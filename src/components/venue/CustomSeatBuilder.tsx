@@ -41,22 +41,22 @@ export function CustomSeatBuilder({ value, onChange }: Props) {
         <span className="range-separator" aria-hidden="true">→</span>
         <label>
           <span>最後の列</span>
-          <input aria-invalid={Boolean(validation.errors.lastRow || validation.errors.range)} value={value.lastRow} onChange={(event) => update('lastRow', event.target.value)} inputMode={value.rowKind === 'number' ? 'numeric' : 'text'} />
-          <span className="field-error">{validation.errors.lastRow}</span>
+          <input aria-invalid={Boolean(validation.errors.lastRow || validation.errors.range)} aria-describedby="last-row-error" value={value.lastRow} onChange={(event) => update('lastRow', event.target.value)} inputMode={value.rowKind === 'number' ? 'numeric' : 'text'} />
+          <span className="field-error" id="last-row-error">{validation.errors.lastRow ?? validation.errors.range}</span>
         </label>
       </div>
 
       <div className="range-grid">
         <label>
           <span>最初の座席番号</span>
-          <input type="number" min="1" step="1" aria-invalid={Boolean(validation.errors.firstSeat)} value={value.firstSeat} onChange={(event) => update('firstSeat', event.target.value)} />
-          <span className="field-error">{validation.errors.firstSeat}</span>
+          <input type="number" min="1" step="1" aria-invalid={Boolean(validation.errors.firstSeat)} aria-describedby="first-seat-error" value={value.firstSeat} onChange={(event) => update('firstSeat', event.target.value)} />
+          <span className="field-error" id="first-seat-error">{validation.errors.firstSeat}</span>
         </label>
         <span className="range-separator" aria-hidden="true">→</span>
         <label>
           <span>最後の座席番号</span>
-          <input type="number" min="1" step="1" aria-invalid={Boolean(validation.errors.lastSeat)} value={value.lastSeat} onChange={(event) => update('lastSeat', event.target.value)} />
-          <span className="field-error">{validation.errors.lastSeat}</span>
+          <input type="number" min="1" step="1" aria-invalid={Boolean(validation.errors.lastSeat)} aria-describedby="last-seat-error" value={value.lastSeat} onChange={(event) => update('lastSeat', event.target.value)} />
+          <span className="field-error" id="last-seat-error">{validation.errors.lastSeat}</span>
         </label>
       </div>
 

@@ -1,11 +1,7 @@
-import type { LotteryMode } from '../domain/lottery/lottery'
-
 const STORAGE_KEY = 'seat-lottery-preferences-v1'
 
 export type Preferences = {
   venueId?: string
-  lotteryMode?: LotteryMode
-  probability?: number
 }
 
 export const loadPreferences = (): Preferences => {
@@ -17,8 +13,6 @@ export const loadPreferences = (): Preferences => {
     const value = parsed as Record<string, unknown>
     return {
       venueId: typeof value.venueId === 'string' ? value.venueId : undefined,
-      lotteryMode: value.lotteryMode === 'seat-only' || value.lotteryMode === 'chance-and-seat' ? value.lotteryMode : undefined,
-      probability: typeof value.probability === 'number' && value.probability >= 0 && value.probability <= 100 ? value.probability : undefined,
     }
   } catch {
     return {}

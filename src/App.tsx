@@ -1,18 +1,18 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import { LotteryAnimation } from './components/lottery/LotteryAnimation'
-import { LotterySettings } from './components/lottery/LotterySettings'
 import { ResultCard } from './components/lottery/ResultCard'
-import { SeatMap } from './components/seat-map/SeatMap'
 import { CustomSeatBuilder } from './components/venue/CustomSeatBuilder'
 import { VenueSelector } from './components/venue/VenueSelector'
 import { venues } from './data/venues'
-import { runLottery, type LotteryMode, type LotteryResult } from './domain/lottery/lottery'
+import { DRAW_ANIMATION_DURATION_MS, REDUCED_MOTION_DRAW_DURATION_MS } from './domain/lottery/constants'
+import { drawSeat, formatSeatLabel } from './domain/lottery/lottery'
 import { generateCustomSeats, validateCustomSeatInput, type CustomSeatInput } from './domain/seats/customSeats'
 import { generateVenueSeats } from './domain/seats/venueSeats'
 import { useReducedMotion } from './hooks/useReducedMotion'
 import { loadPreferences, savePreferences } from './lib/preferences'
 import { buildShareText, shareResult } from './lib/share'
+import type { Seat } from './types/venue'
 
 type SourceMode = 'venue' | 'custom'
 type Phase = 'idle' | 'drawing' | 'result'
@@ -27,24 +27,19 @@ const DEFAULT_CUSTOM: CustomSeatInput = {
   lastSeat: '40',
 }
 
-const initialPreferences = loadPreferences()
-
 const initialVenueId = (): string => {
   const queryVenue = new URLSearchParams(window.location.search).get('venue')
   if (queryVenue !== null) return venues.some((venue) => venue.id === queryVenue) ? queryVenue : ''
-  if (initialPreferences.venueId && venues.some((venue) => venue.id === initialPreferences.venueId)) return initialPreferences.venueId
-  return venues[0]?.id ?? ''
+  const storedVenueId = loadPreferences().venueId
+  return storedVenueId && venues.some((venue) => venue.id === storedVenueId) ? storedVenueId : ''
 }
 
 function App() {
   const [sourceMode, setSourceMode] = useState<SourceMode>('venue')
   const [selectedVenueId, setSelectedVenueId] = useState(initialVenueId)
-  const [selectedLayoutId, setSelectedLayoutId] = useState(() => venues.find((venue) => venue.id === initialVenueId())?.layouts[0]?.id ?? '')
   const [customInput, setCustomInput] = useState(DEFAULT_CUSTOM)
-  const [lotteryMode, setLotteryMode] = useState<LotteryMode>(initialPreferences.lotteryMode ?? 'seat-only')
-  const [probability, setProbability] = useState(initialPreferences.probability ?? 50)
   const [phase, setPhase] = useState<Phase>('idle')
-  const [result, setResult] = useState<LotteryResult | null>(null)
+  const [result, setResult] = useState<Seat | null>(null)
   const [userError, setUserError] = useState('')
   const [shareStatus, setShareStatus] = useState('')
   const timeoutRef = useRef<number | null>(null)
@@ -53,7 +48,7 @@ function App() {
   const reducedMotion = useReducedMotion()
 
   const selectedVenue = venues.find((venue) => venue.id === selectedVenueId)
-  const selectedLayout = selectedVenue?.layouts.find((layout) => layout.id === selectedLayoutId) ?? selectedVenue?.layouts[0]
+  const selectedLayout = selectedVenue?.layouts[0]
   const customValidation = useMemo(() => validateCustomSeatInput(customInput), [customInput])
   const customSeats = useMemo(() => generateCustomSeats(customInput), [customInput])
   const venueSeats = useMemo(
@@ -62,12 +57,11 @@ function App() {
   )
   const availableSeats = sourceMode === 'venue' ? venueSeats : customSeats
   const venueName = sourceMode === 'venue' ? selectedVenue?.name ?? '未選択の会場' : customInput.venueName.trim() || 'マイ会場'
-  const probabilityValid = Number.isFinite(probability) && probability >= 0 && probability <= 100
-  const canDraw = availableSeats.length > 0 && probabilityValid && (sourceMode === 'venue' || Object.keys(customValidation.errors).length === 0)
+  const canDraw = availableSeats.length > 0 && (sourceMode === 'venue' || Object.keys(customValidation.errors).length === 0)
 
   useEffect(() => {
-    savePreferences({ venueId: selectedVenueId || undefined, lotteryMode, probability: probabilityValid ? probability : 50 })
-  }, [lotteryMode, probability, probabilityValid, selectedVenueId])
+    savePreferences({ venueId: selectedVenueId || undefined })
+  }, [selectedVenueId])
 
   const cancelPendingDraw = useCallback(() => {
     drawSequenceRef.current += 1
@@ -100,38 +94,36 @@ function App() {
   }
 
   const changeVenue = (venueId: string) => {
-    const nextVenue = venues.find((venue) => venue.id === venueId)
     setSelectedVenueId(venueId)
-    setSelectedLayoutId(nextVenue?.layouts[0]?.id ?? '')
     resetResult()
     const url = new URL(window.location.href)
     url.searchParams.set('venue', venueId)
     window.history.replaceState({}, '', url)
   }
 
-  const changeLayout = (layoutId: string) => {
-    setSelectedLayoutId(layoutId)
+  const changeCustomInput = (next: CustomSeatInput) => {
+    setCustomInput(next)
     resetResult()
   }
 
   const startDraw = () => {
     if (phase === 'drawing') return
     if (!canDraw) {
-      setUserError(sourceMode === 'venue' ? '有効な座席を含む会場とレイアウトを選んでください。' : '座席範囲のエラーを直してから抽選してください。')
+      setUserError(sourceMode === 'venue' ? '会場を選択してください。' : '座席範囲のエラーを直してから抽選してください。')
       return
     }
     try {
       const drawSequence = cancelPendingDraw()
-      const nextResult = runLottery(lotteryMode, availableSeats, probability)
+      const nextSeat = drawSeat(availableSeats)
       setPhase('drawing')
       setResult(null)
       setShareStatus('')
       setUserError('')
-      const duration = import.meta.env.MODE === 'test' ? 0 : reducedMotion ? 100 : 1800
+      const duration = reducedMotion ? REDUCED_MOTION_DRAW_DURATION_MS : DRAW_ANIMATION_DURATION_MS
       timeoutRef.current = window.setTimeout(() => {
         if (drawSequenceRef.current !== drawSequence) return
         timeoutRef.current = null
-        setResult(nextResult)
+        setResult(nextSeat)
         setPhase('result')
       }, duration)
     } catch (error) {
@@ -170,79 +162,53 @@ function App() {
           <span className="brand-mark" aria-hidden="true">★</span>
           <span>座席抽選<br /><strong>シミュレーター</strong></span>
         </a>
-        <span className="header-badge">PLAY ONLY</span>
       </header>
 
       <main>
         <section className="hero-section">
-          <p className="eyebrow"><span aria-hidden="true">●</span> SEAT LOTTERY EXPERIENCE</p>
-          <h1>今日の運で、<br /><em>どの席に出会う？</em></h1>
+          <h1>あなたの今日の席運は？</h1>
           <p className="hero-lead">ライブ前の願掛けに。架空の座席抽選を、ちょっと楽しく体験できます。</p>
           <div className="hero-notice">
             <span aria-hidden="true">i</span>
-            <p><strong>遊びのためのシミュレーションです</strong>実際のチケット抽選・当選確率・座席割り当てを予測または再現するものではありません。</p>
+            <p><strong>遊びのためのシミュレーションです</strong>実際の座席割り当てを予測または再現するものではありません。</p>
           </div>
         </section>
 
         <section className="setup-card" ref={settingsRef} tabIndex={-1} aria-labelledby="setup-heading">
           <div className="section-heading">
-            <span className="step-number">01</span>
-            <div><p className="eyebrow">PICK YOUR SEATS</p><h2 id="setup-heading">抽選する座席を決める</h2></div>
+            <h2 id="setup-heading">{sourceMode === 'venue' ? '抽選する会場を選ぶ' : '抽選する座席を作る'}</h2>
           </div>
 
-          <div className="source-tabs" role="tablist" aria-label="座席の作り方">
-            <button type="button" role="tab" aria-selected={sourceMode === 'venue'} onClick={() => changeSource('venue')}>会場から選ぶ</button>
-            <button type="button" role="tab" aria-selected={sourceMode === 'custom'} onClick={() => changeSource('custom')}>自分で作る</button>
+          <div className="source-tabs" role="group" aria-label="座席の作り方">
+            <button id="venue-source-button" type="button" aria-pressed={sourceMode === 'venue'} aria-controls="seat-source-panel" onClick={() => changeSource('venue')}>会場から選ぶ</button>
+            <button id="custom-source-button" type="button" aria-pressed={sourceMode === 'custom'} aria-controls="seat-source-panel" onClick={() => changeSource('custom')}>自分で作る</button>
           </div>
 
-          <div role="tabpanel" className="source-panel">
+          <div id="seat-source-panel" aria-labelledby={sourceMode === 'venue' ? 'venue-source-button' : 'custom-source-button'} className="source-panel">
             {sourceMode === 'venue' ? (
-              <>
-                <VenueSelector venues={venues} selectedVenueId={selectedVenueId} onSelect={changeVenue} />
-                {selectedVenue && (
-                  <details className="details-panel">
-                    <summary>選択内容の詳細と座席図</summary>
-                    <div className="details-content">
-                      {selectedVenue.layouts.length > 1 && (
-                        <label className="layout-select"><span>レイアウト</span><select value={selectedLayout?.id} onChange={(event) => changeLayout(event.target.value)}>{selectedVenue.layouts.map((layout) => <option value={layout.id} key={layout.id}>{layout.name}</option>)}</select></label>
-                      )}
-                      <p className="venue-notice">{selectedVenue.notice}</p>
-                      {selectedLayout && <SeatMap venue={selectedVenue} layout={selectedLayout} />}
-                    </div>
-                  </details>
-                )}
-              </>
+              <VenueSelector venues={venues} selectedVenueId={selectedVenueId} onSelect={changeVenue} />
             ) : (
-              <CustomSeatBuilder value={customInput} onChange={(next) => { setCustomInput(next); resetResult() }} />
+              <CustomSeatBuilder value={customInput} onChange={changeCustomInput} />
             )}
           </div>
 
-          <div className="divider" />
-          <div className="section-heading compact">
-            <span className="step-number">02</span>
-            <div><p className="eyebrow">CHOOSE A MODE</p><h2>抽選モードを選ぶ</h2></div>
-          </div>
-          <LotterySettings
-            mode={lotteryMode}
-            onModeChange={(mode) => { setLotteryMode(mode); resetResult() }}
-            probability={probability}
-            onProbabilityChange={(value) => { setProbability(value); resetResult() }}
-          />
-
           <form className="draw-area" onSubmit={(event) => { event.preventDefault(); startDraw() }}>
-            <p>{canDraw ? `${availableSeats.length.toLocaleString('ja-JP')}席から運命の1席を抽選します` : '有効な座席範囲を設定してください'}</p>
+            <p>{canDraw ? `${availableSeats.length.toLocaleString('ja-JP')}席から今日の1席を抽選します` : sourceMode === 'venue' ? '会場を選択してください' : '有効な座席範囲を設定してください'}</p>
             <button className="draw-button" type="submit" disabled={!canDraw || phase === 'drawing'}>
-              <span aria-hidden="true">✦</span>{phase === 'drawing' ? '抽選中です…' : '座席を抽選する'}<span aria-hidden="true">→</span>
+              <span aria-hidden="true">✦</span>{phase === 'drawing' ? '抽選中……' : '座席を抽選する'}<span aria-hidden="true">→</span>
             </button>
             {userError && <p className="form-error centered" role="alert">{userError}</p>}
           </form>
         </section>
 
-        <div className="result-region" aria-live="polite" aria-atomic="true">
+        <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+          {phase === 'drawing' ? '抽選中です。今日の席運を確認しています。' : phase === 'result' && result ? `抽選結果を表示しました。${formatSeatLabel(result)}です。` : ''}
+        </div>
+        <div className="result-region">
           {phase === 'drawing' && <LotteryAnimation />}
           {phase === 'result' && result && (
             <ResultCard
-              result={result}
+              seat={result}
               venueName={venueName}
               venue={sourceMode === 'venue' ? selectedVenue : undefined}
               layout={sourceMode === 'venue' ? selectedLayout : undefined}

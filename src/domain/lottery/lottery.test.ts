@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { Seat, Venue, VenueLayout } from '../../types/venue'
 import { generateVenueSeats } from '../seats/venueSeats'
-import { determineWin, drawSeat, formatSeatLabel, runLottery } from './lottery'
+import { drawSeat, formatSeatLabel } from './lottery'
 import { randomInt, type RandomSource } from './random'
 
 const source = (...values: number[]): RandomSource => {
@@ -14,18 +14,6 @@ const seat: Seat = { venueId: 'v', venueName: '会場', layoutId: 'l', layoutNam
 describe('lottery domain', () => {
   it('1席しかない場合はその席を選ぶ', () => {
     expect(drawSeat([seat], source(123))).toBe(seat)
-  })
-
-  it('0%では必ず落選し100%では必ず当選する', () => {
-    expect(determineWin(0, source(0))).toBe(false)
-    expect(determineWin(100, source(0xffffffff))).toBe(true)
-  })
-
-  it('落選時に座席抽選を実行しない', () => {
-    let calls = 0
-    const countingSource: RandomSource = { nextUint32: () => { calls += 1; if (calls > 1) throw new Error('seat draw should not run'); return 999_999 } }
-    expect(runLottery('chance-and-seat', [seat], 50, countingSource)).toEqual({ status: 'lost' })
-    expect(calls).toBe(1)
   })
 
   it('注入した乱数で同じ結果を再現できる', () => {
