@@ -27,12 +27,25 @@ describe('lottery domain', () => {
   })
 
   it('除外席や存在しない席を抽選対象に含めない', () => {
-    const layout: VenueLayout = { id: 'l', name: '標準', sections: [{ id: 's', label: 'A', map: { x: 0, y: 0, width: 10, height: 10, shape: 'rectangle' }, rows: [{ label: '1', seatRanges: [{ from: 1, to: 4 }], excludedSeats: [2] }] }] }
-    const venue: Venue = { id: 'v', name: '会場', region: '関東', accuracy: 'demo', notice: 'demo', layouts: [layout] }
+    const layout: VenueLayout = { id: 'l', name: '標準', sections: [{ id: 's', label: 'A', variability: 'fixed', includedInVenueLottery: true, map: { x: 0, y: 0, width: 10, height: 10 }, rows: [{ label: '1', seatRanges: [{ from: 1, to: 4 }], excludedSeats: [2] }] }] }
+    const venue: Venue = { id: 'v', name: '会場', region: '関東', seatDataAccuracy: 'demo', seatMapPresentation: 'summary-only', seatDataScope: 'test', notice: 'demo', sources: [], layouts: [layout] }
     const seats = generateVenueSeats(venue, layout)
     expect(seats.map((item) => item.number)).toEqual([1, 3, 4])
     expect(seats.some((item) => item.number === 2 || item.number === 5)).toBe(false)
     for (let value = 0; value < 12; value += 1) expect([1, 3, 4]).toContain(drawSeat(seats, source(value)).number)
+  })
+
+  it('event-specific席を会場共通の抽選対象に含めない', () => {
+    const layout: VenueLayout = {
+      id: 'l', name: '標準', sections: [
+        { id: 'fixed', label: '固定席', variability: 'fixed', includedInVenueLottery: true, rows: [{ label: '1', seatRanges: [{ from: 1, to: 2 }] }] },
+        { id: 'temporary', label: '仮設席', variability: 'event-specific', includedInVenueLottery: true, rows: [{ label: 'A', seatRanges: [{ from: 1, to: 100 }] }] },
+      ],
+    }
+    const venue: Venue = { id: 'v', name: '会場', region: '関東', seatDataAccuracy: 'demo', seatMapPresentation: 'summary-only', seatDataScope: 'test', notice: 'demo', sources: [], layouts: [layout] }
+    const seats = generateVenueSeats(venue, layout)
+    expect(seats).toHaveLength(2)
+    expect(seats.every((item) => item.sectionId === 'fixed')).toBe(true)
   })
 
   it('表示用の座席文字列を生成する', () => {

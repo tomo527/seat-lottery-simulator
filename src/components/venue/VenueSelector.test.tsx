@@ -10,8 +10,11 @@ const venues: Venue[] = Array.from({ length: 30 }, (_, index) => ({
   region: index % 2 === 0 ? '関東' : '近畿',
   prefecture: '架空県',
   city: `テスト市${index + 1}`,
-  accuracy: 'demo',
+  seatDataAccuracy: 'demo',
+  seatMapPresentation: 'summary-only',
+  seatDataScope: 'テスト用範囲',
   notice: 'テスト用の架空会場です。',
+  sources: [],
   layouts: [],
 }))
 

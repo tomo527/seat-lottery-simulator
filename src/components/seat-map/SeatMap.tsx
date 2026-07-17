@@ -1,4 +1,6 @@
+import { useEffect, useRef } from 'react'
 import { formatSeatLabel } from '../../domain/lottery/lottery'
+import { generateVenueSeats } from '../../domain/seats/venueSeats'
 import type { Seat, Venue, VenueLayout } from '../../types/venue'
 
 type Props = {
@@ -8,52 +10,119 @@ type Props = {
   highlightedSeat?: Seat
 }
 
+const MAX_GRID_ROWS = 12
+const MAX_GRID_COLUMNS = 24
+
+function selectedWindow<T>(values: T[], selected: T | undefined, limit: number) {
+  if (values.length <= limit) return values
+  const selectedIndex = selected === undefined ? 0 : Math.max(0, values.indexOf(selected))
+  const start = Math.min(Math.max(0, selectedIndex - Math.floor(limit / 2)), values.length - limit)
+  return values.slice(start, start + limit)
+}
+
+function SeatGrid({ seats, highlightedSeat, officialRange = false }: { seats: Seat[]; highlightedSeat?: Seat; officialRange?: boolean }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const selectedRef = useRef<HTMLSpanElement>(null)
+  const allRows = [...new Set(seats.map((seat) => seat.rowLabel))]
+  const allNumbers = [...new Set(seats.map((seat) => seat.number))].sort((a, b) => a - b)
+  const rows = selectedWindow(allRows, highlightedSeat?.rowLabel, MAX_GRID_ROWS)
+  const numbers = selectedWindow(allNumbers, highlightedSeat?.number, MAX_GRID_COLUMNS)
+  const validSeats = new Set(seats.map((seat) => `${seat.rowLabel}:${seat.number}`))
+
+  useEffect(() => {
+    const scroller = scrollRef.current
+    const selected = selectedRef.current
+    if (!scroller || !selected) return
+    scroller.scrollLeft = Math.max(0, selected.offsetLeft - (scroller.clientWidth - selected.offsetWidth) / 2)
+  }, [highlightedSeat?.number, highlightedSeat?.rowLabel])
+
+  return (
+    <>
+      <div className="seat-grid-scroll" ref={scrollRef}>
+        <div className="seat-grid" style={{ gridTemplateColumns: `2.8rem repeat(${numbers.length}, minmax(1.55rem, 1fr))` }}>
+          {rows.flatMap((row) => [
+            <span className="row-label" key={`${row}-label`}>{row}</span>,
+            ...numbers.map((number) => {
+              const key = `${row}:${number}`
+              const selected = highlightedSeat?.rowLabel === row && highlightedSeat.number === number
+              const valid = validSeats.has(key)
+              return (
+                <span
+                  className={selected ? 'mini-seat selected' : valid ? 'mini-seat' : 'mini-seat unavailable'}
+                  ref={selected ? selectedRef : undefined}
+                  key={key}
+                  aria-label={`${row}列${number}番${selected ? ' 抽選席' : valid ? '' : ' 対象外'}`}
+                >
+                  {valid ? number : '—'}
+                </span>
+              )
+            }),
+          ])}
+        </div>
+      </div>
+      {(allRows.length > rows.length || allNumbers.length > numbers.length) && (
+        <p className="seat-grid-note">表示負荷を抑えるため、抽選席の周辺だけを表示しています。</p>
+      )}
+      {officialRange && (
+        <p className="seat-grid-note">公式資料で確認できる列・座席番号を、抽選用のグリッドとして表示しています。実際の位置関係や縮尺を表すものではありません。</p>
+      )}
+    </>
+  )
+}
+
 export function SeatMap({ venue, layout, customSeats, highlightedSeat }: Props) {
   if (venue && layout) {
-    const alt = `${venue.name} ${layout.name}の簡易座席図。${highlightedSeat ? `${highlightedSeat.sectionLabel}を強調表示しています。` : `${layout.sections.length}エリアを表示しています。`}`
+    if (venue.seatMapPresentation === 'summary-only') {
+      return (
+        <div className="seat-map-summary" data-presentation="summary-only" role="note">
+          <strong>座席図は表示していません</strong>
+          <span>公式資料だけでは配置を十分に確認できないため、抽選結果をテキストで表示しています。</span>
+        </div>
+      )
+    }
+
+    if (venue.seatMapPresentation === 'seat-grid') {
+      const seats = generateVenueSeats(venue, layout)
+      return (
+        <figure className="seat-map-card custom-map" data-presentation="seat-grid" aria-label={`${venue.name}の抽選用座席グリッド`}>
+          <SeatGrid seats={seats} highlightedSeat={highlightedSeat} officialRange />
+          <figcaption>{highlightedSeat ? `抽選席: ${formatSeatLabel(highlightedSeat)}` : '公式に確認できる列と番号の範囲を表示しています。'}</figcaption>
+        </figure>
+      )
+    }
+
+    const mappedSections = layout.sections.filter((section) => section.map)
+    const alt = `${venue.name}の公式情報に基づくエリア概略図。${highlightedSeat?.sectionLabel ? `${highlightedSeat.sectionLabel}を強調表示しています。` : ''}`
     return (
-      <figure className="seat-map-card">
+      <figure className="seat-map-card" data-presentation="verified-section-map">
         <svg className="venue-map" viewBox="0 0 100 76" role="img" aria-label={alt}>
-          <rect className="stage" x="31" y="4" width="38" height="11" rx="5" />
-          <text className="stage-label" x="50" y="11" textAnchor="middle">{layout.stageLabel ?? 'STAGE'}</text>
-          {layout.sections.map((section) => {
+          {mappedSections.map((section) => {
             const selected = highlightedSeat?.sectionId === section.id
-            const { x, y, width, height, rotation = 0, shape } = section.map
+            const map = section.map!
+            const classes = ['map-section', selected ? 'selected' : '', section.includedInVenueLottery ? '' : 'excluded'].filter(Boolean).join(' ')
             return (
-              <g key={section.id} className={selected ? 'map-section selected' : 'map-section'} transform={`rotate(${rotation} ${x + width / 2} ${y + height / 2})`}>
-                <rect x={x} y={y} width={width} height={height} rx={shape === 'rectangle' ? 2 : shape === 'rounded' ? 6 : 11} />
-                <text x={x + width / 2} y={y + height / 2 + 1} textAnchor="middle">{section.label}</text>
-                {selected && <circle className="map-pulse" cx={x + width / 2} cy={y + height - 4} r="2.2" />}
+              <g key={section.id} className={classes}>
+                <rect x={map.x} y={map.y} width={map.width} height={map.height} rx="3" />
+                <text x={map.x + map.width / 2} y={map.y + map.height / 2 + 1} textAnchor="middle">{section.label}</text>
               </g>
             )
           })}
         </svg>
-        <figcaption>{highlightedSeat ? `強調位置: ${formatSeatLabel(highlightedSeat)}` : 'データ内の配置情報から生成した独自の簡易図です。縮尺や実際の見え方を表すものではありません。'}</figcaption>
+        <p className="seat-grid-note">
+          {venue.seatDataAccuracy === 'official-exact'
+            ? '公式資料で確認した区分と位置関係を、独自の概略図で表示しています。実際の縮尺を表すものではありません。'
+            : '公式資料で確認したエリアの位置関係を、エリア単位の独自概略図で表示しています。個々の座席位置や縮尺を表すものではありません。'}
+        </p>
+        <figcaption>{highlightedSeat ? `強調位置: ${formatSeatLabel(highlightedSeat)}` : '公式資料から確認できた位置関係だけを表示しています。'}</figcaption>
       </figure>
     )
   }
 
   if (customSeats?.length) {
-    const rows = [...new Set(customSeats.map((seat) => seat.rowLabel))]
-    const numbers = [...new Set(customSeats.map((seat) => seat.number))]
-    const showIndividual = customSeats.length <= 240
     return (
-      <figure className="seat-map-card custom-map" aria-label="自作座席の簡易座席図">
-        <div className="custom-stage">STAGE</div>
-        {showIndividual ? (
-          <div className="seat-grid" style={{ gridTemplateColumns: `2.25rem repeat(${numbers.length}, minmax(1.4rem, 1fr))` }}>
-            {rows.flatMap((row) => [
-              <span className="row-label" key={`${row}-label`}>{row}</span>,
-              ...numbers.map((number) => {
-                const selected = highlightedSeat?.rowLabel === row && highlightedSeat.number === number
-                return <span className={selected ? 'mini-seat selected' : 'mini-seat'} key={`${row}-${number}`} aria-label={`${row}列${number}番${selected ? ' 抽選席' : ''}`}>{number}</span>
-              }),
-            ])}
-          </div>
-        ) : (
-          <div className="large-map-summary"><span>{rows.length}列</span><strong>{customSeats.length.toLocaleString('ja-JP')}席</strong><span>ブロック表示</span></div>
-        )}
-        <figcaption>{highlightedSeat ? `抽選席: ${formatSeatLabel(highlightedSeat)}` : showIndividual ? '入力範囲を列・座席ごとに表示しています。' : '座席数が多いため、ブラウザの負荷を抑えたブロック表示です。'}</figcaption>
+      <figure className="seat-map-card custom-map" data-presentation="seat-grid" aria-label="自作座席の簡易座席図">
+        <SeatGrid seats={customSeats} highlightedSeat={highlightedSeat} />
+        <figcaption>{highlightedSeat ? `抽選席: ${formatSeatLabel(highlightedSeat)}` : '入力範囲を列・座席ごとに表示しています。'}</figcaption>
       </figure>
     )
   }

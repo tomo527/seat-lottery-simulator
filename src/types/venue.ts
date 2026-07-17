@@ -8,7 +8,27 @@ export const REGIONS = [
 ] as const
 
 export type Region = (typeof REGIONS)[number]
-export type VenueAccuracy = 'demo' | 'approximate' | 'verified'
+
+export type SeatDataAccuracy =
+  | 'official-exact'
+  | 'official-structure'
+  | 'official-range'
+  | 'demo'
+
+export type SeatMapPresentation =
+  | 'verified-section-map'
+  | 'seat-grid'
+  | 'summary-only'
+
+export type SeatAreaVariability = 'fixed' | 'venue-pattern' | 'event-specific'
+
+export type VenueSeatDataSource = {
+  kind: 'venue-official' | 'facility-manager' | 'organizer-official' | 'event-official'
+  publisher: string
+  title: string
+  url: string
+  checkedAt: string
+}
 
 export type VenueSeatRange = {
   from: number
@@ -21,16 +41,17 @@ export type VenueRow = {
   excludedSeats?: number[]
 }
 
-export type VenueSection = {
+export type VenueSeatArea = {
   id: string
-  label: string
-  map: {
+  label?: string
+  variability: SeatAreaVariability
+  includedInVenueLottery: boolean
+  exclusionReason?: string
+  map?: {
     x: number
     y: number
     width: number
     height: number
-    shape: 'rectangle' | 'rounded' | 'arc'
-    rotation?: number
   }
   rows: VenueRow[]
 }
@@ -38,8 +59,7 @@ export type VenueSection = {
 export type VenueLayout = {
   id: string
   name: string
-  stageLabel?: string
-  sections: VenueSection[]
+  sections: VenueSeatArea[]
 }
 
 export type Venue = {
@@ -50,13 +70,12 @@ export type Venue = {
   city?: string
   description?: string
   approximateCapacity?: number
-  accuracy: VenueAccuracy
+  seatDataAccuracy: SeatDataAccuracy
+  seatMapPresentation: SeatMapPresentation
+  seatDataScope: string
   notice: string
-  source?: {
-    title: string
-    url: string
-    checkedAt: string
-  }
+  variabilityNotice?: string
+  sources: VenueSeatDataSource[]
   layouts: VenueLayout[]
 }
 
@@ -66,7 +85,7 @@ export type Seat = {
   layoutId: string
   layoutName: string
   sectionId: string
-  sectionLabel: string
+  sectionLabel?: string
   rowLabel: string
   number: number
 }

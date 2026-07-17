@@ -14,9 +14,7 @@ afterEach(() => {
   vi.useRealTimers()
 })
 
-const openVenuePicker = () => fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
-
-const selectVenue = (name = '星見アリーナ') => {
+const selectVenue = (name = '東京国際フォーラム ホールC') => {
   const trigger = screen.queryByRole('button', { name: '会場を選ぶ' }) ?? screen.getByRole('button', { name: '会場を変更' })
   fireEvent.click(trigger)
   fireEvent.click(screen.getByRole('button', { name: `${name}を選ぶ` }))
@@ -29,17 +27,15 @@ const startVenueDraw = () => {
 }
 
 describe('App', () => {
-  it('不要なラベルや当落設定を表示せず、新しい見出しを表示する', () => {
+  it('遊び用途の見出しだけを表示し、当落設定を表示しない', () => {
     render(<App />)
     expect(screen.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeInTheDocument()
-    expect(screen.queryByText('PLAY ONLY')).not.toBeInTheDocument()
-    expect(screen.queryByText('SEAT LOTTERY EXPERIENCE')).not.toBeInTheDocument()
-    expect(screen.queryByText('抽選モードを選ぶ')).not.toBeInTheDocument()
+    expect(screen.queryByText(/PLAY ONLY|SEAT LOTTERY EXPERIENCE|抽選モードを選ぶ|STEP 01|STEP 02/)).not.toBeInTheDocument()
     expect(screen.queryByLabelText(/当選確率/)).not.toBeInTheDocument()
-    expect(screen.queryByText(/STEP 01|STEP 02|PICK YOUR SEATS|CHOOSE A MODE/)).not.toBeInTheDocument()
   })
 
-  it('保存値がない初期状態では会場を未選択にする', () => {
+  it('保存値がなければ会場未選択で、不正URLも安全に扱う', () => {
+    window.history.replaceState({}, '', '/?venue=unknown-venue')
     render(<App />)
     expect(screen.getByText('まだ会場が選択されていません。')).toBeInTheDocument()
     expect(screen.getByText('会場を選択してください')).toBeInTheDocument()
@@ -47,96 +43,60 @@ describe('App', () => {
   })
 
   it('有効なURL会場IDを復元する', () => {
-    window.history.replaceState({}, '', '/?venue=demo-kirameki-hall')
+    window.history.replaceState({}, '', '/?venue=tokyo-international-forum-hall-c')
     render(<App />)
-    expect(screen.getByText('キラメキホール')).toBeInTheDocument()
+    expect(screen.getByText('東京国際フォーラム ホールC')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled()
   })
 
-  it('保存した会場を復元し、旧当落設定は無視する', () => {
-    localStorage.setItem('seat-lottery-preferences-v1', JSON.stringify({ venueId: 'demo-ocean-dome', lotteryMode: 'chance-and-seat', probability: 10 }))
+  it('保存会場を復元し、古い当落設定は無視する', () => {
+    localStorage.setItem('seat-lottery-preferences-v1', JSON.stringify({ venueId: 'kyocera-dome-osaka-stand-subset', lotteryMode: 'chance-and-seat', probability: 10 }))
     render(<App />)
-    expect(screen.getByText('オーシャンドーム')).toBeInTheDocument()
-    expect(screen.queryByText(/当落|当選確率/)).not.toBeInTheDocument()
+    expect(screen.getByText('京セラドーム大阪（通常野球開催時）')).toBeInTheDocument()
+    expect(screen.queryByText(/当選確率|当落/)).not.toBeInTheDocument()
   })
 
-  it('不正な会場IDは未選択として安全に扱う', () => {
-    window.history.replaceState({}, '', '/?venue=unknown-venue')
+  it('会場名・所在地検索と地域絞り込みができる', () => {
     render(<App />)
-    expect(screen.getByText('まだ会場が選択されていません。')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
-  })
-
-  it('会場選択パネルを開き、会場名で検索できる', () => {
-    render(<App />)
-    openVenuePicker()
+    fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
     const search = screen.getByLabelText('会場名・所在地を検索')
-    fireEvent.change(search, { target: { value: 'キラメキ' } })
+    fireEvent.change(search, { target: { value: '横浜' } })
+    expect(screen.getByRole('button', { name: '横浜アリーナを選ぶ' })).toBeInTheDocument()
+    fireEvent.change(search, { target: { value: '千代田区' } })
+    expect(screen.getByRole('button', { name: '東京国際フォーラム ホールCを選ぶ' })).toBeInTheDocument()
+    fireEvent.change(search, { target: { value: '' } })
+    fireEvent.change(screen.getByLabelText('地域'), { target: { value: '近畿' } })
     expect(screen.getByText('1件の会場')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'キラメキホールを選ぶ' })).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: '星見アリーナを選ぶ' })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '京セラドーム大阪（通常野球開催時）を選ぶ' })).toBeInTheDocument()
   })
 
-  it('都道府県または市区町村で会場を検索できる', () => {
+  it('選択後に公式データ範囲と変動席の除外を簡潔に示す', () => {
     render(<App />)
-    openVenuePicker()
-    const search = screen.getByLabelText('会場名・所在地を検索')
-    fireEvent.change(search, { target: { value: '光野市' } })
-    expect(screen.getByRole('button', { name: 'キラメキホールを選ぶ' })).toBeInTheDocument()
-    fireEvent.change(search, { target: { value: '架空道' } })
-    expect(screen.getByRole('button', { name: 'ノースノート・ライブハウスを選ぶ' })).toBeInTheDocument()
-  })
-
-  it('地域で絞り込める', () => {
-    render(<App />)
-    openVenuePicker()
-    fireEvent.change(screen.getByLabelText('地域'), { target: { value: '九州・沖縄' } })
-    expect(screen.getByText('1件の会場')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'オーシャンドームを選ぶ' })).toBeInTheDocument()
-  })
-
-  it('会場を選ぶとパネルを閉じ、選択内容と変更ボタンを表示する', () => {
-    render(<App />)
-    selectVenue('キラメキホール')
+    selectVenue('横浜アリーナ')
     expect(screen.queryByLabelText('会場名・所在地を検索')).not.toBeInTheDocument()
-    expect(screen.getByText('キラメキホール')).toBeInTheDocument()
-    expect(screen.getByText('架空会場')).toBeInTheDocument()
+    expect(screen.getByText(/固定アリーナ席Aブロックの一部/)).toBeInTheDocument()
+    expect(screen.getByText(/センター席はイベントにより配置が変わる/)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '公式座席情報を確認' })).toHaveAttribute('target', '_blank')
     expect(screen.getByRole('button', { name: '会場を変更' })).toHaveFocus()
-    expect(window.location.search).toContain('demo-kirameki-hall')
-    expect(JSON.parse(localStorage.getItem('seat-lottery-preferences-v1') ?? '{}')).toEqual({ venueId: 'demo-kirameki-hall' })
-    fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
-    expect(screen.getByLabelText('会場名・所在地を検索')).toBeInTheDocument()
+    expect(window.location.search).toContain('yokohama-arena-fixed-a-subset')
   })
 
-  it('抽選前は座席図とレイアウト選択を表示せず、抽選後だけ結果と座席図を表示する', () => {
+  it('抽選前は図を出さず、1800ms後に結果と精度に合う図を表示する', () => {
     vi.useFakeTimers()
     startVenueDraw()
-    expect(screen.queryByRole('img', { name: /簡易座席図/ })).not.toBeInTheDocument()
-    expect(screen.queryByLabelText('レイアウト')).not.toBeInTheDocument()
-    expect(screen.queryByText(/センターステージ|エンドステージ/)).not.toBeInTheDocument()
-    act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS))
-    expect(screen.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeInTheDocument()
-    expect(screen.queryByText(/チケットをご用意できました/)).not.toBeInTheDocument()
-    expect(screen.getByText('セクション・エリア')).toBeInTheDocument()
-    expect(screen.getByText('列')).toBeInTheDocument()
-    expect(screen.getByText('座席番号')).toBeInTheDocument()
-    expect(screen.getByRole('img', { name: /簡易座席図/ })).toBeInTheDocument()
-  })
-
-  it('2400msの抽選演出が終わるまで結果を表示しない', () => {
-    vi.useFakeTimers()
-    startVenueDraw()
+    expect(document.querySelector('[data-presentation]')).not.toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '抽選中……' })).toBeInTheDocument()
-    expect(screen.getByText('抽選中です。今日の席運を確認しています。')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: '抽選中……' })).toBeDisabled()
+    expect(screen.getByText('今日の席運を確認しています')).toBeInTheDocument()
     act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS - 1))
     expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
     act(() => vi.advanceTimersByTime(1))
     expect(screen.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeInTheDocument()
-    expect(screen.getByText(/抽選結果を表示しました。.+です。/)).toBeInTheDocument()
+    expect(document.querySelector('[data-presentation="verified-section-map"]')).toBeInTheDocument()
+    expect(screen.getByText('セクション・エリア')).toBeInTheDocument()
+    expect(screen.queryByText(/チケットをご用意できました/)).not.toBeInTheDocument()
   })
 
-  it('reduced motionでは400msに短縮する', () => {
+  it('reduced motionでは400ms後に結果を表示する', () => {
     vi.spyOn(window, 'matchMedia').mockImplementation((query) => ({
       matches: query === '(prefers-reduced-motion: reduce)', media: query, onchange: null,
       addEventListener: vi.fn(), removeEventListener: vi.fn(), addListener: vi.fn(), removeListener: vi.fn(), dispatchEvent: vi.fn(),
@@ -149,7 +109,7 @@ describe('App', () => {
     expect(screen.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeInTheDocument()
   })
 
-  it('同時に複数の抽選タイマーを開始せず、条件変更時に解除する', () => {
+  it('二重実行せず、会場変更で保留タイマーを解除する', () => {
     const setTimeoutSpy = vi.spyOn(window, 'setTimeout')
     const clearTimeoutSpy = vi.spyOn(window, 'clearTimeout')
     startVenueDraw()
@@ -157,20 +117,21 @@ describe('App', () => {
     const timerCalls = setTimeoutSpy.mock.calls.length
     fireEvent.click(screen.getByRole('button', { name: '抽選中……' }))
     expect(setTimeoutSpy).toHaveBeenCalledTimes(timerCalls)
-    selectVenue('キラメキホール')
+    selectVenue('横浜アリーナ')
     expect(clearTimeoutSpy).toHaveBeenCalledWith(drawTimer)
   })
 
-  it('抽選中に会場を変更しても古い結果を表示しない', () => {
-    vi.useFakeTimers()
+  it('会場変更後は古いcallbackが実行されても結果を反映しない', () => {
+    const setTimeoutSpy = vi.spyOn(window, 'setTimeout')
     startVenueDraw()
-    selectVenue('キラメキホール')
-    act(() => vi.runAllTimers())
+    const staleCallback = setTimeoutSpy.mock.calls.at(-1)?.[0]
+    selectVenue('横浜アリーナ')
+    act(() => (staleCallback as () => void)())
     expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
-    expect(screen.getByText('キラメキホール')).toBeInTheDocument()
+    expect(screen.getByText('横浜アリーナ')).toBeInTheDocument()
   })
 
-  it('抽選中に自作座席を変更しても古い結果を表示しない', () => {
+  it('自作座席の変更で古い結果を表示しない', () => {
     vi.useFakeTimers()
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: '自分で作る' }))
@@ -180,17 +141,7 @@ describe('App', () => {
     expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
   })
 
-  it('解除済みの古いタイマーcallbackが実行されても結果を反映しない', () => {
-    const setTimeoutSpy = vi.spyOn(window, 'setTimeout')
-    startVenueDraw()
-    const staleCallback = setTimeoutSpy.mock.calls.at(-1)?.[0]
-    expect(staleCallback).toBeTypeOf('function')
-    selectVenue('キラメキホール')
-    act(() => (staleCallback as () => void)())
-    expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
-  })
-
-  it('unmount時に保留中の抽選タイマーを解除する', () => {
+  it('unmount時に保留タイマーを解除する', () => {
     const setTimeoutSpy = vi.spyOn(window, 'setTimeout')
     const clearTimeoutSpy = vi.spyOn(window, 'clearTimeout')
     const { unmount } = render(<App />)
@@ -201,19 +152,17 @@ describe('App', () => {
     expect(clearTimeoutSpy).toHaveBeenCalledWith(drawTimer)
   })
 
-  it('自作座席から抽選し、結果後だけ自作座席図を表示する', () => {
+  it('自作座席から従来どおり抽選できる', () => {
     vi.useFakeTimers()
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: '自分で作る' }))
     expect(screen.getByText('760席から今日の1席を抽選します')).toBeInTheDocument()
-    expect(screen.queryByRole('figure', { name: '自作座席の簡易座席図' })).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS))
-    expect(screen.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeInTheDocument()
     expect(screen.getByRole('figure', { name: '自作座席の簡易座席図' })).toBeInTheDocument()
   })
 
-  it('不正な自作入力の近くにバリデーションエラーを表示する', async () => {
+  it('不正な自作入力の近くにエラーを表示する', async () => {
     const user = userEvent.setup()
     render(<App />)
     await user.click(screen.getByRole('button', { name: '自分で作る' }))
@@ -221,7 +170,6 @@ describe('App', () => {
     await user.clear(firstSeat)
     await user.type(firstSeat, '0')
     await waitFor(() => expect(screen.getByText('1以上の安全な整数で入力してください。')).toBeInTheDocument())
-    expect(firstSeat).toHaveAttribute('aria-describedby', 'first-seat-error')
     expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
   })
 })

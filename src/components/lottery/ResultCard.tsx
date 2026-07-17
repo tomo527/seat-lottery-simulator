@@ -1,4 +1,3 @@
-import { formatSeatLabel } from '../../domain/lottery/lottery'
 import { SeatMap } from '../seat-map/SeatMap'
 import type { Seat, Venue, VenueLayout } from '../../types/venue'
 
@@ -14,6 +13,13 @@ type Props = {
   onShare: () => void
 }
 
+const accuracyLabels = {
+  'official-exact': '公式資料で配置関係まで確認',
+  'official-structure': '公式資料でエリア構造を確認',
+  'official-range': '公式資料で列・番号範囲を確認',
+  demo: 'デモデータ',
+} as const
+
 export function ResultCard({ seat, venueName, venue, layout, customSeats, shareStatus, onRetry, onChangeConditions, onShare }: Props) {
   return (
     <section className="result-card" aria-labelledby="result-heading">
@@ -25,13 +31,21 @@ export function ResultCard({ seat, venueName, venue, layout, customSeats, shareS
 
       <dl className="ticket-details">
         <div><dt>会場</dt><dd>{venueName}</dd></div>
-        <div><dt>セクション・エリア</dt><dd>{seat.sectionLabel}</dd></div>
+        {seat.sectionLabel && <div><dt>セクション・エリア</dt><dd>{seat.sectionLabel}</dd></div>}
         <div><dt>列</dt><dd>{seat.rowLabel}列</dd></div>
         <div className="seat-number"><dt>座席番号</dt><dd>{seat.number}番</dd></div>
       </dl>
 
       <SeatMap venue={venue} layout={layout} customSeats={customSeats} highlightedSeat={seat} />
-      <p className="result-alt-text">抽選された座席は {formatSeatLabel(seat)} です。</p>
+      {venue && (
+        <div className="venue-data-notice">
+          <strong>{accuracyLabels[venue.seatDataAccuracy]}</strong>
+          <span>最終確認日: {venue.sources[0]?.checkedAt}</span>
+          {venue.variabilityNotice && <span>{venue.variabilityNotice}</span>}
+          <span>実際の公演では座席構成が異なる可能性があります。</span>
+          {venue.sources[0] && <a href={venue.sources[0].url} target="_blank" rel="noopener noreferrer">公式座席情報を確認</a>}
+        </div>
+      )}
       <div className="simulation-notice"><strong>これはシミュレーションです</strong><span>実際の座席割り当てとは関係のないシミュレーションです。</span></div>
       <div className="result-actions">
         <button className="primary-button" type="button" onClick={onRetry}>もう一度抽選</button>

@@ -7,4 +7,4 @@ export const drawSeat = (seats: readonly Seat[], source: RandomSource = cryptoRa
 }
 
 export const formatSeatLabel = (seat: Seat): string =>
-  `${seat.sectionLabel} ${seat.rowLabel}列 ${seat.number}番`
+  `${seat.sectionLabel ? `${seat.sectionLabel} ` : ''}${seat.rowLabel}列 ${seat.number}番`

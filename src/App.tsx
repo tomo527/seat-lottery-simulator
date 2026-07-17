@@ -44,6 +44,7 @@ function App() {
   const [shareStatus, setShareStatus] = useState('')
   const timeoutRef = useRef<number | null>(null)
   const drawSequenceRef = useRef(0)
+  const shareSequenceRef = useRef(0)
   const settingsRef = useRef<HTMLElement>(null)
   const reducedMotion = useReducedMotion()
 
@@ -74,10 +75,12 @@ function App() {
 
   useEffect(() => () => {
     cancelPendingDraw()
+    shareSequenceRef.current += 1
   }, [cancelPendingDraw])
 
   const resetResult = () => {
     cancelPendingDraw()
+    shareSequenceRef.current += 1
     setPhase('idle')
     setResult(null)
     setShareStatus('')
@@ -113,6 +116,7 @@ function App() {
       return
     }
     try {
+      shareSequenceRef.current += 1
       const drawSequence = cancelPendingDraw()
       const nextSeat = drawSeat(availableSeats)
       setPhase('drawing')
@@ -143,10 +147,12 @@ function App() {
 
   const handleShare = async () => {
     if (!result) return
+    const shareSequence = ++shareSequenceRef.current
     const url = new URL(window.location.href)
     if (sourceMode === 'venue' && selectedVenueId) url.searchParams.set('venue', selectedVenueId)
     const text = buildShareText(venueName, result)
     const outcome = await shareResult(text, url.toString())
+    if (shareSequenceRef.current !== shareSequence) return
     setShareStatus(
       outcome === 'copied' ? '共有文をクリップボードにコピーしました。' :
       outcome === 'shared' ? '共有メニューを開きました。' :
