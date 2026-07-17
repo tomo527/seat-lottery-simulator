@@ -9,17 +9,7 @@ export const REGIONS = [
 
 export type Region = (typeof REGIONS)[number]
 
-export type SeatDataAccuracy =
-  | 'official-exact'
-  | 'official-structure'
-  | 'official-range'
-  | 'demo'
-
-export type SeatMapPresentation =
-  | 'verified-section-map'
-  | 'seat-grid'
-  | 'summary-only'
-
+export type SeatDataAccuracy = 'official-exact' | 'official-structure' | 'official-range' | 'demo'
 export type SeatAreaVariability = 'fixed' | 'venue-pattern' | 'event-specific'
 
 export type VenueSeatDataSource = {
@@ -28,6 +18,15 @@ export type VenueSeatDataSource = {
   title: string
   url: string
   checkedAt: string
+}
+
+export type VenueRepresentativePattern = {
+  id: string
+  name: string
+  coverage: 'complete'
+  expectedSeatCount: number
+  selectionReason: string
+  notIncludedPatterns: string[]
 }
 
 export type VenueSeatRange = {
@@ -47,12 +46,6 @@ export type VenueSeatArea = {
   variability: SeatAreaVariability
   includedInVenueLottery: boolean
   exclusionReason?: string
-  map?: {
-    x: number
-    y: number
-    width: number
-    height: number
-  }
   rows: VenueRow[]
 }
 
@@ -68,14 +61,10 @@ export type Venue = {
   region: Region
   prefecture?: string
   city?: string
-  description?: string
-  approximateCapacity?: number
   seatDataAccuracy: SeatDataAccuracy
-  seatMapPresentation: SeatMapPresentation
-  seatDataScope: string
-  notice: string
-  variabilityNotice?: string
+  representativePattern: VenueRepresentativePattern
   sources: VenueSeatDataSource[]
+  internalNotes: string[]
   layouts: VenueLayout[]
 }
 

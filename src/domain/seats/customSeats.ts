@@ -130,7 +130,7 @@ export const generateCustomSeats = (input: CustomSeatInput): Seat[] => {
   const firstSeat = Number(input.firstSeat)
   const lastSeat = Number(input.lastSeat)
   const venueName = input.venueName.trim() || 'マイ会場'
-  const sectionLabel = input.areaName.trim() || '指定エリア'
+  const sectionLabel = input.areaName.trim() || undefined
   const seats: Seat[] = []
 
   for (const rowLabel of validation.rowLabels) {

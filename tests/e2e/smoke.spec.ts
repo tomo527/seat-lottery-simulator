@@ -1,73 +1,72 @@
-import { expect, test } from '@playwright/test'
+import { expect, test, type Page } from '@playwright/test'
 
-test('実在会場の精度別座席図と自作座席から抽選できる', async ({ page }) => {
+const chooseVenue = async (page: Page, query: string, name: string) => {
+  const trigger = page.getByRole('button', { name: /会場を選ぶ|会場を変更/ })
+  await trigger.click()
+  await page.getByLabel('会場名・所在地を検索').fill(query)
+  await page.getByRole('button', { name: `${name}を選ぶ` }).click()
+  await expect(page.getByRole('button', { name: '会場を変更' })).toBeFocused()
+}
+
+const drawAndExpectTextResult = async (page: Page, venueName: string) => {
+  await page.getByRole('button', { name: '座席を抽選する' }).click()
+  await expect(page.getByRole('heading', { name: '抽選中……' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeVisible({ timeout: 4_000 })
+  const result = page.locator('.result-card')
+  await expect(result.getByText(venueName)).toBeVisible()
+  await expect(result.getByText('列', { exact: true })).toBeVisible()
+  await expect(result.getByText('座席番号', { exact: true })).toBeVisible()
+  await expect(result.locator('svg')).toHaveCount(0)
+  await expect(result.locator('[data-presentation], .seat-grid, .seat-map-card')).toHaveCount(0)
+  await expect(result).not.toContainText(/公式資料|公式情報確認日|データ精度|実際の位置関係や縮尺/)
+}
+
+test('production会場の選択・テキスト抽選結果・再抽選・別会場を確認できる', async ({ page }) => {
+  const consoleErrors: string[] = []
+  page.on('console', (message) => { if (message.type() === 'error') consoleErrors.push(message.text()) })
   await page.goto('/')
   await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
-  await expect(page.getByText(/星見アリーナ|キラメキホール|オーシャンドーム/)).toHaveCount(0)
+  await chooseVenue(page, '文楽', '国立文楽劇場')
+  await expect(page.locator('a[href*="ntj.jac.go.jp"], a[href*="kyoceradome-osaka.jp"]')).toHaveCount(0)
+  await expect(page.locator('body')).not.toContainText(/公式・|公式資料で|公式情報確認日|データ精度/)
+  await drawAndExpectTextResult(page, '国立文楽劇場')
 
-  await page.getByRole('button', { name: '会場を選ぶ' }).click()
-  await page.getByLabel('会場名・所在地を検索').fill('東京国際フォーラム')
-  await expect(page.getByText('1件の会場')).toBeVisible()
-  await page.getByRole('button', { name: '東京国際フォーラム ホールCを選ぶ' }).click()
-  await expect(page.getByText(/1階席の一部/)).toBeVisible()
-  await expect(page.getByText(/公式情報確認日/)).toBeVisible()
-  await expect(page.getByRole('link', { name: '公式座席情報を確認' })).toHaveAttribute('target', '_blank')
-
-  const startedAt = Date.now()
-  await page.getByRole('button', { name: '座席を抽選する' }).click()
+  await page.getByRole('button', { name: 'もう一度抽選' }).click()
   await expect(page.getByRole('heading', { name: '抽選中……' })).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeVisible()
-  expect(Date.now() - startedAt).toBeGreaterThanOrEqual(1_700)
-  await expect(page.locator('[data-presentation="verified-section-map"]')).toBeVisible()
-  await expect(page.getByText('座席番号')).toBeVisible()
-  await expect(page.getByText(/実際の公演では座席構成が異なる可能性/)).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeVisible({ timeout: 4_000 })
 
-  await page.getByRole('button', { name: '条件を変更' }).click()
-  await page.getByRole('button', { name: '会場を変更' }).click()
-  await page.getByLabel('会場名・所在地を検索').fill('京セラドーム大阪')
-  await page.getByRole('button', { name: '京セラドーム大阪（通常野球開催時）を選ぶ' }).click()
-  await expect(page.getByText(/コンサート等では一部の座席位置やアリーナ席が変わる/)).toBeVisible()
-  await page.getByRole('button', { name: '座席を抽選する' }).click()
-  await expect(page.getByRole('heading', { name: '抽選中……' })).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeVisible()
-  await expect(page.locator('[data-presentation="seat-grid"]')).toBeVisible()
-  await expect(page.getByText(/実際の位置関係や縮尺を表すものではありません/)).toBeVisible()
-
-  await page.getByRole('button', { name: '自分で作る' }).click()
-  await page.getByLabel('最初の列').fill('A')
-  await page.getByLabel('最後の列').fill('A')
-  await page.getByLabel('最初の座席番号').fill('1')
-  await page.getByLabel('最後の座席番号').fill('2')
-  await expect(page.getByText('2席から今日の1席を抽選します')).toBeVisible()
-  await page.getByRole('button', { name: '座席を抽選する' }).click()
-  await expect(page.getByRole('heading', { name: '抽選中……' })).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeVisible()
-  await expect(page.getByRole('figure', { name: '自作座席の簡易座席図' })).toBeVisible()
+  await chooseVenue(page, '大阪市西区', '京セラドーム大阪')
+  await expect(page.getByText('抽選対象 34,522席', { exact: true })).toBeVisible()
+  await drawAndExpectTextResult(page, '京セラドーム大阪')
+  expect(consoleErrors).toEqual([])
 })
 
-const responsiveCases = [
-  { width: 360, venueId: 'kyocera-dome-osaka-stand-subset', venueName: '京セラドーム大阪（通常野球開催時）', presentation: 'seat-grid' },
-  { width: 768, venueId: 'yokohama-arena-fixed-a-subset', venueName: '横浜アリーナ', presentation: 'verified-section-map' },
-  { width: 1280, venueId: 'tokyo-international-forum-hall-c', venueName: '東京国際フォーラム ホールC', presentation: 'verified-section-map' },
-]
+test('自作座席はエリアを任意にして従来どおり抽選できる', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('button', { name: '自分で作る' }).click()
+  await page.getByLabel(/会場名/).fill('マイ会場')
+  await page.getByLabel('最初の列').fill('A')
+  await page.getByLabel('最後の列').fill('C')
+  await page.getByLabel('最初の座席番号').fill('1')
+  await page.getByLabel('最後の座席番号').fill('5')
+  await expect(page.getByText('15席', { exact: true })).toBeVisible()
+  await drawAndExpectTextResult(page, 'マイ会場')
+  await expect(page.locator('.result-card').getByText('エリア', { exact: true })).toHaveCount(0)
+})
 
-for (const { width, venueId, venueName, presentation } of responsiveCases) {
-  test(`${width}pxで横スクロールなく結果座席図を確認できる`, async ({ page }) => {
-    await page.setViewportSize({ width, height: 900 })
-    await page.goto(`/?venue=${venueId}`)
-    await expect(page.getByText(venueName)).toBeVisible()
-    await page.getByRole('button', { name: '座席を抽選する' }).click()
-    await expect(page.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeVisible()
-    await expect(page.locator(`[data-presentation="${presentation}"]`)).toBeVisible()
-    const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
-    expect(overflow).toBeLessThanOrEqual(1)
-    if (presentation === 'seat-grid') {
-      const selected = await page.locator('.mini-seat.selected').boundingBox()
-      const scroller = await page.locator('.seat-grid-scroll').boundingBox()
-      expect(selected).not.toBeNull()
-      expect(scroller).not.toBeNull()
-      expect(selected!.x).toBeGreaterThanOrEqual(scroller!.x)
-      expect(selected!.x + selected!.width).toBeLessThanOrEqual(scroller!.x + scroller!.width + 1)
+for (const viewport of [{ width: 360, height: 800 }, { width: 768, height: 900 }, { width: 1280, height: 900 }]) {
+  test(`${viewport.width}pxで横スクロールなく主要操作を表示できる`, async ({ page }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/')
+    await expect(page.getByRole('button', { name: '会場を選ぶ' })).toBeVisible()
+    if (viewport.width === 360) {
+      await chooseVenue(page, '文楽', '国立文楽劇場')
+      await drawAndExpectTextResult(page, '国立文楽劇場')
+      await expect(page.getByRole('button', { name: 'もう一度抽選' })).toBeVisible()
+      await expect(page.getByRole('button', { name: '条件を変更' })).toBeVisible()
+      await expect(page.getByRole('button', { name: '結果を共有' })).toBeVisible()
     }
+    const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
+    expect(overflow).toBe(false)
   })
 }

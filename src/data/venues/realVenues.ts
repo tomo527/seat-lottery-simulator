@@ -1,129 +1,134 @@
-import type { Venue, VenueRow } from '../../types/venue.js'
+import type { Venue, VenueRow, VenueSeatRange } from '../../types/venue.js'
+import {
+  KYOCERA_BASEBALL_EXPECTED_SEAT_COUNT,
+  KYOCERA_BASEBALL_SOURCE_SHA256,
+  kyoceraBaseballCompactSections,
+} from './generated/kyoceraBaseballSeats.js'
 
-const rows = (from: number, to: number, seatsFrom: number, seatsTo: number): VenueRow[] =>
-  Array.from({ length: to - from + 1 }, (_, index) => ({
-    label: String(from + index),
-    seatRanges: [{ from: seatsFrom, to: seatsTo }],
-  }))
+const parseRanges = (value: string): VenueSeatRange[] => value.split(',').map((part) => {
+  const [from, to = from] = part.split('-').map(Number)
+  return { from, to }
+})
+
+const kyoceraSections = kyoceraBaseballCompactSections.map((section) => ({
+  id: section.id,
+  label: section.label,
+  variability: 'venue-pattern' as const,
+  includedInVenueLottery: true,
+  rows: Object.entries(section.rows).map(([label, compactRanges]) => ({
+    label,
+    seatRanges: parseRanges(compactRanges),
+  })),
+}))
+
+const bunrakuCentralRows: VenueRow[] = [
+  { label: '1', seatRanges: [{ from: 3, to: 34 }] },
+  { label: '2', seatRanges: [{ from: 2, to: 23 }, { from: 25, to: 35 }] },
+  { label: '3', seatRanges: [{ from: 1, to: 36 }] },
+  { label: '4', seatRanges: [{ from: 1, to: 23 }, { from: 25, to: 36 }] },
+  { label: '5', seatRanges: [{ from: 1, to: 36 }] },
+  { label: '6', seatRanges: [{ from: 1, to: 23 }, { from: 25, to: 36 }] },
+  { label: '7', seatRanges: [{ from: 1, to: 36 }] },
+  { label: '8', seatRanges: [{ from: 1, to: 23 }, { from: 25, to: 36 }] },
+  { label: '9', seatRanges: [{ from: 2, to: 35 }] },
+  { label: '10', seatRanges: [{ from: 1, to: 23 }, { from: 25, to: 36 }] },
+  { label: '11', seatRanges: [{ from: 1, to: 36 }] },
+  { label: '12', seatRanges: [{ from: 1, to: 23 }, { from: 25, to: 36 }] },
+  { label: '13', seatRanges: [{ from: 1, to: 36 }] },
+  { label: '14', seatRanges: [{ from: 1, to: 23 }, { from: 25, to: 36 }] },
+  { label: '15', seatRanges: [{ from: 1, to: 36 }] },
+  { label: '16', seatRanges: [{ from: 1, to: 23 }, { from: 25, to: 36 }] },
+  { label: '17', seatRanges: [{ from: 1, to: 36 }] },
+  { label: '18', seatRanges: [{ from: 1, to: 23 }, { from: 25, to: 36 }] },
+  { label: '19', seatRanges: [{ from: 3, to: 34 }] },
+]
+
+const bunrakuLeftRows = (): VenueRow[] => Array.from({ length: 12 }, (_, index) => ({
+  label: String(index + 1),
+  seatRanges: [{ from: index === 0 ? 3 : index === 1 ? 2 : 1, to: 4 }],
+}))
+
+const bunrakuRightRows = (): VenueRow[] => Array.from({ length: 12 }, (_, index) => ({
+  label: String(index + 1),
+  seatRanges: [{ from: 1, to: index === 0 ? 2 : index === 1 ? 3 : 4 }],
+}))
 
 export const realVenues: Venue[] = [
   {
-    id: 'tokyo-international-forum-hall-c',
-    name: '東京国際フォーラム ホールC',
-    region: '関東',
-    prefecture: '東京都',
-    city: '千代田区',
-    description: '公式座席表で確認した固定席の一部を登録しています。',
-    approximateCapacity: 1_502,
+    id: 'national-bunraku-theatre-standard',
+    name: '国立文楽劇場',
+    region: '近畿',
+    prefecture: '大阪府',
+    city: '大阪市中央区',
     seatDataAccuracy: 'official-exact',
-    seatMapPresentation: 'verified-section-map',
-    seatDataScope: '1階席の一部（1〜13列・17〜27/28番）',
-    notice: '公式座席表から列・番号と1階席内の配置を確認した範囲のみを抽選対象にしています。全1,502席を網羅するデータではありません。',
-    variabilityNotice: '車いす対応席は催事によって異なる場合があります。登録範囲外の席は抽選対象に含めていません。',
+    representativePattern: {
+      id: 'standard-all-seats',
+      name: '文楽劇場 全席（標準）',
+      coverage: 'complete',
+      expectedSeatCount: 753,
+      selectionReason: '会場公式が「全席 753席」として公開する、花道・出語り床を設置しない標準座席表を採用。',
+      notIncludedPatterns: ['花道設置時 677席', '出語り床設置時 731席', '小ホール 159席'],
+    },
     sources: [
       {
         kind: 'venue-official',
-        publisher: '株式会社東京国際フォーラム',
-        title: 'ホールC 座席表',
-        url: 'https://www.t-i-forum.co.jp/organizer/facilities/c/seat/',
+        publisher: '独立行政法人 日本芸術文化振興会',
+        title: '国立文楽劇場施設の概要',
+        url: 'https://www.ntj.jac.go.jp/bunraku/facilities/outline/',
+        checkedAt: '2026-07-17',
+      },
+      {
+        kind: 'venue-official',
+        publisher: '独立行政法人 日本芸術文化振興会',
+        title: '文楽劇場 座席表',
+        url: 'https://www.ntj.jac.go.jp/bunraku/facilities/seats1/',
+        checkedAt: '2026-07-17',
+      },
+      {
+        kind: 'venue-official',
+        publisher: '独立行政法人 日本芸術文化振興会',
+        title: '文楽劇場 詳細座席図（PDF）',
+        url: 'https://www.ntj.jac.go.jp/assets/files/bunraku/zaseki/zaseki_bunraku_1.pdf',
         checkedAt: '2026-07-17',
       },
     ],
+    internalNotes: [
+      '中央座席663席、左側座席45席、右側座席45席の合計753席。',
+      '車椅子用スペースは座席番号を持つ客席として図示されていないため、753席の番号集合には含めない。',
+    ],
     layouts: [
       {
-        id: 'fixed-seats-verified-subset',
-        name: '固定席・確認済み範囲',
+        id: 'standard-all-seats',
+        name: '文楽劇場 全席（標準）',
         sections: [
-          {
-            id: 'first-floor',
-            label: '1階席',
-            variability: 'fixed',
-            includedInVenueLottery: true,
-            map: { x: 18, y: 15, width: 64, height: 52 },
-            rows: Array.from({ length: 13 }, (_, index) => {
-              const row = index + 1
-              return { label: String(row), seatRanges: [{ from: 17, to: row % 2 === 0 ? 27 : 28 }] }
-            }),
-          },
+          { id: 'center-seats', label: '中央座席', variability: 'fixed', includedInVenueLottery: true, rows: bunrakuCentralRows },
+          { id: 'left-seats', label: '左側座席', variability: 'fixed', includedInVenueLottery: true, rows: bunrakuLeftRows() },
+          { id: 'right-seats', label: '右側座席', variability: 'fixed', includedInVenueLottery: true, rows: bunrakuRightRows() },
         ],
       },
     ],
   },
   {
-    id: 'yokohama-arena-fixed-a-subset',
-    name: '横浜アリーナ',
-    region: '関東',
-    prefecture: '神奈川県',
-    city: '横浜市港北区',
-    description: '公式座席案内で確認した固定席の構造と一部座席を登録しています。',
-    seatDataAccuracy: 'official-structure',
-    seatMapPresentation: 'verified-section-map',
-    seatDataScope: '固定アリーナ席Aブロックの一部（A1〜A2列・16〜58番）',
-    notice: '公式資料で確認できた固定アリーナ席Aブロックの一部だけを抽選対象にしています。ほかの固定席は未登録です。',
-    variabilityNotice: 'センター席はイベントにより配置が変わるため、会場共通の抽選対象に含めていません。',
-    sources: [
-      {
-        kind: 'venue-official',
-        publisher: '株式会社横浜アリーナ',
-        title: '座席案内',
-        url: 'https://www.yokohama-arena.co.jp/seatguide/index.html',
-        checkedAt: '2026-07-17',
-      },
-      {
-        kind: 'venue-official',
-        publisher: '株式会社横浜アリーナ',
-        title: 'Aパターン座席案内',
-        url: 'https://www.yokohama-arena.co.jp/seatguide/astage.html',
-        checkedAt: '2026-07-17',
-      },
-    ],
-    layouts: [
-      {
-        id: 'fixed-seats-verified-subset',
-        name: '固定席・確認済み範囲',
-        sections: [
-          {
-            id: 'arena-a',
-            label: 'アリーナ席 Aブロック',
-            variability: 'fixed',
-            includedInVenueLottery: true,
-            map: { x: 23, y: 50, width: 54, height: 20 },
-            rows: [
-              { label: 'A1', seatRanges: [{ from: 16, to: 58 }] },
-              { label: 'A2', seatRanges: [{ from: 16, to: 58 }] },
-            ],
-          },
-          {
-            id: 'center-seats',
-            label: 'センター席',
-            variability: 'event-specific',
-            includedInVenueLottery: false,
-            exclusionReason: 'イベントにより配置が変わるため',
-            map: { x: 30, y: 18, width: 40, height: 22 },
-            rows: [],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    id: 'kyocera-dome-osaka-stand-subset',
-    name: '京セラドーム大阪（通常野球開催時）',
+    id: 'kyocera-dome-osaka-standard-baseball',
+    name: '京セラドーム大阪',
     region: '近畿',
     prefecture: '大阪府',
     city: '大阪市西区',
-    description: '公式座席検索が示す通常野球開催時パターンの一部を登録しています。',
-    seatDataAccuracy: 'official-range',
-    seatMapPresentation: 'seat-grid',
-    seatDataScope: '通常野球開催時パターン・1塁側下段の一部（1〜3列・101〜109番）',
-    notice: '公式座席検索が案内する通常野球開催時の列・番号だけを抽選用グリッドとして登録しています。実際の位置関係や縮尺は表しません。',
-    variabilityNotice: 'コンサート等では一部の座席位置やアリーナ席が変わるため、この標準パターン以外はシミュレーションに含めていません。',
+    seatDataAccuracy: 'official-exact',
+    representativePattern: {
+      id: 'standard-baseball-stand-seats',
+      name: '通常野球開催時 スタンド席',
+      coverage: 'complete',
+      expectedSeatCount: KYOCERA_BASEBALL_EXPECTED_SEAT_COUNT,
+      selectionReason: '会場公式が「一般的な野球開催時」として提供する座席検索データに列挙されたスタンド席全席を採用。',
+      notIncludedPatterns: ['コンサート時の可動アリーナ席', 'イベントごとに変更される座席配置'],
+    },
     sources: [
       {
         kind: 'venue-official',
         publisher: '株式会社大阪シティドーム',
         title: '京セラドーム大阪 座席検索',
-        url: 'https://www.kyoceradome-osaka.jp/seat/',
+        url: 'https://www.kyoceradome-osaka.jp/seat/index.php',
         checkedAt: '2026-07-17',
       },
       {
@@ -134,27 +139,15 @@ export const realVenues: Venue[] = [
         checkedAt: '2026-07-17',
       },
     ],
+    internalNotes: [
+      `公式JSONを連続範囲へ変換。取得時SHA-256: ${KYOCERA_BASEBALL_SOURCE_SHA256}`,
+      '中央A〜L、1塁側・3塁側の下段、上段、FA・FBブロックを含む20区分・34,522席。',
+    ],
     layouts: [
       {
-        id: 'fixed-stand-verified-subset',
-        name: '固定スタンド席・確認済み範囲',
-        sections: [
-          {
-            id: 'first-base-lower',
-            label: '1塁側・下段',
-            variability: 'venue-pattern',
-            includedInVenueLottery: true,
-            rows: rows(1, 3, 101, 109),
-          },
-          {
-            id: 'concert-arena',
-            label: 'コンサート時のアリーナ席',
-            variability: 'event-specific',
-            includedInVenueLottery: false,
-            exclusionReason: 'コンサートごとに配置が変わる可動席のため',
-            rows: [],
-          },
-        ],
+        id: 'standard-baseball-stand-seats',
+        name: '通常野球開催時 スタンド席',
+        sections: kyoceraSections,
       },
     ],
   },

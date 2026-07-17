@@ -35,7 +35,6 @@ main { width: min(920px, calc(100% - 28px)); margin: 0 auto; }
 .setup-card::before, .result-card::before { content: ''; position: absolute; left: 20px; right: 20px; top: 12px; height: 2px; background: repeating-linear-gradient(90deg, var(--line) 0 5px, transparent 5px 10px); }
 .section-heading { margin-bottom: 24px; text-align: center; }
 .section-heading h2 { margin: 0; font-size: clamp(1.28rem, 4vw, 1.65rem); letter-spacing: -.03em; }
-.eyebrow { margin: 0 0 10px; color: var(--violet); font-size: .68rem; font-weight: 900; letter-spacing: .14em; }
 .source-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; padding: 5px; margin-bottom: 25px; border-radius: 15px; background: #f0eef8; }
 .source-tabs button { min-height: 46px; padding: 10px; border: 0; border-radius: 11px; background: transparent; color: #77708e; font-weight: 800; }
 .source-tabs button[aria-pressed="true"] { background: #fff; color: var(--violet-dark); box-shadow: 0 4px 15px rgba(29, 19, 75, .1); }
@@ -61,7 +60,6 @@ input[aria-invalid="true"] { border-color: #ce3445; }
 .selected-venue-summary strong { overflow-wrap: anywhere; font-size: 1.05rem; }
 .selected-venue-summary span:not(.selected-venue-label) { color: var(--muted); font-size: .72rem; }
 .selected-venue-summary small { width: fit-content; margin-top: 3px; color: #5e5872; font-size: .64rem; line-height: 1.5; }
-.selected-venue-summary a { width: fit-content; margin-top: 5px; color: var(--violet-dark); font-size: .68rem; font-weight: 900; text-underline-offset: 3px; }
 .selected-venue-summary button { flex: none; min-height: 42px; padding: 9px 14px; border: 1px solid #aaa2d4; border-radius: 11px; background: #fff; color: var(--violet-dark); font-size: .73rem; font-weight: 800; }
 .venue-picker-panel { margin-top: 14px; padding: 18px; border: 1px solid #bbb4dc; border-radius: 17px; background: #fff; box-shadow: 0 18px 45px rgba(38,27,93,.13); }
 .venue-picker-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 15px; }
@@ -75,10 +73,7 @@ input[aria-invalid="true"] { border-color: #ce3445; }
 .venue-compact-main { min-width: 0; display: grid; gap: 3px; }
 .venue-compact-main strong { overflow-wrap: anywhere; font-size: .82rem; }
 .venue-compact-main small { color: var(--muted); font-size: .62rem; line-height: 1.35; }
-.accuracy { flex: none; padding: 4px 7px; border-radius: 999px; color: #685f3e; background: #fff5cd; font-size: .58rem; font-weight: 900; }
-.accuracy-official-exact { color: #146652; background: var(--mint-pale); }
-.accuracy-official-structure { color: #394c8c; background: #edf1ff; }
-.accuracy-official-range { color: #7d4f21; background: #fff0dc; }
+.venue-seat-total { flex: none; color: var(--violet-dark); font-size: .65rem; font-weight: 900; }
 
 .optional-fields { margin-bottom: 18px; }
 .row-kind { margin: 0 0 18px; padding: 0; border: 0; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -142,24 +137,6 @@ input[aria-invalid="true"] { border-color: #ce3445; }
 .ticket-details dd { margin: 0; font-size: .84rem; font-weight: 800; }
 .ticket-details .seat-number { background: var(--mint-pale); }
 .ticket-details .seat-number dd { color: #096f5d; font-size: 1.25rem; }
-.seat-map-card { max-width: 630px; margin: 20px auto; padding: 15px; border: 1px solid var(--line); border-radius: 16px; background: #faf9fe; overflow: auto; }
-.venue-map { width: 100%; min-width: 300px; height: auto; display: block; }
-.map-section rect { fill: #e9e6f5; stroke: #b8b1ce; stroke-width: .5; }.map-section text { fill: #5c5570; font-size: 3px; font-weight: 800; pointer-events: none; }
-.map-section.selected rect { fill: #ffdc80; stroke: #ec8b4a; stroke-width: 1; }.map-section.selected text { fill: #5b351c; }
-.map-section.excluded rect { fill: #f1f0f4; stroke-dasharray: 2 1; }.map-section.excluded text { fill: #8b8795; }
-.seat-map-card figcaption { margin-top: 9px; color: var(--muted); font-size: .63rem; line-height: 1.6; text-align: left; }
-.seat-grid-scroll { max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; }
-.seat-grid { min-width: max-content; display: grid; gap: 4px; align-items: center; }
-.row-label { color: var(--violet); font-size: .64rem; font-weight: 900; }
-.mini-seat { display: grid; place-items: center; min-width: 1.4rem; height: 1.4rem; border-radius: 5px 5px 3px 3px; background: #e8e5f2; color: #68617a; font-size: .52rem; }
-.mini-seat.selected { outline: 2px solid #e64958; background: #ffd45c; color: #5c321a; font-weight: 900; transform: scale(1.12); }
-.mini-seat.unavailable { color: #aaa6b2; background: #f3f2f5; }
-.seat-grid-note { margin: 10px 0 0; color: var(--muted); font-size: .63rem; line-height: 1.65; text-align: left; }
-.seat-map-summary { max-width: 630px; margin: 20px auto; padding: 18px; display: grid; gap: 5px; border: 1px dashed #bdb7cf; border-radius: 14px; background: #faf9fc; color: var(--muted); font-size: .69rem; line-height: 1.55; text-align: left; }
-.seat-map-summary strong { color: var(--ink); }
-.venue-data-notice { max-width: 630px; margin: 0 auto 14px; padding: 14px; display: grid; gap: 4px; border: 1px solid #d8d3e8; border-radius: 12px; background: #f8f7fc; color: var(--muted); font-size: .66rem; line-height: 1.55; text-align: left; }
-.venue-data-notice strong { color: var(--ink); }
-.venue-data-notice a { width: fit-content; color: var(--violet-dark); font-weight: 900; text-underline-offset: 3px; }
 .simulation-notice { max-width: 630px; margin: 0 auto 23px; padding: 13px; display: flex; flex-direction: column; gap: 3px; border-radius: 12px; background: var(--coral-pale); color: #7a3940; font-size: .68rem; line-height: 1.5; }
 .simulation-notice strong { color: #8b2130; }
 .result-actions { max-width: 630px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 8px; }
@@ -197,7 +174,6 @@ button:focus-visible, a:focus-visible, input[type="radio"]:focus-visible + span 
   main { width: min(100% - 18px, 920px); }
   .setup-card { padding-inline: 17px; }
   .source-tabs button { font-size: .78rem; }
-  .accuracy { font-size: .52rem; }
   .venue-compact-list button { padding-inline: 9px; }
   .result-actions { grid-template-columns: 1fr; }
   .result-actions .primary-button { grid-column: auto; }

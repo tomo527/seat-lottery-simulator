@@ -3,7 +3,7 @@ export function LotteryAnimation() {
     <div className="drawing-card" aria-labelledby="drawing-heading">
       <div className="stage-lights" aria-hidden="true"><i /><i /></div>
       <div className="drawing-ticket" aria-hidden="true">
-        <span className="ticket-star">☆</span>
+        <span className="ticket-star">★</span>
         <span className="ticket-numbers"><i>07</i><i>24</i><i>51</i></span>
       </div>
       <h2 id="drawing-heading">抽選中……</h2>

@@ -216,9 +216,6 @@ function App() {
             <ResultCard
               seat={result}
               venueName={venueName}
-              venue={sourceMode === 'venue' ? selectedVenue : undefined}
-              layout={sourceMode === 'venue' ? selectedLayout : undefined}
-              customSeats={sourceMode === 'custom' ? customSeats : undefined}
               shareStatus={shareStatus}
               onRetry={startDraw}
               onChangeConditions={changeConditions}

@@ -7,12 +7,7 @@ type Props = {
   onSelect: (venueId: string) => void
 }
 
-const accuracyLabel = {
-  'official-exact': '公式・配置確認',
-  'official-structure': '公式・構造確認',
-  'official-range': '公式・列番号確認',
-  demo: 'デモデータ',
-} as const
+const locationLabel = (venue: Venue) => [venue.prefecture, venue.city].filter(Boolean).join(' ')
 
 export function VenueSelector({ venues, selectedVenueId, onSelect }: Props) {
   const [region, setRegion] = useState('すべて')
@@ -48,9 +43,7 @@ export function VenueSelector({ venues, selectedVenueId, onSelect }: Props) {
     closePanel()
   }
 
-  if (venues.length === 0) {
-    return <p className="empty-state" role="status">現在選べる会場データがありません。自分で座席を作る機能をご利用ください。</p>
-  }
+  if (venues.length === 0) return <p className="empty-state" role="status">現在選べる会場がありません。自分で座席を作る機能をご利用ください。</p>
 
   return (
     <div className="venue-selector">
@@ -59,13 +52,8 @@ export function VenueSelector({ venues, selectedVenueId, onSelect }: Props) {
           <div>
             <span className="selected-venue-label">選択中の会場</span>
             <strong>{selectedVenue.name}</strong>
-            <span>{[selectedVenue.prefecture, selectedVenue.city].filter(Boolean).join(' ')} ・ {selectedVenue.region}</span>
-            <small>{selectedVenue.seatDataScope} ・ {accuracyLabel[selectedVenue.seatDataAccuracy]}</small>
-            <small>公式情報確認日: {selectedVenue.sources[0]?.checkedAt}</small>
-            {selectedVenue.variabilityNotice && <small>{selectedVenue.variabilityNotice}</small>}
-            {selectedVenue.sources[0] && (
-              <a href={selectedVenue.sources[0].url} target="_blank" rel="noopener noreferrer">公式座席情報を確認</a>
-            )}
+            <span>{locationLabel(selectedVenue)}</span>
+            <small>抽選対象 {selectedVenue.representativePattern.expectedSeatCount.toLocaleString('ja-JP')}席</small>
           </div>
           <button ref={triggerRef} type="button" aria-expanded={panelOpen} aria-controls="venue-picker-panel" onClick={() => setPanelOpen((open) => !open)}>会場を変更</button>
         </div>
@@ -77,44 +65,25 @@ export function VenueSelector({ venues, selectedVenueId, onSelect }: Props) {
       )}
 
       {panelOpen && (
-        <section
-          className="venue-picker-panel"
-          id="venue-picker-panel"
-          aria-labelledby="venue-picker-heading"
-          onKeyDown={(event) => { if (event.key === 'Escape') { event.preventDefault(); closePanel() } }}
-        >
+        <section className="venue-picker-panel" id="venue-picker-panel" aria-labelledby="venue-picker-heading" onKeyDown={(event) => {
+          if (event.key === 'Escape') { event.preventDefault(); closePanel() }
+        }}>
           <div className="venue-picker-header">
-            <div><h3 id="venue-picker-heading">会場を選ぶ</h3><p>公式資料で確認できた範囲だけを登録しています。</p></div>
+            <div><h3 id="venue-picker-heading">会場を選ぶ</h3><p>会場名や地域から探せます。</p></div>
             <button className="venue-picker-close" type="button" aria-label="会場選択を閉じる" onClick={closePanel}>×</button>
           </div>
           <div className="filter-grid">
-            <label>
-              <span>会場名・所在地を検索</span>
-              <input ref={searchRef} type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="会場名、都道府県、市区町村" />
-            </label>
-            <label>
-              <span>地域</span>
-              <select value={region} onChange={(event) => setRegion(event.target.value)}>
-                <option>すべて</option>
-                {REGIONS.map((item) => <option key={item}>{item}</option>)}
-              </select>
-            </label>
+            <label><span>会場名・所在地を検索</span><input ref={searchRef} type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="会場名、都道府県、市区町村" /></label>
+            <label><span>地域</span><select value={region} onChange={(event) => setRegion(event.target.value)}><option>すべて</option>{REGIONS.map((item) => <option key={item}>{item}</option>)}</select></label>
           </div>
           <p className="venue-result-count" role="status">{filtered.length.toLocaleString('ja-JP')}件の会場</p>
           {filtered.length > 0 ? (
             <ul className="venue-compact-list" aria-label="会場の検索結果">
               {filtered.map((venue) => (
-                <li key={venue.id}>
-                  <button type="button" aria-label={`${venue.name}を選ぶ`} aria-pressed={selectedVenueId === venue.id} onClick={() => selectVenue(venue.id)}>
-                    <span className="venue-compact-main">
-                      <strong>{venue.name}</strong>
-                      <small>{[venue.prefecture, venue.city].filter(Boolean).join(' ')} ・ {venue.region}</small>
-                      <small>{venue.seatDataScope}</small>
-                      {venue.variabilityNotice && <small>{venue.variabilityNotice}</small>}
-                    </span>
-                    <span className={`accuracy accuracy-${venue.seatDataAccuracy}`}>{accuracyLabel[venue.seatDataAccuracy]}</span>
-                  </button>
-                </li>
+                <li key={venue.id}><button type="button" aria-label={`${venue.name}を選ぶ`} aria-pressed={selectedVenueId === venue.id} onClick={() => selectVenue(venue.id)}>
+                  <span className="venue-compact-main"><strong>{venue.name}</strong><small>{locationLabel(venue)}</small></span>
+                  <span className="venue-seat-total">抽選対象 {venue.representativePattern.expectedSeatCount.toLocaleString('ja-JP')}席</span>
+                </button></li>
               ))}
             </ul>
           ) : <p className="empty-state" role="status">条件に合う会場が見つかりませんでした。</p>}
