@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "kioi-small-hall-standard",
+  "name": "日本製鉄紀尾井小ホール",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [
+    "紀尾井小ホール",
+    "Kioi Small Hall"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-all-seats",
+    "name": "通常座席",
+    "coverage": "complete",
+    "expectedSeatCount": 250,
+    "selectionReason": "会場公式の標準座席表に番号が掲載された全席を採用。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "publisher": "公益財団法人 日本製鉄文化財団",
+      "title": "日本製鉄紀尾井小ホール 使用規程・座席表",
+      "url": "https://kioihall.jp/cms/wp-content/themes/kioihall/file/rent_hall/s_hall/kioihall_s_all.pdf?251223_2=",
+      "checkedAt": "2026-07-20"
+    }
+  ],
+  "registeredScope": "採用した代表パターンの座席表に番号がある全席。",
+  "completenessBasis": "公式座席表の全番号をrangeへ転記し、公式総席数250席との一致を検証。",
+  "transformation": "公式座席表を目視照合し、同一列の連続番号をrangeへ圧縮。欠番はrange分割で表現。",
+  "knownLimitations": [
+    "公演固有の販売停止席や車椅子席への変更は反映しない。"
+  ],
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "1",
+      "from": 3,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "1",
+      "from": 7,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "1",
+      "from": 19,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "2",
+      "from": 7,
+      "to": 18
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "2",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "3",
+      "from": 7,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "3",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "4",
+      "from": 7,
+      "to": 18
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "4",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "5",
+      "from": 7,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "5",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "6",
+      "from": 7,
+      "to": 18
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "6",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "7",
+      "from": 7,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "7",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "8",
+      "from": 7,
+      "to": 18
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "8",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "9",
+      "from": 7,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "9",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "10",
+      "from": 7,
+      "to": 18
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "10",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "11",
+      "from": 7,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "11",
+      "from": 21,
+      "to": 24
+    }
+  ]
+}

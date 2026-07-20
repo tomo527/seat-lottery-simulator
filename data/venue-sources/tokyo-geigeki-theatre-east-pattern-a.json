@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "tokyo-geigeki-theatre-east-pattern-a",
+  "name": "東京芸術劇場 シアターイースト",
+  "prefecture": "東京都",
+  "city": "豊島区",
+  "aliases": [
+    "シアターイースト",
+    "芸劇シアターイースト"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "pattern-a",
+    "name": "基本パターンA",
+    "coverage": "complete",
+    "expectedSeatCount": 272,
+    "selectionReason": "会場公式座席表の基本パターンA（272席）を採用。",
+    "notIncludedPatterns": [
+      "基本パターンB（168席）"
+    ]
+  },
+  "sources": [
+    {
+      "publisher": "公益財団法人 東京都歴史文化財団",
+      "title": "東京芸術劇場 シアターイースト",
+      "url": "https://www.geigeki.jp/facilities/theatre_east/",
+      "checkedAt": "2026-07-20"
+    },
+    {
+      "publisher": "公益財団法人 東京都歴史文化財団",
+      "title": "シアターイースト座席表 基本パターン",
+      "url": "https://www.geigeki.jp/facilities/pdf/east.pdf",
+      "checkedAt": "2026-07-20"
+    }
+  ],
+  "registeredScope": "採用した代表パターンの座席表に番号がある全席。",
+  "completenessBasis": "公式座席表の全番号をrangeへ転記し、公式総席数272席との一致を検証。",
+  "transformation": "公式座席表を目視照合し、同一列の連続番号をrangeへ圧縮。欠番はrange分割で表現。",
+  "knownLimitations": [
+    "公演固有の販売停止席や車椅子席への変更は反映しない。"
+  ],
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "A",
+      "from": 3,
+      "to": 20
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "B",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "C",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "F",
+      "from": 3,
+      "to": 20
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "K",
+      "from": 9,
+      "to": 14
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "K",
+      "from": 19,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "L",
+      "from": 9,
+      "to": 14
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "L",
+      "from": 19,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 9,
+      "to": 14
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 19,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "N",
+      "from": 1,
+      "to": 5
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "N",
+      "from": 8,
+      "to": 15
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "N",
+      "from": 18,
+      "to": 22
+    }
+  ]
+}

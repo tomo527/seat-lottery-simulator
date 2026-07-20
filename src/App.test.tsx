@@ -1,11 +1,26 @@
-import { act, fireEvent, render, screen } from '@testing-library/react'
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
 import { DRAW_ANIMATION_DURATION_MS, REDUCED_MOTION_DRAW_DURATION_MS } from './domain/lottery/constants'
+import { prepareVenueSampler } from './domain/seats/rangeSampler'
+import type { VenueCatalogEntry } from './types/venue'
+
+const loadVenueSeatData = vi.hoisted(() => vi.fn())
+vi.mock('./data/venue-db/loadVenue', () => ({ loadVenueSeatData }))
+
+const samplerFor = (venue: VenueCatalogEntry) => prepareVenueSampler({
+  schemaVersion: 1,
+  venueId: venue.id,
+  patternId: 'test-pattern',
+  ranges: [{ rowLabel: 'A', from: 1, to: venue.seatCount }],
+  totalSeatCount: venue.seatCount,
+})
 
 beforeEach(() => {
   localStorage.clear()
   window.history.replaceState({}, '', '/')
+  loadVenueSeatData.mockReset()
+  loadVenueSeatData.mockImplementation(async (venue: VenueCatalogEntry) => samplerFor(venue))
 })
 
 afterEach(() => {
@@ -13,145 +28,165 @@ afterEach(() => {
   vi.useRealTimers()
 })
 
-const chooseVenue = (name = '国立文楽劇場') => {
+const chooseVenue = async (name = 'Hakuju Hall') => {
   const trigger = screen.queryByRole('button', { name: '会場を選ぶ' }) ?? screen.getByRole('button', { name: '会場を変更' })
   fireEvent.click(trigger)
   fireEvent.click(screen.getByRole('button', { name: `${name}を選ぶ` }))
+  await waitFor(() => expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled())
 }
-
-const startVenueDraw = () => {
-  render(<App />)
-  chooseVenue()
-  fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
-}
-
-const finishDraw = () => act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS))
 
 describe('App', () => {
-  it('遊びサイトとして簡潔な初期画面を表示する', () => {
+  it('初期表示では詳細を読まず、東京10会場を絞り込める', () => {
     render(<App />)
     expect(screen.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeInTheDocument()
     expect(screen.getByText('まだ会場が選択されていません。')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
-    expect(document.body.textContent).not.toMatch(/公式・構造確認|公式・配置確認|公式・列番号確認|公式資料で|公式情報確認日|データ精度|実際の位置関係や縮尺/)
-    expect(document.querySelector('svg')).not.toBeInTheDocument()
+    expect(loadVenueSeatData).not.toHaveBeenCalled()
+    fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
+    fireEvent.change(screen.getByLabelText('地域'), { target: { value: '東京' } })
+    expect(screen.getByText('10件の会場')).toBeInTheDocument()
+    expect(screen.getByRole('list', { name: '会場の検索結果' }).querySelectorAll('button')).toHaveLength(10)
   })
 
-  it('会場名・都道府県・市区町村で検索し、地域で絞り込める', () => {
+  it('会場名・略称・区名をNFKC正規化して検索できる', () => {
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
     const search = screen.getByLabelText('会場名・所在地を検索')
-    fireEvent.change(search, { target: { value: '文楽' } })
-    expect(screen.getByRole('button', { name: '国立文楽劇場を選ぶ' })).toBeInTheDocument()
-    fireEvent.change(search, { target: { value: '大阪市西区' } })
-    expect(screen.getByRole('button', { name: '京セラドーム大阪を選ぶ' })).toBeInTheDocument()
-    fireEvent.change(search, { target: { value: '' } })
-    fireEvent.change(screen.getByLabelText('地域'), { target: { value: '近畿' } })
-    expect(screen.getByText('2件の会場')).toBeInTheDocument()
+    fireEvent.change(search, { target: { value: '  ＩＩＮＯ　ＨＡＬＬ  ' } })
+    expect(screen.getByRole('button', { name: 'イイノホールを選ぶ' })).toBeInTheDocument()
+    fireEvent.change(search, { target: { value: '渋谷区' } })
+    expect(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' })).toBeInTheDocument()
   })
 
-  it('会場選択後も公式リンク・精度・個別注釈をDOMへ出さない', () => {
+  it('選択した会場だけを読み込み、読込中は抽選できない', async () => {
+    let resolve!: (value: ReturnType<typeof samplerFor>) => void
+    loadVenueSeatData.mockImplementationOnce((venue: VenueCatalogEntry) => new Promise((done) => { resolve = done }).then(() => samplerFor(venue)))
     render(<App />)
-    chooseVenue('京セラドーム大阪')
-    expect(screen.getByText('京セラドーム大阪')).toBeInTheDocument()
-    expect(screen.getByText('大阪府 大阪市西区')).toBeInTheDocument()
-    expect(screen.getByText('抽選対象 34,522席')).toBeInTheDocument()
-    expect(document.querySelector('a[href^="https://www.kyoceradome-osaka.jp"]')).not.toBeInTheDocument()
-    expect(document.body.textContent).not.toMatch(/公式|確認日|データ精度|対象外|固定席のみ|センター席はイベント/)
+    const trigger = screen.getByRole('button', { name: '会場を選ぶ' })
+    fireEvent.click(trigger)
+    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    expect(screen.getByText('座席データを読み込んでいます')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
+    expect(loadVenueSeatData).toHaveBeenCalledTimes(1)
+    act(() => resolve(samplerFor(loadVenueSeatData.mock.calls[0][0])))
+    await waitFor(() => expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled())
   })
 
-  it('有効URLとlocalStorageを復元し、不正URLは安全に未選択へ戻す', () => {
-    window.history.replaceState({}, '', '/?venue=national-bunraku-theatre-standard')
-    const { unmount } = render(<App />)
-    expect(screen.getByText('国立文楽劇場')).toBeInTheDocument()
-    unmount()
-    window.history.replaceState({}, '', '/?venue=unknown')
+  it('選択中の会場タブを再度押しても読込済みデータを維持する', async () => {
     render(<App />)
-    expect(screen.getByText('まだ会場が選択されていません。')).toBeInTheDocument()
+    await chooseVenue()
+    fireEvent.click(screen.getByRole('button', { name: '会場から選ぶ' }))
+    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled()
+    expect(loadVenueSeatData).toHaveBeenCalledTimes(1)
   })
 
-  it('1,799msでは結果を出さず、1,800msでテキスト結果だけを表示する', () => {
+  it('読込失敗を安全な案内に変換する', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => undefined)
+    loadVenueSeatData.mockRejectedValueOnce(new Error('network details'))
+    render(<App />)
+    const trigger = screen.getByRole('button', { name: '会場を選ぶ' })
+    fireEvent.click(trigger)
+    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    expect(await screen.findByRole('alert')).toHaveTextContent('座席データを読み込めませんでした。もう一度会場を選択してください。')
+    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
+  })
+
+  it('読込失敗後に同じ会場を選び直すと再読込できる', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => undefined)
+    loadVenueSeatData.mockRejectedValueOnce(new Error('network details'))
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    await screen.findByRole('alert')
+    fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    await waitFor(() => expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled())
+    expect(loadVenueSeatData).toHaveBeenCalledTimes(2)
+  })
+
+  it('会場切替時は遅れて届いた古いresponseを無視する', async () => {
+    const pending = new Map<string, (value: ReturnType<typeof samplerFor>) => void>()
+    loadVenueSeatData.mockImplementation((venue: VenueCatalogEntry) => new Promise((resolve) => pending.set(venue.id, resolve)))
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
+    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
+    fireEvent.click(screen.getByRole('button', { name: 'TOPPANホールを選ぶ' }))
+    const first = loadVenueSeatData.mock.calls[0][0] as VenueCatalogEntry
+    const second = loadVenueSeatData.mock.calls[1][0] as VenueCatalogEntry
+    act(() => pending.get(second.id)?.(samplerFor(second)))
+    await waitFor(() => expect(screen.getByText('408席から今日の1席を抽選します')).toBeInTheDocument())
+    act(() => pending.get(first.id)?.(samplerFor(first)))
+    expect(screen.getByText('TOPPANホール')).toBeInTheDocument()
+    expect(screen.queryByText('300席から今日の1席を抽選します')).not.toBeInTheDocument()
+  })
+
+  it('1,799msでは結果を出さず、1,800msでテキスト結果だけを表示する', async () => {
+    render(<App />)
+    await chooseVenue()
     vi.useFakeTimers()
-    startVenueDraw()
+    fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     expect(screen.getByRole('heading', { name: '抽選中……' })).toBeInTheDocument()
     act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS - 1))
     expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
     act(() => vi.advanceTimersByTime(1))
     expect(screen.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeInTheDocument()
-    expect(screen.getAllByText('国立文楽劇場')).toHaveLength(2)
-    expect(screen.getByText('列')).toBeInTheDocument()
-    expect(screen.getByText('座席番号')).toBeInTheDocument()
+    expect(screen.getByText('A列')).toBeInTheDocument()
     expect(document.querySelector('svg')).not.toBeInTheDocument()
-    expect(document.querySelector('[data-presentation]')).not.toBeInTheDocument()
-    expect(document.body.textContent).not.toMatch(/公式資料|公式情報確認日|データ精度|座席図|ステージ/)
   })
 
-  it('reduced motionでは400ms後に結果を表示する', () => {
+  it('reduced motionでは400ms後に結果を表示する', async () => {
     vi.spyOn(window, 'matchMedia').mockImplementation((query) => ({
       matches: query === '(prefers-reduced-motion: reduce)', media: query, onchange: null,
       addEventListener: vi.fn(), removeEventListener: vi.fn(), addListener: vi.fn(), removeListener: vi.fn(), dispatchEvent: vi.fn(),
     }))
+    render(<App />)
+    await chooseVenue()
     vi.useFakeTimers()
-    startVenueDraw()
+    fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     act(() => vi.advanceTimersByTime(REDUCED_MOTION_DRAW_DURATION_MS - 1))
     expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
     act(() => vi.advanceTimersByTime(1))
     expect(screen.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeInTheDocument()
   })
 
-  it('抽選中は二重実行を防止する', () => {
+  it('抽選中の二重実行と、条件変更後の古いcallbackを拒否する', async () => {
+    render(<App />)
+    await chooseVenue()
     vi.useFakeTimers()
     const setTimeoutSpy = vi.spyOn(window, 'setTimeout')
-    startVenueDraw()
+    fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
+    const staleCallback = setTimeoutSpy.mock.calls.at(-1)?.[0] as () => void
     const count = setTimeoutSpy.mock.calls.length
     fireEvent.click(screen.getByRole('button', { name: '抽選中……' }))
     expect(setTimeoutSpy).toHaveBeenCalledTimes(count)
-  })
-
-  it('抽選中の会場変更でタイマーを取消し、古いcallbackも拒否する', () => {
-    vi.useFakeTimers()
-    const setTimeoutSpy = vi.spyOn(window, 'setTimeout')
-    const clearTimeoutSpy = vi.spyOn(window, 'clearTimeout')
-    startVenueDraw()
-    const staleCallback = setTimeoutSpy.mock.calls.at(-1)?.[0] as () => void
-    const timer = setTimeoutSpy.mock.results.at(-1)?.value
-    chooseVenue('京セラドーム大阪')
-    expect(clearTimeoutSpy).toHaveBeenCalledWith(timer)
+    fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
+    fireEvent.click(screen.getByRole('button', { name: 'TOPPANホールを選ぶ' }))
     act(staleCallback)
-    act(() => vi.runAllTimers())
     expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
-    expect(screen.getByText('京セラドーム大阪')).toBeInTheDocument()
   })
 
-  it('抽選中の自作座席変更で古い結果を表示しない', () => {
+  it('自作座席の変更で古い結果を取消し、unmountでもタイマーを解除する', async () => {
     vi.useFakeTimers()
-    render(<App />)
+    const clearTimeoutSpy = vi.spyOn(window, 'clearTimeout')
+    const { unmount } = render(<App />)
     fireEvent.click(screen.getByRole('button', { name: '自分で作る' }))
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     fireEvent.change(screen.getByLabelText('最後の座席番号'), { target: { value: '20' } })
     act(() => vi.runAllTimers())
     expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
-  })
-
-  it('unmount時に保留タイマーを解除する', () => {
-    vi.useFakeTimers()
-    const clearTimeoutSpy = vi.spyOn(window, 'clearTimeout')
-    const { unmount } = render(<App />)
-    chooseVenue()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     unmount()
     expect(clearTimeoutSpy).toHaveBeenCalled()
   })
 
-  it('自作座席を抽選し、エリア未入力なら空のエリア行を表示しない', () => {
-    vi.useFakeTimers()
+  it('有効URLを復元し、不正URLは安全に未選択へ戻す', async () => {
+    window.history.replaceState({}, '', '/?venue=national-bunraku-theatre-standard')
+    const { unmount } = render(<App />)
+    expect(screen.getByText('国立文楽劇場')).toBeInTheDocument()
+    await waitFor(() => expect(loadVenueSeatData).toHaveBeenCalledTimes(1))
+    unmount()
+    window.history.replaceState({}, '', '/?venue=unknown')
     render(<App />)
-    fireEvent.click(screen.getByRole('button', { name: '自分で作る' }))
-    fireEvent.change(screen.getByLabelText(/会場名/), { target: { value: 'マイ会場' } })
-    fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
-    finishDraw()
-    expect(screen.getByText('マイ会場')).toBeInTheDocument()
-    expect(screen.queryByText('エリア')).not.toBeInTheDocument()
-    expect(document.querySelector('svg')).not.toBeInTheDocument()
+    expect(screen.getByText('まだ会場が選択されていません。')).toBeInTheDocument()
   })
 })

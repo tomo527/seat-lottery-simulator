@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "hamarikyu-asahi-hall-standard",
+  "name": "浜離宮朝日ホール 音楽ホール",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": [
+    "浜離宮朝日",
+    "Hamarikyu Asahi Hall"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-all-seats",
+    "name": "通常座席",
+    "coverage": "complete",
+    "expectedSeatCount": 552,
+    "selectionReason": "会場公式の標準座席表に番号が掲載された全席を採用。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "publisher": "株式会社 朝日ビルディング",
+      "title": "浜離宮朝日ホール 座席表",
+      "url": "https://www.asahi-hall.jp/hamarikyu/ticket/seat.html",
+      "checkedAt": "2026-07-20"
+    },
+    {
+      "publisher": "株式会社 朝日ビルディング",
+      "title": "浜離宮朝日ホール座席表PDF",
+      "url": "https://www.asahi-hall.jp/hamarikyu/music/pdf/zaseki.pdf",
+      "checkedAt": "2026-07-20"
+    }
+  ],
+  "registeredScope": "採用した代表パターンの座席表に番号がある全席。",
+  "completenessBasis": "公式座席表の全番号をrangeへ転記し、公式総席数552席との一致を検証。",
+  "transformation": "公式座席表を目視照合し、同一列の連続番号をrangeへ圧縮。欠番はrange分割で表現。",
+  "knownLimitations": [
+    "公演固有の販売停止席や車椅子席への変更は反映しない。"
+  ],
+  "ranges": [
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "2",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "4",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "6",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "8",
+      "from": 3,
+      "to": 19
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "10",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "12",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "14",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "16",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "17",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "18",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "18",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "19",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "20",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "20",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "21",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "22",
+      "from": 1,
+      "to": 14
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "22",
+      "from": 16,
+      "to": 21
+    },
+    {
+      "areaId": "second-floor-left",
+      "areaLabel": "2階L",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "second-floor-right",
+      "areaLabel": "2階R",
+      "rowLabel": "R",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "second-floor-center",
+      "areaLabel": "2階C",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "areaId": "second-floor-center",
+      "areaLabel": "2階C",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "areaId": "second-floor-center",
+      "areaLabel": "2階C",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "second-floor-center",
+      "areaLabel": "2階C",
+      "rowLabel": "3",
+      "from": 7,
+      "to": 14
+    },
+    {
+      "areaId": "second-floor-center",
+      "areaLabel": "2階C",
+      "rowLabel": "3",
+      "from": 17,
+      "to": 20
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "iino-hall-standard",
+  "name": "イイノホール",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [
+    "IINO HALL"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-all-seats",
+    "name": "通常座席",
+    "coverage": "complete",
+    "expectedSeatCount": 500,
+    "selectionReason": "会場公式の標準座席表に番号が掲載された全席を採用。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "publisher": "イイノホール＆カンファレンスセンター",
+      "title": "資料ダウンロード",
+      "url": "https://www.iino.co.jp/hall/download/",
+      "checkedAt": "2026-07-20"
+    },
+    {
+      "publisher": "イイノホール＆カンファレンスセンター",
+      "title": "イイノホール座席表",
+      "url": "https://www.iino.co.jp/hall/wp-content/themes/iino_hall/assets/pdf/seatinglist.pdf",
+      "checkedAt": "2026-07-20"
+    }
+  ],
+  "registeredScope": "採用した代表パターンの座席表に番号がある全席。",
+  "completenessBasis": "公式座席表の全番号をrangeへ転記し、公式総席数500席との一致を検証。",
+  "transformation": "公式座席表を目視照合し、同一列の連続番号をrangeへ圧縮。欠番はrange分割で表現。",
+  "knownLimitations": [
+    "公演固有の販売停止席や車椅子席への変更は反映しない。"
+  ],
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "A",
+      "from": 4,
+      "to": 27
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "B",
+      "from": 3,
+      "to": 29
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "C",
+      "from": 2,
+      "to": 29
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 31
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 30
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 31
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 30
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "H",
+      "from": 2,
+      "to": 30
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 30
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 31
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 30
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 31
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 1,
+      "to": 30
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "N",
+      "from": 1,
+      "to": 31
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "O",
+      "from": 1,
+      "to": 30
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "P",
+      "from": 1,
+      "to": 31
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "Q",
+      "from": 2,
+      "to": 9
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "Q",
+      "from": 11,
+      "to": 20
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "Q",
+      "from": 22,
+      "to": 29
+    }
+  ]
+}

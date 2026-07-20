@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "toppan-hall-standard",
+  "name": "TOPPANホール",
+  "prefecture": "東京都",
+  "city": "文京区",
+  "aliases": [
+    "トッパンホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-all-seats",
+    "name": "通常座席",
+    "coverage": "complete",
+    "expectedSeatCount": 408,
+    "selectionReason": "会場公式の標準座席表に番号が掲載された全席を採用。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "publisher": "TOPPANホール",
+      "title": "座席表",
+      "url": "https://www.toppanhall.com/about/seatmap.html",
+      "checkedAt": "2026-07-20"
+    },
+    {
+      "publisher": "TOPPANホール",
+      "title": "座席表PDF",
+      "url": "https://www.toppanhall.com/rental/pdf/toppanhall_014.pdf",
+      "checkedAt": "2026-07-20"
+    }
+  ],
+  "registeredScope": "採用した代表パターンの座席表に番号がある全席。",
+  "completenessBasis": "公式座席表の全番号をrangeへ転記し、公式総席数408席との一致を検証。",
+  "transformation": "公式座席表を目視照合し、同一列の連続番号をrangeへ圧縮。欠番はrange分割で表現。",
+  "knownLimitations": [
+    "公演固有の販売停止席や車椅子席への変更は反映しない。"
+  ],
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "A",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "C",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "B",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "B",
+      "from": 18,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "D",
+      "from": 18,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "F",
+      "from": 18,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "H",
+      "from": 18,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "J",
+      "from": 3,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "K",
+      "from": 3,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "L",
+      "from": 3,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 3,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "N",
+      "from": 3,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "O",
+      "from": 3,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "P",
+      "from": 3,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "Q",
+      "from": 3,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "R",
+      "from": 4,
+      "to": 21
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "S",
+      "from": 4,
+      "to": 21
+    }
+  ]
+}

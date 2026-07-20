@@ -70,6 +70,8 @@ input[aria-invalid="true"] { border-color: #ce3445; }
 .venue-compact-list { max-height: 420px; margin: 0; padding: 0 4px 0 0; display: grid; gap: 6px; overflow-y: auto; overscroll-behavior: contain; list-style: none; scrollbar-gutter: stable; }
 .venue-compact-list button { width: 100%; min-height: 58px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--line); border-radius: 11px; background: #fff; color: var(--ink); text-align: left; transition: border-color .18s, background .18s; }
 .venue-compact-list button:hover, .venue-compact-list button[aria-pressed="true"] { border-color: var(--violet); background: #faf9ff; }
+.venue-load-more { display: block; margin: 12px auto 0; padding: 9px 18px; border: 1px solid var(--violet); border-radius: 999px; background: #fff; color: var(--violet-dark); font-weight: 800; }
+.venue-data-status { margin: 18px 0 0; text-align: center; color: var(--violet-dark); font-weight: 800; }
 .venue-compact-main { min-width: 0; display: grid; gap: 3px; }
 .venue-compact-main strong { overflow-wrap: anywhere; font-size: .82rem; }
 .venue-compact-main small { color: var(--muted); font-size: .62rem; line-height: 1.35; }

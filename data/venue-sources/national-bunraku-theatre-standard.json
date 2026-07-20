@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "national-bunraku-theatre-standard",
+  "name": "国立文楽劇場",
+  "prefecture": "大阪府",
+  "city": "大阪市中央区",
+  "aliases": [
+    "国立文楽"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-all-seats",
+    "name": "文楽劇場 全席（標準）",
+    "coverage": "complete",
+    "expectedSeatCount": 753,
+    "selectionReason": "会場公式の標準座席表に番号が掲載された全席を採用。",
+    "notIncludedPatterns": [
+      "花道設置時 677席",
+      "出語り床設置時 731席",
+      "小ホール 159席"
+    ]
+  },
+  "sources": [
+    {
+      "publisher": "独立行政法人 日本芸術文化振興会",
+      "title": "国立文楽劇場施設の概要",
+      "url": "https://www.ntj.jac.go.jp/bunraku/facilities/outline/",
+      "checkedAt": "2026-07-20"
+    },
+    {
+      "publisher": "独立行政法人 日本芸術文化振興会",
+      "title": "文楽劇場 詳細座席図",
+      "url": "https://www.ntj.jac.go.jp/assets/files/bunraku/zaseki/zaseki_bunraku_1.pdf",
+      "checkedAt": "2026-07-20"
+    }
+  ],
+  "registeredScope": "採用した代表パターンの座席表に番号がある全席。",
+  "completenessBasis": "公式座席表の全番号をrangeへ転記し、公式総席数753席との一致を検証。",
+  "transformation": "公式座席表を目視照合し、同一列の連続番号をrangeへ圧縮。欠番はrange分割で表現。",
+  "knownLimitations": [
+    "公演固有の販売停止席や車椅子席への変更は反映しない。"
+  ],
+  "ranges": [
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "1",
+      "from": 3,
+      "to": 34
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "2",
+      "from": 2,
+      "to": 23
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "2",
+      "from": 25,
+      "to": 35
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 23
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "4",
+      "from": 25,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 23
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "6",
+      "from": 25,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 23
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "8",
+      "from": 25,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "9",
+      "from": 2,
+      "to": 35
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 23
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "10",
+      "from": 25,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 23
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "12",
+      "from": 25,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 23
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "14",
+      "from": 25,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 23
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "16",
+      "from": 25,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "17",
+      "from": 1,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "18",
+      "from": 1,
+      "to": 23
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "18",
+      "from": 25,
+      "to": 36
+    },
+    {
+      "areaId": "center-seats",
+      "areaLabel": "中央座席",
+      "rowLabel": "19",
+      "from": 3,
+      "to": 34
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "1",
+      "from": 3,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "2",
+      "from": 2,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "left-seats",
+      "areaLabel": "左側座席",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 2
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 4
+    },
+    {
+      "areaId": "right-seats",
+      "areaLabel": "右側座席",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 4
+    }
+  ]
+}

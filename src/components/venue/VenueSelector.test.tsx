@@ -1,40 +1,44 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { describe, expect, it, vi } from 'vitest'
-import type { Venue } from '../../types/venue'
+import type { VenueCatalogEntry } from '../../types/venue'
 import { VenueSelector } from './VenueSelector'
 
-const venues: Venue[] = Array.from({ length: 30 }, (_, index) => ({
+const venues: VenueCatalogEntry[] = Array.from({ length: 30 }, (_, index) => ({
   id: `venue-${index + 1}`,
-  name: `架空会場${index + 1}`,
-  region: index % 2 === 0 ? '関東' : '近畿',
-  prefecture: index % 2 === 0 ? '東京都' : '大阪府',
-  city: `テスト市${index + 1}`,
-  seatDataAccuracy: 'demo',
-  representativePattern: { id: 'layout', name: 'デモ', coverage: 'complete', expectedSeatCount: index + 1, selectionReason: 'test', notIncludedPatterns: [] },
-  sources: [],
-  internalNotes: [],
-  layouts: [],
+  name: `テスト会場${index + 1}`,
+  prefecture: index < 15 ? '東京都' : '大阪府',
+  city: index < 15 ? `千代田区${index + 1}` : `大阪市${index + 1}`,
+  aliases: index === 0 ? ['ＴＥＳＴ　ＨＡＬＬ'] : [],
+  venueType: 'hall',
+  representativePatternName: '標準',
+  seatCount: index + 100,
+  dataPath: `/venue-db/venues/venue-${index + 1}.json`,
 }))
 
 describe('VenueSelector', () => {
-  it('多数の会場をコンパクトなスクロールリスト内に収める', async () => {
-    const user = userEvent.setup()
-    const { container } = render(<VenueSelector venues={venues} selectedVenueId="" onSelect={vi.fn()} />)
-    await user.click(screen.getByRole('button', { name: '会場を選ぶ' }))
-    expect(screen.getByLabelText('会場名・所在地を検索')).toHaveFocus()
-    expect(screen.getByRole('list', { name: '会場の検索結果' })).toHaveClass('venue-compact-list')
-    expect(screen.getAllByRole('button', { name: /架空会場\d+を選ぶ/ })).toHaveLength(30)
-    expect(container.querySelector('.venue-card')).not.toBeInTheDocument()
-  })
-
-  it('所在地検索と地域絞り込みができる', async () => {
+  it('最初の20件だけを表示し、さらに表示できる', async () => {
     const user = userEvent.setup()
     render(<VenueSelector venues={venues} selectedVenueId="" onSelect={vi.fn()} />)
     await user.click(screen.getByRole('button', { name: '会場を選ぶ' }))
-    await user.type(screen.getByLabelText('会場名・所在地を検索'), 'テスト市2')
-    expect(screen.getByRole('button', { name: '架空会場2を選ぶ' })).toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: '架空会場1を選ぶ' })).not.toBeInTheDocument()
+    expect(screen.getAllByRole('button', { name: /テスト会場\d+を選ぶ/ })).toHaveLength(20)
+    await user.click(screen.getByRole('button', { name: 'さらに表示' }))
+    expect(screen.getAllByRole('button', { name: /テスト会場\d+を選ぶ/ })).toHaveLength(30)
+    await waitFor(() => expect(screen.getByRole('button', { name: 'テスト会場21を選ぶ' })).toHaveFocus())
+  })
+
+  it('東京フィルターとNFKC正規化した略称・区名検索が使える', async () => {
+    const user = userEvent.setup()
+    render(<VenueSelector venues={venues} selectedVenueId="" onSelect={vi.fn()} />)
+    await user.click(screen.getByRole('button', { name: '会場を選ぶ' }))
+    await user.selectOptions(screen.getByLabelText('地域'), '東京')
+    expect(screen.getByText('15件の会場')).toBeInTheDocument()
+    await user.clear(screen.getByLabelText('会場名・所在地を検索'))
+    await user.type(screen.getByLabelText('会場名・所在地を検索'), 'test hall')
+    expect(screen.getByRole('button', { name: 'テスト会場1を選ぶ' })).toBeInTheDocument()
+    await user.clear(screen.getByLabelText('会場名・所在地を検索'))
+    await user.type(screen.getByLabelText('会場名・所在地を検索'), '千代田区2')
+    expect(screen.getByRole('button', { name: 'テスト会場2を選ぶ' })).toBeInTheDocument()
   })
 
   it('Escapeでパネルを閉じ、起点ボタンへフォーカスを戻す', async () => {

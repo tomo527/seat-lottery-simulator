@@ -1,86 +1,64 @@
-# 会場座席データ追加ガイド
+# 静的会場データベース運用ガイド
 
-会場データは`src/data/venues/`へ置き、UIへ直接記述しません。productionへ追加できるのは、採用した代表パターンの全席を公式資料から構造化できる会場だけです。調査メタデータは開発者向けに保持し、通常のユーザー画面へは情報源、精度、確認日、除外理由を表示しません。
+会場データは更新頻度が低いため、ランタイムDBではなく、調査sourceから軽量catalogと会場別JSONを決定論的に生成します。初期画面はcatalogだけを読み、座席範囲は会場選択時にlazy loadします。通常画面へ情報源、確認日、精度、調査注釈は表示しません。
 
-## 情報源の優先順位
+## ディレクトリと責務
 
-1. 会場公式サイト
-2. 会場公式PDF
-3. 施設管理者・主催者の公式資料
-4. 公演公式のイベント固有資料
-
-一般ユーザー作成の座席表、まとめサイト、SNS投稿、画像検索結果だけを根拠にしません。読み取れない番号を収容人数から補完しません。公式画像はリポジトリへ保存・転載・背景表示・トレースせず、確認できた区分、列、番号だけを構造化します。
-
-## 代表パターン
-
-1会場につき`representativePattern`を1件だけ決め、同じIDの`VenueLayout`を1件登録します。
-
-```ts
-representativePattern: {
-  id: 'standard-all-seats',
-  name: '標準客席 全席',
-  coverage: 'complete',
-  expectedSeatCount: 753,
-  selectionReason: '公式資料が標準として示す全席構成',
-  notIncludedPatterns: ['別構成'],
-}
+```text
+data/venue-sources/<venue-id>.json       調査根拠、代表パターン、全range（bundle対象外）
+src/data/venue-db/catalog.generated.json 検索用の軽量メタデータ
+public/venue-db/venues/<venue-id>.json    runtime用の圧縮range
+scripts/venues/                           build / check / validate / report
 ```
 
-優先順位は、公式の標準・基本・通常構成、一般的な利用に近い公式パターン、公式収容数と利用範囲、完全に構造化できるパターンの順です。異なるパターンを混在させません。全席を確実に登録できない場合は、部分範囲を公開せずproduction一覧へ追加しません。
+sourceは公式情報源、確認日、採用・不採用パターン、登録範囲、完全性の根拠、制約、変換方法を保持します。generatedは手編集しません。
 
-## 型と座席範囲
+## 情報源と代表パターン
 
-- `Venue`: 会場、所在地、内部の精度・情報源・代表パターン
-- `VenueLayout`: 採用した代表パターン（productionでは1件）
-- `VenueSeatArea`: 公式に存在するエリアまたはブロック
-- `VenueRow`: 列と座席番号範囲
-- `excludedSeats`: 公式資料で確認できる欠番・除外席
+情報源は、会場公式サイト、会場公式PDF、施設管理者・主催者の公式資料、公演公式のイベント固有資料の順で優先します。一般ユーザーの座席表、まとめサイト、SNS、画像検索だけを根拠にしません。公式画像・PDFはリポジトリへ保存、転載、外部表示、トレースせず、確認できた事実だけを手作業で構造化します。
 
-```ts
+1会場につき代表パターンは1つです。公式の標準・基本・通常、固定席全体、一般的な利用に近い公式パターン、完全に列・番号を構造化できるパターンの順に選びます。異なるパターンを混在させず、一部だけしか確定できない会場はproductionへ入れません。
+
+## sourceとrange形式
+
+```json
 {
-  label: 'C',
-  seatRanges: [{ from: 1, to: 12 }, { from: 15, to: 30 }],
-  excludedSeats: [4, 20],
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "example-hall-standard",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常座席",
+    "coverage": "complete",
+    "expectedSeatCount": 300
+  },
+  "sources": [{ "publisher": "施設運営者", "title": "座席表", "url": "https://example.com/seat.pdf", "checkedAt": "2026-07-20" }],
+  "ranges": [{ "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "A", "from": 1, "to": 20, "excluded": [13] }]
 }
 ```
 
-`from`と`to`は正の安全な整数かつ`from <= to`です。同じエリア・列で範囲を重複させません。公式に名称がないエリアを生成しません。
+連続番号は`from`〜`to`で圧縮します。同一列が分断される場合はrangeを分けます。`excluded`はrange内の公式な欠番だけに使います。`seatCount`はrangeから自動計算され、`expectedSeatCount`との一致を検証します。数万席をSeatオブジェクトとして保存・生成しません。
 
-## fixed / venue-pattern / event-specific
+## 追加手順
 
-- `fixed`: 常設固定席
-- `venue-pattern`: 会場公式が公開する標準パターンの座席。採用パターンが明確な場合に全席を含める
-- `event-specific`: 公演ごとに異なる仮設席。会場共通productionパターンへ混在させない
+1. 公式資料を調査し、完全に構造化できる代表パターンを決める。
+2. `data/venue-sources/<venue-id>.json`へ調査情報と全rangeを追加する。
+3. `npm run venues:build`でcatalogとdetailを生成する。
+4. `npm run venues:check`でgeneratedがsourceと同期していることを確認する。
+5. `npm run venues:validate`でID、所在地、range、重複、欠番、総数、source、完全性、東京件数、ファイルサイズを検証する。
+6. `npm run venues:report`で会場数、地域別件数、range数、席数、全体・最大ファイルサイズを確認する。
+7. 先頭・中間・末尾の決定論的抽選、検索、lazy load、E2Eを実行する。
 
-productionの代表レイアウト内は全エリアを抽選対象にします。event-specificや抽選対象外エリアを代表レイアウトへ入れると検証が失敗します。
+`npm run build`はcheckとvalidateを必須ゲートとして実行します。catalogはID、名称、所在地、別名、種別、内部パターン名、席数、dataPathだけを含み、source URLや全rangeを含めません。
 
-## 情報源と確認日
+## lazy loadingと抽選
 
-実在会場には1件以上のHTTPS公式情報源が必要です。
+`catalog.generated.json`はmain bundleに含まれますが、`public/venue-db/venues/*.json`は含まれません。選択した`dataPath`だけをfetchし、成功した会場はメモリキャッシュします。切替時はAbortControllerとrequest sequenceで古いresponseを無視します。
 
-```ts
-sources: [{
-  kind: 'venue-official',
-  publisher: '施設運営者名',
-  title: '公式ページまたはPDF名',
-  url: 'https://example.com/official-seat-page',
-  checkedAt: '2026-07-17',
-}]
-```
+抽選はrangeごとの有効席数を累積し、`crypto.getRandomValues()`のrejection samplingで全席offsetを1つ選びます。累積配列を二分探索し、該当range内で`excluded`を飛ばしてSeatを1件だけ返すため、全席配列は生成しません。
 
-URLと確認日は内部メタデータおよび`docs/venues/<venue-id>.md`に残しますが、ユーザー向けDOMへ出力しません。
+## 規模拡張とD1移行
 
-## 追加・レビュー手順
+数百会場でも軽量catalog、20件ずつの表示、会場別fetchで運用できます。catalog 100KB、detail 1件300KB、今回規模の全detail 2MBを上限目安として検証します。
 
-1. 公式資料を優先順位どおり調査する
-2. 代表パターンを1つ決定し、採用理由と別パターンを記録する
-3. 代表パターンの全区分・全列・全番号を構造化する
-4. 欠番と重複を資料と照合する
-5. `expectedSeatCount`を資料または公式データの全件数から記録する
-6. `docs/venues/`へ情報源、確認日、全範囲、総数、完全性の根拠、制約を書く
-7. `validateProductionVenues()`とテストを実行する
-8. 別担当レビューで、先頭・中間・末尾、総数、重複、別パターン混在がないことを確認する
-
-検証は、productionのdemo混入、部分データを示すID・名称、情報源欠落、複数レイアウト、総数不一致、重複ID・列・座席範囲、不正範囲、範囲外除外席、event-specific混入を拒否します。Vite起動・build時にも同じ検証を実行します。
-
-京セラドーム大阪の公式JSONは`node scripts/import-kyocera-seat-data.mjs`で決定論的に変換し、取得元SHA-256と総数を生成ファイルへ記録します。生成後は必ず差分と検証結果をレビューしてください。
+数百〜数千会場を超える、管理画面から頻繁に更新する、デプロイなしで更新する、複雑なサーバー検索が必要、イベント別パターンを動的管理する、のいずれかが必要になった段階でD1等を検討します。現段階では静的DBの方が単純で、配信・キャッシュ・保守の負担が小さい設計です。

@@ -5,14 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "node scripts/clean-dist.mjs && npm run venues:check && npm run venues:validate && tsc -b && vite build",
     "lint": "eslint .",
     "typecheck": "tsc -b --pretty false",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "preview": "npm run build && vite preview",
-    "deploy": "npm run build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy",
+    "venues:build": "node scripts/venues/build-catalog.mjs",
+    "venues:check": "node scripts/venues/check-database.mjs",
+    "venues:validate": "node scripts/venues/validate-database.mjs",
+    "venues:report": "node scripts/venues/report-database.mjs"
   },
   "dependencies": {
     "react": "^19.2.7",

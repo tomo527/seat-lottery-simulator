@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "tokyo-fm-hall-a-stage",
+  "name": "TOKYO FMホール",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [
+    "東京FMホール",
+    "TFMホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "a-stage",
+    "name": "Aステージ",
+    "coverage": "complete",
+    "expectedSeatCount": 308,
+    "selectionReason": "会場公式の標準座席表に番号が掲載された全席を採用。",
+    "notIncludedPatterns": [
+      "Bステージ（客席なし）"
+    ]
+  },
+  "sources": [
+    {
+      "publisher": "株式会社エフエム東京",
+      "title": "TOKYO FMホール 図面・書類",
+      "url": "https://www.tfmhall.com/document",
+      "checkedAt": "2026-07-20"
+    },
+    {
+      "publisher": "株式会社エフエム東京",
+      "title": "Aステージ（308席）会場平面図",
+      "url": "https://www.tfmhall.com/_files/ugd/f48b1c_2fefcd1ce65949edae0efa317c1ceebd.pdf",
+      "checkedAt": "2026-07-20"
+    }
+  ],
+  "registeredScope": "採用した代表パターンの座席表に番号がある全席。",
+  "completenessBasis": "公式座席表の全番号をrangeへ転記し、公式総席数308席との一致を検証。",
+  "transformation": "公式座席表を目視照合し、同一列の連続番号をrangeへ圧縮。欠番はrange分割で表現。",
+  "knownLimitations": [
+    "公演固有の販売停止席や車椅子席への変更は反映しない。"
+  ],
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "A",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "B",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "C",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 2,
+      "to": 8
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 10,
+      "to": 15
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 17,
+      "to": 23
+    }
+  ]
+}

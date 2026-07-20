@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "suntory-blue-rose-a",
+  "name": "サントリーホール ブルーローズ",
+  "prefecture": "東京都",
+  "city": "港区",
+  "aliases": [
+    "ブルーローズ",
+    "サントリー小ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "shoebox-a",
+    "name": "シューボックス型・縦使いA型",
+    "coverage": "complete",
+    "expectedSeatCount": 384,
+    "selectionReason": "会場公式が公開する縦使いA型（24席×16列）を代表パターンとして採用。",
+    "notIncludedPatterns": [
+      "シューボックス型・縦使いB型",
+      "扇型・横使いC型"
+    ]
+  },
+  "sources": [
+    {
+      "publisher": "公益財団法人 サントリー芸術財団",
+      "title": "サントリーホール 座席表",
+      "url": "https://www.suntory.co.jp/suntoryhall/seat/",
+      "checkedAt": "2026-07-20"
+    },
+    {
+      "publisher": "公益財団法人 サントリー芸術財団",
+      "title": "ブルーローズ座席表 シューボックス型（縦使いA型）",
+      "url": "https://www.suntory.co.jp/suntoryhall/seat/pdf/bluerose_a.pdf",
+      "checkedAt": "2026-07-20"
+    }
+  ],
+  "registeredScope": "採用した代表パターンの座席表に番号がある全席。",
+  "completenessBasis": "公式座席表の全番号をrangeへ転記し、公式総席数384席との一致を検証。",
+  "transformation": "公式座席表を目視照合し、同一列の連続番号をrangeへ圧縮。欠番はrange分割で表現。",
+  "knownLimitations": [
+    "公演固有の販売停止席や車椅子席への変更は反映しない。"
+  ],
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 24
+    }
+  ]
+}

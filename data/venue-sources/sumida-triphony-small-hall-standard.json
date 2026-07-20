@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "sumida-triphony-small-hall-standard",
+  "name": "すみだトリフォニーホール 小ホール",
+  "prefecture": "東京都",
+  "city": "墨田区",
+  "aliases": [
+    "トリフォニー小ホール",
+    "トリフォニーホール小ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-all-seats",
+    "name": "通常座席",
+    "coverage": "complete",
+    "expectedSeatCount": 252,
+    "selectionReason": "会場公式の標準座席表に番号が掲載された全席を採用。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "publisher": "公益財団法人 墨田区文化振興財団",
+      "title": "すみだトリフォニーホール 座席表",
+      "url": "https://www.triphony.com/seat/",
+      "checkedAt": "2026-07-20"
+    },
+    {
+      "publisher": "公益財団法人 墨田区文化振興財団",
+      "title": "小ホール座席表PDF",
+      "url": "https://www.triphony.com/seat/common/pdf/hall_s.pdf",
+      "checkedAt": "2026-07-20"
+    }
+  ],
+  "registeredScope": "採用した代表パターンの座席表に番号がある全席。",
+  "completenessBasis": "公式座席表の全番号をrangeへ転記し、公式総席数252席との一致を検証。",
+  "transformation": "公式座席表を目視照合し、同一列の連続番号をrangeへ圧縮。欠番はrange分割で表現。",
+  "knownLimitations": [
+    "公演固有の販売停止席や車椅子席への変更は反映しない。"
+  ],
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "16",
+      "from": 3,
+      "to": 14
+    }
+  ]
+}

@@ -4,11 +4,12 @@ import { LotteryAnimation } from './components/lottery/LotteryAnimation'
 import { ResultCard } from './components/lottery/ResultCard'
 import { CustomSeatBuilder } from './components/venue/CustomSeatBuilder'
 import { VenueSelector } from './components/venue/VenueSelector'
+import { loadVenueSeatData } from './data/venue-db/loadVenue'
 import { venues } from './data/venues'
 import { DRAW_ANIMATION_DURATION_MS, REDUCED_MOTION_DRAW_DURATION_MS } from './domain/lottery/constants'
 import { drawSeat, formatSeatLabel } from './domain/lottery/lottery'
 import { generateCustomSeats, validateCustomSeatInput, type CustomSeatInput } from './domain/seats/customSeats'
-import { generateVenueSeats } from './domain/seats/venueSeats'
+import { drawVenueSeat, type PreparedVenueSampler } from './domain/seats/rangeSampler'
 import { useReducedMotion } from './hooks/useReducedMotion'
 import { loadPreferences, savePreferences } from './lib/preferences'
 import { buildShareText, shareResult } from './lib/share'
@@ -42,27 +43,47 @@ function App() {
   const [result, setResult] = useState<Seat | null>(null)
   const [userError, setUserError] = useState('')
   const [shareStatus, setShareStatus] = useState('')
+  const [venueSampler, setVenueSampler] = useState<PreparedVenueSampler | null>(null)
+  const [venueDataStatus, setVenueDataStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>(() => selectedVenueId ? 'loading' : 'idle')
+  const [venueLoadAttempt, setVenueLoadAttempt] = useState(0)
   const timeoutRef = useRef<number | null>(null)
   const drawSequenceRef = useRef(0)
   const shareSequenceRef = useRef(0)
   const settingsRef = useRef<HTMLElement>(null)
+  const venueRequestSequenceRef = useRef(0)
+  const venueAbortRef = useRef<AbortController | null>(null)
   const reducedMotion = useReducedMotion()
 
   const selectedVenue = venues.find((venue) => venue.id === selectedVenueId)
-  const selectedLayout = selectedVenue?.layouts[0]
   const customValidation = useMemo(() => validateCustomSeatInput(customInput), [customInput])
   const customSeats = useMemo(() => generateCustomSeats(customInput), [customInput])
-  const venueSeats = useMemo(
-    () => selectedVenue && selectedLayout ? generateVenueSeats(selectedVenue, selectedLayout) : [],
-    [selectedLayout, selectedVenue],
-  )
-  const availableSeats = sourceMode === 'venue' ? venueSeats : customSeats
   const venueName = sourceMode === 'venue' ? selectedVenue?.name ?? '未選択の会場' : customInput.venueName.trim() || 'マイ会場'
-  const canDraw = availableSeats.length > 0 && (sourceMode === 'venue' || Object.keys(customValidation.errors).length === 0)
+  const availableSeatCount = sourceMode === 'venue' ? venueSampler?.totalSeatCount ?? 0 : customSeats.length
+  const canDraw = sourceMode === 'venue'
+    ? Boolean(selectedVenue && venueSampler && venueDataStatus === 'ready')
+    : customSeats.length > 0 && Object.keys(customValidation.errors).length === 0
 
   useEffect(() => {
     savePreferences({ venueId: selectedVenueId || undefined })
   }, [selectedVenueId])
+
+  useEffect(() => {
+    venueAbortRef.current?.abort()
+    const requestSequence = ++venueRequestSequenceRef.current
+    if (sourceMode !== 'venue' || !selectedVenue) return
+    const controller = new AbortController()
+    venueAbortRef.current = controller
+    loadVenueSeatData(selectedVenue, controller.signal).then((sampler) => {
+      if (controller.signal.aborted || venueRequestSequenceRef.current !== requestSequence) return
+      setVenueSampler(sampler)
+      setVenueDataStatus('ready')
+    }).catch((error: unknown) => {
+      if (controller.signal.aborted || venueRequestSequenceRef.current !== requestSequence) return
+      console.error('Venue seat data could not be loaded.', error)
+      setVenueDataStatus('error')
+    })
+    return () => controller.abort()
+  }, [selectedVenue, sourceMode, venueLoadAttempt])
 
   const cancelPendingDraw = useCallback(() => {
     drawSequenceRef.current += 1
@@ -75,6 +96,8 @@ function App() {
 
   useEffect(() => () => {
     cancelPendingDraw()
+    venueAbortRef.current?.abort()
+    venueRequestSequenceRef.current += 1
     shareSequenceRef.current += 1
   }, [cancelPendingDraw])
 
@@ -88,7 +111,10 @@ function App() {
   }
 
   const changeSource = (mode: SourceMode) => {
+    if (mode === sourceMode) return
     setSourceMode(mode)
+    setVenueSampler(null)
+    setVenueDataStatus(mode === 'venue' && selectedVenue ? 'loading' : 'idle')
     resetResult()
     const url = new URL(window.location.href)
     if (mode === 'custom') url.searchParams.delete('venue')
@@ -98,6 +124,9 @@ function App() {
 
   const changeVenue = (venueId: string) => {
     setSelectedVenueId(venueId)
+    setVenueLoadAttempt((attempt) => attempt + 1)
+    setVenueSampler(null)
+    setVenueDataStatus('loading')
     resetResult()
     const url = new URL(window.location.href)
     url.searchParams.set('venue', venueId)
@@ -118,7 +147,9 @@ function App() {
     try {
       shareSequenceRef.current += 1
       const drawSequence = cancelPendingDraw()
-      const nextSeat = drawSeat(availableSeats)
+      const nextSeat = sourceMode === 'venue'
+        ? drawVenueSeat(venueSampler!, selectedVenue!)
+        : drawSeat(customSeats)
       setPhase('drawing')
       setResult(null)
       setShareStatus('')
@@ -198,8 +229,11 @@ function App() {
             )}
           </div>
 
+          {sourceMode === 'venue' && venueDataStatus === 'loading' && <p className="venue-data-status" role="status">座席データを読み込んでいます</p>}
+          {sourceMode === 'venue' && venueDataStatus === 'error' && <p className="form-error centered" role="alert">座席データを読み込めませんでした。もう一度会場を選択してください。</p>}
+
           <form className="draw-area" onSubmit={(event) => { event.preventDefault(); startDraw() }}>
-            <p>{canDraw ? `${availableSeats.length.toLocaleString('ja-JP')}席から今日の1席を抽選します` : sourceMode === 'venue' ? '会場を選択してください' : '有効な座席範囲を設定してください'}</p>
+            <p>{canDraw ? `${availableSeatCount.toLocaleString('ja-JP')}席から今日の1席を抽選します` : sourceMode === 'venue' ? selectedVenueId && venueDataStatus === 'loading' ? '座席データの読み込みをお待ちください' : selectedVenueId && venueDataStatus === 'error' ? '座席データを再読み込みしてください' : '会場を選択してください' : '有効な座席範囲を設定してください'}</p>
             <button className="draw-button" type="submit" disabled={!canDraw || phase === 'drawing'}>
               <span aria-hidden="true">✦</span>{phase === 'drawing' ? '抽選中……' : '座席を抽選する'}<span aria-hidden="true">→</span>
             </button>
