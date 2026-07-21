@@ -15,6 +15,9 @@ describe('production venue database', () => {
     expect(catalog).toHaveLength(12)
     expect(catalog.filter((venue) => venue.prefecture === '東京都')).toHaveLength(10)
     expect(catalog.filter((venue) => venue.prefecture === '大阪府')).toHaveLength(2)
+    expect(catalog.filter((venue) => venue.region === '関東')).toHaveLength(10)
+    expect(catalog.filter((venue) => venue.region === '関西')).toHaveLength(2)
+    expect(catalog.every((venue) => Boolean(venue.municipality))).toBe(true)
     expect(JSON.stringify(catalog)).not.toMatch(/source|checkedAt|ranges|https?:\/\//)
   })
 

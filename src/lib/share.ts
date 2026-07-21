@@ -4,7 +4,7 @@ import type { Seat } from '../types/venue'
 export type ShareOutcome = 'shared' | 'copied' | 'unavailable' | 'cancelled'
 
 export const buildShareText = (venueName: string, seat: Seat): string =>
-  `座席抽選シミュレーターで「${venueName}」を試しました。\n今日の席運は「${formatSeatLabel(seat)}」でした。\n※実際の座席割り当てとは無関係なシミュレーションです。`
+  `座席抽選シミュレーターで「${venueName}」を試しました。\n今回の席運は「${formatSeatLabel(seat)}」でした。\n※実際の座席割り当てとは無関係なシミュレーションです。`
 
 export const buildClipboardText = (text: string, url: string): string => `${text}\n${url}`
 

@@ -1,6 +1,7 @@
 import { access, readFile, readdir } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { regionForPrefecture } from './regions.mjs'
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 export const SOURCE_DIR = path.join(ROOT, 'data/venue-sources')
@@ -20,9 +21,10 @@ export const buildOutputs = (sources) => {
   const catalog = production.map(({ data }) => ({
     id: data.id,
     name: data.name,
+    searchAliases: [...(data.aliases ?? [])].sort((a, b) => a.localeCompare(b, 'ja')),
+    region: regionForPrefecture(data.prefecture),
     prefecture: data.prefecture,
-    city: data.city,
-    aliases: [...data.aliases].sort((a, b) => a.localeCompare(b, 'ja')),
+    municipality: data.city,
     venueType: data.venueType,
     representativePatternName: data.representativePattern.name,
     seatCount: calculateSeatCount(data.ranges),

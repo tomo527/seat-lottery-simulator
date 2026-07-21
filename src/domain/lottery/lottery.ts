@@ -6,5 +6,15 @@ export const drawSeat = (seats: readonly Seat[], source: RandomSource = cryptoRa
   return seats[randomInt(seats.length, source)]
 }
 
+export const formatRowLabel = (rowLabel: string): string => {
+  const normalized = rowLabel.trim()
+  return normalized.endsWith('列') ? normalized : `${normalized}列`
+}
+
+export const formatSeatNumber = (seatNumber: number | string): string => {
+  const normalized = String(seatNumber).trim()
+  return normalized.endsWith('番') ? normalized : `${normalized}番`
+}
+
 export const formatSeatLabel = (seat: Seat): string =>
-  `${seat.sectionLabel ? `${seat.sectionLabel} ` : ''}${seat.rowLabel}列 ${seat.number}番`
+  `${seat.sectionLabel ? `${seat.sectionLabel} ` : ''}${formatRowLabel(seat.rowLabel)} ${formatSeatNumber(seat.number)}`

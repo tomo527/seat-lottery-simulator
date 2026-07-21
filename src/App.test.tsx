@@ -42,19 +42,20 @@ describe('App', () => {
     expect(screen.getByText('まだ会場が選択されていません。')).toBeInTheDocument()
     expect(loadVenueSeatData).not.toHaveBeenCalled()
     fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
-    fireEvent.change(screen.getByLabelText('地域'), { target: { value: '東京' } })
-    expect(screen.getByText('10件の会場')).toBeInTheDocument()
+    fireEvent.change(screen.getByLabelText('エリア'), { target: { value: '関東' } })
+    fireEvent.change(screen.getByLabelText('都道府県'), { target: { value: '東京都' } })
+    expect(screen.getByText('絞り込み結果 10件')).toBeInTheDocument()
     expect(screen.getByRole('list', { name: '会場の検索結果' }).querySelectorAll('button')).toHaveLength(10)
   })
 
-  it('会場名・略称・区名をNFKC正規化して検索できる', () => {
+  it('会場名・略称をNFKC正規化して検索し、所在地は対象にしない', () => {
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
-    const search = screen.getByLabelText('会場名・所在地を検索')
+    const search = screen.getByLabelText('会場名で検索')
     fireEvent.change(search, { target: { value: '  ＩＩＮＯ　ＨＡＬＬ  ' } })
     expect(screen.getByRole('button', { name: 'イイノホールを選ぶ' })).toBeInTheDocument()
     fireEvent.change(search, { target: { value: '渋谷区' } })
-    expect(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Hakuju Hallを選ぶ' })).not.toBeInTheDocument()
   })
 
   it('選択した会場だけを読み込み、読込中は抽選できない', async () => {
@@ -120,21 +121,24 @@ describe('App', () => {
     expect(screen.queryByText('300席から今日の1席を抽選します')).not.toBeInTheDocument()
   })
 
-  it('1,799msでは結果を出さず、1,800msでテキスト結果だけを表示する', async () => {
+  it('2,499msでは結果を出さず、2,500msで通知風のテキスト結果だけを表示する', async () => {
     render(<App />)
     await chooseVenue()
     vi.useFakeTimers()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     expect(screen.getByRole('heading', { name: '抽選中……' })).toBeInTheDocument()
     act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS - 1))
-    expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
     act(() => vi.advanceTimersByTime(1))
-    expect(screen.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeInTheDocument()
+    expect(screen.getByText(/厳正なる抽選の結果/)).toBeInTheDocument()
+    expect(screen.getByText('SIMULATION')).toBeInTheDocument()
+    expect(screen.getByText('※これは遊びのためのシミュレーションです。実際の座席割り当てとは関係ありません。')).toBeInTheDocument()
     expect(screen.getByText('A列')).toBeInTheDocument()
     expect(document.querySelector('svg')).not.toBeInTheDocument()
   })
 
-  it('reduced motionでは400ms後に結果を表示する', async () => {
+  it('reduced motionでは500ms後に結果を表示する', async () => {
     vi.spyOn(window, 'matchMedia').mockImplementation((query) => ({
       matches: query === '(prefers-reduced-motion: reduce)', media: query, onchange: null,
       addEventListener: vi.fn(), removeEventListener: vi.fn(), addListener: vi.fn(), removeListener: vi.fn(), dispatchEvent: vi.fn(),
@@ -144,9 +148,9 @@ describe('App', () => {
     vi.useFakeTimers()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     act(() => vi.advanceTimersByTime(REDUCED_MOTION_DRAW_DURATION_MS - 1))
-    expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
     act(() => vi.advanceTimersByTime(1))
-    expect(screen.getByRole('heading', { name: 'あなたの席はこちら！' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeInTheDocument()
   })
 
   it('抽選中の二重実行と、条件変更後の古いcallbackを拒否する', async () => {
@@ -162,7 +166,7 @@ describe('App', () => {
     fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
     fireEvent.click(screen.getByRole('button', { name: 'TOPPANホールを選ぶ' }))
     act(staleCallback)
-    expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
   })
 
   it('自作座席の変更で古い結果を取消し、unmountでもタイマーを解除する', async () => {
@@ -173,7 +177,7 @@ describe('App', () => {
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     fireEvent.change(screen.getByLabelText('最後の座席番号'), { target: { value: '20' } })
     act(() => vi.runAllTimers())
-    expect(screen.queryByRole('heading', { name: 'あなたの席はこちら！' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     unmount()
     expect(clearTimeoutSpy).toHaveBeenCalled()

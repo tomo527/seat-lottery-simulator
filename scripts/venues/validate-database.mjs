@@ -1,11 +1,14 @@
 import { readdir, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { buildOutputs, calculateSeatCount, CATALOG_PATH, DETAIL_DIR, exists, readSources } from './lib.mjs'
+import { regionForPrefecture } from './regions.mjs'
 
 const errors = []
 const sources = await readSources()
 const ids = new Set()
 const locations = new Set()
+const searchAliasOwners = new Map()
+const normalizeSearchText = (value) => value.normalize('NFKC').trim().toLocaleLowerCase('ja-JP')
 
 for (const { file, data } of sources) {
   const label = `${file}:`
@@ -16,7 +19,19 @@ for (const { file, data } of sources) {
   locations.add(locationKey)
   if (data.status !== 'production') continue
   if (data.schemaVersion !== 1) errors.push(`${label} unsupported schemaVersion`)
+  if (!data.city?.trim()) errors.push(`${label} municipality is missing`)
+  if (!regionForPrefecture(data.prefecture)) errors.push(`${label} prefecture ${data.prefecture} has no region mapping`)
   if (!data.sources?.length || data.sources.some((source) => !source.url?.startsWith('https://') || !/^\d{4}-\d{2}-\d{2}$/.test(source.checkedAt ?? ''))) errors.push(`${label} production source metadata is missing or invalid`)
+  const normalizedName = normalizeSearchText(data.name ?? '')
+  const normalizedAliases = (data.aliases ?? []).map(normalizeSearchText)
+  if (normalizedAliases.some((alias) => !alias)) errors.push(`${label} has an empty search alias`)
+  if (new Set(normalizedAliases).size !== normalizedAliases.length) errors.push(`${label} has duplicate search aliases`)
+  if (normalizedAliases.includes(normalizedName)) errors.push(`${label} search alias duplicates the venue name`)
+  for (const alias of normalizedAliases) {
+    const existingOwner = searchAliasOwners.get(alias)
+    if (existingOwner) errors.push(`${label} search alias duplicates ${existingOwner}`)
+    else searchAliasOwners.set(alias, data.id)
+  }
   if (Array.isArray(data.representativePattern)) errors.push(`${label} multiple representative patterns are forbidden`)
   if (data.representativePattern?.coverage !== 'complete') errors.push(`${label} representative pattern is not complete`)
   const productionIdentity = [data.id, data.name, data.representativePattern?.name, data.representativePattern?.coverage, data.registeredScope].join(' ').toLowerCase()
@@ -42,7 +57,6 @@ for (const { file, data } of sources) {
   const calculated = calculateSeatCount(data.ranges ?? [])
   if (calculated <= 0) errors.push(`${label} has no selectable seats`)
   if (calculated !== data.representativePattern?.expectedSeatCount) errors.push(`${label} expected ${data.representativePattern?.expectedSeatCount}, calculated ${calculated}`)
-  if (data.prefecture === '東京都' && !data.city) errors.push(`${label} Tokyo venue city is missing`)
 }
 
 const tokyoCount = sources.filter(({ data }) => data.status === 'production' && data.prefecture === '東京都').length
@@ -50,6 +64,8 @@ if (tokyoCount < 10) errors.push(`Tokyo production venue count is ${tokyoCount};
 const { catalog, details } = buildOutputs(sources)
 for (const entry of catalog) {
   const detail = details.get(entry.id)
+  if (!entry.region || entry.region !== regionForPrefecture(entry.prefecture)) errors.push(`${entry.id}: catalog region is invalid`)
+  if (!entry.municipality?.trim()) errors.push(`${entry.id}: catalog municipality is missing`)
   if (!detail || detail.totalSeatCount !== entry.seatCount) errors.push(`${entry.id}: catalog/detail count mismatch`)
   if (!(await exists(path.join(DETAIL_DIR, `${entry.id}.json`)))) errors.push(`${entry.id}: generated detail file is missing`)
 }

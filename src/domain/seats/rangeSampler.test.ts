@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import type { VenueCatalogEntry, VenueSeatDefinition } from '../../types/venue'
 import { drawVenueSeat, prepareVenueSampler, seatAtOffset } from './rangeSampler'
 
-const venue: VenueCatalogEntry = { id: 'v', name: '会場', prefecture: '東京都', city: '千代田区', aliases: [], venueType: 'hall', representativePatternName: '標準', seatCount: 6, dataPath: '/v.json' }
+const venue: VenueCatalogEntry = { id: 'v', name: '会場', searchAliases: [], region: '関東', prefecture: '東京都', municipality: '千代田区', venueType: 'hall', representativePatternName: '標準', seatCount: 6, dataPath: '/v.json' }
 const definition: VenueSeatDefinition = {
   schemaVersion: 1, venueId: 'v', patternId: 'p', areas: { a: '1階' }, totalSeatCount: 6,
   ranges: [{ areaId: 'a', rowLabel: 'A', from: 1, to: 4, excluded: [2] }, { areaId: 'a', rowLabel: 'B', from: 10, to: 12 }],

@@ -3,7 +3,7 @@ import { clearVenueSeatDataCache, loadVenueSeatData } from './loadVenue'
 import type { VenueCatalogEntry, VenueSeatDefinition } from '../../types/venue'
 
 const venue: VenueCatalogEntry = {
-  id: 'test-hall', name: 'Test Hall', prefecture: '東京都', city: 'テスト区', aliases: [], venueType: 'hall',
+  id: 'test-hall', name: 'Test Hall', searchAliases: [], region: '関東', prefecture: '東京都', municipality: 'テスト区', venueType: 'hall',
   representativePatternName: 'standard', seatCount: 3, dataPath: '/venue-db/venues/test-hall.json',
 }
 const detail: VenueSeatDefinition = {

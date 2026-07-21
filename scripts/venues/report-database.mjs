@@ -6,8 +6,12 @@ const sources = await readSources()
 const catalog = JSON.parse(await (await import('node:fs/promises')).readFile(CATALOG_PATH, 'utf8'))
 const files = [CATALOG_PATH, ...(await readdir(DETAIL_DIR)).filter((file) => file.endsWith('.json')).sort().map((file) => path.join(DETAIL_DIR, file))]
 const sizes = await Promise.all(files.map(async (file) => ({ file, bytes: (await stat(file)).size })))
+const byRegion = Object.groupBy(catalog, (entry) => entry.region)
 const byPrefecture = Object.groupBy(catalog, (entry) => entry.prefecture)
 console.log(`Venues: ${catalog.length}`)
+console.log('By region:')
+for (const key of Object.keys(byRegion).sort()) console.log(`  ${key}: ${byRegion[key].length}`)
+console.log('By prefecture:')
 for (const key of Object.keys(byPrefecture).sort()) console.log(`  ${key}: ${byPrefecture[key].length}`)
 for (const entry of catalog) {
   const ranges = sources.find(({ data }) => data.id === entry.id)?.data.ranges.length ?? 0

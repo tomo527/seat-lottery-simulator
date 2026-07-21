@@ -2,12 +2,13 @@
   {
     "id": "hakuju-hall-standard",
     "name": "Hakuju Hall",
-    "prefecture": "東京都",
-    "city": "渋谷区",
-    "aliases": [
+    "searchAliases": [
       "ハクジュホール",
       "白寿ホール"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
     "venueType": "hall",
     "representativePatternName": "通常公演",
     "seatCount": 300,
@@ -16,12 +17,13 @@
   {
     "id": "hamarikyu-asahi-hall-standard",
     "name": "浜離宮朝日ホール 音楽ホール",
-    "prefecture": "東京都",
-    "city": "中央区",
-    "aliases": [
+    "searchAliases": [
       "Hamarikyu Asahi Hall",
       "浜離宮朝日"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
     "venueType": "hall",
     "representativePatternName": "通常座席",
     "seatCount": 552,
@@ -30,11 +32,12 @@
   {
     "id": "iino-hall-standard",
     "name": "イイノホール",
-    "prefecture": "東京都",
-    "city": "千代田区",
-    "aliases": [
+    "searchAliases": [
       "IINO HALL"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
     "venueType": "hall",
     "representativePatternName": "通常座席",
     "seatCount": 500,
@@ -43,12 +46,13 @@
   {
     "id": "kioi-small-hall-standard",
     "name": "日本製鉄紀尾井小ホール",
-    "prefecture": "東京都",
-    "city": "千代田区",
-    "aliases": [
+    "searchAliases": [
       "Kioi Small Hall",
       "紀尾井小ホール"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
     "venueType": "theater",
     "representativePatternName": "通常座席",
     "seatCount": 250,
@@ -57,12 +61,13 @@
   {
     "id": "kyocera-dome-osaka-standard-baseball",
     "name": "京セラドーム大阪",
-    "prefecture": "大阪府",
-    "city": "大阪市西区",
-    "aliases": [
+    "searchAliases": [
       "京セラドーム",
       "大阪ドーム"
     ],
+    "region": "関西",
+    "prefecture": "大阪府",
+    "municipality": "大阪市西区",
     "venueType": "dome",
     "representativePatternName": "通常野球開催時 スタンド席",
     "seatCount": 34522,
@@ -71,11 +76,12 @@
   {
     "id": "national-bunraku-theatre-standard",
     "name": "国立文楽劇場",
-    "prefecture": "大阪府",
-    "city": "大阪市中央区",
-    "aliases": [
+    "searchAliases": [
       "国立文楽"
     ],
+    "region": "関西",
+    "prefecture": "大阪府",
+    "municipality": "大阪市中央区",
     "venueType": "theater",
     "representativePatternName": "文楽劇場 全席（標準）",
     "seatCount": 753,
@@ -84,12 +90,13 @@
   {
     "id": "oji-hall-standard",
     "name": "銀座 王子ホール",
-    "prefecture": "東京都",
-    "city": "中央区",
-    "aliases": [
+    "searchAliases": [
       "OJI HALL",
       "王子ホール"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
     "venueType": "hall",
     "representativePatternName": "通常座席",
     "seatCount": 315,
@@ -98,12 +105,13 @@
   {
     "id": "sumida-triphony-small-hall-standard",
     "name": "すみだトリフォニーホール 小ホール",
-    "prefecture": "東京都",
-    "city": "墨田区",
-    "aliases": [
+    "searchAliases": [
       "トリフォニーホール小ホール",
       "トリフォニー小ホール"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "墨田区",
     "venueType": "hall",
     "representativePatternName": "通常座席",
     "seatCount": 252,
@@ -112,12 +120,13 @@
   {
     "id": "suntory-blue-rose-a",
     "name": "サントリーホール ブルーローズ",
-    "prefecture": "東京都",
-    "city": "港区",
-    "aliases": [
+    "searchAliases": [
       "サントリー小ホール",
       "ブルーローズ"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "港区",
     "venueType": "hall",
     "representativePatternName": "シューボックス型・縦使いA型",
     "seatCount": 384,
@@ -126,12 +135,13 @@
   {
     "id": "tokyo-fm-hall-a-stage",
     "name": "TOKYO FMホール",
-    "prefecture": "東京都",
-    "city": "千代田区",
-    "aliases": [
+    "searchAliases": [
       "TFMホール",
       "東京FMホール"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
     "venueType": "hall",
     "representativePatternName": "Aステージ",
     "seatCount": 308,
@@ -140,12 +150,13 @@
   {
     "id": "tokyo-geigeki-theatre-east-pattern-a",
     "name": "東京芸術劇場 シアターイースト",
-    "prefecture": "東京都",
-    "city": "豊島区",
-    "aliases": [
+    "searchAliases": [
       "シアターイースト",
       "芸劇シアターイースト"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "豊島区",
     "venueType": "theater",
     "representativePatternName": "基本パターンA",
     "seatCount": 272,
@@ -154,11 +165,12 @@
   {
     "id": "toppan-hall-standard",
     "name": "TOPPANホール",
-    "prefecture": "東京都",
-    "city": "文京区",
-    "aliases": [
+    "searchAliases": [
       "トッパンホール"
     ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "文京区",
     "venueType": "hall",
     "representativePatternName": "通常座席",
     "seatCount": 408,

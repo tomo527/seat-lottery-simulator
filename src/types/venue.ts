@@ -3,9 +3,10 @@ export type VenueType = 'theater' | 'hall' | 'arena' | 'stadium' | 'dome'
 export type VenueCatalogEntry = {
   id: string
   name: string
+  searchAliases: string[]
+  region: string
   prefecture: string
-  city: string
-  aliases: string[]
+  municipality: string
   venueType: VenueType
   representativePatternName: string
   seatCount: number
