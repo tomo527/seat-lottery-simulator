@@ -1,7 +1,7 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
-import { DRAW_ANIMATION_DURATION_MS, REDUCED_MOTION_DRAW_DURATION_MS } from './domain/lottery/constants'
+import { DRAW_ANIMATION_DURATION_MS } from './domain/lottery/constants'
 import { prepareVenueSampler } from './domain/seats/rangeSampler'
 import type { VenueCatalogEntry } from './types/venue'
 
@@ -121,13 +121,15 @@ describe('App', () => {
     expect(screen.queryByText('300席から今日の1席を抽選します')).not.toBeInTheDocument()
   })
 
-  it('2,499msでは結果を出さず、2,500msで通知風のテキスト結果だけを表示する', async () => {
+  it('2,999msと3,199msでは結果を出さず、3,200msで通知風のテキスト結果だけを表示する', async () => {
     render(<App />)
     await chooseVenue()
     vi.useFakeTimers()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     expect(screen.getByRole('heading', { name: '抽選中……' })).toBeInTheDocument()
-    act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS - 1))
+    act(() => vi.advanceTimersByTime(2_999))
+    expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
+    act(() => vi.advanceTimersByTime(200))
     expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
     act(() => vi.advanceTimersByTime(1))
     expect(screen.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeInTheDocument()
@@ -138,7 +140,7 @@ describe('App', () => {
     expect(document.querySelector('svg')).not.toBeInTheDocument()
   })
 
-  it('reduced motionでは500ms後に結果を表示する', async () => {
+  it('reduced motionでも3,200ms待ってから結果を表示する', async () => {
     vi.spyOn(window, 'matchMedia').mockImplementation((query) => ({
       matches: query === '(prefers-reduced-motion: reduce)', media: query, onchange: null,
       addEventListener: vi.fn(), removeEventListener: vi.fn(), addListener: vi.fn(), removeListener: vi.fn(), dispatchEvent: vi.fn(),
@@ -147,10 +149,23 @@ describe('App', () => {
     await chooseVenue()
     vi.useFakeTimers()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
-    act(() => vi.advanceTimersByTime(REDUCED_MOTION_DRAW_DURATION_MS - 1))
+    act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS - 1))
     expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
     act(() => vi.advanceTimersByTime(1))
     expect(screen.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeInTheDocument()
+  })
+
+  it('抽選中は可愛い装飾を支援技術から隠し、進行状態を通知する', async () => {
+    render(<App />)
+    await chooseVenue()
+    vi.useFakeTimers()
+    fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
+    expect(screen.getByTestId('lottery-animation')).toBeInTheDocument()
+    expect(document.querySelector('.drawing-envelope')).toHaveAttribute('aria-hidden', 'true')
+    expect(document.querySelector('.drawing-sparkles')).toHaveAttribute('aria-hidden', 'true')
+    expect(document.querySelector('.ticket-numbers')).toHaveTextContent('A列12番')
+    expect(screen.getByRole('status')).toHaveTextContent('抽選中です。今日の席運を確認しています。')
+    expect(screen.getByRole('button', { name: '抽選中……' })).toBeDisabled()
   })
 
   it('抽選中の二重実行と、条件変更後の古いcallbackを拒否する', async () => {

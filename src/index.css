@@ -1,6 +1,20 @@
 @import "tailwindcss";
 
 :root {
+  --ink: #171332;
+  --muted: #68627e;
+  --paper: #ffffff;
+  --canvas: #f8f7ff;
+  --line: #dedbea;
+  --violet: #5140c7;
+  --violet-dark: #30237f;
+  --violet-pale: #eeebff;
+  --coral: #ff6b72;
+  --coral-pale: #fff0ef;
+  --mint: #35c5a6;
+  --mint-pale: #e8fbf6;
+  --yellow: #ffd45c;
+  --shadow: 0 24px 70px rgba(38, 27, 93, 0.12);
   font-family: Inter, "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif;
   color: #171332;
   background: #f8f7ff;
@@ -17,6 +31,10 @@ button, label, summary, select { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
 button:disabled { cursor: not-allowed; }
 a { color: inherit; }
+button:focus-visible, a:focus-visible, input[type="radio"]:focus-visible + span {
+  outline: 3px solid rgba(255, 107, 114, .55);
+  outline-offset: 3px;
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }

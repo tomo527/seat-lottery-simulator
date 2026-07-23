@@ -2,11 +2,13 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import { LotteryAnimation } from './components/lottery/LotteryAnimation'
 import { ResultCard } from './components/lottery/ResultCard'
+import { SiteFooter } from './components/layout/SiteFooter'
+import { SiteHeader } from './components/layout/SiteHeader'
 import { CustomSeatBuilder } from './components/venue/CustomSeatBuilder'
 import { VenueSelector } from './components/venue/VenueSelector'
 import { loadVenueSeatData } from './data/venue-db/loadVenue'
 import { venues } from './data/venues'
-import { DRAW_ANIMATION_DURATION_MS, REDUCED_MOTION_DRAW_DURATION_MS } from './domain/lottery/constants'
+import { DRAW_ANIMATION_DURATION_MS } from './domain/lottery/constants'
 import { drawSeat, formatSeatLabel } from './domain/lottery/lottery'
 import { generateCustomSeats, validateCustomSeatInput, type CustomSeatInput } from './domain/seats/customSeats'
 import { drawVenueSeat, type PreparedVenueSampler } from './domain/seats/rangeSampler'
@@ -154,13 +156,12 @@ function App() {
       setResult(null)
       setShareStatus('')
       setUserError('')
-      const duration = reducedMotion ? REDUCED_MOTION_DRAW_DURATION_MS : DRAW_ANIMATION_DURATION_MS
       timeoutRef.current = window.setTimeout(() => {
         if (drawSequenceRef.current !== drawSequence) return
         timeoutRef.current = null
         setResult(nextSeat)
         setPhase('result')
-      }, duration)
+      }, DRAW_ANIMATION_DURATION_MS)
     } catch (error) {
       console.error('Lottery could not be completed.', error)
       setUserError('抽選を完了できませんでした。入力内容を確認して、もう一度お試しください。')
@@ -194,12 +195,7 @@ function App() {
 
   return (
     <div className="app-shell">
-      <header className="site-header">
-        <a className="brand" href="/" aria-label="座席抽選シミュレーター トップ">
-          <span className="brand-mark" aria-hidden="true">★</span>
-          <span>座席抽選<br /><strong>シミュレーター</strong></span>
-        </a>
-      </header>
+      <SiteHeader />
 
       <main>
         <section className="hero-section">
@@ -259,11 +255,7 @@ function App() {
         </div>
       </main>
 
-      <footer>
-        <strong>座席抽選シミュレーター</strong>
-        <p>すべての結果はエンターテインメント目的の架空シミュレーションです。</p>
-        <span>NO REAL TICKET DATA · NO PREDICTIONS</span>
-      </footer>
+      <SiteFooter currentPath="/" />
     </div>
   )
 }
