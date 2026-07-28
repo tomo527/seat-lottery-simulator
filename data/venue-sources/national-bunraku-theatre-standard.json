@@ -23,12 +23,23 @@
   },
   "sources": [
     {
+      "id": "official-facility-outline",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
       "publisher": "独立行政法人 日本芸術文化振興会",
       "title": "国立文楽劇場施設の概要",
       "url": "https://www.ntj.jac.go.jp/bunraku/facilities/outline/",
       "checkedAt": "2026-07-20"
     },
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
       "publisher": "独立行政法人 日本芸術文化振興会",
       "title": "文楽劇場 詳細座席図",
       "url": "https://www.ntj.jac.go.jp/assets/files/bunraku/zaseki/zaseki_bunraku_1.pdf",
@@ -406,5 +417,13 @@
       "from": 1,
       "to": 4
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

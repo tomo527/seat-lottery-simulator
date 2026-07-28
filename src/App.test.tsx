@@ -1,9 +1,12 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import App from './App'
+import catalogJson from './data/venue-db/catalog.generated.json'
 import { DRAW_ANIMATION_DURATION_MS } from './domain/lottery/constants'
 import { prepareVenueSampler } from './domain/seats/rangeSampler'
 import type { VenueCatalogEntry } from './types/venue'
+
+const tokyoVenueCount = (catalogJson as VenueCatalogEntry[]).filter((venue) => venue.prefecture === '東京都').length
 
 const loadVenueSeatData = vi.hoisted(() => vi.fn())
 vi.mock('./data/venue-db/loadVenue', () => ({ loadVenueSeatData }))
@@ -31,12 +34,15 @@ afterEach(() => {
 const chooseVenue = async (name = 'Hakuju Hall') => {
   const trigger = screen.queryByRole('button', { name: '会場を選ぶ' }) ?? screen.getByRole('button', { name: '会場を変更' })
   fireEvent.click(trigger)
+  if (!screen.queryByRole('button', { name: `${name}を選ぶ` })) {
+    fireEvent.change(screen.getByLabelText('会場名で検索'), { target: { value: name } })
+  }
   fireEvent.click(screen.getByRole('button', { name: `${name}を選ぶ` }))
   await waitFor(() => expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled())
 }
 
 describe('App', () => {
-  it('初期表示では詳細を読まず、東京10会場を絞り込める', () => {
+  it('初期表示では詳細を読まず、全東京会場を絞り込める', () => {
     render(<App />)
     expect(screen.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeInTheDocument()
     expect(screen.getByText('まだ会場が選択されていません。')).toBeInTheDocument()
@@ -44,8 +50,8 @@ describe('App', () => {
     fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
     fireEvent.change(screen.getByLabelText('エリア'), { target: { value: '関東' } })
     fireEvent.change(screen.getByLabelText('都道府県'), { target: { value: '東京都' } })
-    expect(screen.getByText('絞り込み結果 10件')).toBeInTheDocument()
-    expect(screen.getByRole('list', { name: '会場の検索結果' }).querySelectorAll('button')).toHaveLength(10)
+    expect(screen.getByText(`絞り込み結果 ${tokyoVenueCount}件`)).toBeInTheDocument()
+    expect(screen.getByRole('list', { name: '会場の検索結果' }).querySelectorAll('button')).toHaveLength(Math.min(tokyoVenueCount, 20))
   })
 
   it('会場名・略称をNFKC正規化して検索し、所在地は対象にしない', () => {
@@ -111,6 +117,7 @@ describe('App', () => {
     fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
     fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
     fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
+    fireEvent.change(screen.getByLabelText('会場名で検索'), { target: { value: 'TOPPANホール' } })
     fireEvent.click(screen.getByRole('button', { name: 'TOPPANホールを選ぶ' }))
     const first = loadVenueSeatData.mock.calls[0][0] as VenueCatalogEntry
     const second = loadVenueSeatData.mock.calls[1][0] as VenueCatalogEntry
@@ -179,6 +186,7 @@ describe('App', () => {
     fireEvent.click(screen.getByRole('button', { name: '抽選中……' }))
     expect(setTimeoutSpy).toHaveBeenCalledTimes(count)
     fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
+    fireEvent.change(screen.getByLabelText('会場名で検索'), { target: { value: 'TOPPANホール' } })
     fireEvent.click(screen.getByRole('button', { name: 'TOPPANホールを選ぶ' }))
     act(staleCallback)
     expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()

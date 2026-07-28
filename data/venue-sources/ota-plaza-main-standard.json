@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "ota-plaza-main-standard",
+  "name": "大田区民プラザ 大ホール",
+  "prefecture": "東京都",
+  "city": "大田区",
+  "aliases": [
+    "大田区民プラザ大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-numbered-seats",
+    "name": "通常固定番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 509,
+    "selectionReason": "公式客席図が示す通常の番号付き客席509席を代表パターンとした。",
+    "notIncludedPatterns": [
+      "車椅子席2席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "公益財団法人大田区文化振興協会",
+      "title": "大田区民プラザ 大ホール客席図面",
+      "url": "https://www.ota-bunka.or.jp/files/3-Plaza_BHall-Zaseki.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": ["seat-count", "facility"],
+      "publisher": "公益財団法人大田区文化振興協会",
+      "title": "大田区民プラザ 大ホール",
+      "url": "https://www.ota-bunka.or.jp/facilities/plaza/halls/main_hall/main_hall01",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "公式客席図のA列からU列までの番号付き客席509席。",
+  "completenessBasis": "公式客席図の全列・番号を転記し、公式施設案内の固定番号席509席と照合した。",
+  "transformation": "各列の連続番号をrangeとして転記し、中央通路で分断されるU列は1番から9番と21番から29番の2rangeとした。",
+  "knownLimitations": [
+    "番号のない車椅子席2区画は抽選対象外。",
+    "I列は公式客席図に存在しない。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-26",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 7, "to": 23, "excluded": [] },
+    { "rowLabel": "B", "from": 6, "to": 24, "excluded": [] },
+    { "rowLabel": "C", "from": 5, "to": 25, "excluded": [] },
+    { "rowLabel": "D", "from": 4, "to": 26, "excluded": [] },
+    { "rowLabel": "E", "from": 4, "to": 26, "excluded": [] },
+    { "rowLabel": "F", "from": 4, "to": 26, "excluded": [] },
+    { "rowLabel": "G", "from": 4, "to": 26, "excluded": [] },
+    { "rowLabel": "H", "from": 4, "to": 26, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "Q", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "R", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "S", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "T", "from": 1, "to": 29, "excluded": [] },
+    { "rowLabel": "U", "from": 1, "to": 9, "excluded": [] },
+    { "rowLabel": "U", "from": 21, "to": 29, "excluded": [] }
+  ]
+}

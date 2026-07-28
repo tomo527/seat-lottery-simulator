@@ -20,12 +20,24 @@
   },
   "sources": [
     {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
       "publisher": "王子ホール",
       "title": "座席表",
       "url": "https://www.ojihall.jp/facility/seats.html",
       "checkedAt": "2026-07-20"
     },
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
       "publisher": "王子ホール",
       "title": "王子ホール座席表（315席）",
       "url": "https://www.ojihall.jp/rental/%E7%8E%8B%E5%AD%90%E3%83%9B%E3%83%BC%E3%83%AB%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf",
@@ -40,142 +52,127 @@
   ],
   "ranges": [
     {
-      "areaId": "main",
       "rowLabel": "A",
       "from": 1,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "C",
       "from": 1,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "E",
       "from": 1,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "G",
       "from": 1,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "I",
       "from": 1,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "B",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "B",
       "from": 18,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "D",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "D",
       "from": 18,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "F",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "F",
       "from": 18,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "H",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "H",
       "from": 18,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "J",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "J",
       "from": 18,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "K",
       "from": 2,
       "to": 21
     },
     {
-      "areaId": "main",
       "rowLabel": "L",
       "from": 2,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "L",
       "from": 18,
       "to": 21
     },
     {
-      "areaId": "main",
       "rowLabel": "M",
       "from": 3,
       "to": 20
     },
     {
-      "areaId": "main",
       "rowLabel": "N",
       "from": 3,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "N",
       "from": 18,
       "to": 20
     },
     {
-      "areaId": "main",
       "rowLabel": "O",
       "from": 4,
       "to": 19
     },
     {
-      "areaId": "main",
       "rowLabel": "P",
       "from": 7,
       "to": 16
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

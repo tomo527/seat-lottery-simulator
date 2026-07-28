@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "koganei-miyaji-main-standard",
+  "name": "小金井 宮地楽器ホール 大ホール",
+  "prefecture": "東京都",
+  "city": "小金井市",
+  "aliases": [
+    "小金井宮地楽器ホール 大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-seating",
+    "name": "通常客席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設案内の通常客席569席を候補とする。",
+    "notIncludedPatterns": [
+      "車椅子スペースへ座席を設置した578席配置",
+      "1階1列・2列を撤去した配置"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "小金井 宮地楽器ホール",
+      "title": "大ホール客席案内図",
+      "url": "https://koganei-civic-center.jp/common2025/pdf/mainhall_03.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "小金井 宮地楽器ホール",
+      "title": "大ホール",
+      "url": "https://koganei-civic-center.jp/facilities/mainhall.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "公式の通常客席569席を予定。",
+  "completenessBasis": "公式施設案内と客席図を確認済み。車椅子スペースと着脱可能番号席の標準状態を照合中。",
+  "transformation": "通常配置で実在する番号付き座席だけを階別rangeへ転記する予定。",
+  "knownLimitations": [
+    "車椅子スペースへ座席を設ける場合は578席となる。",
+    "1階1列と2列は全撤去可能。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "通常569席配置で外れる番号席と側面席の全range転記が未完了。",
+      "公式座席図の各ブロックを拡大確認し、569席となる番号集合を転記する。"
+    ]
+  },
+  "ranges": []
+}

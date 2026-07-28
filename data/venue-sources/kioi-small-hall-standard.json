@@ -20,6 +20,13 @@
   },
   "sources": [
     {
+      "id": "official-rules-and-seat-map",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-structure",
+        "seat-count"
+      ],
       "publisher": "公益財団法人 日本製鉄文化財団",
       "title": "日本製鉄紀尾井小ホール 使用規程・座席表",
       "url": "https://kioihall.jp/cms/wp-content/themes/kioihall/file/rent_hall/s_hall/kioihall_s_all.pdf?251223_2=",
@@ -34,202 +41,177 @@
   ],
   "ranges": [
     {
-      "areaId": "main",
       "rowLabel": "1",
       "from": 3,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "1",
       "from": 7,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "1",
       "from": 19,
       "to": 22
     },
     {
-      "areaId": "main",
       "rowLabel": "2",
       "from": 1,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "2",
       "from": 7,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "2",
       "from": 19,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "3",
       "from": 1,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "3",
       "from": 7,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "3",
       "from": 19,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "4",
       "from": 1,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "4",
       "from": 7,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "4",
       "from": 19,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "5",
       "from": 1,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "5",
       "from": 7,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "5",
       "from": 19,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "6",
       "from": 1,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "6",
       "from": 7,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "6",
       "from": 19,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "7",
       "from": 1,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "7",
       "from": 7,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "7",
       "from": 19,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "8",
       "from": 1,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "8",
       "from": 7,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "8",
       "from": 19,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "9",
       "from": 1,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "9",
       "from": 7,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "9",
       "from": 19,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "10",
       "from": 1,
       "to": 6
     },
     {
-      "areaId": "main",
       "rowLabel": "10",
       "from": 7,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "10",
       "from": 19,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "11",
       "from": 1,
       "to": 4
     },
     {
-      "areaId": "main",
       "rowLabel": "11",
       "from": 7,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "11",
       "from": 21,
       "to": 24
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

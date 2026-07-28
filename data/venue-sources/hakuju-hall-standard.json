@@ -20,12 +20,23 @@
   },
   "sources": [
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
       "publisher": "株式会社 白寿生科学研究所",
       "title": "Hakuju Hall 座席表〈通常公演〉",
       "url": "https://www.hakujuhall.jp/hall_info/pdf/seat_normal.pdf?2024=",
       "checkedAt": "2026-07-20"
     },
     {
+      "id": "official-use-rules",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
       "publisher": "株式会社 白寿生科学研究所",
       "title": "Hakuju Hall 使用規定",
       "url": "https://www.hakujuhall.jp/rental/pdf/rule.pdf?202408=",
@@ -40,106 +51,97 @@
   ],
   "ranges": [
     {
-      "areaId": "main",
       "rowLabel": "A",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "B",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "C",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "D",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "E",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "G",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "I",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "K",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "M",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "O",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "Q",
       "from": 1,
       "to": 18
     },
     {
-      "areaId": "main",
       "rowLabel": "F",
       "from": 1,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "H",
       "from": 1,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "J",
       "from": 1,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "L",
       "from": 1,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "N",
       "from": 1,
       "to": 17
     },
     {
-      "areaId": "main",
       "rowLabel": "P",
       "from": 1,
       "to": 17
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

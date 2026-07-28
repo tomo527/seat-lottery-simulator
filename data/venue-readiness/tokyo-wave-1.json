@@ -1,0 +1,217 @@
+{
+  "reportVersion": 1,
+  "baselineDate": "2026-07-27",
+  "scope": "作業開始時点でdraftだった30 sourceのreadiness",
+  "venues": [
+    {
+      "venueId": "asakusa-public-hall-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "curian-main-standard",
+      "readiness": "R4",
+      "secondPass": "mismatch",
+      "blocker": "公式座席図の番号席1,084席と公式公称1,074席が10席不一致。",
+      "nextAction": "差の10席を説明する公式資料が公開された場合に全rangeを再照合する。"
+    },
+    {
+      "venueId": "ebara-culture-main-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "fuchu-dream-hall-standard",
+      "readiness": "R4",
+      "secondPass": "mismatch",
+      "blocker": "公式座席図の1階表示番号が公式階別小計より1席多い。",
+      "nextAction": "除外対象の1番号を示す公式資料を確認後、第1・第2パスをやり直す。"
+    },
+    {
+      "venueId": "hitomi-memorial-hall-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "公式座席表の全range転記が未完了。",
+      "nextAction": "1階・2階の全列と欠番を転記し、公称席数と照合する。"
+    },
+    {
+      "venueId": "itabashi-culture-main-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "jcom-hall-hachioji-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "側面列、車椅子転換席、可倒席を含む固定席1,869席の全range独立照合が未完了。",
+      "nextAction": "通常配置PDFだけから階・側面列を再抽出し、音響反射板配置と混在していないことを確認する。"
+    },
+    {
+      "venueId": "kabukiza-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "花道と販売停止席を含む通常配置の代表集合が未確定。",
+      "nextAction": "公式座席表で花道使用時と不使用時の固定番号席差分を確定する。"
+    },
+    {
+      "venueId": "koganei-miyaji-main-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "通常569席配置で外れる番号席と側面席の全range転記が未完了。",
+      "nextAction": "公式座席図の各ブロックを拡大確認し、569席となる番号集合を転記する。"
+    },
+    {
+      "venueId": "line-cube-shibuya-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "多目的鑑賞4席と車椅子転換26席を通常抽選集合へ含める方針が未解決。",
+      "nextAction": "公式座席表の1,956席内訳と転換時に外れる26番号を施設資料で確認する。"
+    },
+    {
+      "venueId": "meijiza-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "花道あり・なしの複数配置から代表パターンを一意に確定できていない。",
+      "nextAction": "公式が通常配置として扱う座席表と総席数を特定する。"
+    },
+    {
+      "venueId": "mitaka-public-light-hall-standard",
+      "readiness": "R4",
+      "secondPass": "mismatch",
+      "blocker": "独立抽出は番号席713席と非番号車椅子6区画で公称719席に一致するが、既存第1パスrangeは719席で6席多い。",
+      "nextAction": "公式座席図から全rangeを再転記し、第1パスの過剰6席を特定してから再度独立比較する。"
+    },
+    {
+      "venueId": "musashino-civic-main-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "左右側面ブロックと中央ブロックの同一列統合を含む全range転記が未完了。",
+      "nextAction": "公式PDFから中央・左右を別抽出し、階別小計と照合する。"
+    },
+    {
+      "venueId": "musashino-civic-small-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "national-noh-theatre-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "正面・脇正面・中正面の全番号転記と総席数照合が未完了。",
+      "nextAction": "公式座席図を3 areaに分けて独立転記する。"
+    },
+    {
+      "venueId": "nerima-culture-main-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "nhk-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "固定席、可動席、車椅子転換席の境界を公式資料だけで確定していない。",
+      "nextAction": "通常配置の階別番号席と転換対象番号を公式資料で特定する。"
+    },
+    {
+      "venueId": "nissay-theatre-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "1階・2階の全番号転記と公式総席数の独立照合が未完了。",
+      "nextAction": "左右ボックス席を含む全rangeを公式座席図から再抽出する。"
+    },
+    {
+      "venueId": "nntt-opera-palace-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "複数階・ボックス席・オーケストラピット使用時の集合差分が未確定。",
+      "nextAction": "基本配置の公式座席表と階別総数を固定してから全rangeを入力する。"
+    },
+    {
+      "venueId": "ota-aprico-main-standard",
+      "readiness": "R5",
+      "secondPass": "not-started",
+      "blocker": "改修中または改修後座席構成の現行性を確認できない。",
+      "nextAction": "公式再開後に改修後座席表と公演実施を確認する。"
+    },
+    {
+      "venueId": "parthenon-tama-main-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "sunpearl-arakawa-main-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "可動席を含む全rangeと通常配置総席数の照合が未完了。",
+      "nextAction": "公式座席表から可動席範囲を区別して全列を転記する。"
+    },
+    {
+      "venueId": "theatre-1010-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "複数階と可動席の全range転記が未完了。",
+      "nextAction": "通常舞台配置の公式座席図だけから全rangeを再抽出する。"
+    },
+    {
+      "venueId": "tokyo-geigeki-concert-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "サイド席・複数階を含む全rangeが未転記で、改修後再開前。",
+      "nextAction": "公式再開後に現行座席表を確認し、サイド席の番号方向を独立照合する。"
+    },
+    {
+      "venueId": "tokyo-geigeki-playhouse-standard",
+      "readiness": "R5",
+      "secondPass": "in-progress",
+      "blocker": "設備更新工事による休館中で、2026年7月27日時点で再開未確認。",
+      "nextAction": "2026年9月以降に公式の再開と公演実施を確認して再レビューする。"
+    },
+    {
+      "venueId": "tokyo-international-forum-hall-a-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "5,000席の複数階・オーケストラピット差分を含む全range転記が未完了。",
+      "nextAction": "通常5,000席配置を公式資料から階別に独立抽出する。"
+    },
+    {
+      "venueId": "tokyo-international-forum-hall-c-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "1階17列6～8番が非常設で、最大1,502席との包含関係が未解決。",
+      "nextAction": "常設番号席だけの総数を示す公式資料を確認して代表集合を確定する。"
+    },
+    {
+      "venueId": "tokyo-tatemono-brillia-hall-standard",
+      "readiness": "R3",
+      "secondPass": "in-progress",
+      "blocker": "車椅子スペース15席と座席装着時番号席の集合が公称1,248席と一致するか未解決。",
+      "nextAction": "座席装着時の番号と階別小計を公式運用資料で確認する。"
+    },
+    {
+      "venueId": "tower-hall-funabori-main-standard",
+      "readiness": "R4",
+      "secondPass": "mismatch",
+      "blocker": "公式座席図の表示番号753席と公式公称750席が3席不一致。",
+      "nextAction": "恒常的に外す3番号を示す公式資料が公開された場合に再照合する。"
+    },
+    {
+      "venueId": "yurakucho-asahi-hall-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    }
+  ]
+}

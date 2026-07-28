@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-international-forum-hall-a-standard",
+  "name": "東京国際フォーラム ホールA",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [
+    "東京国際フォーラムA"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "fixed-seats-only",
+    "name": "通常固定席のみ",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席案内の最大5012席から非常設の車椅子転用位置12席を除く固定番号席5000席を代表候補とする。",
+    "notIncludedPatterns": [
+      "1階21列1番から6番および62番から67番の非常設12席",
+      "オーケストラピット使用時"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-guide",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "株式会社東京国際フォーラム",
+      "title": "ホールA座席表",
+      "url": "https://www.t-i-forum.co.jp/visitors/facilities/a/seat/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常配置の固定番号席5000席を予定。",
+  "completenessBasis": "公式座席案内で最大5012席、オーケストラピット時4913席、非常設12席を確認済み。固定席rangeを転記中。",
+  "transformation": "1階・2階をareaに分け、非常設12席を除いてrangeへ転記する予定。",
+  "knownLimitations": [
+    "最大席数5012席には車椅子利用時に外す非常設12席が含まれる。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "5,000席の複数階・オーケストラピット差分を含む全range転記が未完了。",
+      "通常5,000席配置を公式資料から階別に独立抽出する。"
+    ]
+  },
+  "ranges": []
+}

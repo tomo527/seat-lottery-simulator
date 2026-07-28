@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "yurakucho-asahi-hall-standard",
+  "name": "有楽町朝日ホール",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [
+    "有楽町朝日ホール Aタイプ"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "type-a-standard",
+    "name": "Aタイプ（通常タイプ）",
+    "coverage": "complete",
+    "expectedSeatCount": 636,
+    "selectionReason": "公式が通常タイプと明示する舞台奥行7mのAタイプ636席を代表パターンとする。",
+    "notIncludedPatterns": [
+      "Bタイプ772席",
+      "朝日名人会タイプ714席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "有楽町朝日ホール",
+      "title": "Aタイプ座席表",
+      "url": "https://www.asahi-hall.jp/yurakucho/hall/pdf/hall_a.pdf",
+      "checkedAt": "2026-07-27"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "有楽町朝日ホール",
+      "title": "座席表・タイプ案内",
+      "url": "https://www.asahi-hall.jp/yurakucho/hall/zaseki.html",
+      "checkedAt": "2026-07-27"
+    }
+  ],
+  "registeredScope": "通常AタイプのA列からU列までの番号付き固定席636席。",
+  "completenessBasis": "公式Aタイプ座席表の全番号を列別に独立再抽出し、A列からE列148席、F列からK列168席、L列からU列320席の合計636席を公式公称と照合した。",
+  "transformation": "公式座席表の連続番号を列別rangeへ転記し、公式に欠番と明記されたB22・D22は分断rangeで表現した。",
+  "knownLimitations": [
+    "可動席を含むBタイプと朝日名人会タイプは対象外。",
+    "E2・E3・E30・E31は固定席を取り外して車椅子スペースへ変更できるが、通常Aタイプでは番号付き固定席として含める。",
+    "F2・F31の車椅子位置と赤点線部へ設置可能な可動いす16席は通常Aタイプ636席の抽選対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-27",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 2, "to": 31, "excluded": [] },
+    { "rowLabel": "B", "from": 2, "to": 21, "excluded": [] },
+    { "rowLabel": "B", "from": 23, "to": 31, "excluded": [] },
+    { "rowLabel": "C", "from": 2, "to": 31, "excluded": [] },
+    { "rowLabel": "D", "from": 2, "to": 21, "excluded": [] },
+    { "rowLabel": "D", "from": 23, "to": 31, "excluded": [] },
+    { "rowLabel": "E", "from": 2, "to": 31, "excluded": [] },
+    { "rowLabel": "F", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "G", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "H", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "I", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "J", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "K", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "Q", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "R", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "S", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "T", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "U", "from": 1, "to": 32, "excluded": [] }
+  ]
+}

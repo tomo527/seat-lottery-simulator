@@ -23,12 +23,25 @@
   },
   "sources": [
     {
+      "id": "official-seat-search",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
       "publisher": "株式会社大阪シティドーム",
       "title": "京セラドーム大阪 座席検索",
       "url": "https://www.kyoceradome-osaka.jp/seat/index.php",
       "checkedAt": "2026-07-20"
     },
     {
+      "id": "official-seat-data",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
       "publisher": "株式会社大阪シティドーム",
       "title": "京セラドーム大阪 公式座席検索データ",
       "url": "https://www.kyoceradome-osaka.jp/app/_src/data.json",
@@ -24654,5 +24667,13 @@
       "from": 126,
       "to": 130
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "katsushika-symphony-mozart-standard",
+  "name": "かつしかシンフォニーヒルズ モーツァルトホール",
+  "prefecture": "東京都",
+  "city": "葛飾区",
+  "aliases": [
+    "モーツァルトホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-full-seating",
+    "name": "通常客席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 1318,
+    "selectionReason": "公式施設案内が通常定員として示す1階席770席と2階席548席の全番号席を代表パターンとした。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時1178席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "モーツァルトホール座席表",
+      "url": "https://www.k-mil.gr.jp/institution/symphony/mz_seat.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "シンフォニーヒルズについて",
+      "url": "https://www.k-mil.gr.jp/institution/symphony/index.html",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-stage-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "モーツァルトホール舞台資料",
+      "url": "https://www.k-mil.gr.jp/institution/symphony/pdf_202506/mz_stage.pdf",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常配置の1階席770席、2階中央固定席404席、左右バルコニー各72席。",
+  "completenessBasis": "公式座席表の全番号を転記し、公式施設案内の階別内訳770席と548席および総席数1318席に照合した。",
+  "transformation": "階と左右バルコニーをareaに分け、各列の最小番号から最大番号をrangeとして転記した。2階12列の欠番12番と24番はexcludedに記録した。",
+  "knownLimitations": [
+    "1階1列から3列はオーケストラピット使用時に客席として利用しないが、通常配置では番号付き客席として登録した。",
+    "1階8列1番から4番および32番から35番は取外し可能席だが、通常配置1318席に含まれるため登録した。",
+    "ファミリールームは座席番号が示されていないため登録対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-26",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "1", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "2", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "3", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "4", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "5", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "6", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "7", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "8", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "9", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "10", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "11", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "12", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "13", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "14", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "15", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "16", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "17", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "18", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "19", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "20", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "21", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "22", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "1", "from": 2, "to": 34, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "2", "from": 2, "to": 34, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "3", "from": 2, "to": 34, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "4", "from": 2, "to": 34, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "5", "from": 2, "to": 34, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "6", "from": 2, "to": 34, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "7", "from": 2, "to": 34, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "8", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "9", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "10", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "11", "from": 1, "to": 35, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "12", "from": 1, "to": 35, "excluded": [12, 24] },
+    { "areaId": "left-balcony", "areaLabel": "L席（バルコニー）", "rowLabel": "1", "from": 1, "to": 38, "excluded": [] },
+    { "areaId": "left-balcony", "areaLabel": "L席（バルコニー）", "rowLabel": "2", "from": 1, "to": 34, "excluded": [] },
+    { "areaId": "right-balcony", "areaLabel": "R席（バルコニー）", "rowLabel": "1", "from": 1, "to": 38, "excluded": [] },
+    { "areaId": "right-balcony", "areaLabel": "R席（バルコニー）", "rowLabel": "2", "from": 1, "to": 34, "excluded": [] }
+  ]
+}

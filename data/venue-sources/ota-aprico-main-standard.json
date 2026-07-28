@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "ota-aprico-main-standard",
+  "name": "大田区民ホール・アプリコ 大ホール",
+  "prefecture": "東京都",
+  "city": "大田区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "",
+    "name": "",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "",
+    "notIncludedPatterns": []
+  },
+  "sources": [],
+  "registeredScope": "",
+  "completenessBasis": "",
+  "transformation": "",
+  "knownLimitations": [],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "改修中または改修後座席構成の現行性を確認できない。",
+      "公式再開後に改修後座席表と公演実施を確認する。"
+    ]
+  },
+  "ranges": []
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "musashino-civic-main-standard",
+  "name": "武蔵野市民文化会館 大ホール",
+  "prefecture": "東京都",
+  "city": "武蔵野市",
+  "aliases": [
+    "武蔵野市民文化会館大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設案内の通常利用時固定席1252席を候補とする。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時1097席",
+      "仮設舞台階段使用時1225席",
+      "車椅子席4席",
+      "親子席16席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人武蔵野文化生涯学習事業団",
+      "title": "大ホール座席表",
+      "url": "https://www.musashino.or.jp/_res/projects/default_project/_page_/001/002/099/dai_hall.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "公益財団法人武蔵野文化生涯学習事業団",
+      "title": "武蔵野市民文化会館 大ホール",
+      "url": "https://www.musashino.or.jp/bunka/1002094/1002099.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常利用時の1階固定席912席と2階固定席340席を予定。",
+  "completenessBasis": "公式座席表と階別固定席数を確認済み。側面ブロックを含む全rangeの転記を継続中。",
+  "transformation": "階別にareaを分け、同一列内の分断された番号帯を明示rangeとして転記する予定。",
+  "knownLimitations": [
+    "オーケストラピットと仮設舞台階段の使用時は前方席数が変わる。",
+    "車椅子席と親子席は固定番号席数1252席に含めない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "左右側面ブロックと中央ブロックの同一列統合を含む全range転記が未完了。",
+      "公式PDFから中央・左右を別抽出し、階別小計と照合する。"
+    ]
+  },
+  "ranges": []
+}

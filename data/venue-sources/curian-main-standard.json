@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "curian-main-standard",
+  "name": "きゅりあん 大ホール",
+  "prefecture": "東京都",
+  "city": "品川区",
+  "aliases": [
+    "きゅりあん大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設案内の番号付き椅子1074席を候補とする。",
+    "notIncludedPatterns": [
+      "車椅子席6席",
+      "母子席8席",
+      "立見席54席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人品川文化振興事業団",
+      "title": "きゅりあん大ホール座席表",
+      "url": "https://www.shinagawa-culture.or.jp/curian/facility/jk1h86000000065y-att/equipment-11.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "公益財団法人品川文化振興事業団",
+      "title": "きゅりあん施設案内",
+      "url": "https://www.shinagawa-culture.or.jp/curian/facility/guide/floors.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常配置の番号付き椅子を予定。",
+  "completenessBasis": "公式座席表の可視番号を転記したが、range計算1084席と公式椅子席1074席が10席一致しない。",
+  "transformation": "公式座席表で可視の連続番号を列ごとの明示rangeへ転記し、総数へ合わせる推測除外は行っていない。",
+  "knownLimitations": [
+    "番号のない車椅子席・母子席・立見席は対象外。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "mismatched",
+    "seatCount": "mismatched",
+    "unresolvedIssues": [
+      "公式座席図の番号席1,084席と公式公称1,074席が10席不一致。",
+      "差の10席を説明する公式資料が公開された場合に全rangeを再照合する。"
+    ]
+  },
+  "ranges": [
+    {
+      "rowLabel": "SA",
+      "from": 15,
+      "to": 32,
+      "excluded": []
+    },
+    {
+      "rowLabel": "SB",
+      "from": 14,
+      "to": 33,
+      "excluded": []
+    },
+    {
+      "rowLabel": "SC",
+      "from": 12,
+      "to": 35,
+      "excluded": []
+    },
+    {
+      "rowLabel": "SD",
+      "from": 11,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "rowLabel": "SE",
+      "from": 9,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "rowLabel": "SF",
+      "from": 8,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "rowLabel": "A",
+      "from": 11,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "rowLabel": "B",
+      "from": 6,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "rowLabel": "C",
+      "from": 4,
+      "to": 43,
+      "excluded": []
+    },
+    {
+      "rowLabel": "D",
+      "from": 4,
+      "to": 43,
+      "excluded": []
+    },
+    {
+      "rowLabel": "E",
+      "from": 4,
+      "to": 43,
+      "excluded": []
+    },
+    {
+      "rowLabel": "F",
+      "from": 3,
+      "to": 44,
+      "excluded": []
+    },
+    {
+      "rowLabel": "G",
+      "from": 3,
+      "to": 44,
+      "excluded": []
+    },
+    {
+      "rowLabel": "H",
+      "from": 3,
+      "to": 44,
+      "excluded": []
+    },
+    {
+      "rowLabel": "I",
+      "from": 3,
+      "to": 44,
+      "excluded": []
+    },
+    {
+      "rowLabel": "J",
+      "from": 6,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "rowLabel": "K",
+      "from": 6,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "rowLabel": "L",
+      "from": 6,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "rowLabel": "M",
+      "from": 6,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "rowLabel": "N",
+      "from": 6,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "rowLabel": "O",
+      "from": 1,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "rowLabel": "P",
+      "from": 1,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "rowLabel": "Q",
+      "from": 1,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "rowLabel": "R",
+      "from": 1,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "rowLabel": "S",
+      "from": 1,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "rowLabel": "T",
+      "from": 1,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "rowLabel": "U",
+      "from": 1,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "rowLabel": "V",
+      "from": 1,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "rowLabel": "W",
+      "from": 6,
+      "to": 41,
+      "excluded": []
+    }
+  ]
+}

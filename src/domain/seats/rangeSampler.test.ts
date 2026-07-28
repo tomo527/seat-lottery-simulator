@@ -23,5 +23,6 @@ describe('range-based venue sampler', () => {
     const large = prepareVenueSampler({ ...definition, ranges: [{ rowLabel: '1', from: 1, to: 50_000 }], totalSeatCount: 50_000 })
     expect(large.cumulativeCounts).toHaveLength(1)
     expect(large.totalSeatCount).toBe(50_000)
+    expect(seatAtOffset(large, venue, 0).sectionId).toBe('main')
   })
 })

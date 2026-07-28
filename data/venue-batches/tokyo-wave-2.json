@@ -1,0 +1,310 @@
+{
+  "batchId": "tokyo-wave-2",
+  "createdAt": "2026-07-26",
+  "scope": "Wave 1後の東京都候補。公式施設URLと概算席数があり、固定番号席・公式座席表・現役性を優先確認する50会場。",
+  "targetVenueIds": [
+    "tokyo-official-0658",
+    "tokyo-official-0370",
+    "tokyo-official-0234",
+    "tokyo-official-0306",
+    "tokyo-official-0537",
+    "tokyo-official-1065",
+    "tokyo-official-0760",
+    "tokyo-official-0546",
+    "tokyo-official-1121",
+    "tokyo-official-1150",
+    "tokyo-official-0849",
+    "tokyo-official-0106",
+    "tokyo-official-0557",
+    "tokyo-official-0285",
+    "tokyo-official-0002",
+    "tokyo-official-0025",
+    "tokyo-official-0706",
+    "tokyo-official-1193",
+    "tokyo-official-1197",
+    "tokyo-official-0369",
+    "tokyo-official-0934",
+    "tokyo-official-0411",
+    "tokyo-official-1161",
+    "tokyo-official-1057",
+    "tokyo-official-0973",
+    "tokyo-official-0974",
+    "tokyo-official-0034",
+    "tokyo-official-0880",
+    "tokyo-official-1146",
+    "tokyo-official-0392",
+    "tokyo-official-0267",
+    "tokyo-official-0446",
+    "tokyo-official-0707",
+    "tokyo-official-0439",
+    "tokyo-official-1027",
+    "tokyo-official-0304",
+    "tokyo-official-0090",
+    "tokyo-official-0916",
+    "tokyo-official-0852",
+    "tokyo-official-0047",
+    "tokyo-official-0323",
+    "tokyo-official-0340",
+    "tokyo-official-0414",
+    "tokyo-official-0977",
+    "tokyo-official-1066",
+    "tokyo-official-1096",
+    "tokyo-official-0874",
+    "tokyo-official-0876",
+    "tokyo-official-1198",
+    "tokyo-official-1151"
+  ],
+  "status": "in-progress",
+  "fastTrackAssessments": [
+    {
+      "inventoryId": "tokyo-official-0658",
+      "assessment": "draft-created",
+      "result": "公式座席表は3階全体とPDFを公開している。1,972席の階別内訳、車椅子席、舞台都合の販売停止席をPDFから全range転記する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0370",
+      "assessment": "draft-created",
+      "result": "公式資料を記録したdraft sourceを作成。全range転記と独立照合待ち。"
+    },
+    {
+      "inventoryId": "tokyo-official-0234",
+      "assessment": "blocked",
+      "result": "2026年10月の再開前で改修後の現行座席構成を確認できない。再開後、公式座席表と公称席数の更新を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0306",
+      "assessment": "draft-created",
+      "result": "公式資料を記録したdraft sourceを作成。全range転記と独立照合待ち。"
+    },
+    {
+      "inventoryId": "tokyo-official-0537",
+      "assessment": "blocked",
+      "result": "公式施設ページは最大1,570席を示すが、全列・全番号を判読できる公式座席表を公開していない。座席表公開時に再確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-1065",
+      "assessment": "draft-created",
+      "result": "公式資料を記録したdraft sourceを作成。全range転記と独立照合待ち。"
+    },
+    {
+      "inventoryId": "tokyo-official-0760",
+      "assessment": "draft-created",
+      "result": "公式資料を記録したdraft sourceを作成。全range転記と独立照合待ち。"
+    },
+    {
+      "inventoryId": "tokyo-official-0546",
+      "assessment": "blocked",
+      "result": "大学公式サイトで講堂の利用は確認できるが、全列・全番号と総席数を同時に裏付ける公開公式資料を確認できない。"
+    },
+    {
+      "inventoryId": "tokyo-official-1121",
+      "assessment": "draft-created",
+      "result": "公式資料を記録したdraft sourceを作成。全range転記と独立照合待ち。"
+    },
+    {
+      "inventoryId": "tokyo-official-1150",
+      "assessment": "production",
+      "result": "公式通常座席表の番号席1,058席を二度独立抽出し一致。A～C列の番号付き移動可能席を含め、非番号車椅子区画4を除外してproduction化。"
+    },
+    {
+      "inventoryId": "tokyo-official-0849",
+      "assessment": "blocked",
+      "result": "大学公式ページは1,005席を示すが、一般に再確認可能な全番号付き公式座席表を確認できない。公開資料追加時に再確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0106",
+      "assessment": "blocked",
+      "result": "公式案内はシアター形式等のイベント別可変レイアウトを示し、固定番号席の単一代表パターンを定義できない。"
+    },
+    {
+      "inventoryId": "tokyo-official-0557",
+      "assessment": "draft-created",
+      "result": "公式座席表から933席の全列・全番号を転記し、車椅子スペースが公称席数へ含まれるか確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0285",
+      "assessment": "draft-created",
+      "result": "公式座席表から907席の1～3階全rangeを転記し、車椅子スペースと公演別販売停止席を固定番号席から分離する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0002",
+      "assessment": "draft-created",
+      "result": "公式施設資料の802席と座席表について、前方可動席と車椅子対応時に外す席を通常配置として確定し全rangeを転記する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0025",
+      "assessment": "blocked",
+      "result": "2026年12月まで設備工事に伴う休館中である。2027年1月以降の公式再開と改修後座席表の不変を確認するまでproduction化しない。"
+    },
+    {
+      "inventoryId": "tokyo-official-0706",
+      "assessment": "draft-created",
+      "result": "公式施設資料の758席について、客席図の全番号と車椅子対応席・可動席の通常配置を照合する。"
+    },
+    {
+      "inventoryId": "tokyo-official-1193",
+      "assessment": "production",
+      "result": "公式通常座席表の番号席700席を二度独立抽出し一致。非番号車椅子区画2を除外してproduction化。"
+    },
+    {
+      "inventoryId": "tokyo-official-1197",
+      "assessment": "production",
+      "result": "公式固定番号席を独立照合済み。"
+    },
+    {
+      "inventoryId": "tokyo-official-0369",
+      "assessment": "draft-created",
+      "result": "公式資料を記録したdraft sourceを作成。全range転記と独立照合待ち。"
+    },
+    {
+      "inventoryId": "tokyo-official-0934",
+      "assessment": "production",
+      "result": "公式通常座席表の番号席543席を二度独立抽出し一致。非番号車椅子スペース4区画を除外してproduction化。"
+    },
+    {
+      "inventoryId": "tokyo-official-0411",
+      "assessment": "draft-created",
+      "result": "公式資料を記録したdraft sourceを作成。全range転記と独立照合待ち。"
+    },
+    {
+      "inventoryId": "tokyo-official-1161",
+      "assessment": "blocked",
+      "result": "公式PDFは印字総数508席、図上番号位置510席、通常車椅子席として取り外す注記12席で全体関係が一致しない。通常配置の公式な番号集合が明示されるまで推測せず保留する。"
+    },
+    {
+      "inventoryId": "tokyo-official-1057",
+      "assessment": "draft-created",
+      "result": "公式資料を記録したdraft sourceを作成。全range転記と独立照合待ち。"
+    },
+    {
+      "inventoryId": "tokyo-official-0973",
+      "assessment": "draft-created",
+      "result": "公式資料を記録したdraft sourceを作成。全range転記と独立照合待ち。"
+    },
+    {
+      "inventoryId": "tokyo-official-0974",
+      "assessment": "draft-created",
+      "result": "公式施設ページに掲載される501席のうち、固定番号席の全列・番号と車椅子利用時の転換席を座席図で確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0034",
+      "assessment": "draft-created",
+      "result": "公式座席表から420席の全rangeを転記し、前方席または舞台拡張時に外す席が標準配置へ含まれるか確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0880",
+      "assessment": "draft-created",
+      "result": "公式施設図面から402席の全列・全番号を転記し、車椅子席と可動席の公称席数への包含を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-1146",
+      "assessment": "draft-created",
+      "result": "公式座席資料から402席の全rangeを転記し、舞台張出し・車椅子利用時に取り外す席を通常固定席配置と区別する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0392",
+      "assessment": "draft-created",
+      "result": "公式座席表の400席について全rangeを転記し、車椅子スペース利用時の取り外し席を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0267",
+      "assessment": "draft-created",
+      "result": "公式座席表から394席の全列・全番号を転記し、車椅子対応席と公称席数の関係を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0446",
+      "assessment": "draft-created",
+      "result": "公式客席案内から385席の正面・中正面・脇正面のarea、列、番号方向を独立抽出し、補助席を除外する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0707",
+      "assessment": "draft-created",
+      "result": "公式施設資料の384席について全番号を確認し、可動席または舞台形式による席数変動がない標準配置を確定する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0439",
+      "assessment": "draft-created",
+      "result": "公式座席表から368席の全rangeを転記し、車椅子スペース利用時に外す席と通常配置を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-1027",
+      "assessment": "draft-created",
+      "result": "公式座席表から350席の全列・全番号を転記し、車椅子用可動席と公称席数の関係を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0304",
+      "assessment": "draft-created",
+      "result": "公式座席表から325固定席と可動席16席の番号体系を確認し、通常配置341席の全rangeを転記する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0090",
+      "assessment": "draft-created",
+      "result": "公式座席表から333席の1・2階全rangeを転記し、車椅子利用時に取り外す固定席を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0916",
+      "assessment": "draft-created",
+      "result": "公式座席表から306席の全rangeを転記し、車椅子対応時の取り外し席を通常配置へ含めるか確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0852",
+      "assessment": "draft-created",
+      "result": "公式座席表から301席の全列・全番号を転記し、車椅子スペースと張出舞台使用時の販売停止席を区別する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0047",
+      "assessment": "blocked",
+      "result": "旧国立演芸場は2023年10月に閉場し、建替え中である。新施設開場後の座席資料公開まで再登録しない。"
+    },
+    {
+      "inventoryId": "tokyo-official-0323",
+      "assessment": "draft-created",
+      "result": "公式施設資料の300席について、固定番号が記載された現行座席表を取得し全rangeを確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0340",
+      "assessment": "draft-created",
+      "result": "公式座席表から300席の全rangeを転記し、車椅子対応席および舞台拡張時の取り外し席を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0414",
+      "assessment": "draft-created",
+      "result": "公式座席表から300席の全rangeを転記し、ロールバックチェア等の可動席が通常配置へ含まれるか確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0977",
+      "assessment": "draft-created",
+      "result": "公式施設資料の300席について、固定番号付き座席表の公開有無と車椅子対応席を追加確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-1066",
+      "assessment": "draft-created",
+      "result": "公式座席資料から300席の全列・全番号を転記し、平土間転換の有無と通常固定席配置を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-1096",
+      "assessment": "draft-created",
+      "result": "公式座席表から300席の全rangeを転記し、可動席・車椅子席の公称席数への包含を確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-0874",
+      "assessment": "blocked",
+      "result": "ドームホールは平土間の多目的空間で、固定番号席による単一代表パターンを定義できない。"
+    },
+    {
+      "inventoryId": "tokyo-official-0876",
+      "assessment": "blocked",
+      "result": "スカイホールは可動椅子による多目的配置で、固定番号席による単一代表パターンを定義できない。"
+    },
+    {
+      "inventoryId": "tokyo-official-1198",
+      "assessment": "draft-created",
+      "result": "公式施設資料の250席について、平土間転換可能な座席の番号体系と通常配置を座席図から確認する。"
+    },
+    {
+      "inventoryId": "tokyo-official-1151",
+      "assessment": "draft-created",
+      "result": "公式施設資料の260席について、固定席か可動椅子配置かを確認し、番号付き標準配置を一意に定義できる場合のみrangeを入力する。"
+    }
+  ]
+}

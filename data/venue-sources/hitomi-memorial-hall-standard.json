@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "hitomi-memorial-hall-standard",
+  "name": "昭和女子大学 人見記念講堂",
+  "prefecture": "東京都",
+  "city": "世田谷区",
+  "aliases": [
+    "人見記念講堂"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席案内の通常配置2070席を候補とする。",
+    "notIncludedPatterns": [
+      "車椅子兼用席6席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "昭和女子大学",
+      "title": "人見記念講堂座席表",
+      "url": "https://hall.swu.ac.jp/albums/abm.php?d=1496&f=abm00030159.pdf&n=%E4%BA%BA%E8%A6%8B%E8%A8%98%E5%BF%B5%E8%AC%9B%E5%A0%82%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "昭和女子大学",
+      "title": "人見記念講堂座席案内",
+      "url": "https://hall.swu.ac.jp/seat.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "1階1538席・2階532席の番号付き座席を予定。",
+  "completenessBasis": "公式座席表と階別合計2070席を確認済み。全rangeを独立照合する。",
+  "transformation": "公式座席表のarea・列・番号を明示rangeへ転記する予定。",
+  "knownLimitations": [
+    "8列の6席は車椅子兼用席。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "公式座席表の全range転記が未完了。",
+      "1階・2階の全列と欠番を転記し、公称席数と照合する。"
+    ]
+  },
+  "ranges": []
+}

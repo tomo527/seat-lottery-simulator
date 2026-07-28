@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "kiyose-keyaki-hall-standard",
+  "name": "清瀬けやきホール",
+  "prefecture": "東京都",
+  "city": "清瀬市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式資料が示す通常の番号付き固定席配置を候補とし、全rangeと転換席の独立照合完了後に確定する。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "清瀬けやきホール",
+      "title": "清瀬けやきホール〔ホール〕 公式施設案内",
+      "url": "https://kiyosekeyakihall.jp/",
+      "checkedAt": "2026-07-27"
+    }
+  ],
+  "registeredScope": "番号付き固定席の通常配置を調査中。",
+  "completenessBasis": "公式施設案内を確認済み。全番号を示す座席資料との照合は未完了。",
+  "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
+  "knownLimitations": [
+    "未解決事項が残るためproduction生成対象外。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "現行公式PDFは1・2階454席と3階54席の計508席と印字する一方、図上の番号位置は510席ある。",
+      "公式PDFはA23・A24・B23～B26・C23～C28の12席を通常車椅子席として取り外すと明記するため、全12席を除くと498番号席となり印字総数508席と一致しない。",
+      "施設が通常配置に含む番号席集合と車椅子転換席の数え方を公式に説明するまで、508席へ合わせる恣意的な除外は行わない。"
+    ]
+  },
+  "ranges": []
+}

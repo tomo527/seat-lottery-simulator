@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "nerima-culture-small-standard",
+  "name": "練馬文化センター 小ホール",
+  "prefecture": "東京都",
+  "city": "練馬区",
+  "aliases": [
+    "つつじホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-numbered-fixed-seats",
+    "name": "通常番号付き固定席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 543,
+    "selectionReason": "公式座席表と施設概要が一致して示す通常の番号付き固定席543席を代表パターンとする。",
+    "notIncludedPatterns": [
+      "番号のない車椅子スペース4区画"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "練馬区立練馬文化センター",
+      "title": "小ホール（つつじホール）座席表",
+      "url": "https://www.neribun.or.jp/hall/file/nerima/%E5%BA%A7%E5%B8%AD%E8%A1%A8%EF%BC%88%E5%B0%8F%E3%83%9B%E3%83%BC%E3%83%AB%EF%BC%89.pdf",
+      "checkedAt": "2026-07-28"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "練馬区立練馬文化センター",
+      "title": "小ホール（つつじホール）施設概要",
+      "url": "https://www.neribun.or.jp/hall/nerima.html",
+      "checkedAt": "2026-07-28"
+    }
+  ],
+  "registeredScope": "公式通常座席表のA列からT列までに番号が示された固定席543席。番号のない車椅子スペース4区画は除く。",
+  "completenessBasis": "現行公式座席表から全20列を二度独立抽出し、番号席543席が公式施設概要の客席数と一致した。",
+  "transformation": "各列の連続する番号付き座席を明示rangeへ転記した。車椅子スペースは個別座席番号を持たないためrangeへ含めていない。",
+  "knownLimitations": [
+    "公式資料に別掲される番号のない車椅子スペース4区画は抽選対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-28",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 8, "to": 24, "excluded": [] },
+    { "rowLabel": "B", "from": 6, "to": 26, "excluded": [] },
+    { "rowLabel": "C", "from": 5, "to": 27, "excluded": [] },
+    { "rowLabel": "D", "from": 4, "to": 28, "excluded": [] },
+    { "rowLabel": "E", "from": 3, "to": 29, "excluded": [] },
+    { "rowLabel": "F", "from": 2, "to": 30, "excluded": [] },
+    { "rowLabel": "G", "from": 2, "to": 30, "excluded": [] },
+    { "rowLabel": "H", "from": 2, "to": 30, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 27, "excluded": [] },
+    { "rowLabel": "K", "from": 2, "to": 30, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "Q", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "R", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "S", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "T", "from": 12, "to": 19, "excluded": [] }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "kabukiza-standard",
+  "name": "歌舞伎座",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": [
+    "GINZA KABUKIZA"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-numbered-seats",
+    "name": "通常番号席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席表が総席数として示す番号席1808席を代表パターン候補とする。",
+    "notIncludedPatterns": [
+      "一幕見席96席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "株式会社歌舞伎座",
+      "title": "歌舞伎座 座席表",
+      "url": "https://s3.ap-northeast-1.amazonaws.com/www.kabuki-bito.jp.assets/wp-content/uploads/2025/06/30094505/kabukiza_seat_2025.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "株式会社歌舞伎座",
+      "title": "建物概要",
+      "url": "https://www.kabuki-za.co.jp/guide/gaiyo.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "公式座席表の番号席1808席を予定。",
+  "completenessBasis": "公式座席表と建物概要で1808席を確認済み。全rangeを転記中。",
+  "transformation": "階・桟敷等をareaへ分け、公式番号をrangeへ転記する予定。",
+  "knownLimitations": [
+    "一幕見席96席は通常番号席1808席とは別運用のため対象外。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "花道と販売停止席を含む通常配置の代表集合が未確定。",
+      "公式座席表で花道使用時と不使用時の固定番号席差分を確定する。"
+    ]
+  },
+  "ranges": []
+}

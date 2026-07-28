@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "icho-hall-main-standard",
+  "name": "いちょうホール 大ホール",
+  "prefecture": "東京都",
+  "city": "八王子市",
+  "aliases": [
+    "八王子市芸術文化会館 大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-numbered-seats",
+    "name": "通常固定番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 798,
+    "selectionReason": "公式客席図の通常ワンスロープ配置にある番号付き客席を候補とする。",
+    "notIncludedPatterns": [
+      "車椅子席2席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "公益財団法人八王子市学園都市文化ふれあい財団",
+      "title": "大ホール客席図",
+      "url": "https://www.hachiojibunka.or.jp/icho/assets/doc/main_hall.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": ["seat-count", "facility"],
+      "publisher": "公益財団法人八王子市学園都市文化ふれあい財団",
+      "title": "いちょうホール 大ホール",
+      "url": "https://www.hachiojibunka.or.jp/icho/facility/main_hall/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常ワンスロープ配置の番号付き客席798席。",
+  "completenessBasis": "公式客席図の1列から23列までを全数転記し、施設案内の800席から番号のない常設車椅子席2席を除いた798席と照合した。",
+  "transformation": "各列の最小番号から最大番号をrangeとし、2列と4列の欠番24番をexcludedに記録した。8列の常設車椅子スペース2区画はrangeへ含めていない。",
+  "knownLimitations": [
+    "施設案内の800席には番号のない車椅子席2席を含むため、番号付き客席は798席として照合する。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-26",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "1", "from": 4, "to": 33, "excluded": [] },
+    { "rowLabel": "2", "from": 4, "to": 33, "excluded": [24] },
+    { "rowLabel": "3", "from": 3, "to": 34, "excluded": [] },
+    { "rowLabel": "4", "from": 3, "to": 34, "excluded": [24] },
+    { "rowLabel": "5", "from": 2, "to": 35, "excluded": [] },
+    { "rowLabel": "6", "from": 2, "to": 35, "excluded": [] },
+    { "rowLabel": "7", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "8", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "9", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "10", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "11", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "12", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "13", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "14", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "15", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "16", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "17", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "18", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "19", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "20", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "21", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "22", "from": 1, "to": 36, "excluded": [] },
+    { "rowLabel": "23", "from": 1, "to": 36, "excluded": [] }
+  ]
+}

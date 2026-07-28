@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "line-cube-shibuya-standard",
+  "name": "LINE CUBE SHIBUYA",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": [
+    "渋谷公会堂"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-full-seating",
+    "name": "通常全席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設案内の通常全席配置1956席を候補とする。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時",
+      "車椅子利用時"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "LINE CUBE SHIBUYA",
+      "title": "座席表",
+      "url": "https://linecubeshibuya.com/cms/wp-content/uploads/2021/10/seating_chart_n.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "LINE CUBE SHIBUYA",
+      "title": "施設概要",
+      "url": "https://linecubeshibuya.com/facility",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常全席配置の番号付き座席1956席を予定。",
+  "completenessBasis": "公式座席表と階別総数を確認済み。3階までの全rangeを独立照合する。",
+  "transformation": "公式座席表のarea・列・番号を明示rangeへ転記する予定。",
+  "knownLimitations": [
+    "オーケストラピット利用時は前方126席を使用しない。",
+    "車椅子利用時は通常席26席の扱いが変わる。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "多目的鑑賞4席と車椅子転換26席を通常抽選集合へ含める方針が未解決。",
+      "公式座席表の1,956席内訳と転換時に外れる26番号を施設資料で確認する。"
+    ]
+  },
+  "ranges": []
+}

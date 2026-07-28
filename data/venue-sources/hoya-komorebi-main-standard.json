@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "hoya-komorebi-main-standard",
+  "name": "タクトホームこもれびGRAFAREホール メインホール",
+  "prefecture": "東京都",
+  "city": "西東京市",
+  "aliases": [
+    "保谷こもれびホール メインホール",
+    "保谷こもれびホールメインホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 658,
+    "selectionReason": "公式客席図が固定席658席と車椅子席4席を明確に区分しているため、番号付き固定席658席を代表パターンとする。",
+    "notIncludedPatterns": [
+      "番号のない車椅子席4席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "タクトホームこもれびGRAFAREホール",
+      "title": "メインホール客席図",
+      "url": "https://www.komorebi-hall.jp/src/pdf/hall_seat_ver2.pdf",
+      "checkedAt": "2026-07-27"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "タクトホームこもれびGRAFAREホール",
+      "title": "施設概要 メインホール",
+      "url": "https://www.komorebi-hall.jp/about/hall/",
+      "checkedAt": "2026-07-27"
+    }
+  ],
+  "registeredScope": "公式客席図に番号が示されたA列からZ列までの固定席658席。",
+  "completenessBasis": "第1パスと独立第2パスで公式客席図から全列・最小番号・最大番号を別々に抽出し、固定席658席および公式総数と一致した。",
+  "transformation": "各列の連続する番号付き固定席を1つの明示rangeとして転記した。",
+  "knownLimitations": [
+    "番号のない車椅子席4席は抽選対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-27",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 9, "to": 20, "excluded": [] },
+    { "rowLabel": "B", "from": 6, "to": 23, "excluded": [] },
+    { "rowLabel": "C", "from": 5, "to": 24, "excluded": [] },
+    { "rowLabel": "D", "from": 4, "to": 25, "excluded": [] },
+    { "rowLabel": "E", "from": 3, "to": 26, "excluded": [] },
+    { "rowLabel": "F", "from": 2, "to": 27, "excluded": [] },
+    { "rowLabel": "G", "from": 2, "to": 27, "excluded": [] },
+    { "rowLabel": "H", "from": 2, "to": 27, "excluded": [] },
+    { "rowLabel": "I", "from": 2, "to": 27, "excluded": [] },
+    { "rowLabel": "J", "from": 2, "to": 27, "excluded": [] },
+    { "rowLabel": "K", "from": 5, "to": 24, "excluded": [] },
+    { "rowLabel": "L", "from": 5, "to": 24, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "Q", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "R", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "S", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "T", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "U", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "V", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "W", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "X", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "Y", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "Z", "from": 1, "to": 28, "excluded": [] }
+  ]
+}

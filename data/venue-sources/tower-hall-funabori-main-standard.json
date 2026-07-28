@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tower-hall-funabori-main-standard",
+  "name": "タワーホール船堀 大ホール",
+  "prefecture": "東京都",
+  "city": "江戸川区",
+  "aliases": [
+    "タワーホール船堀大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席表の750席を候補とする。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "タワーホール船堀",
+      "title": "大ホール座席表",
+      "url": "https://www.towerhall.jp/tower/wp-content/uploads/2022/06/gb05.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "タワーホール船堀",
+      "title": "施設案内",
+      "url": "https://www.towerhall.jp/facility/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "公式座席表の番号付き座席750席を予定。",
+  "completenessBasis": "公式座席PDFの表示番号753席と、公式施設ページ・料金表・ガイドの750席が3席一致しない。",
+  "transformation": "総数へ合わせる推測除外は行わず、公式な750席の番号内訳または訂正版PDFを待つ。",
+  "knownLimitations": [],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "公式座席図の表示番号753席と公式公称750席が3席不一致。",
+      "恒常的に外す3番号を示す公式資料が公開された場合に再照合する。"
+    ]
+  },
+  "ranges": []
+}

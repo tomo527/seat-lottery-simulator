@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "hitotsubashi-hall-standard",
+  "name": "一橋講堂",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [
+    "一橋大学一橋講堂"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 521,
+    "selectionReason": "公式施設案内が示す常設の固定席配置を代表パターンとした。",
+    "notIncludedPatterns": [
+      "車いすスペース2か所"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "国立大学法人一橋大学",
+      "title": "一橋講堂 座席表・寸法図",
+      "url": "https://www.hit-u.ac.jp/hall/file/facility1_3.pdf",
+      "checkedAt": "2026-07-24"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "国立大学法人一橋大学",
+      "title": "施設のご案内 一橋講堂",
+      "url": "https://www.hit-u.ac.jp/hall/facility.html",
+      "checkedAt": "2026-07-24"
+    }
+  ],
+  "registeredScope": "公式座席表に番号が記載された1階固定席494席と2階固定席27席。",
+  "completenessBasis": "公式座席表のA列からP列までの全番号を転記し、公式施設案内の固定席521席と照合した。",
+  "transformation": "各列の最小番号から最大番号をrangeとし、座席表上で番号が存在しない箇所だけをexcludedへ記録した。",
+  "knownLimitations": [
+    "公式案内に別掲される番号のない車いすスペース2か所は抽選対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "A",
+      "from": 5,
+      "to": 31,
+      "excluded": []
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "B",
+      "from": 4,
+      "to": 32,
+      "excluded": [
+        24
+      ]
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "C",
+      "from": 3,
+      "to": 33,
+      "excluded": []
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "D",
+      "from": 2,
+      "to": 34,
+      "excluded": [
+        24
+      ]
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 35,
+      "excluded": []
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 35,
+      "excluded": [
+        24
+      ]
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 35,
+      "excluded": []
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 35,
+      "excluded": [
+        24
+      ]
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 35,
+      "excluded": []
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 35,
+      "excluded": [
+        24
+      ]
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 35,
+      "excluded": []
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 35,
+      "excluded": [
+        24
+      ]
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "M",
+      "from": 1,
+      "to": 35,
+      "excluded": []
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "N",
+      "from": 1,
+      "to": 35,
+      "excluded": [
+        24
+      ]
+    },
+    {
+      "areaId": "first-floor",
+      "areaLabel": "1階",
+      "rowLabel": "O",
+      "from": 1,
+      "to": 35,
+      "excluded": [
+        12,
+        13,
+        23,
+        24
+      ]
+    },
+    {
+      "areaId": "second-floor",
+      "areaLabel": "2階",
+      "rowLabel": "P",
+      "from": 1,
+      "to": 27,
+      "excluded": []
+    }
+  ]
+}

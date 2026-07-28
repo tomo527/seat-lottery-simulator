@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "nissay-theatre-standard",
+  "name": "日生劇場",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [
+    "Nissay Theatre"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-numbered-seats",
+    "name": "通常番号席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席表の1階・グランドサークル階・2階の番号席を代表パターン候補とする。",
+    "notIncludedPatterns": [
+      "車椅子スペース"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "日生劇場",
+      "title": "日生劇場座席表",
+      "url": "https://www.nissaytheatre.or.jp/wptest/wp-content/themes/nissay/assets/pdf/seat/seat.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-seat-guide",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "日生劇場",
+      "title": "座席表",
+      "url": "https://www.nissaytheatre.or.jp/seat/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "公式座席表の番号付き固定席を予定。",
+  "completenessBasis": "公式座席表で全番号を確認可能。番号席総数と車椅子スペースの切り分けを独立計数中。",
+  "transformation": "1階・グランドサークル階・2階をareaに分けてrangeへ転記する予定。",
+  "knownLimitations": [
+    "公式ページ本文に番号席総数の明記がなく、独立した全数計数が必要。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "1階・2階の全番号転記と公式総席数の独立照合が未完了。",
+      "左右ボックス席を含む全rangeを公式座席図から再抽出する。"
+    ]
+  },
+  "ranges": []
+}

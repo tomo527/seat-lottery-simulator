@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "fussa-civic-main-standard",
+  "name": "福生市民会館 大ホール",
+  "prefecture": "東京都",
+  "city": "福生市",
+  "aliases": [
+    "もくせいホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-numbered-seats-with-movable-front-rows",
+    "name": "通常番号席配置（A～C列移動可能席含む）",
+    "coverage": "complete",
+    "expectedSeatCount": 1058,
+    "selectionReason": "公式大ホール座席表が通常配置として示す固定席1,058席を代表パターンとする。A列からC列は移動可能席だが同じ公式通常座席表で恒常的な番号が定義されるため含める。",
+    "notIncludedPatterns": [
+      "番号のない車椅子席4区画"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "福生市民会館",
+      "title": "福生市民会館大ホール座席表",
+      "url": "https://fussa-shiminkaikan.jp/pdf/fussa-001.pdf",
+      "checkedAt": "2026-07-28"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "福生市民会館",
+      "title": "大ホール（もくせいホール）施設案内",
+      "url": "https://fussa-shiminkaikan.jp/facility-guide-largehall.php",
+      "checkedAt": "2026-07-28"
+    }
+  ],
+  "registeredScope": "公式通常座席表のA列からY列までに番号が示された1,058席。A列からC列の移動可能席を含み、番号のない車椅子席4区画を除く。",
+  "completenessBasis": "公式座席表から全25列を二度独立抽出し、番号席1,058席と非番号車椅子区画4の合計が公式定員1,062人に一致した。",
+  "transformation": "各列の連続する番号付き座席を明示rangeへ転記した。通路による分断を複数rangeとし、H列左右の非番号車椅子区画はrangeへ含めていない。",
+  "knownLimitations": [
+    "A列からC列は移動可能席だが、公式通常座席表で番号が定義された通常配置として含める。",
+    "公式定員1,062人に含まれる番号のない車椅子席4区画は抽選対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-28",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 23, "to": 32, "excluded": [] },
+    { "rowLabel": "B", "from": 14, "to": 42, "excluded": [] },
+    { "rowLabel": "C", "from": 13, "to": 32, "excluded": [] },
+    { "rowLabel": "C", "from": 34, "to": 43, "excluded": [] },
+    { "rowLabel": "D", "from": 12, "to": 44, "excluded": [] },
+    { "rowLabel": "E", "from": 12, "to": 32, "excluded": [] },
+    { "rowLabel": "E", "from": 34, "to": 44, "excluded": [] },
+    { "rowLabel": "F", "from": 12, "to": 44, "excluded": [] },
+    { "rowLabel": "G", "from": 12, "to": 32, "excluded": [] },
+    { "rowLabel": "G", "from": 34, "to": 44, "excluded": [] },
+    { "rowLabel": "H", "from": 8, "to": 9, "excluded": [] },
+    { "rowLabel": "H", "from": 12, "to": 44, "excluded": [] },
+    { "rowLabel": "H", "from": 47, "to": 48, "excluded": [] },
+    { "rowLabel": "I", "from": 6, "to": 32, "excluded": [] },
+    { "rowLabel": "I", "from": 34, "to": 50, "excluded": [] },
+    { "rowLabel": "J", "from": 5, "to": 51, "excluded": [] },
+    { "rowLabel": "K", "from": 4, "to": 32, "excluded": [] },
+    { "rowLabel": "K", "from": 34, "to": 52, "excluded": [] },
+    { "rowLabel": "L", "from": 3, "to": 53, "excluded": [] },
+    { "rowLabel": "M", "from": 2, "to": 32, "excluded": [] },
+    { "rowLabel": "M", "from": 34, "to": 54, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 55, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "O", "from": 34, "to": 55, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 55, "excluded": [] },
+    { "rowLabel": "Q", "from": 9, "to": 21, "excluded": [] },
+    { "rowLabel": "Q", "from": 23, "to": 32, "excluded": [] },
+    { "rowLabel": "Q", "from": 34, "to": 43, "excluded": [] },
+    { "rowLabel": "Q", "from": 45, "to": 47, "excluded": [] },
+    { "rowLabel": "R", "from": 9, "to": 47, "excluded": [] },
+    { "rowLabel": "S", "from": 9, "to": 21, "excluded": [] },
+    { "rowLabel": "S", "from": 23, "to": 32, "excluded": [] },
+    { "rowLabel": "S", "from": 34, "to": 43, "excluded": [] },
+    { "rowLabel": "S", "from": 45, "to": 47, "excluded": [] },
+    { "rowLabel": "T", "from": 9, "to": 47, "excluded": [] },
+    { "rowLabel": "U", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "U", "from": 23, "to": 32, "excluded": [] },
+    { "rowLabel": "U", "from": 34, "to": 43, "excluded": [] },
+    { "rowLabel": "U", "from": 45, "to": 55, "excluded": [] },
+    { "rowLabel": "V", "from": 1, "to": 55, "excluded": [] },
+    { "rowLabel": "W", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "W", "from": 23, "to": 32, "excluded": [] },
+    { "rowLabel": "W", "from": 34, "to": 43, "excluded": [] },
+    { "rowLabel": "W", "from": 45, "to": 55, "excluded": [] },
+    { "rowLabel": "X", "from": 1, "to": 55, "excluded": [] },
+    { "rowLabel": "Y", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "Y", "from": 23, "to": 32, "excluded": [] },
+    { "rowLabel": "Y", "from": 34, "to": 43, "excluded": [] },
+    { "rowLabel": "Y", "from": 45, "to": 55, "excluded": [] }
+  ]
+}

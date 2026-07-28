@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "nntt-opera-palace-standard",
+  "name": "新国立劇場 オペラパレス",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": [
+    "オペラパレス",
+    "新国立劇場オペラ劇場"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-numbered-seats",
+    "name": "通常番号席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設案内が番号席として示す4階層1806席を代表パターン候補とする。",
+    "notIncludedPatterns": [
+      "車椅子スペース最大8席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "新国立劇場",
+      "title": "オペラパレス座席表",
+      "url": "https://cms.nntt.jac.go.jp/assets/images/guide/PDF/operapalace_seat.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "新国立劇場",
+      "title": "オペラパレス",
+      "url": "https://cms.nntt.jac.go.jp/guide/operapalace/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "1階860席、2階354席、3階292席、4階300席の番号席1806席を予定。",
+  "completenessBasis": "公式施設案内の階別番号席数と公式座席表を確認済み。全rangeを転記中。",
+  "transformation": "4階層をareaに分けて公式番号をrangeへ転記する予定。",
+  "knownLimitations": [
+    "番号のない車椅子スペース最大8席は対象外。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "複数階・ボックス席・オーケストラピット使用時の集合差分が未確定。",
+      "基本配置の公式座席表と階別総数を固定してから全rangeを入力する。"
+    ]
+  },
+  "ranges": []
+}

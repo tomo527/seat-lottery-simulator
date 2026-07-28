@@ -20,12 +20,24 @@
   },
   "sources": [
     {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
       "publisher": "株式会社 朝日ビルディング",
       "title": "浜離宮朝日ホール 座席表",
       "url": "https://www.asahi-hall.jp/hamarikyu/ticket/seat.html",
       "checkedAt": "2026-07-20"
     },
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
       "publisher": "株式会社 朝日ビルディング",
       "title": "浜離宮朝日ホール座席表PDF",
       "url": "https://www.asahi-hall.jp/hamarikyu/music/pdf/zaseki.pdf",
@@ -312,5 +324,13 @@
       "from": 17,
       "to": 20
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

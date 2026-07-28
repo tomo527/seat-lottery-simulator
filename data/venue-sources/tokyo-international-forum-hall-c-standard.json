@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-international-forum-hall-c-standard",
+  "name": "東京国際フォーラム ホールC",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [
+    "東京国際フォーラムC"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "fixed-seats-only",
+    "name": "通常固定席のみ",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席案内の最大1502席から非常設の車椅子転用位置3席を除く固定番号席1499席を代表候補とする。",
+    "notIncludedPatterns": [
+      "1階17列6番から8番の非常設3席",
+      "オーケストラピット使用時"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-guide",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "株式会社東京国際フォーラム",
+      "title": "ホールC座席表",
+      "url": "https://www.t-i-forum.co.jp/visitors/facilities/c/seat/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常配置の固定番号席1499席を予定。",
+  "completenessBasis": "公式座席案内で最大1502席、オーケストラピット時1416席、非常設3席を確認済み。固定席rangeを転記中。",
+  "transformation": "1階から3階をareaに分け、非常設3席を除いてrangeへ転記する予定。",
+  "knownLimitations": [
+    "最大席数1502席には車椅子利用時に外す非常設3席が含まれる。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "1階17列6～8番が非常設で、最大1,502席との包含関係が未解決。",
+      "常設番号席だけの総数を示す公式資料を確認して代表集合を確定する。"
+    ]
+  },
+  "ranges": []
+}

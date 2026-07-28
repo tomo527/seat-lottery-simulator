@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "fuchu-vienna-hall-standard",
+  "name": "府中の森芸術劇場 ウィーンホール",
+  "prefecture": "東京都",
+  "city": "府中市",
+  "aliases": [
+    "府中の森芸術劇場ウィーンホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-numbered-seats",
+    "name": "通常固定番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 504,
+    "selectionReason": "公式客席図と施設案内が通常配置として示す一般席504席を代表パターンとした。",
+    "notIncludedPatterns": [
+      "車椅子席6席",
+      "立見席12席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人府中文化振興財団",
+      "title": "ウィーンホール客席図",
+      "url": "https://www.fuchu-cpf.or.jp/_res/projects/default_project/_page_/001/000/187/vienna-seat.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "公益財団法人府中文化振興財団",
+      "title": "ウィーンホール紹介",
+      "url": "https://www.fuchu-cpf.or.jp/theater/1000160/1000187.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "公式客席図の1列から21列までに番号が付された一般席504席。",
+  "completenessBasis": "公式客席図で1列から21列が各24席であることを確認し、施設案内の一般席504席と照合した。",
+  "transformation": "各列の連続番号1番から24番を1rangeとして転記した。",
+  "knownLimitations": [
+    "22列7番から18番として図示された立見席12席は固定番号席ではないため対象外。",
+    "車椅子席6席は座席番号が定義されていないため対象外。",
+    "8列1番から6番および19番から24番は可動席だが、公式の通常客席図と一般席504席に含まれる番号付き座席として登録した。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-26",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "1", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "2", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "3", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "4", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "5", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "6", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "7", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "8", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "9", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "10", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "11", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "12", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "13", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "14", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "15", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "16", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "17", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "18", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "19", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "20", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "21", "from": 1, "to": 24, "excluded": [] }
+  ]
+}

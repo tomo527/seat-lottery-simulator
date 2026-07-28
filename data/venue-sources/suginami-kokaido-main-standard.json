@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "suginami-kokaido-main-standard",
+  "name": "杉並公会堂 大ホール",
+  "prefecture": "東京都",
+  "city": "杉並区",
+  "aliases": [
+    "杉並公会堂大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "concert-standard",
+    "name": "コンサート形式",
+    "coverage": "complete",
+    "expectedSeatCount": 1186,
+    "selectionReason": "公式が標準的な使用形態と明示するコンサート形式を代表パターンとする。",
+    "notIncludedPatterns": [
+      "幕形式（プロセニアム設置）",
+      "舞台拡張（客席前方2列60席撤去）",
+      "車椅子席4席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "杉並公会堂",
+      "title": "大ホール座席表",
+      "url": "https://www.suginamikoukaidou.com/wp-content/uploads/2023/05/7e48dcd97a06066189054093ab83d51f.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "杉並公会堂",
+      "title": "大ホール施設概要",
+      "url": "https://www.suginamikoukaidou.com/rental/lghall-1/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "標準的なコンサート形式の番号付き一般席1186席。",
+  "completenessBasis": "公式座席PDFの全番号を二度独立転記し、1階778席・2階408席と、車椅子4席を含む公式定員1190席を照合した。",
+  "transformation": "1階、2階ポディウム、左右バルコニー、2階正面をareaに分け、公式座席表の番号を明示rangeへ転記した。",
+  "knownLimitations": [
+    "番号のない車椅子席4席は抽選対象外とする。",
+    "幕形式と舞台拡張時は席数が異なる。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-26",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "1", "from": 3, "to": 31, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "2", "from": 2, "to": 32, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "3", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "4", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "5", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "6", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "7", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "8", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "9", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "10", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "11", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "12", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "13", "from": 5, "to": 29, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "14", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "15", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "16", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "17", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "18", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "19", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "20", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "21", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "22", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "23", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "24", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "second-podium", "areaLabel": "2階ポディウム", "rowLabel": "P1", "from": 2, "to": 32, "excluded": [] },
+    { "areaId": "second-podium", "areaLabel": "2階ポディウム", "rowLabel": "P2", "from": 2, "to": 32, "excluded": [] },
+    { "areaId": "second-podium", "areaLabel": "2階ポディウム", "rowLabel": "P3", "from": 2, "to": 32, "excluded": [] },
+    { "areaId": "second-left-balcony", "areaLabel": "2階左バルコニー", "rowLabel": "2L", "from": 1, "to": 46, "excluded": [] },
+    { "areaId": "second-right-balcony", "areaLabel": "2階右バルコニー", "rowLabel": "2R", "from": 1, "to": 46, "excluded": [] },
+    { "areaId": "second-front", "areaLabel": "2階正面", "rowLabel": "C1", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "second-front", "areaLabel": "2階正面", "rowLabel": "C2", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "second-front", "areaLabel": "2階正面", "rowLabel": "C3", "from": 1, "to": 33, "excluded": [] },
+    { "areaId": "second-front", "areaLabel": "2階正面", "rowLabel": "C4", "from": 2, "to": 32, "excluded": [] },
+    { "areaId": "second-front", "areaLabel": "2階正面", "rowLabel": "C5", "from": 2, "to": 32, "excluded": [] },
+    { "areaId": "second-front", "areaLabel": "2階正面", "rowLabel": "C6", "from": 2, "to": 32, "excluded": [] },
+    { "areaId": "second-front", "areaLabel": "2階正面", "rowLabel": "C7", "from": 2, "to": 32, "excluded": [] }
+  ]
+}

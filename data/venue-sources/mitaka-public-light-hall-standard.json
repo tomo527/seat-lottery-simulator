@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "mitaka-public-light-hall-standard",
+  "name": "三鷹市公会堂 光のホール",
+  "prefecture": "東京都",
+  "city": "三鷹市",
+  "aliases": [
+    "光のホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設案内が示す通常固定席配置を候補とするが、番号付き固定席の集合を公式資料だけで確定できていない。",
+    "notIncludedPatterns": [
+      "ステージ拡張時649席",
+      "番号のない車いす席6区画"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "公益財団法人三鷹市スポーツと文化財団",
+      "title": "光のホール座席表",
+      "url": "https://mitaka-sportsandculture.or.jp/_files/00002783/seat783.png",
+      "checkedAt": "2026-07-28"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "公益財団法人三鷹市スポーツと文化財団",
+      "title": "光のホール概要",
+      "url": "https://mitaka-sportsandculture.or.jp/kokaido/info/hikari.html",
+      "checkedAt": "2026-07-28"
+    }
+  ],
+  "registeredScope": "通常固定席配置の番号付き固定席だけを登録予定。番号のない車いす席6区画は抽選対象外とする。",
+  "completenessBasis": "公式施設案内は通常固定席719席に車いす席6席を含むと明記する。一方、公式座席図からの独立した番号席抽出が713席で一致せず、完全な番号席集合を確定できない。",
+  "transformation": "公式座席図を第1パスと独立第2パスでゼロから読み直した。公式根拠のない番号除外は行わず、不一致rangeは保存しない。",
+  "knownLimitations": [
+    "公式公称719席には番号のない車いす席6区画が含まれる。",
+    "車いす席6区画は抽選対象外とする。",
+    "ステージ拡張時649席は代表パターンに含めない。",
+    "第1パス719番号席、第2パス716番号席、公称値からの算術値713席が一致していない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "mismatched",
+    "seatCount": "mismatched",
+    "unresolvedIssues": [
+      "公式施設案内の通常固定席719席は車いす席6席を含むため番号付き固定席は713席と解釈できるが、公式座席図から除外すべき6番号を特定できない。",
+      "公式座席図の第1パスは719番号席、第2パスは716番号席となり、互いにも713席にも一致しない。",
+      "施設が番号付き固定席713席の全番号または車いす席へ転換する座席番号を公式資料で公開した場合に、両パスを再実施する。"
+    ]
+  },
+  "ranges": []
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-geigeki-concert-hall-standard",
+  "name": "東京芸術劇場 コンサートホール",
+  "prefecture": "東京都",
+  "city": "豊島区",
+  "aliases": [
+    "東京芸術劇場大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-numbered-seats",
+    "name": "通常番号席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行公式施設案内が番号席として示す1999席を代表パターン候補とする。",
+    "notIncludedPatterns": [
+      "車椅子スペース8席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "東京芸術劇場",
+      "title": "コンサートホール座席表",
+      "url": "https://www.geigeki.jp/facilities/pdf/concert.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "東京芸術劇場",
+      "title": "コンサートホール",
+      "url": "https://www.geigeki.jp/facilities/concerthall/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "現行公式座席表の番号席1999席を予定。",
+  "completenessBasis": "公式施設案内で番号席1999席と車椅子スペース8席を確認済み。全rangeを転記中。",
+  "transformation": "階・サイド席をareaに分けて公式番号をrangeへ転記する予定。",
+  "knownLimitations": [
+    "番号のない車椅子スペース8席は対象外。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "サイド席・複数階を含む全rangeが未転記で、改修後再開前。",
+      "公式再開後に現行座席表を確認し、サイド席の番号方向を独立照合する。"
+    ]
+  },
+  "ranges": []
+}

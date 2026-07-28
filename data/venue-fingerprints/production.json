@@ -1,0 +1,285 @@
+{
+  "manifestVersion": 1,
+  "reviewPolicy": "fingerprint変更時はsnapshot値だけを更新せず、公式資料から独立再確認する。",
+  "venues": {
+    "akigawa-kirara-hall-standard": {
+      "count": 700,
+      "samples": [
+        "main/A/1",
+        "main/L/3",
+        "main/V/32"
+      ],
+      "sha256": "e06994e86fec5fb4be0288da37a517210a0786d1add2bf861279822376c33d3b"
+    },
+    "asakusa-public-hall-standard": {
+      "count": 1070,
+      "samples": [
+        "first-floor/1/15",
+        "first-floor/16/31",
+        "third-floor/5/40"
+      ],
+      "sha256": "168509a0558a539c16662bac9ce26fff513cf42bff4a049195634409477850fc"
+    },
+    "ebara-culture-main-standard": {
+      "count": 437,
+      "samples": [
+        "main/A/2",
+        "main/K/13",
+        "main/U/21"
+      ],
+      "sha256": "2c530e1d3f6222b4a91afd230129b5837415e29672937a24082cfb37c53226d3"
+    },
+    "fuchu-vienna-hall-standard": {
+      "count": 504,
+      "samples": [
+        "main/1/1",
+        "main/11/13",
+        "main/21/24"
+      ],
+      "sha256": "32f14ad690a5b391dc1c72f12c4d01ddde99419a9258f7530697c7eb073ea478"
+    },
+    "fussa-civic-main-standard": {
+      "count": 1058,
+      "samples": [
+        "main/A/23",
+        "main/N/52",
+        "main/Y/55"
+      ],
+      "sha256": "4aa27cf39431bbb259105545b3e676a66d0a9a017639585c14a9237104136bf1"
+    },
+    "hakuju-hall-standard": {
+      "count": 300,
+      "samples": [
+        "main/A/1",
+        "main/M/7",
+        "main/P/17"
+      ],
+      "sha256": "28350eea648aa10e87fabf88d9af19904a905f62fdd83689ee44ec14d0e68cba"
+    },
+    "hamarikyu-asahi-hall-standard": {
+      "count": 552,
+      "samples": [
+        "first-floor/1/1",
+        "first-floor/14/13",
+        "second-floor-center/3/20"
+      ],
+      "sha256": "0c29b25374e7db85881adb571c924b494f686927883effe6703a1782812d06e0"
+    },
+    "hitotsubashi-hall-standard": {
+      "count": 521,
+      "samples": [
+        "first-floor/A/5",
+        "first-floor/I/5",
+        "second-floor/P/27"
+      ],
+      "sha256": "d05ac2ef2e92cdb94ea0ec8e45022221da4789e5d814f76efa35c2f0a47831b8"
+    },
+    "hoya-komorebi-main-standard": {
+      "count": 658,
+      "samples": [
+        "main/A/9",
+        "main/O/8",
+        "main/Z/28"
+      ],
+      "sha256": "3e7ac806784b59df298ba92aae5790bc7a222cf78efad56a3fb9b0a72c16d656"
+    },
+    "icho-hall-main-standard": {
+      "count": 798,
+      "samples": [
+        "main/1/4",
+        "main/12/34",
+        "main/23/36"
+      ],
+      "sha256": "a81b6ef91818a1ec84d0c72d1dc6b23eb87c177d117ba4ed4c319b40ac83c081"
+    },
+    "iino-hall-standard": {
+      "count": 500,
+      "samples": [
+        "main/A/4",
+        "main/I/21",
+        "main/Q/29"
+      ],
+      "sha256": "ae76597d0b3d2a208a40174f2fab6639523ad20da3e83d43b47142370053ac95"
+    },
+    "itabashi-culture-main-standard": {
+      "count": 1263,
+      "samples": [
+        "first-floor/1/10",
+        "first-floor/18/25",
+        "second-floor/37/43"
+      ],
+      "sha256": "8f52e47022150d429bf4d5c0ac276f5a6c89e1908752b8f7ceb67e9cd52ce91b"
+    },
+    "katsushika-symphony-mozart-standard": {
+      "count": 1318,
+      "samples": [
+        "first-floor/1/1",
+        "first-floor/19/30",
+        "right-balcony/2/34"
+      ],
+      "sha256": "e3e67d6ab6c68632cecc58fefffdaffeeb0621e7383eed35a963c27677b04491"
+    },
+    "kioi-small-hall-standard": {
+      "count": 250,
+      "samples": [
+        "main/1/3",
+        "main/6/13",
+        "main/11/24"
+      ],
+      "sha256": "1126bafa89f1d1c624b8423ff070658efabb10772eb46cef5e91441f127aad5b"
+    },
+    "kyocera-dome-osaka-standard-baseball": {
+      "count": 34522,
+      "samples": [
+        "center-a-lower/001/1",
+        "third-base-lower/002/66",
+        "center-l-lower/029/130"
+      ],
+      "sha256": "62b7c55a7e75daa8e46d9286fbd1d2f7f0c9f88c6bff3b7cd7590960e899587b"
+    },
+    "mitaka-arts-wind-hall-standard": {
+      "count": 622,
+      "samples": [
+        "first-floor/A/1",
+        "first-floor/N/14",
+        "second-floor/R/37"
+      ],
+      "sha256": "00b88c003da14c556df384cd6cc74c16fe2ab26315e7a38124a4706a6a7ac6f4"
+    },
+    "musashino-civic-small-standard": {
+      "count": 425,
+      "samples": [
+        "main/1/8",
+        "main/9/5",
+        "main/15/31"
+      ],
+      "sha256": "e82af28ef86df7a84f9885f9a986403b31371562aba25fb3b1895b446e67068b"
+    },
+    "national-bunraku-theatre-standard": {
+      "count": 753,
+      "samples": [
+        "center-seats/1/3",
+        "center-seats/11/30",
+        "right-seats/12/4"
+      ],
+      "sha256": "3e921c72a1eb74a508c7d05068db38cc954d82a8e345efa759c29d9adf084622"
+    },
+    "nerima-culture-main-standard": {
+      "count": 1332,
+      "samples": [
+        "first-floor/A/12",
+        "first-floor/R/36",
+        "second-floor/S/37"
+      ],
+      "sha256": "c0286cbe7f5c7dd21bda5f280db2cd743f67b075d34ed640deaa889397f00601"
+    },
+    "nerima-culture-small-standard": {
+      "count": 543,
+      "samples": [
+        "main/A/8",
+        "main/K/15",
+        "main/T/19"
+      ],
+      "sha256": "ee8eb3a9b06aee9afb6f8006fd68d4059c0d9b73175b8eb9d3f5d3f27ec5d500"
+    },
+    "oji-hall-standard": {
+      "count": 315,
+      "samples": [
+        "main/A/1",
+        "main/F/6",
+        "main/P/16"
+      ],
+      "sha256": "f4cee93bc5b6e3bc39b0ffbed9c338f73f98c9928951e499fc204ac033320b5c"
+    },
+    "ota-plaza-main-standard": {
+      "count": 509,
+      "samples": [
+        "main/A/7",
+        "main/L/25",
+        "main/U/29"
+      ],
+      "sha256": "34f5c4543e7c603d890fa5b297980fcc0dc9081fcac0051c5bf288b344552b5b"
+    },
+    "parthenon-tama-main-standard": {
+      "count": 1129,
+      "samples": [
+        "main/A/6",
+        "main/O/42",
+        "main/EE/41"
+      ],
+      "sha256": "b3431849fc8942dcf35f0ef86f1361367b464b12d0ca8d8ef2d346360c3cdd5e"
+    },
+    "risuru-main-standard": {
+      "count": 1201,
+      "samples": [
+        "first-floor/1/10",
+        "first-floor/17/36",
+        "second-floor/34/34"
+      ],
+      "sha256": "2044cf94737fe95df84811f6fa933cb27319f6aa4ad1ef9e6f7a155f69303e23"
+    },
+    "suginami-kokaido-main-standard": {
+      "count": 1186,
+      "samples": [
+        "first-floor/1/3",
+        "first-floor/19/14",
+        "second-front/C7/32"
+      ],
+      "sha256": "f157b57576f7d2a2d2d2baf5686f17357e81e4b3fdf9c2bde03510c382caedec"
+    },
+    "sumida-triphony-small-hall-standard": {
+      "count": 252,
+      "samples": [
+        "main/1/1",
+        "main/8/15",
+        "main/16/14"
+      ],
+      "sha256": "f78c53616b90045206f054aa373c1c19187bbdce9f1e0f78e12bc32bcf630e1b"
+    },
+    "suntory-blue-rose-a": {
+      "count": 384,
+      "samples": [
+        "main/1/1",
+        "main/9/1",
+        "main/16/24"
+      ],
+      "sha256": "76a880cdd4fd5280a6d4ea141d6559fdc9c3aecbd7e047e465ccf86d048f62d3"
+    },
+    "tokyo-fm-hall-a-stage": {
+      "count": 308,
+      "samples": [
+        "main/A/1",
+        "main/G/11",
+        "main/M/23"
+      ],
+      "sha256": "e1a168df3da04577f88cdbcf09d2126f043c0c80b7145661a254b73cc3b3dee9"
+    },
+    "tokyo-geigeki-theatre-east-pattern-a": {
+      "count": 272,
+      "samples": [
+        "main/A/3",
+        "main/G/13",
+        "main/N/22"
+      ],
+      "sha256": "73c2fb73d4a17f0b92753f6ca57b55167d1e1a2acc22bd10ebf992b55df9eede"
+    },
+    "toppan-hall-standard": {
+      "count": 408,
+      "samples": [
+        "main/A/1",
+        "main/H/16",
+        "main/S/21"
+      ],
+      "sha256": "57320b1ff750111ecdf85d4088f7b3366ceaa188714e16a652972af08488315e"
+    },
+    "yurakucho-asahi-hall-standard": {
+      "count": 636,
+      "samples": [
+        "main/A/2",
+        "main/L/3",
+        "main/U/32"
+      ],
+      "sha256": "1623e69088e6cef0ae7400d0e06864c6f9ba31849890eb37d1b40088045a1ac7"
+    }
+  }
+}

@@ -20,12 +20,24 @@
   },
   "sources": [
     {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
       "publisher": "公益財団法人 墨田区文化振興財団",
       "title": "すみだトリフォニーホール 座席表",
       "url": "https://www.triphony.com/seat/",
       "checkedAt": "2026-07-20"
     },
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
       "publisher": "公益財団法人 墨田区文化振興財団",
       "title": "小ホール座席表PDF",
       "url": "https://www.triphony.com/seat/common/pdf/hall_s.pdf",
@@ -40,100 +52,92 @@
   ],
   "ranges": [
     {
-      "areaId": "main",
       "rowLabel": "1",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "2",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "3",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "4",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "5",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "6",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "7",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "8",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "9",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "10",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "11",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "12",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "13",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "14",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "15",
       "from": 1,
       "to": 16
     },
     {
-      "areaId": "main",
       "rowLabel": "16",
       "from": 3,
       "to": 14
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

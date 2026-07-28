@@ -1,89 +1,86 @@
-import { readdir, stat } from 'node:fs/promises'
+import { readFile, readdir, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { buildOutputs, calculateSeatCount, CATALOG_PATH, DETAIL_DIR, exists, readSources } from './lib.mjs'
+import { analyzeDatabaseSizes, evaluateSizeLimits } from './capacity.mjs'
 import { regionForPrefecture } from './regions.mjs'
+import { validateSources } from './validation.mjs'
+import { readInventories, validateInventories } from './inventory.mjs'
+import { readBatches, validateBatches } from './batches.mjs'
 
-const errors = []
 const sources = await readSources()
-const ids = new Set()
-const locations = new Set()
-const searchAliasOwners = new Map()
-const normalizeSearchText = (value) => value.normalize('NFKC').trim().toLocaleLowerCase('ja-JP')
-
-for (const { file, data } of sources) {
-  const label = `${file}:`
-  if (ids.has(data.id)) errors.push(`${label} duplicate venue ID ${data.id}`)
-  ids.add(data.id)
-  const locationKey = `${data.name}\0${data.prefecture}\0${data.city}`
-  if (locations.has(locationKey)) errors.push(`${label} duplicate name and location`)
-  locations.add(locationKey)
-  if (data.status !== 'production') continue
-  if (data.schemaVersion !== 1) errors.push(`${label} unsupported schemaVersion`)
-  if (!data.city?.trim()) errors.push(`${label} municipality is missing`)
-  if (!regionForPrefecture(data.prefecture)) errors.push(`${label} prefecture ${data.prefecture} has no region mapping`)
-  if (!data.sources?.length || data.sources.some((source) => !source.url?.startsWith('https://') || !/^\d{4}-\d{2}-\d{2}$/.test(source.checkedAt ?? ''))) errors.push(`${label} production source metadata is missing or invalid`)
-  const normalizedName = normalizeSearchText(data.name ?? '')
-  const normalizedAliases = (data.aliases ?? []).map(normalizeSearchText)
-  if (normalizedAliases.some((alias) => !alias)) errors.push(`${label} has an empty search alias`)
-  if (new Set(normalizedAliases).size !== normalizedAliases.length) errors.push(`${label} has duplicate search aliases`)
-  if (normalizedAliases.includes(normalizedName)) errors.push(`${label} search alias duplicates the venue name`)
-  for (const alias of normalizedAliases) {
-    const existingOwner = searchAliasOwners.get(alias)
-    if (existingOwner) errors.push(`${label} search alias duplicates ${existingOwner}`)
-    else searchAliasOwners.set(alias, data.id)
+const validation = validateSources(sources)
+const errors = [...validation.errors]
+const inventories = await readInventories()
+const inventoryValidation = validateInventories(inventories, sources)
+errors.push(...inventoryValidation.errors)
+const batches = await readBatches()
+errors.push(...validateBatches(batches, inventoryValidation.items, sources).errors)
+const { catalog: expectedCatalog, details: expectedDetails } = buildOutputs(sources)
+let catalog = []
+try {
+  catalog = JSON.parse(await readFile(CATALOG_PATH, 'utf8'))
+  if (/sources|checkedAt|verification|completenessBasis|transformation|knownLimitations|publisher|https?:\/\//.test(JSON.stringify(catalog))) {
+    errors.push('source/research metadata leaked into generated catalog')
   }
-  if (Array.isArray(data.representativePattern)) errors.push(`${label} multiple representative patterns are forbidden`)
-  if (data.representativePattern?.coverage !== 'complete') errors.push(`${label} representative pattern is not complete`)
-  const productionIdentity = [data.id, data.name, data.representativePattern?.name, data.representativePattern?.coverage, data.registeredScope].join(' ').toLowerCase()
-  if (/(?:^|[-_\s])(demo|sample|partial)(?:$|[-_\s])|一部/.test(productionIdentity)) errors.push(`${label} demo/sample/partial production data is forbidden`)
-  if (!Array.isArray(data.ranges) || data.ranges.length === 0) errors.push(`${label} has no seat ranges`)
-  const seats = new Set()
-  for (const [index, range] of (data.ranges ?? []).entries()) {
-    const prefix = `${label} range ${index}`
-    if (![range.from, range.to].every(Number.isSafeInteger)) errors.push(`${prefix} uses a non-safe integer`)
-    if (range.from <= 0 || range.to <= 0) errors.push(`${prefix} uses a non-positive number`)
-    if (range.from > range.to) errors.push(`${prefix} has from > to`)
-    const excluded = range.excluded ?? []
-    if (new Set(excluded).size !== excluded.length) errors.push(`${prefix} has duplicate exclusions`)
-    if (excluded.some((number) => !Number.isSafeInteger(number) || number < range.from || number > range.to)) errors.push(`${prefix} has an out-of-range exclusion`)
-    const excludedSet = new Set(excluded)
-    for (let number = range.from; number <= range.to; number += 1) {
-      if (excludedSet.has(number)) continue
-      const key = `${range.areaId ?? ''}\0${range.rowLabel}\0${number}`
-      if (seats.has(key)) errors.push(`${prefix} duplicates seat ${key.replaceAll('\0', '/')}`)
-      seats.add(key)
-    }
-  }
-  const calculated = calculateSeatCount(data.ranges ?? [])
-  if (calculated <= 0) errors.push(`${label} has no selectable seats`)
-  if (calculated !== data.representativePattern?.expectedSeatCount) errors.push(`${label} expected ${data.representativePattern?.expectedSeatCount}, calculated ${calculated}`)
+} catch (error) {
+  errors.push(`catalog cannot be read: ${error.message}`)
 }
 
-const tokyoCount = sources.filter(({ data }) => data.status === 'production' && data.prefecture === '東京都').length
-if (tokyoCount < 10) errors.push(`Tokyo production venue count is ${tokyoCount}; at least 10 are required`)
-const { catalog, details } = buildOutputs(sources)
+const productionIds = new Set(sources.filter(({ data }) => data.status === 'production').map(({ data }) => data.id))
 for (const entry of catalog) {
-  const detail = details.get(entry.id)
+  if (!productionIds.has(entry.id)) errors.push(`${entry.id}: non-production source is present in generated catalog`)
   if (!entry.region || entry.region !== regionForPrefecture(entry.prefecture)) errors.push(`${entry.id}: catalog region is invalid`)
   if (!entry.municipality?.trim()) errors.push(`${entry.id}: catalog municipality is missing`)
-  if (!detail || detail.totalSeatCount !== entry.seatCount) errors.push(`${entry.id}: catalog/detail count mismatch`)
-  if (!(await exists(path.join(DETAIL_DIR, `${entry.id}.json`)))) errors.push(`${entry.id}: generated detail file is missing`)
+  const detailPath = path.join(DETAIL_DIR, `${entry.id}.json`)
+  if (!(await exists(detailPath))) {
+    errors.push(`${entry.id}: generated detail file is missing`)
+    continue
+  }
+  try {
+    const detail = JSON.parse(await readFile(detailPath, 'utf8'))
+    if (detail.totalSeatCount !== entry.seatCount) errors.push(`${entry.id}: catalog/detail count mismatch`)
+    if (calculateSeatCount(detail.ranges ?? []) !== detail.totalSeatCount) errors.push(`${entry.id}: detail calculated count mismatch`)
+    if (/source|checkedAt|verification|completenessBasis|transformation|knownLimitations/.test(JSON.stringify(detail))) {
+      errors.push(`${entry.id}: source/research metadata leaked into runtime detail`)
+    }
+  } catch (error) {
+    errors.push(`${entry.id}: generated detail cannot be read: ${error.message}`)
+  }
+}
+if (catalog.some((entry) => !expectedDetails.has(entry.id)) || catalog.length !== expectedCatalog.length) {
+  errors.push('generated catalog production membership is invalid')
 }
 
-const catalogSize = (await stat(CATALOG_PATH)).size
-if (catalogSize >= 100_000) errors.push(`catalog is ${catalogSize} bytes; limit is under 100,000 bytes`)
-const detailFiles = (await readdir(DETAIL_DIR)).filter((file) => file.endsWith('.json'))
-let databaseSize = catalogSize
+let catalogSize = 0
+try {
+  catalogSize = (await stat(CATALOG_PATH)).size
+} catch {
+  // Read error already reported above.
+}
+const detailFiles = (await readdir(DETAIL_DIR).catch(() => [])).filter((file) => file.endsWith('.json')).sort()
+const detailSizes = []
 for (const file of detailFiles) {
-  const size = (await stat(path.join(DETAIL_DIR, file))).size
-  databaseSize += size
-  if (size >= 300_000) errors.push(`${file}: ${size} bytes; detail limit is under 300,000 bytes`)
+  const fullPath = path.join(DETAIL_DIR, file)
+  const size = (await stat(fullPath)).size
+  detailSizes.push({ file, bytes: size })
+  if (!productionIds.has(path.basename(file, '.json'))) errors.push(`${file}: non-production generated detail exists`)
 }
-if (databaseSize >= 2_000_000) errors.push(`generated database is ${databaseSize} bytes; limit is under 2,000,000 bytes`)
+const sizeAnalysis = analyzeDatabaseSizes({
+  catalogBytes: catalogSize,
+  detailBytes: detailSizes.map(({ bytes }) => bytes),
+  venueCount: catalog.length,
+})
+sizeAnalysis.detailSizes = detailSizes
+const sizeIssues = evaluateSizeLimits(sizeAnalysis)
+errors.push(...sizeIssues.errors)
 
+for (const warning of validation.warnings) console.warn(`WARNING: ${warning}`)
+for (const warning of inventoryValidation.warnings) console.warn(`WARNING: ${warning}`)
+for (const warning of sizeIssues.warnings) console.warn(`WARNING: ${warning}`)
 if (errors.length) {
   console.error(errors.join('\n'))
   process.exitCode = 1
 } else {
-  console.log(`Validated ${catalog.length} venues (${tokyoCount} Tokyo) and ${catalog.reduce((sum, item) => sum + item.seatCount, 0).toLocaleString('ja-JP')} seats.`)
+  const totalSeats = catalog.reduce((sum, item) => sum + item.seatCount, 0)
+  console.log(`Validated ${catalog.length} production venues and ${totalSeats.toLocaleString('ja-JP')} seats (${validation.warnings.length + inventoryValidation.warnings.length + sizeIssues.warnings.length} warnings).`)
 }

@@ -1,5 +1,75 @@
 [
   {
+    "id": "akigawa-kirara-hall-standard",
+    "name": "S&D秋川キララホール",
+    "searchAliases": [
+      "秋川キララホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "あきる野市",
+    "venueType": "hall",
+    "representativePatternName": "通常固定番号席配置",
+    "seatCount": 700,
+    "dataPath": "/venue-db/venues/akigawa-kirara-hall-standard.json"
+  },
+  {
+    "id": "asakusa-public-hall-standard",
+    "name": "浅草公会堂",
+    "searchAliases": [
+      "浅草公会堂 ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（花道なし）",
+    "seatCount": 1070,
+    "dataPath": "/venue-db/venues/asakusa-public-hall-standard.json"
+  },
+  {
+    "id": "ebara-culture-main-standard",
+    "name": "荏原文化センター 大ホール",
+    "searchAliases": [
+      "荏原文化センター大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "品川区",
+    "venueType": "hall",
+    "representativePatternName": "公式座席表配置",
+    "seatCount": 437,
+    "dataPath": "/venue-db/venues/ebara-culture-main-standard.json"
+  },
+  {
+    "id": "fuchu-vienna-hall-standard",
+    "name": "府中の森芸術劇場 ウィーンホール",
+    "searchAliases": [
+      "府中の森芸術劇場ウィーンホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "府中市",
+    "venueType": "hall",
+    "representativePatternName": "通常固定番号席配置",
+    "seatCount": 504,
+    "dataPath": "/venue-db/venues/fuchu-vienna-hall-standard.json"
+  },
+  {
+    "id": "fussa-civic-main-standard",
+    "name": "福生市民会館 大ホール",
+    "searchAliases": [
+      "もくせいホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "福生市",
+    "venueType": "hall",
+    "representativePatternName": "通常番号席配置（A～C列移動可能席含む）",
+    "seatCount": 1058,
+    "dataPath": "/venue-db/venues/fussa-civic-main-standard.json"
+  },
+  {
     "id": "hakuju-hall-standard",
     "name": "Hakuju Hall",
     "searchAliases": [
@@ -30,6 +100,49 @@
     "dataPath": "/venue-db/venues/hamarikyu-asahi-hall-standard.json"
   },
   {
+    "id": "hitotsubashi-hall-standard",
+    "name": "一橋講堂",
+    "searchAliases": [
+      "一橋大学一橋講堂"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "representativePatternName": "通常固定席配置",
+    "seatCount": 521,
+    "dataPath": "/venue-db/venues/hitotsubashi-hall-standard.json"
+  },
+  {
+    "id": "hoya-komorebi-main-standard",
+    "name": "タクトホームこもれびGRAFAREホール メインホール",
+    "searchAliases": [
+      "保谷こもれびホール メインホール",
+      "保谷こもれびホールメインホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "西東京市",
+    "venueType": "hall",
+    "representativePatternName": "通常固定席配置",
+    "seatCount": 658,
+    "dataPath": "/venue-db/venues/hoya-komorebi-main-standard.json"
+  },
+  {
+    "id": "icho-hall-main-standard",
+    "name": "いちょうホール 大ホール",
+    "searchAliases": [
+      "八王子市芸術文化会館 大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "八王子市",
+    "venueType": "hall",
+    "representativePatternName": "通常固定番号席配置",
+    "seatCount": 798,
+    "dataPath": "/venue-db/venues/icho-hall-main-standard.json"
+  },
+  {
     "id": "iino-hall-standard",
     "name": "イイノホール",
     "searchAliases": [
@@ -42,6 +155,34 @@
     "representativePatternName": "通常座席",
     "seatCount": 500,
     "dataPath": "/venue-db/venues/iino-hall-standard.json"
+  },
+  {
+    "id": "itabashi-culture-main-standard",
+    "name": "板橋区立文化会館 大ホール",
+    "searchAliases": [
+      "板橋区立文化会館大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "板橋区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（オーケストラピットなし）",
+    "seatCount": 1263,
+    "dataPath": "/venue-db/venues/itabashi-culture-main-standard.json"
+  },
+  {
+    "id": "katsushika-symphony-mozart-standard",
+    "name": "かつしかシンフォニーヒルズ モーツァルトホール",
+    "searchAliases": [
+      "モーツァルトホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "葛飾区",
+    "venueType": "hall",
+    "representativePatternName": "通常客席配置",
+    "seatCount": 1318,
+    "dataPath": "/venue-db/venues/katsushika-symphony-mozart-standard.json"
   },
   {
     "id": "kioi-small-hall-standard",
@@ -74,6 +215,34 @@
     "dataPath": "/venue-db/venues/kyocera-dome-osaka-standard-baseball.json"
   },
   {
+    "id": "mitaka-arts-wind-hall-standard",
+    "name": "三鷹市芸術文化センター 風のホール",
+    "searchAliases": [
+      "風のホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "三鷹市",
+    "venueType": "hall",
+    "representativePatternName": "通常固定席配置",
+    "seatCount": 622,
+    "dataPath": "/venue-db/venues/mitaka-arts-wind-hall-standard.json"
+  },
+  {
+    "id": "musashino-civic-small-standard",
+    "name": "武蔵野市民文化会館 小ホール",
+    "searchAliases": [
+      "武蔵野市民文化会館小ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "武蔵野市",
+    "venueType": "hall",
+    "representativePatternName": "通常固定席配置",
+    "seatCount": 425,
+    "dataPath": "/venue-db/venues/musashino-civic-small-standard.json"
+  },
+  {
     "id": "national-bunraku-theatre-standard",
     "name": "国立文楽劇場",
     "searchAliases": [
@@ -86,6 +255,34 @@
     "representativePatternName": "文楽劇場 全席（標準）",
     "seatCount": 753,
     "dataPath": "/venue-db/venues/national-bunraku-theatre-standard.json"
+  },
+  {
+    "id": "nerima-culture-main-standard",
+    "name": "練馬文化センター 大ホール",
+    "searchAliases": [
+      "練馬文化センター大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "練馬区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（オーケストラピットなし）",
+    "seatCount": 1332,
+    "dataPath": "/venue-db/venues/nerima-culture-main-standard.json"
+  },
+  {
+    "id": "nerima-culture-small-standard",
+    "name": "練馬文化センター 小ホール",
+    "searchAliases": [
+      "つつじホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "練馬区",
+    "venueType": "hall",
+    "representativePatternName": "通常番号付き固定席配置",
+    "seatCount": 543,
+    "dataPath": "/venue-db/venues/nerima-culture-small-standard.json"
   },
   {
     "id": "oji-hall-standard",
@@ -101,6 +298,63 @@
     "representativePatternName": "通常座席",
     "seatCount": 315,
     "dataPath": "/venue-db/venues/oji-hall-standard.json"
+  },
+  {
+    "id": "ota-plaza-main-standard",
+    "name": "大田区民プラザ 大ホール",
+    "searchAliases": [
+      "大田区民プラザ大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "大田区",
+    "venueType": "hall",
+    "representativePatternName": "通常固定番号席配置",
+    "seatCount": 509,
+    "dataPath": "/venue-db/venues/ota-plaza-main-standard.json"
+  },
+  {
+    "id": "parthenon-tama-main-standard",
+    "name": "パルテノン多摩 大ホール",
+    "searchAliases": [
+      "パルテノン多摩大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "多摩市",
+    "venueType": "hall",
+    "representativePatternName": "通常固定席配置",
+    "seatCount": 1129,
+    "dataPath": "/venue-db/venues/parthenon-tama-main-standard.json"
+  },
+  {
+    "id": "risuru-main-standard",
+    "name": "たましんRISURUホール 大ホール",
+    "searchAliases": [
+      "RISURUホール 大ホール",
+      "立川市市民会館 大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "立川市",
+    "venueType": "hall",
+    "representativePatternName": "通常固定席配置",
+    "seatCount": 1201,
+    "dataPath": "/venue-db/venues/risuru-main-standard.json"
+  },
+  {
+    "id": "suginami-kokaido-main-standard",
+    "name": "杉並公会堂 大ホール",
+    "searchAliases": [
+      "杉並公会堂大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "杉並区",
+    "venueType": "hall",
+    "representativePatternName": "コンサート形式",
+    "seatCount": 1186,
+    "dataPath": "/venue-db/venues/suginami-kokaido-main-standard.json"
   },
   {
     "id": "sumida-triphony-small-hall-standard",
@@ -175,5 +429,19 @@
     "representativePatternName": "通常座席",
     "seatCount": 408,
     "dataPath": "/venue-db/venues/toppan-hall-standard.json"
+  },
+  {
+    "id": "yurakucho-asahi-hall-standard",
+    "name": "有楽町朝日ホール",
+    "searchAliases": [
+      "有楽町朝日ホール Aタイプ"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "representativePatternName": "Aタイプ（通常タイプ）",
+    "seatCount": 636,
+    "dataPath": "/venue-db/venues/yurakucho-asahi-hall-standard.json"
   }
 ]

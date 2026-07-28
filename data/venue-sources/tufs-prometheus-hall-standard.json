@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tufs-prometheus-hall-standard",
+  "name": "東京外国語大学 プロメテウス・ホール",
+  "prefecture": "東京都",
+  "city": "府中市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式資料が示す通常の番号付き固定席配置を候補とし、全rangeと転換席の独立照合完了後に確定する。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "プロメテウス・ホール(東京外国語大学アゴラ・グローバル内)",
+      "title": "プロメテウス・ホール(東京外国語大学アゴラ・グローバル内) 公式施設案内",
+      "url": "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA_Global.html",
+      "checkedAt": "2026-07-27"
+    }
+  ],
+  "registeredScope": "番号付き固定席の通常配置を調査中。",
+  "completenessBasis": "公式施設案内を確認済み。全番号を示す座席資料との照合は未完了。",
+  "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
+  "knownLimitations": [
+    "未解決事項が残るためproduction生成対象外。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "公式施設ページで客席概要は確認済み。全列・全番号と総席数を同時に裏付ける現行公式資料を追加確認する。"
+    ]
+  },
+  "ranges": []
+}

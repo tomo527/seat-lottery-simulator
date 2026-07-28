@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "fuchu-dream-hall-standard",
+  "name": "府中の森芸術劇場 どりーむホール",
+  "prefecture": "東京都",
+  "city": "府中市",
+  "aliases": [
+    "府中の森芸術劇場どりーむホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設案内が通常配置として示す固定席2017席を候補とする。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時1863席",
+      "車椅子席10席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人府中文化振興財団",
+      "title": "どりーむホール座席表",
+      "url": "https://www.fuchu-cpf.or.jp/theater/1000160/1000175.html",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "公益財団法人府中文化振興財団",
+      "title": "どりーむホール紹介",
+      "url": "https://www.fuchu-cpf.or.jp/theater/1000160/1000175.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常配置の1階固定席1527席と2・3階固定席490席を予定。",
+  "completenessBasis": "公式固定席2017席の内訳を確認したが、公式PDFの1階可視番号1528席と公式1階固定席1527席が1席一致しない。",
+  "transformation": "総数へ合わせる推測除外は行わず、公式資料の訂正または番号一覧を待つ。",
+  "knownLimitations": [
+    "オーケストラピット使用時は前方164席を使用しない。",
+    "車椅子席10席は番号付き固定席ではないため対象外。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "公式座席図の1階表示番号が公式階別小計より1席多い。",
+      "除外対象の1番号を示す公式資料を確認後、第1・第2パスをやり直す。"
+    ]
+  },
+  "ranges": []
+}

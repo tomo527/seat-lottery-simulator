@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "parthenon-tama-main-standard",
+  "name": "パルテノン多摩 大ホール",
+  "prefecture": "東京都",
+  "city": "多摩市",
+  "aliases": [
+    "パルテノン多摩大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 1129,
+    "selectionReason": "公式座席表が示すオーケストラピット未使用時の番号席1,129席を通常代表パターンとする。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時",
+      "車椅子席25席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "パルテノン多摩共同事業体",
+      "title": "大ホール座席表",
+      "url": "https://www.parthenon.or.jp/wp-content/uploads/2024/05/8353aa713b70c26fd8b81c4dc09f2cba.pdf",
+      "checkedAt": "2026-07-27"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "パルテノン多摩共同事業体",
+      "title": "大ホール施設概要",
+      "url": "https://www.parthenon.or.jp/guide/facility/the-grand-hall/",
+      "checkedAt": "2026-07-27"
+    }
+  ],
+  "registeredScope": "通常配置の固定席945席と取り外し可能な番号席184席、合計1,129席。",
+  "completenessBasis": "公式座席表から全番号を独立再抽出し、固定席945席と取り外し可能席184席の合計1,129席、および車椅子25席・多目的室20名を含む定員1,174名の内訳と照合した。",
+  "transformation": "A列からEE列までの連続番号を明示rangeへ転記し、通路・車椅子区画による分断を複数rangeで表現した。",
+  "knownLimitations": [
+    "番号のない車椅子席25席は抽選対象外とする。",
+    "オーケストラピット使用時にA列からD列を外す995席配置は含めない。",
+    "取り外し可能な番号席184席は公式の通常座席数1,129席に含まれるため抽選対象とした。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-27",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 6, "to": 37, "excluded": [] },
+    { "rowLabel": "B", "from": 5, "to": 30, "excluded": [] },
+    { "rowLabel": "B", "from": 32, "to": 38, "excluded": [] },
+    { "rowLabel": "C", "from": 5, "to": 38, "excluded": [] },
+    { "rowLabel": "D", "from": 4, "to": 30, "excluded": [] },
+    { "rowLabel": "D", "from": 32, "to": 39, "excluded": [] },
+    { "rowLabel": "E", "from": 4, "to": 39, "excluded": [] },
+    { "rowLabel": "F", "from": 4, "to": 30, "excluded": [] },
+    { "rowLabel": "F", "from": 32, "to": 39, "excluded": [] },
+    { "rowLabel": "G", "from": 3, "to": 40, "excluded": [] },
+    { "rowLabel": "H", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "H", "from": 32, "to": 40, "excluded": [] },
+    { "rowLabel": "I", "from": 3, "to": 40, "excluded": [] },
+    { "rowLabel": "J", "from": 2, "to": 30, "excluded": [] },
+    { "rowLabel": "J", "from": 32, "to": 41, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 42, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 30, "excluded": [] },
+    { "rowLabel": "L", "from": 32, "to": 42, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 42, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 30, "excluded": [] },
+    { "rowLabel": "N", "from": 32, "to": 42, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 42, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 30, "excluded": [] },
+    { "rowLabel": "P", "from": 32, "to": 42, "excluded": [] },
+    { "rowLabel": "Q", "from": 1, "to": 42, "excluded": [] },
+    { "rowLabel": "R", "from": 1, "to": 30, "excluded": [] },
+    { "rowLabel": "R", "from": 32, "to": 42, "excluded": [] },
+    { "rowLabel": "S", "from": 2, "to": 10, "excluded": [] },
+    { "rowLabel": "S", "from": 13, "to": 30, "excluded": [] },
+    { "rowLabel": "S", "from": 33, "to": 41, "excluded": [] },
+    { "rowLabel": "T", "from": 1, "to": 30, "excluded": [] },
+    { "rowLabel": "T", "from": 32, "to": 42, "excluded": [] },
+    { "rowLabel": "U", "from": 1, "to": 42, "excluded": [] },
+    { "rowLabel": "V", "from": 1, "to": 30, "excluded": [] },
+    { "rowLabel": "V", "from": 32, "to": 42, "excluded": [] },
+    { "rowLabel": "W", "from": 1, "to": 42, "excluded": [] },
+    { "rowLabel": "X", "from": 1, "to": 30, "excluded": [] },
+    { "rowLabel": "X", "from": 32, "to": 42, "excluded": [] },
+    { "rowLabel": "Y", "from": 1, "to": 42, "excluded": [] },
+    { "rowLabel": "Z", "from": 1, "to": 30, "excluded": [] },
+    { "rowLabel": "Z", "from": 32, "to": 42, "excluded": [] },
+    { "rowLabel": "AA", "from": 2, "to": 11, "excluded": [] },
+    { "rowLabel": "AA", "from": 13, "to": 19, "excluded": [] },
+    { "rowLabel": "AA", "from": 24, "to": 30, "excluded": [] },
+    { "rowLabel": "AA", "from": 32, "to": 41, "excluded": [] },
+    { "rowLabel": "BB", "from": 2, "to": 11, "excluded": [] },
+    { "rowLabel": "BB", "from": 32, "to": 41, "excluded": [] },
+    { "rowLabel": "CC", "from": 2, "to": 11, "excluded": [] },
+    { "rowLabel": "CC", "from": 32, "to": 41, "excluded": [] },
+    { "rowLabel": "DD", "from": 2, "to": 11, "excluded": [] },
+    { "rowLabel": "DD", "from": 32, "to": 41, "excluded": [] },
+    { "rowLabel": "EE", "from": 2, "to": 11, "excluded": [] },
+    { "rowLabel": "EE", "from": 32, "to": 41, "excluded": [] }
+  ]
+}

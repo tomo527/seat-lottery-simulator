@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "kunitachi-arts-small-hall-standard",
+  "name": "くにたち市民芸術小ホール",
+  "prefecture": "東京都",
+  "city": "国立市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定番号席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "くにたち市民芸術小ホール",
+      "title": "くにたち市民芸術小ホール 公式施設案内",
+      "url": "https://kuzaidan.or.jp/hall/",
+      "checkedAt": "2026-07-28"
+    }
+  ],
+  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
+  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "knownLimitations": [
+    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "公式座席資料から402席の全rangeを転記し、舞台張出し・車椅子利用時に取り外す席を通常固定席配置と区別する。"
+    ]
+  },
+  "ranges": []
+}

@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "musashino-civic-small-standard",
+  "name": "武蔵野市民文化会館 小ホール",
+  "prefecture": "東京都",
+  "city": "武蔵野市",
+  "aliases": [
+    "武蔵野市民文化会館小ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 425,
+    "selectionReason": "公式小ホール座席表に示された通常固定番号席425席を代表パターンとする。",
+    "notIncludedPatterns": [
+      "車椅子席4席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": ["seat-count", "facility"],
+      "publisher": "公益財団法人武蔵野文化生涯学習事業団",
+      "title": "武蔵野市民文化会館 大ホール・小ホール ご利用案内",
+      "url": "https://www.musashino.or.jp/_res/projects/default_project/_page_/001/008/244/2026.3hall.pdf",
+      "checkedAt": "2026-07-27"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure"],
+      "publisher": "公益財団法人武蔵野文化生涯学習事業団",
+      "title": "小ホール座席表",
+      "url": "https://www.musashino.or.jp/_res/projects/default_project/_page_/001/002/100/1002100_1.pdf",
+      "checkedAt": "2026-07-27"
+    }
+  ],
+  "registeredScope": "公式小ホール座席表の1列から15列までの固定番号席425席。",
+  "completenessBasis": "公式座席表の全列・全番号を独立再抽出し、同資料記載の固定席425席と照合した。",
+  "transformation": "単一main areaとして、各列の連続番号を15個の明示rangeへ転記した。",
+  "knownLimitations": [
+    "車椅子席4席は番号付き固定席ではないため対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-27",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "1", "from": 8, "to": 24, "excluded": [] },
+    { "rowLabel": "2", "from": 8, "to": 24, "excluded": [] },
+    { "rowLabel": "3", "from": 4, "to": 29, "excluded": [] },
+    { "rowLabel": "4", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "5", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "6", "from": 2, "to": 31, "excluded": [] },
+    { "rowLabel": "7", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "8", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "9", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "10", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "11", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "12", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "13", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "14", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "15", "from": 1, "to": 31, "excluded": [] }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "ebara-culture-main-standard",
+  "name": "荏原文化センター 大ホール",
+  "prefecture": "東京都",
+  "city": "品川区",
+  "aliases": [
+    "荏原文化センター大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-seating-chart",
+    "name": "公式座席表配置",
+    "coverage": "complete",
+    "expectedSeatCount": 437,
+    "selectionReason": "公式座席表に通常状態として示されたA列からU列までの椅子437席を代表パターンとする。",
+    "notIncludedPatterns": [
+      "A列取外し時",
+      "G列車椅子転用時"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "品川区",
+      "title": "荏原文化センター大ホール座席表",
+      "url": "https://www.city.shinagawa.tokyo.jp/ct/pdf/hpg000000314_7.pdf",
+      "checkedAt": "2026-07-27"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "品川区",
+      "title": "荏原文化センター施設案内",
+      "url": "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-bunka/shisetsu-bunka-bunka/hpg000000314.html",
+      "checkedAt": "2026-07-27"
+    }
+  ],
+  "registeredScope": "公式座席表のA列からU列までに番号が付された椅子437席。",
+  "completenessBasis": "公式座席表のA・B列各19席とC列からU列までの各21席を合計し、同資料記載の椅子席437席と照合した。",
+  "transformation": "A・B列を2番から20番、C列からU列を1番から21番の明示rangeへ転記した。",
+  "knownLimitations": [
+    "A列2～20番は取外し可能。",
+    "G列17～21番は車椅子転用可能。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-27",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 2, "to": 20, "excluded": [] },
+    { "rowLabel": "B", "from": 2, "to": 20, "excluded": [] },
+    { "rowLabel": "C", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "Q", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "R", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "S", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "T", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "U", "from": 1, "to": 21, "excluded": [] }
+  ]
+}

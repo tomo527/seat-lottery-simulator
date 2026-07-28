@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "meijiza-standard",
+  "name": "明治座",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": [
+    "明治座東京"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-without-hanamichi",
+    "name": "花道なし通常客席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式が示す2配置のうち、花道による減席がない花道なし1448席配置を代表パターン候補とする。",
+    "notIncludedPatterns": [
+      "花道あり1368席配置"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map-without-hanamichi",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "花道なし座席表",
+      "url": "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat-none.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-seat-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "劇場座席表",
+      "url": "https://www.meijiza.co.jp/theater-guide/seat/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "花道なし通常配置の番号席1448席を予定。",
+  "completenessBasis": "公式座席ページと花道なしPDFで席数を確認済み。全rangeを転記中。",
+  "transformation": "階・客席区分ごとに公式番号をrangeへ転記する予定。",
+  "knownLimitations": [
+    "花道あり公演では80席少ない別配置となるため混在させない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "花道あり・なしの複数配置から代表パターンを一意に確定できていない。",
+      "公式が通常配置として扱う座席表と総席数を特定する。"
+    ]
+  },
+  "ranges": []
+}

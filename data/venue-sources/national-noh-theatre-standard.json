@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "national-noh-theatre-standard",
+  "name": "国立能楽堂",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": [
+    "国立能楽堂 能舞台"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-seating",
+    "name": "通常客席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設案内の通常627席を候補とする。",
+    "notIncludedPatterns": [
+      "中正面可動席の別状態"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "独立行政法人日本芸術文化振興会",
+      "title": "国立能楽堂座席表",
+      "url": "https://www.ntj.jac.go.jp/assets/files/nou/zaseki/zaseki_nou_2.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "独立行政法人日本芸術文化振興会",
+      "title": "国立能楽堂施設案内",
+      "url": "https://www.ntj.jac.go.jp/nou/facilities/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "正面・脇正面・中正面・GBの番号付き座席627席を予定。",
+  "completenessBasis": "公式座席表とarea別合計627席を確認済み。可動6席を含む通常状態を独立照合する。",
+  "transformation": "公式座席表のarea・列・番号を明示rangeへ転記する予定。",
+  "knownLimitations": [
+    "中正面に可動席6席がある。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "正面・脇正面・中正面の全番号転記と総席数照合が未完了。",
+      "公式座席図を3 areaに分けて独立転記する。"
+    ]
+  },
+  "ranges": []
+}

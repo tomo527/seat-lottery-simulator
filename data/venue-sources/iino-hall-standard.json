@@ -19,12 +19,23 @@
   },
   "sources": [
     {
+      "id": "official-download-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
       "publisher": "イイノホール＆カンファレンスセンター",
       "title": "資料ダウンロード",
       "url": "https://www.iino.co.jp/hall/download/",
       "checkedAt": "2026-07-20"
     },
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
       "publisher": "イイノホール＆カンファレンスセンター",
       "title": "イイノホール座席表",
       "url": "https://www.iino.co.jp/hall/wp-content/themes/iino_hall/assets/pdf/seatinglist.pdf",
@@ -39,118 +50,107 @@
   ],
   "ranges": [
     {
-      "areaId": "main",
       "rowLabel": "A",
       "from": 4,
       "to": 27
     },
     {
-      "areaId": "main",
       "rowLabel": "B",
       "from": 3,
       "to": 29
     },
     {
-      "areaId": "main",
       "rowLabel": "C",
       "from": 2,
       "to": 29
     },
     {
-      "areaId": "main",
       "rowLabel": "D",
       "from": 1,
       "to": 31
     },
     {
-      "areaId": "main",
       "rowLabel": "E",
       "from": 1,
       "to": 30
     },
     {
-      "areaId": "main",
       "rowLabel": "F",
       "from": 1,
       "to": 31
     },
     {
-      "areaId": "main",
       "rowLabel": "G",
       "from": 1,
       "to": 30
     },
     {
-      "areaId": "main",
       "rowLabel": "H",
       "from": 2,
       "to": 30
     },
     {
-      "areaId": "main",
       "rowLabel": "I",
       "from": 1,
       "to": 30
     },
     {
-      "areaId": "main",
       "rowLabel": "J",
       "from": 1,
       "to": 31
     },
     {
-      "areaId": "main",
       "rowLabel": "K",
       "from": 1,
       "to": 30
     },
     {
-      "areaId": "main",
       "rowLabel": "L",
       "from": 1,
       "to": 31
     },
     {
-      "areaId": "main",
       "rowLabel": "M",
       "from": 1,
       "to": 30
     },
     {
-      "areaId": "main",
       "rowLabel": "N",
       "from": 1,
       "to": 31
     },
     {
-      "areaId": "main",
       "rowLabel": "O",
       "from": 1,
       "to": 30
     },
     {
-      "areaId": "main",
       "rowLabel": "P",
       "from": 1,
       "to": 31
     },
     {
-      "areaId": "main",
       "rowLabel": "Q",
       "from": 2,
       "to": 9
     },
     {
-      "areaId": "main",
       "rowLabel": "Q",
       "from": 11,
       "to": 20
     },
     {
-      "areaId": "main",
       "rowLabel": "Q",
       "from": 22,
       "to": 29
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

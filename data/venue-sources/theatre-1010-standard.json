@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "theatre-1010-standard",
+  "name": "シアター1010",
+  "prefecture": "東京都",
+  "city": "足立区",
+  "aliases": [
+    "シアター千住"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-seating",
+    "name": "通常客席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席表の1階553席・2階148席を候補とする。",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "シアター1010",
+      "title": "劇場座席表",
+      "url": "https://www.t1010.jp/html/guide/pdf/06_theatre_seat.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "シアター1010",
+      "title": "よくある質問",
+      "url": "https://www.t1010.jp/html/news/faq.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常配置の番号付き座席701席を予定。",
+  "completenessBasis": "公式座席表と階別合計701席を確認済み。全rangeを独立照合する。",
+  "transformation": "公式座席表のarea・列・番号を明示rangeへ転記する予定。",
+  "knownLimitations": [],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "複数階と可動席の全range転記が未完了。",
+      "通常舞台配置の公式座席図だけから全rangeを再抽出する。"
+    ]
+  },
+  "ranges": []
+}

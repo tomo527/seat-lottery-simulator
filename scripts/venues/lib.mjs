@@ -7,14 +7,23 @@ export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '
 export const SOURCE_DIR = path.join(ROOT, 'data/venue-sources')
 export const CATALOG_PATH = path.join(ROOT, 'src/data/venue-db/catalog.generated.json')
 export const DETAIL_DIR = path.join(ROOT, 'public/venue-db/venues')
+export const INVENTORY_DIR = path.join(ROOT, 'data/venue-inventory')
+export const BATCH_DIR = path.join(ROOT, 'data/venue-batches')
 
-export const readSources = async () => {
-  const files = (await readdir(SOURCE_DIR)).filter((file) => file.endsWith('.json')).sort()
-  return Promise.all(files.map(async (file) => ({ file, data: JSON.parse(await readFile(path.join(SOURCE_DIR, file), 'utf8')) })))
+export const readSources = async (sourceDir = SOURCE_DIR) => {
+  const files = (await readdir(sourceDir)).filter((file) => file.endsWith('.json')).sort()
+  return Promise.all(files.map(async (file) => {
+    try {
+      return { file, data: JSON.parse(await readFile(path.join(sourceDir, file), 'utf8')) }
+    } catch (error) {
+      throw new Error(`${file}: invalid JSON: ${error.message}`, { cause: error })
+    }
+  }))
 }
 
 export const rangeSeatCount = (range) => range.to - range.from + 1 - new Set(range.excluded ?? []).size
 export const calculateSeatCount = (ranges) => ranges.reduce((total, range) => total + rangeSeatCount(range), 0)
+export const canonicalAreaId = (range) => range.areaId ?? 'main'
 
 export const buildOutputs = (sources) => {
   const production = sources.filter(({ data }) => data.status === 'production').sort((left, right) => left.data.id.localeCompare(right.data.id))

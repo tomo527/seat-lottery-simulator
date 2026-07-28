@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "jcom-hall-hachioji-standard",
+  "name": "J:COMホール八王子",
+  "prefecture": "東京都",
+  "city": "八王子市",
+  "aliases": [
+    "オリンパスホール八王子",
+    "八王子市民会館"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常利用時固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席案内の通常利用時固定席1869席を候補とし、親子席と立見席を含めない。",
+    "notIncludedPatterns": [
+      "音響反射板設置・オーケストラピット使用時",
+      "親子席8席",
+      "立見席144席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map-1",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "八王子市民会館共同事業体",
+      "title": "J:COMホール八王子 座席表1",
+      "url": "https://jcom.hall-info.jp/file/seat120210401.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-seat-map-2",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "八王子市民会館共同事業体",
+      "title": "J:COMホール八王子 座席表2",
+      "url": "https://jcom.hall-info.jp/file/seat220210401.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "八王子市民会館共同事業体",
+      "title": "ホールのご案内",
+      "url": "https://jcom.hall-info.jp/about/big_hall.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常利用時の番号付き固定席1869席を予定。",
+  "completenessBasis": "公式座席表は確認済み。階別固定席、側面席、親子席、立見席、車椅子席の最終切り分けを転記中。",
+  "transformation": "階・中央客席・左右側面席をareaとし、番号付き固定席だけを明示rangeへ転記する予定。",
+  "knownLimitations": [
+    "音響反射板・オーケストラピット使用時は客席数が異なる。",
+    "黄色表示の音響・照明等専用可倒席の通常配置での扱いを独立確認する必要がある。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "側面列、車椅子転換席、可倒席を含む固定席1,869席の全range独立照合が未完了。",
+      "通常配置PDFだけから階・側面列を再抽出し、音響反射板配置と混在していないことを確認する。"
+    ]
+  },
+  "ranges": []
+}

@@ -1,8 +1,17 @@
 import { readFile, readdir } from 'node:fs/promises'
 import path from 'node:path'
 import { buildOutputs, CATALOG_PATH, compactJsonText, DETAIL_DIR, jsonText, readSources } from './lib.mjs'
+import { assertValidSources } from './validation.mjs'
+import { readInventories, validateInventories } from './inventory.mjs'
 
-const { catalog, details } = buildOutputs(await readSources())
+const sources = await readSources()
+assertValidSources(sources)
+const inventories = await readInventories()
+if (inventories.length) {
+  const inventoryValidation = validateInventories(inventories, sources)
+  if (inventoryValidation.errors.length) throw new Error(inventoryValidation.errors.join('\n'))
+}
+const { catalog, details } = buildOutputs(sources)
 const stale = []
 const compare = async (file, expected) => {
   const actual = await readFile(file, 'utf8').catch(() => '')

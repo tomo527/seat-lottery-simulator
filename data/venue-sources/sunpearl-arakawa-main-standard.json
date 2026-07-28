@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "sunpearl-arakawa-main-standard",
+  "name": "サンパール荒川 大ホール",
+  "prefecture": "東京都",
+  "city": "荒川区",
+  "aliases": [
+    "荒川区民会館 大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-full-seating",
+    "name": "通常客席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席表の通常975席を候補とする。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時",
+      "スピーカー台・フェンス設置時"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "サンパール荒川",
+      "title": "大ホール座席表",
+      "url": "https://www.sunpearl-arakawa.com/src/pdf/hall_big_zaseki.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "サンパール荒川",
+      "title": "大ホール施設概要",
+      "url": "https://www.sunpearl-arakawa.com/about/hall_big/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常配置の番号付き座席975席を予定。",
+  "completenessBasis": "公式座席表と通常席数を確認済み。全rangeを独立照合する。",
+  "transformation": "公式座席表のarea・列・番号を明示rangeへ転記する予定。",
+  "knownLimitations": [
+    "オーケストラピット等の使用時は減席する。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "可動席を含む全rangeと通常配置総席数の照合が未完了。",
+      "公式座席表から可動席範囲を区別して全列を転記する。"
+    ]
+  },
+  "ranges": []
+}

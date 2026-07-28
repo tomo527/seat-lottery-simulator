@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-geigeki-playhouse-standard",
+  "name": "東京芸術劇場 プレイハウス",
+  "prefecture": "東京都",
+  "city": "豊島区",
+  "aliases": [
+    "東京芸術劇場中ホール"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-without-orchestra-pit",
+    "name": "オーケストラピット未使用時通常客席",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行公式資料が通常全客席として示す829席配置を代表パターン候補とする。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時713席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "東京芸術劇場",
+      "title": "プレイハウス座席表",
+      "url": "https://www.geigeki.jp/facilities/pdf/playhouse.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "東京芸術劇場",
+      "title": "プレイハウス",
+      "url": "https://www.geigeki.jp/facilities/playhouse/",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "通常全客席の1階626席と2階203席、合計829席を予定。",
+  "completenessBasis": "現行公式施設案内と座席表で829席を確認済み。全rangeを転記中。",
+  "transformation": "1階と2階をareaに分けて番号席をrangeへ転記する予定。",
+  "knownLimitations": [
+    "オーケストラピット使用時はA列からE列の116席を使用しない。",
+    "旧資料の834席ではなく2026年時点の現行公式829席を使用する。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "設備更新工事による休館中で、2026年7月27日時点で再開未確認。",
+      "2026年9月以降に公式の再開と公演実施を確認して再レビューする。"
+    ]
+  },
+  "ranges": []
+}

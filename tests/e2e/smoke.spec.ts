@@ -1,4 +1,10 @@
+import { readFileSync } from 'node:fs'
 import { expect, test, type Page } from '@playwright/test'
+
+const catalog = JSON.parse(readFileSync(new URL('../../src/data/venue-db/catalog.generated.json', import.meta.url), 'utf8')) as {
+  prefecture: string
+}[]
+const tokyoVenueCount = catalog.filter((venue) => venue.prefecture === '東京都').length
 
 const openPicker = (page: Page) => page.getByRole('button', { name: /会場を選ぶ|会場を変更/ }).click()
 
@@ -91,6 +97,23 @@ test('4要素をANDで絞り込み、通知風結果を再抽選できる', asyn
   expect(consoleErrors).toEqual([])
 })
 
+test('一橋講堂をalias検索し、detailをlazy loadして階表示付きで抽選できる', async ({ page }) => {
+  await page.goto('/')
+  await openPicker(page)
+  await page.getByLabel('会場名で検索').fill('一橋大学一橋講堂')
+  await expect(page.getByText('絞り込み結果 1件')).toBeVisible()
+  const detailResponse = page.waitForResponse((response) =>
+    response.url().endsWith('/venue-db/venues/hitotsubashi-hall-standard.json') && response.ok())
+  await page.getByRole('button', { name: '一橋講堂を選ぶ' }).click()
+  await detailResponse
+  await expect(page).toHaveURL(/\?venue=hitotsubashi-hall-standard$/)
+  await expect(page.getByText('抽選対象 521席')).toBeVisible()
+  await expect(page.getByRole('button', { name: '座席を抽選する' })).toBeEnabled()
+  await drawAndExpectNotification(page, '一橋講堂')
+  await expect(page.locator('.ticket-details').getByText('エリア', { exact: true })).toBeVisible()
+  await expect(page.locator('.ticket-details dd').filter({ hasText: /1階|2階/ })).toBeVisible()
+})
+
 test('会場切替と自作座席でも通知カードが成立する', async ({ page }) => {
   await page.goto('/')
   await chooseVenue(page, '東京芸術劇場', '東京芸術劇場 シアターイースト')
@@ -151,7 +174,7 @@ for (const viewport of [{ width: 360, height: 800 }, { width: 768, height: 900 }
     await page.getByLabel('エリア').selectOption({ label: '関東' })
     await page.getByLabel('都道府県').selectOption({ label: '東京都' })
     await expect(page.getByLabel('市区町村')).toBeEnabled()
-    await expect(page.getByText('絞り込み結果 10件')).toBeVisible()
+    await expect(page.getByText(`絞り込み結果 ${tokyoVenueCount}件`)).toBeVisible()
     expect(await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)).toBe(false)
   })
 

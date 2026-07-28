@@ -22,12 +22,24 @@
   },
   "sources": [
     {
+      "id": "official-document-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
       "publisher": "株式会社エフエム東京",
       "title": "TOKYO FMホール 図面・書類",
       "url": "https://www.tfmhall.com/document",
       "checkedAt": "2026-07-20"
     },
     {
+      "id": "official-floor-plan",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
       "publisher": "株式会社エフエム東京",
       "title": "Aステージ（308席）会場平面図",
       "url": "https://www.tfmhall.com/_files/ugd/f48b1c_2fefcd1ce65949edae0efa317c1ceebd.pdf",
@@ -42,94 +54,87 @@
   ],
   "ranges": [
     {
-      "areaId": "main",
       "rowLabel": "A",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "B",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "C",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "D",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "E",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "F",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "G",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "H",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "I",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "J",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "K",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "L",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "M",
       "from": 2,
       "to": 8
     },
     {
-      "areaId": "main",
       "rowLabel": "M",
       "from": 10,
       "to": 15
     },
     {
-      "areaId": "main",
       "rowLabel": "M",
       "from": 17,
       "to": 23
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "akigawa-kirara-hall-standard",
+  "name": "S&D秋川キララホール",
+  "prefecture": "東京都",
+  "city": "あきる野市",
+  "aliases": [
+    "秋川キララホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-numbered-seats",
+    "name": "通常固定番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 700,
+    "selectionReason": "公式座席案内図が客席702席を、A列からV列までの固定番号席700席とF列位置の車椅子用2席に区分しているため、通常時の固定番号席700席を代表パターンとする。",
+    "notIncludedPatterns": [
+      "F列位置の番号付き固定席ではない車椅子用2席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "S&D秋川キララホール",
+      "title": "秋川キララホール 座席案内図 702席（含車椅子席2席）",
+      "url": "https://www.akigawa-kirarahall.jp/link/zasekihyo.pdf",
+      "checkedAt": "2026-07-28"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "S&D秋川キララホール",
+      "title": "施設案内",
+      "url": "https://www.akigawa-kirarahall.jp/facility.html",
+      "checkedAt": "2026-07-28"
+    }
+  ],
+  "registeredScope": "公式座席案内図に通常配置として示されたA列からE列およびG列からV列の各1番から32番、F列1番から28番の固定番号席700席。",
+  "completenessBasis": "公式座席案内図からA列からE列の160席、F列の28席、G列からV列の512席を転記し、固定番号席合計700席と、公式公称702席から車椅子用2席を除いた数が一致することを第1パスで確認した。",
+  "transformation": "公式座席案内図の各列で連続する固定番号席を、列ごとの明示rangeへ転記した。F列位置の車椅子用2席は番号付き固定席ではないためrangeへ含めていない。",
+  "knownLimitations": [
+    "公式公称702席にはF列位置の車椅子用2席が含まれるが、番号付き固定席ではないため抽選対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-28",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "B", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "C", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "Q", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "R", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "S", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "T", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "U", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "V", "from": 1, "to": 32, "excluded": [] }
+  ]
+}

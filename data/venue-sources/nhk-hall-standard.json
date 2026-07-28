@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "nhk-hall-standard",
+  "name": "NHKホール",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": [
+    "NHK Hall"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "fixed-seats-only",
+    "name": "通常固定席のみ",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "イベントごとの差を避け、公式施設概要が固定席と明示する3400席だけを代表パターン候補とする。",
+    "notIncludedPatterns": [
+      "可動席201席",
+      "オーケストラピット席160席",
+      "L・R補助席41席"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "一般財団法人NHK財団",
+      "title": "NHKホール座席表",
+      "url": "https://www.nhk-fdn.or.jp/nhk_hall/pdf/nhk_hall.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "一般財団法人NHK財団",
+      "title": "NHKホール施設概要",
+      "url": "https://www.nhk-fdn.or.jp/nhk_hall/organizer.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "公式施設概要の固定席3400席のみを予定。",
+  "completenessBasis": "固定席3400席と可動席201席の内訳を公式資料で確認済み。固定席番号の全rangeを転記中。",
+  "transformation": "階・ブロック別に固定席だけをrangeへ転記する予定。",
+  "knownLimitations": [
+    "オーケストラピット席とL・R補助席は可動席のため対象外。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "固定席、可動席、車椅子転換席の境界を公式資料だけで確定していない。",
+      "通常配置の階別番号席と転換対象番号を公式資料で特定する。"
+    ]
+  },
+  "ranges": []
+}

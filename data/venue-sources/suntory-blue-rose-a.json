@@ -23,12 +23,25 @@
   },
   "sources": [
     {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
       "publisher": "公益財団法人 サントリー芸術財団",
       "title": "サントリーホール 座席表",
       "url": "https://www.suntory.co.jp/suntoryhall/seat/",
       "checkedAt": "2026-07-20"
     },
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
       "publisher": "公益財団法人 サントリー芸術財団",
       "title": "ブルーローズ座席表 シューボックス型（縦使いA型）",
       "url": "https://www.suntory.co.jp/suntoryhall/seat/pdf/bluerose_a.pdf",
@@ -43,100 +56,92 @@
   ],
   "ranges": [
     {
-      "areaId": "main",
       "rowLabel": "1",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "2",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "3",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "4",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "5",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "6",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "7",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "8",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "9",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "10",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "11",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "12",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "13",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "14",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "15",
       "from": 1,
       "to": 24
     },
     {
-      "areaId": "main",
       "rowLabel": "16",
       "from": 1,
       "to": 24
     }
-  ]
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-24",
+    "method": "legacy-official-source-metadata-review-and-range-reconciliation",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  }
 }

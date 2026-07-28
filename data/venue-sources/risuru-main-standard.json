@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "risuru-main-standard",
+  "name": "たましんRISURUホール 大ホール",
+  "prefecture": "東京都",
+  "city": "立川市",
+  "aliases": [
+    "立川市市民会館 大ホール",
+    "RISURUホール 大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常固定席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 1201,
+    "selectionReason": "公式施設案内の通常配置を候補とし、オーケストラピット使用時の撤去席を含む別配置は採用しない。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時（1階1～2列49席撤去）",
+      "車椅子転換時の14位置"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "たましんRISURUホール",
+      "title": "大ホール座席表",
+      "url": "https://risuru.hall-info.jp/file/LargeHallSeatingChart.pdf",
+      "checkedAt": "2026-07-26"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "たましんRISURUホール",
+      "title": "大ホール施設概要",
+      "url": "https://risuru.hall-info.jp/service/bighall.html",
+      "checkedAt": "2026-07-26"
+    }
+  ],
+  "registeredScope": "オーケストラピット未使用時の通常配置における1階・2階番号付き座席1201席。",
+  "completenessBasis": "公式座席PDFの全番号を二度独立転記し、1階通常番号位置785席（うち車椅子転換可能14位置）と2階416席を公式総座席数1201席へ照合した。",
+  "transformation": "1階と2階をareaに分け、公式座席表の番号をrange、恒久欠番をexcludedとして転記した。",
+  "knownLimitations": [
+    "オーケストラピット使用時は1階1～2列49席を撤去する。",
+    "1階6列・22列の14位置は通常時に公式番号席として使われ、車椅子利用時に転換される。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-26",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "1", "from": 10, "to": 33, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "2", "from": 9, "to": 34, "excluded": [30] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "3", "from": 8, "to": 35, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "4", "from": 7, "to": 36, "excluded": [30] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "5", "from": 6, "to": 37, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "6", "from": 6, "to": 37, "excluded": [7, 9, 30, 34, 36] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "7", "from": 3, "to": 40, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "8", "from": 3, "to": 40, "excluded": [30] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "9", "from": 2, "to": 41, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "10", "from": 1, "to": 42, "excluded": [30] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "11", "from": 1, "to": 42, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "12", "from": 1, "to": 42, "excluded": [30] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "13", "from": 1, "to": 42, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "14", "from": 1, "to": 42, "excluded": [30] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "15", "from": 2, "to": 41, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "16", "from": 2, "to": 41, "excluded": [30] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "17", "from": 2, "to": 41, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "18", "from": 2, "to": 41, "excluded": [30] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "19", "from": 3, "to": 40, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "20", "from": 3, "to": 40, "excluded": [30] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "21", "from": 3, "to": 40, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "22", "from": 4, "to": 39, "excluded": [5, 7, 9, 11, 30, 32, 34, 36, 38] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "23", "from": 2, "to": 40, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "24", "from": 2, "to": 40, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "25", "from": 2, "to": 40, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "26", "from": 3, "to": 39, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "27", "from": 3, "to": 39, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "28", "from": 4, "to": 38, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "29", "from": 4, "to": 38, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "30", "from": 5, "to": 37, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "31", "from": 5, "to": 37, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "32", "from": 5, "to": 37, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "33", "from": 5, "to": 37, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "34", "from": 8, "to": 34, "excluded": [15, 16, 26, 27] }
+  ]
+}
