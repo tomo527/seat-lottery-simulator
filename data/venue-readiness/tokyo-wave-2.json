@@ -1,0 +1,337 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-2",
+  "baselineDate": "2026-07-29",
+  "scope": "Wave 2開始時点の残存draft 36 sourceのreadiness更新",
+  "expectedVenueCount": 36,
+  "cohort": {
+    "description": "2026-07-29の処理開始時点でdraft-createdだった36件。開始時点で既にproductionだった4件とblockedだった10件はreadiness再評価の対象外。",
+    "batchCandidateCount": 50,
+    "excluded": [
+      {
+        "venueId": "tokyo-official-0234",
+        "baselineStatus": "blocked",
+        "reason": "開始時点で新宿文化センター長期休館によりblocked。"
+      },
+      {
+        "venueId": "tokyo-official-0537",
+        "baselineStatus": "blocked",
+        "reason": "開始時点で公式全番号座席構造を確定できずblocked。"
+      },
+      {
+        "venueId": "tokyo-official-0546",
+        "baselineStatus": "blocked",
+        "reason": "開始時点で公式全番号座席構造を確定できずblocked。"
+      },
+      {
+        "venueId": "tokyo-official-1150",
+        "baselineStatus": "production",
+        "reason": "開始時点でproduction化済み。"
+      },
+      {
+        "venueId": "tokyo-official-0849",
+        "baselineStatus": "blocked",
+        "reason": "開始時点で公式全番号座席構造を確定できずblocked。"
+      },
+      {
+        "venueId": "tokyo-official-0106",
+        "baselineStatus": "blocked",
+        "reason": "開始時点でイベント別配置のため代表パターンを一意に確定できずblocked。"
+      },
+      {
+        "venueId": "tokyo-official-0025",
+        "baselineStatus": "blocked",
+        "reason": "開始時点で公式資料間の席数差分が未解消のためblocked。"
+      },
+      {
+        "venueId": "tokyo-official-1193",
+        "baselineStatus": "production",
+        "reason": "開始時点でproduction化済み。"
+      },
+      {
+        "venueId": "tokyo-official-1197",
+        "baselineStatus": "production",
+        "reason": "開始時点でproduction化済み。"
+      },
+      {
+        "venueId": "tokyo-official-0934",
+        "baselineStatus": "production",
+        "reason": "開始時点でproduction化済み。"
+      },
+      {
+        "venueId": "tokyo-official-1161",
+        "baselineStatus": "blocked",
+        "reason": "開始時点で公称席数と転換席の関係が未解消のためblocked。"
+      },
+      {
+        "venueId": "tokyo-official-0047",
+        "baselineStatus": "blocked",
+        "reason": "開始時点で閉場・建替え中のためblocked。"
+      },
+      {
+        "venueId": "tokyo-official-0874",
+        "baselineStatus": "blocked",
+        "reason": "開始時点で固定番号席の代表配置を確定できずblocked。"
+      },
+      {
+        "venueId": "tokyo-official-0876",
+        "baselineStatus": "blocked",
+        "reason": "開始時点で固定番号席の代表配置を確定できずblocked。"
+      }
+    ]
+  },
+  "venues": [
+    {
+      "venueId": "tokyu-theatre-orb-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "sumida-triphony-main-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "bunkyo-civic-main-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "chofu-green-main-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "nakano-zero-main-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "hino-brick-main-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "setagaya-eagle-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "theater-milano-za-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "nihon-education-center-hitotsubashi-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "olympic-center-main-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "hikifune-culture-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "koto-culture-hall-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "tufs-prometheus-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "edogawa-culture-small-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "kasai-civic-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "zendentsu-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "hokutopia-tsutsuji-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "kunitachi-arts-small-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "kameido-camelia-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "yotsuya-civic-hall-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "kita-noh-theatre-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "olympic-center-small-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "square-ebara-hiratsuka-hall-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "musashino-public-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "bunkyo-civic-small-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "yamaha-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "itabashi-culture-small-standard",
+      "readiness": "R4",
+      "secondPass": "mismatch",
+      "blocker": "公称306席（車椅子4席を含む）と座席図上の番号席306席・別描画の車椅子4区画が同時に成立する関係、および車椅子利用時に外す4番号を公式資料から特定できない。",
+      "nextAction": "施設が車椅子利用時の撤去・転換番号を明記した公式運用資料を公開した場合に、代表パターンとexpectedSeatCountを再確定して独立照合する。"
+    },
+    {
+      "venueId": "owlspot-theatre-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "taito-civic-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "taito-millennium-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "toyosu-civic-center-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "komatsugawa-civic-hall-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "chofu-green-small-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "popuri-hall-tsurukawa-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
+    },
+    {
+      "venueId": "hoya-komorebi-small-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    },
+    {
+      "venueId": "fussa-civic-small-standard",
+      "readiness": "R3",
+      "secondPass": "not-started",
+      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
+      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+    }
+  ]
+}

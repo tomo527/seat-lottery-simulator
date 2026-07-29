@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "theatre-crea-standard",
+  "name": "シアタークリエ",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": ["Theatre Creation"],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-proscenium",
+    "name": "通常舞台配置",
+    "coverage": "complete",
+    "expectedSeatCount": 609,
+    "selectionReason": "公式座席表が示す本席603席と番号付きボックス席6席を通常配置の代表パターンとする。",
+    "notIncludedPatterns": ["補助席1番から7番を使用する配置", "車椅子利用時に21列3番・4番を転換する配置"]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count", "facility"],
+      "publisher": "東宝株式会社",
+      "title": "シアタークリエ 座席表",
+      "url": "https://www.tohostage.com/seat/crea2016_sa.pdf",
+      "checkedAt": "2026-07-29"
+    }
+  ],
+  "registeredScope": "公式座席表の1列から22列までの603席と、L1からL3までの番号付きボックス席6席。",
+  "completenessBasis": "公式座席表を列別に再集計した603席とボックス席6席の合計609席が、図中の公称609席と一致した。",
+  "transformation": "本席は列ごとの番号rangeと欠番へ、ボックス席は各区画の1番から2番へ転記した。",
+  "knownLimitations": ["非番号の車椅子スペース2区画は、通常時に番号席21列3番・4番として利用する代表配置で扱う。", "補助席1番から7番は非常設のため除外する。"],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-29",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "1", "from": 4, "to": 26, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "2", "from": 3, "to": 27, "excluded": [22] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "3", "from": 3, "to": 27, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "4", "from": 3, "to": 27, "excluded": [22] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "5", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "6", "from": 1, "to": 29, "excluded": [22] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "7", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "8", "from": 1, "to": 29, "excluded": [22] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "9", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "10", "from": 1, "to": 29, "excluded": [22] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "11", "from": 3, "to": 27, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "12", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "13", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "14", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "15", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "16", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "17", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "18", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "19", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "20", "from": 1, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "21", "from": 3, "to": 29, "excluded": [] },
+    { "areaId": "main", "areaLabel": "本席", "rowLabel": "22", "from": 5, "to": 27, "excluded": [] },
+    { "areaId": "box-l1", "areaLabel": "ボックス席L1", "rowLabel": "L1", "from": 1, "to": 2, "excluded": [] },
+    { "areaId": "box-l2", "areaLabel": "ボックス席L2", "rowLabel": "L2", "from": 1, "to": 2, "excluded": [] },
+    { "areaId": "box-l3", "areaLabel": "ボックス席L3", "rowLabel": "L3", "from": 1, "to": 2, "excluded": [] }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-wave3-0559",
+  "name": "砧区民会館(成城ホール)〔成城ホール〕",
+  "prefecture": "東京都",
+  "city": "世田谷区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "",
+    "name": "",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
+    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
+  },
+  "sources": [],
+  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
+  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
+  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
+  "knownLimitations": ["有効なHTTPSの公式施設URLを再特定し、全番号付き座席表と総席数資料を取得する。"],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": ["有効なHTTPSの公式施設URLを再特定し、全番号付き座席表と総席数資料を取得する。"]
+  },
+  "ranges": []
+}

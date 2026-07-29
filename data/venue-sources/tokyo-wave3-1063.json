@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-wave3-1063",
+  "name": "調布市文化会館 たづくり〔くすのきホール 〕",
+  "prefecture": "東京都",
+  "city": "調布市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "",
+    "name": "",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
+    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
+  },
+  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"調布市文化会館 たづくり","title":"調布市文化会館 たづくり〔くすのきホール 〕 施設案内","url":"https://www.chofu-culture-community.org/forms/info/info.aspx?info_id=807","checkedAt":"2026-07-29"}],
+  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
+  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
+  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
+  "knownLimitations": ["公式座席図の番号席500席と非番号車椅子4区画では、公称506席との差2席を説明できない。"],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": ["公称506席と、公式座席図から確認できる番号席500席・非番号車椅子4区画との差2席を示す公式根拠が必要。"]
+  },
+  "ranges": []
+}

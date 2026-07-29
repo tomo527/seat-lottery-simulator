@@ -1,48 +1,59 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "bunkyo-civic-small-standard",
   "name": "文京シビックホール 小ホール",
   "prefecture": "東京都",
   "city": "文京区",
-  "aliases": [],
+  "aliases": ["響きの森文京公会堂 小ホール"],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "id": "standard-numbered-seats",
+    "name": "通常番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 341,
+    "selectionReason": "公式利用手引きが通常配置をA列からM列の電動可動椅子299席とア・イ列の移動椅子42席、計341席として示すため、この番号付き通常配置を代表パターンとする。",
+    "notIncludedPatterns": ["舞台前迫り・奥迫りを使用して客席配置を変更する場合"]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-small-hall-guide",
       "official": true,
-      "roles": [
-        "facility"
-      ],
-      "publisher": "文京シビックホール 小ホール",
-      "title": "文京シビックホール 小ホール 公式施設案内",
-      "url": "https://www.b-academy.jp/",
-      "checkedAt": "2026-07-28"
+      "roles": ["seat-structure", "seat-count", "facility"],
+      "publisher": "文京シビックホール",
+      "title": "小ホール 利用の手引き（小ホール座席表）",
+      "url": "https://www.b-academy.jp/rental/upload/bunkyo_small_hall.pdf",
+      "checkedAt": "2026-07-29"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
-  "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
-  ],
+  "registeredScope": "公式座席表に通常配置として示されたア列2番から22番、イ列2番から22番、A列からM列の各1番から23番の番号付き341席。",
+  "completenessBasis": "公式座席表から移動椅子42席と電動可動椅子299席を全列転記し、公式内訳341席と一致することを第1パスで確認した。",
+  "transformation": "公式座席表で各列に連続する番号を列ごとの明示rangeへ転記した。",
+  "knownLimitations": ["全席が可動席であり、舞台迫りの利用などによる別配置は代表パターンに含めない。"],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式座席表から325固定席と可動席16席の番号体系を確認し、通常配置341席の全rangeを転記する。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-07-29",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "ア", "from": 2, "to": 22, "excluded": [] },
+    { "rowLabel": "イ", "from": 2, "to": 22, "excluded": [] },
+    { "rowLabel": "A", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "B", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "C", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 23, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 23, "excluded": [] }
+  ]
 }

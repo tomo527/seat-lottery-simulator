@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "koto-culture-hall-standard",
   "name": "江東区文化センター ホール",
   "prefecture": "東京都",
@@ -8,41 +8,64 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式資料が示す通常の番号付き固定席配置を候補とし、全rangeと転換席の独立照合完了後に確定する。",
-    "notIncludedPatterns": []
+    "id": "standard-numbered-seats",
+    "name": "通常番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 511,
+    "selectionReason": "公式座席表が1列から18列の番号席511席を通常配置として示し、施設案内も固定席432席・可動席79席の計511席と明記するため、この配置を代表パターンとする。",
+    "notIncludedPatterns": ["番号のない車椅子スペース3区画を使用するため可動席を取り外した配置"]
   },
   "sources": [
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "公益財団法人江東区文化コミュニティ財団",
+      "title": "江東区文化センター ホール座席表",
+      "url": "https://www.kcf.or.jp/cms/files/pdf/id1_922.pdf",
+      "checkedAt": "2026-07-29"
+    },
+    {
       "id": "official-facility-guide",
       "official": true,
-      "roles": [
-        "facility"
-      ],
-      "publisher": "江東区文化センター",
-      "title": "江東区文化センター〔ホール〕 公式施設案内",
-      "url": "https://www.kcf.or.jp/koto/",
-      "checkedAt": "2026-07-27"
+      "roles": ["facility", "seat-count"],
+      "publisher": "公益財団法人江東区文化コミュニティ財団",
+      "title": "江東区文化センター ホール",
+      "url": "https://www.kcf.or.jp/koto/shisetsu/ichiran/detail/?id=2",
+      "checkedAt": "2026-07-29"
     }
   ],
-  "registeredScope": "番号付き固定席の通常配置を調査中。",
-  "completenessBasis": "公式施設案内を確認済み。全番号を示す座席資料との照合は未完了。",
-  "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
-  "knownLimitations": [
-    "未解決事項が残るためproduction生成対象外。"
-  ],
+  "registeredScope": "公式座席表に通常配置として番号が付された固定席432席と可動席79席、計511席。",
+  "completenessBasis": "1列から18列の全番号を転記し、固定432席と可動79席の公式内訳および公式合計511席に一致することを第1パスで確認した。",
+  "transformation": "各列の最小番号から最大番号までを明示rangeへ転記した。通路は番号の連続を分断しないためrangeを分割していない。",
+  "knownLimitations": ["車椅子利用時は一部の番号付き可動席を取り外すが、代表パターンは全番号席を設置した通常配置。"],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式施設ページで総席数は確認済み。全番号を判読できる現行公式座席表を特定してからrangeを入力する。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-07-29",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "1", "from": 7, "to": 26, "excluded": [] },
+    { "rowLabel": "2", "from": 5, "to": 28, "excluded": [] },
+    { "rowLabel": "3", "from": 4, "to": 29, "excluded": [] },
+    { "rowLabel": "4", "from": 3, "to": 30, "excluded": [] },
+    { "rowLabel": "5", "from": 2, "to": 30, "excluded": [] },
+    { "rowLabel": "6", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "7", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "8", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "9", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "10", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "11", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "12", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "13", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "14", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "15", "from": 1, "to": 32, "excluded": [] },
+    { "rowLabel": "16", "from": 4, "to": 29, "excluded": [] },
+    { "rowLabel": "17", "from": 6, "to": 27, "excluded": [] },
+    { "rowLabel": "18", "from": 9, "to": 24, "excluded": [] }
+  ]
 }

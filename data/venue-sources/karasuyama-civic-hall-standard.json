@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "karasuyama-civic-hall-standard",
+  "name": "烏山区民会館 ホール",
+  "prefecture": "東京都",
+  "city": "世田谷区",
+  "aliases": ["烏山区民会館"],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-numbered-seats",
+    "name": "通常番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 382,
+    "selectionReason": "公式平面図に示された通常の番号付き座席382席を、抽選対象の一意な代表配置とする。",
+    "notIncludedPatterns": ["車椅子スペース2区画を利用する配置"]
+  },
+  "sources": [
+    {
+      "id": "official-hall-plan",
+      "official": true,
+      "roles": ["seat-structure", "seat-count", "facility"],
+      "publisher": "株式会社世田谷サービス公社",
+      "title": "烏山区民会館 ホール平面図",
+      "url": "https://www.setagaya.co.jp/kuminkaikan/karasuyama/pdf/heimenzu_hall.pdf",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": ["seat-count", "facility"],
+      "publisher": "株式会社世田谷サービス公社",
+      "title": "烏山区民会館 ホール",
+      "url": "https://www.setagaya.co.jp/kuminkaikan/karasuyama/facilities/hall.html",
+      "checkedAt": "2026-07-29"
+    }
+  ],
+  "registeredScope": "公式平面図に番号が示されたA列からQ列までの382席。",
+  "completenessBasis": "公式平面図から各列の先頭・末尾番号を別々に抽出し、番号席合計382席が公式内訳の客席382席と一致することを第1・第2パスで確認した。",
+  "transformation": "公式平面図の連続する番号を列ごとのrangeへ転記した。",
+  "knownLimitations": ["非番号の車椅子スペース2区画は抽選対象に含めない。"],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-29",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 3, "to": 23, "excluded": [] },
+    { "rowLabel": "B", "from": 2, "to": 24, "excluded": [] },
+    { "rowLabel": "C", "from": 2, "to": 24, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 25, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 25, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 25, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 25, "excluded": [] },
+    { "rowLabel": "H", "from": 5, "to": 18, "excluded": [] },
+    { "rowLabel": "I", "from": 5, "to": 21, "excluded": [] },
+    { "rowLabel": "J", "from": 5, "to": 21, "excluded": [] },
+    { "rowLabel": "K", "from": 5, "to": 21, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 25, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 25, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 25, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 25, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 25, "excluded": [] },
+    { "rowLabel": "Q", "from": 1, "to": 25, "excluded": [] }
+  ]
+}

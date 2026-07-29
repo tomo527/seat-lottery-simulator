@@ -8,41 +8,62 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
+    "id": "standard-fixed-numbered-seats",
     "name": "通常固定番号席配置",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "expectedSeatCount": 306,
+    "selectionReason": "公式座席表からA列からP列の番号席306席は抽出できるが、同資料は公称306席に車椅子席4席を含むとも記載しており、車椅子利用時に外す番号席を一意に特定できないため代表パターンは未確定。",
+    "notIncludedPatterns": ["車椅子席4席を使用するためC・D列左右の周辺番号席を転換する配置"]
   },
   "sources": [
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "板橋区立文化会館",
+      "title": "小ホール座席表 306席（車椅子席4席含む）",
+      "url": "https://www.itabashi-ci.org/culturehall/institution/pdf/bunka-h2_zaseki.pdf",
+      "checkedAt": "2026-07-29"
+    },
+    {
       "id": "official-facility-page",
       "official": true,
-      "roles": [
-        "facility"
-      ],
-      "publisher": "板橋区立文化会館 小ホール",
-      "title": "板橋区立文化会館 小ホール 公式施設案内",
-      "url": "https://www.itabashi-ci.org/culturehall/",
-      "checkedAt": "2026-07-28"
+      "roles": ["facility", "seat-count"],
+      "publisher": "板橋区立文化会館",
+      "title": "文化会館 小ホール",
+      "url": "https://www.itabashi-ci.org/culturehall/institution/bunka-h2.html",
+      "checkedAt": "2026-07-29"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
-  "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
-  ],
+  "registeredScope": "第1パス候補として公式座席表に番号が付されたA列からP列の306席を転記したが、productionの抽選対象集合としては未確定。",
+  "completenessBasis": "A・B列各12席、C・D列各16席、E列からO列各22席、P列8席の番号席306席を転記した。公称306席に含まれる車椅子4席との包含関係は未解決。",
+  "transformation": "公式座席表の列ごとの連続番号を明示rangeへ転記した。別に描かれた車椅子4区画は非番号のためrangeに含めていないが、車椅子利用時に外す番号席は公式資料から特定できない。",
+  "knownLimitations": ["座席図には306個の番号席と車椅子4区画が別に描かれる一方、公称306席は車椅子席4席を含む。車椅子運用時に撤去・転換する4番号を公式資料から一意に確認できない。"],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式座席表から306席の全rangeを転記し、車椅子対応時の取り外し席を通常配置へ含めるか確認する。"
-    ]
+    "checkedAt": "2026-07-29",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit",
+    "seatStructure": "mismatched",
+    "seatCount": "mismatched",
+    "unresolvedIssues": ["公称306席（車椅子4席を含む）と、座席図上の番号席306席・別描画の車椅子4区画の関係、および車椅子利用時に外す番号席が公式資料で特定できない。"]
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "A", "from": 6, "to": 17, "excluded": [] },
+    { "rowLabel": "B", "from": 6, "to": 17, "excluded": [] },
+    { "rowLabel": "C", "from": 4, "to": 19, "excluded": [] },
+    { "rowLabel": "D", "from": 4, "to": 19, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "P", "from": 8, "to": 15, "excluded": [] }
+  ]
 }

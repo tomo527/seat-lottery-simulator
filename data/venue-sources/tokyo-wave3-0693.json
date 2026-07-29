@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-wave3-0693",
+  "name": "LUMINE 0〔ホール〕",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "",
+    "name": "",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
+    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
+  },
+  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"LUMINE 0","title":"LUMINE 0〔ホール〕 施設案内","url":"https://www.lumine.ne.jp/luminezero/","checkedAt":"2026-07-29"}],
+  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
+  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
+  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
+  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
+  },
+  "ranges": []
+}

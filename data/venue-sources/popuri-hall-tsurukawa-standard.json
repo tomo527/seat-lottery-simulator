@@ -1,48 +1,67 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "popuri-hall-tsurukawa-standard",
   "name": "和光大学ポプリホール鶴川",
   "prefecture": "東京都",
   "city": "町田市",
-  "aliases": [],
+  "aliases": ["町田市鶴川緑の交流館 ホール", "ポプリホール鶴川"],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "id": "standard-numbered-seats",
+    "name": "通常番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 300,
+    "selectionReason": "公式座席表がA列からN列の通常番号席300席を示し、公式施設案内の定員300名と一致するため、この配置を代表パターンとする。",
+    "notIncludedPatterns": ["F列4番から7番および21番から26番を取り外して車椅子スペースとする配置"]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-seat-map",
       "official": true,
-      "roles": [
-        "facility"
-      ],
+      "roles": ["seat-structure", "seat-count"],
       "publisher": "和光大学ポプリホール鶴川",
-      "title": "和光大学ポプリホール鶴川 公式施設案内",
-      "url": "https://www.m-shimin-hall.jp/tsurukawa/",
-      "checkedAt": "2026-07-28"
+      "title": "和光大学ポプリホール鶴川 座席表",
+      "url": "https://www.m-shimin-hall.jp/wp-content/uploads/2024/04/popri_zaseki.pdf",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": ["facility", "seat-count"],
+      "publisher": "和光大学ポプリホール鶴川",
+      "title": "施設案内 ホール",
+      "url": "https://www.m-shimin-hall.jp/tsurukawa/facility_information/",
+      "checkedAt": "2026-07-29"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
-  "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
-  ],
+  "registeredScope": "公式座席表に通常配置として示されたA列からN列の番号付き300席。",
+  "completenessBasis": "全14列の番号と恒久欠番を転記し、公式定員300名と一致することを第1パスで確認した。",
+  "transformation": "列内の番号空白はexcludedへ明示した。F列の取り外し可能な番号席10席は通常配置では設置されるため含めた。",
+  "knownLimitations": ["車椅子利用時はF列の番号付き可動席10席の一部または全部を取り外す。代表パターンは全席設置時。"],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式座席表から300席の全rangeを転記し、可動席・車椅子席の公称席数への包含を確認する。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-07-29",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "A", "from": 3, "to": 25, "excluded": [15, 16, 17, 18, 19, 20] },
+    { "rowLabel": "B", "from": 2, "to": 26, "excluded": [16, 17, 18, 19, 20] },
+    { "rowLabel": "C", "from": 1, "to": 27, "excluded": [17, 18, 19, 20] },
+    { "rowLabel": "D", "from": 2, "to": 26, "excluded": [18, 19, 20] },
+    { "rowLabel": "E", "from": 8, "to": 18, "excluded": [] },
+    { "rowLabel": "F", "from": 4, "to": 26, "excluded": [] },
+    { "rowLabel": "G", "from": 2, "to": 26, "excluded": [20] },
+    { "rowLabel": "H", "from": 2, "to": 26, "excluded": [] },
+    { "rowLabel": "I", "from": 2, "to": 26, "excluded": [20] },
+    { "rowLabel": "J", "from": 2, "to": 26, "excluded": [] },
+    { "rowLabel": "K", "from": 2, "to": 26, "excluded": [20] },
+    { "rowLabel": "L", "from": 2, "to": 26, "excluded": [] },
+    { "rowLabel": "M", "from": 8, "to": 26, "excluded": [17, 18] },
+    { "rowLabel": "N", "from": 8, "to": 27, "excluded": [] }
+  ]
 }

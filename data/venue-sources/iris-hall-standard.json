@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "iris-hall-standard",
+  "name": "かつしかシンフォニーヒルズ アイリスホール",
+  "prefecture": "東京都",
+  "city": "葛飾区",
+  "aliases": ["葛飾区文化会館 アイリスホール", "アイリスホール"],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "full-seating",
+    "name": "通常客席298席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 298,
+    "selectionReason": "公式施設案内が客席298席（固定171席、可動127席）と明示する全客席配置を代表パターンとする。",
+    "notIncludedPatterns": ["客席前半を舞台として使用する165席配置", "平土間配置"]
+  },
+  "sources": [
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": ["seat-count", "facility"],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "シンフォニーヒルズ施設紹介",
+      "url": "https://www.k-mil.gr.jp/institution/symphony/index.html",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure"],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "アイリスホール 座席表",
+      "url": "https://www.k-mil.gr.jp/institution/symphony/ir_seat.html",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "official-stage-guide",
+      "official": true,
+      "roles": ["seat-count", "facility"],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "アイリスホール 舞台資料",
+      "url": "https://www.k-mil.gr.jp/institution/symphony/pdf_202506/iris_stage.pdf",
+      "checkedAt": "2026-07-29"
+    }
+  ],
+  "registeredScope": "通常客席配置のA列からP列までの番号付き298席。",
+  "completenessBasis": "公式座席表の各列を別パスで再抽出し、A列15席、B列17席、C列からP列まで各19席、合計298席が公式内訳の固定171席・可動127席と一致した。",
+  "transformation": "公式座席表に連続して示された番号を列ごとのrangeへ転記した。",
+  "knownLimitations": ["A列からG列までの127席は公式の通常配置に含まれる番号付き可動席として登録する。", "客席前半を舞台として使用する165席配置は別配置のため含めない。"],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-07-29",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    { "rowLabel": "A", "from": 3, "to": 17, "excluded": [] },
+    { "rowLabel": "B", "from": 2, "to": 18, "excluded": [] },
+    { "rowLabel": "C", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 19, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 19, "excluded": [] }
+  ]
+}

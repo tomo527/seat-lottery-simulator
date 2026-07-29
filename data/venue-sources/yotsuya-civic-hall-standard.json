@@ -1,48 +1,75 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "yotsuya-civic-hall-standard",
   "name": "四谷区民ホール",
   "prefecture": "東京都",
   "city": "新宿区",
-  "aliases": [],
+  "aliases": ["新宿区立四谷区民ホール"],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
+    "id": "standard-fixed-numbered-seats",
     "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "coverage": "complete",
+    "expectedSeatCount": 392,
+    "selectionReason": "現行公式座席表が1階286席と2階106席の固定番号席、計392席を明示するため、この番号席集合を代表パターンとする。",
+    "notIncludedPatterns": ["1階O・P列右側の番号のない車椅子スペース2台分", "親子室5席分"]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-seat-map",
       "official": true,
-      "roles": [
-        "facility"
-      ],
-      "publisher": "四谷区民ホール",
-      "title": "四谷区民ホール 公式施設案内",
-      "url": "https://www.shinjuku.hall-info.jp/yotsuya/",
-      "checkedAt": "2026-07-28"
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "新宿区立四谷区民ホール",
+      "title": "四谷区民ホール 座席表（2022.10.01～）",
+      "url": "https://shinjuku.hall-info.jp/file/yotsuya_seat_table.pdf",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": ["facility", "seat-count"],
+      "publisher": "新宿区立四谷区民ホール",
+      "title": "施設紹介",
+      "url": "https://shinjuku.hall-info.jp/yotsuya/about.html",
+      "checkedAt": "2026-07-29"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
-  "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
-  ],
+  "registeredScope": "現行公式座席表に番号が付された1階A列からP列の286席と2階Q列からV列の106席、計392席。",
+  "completenessBasis": "全22列の最小・最大番号を転記し、公式階別小計286席・106席と総数392席に一致することを第1パスで確認した。",
+  "transformation": "公式座席表の各列の連続番号を階別areaの明示rangeへ転記した。",
+  "knownLimitations": ["公式座席表の収容内訳は番号席392席に加えて非番号車椅子2台分と親子室5席分。後二者は抽選対象外。"],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式座席表から394席の全列・全番号を転記し、車椅子対応席と公称席数の関係を確認する。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-07-29",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "A", "from": 3, "to": 18, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "B", "from": 2, "to": 19, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "C", "from": 1, "to": 19, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "D", "from": 1, "to": 19, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "E", "from": 1, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "F", "from": 1, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "G", "from": 1, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "H", "from": 2, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "I", "from": 2, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "J", "from": 3, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "K", "from": 4, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "L", "from": 4, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "M", "from": 5, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "N", "from": 6, "to": 21, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "O", "from": 6, "to": 17, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "P", "from": 7, "to": 17, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "Q", "from": 1, "to": 20, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "R", "from": 2, "to": 20, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "S", "from": 2, "to": 20, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "T", "from": 3, "to": 20, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "U", "from": 4, "to": 19, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "V", "from": 5, "to": 18, "excluded": [] }
+  ]
 }

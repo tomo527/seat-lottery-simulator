@@ -1,48 +1,71 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "square-ebara-hiratsuka-hall-standard",
   "name": "スクエア荏原 ひらつかホール",
   "prefecture": "東京都",
   "city": "品川区",
-  "aliases": [],
+  "aliases": ["ひらつかホール"],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
+    "id": "standard-fixed-numbered-seats",
     "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "coverage": "complete",
+    "expectedSeatCount": 362,
+    "selectionReason": "公式座席表と施設概要が固定番号席362席と非番号の車椅子6席を明確に区分するため、固定番号席362席を代表パターンとする。",
+    "notIncludedPatterns": ["9列左右の番号のない車椅子席6区画", "親子室3名分"]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-seat-map",
       "official": true,
-      "roles": [
-        "facility"
-      ],
-      "publisher": "スクエア荏原 ひらつかホール",
-      "title": "スクエア荏原 ひらつかホール 公式施設案内",
-      "url": "https://www.shinagawa-culture.or.jp/square/",
-      "checkedAt": "2026-07-28"
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "公益財団法人品川文化振興事業団",
+      "title": "ひらつかホール座席表",
+      "url": "https://www.shinagawa-culture.or.jp/square/facility/guide/jk1h86000000084r-att/e_zasekihyo.pdf",
+      "checkedAt": "2026-07-29"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": ["facility", "seat-count"],
+      "publisher": "公益財団法人品川文化振興事業団",
+      "title": "スクエア荏原 施設一覧",
+      "url": "https://www.shinagawa-culture.or.jp/square/facility/guide/outline.html",
+      "checkedAt": "2026-07-29"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
-  "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
-  ],
+  "registeredScope": "公式座席表の1列から18列に番号が付された固定席362席。",
+  "completenessBasis": "全18列を転記し、公式内訳の固定席362席と一致すること、および車椅子6区画が非番号であることを第1パスで確認した。",
+  "transformation": "各列の連続番号を明示rangeへ転記し、9列左右の非番号車椅子区画は除外した。",
+  "knownLimitations": ["公称定員368席は固定番号席362席と非番号車椅子6席の合計。親子室3名分は公称定員外で抽選対象外。"],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式座席表から368席の全rangeを転記し、車椅子スペース利用時に外す席と通常配置を確認する。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-07-29",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "1", "from": 3, "to": 20, "excluded": [] },
+    { "rowLabel": "2", "from": 2, "to": 21, "excluded": [] },
+    { "rowLabel": "3", "from": 2, "to": 21, "excluded": [] },
+    { "rowLabel": "4", "from": 2, "to": 21, "excluded": [] },
+    { "rowLabel": "5", "from": 2, "to": 21, "excluded": [] },
+    { "rowLabel": "6", "from": 2, "to": 21, "excluded": [] },
+    { "rowLabel": "7", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "8", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "9", "from": 6, "to": 17, "excluded": [] },
+    { "rowLabel": "10", "from": 6, "to": 17, "excluded": [] },
+    { "rowLabel": "11", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "12", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "13", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "14", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "15", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "16", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "17", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "18", "from": 1, "to": 22, "excluded": [] }
+  ]
 }
