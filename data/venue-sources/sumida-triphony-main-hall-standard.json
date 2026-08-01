@@ -24,12 +24,21 @@
       ],
       "publisher": "すみだトリフォニーホール",
       "title": "すみだトリフォニーホール〔大ホール〕 公式施設案内",
-      "url": "https://www.triphony.com/",
-      "checkedAt": "2026-07-27"
+      "url": "https://www.triphony.com/hallguide/hall_b.php",
+      "checkedAt": "2026-08-01"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "すみだトリフォニーホール",
+      "title": "大ホール 座席表",
+      "url": "https://www.triphony.com/seat/common/pdf/hall_b.pdf",
+      "checkedAt": "2026-08-01"
     }
   ],
   "registeredScope": "番号付き固定席の通常配置を調査中。",
-  "completenessBasis": "公式施設案内を確認済み。全番号を示す座席資料との照合は未完了。",
+  "completenessBasis": "公式施設案内の1,801席（1階1,040・2階233・3階528）、オーケストラピット使用時200席減・車椅子4席分と、公式PDF座席表を確認済み。全番号のrange抽出と独立照合は未完了。",
   "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
   "knownLimitations": [
     "未解決事項が残るためproduction生成対象外。"
@@ -41,7 +50,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表の1階・2階・3階全rangeを転記し、オーケストラピット使用時に外れる200席と車椅子4席分を通常固定席1,801席から切り分ける。"
+      "公式PDFの1階・2階・3階全range、複数の側方／バルコニーarea、オーケストラピット使用時に外れる200席、非番号車椅子4区画を独立に抽出する必要がある。番号席総数と公称1,801席との関係を確認せず推測してはならない。"
     ]
   },
   "ranges": []

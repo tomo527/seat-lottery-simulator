@@ -42,6 +42,20 @@
     "dataPath": "/venue-db/venues/bunkyo-civic-small-standard.json"
   },
   {
+    "id": "chofu-green-main-standard",
+    "name": "調布市グリーンホール 大ホール",
+    "searchAliases": [
+      "グリーンホール 大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "調布市",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（オーケストラピット未使用）",
+    "seatCount": 1295,
+    "dataPath": "/venue-db/venues/chofu-green-main-standard.json"
+  },
+  {
     "id": "ebara-culture-main-standard",
     "name": "荏原文化センター 大ホール",
     "searchAliases": [
@@ -112,6 +126,20 @@
     "representativePatternName": "通常座席",
     "seatCount": 552,
     "dataPath": "/venue-db/venues/hamarikyu-asahi-hall-standard.json"
+  },
+  {
+    "id": "hikifune-culture-hall-standard",
+    "name": "曳舟文化センター 劇場ホール",
+    "searchAliases": [
+      "劇場ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "墨田区",
+    "venueType": "hall",
+    "representativePatternName": "通常番号席配置",
+    "seatCount": 582,
+    "dataPath": "/venue-db/venues/hikifune-culture-hall-standard.json"
   },
   {
     "id": "hitotsubashi-hall-standard",

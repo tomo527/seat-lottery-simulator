@@ -1,48 +1,77 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "hikifune-culture-hall-standard",
   "name": "曳舟文化センター 劇場ホール",
   "prefecture": "東京都",
   "city": "墨田区",
-  "aliases": [],
+  "aliases": ["劇場ホール"],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式資料が示す通常の番号付き固定席配置を候補とし、全rangeと転換席の独立照合完了後に確定する。",
-    "notIncludedPatterns": []
+    "id": "standard-numbered-seats",
+    "name": "通常番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 582,
+    "selectionReason": "公式座席表の通常配置582席を代表パターンとする。可動椅子30席を車椅子12台分の空間へ転換する564席配置は別配置である。",
+    "notIncludedPatterns": ["可動椅子30席を車椅子12台分の空間へ転換した564席配置"]
   },
   "sources": [
     {
       "id": "official-facility-guide",
       "official": true,
-      "roles": [
-        "facility"
-      ],
+      "roles": ["facility", "seat-count"],
       "publisher": "曳舟文化センター",
       "title": "曳舟文化センター〔劇場ホール〕 公式施設案内",
-      "url": "https://www.hikifune-bunka.com",
-      "checkedAt": "2026-07-27"
+      "url": "https://www.hikifune-bunka.jp/about/hall/",
+      "checkedAt": "2026-08-01"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "墨田区曳舟文化センター",
+      "title": "曳舟文化センター 劇場ホール座席表",
+      "url": "https://www.hikifune-bunka.jp/src/pdf/hall_seat.pdf",
+      "checkedAt": "2026-08-01"
     }
   ],
-  "registeredScope": "番号付き固定席の通常配置を調査中。",
-  "completenessBasis": "公式施設案内を確認済み。全番号を示す座席資料との照合は未完了。",
-  "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
+  "registeredScope": "公式座席表の通常配置に番号が付された1列から22列の582席。可動椅子30席も通常配置では番号席として含める。",
+  "completenessBasis": "第1パスで公式PDFの全22列・全番号を転記し582席を確認した。独立第2パスでもsource JSONやrangeを参照せず公式PDFを再読し、全range・総席数・可動椅子の転換範囲・先頭／中間／末尾offsetが一致した。",
+  "transformation": "通路で左右に分かれる列も番号が連続するため、各列の最小番号から最大番号までをmain areaの明示rangeへ転記した。",
   "knownLimitations": [
-    "未解決事項が残るためproduction生成対象外。"
+    "可動椅子30席は通常582席配置に含める。これらを車椅子12台分の空間へ変更する場合は564席となる別配置であり、代表パターンには混在させない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式座席表から全rangeを転記し、可動席・車椅子対応席と公称席数の包含関係を確認する。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-01",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex independent second-pass audit (isolated reviewer)",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    {"areaId":"main","areaLabel":"全席","rowLabel":"1","from":11,"to":22,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"2","from":7,"to":26,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"3","from":6,"to":27,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"4","from":5,"to":28,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"5","from":4,"to":29,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"6","from":4,"to":29,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"7","from":7,"to":26,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"8","from":2,"to":31,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"9","from":2,"to":31,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"10","from":1,"to":32,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"11","from":1,"to":32,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"12","from":1,"to":32,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"13","from":1,"to":32,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"14","from":11,"to":22,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"15","from":5,"to":28,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"16","from":5,"to":28,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"17","from":5,"to":28,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"18","from":1,"to":32,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"19","from":1,"to":32,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"20","from":1,"to":32,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"21","from":1,"to":32,"excluded":[]},
+    {"areaId":"main","areaLabel":"全席","rowLabel":"22","from":1,"to":32,"excluded":[]}
+  ]
 }

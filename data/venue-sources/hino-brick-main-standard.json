@@ -19,20 +19,27 @@
     {
       "id": "official-facility-guide",
       "official": true,
-      "roles": [
-        "facility"
-      ],
+      "roles": ["facility", "seat-count"],
       "publisher": "日野市民会館(ひの煉瓦ホール)",
       "title": "日野市民会館(ひの煉瓦ホール)〔大ホール〕 公式施設案内",
-      "url": "https://www.hino-_kaikan.jp/",
-      "checkedAt": "2026-07-27"
+      "url": "https://www.hino-kaikan.jp/about/hall_big/",
+      "checkedAt": "2026-08-01"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure"],
+      "publisher": "日野市民会館(ひの煉瓦ホール)",
+      "title": "日野市民会館 大ホール 座席表",
+      "url": "https://www.hino-kaikan.jp/src/pdf/hall-big_zaseki.pdf",
+      "checkedAt": "2026-08-01"
     }
   ],
-  "registeredScope": "番号付き固定席の通常配置を調査中。",
-  "completenessBasis": "公式施設案内を確認済み。全番号を示す座席資料との照合は未完了。",
+  "registeredScope": "公式座席図に示される1階から3階の番号席を調査中。",
+  "completenessBasis": "公式施設ページの総数1,104席（固定席1,094・車椅子スペース6・親子席4）と公式3階建て座席図を確認済み。ただし、図上の番号席、親子席4席、非番号車椅子6区画の包含関係を公式資料だけで確定できない。",
   "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
   "knownLimitations": [
-    "未解決事項が残るためproduction生成対象外。"
+    "固定席1,094席・親子席4席・非番号車椅子スペース6区画の各集合が、公式座席図の番号席へどう対応するかを公式資料が明示していない。"
   ],
   "verification": {
     "status": "pending",
@@ -41,7 +48,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表の全列・欠番を転記し、可動席および車椅子対応席を代表パターンへ含める条件を確認する。"
+      "公式の番号席総数と1階から3階の内訳、親子席4席が番号付きか、車椅子スペース6区画の通常時の撤去・転換番号を確認する必要がある。番号規則や図面の配置から補完してはならない。"
     ]
   },
   "ranges": []

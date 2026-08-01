@@ -92,36 +92,36 @@
       "venueId": "sumida-triphony-main-hall-standard",
       "readiness": "R3",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "公式PDFと1,801席（1階1,040・2階233・3階528）、ピット使用時200席減、車椅子4区画は確認済みだが、複数階・側方areaを含む全rangeの独立抽出が未完了。",
+      "nextAction": "公式PDFだけから各階・側方areaを全rangeへ転記し、番号席総数と非番号車椅子4区画・ピット時差分を照合してから第2パスを行う。"
     },
     {
       "venueId": "bunkyo-civic-main-standard",
       "readiness": "R3",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "公式PDFと1,802席（1階1,242・2階560）、車椅子6席、ピット設営時162席減は確認済みだが、側方段差席を含む番号席総数の独立抽出が未完了。",
+      "nextAction": "公式PDFの1階・2階の側方段差席を含め全rangeを転記し、公称1,802席に含まれる非番号車椅子6区画との関係を確認してから第2パスを行う。"
     },
     {
       "venueId": "chofu-green-main-standard",
-      "readiness": "R3",
-      "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
     },
     {
       "venueId": "nakano-zero-main-standard",
       "readiness": "R3",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "現行公式PDFと1,292席、ピット使用時1,164席、車椅子4区画は確認済みだが、1階・2階の多数ブロックに分かれた全rangeと番号席総数の独立抽出が未完了。",
+      "nextAction": "公式PDFだけから1階・2階の全ブロック・欠番をrange化し、非番号車椅子4区画とピット時128席減の関係を確認してから第2パスを行う。"
     },
     {
       "venueId": "hino-brick-main-standard",
       "readiness": "R3",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "公式1,104席（固定1,094・車椅子6・親子4）と3階建て座席図は確認済みだが、番号席・親子席・非番号車椅子6区画の包含関係と階別番号席総数が公式資料だけで確定できない。",
+      "nextAction": "固定1,094席の公式内訳、親子席4席が番号付きか、車椅子利用時の撤去・転換番号を示す公式資料を取得してからrange化する。"
     },
     {
       "venueId": "setagaya-eagle-hall-standard",
@@ -153,10 +153,10 @@
     },
     {
       "venueId": "hikifune-culture-hall-standard",
-      "readiness": "R3",
-      "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "production fingerprintを維持する。"
     },
     {
       "venueId": "koto-culture-hall-standard",
@@ -169,15 +169,15 @@
       "venueId": "tufs-prometheus-hall-standard",
       "readiness": "R3",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "東京外国語大学の公式資料で約500人規模・1階2階構成は確認できるが、全番号seat-structure sourceと504席または正確な公称席数を示すseat-count sourceがない。",
+      "nextAction": "現行の公式番号座席図と正確な公称席数が公開された場合に、番号規則を推測せず第1パスを開始する。"
     },
     {
       "venueId": "edogawa-culture-small-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "2026年4月から2027年11月まで（予定）の全館改修休館中で、現行seat-structure sourceとseat-count sourceを確認できない。",
+      "nextAction": "再開後に現行の公式座席表と公称席数を確認し、改修前資料を推測で流用せず第1パスをやり直す。"
     },
     {
       "venueId": "kasai-civic-hall-standard",

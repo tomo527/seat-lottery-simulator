@@ -25,14 +25,23 @@
       "publisher": "江戸川区総合文化センター",
       "title": "江戸川区総合文化センター〔小ホール〕 公式施設案内",
       "url": "https://edogawa-bunkacenter.jp/",
-      "checkedAt": "2026-07-27"
+      "checkedAt": "2026-08-01"
+    },
+    {
+      "id": "official-renovation-notice",
+      "official": true,
+      "roles": ["facility"],
+      "publisher": "江戸川区総合文化センター",
+      "title": "改修工事による休館のお知らせ",
+      "url": "https://edogawa-bunkacenter.jp/sp/news/",
+      "checkedAt": "2026-08-01"
     }
   ],
-  "registeredScope": "番号付き固定席の通常配置を調査中。",
-  "completenessBasis": "公式施設案内を確認済み。全番号を示す座席資料との照合は未完了。",
+  "registeredScope": "改修前の番号付き固定席の通常配置を調査中。",
+  "completenessBasis": "公式サイトは小ホールを約500人と案内するが、2026年4月から2027年11月まで全館改修休館中である。現行のseat-structure sourceとseat-count sourceを再開後に確認する必要がある。",
   "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
   "knownLimitations": [
-    "未解決事項が残るためproduction生成対象外。"
+    "2027年11月まで（予定）の改修休館中であり、再開後の現行座席仕様を確認するまでproduction生成対象外。"
   ],
   "verification": {
     "status": "pending",
@@ -41,7 +50,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表の番号席と車椅子2区画・同伴者2席の関係を確認し、固定番号席だけの全rangeと公称502席を独立照合する。"
+      "再開後に現行の公式seat-structure sourceとseat-count sourceを取得し、番号席と車椅子2区画・同伴者2席の関係を確認する。改修前の図面や約500人の案内から番号席を推測してはならない。"
     ]
   },
   "ranges": []

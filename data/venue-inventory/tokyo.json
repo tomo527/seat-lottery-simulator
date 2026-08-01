@@ -7280,14 +7280,14 @@
       "city": "墨田区",
       "capacity": 582,
       "category": "hall",
-      "officialFacilityUrl": "https://www.hikifune-bunka.com",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "officialFacilityUrl": "https://www.hikifune-bunka.jp/about/hall/",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式施設ページと公式座席表を独立確認し、通常配置の番号席582席と可動椅子30席を車椅子12台分へ転換した564席別配置の関係を確認した。",
       "priority": "B",
       "venueSourceId": "hikifune-culture-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-01"
     },
     {
       "inventoryId": "tokyo-official-0370",
@@ -19049,13 +19049,14 @@
       "capacity": 502,
       "category": "hall",
       "officialFacilityUrl": "https://edogawa-bunkacenter.jp/",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "renovation",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026年4月から2027年11月まで（予定）の全館改修休館中。再開後の現行座席図と公称席数を確認するまでproduction化しない。",
       "priority": "B",
       "venueSourceId": "edogawa-culture-small-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-01",
+      "blockingReason": "2026年4月から2027年11月まで（予定）の全館改修休館中。再開後に現行seat-structure sourceとseat-count sourceを確認する。"
     },
     {
       "inventoryId": "tokyo-official-0974",
@@ -20867,14 +20868,14 @@
       "city": "調布市",
       "capacity": 1307,
       "category": "hall",
-      "officialFacilityUrl": "https://www.chofu-culture-community.org/forms/menutop/menutop.aspx?menu_id=90",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "officialFacilityUrl": "https://www.chofu-culture-community.org/halls/green-hall-large",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式施設ページと公式座席表を独立確認し、通常配置の番号席1,295席（1階865席・2階430席）と定員1,301席に含まれる非番号車椅子6区画の関係を確認した。",
       "priority": "A",
       "venueSourceId": "chofu-green-main-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-01"
     },
     {
       "inventoryId": "tokyo-official-1066",

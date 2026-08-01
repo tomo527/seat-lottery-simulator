@@ -24,12 +24,21 @@
       ],
       "publisher": "中野区もみじ山文化センター なかのZERO",
       "title": "中野区もみじ山文化センター なかのZERO〔大ホール〕 公式施設案内",
-      "url": "https://nicesacademia.jp/",
-      "checkedAt": "2026-07-27"
+      "url": "https://www.naka-lab.jp/space-rooms/main-hall",
+      "checkedAt": "2026-08-01"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "中野区文化施設 指定管理者 なかの応援パートナーズ",
+      "title": "なかのZERO大ホール 座席案内図（客席数1,292席）",
+      "url": "https://09a24188-feca-4db1-9b51-550e675a0e21.usrfiles.com/ugd/09a241_73561a982bb6463d944225a862ccef78.pdf",
+      "checkedAt": "2026-08-01"
     }
   ],
   "registeredScope": "番号付き固定席の通常配置を調査中。",
-  "completenessBasis": "公式施設案内を確認済み。全番号を示す座席資料との照合は未完了。",
+  "completenessBasis": "現行公式施設ページの1,292席（オーケストラピット使用時1,164席・車椅子4席）と公式PDF座席案内図を確認済み。1階・2階の複数ブロックに分かれた全番号rangeの独立抽出は未完了。",
   "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
   "knownLimitations": [
     "未解決事項が残るためproduction生成対象外。"
@@ -41,7 +50,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表から1階・2階全rangeを転記し、車椅子席表示と公称1,292席の包含関係を確認する。"
+      "公式PDFから1階・2階の全ブロック・全range・欠番を独立に抽出し、非番号車椅子4区画とピット使用時128席減が公称1,292席にどう含まれるかを確認する必要がある。番号の規則性から未確認席を推測してはならない。"
     ]
   },
   "ranges": []
