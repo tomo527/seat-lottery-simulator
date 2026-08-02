@@ -15,18 +15,21 @@
     "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
     "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"国立音楽大学","title":"国立音楽大学〔講堂大ホール〕 施設案内","url":"https://www.kunitachi.ac.jp/introduction/organization/hall.html","checkedAt":"2026-07-29"}],
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"国立音楽大学","title":"国立音楽大学〔講堂大ホール〕 施設案内","url":"https://www.kunitachi.ac.jp/introduction/organization/hall.html","checkedAt":"2026-08-02"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure"],"publisher":"国立音楽大学","title":"国立音楽大学 講堂大ホール座席表","url":"https://www.kunitachi.ac.jp/documents/organization/l_hall_seating.pdf","checkedAt":"2026-08-02"}
+  ],
   "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
   "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
   "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
+  "knownLimitations": ["公式資料は大ホールを1,290席と案内し番号図を公開するが、図の全area・全rowを目視で独立転記・照合するまでrangeを確定してはならない。オーケストラピット使用時の扱いを推測してはならない。"],
   "verification": {
     "status": "pending",
     "checkedAt": null,
     "method": "",
     "seatStructure": "pending",
     "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
+    "unresolvedIssues": ["通常1,290席の全番号range、area別小計、ピット使用時に除外される番号の公式根拠、独立第2パスが未完了。"]
   },
   "ranges": []
 }
