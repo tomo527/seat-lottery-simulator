@@ -1,0 +1,70 @@
+{
+  "inventoryVersion": 1,
+  "jurisdiction": "宮城県",
+  "discoverySource": {
+    "publisher": "Release Seed curated selection",
+    "title": "宮城県 regional release seed",
+    "checkedAt": "2026-08-02",
+    "recordCount": 3
+  },
+  "normalizationScope": "Regional release seed: high-demand fixed-seat halls selected for official-source preflight.",
+  "venues": [
+    {
+      "inventoryId": "sendai-sunplaza-hall",
+      "facilityName": "仙台サンプラザホール",
+      "spaceName": null,
+      "officialDisplayName": "仙台サンプラザホール",
+      "prefecture": "宮城県",
+      "city": "仙台市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.sendai-sunplaza.com/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "sendai-sunplaza-hall-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "tokyo-electron-hall-miyagi",
+      "facilityName": "東京エレクトロンホール宮城",
+      "spaceName": "大ホール",
+      "officialDisplayName": "東京エレクトロンホール宮城 大ホール",
+      "prefecture": "宮城県",
+      "city": "仙台市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.bunka.city.sendai.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "tokyo-electron-hall-miyagi-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "izumity21-main",
+      "facilityName": "仙台市泉文化創造センター イズミティ21",
+      "spaceName": "大ホール",
+      "officialDisplayName": "仙台市泉文化創造センター イズミティ21 大ホール",
+      "prefecture": "宮城県",
+      "city": "仙台市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.bunka.city.sendai.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "B",
+      "venueSourceId": "izumity21-main-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    }
+  ]
+}

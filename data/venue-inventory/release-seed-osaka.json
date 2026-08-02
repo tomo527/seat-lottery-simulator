@@ -1,0 +1,113 @@
+{
+  "inventoryVersion": 1,
+  "jurisdiction": "大阪府",
+  "discoverySource": {
+    "publisher": "Release Seed curated selection",
+    "title": "大阪府 regional release seed",
+    "checkedAt": "2026-08-02",
+    "recordCount": 3
+  },
+  "normalizationScope": "Regional release seed: high-demand fixed-seat halls selected for official-source preflight.",
+  "venues": [
+    {
+      "inventoryId": "festival-hall",
+      "facilityName": "フェスティバルホール",
+      "spaceName": null,
+      "officialDisplayName": "フェスティバルホール",
+      "prefecture": "大阪府",
+      "city": "大阪市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.festivalhall.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "festival-hall-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "orix-theatre",
+      "facilityName": "オリックス劇場",
+      "spaceName": null,
+      "officialDisplayName": "オリックス劇場",
+      "prefecture": "大阪府",
+      "city": "大阪市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.orixtheater.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "orix-theatre-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "umeda-arts-theater-main",
+      "facilityName": "梅田芸術劇場",
+      "spaceName": "メインホール",
+      "officialDisplayName": "梅田芸術劇場 メインホール",
+      "prefecture": "大阪府",
+      "city": "大阪市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.umegei.com/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "umeda-arts-theater-main-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "kyocera-dome-osaka-standard-baseball",
+      "facilityName": "京セラドーム大阪",
+      "spaceName": null,
+      "officialDisplayName": "京セラドーム大阪",
+      "prefecture": "大阪府",
+      "city": "大阪市西区",
+      "capacity": 34522,
+      "category": "dome",
+      "officialFacilityUrl": "https://www.kyoceradome-osaka.jp/seat/index.php",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "Existing verified production venue retained in the new Osaka regional inventory.",
+      "priority": "A",
+      "venueSourceId": "kyocera-dome-osaka-standard-baseball",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": [
+        "京セラドーム",
+        "大阪ドーム"
+      ]
+    },
+    {
+      "inventoryId": "national-bunraku-theatre-standard",
+      "facilityName": "国立文楽劇場",
+      "spaceName": null,
+      "officialDisplayName": "国立文楽劇場",
+      "prefecture": "大阪府",
+      "city": "大阪市中央区",
+      "capacity": 753,
+      "category": "theater",
+      "officialFacilityUrl": "https://www.ntj.jac.go.jp/bunraku/facilities/outline/",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "Existing verified production venue retained in the new Osaka regional inventory.",
+      "priority": "A",
+      "venueSourceId": "national-bunraku-theatre-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": [
+        "国立文楽"
+      ]
+    }
+  ]
+}

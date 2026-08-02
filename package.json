@@ -18,6 +18,7 @@
     "venues:inventory:report": "node scripts/venues/inventory-report.mjs",
     "venues:batch:report": "node scripts/venues/batch-report.mjs",
     "venues:readiness:report": "node scripts/venues/readiness-report.mjs",
+    "venues:release:coverage": "node scripts/venues/release-coverage-report.mjs",
     "venues:build": "node scripts/venues/build-catalog.mjs",
     "venues:check": "node scripts/venues/check-database.mjs",
     "venues:validate": "node scripts/venues/validate-database.mjs",

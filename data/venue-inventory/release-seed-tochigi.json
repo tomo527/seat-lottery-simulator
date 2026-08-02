@@ -1,0 +1,51 @@
+{
+  "inventoryVersion": 1,
+  "jurisdiction": "栃木県",
+  "discoverySource": {
+    "publisher": "Release Seed curated selection",
+    "title": "栃木県 regional release seed",
+    "checkedAt": "2026-08-02",
+    "recordCount": 2
+  },
+  "normalizationScope": "Regional release seed: high-demand fixed-seat halls selected for official-source preflight.",
+  "venues": [
+    {
+      "inventoryId": "tochigi-ken-sogo-bunka-center-main",
+      "facilityName": "栃木県総合文化センター",
+      "spaceName": "メインホール",
+      "officialDisplayName": "栃木県総合文化センター メインホール",
+      "prefecture": "栃木県",
+      "city": "宇都宮市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.tochigi-kenmin.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "tochigi-ken-sogo-bunka-center-main-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "utsunomiya-city-culture-hall",
+      "facilityName": "宇都宮市文化会館",
+      "spaceName": "大ホール",
+      "officialDisplayName": "宇都宮市文化会館 大ホール",
+      "prefecture": "栃木県",
+      "city": "宇都宮市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.bunkakaikan.com/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "utsunomiya-city-culture-hall-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    }
+  ]
+}

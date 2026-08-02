@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "saitama-kaikan-main-release-seed",
+  "name": "埼玉会館 大ホール",
+  "prefecture": "埼玉県",
+  "city": "さいたま市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "",
+    "name": "",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
+    "notIncludedPatterns": []
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "埼玉会館",
+      "title": "埼玉会館 公式施設案内",
+      "url": "https://www.saf.or.jp/saitama/",
+      "checkedAt": "2026-08-02"
+    }
+  ],
+  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
+  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
+  "transformation": "No seat-map transcription has been performed.",
+  "knownLimitations": [
+    "Preflight classification: STANDARD. The repository does not yet hold independently reviewed full numbered-seat ranges or a reconciled official seat count."
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": null,
+    "method": "",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+    ]
+  },
+  "ranges": []
+}

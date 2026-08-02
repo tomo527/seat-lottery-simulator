@@ -1,0 +1,70 @@
+{
+  "inventoryVersion": 1,
+  "jurisdiction": "広島県",
+  "discoverySource": {
+    "publisher": "Release Seed curated selection",
+    "title": "広島県 regional release seed",
+    "checkedAt": "2026-08-02",
+    "recordCount": 3
+  },
+  "normalizationScope": "Regional release seed: high-demand fixed-seat halls selected for official-source preflight.",
+  "venues": [
+    {
+      "inventoryId": "hbg-hall",
+      "facilityName": "広島文化学園HBGホール",
+      "spaceName": null,
+      "officialDisplayName": "広島文化学園HBGホール",
+      "prefecture": "広島県",
+      "city": "広島市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://h-bkk.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "hbg-hall-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "jms-aster-plaza-large",
+      "facilityName": "JMSアステールプラザ",
+      "spaceName": "大ホール",
+      "officialDisplayName": "JMSアステールプラザ 大ホール",
+      "prefecture": "広島県",
+      "city": "広島市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://h-culture.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "jms-aster-plaza-large-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "hiroshima-city-culture-exchange-hall",
+      "facilityName": "広島市文化交流会館",
+      "spaceName": "ホール",
+      "officialDisplayName": "広島市文化交流会館 ホール",
+      "prefecture": "広島県",
+      "city": "広島市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://h-bkk.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "B",
+      "venueSourceId": "hiroshima-city-culture-exchange-hall-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    }
+  ]
+}

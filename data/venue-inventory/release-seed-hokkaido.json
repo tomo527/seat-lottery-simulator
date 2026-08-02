@@ -1,0 +1,70 @@
+{
+  "inventoryVersion": 1,
+  "jurisdiction": "北海道",
+  "discoverySource": {
+    "publisher": "Release Seed curated selection",
+    "title": "北海道 regional release seed",
+    "checkedAt": "2026-08-02",
+    "recordCount": 3
+  },
+  "normalizationScope": "Regional release seed: high-demand fixed-seat halls selected for official-source preflight.",
+  "venues": [
+    {
+      "inventoryId": "sapporo-kitara-main",
+      "facilityName": "札幌コンサートホールKitara",
+      "spaceName": "大ホール",
+      "officialDisplayName": "札幌コンサートホールKitara 大ホール",
+      "prefecture": "北海道",
+      "city": "札幌市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.kitara-sapporo.or.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "sapporo-kitara-main-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "sapporo-kitara-small",
+      "facilityName": "札幌コンサートホールKitara",
+      "spaceName": "小ホール",
+      "officialDisplayName": "札幌コンサートホールKitara 小ホール",
+      "prefecture": "北海道",
+      "city": "札幌市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.kitara-sapporo.or.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "B",
+      "venueSourceId": "sapporo-kitara-small-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "sapporo-hitaru",
+      "facilityName": "札幌文化芸術劇場hitaru",
+      "spaceName": null,
+      "officialDisplayName": "札幌文化芸術劇場hitaru",
+      "prefecture": "北海道",
+      "city": "札幌市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.sapporo-community-plaza.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "sapporo-hitaru-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    }
+  ]
+}

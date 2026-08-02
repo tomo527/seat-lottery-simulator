@@ -1,0 +1,70 @@
+{
+  "inventoryVersion": 1,
+  "jurisdiction": "京都府",
+  "discoverySource": {
+    "publisher": "Release Seed curated selection",
+    "title": "京都府 regional release seed",
+    "checkedAt": "2026-08-02",
+    "recordCount": 3
+  },
+  "normalizationScope": "Regional release seed: high-demand fixed-seat halls selected for official-source preflight.",
+  "venues": [
+    {
+      "inventoryId": "kyoto-concert-hall-main",
+      "facilityName": "京都コンサートホール",
+      "spaceName": "大ホール",
+      "officialDisplayName": "京都コンサートホール 大ホール",
+      "prefecture": "京都府",
+      "city": "京都市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.kyotoconcerthall.org/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "kyoto-concert-hall-main-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "rohm-theatre-kyoto-main",
+      "facilityName": "ロームシアター京都",
+      "spaceName": "メインホール",
+      "officialDisplayName": "ロームシアター京都 メインホール",
+      "prefecture": "京都府",
+      "city": "京都市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://rohmtheatrekyoto.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "rohm-theatre-kyoto-main-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "kyoto-art-theatre-shunjuza",
+      "facilityName": "京都芸術劇場",
+      "spaceName": "春秋座",
+      "officialDisplayName": "京都芸術劇場 春秋座",
+      "prefecture": "京都府",
+      "city": "京都市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://k-pac.org/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "B",
+      "venueSourceId": "kyoto-art-theatre-shunjuza-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    }
+  ]
+}

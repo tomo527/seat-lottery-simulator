@@ -1,0 +1,70 @@
+{
+  "inventoryVersion": 1,
+  "jurisdiction": "福岡県",
+  "discoverySource": {
+    "publisher": "Release Seed curated selection",
+    "title": "福岡県 regional release seed",
+    "checkedAt": "2026-08-02",
+    "recordCount": 3
+  },
+  "normalizationScope": "Regional release seed: high-demand fixed-seat halls selected for official-source preflight.",
+  "venues": [
+    {
+      "inventoryId": "acros-fukuoka-symphony",
+      "facilityName": "アクロス福岡",
+      "spaceName": "福岡シンフォニーホール",
+      "officialDisplayName": "アクロス福岡 福岡シンフォニーホール",
+      "prefecture": "福岡県",
+      "city": "福岡市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.acros.or.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "acros-fukuoka-symphony-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "fukuoka-sunpalace-hall",
+      "facilityName": "福岡サンパレス ホテル＆ホール",
+      "spaceName": null,
+      "officialDisplayName": "福岡サンパレス ホテル＆ホール",
+      "prefecture": "福岡県",
+      "city": "福岡市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.f-sunpalace.com/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "fukuoka-sunpalace-hall-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    },
+    {
+      "inventoryId": "hakataza",
+      "facilityName": "博多座",
+      "spaceName": null,
+      "officialDisplayName": "博多座",
+      "prefecture": "福岡県",
+      "city": "福岡市",
+      "capacity": null,
+      "category": "hall",
+      "officialFacilityUrl": "https://www.hakataza.co.jp/",
+      "operationalStatus": "active",
+      "eligibility": "needs-research",
+      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "priority": "A",
+      "venueSourceId": "hakataza-release-seed",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-02",
+      "aliases": []
+    }
+  ]
+}
