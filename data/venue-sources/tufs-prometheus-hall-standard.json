@@ -25,7 +25,7 @@
       "publisher": "プロメテウス・ホール(東京外国語大学アゴラ・グローバル内)",
       "title": "プロメテウス・ホール(東京外国語大学アゴラ・グローバル内) 公式施設案内",
       "url": "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA_Global.html",
-      "checkedAt": "2026-08-01"
+      "checkedAt": "2026-08-02"
     },
     {
       "id": "official-equipment-guide",
@@ -34,11 +34,11 @@
       "publisher": "東京外国語大学 教育情報化支援室",
       "title": "プロメテウスホール 同時通訳設備",
       "url": "https://wp3.tufs.ac.jp/csmc/facility-guide/prometheus-hall/simul/",
-      "checkedAt": "2026-08-01"
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "番号付き固定席の通常配置を調査中。",
-  "completenessBasis": "東京外国語大学の公式資料はアゴラ・グローバル内のホール、約500人規模、1階・2階構成および設備を確認できるが、番号付き座席図と正確なseat-countを同時に示す現行公式資料は確認できない。",
+  "completenessBasis": "2026-08-02に東京外国語大学の現行施設資料と設備案内を再確認した。公式案内はアゴラ・グローバル内のホール、約500人規模、1階・2階構成および設備を確認できるが、番号付き座席図と正確なseat-countを同時に示す現行公式資料は確認できない。",
   "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
   "knownLimitations": [
     "公式資料に約500人規模との案内はあるが、inventoryの504席を裏付ける正確な現行seat-count sourceと全番号seat-structure sourceがない。"
@@ -50,7 +50,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "全列・全番号を示す現行公式座席図と、504席または正確な公称席数を示す公式seat-count sourceを確認する必要がある。約500人という案内や座席の規則性だけで補完してはならない。"
+      "現行公式資料は約500人という概数のみで、inventoryの504席を裏付ける正確なseat-count sourceがない。全列・全番号を示す公式座席図も公開されていない。約500人、会場写真、販売サイト又は座席番号の規則性から504席・rangeを補完してはならない。"
     ]
   },
   "ranges": []

@@ -20,19 +20,29 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
       "publisher": "台東区民会館 ホール",
       "title": "台東区民会館 ホール 公式施設案内",
       "url": "https://www.city.taito.lg.jp/index/shisetsu/hall/kuminkan/riyouannai.html",
-      "checkedAt": "2026-07-28"
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-hall-layout",
+      "official": true,
+      "roles": ["seat-count"],
+      "publisher": "台東区",
+      "title": "台東区民会館 ホール全室（9階）机レイアウト",
+      "url": "https://www.city.taito.lg.jp/kusei/shisetsu/hall/kuminkan/riyouannai.files/ray-hall.pdf",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
   "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "公式ページは定員300人とする一方、公式レイアウトは椅子300脚を通常収納し利用者が出し入れすると明記する。番号付き固定席の代表配置ではない。"
   ],
   "verification": {
     "status": "pending",
@@ -41,7 +51,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式施設資料の300席について、固定番号が記載された現行座席表を取得し全rangeを確認する。"
+        "公式資料上の300席は利用者が出し入れするパイプ椅子であり、公式の番号付き通常座席図がない。座席番号・行・代表配置を推測してrange化してはならない。"
     ]
   },
   "ranges": []

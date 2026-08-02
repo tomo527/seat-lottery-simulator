@@ -20,16 +20,16 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility", "seat-count"
       ],
       "publisher": "くにたち市民芸術小ホール",
       "title": "くにたち市民芸術小ホール 公式施設案内",
       "url": "https://kuzaidan.or.jp/hall/",
-      "checkedAt": "2026-07-28"
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "公式はエンドステージ270席、プロセニアム336席、スラストステージ99・132・369・402席という複数の正当な配置を明記する。単一の通常代表配置および各配置間で外れる番号席は一意に確定できない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +41,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席資料から402席の全rangeを転記し、舞台張出し・車椅子利用時に取り外す席を通常固定席配置と区別する。"
+      "公式資料は複数の座席数を持つ舞台形式を示す。402席だけを通常代表配置と推測せず、各形式の完全な番号範囲と代表配置の公式指定を待つ。"
     ]
   },
   "ranges": []

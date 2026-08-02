@@ -20,19 +20,29 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
       "publisher": "福生市民会館 小ホール",
       "title": "福生市民会館 小ホール 公式施設案内",
       "url": "https://fussa-shiminkaikan.jp/",
-      "checkedAt": "2026-07-28"
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "福生市民会館",
+      "title": "福生市民会館小ホール（つつじホール）座席表（定員260人・固定席256席）",
+      "url": "https://fussa-shiminkaikan.jp/pdf/fussa-002.pdf",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
   "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "公式PDFは定員260人（固定席256席）と車椅子席4席を示す。図上の番号枠数と固定席256席の関係を独立に照合できるまでproduction化しない。"
   ],
   "verification": {
     "status": "pending",
@@ -41,7 +51,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式施設資料の260席について、固定席か可動椅子配置かを確認し、番号付き標準配置を一意に定義できる場合のみrangeを入力する。"
+        "公式座席表と定員260人（固定席256席・車椅子席4席）は確認したが、図上で読める番号枠集合の総数が固定席256席と一致するかを第1パスと独立第2パスで確定していない。車椅子席の番号・包含関係を推測してrange化してはならない。"
     ]
   },
   "ranges": []

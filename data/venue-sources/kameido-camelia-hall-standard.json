@@ -20,16 +20,34 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility", "seat-count"
       ],
       "publisher": "亀戸文化センター カメリアホール",
       "title": "亀戸文化センター カメリアホール 公式施設案内",
-      "url": "https://www.kcf.or.jp/kameido/",
-      "checkedAt": "2026-07-28"
+      "url": "https://www.kcf.or.jp/kameido/shisetsu-bunka/ichiran/detail/?id=67",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "江東区文化コミュニティ財団",
+      "title": "カメリアホール座席表（通常固定席400席・親子室2席）",
+      "url": "https://www.kcf.or.jp/cms/files/pdf/id72_35229.pdf",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-barrier-free",
+      "official": true,
+      "roles": ["facility"],
+      "publisher": "江東区文化コミュニティ財団",
+      "title": "カメリアホール バリアフリー案内",
+      "url": "https://www.kcf.or.jp/kameido/outline/barrierfree/",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "公式座席表で通常400席（親子室2席は別）と番号表示を確認し、施設詳細では固定384席・可動16席と明記される。しかし公式施設詳細は車椅子転換をG列3～8番、バリアフリー案内はG列3～18番と記載し、外れる番号席の公式記載が一致しない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +59,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表の400席について全rangeを転記し、車椅子スペース利用時の取り外し席を確認する。"
+      "公式資料間で車椅子対応時に外すG列の番号範囲が3～8番と3～18番で不一致である。解消までproduction化しない。"
     ]
   },
   "ranges": []

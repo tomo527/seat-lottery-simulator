@@ -20,16 +20,16 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility", "seat-count"
       ],
       "publisher": "北とぴあ つつじホール",
       "title": "北とぴあ つつじホール 公式施設案内",
-      "url": "https://www.hokutopia.jp/",
-      "checkedAt": "2026-07-28"
+      "url": "https://www.hokutopia.jp/hall-guide/halls/tsutsuji_hall",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "北とぴあ公式施設案内と客席図で402席を確認した。公式には舞台面使用60席および客席面追加という別使用形態もあり、通常402席の全番号rangeと可動・車椅子区画の扱いを一意に確定できない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +41,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式施設図面から402席の全列・全番号を転記し、車椅子席と可動席の公称席数への包含を確認する。"
+      "公式客席図は402席を示すが、全番号・可動／車椅子区画の通常配置への包含を完全に確定できない。舞台面使用60席・客席面追加を通常402席に混在させない。"
     ]
   },
   "ranges": []

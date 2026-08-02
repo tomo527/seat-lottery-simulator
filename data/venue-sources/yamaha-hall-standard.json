@@ -20,16 +20,16 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility", "seat-count"
       ],
       "publisher": "ヤマハホール",
       "title": "ヤマハホール 公式施設案内",
-      "url": "https://www.yamahaginza.com/hall/",
-      "checkedAt": "2026-07-28"
+      "url": "https://retailing.jp.yamaha.com/shop/ginza/hall/facilities",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "ヤマハ公式設備概要・利用案内で333席（1階250席・2階83席、1階は車椅子席を含む）を確認した。階別図は平面図であり、全列・全番号・車椅子転換時に外れる番号を示す完全な番号付き座席表は公開されていない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +41,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表から333席の1・2階全rangeを転記し、車椅子利用時に取り外す固定席を確認する。"
+      "公式の階別席数は確認済みだが、完全な番号付き座席図と1階に含まれる車椅子席の番号・転換関係が未公開である。座席番号の連続性から補完しない。"
     ]
   },
   "ranges": []

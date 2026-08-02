@@ -20,16 +20,16 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility", "seat-count"
       ],
       "publisher": "十四世喜多六平太記念能楽堂",
       "title": "十四世喜多六平太記念能楽堂 公式施設案内",
-      "url": "https://kita-noh.com/",
-      "checkedAt": "2026-07-28"
+      "url": "https://kita-noh.com/stage/seat/",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "公式座席案内で総定員385名、1階定席289・桟敷17・2階定席79を確認した。公式座席図は正面・中正面・脇正面および桟敷を図示するが、全ブロックの番号方向・連番・欠番を機械的に確定できる完全な番号表ではない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +41,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式客席案内から385席の正面・中正面・脇正面のarea、列、番号方向を独立抽出し、補助席を除外する。"
+      "公式の階別・桟敷別定員は確認済みだが、全areaの番号方向、欠番、桟敷席の番号有無を確定できない。座席図の見た目から連番を補完しない。"
     ]
   },
   "ranges": []

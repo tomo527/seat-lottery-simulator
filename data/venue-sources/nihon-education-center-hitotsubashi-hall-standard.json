@@ -24,12 +24,30 @@
       ],
       "publisher": "日本教育会館 一ツ橋ホール",
       "title": "日本教育会館 一ツ橋ホール 公式施設案内",
-      "url": "https://www.jec.or.jp/",
-      "checkedAt": "2026-07-28"
+      "url": "https://www.jec.or.jp/hall.html",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-hall-layout",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "一般財団法人日本教育会館",
+      "title": "一ツ橋ホール見取り図",
+      "url": "https://www.jec.or.jp/pdf/Hall_3F2604.pdf",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-usage-guide",
+      "official": true,
+      "roles": ["seat-count"],
+      "publisher": "一般財団法人日本教育会館",
+      "title": "一ツ橋ホール・会議室のご案内",
+      "url": "https://www.jec.or.jp/pdf/pamphlet2603.pdf",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "公式施設案内、公式見取り図、公式パンフレットで802席、1・2・22列が可動席、車椅子スペース約17席設置時は一般席28席を外すこと、舞台せり出し時は1・2列を外すことを確認した。見取り図は列番号を示すが、802席の通常配置を全rangeとして独立集計していない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +59,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式施設資料の802席と座席表について、前方可動席と車椅子対応時に外す席を通常配置として確定し全rangeを転記する。"
+      "公式資料は802席、1・2・22列の可動席、車椅子時に一般席28席を外すこと、舞台せり出し時に1・2列を外すことを明記する。見取り図の各行は左右・中央ブロックに分かれ、番号の空白があるため、通常802席の全番号rangeと車椅子／せり出し別配置の差を独立集計するまでrangeを作成しない。"
     ]
   },
   "ranges": []

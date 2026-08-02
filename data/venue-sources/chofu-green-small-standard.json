@@ -20,19 +20,20 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
       "publisher": "調布市グリーンホール 小ホール",
       "title": "調布市グリーンホール 小ホール 公式施設案内",
       "url": "https://www.chofu-culture-community.org/forms/menutop/menutop.aspx?menu_id=90",
-      "checkedAt": "2026-07-28"
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
   "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "公式小ホールページは最大定員300人を示すが、公開座席表の一覧には小ホールが含まれず、舞台関係資料だけでは番号席集合を確認できない。"
   ],
   "verification": {
     "status": "pending",
@@ -41,7 +42,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席資料から300席の全列・全番号を転記し、平土間転換の有無と通常固定席配置を確認する。"
+        "公式の厳密な定員300人は確認できたが、現行の完全な番号付き座席図が公開されていない。平土間又は別配置の有無も公式資料で確定できないため、番号連続性や第三者座席表からrangeを作成してはならない。"
     ]
   },
   "ranges": []

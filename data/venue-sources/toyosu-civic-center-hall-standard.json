@@ -20,28 +20,38 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
       "publisher": "豊洲シビックセンターホール",
       "title": "豊洲シビックセンターホール 公式施設案内",
       "url": "https://www.kcf.or.jp/toyosu",
-      "checkedAt": "2026-07-28"
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "公益財団法人江東区文化コミュニティ財団",
+      "title": "豊洲文化センター シビックセンターホール 座席図",
+      "url": "https://www.kcf.or.jp/cms/files/pdf/id4_52218.pdf",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
   "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "公式利用案内は定員300名を固定席240席と可動席60席に分ける。可動席を外した別配置を通常300席配置と混在させない。"
   ],
   "verification": {
     "status": "pending",
     "checkedAt": null,
     "method": "",
     "seatStructure": "pending",
-    "seatCount": "pending",
+      "seatCount": "matched",
     "unresolvedIssues": [
-      "公式座席表から300席の全rangeを転記し、ロールバックチェア等の可動席が通常配置へ含まれるか確認する。"
+        "公式座席図の全行・全番号を第1パスと独立第2パスで転記し、固定240席と可動60席が公式の通常300席配置にどう対応するか、及び可動席の別配置がないかを確認する必要がある。"
     ]
   },
   "ranges": []

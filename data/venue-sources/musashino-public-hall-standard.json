@@ -20,16 +20,25 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility", "seat-count"
       ],
       "publisher": "武蔵野公会堂 ホール",
       "title": "武蔵野公会堂 ホール 公式施設案内",
-      "url": "https://www.musashino.or.jp/koukaido",
-      "checkedAt": "2026-07-28"
+      "url": "https://www.musashino.or.jp/koukaido/1002140/1002141.html",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-closure-notice",
+      "official": true,
+      "roles": ["facility"],
+      "publisher": "武蔵野市",
+      "title": "武蔵野公会堂の改修等について（令和8年5月1日より当面休館）",
+      "url": "https://www.city.musashino.lg.jp/shiseijoho/shisaku_keikaku/shimimbu_shisaku_keikaku/kokaido_kaishu_kaigi/index.html",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "公式座席表で固定350席と15・16列11・12番の車椅子転換を確認した。ただし武蔵野市公式は2026年5月1日から当面休館と案内し、改修後の再開時期・座席配置は未定である。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +50,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表から350席の全列・全番号を転記し、車椅子用可動席と公称席数の関係を確認する。"
+      "現行350席図は確認できるが、2026年5月1日から当面休館中で改修後の代表配置が未公開である。再開後の公式座席図・施設資料で再調査する。"
     ]
   },
   "ranges": []

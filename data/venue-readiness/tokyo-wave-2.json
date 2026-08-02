@@ -167,7 +167,7 @@
     },
     {
       "venueId": "tufs-prometheus-hall-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
       "blocker": "東京外国語大学の公式資料で約500人規模・1階2階構成は確認できるが、全番号seat-structure sourceと504席または正確な公称席数を示すseat-count sourceがない。",
       "nextAction": "現行の公式番号座席図と正確な公称席数が公開された場合に、番号規則を推測せず第1パスを開始する。"
@@ -181,17 +181,17 @@
     },
     {
       "venueId": "kasai-civic-hall-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "公式の501席表記は確認したが、全列・全番号を示す公式seat-structure sourceが公開されていない。",
+      "nextAction": "公式番号座席図が公開された場合に、番号を推測せず第1パスを開始する。"
     },
     {
       "venueId": "zendentsu-hall-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "公式の420席表記は確認したが、全列・全番号を示す公式seat-structure sourceが公開されていない。",
+      "nextAction": "公式番号座席図が公開された場合に、番号を推測せず第1パスを開始する。"
     },
     {
       "venueId": "hokutopia-tsutsuji-hall-standard",
@@ -223,10 +223,10 @@
     },
     {
       "venueId": "kita-noh-theatre-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "公式の385席内訳は確認したが、全番号席集合を抽出できる公式seat-structure sourceが不足している。",
+      "nextAction": "公式番号座席図が公開された場合に、番号を推測せず第1パスを開始する。"
     },
     {
       "venueId": "olympic-center-small-hall-standard",
@@ -244,10 +244,10 @@
     },
     {
       "venueId": "musashino-public-hall-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "350席表記はあるが、2026-05-01から休館中で、現行配置の公式seat-structure sourceを確認できない。",
+      "nextAction": "再開後に現行の公式番号座席図と公称席数が公開された場合に第1パスを開始する。"
     },
     {
       "venueId": "bunkyo-civic-small-standard",
@@ -258,10 +258,10 @@
     },
     {
       "venueId": "yamaha-hall-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "公式の333席（1階250・2階83）表記はあるが、全番号を読める公式seat-structure sourceがない。",
+      "nextAction": "公式番号座席図が公開された場合に、番号を推測せず第1パスを開始する。"
     },
     {
       "venueId": "itabashi-culture-small-standard",
@@ -279,10 +279,10 @@
     },
     {
       "venueId": "taito-civic-hall-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "300席は机レイアウト上の持込椅子定員であり、固定番号席の公式seat-structure sourceではない。",
+      "nextAction": "固定番号席の公式座席図と単一通常配置が公開された場合に再評価する。"
     },
     {
       "venueId": "taito-millennium-hall-standard",
@@ -307,10 +307,10 @@
     },
     {
       "venueId": "chofu-green-small-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "公式300席表記は確認したが、全列・全番号を示す公式seat-structure sourceが公開されていない。",
+      "nextAction": "公式番号座席図が公開された場合に、番号を推測せず第1パスを開始する。"
     },
     {
       "venueId": "popuri-hall-tsurukawa-standard",
@@ -321,10 +321,10 @@
     },
     {
       "venueId": "hoya-komorebi-small-standard",
-      "readiness": "R3",
+      "readiness": "R5",
       "secondPass": "not-started",
-      "blocker": "公式seat-structure／seat-count資料の確認は継続可能だが、全rangeとexpectedSeatCountが未入力。",
-      "nextAction": "公式座席図から全列・全番号・欠番・可動席／車椅子区画を転記し、第1パス完了後に独立照合する。"
+      "blocker": "最大250席の電動可動床で、単一通常配置と全番号席集合を示す公式資料がない。",
+      "nextAction": "通常配置を一意にする公式番号座席図と公称席数が公開された場合に再評価する。"
     },
     {
       "venueId": "fussa-civic-small-standard",

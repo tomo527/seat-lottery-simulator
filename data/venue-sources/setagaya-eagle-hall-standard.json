@@ -24,12 +24,30 @@
       ],
       "publisher": "せたがやイーグレットホール",
       "title": "せたがやイーグレットホール 公式施設案内",
-      "url": "https://www.setagaya.co.jp/kuminkaikan/setagaya/",
-      "checkedAt": "2026-07-28"
+      "url": "https://www.setagaya.co.jp/kuminkaikan/setagaya/facilities/hall.html",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-download-index",
+      "official": true,
+      "roles": ["seat-structure"],
+      "publisher": "世田谷区民会館",
+      "title": "せたがやイーグレットホール 各種資料（1階・2階座席表）",
+      "url": "https://www.setagaya.co.jp/kuminkaikan/setagaya/download.html",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-usage-guide",
+      "official": true,
+      "roles": ["seat-count"],
+      "publisher": "世田谷区民会館",
+      "title": "世田谷区民会館施設使用案内",
+      "url": "https://www.setagaya.co.jp/kuminkaikan/setagaya/pdf/Shisetsu_Shiyou_Annai.pdf",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "公式施設案内と公式使用案内で通常933席、前舞台使用時902席、車椅子席を最大24席まで設置できることを確認した。公式ダウンロード一覧には1階・2階座席表があるが、通常933席との関係および車椅子設置時に外れる一般席の組合せが未確定である。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +59,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表から933席の全列・全番号を転記し、車椅子スペースが公称席数へ含まれるか確認する。"
+      "通常933席、前舞台使用時902席、車椅子席最大24席という公式資料は確認できるが、車椅子設置時に一般席を2席、4席又は31席外す複数条件が施設設計資料に記載される。通常代表配置の番号席集合と各転換条件の関係を公式座席表で確認するまでrangeを作成しない。"
     ]
   },
   "ranges": []

@@ -25,11 +25,29 @@
       "publisher": "国立オリンピック記念青少年総合センター カルチャー棟 大ホール",
       "title": "国立オリンピック記念青少年総合センター カルチャー棟 大ホール 公式施設案内",
       "url": "https://nyc.niye.go.jp/",
-      "checkedAt": "2026-07-28"
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-hall-layout",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "国立オリンピック記念青少年総合センター",
+      "title": "カルチャー棟 大ホール（758席）設備・備品定数・配置図",
+      "url": "https://nyc.niye.go.jp/lib/pdf/facilities/culture/hall_L.pdf",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-hall-specification",
+      "official": true,
+      "roles": ["seat-count"],
+      "publisher": "国立オリンピック記念青少年総合センター",
+      "title": "大ホール主要諸元表",
+      "url": "https://nyc.niye.go.jp/wp-content/uploads/2024/07/hall_L_butai.pdf",
+      "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "registeredScope": "公式配置図に示された通常758席の番号付き座席を候補として調査中。車椅子席の確保時は別配置として扱う。",
+  "completenessBasis": "公式配置図と主要諸元表で通常758席を確認した。配置図はAからYの行と各番号を示し、主要諸元表は車椅子席の確保などで758席より少なくなる場合があると記載する。通常図の全番号rangeは読み取れるが、車椅子マークの箇所を番号席として扱うか別配置として扱うかを独立に照合するまではcompleteとしない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +59,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式施設資料の758席について、客席図の全番号と車椅子対応席・可動席の通常配置を照合する。"
+      "公式配置図と758席は確認済みで、通常図はAからYの行・番号を示す。一方、図内には車椅子マークがあり、主要諸元表は車椅子席確保時に758席未満となるとしている。通常758席の番号集合、車椅子対応で外す番号、可動席の有無を第1・第2パスで別々に集計するまでrangeを作成しない。"
     ]
   },
   "ranges": []

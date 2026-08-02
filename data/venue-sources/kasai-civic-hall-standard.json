@@ -20,16 +20,16 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility", "seat-count"
       ],
       "publisher": "葛西区民館 ホール",
       "title": "葛西区民館 ホール 公式施設案内",
       "url": "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/index.html",
-      "checkedAt": "2026-07-28"
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "江戸川区公式資料でホール固定501席を確認した。現行公式公開資料には列・番号を示す座席表がなく、番号席集合は抽出できない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +41,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式施設ページに掲載される501席のうち、固定番号席の全列・番号と車椅子利用時の転換席を座席図で確認する。"
+      "公式資料で固定501席は確認できるが、完全な番号付き座席図、車椅子利用時の転換範囲、番号席集合が未公開である。推測でrangeを作成しない。"
     ]
   },
   "ranges": []

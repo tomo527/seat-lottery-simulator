@@ -20,19 +20,20 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
       "publisher": "タクトホームこもれびGRAFAREホール 小ホール",
       "title": "タクトホームこもれびGRAFAREホール 小ホール 公式施設案内",
       "url": "https://www.komorebi-hall.jp/",
-      "checkedAt": "2026-07-28"
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
   "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "公式小ホール案内は最大250席及び電動可動式床を示す。最大定員だけでは通常の番号付き代表配置又は可動席の取り外し条件を一意に定められない。"
   ],
   "verification": {
     "status": "pending",
@@ -41,7 +42,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式施設資料の250席について、平土間転換可能な座席の番号体系と通常配置を座席図から確認する。"
+        "公式資料が示すのは最大250席と可動式床であり、現行の全番号席集合、平土間転換時に外れる番号、通常代表配置の一意性を確認できない。推測でrange化してはならない。"
     ]
   },
   "ranges": []

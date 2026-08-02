@@ -20,16 +20,16 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility", "seat-count"
       ],
       "publisher": "全電通ホール",
       "title": "全電通ホール 公式施設案内",
-      "url": "https://zhall.or.jp/",
-      "checkedAt": "2026-07-28"
+      "url": "https://zhall.or.jp/hall/",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "公式案内で舞台A・B・Cの3面使用時の基本座席数420席を確認した。全列・全番号を示す公式座席表は取得できず、番号席集合を完全抽出できない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +41,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表から420席の全rangeを転記し、前方席または舞台拡張時に外す席が標準配置へ含まれるか確認する。"
+      "公式の基本座席数420席は確認済みだが、公式番号付き座席図と舞台形式変更時に外れる番号席の範囲が未公開である。"
     ]
   },
   "ranges": []

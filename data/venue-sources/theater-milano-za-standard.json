@@ -24,12 +24,30 @@
       ],
       "publisher": "THEATER MILANO-Za",
       "title": "THEATER MILANO-Za 公式施設案内",
-      "url": "https://milano-za.jp/",
-      "checkedAt": "2026-07-28"
+      "url": "https://milano-za.jp/about/overview.html",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure"],
+      "publisher": "THEATER MILANO-Za",
+      "title": "THEATER MILANO-Za 座席表",
+      "url": "https://milano-za.jp/seating-chart/seating_chart.pdf",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-capacity-page",
+      "official": true,
+      "roles": ["seat-count"],
+      "publisher": "THEATER MILANO-Za",
+      "title": "THEATER MILANO-Za 施設概要",
+      "url": "https://milano-za.jp/about/overview.html",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "公式施設概要で基本構成907席（1階612、2階148［バルコニー50］、3階147［バルコニー18］、車椅子エリア含む）と最大1,084席まで増設可能であることを確認した。公式座席表PDFは基本形状であり、公演により配置が異なると明記する。車椅子エリアが番号付き範囲として907に含まれるかを完全なarea別集計で示すまではcompleteとしない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +59,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表から907席の1～3階全rangeを転記し、車椅子スペースと公演別販売停止席を固定番号席から分離する。"
+      "公式資料には基本構成907席と階別内訳がある一方、座席表は基本形状で公演により配置が異なると明記する。車椅子エリアを含む907席のうち番号付き席集合、バルコニーの全range、最大1,084席への増設分を独立に区別できていない。公演の販売停止・増設席を恒久rangeとして推測してはならない。"
     ]
   },
   "ranges": []

@@ -25,11 +25,29 @@
       "publisher": "東急シアターオーブ",
       "title": "東急シアターオーブ 公式施設案内",
       "url": "https://theatre-orb.com/",
-      "checkedAt": "2026-07-28"
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure"],
+      "publisher": "東急シアターオーブ",
+      "title": "東急シアターオーブ 座席表",
+      "url": "https://theatre-orb.com/seating/seat.pdf",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-capacity-record",
+      "official": true,
+      "roles": ["seat-count"],
+      "publisher": "東急シアターオーブ",
+      "title": "東急シアターオーブ収容定員1,972人を記載した公式イベント資料",
+      "url": "https://theatre-orb.com/lineup/23_nmc/topics/images/img_6761/NYMC2023_checklist.pdf",
+      "checkedAt": "2026-08-02"
     }
   ],
   "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
+  "completenessBasis": "公式の3階分座席表PDFと、同劇場が公開した収容定員1,972人の資料を確認した。座席表は同じ列番号が1階・2階・3階および左右・中央ブロックで反復するため、area分割、車椅子席の番号性、階別番号席合計を独立に確定するまではcompleteとしない。",
   "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
   "knownLimitations": [
     "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
@@ -41,7 +59,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式座席表は3階全体とPDFを公開している。1,972席の階別内訳、車椅子席、舞台都合の販売停止席をPDFから全range転記する。"
+      "公式PDFと公式1,972人資料は到達できるが、PDFだけでは車椅子対応箇所が番号席か非番号区画か、また1,972に含まれる番号席集合との関係を確定できない。繰返し番号を階・左右・中央areaへ完全に分解し、階別合計を独立照合するまでrangeを作成しない。公演ごとの販売停止席を恒久欠番と推測してはならない。"
     ]
   },
   "ranges": []
