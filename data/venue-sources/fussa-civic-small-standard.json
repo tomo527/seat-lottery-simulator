@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "fussa-civic-small-standard",
   "name": "福生市民会館 小ホール",
   "prefecture": "東京都",
@@ -8,51 +8,66 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "id": "standard-numbered-fixed-seats",
+    "name": "通常番号付き固定席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 256,
+    "selectionReason": "公式座席表が定員260人の内訳として示す番号付き固定席256席を代表パターンとする。J列中央の車椅子席4席は固定番号席とは別区画のため含めない。",
+    "notIncludedPatterns": [
+      "J列中央の車椅子席4席"
+    ]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-facility-guide",
       "official": true,
       "roles": [
         "facility",
         "seat-count"
       ],
-      "publisher": "福生市民会館 小ホール",
-      "title": "福生市民会館 小ホール 公式施設案内",
-      "url": "https://fussa-shiminkaikan.jp/",
+      "publisher": "福生市民会館",
+      "title": "小ホール（つつじホール）施設案内",
+      "url": "https://fussa-shiminkaikan.jp/facility-guide-smallhall.php",
       "checkedAt": "2026-08-02"
     },
     {
       "id": "official-seat-map",
       "official": true,
-      "roles": ["seat-structure", "seat-count"],
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
       "publisher": "福生市民会館",
-      "title": "福生市民会館小ホール（つつじホール）座席表（定員260人・固定席256席）",
+      "title": "福生市民会館小ホール（つつじホール）座席表",
       "url": "https://fussa-shiminkaikan.jp/pdf/fussa-002.pdf",
       "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "公式座席表のA列からJ列までに通常座席番号が示された固定席256席。J列中央の車椅子席4席は除く。",
+  "completenessBasis": "公式座席表からA列12席、B列26席、C～I列各28席、J列22席を転記し、12 + 26 + 7×28 + 22 = 256席が公式固定席256席と一致した。固定席256席と車椅子席4席の合計260席が公式定員260席に一致した。",
+  "transformation": "公式座席表の通常座席番号を連続rangeへ転記した。A列9～20番、B列2～27番、C～I列1～28番、J列1～14番・21～28番とし、J列15～20番相当の位置に描かれた車椅子席1～4は通常座席番号ではないためrangeへ含めない。",
   "knownLimitations": [
-    "公式PDFは定員260人（固定席256席）と車椅子席4席を示す。図上の番号枠数と固定席256席の関係を独立に照合できるまでproduction化しない。"
+    "J列中央の車椅子席4席は公式定員260席には含まれるが、通常の固定番号席256席とは別区画のため抽選対象外。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-        "公式座席表と定員260人（固定席256席・車椅子席4席）は確認したが、図上で読める番号枠集合の総数が固定席256席と一致するかを第1パスと独立第2パスで確定していない。車椅子席の番号・包含関係を推測してrange化してはならない。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-02",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "A", "from": 9, "to": 20, "excluded": [] },
+    { "rowLabel": "B", "from": 2, "to": 27, "excluded": [] },
+    { "rowLabel": "C", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 14, "excluded": [] },
+    { "rowLabel": "J", "from": 21, "to": 28, "excluded": [] }
+  ]
 }

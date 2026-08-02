@@ -12,20 +12,22 @@
     "name": "通常固定席配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "公式資料が示す通常の番号付き固定席配置を候補とし、全rangeと転換席の独立照合完了後に確定する。",
-    "notIncludedPatterns": []
+    "selectionReason": "公式座席表の通常配置を代表候補とするが、1階側方番号セルの列への対応づけと公式公称1,242席が矛盾するため確定しない。",
+    "notIncludedPatterns": [
+      "オーケストラピット設置時（1階162席減）",
+      "番号のない車椅子スペース6区画",
+      "親子室5席"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-guide",
       "official": true,
-      "roles": [
-        "facility"
-      ],
+      "roles": ["facility", "seat-count", "event-layout"],
       "publisher": "響きの森文京公会堂",
-      "title": "響きの森文京公会堂〔文京シビックホール 大ホール〕 公式施設案内",
-      "url": "https://www.b-academy.jp/rental/bc/index.html",
-      "checkedAt": "2026-08-01"
+      "title": "文京シビックホール 大ホール 施設概要",
+      "url": "https://www.b-academy.jp/rental/bc/mainhall.html",
+      "checkedAt": "2026-08-02"
     },
     {
       "id": "official-seat-map",
@@ -34,23 +36,25 @@
       "publisher": "文京アカデミー",
       "title": "文京シビックホール 大ホール座席表",
       "url": "https://www.b-academy.jp/hall/upload/zaseki_hall_mono.pdf",
-      "checkedAt": "2026-08-01"
+      "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常の1階・2階番号付き座席を候補として調査中。オーケストラピット設置時は含めない。",
-  "completenessBasis": "公式PDFを視覚確認し、1階1,242席（車椅子6席を含む）、2階560席、計1,802席、ピット設置時162席減を確認した。車椅子6席は図中で番号セルと異なる区画として表示され、1階の側方段差席・2階段差席には主ブロックと重複する列番号がある。番号席総数と公称との差を明示的に集計するまではcompleteとしない。",
-  "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
+  "registeredScope": "通常配置の1階・2階番号付き座席を候補として調査中。オーケストラピット設置時、番号のない車椅子スペース、親子室は含めない。",
+  "completenessBasis": "公式施設ページは客席1,802席（1階1,242・2階560）、親子室5席、車椅子スペース6席を別項目で記載する。公式座席表も1階1,242・2階560・計1,802と印字する。2階は1-3列の左右1-2/43-44、9-13列1-44、21列5-40を直接集計して560席に一致する。一方、1階は側方番号セルに個別の列表示がなく、図の水平位置どおり主列へ接続する読み方では番号セルが1,258となり、印字1,242と16席矛盾する。側方セルを別areaにしても行ラベルがないため、公式資料だけでは一意なseat IDへ変換できない。",
+  "transformation": "公式図の列表示と番号セルを階別rangeへ転記する方針だが、1階側方番号セルの列対応が一意に確定するまでrangeは作成しない。公称数へ合わせる補完・除外は行わない。",
   "knownLimitations": [
-    "未解決事項が残るためproduction生成対象外。"
+    "1階側方番号セルと列表示の対応、および公称1,242席との差16席が公式資料だけでは解消しないためproduction生成対象外。",
+    "車椅子スペース6席と親子室5席は公式施設ページで客席1,802席とは別項目のため抽選IDに含めない。",
+    "オーケストラピット設置時は1階162席減となる別配置のため対象外。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-02",
+    "method": "official-source-first-pass-conflict-review",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式PDFは到達できるが、1階の公称1,242席は車椅子6席を含む。番号セルと非番号車椅子区画の対応、1階・2階の側方段差席を含む完全なarea別range、番号席総数との差が未確定である。灰色の図形・連続番号から席の有無を補完してはならない。"
+      "公式資料は客席1,802席（1階1,242・2階560）と、親子室5席・車椅子スペース6席を別項目で記載する。2階番号セルは560席に一致するが、1階側方番号セルを図の水平位置どおり主列へ接続すると1,258席となり、公称1,242席より16席多い。側方セル自体に列ラベルがなく、別areaとしても一意なrowLabelを確定できないため、席を推測除外せずrangesを空のまま維持する。"
     ]
   },
   "ranges": []

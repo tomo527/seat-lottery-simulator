@@ -44,13 +44,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.jec.or.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式施設資料の802席と座席表について、前方可動席と車椅子対応時に外す席を通常配置として確定し全rangeを転記する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式見取り図と施設案内を独立照合し、通常802席の全29列、可動1・2・22列、総席数、offsetが一致。production sourceに紐付く。",
       "priority": "B",
       "venueSourceId": "nihon-education-center-hitotsubashi-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式施設資料の802席と座席表について、前方可動席と車椅子対応時に外す席を通常配置として確定し全rangeを転記する。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02"
     },
     {
       "inventoryId": "tokyo-official-0003",
@@ -5644,13 +5643,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://milano-za.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式座席表から907席の1～3階全rangeを転記し、車椅子スペースと公演別販売停止席を固定番号席から分離する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式施設概要と基本形状座席表を独立照合し、基本構成907席の全33 range、階別・area別集計、欠番14件、offsetが一致。production sourceに紐付く。",
       "priority": "B",
       "venueSourceId": "theater-milano-za-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式座席表から907席の1～3階全rangeを転記し、車椅子スペースと公演別販売停止席を固定番号席から分離する。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02"
     },
     {
       "inventoryId": "tokyo-official-0286",
@@ -6052,13 +6050,14 @@
       "capacity": 1802,
       "category": "hall",
       "officialFacilityUrl": "https://www.b-academy.jp",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "公式公称は1階1,242・2階560の計1,802だが、列ラベルのない1階側方セルを図どおり接続すると1階1,258となり16席超過する。推測除外せずdraftを維持。",
       "priority": "A",
       "venueSourceId": "bunkyo-civic-main-standard",
       "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27"
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "1階側方段差席の正式な列・番号対応と、公称1,242席への包含を示す公式資料が必要。"
     },
     {
       "inventoryId": "tokyo-official-0307",
@@ -6717,13 +6716,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.city.taito.lg.jp/gakushu/shogaigakushu/shogaigakushusisetsu/syougaigakusyuucente/index.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式座席表から300席の全rangeを転記し、車椅子対応席および舞台拡張時の取り外し席を確認する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式2階案内と客席図を独立照合し、A～O列の固定番号席300席、欠番、分断range、offsetが一致。production sourceに紐付く。",
       "priority": "C",
       "venueSourceId": "taito-millennium-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式座席表から300席の全rangeを転記し、車椅子対応席および舞台拡張時の取り外し席を確認する。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02"
     },
     {
       "inventoryId": "tokyo-asakusa-public-hall",
@@ -7300,13 +7298,14 @@
       "capacity": 1805,
       "category": "hall",
       "officialFacilityUrl": "https://www.triphony.com/",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "第1パス番号席1,795に対し現行公式公称1,801。車椅子4区画を考慮しても2席差が残り、公式説明までproduction条件を満たさない。",
       "priority": "A",
       "venueSourceId": "sumida-triphony-main-hall-standard",
       "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27"
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "1階番号席1,034、公称1,040、車椅子4区画の包含関係と残る2席の公式説明が必要。"
     },
     {
       "inventoryId": "tokyo-sumida-triphony-small-hall",
@@ -7741,12 +7740,12 @@
       "officialFacilityUrl": "https://www.kcf.or.jp/kameido/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式座席表の400席について全rangeを転記し、車椅子スペース利用時の取り外し席を確認する。",
+      "eligibilityReason": "通常400席rangeは独立一致したが、車いす転換対象が公式ページ間でG3～8（6席）とG3～18（16席）に矛盾するためdraftを維持。",
       "priority": "C",
       "venueSourceId": "kameido-camelia-hall-standard",
       "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式座席表の400席について全rangeを転記し、車椅子スペース利用時の取り外し席を確認する。"
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "施設公式の訂正または回答で車いす転換対象番号を確定する必要がある。"
     },
     {
       "inventoryId": "tokyo-official-0393",
@@ -8172,13 +8171,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.kcf.or.jp/toyosu",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式座席表から300席の全rangeを転記し、ロールバックチェア等の可動席が通常配置へ含まれるか確認する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式施設詳細と座席図を独立照合し、通常300席の全14列、固定246・可動54、総席数、offsetが一致。production sourceに紐付く。",
       "priority": "C",
       "venueSourceId": "toyosu-civic-center-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式座席表から300席の全rangeを転記し、ロールバックチェア等の可動席が通常配置へ含まれるか確認する。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02"
     },
     {
       "inventoryId": "tokyo-official-0415",
@@ -10967,12 +10965,12 @@
       "officialFacilityUrl": "https://www.setagaya.co.jp/kuminkaikan/setagaya/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式座席表から933席の全列・全番号を転記し、車椅子スペースが公称席数へ含まれるか確認する。",
+      "eligibilityReason": "通常図の番号席929に対し公式定員は車椅子席を含む933。差4席と複数の車椅子転換パターンの包含関係を公式資料だけで確定できない。",
       "priority": "B",
       "venueSourceId": "setagaya-eagle-hall-standard",
       "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式座席表から933席の全列・全番号を転記し、車椅子スペースが公称席数へ含まれるか確認する。"
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "通常933席に含まれる4席と、各車椅子転換時に撤去する番号席を明示する公式資料が必要。"
     },
     {
       "inventoryId": "tokyo-official-0558",
@@ -12917,12 +12915,12 @@
       "officialFacilityUrl": "https://theatre-orb.com/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式座席表は3階全体とPDFを公開している。1,972席の階別内訳、車椅子席、舞台都合の販売停止席をPDFから全range転記する。",
+      "eligibilityReason": "公式公称1,972席と座席図は確認したが、1階車椅子対応エリアで通常販売される置換対象番号が公式非公開で、完全な通常番号席集合を確定できない。",
       "priority": "A",
       "venueSourceId": "tokyu-theatre-orb-standard",
       "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式座席表は3階全体とPDFを公開している。1,972席の階別内訳、車椅子席、舞台都合の販売停止席をPDFから全range転記する。"
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "車椅子転換対象番号と通常販売時の番号席集合を示す公式資料が必要。"
     },
     {
       "inventoryId": "tokyo-official-0659",
@@ -13848,13 +13846,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://nyc.niye.go.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式施設資料の758席について、客席図の全番号と車椅子対応席・可動席の通常配置を照合する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式配置図と主要諸元を独立照合し、A～Y列の通常固定番号席758席、車椅子区画、総席数、offsetが一致。production sourceに紐付く。",
       "priority": "B",
       "venueSourceId": "olympic-center-main-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式施設資料の758席について、客席図の全番号と車椅子対応席・可動席の通常配置を照合する。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02"
     },
     {
       "inventoryId": "tokyo-official-0707",
@@ -13869,12 +13866,12 @@
       "officialFacilityUrl": "https://nyc.niye.go.jp/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式施設資料の384席について全番号を確認し、可動席または舞台形式による席数変動がない標準配置を確定する。",
+      "eligibilityReason": "公式配置図が可変舞台246・312・318・384席を正規配置として並列掲載し、通常・標準・基本配置を指定していないため代表配置の方針判断が必要。",
       "priority": "C",
       "venueSourceId": "olympic-center-small-hall-standard",
       "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式施設資料の384席について全番号を確認し、可動席または舞台形式による席数変動がない標準配置を確定する。"
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "POLICY DECISION REQUIRED: 246・312・318・384席から代表配置を選定し、その配置の鮮明な公式番号図が必要。"
     },
     {
       "inventoryId": "tokyo-official-0708",
@@ -14897,13 +14894,14 @@
       "capacity": 1292,
       "category": "hall",
       "officialFacilityUrl": "https://nicesacademia.jp/",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "通常番号席1,292の全rangeは独立一致したが、公式定員1,292席と別描画の車イス4区画の包含関係・転換対象番号を公式資料だけで確定できない。",
       "priority": "A",
       "venueSourceId": "nakano-zero-main-standard",
       "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27"
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "車イス4席が定員1,292の内数か、転換する番号席はどれかを示す公式資料が必要。"
     },
     {
       "inventoryId": "tokyo-official-0761",
@@ -16692,13 +16690,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.owlspot.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式座席表から301席の全列・全番号を転記し、車椅子スペースと張出舞台使用時の販売停止席を区別する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式通常使用時座席表を独立照合し、通常301席の全range、欠番、転換注記、offsetが一致。production sourceに紐付く。",
       "priority": "C",
       "venueSourceId": "owlspot-theatre-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式座席表から301席の全列・全番号を転記し、車椅子スペースと張出舞台使用時の販売停止席を区別する。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02"
     },
     {
       "inventoryId": "tokyo-official-0853",
@@ -17241,13 +17238,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.hokutopia.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式施設図面から402席の全列・全番号を転記し、車椅子席と可動席の公称席数への包含を確認する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式施設案内と客席図を独立照合し、通常402席の全15列、総席数、offsetが一致。舞台面60人は別利用区分と確認し、production sourceに紐付く。",
       "priority": "C",
       "venueSourceId": "hokutopia-tsutsuji-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式施設図面から402席の全列・全番号を転記し、車椅子席と可動席の公称席数への包含を確認する。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02"
     },
     {
       "inventoryId": "tokyo-official-0881",
@@ -19129,12 +19125,12 @@
       "officialFacilityUrl": "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/index.html",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式施設資料の300席について、固定番号付き座席表の公開有無と車椅子対応席を追加確認する。",
+      "eligibilityReason": "現行公式ページで300席・常設非可動を確認したが、全列・全番号の公式座席図は公開されていない。351席資料は別施設の小松川さくらホール多目的ホール。",
       "priority": "C",
       "venueSourceId": "komatsugawa-civic-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式施設資料の300席について、固定番号付き座席表の公開有無と車椅子対応席を追加確認する。"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "対象ホールは公式300席・常設非可動まで確認したが、全列・全番号を示す公式座席図が公開されていない。"
     },
     {
       "inventoryId": "tokyo-official-0978",
@@ -21983,14 +21979,15 @@
       "city": "日野市",
       "capacity": 1104,
       "category": "hall",
-      "officialFacilityUrl": "https://www.hino-_kaikan.jp/",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "officialFacilityUrl": "https://www.hino-kaikan.jp/",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "公式施設案内の固定1,094席と独立座席図抽出1,102席が、1階7列6～9番・22～25番の8席で不一致。公式説明までproduction条件を満たさない。",
       "priority": "A",
       "venueSourceId": "hino-brick-main-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27"
+      "researchStatus": "independent-review-mismatch",
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "第1パス1,094席に対し第2パス1,102席。1階7列の8番号を除外する公式凡例が必要。"
     },
     {
       "inventoryId": "tokyo-official-1122",
@@ -22466,12 +22463,12 @@
       "officialFacilityUrl": "https://kuzaidan.or.jp/hall/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式座席資料から402席の全rangeを転記し、舞台張出し・車椅子利用時に取り外す席を通常固定席配置と区別する。",
+      "eligibilityReason": "公式がエンド270、プロセニアム336、スラスト99・132・369・402席を正規使用スタイルとして並列掲載し、通常代表を指定していないため方針判断が必要。",
       "priority": "C",
       "venueSourceId": "kunitachi-arts-small-hall-standard",
       "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式座席資料から402席の全rangeを転記し、舞台張出し・車椅子利用時に取り外す席を通常固定席配置と区別する。"
+      "lastCheckedAt": "2026-08-02",
+      "blockingReason": "POLICY DECISION REQUIRED: 正規使用スタイルから代表配置を選定し、その配置の鮮明な公式番号図が必要。"
     },
     {
       "inventoryId": "tokyo-official-1147",
@@ -22562,13 +22559,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://fussa-shiminkaikan.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設ページを2026-07-28に確認。固定番号席候補であるが、公式施設資料の260席について、固定席か可動椅子配置かを確認し、番号付き標準配置を一意に定義できる場合のみrangeを入力する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式座席表と施設案内を独立照合し、固定番号席256席と車椅子4席の定員260席への包含、全range、offsetが一致。production sourceに紐付く。",
       "priority": "D",
       "venueSourceId": "fussa-civic-small-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "公式施設資料の260席について、固定席か可動椅子配置かを確認し、番号付き標準配置を一意に定義できる場合のみrangeを入力する。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-02"
     },
     {
       "inventoryId": "tokyo-official-1152",

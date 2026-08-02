@@ -5,33 +5,44 @@
   "name": "亀戸文化センター カメリアホール",
   "prefecture": "東京都",
   "city": "江東区",
-  "aliases": [],
+  "aliases": [
+    "カメリアホール"
+  ],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "id": "standard-numbered-seats-with-removable-wheelchair-row",
+    "name": "通常番号席配置（車いす転換可能席含む）",
+    "coverage": "complete",
+    "expectedSeatCount": 400,
+    "selectionReason": "公式座席表が通常固定席として示す番号付き400席を代表パターンとする。車いす対応時に取り外すG列の範囲は公式ページ間で矛盾するため、転換配置は代表パターンに含めない。",
+    "notIncludedPatterns": [
+      "G列の一部を取り外す車いす対応配置",
+      "親子室2席"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility", "seat-count"
+        "facility",
+        "seat-count",
+        "event-layout"
       ],
-      "publisher": "亀戸文化センター カメリアホール",
-      "title": "亀戸文化センター カメリアホール 公式施設案内",
+      "publisher": "公益財団法人江東区文化コミュニティ財団",
+      "title": "亀戸文化センター ホール",
       "url": "https://www.kcf.or.jp/kameido/shisetsu-bunka/ichiran/detail/?id=67",
       "checkedAt": "2026-08-02"
     },
     {
       "id": "official-seat-map",
       "official": true,
-      "roles": ["seat-structure", "seat-count"],
-      "publisher": "江東区文化コミュニティ財団",
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "公益財団法人江東区文化コミュニティ財団",
       "title": "カメリアホール座席表（通常固定席400席・親子室2席）",
       "url": "https://www.kcf.or.jp/cms/files/pdf/id72_35229.pdf",
       "checkedAt": "2026-08-02"
@@ -39,28 +50,51 @@
     {
       "id": "official-barrier-free",
       "official": true,
-      "roles": ["facility"],
-      "publisher": "江東区文化コミュニティ財団",
-      "title": "カメリアホール バリアフリー案内",
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "公益財団法人江東区文化コミュニティ財団",
+      "title": "亀戸文化センター バリアフリー",
       "url": "https://www.kcf.or.jp/kameido/outline/barrierfree/",
       "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式座席表で通常400席（親子室2席は別）と番号表示を確認し、施設詳細では固定384席・可動16席と明記される。しかし公式施設詳細は車椅子転換をG列3～8番、バリアフリー案内はG列3～18番と記載し、外れる番号席の公式記載が一致しない。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "公式通常座席表のA列からQ列までに番号が示された400席。通常番号席のG列を含み、車いす対応への転換配置と親子室2席を除く。",
+  "completenessBasis": "公式座席表からA列20席、B～P列各24席、Q列20席を転記し、20 + 15×24 + 20 = 400席が座席表の通常固定席400席および施設ページの客席400席と一致した。施設定員402人との差2人は公式に別掲された親子室2席で説明できる。",
+  "transformation": "公式通常座席表の連続番号を明示rangeへ転記した。A列は3～22番、B～P列は1～24番、Q列は3～22番とした。車いす対応を示す図形は通常番号席の上に重ねて表示されるため、通常配置のrangeからは除外しない。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "公式施設ページは客席400席を固定席384席・可動16席と区分し、座席図の車椅子席枠もG列3～18番の16席に重なる。",
+    "同じ公式施設ページの備考は取り外し範囲をG列3～8番と記す一方、公式バリアフリーページはG列3～18番と記す。公式記載が矛盾するため、車いす対応配置の除外番号は確定しない。",
+    "親子室2席は通常番号席400席とは別区画で、抽選対象rangeに含めない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
+    "checkedAt": "2026-08-02",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
     "unresolvedIssues": [
-      "公式資料間で車椅子対応時に外すG列の番号範囲が3～8番と3～18番で不一致である。解消までproduction化しない。"
+      "通常番号席400席のrange・総数・offsetは独立第2パスと一致した。ただし車いす対応時に外すG列の公式記載が施設ページの3～8番（6席）とバリアフリー案内の3～18番（16席）で矛盾し、施設公式の訂正または回答がない限り転換配置を確定できない。"
     ]
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "A", "from": 3, "to": 22, "excluded": [] },
+    { "rowLabel": "B", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "C", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 24, "excluded": [] },
+    { "rowLabel": "Q", "from": 3, "to": 22, "excluded": [] }
+  ]
 }

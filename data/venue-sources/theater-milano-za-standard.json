@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "theater-milano-za-standard",
   "name": "THEATER MILANO-Za",
   "prefecture": "東京都",
@@ -8,22 +8,23 @@
   "aliases": [],
   "venueType": "theater",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "id": "basic-configuration-907",
+    "name": "基本構成907席",
+    "coverage": "complete",
+    "expectedSeatCount": 907,
+    "selectionReason": "公式施設概要が907席を「基本構成」と明記し、公式座席表も「基本形状」として掲載するため、この恒常的な番号付き配置を代表パターンとする。最大1,084席までの増設配置は公演ごとに異なるため含めない。",
+    "notIncludedPatterns": [
+      "最大1,084席までの増設配置",
+      "公演ごとの販売停止・座席変更"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
-      "roles": [
-        "facility"
-      ],
+      "roles": ["facility", "seat-count"],
       "publisher": "THEATER MILANO-Za",
-      "title": "THEATER MILANO-Za 公式施設案内",
+      "title": "THEATER MILANO-Za 施設概要（基本構成907席・階別内訳）",
       "url": "https://milano-za.jp/about/overview.html",
       "checkedAt": "2026-08-02"
     },
@@ -32,35 +33,60 @@
       "official": true,
       "roles": ["seat-structure"],
       "publisher": "THEATER MILANO-Za",
-      "title": "THEATER MILANO-Za 座席表",
+      "title": "THEATER MILANO-Za 座席表（基本形状）",
       "url": "https://milano-za.jp/seating-chart/seating_chart.pdf",
-      "checkedAt": "2026-08-02"
-    },
-    {
-      "id": "official-capacity-page",
-      "official": true,
-      "roles": ["seat-count"],
-      "publisher": "THEATER MILANO-Za",
-      "title": "THEATER MILANO-Za 施設概要",
-      "url": "https://milano-za.jp/about/overview.html",
       "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設概要で基本構成907席（1階612、2階148［バルコニー50］、3階147［バルコニー18］、車椅子エリア含む）と最大1,084席まで増設可能であることを確認した。公式座席表PDFは基本形状であり、公演により配置が異なると明記する。車椅子エリアが番号付き範囲として907に含まれるかを完全なarea別集計で示すまではcompleteとしない。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "公式座席表に掲載された基本形状907席。1階612席、2階148席（左右バルコニー各25席を含む）、3階147席（左右バルコニー各9席を含む）。車椅子のまま鑑賞する区画は公演ごとの運用であり、番号付きrangeへ追加しない。",
+  "completenessBasis": "第1パスで公式座席表を階・バルコニー別に全33 rangeへ転記した。1階612席、2階メイン98席＋左右バルコニー50席、3階メイン129席＋左右バルコニー18席、合計907席となり、公式の基本構成と階別内訳に一致する。最大1,084席への増設分は基本構成に混在させていない。独立第2パスは未実施。",
+  "transformation": "公式座席表の各階・各バルコニーの列と番号をrangeへ転記した。番号の連続区間内に実在しない2階B列21番、2階C列7・22番、2階D列6～8・20～23番、3階A・C列22番、1階S列10・23番はexcludedに明示した。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "公式座席表は基本形状であり、公演ごとに座席配置が異なる場合がある。最大1,084席までの増設席は代表パターンに含めない。",
+    "車椅子のまま鑑賞できるスペースの具体的位置・一般席転換番号は公演問い合わせ先への確認事項であり、番号付きrangeに推測で含めない。",
+    "独立第2パス完了まではproductionへ昇格しない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式資料には基本構成907席と階別内訳がある一方、座席表は基本形状で公演により配置が異なると明記する。車椅子エリアを含む907席のうち番号付き席集合、バルコニーの全range、最大1,084席への増設分を独立に区別できていない。公演の販売停止・増設席を恒久rangeとして推測してはならない。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-02",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"A","from":5,"to":28,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"B","from":4,"to":29,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"C","from":3,"to":30,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"D","from":3,"to":30,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"E","from":2,"to":31,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"F","from":2,"to":31,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"G","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"H","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"I","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"J","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"K","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"L","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"M","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"N","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"O","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"P","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"Q","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"R","from":1,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"S","from":1,"to":32,"excluded":[10,23]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"T","from":1,"to":32,"excluded":[]},
+    {"areaId":"second-floor-main","areaLabel":"2階メイン席","rowLabel":"A","from":1,"to":28,"excluded":[]},
+    {"areaId":"second-floor-main","areaLabel":"2階メイン席","rowLabel":"B","from":1,"to":28,"excluded":[21]},
+    {"areaId":"second-floor-main","areaLabel":"2階メイン席","rowLabel":"C","from":2,"to":27,"excluded":[7,22]},
+    {"areaId":"second-floor-main","areaLabel":"2階メイン席","rowLabel":"D","from":2,"to":27,"excluded":[6,7,8,20,21,22,23]},
+    {"areaId":"second-floor-left-balcony","areaLabel":"2階LB","rowLabel":"LB","from":1,"to":25,"excluded":[]},
+    {"areaId":"second-floor-right-balcony","areaLabel":"2階RB","rowLabel":"RB","from":1,"to":25,"excluded":[]},
+    {"areaId":"third-floor-main","areaLabel":"3階メイン席","rowLabel":"A","from":1,"to":30,"excluded":[22]},
+    {"areaId":"third-floor-main","areaLabel":"3階メイン席","rowLabel":"B","from":1,"to":30,"excluded":[]},
+    {"areaId":"third-floor-main","areaLabel":"3階メイン席","rowLabel":"C","from":1,"to":30,"excluded":[22]},
+    {"areaId":"third-floor-main","areaLabel":"3階メイン席","rowLabel":"D","from":1,"to":30,"excluded":[]},
+    {"areaId":"third-floor-main","areaLabel":"3階メイン席","rowLabel":"E","from":10,"to":20,"excluded":[]},
+    {"areaId":"third-floor-left-balcony","areaLabel":"3階LB","rowLabel":"LB","from":1,"to":9,"excluded":[]},
+    {"areaId":"third-floor-right-balcony","areaLabel":"3階RB","rowLabel":"RB","from":1,"to":9,"excluded":[]}
+  ]
 }

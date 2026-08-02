@@ -1,59 +1,87 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "owlspot-theatre-standard",
   "name": "あうるすぽっと",
   "prefecture": "東京都",
   "city": "豊島区",
-  "aliases": [],
+  "aliases": [
+    "豊島区立舞台芸術交流センター"
+  ],
   "venueType": "theater",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "id": "standard-numbered-seats-with-removable-front-rows",
+    "name": "通常番号席配置（A・B列取り外し可能席含む）",
+    "coverage": "complete",
+    "expectedSeatCount": 301,
+    "selectionReason": "公式座席ページと座席表PDFが通常使用時として示す番号付き301席を代表パターンとする。A・B列は取り外し可能だが、通常使用時の公式座席表で番号が定義されるため含める。",
+    "notIncludedPatterns": [
+      "H列18～22番の5席を取り外して車イス用スペース2席とする別配置",
+      "A・B列を取り外す張り出し舞台等の別配置",
+      "舞台階段設置時にA列の一部または全部を取り外す別配置"
+    ]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-seat-page",
       "official": true,
       "roles": [
         "facility",
-        "seat-count"
+        "seat-count",
+        "event-layout"
       ],
       "publisher": "あうるすぽっと",
-      "title": "あうるすぽっと 公式施設案内",
-      "url": "https://www.owlspot.jp/",
+      "title": "座席表",
+      "url": "https://www.owlspot.jp/events/seat/",
       "checkedAt": "2026-08-02"
     },
     {
       "id": "official-seat-map",
       "official": true,
-      "roles": ["seat-structure", "seat-count"],
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
       "publisher": "あうるすぽっと",
-      "title": "あうるすぽっと 座席表（通常使用時301席）",
+      "title": "あうるすぽっと座席表（通常使用時301席・舞台階段設置例）",
       "url": "https://www.owlspot.jp/events/images/seat_02.pdf",
       "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "公式座席表の通常使用時にA列からN列まで番号が示された301席。取り外し可能なA・B列を含み、車イス用スペース転換、張り出し舞台、舞台階段設置時の別配置を除く。",
+  "completenessBasis": "公式通常座席表からA列18席、B・D・F列各21席、C・E・G列各22席、H～N列各22席を転記し、18 + 3×21 + 3×22 + 7×22 = 301席が公式客席数301席と一致した。",
+  "transformation": "各列の公式番号を連続rangeへ転記した。A列は3～20番、B・D・F列は17番がなく1～16番・18～22番、C・E・G・H～N列は1～22番とした。",
   "knownLimitations": [
-    "公式PDFは通常使用時301席を示すが、H列18番から22番の5席は車椅子用スペース2席へ取り外し可能である。",
-    "A・B列は張り出し舞台等で取り外し可能であり、舞台階段設置時はA列の一部又は全部を外す別配置がある。"
+    "通常配置のH列18～22番は5席を取り外して車イス用スペース2席に転換可能だが、代表パターンでは通常番号席として含める。",
+    "A・B列は張り出し舞台等で取り外し可能だが、通常使用時の番号席として含める。",
+    "舞台階段設置時は非常用通路確保のためA列の一部または全部を外す必要があり、公式PDFの設置例ではA列3～5番・18～20番を外してA列6～17番を残す。ただし施設は設置条件により一部または全部と案内するため、別の固定代表パターンにはしない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-      "seatCount": "matched",
-    "unresolvedIssues": [
-        "公式PDFの通常使用時301席について、全列・全番号を第1パスと独立第2パスで転記し、A・B列及びH列18番から22番の可変条件を通常代表配置と混在させないことを確認する必要がある。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-02",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "A", "from": 3, "to": 20, "excluded": [] },
+    { "rowLabel": "B", "from": 1, "to": 16, "excluded": [] },
+    { "rowLabel": "B", "from": 18, "to": 22, "excluded": [] },
+    { "rowLabel": "C", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 16, "excluded": [] },
+    { "rowLabel": "D", "from": 18, "to": 22, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 16, "excluded": [] },
+    { "rowLabel": "F", "from": 18, "to": 22, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 22, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 22, "excluded": [] }
+  ]
 }

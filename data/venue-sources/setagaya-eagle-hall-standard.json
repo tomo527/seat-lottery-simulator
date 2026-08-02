@@ -12,8 +12,8 @@
     "name": "通常固定番号席配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "selectionReason": "公式施設が通常933席、前舞台使用時902席を明記するため、前舞台未使用の通常座席図を代表候補とする。ただし座席図から独立集計した番号席929席と公称933席の差4席を公式資料だけで説明できないため未確定。",
+    "notIncludedPatterns": ["前舞台使用時902席", "車椅子席への転換配置"]
   },
   "sources": [
     {
@@ -37,6 +37,24 @@
       "checkedAt": "2026-08-02"
     },
     {
+      "id": "official-first-floor-seat-map",
+      "official": true,
+      "roles": ["seat-structure"],
+      "publisher": "世田谷区民会館",
+      "title": "せたがやイーグレットホール 1階座席案内",
+      "url": "https://www.setagaya.co.jp/kuminkaikan/setagaya/pdf/hall_heimen21.pdf",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-second-floor-seat-map",
+      "official": true,
+      "roles": ["seat-structure"],
+      "publisher": "世田谷区民会館",
+      "title": "せたがやイーグレットホール 2階座席案内",
+      "url": "https://www.setagaya.co.jp/kuminkaikan/setagaya/pdf/hall_heimen22.pdf",
+      "checkedAt": "2026-08-02"
+    },
+    {
       "id": "official-usage-guide",
       "official": true,
       "roles": ["seat-count"],
@@ -44,13 +62,23 @@
       "title": "世田谷区民会館施設使用案内",
       "url": "https://www.setagaya.co.jp/kuminkaikan/setagaya/pdf/Shisetsu_Shiyou_Annai.pdf",
       "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-design-details",
+      "official": true,
+      "roles": ["seat-count"],
+      "publisher": "世田谷区民会館",
+      "title": "世田谷区民会館 施設設計内容（通常933席・車椅子転換・前舞台902席）",
+      "url": "https://www.setagaya.co.jp/kuminkaikan/setagaya/pdf/design_details.pdf",
+      "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内と公式使用案内で通常933席、前舞台使用時902席、車椅子席を最大24席まで設置できることを確認した。公式ダウンロード一覧には1階・2階座席表があるが、通常933席との関係および車椅子設置時に外れる一般席の組合せが未確定である。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "公式1階・2階座席案内に描かれたメイン1～27列とL1・L2・R1・R2列の番号席929席。前舞台使用時および車椅子転換時の配置は含めない。",
+  "completenessBasis": "公式座席案内を重複なく統合するとメイン863席、左側L1・L2列33席、右側R1・R2列33席、合計929番号席となる。公式施設案内の通常定員933席（車椅子席を含む）との差4席について、公式設計資料は車椅子転換を前方+8/-31、後方左右各+2/-4、前舞台時前方+11/-43、後方左右各+2/-4と示すが、通常配置の差4席を直接説明しない。このため全番号rangeは転記済みでもexpectedSeatCountとcoverageは未確定。",
+  "transformation": "公式1階・2階座席案内に重複表示されるメイン1～21列は一度だけ登録し、2階案内で追加表示される22～27列と左右側方列を追加した。座席図にない番号はexcludedへ明示し、番号規則から補完していない。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "番号席929席と公称933席の差4席の公式説明、および通常配置における車椅子席の包含関係が解決するまでproductionへ昇格しない。",
+    "親子室は公式設計資料で933席とは別に記載されるが、室内座席数は公式資料から確認できないため番号席へ含めない。"
   ],
   "verification": {
     "status": "pending",
@@ -59,8 +87,41 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "通常933席、前舞台使用時902席、車椅子席最大24席という公式資料は確認できるが、車椅子設置時に一般席を2席、4席又は31席外す複数条件が施設設計資料に記載される。通常代表配置の番号席集合と各転換条件の関係を公式座席表で確認するまでrangeを作成しない。"
+      "公式座席図の番号席は929席だが、公式定員は車椅子席を含む933席であり、差4席を通常配置の恒常車椅子区画または別席として明示する公式記述を確認できない。",
+      "車椅子転換は通常時に前方+8席/一般席-31席、後方左右各+2席/一般席-4席、前舞台時に前方+11席/一般席-43席、後方左右各+2席/一般席-4席と複数であり、通常933席との包含関係が未確定。"
     ]
   },
-  "ranges": []
+  "ranges": [
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"1","from":10,"to":31,"excluded":[22,23,24,25,26,27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"2","from":9,"to":32,"excluded":[23,24,25,26,27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"3","from":8,"to":33,"excluded":[24,25,26,27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"4","from":7,"to":34,"excluded":[25,26,27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"5","from":4,"to":37,"excluded":[24,25,26,27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"6","from":2,"to":39,"excluded":[25,26,27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"7","from":1,"to":40,"excluded":[26,27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"8","from":1,"to":40,"excluded":[27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"9","from":1,"to":40,"excluded":[26,27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"10","from":1,"to":40,"excluded":[27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"11","from":2,"to":39,"excluded":[28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"12","from":2,"to":39,"excluded":[27,28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"13","from":4,"to":37,"excluded":[28,29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"14","from":4,"to":37,"excluded":[29]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"15","from":4,"to":37,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"16","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"17","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"18","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"19","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"20","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"21","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"22","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"23","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"24","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"25","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"26","from":3,"to":38,"excluded":[]},
+    {"areaId":"main","areaLabel":"メイン席","rowLabel":"27","from":12,"to":27,"excluded":[]},
+    {"areaId":"left-side-l1","areaLabel":"左側L1列","rowLabel":"L1","from":1,"to":17,"excluded":[]},
+    {"areaId":"left-side-l2","areaLabel":"左側L2列","rowLabel":"L2","from":1,"to":16,"excluded":[]},
+    {"areaId":"right-side-r1","areaLabel":"右側R1列","rowLabel":"R1","from":1,"to":17,"excluded":[]},
+    {"areaId":"right-side-r2","areaLabel":"右側R2列","rowLabel":"R2","from":1,"to":16,"excluded":[]}
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "hokutopia-tsutsuji-hall-standard",
   "name": "北とぴあ つつじホール",
   "prefecture": "東京都",
@@ -10,10 +10,10 @@
   "representativePattern": {
     "id": "standard-fixed-seats",
     "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "coverage": "complete",
+    "expectedSeatCount": 402,
+    "selectionReason": "公式施設ページが客席402席をホールの通常客席として掲げ、公式客席図も同じ402席のA～O列番号席を示すため、この配置を代表パターンとする。料金表の「舞台面使用60席」は舞台だけを別施設面として利用する区分であり、402席に加える客席配置ではない。",
+    "notIncludedPatterns": ["舞台面のみを定員60人で使用する区分", "客席面追加の料金区分"]
   },
   "sources": [
     {
@@ -26,23 +26,55 @@
       "title": "北とぴあ つつじホール 公式施設案内",
       "url": "https://www.hokutopia.jp/hall-guide/halls/tsutsuji_hall",
       "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "北とぴあ",
+      "title": "つつじホール客席図 402席",
+      "url": "https://www.hokutopia.jp/wp-content/uploads/2022/01/dff8c612dc9c3efeaa8888d9be710367.pdf",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-fee-table",
+      "official": true,
+      "roles": ["seat-count"],
+      "publisher": "北とぴあ",
+      "title": "北とぴあ施設利用料金表（つつじホール402・舞台面使用60）",
+      "url": "https://www.hokutopia.jp/wp-content/uploads/2025/02/48d00243fbc06a28a6e59d8ec3cdb2f5.pdf",
+      "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "北とぴあ公式施設案内と客席図で402席を確認した。公式には舞台面使用60席および客席面追加という別使用形態もあり、通常402席の全番号rangeと可動・車椅子区画の扱いを一意に確定できない。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "公式客席図に示されたA～O列の番号付き402席。舞台面使用60人および客席面追加の料金区分は含めない。",
+  "completenessBasis": "第1パスで公式客席図のA～O列を全rangeへ転記し、A列12席、B列20席、C列22席、D列24席、E列26席、F列28席、G列30席、H～O列各30席の合計402席を確認した。公式施設ページ・公式客席図の402席と一致する。独立第2パスは未実施。",
+  "transformation": "公式客席図の列ごとの最小・最大番号と恒久欠番をrangeへ転記した。A～G列の中央と側方の番号は連続するため1 rangeへ統合し、番号規則から座席を追加していない。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "独立第2パス完了まではproductionへ昇格しない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式客席図は402席を示すが、全番号・可動／車椅子区画の通常配置への包含を完全に確定できない。舞台面使用60席・客席面追加を通常402席に混在させない。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-02",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    {"areaId":"main","areaLabel":"客席","rowLabel":"A","from":10,"to":21,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"B","from":6,"to":25,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"C","from":5,"to":26,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"D","from":4,"to":27,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"E","from":3,"to":28,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"F","from":2,"to":29,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"G","from":1,"to":30,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"H","from":1,"to":30,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"I","from":1,"to":30,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"J","from":1,"to":30,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"K","from":1,"to":30,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"L","from":1,"to":30,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"M","from":1,"to":30,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"N","from":1,"to":30,"excluded":[]},
+    {"areaId":"main","areaLabel":"客席","rowLabel":"O","from":1,"to":30,"excluded":[]}
+  ]
 }

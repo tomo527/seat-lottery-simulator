@@ -8,12 +8,12 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
+    "id": "policy-decision-required",
+    "name": "代表配置未選定",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "selectionReason": "公式資料は可変式舞台に対する246席、312席、318席、384席の4配置を同じ配置図内に並列掲載し、最大384席以外に通常・標準・基本配置を指定しない。最大席数を自動採用せず方針判断待ちとする。",
+    "notIncludedPatterns": ["246席配置", "312席配置", "318席配置", "384席配置"]
   },
   "sources": [
     {
@@ -28,11 +28,12 @@
       "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式資料は最大384席とする一方、可変式舞台の形により収容人数が変わり、主要諸元表は246～384名、312席時の舞台寸法を示す。単一の通常代表配置と全番号席集合は一意に確定できない。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "代表配置未選定のため番号席rangeは未登録。公式配置図の246・312・318・384席を正規選択肢として記録する。",
+  "completenessBasis": "公式PDFは最大384席と明記しつつ、舞台形状によって収容人数が変わること、312席時の舞台寸法、配置図として312席・246席・318席・384席の4形状を示す。4配置はいずれも可変舞台と可動客席の正規形状であり、デフォルト指定がない。各小図は配置全体を示すが、配置別の全番号を判読できる独立座席表ではない。",
+  "transformation": "方針決定前に複数配置を混在させない。代表配置が決まった後、その配置の鮮明な公式番号付き座席表からrangeを再抽出する。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "POLICY DECISION REQUIRED: 246・312・318・384席のどれを抽選用代表配置とするか決定が必要。",
+    "公式PDFは配置別の完全な番号席一覧を提供していないため、方針決定後も鮮明な配置別座席表が必要。"
   ],
   "verification": {
     "status": "pending",
@@ -41,7 +42,8 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "舞台可変により246～384席へ変動する。最大384席を通常配置と推測せず、公式の代表座席図・配置別番号一覧を待つ。"
+      "POLICY DECISION REQUIRED: 可変舞台の246・312・318・384席はいずれも公式配置図に掲載され、通常代表の指定がない。",
+      "選定した配置について全番号席rangeを抽出できる鮮明な公式座席図が必要。最大384席を通常配置として推測しない。"
     ]
   },
   "ranges": []

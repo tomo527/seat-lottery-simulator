@@ -98,6 +98,18 @@
     "dataPath": "/venue-db/venues/fussa-civic-main-standard.json"
   },
   {
+    "id": "fussa-civic-small-standard",
+    "name": "福生市民会館 小ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "福生市",
+    "venueType": "hall",
+    "representativePatternName": "通常番号付き固定席配置",
+    "seatCount": 256,
+    "dataPath": "/venue-db/venues/fussa-civic-small-standard.json"
+  },
+  {
     "id": "hakuju-hall-standard",
     "name": "Hakuju Hall",
     "searchAliases": [
@@ -154,6 +166,18 @@
     "representativePatternName": "通常固定席配置",
     "seatCount": 521,
     "dataPath": "/venue-db/venues/hitotsubashi-hall-standard.json"
+  },
+  {
+    "id": "hokutopia-tsutsuji-hall-standard",
+    "name": "北とぴあ つつじホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "北区",
+    "venueType": "hall",
+    "representativePatternName": "通常固定番号席配置",
+    "seatCount": 402,
+    "dataPath": "/venue-db/venues/hokutopia-tsutsuji-hall-standard.json"
   },
   {
     "id": "hoya-komorebi-main-standard",
@@ -368,6 +392,18 @@
     "dataPath": "/venue-db/venues/nerima-culture-small-standard.json"
   },
   {
+    "id": "nihon-education-center-hitotsubashi-hall-standard",
+    "name": "日本教育会館 一ツ橋ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "representativePatternName": "通常番号席配置（1・2・22列可動席含む）",
+    "seatCount": 802,
+    "dataPath": "/venue-db/venues/nihon-education-center-hitotsubashi-hall-standard.json"
+  },
+  {
     "id": "oji-hall-standard",
     "name": "銀座 王子ホール",
     "searchAliases": [
@@ -383,6 +419,18 @@
     "dataPath": "/venue-db/venues/oji-hall-standard.json"
   },
   {
+    "id": "olympic-center-main-hall-standard",
+    "name": "国立オリンピック記念青少年総合センター カルチャー棟 大ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "hall",
+    "representativePatternName": "通常番号付き固定席配置",
+    "seatCount": 758,
+    "dataPath": "/venue-db/venues/olympic-center-main-hall-standard.json"
+  },
+  {
     "id": "ota-plaza-main-standard",
     "name": "大田区民プラザ 大ホール",
     "searchAliases": [
@@ -395,6 +443,20 @@
     "representativePatternName": "通常固定番号席配置",
     "seatCount": 509,
     "dataPath": "/venue-db/venues/ota-plaza-main-standard.json"
+  },
+  {
+    "id": "owlspot-theatre-standard",
+    "name": "あうるすぽっと",
+    "searchAliases": [
+      "豊島区立舞台芸術交流センター"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "豊島区",
+    "venueType": "theater",
+    "representativePatternName": "通常番号席配置（A・B列取り外し可能席含む）",
+    "seatCount": 301,
+    "dataPath": "/venue-db/venues/owlspot-theatre-standard.json"
   },
   {
     "id": "parthenon-tama-main-standard",
@@ -513,6 +575,30 @@
     "dataPath": "/venue-db/venues/suntory-blue-rose-a.json"
   },
   {
+    "id": "taito-millennium-hall-standard",
+    "name": "台東区生涯学習センター ミレニアムホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "venueType": "hall",
+    "representativePatternName": "通常固定番号席配置",
+    "seatCount": 300,
+    "dataPath": "/venue-db/venues/taito-millennium-hall-standard.json"
+  },
+  {
+    "id": "theater-milano-za-standard",
+    "name": "THEATER MILANO-Za",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "新宿区",
+    "venueType": "theater",
+    "representativePatternName": "基本構成907席",
+    "seatCount": 907,
+    "dataPath": "/venue-db/venues/theater-milano-za-standard.json"
+  },
+  {
     "id": "theatre-crea-standard",
     "name": "シアタークリエ",
     "searchAliases": [
@@ -569,6 +655,20 @@
     "representativePatternName": "通常座席",
     "seatCount": 408,
     "dataPath": "/venue-db/venues/toppan-hall-standard.json"
+  },
+  {
+    "id": "toyosu-civic-center-hall-standard",
+    "name": "豊洲シビックセンターホール",
+    "searchAliases": [
+      "豊洲文化センター ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "江東区",
+    "venueType": "hall",
+    "representativePatternName": "通常番号席配置（可動席含む）",
+    "seatCount": 300,
+    "dataPath": "/venue-db/venues/toyosu-civic-center-hall-standard.json"
   },
   {
     "id": "yotsuya-civic-hall-standard",

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "taito-millennium-hall-standard",
   "name": "台東区生涯学習センター ミレニアムホール",
   "prefecture": "東京都",
@@ -8,24 +8,24 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
+    "id": "standard-fixed-numbered-seats",
     "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "coverage": "complete",
+    "expectedSeatCount": 300,
+    "selectionReason": "公式2階案内が客席300席を固定席と明記し、公式客席図面にもA列からO列の番号席300席が示されるため、この番号席集合を代表パターンとする。車椅子用スペース4席と親子室6席は別記の番号のない補助席である。",
+    "notIncludedPatterns": [
+      "O列の番号のない車椅子用スペース4席",
+      "親子室6席"
+    ]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-second-floor-guide",
       "official": true,
-      "roles": [
-        "facility",
-        "seat-count"
-      ],
-      "publisher": "台東区生涯学習センター ミレニアムホール",
-      "title": "台東区生涯学習センター ミレニアムホール 公式施設案内",
-      "url": "https://www.city.taito.lg.jp/gakushu/shogaigakushu/shogaigakushusisetsu/syougaigakusyuucente/index.html",
+      "roles": ["facility", "seat-count"],
+      "publisher": "台東区",
+      "title": "台東区生涯学習センター 2階案内（ミレニアムホール）",
+      "url": "https://www.city.taito.lg.jp/gakushu/shogaigakushu/shogaigakushusisetsu/syougaigakusyuucente/furoaannai/2kai.html",
       "checkedAt": "2026-08-02"
     },
     {
@@ -38,21 +38,37 @@
       "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "公式客席図面のA列からO列に番号が付された固定席300席。O列の番号のない車椅子用スペース4席と、客席後方の親子室6席は含めない。",
+  "completenessBasis": "第1パスでA列からN列の287席とO列の13席を転記して計300席とし、公式2階案内の固定席300席および公式客席図面の座席数300席に一致した。公式2階案内は車椅子用スペース4席・親子室6席を固定席300席とは別に注記している。",
+  "transformation": "公式客席図面の各列に表示された番号だけを明示rangeへ転記した。B・D・F・H・J・L・N列は恒久欠番16番をexcludedとし、O列は1～3番、8～14番、19～21番の3rangeへ分割した。",
   "knownLimitations": [
-    "公式図は300席と親子室6席を別記している。親子室が番号付き抽選対象かどうかを推測しない。"
+    "公式案内は固定席300席、車椅子用スペース4席、親子室6席を別記するが、施設全体の収容人数を310人とは表現していないため、補助席を番号席総数へ加算しない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-      "seatCount": "matched",
-    "unresolvedIssues": [
-        "公式PDFからA列からO列の全番号席を第1パスと独立第2パスで転記し、300席との一致、欠番、及び別記の親子室6席を番号席に含めないことを確認する必要がある。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-02",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "A", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "B", "from": 1, "to": 21, "excluded": [16] },
+    { "rowLabel": "C", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 21, "excluded": [16] },
+    { "rowLabel": "E", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 21, "excluded": [16] },
+    { "rowLabel": "G", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 21, "excluded": [16] },
+    { "rowLabel": "I", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 21, "excluded": [16] },
+    { "rowLabel": "K", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 21, "excluded": [16] },
+    { "rowLabel": "M", "from": 1, "to": 21, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 21, "excluded": [16] },
+    { "rowLabel": "O", "from": 1, "to": 3, "excluded": [] },
+    { "rowLabel": "O", "from": 8, "to": 14, "excluded": [] },
+    { "rowLabel": "O", "from": 19, "to": 21, "excluded": [] }
+  ]
 }

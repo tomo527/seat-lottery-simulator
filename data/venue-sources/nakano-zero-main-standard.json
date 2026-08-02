@@ -10,10 +10,13 @@
   "representativePattern": {
     "id": "standard-fixed-seats",
     "name": "通常固定席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式資料が示す通常の番号付き固定席配置を候補とし、全rangeと転換席の独立照合完了後に確定する。",
-    "notIncludedPatterns": []
+    "coverage": "complete",
+    "expectedSeatCount": 1292,
+    "selectionReason": "公式座席案内図に番号が掲載された通常配置の1階1,014席・2階278席、計1,292席を代表パターンとする。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時1,164席",
+      "番号のない車イス席4区画"
+    ]
   },
   "sources": [
     {
@@ -25,7 +28,7 @@
       "publisher": "中野区もみじ山文化センター なかのZERO",
       "title": "中野区もみじ山文化センター なかのZERO〔大ホール〕 公式施設案内",
       "url": "https://www.naka-lab.jp/space-rooms/main-hall",
-      "checkedAt": "2026-08-01"
+      "checkedAt": "2026-08-02"
     },
     {
       "id": "official-seat-map",
@@ -34,24 +37,59 @@
       "publisher": "中野区文化施設 指定管理者 なかの応援パートナーズ",
       "title": "なかのZERO大ホール 座席案内図（客席数1,292席）",
       "url": "https://09a24188-feca-4db1-9b51-550e675a0e21.usrfiles.com/ugd/09a241_73561a982bb6463d944225a862ccef78.pdf",
-      "checkedAt": "2026-08-01"
+      "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常の1階・2階番号付き座席を候補として調査中。ピット使用時の別配置は含めない。",
-  "completenessBasis": "公式PDFを視覚確認し、通常1,292席、ピット使用時1,164席、車椅子4席を確認した。1階・2階とも左右・中央・側方ブロックがあり、同じ行番号の複数rangeと非番号車椅子区画がある。通常1,292と番号席集合の関係をarea別に独立集計するまではcompleteとしない。",
-  "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
+  "registeredScope": "公式座席案内図の通常配置に番号が掲載された1階1,014席と2階278席、合計1,292席。番号のない車イス席4区画は抽選IDに含めない。",
+  "completenessBasis": "公式座席案内図の全番号を階別に転記し、1階は1列12-39、12列1-50、23列8-43、2階は1列の1-7・44-50、4列1-50、7列1-50を再確認した。機械集計は1階1,014席、2階278席、合計1,292席で、図面表題と公式施設ページの公称1,292席に一致する。決定的offsetは先頭0=first-floor/1/12、中間646=first-floor/16/17、末尾1,291=second-floor/7/50。図中の車イス記号4区画は番号セルを持たず、追加の抽選IDにはしていない。",
+  "transformation": "1階席と2階席をareaへ分け、公式図の各列に存在する連続番号を明示rangeへ転記した。2階1・2列は中央番号席がないため左右を別rangeとした。",
   "knownLimitations": [
-    "未解決事項が残るためproduction生成対象外。"
+    "オーケストラピット使用時は128席減となる別配置のため対象外。",
+    "番号のない車イス席4区画は抽選IDに含めない。",
+    "通常番号席rangeは独立第2パスと一致したが、公式定員1,292席に車イス席4席が括弧併記される一方、公式図は番号セル1,292席と番号のない車イス4区画を別描画する。包含関係を公式文言だけで確定できない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
+    "checkedAt": "2026-08-02",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
     "unresolvedIssues": [
-      "公式PDFと通常1,292席は確認済みだが、車椅子4席が公称に含まれるか、番号セルとの置換関係、1階・2階の全側方ブロック・欠番を独立集計できていない。ピット使用時128席減から通常配置の番号席を逆算してはならない。"
+      "通常番号席1,292席の全range・階別席数・offsetは独立第2パスと一致した。ただし公式定員1,292席は車イス席4席を括弧併記し、座席図は番号セル1,292席と番号のない車イス4区画を別描画するため、車イス4席の内外・転換対象番号を公式資料だけで説明できない。"
     ]
   },
-  "ranges": []
+  "ranges": [
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "1", "from": 12, "to": 39, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "2", "from": 11, "to": 40, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "3", "from": 9, "to": 42, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "4", "from": 8, "to": 43, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "5", "from": 8, "to": 43, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "6", "from": 8, "to": 43, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "7", "from": 8, "to": 43, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "8", "from": 3, "to": 48, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "9", "from": 2, "to": 49, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "10", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "11", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "12", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "13", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "14", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "15", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "16", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "17", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "18", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "19", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "20", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "21", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "22", "from": 2, "to": 49, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "23", "from": 8, "to": 43, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "1", "from": 1, "to": 7, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "1", "from": 44, "to": 50, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "2", "from": 1, "to": 7, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "2", "from": 44, "to": 50, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "3", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "4", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "5", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "6", "from": 1, "to": 50, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "7", "from": 1, "to": 50, "excluded": [] }
+  ]
 }

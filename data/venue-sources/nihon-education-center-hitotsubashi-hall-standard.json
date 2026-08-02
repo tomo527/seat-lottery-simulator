@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "nihon-education-center-hitotsubashi-hall-standard",
   "name": "日本教育会館 一ツ橋ホール",
   "prefecture": "東京都",
@@ -8,29 +8,38 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "id": "standard-numbered-seats-with-movable-rows",
+    "name": "通常番号席配置（1・2・22列可動席含む）",
+    "coverage": "complete",
+    "expectedSeatCount": 802,
+    "selectionReason": "公式見取り図が示す通常配置の番号付き802席を代表パターンとする。1・2・22列は可動席だが、同じ公式通常配置で恒常的な番号が定義されるため含める。",
+    "notIncludedPatterns": [
+      "車イススペース設置時の別配置（一般席28席を取り外し、約17席分を確保）",
+      "舞台せり出し時の別配置"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count",
+        "event-layout"
       ],
-      "publisher": "日本教育会館 一ツ橋ホール",
-      "title": "日本教育会館 一ツ橋ホール 公式施設案内",
+      "publisher": "一般財団法人日本教育会館",
+      "title": "一ツ橋ホール",
       "url": "https://www.jec.or.jp/hall.html",
       "checkedAt": "2026-08-02"
     },
     {
       "id": "official-hall-layout",
       "official": true,
-      "roles": ["seat-structure", "seat-count"],
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
       "publisher": "一般財団法人日本教育会館",
       "title": "一ツ橋ホール見取り図",
       "url": "https://www.jec.or.jp/pdf/Hall_3F2604.pdf",
@@ -39,28 +48,62 @@
     {
       "id": "official-usage-guide",
       "official": true,
-      "roles": ["seat-count"],
+      "roles": [
+        "facility",
+        "seat-count",
+        "event-layout"
+      ],
       "publisher": "一般財団法人日本教育会館",
       "title": "一ツ橋ホール・会議室のご案内",
       "url": "https://www.jec.or.jp/pdf/pamphlet2603.pdf",
       "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内、公式見取り図、公式パンフレットで802席、1・2・22列が可動席、車椅子スペース約17席設置時は一般席28席を外すこと、舞台せり出し時は1・2列を外すことを確認した。見取り図は列番号を示すが、802席の通常配置を全rangeとして独立集計していない。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "公式通常見取り図の1列から29列までに番号が示された802席。可動席の1・2・22列を含み、車イススペース設置時または舞台せり出し時の別配置を除く。",
+  "completenessBasis": "公式見取り図から1列22席、2列24席、3～29列各28席を転記し、22 + 24 + 27×28 = 802席が公式定員802席と一致した。公式施設ページとパンフレットでも1・2・22列が可動席、車イススペース設置時は一般席28席を取り外して約17席分を確保すると確認した。",
+  "transformation": "各列の連続番号を明示rangeへ転記した。1列は4～25番、2列は3～26番、3～29列は1～28番で、公式見取り図に表示された番号だけを登録した。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "1・2・22列は可動席だが、通常見取り図で番号が定義されるため代表パターンに含める。",
+    "車イススペース設置時は一般席28席を取り外すが、公式公開資料は取り外す番号を文章で特定していないため、別配置のrangeは作成しない。",
+    "舞台せり出し時は舞台奥行が8mから11mになるが、公式公開資料は取り外す座席番号を明記していないため、別配置のrangeは作成しない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式資料は802席、1・2・22列の可動席、車椅子時に一般席28席を外すこと、舞台せり出し時に1・2列を外すことを明記する。見取り図の各行は左右・中央ブロックに分かれ、番号の空白があるため、通常802席の全番号rangeと車椅子／せり出し別配置の差を独立集計するまでrangeを作成しない。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-02",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "1", "from": 4, "to": 25, "excluded": [] },
+    { "rowLabel": "2", "from": 3, "to": 26, "excluded": [] },
+    { "rowLabel": "3", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "4", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "5", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "6", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "7", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "8", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "9", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "10", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "11", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "12", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "13", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "14", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "15", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "16", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "17", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "18", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "19", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "20", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "21", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "22", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "23", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "24", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "25", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "26", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "27", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "28", "from": 1, "to": 28, "excluded": [] },
+    { "rowLabel": "29", "from": 1, "to": 28, "excluded": [] }
+  ]
 }

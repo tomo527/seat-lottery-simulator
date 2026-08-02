@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "olympic-center-main-hall-standard",
   "name": "国立オリンピック記念青少年総合センター カルチャー棟 大ホール",
   "prefecture": "東京都",
@@ -8,12 +8,14 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "id": "standard-numbered-fixed-seats",
+    "name": "通常番号付き固定席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 758,
+    "selectionReason": "公式配置図と主要諸元が一致して示すA列からY列までの通常番号席758席を代表パターンとする。",
+    "notIncludedPatterns": [
+      "公式配置図で番号席として描かれていない車椅子対応区画"
+    ]
   },
   "sources": [
     {
@@ -22,15 +24,18 @@
       "roles": [
         "facility"
       ],
-      "publisher": "国立オリンピック記念青少年総合センター カルチャー棟 大ホール",
-      "title": "国立オリンピック記念青少年総合センター カルチャー棟 大ホール 公式施設案内",
-      "url": "https://nyc.niye.go.jp/",
+      "publisher": "国立オリンピック記念青少年総合センター",
+      "title": "カルチャー棟",
+      "url": "https://nyc.niye.go.jp/facilities/culture",
       "checkedAt": "2026-08-02"
     },
     {
       "id": "official-hall-layout",
       "official": true,
-      "roles": ["seat-structure", "seat-count"],
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
       "publisher": "国立オリンピック記念青少年総合センター",
       "title": "カルチャー棟 大ホール（758席）設備・備品定数・配置図",
       "url": "https://nyc.niye.go.jp/lib/pdf/facilities/culture/hall_L.pdf",
@@ -39,28 +44,56 @@
     {
       "id": "official-hall-specification",
       "official": true,
-      "roles": ["seat-count"],
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
       "publisher": "国立オリンピック記念青少年総合センター",
-      "title": "大ホール主要諸元表",
+      "title": "カルチャー棟大ホール主要諸元・舞台資料",
       "url": "https://nyc.niye.go.jp/wp-content/uploads/2024/07/hall_L_butai.pdf",
       "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "公式配置図に示された通常758席の番号付き座席を候補として調査中。車椅子席の確保時は別配置として扱う。",
-  "completenessBasis": "公式配置図と主要諸元表で通常758席を確認した。配置図はAからYの行と各番号を示し、主要諸元表は車椅子席の確保などで758席より少なくなる場合があると記載する。通常図の全番号rangeは読み取れるが、車椅子マークの箇所を番号席として扱うか別配置として扱うかを独立に照合するまではcompleteとしない。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "公式配置図のA列からY列までに座席セルが示された番号席758席。A列とY列の端部欠番、Y列中央の車椅子対応区画を番号席から除く。",
+  "completenessBasis": "公式配置図を列ごとに確認し、A列2～30番の29席、B～X列各1～31番の23×31席、Y列2～9番・23～30番の16席を転記した。29 + 23×31 + 16 = 758席が公式配置図・主要諸元の定員758席と一致した。",
+  "transformation": "公式配置図の座席セルだけを連続番号rangeへ転記した。A列は1番・31番がなく2～30番、B～X列は1～31番、Y列は中央10～22番と両端1番・31番がなく2～9番・23～30番に分けた。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "公式配置図にはA列前方とY列中央に車椅子記号があるが、車椅子区画の収容数は公開資料に明記されていないため、番号のない区画をrangeへ含めない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式配置図と758席は確認済みで、通常図はAからYの行・番号を示す。一方、図内には車椅子マークがあり、主要諸元表は車椅子席確保時に758席未満となるとしている。通常758席の番号集合、車椅子対応で外す番号、可動席の有無を第1・第2パスで別々に集計するまでrangeを作成しない。"
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-02",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "rowLabel": "A", "from": 2, "to": 30, "excluded": [] },
+    { "rowLabel": "B", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "C", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "D", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "E", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "F", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "G", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "H", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "I", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "J", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "K", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "L", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "M", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "N", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "O", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "P", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "Q", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "R", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "S", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "T", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "U", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "V", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "W", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "X", "from": 1, "to": 31, "excluded": [] },
+    { "rowLabel": "Y", "from": 2, "to": 9, "excluded": [] },
+    { "rowLabel": "Y", "from": 23, "to": 30, "excluded": [] }
+  ]
 }

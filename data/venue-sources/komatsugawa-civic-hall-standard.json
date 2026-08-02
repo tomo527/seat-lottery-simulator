@@ -5,26 +5,23 @@
   "name": "小松川区民館 ホール",
   "prefecture": "東京都",
   "city": "江戸川区",
-  "aliases": [],
+  "aliases": ["江戸川区立小松川区民館 ホール"],
   "venueType": "hall",
   "representativePattern": {
     "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
+    "name": "通常常設席配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
+    "selectionReason": "現行江戸川区公式案内はホールに300席の常設・非可動席があることを明記するが、番号付き座席図を公開していないため、代表パターン候補の全rangeは確定しない。",
     "notIncludedPatterns": []
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
-      "roles": [
-        "facility",
-        "seat-count"
-      ],
-      "publisher": "小松川区民館 ホール",
-      "title": "小松川区民館 ホール 公式施設案内",
+      "roles": ["facility"],
+      "publisher": "江戸川区",
+      "title": "小松川区民館",
       "url": "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/index.html",
       "checkedAt": "2026-08-02"
     },
@@ -33,25 +30,35 @@
       "official": true,
       "roles": ["facility", "seat-count"],
       "publisher": "江戸川区",
-      "title": "小松川区民館 施設概要・アクセス（300席のホール）",
+      "title": "小松川区民館 施設概要・アクセス",
       "url": "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/guide.html",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-room-guide",
+      "official": true,
+      "roles": ["facility", "seat-count", "event-layout"],
+      "publisher": "江戸川区",
+      "title": "小松川区民館 部屋紹介（ホール）",
+      "url": "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/room.html",
       "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式施設案内を確認済み。全番号付き座席表と公式総席数の突合は未完了。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "番号付き座席図を確認できないため、座席rangeは未登録。現行公式本文で確認できるのは300席が常設・非可動であることまで。",
+  "completenessBasis": "江戸川区公式の施設トップは2026年7月10日更新、施設概要と部屋紹介は2026年4月7日更新で、後二者はともに300席と記載し、部屋紹介は常設・非可動と明記する。しかし、全列・番号・欠番を示す現行公式座席図は公開されていない。",
+  "transformation": "公式番号座席図がないためrange変換を行っていない。客席写真や番号規則から補完しない。",
   "knownLimitations": [
-    "現行公式施設案内は300席、江戸川区の主要生活環境施設資料は小松川さくらホール多目的ホール351席と記載しており、同一現行配置か履歴上の数値かを公式資料だけで解消できない。"
+    "従前メモの351席は施設名が小松川さくらホール多目的ホールであり、本対象の江戸川区立小松川区民館ホールとは名称が異なる。現行江戸川区公式ページは本対象を平井4丁目1番1号の300席常設ホールとして案内しており、351席を本対象の旧定員または別配置とは扱わない。",
+    "現行公式部屋紹介には客席写真があるが、全列・番号・欠番を判読できる座席表ではないため、OCRや推測によるrange化は行わない。"
   ],
   "verification": {
     "status": "pending",
     "checkedAt": null,
     "method": "",
     "seatStructure": "pending",
-    "seatCount": "pending",
+    "seatCount": "matched",
     "unresolvedIssues": [
-        "現行公式案内の300席と区の施設資料の351席の差の理由、並びに現行の番号付き座席図を確認できない。数値差を推測で調整せず、管理者の現行座席表又は改修・定員変更の公式根拠を取得する必要がある。"
+      "300席が常設・非可動であることは2026年4月7日更新の公式部屋紹介で確認したが、現行の全番号付き座席図、列名、番号、欠番、車椅子対応時の扱いは公開公式資料から確認できない。施設公式の現行座席表が必要。"
     ]
   },
   "ranges": []

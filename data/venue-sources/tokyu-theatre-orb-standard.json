@@ -12,8 +12,11 @@
     "name": "通常固定番号席配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "公式施設が案内する通常利用時の固定番号席配置を代表パターン候補とする。全rangeと可動席等の扱いは未確定。",
-    "notIncludedPatterns": []
+    "selectionReason": "公式座席表の3階分固定番号席を通常配置候補とするが、1階の車椅子対応エリアとして転換・一般販売される番号席が公式図で特定されないため確定しない。",
+    "notIncludedPatterns": [
+      "公演ごとの販売停止席",
+      "車椅子対応エリアへの公演別転換"
+    ]
   },
   "sources": [
     {
@@ -25,6 +28,15 @@
       "publisher": "東急シアターオーブ",
       "title": "東急シアターオーブ 公式施設案内",
       "url": "https://theatre-orb.com/",
+      "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-seating-page",
+      "official": true,
+      "roles": ["facility", "event-layout"],
+      "publisher": "東急シアターオーブ",
+      "title": "東急シアターオーブ 座席表のご案内・車椅子席案内",
+      "url": "https://theatre-orb.com/seating/",
       "checkedAt": "2026-08-02"
     },
     {
@@ -44,22 +56,32 @@
       "title": "東急シアターオーブ収容定員1,972人を記載した公式イベント資料",
       "url": "https://theatre-orb.com/lineup/23_nmc/topics/images/img_6761/NYMC2023_checklist.pdf",
       "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-wheelchair-policy",
+      "official": true,
+      "roles": ["event-layout"],
+      "publisher": "東急シアターオーブ",
+      "title": "Concert for LEVAY 車椅子対応エリアの一般席販売方針",
+      "url": "https://theatre-orb.com/lineup/26_levay/",
+      "checkedAt": "2026-08-02"
     }
   ],
-  "registeredScope": "通常配置で利用する番号付き固定席。全range確定前のdraftであり、可動席・車椅子区画等の包含は未確定。",
-  "completenessBasis": "公式の3階分座席表PDFと、同劇場が公開した収容定員1,972人の資料を確認した。座席表は同じ列番号が1階・2階・3階および左右・中央ブロックで反復するため、area分割、車椅子席の番号性、階別番号席合計を独立に確定するまではcompleteとしない。",
-  "transformation": "公式座席資料から列・番号・恒久欠番を明示rangeへ転記する。規則からの自動補完は行わない。",
+  "registeredScope": "通常配置の1階・2階・3階番号付き固定席を候補として調査中。公演別販売停止席と車椅子対応エリアへの転換時配置は含めない。",
+  "completenessBasis": "公式座席表PDFは3階分の番号セルを示し、公式資料は客席数1,972席と記載する。公式座席ページとFAQは1階席エリアに車椅子席があると案内し、公式公演ページは車椅子対応エリアが未予約の場合に一般席として発売される場合があると明記する。したがって通常番号席の一部が転換対象と判断できるが、公式座席表は対象番号を示さず、公演ページも場所は当日案内としている。番号セル総数と1,972席の関係、および通常時に番号席として含める転換位置を公式資料だけで一意に確定できない。",
+  "transformation": "階・左右ブロックをareaへ分け、公式図の番号セルだけをrange化する方針だが、車椅子対応エリアの通常番号席との置換位置が公式に特定されるまでrangeは作成しない。公演別販売停止から恒久欠番を推測しない。",
   "knownLimitations": [
-    "全rangeと代表配置の独立照合が完了するまでproductionへ昇格しない。"
+    "車椅子対応エリアは公演により一般席として販売される場合があるが、対象番号が公式資料で非公開のためproductionへ昇格しない。",
+    "公演別の販売停止席は恒久欠番として扱わない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-02",
+    "method": "official-source-first-pass-layout-policy-review",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式PDFと公式1,972人資料は到達できるが、PDFだけでは車椅子対応箇所が番号席か非番号区画か、また1,972に含まれる番号席集合との関係を確定できない。繰返し番号を階・左右・中央areaへ完全に分解し、階別合計を独立照合するまでrangeを作成しない。公演ごとの販売停止席を恒久欠番と推測してはならない。"
+      "公式資料は客席数1,972席、1階の車椅子席エリア、未予約時に対応エリアを一般席販売する場合があることを示すが、転換対象となる通常番号席を公開していない。公式座席表にも車椅子対応位置の表示がなく、1,972席と番号セル集合の置換関係を一意に確定できないためrangesを空のまま維持する。"
     ]
   },
   "ranges": []
