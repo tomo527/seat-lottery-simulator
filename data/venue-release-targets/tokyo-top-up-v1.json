@@ -1,4 +1,4 @@
-+{
+{
   "releaseTargetVersion": 1,
   "releaseId": "tokyo-top-up-v1",
   "createdAt": "2026-08-02",
@@ -16,7 +16,12 @@
       "existingWaveCandidate": false,
       "productionDifficulty": "hold",
       "recommendedOrder": 1,
-      "officialNumberedSeatMap": "unverified"
+      "officialNumberedSeatMap": "unverified",
+      "existingReference": {
+        "inventoryId": "tokyo-nhk-hall",
+        "venueSourceId": "nhk-hall-standard",
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "tokyo-bunka-hall-main",
@@ -31,7 +36,12 @@
       "productionDifficulty": "standard",
       "recommendedOrder": 2,
       "officialNumberedSeatMap": "unverified",
-      "note": "多層座席図の現行版を公式資料で確認後にrange化。"
+      "note": "多層座席図の現行版を公式資料で確認後にrange化。",
+      "existingReference": {
+        "inventoryId": "tokyo-tokyo-bunka-main-hall",
+        "venueSourceId": null,
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "tokyo-geigeki-concert",
@@ -46,7 +56,12 @@
       "productionDifficulty": "standard",
       "recommendedOrder": 3,
       "officialNumberedSeatMap": "unverified",
-      "note": "既存シアターイーストとは別ホール。"
+      "note": "既存シアターイーストとは別ホール。",
+      "existingReference": {
+        "inventoryId": "tokyo-tokyo-geigeki-concert-hall",
+        "venueSourceId": "tokyo-geigeki-concert-hall-standard",
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "suntory-hall-main",
@@ -61,7 +76,12 @@
       "productionDifficulty": "complex",
       "recommendedOrder": 4,
       "officialNumberedSeatMap": "unverified",
-      "note": "車椅子・舞台設定を含む代表配置の確認が必要。"
+      "note": "車椅子・舞台設定を含む代表配置の確認が必要。",
+      "existingReference": {
+        "inventoryId": "tokyo-official-0130",
+        "venueSourceId": null,
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "tokyo-opera-city-concert",
@@ -76,7 +96,12 @@
       "productionDifficulty": "standard",
       "recommendedOrder": 5,
       "officialNumberedSeatMap": "unverified",
-      "note": "複数階・バルコニーの公式番号図を確認後にrange化。"
+      "note": "複数階・バルコニーの公式番号図を確認後にrange化。",
+      "existingReference": {
+        "inventoryId": "tokyo-official-0241",
+        "venueSourceId": null,
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "nissay-theatre",
@@ -91,7 +116,12 @@
       "productionDifficulty": "standard",
       "recommendedOrder": 6,
       "officialNumberedSeatMap": "unverified",
-      "note": "商業劇場の現行公式座席図を確認後にrange化。"
+      "note": "商業劇場の現行公式座席図を確認後にrange化。",
+      "existingReference": {
+        "inventoryId": "tokyo-nissay-theatre",
+        "venueSourceId": "nissay-theatre-standard",
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "meijiza",
@@ -106,7 +136,12 @@
       "productionDifficulty": "complex",
       "recommendedOrder": 7,
       "officialNumberedSeatMap": "unverified",
-      "note": "花道・車椅子等を含む通常代表配置の確認が必要。"
+      "note": "花道・車椅子等を含む通常代表配置の確認が必要。",
+      "existingReference": {
+        "inventoryId": "tokyo-meijiza",
+        "venueSourceId": "meijiza-standard",
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "kabukiza",
@@ -121,7 +156,12 @@
       "productionDifficulty": "complex",
       "recommendedOrder": 8,
       "officialNumberedSeatMap": "unverified",
-      "note": "桟敷・幕見を通常の番号席集合に混在させない確認が必要。"
+      "note": "桟敷・幕見を通常の番号席集合に混在させない確認が必要。",
+      "existingReference": {
+        "inventoryId": "tokyo-kabukiza",
+        "venueSourceId": "kabukiza-standard",
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "line-cube-shibuya",
@@ -136,7 +176,12 @@
       "productionDifficulty": "standard",
       "recommendedOrder": 9,
       "officialNumberedSeatMap": "unverified",
-      "note": "旧渋谷公会堂の現行公式座席図を確認後にrange化。"
+      "note": "旧渋谷公会堂の現行公式座席図を確認後にrange化。",
+      "existingReference": {
+        "inventoryId": "tokyo-line-cube-shibuya",
+        "venueSourceId": "line-cube-shibuya-standard",
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "tokyo-garden-theater",
@@ -151,7 +196,12 @@
       "productionDifficulty": "hold",
       "recommendedOrder": 10,
       "officialNumberedSeatMap": "unverified",
-      "note": "イベント別の可変構成が通常固定番号席として一意か要判断。"
+      "note": "イベント別の可変構成が通常固定番号席として一意か要判断。",
+      "existingReference": {
+        "inventoryId": "tokyo-official-0429",
+        "venueSourceId": null,
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "tokyo-dome-city-hall",
@@ -181,7 +231,12 @@
       "productionDifficulty": "hold",
       "recommendedOrder": 12,
       "officialNumberedSeatMap": "unverified",
-      "note": "スタンディングと椅子席の通常代表配置判断が必要。"
+      "note": "スタンディングと椅子席の通常代表配置判断が必要。",
+      "existingReference": {
+        "inventoryId": "tokyo-official-0129",
+        "venueSourceId": null,
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "kioi-hall",
@@ -196,7 +251,12 @@
       "productionDifficulty": "standard",
       "recommendedOrder": 13,
       "officialNumberedSeatMap": "unverified",
-      "note": "既存の日本製鉄紀尾井小ホールとは別会場。"
+      "note": "既存の日本製鉄紀尾井小ホールとは別会場。",
+      "existingReference": {
+        "inventoryId": "tokyo-official-0025",
+        "venueSourceId": null,
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "setagaya-public-theatre",
@@ -211,7 +271,12 @@
       "productionDifficulty": "complex",
       "recommendedOrder": 14,
       "officialNumberedSeatMap": "unverified",
-      "note": "可動機構と車椅子転換の公式範囲確認が必要。"
+      "note": "可動機構と車椅子転換の公式範囲確認が必要。",
+      "existingReference": {
+        "inventoryId": "tokyo-setagaya-public-theatre",
+        "venueSourceId": null,
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "kameari-lirio-hall",
@@ -226,7 +291,12 @@
       "productionDifficulty": "standard",
       "recommendedOrder": 15,
       "officialNumberedSeatMap": "unverified",
-      "note": "公式番号図と公称席数の確認後にrange化。"
+      "note": "公式番号図と公称席数の確認後にrange化。",
+      "existingReference": {
+        "inventoryId": "tokyo-kameari-lirio-hall",
+        "venueSourceId": null,
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     },
     {
       "venueId": "bunkamura-orchard-hall",
@@ -241,7 +311,12 @@
       "productionDifficulty": "hold",
       "recommendedOrder": 16,
       "officialNumberedSeatMap": "unverified",
-      "note": "施設再開後の現行公式番号図を確認するまで保留。"
+      "note": "施設再開後の現行公式番号図を確認するまで保留。",
+      "existingReference": {
+        "inventoryId": "tokyo-bunkamura-orchard-hall",
+        "venueSourceId": null,
+        "duplicateResolution": "existing inventory/source is referenced; no new venue identity will be created"
+      }
     }
   ]
 }
