@@ -1,0 +1,29 @@
+{
+  "reportVersion": 1,
+  "cohortId": "release-seed-v1-cohort-1",
+  "createdAt": "2026-08-03",
+  "selectionRule": "FAST-TRACK/STANDARD only; regional target first, then same-region Priority B, then other-region easy Priority B.",
+  "targetCount": 17,
+  "productionCount": 0,
+  "processingStatus": "selected-awaiting-range-entry",
+  "targets": [
+    { "venueId": "yokohama-minatomirai-hall-main-release-seed", "targetRegion": "神奈川県", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "muza-kawasaki-symphony-hall-release-seed", "targetRegion": "神奈川県", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "ichikawa-culture-hall-main-release-seed", "targetRegion": "千葉県", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "mori-no-hall21-main-release-seed", "targetRegion": "千葉県", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "saitama-kaikan-main-release-seed", "targetRegion": "埼玉県", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "omiya-sonic-city-large-release-seed", "targetRegion": "埼玉県", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "culttz-kawasaki-hall-release-seed", "targetRegion": "茨城県", "priority": "B", "classification": "STANDARD", "selection": "substitute: both Ibaraki candidates are SOURCE HOLD" },
+    { "venueId": "utsunomiya-city-culture-hall-release-seed", "targetRegion": "栃木県", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "tokorozawa-muse-ark-release-seed", "targetRegion": "群馬県", "priority": "B", "classification": "STANDARD", "selection": "substitute: both Gunma candidates are SOURCE/SOL HANDOFF" },
+    { "venueId": "sapporo-kitara-main-release-seed", "targetRegion": "札幌市", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "sendai-sunplaza-hall-release-seed", "targetRegion": "仙台市", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "aichi-arts-center-main-release-seed", "targetRegion": "名古屋市", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "kyoto-concert-hall-main-release-seed", "targetRegion": "京都市", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "festival-hall-release-seed", "targetRegion": "大阪市", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "westa-kawagoe-large-release-seed", "targetRegion": "神戸市", "priority": "B", "classification": "STANDARD", "selection": "substitute: Kobe candidates are SOURCE HOLD" },
+    { "venueId": "hbg-hall-release-seed", "targetRegion": "広島市", "priority": "A", "classification": "STANDARD", "selection": "regional target" },
+    { "venueId": "fukuoka-sunpalace-hall-release-seed", "targetRegion": "福岡市", "priority": "A", "classification": "STANDARD", "selection": "regional target" }
+  ],
+  "qualityGate": "No selected venue may move to production until official range extraction, independent second pass, expected/calculated equality, verified fingerprint/catalog/runtime outputs, and source/inventory/batch consistency all pass."
+}
