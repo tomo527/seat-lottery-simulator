@@ -35,7 +35,7 @@
       ],
       "publisher": "森のホール21 大ホール",
       "title": "公式座席図・座席案内",
-      "url": "https://www.morinohall21.com/hall21/hall_l.html",
+      "url": "https://www.morinohall21.com/hall21/file/hall_l_seatingchart02.pdf",
       "checkedAt": "2026-08-03"
     },
     {
@@ -54,8 +54,9 @@
   "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
   "transformation": "No seat-map transcription has been performed.",
   "knownLimitations": [
-    "Closure Pass分類: STANDARD。公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "Regional Production Cohort 1 official review: SOL HANDOFF.",
+    "The official count explicitly changes for orchestra-pit use; the normal representative layout, pit exclusions, and dense multi-floor ranges require Sol comparison.",
+    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
   ],
   "verification": {
     "status": "pending",
@@ -64,7 +65,8 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+      "The official count explicitly changes for orchestra-pit use; the normal representative layout, pit exclusions, and dense multi-floor ranges require Sol comparison.",
+      "Independent Terra/Sol handoff review is required before any range entry or production decision."
     ]
   },
   "ranges": [],
@@ -80,15 +82,15 @@
     "wheelchair": "不明",
     "pit": "なし",
     "areas": "複数",
-    "processingRoute": "Luna",
-    "classification": "STANDARD",
-    "mapUrl": "https://www.morinohall21.com/hall21/hall_l.html",
+    "processingRoute": "Sol",
+    "classification": "SOL HANDOFF",
+    "mapUrl": "https://www.morinohall21.com/hall21/file/hall_l_seatingchart02.pdf",
     "countUrl": "https://www.morinohall21.com/hall21/hall_l.html",
     "checkedAt": "2026-08-03",
-    "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+    "rationale": "The official count explicitly changes for orchestra-pit use; the normal representative layout, pit exclusions, and dense multi-floor ranges require Sol comparison.",
     "officialFacilityUrl": "https://www.morinohall21.com/",
     "status": "complete",
     "rangeEntry": "not-started",
-    "decision": "pending"
+    "decision": "handoff"
   }
 }

@@ -63,17 +63,17 @@
     },
     {
       "inventoryId": "yokohama-minatomirai-hall-main",
-      "classification": "STANDARD",
-      "rationale": "公式大ホール座席表PDFと公式座席案内ページを確認。複数階の通常配置を独立転記する対象。",
+      "classification": "TERRA HANDOFF",
+      "rationale": "Three-floor official numbered map is available, but the dense block/row transcription and independent second pass are not complete.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "muza-kawasaki-symphony-hall",
-      "classification": "STANDARD",
-      "rationale": "公式施設サイト内のホール座席資料導線を確認。通常配置の公式資料照合が残る。",
+      "classification": "TERRA HANDOFF",
+      "rationale": "The current official block map has dense curved blocks and an official total of 1,997; exact row ranges and area aggregation require Terra transcription.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "yokosuka-arts-theatre",
@@ -84,10 +84,10 @@
     },
     {
       "inventoryId": "culttz-kawasaki-hall",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The former seat URL was stale; the current official seating page is live and identifies a 2,013-seat hall with orchestra pit, parent/child seats, and wheelchair seats. Exact numbered exclusions require Sol.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "sagamihara-green-hall-main",
@@ -98,17 +98,17 @@
     },
     {
       "inventoryId": "ichikawa-culture-hall-main",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The official page identifies movable seats and wheelchair conversion positions in 1F, plus an orchestra pit; the selectable-seat inclusion relationship must be resolved before ranges are entered.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "mori-no-hall21-main",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The official count explicitly changes for orchestra-pit use; the normal representative layout, pit exclusions, and dense multi-floor ranges require Sol comparison.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "narashino-culture-hall",
@@ -147,17 +147,17 @@
     },
     {
       "inventoryId": "saitama-kaikan-main",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The official map is dense and the official count changes by 115 seats with orchestra-pit use; exact pit removal and wheelchair treatment require Sol.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "omiya-sonic-city-large",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The official normal map spans four floors and the facility has an orchestra pit and wheelchair seats; exact pit/conversion semantics must be settled before range entry.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "kawaguchi-lilia-main",
@@ -168,17 +168,17 @@
     },
     {
       "inventoryId": "tokorozawa-muse-ark",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "TERRA HANDOFF",
+      "rationale": "The official map has dense multi-floor blocks, PA seats, and 13 movable seats that can convert to six wheelchair positions; exact normal-layout ranges require Terra.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "westa-kawagoe-large",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The official source presents normal, orchestra-pit, temporary-hanamichi, and parent/child alternatives, plus wheelchair treatment; Sol must isolate one representative configuration.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "mito-arts-tower-concert",
@@ -203,10 +203,10 @@
     },
     {
       "inventoryId": "utsunomiya-city-culture-hall",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "TERRA HANDOFF",
+      "rationale": "The official count is 2,000 across three tiers and the numbered image maps are available, but the full multi-area row transcription and independent second pass are not complete.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "gunma-music-center",
@@ -224,10 +224,10 @@
     },
     {
       "inventoryId": "sapporo-kitara-main",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "TERRA HANDOFF",
+      "rationale": "The official map is an arena-style, dense multi-area numbered layout; exact selectable range aggregation and independent second pass require Terra.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "sapporo-kitara-small",
@@ -245,10 +245,10 @@
     },
     {
       "inventoryId": "sendai-sunplaza-hall",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "TERRA HANDOFF",
+      "rationale": "The official source has zone-specific row/seat endpoints and a separate unobstructed-sightline total; dense zone transcription requires Terra, with the 2,054 concert pattern as the starting nominal basis.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "tokyo-electron-hall-miyagi",
@@ -266,10 +266,10 @@
     },
     {
       "inventoryId": "aichi-arts-center-main",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The official facility source exposes multiple use patterns, wheelchair/parent-child spaces, orchestra-pit reduction, and dense five-floor ranges; Sol must select and reconcile one representative configuration.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "niterra-forest-hall",
@@ -287,10 +287,10 @@
     },
     {
       "inventoryId": "kyoto-concert-hall-main",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "TERRA HANDOFF",
+      "rationale": "The official total and floor subtotals are clear, but the shoe-box map has dense balcony/podium/center blocks requiring Terra range transcription and an independent second pass.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "rohm-theatre-kyoto-main",
@@ -308,10 +308,10 @@
     },
     {
       "inventoryId": "festival-hall",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The official map contains multiple floors, boxes, and a 176-seat orchestra-pit component; Sol must resolve the representative configuration and removal semantics.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "orix-theatre",
@@ -350,10 +350,10 @@
     },
     {
       "inventoryId": "hbg-hall",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The official count includes a 52-seat orchestra-pit component and 20 movable wheelchair positions; exact normal-layout exclusions and conversions require Sol.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "jms-aster-plaza-large",
@@ -378,10 +378,10 @@
     },
     {
       "inventoryId": "fukuoka-sunpalace-hall",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "SOL HANDOFF",
+      "rationale": "The official map has a 124-seat orchestra-pit component and dense multi-floor numbering; Sol must resolve the representative configuration and pit exclusions.",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "hakataza",

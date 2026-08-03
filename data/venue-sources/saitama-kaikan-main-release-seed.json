@@ -35,7 +35,7 @@
       ],
       "publisher": "埼玉会館 大ホール",
       "title": "公式座席図・座席案内",
-      "url": "https://www.saf.or.jp/saitama/facilities/main_hall/",
+      "url": "https://www.saf.or.jp/wp-content/uploads/2023/05/%E5%9F%BC%E7%8E%89%E4%BC%9A%E9%A4%A8%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%E5%AE%A2%E5%B8%AD%E5%9B%B3%E9%9D%A2-1.pdf",
       "checkedAt": "2026-08-03"
     },
     {
@@ -54,8 +54,9 @@
   "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
   "transformation": "No seat-map transcription has been performed.",
   "knownLimitations": [
-    "Closure Pass分類: STANDARD。公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "Regional Production Cohort 1 official review: SOL HANDOFF.",
+    "The official map is dense and the official count changes by 115 seats with orchestra-pit use; exact pit removal and wheelchair treatment require Sol.",
+    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
   ],
   "verification": {
     "status": "pending",
@@ -64,7 +65,8 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+      "The official map is dense and the official count changes by 115 seats with orchestra-pit use; exact pit removal and wheelchair treatment require Sol.",
+      "Independent Terra/Sol handoff review is required before any range entry or production decision."
     ]
   },
   "ranges": [],
@@ -80,15 +82,15 @@
     "wheelchair": "不明",
     "pit": "なし",
     "areas": "複数",
-    "processingRoute": "Luna",
-    "classification": "STANDARD",
-    "mapUrl": "https://www.saf.or.jp/saitama/facilities/main_hall/",
+    "processingRoute": "Sol",
+    "classification": "SOL HANDOFF",
+    "mapUrl": "https://www.saf.or.jp/wp-content/uploads/2023/05/%E5%9F%BC%E7%8E%89%E4%BC%9A%E9%A4%A8%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%E5%AE%A2%E5%B8%AD%E5%9B%B3%E9%9D%A2-1.pdf",
     "countUrl": "https://www.saf.or.jp/saitama/facilities/main_hall/",
     "checkedAt": "2026-08-03",
-    "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+    "rationale": "The official map is dense and the official count changes by 115 seats with orchestra-pit use; exact pit removal and wheelchair treatment require Sol.",
     "officialFacilityUrl": "https://www.saf.or.jp/saitama/",
     "status": "complete",
     "rangeEntry": "not-started",
-    "decision": "pending"
+    "decision": "handoff"
   }
 }
