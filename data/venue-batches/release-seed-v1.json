@@ -56,243 +56,339 @@
   "complexityAssessments": [
     {
       "inventoryId": "kanagawa-kenmin-hall-main",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOL HANDOFF",
+      "rationale": "公式大ホール施設ページは確認できたが、通常配置の完全な番号図と転換・車椅子条件の独立照合を要する。",
+      "preflightComplete": true,
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "yokohama-minatomirai-hall-main",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式大ホール座席表PDFと公式座席案内ページを確認。複数階の通常配置を独立転記する対象。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "muza-kawasaki-symphony-hall",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式施設サイト内のホール座席資料導線を確認。通常配置の公式資料照合が残る。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "yokosuka-arts-theatre",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOL HANDOFF",
+      "rationale": "公式座席図PDFと施設資料PDFを確認。大劇場のピット・転換条件を含むため高度照合が必要。",
+      "preflightComplete": true,
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "culttz-kawasaki-hall",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "sagamihara-green-hall-main",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式案内で大ホール客席数1,790席と座席表導線を確認。通常配置の番号集合を転記可能。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "ichikawa-culture-hall-main",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "mori-no-hall21-main",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "narashino-culture-hall",
       "classification": "SOURCE HOLD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "登録済み公式URLが404で、現行施設ページ・番号図・厳密席数を確認できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "funabashi-civic-culture-hall",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "chiba-city-culture-center-hall",
       "classification": "SOURCE HOLD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "登録URLは財団トップへリダイレクトし、対象アートホールの現行番号図・厳密席数を特定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "urayasu-culture-hall",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "公式施設ページは確認できたが、現行の完全番号図と厳密席数の組合せを特定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "saitama-arts-theatre-main",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOL HANDOFF",
+      "rationale": "公式大ホール施設ページは確認できたが、多層・密な客席と可動・転換条件の独立照合が必要。",
+      "preflightComplete": true,
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "saitama-kaikan-main",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "omiya-sonic-city-large",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "kawaguchi-lilia-main",
       "classification": "SOURCE HOLD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式トップは確認できたが、改修後の対象メインホールについて現行完全番号図・厳密席数を確定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "tokorozawa-muse-ark",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "westa-kawagoe-large",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "mito-arts-tower-concert",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "公式ホール施設ページは確認できたが、現行コンサートホールATMの完全番号図と厳密席数を同一対象として特定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "ibaraki-kenritsu-bunka-center-large",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "公式施設サイトは確認できたが、対象大ホールの現行完全番号図・厳密席数を確定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "tochigi-ken-sogo-bunka-center-main",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "utsunomiya-city-culture-hall",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "gunma-music-center",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "登録URLは高崎芸術劇場の資料ページで、群馬音楽センター対象の現行番号図・厳密席数を識別できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "takasaki-city-theatre-main",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOL HANDOFF",
+      "rationale": "公式資料の現行状態をClosure Passで確認し、SOL HANDOFFへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "sapporo-kitara-main",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "sapporo-kitara-small",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "sapporo-hitaru",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "TERRA HANDOFF",
+      "rationale": "公式座席図と劇場施設資料を確認。多層・密なrange抽出をTerraへ引き継ぐ。",
+      "preflightComplete": true,
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "sendai-sunplaza-hall",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "tokyo-electron-hall-miyagi",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "登録済み公式URLは403で現行対象資料を確認できず、番号図・厳密席数を確定しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "izumity21-main",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "登録済み公式URLは403で現行対象資料を確認できず、番号図・厳密席数を確定しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "aichi-arts-center-main",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "niterra-forest-hall",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "公式財団トップは確認できたが、対象フォレストホールの現行完全番号図・厳密席数を特定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "misonoza",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "TERRA HANDOFF",
+      "rationale": "公式座席案内を確認。階・桟敷・ボックス等の密なrange抽出をTerraへ引き継ぐ。",
+      "preflightComplete": true,
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "kyoto-concert-hall-main",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "rohm-theatre-kyoto-main",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "STANDARD",
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "kyoto-art-theatre-shunjuza",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "公式サイトは確認できたが、春秋座の現行完全番号図・厳密席数の資料を対象ページから確定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "festival-hall",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "orix-theatre",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "公式トップは確認できたが、対象劇場の現行完全番号図・厳密席数を確定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "umeda-arts-theater-main",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "TERRA HANDOFF",
+      "rationale": "公式資料の現行状態をClosure Passで確認し、TERRA HANDOFFへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "kobe-kokusai-hall",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "kobe-matsukata-hall",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "kobe-bunka-hall-main",
       "classification": "SOURCE HOLD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式サイトは確認できたが、改修・新ホール時点を含む対象大ホールの現行完全番号図・厳密席数を確定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "hbg-hall",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "jms-aster-plaza-large",
-      "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "SOURCE HOLD",
+      "rationale": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "hiroshima-city-culture-exchange-hall",
       "classification": "SOURCE HOLD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "同一公式サイトは確認できたが、HBGホールと対象施設の資料対象を分離できず、番号図・厳密席数を確定しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "acros-fukuoka-symphony",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "TERRA HANDOFF",
+      "rationale": "公式資料の現行状態をClosure Passで確認し、TERRA HANDOFFへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "fukuoka-sunpalace-hall",
       "classification": "STANDARD",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "preflightComplete": true,
+      "processingRoute": "Luna"
     },
     {
       "inventoryId": "hakataza",
-      "classification": "COMPLEX",
-      "rationale": "Initial official-facility preflight; full seat-map and seat-count reconciliation remains required before range entry."
+      "classification": "TERRA HANDOFF",
+      "rationale": "公式劇場サイトは確認できたが、劇場座席の密なrange抽出と配置資料の対象照合をTerraへ引き継ぐ。",
+      "preflightComplete": true,
+      "processingRoute": "Terra"
     }
   ]
 }

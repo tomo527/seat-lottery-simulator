@@ -26,13 +26,36 @@
       "title": "横須賀芸術劇場 公式施設案内",
       "url": "https://www.yokosuka-arts.or.jp/rental/download/",
       "checkedAt": "2026-08-02"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "よこすか芸術劇場",
+      "title": "公式座席図・座席案内",
+      "url": "https://www.yokosuka-arts.or.jp/rental/download/pdf/L_seat.pdf",
+      "checkedAt": "2026-08-03"
+    },
+    {
+      "id": "official-seat-count",
+      "official": true,
+      "roles": [
+        "seat-count"
+      ],
+      "publisher": "よこすか芸術劇場",
+      "title": "公式施設・座席数案内",
+      "url": "https://www.yokosuka-arts.or.jp/rental/download/pdf/L_sisetsu.pdf",
+      "checkedAt": "2026-08-03"
     }
   ],
   "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
   "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
   "transformation": "No seat-map transcription has been performed.",
   "knownLimitations": [
-    "Preflight classification: COMPLEX. The repository does not yet hold independently reviewed full numbered-seat ranges or a reconciled official seat count."
+    "Closure Pass分類: SOL HANDOFF。公式座席図PDFと施設資料PDFを確認。大劇場のピット・転換条件を含むため高度照合が必要。",
+    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
   ],
   "verification": {
     "status": "pending",
@@ -44,5 +67,28 @@
       "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
     ]
   },
-  "ranges": []
+  "ranges": [],
+  "preflight": {
+    "officialFacilityPage": "あり",
+    "officialSeatStructureSource": "あり",
+    "officialSeatCountSource": "あり",
+    "completeNumberedSeatMap": "あり",
+    "exactNominalSeatCount": "あり",
+    "representativeLayout": "一意",
+    "fixedSeats": "あり",
+    "movableSeats": "なし",
+    "wheelchair": "不明",
+    "pit": "あり",
+    "areas": "複雑",
+    "processingRoute": "Sol",
+    "classification": "SOL HANDOFF",
+    "mapUrl": "https://www.yokosuka-arts.or.jp/rental/download/pdf/L_seat.pdf",
+    "countUrl": "https://www.yokosuka-arts.or.jp/rental/download/pdf/L_sisetsu.pdf",
+    "checkedAt": "2026-08-03",
+    "rationale": "公式座席図PDFと施設資料PDFを確認。大劇場のピット・転換条件を含むため高度照合が必要。",
+    "officialFacilityUrl": "https://www.yokosuka-arts.or.jp/rental/download/",
+    "status": "complete",
+    "rangeEntry": "not-started",
+    "decision": "pending"
+  }
 }

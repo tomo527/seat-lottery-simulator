@@ -24,9 +24,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "kyoto-concert-hall-main-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "draft-created",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": null
     },
     {
       "inventoryId": "rohm-theatre-kyoto-main",
@@ -43,9 +45,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "rohm-theatre-kyoto-main-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "draft-created",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": null
     },
     {
       "inventoryId": "kyoto-art-theatre-shunjuza",
@@ -62,9 +66,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "B",
       "venueSourceId": "kyoto-art-theatre-shunjuza-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": "公式サイトは確認できたが、春秋座の現行完全番号図・厳密席数の資料を対象ページから確定できない。"
     }
   ]
 }

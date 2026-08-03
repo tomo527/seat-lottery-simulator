@@ -24,9 +24,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "tochigi-ken-sogo-bunka-center-main-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。"
     },
     {
       "inventoryId": "utsunomiya-city-culture-hall",
@@ -43,9 +45,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "utsunomiya-city-culture-hall-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "draft-created",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": null
     }
   ]
 }

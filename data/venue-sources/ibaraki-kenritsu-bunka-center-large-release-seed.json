@@ -32,7 +32,8 @@
   "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
   "transformation": "No seat-map transcription has been performed.",
   "knownLimitations": [
-    "Preflight classification: STANDARD. The repository does not yet hold independently reviewed full numbered-seat ranges or a reconciled official seat count."
+    "Closure Pass分類: SOURCE HOLD。公式施設サイトは確認できたが、対象大ホールの現行完全番号図・厳密席数を確定できない。",
+    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
   ],
   "verification": {
     "status": "pending",
@@ -44,5 +45,28 @@
       "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
     ]
   },
-  "ranges": []
+  "ranges": [],
+  "preflight": {
+    "officialFacilityPage": "あり",
+    "officialSeatStructureSource": "なし",
+    "officialSeatCountSource": "なし",
+    "completeNumberedSeatMap": "なし",
+    "exactNominalSeatCount": "なし",
+    "representativeLayout": "不明",
+    "fixedSeats": "不明",
+    "movableSeats": "不明",
+    "wheelchair": "不明",
+    "pit": "不明",
+    "areas": "不明",
+    "processingRoute": "Hold",
+    "classification": "SOURCE HOLD",
+    "mapUrl": null,
+    "countUrl": null,
+    "checkedAt": "2026-08-03",
+    "rationale": "公式施設サイトは確認できたが、対象大ホールの現行完全番号図・厳密席数を確定できない。",
+    "officialFacilityUrl": "https://www.ibarakiken-bunkacenter.com/",
+    "status": "complete",
+    "rangeEntry": "not-started",
+    "decision": "pending"
+  }
 }

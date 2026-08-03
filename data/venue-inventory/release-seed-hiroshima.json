@@ -24,9 +24,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "hbg-hall-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "draft-created",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": null
     },
     {
       "inventoryId": "jms-aster-plaza-large",
@@ -43,9 +45,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "jms-aster-plaza-large-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。"
     },
     {
       "inventoryId": "hiroshima-city-culture-exchange-hall",
@@ -62,9 +66,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "B",
       "venueSourceId": "hiroshima-city-culture-exchange-hall-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": "同一公式サイトは確認できたが、HBGホールと対象施設の資料対象を分離できず、番号図・厳密席数を確定しない。"
     }
   ]
 }

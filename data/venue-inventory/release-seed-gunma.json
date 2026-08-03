@@ -24,9 +24,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "gunma-music-center-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": "登録URLは高崎芸術劇場の資料ページで、群馬音楽センター対象の現行番号図・厳密席数を識別できない。"
     },
     {
       "inventoryId": "takasaki-city-theatre-main",
@@ -43,9 +45,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "takasaki-city-theatre-main-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "draft-created",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": null
     }
   ]
 }

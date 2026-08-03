@@ -24,9 +24,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "mito-arts-tower-concert-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": "公式ホール施設ページは確認できたが、現行コンサートホールATMの完全番号図と厳密席数を同一対象として特定できない。"
     },
     {
       "inventoryId": "ibaraki-kenritsu-bunka-center-large",
@@ -43,9 +45,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "ibaraki-kenritsu-bunka-center-large-release-seed",
-      "researchStatus": "source-located",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
-      "aliases": []
+      "aliases": [],
+      "researchLastCheckedAt": "2026-08-03",
+      "blockingReason": "公式施設サイトは確認できたが、対象大ホールの現行完全番号図・厳密席数を確定できない。"
     }
   ]
 }
