@@ -1648,6 +1648,101 @@
   "handoffs": {
     "terraMacro": [
       {
+        "venueId": "sapporo-hitaru-release-seed",
+        "venueName": "札幌文化芸術劇場hitaru",
+        "region": "北海道",
+        "priority": "A",
+        "officialSeatMap": "https://www.sapporo-community-plaza.jp/theater_seat.html",
+        "officialSeatCount": "https://www.sapporo-community-plaza.jp/facility_theater.html",
+        "nominalSeatCount": "公式資料の厳密値はrange前に転記",
+        "representativePattern": "一意",
+        "confirmedAreas": "複雑",
+        "unresolved": "公式座席図と劇場施設資料を確認。多層・密なrange抽出をTerraへ引き継ぐ。",
+        "doNotGuess": [
+          "座席番号",
+          "欠番",
+          "車椅子転換対象番号",
+          "ピット・迫り撤去番号"
+        ],
+        "nextWork": "公式図をレンダー確認し、密なarea/row rangeを第1・第2パスで独立抽出する。"
+      },
+      {
+        "venueId": "misonoza-release-seed",
+        "venueName": "御園座",
+        "region": "愛知県",
+        "priority": "A",
+        "officialSeatMap": "https://www.misonoza.co.jp/seat/",
+        "officialSeatCount": "https://www.misonoza.co.jp/seat/",
+        "nominalSeatCount": "公式資料の厳密値はrange前に転記",
+        "representativePattern": "一意",
+        "confirmedAreas": "複雑",
+        "unresolved": "公式座席案内を確認。階・桟敷・ボックス等の密なrange抽出をTerraへ引き継ぐ。",
+        "doNotGuess": [
+          "座席番号",
+          "欠番",
+          "車椅子転換対象番号",
+          "ピット・迫り撤去番号"
+        ],
+        "nextWork": "公式図をレンダー確認し、密なarea/row rangeを第1・第2パスで独立抽出する。"
+      },
+      {
+        "venueId": "umeda-arts-theater-main-release-seed",
+        "venueName": "梅田芸術劇場 メインホール",
+        "region": "大阪府",
+        "priority": "A",
+        "officialSeatMap": "https://www.umegei.com/guide/seat/",
+        "officialSeatCount": "https://www.umegei.com/guide/floormap/",
+        "nominalSeatCount": "公式資料の厳密値はrange前に転記",
+        "representativePattern": "一意",
+        "confirmedAreas": "複雑",
+        "unresolved": "公式資料の現行状態をClosure Passで確認し、TERRA HANDOFFへ分類。番号rangeは未転記。",
+        "doNotGuess": [
+          "座席番号",
+          "欠番",
+          "車椅子転換対象番号",
+          "ピット・迫り撤去番号"
+        ],
+        "nextWork": "公式図をレンダー確認し、密なarea/row rangeを第1・第2パスで独立抽出する。"
+      },
+      {
+        "venueId": "acros-fukuoka-symphony-release-seed",
+        "venueName": "アクロス福岡 福岡シンフォニーホール",
+        "region": "福岡県",
+        "priority": "A",
+        "officialSeatMap": "https://www.acros.or.jp/images/pdf/sh_zasekihyo.pdf",
+        "officialSeatCount": "https://www.acros.or.jp/s_facilities/user_guide/",
+        "nominalSeatCount": "公式資料の厳密値はrange前に転記",
+        "representativePattern": "一意",
+        "confirmedAreas": "複雑",
+        "unresolved": "公式資料の現行状態をClosure Passで確認し、TERRA HANDOFFへ分類。番号rangeは未転記。",
+        "doNotGuess": [
+          "座席番号",
+          "欠番",
+          "車椅子転換対象番号",
+          "ピット・迫り撤去番号"
+        ],
+        "nextWork": "公式図をレンダー確認し、密なarea/row rangeを第1・第2パスで独立抽出する。"
+      },
+      {
+        "venueId": "hakataza-release-seed",
+        "venueName": "博多座",
+        "region": "福岡県",
+        "priority": "A",
+        "officialSeatMap": "https://www.hakataza.co.jp/",
+        "officialSeatCount": "https://www.hakataza.co.jp/",
+        "nominalSeatCount": "公式資料の厳密値はrange前に転記",
+        "representativePattern": "一意",
+        "confirmedAreas": "複雑",
+        "unresolved": "公式劇場サイトは確認できたが、劇場座席の密なrange抽出と配置資料の対象照合をTerraへ引き継ぐ。",
+        "doNotGuess": [
+          "座席番号",
+          "欠番",
+          "車椅子転換対象番号",
+          "ピット・迫り撤去番号"
+        ],
+        "nextWork": "公式図をレンダー確認し、密なarea/row rangeを第1・第2パスで独立抽出する。"
+      },
+      {
         "venueId": "yokohama-minatomirai-hall-main-release-seed",
         "venueName": "横浜みなとみらいホール 大ホール",
         "region": "神奈川県",
@@ -1782,6 +1877,82 @@
       }
     ],
     "solMacro": [
+      {
+        "venueId": "kanagawa-kenmin-hall-main-release-seed",
+        "venueName": "神奈川県民ホール 大ホール",
+        "region": "神奈川県",
+        "priority": "A",
+        "officialSeatMap": "https://www.kanagawa-kenminhall.com/about/mainhall",
+        "officialSeatCount": "https://www.kanagawa-kenminhall.com/about/mainhall",
+        "nominalSeatCount": "公式資料の厳密値はrange前に転記",
+        "representativePattern": "一意",
+        "confirmedAreas": "複雑",
+        "unresolved": "公式大ホール施設ページは確認できたが、通常配置の完全な番号図と転換・車椅子条件の独立照合を要する。",
+        "doNotGuess": [
+          "車椅子転換対象番号",
+          "ピット・迫り撤去番号",
+          "資料時点差",
+          "局所的不一致"
+        ],
+        "nextWork": "公式資料間の対象配置を照合し、必要ならSolで判断を確定してからrangeを入力する。"
+      },
+      {
+        "venueId": "yokosuka-arts-theatre-release-seed",
+        "venueName": "よこすか芸術劇場",
+        "region": "神奈川県",
+        "priority": "A",
+        "officialSeatMap": "https://www.yokosuka-arts.or.jp/rental/download/pdf/L_seat.pdf",
+        "officialSeatCount": "https://www.yokosuka-arts.or.jp/rental/download/pdf/L_sisetsu.pdf",
+        "nominalSeatCount": "公式資料の厳密値はrange前に転記",
+        "representativePattern": "一意",
+        "confirmedAreas": "複雑",
+        "unresolved": "公式座席図PDFと施設資料PDFを確認。大劇場のピット・転換条件を含むため高度照合が必要。",
+        "doNotGuess": [
+          "車椅子転換対象番号",
+          "ピット・迫り撤去番号",
+          "資料時点差",
+          "局所的不一致"
+        ],
+        "nextWork": "公式資料間の対象配置を照合し、必要ならSolで判断を確定してからrangeを入力する。"
+      },
+      {
+        "venueId": "saitama-arts-theatre-main-release-seed",
+        "venueName": "彩の国さいたま芸術劇場 大ホール",
+        "region": "埼玉県",
+        "priority": "A",
+        "officialSeatMap": "https://www.saf.or.jp/arthall/facilities/main_hall/",
+        "officialSeatCount": "https://www.saf.or.jp/arthall/facilities/main_hall/",
+        "nominalSeatCount": "公式資料の厳密値はrange前に転記",
+        "representativePattern": "一意",
+        "confirmedAreas": "複雑",
+        "unresolved": "公式大ホール施設ページは確認できたが、多層・密な客席と可動・転換条件の独立照合が必要。",
+        "doNotGuess": [
+          "車椅子転換対象番号",
+          "ピット・迫り撤去番号",
+          "資料時点差",
+          "局所的不一致"
+        ],
+        "nextWork": "公式資料間の対象配置を照合し、必要ならSolで判断を確定してからrangeを入力する。"
+      },
+      {
+        "venueId": "takasaki-city-theatre-main-release-seed",
+        "venueName": "高崎芸術劇場 大劇場",
+        "region": "群馬県",
+        "priority": "A",
+        "officialSeatMap": "https://www.takasaki-foundation.or.jp/theatre/",
+        "officialSeatCount": "https://www.takasaki-foundation.or.jp/theatre/",
+        "nominalSeatCount": "公式資料の厳密値はrange前に転記",
+        "representativePattern": "一意",
+        "confirmedAreas": "複雑",
+        "unresolved": "公式資料の現行状態をClosure Passで確認し、SOL HANDOFFへ分類。番号rangeは未転記。",
+        "doNotGuess": [
+          "車椅子転換対象番号",
+          "ピット・迫り撤去番号",
+          "資料時点差",
+          "局所的不一致"
+        ],
+        "nextWork": "公式資料間の対象配置を照合し、必要ならSolで判断を確定してからrangeを入力する。"
+      },
       {
         "venueId": "culttz-kawasaki-hall-release-seed",
         "venueName": "カルッツかわさき ホール",
