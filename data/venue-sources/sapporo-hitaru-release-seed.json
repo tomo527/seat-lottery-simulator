@@ -64,7 +64,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+      "POLICY HOLD: the official source presents A, B, and C seating patterns as valid choices but does not identify one as the representative configuration."
     ]
   },
   "ranges": [],
@@ -74,21 +74,21 @@
     "officialSeatCountSource": "あり",
     "completeNumberedSeatMap": "あり",
     "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
+    "representativeLayout": "複数同格",
     "fixedSeats": "あり",
     "movableSeats": "なし",
     "wheelchair": "不明",
     "pit": "不明",
     "areas": "複雑",
-    "processingRoute": "Terra",
-    "classification": "TERRA HANDOFF",
+    "processingRoute": "Hold",
+    "classification": "POLICY HOLD",
     "mapUrl": "https://www.sapporo-community-plaza.jp/theater_seat.html",
     "countUrl": "https://www.sapporo-community-plaza.jp/facility_theater.html",
     "checkedAt": "2026-08-03",
-    "rationale": "公式座席図と劇場施設資料を確認。多層・密なrange抽出をTerraへ引き継ぐ。",
+    "rationale": "Official facility information defines A (2,302), B (2,051), and C (1,686) seating patterns and a separate orchestra-pit reduction. No representative configuration is selected by the official source.",
     "officialFacilityUrl": "https://www.sapporo-community-plaza.jp/",
     "status": "complete",
     "rangeEntry": "not-started",
-    "decision": "pending"
+    "decision": "formal-hold"
   }
 }

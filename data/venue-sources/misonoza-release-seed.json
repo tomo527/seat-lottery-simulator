@@ -64,7 +64,7 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+      "POLICY HOLD: the official source explicitly states that seat classifications differ by performance and exposes multiple valid maps."
     ]
   },
   "ranges": [],
@@ -74,21 +74,21 @@
     "officialSeatCountSource": "あり",
     "completeNumberedSeatMap": "あり",
     "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
+    "representativeLayout": "複数同格",
     "fixedSeats": "あり",
     "movableSeats": "なし",
     "wheelchair": "不明",
     "pit": "不明",
     "areas": "複雑",
-    "processingRoute": "Terra",
-    "classification": "TERRA HANDOFF",
+    "processingRoute": "Hold",
+    "classification": "POLICY HOLD",
     "mapUrl": "https://www.misonoza.co.jp/seat/",
     "countUrl": "https://www.misonoza.co.jp/seat/",
     "checkedAt": "2026-08-03",
-    "rationale": "公式座席案内を確認。階・桟敷・ボックス等の密なrange抽出をTerraへ引き継ぐ。",
+    "rationale": "The official seat page presents standard, hanamichi, and production-specific maps and says that seat classifications differ by performance. No representative configuration is selected by the official source.",
     "officialFacilityUrl": "https://www.misonoza.co.jp/",
     "status": "complete",
     "rangeEntry": "not-started",
-    "decision": "pending"
+    "decision": "formal-hold"
   }
 }
