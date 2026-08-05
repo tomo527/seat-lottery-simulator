@@ -1,0 +1,204 @@
+{
+  "reportVersion": 1,
+  "reportId": "release-seed-v1-focused-regional-batch-1",
+  "generatedAt": "2026-08-05",
+  "scope": "Sequential focused regional review: complete the first range pass, independent second pass, comparison and final classification for the three specified venues.",
+  "baseline": {
+    "branch": "main",
+    "head": "6d20fcbcd316457f05259232844b80ecbcbca297",
+    "production": 50,
+    "totalSeats": 64632,
+    "fingerprints": 50,
+    "catalogEntries": 50,
+    "runtimeDetails": 50,
+    "workingTree": "clean"
+  },
+  "targets": [
+    {
+      "id": "utsunomiya-city-culture-hall-release-seed",
+      "name": "Utsunomiya City Culture Hall Main Hall",
+      "firstPass": {
+        "rangeCount": 220,
+        "calculatedSeatCount": 2000,
+        "floors": {
+          "1F": 1370,
+          "2F": 430,
+          "3F": 200
+        }
+      },
+      "secondPass": {
+        "rangeCount": 220,
+        "calculatedSeatCount": 2000,
+        "floors": {
+          "1F": 1370,
+          "2F": 430,
+          "3F": 200
+        }
+      },
+      "comparison": {
+        "rangeSet": "zero",
+        "areas": "zero",
+        "floors": "zero",
+        "rows": "zero",
+        "fromToExcluded": "zero",
+        "offsets": "zero"
+      },
+      "expectedSeatCount": 2000,
+      "officialNominalSeatCount": 2000,
+      "nominalDifference": 0,
+      "verification": "verified",
+      "finalClassification": "PRODUCTION",
+      "production": true,
+      "offsets": {
+        "first": "1-left-outer / row 6 / seat 9",
+        "middle": "1-right / row 12 / seat 40",
+        "last": "3-right-outer / row 4 / seat 47"
+      }
+    },
+    {
+      "id": "acros-fukuoka-symphony-release-seed",
+      "name": "ACROS Fukuoka Fukuoka Symphony Hall",
+      "firstPass": {
+        "rangeCount": 135,
+        "calculatedSeatCount": 1885,
+        "floors": {
+          "1F": 1226,
+          "2F": 384,
+          "3F": 275
+        }
+      },
+      "secondPass": {
+        "rangeCount": 135,
+        "calculatedSeatCount": 1885,
+        "floors": {
+          "1F": 1226,
+          "2F": 384,
+          "3F": 275
+        }
+      },
+      "comparison": {
+        "rangeSet": "zero",
+        "areas": "zero",
+        "floors": "zero",
+        "rows": "zero",
+        "fromToExcluded": "zero",
+        "offsets": "zero"
+      },
+      "expectedSeatCount": 1871,
+      "officialNominalSeatCount": 1875,
+      "nominalDifference": 4,
+      "officialTableDifference": 14,
+      "nonNumberedWheelchairSpaces": 4,
+      "verification": "pending: seat-count mismatch",
+      "finalClassification": "CONTRADICTION",
+      "production": false,
+      "reason": "The official PDF table says 1F 1,212 and total 1,871, while both independent complete readings of the printed labels say 1F 1,226 and total 1,885. The unnumbered wheelchair spaces explain the 1,875-to-1,871 distinction, not the 14-seat diagram/table conflict.",
+      "offsets": {
+        "first": "1-left / row 1 / seat 2",
+        "middle": "1-right / row 25 / seat 29",
+        "last": "3-right-side / side / seat 45"
+      }
+    },
+    {
+      "id": "yokohama-minatomirai-hall-main-release-seed",
+      "name": "Yokohama Minato Mirai Hall Main Hall",
+      "firstPass": {
+        "rangeCount": 204,
+        "calculatedSeatCount": 2020,
+        "floors": {
+          "1F": 1044,
+          "2F": 682,
+          "3F": 294
+        }
+      },
+      "secondPass": {
+        "rangeCount": 204,
+        "calculatedSeatCount": 2020,
+        "floors": {
+          "1F": 1044,
+          "2F": 682,
+          "3F": 294
+        }
+      },
+      "comparison": {
+        "rangeSet": "zero",
+        "areas": "zero",
+        "floors": "zero",
+        "rows": "zero",
+        "fromToExcluded": "zero",
+        "offsets": "zero"
+      },
+      "expectedSeatCount": 2020,
+      "officialNominalSeatCount": 2020,
+      "nominalDifference": 0,
+      "numberedWheelchairConversionSeats": [
+        "1F C row 19 seats 1-3",
+        "1F C row 19 seats 34-36"
+      ],
+      "nonNumberedWheelchairSpaces": 14,
+      "verification": "verified",
+      "finalClassification": "PRODUCTION",
+      "production": true,
+      "offsets": {
+        "first": "1-center / row 1 / seat 1",
+        "middle": "1-center / row 29 / seat 3",
+        "last": "3-right-re / side / seat 7"
+      }
+    }
+  ],
+  "noRangeWork": [
+    "Muza Kawasaki Symphony Hall",
+    "Tokorozawa Muse Ark Hall",
+    "Sapporo Concert Hall Kitara Main Hall",
+    "Kyoto Concert Hall Main Hall"
+  ],
+  "classificationUpdates": [
+    {
+      "id": "sendai-sunplaza-hall-release-seed",
+      "classification": "POLICY HOLD CANDIDATE",
+      "reason": "Official 2,054 and 2,372 seat configurations do not uniquely define the ordinary representative layout."
+    },
+    {
+      "id": "umeda-arts-theater-main-release-seed",
+      "classification": "DATE HOLD",
+      "reason": "Current 1,905 seats through 2026-08-16; re-review the new official 1,920-seat configuration on or after 2026-09-10."
+    },
+    {
+      "id": "hakataza-release-seed",
+      "classification": "SOURCE HOLD",
+      "reason": "No complete official numbered-seat-map artifact and reconciled exact capacity identified."
+    },
+    {
+      "id": "sapporo-hitaru-release-seed",
+      "classification": "POLICY HOLD",
+      "reason": "Maintained."
+    },
+    {
+      "id": "misonoza-release-seed",
+      "classification": "POLICY HOLD",
+      "reason": "Maintained."
+    }
+  ],
+  "outcome": {
+    "newProductionCount": 2,
+    "productionTotalAfterBatch": 52,
+    "totalSeatsAfterBatch": 68652,
+    "releaseReady": false,
+    "nextWork": {
+      "terra": [
+        "Resolve the ACROS official PDF 14-seat contradiction only after issuer clarification or a corrected numbered map."
+      ],
+      "sol": [],
+      "policyHold": [
+        "Sendai Sunplaza representative configuration."
+      ],
+      "sourceHold": [
+        "Hakataza complete numbered seating artifact and exact capacity."
+      ],
+      "dateHold": [
+        "Umeda Arts Theater new official 1,920-seat configuration on or after 2026-09-10"
+      ]
+    }
+  }
+}
+
