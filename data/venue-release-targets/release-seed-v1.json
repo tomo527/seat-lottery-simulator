@@ -730,7 +730,7 @@
       "reason": "High-demand representative fixed-seat hall selected for regional release coverage.",
       "inventoryId": "utsunomiya-city-culture-hall",
       "batchId": "release-seed-v1",
-      "currentStatus": "preflight-complete",
+      "currentStatus": "production",
       "preflight": {
         "officialFacilityPage": "あり",
         "officialSeatStructureSource": "あり",
@@ -743,12 +743,12 @@
         "wheelchair": "不明",
         "pit": "なし",
         "areas": "複数",
-        "processingRoute": "Terra",
-        "classification": "TERRA HANDOFF",
-        "mapUrl": "https://www.bunkakaikan.com/facilityguide/seat.html",
+        "processingRoute": "Production",
+        "classification": "PRODUCTION",
+        "mapUrl": "https://www.bunkakaikan.com/facilityguide/files/aud-l.pdf",
         "countUrl": "https://www.bunkakaikan.com/facilityguide/b_hall.html",
-        "checkedAt": "2026-08-03",
-        "rationale": "The official count is 2,000 across three tiers and the numbered image maps are available, but the full multi-area row transcription and independent second pass are not complete.",
+        "checkedAt": "2026-08-05",
+        "rationale": "Two independent official-PDF vector-coordinate passes matched all 220 ranges and the official 2,000-seat total.",
         "officialFacilityUrl": "https://www.bunkakaikan.com/"
       }
     },
