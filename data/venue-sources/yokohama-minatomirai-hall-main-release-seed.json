@@ -1,19 +1,21 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "yokohama-minatomirai-hall-main-release-seed",
-  "name": "横浜みなとみらいホール 大ホール",
+  "name": "Yokohama Minato Mirai Hall Main Hall",
   "prefecture": "神奈川県",
   "city": "横浜市",
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "id": "official-fixed-numbered-layout",
+    "name": "Official fixed numbered layout",
+    "coverage": "complete",
+    "expectedSeatCount": 2020,
+    "selectionReason": "The official PDF explicitly states 1F 1,044, 2F 682 and 3F 294 seats. Their fully transcribed printed numbered-seat ranges total 2,020; the 14 wheelchair spaces are separate, unnumbered spaces.",
+    "notIncludedPatterns": [
+      "Fourteen unnumbered wheelchair spaces are not selectable seat numbers."
+    ]
   },
   "sources": [
     {
@@ -22,10 +24,10 @@
       "roles": [
         "facility"
       ],
-      "publisher": "横浜みなとみらいホール",
-      "title": "横浜みなとみらいホール 公式施設案内",
+      "publisher": "Yokohama Minato Mirai Hall",
+      "title": "Main Hall ticket and seating guide",
       "url": "https://yokohama-minatomiraihall.jp/ticket/main.html",
-      "checkedAt": "2026-08-02"
+      "checkedAt": "2026-08-05"
     },
     {
       "id": "official-seat-map",
@@ -33,10 +35,10 @@
       "roles": [
         "seat-structure"
       ],
-      "publisher": "横浜みなとみらいホール 大ホール",
-      "title": "公式座席図・座席案内",
+      "publisher": "Yokohama Minato Mirai Hall",
+      "title": "Main Hall seating plan PDF",
       "url": "https://yokohama-minatomiraihall.jp/static/file/guide/download/hallm.pdf",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-05"
     },
     {
       "id": "official-seat-count",
@@ -44,53 +46,1998 @@
       "roles": [
         "seat-count"
       ],
-      "publisher": "横浜みなとみらいホール 大ホール",
-      "title": "公式施設・座席数案内",
+      "publisher": "Yokohama Minato Mirai Hall",
+      "title": "Main Hall ticket and seating guide",
       "url": "https://yokohama-minatomiraihall.jp/ticket/main.html",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-05"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
-  "knownLimitations": [
-    "Regional Production Cohort 1 official review: TERRA HANDOFF.",
-    "Three-floor official numbered map is available, but the dense block/row transcription and independent second pass are not complete.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
-  ],
+  "registeredScope": "All printed numbered seats in the official fixed seating diagram. The runtime source contains no PDF-review notes beyond the seat model.",
+  "completenessBasis": "Official PDF table: 1F 1,044 (C rows 1–19: 684; C rows 20–29: 360), 2F 682, 3F 294; source ranges total the same 2,020 numbered seats.",
+  "transformation": "Fourteen wheelchair-space icons carry no seat numbers and are intentionally absent. Numbered removable seats remain selectable in the ordinary layout: 1F C row 19 seats 1–3 and 34–36.",
+  "knownLimitations": [],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "Three-floor official numbered map is available, but the dense block/row transcription and independent second pass are not complete.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-05",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": [],
+  "ranges": [
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "17",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "18",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "19",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "20",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "21",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "22",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "23",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "24",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "25",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "26",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "27",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "28",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "29",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-left",
+      "areaLabel": "Level 2 P left",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 25,
+      "to": 28,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-center",
+      "areaLabel": "Level 2 P center",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 13,
+      "to": 24,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-right",
+      "areaLabel": "Level 2 P right",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 9,
+      "to": 12,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-left",
+      "areaLabel": "Level 2 P left",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 25,
+      "to": 31,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-center",
+      "areaLabel": "Level 2 P center",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 13,
+      "to": 24,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-right",
+      "areaLabel": "Level 2 P right",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 6,
+      "to": 12,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-left",
+      "areaLabel": "Level 2 P left",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 25,
+      "to": 32,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-center",
+      "areaLabel": "Level 2 P center",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 13,
+      "to": 24,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-right",
+      "areaLabel": "Level 2 P right",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 5,
+      "to": 12,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-left",
+      "areaLabel": "Level 2 P left",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 25,
+      "to": 33,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-center",
+      "areaLabel": "Level 2 P center",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 13,
+      "to": 24,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-right",
+      "areaLabel": "Level 2 P right",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 4,
+      "to": 12,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-left",
+      "areaLabel": "Level 2 P left",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 31,
+      "to": 35,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-right",
+      "areaLabel": "Level 2 P right",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 2,
+      "to": 6,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-left",
+      "areaLabel": "Level 2 P left",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 31,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "2-p-right",
+      "areaLabel": "Level 2 P right",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 6,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 4,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 3,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 2,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 2,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 2,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "17",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "18",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "19",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "20",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "21",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-la",
+      "areaLabel": "Level 2 LA",
+      "floor": "2F",
+      "rowLabel": "22",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 4,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 3,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 2,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 2,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 2,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "17",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "18",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "19",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "20",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "21",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-ra",
+      "areaLabel": "Level 2 RA",
+      "floor": "2F",
+      "rowLabel": "22",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lb",
+      "areaLabel": "Level 2 left LB",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lb",
+      "areaLabel": "Level 2 left LB",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lb",
+      "areaLabel": "Level 2 left LB",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lb",
+      "areaLabel": "Level 2 left LB",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lb",
+      "areaLabel": "Level 2 left LB",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lb",
+      "areaLabel": "Level 2 left LB",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lb",
+      "areaLabel": "Level 2 left LB",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lb",
+      "areaLabel": "Level 2 left LB",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lc",
+      "areaLabel": "Level 2 left LC",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lc",
+      "areaLabel": "Level 2 left LC",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lc",
+      "areaLabel": "Level 2 left LC",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lc",
+      "areaLabel": "Level 2 left LC",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lc",
+      "areaLabel": "Level 2 left LC",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lc",
+      "areaLabel": "Level 2 left LC",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lc",
+      "areaLabel": "Level 2 left LC",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lc",
+      "areaLabel": "Level 2 left LC",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-ld",
+      "areaLabel": "Level 2 left LD",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-ld",
+      "areaLabel": "Level 2 left LD",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-ld",
+      "areaLabel": "Level 2 left LD",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-ld",
+      "areaLabel": "Level 2 left LD",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-ld",
+      "areaLabel": "Level 2 left LD",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-ld",
+      "areaLabel": "Level 2 left LD",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-ld",
+      "areaLabel": "Level 2 left LD",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-ld",
+      "areaLabel": "Level 2 left LD",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-le",
+      "areaLabel": "Level 2 left LE",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-le",
+      "areaLabel": "Level 2 left LE",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-le",
+      "areaLabel": "Level 2 left LE",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-le",
+      "areaLabel": "Level 2 left LE",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-le",
+      "areaLabel": "Level 2 left LE",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-le",
+      "areaLabel": "Level 2 left LE",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-le",
+      "areaLabel": "Level 2 left LE",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-le",
+      "areaLabel": "Level 2 left LE",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lf",
+      "areaLabel": "Level 2 left LF",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lf",
+      "areaLabel": "Level 2 left LF",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lf",
+      "areaLabel": "Level 2 left LF",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lf",
+      "areaLabel": "Level 2 left LF",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lf",
+      "areaLabel": "Level 2 left LF",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lf",
+      "areaLabel": "Level 2 left LF",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lf",
+      "areaLabel": "Level 2 left LF",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-lf",
+      "areaLabel": "Level 2 left LF",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rb",
+      "areaLabel": "Level 2 right RB",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rb",
+      "areaLabel": "Level 2 right RB",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rb",
+      "areaLabel": "Level 2 right RB",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rb",
+      "areaLabel": "Level 2 right RB",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rb",
+      "areaLabel": "Level 2 right RB",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rb",
+      "areaLabel": "Level 2 right RB",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rb",
+      "areaLabel": "Level 2 right RB",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rb",
+      "areaLabel": "Level 2 right RB",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rc",
+      "areaLabel": "Level 2 right RC",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rc",
+      "areaLabel": "Level 2 right RC",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rc",
+      "areaLabel": "Level 2 right RC",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rc",
+      "areaLabel": "Level 2 right RC",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rc",
+      "areaLabel": "Level 2 right RC",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rc",
+      "areaLabel": "Level 2 right RC",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rc",
+      "areaLabel": "Level 2 right RC",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rc",
+      "areaLabel": "Level 2 right RC",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rd",
+      "areaLabel": "Level 2 right RD",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rd",
+      "areaLabel": "Level 2 right RD",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rd",
+      "areaLabel": "Level 2 right RD",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rd",
+      "areaLabel": "Level 2 right RD",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rd",
+      "areaLabel": "Level 2 right RD",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rd",
+      "areaLabel": "Level 2 right RD",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rd",
+      "areaLabel": "Level 2 right RD",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rd",
+      "areaLabel": "Level 2 right RD",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-re",
+      "areaLabel": "Level 2 right RE",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-re",
+      "areaLabel": "Level 2 right RE",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-re",
+      "areaLabel": "Level 2 right RE",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-re",
+      "areaLabel": "Level 2 right RE",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-re",
+      "areaLabel": "Level 2 right RE",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-re",
+      "areaLabel": "Level 2 right RE",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-re",
+      "areaLabel": "Level 2 right RE",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-re",
+      "areaLabel": "Level 2 right RE",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rf",
+      "areaLabel": "Level 2 right RF",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rf",
+      "areaLabel": "Level 2 right RF",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rf",
+      "areaLabel": "Level 2 right RF",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rf",
+      "areaLabel": "Level 2 right RF",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rf",
+      "areaLabel": "Level 2 right RF",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rf",
+      "areaLabel": "Level 2 right RF",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rf",
+      "areaLabel": "Level 2 right RF",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-rf",
+      "areaLabel": "Level 2 right RF",
+      "floor": "2F",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 3,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 4,
+      "to": 10,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 11,
+      "to": 22,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 23,
+      "to": 29,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 4,
+      "to": 10,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 11,
+      "to": 22,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 23,
+      "to": 29,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 4,
+      "to": 10,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 11,
+      "to": 22,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 23,
+      "to": 29,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 10,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 11,
+      "to": 22,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 23,
+      "to": 32,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 10,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 11,
+      "to": 22,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 23,
+      "to": 32,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 10,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 11,
+      "to": 22,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 23,
+      "to": 32,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "7",
+      "from": 11,
+      "to": 22,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left-la",
+      "areaLabel": "Level 3 LA",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 8,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left-lb",
+      "areaLabel": "Level 3 LB",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 8,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left-lc",
+      "areaLabel": "Level 3 LC",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 8,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left-ld",
+      "areaLabel": "Level 3 LD",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 8,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left-le",
+      "areaLabel": "Level 3 LE",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 7,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right-ra",
+      "areaLabel": "Level 3 RA",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 8,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right-rb",
+      "areaLabel": "Level 3 RB",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 8,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right-rc",
+      "areaLabel": "Level 3 RC",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 8,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right-rd",
+      "areaLabel": "Level 3 RD",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 8,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right-re",
+      "areaLabel": "Level 3 RE",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 7,
+      "excluded": []
+    }
+  ],
   "preflight": {
-    "officialFacilityPage": "あり",
-    "officialSeatStructureSource": "あり",
-    "officialSeatCountSource": "あり",
-    "completeNumberedSeatMap": "あり",
-    "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
-    "fixedSeats": "あり",
-    "movableSeats": "なし",
-    "wheelchair": "非番号区画",
-    "pit": "なし",
-    "areas": "複数",
-    "processingRoute": "Terra",
-    "classification": "TERRA HANDOFF",
+    "officialFacilityPage": "yes",
+    "officialSeatStructureSource": "yes",
+    "officialSeatCountSource": "yes",
+    "completeNumberedSeatMap": "yes",
+    "exactNominalSeatCount": "yes",
+    "representativeLayout": "unique fixed diagram",
+    "fixedSeats": "yes",
+    "movableSeats": "six numbered removable seats in 1F C row 19",
+    "wheelchair": "14 non-numbered spaces",
+    "pit": "no",
+    "areas": "C; P; LA-LF; RA-RF across three floors",
+    "processingRoute": "Production",
+    "classification": "PRODUCTION",
     "mapUrl": "https://yokohama-minatomiraihall.jp/static/file/guide/download/hallm.pdf",
     "countUrl": "https://yokohama-minatomiraihall.jp/ticket/main.html",
-    "checkedAt": "2026-08-03",
-    "rationale": "Three-floor official numbered map is available, but the dense block/row transcription and independent second pass are not complete.",
-    "officialFacilityUrl": "https://yokohama-minatomiraihall.jp/ticket/main.html",
+    "checkedAt": "2026-08-05",
+    "rationale": "Both independent official-PDF range passes match the printed numbering and the official 2,020-seat floor total. The 14 wheelchair spaces are unnumbered extras, while the six dark removable seats are numbered and included.",
+    "officialFacilityUrl": "https://yokohama-minatomiraihall.jp/",
     "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "handoff"
+    "rangeEntry": "complete",
+    "decision": "PRODUCTION"
+  },
+  "rangeReview": {
+    "firstPass": {
+      "method": "Rendered official PDF visual row reading with explicit area/row ranges",
+      "rangeCount": 204,
+      "calculatedSeatCount": 2020,
+      "floorSeatCounts": {
+        "1F": 1044,
+        "2F": 682,
+        "3F": 294
+      },
+      "areaSeatCounts": {
+        "1-center": 1044,
+        "2-p-left": 39,
+        "2-p-center": 48,
+        "2-p-right": 39,
+        "2-left-la": 65,
+        "2-right-ra": 65,
+        "2-left-lb": 24,
+        "2-left-lc": 24,
+        "2-left-ld": 24,
+        "2-left-le": 24,
+        "2-left-lf": 24,
+        "2-right-rb": 24,
+        "2-right-rc": 24,
+        "2-right-rd": 24,
+        "2-right-re": 24,
+        "2-right-rf": 24,
+        "2-center-left": 51,
+        "2-center": 84,
+        "2-center-right": 51,
+        "3-center": 216,
+        "3-left-la": 8,
+        "3-left-lb": 8,
+        "3-left-lc": 8,
+        "3-left-ld": 8,
+        "3-left-le": 7,
+        "3-right-ra": 8,
+        "3-right-rb": 8,
+        "3-right-rc": 8,
+        "3-right-rd": 8,
+        "3-right-re": 7
+      },
+      "movableNumberedSeats": [
+        "1-center / row 19 / seats 1-3",
+        "1-center / row 19 / seats 34-36"
+      ],
+      "unnumberedWheelchairSpaces": 14,
+      "firstOffset": "1-center / row 1 / seat 1",
+        "middleOffset": "1-center / row 29 / seat 3",
+      "lastOffset": "3-right-re / side / seat 7"
+    },
+    "secondPass": {
+      "method": "Independent PDF vector-summary and rendered-layout re-read; first-pass source ranges and totals not used as input",
+      "rangeCount": 204,
+      "calculatedSeatCount": 2020,
+      "floorSeatCounts": {
+        "1F": 1044,
+        "2F": 682,
+        "3F": 294
+      },
+      "areaSeatCounts": {
+        "1-center": 1044,
+        "2-p-left": 39,
+        "2-p-center": 48,
+        "2-p-right": 39,
+        "2-left-la": 65,
+        "2-right-ra": 65,
+        "2-left-lb": 24,
+        "2-left-lc": 24,
+        "2-left-ld": 24,
+        "2-left-le": 24,
+        "2-left-lf": 24,
+        "2-right-rb": 24,
+        "2-right-rc": 24,
+        "2-right-rd": 24,
+        "2-right-re": 24,
+        "2-right-rf": 24,
+        "2-center-left": 51,
+        "2-center": 84,
+        "2-center-right": 51,
+        "3-center": 216,
+        "3-left-la": 8,
+        "3-left-lb": 8,
+        "3-left-lc": 8,
+        "3-left-ld": 8,
+        "3-left-le": 7,
+        "3-right-ra": 8,
+        "3-right-rb": 8,
+        "3-right-rc": 8,
+        "3-right-rd": 8,
+        "3-right-re": 7
+      },
+      "movableNumberedSeats": [
+        "1-center / row 19 / seats 1-3",
+        "1-center / row 19 / seats 34-36"
+      ],
+      "unnumberedWheelchairSpaces": 14,
+      "firstOffset": "1-center / row 1 / seat 1",
+        "middleOffset": "1-center / row 29 / seat 3",
+      "lastOffset": "3-right-re / side / seat 7"
+    },
+    "diff": {
+      "rangeSet": "zero",
+      "areas": "zero",
+      "floors": "zero",
+      "rows": "zero",
+      "fromToExcluded": "zero",
+      "seatCounts": "zero",
+      "offsets": "zero"
+    },
+    "expectedSeatCount": 2020,
+    "officialNominalSeatCount": 2020,
+    "nominalDifference": 0,
+    "finalClassification": "PRODUCTION"
   }
 }

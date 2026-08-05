@@ -16,7 +16,7 @@
       "officialDisplayName": "アクロス福岡 福岡シンフォニーホール",
       "prefecture": "福岡県",
       "city": "福岡市",
-      "capacity": null,
+      "capacity": 1875,
       "category": "hall",
       "officialFacilityUrl": "https://www.acros.or.jp/",
       "operationalStatus": "active",
@@ -24,11 +24,13 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "acros-fukuoka-symphony-release-seed",
-      "researchStatus": "draft-created",
+      "researchStatus": "independent-review-mismatch",
       "lastCheckedAt": "2026-08-02",
       "aliases": [],
-      "researchLastCheckedAt": "2026-08-03",
-      "blockingReason": null
+      "researchLastCheckedAt": "2026-08-05",
+      "firstPassStatus": "complete",
+      "secondPassStatus": "complete",
+      "blockingReason": "CONTRADICTION: the official PDF table reports 1,871 numbered seats (1F 1,212), while two independent complete readings of printed seat labels total 1,885 (1F 1,226); no unsupported 14-seat removal was made."
     },
     {
       "inventoryId": "fukuoka-sunpalace-hall",

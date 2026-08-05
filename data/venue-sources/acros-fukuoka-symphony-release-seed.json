@@ -2,18 +2,20 @@
   "schemaVersion": 1,
   "status": "draft",
   "id": "acros-fukuoka-symphony-release-seed",
-  "name": "アクロス福岡 福岡シンフォニーホール",
+  "name": "ACROS Fukuoka Fukuoka Symphony Hall",
   "prefecture": "福岡県",
-  "city": "福岡市",
+  "city": "Fukuoka",
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "id": "official-fixed-numbered-layout",
+    "name": "Official fixed numbered layout",
+    "coverage": "complete",
+    "expectedSeatCount": 1871,
+    "selectionReason": "The official PDF table states 1,212/384/275 numbered seats (1,871) and four non-numbered wheelchair spaces; the fully transcribed printed seat labels instead total 1,885, so this record remains a contradiction hold.",
+    "notIncludedPatterns": [
+      "Four non-numbered wheelchair spaces shown as icons, never synthesized as seat numbers."
+    ]
   },
   "sources": [
     {
@@ -22,10 +24,10 @@
       "roles": [
         "facility"
       ],
-      "publisher": "アクロス福岡",
-      "title": "アクロス福岡 公式施設案内",
+      "publisher": "ACROS Fukuoka",
+      "title": "Fukuoka Symphony Hall facility guide",
       "url": "https://www.acros.or.jp/",
-      "checkedAt": "2026-08-02"
+      "checkedAt": "2026-08-05"
     },
     {
       "id": "official-seat-map",
@@ -33,10 +35,10 @@
       "roles": [
         "seat-structure"
       ],
-      "publisher": "アクロス福岡 福岡シンフォニーホール",
-      "title": "公式座席図・座席案内",
+      "publisher": "ACROS Fukuoka",
+      "title": "Fukuoka Symphony Hall seating plan",
       "url": "https://www.acros.or.jp/images/pdf/sh_zasekihyo.pdf",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-05"
     },
     {
       "id": "official-seat-count",
@@ -44,51 +46,1343 @@
       "roles": [
         "seat-count"
       ],
-      "publisher": "アクロス福岡 福岡シンフォニーホール",
-      "title": "公式施設・座席数案内",
+      "publisher": "ACROS Fukuoka",
+      "title": "Fukuoka Symphony Hall user guide",
       "url": "https://www.acros.or.jp/s_facilities/user_guide/",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-05"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "Complete transcription of printed numbered labels from the official seating-plan PDF only; this draft is deliberately not selectable at runtime because the same official PDF table conflicts with the printed-label total.",
+  "completenessBasis": "The first pass enumerates every visible numbered label by level, area and row. The official PDF table states 1F 1,212, 2F 384, 3F 275, 1,871 total; the printed ranges mechanically sum to 1F 1,226, 2F 384, 3F 275, 1,885 total.",
+  "transformation": "No number was inferred, added, removed, or converted. The four wheelchair icons have no printed seat numbers and are not ranges.",
   "knownLimitations": [
-    "Closure Pass分類: TERRA HANDOFF。公式資料の現行状態をClosure Passで確認し、TERRA HANDOFFへ分類。番号rangeは未転記。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "Official self-contradiction: the PDF table reports 1F 1,212 and total 1,871, while independent coordinate extraction and visual transcription of all printed numbered labels yield 1F 1,226 and total 1,885 (both differ by 14).",
+    "The four non-numbered wheelchair spaces are excluded from the range collection."
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
+    "checkedAt": "2026-08-05",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "mismatched",
     "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+      "Official PDF seat-count table and the complete printed numbered-label set differ by 14 seats; no defensible numbered-seat exclusion is identified."
     ]
   },
-  "ranges": [],
+  "ranges": [
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "1",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "1",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "1",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "2",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "2",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "2",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "3",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "3",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "3",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "4",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "4",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "4",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "5",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "5",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "5",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "6",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "6",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "6",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "7",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "7",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "7",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "8",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "8",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "8",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "9",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "9",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "10",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "10",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "11",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "11",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "12",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "12",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "13",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "13",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "14",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "14",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "15",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "15",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "16",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "16",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "17",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "17",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "17",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "18",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "18",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "18",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "19",
+      "from": 4,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "19",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "19",
+      "from": 27,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "20",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "20",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "20",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "21",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "21",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "21",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "22",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "22",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "22",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "23",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "23",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "23",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "24",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "24",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "24",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "25",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "25",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "25",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "26",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "26",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "26",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "27",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "27",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "27",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "28",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "28",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "28",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "29",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "29",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "29",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "30",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "30",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "30",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "31",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "31",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "31",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "1-left",
+      "areaLabel": "Level 1 left",
+      "floor": "1F",
+      "rowLabel": "32",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "1-center",
+      "areaLabel": "Level 1 center",
+      "floor": "1F",
+      "rowLabel": "32",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "1-right",
+      "areaLabel": "Level 1 right",
+      "floor": "1F",
+      "rowLabel": "32",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 4,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "1",
+      "from": 27,
+      "to": 36,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 3,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "2",
+      "from": 27,
+      "to": 37,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "3",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 2,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "4",
+      "from": 27,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "5",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-left",
+      "areaLabel": "Level 2 center left",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 13,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center",
+      "areaLabel": "Level 2 center",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 14,
+      "to": 26,
+      "excluded": []
+    },
+    {
+      "areaId": "2-center-right",
+      "areaLabel": "Level 2 center right",
+      "floor": "2F",
+      "rowLabel": "6",
+      "from": 27,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-l1",
+      "areaLabel": "Level 2 left L1",
+      "floor": "2F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "areaId": "2-left-l2",
+      "areaLabel": "Level 2 left L2",
+      "floor": "2F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-r1",
+      "areaLabel": "Level 2 right R1",
+      "floor": "2F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "areaId": "2-right-r2",
+      "areaLabel": "Level 2 right R2",
+      "floor": "2F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left",
+      "areaLabel": "Level 3 left",
+      "floor": "3F",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 12,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "1",
+      "from": 13,
+      "to": 25,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right",
+      "areaLabel": "Level 3 right",
+      "floor": "3F",
+      "rowLabel": "1",
+      "from": 26,
+      "to": 37,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left",
+      "areaLabel": "Level 3 left",
+      "floor": "3F",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 12,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "2",
+      "from": 13,
+      "to": 25,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right",
+      "areaLabel": "Level 3 right",
+      "floor": "3F",
+      "rowLabel": "2",
+      "from": 26,
+      "to": 37,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left",
+      "areaLabel": "Level 3 left",
+      "floor": "3F",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 12,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "3",
+      "from": 13,
+      "to": 25,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right",
+      "areaLabel": "Level 3 right",
+      "floor": "3F",
+      "rowLabel": "3",
+      "from": 26,
+      "to": 37,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left",
+      "areaLabel": "Level 3 left",
+      "floor": "3F",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 12,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "4",
+      "from": 13,
+      "to": 25,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right",
+      "areaLabel": "Level 3 right",
+      "floor": "3F",
+      "rowLabel": "4",
+      "from": 26,
+      "to": 37,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left",
+      "areaLabel": "Level 3 left",
+      "floor": "3F",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 12,
+      "excluded": []
+    },
+    {
+      "areaId": "3-center",
+      "areaLabel": "Level 3 center",
+      "floor": "3F",
+      "rowLabel": "5",
+      "from": 13,
+      "to": 25,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right",
+      "areaLabel": "Level 3 right",
+      "floor": "3F",
+      "rowLabel": "5",
+      "from": 26,
+      "to": 37,
+      "excluded": []
+    },
+    {
+      "areaId": "3-left-side",
+      "areaLabel": "Level 3 left side",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 45,
+      "excluded": []
+    },
+    {
+      "areaId": "3-right-side",
+      "areaLabel": "Level 3 right side",
+      "floor": "3F",
+      "rowLabel": "side",
+      "from": 1,
+      "to": 45,
+      "excluded": []
+    }
+  ],
   "preflight": {
-    "officialFacilityPage": "あり",
-    "officialSeatStructureSource": "あり",
-    "officialSeatCountSource": "あり",
-    "completeNumberedSeatMap": "あり",
-    "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
-    "fixedSeats": "あり",
-    "movableSeats": "なし",
-    "wheelchair": "不明",
-    "pit": "不明",
-    "areas": "複雑",
+    "officialFacilityPage": "yes",
+    "officialSeatStructureSource": "yes",
+    "officialSeatCountSource": "yes",
+    "completeNumberedSeatMap": "yes",
+    "exactNominalSeatCount": "yes",
+    "representativeLayout": "unique fixed diagram",
+    "fixedSeats": "yes",
+    "movableSeats": "no",
+    "wheelchair": "four non-numbered spaces",
+    "pit": "no",
+    "areas": "level 1 center; level 2 side lanes; level 3 side lanes",
     "processingRoute": "Terra",
-    "classification": "TERRA HANDOFF",
+    "classification": "CONTRADICTION",
     "mapUrl": "https://www.acros.or.jp/images/pdf/sh_zasekihyo.pdf",
     "countUrl": "https://www.acros.or.jp/s_facilities/user_guide/",
-    "checkedAt": "2026-08-03",
-    "rationale": "公式資料の現行状態をClosure Passで確認し、TERRA HANDOFFへ分類。番号rangeは未転記。",
+    "checkedAt": "2026-08-05",
+    "rationale": "Both independent passes fully transcribed the same printed numbered seats (1,885) but the official PDF table specifies 1,871 numbered seats. The 14-seat difference is not explained by the four non-numbered wheelchair spaces.",
     "officialFacilityUrl": "https://www.acros.or.jp/",
     "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "pending"
+    "rangeEntry": "complete",
+    "decision": "CONTRADICTION"
+  },
+  "rangeReview": {
+    "firstPass": {
+      "method": "PDF vector text coordinate reconstruction plus rendered visual row check",
+      "rangeCount": 135,
+      "calculatedSeatCount": 1885,
+      "floorSeatCounts": {
+        "1F": 1226,
+        "2F": 384,
+        "3F": 275
+      },
+      "areaSeatCounts": {
+        "1-left": 405,
+        "1-center": 416,
+        "1-right": 405,
+        "2-center-left": 71,
+        "2-center": 78,
+        "2-center-right": 71,
+        "2-left-l1": 41,
+        "2-left-l2": 41,
+        "2-right-r1": 41,
+        "2-right-r2": 41,
+        "3-left": 60,
+        "3-center": 65,
+        "3-right": 60,
+        "3-left-side": 45,
+        "3-right-side": 45
+      },
+      "firstOffset": "1-left / row 1 / seat 2",
+        "middleOffset": "1-right / row 25 / seat 29",
+      "lastOffset": "3-right-side / side / seat 45"
+    },
+    "secondPass": {
+      "method": "Independent rendered-PDF visual read with separate coordinate grouping; source JSON and first-pass aggregate not consulted",
+      "rangeCount": 135,
+      "calculatedSeatCount": 1885,
+      "floorSeatCounts": {
+        "1F": 1226,
+        "2F": 384,
+        "3F": 275
+      },
+      "areaSeatCounts": {
+        "1-left": 405,
+        "1-center": 416,
+        "1-right": 405,
+        "2-center-left": 71,
+        "2-center": 78,
+        "2-center-right": 71,
+        "2-left-l1": 41,
+        "2-left-l2": 41,
+        "2-right-r1": 41,
+        "2-right-r2": 41,
+        "3-left": 60,
+        "3-center": 65,
+        "3-right": 60,
+        "3-left-side": 45,
+        "3-right-side": 45
+      },
+      "firstOffset": "1-left / row 1 / seat 2",
+        "middleOffset": "1-right / row 25 / seat 29",
+      "lastOffset": "3-right-side / side / seat 45"
+    },
+    "diff": {
+      "rangeSet": "zero",
+      "areas": "zero",
+      "floors": "zero",
+      "rows": "zero",
+      "fromToExcluded": "zero",
+      "seatCounts": "zero",
+      "offsets": "zero"
+    },
+    "expectedSeatCount": 1871,
+    "officialNominalSeatCount": 1875,
+    "nonNumberedWheelchairSpaces": 4,
+    "officialTableDifference": 14,
+    "finalClassification": "CONTRADICTION"
   }
 }
