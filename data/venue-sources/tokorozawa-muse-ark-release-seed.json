@@ -54,9 +54,9 @@
   "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
   "transformation": "No seat-map transcription has been performed.",
   "knownLimitations": [
-    "Regional Production Cohort 1 official review: TERRA HANDOFF.",
-    "The official map has dense multi-floor blocks, PA seats, and 13 movable seats that can convert to six wheelchair positions; exact normal-layout ranges require Terra.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "TERRA first pass and independent official-source review confirmed the official page's maximum-use total of 2,002 seats, with 1F/2F/3F totals of 1,106/560/336.",
+    "The same official page says that 13 first-floor movable seats can be converted to six wheelchair positions. The official material does not define which one fixed selectable configuration is the representative simulator pattern.",
+    "POLICY HOLD: no range set, fingerprint, catalog entry, or runtime detail was created; do not choose between the movable-seat and wheelchair-conversion configurations by inference."
   ],
   "verification": {
     "status": "pending",
@@ -65,8 +65,8 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "The official map has dense multi-floor blocks, PA seats, and 13 movable seats that can convert to six wheelchair positions; exact normal-layout ranges require Terra.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
+      "POLICY HOLD: the official source presents 2,002 as a maximum-use pattern and separately permits conversion of 13 first-floor movable seats to six wheelchair positions.",
+      "No single complete representative selectable configuration is explicitly defined by the issuer."
     ]
   },
   "ranges": [],
@@ -91,6 +91,6 @@
     "officialFacilityUrl": "https://www.muse-tokorozawa.or.jp/",
     "status": "complete",
     "rangeEntry": "not-started",
-    "decision": "handoff"
+    "decision": "policy-hold"
   }
 }

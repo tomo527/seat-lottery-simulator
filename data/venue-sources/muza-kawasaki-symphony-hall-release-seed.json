@@ -54,9 +54,9 @@
   "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
   "transformation": "No seat-map transcription has been performed.",
   "knownLimitations": [
-    "Regional Production Cohort 1 official review: TERRA HANDOFF.",
-    "The current official block map has dense curved blocks and an official total of 1,997; exact row ranges and area aggregation require Terra transcription.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "TERRA first pass and independent official-source review both confirmed the 2023 official map's block totals: 1,987 numbered general seats and 10 separately identified wheelchair positions, for 1,997 total positions.",
+    "The official public material does not publish a machine-readable or tabular row/number inventory. Its dense curved diagram is not sufficient to create a lossless range model without inventing row endpoints or converting the separate wheelchair positions into fabricated numbered seats.",
+    "SOURCE HOLD: no first-pass ranges, independent range diff, fingerprint, catalog entry, or runtime detail was created."
   ],
   "verification": {
     "status": "pending",
@@ -65,8 +65,8 @@
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "The current official block map has dense curved blocks and an official total of 1,997; exact row ranges and area aggregation require Terra transcription.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
+      "SOURCE HOLD: official sources establish 1,987 numbered general seats plus 10 separate wheelchair positions, but not a lossless row/number range inventory.",
+      "Do not fabricate row endpoints, exclusions, or wheelchair seat numbers from displayed block totals."
     ]
   },
   "ranges": [],
@@ -91,6 +91,6 @@
     "officialFacilityUrl": "https://www.kawasaki-sym-hall.jp/",
     "status": "complete",
     "rangeEntry": "not-started",
-    "decision": "handoff"
+    "decision": "source-hold"
   }
 }

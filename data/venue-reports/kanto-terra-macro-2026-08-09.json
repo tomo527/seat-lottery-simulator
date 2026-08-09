@@ -1,0 +1,41 @@
+{
+  "reportVersion": 1,
+  "reportId": "kanto-terra-macro-2026-08-09",
+  "generatedAt": "2026-08-09",
+  "scope": "Terra review of the two remaining Kanto TERRA targets only. Existing production sources and generated artifacts were not changed.",
+  "baseline": {
+    "production": 55,
+    "fingerprints": 55,
+    "catalogEntries": 55,
+    "runtimeDetails": 55
+  },
+  "outcomes": [
+    {
+      "id": "muza-kawasaki-symphony-hall-release-seed",
+      "name": "ミューザ川崎シンフォニーホール",
+      "firstPass": "The official 2023 numbered map was rendered and read at full resolution. Its printed table gives 1,987 numbered general seats plus 10 separately identified wheelchair positions, totaling 1,997.",
+      "independentSecondPass": "The current official seat page was independently checked against the same issuer PDF. The page exposes seat-view anchors but no row/number inventory that can independently reproduce range endpoints.",
+      "differenceCheck": "The total-position evidence matches (1,997); a zero-diff range comparison is unavailable because no issuer-published row/number inventory exists. Block-total fitting was rejected.",
+      "finalClassification": "SOURCE HOLD",
+      "production": false,
+      "reason": "Do not manufacture row ranges or wheelchair seat numbers from aggregate block totals."
+    },
+    {
+      "id": "tokorozawa-muse-ark-release-seed",
+      "name": "所沢市民文化センター ミューズ アークホール",
+      "firstPass": "The official A3 numbered map was rendered and read at full resolution. It labels a maximum 2,002-seat pattern and PA/wheelchair locations.",
+      "independentSecondPass": "The official facility page independently states 2,002 seats (1F 1,106; 2F 560; 3F 336) and that 13 first-floor movable seats can convert to six wheelchair positions.",
+      "differenceCheck": "The floor totals match the maximum-use map. The sources do not establish one fixed representative selectable configuration across the movable-seat and wheelchair-conversion states.",
+      "finalClassification": "POLICY HOLD",
+      "production": false,
+      "reason": "Do not select a normal or converted configuration by inference."
+    }
+  ],
+  "summary": {
+    "productionPromotions": 0,
+    "sourceHolds": 1,
+    "policyHolds": 1,
+    "existingProductionRegression": false,
+    "nextQueue": "Sol high Kanto P0 macro only; do not begin Tokyo top-up or national-city work."
+  }
+}
