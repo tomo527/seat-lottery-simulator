@@ -21,7 +21,7 @@
       "officialFacilityUrl": "https://www.takasaki-foundation.or.jp/theatre/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "eligibilityReason": "CONTRADICTION: 公式客席図の2階印刷番号480に対し、同図表は2階448で32席差。",
       "priority": "A",
       "venueSourceId": "gunma-music-center-release-seed",
       "researchStatus": "blocked",
@@ -45,11 +45,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "A",
       "venueSourceId": "takasaki-city-theatre-main-release-seed",
-      "researchStatus": "draft-created",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
       "aliases": [],
-      "researchLastCheckedAt": "2026-08-03",
-      "blockingReason": null
+      "researchLastCheckedAt": "2026-08-09",
+      "blockingReason": "CONTRADICTION: two independent official-map passes total 480 printed numbered seats on 2F, while the official 2F subtotal is 448; the 32-seat difference is unresolved."
     }
   ]
 }

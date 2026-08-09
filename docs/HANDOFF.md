@@ -7,7 +7,7 @@ Updated: 2026-08-09 (Asia/Tokyo)
 - Current HEAD is the commit containing this handoff; resolve the exact SHA with `git rev-parse HEAD`. Branch `main` is pushed to `origin/main`, local HEAD equals `origin/main`, and the working tree is clean at handoff completion.
 - Production: **56 venues / 74,959 seats**. Generated sources, catalog, runtime details, and production fingerprints are synchronized at 56 each.
 - Coverage: Tokyo **48**, Kanagawa **3**, Chiba **1**, Saitama **1**, Ibaraki **0**, Tochigi **1**, Gunma **0**; Osaka **2**. Kanto total: **54**.
-- The 2026-08-09 Kanto P0 Sol macro promoted `saitama-arts-theatre-main-release-seed` (776 seats) and preserved all 55 baseline production fingerprints and catalog entries unchanged.
+- The 2026-08-09 Kanto P1 Sol macro closed `takasaki-city-theatre-main-release-seed` as **CONTRADICTION** and preserved all 56 baseline production fingerprints and catalog entries unchanged.
 
 ## Release goal
 
@@ -18,8 +18,13 @@ Release `release-seed-v1` with the production gate intact, prioritizing remainin
 - **PRODUCTION**: `yokohama-minatomirai-hall-main-release-seed`, `sagamihara-green-hall-main-release-seed`, `culttz-kawasaki-hall-release-seed`, `ichikawa-culture-hall-main-release-seed`, `saitama-arts-theatre-main-release-seed`, `utsunomiya-city-culture-hall-release-seed`.
 - **LUNA**: none remaining in Kanto.
 - **TERRA**: none remaining in Kanto.
-- **SOL**: `takasaki-city-theatre-main-release-seed`.
-- **HOLD/MISMATCH**: `kanagawa-kenmin-hall-main-release-seed` (SOURCE HOLD), `muza-kawasaki-symphony-hall-release-seed` (SOURCE HOLD), `yokosuka-arts-theatre-release-seed` (POLICY HOLD), `mori-no-hall21-main-release-seed` (SOURCE HOLD), `narashino-culture-hall-release-seed`, `funabashi-civic-culture-hall-release-seed`, `chiba-city-culture-center-hall-release-seed`, `urayasu-culture-hall-release-seed`, `saitama-kaikan-main-release-seed` (CONTRADICTION), `omiya-sonic-city-large-release-seed` (INDEPENDENT REVIEW MISMATCH), `kawaguchi-lilia-main-release-seed`, `tokorozawa-muse-ark-release-seed` (POLICY HOLD), `westa-kawagoe-large-release-seed` (CONTRADICTION), `mito-arts-tower-concert-release-seed`, `ibaraki-kenritsu-bunka-center-large-release-seed`, `tochigi-ken-sogo-bunka-center-main-release-seed`, `gunma-music-center-release-seed`.
+- **SOL**: none remaining in Kanto.
+- **HOLD/MISMATCH**: `kanagawa-kenmin-hall-main-release-seed` (SOURCE HOLD), `muza-kawasaki-symphony-hall-release-seed` (SOURCE HOLD), `yokosuka-arts-theatre-release-seed` (POLICY HOLD), `mori-no-hall21-main-release-seed` (SOURCE HOLD), `narashino-culture-hall-release-seed`, `funabashi-civic-culture-hall-release-seed`, `chiba-city-culture-center-hall-release-seed`, `urayasu-culture-hall-release-seed`, `saitama-kaikan-main-release-seed` (CONTRADICTION), `omiya-sonic-city-large-release-seed` (INDEPENDENT REVIEW MISMATCH), `kawaguchi-lilia-main-release-seed`, `tokorozawa-muse-ark-release-seed` (POLICY HOLD), `westa-kawagoe-large-release-seed` (CONTRADICTION), `mito-arts-tower-concert-release-seed`, `ibaraki-kenritsu-bunka-center-large-release-seed`, `tochigi-ken-sogo-bunka-center-main-release-seed`, `gunma-music-center-release-seed`, `takasaki-city-theatre-main-release-seed` (CONTRADICTION).
+
+## 2026-08-09 Kanto P1 Sol macro outcome
+
+- `takasaki-city-theatre-main-release-seed`: **CONTRADICTION**. Expected numbered seats are 2,022 (official 2,027 positions less five nonnumbered wheelchair positions); two complete independent passes both read 2,054 printed numbered seats, with 1F 1,468, 2F 480, and side areas 106. `rangeDiff: 0`, but the same official map states 2F 448, leaving an unexplained 32-seat difference. No ranges, generated detail, catalog entry, or fingerprint were created.
+- Production promotions: **0**; production remains **56 venues / 74,959 seats**.
 
 ## 2026-08-09 Kanto P0 Sol macro outcomes
 
@@ -45,13 +50,13 @@ Release `release-seed-v1` with the production gate intact, prioritizing remainin
 
 ## Tokyo top-up
 
-16 candidates remain: 7 STANDARD candidates ready for a future Luna source pass, 4 COMPLEX candidates for later judgment, and 5 HOLD candidates. Do not start Tokyo top-up until remaining Kanto P0 and P1 queues have been processed.
+16 candidates remain: 7 STANDARD candidates ready for Luna source passes, 4 COMPLEX candidates for later judgment, and 5 HOLD candidates. Kanto P0/P1 processing is now closed to concrete production or hold decisions, so Tokyo STANDARD is the next queue.
 
 ## Model queues
 
-- **LUNA NEXT**: none in Kanto; defer the Tokyo STANDARD source pass.
+- **LUNA NEXT**: Tokyo top-up STANDARD macro 1: `tokyo-bunka-hall-main`, `tokyo-geigeki-concert`, and `tokyo-opera-city-concert`.
 - **TERRA NEXT**: none in Kanto.
-- **SOL NEXT**: `takasaki-city-theatre-main-release-seed` as the next Kanto P1 macro.
+- **SOL NEXT**: none in Kanto; defer P2 complex work until the Tokyo STANDARD queue is processed.
 - **HOLD**: preserve all recorded Kanto P0/P1 source, policy, contradiction, and independent-review holds. Reopen only when issuer-owned material explicitly resolves the recorded blocker; do not fit ranges to totals.
 
 ## Holds
@@ -64,10 +69,10 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Validation status
 
-- 2026-08-09: `venues:inventory:report`, release-seed `venues:batch:report`, `venues:release:coverage`, `venues:build`, `venues:check`, `venues:validate`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check` passed after the Kanto P0 Sol macro.
+- 2026-08-09: `venues:inventory:report`, release-seed `venues:batch:report`, `venues:release:coverage`, `venues:build`, `venues:check`, `venues:validate`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check` passed after the Kanto P1 Sol macro.
 - Validation result: 56 production venues / 74,959 seats. Existing warnings remain limited to Kyocera Dome row fragmentation and 300/500-venue size projections; no validation errors.
 - E2E required the approved elevated run because Miniflare writes the user Wrangler registry outside the workspace; the sandbox-only attempt failed with `EPERM` and was not a repository failure.
 
 ## Exact next action
 
-Run a **new Sol high Kanto P1 macro** for `takasaki-city-theatre-main-release-seed`, starting from its existing source, preflight, and review state. Complete first pass, independent second pass, zero diff, and production if the gate is met; otherwise record a concrete HOLD/MISMATCH. Preserve every existing Kanto hold and defer Tokyo top-up and national-city research.
+Run a **new Luna high Tokyo top-up STANDARD macro 1** for `tokyo-bunka-hall-main`, `tokyo-geigeki-concert`, and `tokyo-opera-city-concert`, starting from `data/venue-release-targets/tokyo-top-up-v1.json` and existing inventory/source state. Complete each venue through first pass, independent second pass, and production or a concrete HOLD/MISMATCH. Preserve every Kanto hold and do not begin the remaining Tokyo candidates or P2 national-city work in that macro.

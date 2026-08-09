@@ -1,0 +1,52 @@
+{
+  "reportVersion": 1,
+  "reportId": "kanto-sol-p1-takasaki-2026-08-09",
+  "generatedAt": "2026-08-09",
+  "scope": "Single-venue Sol high Kanto P1 macro for takasaki-city-theatre-main-release-seed.",
+  "outcome": {
+    "id": "takasaki-city-theatre-main-release-seed",
+    "finalClassification": "CONTRADICTION",
+    "officialTotalPositions": 2027,
+    "wheelchairPositions": 5,
+    "expectedNumberedSeatCount": 2022,
+    "calculatedPrintedNumberedSeatCount": 2054,
+    "firstPass": "complete",
+    "secondPass": "complete",
+    "rangeDiff": 0,
+    "firstPassSubtotals": {
+      "firstFloor": 1468,
+      "secondFloor": 480,
+      "sideAreas": 106
+    },
+    "secondPassSubtotals": {
+      "firstFloor": 1468,
+      "secondFloor": 480,
+      "sideAreas": 106
+    },
+    "officialSubtotals": {
+      "firstFloor": 1468,
+      "secondFloor": 448,
+      "sideAreas": 106
+    },
+    "unresolvedIssues": [
+      "The official map prints 480 numbered seats on 2F in both independent passes, while the same map's table states 448; the unexplained 32-seat difference prevents range registration and production promotion."
+    ]
+  },
+  "productionPromotions": 0,
+  "productionBaseline": 56,
+  "productionFinal": 56,
+  "productionSeatBaseline": 74959,
+  "productionSeatFinal": 74959,
+  "coverage": {
+    "kanto": 54,
+    "tokyo": 48,
+    "kanagawa": 3,
+    "chiba": 1,
+    "saitama": 1,
+    "ibaraki": 0,
+    "tochigi": 1,
+    "gunma": 0
+  },
+  "baselineProductionRegression": "zero fingerprint and catalog-entry diff across all 56 baseline production venues",
+  "releaseReady": false
+}

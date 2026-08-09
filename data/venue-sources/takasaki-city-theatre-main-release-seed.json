@@ -8,63 +8,84 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "normal-2027-position-layout-candidate",
+    "name": "通常2,027席配置候補",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "selectionReason": "公式ページと客席図は通常2,027位置（車椅子席5を含む）を示すが、2階の印刷番号集合が公式小計448席と32席矛盾する。",
+    "notIncludedPatterns": [
+      "前迫り使用時1,834席配置（193席撤去）",
+      "花道設営時（60席撤去）",
+      "客席オペレート、仮設スピーカー、張り出し舞台等の個別撤去配置"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
-      "publisher": "高崎芸術劇場",
-      "title": "高崎芸術劇場 公式施設案内",
-      "url": "https://www.takasaki-foundation.or.jp/theatre/",
-      "checkedAt": "2026-08-02"
+      "publisher": "高崎芸術劇",
+      "title": "大劇場 公式施設案内",
+      "url": "https://www.takasaki-foundation.or.jp/theatre/gt.php",
+      "checkedAt": "2026-08-09"
     },
     {
       "id": "official-seat-map",
       "official": true,
       "roles": [
-        "seat-structure"
-      ],
-      "publisher": "高崎芸術劇場 大劇場",
-      "title": "公式座席図・座席案内",
-      "url": "https://www.takasaki-foundation.or.jp/theatre/",
-      "checkedAt": "2026-08-03"
-    },
-    {
-      "id": "official-seat-count",
-      "official": true,
-      "roles": [
+        "seat-structure",
         "seat-count"
       ],
-      "publisher": "高崎芸術劇場 大劇場",
-      "title": "公式施設・座席数案内",
-      "url": "https://www.takasaki-foundation.or.jp/theatre/",
-      "checkedAt": "2026-08-03"
+      "publisher": "高崎芸術劇 大劇場",
+      "title": "大劇場 公式客席図 GT115 ver.2",
+      "url": "https://www.takasaki-foundation.or.jp/theatre/upload/download/GT_seats.pdf",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-technical-overview",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "高崎芸術劇 舞台技術課",
+      "title": "大劇場 概要＆利用の手引き（舞台技術）2026年5月26日版",
+      "url": "https://www.takasaki-foundation.or.jp/theatre/upload/download/gaiyou_gt.zip",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-seat-operation-rules",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "event-layout"
+      ],
+      "publisher": "高崎芸術劇 大劇場",
+      "title": "大劇場PA／照明等 客席オペレートエリア利用規定",
+      "url": "https://www.takasaki-foundation.or.jp/theatre/upload/download/GT_audience_seat_operate_use_rules.pdf",
+      "checkedAt": "2026-08-09"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "Sol独立2パスの矛盾記録のみ。選択可能な番号席rangeは登録しない。",
+  "completenessBasis": "公式図と公式ページは2,027席（1階1,468、2階448、L/R 16、1L/1R 62、2L/2R 28、車椅子5）と明記する。しかし公式図の2階印刷番号は独立2パスとも1-4列が56/55/56/55席、5-9列が52/51/52/51/52席で計480席となる。",
+  "transformation": "公式PDFの各列の明示番号端点と欠番を第1パスと独立第2パスで別々に読み、機械比較でrangeDiff 0を確認。公式小計と整合しないためrange保存を保留。",
   "knownLimitations": [
-    "Closure Pass分類: SOL HANDOFF。公式資料の現行状態をClosure Passで確認し、SOL HANDOFFへ分類。番号rangeは未転記。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "第1パスは印刷番号を1階1,468、2階480、側席106、計2,054番号席と集計した。車椅子席5は非番号の別扱い。",
+    "独立第2パスも全rowの開始、終了、欠番、階別小計に同一の結果を得てrangeDiff 0。",
+    "公式2,027席から車椅子5を除く番号席期待値は2,022だが、印刷番号は2,054で、2階に32席の未解決差がある。",
+    "前迫り、花道、客席オペレート、仮設スピーカー時の撤去席は公式手引きで別配置と明示され、通常配置と混合していない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "mismatched",
     "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+      "CONTRADICTION: two independent official-map passes total 480 printed numbered seats on 2F and 2,054 numbered seats overall, while the same official map and facility page state 448 seats on 2F and imply 2,022 numbered seats overall after excluding five wheelchair positions; the 32-seat difference is unresolved."
     ]
   },
   "ranges": [],
@@ -73,22 +94,22 @@
     "officialSeatStructureSource": "あり",
     "officialSeatCountSource": "あり",
     "completeNumberedSeatMap": "あり",
-    "exactNominalSeatCount": "あり",
+    "exactNominalSeatCount": "矛盾（公式2階448／印刷番号480）",
     "representativeLayout": "一意",
     "fixedSeats": "あり",
-    "movableSeats": "なし",
-    "wheelchair": "不明",
-    "pit": "不明",
-    "areas": "複雑",
-    "processingRoute": "Sol",
-    "classification": "SOL HANDOFF",
-    "mapUrl": "https://www.takasaki-foundation.or.jp/theatre/",
-    "countUrl": "https://www.takasaki-foundation.or.jp/theatre/",
-    "checkedAt": "2026-08-03",
-    "rationale": "公式資料の現行状態をClosure Passで確認し、SOL HANDOFFへ分類。番号rangeは未転記。",
+    "movableSeats": "あり（1階の明示席）",
+    "wheelchair": "あり（5席、非番号）",
+    "pit": "あり（前迫り使用時193席撤去）",
+    "areas": "複数",
+    "processingRoute": "Hold",
+    "classification": "CONTRADICTION",
+    "mapUrl": "https://www.takasaki-foundation.or.jp/theatre/upload/download/GT_seats.pdf",
+    "countUrl": "https://www.takasaki-foundation.or.jp/theatre/gt.php",
+    "checkedAt": "2026-08-09",
+    "rationale": "独立2パスの印刷番号は2階480、全2,054席だが、同じ公式図の表は2階448、公式2,027位置から車椅子5を除く番号席は2,022で32席差。削除番号を推測せずCONTRADICTION。",
     "officialFacilityUrl": "https://www.takasaki-foundation.or.jp/theatre/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "pending"
+    "status": "blocked",
+    "rangeEntry": "blocked-contradiction",
+    "decision": "contradiction-hold"
   }
 }
