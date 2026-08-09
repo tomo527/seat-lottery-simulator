@@ -91,7 +91,7 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 - 2026-08-09 Tokyo macro 3 data checks passed: `venues:build`, `venues:check`, `venues:validate`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report`, `venues:release:coverage`, and `venues:report`; source hold recorded without changing production data. Production remains 56 venues / 74,959 seats.
 - Full application validation passed: `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check`.
-- Final pushed HEAD `6daf8ee` passed `Workers Builds: seat-lottery-simulator` run `https://github.com/tomo527/seat-lottery-simulator/runs/93256523368`; public URL returned HTTP 200. Recheck the same flow after any subsequent HANDOFF-only commit.
+- Macro 3 deployment verification passed: `Workers Builds: seat-lottery-simulator` runs `https://github.com/tomo527/seat-lottery-simulator/runs/93256523368` and `https://github.com/tomo527/seat-lottery-simulator/runs/93256713037` succeeded; the public URL returned HTTP 200. The final HANDOFF-only follow-up must preserve this deployment state.
 - Existing warnings remain limited to Kyocera Dome row fragmentation, inventory duplicate-candidate reporting, and 300/500-venue size projections; no database validation errors.
 - E2E required the approved elevated run because Miniflare writes the user Wrangler registry outside the workspace; the sandbox-only attempt failed with `EPERM` and was not a repository failure.
 
