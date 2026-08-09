@@ -65,7 +65,7 @@ Existing closure holds also include Sendai Sunplaza policy ambiguity, Sapporo hi
 
 ## Deployment verification
 
-The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. The repository uses the established GitHub-to-Cloudflare Workers Builds flow; exact-HEAD public deployment verification remains pending after push.
+The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. The repository uses the established GitHub-to-Cloudflare Workers Builds flow. Before closing a macro, verify that the final pushed HEAD has a successful `Workers Builds: seat-lottery-simulator` check and that the public URL returns HTTP 200.
 
 ## Validation status
 
