@@ -1,0 +1,53 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-top-up-standard-macro-3-2026-08-09",
+  "generatedAt": "2026-08-09",
+  "scope": "Luna high Tokyo top-up STANDARD macro 3. Only kameari-lirio-hall was reviewed.",
+  "baseline": {
+    "head": "cd3dbe184cc9f2aa6d490b7d68baebfc29b738c9",
+    "productionVenues": 56,
+    "productionSeats": 74959,
+    "catalogEntries": 56,
+    "fingerprints": 56
+  },
+  "outcomes": [
+    {
+      "id": "kameari-lirio-hall",
+      "sourceId": "kameari-lirio-hall-standard",
+      "inventoryId": "tokyo-kameari-lirio-hall",
+      "officialSeatCount": 610,
+      "calculatedSeatCount": null,
+      "firstPass": "official current top page, facility page, seat-map landing page, and facility charge PDF reviewed; official material states 610 seats including two wheelchair positions, while current status remains renovation closure",
+      "independentSecondPass": "independent reread of official program/status material confirmed the hall is closed through 2026-08-31 and scheduled to reopen on 2026-09-01; no post-renovation numbered-seat map or current seat breakdown was confirmed",
+      "rangeDiff": null,
+      "finalClassification": "HOLD / SOURCE HOLD",
+      "production": false,
+      "modelHandoff": null,
+      "blocker": "The official current page schedules renovation closure through 2026-08-31 and a 2026-09-01 reopening. The published seat map is not sufficient evidence of the post-renovation current representative pattern; reusing it or fitting ranges to 610 is prohibited. First and independent second range passes remain pending until post-renovation official seat material is published.",
+      "sources": [
+        "https://www.k-mil.gr.jp/",
+        "https://www.k-mil.gr.jp/institution/lirio/index.html",
+        "https://www.k-mil.gr.jp/institution/charge.html",
+        "https://www.k-mil.gr.jp/institution/lirio/pdf/lirio_charge.pdf",
+        "https://www.k-mil.gr.jp/program/index.html"
+      ]
+    }
+  ],
+  "summary": {
+    "productionPromotions": 0,
+    "afterProductionVenues": 56,
+    "afterProductionSeats": 74959,
+    "existingProductionRegression": false,
+    "catalogRegression": false,
+    "fingerprintRegression": false,
+    "remainingTokyoTopUp": {
+      "total": 10,
+      "standard": 0,
+      "complex": 4,
+      "hold": 6,
+      "note": "kameari-lirio-hall is now a concrete source hold; no Tokyo STANDARD candidate remains."
+    },
+    "nextRecommended": "Terra high nissay-theatre first, then Sol high line-cube-shibuya; keep kameari-lirio-hall on post-renovation source hold, kioi-hall closed, and do not start remaining COMPLEX/P2 work.",
+    "releaseReady": false
+  }
+}

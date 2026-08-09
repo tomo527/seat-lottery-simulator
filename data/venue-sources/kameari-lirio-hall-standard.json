@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "kameari-lirio-hall-standard",
+  "name": "かめありリリオホール",
+  "prefecture": "東京都",
+  "city": "葛飾区",
+  "aliases": [
+    "葛飾区亀有文化ホール",
+    "リリオホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "post-renovation-standard-numbered-seats",
+    "name": "改修後通常番号席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式施設案内は客席610席（車椅子席2台分を含む）と示すが、公式トップが2026年8月31日まで休館、2026年9月1日リニューアルオープンと示しているため、改修後の現行代表配置を未確定とした。",
+    "notIncludedPatterns": [
+      "改修前の座席図を改修後の現行配置として扱わない",
+      "前6列の椅子取り外し時442席の可変配置"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-current-status",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "かつしかシンフォニーヒルズ・かめありリリオホール",
+      "url": "https://www.k-mil.gr.jp/",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count",
+        "seat-structure"
+      ],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "リリオホール施設紹介",
+      "url": "https://www.k-mil.gr.jp/institution/lirio/index.html",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-seat-map-landing",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "料金及び各種設備図面（リリオホール座席表）",
+      "url": "https://www.k-mil.gr.jp/institution/charge.html",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-facility-charge",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "リリオホール施設及び付帯設備料金表",
+      "url": "https://www.k-mil.gr.jp/institution/lirio/pdf/lirio_charge.pdf",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-program-status",
+      "official": true,
+      "roles": ["facility"],
+      "publisher": "葛飾区文化施設指定管理者",
+      "title": "公演情報（リリオホール休館表示）",
+      "url": "https://www.k-mil.gr.jp/program/index.html",
+      "checkedAt": "2026-08-09"
+    }
+  ],
+  "registeredScope": "改修後の現行通常配置の番号席を対象とする予定。現時点では公式の改修後座席図と番号集合が未公開・未確認のためrangeを登録しない。公式施設案内の客席610席は記録するが、productionのexpectedSeatCountには採用しない。",
+  "completenessBasis": "第1パスは現行公式トップ、施設紹介、座席表掲載ページ、料金表を確認し、610席（車椅子席2台分を含む）と現行休館状態を確認した。独立第2パスは公式公演情報で2025年11月10日から休館中であることを再確認したが、改修後の現行座席図は確認できなかった。",
+  "transformation": "現行性が確定するまで旧座席図から番号rangeを転記しない。総席数へのrange fitting、車椅子席の番号推測、改修前後のレイアウト混在は行わない。",
+  "knownLimitations": [
+    "公式トップは2026年8月31日まで休館、2026年9月1日リニューアルオープンと示すため、2026-08-09時点では稼働中の現行代表配置を確定できない。",
+    "改修後公式座席図、階・列別内訳、車椅子席の番号対応が公開された後に第1パスと独立第2パスをやり直す。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": "2026-08-09",
+    "method": "official-currentness-review",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "SOURCE HOLD: 2026-08-09時点で公式トップが8月31日までの改修休館を示し、改修後の現行座席図・番号席集合が未確認。",
+      "第1パスと独立第2パスは改修前の図を現行配置として転記せず保留した。2026年9月1日の再開後に公式資料で再実施する。"
+    ]
+  },
+  "ranges": []
+}
