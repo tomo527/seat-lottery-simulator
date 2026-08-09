@@ -1,0 +1,95 @@
+{
+  "reportVersion": 1,
+  "reportId": "kanto-sol-p0-macro-2026-08-09",
+  "generatedAt": "2026-08-09",
+  "scope": "HANDOFF SOL NEXT six-venue Kanto P0 macro; no Tokyo top-up, national-city, or Takasaki work.",
+  "outcomes": [
+    {
+      "id": "yokosuka-arts-theatre-release-seed",
+      "finalClassification": "POLICY HOLD",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "localized-diff-resolved",
+      "secondPass": "policy-hold",
+      "rangeDiff": 0,
+      "unresolvedIssues": [
+        "Rows M and N are resolved as 2-31 and 2-37, but the official fixed-seat subtotal and four separately shown wheelchair positions do not define selectable fixed-seat numbers for one representative pattern."
+      ]
+    },
+    {
+      "id": "mori-no-hall21-main-release-seed",
+      "finalClassification": "SOURCE HOLD",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "blocked-source",
+      "secondPass": "not-possible",
+      "rangeDiff": null,
+      "unresolvedIssues": [
+        "The registered official PDF is a third-floor restricted-view photo guide, not a complete numbered-seat map."
+      ]
+    },
+    {
+      "id": "saitama-arts-theatre-main-release-seed",
+      "finalClassification": "PRODUCTION",
+      "expectedSeatCount": 776,
+      "calculatedSeatCount": 776,
+      "firstPass": "complete",
+      "secondPass": "complete",
+      "rangeDiff": 0,
+      "unresolvedIssues": []
+    },
+    {
+      "id": "saitama-kaikan-main-release-seed",
+      "finalClassification": "CONTRADICTION",
+      "expectedSeatCount": 1315,
+      "calculatedSeatCount": 1337,
+      "firstPass": "complete",
+      "secondPass": "complete",
+      "rangeDiff": 0,
+      "unresolvedIssues": [
+        "Two independent reads total 1,071 printed first-floor numbers, while the official source states 1,049 first-floor seats; the 22-seat difference is not defined."
+      ]
+    },
+    {
+      "id": "omiya-sonic-city-large-release-seed",
+      "finalClassification": "INDEPENDENT REVIEW MISMATCH",
+      "expectedSeatCount": 1677,
+      "calculatedSeatCount": 1681,
+      "firstPass": "complete",
+      "secondPass": "complete",
+      "rangeDiff": 0,
+      "unresolvedIssues": [
+        "Two independent reads total 1,681 printed numbered seats, while the official 1,687-seat total including ten wheelchair positions implies 1,677 selectable numbered seats."
+      ]
+    },
+    {
+      "id": "westa-kawagoe-large-release-seed",
+      "finalClassification": "CONTRADICTION",
+      "expectedSeatCount": 1712,
+      "calculatedSeatCount": 1730,
+      "firstPass": "complete",
+      "secondPass": "complete",
+      "rangeDiff": 0,
+      "unresolvedIssues": [
+        "Two independent reads total 594 printed third-floor numbered seats, while the official normal-layout table states 576."
+      ]
+    }
+  ],
+  "productionPromotions": 1,
+  "productionBaseline": 55,
+  "productionFinal": 56,
+  "productionSeatBaseline": 74183,
+  "productionSeatFinal": 74959,
+  "coverage": {
+    "kanto": 54,
+    "tokyo": 48,
+    "kanagawa": 3,
+    "chiba": 1,
+    "saitama": 1,
+    "ibaraki": 0,
+    "tochigi": 1,
+    "gunma": 0
+  },
+  "existingProductionRegression": "zero fingerprint diff across the 55 baseline production venues",
+  "releaseReady": false
+}

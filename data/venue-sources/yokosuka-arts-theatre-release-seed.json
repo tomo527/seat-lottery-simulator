@@ -55,13 +55,14 @@
       "checkedAt": "2026-08-09"
     }
   ],
-  "registeredScope": "Sol独立レビュー記録のみ。差分解消前の番号席rangeは登録しない。",
-  "completenessBasis": "公式表の固定席1,796席と階別内訳は確定。1・2階平土間席の独立再抽出が公式862席に対して4席差となり、全体range確定を保留した。",
-  "transformation": "公式図の連続番号をエリア別rangeへ抽出したが、車椅子区画に隣接するM〜N列付近で第1・第2パスが4席不一致となったため保存しない。",
+  "registeredScope": "Sol局所再照合記録のみ。固定席と車椅子使用時の対応番号が公式図で一意にならないため番号席rangeは登録しない。",
+  "completenessBasis": "M列は2〜31、N列は2〜37と現行公式図から局所差分を解消した。一方、公式表の平土間固定席862席と、M〜N列脇に別掲された非番号車椅子席4席の通常固定席への戻し方が公式図で定義されない。",
+  "transformation": "M〜N列の印刷番号は独立2パスで再読したが、車椅子区画を固定席へ戻す番号を推測しないためrange化を保留。",
   "knownLimitations": [
     "公式表は固定席1,796席（平土間862、2階バルコニー234、3階196、4階276、5階228）を明示する。",
-    "独立再抽出の平土間番号集合が862席に対して4席差となり、M〜N列の車椅子区画隣接部へ局在する。",
-    "公式図にない番号を削除・追加して席数を合わせない。"
+    "旧4席局所差分は、現行図でM列2〜31、N列2〜37と確定して解消した。",
+    "公式表は固定席1,796席と非番号車椅子席4席を別掲するが、図示された車椅子区画を通常固定席へ戻す番号は明示しない。",
+    "公式図にない固定席番号を追加して平土間862席へ合わせないためPOLICY HOLD。"
   ],
   "verification": {
     "status": "pending",
@@ -70,7 +71,7 @@
     "seatStructure": "pending",
     "seatCount": "matched",
     "unresolvedIssues": [
-      "INDEPENDENT REVIEW MISMATCH: the official flat-floor subtotal is 862 fixed seats, while the two visual range passes differ by four seats around rows M-N adjacent to the four wheelchair spaces."
+      "POLICY HOLD: the M-N local reading is resolved (M 2-31, N 2-37), but the issuer does not define the fixed-seat numbers that correspond to the four separately shown wheelchair positions in the published 862-fixed-seat subtotal."
     ]
   },
   "ranges": [],
@@ -80,21 +81,21 @@
     "officialSeatCountSource": "あり",
     "completeNumberedSeatMap": "あり",
     "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
+    "representativeLayout": "非一意（固定席と車椅子図示の番号対応未定義）",
     "fixedSeats": "あり",
     "movableSeats": "なし",
     "wheelchair": "あり（1階非番号4席）",
     "pit": "あり（舞台側120席減／全体222席減）",
     "areas": "複雑",
-    "processingRoute": "Sol",
-    "classification": "INDEPENDENT REVIEW MISMATCH",
+    "processingRoute": "Hold",
+    "classification": "POLICY HOLD",
     "mapUrl": "https://www.yokosuka-arts.or.jp/rental/download/pdf/L_seat.pdf",
     "countUrl": "https://www.yokosuka-arts.or.jp/rental/download/pdf/L_sisetsu.pdf",
     "checkedAt": "2026-08-09",
-    "rationale": "代表固定配置とピット除外方針は確定したが、平土間862席の独立再抽出がM〜N列付近で4席不一致。",
+    "rationale": "M列2〜31、N列2〜37で旧4席局所差分は解消。公式固定席862席と別掲車椅子4席の固定席番号対応が未定義のため、番号を補わずPOLICY HOLD。",
     "officialFacilityUrl": "https://www.yokosuka-arts.or.jp/rental/download/",
     "status": "blocked",
-    "rangeEntry": "blocked-review-mismatch",
-    "decision": "independent-review-mismatch"
+    "rangeEntry": "blocked-policy-hold",
+    "decision": "policy-hold"
   }
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "saitama-arts-theatre-main-release-seed",
   "name": "彩の国さいたま芸術劇場 大ホール",
   "prefecture": "埼玉県",
@@ -8,12 +8,15 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "id": "normal-776-numbered-seats",
+    "name": "通常776席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 776,
+    "selectionReason": "公式施設ページと現行座席表が通常776席（1階616席、2階160席）を明示するため、全番号席が設置された通常配置を代表パターンとする。",
+    "notIncludedPatterns": [
+      "A〜D列102席を取り外すオーケストラピット使用時674席配置",
+      "Q列30席を取り外して車椅子15台を設置する転換配置"
+    ]
   },
   "sources": [
     {
@@ -35,8 +38,8 @@
       ],
       "publisher": "彩の国さいたま芸術劇場 大ホール",
       "title": "公式座席図・座席案内",
-      "url": "https://www.saf.or.jp/arthall/facilities/main_hall/",
-      "checkedAt": "2026-08-03"
+      "url": "https://www.saf.or.jp/arthall/pdf/dai_hall_05_2026.pdf",
+      "checkedAt": "2026-08-09"
     },
     {
       "id": "official-seat-count",
@@ -47,27 +50,60 @@
       "publisher": "彩の国さいたま芸術劇場 大ホール",
       "title": "公式施設・座席数案内",
       "url": "https://www.saf.or.jp/arthall/facilities/main_hall/",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-09"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "公式通常配置の1階616席と2階160席に印刷された全番号席776席。",
+  "completenessBasis": "第1パスで公式図の全列・番号を転記し、1階616席、2階160席、計776席を確認。独立第2パスで各列端点、Q列、側席、階別小計を再抽出し、range差分ゼロとなった。",
+  "transformation": "同一階・同一列の連続番号をrangeへ圧縮。T列だけは公式図の欠番6、7、18、19をexcludedへ明示した。",
   "knownLimitations": [
-    "Closure Pass分類: SOL HANDOFF。公式大ホール施設ページは確認できたが、多層・密な客席と可動・転換条件の独立照合が必要。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "オーケストラピット使用時はA〜D列102席を取り外すため、代表パターンに含めない。",
+    "Q列30席を取り外して車椅子15台を設置する転換配置は代表パターンに含めない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
-    ]
+    "status": "verified",
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
+    "reviewer": "Codex Sol independent second-pass audit",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": []
   },
-  "ranges": [],
+  "ranges": [
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "A", "from": 7, "to": 24, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "B", "from": 3, "to": 28, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "C", "from": 2, "to": 29, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "D", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "E", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "F", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "G", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "H", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "I", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "J", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "K", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "L", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "M", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "N", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "O", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "P", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "Q", "from": 1, "to": 30, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "LA", "from": 1, "to": 18, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "LB", "from": 4, "to": 15, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "RA", "from": 1, "to": 18, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "RB", "from": 4, "to": 15, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "R", "from": 1, "to": 24, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "S", "from": 1, "to": 24, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "T", "from": 3, "to": 22, "excluded": [6, 7, 18, 19] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "LC", "from": 1, "to": 14, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "LD", "from": 4, "to": 6, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "LY", "from": 7, "to": 16, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "RC", "from": 1, "to": 14, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "RD", "from": 4, "to": 6, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "RY", "from": 7, "to": 16, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "U", "from": 2, "to": 35, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "V", "from": 1, "to": 36, "excluded": [] },
+    { "areaId": "second-floor", "areaLabel": "2階", "rowLabel": "W", "from": 1, "to": 36, "excluded": [] }
+  ],
   "preflight": {
     "officialFacilityPage": "あり",
     "officialSeatStructureSource": "あり",
@@ -77,18 +113,18 @@
     "representativeLayout": "一意",
     "fixedSeats": "あり",
     "movableSeats": "なし",
-    "wheelchair": "不明",
-    "pit": "不明",
+    "wheelchair": "あり（Q列30席を取り外し15台設置可）",
+    "pit": "あり（A〜D列102席を取り外し）",
     "areas": "複雑",
     "processingRoute": "Sol",
-    "classification": "SOL HANDOFF",
-    "mapUrl": "https://www.saf.or.jp/arthall/facilities/main_hall/",
+    "classification": "PRODUCTION",
+    "mapUrl": "https://www.saf.or.jp/arthall/pdf/dai_hall_05_2026.pdf",
     "countUrl": "https://www.saf.or.jp/arthall/facilities/main_hall/",
-    "checkedAt": "2026-08-03",
-    "rationale": "公式大ホール施設ページは確認できたが、多層・密な客席と可動・転換条件の独立照合が必要。",
+    "checkedAt": "2026-08-09",
+    "rationale": "通常776席の全番号を独立2パスで照合し、1階616席、2階160席、range差分ゼロ。ピット102席とQ列車椅子転換は別配置として除外。",
     "officialFacilityUrl": "https://www.saf.or.jp/arthall/",
     "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "pending"
+    "rangeEntry": "complete",
+    "decision": "production"
   }
 }

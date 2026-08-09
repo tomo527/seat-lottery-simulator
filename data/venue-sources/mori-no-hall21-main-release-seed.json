@@ -8,12 +8,14 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "normal-1955-seat-layout-candidate",
+    "name": "通常1,955席配置候補",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "selectionReason": "公式施設ページが通常1,955席を一意に示すが、登録済み資料だけでは全番号構造を確定できない。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時1,790席配置"
+    ]
   },
   "sources": [
     {
@@ -36,7 +38,7 @@
       "publisher": "森のホール21 大ホール",
       "title": "公式座席図・座席案内",
       "url": "https://www.morinohall21.com/hall21/file/hall_l_seatingchart02.pdf",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-09"
     },
     {
       "id": "official-seat-count",
@@ -47,26 +49,25 @@
       "publisher": "森のホール21 大ホール",
       "title": "公式施設・座席数案内",
       "url": "https://www.morinohall21.com/hall21/hall_l.html",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-09"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "Sol公式資料確認記録のみ。選択可能な番号席rangeは登録しない。",
+  "completenessBasis": "公式ページは通常1,955席と階別内訳を明示するが、source登録済みPDFは3階見切れ席の見え方資料であり、全階の完全番号図ではない。",
+  "transformation": "全階の番号集合を独立2パスで読める公式資料がsource内にないためrange転記を行わない。",
   "knownLimitations": [
-    "Regional Production Cohort 1 official review: SOL HANDOFF.",
-    "The official count explicitly changes for orchestra-pit use; the normal representative layout, pit exclusions, and dense multi-floor ranges require Sol comparison.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "公式ページは通常1,955席（1階1,280、2階222、3階453）とピット使用時1,790席を明示する。",
+    "登録済みseat-map PDFは3階の見切れ席写真と一部番号を示す資料で、1〜3階の完全番号図ではない。",
+    "SOURCE HOLD: 完全番号図がsourceに追加されるまでrange、fingerprint、catalog、runtime detailを作成しない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
     "seatStructure": "pending",
-    "seatCount": "pending",
+    "seatCount": "matched",
     "unresolvedIssues": [
-      "The official count explicitly changes for orchestra-pit use; the normal representative layout, pit exclusions, and dense multi-floor ranges require Sol comparison.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
+      "SOURCE HOLD: the registered official PDF is a third-floor restricted-view guide, not a complete numbered map for all 1,955 normal seats."
     ]
   },
   "ranges": [],
@@ -74,23 +75,23 @@
     "officialFacilityPage": "あり",
     "officialSeatStructureSource": "あり",
     "officialSeatCountSource": "あり",
-    "completeNumberedSeatMap": "あり",
+    "completeNumberedSeatMap": "なし（登録PDFは3階見切れ席資料）",
     "exactNominalSeatCount": "あり",
     "representativeLayout": "一意",
     "fixedSeats": "あり",
     "movableSeats": "なし",
-    "wheelchair": "不明",
-    "pit": "なし",
+    "wheelchair": "あり（18席対応）",
+    "pit": "あり（通常1,955席から1,790席へ165席減）",
     "areas": "複数",
-    "processingRoute": "Sol",
-    "classification": "SOL HANDOFF",
+    "processingRoute": "Hold",
+    "classification": "SOURCE HOLD",
     "mapUrl": "https://www.morinohall21.com/hall21/file/hall_l_seatingchart02.pdf",
     "countUrl": "https://www.morinohall21.com/hall21/hall_l.html",
-    "checkedAt": "2026-08-03",
-    "rationale": "The official count explicitly changes for orchestra-pit use; the normal representative layout, pit exclusions, and dense multi-floor ranges require Sol comparison.",
+    "checkedAt": "2026-08-09",
+    "rationale": "公式席数は確定したが、登録済みPDFは3階見切れ席資料で全階の完全番号図ではなく、独立2パスを完了できない。",
     "officialFacilityUrl": "https://www.morinohall21.com/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "handoff"
+    "status": "blocked",
+    "rangeEntry": "blocked-source-hold",
+    "decision": "source-hold"
   }
 }

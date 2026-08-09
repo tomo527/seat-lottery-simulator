@@ -16,18 +16,18 @@
       "officialDisplayName": "彩の国さいたま芸術劇場 大ホール",
       "prefecture": "埼玉県",
       "city": "さいたま市",
-      "capacity": null,
+      "capacity": 776,
       "category": "hall",
       "officialFacilityUrl": "https://www.saf.or.jp/arthall/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式通常776番号席を独立2パスで照合し、1階616・2階160・range差分ゼロ。",
       "priority": "A",
       "venueSourceId": "saitama-arts-theatre-main-release-seed",
-      "researchStatus": "draft-created",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-02",
       "aliases": [],
-      "researchLastCheckedAt": "2026-08-03",
+      "researchLastCheckedAt": "2026-08-09",
       "blockingReason": null
     },
     {
@@ -42,14 +42,14 @@
       "officialFacilityUrl": "https://www.saf.or.jp/saitama/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "eligibilityReason": "CONTRADICTION: 公式図の印刷番号1階1,071に対し、同図表は1階1,049（車椅子6席）で22席差。",
       "priority": "A",
       "venueSourceId": "saitama-kaikan-main-release-seed",
-      "researchStatus": "draft-created",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
       "aliases": [],
-      "researchLastCheckedAt": "2026-08-03",
-      "blockingReason": null
+      "researchLastCheckedAt": "2026-08-09",
+      "blockingReason": "CONTRADICTION: official 1F printed numbering and the official 1F subtotal differ by 22 seats."
     },
     {
       "inventoryId": "omiya-sonic-city-large",
@@ -63,14 +63,14 @@
       "officialFacilityUrl": "https://www.sonic-city.or.jp/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "eligibilityReason": "INDEPENDENT REVIEW MISMATCH: 1階印刷番号1,681に対し公式番号席期待1,677で4席差。",
       "priority": "A",
       "venueSourceId": "omiya-sonic-city-large-release-seed",
-      "researchStatus": "draft-created",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
       "aliases": [],
-      "researchLastCheckedAt": "2026-08-03",
-      "blockingReason": null
+      "researchLastCheckedAt": "2026-08-09",
+      "blockingReason": "INDEPENDENT REVIEW MISMATCH: four unexplained first-floor numbered seats remain after accounting for ten wheelchair positions."
     },
     {
       "inventoryId": "kawaguchi-lilia-main",
@@ -84,7 +84,7 @@
       "officialFacilityUrl": "https://www.lilia.or.jp/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
+      "eligibilityReason": "CONTRADICTION: 通常図3階の印刷番号594に対し公式内訳576で18席差。",
       "priority": "A",
       "venueSourceId": "kawaguchi-lilia-main-release-seed",
       "researchStatus": "blocked",
@@ -129,11 +129,11 @@
       "eligibilityReason": "Release Seed preflight: eligibility remains unconfirmed until official numbered-seat structure and capacity are reconciled.",
       "priority": "B",
       "venueSourceId": "westa-kawagoe-large-release-seed",
-      "researchStatus": "draft-created",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-02",
       "aliases": [],
-      "researchLastCheckedAt": "2026-08-03",
-      "blockingReason": null
+      "researchLastCheckedAt": "2026-08-09",
+      "blockingReason": "CONTRADICTION: the normal map prints 594 third-floor numbered seats while the official table states 576."
     }
   ]
 }

@@ -70,15 +70,15 @@
     },
     {
       "inventoryId": "muza-kawasaki-symphony-hall",
-      "classification": "TERRA HANDOFF",
-      "rationale": "The current official block map has dense curved blocks and an official total of 1,997; exact row ranges and area aggregation require Terra transcription.",
+      "classification": "SOURCE HOLD",
+      "rationale": "The official sources establish 1,987 numbered general seats plus 10 separate wheelchair positions, but do not publish a lossless row/number range inventory.",
       "preflightComplete": true,
-      "processingRoute": "Terra"
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "yokosuka-arts-theatre",
-      "classification": "INDEPENDENT REVIEW MISMATCH",
-      "rationale": "平土間公式862席に対しM〜N列付近で独立再抽出が4席不一致。",
+      "classification": "POLICY HOLD",
+      "rationale": "M列2〜31、N列2〜37で旧局所差分は解消。固定席862席と車椅子4席の番号対応が公式資料で未定義。",
       "preflightComplete": true,
       "processingRoute": "Sol"
     },
@@ -105,8 +105,8 @@
     },
     {
       "inventoryId": "mori-no-hall21-main",
-      "classification": "SOL HANDOFF",
-      "rationale": "The official count explicitly changes for orchestra-pit use; the normal representative layout, pit exclusions, and dense multi-floor ranges require Sol comparison.",
+      "classification": "SOURCE HOLD",
+      "rationale": "The registered official PDF is a third-floor restricted-view guide, not a complete numbered map for all 1,955 normal seats.",
       "preflightComplete": true,
       "processingRoute": "Sol"
     },
@@ -140,22 +140,22 @@
     },
     {
       "inventoryId": "saitama-arts-theatre-main",
-      "classification": "SOL HANDOFF",
-      "rationale": "公式大ホール施設ページは確認できたが、多層・密な客席と可動・転換条件の独立照合が必要。",
+      "classification": "PRODUCTION",
+      "rationale": "通常776番号席を独立2パスで照合し、1階616・2階160・range差分ゼロ。",
       "preflightComplete": true,
       "processingRoute": "Sol"
     },
     {
       "inventoryId": "saitama-kaikan-main",
-      "classification": "SOL HANDOFF",
-      "rationale": "The official map is dense and the official count changes by 115 seats with orchestra-pit use; exact pit removal and wheelchair treatment require Sol.",
+      "classification": "CONTRADICTION",
+      "rationale": "The official printed numbering totals 1F 1,071 while the same official document states 1F 1,049 including six wheelchair positions.",
       "preflightComplete": true,
       "processingRoute": "Sol"
     },
     {
       "inventoryId": "omiya-sonic-city-large",
-      "classification": "SOL HANDOFF",
-      "rationale": "The official normal map spans four floors and the facility has an orchestra pit and wheelchair seats; exact pit/conversion semantics must be settled before range entry.",
+      "classification": "INDEPENDENT REVIEW MISMATCH",
+      "rationale": "The 1F printed numbering totals 1,681 versus an official numbered-seat expectation of 1,677 after ten wheelchair positions.",
       "preflightComplete": true,
       "processingRoute": "Sol"
     },
@@ -168,15 +168,15 @@
     },
     {
       "inventoryId": "tokorozawa-muse-ark",
-      "classification": "TERRA HANDOFF",
-      "rationale": "The official map has dense multi-floor blocks, PA seats, and 13 movable seats that can convert to six wheelchair positions; exact normal-layout ranges require Terra.",
+      "classification": "POLICY HOLD",
+      "rationale": "The official maximum-use pattern has 2,002 seats, while 13 movable first-floor seats can convert to six wheelchair positions; the issuer does not define one fixed representative selectable configuration.",
       "preflightComplete": true,
-      "processingRoute": "Terra"
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "westa-kawagoe-large",
-      "classification": "SOL HANDOFF",
-      "rationale": "The official source presents normal, orchestra-pit, temporary-hanamichi, and parent/child alternatives, plus wheelchair treatment; Sol must isolate one representative configuration.",
+      "classification": "CONTRADICTION",
+      "rationale": "The normal map prints 594 numbered seats on 3F while the official normal-layout table states 576.",
       "preflightComplete": true,
       "processingRoute": "Sol"
     },
