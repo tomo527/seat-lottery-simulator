@@ -4,7 +4,7 @@ Updated: 2026-08-09 (Asia/Tokyo)
 
 ## Current state
 
-- Current HEAD before this macro checkpoint: `a082552` (`docs: establish repository handoff workflow`); branch `main`.
+- Current HEAD at the final validation checkpoint: `d0deb31` (`feat(venues): expand Kanto release coverage`); branch `main`; checkpoint is pushed to `origin/main` and the working tree is clean.
 - Production: **52 venues / 68,652 seats**. Generated sources, catalog, runtime details, and production fingerprints are synchronized at 52 each.
 - Coverage: Tokyo **48**, Kanagawa **1**, Chiba **0**, Saitama **0**, Ibaraki **0**, Tochigi **1**, Gunma **0**; Osaka **2**. Kanto total: **50**.
 - Tokyo production count is taken from `data/venue-sources/` and generated production artifacts, not from the old README summary.
@@ -38,6 +38,12 @@ Existing closure holds include source-incomplete Chiba/Ibaraki/Tochigi/Gunma can
 ## Deployment verification
 
 The repository identifies the official URL as `https://seat-lottery-simulator.studiotomo.workers.dev/`; prior reachability was verified, but the public UI does not expose a commit SHA. Current exact-HEAD deployment verification is **pending**.
+
+## Validation status
+
+- 2026-08-09: `venues:inventory:report`, `venues:release:coverage`, `venues:build`, `venues:check`, `venues:validate`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check` passed.
+- Existing validation warnings remain: Kyocera Dome row fragmentation and 300/500-venue size projections. No validation errors.
+- E2E required the approved elevated run because Miniflare must write the user Wrangler registry outside the workspace; the sandbox-only attempt failed with `EPERM` and was not a repository failure.
 
 ## Exact next action
 
