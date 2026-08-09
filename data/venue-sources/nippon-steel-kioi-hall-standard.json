@@ -12,36 +12,85 @@
     "name": "改修後通常配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "公式資料が示す通常の番号付き固定席配置を候補とし、全rangeと転換席の独立照合完了後に確定する。",
+    "selectionReason": "公式施設案内は800席（1階522・2階278）を示し、公式座席図は通常配置候補を示す。ただし公式休館告知により改修後の現行代表配置は未確定。",
     "notIncludedPatterns": []
   },
   "sources": [
     {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "日本製鉄紀尾井ホール",
+      "title": "日本製鉄紀尾井ホール 座席表",
+      "url": "https://nipponsteel-kioihall.jp/cms/wp-content/themes/kioihall/file/seatingchart/pdf-hall_202510.pdf",
+      "checkedAt": "2026-08-09"
+    },
+    {
       "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "日本製鉄紀尾井ホール",
+      "title": "日本製鉄紀尾井ホール 施設案内",
+      "url": "https://nipponsteel-kioihall.jp/facilities/hall/",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-closure-notice",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "公益財団法人日本製鉄文化財団",
+      "title": "設備更新・修繕工事に伴う休館と事務所移転のお知らせ",
+      "url": "https://nipponsteel-kioihall.jp/news/info_20250708/",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-reopening-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "日本製鉄紀尾井ホール",
+      "title": "再開場特設ページ",
+      "url": "https://nipponsteel-kioihall.jp/reopening/",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "legacy-official-domain",
       "official": true,
       "roles": [
         "facility"
       ],
       "publisher": "日本製鉄紀尾井ホール",
-      "title": "日本製鉄紀尾井ホール〔日本製鉄紀尾井ホール〕 公式施設案内",
+      "title": "日本製鉄紀尾井ホール 旧公式ドメイン",
       "url": "https://nipponsteel-kioihall.jp",
-      "checkedAt": "2026-07-27"
+      "checkedAt": "2026-08-09"
     }
   ],
-  "registeredScope": "番号付き固定席の通常配置を調査中。",
-  "completenessBasis": "公式施設案内を確認済み。全番号を示す座席資料との照合は未完了。",
-  "transformation": "公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
+  "registeredScope": "改修後に公式が再提示する番号付き固定席の通常配置。",
+  "completenessBasis": "現行公式施設案内・座席図・休館告知・再開場特設ページを確認した。改修後の現行seat mapが出るまで代表パターンを固定しない。",
+  "transformation": "改修後の公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
   "knownLimitations": [
-    "未解決事項が残るためproduction生成対象外。"
+    "2026年8月時点で改修休館中のため、2025年10月版座席図をproductionの現行根拠にしない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "matched",
     "unresolvedIssues": [
-      "2026年12月まで設備工事に伴う休館中である。2027年1月以降の公式再開と改修後座席表の不変を確認するまでproduction化しない。"
+      "第1パスと独立第2パスは公式施設案内の800席（1階522・2階278）と公式座席図の構造を確認した。",
+      "公式休館告知は2025年8月1日から2026年12月末まで休館と明記し、再開場特設ページも2027年1月の再開場記念公演を案内している。改修後の現行座席図と再開を確認するまでproduction化しない。"
     ]
   },
   "ranges": []

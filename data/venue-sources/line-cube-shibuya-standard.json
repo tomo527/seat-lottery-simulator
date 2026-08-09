@@ -31,7 +31,7 @@
       "publisher": "LINE CUBE SHIBUYA",
       "title": "座席表",
       "url": "https://linecubeshibuya.com/cms/wp-content/uploads/2021/10/seating_chart_n.pdf",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-09"
     },
     {
       "id": "official-facility-guide",
@@ -44,25 +44,25 @@
       "publisher": "LINE CUBE SHIBUYA",
       "title": "施設概要",
       "url": "https://linecubeshibuya.com/facility",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-09"
     }
   ],
   "registeredScope": "通常全席配置の番号付き座席1956席を予定。",
-  "completenessBasis": "公式座席表と階別総数を確認済み。3階までの全rangeを独立照合する。",
-  "transformation": "公式座席表のarea・列・番号を明示rangeへ転記する予定。",
+  "completenessBasis": "現行公式座席表と施設案内の1,956席（1階1,180・2階424・3階352）を確認した。通常席・多目的鑑賞席・車椅子転換席の包含関係を固定してから全rangeを独立抽出する。",
+  "transformation": "1階・2階・3階をareaに分け、公式図に印刷された連続番号だけを明示rangeへ転記する。",
   "knownLimitations": [
     "オーケストラピット利用時は前方126席を使用しない。",
-    "車椅子利用時は通常席26席の扱いが変わる。"
+    "公式資料は多目的鑑賞席4席を1階1,180席に含め、車椅子スペース12台分と1階26席使用を別記している。通常抽選集合への包含関係を推測しない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "多目的鑑賞4席と車椅子転換26席を通常抽選集合へ含める方針が未解決。",
-      "公式座席表の1,956席内訳と転換時に外れる26番号を施設資料で確認する。"
+      "第1パスと独立第2パスは現行公式座席表の1階1,180・2階424・3階352と総数1,956を確認した。",
+      "多目的鑑賞4席、車椅子スペース12台分、車椅子使用時に変わる1階26席の番号包含関係が公式資料だけで一意に定義されていない。Solで固定代表配置を判定する。"
     ]
   },
   "ranges": []

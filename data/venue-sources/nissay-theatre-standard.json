@@ -14,7 +14,7 @@
     "name": "通常番号席配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "公式座席表の1階・グランドサークル階・2階の番号席を代表パターン候補とする。",
+    "selectionReason": "公式座席表の1階・グランドサークル階・2階の番号席を代表パターン候補とする。公式施設資料は現在1,334席と示す。",
     "notIncludedPatterns": [
       "車椅子スペース"
     ]
@@ -29,7 +29,7 @@
       "publisher": "日生劇場",
       "title": "日生劇場座席表",
       "url": "https://www.nissaytheatre.or.jp/wptest/wp-content/themes/nissay/assets/pdf/seat/seat.pdf",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-09"
     },
     {
       "id": "official-seat-guide",
@@ -40,24 +40,36 @@
       "publisher": "日生劇場",
       "title": "座席表",
       "url": "https://www.nissaytheatre.or.jp/seat/",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-theatre-overview",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "日生劇場",
+      "title": "建築物としての日生劇場",
+      "url": "https://www.nissaytheatre.or.jp/theater/",
+      "checkedAt": "2026-08-09"
     }
   ],
   "registeredScope": "公式座席表の番号付き固定席を予定。",
-  "completenessBasis": "公式座席表で全番号を確認可能。番号席総数と車椅子スペースの切り分けを独立計数中。",
-  "transformation": "1階・グランドサークル階・2階をareaに分けてrangeへ転記する予定。",
+  "completenessBasis": "公式座席表と公式施設資料の1,334席を確認した。1階・グランドサークル階・2階の曲面ボックスを含む全番号のlossless range化はTerraで独立抽出する。",
+  "transformation": "1階・グランドサークル階・2階をareaに分け、公式図に印刷された連続番号だけをrangeへ転記する。",
   "knownLimitations": [
-    "公式ページ本文に番号席総数の明記がなく、独立した全数計数が必要。"
+    "公式図は複数階と左右曲面ボックスを含む高密度配置で、Lunaの2パスでは全row・欠番・areaをlosslessに確定できない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "1階・2階の全番号転記と公式総席数の独立照合が未完了。",
-      "左右ボックス席を含む全rangeを公式座席図から再抽出する。"
+      "第1パスと独立第2パスは現行公式座席図の1階・グランドサークル階・2階と左右曲面ボックスの構造を確認したが、全row・欠番・areaのlossless range転記は未完了。",
+      "公式施設資料の現在1,334席と計算席数を一致させる全range抽出をTerraで実施する。総席数に合わせた補正は禁止。"
     ]
   },
   "ranges": []

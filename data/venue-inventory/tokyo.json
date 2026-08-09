@@ -501,15 +501,15 @@
       "city": "千代田区",
       "capacity": 800,
       "category": "hall",
-      "officialFacilityUrl": "https://nipponsteel-kioihall.jp",
+      "officialFacilityUrl": "https://nipponsteel-kioihall.jp/facilities/hall/",
       "operationalStatus": "renovation",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "公式施設案内は800席（1階522・2階278）を示すが、公式休館告知により2026年8月時点は改修休館中。改修後の現行座席図と再開確認までproduction化しない。",
       "priority": "B",
       "venueSourceId": "nippon-steel-kioi-hall-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-27",
-      "blockingReason": "2026年12月まで設備工事に伴う休館中である。2027年1月以降の公式再開と改修後座席表の不変を確認するまでproduction化しない。"
+      "lastCheckedAt": "2026-08-09",
+      "blockingReason": "POLICY/SOURCE HOLD: 公式休館告知は2025年8月1日から2026年12月末まで休館と明記し、再開場特設ページは2027年1月の再開場記念公演を案内する。2025年10月版座席図を改修後の現行配置として扱わない。"
     },
     {
       "inventoryId": "tokyo-kioi-small-hall",
@@ -1030,11 +1030,12 @@
       "officialFacilityUrl": "https://www.nissaytheatre.or.jp/seat/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibilityReason": "現行公式施設資料は1,334席、公式座席図は1階・グランドサークル階・2階と左右曲面ボックスを示す。高密度全range転記はTerraで完了させるまでproduction化しない。",
       "priority": "A",
       "venueSourceId": "nissay-theatre-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-09",
+      "blockingReason": "TERRA HANDOFF: 第1・独立第2パスで現行公式座席図の構造と公式1,334席を確認したが、左右曲面ボックスを含む全row・欠番・areaのlossless range転記はLunaの範囲を超える。総席数に合わせた補正は禁止。",
       "discoveryUrlRaw": "http://www.nissaytheatre.or.jp/"
     },
     {
@@ -14495,12 +14496,12 @@
       "officialFacilityUrl": "https://linecubeshibuya.com/facility",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibilityReason": "現行公式資料は通常1,956席（1階1,180・2階424・3階352）を示すが、多目的鑑賞席4席と車椅子転換の1階26席を含む固定代表集合が未確定。",
       "priority": "A",
       "venueSourceId": "line-cube-shibuya-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27",
-      "blockingReason": "多目的鑑賞4席と車椅子転換26席を通常抽選集合へ含める方針が未解決。"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-09",
+      "blockingReason": "SOL HANDOFF / POLICY HOLD: 第1・独立第2パスで公式1,956席の階別内訳を確認したが、多目的鑑賞4席、車椅子スペース12台分、車椅子使用時の1階26席の番号包含関係が一意でない。総席数に合わせた除外は禁止。"
     },
     {
       "inventoryId": "tokyo-official-0740",

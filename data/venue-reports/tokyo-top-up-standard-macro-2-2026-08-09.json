@@ -1,0 +1,92 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-top-up-standard-macro-2-2026-08-09",
+  "generatedAt": "2026-08-09",
+  "scope": "Luna high Tokyo top-up STANDARD macro 2. Only nissay-theatre, line-cube-shibuya, and kioi-hall were reviewed.",
+  "baseline": {
+    "head": "a66c8dd817f22df57642088229d21870b9ae7076",
+    "productionVenues": 56,
+    "productionSeats": 74959,
+    "catalogEntries": 56,
+    "fingerprints": 56
+  },
+  "outcomes": [
+    {
+      "id": "nissay-theatre",
+      "sourceId": "nissay-theatre-standard",
+      "inventoryId": "tokyo-nissay-theatre",
+      "officialSeatCount": 1334,
+      "calculatedSeatCount": null,
+      "firstPass": "official current seat map and official theatre overview reviewed; dense 1F, G.C., 2F, and curved box areas require lossless range transcription",
+      "independentSecondPass": "independent reread confirmed the same multi-area structure and official 1,334-seat count; no complete row/omission/area extraction was promoted",
+      "rangeDiff": null,
+      "finalClassification": "TERRA HANDOFF",
+      "production": false,
+      "modelHandoff": "Terra",
+      "blocker": "The official map is a high-density multi-area layout. Exact numbered ranges, omissions, and area boundaries for the curved box seats were not losslessly completed at Luna quality; fitting ranges to 1,334 is prohibited.",
+      "sources": [
+        "https://www.nissaytheatre.or.jp/seat/",
+        "https://www.nissaytheatre.or.jp/wptest/wp-content/themes/nissay/assets/pdf/seat/seat.pdf",
+        "https://www.nissaytheatre.or.jp/theater/"
+      ]
+    },
+    {
+      "id": "line-cube-shibuya",
+      "sourceId": "line-cube-shibuya-standard",
+      "inventoryId": "tokyo-line-cube-shibuya",
+      "officialSeatCount": 1956,
+      "officialFloorCounts": {
+        "1F": 1180,
+        "2F": 424,
+        "3F": 352
+      },
+      "calculatedSeatCount": null,
+      "firstPass": "official current three-page seat map and facility guide reviewed; normal total and floor subtotals match",
+      "independentSecondPass": "independent reread confirmed 1,956 total, 1F 1,180, 2F 424, 3F 352, plus 4 multipurpose seats and 12 wheelchair spaces/26 first-floor seats used",
+      "rangeDiff": null,
+      "finalClassification": "POLICY HOLD",
+      "production": false,
+      "modelHandoff": "Sol",
+      "blocker": "Official material does not define one fixed selectable numbered-seat set for the multipurpose 4 seats and wheelchair conversion of 26 first-floor seats. Do not exclude or include numbers only to fit 1,956.",
+      "sources": [
+        "https://linecubeshibuya.com/facility",
+        "https://linecubeshibuya.com/cms/wp-content/uploads/2021/10/seating_chart_n.pdf"
+      ]
+    },
+    {
+      "id": "kioi-hall",
+      "sourceId": "nippon-steel-kioi-hall-standard",
+      "inventoryId": "tokyo-official-0025",
+      "officialSeatCount": 800,
+      "officialFloorCounts": {
+        "1F": 522,
+        "2F": 278
+      },
+      "calculatedSeatCount": null,
+      "firstPass": "current official facility, seat chart, closure notice, and reopening page reviewed",
+      "independentSecondPass": "independent reread confirmed 800 seats and 2025-10 seat chart, but current official closure/reopening state prevents treating that chart as the post-renovation representative pattern",
+      "rangeDiff": null,
+      "finalClassification": "POLICY HOLD",
+      "production": false,
+      "modelHandoff": null,
+      "blocker": "Official notice states closure from 2025-08-01 through the end of 2026, and the reopening page schedules reopening commemorative performances from January 2027. Wait for post-renovation current seat material; do not escalate or reuse the pre-renovation map.",
+      "sources": [
+        "https://nipponsteel-kioihall.jp/facilities/hall/",
+        "https://nipponsteel-kioihall.jp/facilities/seatingchart/",
+        "https://nipponsteel-kioihall.jp/cms/wp-content/themes/kioihall/file/seatingchart/pdf-hall_202510.pdf",
+        "https://nipponsteel-kioihall.jp/news/info_20250708/",
+        "https://nipponsteel-kioihall.jp/reopening/"
+      ]
+    }
+  ],
+  "summary": {
+    "productionPromotions": 0,
+    "afterProductionVenues": 56,
+    "afterProductionSeats": 74959,
+    "existingProductionRegression": false,
+    "catalogRegression": false,
+    "fingerprintRegression": false,
+    "nextRecommended": "Terra high nissay-theatre and Sol high line-cube-shibuya escalation; keep kioi-hall closed until post-renovation official material, then consider Luna high STANDARD macro 3 for kameari-lirio-hall.",
+    "releaseReady": false
+  }
+}
