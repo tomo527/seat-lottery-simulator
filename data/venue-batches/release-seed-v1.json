@@ -56,10 +56,10 @@
   "complexityAssessments": [
     {
       "inventoryId": "kanagawa-kenmin-hall-main",
-      "classification": "SOL HANDOFF",
-      "rationale": "公式大ホール施設ページは確認できたが、通常配置の完全な番号図と転換・車椅子条件の独立照合を要する。",
+      "classification": "SOURCE HOLD",
+      "rationale": "公式席数は明示されるが公開番号図が低解像度・マーカー重畳で独立全番号照合不能。",
       "preflightComplete": true,
-      "processingRoute": "Sol"
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "yokohama-minatomirai-hall-main",
@@ -77,29 +77,29 @@
     },
     {
       "inventoryId": "yokosuka-arts-theatre",
-      "classification": "SOL HANDOFF",
-      "rationale": "公式座席図PDFと施設資料PDFを確認。大劇場のピット・転換条件を含むため高度照合が必要。",
+      "classification": "INDEPENDENT REVIEW MISMATCH",
+      "rationale": "平土間公式862席に対しM〜N列付近で独立再抽出が4席不一致。",
       "preflightComplete": true,
       "processingRoute": "Sol"
     },
     {
       "inventoryId": "culttz-kawasaki-hall",
-      "classification": "SOL HANDOFF",
-      "rationale": "The former seat URL was stale; the current official seating page is live and identifies a 2,013-seat hall with orchestra pit, parent/child seats, and wheelchair seats. Exact numbered exclusions require Sol.",
+      "classification": "PRODUCTION",
+      "rationale": "最大配置の番号席1,995席を非番号車いす席18席と分離し、独立2パス差分ゼロ確認。",
       "preflightComplete": true,
       "processingRoute": "Sol"
     },
     {
       "inventoryId": "sagamihara-green-hall-main",
-      "classification": "STANDARD",
-      "rationale": "公式案内で大ホール客席数1,790席と座席表導線を確認。通常配置の番号集合を転記可能。",
+      "classification": "PRODUCTION",
+      "rationale": "公式1階13列の20番号欠番を車椅子スペースとして解決し、番号席1,778席を独立2パス差分ゼロ確認。",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Sol"
     },
     {
       "inventoryId": "ichikawa-culture-hall-main",
-      "classification": "SOL HANDOFF",
-      "rationale": "The official page identifies movable seats and wheelchair conversion positions in 1F, plus an orchestra pit; the selectable-seat inclusion relationship must be resolved before ranges are entered.",
+      "classification": "PRODUCTION",
+      "rationale": "車椅子転換位置を一般席とする1,758席配置を独立2パス差分ゼロ確認。",
       "preflightComplete": true,
       "processingRoute": "Sol"
     },

@@ -8,12 +8,14 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "fixed-2433-seat-layout-candidate",
+    "name": "固定2,433席配置候補",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "selectionReason": "公式施設ページは固定席2,433席（1階1,509・2階304・3階620）、車椅子席6席、立見50人を別に示すが、公開座席図はビューポイントを重畳した低解像度GIFである。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時の1階190席減配置"
+    ]
   },
   "sources": [
     {
@@ -25,7 +27,7 @@
       "publisher": "神奈川県民ホール",
       "title": "神奈川県民ホール 公式施設案内",
       "url": "https://www.kanagawa-kenminhall.com/about/mainhall",
-      "checkedAt": "2026-08-02"
+      "checkedAt": "2026-08-09"
     },
     {
       "id": "official-seat-map",
@@ -36,7 +38,7 @@
       "publisher": "神奈川県民ホール 大ホール",
       "title": "公式座席図・座席案内",
       "url": "https://www.kanagawa-kenminhall.com/about/mainhall",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-09"
     },
     {
       "id": "official-seat-count",
@@ -47,24 +49,25 @@
       "publisher": "神奈川県民ホール 大ホール",
       "title": "公式施設・座席数案内",
       "url": "https://www.kanagawa-kenminhall.com/about/mainhall",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-09"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "公式資料再確認記録のみ。選択可能な番号席rangeは登録しない。",
+  "completenessBasis": "公式施設ページの階別席数と転換条件は確認済みだが、公開中の座席図から全番号集合を独立に2回抽出できない。",
+  "transformation": "低解像度かつビューポイント重畳の公式GIFしか確認できないためrange転記を保留。",
   "knownLimitations": [
-    "Closure Pass分類: SOL HANDOFF。公式大ホール施設ページは確認できたが、通常配置の完全な番号図と転換・車椅子条件の独立照合を要する。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "公式施設ページは固定席2,433席、車椅子席6席、立見50人、ピット使用時190席減を明示する。",
+    "公開座席図は320px級のビューポイント重畳GIFで、複数箇所の番号が隠れ、独立した全番号照合に耐えない。",
+    "完全な公式番号図または発行者提供の座席一覧が公開されるまでSOURCE HOLD。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
     "seatStructure": "pending",
-    "seatCount": "pending",
+    "seatCount": "matched",
     "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+      "SOURCE HOLD: the official capacity and conversion rules are explicit, but the only public numbered diagram is a low-resolution viewpoint GIF with overlaid markers that obscure seat numbers."
     ]
   },
   "ranges": [],
@@ -72,23 +75,23 @@
     "officialFacilityPage": "あり",
     "officialSeatStructureSource": "あり",
     "officialSeatCountSource": "あり",
-    "completeNumberedSeatMap": "あり",
+    "completeNumberedSeatMap": "なし（公開図は独立読取不能）",
     "exactNominalSeatCount": "あり",
     "representativeLayout": "一意",
     "fixedSeats": "あり",
     "movableSeats": "なし",
-    "wheelchair": "不明",
-    "pit": "不明",
+    "wheelchair": "あり（6席、1階可動26席を8席分へ転用可能）",
+    "pit": "あり（1階190席減）",
     "areas": "複雑",
-    "processingRoute": "Sol",
-    "classification": "SOL HANDOFF",
+    "processingRoute": "Hold",
+    "classification": "SOURCE HOLD",
     "mapUrl": "https://www.kanagawa-kenminhall.com/about/mainhall",
     "countUrl": "https://www.kanagawa-kenminhall.com/about/mainhall",
-    "checkedAt": "2026-08-03",
-    "rationale": "公式大ホール施設ページは確認できたが、通常配置の完全な番号図と転換・車椅子条件の独立照合を要する。",
+    "checkedAt": "2026-08-09",
+    "rationale": "公式席数内訳は確定したが、公開番号図が低解像度かつマーカー重畳で全番号の独立2パスを実施できない。",
     "officialFacilityUrl": "https://www.kanagawa-kenminhall.com/about/mainhall",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "pending"
+    "status": "blocked",
+    "rangeEntry": "blocked-source",
+    "decision": "source-hold"
   }
 }

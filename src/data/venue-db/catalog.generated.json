@@ -56,6 +56,18 @@
     "dataPath": "/venue-db/venues/chofu-green-main-standard.json"
   },
   {
+    "id": "culttz-kawasaki-hall-release-seed",
+    "name": "カルッツかわさき ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "神奈川県",
+    "municipality": "川崎市",
+    "venueType": "hall",
+    "representativePatternName": "最大2,013席配置の番号席",
+    "seatCount": 1995,
+    "dataPath": "/venue-db/venues/culttz-kawasaki-hall-release-seed.json"
+  },
+  {
     "id": "ebara-culture-main-standard",
     "name": "荏原文化センター 大ホール",
     "searchAliases": [
@@ -193,6 +205,18 @@
     "representativePatternName": "通常固定席配置",
     "seatCount": 658,
     "dataPath": "/venue-db/venues/hoya-komorebi-main-standard.json"
+  },
+  {
+    "id": "ichikawa-culture-hall-main-release-seed",
+    "name": "市川市文化会館 大ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "千葉県",
+    "municipality": "市川市",
+    "venueType": "hall",
+    "representativePatternName": "車椅子転換位置を一般席とする通常1,758席配置",
+    "seatCount": 1758,
+    "dataPath": "/venue-db/venues/ichikawa-culture-hall-main-release-seed.json"
   },
   {
     "id": "icho-hall-main-standard",
@@ -501,6 +525,20 @@
     "representativePatternName": "通常固定席配置",
     "seatCount": 1201,
     "dataPath": "/venue-db/venues/risuru-main-standard.json"
+  },
+  {
+    "id": "sagamihara-green-hall-main-release-seed",
+    "name": "相模女子大学グリーンホール 大ホール",
+    "searchAliases": [
+      "相模原グリーンホール 大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "神奈川県",
+    "municipality": "相模原市",
+    "venueType": "hall",
+    "representativePatternName": "通常1,790席配置の番号席",
+    "seatCount": 1778,
+    "dataPath": "/venue-db/venues/sagamihara-green-hall-main-release-seed.json"
   },
   {
     "id": "square-ebara-hiratsuka-hall-standard",

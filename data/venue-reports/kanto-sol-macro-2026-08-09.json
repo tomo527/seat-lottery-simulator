@@ -1,0 +1,79 @@
+{
+  "reportVersion": 1,
+  "reportId": "kanto-sol-macro-2026-08-09",
+  "generatedAt": "2026-08-09",
+  "scope": "HANDOFF SOL NEXT five-venue macro; Kanagawa and Chiba only.",
+  "outcomes": [
+    {
+      "id": "sagamihara-green-hall-main-release-seed",
+      "finalClassification": "PRODUCTION",
+      "expectedSeatCount": 1778,
+      "calculatedSeatCount": 1778,
+      "firstPass": "complete",
+      "secondPass": "complete",
+      "rangeDiff": 0,
+      "unresolvedIssues": []
+    },
+    {
+      "id": "kanagawa-kenmin-hall-main-release-seed",
+      "finalClassification": "SOURCE HOLD",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "blocked-source",
+      "secondPass": "not-possible",
+      "rangeDiff": null,
+      "unresolvedIssues": [
+        "Only a low-resolution official viewpoint GIF with overlaid markers is public; complete seat numbers cannot be independently read."
+      ]
+    },
+    {
+      "id": "yokosuka-arts-theatre-release-seed",
+      "finalClassification": "INDEPENDENT REVIEW MISMATCH",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "complete-partial",
+      "secondPass": "mismatch",
+      "rangeDiff": 4,
+      "unresolvedIssues": [
+        "Official flat-floor subtotal 862 versus a four-seat local mismatch around rows M-N beside wheelchair spaces."
+      ]
+    },
+    {
+      "id": "culttz-kawasaki-hall-release-seed",
+      "finalClassification": "PRODUCTION",
+      "expectedSeatCount": 1995,
+      "calculatedSeatCount": 1995,
+      "firstPass": "complete",
+      "secondPass": "complete",
+      "rangeDiff": 0,
+      "unresolvedIssues": []
+    },
+    {
+      "id": "ichikawa-culture-hall-main-release-seed",
+      "finalClassification": "PRODUCTION",
+      "expectedSeatCount": 1758,
+      "calculatedSeatCount": 1758,
+      "firstPass": "complete",
+      "secondPass": "complete",
+      "rangeDiff": 0,
+      "unresolvedIssues": []
+    }
+  ],
+  "productionPromotions": 3,
+  "productionBaseline": 52,
+  "productionFinal": 55,
+  "productionSeatBaseline": 68652,
+  "productionSeatFinal": 74183,
+  "coverage": {
+    "kanto": 53,
+    "tokyo": 48,
+    "kanagawa": 3,
+    "chiba": 1,
+    "saitama": 0,
+    "ibaraki": 0,
+    "tochigi": 1,
+    "gunma": 0
+  },
+  "existingProductionRegression": "zero fingerprint diff across the 52 baseline production venues",
+  "releaseReady": false
+}
