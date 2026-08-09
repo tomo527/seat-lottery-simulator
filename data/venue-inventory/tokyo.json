@@ -4777,16 +4777,16 @@
       "city": "新宿区",
       "capacity": 1632,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "officialFacilityUrl": "https://www.operacity.jp/concert/seat/index.php",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "東京都公式inventoryと施設公式座席ページを確認。公式座席図の第1・独立第2パスで1F側方ブロックの席数包含関係に矛盾が残るためproduction化しない。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0241",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-09",
       "discoveryUrlRaw": "http://www.operacity.jp/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "CONTRADICTION/MISMATCH: 公式図の1-LB/1-RB計58番号席と、公式小計1,632席（1F972・2F358・3F302）の包含関係を公式資料だけで説明できない。"
     },
     {
       "inventoryId": "tokyo-official-0242",
@@ -6600,11 +6600,12 @@
       "officialFacilityUrl": "https://www.t-bunka.jp/",
       "operationalStatus": "renovation",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "2026年5月7日から大規模改修休館中。再開後の座席仕様確定までproduction化しない。",
+      "eligibilityReason": "2026年5月7日から大規模改修休館中。公式ページも休館中を表示しており、再開後の座席仕様確定までproduction化しない。",
       "priority": "A",
       "venueSourceId": "tokyo-bunka-main-hall-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-24"
+      "lastCheckedAt": "2026-08-09",
+      "blockingReason": "POLICY/SOURCE HOLD: 公式ページが大ホール休館中を示す。改修後の現行座席図・番号席集合が確定するまでproduction化しない。"
     },
     {
       "inventoryId": "tokyo-tokyo-bunka-small-hall",
@@ -16124,12 +16125,13 @@
       "officialFacilityUrl": "https://www.geigeki.jp/facilities/concerthall/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibilityReason": "公式施設資料と座席資料を第1・独立第2パスで確認したが、Q〜T列の印刷番号と公式小計に10席差が残るためproduction化しない。",
       "priority": "A",
       "venueSourceId": "tokyo-geigeki-concert-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27",
-      "discoveryUrlRaw": "http://www.geigeki.jp/rent/concert/index.html"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-09",
+      "discoveryUrlRaw": "http://www.geigeki.jp/rent/concert/index.html",
+      "blockingReason": "CONTRADICTION/MISMATCH: 公式図のQ〜T列は第1・独立第2パスとも92席と読める一方、公式小計は82席。差10席の除外番号・包含関係が不明。"
     },
     {
       "inventoryId": "tokyo-tokyo-geigeki-playhouse",

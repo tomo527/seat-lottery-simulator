@@ -1,0 +1,91 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-top-up-standard-macro-1-2026-08-09",
+  "generatedAt": "2026-08-09",
+  "scope": "Luna high Tokyo top-up STANDARD macro 1; only the three canonical targets; no remaining Tokyo candidates or P2 work.",
+  "baseline": {
+    "branch": "main",
+    "head": "7668a8b3fcc8bc68299dc4dd06a1dde0657f269b",
+    "production": 56,
+    "totalSeats": 74959,
+    "workingTreeBeforeMacro": "clean"
+  },
+  "outcome": {
+    "lunaCandidates": 3,
+    "productionPromotions": 0,
+    "releaseReady": false,
+    "reason": "Bunka is an official renovation/closure hold; Geigeki has a 10-seat official map/subtotal contradiction; Opera City has an unexplained 58-seat 1F side-block inclusion contradiction. No ranges were corrected to fit published totals."
+  },
+  "venues": [
+    {
+      "venueId": "tokyo-bunka-hall-main",
+      "inventoryId": "tokyo-tokyo-bunka-main-hall",
+      "sourceId": "tokyo-bunka-main-hall-standard",
+      "model": "Luna high",
+      "classification": "HOLD",
+      "officialSeatCount": "2,303 total (1F 1,282; 2F 238; 3F 355; 4F 268; 5F 160; wheelchair 14 shown by official source)",
+      "productionSeatCount": null,
+      "firstPass": "blocked before range transcription by current official closed/renovation state",
+      "independentSecondPass": "not started; operational hold is decisive",
+      "blocker": "Official current page shows 大ホール 休館中; the 2026 renovation means pre-renovation ranges cannot be treated as current.",
+      "escalation": "No model escalation; re-open after official post-renovation map/count publication."
+    },
+    {
+      "venueId": "tokyo-geigeki-concert",
+      "inventoryId": "tokyo-tokyo-geigeki-concert-hall",
+      "sourceId": "tokyo-geigeki-concert-hall-standard",
+      "model": "Luna high",
+      "classification": "CONTRADICTION / MISMATCH",
+      "officialSeatCount": "1,999 official total; wheelchair spaces 8 separately shown on the official map",
+      "productionSeatCount": null,
+      "firstPass": "complete visual read of the official PDF; Q-T printed seats read as 92 while the official subtotal says 82",
+      "independentSecondPass": "complete independently from the same official PDF; same 10-seat difference",
+      "blocker": "Q-T official map/subtotal difference is 10 seats. No official exclusion number or inclusion explanation; no range fit or guessed deletion.",
+      "escalation": "Sol: official-source contradiction requires advanced resolution."
+    },
+    {
+      "venueId": "tokyo-opera-city-concert",
+      "inventoryId": "tokyo-official-0241",
+      "sourceId": "tokyo-wave3-0241",
+      "model": "Luna high",
+      "classification": "CONTRADICTION / MISMATCH",
+      "officialSeatCount": "1,632 total (1F 972; 2F 358; 3F 302; wheelchair 10 included)",
+      "productionSeatCount": null,
+      "firstPass": "complete visual read of current official PDF; 1F 1-LB/1-RB add 58 printed numbered seats beyond the 1F/2F/3F official subtotal structure",
+      "independentSecondPass": "complete independently; same 58-seat inclusion ambiguity",
+      "blocker": "The official map displays 1-LB/1-RB 58 numbered seats, but official floor subtotals do not define whether they are included. Excluding them solely to fit 1,632 is prohibited.",
+      "escalation": "Sol: official-source inclusion contradiction; Luna does not infer the representative set."
+    }
+  ],
+  "productionDelta": {
+    "venues": 0,
+    "seats": 0,
+    "after": {
+      "venues": 56,
+      "seats": 74959
+    }
+  },
+  "baselineRegression": {
+    "productionFingerprints": "unchanged",
+    "catalogEntries": "unchanged",
+    "baselineVenues": 56,
+    "baselineSeats": 74959
+  },
+  "officialSources": {
+    "bunka": [
+      "https://www.t-bunka.jp/hall/pdf/bhall_zaseki_a4.pdf",
+      "https://www.t-bunka.jp/host/hall/info07.html",
+      "https://www.t-bunka.jp/hall/large.html/common/pdf/hall/sp_large/point_1f_14.html"
+    ],
+    "geigeki": [
+      "https://www.geigeki.jp/facilities/pdf/concert.pdf",
+      "https://www.geigeki.jp/facilities/concerthall/"
+    ],
+    "opera": [
+      "https://www.operacity.jp/concert/rental/download/pdf/1_CH_seat.pdf",
+      "https://www.operacity.jp/concert/seat/index.php"
+    ]
+  },
+  "nextModelMacro": "Luna high Tokyo top-up STANDARD macro 2 after this handoff: next canonical STANDARD queue, starting with nissay-theatre, line-cube-shibuya, and kioi-hall; do not reopen these three holds or start P2.",
+  "handoffExactNextAction": "Run a new Luna high Tokyo top-up STANDARD macro 2 for nissay-theatre, line-cube-shibuya, and kioi-hall, preserving the three macro-1 closures and all Kanto holds."
+}

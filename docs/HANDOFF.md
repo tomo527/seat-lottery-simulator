@@ -50,14 +50,20 @@ Release `release-seed-v1` with the production gate intact, prioritizing remainin
 
 ## Tokyo top-up
 
-16 candidates remain: 7 STANDARD candidates ready for Luna source passes, 4 COMPLEX candidates for later judgment, and 5 HOLD candidates. Kanto P0/P1 processing is now closed to concrete production or hold decisions, so Tokyo STANDARD is the next queue.
+The 2026-08-09 Luna high STANDARD macro 1 closed exactly three targets with no production promotion:
+
+- `tokyo-bunka-hall-main`: **HOLD**. Official current material shows the large hall is closed during renovation; the pre-renovation map must not be promoted as current.
+- `tokyo-geigeki-concert`: **CONTRADICTION/MISMATCH**. Two official-PDF passes read Q-T as 92 printed seats while the same official table states 82; the unexplained difference is 10 seats.
+- `tokyo-opera-city-concert`: **CONTRADICTION/MISMATCH**. Two official-PDF passes read 58 numbered seats in 1-LB/1-RB beyond the published 1F/2F/3F subtotal structure; excluding them only to fit 1,632 is prohibited.
+
+No range was corrected to a published total, and no generated catalog/runtime/fingerprint changed. The remaining Tokyo top-up queue is 13 candidates: 4 STANDARD candidates ready for Luna source passes, 4 COMPLEX candidates for later judgment, and 5 HOLD candidates.
 
 ## Model queues
 
-- **LUNA NEXT**: Tokyo top-up STANDARD macro 1: `tokyo-bunka-hall-main`, `tokyo-geigeki-concert`, and `tokyo-opera-city-concert`.
+- **LUNA NEXT**: Tokyo top-up STANDARD macro 2: `nissay-theatre`, `line-cube-shibuya`, and `kioi-hall`; keep `kameari-lirio-hall` for the following STANDARD macro.
 - **TERRA NEXT**: none in Kanto.
-- **SOL NEXT**: none in Kanto; defer P2 complex work until the Tokyo STANDARD queue is processed.
-- **HOLD**: preserve all recorded Kanto P0/P1 source, policy, contradiction, and independent-review holds. Reopen only when issuer-owned material explicitly resolves the recorded blocker; do not fit ranges to totals.
+- **SOL ESCALATION**: `tokyo-geigeki-concert` and `tokyo-opera-city-concert` only if new issuer-owned material is obtained that explicitly resolves the recorded contradictions; do not reopen them in macro 2.
+- **HOLD**: preserve all recorded Kanto P0/P1 holds and the three macro-1 Tokyo closures. Reopen only when issuer-owned material explicitly resolves the recorded blocker; do not fit ranges to totals.
 
 ## Holds
 
@@ -69,10 +75,12 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Validation status
 
-- 2026-08-09: `venues:inventory:report`, release-seed `venues:batch:report`, `venues:release:coverage`, `venues:build`, `venues:check`, `venues:validate`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check` passed after the Kanto P1 Sol macro.
-- Validation result: 56 production venues / 74,959 seats. Existing warnings remain limited to Kyocera Dome row fragmentation and 300/500-venue size projections; no validation errors.
+- 2026-08-09 Tokyo macro 1 data checks: `venues:build`, `venues:check`, `venues:validate`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report`, `venues:release:coverage`, and `venues:report` passed; production remains 56 venues / 74,959 seats.
+- Full application validation passed: `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check`.
+- Push, Workers Builds, and public HTTP 200 confirmation remain required before this handoff is closed.
+- Existing warnings remain limited to Kyocera Dome row fragmentation, inventory duplicate-candidate reporting, and 300/500-venue size projections; no database validation errors.
 - E2E required the approved elevated run because Miniflare writes the user Wrangler registry outside the workspace; the sandbox-only attempt failed with `EPERM` and was not a repository failure.
 
 ## Exact next action
 
-Run a **new Luna high Tokyo top-up STANDARD macro 1** for `tokyo-bunka-hall-main`, `tokyo-geigeki-concert`, and `tokyo-opera-city-concert`, starting from `data/venue-release-targets/tokyo-top-up-v1.json` and existing inventory/source state. Complete each venue through first pass, independent second pass, and production or a concrete HOLD/MISMATCH. Preserve every Kanto hold and do not begin the remaining Tokyo candidates or P2 national-city work in that macro.
+Run a **new Luna high Tokyo top-up STANDARD macro 2** for `nissay-theatre`, `line-cube-shibuya`, and `kioi-hall`, starting from `data/venue-release-targets/tokyo-top-up-v1.json` and existing inventory/source state. Complete each venue through official primary-source confirmation, first pass, independent second pass, and production or a concrete HOLD/MISMATCH. Preserve the three macro-1 Tokyo closures and every Kanto hold; do not start `kameari-lirio-hall`, remaining Tokyo candidates, or P2 national-city work in that macro.

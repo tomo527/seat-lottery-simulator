@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-bunka-main-hall-standard",
+  "name": "東京文化会館 大ホール",
+  "prefecture": "東京都",
+  "city": "台東区",
+  "aliases": [
+    "東京文化会館大ホール"
+  ],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard-current-numbered-seats",
+    "name": "現行通常番号席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式座席表と施設案内で大ホールの公称2,303席を確認したが、公式ページが休館中を示すため現行再開後の代表配置は確定しない。",
+    "notIncludedPatterns": [
+      "2026年5月7日からの大規模改修休館中",
+      "車椅子席14席を含む公式席数の番号席対応は再開後に再確認"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "東京文化会館",
+      "title": "大ホール座席表",
+      "url": "https://www.t-bunka.jp/hall/pdf/bhall_zaseki_a4.pdf",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "東京文化会館",
+      "title": "東京文化会館 大ホール施設案内",
+      "url": "https://www.t-bunka.jp/host/hall/info07.html",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-current-hall-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "東京文化会館",
+      "title": "大ホール座席表・施設案内（休館中表示）",
+      "url": "https://www.t-bunka.jp/hall/large.html/common/pdf/hall/sp_large/point_1f_14.html",
+      "checkedAt": "2026-08-09"
+    }
+  ],
+  "registeredScope": "改修後に公式が示す現行通常配置の番号席を対象とする予定。現時点ではrangeを登録しない。",
+  "completenessBasis": "公式座席表と公式施設案内で公称2,303席（1階1,282・2階238・3階355・4階268・5階160、車椅子14）を確認したが、現行公式ページは大ホールを休館中と表示する。",
+  "transformation": "休館中のため改修後仕様を推測せず、番号range転記を保留。",
+  "knownLimitations": [
+    "大規模改修後の再開時点で公式座席表・階別内訳・番号席集合を再確認する。",
+    "改修前の図を改修後の現行配置としてproductionへ流用しない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": "2026-08-09",
+    "method": "",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": [
+      "POLICY/SOURCE HOLD: 公式ページが現在も大ホール休館中を示し、改修後の現行座席仕様が未確定。",
+      "再開後の現行公式座席図と席数内訳を確認するまで第1・第2パスとproduction gateを完了しない。"
+    ]
+  },
+  "ranges": []
+}

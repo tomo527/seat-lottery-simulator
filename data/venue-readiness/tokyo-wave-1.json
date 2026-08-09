@@ -166,10 +166,10 @@
     },
     {
       "venueId": "tokyo-geigeki-concert-hall-standard",
-      "readiness": "R3",
-      "secondPass": "not-started",
-      "blocker": "サイド席・複数階を含む全rangeが未転記で、改修後再開前。",
-      "nextAction": "公式再開後に現行座席表を確認し、サイド席の番号方向を独立照合する。"
+      "readiness": "R4",
+      "secondPass": "mismatch",
+      "blocker": "公式座席図のQ〜T列は第1・独立第2パスとも92席と読めるが、同図の公式小計は82席で10席不一致。総席数に合わせた除外は行わない。",
+      "nextAction": "Q〜T列の10席差を説明する公式資料または施設回答を取得し、差分を確定してから再照合する。"
     },
     {
       "venueId": "tokyo-geigeki-playhouse-standard",

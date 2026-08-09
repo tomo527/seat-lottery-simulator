@@ -8,25 +8,62 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "standard-concert-hall-numbered-seats",
+    "name": "通常コンサートホール番号席配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
+    "selectionReason": "現行公式座席図を第1・独立第2パスで照合したが、図中の1-LB/1-RBと公式階別小計の包含関係を確定できないため、通常配置を確定しない。",
+    "notIncludedPatterns": [
+      "車椅子席10席",
+      "パイプオルガン使用時のP列26席撤去",
+      "図示の1-LB/1-RBを公式小計へ含めるか否かの未確定差分"
+    ]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"東京オペラシティ コンサートホール/リサイタルホール","title":"東京オペラシティ コンサートホール/リサイタルホール〔東京オペラシティ コンサートホール:タケミツ メモリアル〕 施設案内","url":"https://www.operacity.jp/","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "東京オペラシティ コンサートホール",
+      "title": "コンサートホール座席図",
+      "url": "https://www.operacity.jp/concert/rental/download/pdf/1_CH_seat.pdf",
+      "checkedAt": "2026-08-09"
+    },
+    {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "東京オペラシティ コンサートホール／リサイタルホール",
+      "title": "座席表",
+      "url": "https://www.operacity.jp/concert/seat/index.php",
+      "checkedAt": "2026-08-09"
+    }
+  ],
+  "registeredScope": "現行公式座席図の番号席を対象候補とするが、1F側方ブロックの公式席数への包含関係が解消するまでrangeは登録しない。",
+  "completenessBasis": "公式PDFは1,632席（1階972・2階358・3階302、車椅子10席含む）を示す。図には1F中央の番号席と別に1-LB/1-RBの番号ブロック計58席が描かれており、公式小計への包含関係が図・公式ページで説明されていない。",
+  "transformation": "公式PDFを第1パスと独立第2パスで再読し、1F側方ブロックを総席数に合わせて除外せず、range登録を保留。",
+  "knownLimitations": [
+    "公式ページは2026年3月更新の車椅子席増設後の座席図を案内している。",
+    "公式小計に対する1-LB/1-RB計58席の扱いを施設資料だけで確定する必要がある。",
+    "パイプオルガン使用時のP列26席撤去は通常配置の選択集合を別途変える。"
+  ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "mismatched",
+    "unresolvedIssues": [
+      "CONTRADICTION/MISMATCH: 第1パスと独立第2パスがともに公式図の1-LB/1-RB計58番号席を確認したが、公式階別小計1,632席は1F972・2F358・3F302でこの差分の包含関係を説明しない。",
+      "58席を総席数に合わせて除外する公式根拠がないため、production gateを閉じない。"
+    ]
   },
   "ranges": []
 }

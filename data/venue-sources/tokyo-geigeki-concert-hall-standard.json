@@ -14,9 +14,10 @@
     "name": "通常番号席配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "現行公式施設案内が番号席として示す1999席を代表パターン候補とする。",
+    "selectionReason": "公式座席図を第1パスと独立第2パスで照合した結果、Q〜T列の印刷番号と公式小計が一致しないため、通常番号席集合を確定しない。",
     "notIncludedPatterns": [
-      "車椅子スペース8席"
+      "公式図で別掲される車椅子用スペース8席",
+      "総席数に合わせた任意の番号除外"
     ]
   },
   "sources": [
@@ -30,7 +31,7 @@
       "publisher": "東京芸術劇場",
       "title": "コンサートホール座席表",
       "url": "https://www.geigeki.jp/facilities/pdf/concert.pdf",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-09"
     },
     {
       "id": "official-facility-guide",
@@ -42,24 +43,25 @@
       "publisher": "東京芸術劇場",
       "title": "コンサートホール",
       "url": "https://www.geigeki.jp/facilities/concerthall/",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-09"
     }
   ],
-  "registeredScope": "現行公式座席表の番号席1999席を予定。",
-  "completenessBasis": "公式施設案内で番号席1999席と車椅子スペース8席を確認済み。全rangeを転記中。",
-  "transformation": "階・サイド席をareaに分けて公式番号をrangeへ転記する予定。",
+  "registeredScope": "現行公式座席表に印刷された番号席を対象候補とするが、公式小計との矛盾解消までrangeは登録しない。",
+  "completenessBasis": "公式PDFの第1パスと独立第2パスで、Q〜T列の印刷番号を各22・22・22・22ではなく図示どおり92席として読める一方、同PDFの公式小計はQ〜T列82席。差10席を説明できない。",
+  "transformation": "公式PDFの階・サイド席を独立に再読したが、公式小計と印刷番号の差を総席数合わせで補正せず、range登録を保留。",
   "knownLimitations": [
-    "番号のない車椅子スペース8席は対象外。"
+    "公式PDFの公式合計は1,999席、車椅子用スペースは8席と別掲。",
+    "Q〜T列の図示番号と公式小計の10席差について、除外番号または包含関係の公式説明が必要。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
+    "seatStructure": "matched",
+    "seatCount": "mismatched",
     "unresolvedIssues": [
-      "サイド席・複数階を含む全rangeが未転記で、改修後再開前。",
-      "公式再開後に現行座席表を確認し、サイド席の番号方向を独立照合する。"
+      "CONTRADICTION/MISMATCH: 第1パスと独立第2パスがともにQ〜T列の図示番号を92席と読めるが、公式小計は82席で10席差。",
+      "差の10席を説明する公式資料がないため、総席数に合わせたrange補正・番号除外は行わない。"
     ]
   },
   "ranges": []
