@@ -1,0 +1,99 @@
+{
+  "reportVersion": 1,
+  "reportId": "kanto-luna-macro-2026-08-09",
+  "generatedAt": "2026-08-09",
+  "scope": "Kanto release macro reclassification and Luna execution checkpoint; existing IDs only; no new national discovery.",
+  "baseline": {
+    "branch": "main",
+    "head": "a082552",
+    "production": 52,
+    "totalSeats": 68652,
+    "workingTreeBeforeMacro": "clean"
+  },
+  "outcome": {
+    "lunaCandidates": 1,
+    "lunaProductionPromotions": 0,
+    "reclassifiedToSol": [
+      "sagamihara-green-hall-main-release-seed"
+    ],
+    "releaseReady": false,
+    "reason": "The only Kanto Luna candidate reached two-pass visual review but has an unresolved 20-seat official-map versus official-count mismatch in 1F."
+  },
+  "kantoClassification": {
+    "production": [
+      "yokohama-minatomirai-hall-main-release-seed",
+      "utsunomiya-city-culture-hall-release-seed"
+    ],
+    "luna": [],
+    "terra": [
+      "muza-kawasaki-symphony-hall-release-seed",
+      "tokorozawa-muse-ark-release-seed"
+    ],
+    "sol": [
+      "sagamihara-green-hall-main-release-seed",
+      "kanagawa-kenmin-hall-main-release-seed",
+      "yokosuka-arts-theatre-release-seed",
+      "culttz-kawasaki-hall-release-seed",
+      "ichikawa-culture-hall-main-release-seed",
+      "mori-no-hall21-main-release-seed",
+      "saitama-arts-theatre-main-release-seed",
+      "saitama-kaikan-main-release-seed",
+      "omiya-sonic-city-large-release-seed",
+      "westa-kawagoe-large-release-seed",
+      "takasaki-city-theatre-main-release-seed"
+    ],
+    "hold": [
+      "narashino-culture-hall-release-seed",
+      "funabashi-civic-culture-hall-release-seed",
+      "chiba-city-culture-center-hall-release-seed",
+      "urayasu-culture-hall-release-seed",
+      "kawaguchi-lilia-main-release-seed",
+      "mito-arts-tower-concert-release-seed",
+      "ibaraki-kenritsu-bunka-center-large-release-seed",
+      "tochigi-ken-sogo-bunka-center-main-release-seed",
+      "gunma-music-center-release-seed"
+    ]
+  },
+  "modelQueues": {
+    "terraNext": [
+      "muza-kawasaki-symphony-hall-release-seed",
+      "tokorozawa-muse-ark-release-seed",
+      "sapporo-kitara-main-release-seed",
+      "sendai-sunplaza-hall-release-seed",
+      "kyoto-concert-hall-main-release-seed"
+    ],
+    "solNext": [
+      "sagamihara-green-hall-main-release-seed",
+      "kanagawa-kenmin-hall-main-release-seed",
+      "yokosuka-arts-theatre-release-seed",
+      "culttz-kawasaki-hall-release-seed",
+      "ichikawa-culture-hall-main-release-seed"
+    ]
+  },
+  "tokyoTopUp": {
+    "standard": [
+      "tokyo-bunka-hall-main",
+      "tokyo-geigeki-concert",
+      "tokyo-opera-city-concert",
+      "nissay-theatre",
+      "line-cube-shibuya",
+      "kioi-hall",
+      "kameari-lirio-hall"
+    ],
+    "complex": [
+      "suntory-hall-main",
+      "meijiza",
+      "kabukiza",
+      "setagaya-public-theatre"
+    ],
+    "hold": [
+      "nhk-hall",
+      "tokyo-garden-theater",
+      "tokyo-dome-city-hall",
+      "ex-theater-roppongi",
+      "bunkamura-orchard-hall"
+    ],
+    "productionPromotions": 0,
+    "note": "The top-up target file contains seven STANDARD entries; NHK is a separate hold candidate. Current source files for these target IDs are not yet ready for a two-pass production decision."
+  }
+}

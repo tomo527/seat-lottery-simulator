@@ -5,66 +5,64 @@
   "name": "相模女子大学グリーンホール 大ホール",
   "prefecture": "神奈川県",
   "city": "相模原市",
-  "aliases": [],
+  "aliases": [
+    "相模原グリーンホール 大ホール"
+  ],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "standard-1790-seat-layout",
+    "name": "通常1,790席配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "selectionReason": "公式施設資料は通常配置を1,790席（1階1,036席、2階742席、車椅子スペース12席）とし、2階可変1,240席配置およびオーケストラピット使用時を別構成としている。通常配置を代表候補とする。",
+    "notIncludedPatterns": [
+      "2階可変装置を使用する1,240席配置",
+      "オーケストラピット使用時の1階1〜5列134席減配置",
+      "通常配置の車椅子スペース12席は番号席rangeに含めない"
+    ]
   },
   "sources": [
-    {
-      "id": "official-facility-page",
-      "official": true,
-      "roles": [
-        "facility"
-      ],
-      "publisher": "相模女子大学グリーンホール",
-      "title": "相模女子大学グリーンホール 公式施設案内",
-      "url": "https://hall-net.or.jp/01greenhall/",
-      "checkedAt": "2026-08-02"
-    },
     {
       "id": "official-seat-map",
       "official": true,
       "roles": [
         "seat-structure"
       ],
-      "publisher": "相模女子大学グリーンホール 大ホール",
-      "title": "公式座席図・座席案内",
-      "url": "https://hall-net.or.jp/01greenhall/visitors/seatmap/",
-      "checkedAt": "2026-08-03"
+      "publisher": "公益財団法人相模原市民文化財団",
+      "title": "相模女子大学グリーンホール 大ホール座席表（2026年版）",
+      "url": "https://hall-net.or.jp/wp-content/uploads/2026/01/greenhall-seat2026.pdf",
+      "checkedAt": "2026-08-09"
     },
     {
       "id": "official-seat-count",
       "official": true,
       "roles": [
-        "seat-count"
+        "seat-count",
+        "facility"
       ],
-      "publisher": "相模女子大学グリーンホール 大ホール",
-      "title": "公式施設・座席数案内",
+      "publisher": "公益財団法人相模原市民文化財団",
+      "title": "大ホール 施設概要・客席数",
       "url": "https://hall-net.or.jp/01greenhall/rental/mainhall/",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-09"
     }
   ],
   "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "completenessBasis": "公式座席図の番号rangeと公式施設資料の1階1,036席・2階742席・車椅子スペース12席を照合する。現時点の2回の独立した座席図読取は1階1,056席・2階742席となり、1階で20席の未解決差分がある。",
+  "transformation": "未解決の公式資料差分があるためrange転記を保留している。推測による除外は行わない。",
   "knownLimitations": [
-    "Closure Pass分類: STANDARD。公式案内で大ホール客席数1,790席と座席表導線を確認。通常配置の番号集合を転記可能。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "公式資料の表は通常配置を1,790席（1階1,036席・2階742席・車椅子12席）とする。",
+    "公式座席図の座席箱を2回独立読取した結果は1階1,056席・2階742席で、1階に20席の差分が残る。",
+    "差分20席の対象・除外根拠が公式資料で確定するまでproduction化しない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-09",
+    "method": "independent-official-source-review",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+      "The official facility table states 1F 1,036 numbered seats plus 2F 742 seats and 12 wheelchair spaces, while two independent visual readings of the official 2026 map total 1F 1,056 numbered seats plus 2F 742 seats.",
+      "The 20-seat 1F difference has no issuer-confirmed exclusion or layout explanation; Sol must resolve it before any range entry."
     ]
   },
   "ranges": [],
@@ -76,19 +74,19 @@
     "exactNominalSeatCount": "あり",
     "representativeLayout": "一意",
     "fixedSeats": "あり",
-    "movableSeats": "なし",
-    "wheelchair": "非番号区画",
-    "pit": "なし",
+    "movableSeats": "あり（2階可変装置）",
+    "wheelchair": "あり（12席）",
+    "pit": "あり（1階1〜5列134席減）",
     "areas": "複数",
-    "processingRoute": "Luna",
-    "classification": "STANDARD",
-    "mapUrl": "https://hall-net.or.jp/01greenhall/visitors/seatmap/",
+    "processingRoute": "Sol",
+    "classification": "SOL HANDOFF",
+    "mapUrl": "https://hall-net.or.jp/wp-content/uploads/2026/01/greenhall-seat2026.pdf",
     "countUrl": "https://hall-net.or.jp/01greenhall/rental/mainhall/",
-    "checkedAt": "2026-08-03",
-    "rationale": "公式案内で大ホール客席数1,790席と座席表導線を確認。通常配置の番号集合を転記可能。",
+    "checkedAt": "2026-08-09",
+    "rationale": "通常配置は一意だが、公式表と公式座席図の1階20席差分を解消できないため、高度な公式資料照合が必要。",
     "officialFacilityUrl": "https://hall-net.or.jp/01greenhall/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "pending"
+    "status": "blocked",
+    "rangeEntry": "blocked-count-mismatch",
+    "decision": "pending-sol-resolution"
   }
 }
