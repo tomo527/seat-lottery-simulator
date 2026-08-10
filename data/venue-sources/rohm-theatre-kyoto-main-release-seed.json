@@ -8,7 +8,7 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "terra-handoff-unselected",
+    "id": "sol-handoff-unselected",
     "name": "代表番号席集合未確定",
     "coverage": "draft",
     "expectedSeatCount": null,
@@ -80,15 +80,15 @@
     "wheelchair": "あり（通常10席、個別置換番号未確定）",
     "pit": "あり（172席減）",
     "areas": "複数階・複数サイドエリア",
-    "processingRoute": "Terra",
-    "classification": "TERRA HANDOFF / SCHEMA-POLICY HOLD",
+    "processingRoute": "Sol",
+    "classification": "SOL HANDOFF / POLICY-SCHEMA HOLD",
     "mapUrl": "https://rohmtheatrekyoto.jp/floorguide/main-hall/",
     "countUrl": "https://rohmtheatrekyoto.jp/rental/facility/",
     "checkedAt": "2026-08-10",
     "rationale": "currentnessと公式席数は確認したが、LunaのSTANDARD転記範囲を超える構造・運用・番号席schemaを推測なしで解けないため、Terraへhandoffし範囲転記前に停止した。",
     "officialFacilityUrl": "https://rohmtheatrekyoto.jp/",
     "status": "blocked",
-    "rangeEntry": "blocked-terra-handoff",
-    "decision": "terra-handoff"
+    "rangeEntry": "blocked-before-first-pass",
+    "decision": "sol-handoff"
   }
 }

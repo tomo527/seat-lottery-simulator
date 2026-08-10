@@ -12,7 +12,7 @@
     "name": "",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
+    "selectionReason": "2026-08-10 Terra currentness review: the issuer publishes a January 2026 fixed three-floor seat map and 1,833-seat floor total, but the map separately marks unnumbered wheelchair space without an issuer-owned inclusion or replacement-number rule. A selectable numbered-seat representative pattern is therefore not established.",
     "notIncludedPatterns": []
   },
   "sources": [
@@ -55,18 +55,19 @@
   "transformation": "No seat-map transcription has been performed.",
   "knownLimitations": [
     "Regional Production Cohort 1 official review: TERRA HANDOFF.",
-    "The official total and floor subtotals are clear, but the shoe-box map has dense balcony/podium/center blocks requiring Terra range transcription and an independent second pass.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "The official facility page and January 2026 map agree on 1F 980, 2F 453, 3F 400, total 1,833.",
+    "The current map separately labels wheelchair-use space at the rear of the first-floor map without individual numbers or an inclusion/replacement rule; the official count page does not resolve that relationship.",
+    "No lossless range transcription, independent second pass, fingerprint, catalog entry, or runtime detail was created."
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-10",
+    "method": "issuer-owned-currentness-and-selectable-numbered-seat gate",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "The official total and floor subtotals are clear, but the shoe-box map has dense balcony/podium/center blocks requiring Terra range transcription and an independent second pass.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
+      "The current official facility page and January 2026 map agree on 980 + 453 + 400 = 1,833 seats.",
+      "The map marks wheelchair-use space but the issuer publishes neither its individual seat numbers nor its inclusion/replacement relation to the 980 first-floor total. Entering ranges or setting expectedSeatCount would require a policy choice or arithmetic fitting."
     ]
   },
   "ranges": [],
@@ -82,15 +83,15 @@
     "wheelchair": "不明",
     "pit": "なし",
     "areas": "複数",
-    "processingRoute": "Terra",
-    "classification": "TERRA HANDOFF",
+    "processingRoute": "Sol",
+    "classification": "SOL HANDOFF / SCHEMA HOLD",
     "mapUrl": "https://www.kyotoconcerthall.org/pdf/hall1_202601.pdf",
     "countUrl": "https://www.kyotoconcerthall.org/facilities/",
-    "checkedAt": "2026-08-03",
-    "rationale": "The official total and floor subtotals are clear, but the shoe-box map has dense balcony/podium/center blocks requiring Terra range transcription and an independent second pass.",
+    "checkedAt": "2026-08-10",
+    "rationale": "The current January 2026 issuer map and official facility page establish one physical layout and 1,833 floor-total seats, but the separately marked wheelchair space has no issuer-owned individual-number or inclusion rule. Do not fit ranges to 1,833 or infer a wheelchair exclusion.",
     "officialFacilityUrl": "https://www.kyotoconcerthall.org/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "handoff"
+    "status": "blocked",
+    "rangeEntry": "blocked-before-first-pass",
+    "decision": "sol-handoff"
   }
 }

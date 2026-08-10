@@ -12,7 +12,7 @@
     "name": "",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
+    "selectionReason": "2026-08-10 Terra currentness review: the issuer publishes one fixed three-floor layout and 2,008-seat floor total, but separately labels 12 wheelchair spaces without stating whether they are included in that total or identifying a numbered-seat relationship. A selectable numbered-seat representative pattern is therefore not established.",
     "notIncludedPatterns": []
   },
   "sources": [
@@ -55,18 +55,19 @@
   "transformation": "No seat-map transcription has been performed.",
   "knownLimitations": [
     "Regional Production Cohort 1 official review: TERRA HANDOFF.",
-    "The official map is an arena-style, dense multi-area numbered layout; exact selectable range aggregation and independent second pass require Terra.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "The official main-hall page gives 2,008 seats (1F 529, 2F 1,079, 3F 400) and separately states 12 wheelchair spaces.",
+    "The current issuer-owned PDF marks wheelchair-use spaces without individual seat numbers or an inclusion/replacement rule. The 2,008 total cannot be converted to a numbered-seat expectation by arithmetic.",
+    "No lossless range transcription, independent second pass, fingerprint, catalog entry, or runtime detail was created."
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-10",
+    "method": "issuer-owned-currentness-and-selectable-numbered-seat gate",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "The official map is an arena-style, dense multi-area numbered layout; exact selectable range aggregation and independent second pass require Terra.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
+      "The current official facility page gives 2,008 seats as 529 + 1,079 + 400 and separately states 12 wheelchair spaces, without an inclusion rule.",
+      "The current official numbered map labels wheelchair-use spaces but gives neither their individual numbers nor replacement numbers. Entering ranges or setting expectedSeatCount would require inferred grouping or arithmetic exclusion."
     ]
   },
   "ranges": [],
@@ -82,15 +83,15 @@
     "wheelchair": "不明",
     "pit": "なし",
     "areas": "複数",
-    "processingRoute": "Terra",
-    "classification": "TERRA HANDOFF",
+    "processingRoute": "Sol",
+    "classification": "SOL HANDOFF / SCHEMA HOLD",
     "mapUrl": "https://www.kitara-sapporo.or.jp/facility/images/img_seat/seat_bighall.pdf",
     "countUrl": "https://www.kitara-sapporo.or.jp/facility/mainhall.html",
-    "checkedAt": "2026-08-03",
-    "rationale": "The official map is an arena-style, dense multi-area numbered layout; exact selectable range aggregation and independent second pass require Terra.",
+    "checkedAt": "2026-08-10",
+    "rationale": "The current official main-hall page establishes one physical layout and 2,008 floor-total seats, but its separate 12-wheelchair-space statement and the current map do not establish whether the spaces are included or provide a numbered replacement relation. Do not fit ranges to 2,008 or subtract 12.",
     "officialFacilityUrl": "https://www.kitara-sapporo.or.jp/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "handoff"
+    "status": "blocked",
+    "rangeEntry": "blocked-before-first-pass",
+    "decision": "sol-handoff"
   }
 }

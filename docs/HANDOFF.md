@@ -14,6 +14,7 @@ Updated: 2026-08-10 (Asia/Tokyo)
 - The 2026-08-10 Sol Tokyo COMPLEX macro 3 closed `kabukiza` as **SCHEMA HOLD** before range transcription. Production remains **58 venues / 78,917 seats**, and all baseline production fingerprints, catalog entries, and runtime details are unchanged.
 - The 2026-08-10 Sol Tokyo COMPLEX macro 4 closed `setagaya-public-theatre` as **POLICY/SCHEMA/SOURCE HOLD** before range transcription. Tokyo COMPLEX is complete, bounded Tokyo top-up processing is complete, and production remains **58 venues / 78,917 seats** with every baseline production artifact unchanged.
 - The 2026-08-10 Luna high P2 STANDARD macro 1 closed `sapporo-kitara-small-release-seed` as **LUNA BOUNDARY / SCHEMA HOLD** and `rohm-theatre-kyoto-main-release-seed` as **TERRA HANDOFF / SCHEMA-POLICY HOLD** after currentness review. Both remain draft with empty ranges and `expectedSeatCount`/`calculatedSeatCount` null; no first pass, independent second pass, or production promotion was authorized. Production remains **58 venues / 78,917 seats**, with zero baseline production artifact regression.
+- The 2026-08-10 Terra high P2 DENSE + escalation macro reviewed exactly `rohm-theatre-kyoto-main-release-seed`, `sapporo-kitara-main-release-seed`, and `kyoto-concert-hall-main-release-seed`. All three are now **SOL HANDOFF** before range entry: ROHM has no issuer-owned numbered wheelchair/pit conversion key for normal 2,005 (including 10 wheelchair seats) versus pit 1,833; Kitara separately states 12 wheelchair spaces beside its 2,008 floor total without an inclusion/replacement rule; Kyoto Concert Hall's January 2026 map separately marks wheelchair space without a relationship to its 1F 980 / total 1,833 counts. All remain draft with empty ranges and null expected/calculated counts. No first/second range pass or production promotion was authorized; production remains **58 venues / 78,917 seats**, with zero baseline artifact regression.
 
 ## Release goal
 
@@ -134,6 +135,8 @@ No range was fitted to 610, and no generated catalog/runtime/fingerprint changed
 
 ## Holds
 
+- **2026-08-10 P2 Terra DENSE escalation closures**: `rohm-theatre-kyoto-main-release-seed` (**SOL POLICY/SCHEMA**), `sapporo-kitara-main-release-seed` (**SOL SCHEMA**), and `kyoto-concert-hall-main-release-seed` (**SOL SCHEMA**) are not range-transcription work until issuer-owned material resolves each recorded inclusion/replacement relationship. The macro report is `data/venue-reports/p2-terra-dense-escalation-macro-2026-08-10.json`. `sapporo-kitara-small-release-seed` remains untouched on its Luna schema hold, and no P2 HOLD target was reopened.
+
 Existing closure holds also include `meijiza` policy/schema ambiguity, `kabukiza` wheelchair inclusion schema ambiguity, `setagaya-public-theatre` configuration/conversion/currentness ambiguity, Sendai Sunplaza policy ambiguity, Sapporo hitaru policy ambiguity, Misonoza policy ambiguity, Umeda date hold, Hakataza source hold, and the ACROS official 1,871 vs 1,885 contradiction. Do not promote any hold by arithmetic or inference.
 
 ## Deployment verification
@@ -161,4 +164,4 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Exact next action
 
-Run **Terra high bounded review for `rohm-theatre-kyoto-main-release-seed` only**: resolve the current four-floor official map into a lossless representative selectable numbered-seat set and settle the issuer-owned wheelchair/orchestra-pit inclusion rules, then perform first pass, independent second pass, and production gate only if the evidence uniquely supports them. Keep `sapporo-kitara-small-release-seed` on its Luna schema hold unless new issuer-owned area/row-key evidence resolves it; preserve all Kanto/Tokyo production and holds, do not reopen any of the 16 P2 holds, and do not start Sol or other P2 queues in that macro.
+Run **Sol high bounded evidence-resolution macro for exactly `rohm-theatre-kyoto-main-release-seed`, `sapporo-kitara-main-release-seed`, and `kyoto-concert-hall-main-release-seed`**: locate issuer-owned current material that explicitly maps wheelchair spaces to the published totals and individual numbered-seat inclusions/replacements; for ROHM also resolve the normal-to-orchestra-pit 172-seat numbered conversion. Do not create ranges, use arithmetic fitting, or promote any venue unless the representative selectable numbered-seat set becomes unique. Keep `sapporo-kitara-small-release-seed`, the 16 P2 HOLDs, the four separate P2 Sol targets, and all Kanto/Tokyo records out of scope.

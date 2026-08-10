@@ -1,0 +1,75 @@
+{
+  "reportVersion": 1,
+  "reportId": "p2-terra-dense-escalation-macro-2026-08-10",
+  "generatedAt": "2026-08-10",
+  "scope": "Terra high P2 DENSE + escalation macro for rohm-theatre-kyoto-main-release-seed, sapporo-kitara-main-release-seed, and kyoto-concert-hall-main-release-seed only.",
+  "baseline": {
+    "productionVenues": 58,
+    "productionSeats": 78917,
+    "baselineProductionArtifactsChanged": false
+  },
+  "outcomes": [
+    {
+      "id": "rohm-theatre-kyoto-main-release-seed",
+      "classification": "SOL HANDOFF / POLICY-SCHEMA HOLD",
+      "currentness": "complete",
+      "currentnessSources": [
+        "https://rohmtheatrekyoto.jp/floorguide/main-hall/",
+        "https://rohmtheatrekyoto.jp/rental/facility/",
+        "https://rohmtheatrekyoto.jp/wp-content/uploads/MainHall_seat_20210401.pdf"
+      ],
+      "officialCounts": {"normalUse": 2005, "orchestraPitUse": 1833, "difference": 172, "wheelchairIncluded": 10},
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "not-started: representative selectable numbered-seat gate failed before range entry",
+      "secondPass": "not-started",
+      "rangeDiff": null,
+      "productionGate": "blocked",
+      "blocker": "The current issuer page states 2,005 seats including 10 wheelchair seats and 1,833 when the orchestra pit is used, but neither it nor the current map publishes a complete numbered-seat inclusion/replacement key for the wheelchair positions or the 172-seat pit conversion. Selecting, subtracting, or preserving these positions would be a new policy.",
+      "solHandoff": "Resolve whether the numbered wheelchair-marked positions are part of the intended selectable set, and identify the exact normal-to-pit numbered-seat conversion rule from issuer-owned material. Do not use the normal/pit arithmetic to construct ranges."
+    },
+    {
+      "id": "sapporo-kitara-main-release-seed",
+      "classification": "SOL HANDOFF / SCHEMA HOLD",
+      "currentness": "complete",
+      "currentnessSources": [
+        "https://www.kitara-sapporo.or.jp/facility/mainhall.html",
+        "https://www.kitara-sapporo.or.jp/facility/seat.html",
+        "https://www.kitara-sapporo.or.jp/facility/images/img_seat/seat_bighall.pdf"
+      ],
+      "officialCounts": {"total": 2008, "firstFloor": 529, "secondFloor": 1079, "thirdFloor": 400, "wheelchairSpacesSeparatelyStated": 12},
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "not-started: representative selectable numbered-seat gate failed before range entry",
+      "secondPass": "not-started",
+      "rangeDiff": null,
+      "productionGate": "blocked",
+      "blocker": "The current issuer facility page separately states 12 wheelchair spaces beside a 2,008-seat floor total, while the current map marks wheelchair-use space without individual numbered-seat or inclusion/replacement mapping. The total cannot be safely turned into a numbered-seat expected count.",
+      "solHandoff": "Obtain an issuer-owned statement defining whether the 12 spaces are contained in the 2,008 total and, if converted from seats, their exact numbered-seat mapping."
+    },
+    {
+      "id": "kyoto-concert-hall-main-release-seed",
+      "classification": "SOL HANDOFF / SCHEMA HOLD",
+      "currentness": "complete",
+      "currentnessSources": [
+        "https://www.kyotoconcerthall.org/facilities/",
+        "https://www.kyotoconcerthall.org/pdf/hall1_202601.pdf"
+      ],
+      "officialCounts": {"total": 1833, "firstFloor": 980, "secondFloor": 453, "thirdFloor": 400},
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "not-started: representative selectable numbered-seat gate failed before range entry",
+      "secondPass": "not-started",
+      "rangeDiff": null,
+      "productionGate": "blocked",
+      "blocker": "The current January 2026 issuer seat map separately marks wheelchair-use space at the rear of the first-floor seating, but gives no individual number or relationship to the official 980-seat first-floor total. The facility page repeats the floor totals without resolving this point.",
+      "solHandoff": "Obtain an issuer-owned wheelchair inclusion/replacement number rule before entering ranges or treating 1,833 as a numbered-seat expectation."
+    }
+  ],
+  "productionPromotions": 0,
+  "productionFinal": 58,
+  "productionSeatFinal": 78917,
+  "baselineProductionRegression": "zero fingerprint, catalog-entry, runtime-detail, catalog, and generated-runtime changes across the 58 baseline production venues",
+  "releaseReady": false,
+  "nextRecommended": "Sol high bounded evidence-resolution macro for the three recorded wheelchair/conversion schema-policy blockers only; do not reopen sapporo-kitara-small-release-seed, any of the 16 P2 holds, or the separate four-item Sol queue."
+}
