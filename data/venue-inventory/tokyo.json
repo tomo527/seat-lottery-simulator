@@ -1632,13 +1632,14 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.kabuki-za.co.jp/guide/gaiyo.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibility": "needs-research",
+      "eligibilityReason": "SCHEMA HOLD。現行公式図は花道・番号付き桟敷を含む1,808席（1F 897・2F 441・3F 470）を示し、4階一幕見席96席を明示的に除外する。一方、1階の無番号車いすスペース2席と1,808席の包含・置換番号は未公表。",
       "priority": "A",
       "venueSourceId": "kabukiza-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27",
-      "discoveryUrlRaw": "http://www.kabuki-za.co.jp/"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-10",
+      "discoveryUrlRaw": "http://www.kabuki-za.co.jp/",
+      "blockingReason": "SCHEMA HOLD: 発行者による公式1,808席への無番号車いす2席の包含ルール又は撤去・復帰する個別番号の公開が必要。1,808席からの算術控除、図形位置からの番号推測、販売状態による代表集合の創作は禁止。"
     },
     {
       "inventoryId": "tokyo-oji-hall",

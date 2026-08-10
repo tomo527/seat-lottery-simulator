@@ -11,6 +11,7 @@ Updated: 2026-08-10 (Asia/Tokyo)
 - The 2026-08-10 bounded Terra escalation left `nissay-theatre` on **SOURCE/SCHEMA HOLD** and handed `line-cube-shibuya` to Sol. The bounded Sol escalation then found current issuer-owned operational evidence identifying all 26 wheelchair-conversion seats and promoted `line-cube-shibuya-standard` as **PRODUCTION**, 1,952 numbered seats. Production is now **57 venues / 76,911 seats**.
 - The 2026-08-10 Sol Tokyo COMPLEX macro 1 promoted `tokyo-wave3-0130` (`suntory-hall-main`) as **PRODUCTION**, 2,006 numbered seats. The prior 57 production fingerprints and catalog entries are unchanged; production is now **58 venues / 78,917 seats**.
 - The 2026-08-10 Sol Tokyo COMPLEX macro 2 closed `meijiza` as **POLICY/SCHEMA HOLD** before range transcription. Production remains **58 venues / 78,917 seats**, and all baseline production fingerprints and catalog entries are unchanged.
+- The 2026-08-10 Sol Tokyo COMPLEX macro 3 closed `kabukiza` as **SCHEMA HOLD** before range transcription. Production remains **58 venues / 78,917 seats**, and all baseline production fingerprints, catalog entries, and runtime details are unchanged.
 
 ## Release goal
 
@@ -52,6 +53,13 @@ Release `release-seed-v1` with the production gate intact, prioritizing remainin
 - `tokorozawa-muse-ark-release-seed`: **POLICY HOLD**. The official map/page agree on maximum 2,002 seats (1F 1,106; 2F 560; 3F 336); the official page also says 13 movable 1F seats can convert to six wheelchair positions. It does not define one fixed representative selectable configuration.
 
 ## Tokyo top-up
+
+### 2026-08-10 Sol Tokyo COMPLEX macro 3
+
+- `kabukiza`: **SCHEMA HOLD**. Current issuer-owned sources publish one physical layout with 1F 897 + 2F 441 + 3F 470 = 1,808 seats. The hanamichi is a permanent facility element, and the current map includes individually numbered first-floor sajiki seats. The 96 fourth-floor one-act viewing seats use separate access/sales and are explicitly excluded from the 1,808 total.
+- Wheelchair/sales resolution: the current official map draws two unnumbered first-floor wheelchair positions, and Shochiku's current wheelchair guide confirms a dedicated space for at most two seats. Neither source says whether those positions are included in the 1,808 total or identifies numbered seats removed/reinstated for their use. The July 2025 change is a sales-grade change, while selectable/unavailable status varies by reservation stage; neither defines a different normal physical numbered set.
+- The physical-layout variants are therefore resolved, but the selectable numbered-seat set is not uniquely defined. Expected/calculated counts remain `null`/`null`, ranges remain empty, and the first pass, independent second pass, and production gate were not started. Do not subtract two from 1,808, infer replacement numbers from the diagram, or create a repository inclusion policy. Reopen only if the issuer publishes the inclusion rule or replacement seat numbers.
+- Production promotions: **0**. All 58 baseline production fingerprints, catalog entries, and runtime details are unchanged; production remains **58 venues / 78,917 seats**.
 
 ### 2026-08-10 Sol Tokyo COMPLEX macro 2
 
@@ -103,13 +111,13 @@ No range was fitted to 610, and no generated catalog/runtime/fingerprint changed
 ## Model queues
 
 - **TERRA**: no queued target. Keep `nissay-theatre` on SOURCE/SCHEMA HOLD unless the issuer publishes a curve seat-number key; do not repeat diagram-only transcription.
-- **SOL**: `line-cube-shibuya` and `suntory-hall-main` are closed as production, and `meijiza` is closed on POLICY/SCHEMA HOLD; do not escalate them again. The next bounded Tokyo target is `kabukiza` in COMPLEX macro 3. Preserve macro-1 `tokyo-geigeki-concert` and `tokyo-opera-city-concert` closures.
+- **SOL**: `line-cube-shibuya` and `suntory-hall-main` are closed as production; `meijiza` is closed on POLICY/SCHEMA HOLD; and `kabukiza` is closed on SCHEMA HOLD. Do not escalate them again. The next bounded Tokyo target is `setagaya-public-theatre` in COMPLEX macro 4. Preserve macro-1 `tokyo-geigeki-concert` and `tokyo-opera-city-concert` closures.
 - **LUNA CLOSED**: no Tokyo STANDARD candidate remains. Keep `kameari-lirio-hall` on source hold until post-renovation official material is published after the scheduled 2026-09-01 reopening.
 - **HOLD**: preserve `kioi-hall`, all recorded Kanto P0/P1 holds, and all macro-1 Tokyo closures. Reopen only when issuer-owned material explicitly resolves the recorded blocker; do not fit ranges to totals.
 
 ## Holds
 
-Existing closure holds also include `meijiza` policy/schema ambiguity, Sendai Sunplaza policy ambiguity, Sapporo hitaru policy ambiguity, Misonoza policy ambiguity, Umeda date hold, Hakataza source hold, and the ACROS official 1,871 vs 1,885 contradiction. Do not promote any hold by arithmetic or inference.
+Existing closure holds also include `meijiza` policy/schema ambiguity, `kabukiza` wheelchair inclusion schema ambiguity, Sendai Sunplaza policy ambiguity, Sapporo hitaru policy ambiguity, Misonoza policy ambiguity, Umeda date hold, Hakataza source hold, and the ACROS official 1,871 vs 1,885 contradiction. Do not promote any hold by arithmetic or inference.
 
 ## Deployment verification
 
@@ -117,6 +125,7 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Validation status
 
+- 2026-08-10 Sol Tokyo COMPLEX macro 3 passed: `venues:build`, `venues:check`, `venues:validate`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report -- --batch tokyo-wave-1`, `venues:release:coverage`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check`. `kabukiza-standard` remains draft with no ranges after the selectable-numbered-set schema gate failed; all 58 production catalog entries, runtime details, and fingerprints are unchanged at 78,917 seats.
 - 2026-08-10 Sol Tokyo COMPLEX macro 2 passed: `venues:build`, `venues:check`, `venues:validate`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report -- --batch tokyo-wave-1`, `venues:release:coverage`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check`. `meijiza-standard` remains draft with no ranges after the representative-pattern gate failed; all 58 production catalog entries, runtime details, and fingerprints are unchanged at 78,917 seats.
 - 2026-08-10 Sol Tokyo COMPLEX macro 1 passed: `venues:review -- --id tokyo-wave3-0130`, `venues:build`, `venues:check`, `venues:validate`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report -- --batch tokyo-wave-3`, `venues:release:coverage`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check`. Existing 57 fingerprints are unchanged; production is 58 venues / 78,917 seats.
 - 2026-08-10 bounded Sol LINE CUBE escalation passed: `venues:review -- --id line-cube-shibuya-standard`, `venues:build`, `venues:check`, `venues:validate`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report -- --batch tokyo-wave-1`, `venues:release:coverage`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check`. Existing 56 fingerprints are unchanged; production is 57 venues / 76,911 seats.
@@ -131,4 +140,4 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Exact next action
 
-Run **Sol high Tokyo COMPLEX macro 3 for `kabukiza` only**: use issuer-owned material to determine whether one normal selectable numbered-seat set is uniquely defined across hanamichi, sajiki, makumi, wheelchair, removal, and sales-pattern variants; complete the first pass, independent second pass, and production gate only if that set is unique, and otherwise close it with a concrete POLICY/SCHEMA/SOURCE HOLD. Keep `meijiza`, `suntory-hall-main`, `line-cube-shibuya-standard`, `nissay-theatre`, `kameari-lirio-hall`, `kioi-hall`, and every recorded Kanto/Tokyo closure unchanged; do not start `setagaya-public-theatre` or P2 in the same macro.
+Run **Sol high Tokyo COMPLEX macro 4 for `setagaya-public-theatre` only**: use issuer-owned material to determine whether one normal selectable numbered-seat set is uniquely defined across stage/seat variants, wheelchair use, removable seats, and sales-pattern differences; complete the first pass, independent second pass, and production gate only if that set is unique, and otherwise close it with a concrete POLICY/SCHEMA/SOURCE HOLD. Keep `kabukiza`, `meijiza`, `suntory-hall-main`, `line-cube-shibuya-standard`, `nissay-theatre`, `kameari-lirio-hall`, `kioi-hall`, and every recorded Kanto/Tokyo closure unchanged; do not start P2 in the same macro.

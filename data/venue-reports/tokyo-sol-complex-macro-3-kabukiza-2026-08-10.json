@@ -1,0 +1,55 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-sol-complex-macro-3-kabukiza-2026-08-10",
+  "generatedAt": "2026-08-10",
+  "scope": "Sol high Tokyo COMPLEX macro 3 for kabukiza only. No existing production venue, other COMPLEX target, recorded hold, or P2 target was reopened.",
+  "baseline": {
+    "head": "f91f90559254686f2dc640752b0a719bcbb7362d",
+    "productionVenues": 58,
+    "productionSeats": 78917,
+    "catalogEntries": 58,
+    "fingerprints": 58
+  },
+  "outcome": {
+    "id": "kabukiza",
+    "sourceId": "kabukiza-standard",
+    "inventoryId": "tokyo-kabukiza",
+    "officialCapacity": {
+      "total": 1808,
+      "1F": 897,
+      "2F": 441,
+      "3F": 470,
+      "excludedOneActViewingSeats": 96
+    },
+    "representativePattern": "physical-layout-unique; selectable-numbered-seat-set-schema-unresolved",
+    "expectedSeatCount": null,
+    "calculatedSeatCount": null,
+    "firstPass": "not-started; the issuer-owned representative-pattern gate failed before range transcription",
+    "independentSecondPass": "not-started; user scope permits an independent range pass only after a unique selectable numbered-seat set is established",
+    "rangeDiff": null,
+    "newOfficialEvidence": "The current Shochiku seat page points to the July 2025 official map, which publishes 1F 897, 2F 441, 3F 470, and total 1,808 in one fixed layout. The map includes the permanent hanamichi and numbered first-floor sajiki seats, while the facility sources separately identify the 96 fourth-floor one-act viewing seats outside the 1,808 total. A current Shochiku wheelchair guide confirms a dedicated first-floor space with a maximum of two seats, and the current map draws two wheelchair positions without individual numbers.",
+    "variantResolution": "Hanamichi and numbered sajiki are part of the current fixed map, not alternate representative configurations. The 96 makumi seats have separate access and sales and are explicitly excluded from 1,808. The July 2025 change concerns sales grades, and selectable/unavailable states vary during reservation, so sales availability does not define a physical normal set. No current issuer source publishes a removed-seat variant or the numbered seats replaced by the two wheelchair positions.",
+    "finalClassification": "SCHEMA HOLD",
+    "production": false,
+    "blocker": "Issuer-owned evidence does not say whether the two unnumbered wheelchair positions are included in the official 1,808 total or identify any numbered seats removed/reinstated for their use. Therefore neither the complete selectable numbered-seat set nor its expected count can be defined without arithmetic subtraction, visual inference, or repository-created policy.",
+    "sources": [
+      "https://www.shochiku.co.jp/play/theater/kabukiza/seats/",
+      "https://s3.ap-northeast-1.amazonaws.com/www.kabuki-bito.jp.assets/wp-content/uploads/2025/06/30094505/kabukiza_seat_2025.pdf",
+      "https://www.shochiku.co.jp/play/theater/kabukiza/facility/",
+      "https://www.kabuki-za.co.jp/guide/gaiyo.html",
+      "https://www.shochiku.co.jp/play/theater/kabukiza/wheelchair-access/",
+      "https://www.kabuki-za.co.jp/wp-content/uploads/2025/04/250421bk01.pdf",
+      "https://www.kabuki-bito.jp/news/7951/"
+    ]
+  },
+  "summary": {
+    "productionPromotions": 0,
+    "afterProductionVenues": 58,
+    "afterProductionSeats": 78917,
+    "existingProductionRegression": false,
+    "catalogRegression": false,
+    "fingerprintRegression": false,
+    "releaseReady": false,
+    "nextRecommended": "Sol high Tokyo COMPLEX macro 4 for setagaya-public-theatre only. Keep kabukiza on SCHEMA HOLD, preserve every production/hold, and do not start P2 in the same macro."
+  }
+}
