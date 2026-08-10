@@ -8,87 +8,87 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "luna-boundary-hold-unselected",
+    "name": "代表番号席集合未確定",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "selectionReason": "現行公式ページは453席（1階343、2階110、車いすスペース6）と小ホール座席図を示すが、1階・2階の図示番号をリポジトリのcanonical area/rowへ、車いすスペースの番号席との包含・置換関係をissuer-owned根拠だけで確定できないため、Luna STANDARDのproduction gateを停止した。",
+    "notIncludedPatterns": [
+      "公式453席を算術控除して番号席数を作る独自policy",
+      "図形配置からarea/rowを新設する推測"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
-      "roles": [
-        "facility"
-      ],
+      "roles": ["facility", "seat-count"],
       "publisher": "札幌コンサートホールKitara",
-      "title": "札幌コンサートホールKitara 公式施設案内",
-      "url": "https://www.kitara-sapporo.or.jp/",
-      "checkedAt": "2026-08-02"
+      "title": "小ホール 公式施設案内",
+      "url": "https://www.kitara-sapporo.or.jp/facility/smallhall.html",
+      "checkedAt": "2026-08-10"
     },
     {
       "id": "official-seat-map",
       "official": true,
-      "roles": [
-        "seat-structure"
-      ],
+      "roles": ["seat-structure"],
       "publisher": "札幌コンサートホールKitara 小ホール",
-      "title": "公式座席図・座席案内",
+      "title": "公式座席表・小ホール座席図",
       "url": "https://www.kitara-sapporo.or.jp/facility/seat.html",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-10"
     },
     {
-      "id": "official-seat-count",
+      "id": "official-seat-map-pdf",
       "official": true,
-      "roles": [
-        "seat-count"
-      ],
+      "roles": ["seat-structure"],
       "publisher": "札幌コンサートホールKitara 小ホール",
-      "title": "公式施設・座席数案内",
-      "url": "https://www.kitara-sapporo.or.jp/facility/smallhall.html",
-      "checkedAt": "2026-08-03"
+      "title": "小ホール座席表PDF",
+      "url": "https://www.kitara-sapporo.or.jp/facility/images/img_seat/seat_smallhall.pdf",
+      "checkedAt": "2026-08-10"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "Currentness and representative-pattern gate only; no selectable-seat range is registered.",
+  "completenessBasis": "Current official facility page and official seat-map page/PDF were checked. The official materials establish the nominal layout and count but do not provide the issuer-owned numbered-seat inclusion/replacement key required to register one canonical selectable set without inference.",
+  "transformation": "No seat-map transcription was performed after the representative selectable numbered-seat gate failed.",
   "knownLimitations": [
-    "Closure Pass分類: STANDARD。公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "LUNA BOUNDARY HOLD: 1階・2階の複数図示ブロックをcanonical area/rowへ対応付けるlossless keyが公式資料本文にない。",
+    "SCHEMA HOLD: 車いすスペース6席と番号席の包含・置換関係が個別番号で公表されていない。",
+    "Terra handoff要否: 追加の公式area/row keyが出ない場合はTerra highで図面の構造転記を再監査する。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-10",
+    "method": "issuer-owned-representative-pattern-and-currentness-gate",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
+      "現行公式資料で453席、1階343席、2階110席、車いすスペース6席、座席図PDFの存在を確認した。",
+      "代表selectable numbered-seat setを一意に確定できないため、第1パス、独立第2パス、production gateを開始していない。",
+      "個別の番号席包含・置換ルール又はlossless area/row keyが必要。"
     ]
   },
   "ranges": [],
   "preflight": {
     "officialFacilityPage": "あり",
-    "officialSeatStructureSource": "あり",
-    "officialSeatCountSource": "あり",
-    "completeNumberedSeatMap": "あり",
-    "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
+    "officialSeatStructureSource": "あり（現行座席表ページ・公式PDF）",
+    "officialSeatCountSource": "あり（453席、1階343・2階110、車いす6）",
+    "completeNumberedSeatMap": "図はあり、canonical area/row keyと車いす置換関係が未確定",
+    "exactNominalSeatCount": "453席（車いすスペース6席を含む表記）",
+    "representativeLayout": "一意の物理レイアウトは確認、selectable numbered-seat setは未確定",
     "fixedSeats": "あり",
     "movableSeats": "なし",
-    "wheelchair": "不明",
+    "wheelchair": "あり（6席、個別置換番号未公表）",
     "pit": "なし",
     "areas": "複数",
-    "processingRoute": "Luna",
-    "classification": "STANDARD",
+    "processingRoute": "Hold",
+    "classification": "LUNA BOUNDARY / SCHEMA HOLD",
     "mapUrl": "https://www.kitara-sapporo.or.jp/facility/seat.html",
     "countUrl": "https://www.kitara-sapporo.or.jp/facility/smallhall.html",
-    "checkedAt": "2026-08-03",
-    "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+    "checkedAt": "2026-08-10",
+    "rationale": "現行公式資料のcurrentnessとnominal structure/countは確認したが、推測なしで一つのcanonical selectable numbered-seat setを登録できないため、範囲転記前に停止した。",
     "officialFacilityUrl": "https://www.kitara-sapporo.or.jp/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "pending"
+    "status": "blocked",
+    "rangeEntry": "blocked-luna-boundary-schema-hold",
+    "decision": "luna-boundary-hold"
   }
 }

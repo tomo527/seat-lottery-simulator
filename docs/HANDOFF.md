@@ -13,6 +13,7 @@ Updated: 2026-08-10 (Asia/Tokyo)
 - The 2026-08-10 Sol Tokyo COMPLEX macro 2 closed `meijiza` as **POLICY/SCHEMA HOLD** before range transcription. Production remains **58 venues / 78,917 seats**, and all baseline production fingerprints and catalog entries are unchanged.
 - The 2026-08-10 Sol Tokyo COMPLEX macro 3 closed `kabukiza` as **SCHEMA HOLD** before range transcription. Production remains **58 venues / 78,917 seats**, and all baseline production fingerprints, catalog entries, and runtime details are unchanged.
 - The 2026-08-10 Sol Tokyo COMPLEX macro 4 closed `setagaya-public-theatre` as **POLICY/SCHEMA/SOURCE HOLD** before range transcription. Tokyo COMPLEX is complete, bounded Tokyo top-up processing is complete, and production remains **58 venues / 78,917 seats** with every baseline production artifact unchanged.
+- The 2026-08-10 Luna high P2 STANDARD macro 1 closed `sapporo-kitara-small-release-seed` as **LUNA BOUNDARY / SCHEMA HOLD** and `rohm-theatre-kyoto-main-release-seed` as **TERRA HANDOFF / SCHEMA-POLICY HOLD** after currentness review. Both remain draft with empty ranges and `expectedSeatCount`/`calculatedSeatCount` null; no first pass, independent second pass, or production promotion was authorized. Production remains **58 venues / 78,917 seats**, with zero baseline production artifact regression.
 
 ## Release goal
 
@@ -126,8 +127,8 @@ No range was fitted to 610, and no generated catalog/runtime/fingerprint changed
 ## Model queues
 
 - **TOKYO CLOSED**: no active Tokyo top-up queue remains. Preserve the two promotions and all 14 non-production closures. Keep `nissay-theatre`, `meijiza`, `kabukiza`, and `setagaya-public-theatre` off model queues unless issuer-owned evidence resolves their exact blockers.
-- **P2 LUNA — next, cheapest**: P2 STANDARD macro 1 for `sapporo-kitara-small-release-seed` and `rohm-theatre-kyoto-main-release-seed` only.
-- **P2 TERRA — after Luna**: one dense macro for `sapporo-kitara-main-release-seed` and `kyoto-concert-hall-main-release-seed`; both have a unique representative layout and dense multi-area maps.
+- **P2 LUNA**: macro 1 is complete with no promotion. `sapporo-kitara-small-release-seed` is a Luna schema hold; `rohm-theatre-kyoto-main-release-seed` is a Terra handoff. Do not reopen either without the recorded evidence path.
+- **P2 TERRA — next recommended macro**: Terra high bounded review for `rohm-theatre-kyoto-main-release-seed` only, to resolve its four-floor lossless map and wheelchair/pit policy blocker. Keep `sapporo-kitara-main-release-seed` and `kyoto-concert-hall-main-release-seed` queued for the following Terra macro.
 - **P2 SOL — after Terra, increasing complexity**: separate bounded macros for `hbg-hall-release-seed`, `fukuoka-sunpalace-hall-release-seed`, `festival-hall-release-seed`, then `aichi-arts-center-main-release-seed`.
 - **P2 HOLD — no model work**: 16 of 24 P2 targets remain off-queue, including Sendai Sunplaza policy ambiguity, Umeda date hold, Sapporo hitaru and Misonoza policy holds, ACROS contradiction, and all recorded source holds. Reopen only on changed issuer-owned evidence.
 
@@ -156,7 +157,8 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 - Sol Tokyo COMPLEX macro 4 deployment verification passed: data commit `65239d0` completed `Workers Builds: seat-lottery-simulator` check `https://github.com/tomo527/seat-lottery-simulator/runs/93367288322`; the public URL loaded successfully with `絞り込み結果 58件`, and searching `世田谷パブリックシアター` returned 0 results as required by the HOLD. The final HANDOFF-only follow-up must preserve this deployment state.
 - Existing warnings remain limited to Kyocera Dome row fragmentation, inventory duplicate-candidate reporting, and 300/500-venue size projections; no database validation errors.
 - E2E required the approved elevated run because Miniflare writes the user Wrangler registry outside the workspace; the sandbox-only attempt failed with `EPERM` and was not a repository failure.
+- 2026-08-10 Luna high P2 STANDARD macro 1 validation passed: `venues:build`, `venues:check`, `venues:validate`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report -- --batch release-seed-v1`, `venues:release:coverage`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests, elevated Miniflare run), and `git diff --check`. Both targets remain non-production holds; all 58 production artifacts remain unchanged at 78,917 seats.
 
 ## Exact next action
 
-Run **Luna high P2 STANDARD macro 1 for `sapporo-kitara-small-release-seed` and `rohm-theatre-kyoto-main-release-seed` only**: refresh issuer-owned currentness, establish one representative selectable numbered-seat set for each, then complete first pass, independent second pass, and production gate separately. Preserve all Kanto/Tokyo production and holds, do not reopen any of the 16 P2 holds, and do not start the Terra or Sol queues in the same macro.
+Run **Terra high bounded review for `rohm-theatre-kyoto-main-release-seed` only**: resolve the current four-floor official map into a lossless representative selectable numbered-seat set and settle the issuer-owned wheelchair/orchestra-pit inclusion rules, then perform first pass, independent second pass, and production gate only if the evidence uniquely supports them. Keep `sapporo-kitara-small-release-seed` on its Luna schema hold unless new issuer-owned area/row-key evidence resolves it; preserve all Kanto/Tokyo production and holds, do not reopen any of the 16 P2 holds, and do not start Sol or other P2 queues in that macro.

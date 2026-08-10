@@ -231,10 +231,10 @@
     },
     {
       "inventoryId": "sapporo-kitara-small",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "LUNA BOUNDARY / SCHEMA HOLD",
+      "rationale": "現行公式ページで453席（1階343、2階110、車いす6）と公式座席図を再確認したが、推測なしでcanonical area/row及び車いす包含・置換関係を確定できず、Lunaの第1パス前に停止。Terra handoff要否を残す。",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "sapporo-hitaru",
@@ -294,10 +294,10 @@
     },
     {
       "inventoryId": "rohm-theatre-kyoto-main",
-      "classification": "STANDARD",
-      "rationale": "公式資料の現行状態をClosure Passで確認し、STANDARDへ分類。番号rangeは未転記。",
+      "classification": "TERRA HANDOFF / SCHEMA-POLICY HOLD",
+      "rationale": "現行フロアガイドの2026年4月版座席図と公式設備ページの通常2,005席・ピット時1,833席を再確認したが、4階・side areasをLunaでlossless転記できず、通常/ピット及び車いすschemaを解くTerra handoffとして第1パス前に停止。",
       "preflightComplete": true,
-      "processingRoute": "Luna"
+      "processingRoute": "Terra"
     },
     {
       "inventoryId": "kyoto-art-theatre-shunjuza",

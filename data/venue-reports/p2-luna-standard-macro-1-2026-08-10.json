@@ -1,0 +1,57 @@
+{
+  "reportVersion": 1,
+  "reportId": "p2-luna-standard-macro-1-2026-08-10",
+  "generatedAt": "2026-08-10",
+  "scope": "Luna high P2 STANDARD macro 1 for sapporo-kitara-small-release-seed and rohm-theatre-kyoto-main-release-seed only.",
+  "outcomes": [
+    {
+      "id": "sapporo-kitara-small-release-seed",
+      "classification": "LUNA BOUNDARY / SCHEMA HOLD",
+      "currentness": "complete",
+      "currentnessSources": [
+        "https://www.kitara-sapporo.or.jp/facility/seat.html",
+        "https://www.kitara-sapporo.or.jp/facility/smallhall.html",
+        "https://www.kitara-sapporo.or.jp/facility/images/img_seat/seat_smallhall.pdf"
+      ],
+      "officialNominalSeatCount": 453,
+      "officialSubtotals": {"firstFloor": 343, "secondFloor": 110, "wheelchairSpaces": 6},
+      "representativeSelectableNumberedSeatSet": "not established",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "not-started",
+      "secondPass": "not-started",
+      "rangeDiff": null,
+      "productionGate": "not-started",
+      "blocker": "Official map and count are current and present, but the issuer does not publish a lossless canonical area/row key or individual wheelchair inclusion/replacement numbers. Registering ranges would require inferred grouping or arithmetic exclusion.",
+      "handoff": "Terra high review only if a new issuer-owned key is unavailable; Sol is not indicated."
+    },
+    {
+      "id": "rohm-theatre-kyoto-main-release-seed",
+      "classification": "TERRA HANDOFF / SCHEMA-POLICY HOLD",
+      "currentness": "complete",
+      "currentnessSources": [
+        "https://rohmtheatrekyoto.jp/floorguide/main-hall/",
+        "https://rohmtheatrekyoto.jp/rental/facility/",
+        "https://rohmtheatrekyoto.jp/wp-content/uploads/MainHall_seat_20210401.pdf"
+      ],
+      "officialNominalSeatCount": 2005,
+      "officialSubtotals": {"normalUse": 2005, "orchestraPitUse": 1833, "wheelchairIncluded": 10},
+      "representativeSelectableNumberedSeatSet": "not established",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "not-started",
+      "secondPass": "not-started",
+      "rangeDiff": null,
+      "productionGate": "not-started",
+      "blocker": "Current 2026.4 floor-map imagery and normal/pit counts are confirmed, but four-floor main/side-area lossless transcription and issuer-owned wheelchair/pit inclusion rules exceed Luna STANDARD without inference.",
+      "handoff": "Terra high required; do not start Sol or other P2 work in this macro."
+    }
+  ],
+  "productionPromotions": 0,
+  "productionBaseline": 58,
+  "productionFinal": 58,
+  "productionSeatBaseline": 78917,
+  "productionSeatFinal": 78917,
+  "baselineProductionRegression": "confirmed zero fingerprint, catalog-entry, runtime-detail, catalog, and generated-runtime diff across all 58 baseline production venues",
+  "releaseReady": false
+}
