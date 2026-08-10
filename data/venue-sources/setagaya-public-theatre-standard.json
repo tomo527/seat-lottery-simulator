@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "setagaya-public-theatre-standard",
+  "name": "世田谷パブリックシアター",
+  "prefecture": "東京都",
+  "city": "世田谷区",
+  "aliases": [
+    "世田谷文化生活情報センター 主劇場",
+    "SETAGAYA PUBLIC THEATRE"
+  ],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "policy-schema-source-hold-unselected",
+    "name": "代表配置未選定",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "公式概要は612席を基本形状と呼ぶ一方、可変設備による標準プロセニアム形式540〜600席とオープン形式513〜540席を並列掲載し、前舞台・平土間・鳥屋口で客席を撤去できると明記する。車椅子スペース4台12席の個別番号対応もなく、通常公演のselectable numbered-seat setを一意に指定していない。さらに主劇場は2026年4月1日から2027年3月31日予定で改修休館中で、公開番号図は2010年4月版のため、改修後の現行代表配置として採用できない。",
+    "notIncludedPatterns": [
+      "代表選定前の612席基本形状",
+      "代表選定前のプロセニアム形式540〜600席",
+      "代表選定前のオープン形式513〜540席",
+      "立見88人、補助席、注釈付席その他の公演別販売"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-theater-overview",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count",
+        "seat-structure",
+        "event-layout"
+      ],
+      "publisher": "公益財団法人せたがや文化財団／世田谷パブリックシアター",
+      "title": "世田谷パブリックシアター（主劇場）概要",
+      "url": "https://setagaya-pt.jp/guide/theater/",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "公益財団法人せたがや文化財団／世田谷パブリックシアター",
+      "title": "主劇場座席図（2010年4月版）",
+      "url": "https://setagaya-pt.jp/assets/docs/about/2015/06/2-2-1-1a.pdf",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-renovation-closure",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "公益財団法人せたがや文化財団／世田谷パブリックシアター",
+      "title": "世田谷パブリックシアター（主劇場）一時休館のお知らせ",
+      "url": "https://setagaya-pt.jp/news/23262/",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-current-lineup",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "公益財団法人せたがや文化財団／世田谷パブリックシアター",
+      "title": "主催公演ラインアップ",
+      "url": "https://www.setagaya-pt.jp/stage/lineup/",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-accessibility-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "公益財団法人せたがや文化財団／世田谷パブリックシアター",
+      "title": "鑑賞サポート",
+      "url": "https://setagaya-pt.jp/guide/support/",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-sales-variant-example",
+      "official": true,
+      "roles": [
+        "event-layout"
+      ],
+      "publisher": "公益財団法人せたがや文化財団／世田谷パブリックシアター",
+      "title": "『シッダールタ』公演・チケット情報",
+      "url": "https://setagaya-pt.jp/stage/25224/",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-post-renovation-rental",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "公益財団法人せたがや文化財団／世田谷パブリックシアター",
+      "title": "劇場使用申込み詳細",
+      "url": "https://setagaya-pt.jp/guide/rental-detail/",
+      "checkedAt": "2026-08-10"
+    }
+  ],
+  "registeredScope": "POLICY/SCHEMA/SOURCE HOLD。改修後の現行通常公演について発行者が一意に指定するselectable numbered-seat setを対象とする予定だが、現時点では番号rangeを登録しない。",
+  "completenessBasis": "現行公式概要は612席（基本形状）、プロセニアム形式540〜600席、オープン形式513〜540席、車椅子スペース4台12席、立見88人を掲載する。前舞台・平土間は客席を撤去して舞台又はオーケストラピットにでき、鳥屋口でも一部客席を撤去する。公式番号図は3階までの番号を描くが2010年4月版であり、現在は天井・舞台設備等の改修休館中である。",
+  "transformation": "代表配置ゲートで停止したためrange転記を開始しない。612席へのrange fitting、形式rangeの最大値採用、車椅子12席の算術控除、図形位置からの撤去番号推測、補助席・立見の番号創作を行わない。",
+  "knownLimitations": [
+    "POLICY HOLD: 発行者は基本形状612席を示すが、実運用する2つの舞台形式を席数rangeで示し、通常公演の既定形式・既定席数を指定していない。",
+    "SCHEMA HOLD: 車椅子スペース4台12席について、基本形状のどの個別番号を撤去・復帰するか、各舞台形式の席数rangeへどう算入するかを公表していない。",
+    "前舞台と平土間は客席を撤去して舞台・オーケストラピットに使用でき、鳥屋口も一部客席撤去を伴うが、公演ごとの撤去番号集合を通常代表へ固定する公式ルールがない。",
+    "公式公演ページは注釈付指定席、補助席、1階・3階立見を販売可能時に追加する例を示す。これは販売variantであり、固定された通常番号席集合を定義しない。",
+    "SOURCE HOLD: 主劇場は2026年4月1日から2027年3月31日予定で改修休館中で、公開番号図は2010年4月版である。改修後の現行番号図・席数・車椅子対応を確認できない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": "2026-08-10",
+    "method": "issuer-owned-representative-pattern-and-currentness-gate",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "POLICY HOLD: 612席基本形状、プロセニアム540〜600席、オープン513〜540席のいずれを通常販売用代表とするか発行者指定がない。",
+      "SCHEMA HOLD: 車椅子4台12席、前舞台・平土間・鳥屋口の撤去対象番号と各形式の包含関係が未公表。",
+      "SOURCE HOLD: 2027年再開後の公式座席図・席数・運用資料が未公表で、2010年版番号図を改修後の現行配置として扱えない。",
+      "代表番号席集合が一意でないため、第1パス、独立第2パス、production gateを開始していない。"
+    ]
+  },
+  "ranges": [],
+  "preflight": {
+    "officialFacilityPage": "あり",
+    "officialSeatStructureSource": "あり（2010年4月版、改修後現行性未確認）",
+    "officialSeatCountSource": "あり（612席基本形状、形式別range）",
+    "completeNumberedSeatMap": "旧版あり、改修後現行図なし",
+    "exactNominalSeatCount": "612席（基本形状）。通常公演はrangeのため非一意",
+    "representativeLayout": "非一意",
+    "fixedSeats": "3階までの旧番号図あり",
+    "movableSeats": "前舞台・平土間・鳥屋口で撤去あり、個別番号未公表",
+    "wheelchair": "4台12席、置換番号・形式別包含関係未公表",
+    "pit": "前舞台39.3平方メートルをオーケストラピットとして使用可能",
+    "areas": "1F・2F・3F、舞台形式別に可変",
+    "processingRoute": "Hold",
+    "classification": "POLICY/SCHEMA/SOURCE HOLD",
+    "mapUrl": "https://setagaya-pt.jp/assets/docs/about/2015/06/2-2-1-1a.pdf",
+    "countUrl": "https://setagaya-pt.jp/guide/theater/",
+    "checkedAt": "2026-08-10",
+    "rationale": "発行者は基本形状と2形式を明記するが、通常販売用の既定形式、車椅子・撤去席の番号対応、改修後の現行図を示していない。推測又は独自policyなしでは代表番号席集合を定義できない。",
+    "officialFacilityUrl": "https://setagaya-pt.jp/guide/theater/",
+    "status": "blocked",
+    "rangeEntry": "blocked-policy-schema-source-hold",
+    "decision": "policy-schema-source-hold"
+  }
+}

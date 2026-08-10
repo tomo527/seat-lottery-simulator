@@ -1,0 +1,109 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-sol-complex-macro-4-setagaya-public-theatre-2026-08-10",
+  "generatedAt": "2026-08-10",
+  "scope": "Sol high Tokyo COMPLEX macro 4 for setagaya-public-theatre only. No existing production venue, recorded hold, or P2 target was reopened or processed.",
+  "baseline": {
+    "head": "33fd9ab5c6f7ea35261f32b747493c932895666b",
+    "productionVenues": 58,
+    "productionSeats": 78917,
+    "catalogEntries": 58,
+    "fingerprints": 58
+  },
+  "outcome": {
+    "id": "setagaya-public-theatre",
+    "sourceId": "setagaya-public-theatre-standard",
+    "inventoryId": "tokyo-setagaya-public-theatre",
+    "officialConfigurations": {
+      "basicShape": 612,
+      "proscenium": "540-600 seats",
+      "open": "513-540 seats",
+      "standingMaximum": 88,
+      "wheelchairConversion": "4 wheelchair positions / 12 seats; individual numbered-seat mapping unpublished"
+    },
+    "representativePattern": "not-unique and not post-renovation current",
+    "expectedSeatCount": null,
+    "calculatedSeatCount": null,
+    "firstPass": "not-started; the issuer-owned representative-pattern/currentness gate failed before range transcription",
+    "independentSecondPass": "not-started; user scope permits an independent range pass only after a unique current selectable numbered-seat set is established",
+    "rangeDiff": null,
+    "newOfficialEvidence": "The current official overview calls 612 seats the basic shape but publishes two operational stage forms with capacity ranges: proscenium 540-600 and open 513-540. It explicitly permits removal of seats at the forestage and flat-floor areas for stage/orchestra-pit use and partial removal for three actor entrances. It states four wheelchair positions correspond to 12 seats but does not publish their individual numbers. An official performance page separately sells annotated seats, auxiliary chairs, and first-/third-floor standing positions when available.",
+    "currentness": "The main theatre is officially closed from 2026-04-01 through 2027-03-31 (planned) for ceiling and stage-equipment renovation. The official numbered map currently linked from the venue page is dated April 2010; no post-renovation current numbered map or conversion schedule is published.",
+    "finalClassification": "POLICY/SCHEMA/SOURCE HOLD",
+    "production": false,
+    "blocker": "The issuer does not designate one default operational form/count, map the 12 wheelchair-conversion seats or other removable seats to individual numbers, or publish a post-renovation current numbered map. Selecting 612 or a range maximum would create repository policy and arithmetic fitting.",
+    "sources": [
+      "https://setagaya-pt.jp/guide/theater/",
+      "https://setagaya-pt.jp/assets/docs/about/2015/06/2-2-1-1a.pdf",
+      "https://setagaya-pt.jp/news/23262/",
+      "https://www.setagaya-pt.jp/stage/lineup/",
+      "https://setagaya-pt.jp/guide/support/",
+      "https://setagaya-pt.jp/stage/25224/",
+      "https://setagaya-pt.jp/guide/rental-detail/"
+    ]
+  },
+  "tokyoTopUp": {
+    "targets": 16,
+    "complexTargetsCompleted": "4/4",
+    "productionPromotions": 2,
+    "productionIds": [
+      "line-cube-shibuya",
+      "suntory-hall-main"
+    ],
+    "productionSeatsAdded": 3958,
+    "nonProductionClosures": 14,
+    "closureBreakdown": {
+      "holdOrSourcePolicySchemaClosure": 12,
+      "officialContradictionOrMismatch": 2
+    },
+    "activeTokyoModelQueue": [],
+    "status": "bounded top-up processing complete; closed holds reopen only on new issuer-owned evidence"
+  },
+  "p2QueueDesign": {
+    "targets": 24,
+    "activeQueue": 8,
+    "holdWithoutModelWork": 16,
+    "sequence": [
+      {
+        "model": "Luna high",
+        "macro": "P2 STANDARD macro 1",
+        "targets": [
+          "sapporo-kitara-small-release-seed",
+          "rohm-theatre-kyoto-main-release-seed"
+        ],
+        "rationale": "Two issuer-mapped standard fixed-seat targets; cheapest complete passes first."
+      },
+      {
+        "model": "Terra high",
+        "macro": "P2 DENSE macro 1",
+        "targets": [
+          "sapporo-kitara-main-release-seed",
+          "kyoto-concert-hall-main-release-seed"
+        ],
+        "rationale": "Only after Luna; dense multi-area official maps with an already unique representative layout."
+      },
+      {
+        "model": "Sol high",
+        "macro": "P2 COMPLEX macros 1-4",
+        "targets": [
+          "hbg-hall-release-seed",
+          "fukuoka-sunpalace-hall-release-seed",
+          "festival-hall-release-seed",
+          "aichi-arts-center-main-release-seed"
+        ],
+        "rationale": "Only after cheaper queues; resolve wheelchair/orchestra-pit/multiple-use semantics in increasing complexity."
+      }
+    ],
+    "holdPolicy": "Do not assign model work to the other 16 P2 targets. Preserve source/date/policy holds and the ACROS contradiction until issuer-owned evidence changes."
+  },
+  "summary": {
+    "productionPromotions": 0,
+    "afterProductionVenues": 58,
+    "afterProductionSeats": 78917,
+    "existingProductionRegression": false,
+    "catalogRegression": false,
+    "fingerprintRegression": false,
+    "releaseReady": false,
+    "nextRecommended": "Luna high P2 STANDARD macro 1 for sapporo-kitara-small-release-seed and rohm-theatre-kyoto-main-release-seed only. Do not start Terra, Sol, or any P2 hold in the same macro."
+  }
+}
