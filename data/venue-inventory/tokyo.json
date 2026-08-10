@@ -2606,16 +2606,18 @@
       "city": "港区",
       "capacity": 2006,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "officialFacilityUrl": "https://www.suntory.co.jp/suntoryhall/facility/hall.html",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式大ホール座席表と現行公式貸出利用案内の別掲載座席図を独立照合し、通常の全番号席が1階858席・2階1,148席・計2,006席でrange差分ゼロ。無番号の専用車椅子スペース6か所、最大14席のユニバーサル・デザイン対応運用、舞台昇降床を代表番号席から一意に分離した。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0130",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-10",
       "discoveryUrlRaw": "http://suntory.jp/HALL/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "aliases": [
+        "サントリーホール 大ホール"
+      ]
     },
     {
       "inventoryId": "tokyo-suntory-blue-rose-a",

@@ -1,0 +1,65 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-sol-complex-macro-1-suntory-hall-2026-08-10",
+  "generatedAt": "2026-08-10",
+  "scope": "Sol high Tokyo COMPLEX macro 1 for suntory-hall-main only. No existing production venue, other COMPLEX target, recorded hold, or P2 target was reopened.",
+  "baseline": {
+    "head": "a5e1abb9731218f828ed7129cb2bb6218ac354f7",
+    "productionVenues": 57,
+    "productionSeats": 76911,
+    "catalogEntries": 57,
+    "fingerprints": 57
+  },
+  "outcome": {
+    "id": "suntory-hall-main",
+    "sourceId": "tokyo-wave3-0130",
+    "inventoryId": "tokyo-official-0130",
+    "officialCapacity": 2006,
+    "officialFloorCounts": {
+      "1F": 858,
+      "2F": 1148
+    },
+    "officialSecondFloorBlockCounts": {
+      "LA": 110,
+      "LB": 74,
+      "LC": 52,
+      "LD": 66,
+      "C": 354,
+      "RA": 110,
+      "RB": 74,
+      "RC": 52,
+      "RD": 66,
+      "P": 190
+    },
+    "calculatedNumberedSeatCount": 2006,
+    "calculatedNumberedFloorCounts": {
+      "1F": 858,
+      "2F": 1148
+    },
+    "firstPass": "The current official hall seat map was rendered at high resolution and every printed numbered run was transcribed without fitting to capacity. The result was 1F rows 1-14 510, rows 15-23 348, 1F 858; all ten 2F blocks matched their printed subtotals for 1,148; total 2,006.",
+    "independentSecondPass": "A fresh extraction from the separately published current official rental guide seat map re-read every 1F row, every LA/LB/LC/LD/C/RA/RB/RC/RD/P endpoint, and the split runs in 1F row 23 plus C and P. It reproduced 2,006 seats with zero range diff and the same printed floor/block subtotals.",
+    "rangeDiff": 0,
+    "newOfficialEvidence": "The current issuer rental guide requires the Main Hall to be all-reserved and directs ticket issuance from the hall's 2,006-seat map. The issuer seat/facility/barrier-free pages independently state 2,006 total, 1F 858, 2F 1,148, six dedicated unnumbered wheelchair spaces, up to 14 universal-design compatible seats, and a 39-part stage lift.",
+    "variantResolution": "The six dedicated wheelchair symbols are outside the numbered runs; up to 14 universal-design compatible seats are an on-request operational conversion; and the 39-part lift is stage equipment, not an alternative audience-seat numbering. These issuer statements make the standard printed 2,006-number seat map a unique representative selectable set without inventing a policy.",
+    "finalClassification": "PRODUCTION",
+    "production": true,
+    "blocker": null,
+    "sources": [
+      "https://www.suntory.co.jp/suntoryhall/seat/",
+      "https://www.suntory.co.jp/suntoryhall/seat/pdf/hall.pdf",
+      "https://www.suntory.co.jp/suntoryhall/rental/pdf/suntory_hall_rent03_202512.pdf",
+      "https://www.suntory.co.jp/suntoryhall/facility/hall.html",
+      "https://www.suntory.co.jp/suntoryhall/facility/barrierfree.html"
+    ]
+  },
+  "summary": {
+    "productionPromotions": 1,
+    "afterProductionVenues": 58,
+    "afterProductionSeats": 78917,
+    "existingProductionRegression": false,
+    "catalogRegression": false,
+    "fingerprintRegression": false,
+    "releaseReady": false,
+    "nextRecommended": "Sol high Tokyo COMPLEX macro 2 for meijiza only; preserve suntory-hall-main and every existing production/hold, and do not start kabukiza, setagaya-public-theatre, or P2 in the same macro."
+  }
+}
