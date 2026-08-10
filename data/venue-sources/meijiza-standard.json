@@ -10,29 +10,17 @@
   ],
   "venueType": "theater",
   "representativePattern": {
-    "id": "standard-without-hanamichi",
-    "name": "花道なし通常客席配置",
+    "id": "policy-schema-hold-unselected",
+    "name": "代表配置未選定",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "公式が示す2配置のうち、花道による減席がない花道なし1448席配置を代表パターン候補とする。",
+    "selectionReason": "公式は花道あり1,368席と花道なし1,448席の2つの完全な番号席配置を並列掲載し、花道使用は公演ごとに異なると明記する。通常・標準・既定配置の指定がないため、どちらかを抽選用代表として選ぶとrepository側のpolicy創作になる。",
     "notIncludedPatterns": [
-      "花道あり1368席配置"
+      "代表配置決定前の花道あり1,368席配置",
+      "代表配置決定前の花道なし1,448席配置"
     ]
   },
   "sources": [
-    {
-      "id": "official-seat-map-without-hanamichi",
-      "official": true,
-      "roles": [
-        "seat-structure",
-        "seat-count",
-        "event-layout"
-      ],
-      "publisher": "株式会社明治座",
-      "title": "花道なし座席表",
-      "url": "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat-none.pdf",
-      "checkedAt": "2026-07-26"
-    },
     {
       "id": "official-seat-guide",
       "official": true,
@@ -44,25 +32,123 @@
       "publisher": "株式会社明治座",
       "title": "劇場座席表",
       "url": "https://www.meijiza.co.jp/theater-guide/seat/",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-seat-map-without-hanamichi",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "花道なし座席表",
+      "url": "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat-none.pdf",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-seat-map-with-hanamichi",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "花道あり座席表",
+      "url": "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat.pdf",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-barrier-free-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "バリアフリー",
+      "url": "https://www.meijiza.co.jp/theater-guide/barrierfree/",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-event-without-hanamichi",
+      "official": true,
+      "roles": [
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "『忠臣蔵』公演詳細",
+      "url": "https://www.meijiza.co.jp/info/2025/2025_12_01/",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-event-with-hanamichi",
+      "official": true,
+      "roles": [
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "SHOW-WA&MATSURIコンサート2025 in 明治座",
+      "url": "https://www.meijiza.co.jp/info/2025/2025_09_02/",
+      "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-event-supplemental-sales",
+      "official": true,
+      "roles": [
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "Ms.OOJA 明治座公演 2026",
+      "url": "https://www.meijiza.co.jp/info/2026/2026_06_01/",
+      "checkedAt": "2026-08-10"
     }
   ],
-  "registeredScope": "花道なし通常配置の番号席1448席を予定。",
-  "completenessBasis": "公式座席ページと花道なしPDFで席数を確認済み。全rangeを転記中。",
-  "transformation": "階・客席区分ごとに公式番号をrangeへ転記する予定。",
+  "registeredScope": "POLICY/SCHEMA HOLD。代表配置を選定できないため番号席rangeは登録しない。",
+  "completenessBasis": "現行公式座席ページと2つの公式PDFは、花道ありを1F 834・2F 390・3F 144（計1,368）、花道なしを1F 914・2F 390・3F 144（計1,448）として完全に別掲載する。公式公演詳細にも花道あり・なしの双方の実運用例があり、施設ページは使用状態を公演ごとに確認するよう案内する。",
+  "transformation": "代表配置ゲートで停止したためrange転記を開始しない。1,368又は1,448を通常値として採用せず、両配置を混在させず、最大値選択や席数合わせを行わない。",
   "knownLimitations": [
-    "花道あり公演では80席少ない別配置となるため混在させない。"
+    "POLICY HOLD: 花道あり・なしは同格の現行公式配置であり、発行者は通常・標準・既定の代表配置を指定していない。",
+    "公式2図の比較では花道あり配置で1F各1～20列の7～10番がなく、公式1F合計も914から834へ80席減る。ただし、この差は花道なしを代表にする根拠ではない。",
+    "SCHEMA HOLD: 公式は2階左右コーナーの車いすスペースを案内し、公演ごとの予約方法へ委ねるが、個別番号又は2階390番号席との撤去・置換対応を公表していない。",
+    "席選択可否、注釈付き席、補助席、立ち見の販売は公演・販売段階ごとに変わり、1つの通常固定番号席集合を選ぶ根拠にならない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-10",
+    "method": "issuer-owned-representative-pattern-gate",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "花道あり・なしの複数配置から代表パターンを一意に確定できていない。",
-      "公式が通常配置として扱う座席表と総席数を特定する。"
+      "POLICY HOLD: 発行者が花道あり1,368席と花道なし1,448席のどちらを通常代表とするか指定していない。",
+      "SCHEMA HOLD: 2階左右の無番号車いすスペースと2階390番号席の包含・転換関係及び対象番号が未公表である。",
+      "代表配置が一意でないため、ユーザー指定に従い第1パス、独立第2パス、production gateを開始していない。発行者による通常配置指定と車いす運用の番号対応が必要である。"
     ]
   },
-  "ranges": []
+  "ranges": [],
+  "preflight": {
+    "officialFacilityPage": "あり",
+    "officialSeatStructureSource": "あり（花道あり・なしの2配置）",
+    "officialSeatCountSource": "あり（1,368席・1,448席）",
+    "completeNumberedSeatMap": "あり（2配置）",
+    "exactNominalSeatCount": "複数（1,368席・1,448席）",
+    "representativeLayout": "非一意",
+    "fixedSeats": "あり",
+    "movableSeats": "花道設置時に1F 80席差",
+    "wheelchair": "2階左右に無番号スペース、番号席との対応未公表",
+    "pit": "なし",
+    "areas": "1F・2F・3F",
+    "processingRoute": "Hold",
+    "classification": "POLICY/SCHEMA HOLD",
+    "mapUrl": "https://www.meijiza.co.jp/theater-guide/seat/",
+    "countUrl": "https://www.meijiza.co.jp/theater-guide/seat/",
+    "checkedAt": "2026-08-10",
+    "rationale": "花道あり1,368席と花道なし1,448席はいずれも発行者の現行公式番号図で、公演ごとに選択される。通常代表の指定がなく、2階車いすスペースと390番号席の対応も未公表のため、推測による代表選択又はschema補完を禁止する。",
+    "officialFacilityUrl": "https://www.meijiza.co.jp/theater-guide/seat/",
+    "status": "blocked",
+    "rangeEntry": "blocked-policy-schema-hold",
+    "decision": "policy-schema-hold"
+  }
 }

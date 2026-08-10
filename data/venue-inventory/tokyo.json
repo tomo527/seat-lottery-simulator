@@ -2174,16 +2174,17 @@
       "officialDisplayName": "明治座",
       "prefecture": "東京都",
       "city": "中央区",
-      "capacity": 1448,
+      "capacity": null,
       "category": "hall",
       "officialFacilityUrl": "https://www.meijiza.co.jp/theater-guide/seat/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibility": "needs-research",
+      "eligibilityReason": "POLICY/SCHEMA HOLD。公式は花道あり1,368席と花道なし1,448席を公演ごとの有効配置として並列掲載し、通常代表を指定しない。2階左右の車いすスペースと390番号席の番号対応も未公表。",
       "priority": "A",
       "venueSourceId": "meijiza-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-10",
+      "blockingReason": "POLICY/SCHEMA HOLD: 発行者による通常代表配置の指定と、2階無番号車いすスペースが置換・除外する番号席の公式対応が必要。1,368又は1,448の採用、80席差の算術適用、販売パターンからの推測は禁止。"
     },
     {
       "inventoryId": "tokyo-official-0109",

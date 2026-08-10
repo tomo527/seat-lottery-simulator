@@ -1,0 +1,62 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-sol-complex-macro-2-meijiza-2026-08-10",
+  "generatedAt": "2026-08-10",
+  "scope": "Sol high Tokyo COMPLEX macro 2 for meijiza only. No existing production venue, other COMPLEX target, recorded hold, or P2 target was reopened.",
+  "baseline": {
+    "head": "f8ec4f45e86374e119d88142d9f5fa91d256ca2c",
+    "productionVenues": 58,
+    "productionSeats": 78917,
+    "catalogEntries": 58,
+    "fingerprints": 58
+  },
+  "outcome": {
+    "id": "meijiza",
+    "sourceId": "meijiza-standard",
+    "inventoryId": "tokyo-meijiza",
+    "officialConfigurations": {
+      "withHanamichi": {
+        "total": 1368,
+        "1F": 834,
+        "2F": 390,
+        "3F": 144
+      },
+      "withoutHanamichi": {
+        "total": 1448,
+        "1F": 914,
+        "2F": 390,
+        "3F": 144
+      }
+    },
+    "representativePattern": "not-unique",
+    "expectedSeatCount": null,
+    "calculatedSeatCount": null,
+    "firstPass": "not-started; the issuer-owned representative-pattern gate failed before range transcription",
+    "independentSecondPass": "not-started; user scope permits an independent range pass only after a unique representative pattern is established",
+    "rangeDiff": null,
+    "newOfficialEvidence": "The current official seat page publishes complete with-hanamichi and without-hanamichi numbered maps together and says hanamichi use varies by performance. Official performance pages demonstrate both states in actual use. The official barrier-free guide places wheelchair spaces at both second-floor corners and makes reservation handling performance-specific. Another official event page separately adds annotation seats, auxiliary seats, and standing sales, showing that sales mode does not designate a single normal fixed-seat set.",
+    "variantResolution": "The two official maps label 1F 834/914, 2F 390, and 3F 144. Their first-floor difference is the four-seat run 7-10 across rows 1-20 when the hanamichi is installed, but neither map nor the current seat page elevates the 1,448-seat state to a default. The wheelchair spaces have no published individual numbers or issuer-owned mapping to removed/replaced seats within the 390 numbered second-floor seats.",
+    "finalClassification": "POLICY/SCHEMA HOLD",
+    "production": false,
+    "blocker": "Selecting either 1,368 or 1,448 as the representative would create repository policy, while including or excluding wheelchair positions would require an unpublished seat-number relationship. Do not infer, subtract, fit, or manufacture ranges.",
+    "sources": [
+      "https://www.meijiza.co.jp/theater-guide/seat/",
+      "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat-none.pdf",
+      "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat.pdf",
+      "https://www.meijiza.co.jp/theater-guide/barrierfree/",
+      "https://www.meijiza.co.jp/info/2025/2025_12_01/",
+      "https://www.meijiza.co.jp/info/2025/2025_09_02/",
+      "https://www.meijiza.co.jp/info/2026/2026_06_01/"
+    ]
+  },
+  "summary": {
+    "productionPromotions": 0,
+    "afterProductionVenues": 58,
+    "afterProductionSeats": 78917,
+    "existingProductionRegression": false,
+    "catalogRegression": false,
+    "fingerprintRegression": false,
+    "releaseReady": false,
+    "nextRecommended": "Sol high Tokyo COMPLEX macro 3 for kabukiza only. Keep meijiza on POLICY/SCHEMA HOLD, preserve every production/hold, and do not start setagaya-public-theatre or P2 in the same macro."
+  }
+}
