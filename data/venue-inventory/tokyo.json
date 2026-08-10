@@ -14495,13 +14495,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://linecubeshibuya.com/facility",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行公式資料は通常1,956席（1階1,180・2階424・3階352）を示すが、多目的鑑賞席4席と車椅子転換の1階26席を含む固定代表集合が未確定。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式座席表の全番号席1,952席（1階1,176・2階424・3階352）を独立2パスで一致確認し、公式利用案内で車椅子転換対象26席も番号指定されたためproduction化した。",
       "priority": "A",
       "venueSourceId": "line-cube-shibuya-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-10",
-      "blockingReason": "SOL HANDOFF: Terra第1・独立第2パスで公式1,956席（1階1,180・2階424・3階352）を一致確認した。多目的鑑賞室4席は無番号で、車椅子12台分へ転換する1階26席の番号も公式資料にないため、fixed selectable numbered-seat setを一意に定義できない。推測又は算術差引きは禁止。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-10"
     },
     {
       "inventoryId": "tokyo-official-0740",

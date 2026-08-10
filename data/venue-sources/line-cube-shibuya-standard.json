@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "line-cube-shibuya-standard",
   "name": "LINE CUBE SHIBUYA",
   "prefecture": "東京都",
@@ -10,14 +10,16 @@
   ],
   "venueType": "hall",
   "representativePattern": {
-    "id": "standard-full-seating",
-    "name": "通常全席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設案内の通常全席配置1956席を候補とする。",
+    "id": "standard-1952-numbered-seats",
+    "name": "通常1,952番号席配置",
+    "coverage": "complete",
+    "expectedSeatCount": 1952,
+    "selectionReason": "公式座席表に印刷された通常配置の全番号席を対象とする。公式の定員1,956名には個別番号のない多目的鑑賞室4席が含まれるため、その4席は抽選対象に含めない。",
     "notIncludedPatterns": [
-      "オーケストラピット使用時",
-      "車椅子利用時"
+      "オーケストラピット使用時（1階126席を使用しない配置）",
+      "車椅子利用時（1階16列1～13番・32～44番の26席を撤去する配置）",
+      "多目的鑑賞室の無番号4席",
+      "公演・撮影・機材設置ごとの個別座席カット"
     ]
   },
   "sources": [
@@ -29,7 +31,7 @@
         "seat-count"
       ],
       "publisher": "LINE CUBE SHIBUYA",
-      "title": "座席表",
+      "title": "座席表 ver.191101",
       "url": "https://linecubeshibuya.com/cms/wp-content/uploads/2021/10/seating_chart_n.pdf",
       "checkedAt": "2026-08-10"
     },
@@ -38,33 +40,117 @@
       "official": true,
       "roles": [
         "seat-count",
-        "facility",
-        "event-layout"
+        "facility"
       ],
       "publisher": "LINE CUBE SHIBUYA",
       "title": "施設概要",
       "url": "https://linecubeshibuya.com/facility",
       "checkedAt": "2026-08-10"
+    },
+    {
+      "id": "official-user-guide",
+      "official": true,
+      "roles": [
+        "event-layout",
+        "seat-structure"
+      ],
+      "publisher": "渋谷公会堂管理事務所",
+      "title": "LINE CUBE SHIBUYA 利用のご案内",
+      "url": "https://linecubeshibuya.com/cms/wp-content/uploads/2019/12/userguide.pdf",
+      "checkedAt": "2026-08-10"
     }
   ],
-  "registeredScope": "未登録。現行公式資料だけでは通常の固定番号付きseat setを一意に定義できない。",
-  "completenessBasis": "現行公式座席表と施設案内の1,956席（1階1,180・2階424・3階352）を確認したが、通常席・多目的鑑賞席・車椅子転換席の包含関係を公式根拠だけで固定できない。",
-  "transformation": "1階・2階・3階をareaに分け、公式図に印刷された連続番号だけを明示rangeへ転記する。",
+  "registeredScope": "公式座席表に個別番号が印刷された通常配置の1階1,176席、2階424席、3階352席、計1,952席。",
+  "completenessBasis": "第1パスは公式座席表を原寸表示して全階・全列の端点と欠番を転記し、1階1,176席、2階424席、3階352席、計1,952席を確認した。独立第2パスは座席表の番号runと階別小計を再抽出し、現行公式利用案内の車椅子転換番号（1階16列1～13番・32～44番）を照合してrange差分ゼロとなった。1,952は1,956からの単純差引きではなく、公式図に印刷された番号席の全数である。",
+  "transformation": "各階の同一列に印刷された連続番号をrangeへ圧縮し、偶数列の31番欠番をexcludedへ明示した。2階・3階の左右側列は公式図のL列・R列を独立areaとして登録した。",
   "knownLimitations": [
-    "オーケストラピット利用時の126席を使わない配置は固定番号席集合と別パターンである。",
-    "公式座席表は定員1,956、1階1,180（多目的鑑賞室4席を含む）、2階424、3階352、車椅子スペース12台分／1階26席分を使用と明記する。ただし多目的鑑賞室4席には個別番号がなく、車椅子転換対象の26番号も明記しないため、一意のfixed selectable numbered-seat setを定義できない。"
+    "公式定員1,956名は1階1,180席（個別番号のない多目的鑑賞室4席を含む）、2階424席、3階352席であり、抽選対象の番号席総数とは異なる。",
+    "車椅子スペース12台分を設ける場合、公式利用案内に従って1階16列1～13番・32～44番の26席を撤去する。この転換配置は通常番号席配置に含めない。",
+    "オーケストラピット使用時は1階126席を使わない別配置であり、代表パターンに含めない。",
+    "撮影・機材設置等による公演ごとの座席カットは固定代表配置に含めない。"
   ],
   "verification": {
-    "status": "pending",
+    "status": "verified",
     "checkedAt": "2026-08-10",
     "method": "independent-official-source-review",
-    "seatStructure": "mismatched",
+    "reviewer": "Codex Sol independent second-pass audit",
+    "seatStructure": "matched",
     "seatCount": "matched",
-    "unresolvedIssues": [
-      "Terra第1パスと独立第2パスは公式定員1,956、1階1,180（多目的鑑賞室4席含む）、2階424、3階352を一致確認した。",
-      "同じ公式座席表は車椅子スペース12台分に1階26席分を使用すると記すが、転換対象の番号を特定しない。多目的鑑賞室4席も個別番号を示さない。",
-      "1956定員、無番号4席を除く数、又は車椅子転換時の数のいずれを通常の固定番号席集合にするかは、公式資料だけで決められない。算術差引き又は推定範囲を作らず、Sol handoffで発行者根拠を要求する。"
-    ]
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "1", "from": 9, "to": 36, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "2", "from": 8, "to": 37, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "3", "from": 6, "to": 39, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "4", "from": 5, "to": 40, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "5", "from": 4, "to": 41, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "6", "from": 3, "to": 42, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "7", "from": 2, "to": 43, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "8", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "9", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "10", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "11", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "12", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "13", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "14", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "15", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "16", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "17", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "18", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "19", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "20", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "21", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "22", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "23", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "24", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "25", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "26", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "27", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "28", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "first-floor", "areaLabel": "1階", "rowLabel": "29", "from": 14, "to": 31, "excluded": [] },
+    { "areaId": "second-floor-left", "areaLabel": "2階左側席", "rowLabel": "L列", "from": 1, "to": 17, "excluded": [] },
+    { "areaId": "second-floor-right", "areaLabel": "2階右側席", "rowLabel": "R列", "from": 1, "to": 17, "excluded": [] },
+    { "areaId": "second-floor-main", "areaLabel": "2階正面席", "rowLabel": "1", "from": 2, "to": 43, "excluded": [] },
+    { "areaId": "second-floor-main", "areaLabel": "2階正面席", "rowLabel": "2", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "second-floor-main", "areaLabel": "2階正面席", "rowLabel": "3", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "second-floor-main", "areaLabel": "2階正面席", "rowLabel": "4", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "second-floor-main", "areaLabel": "2階正面席", "rowLabel": "5", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "second-floor-main", "areaLabel": "2階正面席", "rowLabel": "6", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "second-floor-main", "areaLabel": "2階正面席", "rowLabel": "7", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "second-floor-main", "areaLabel": "2階正面席", "rowLabel": "8", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "second-floor-main", "areaLabel": "2階正面席", "rowLabel": "9", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "third-floor-left", "areaLabel": "3階左側席", "rowLabel": "L列", "from": 1, "to": 16, "excluded": [] },
+    { "areaId": "third-floor-right", "areaLabel": "3階右側席", "rowLabel": "R列", "from": 1, "to": 16, "excluded": [] },
+    { "areaId": "third-floor-main", "areaLabel": "3階正面席", "rowLabel": "1", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "third-floor-main", "areaLabel": "3階正面席", "rowLabel": "2", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "third-floor-main", "areaLabel": "3階正面席", "rowLabel": "3", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "third-floor-main", "areaLabel": "3階正面席", "rowLabel": "4", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "third-floor-main", "areaLabel": "3階正面席", "rowLabel": "5", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "third-floor-main", "areaLabel": "3階正面席", "rowLabel": "6", "from": 1, "to": 44, "excluded": [31] },
+    { "areaId": "third-floor-main", "areaLabel": "3階正面席", "rowLabel": "7", "from": 1, "to": 44, "excluded": [] },
+    { "areaId": "third-floor-main", "areaLabel": "3階正面席", "rowLabel": "8", "from": 14, "to": 28, "excluded": [] }
+  ],
+  "preflight": {
+    "officialFacilityPage": "あり",
+    "officialSeatStructureSource": "あり",
+    "officialSeatCountSource": "あり",
+    "completeNumberedSeatMap": "あり",
+    "exactNominalSeatCount": "あり（定員1,956名、番号席1,952席）",
+    "representativeLayout": "一意",
+    "fixedSeats": "あり",
+    "movableSeats": "あり（車椅子転換対象26席）",
+    "wheelchair": "あり（1階16列1～13番・32～44番を撤去して12台分）",
+    "pit": "あり（126席を使用しない別配置）",
+    "areas": "複雑",
+    "processingRoute": "Sol",
+    "classification": "PRODUCTION",
+    "mapUrl": "https://linecubeshibuya.com/cms/wp-content/uploads/2021/10/seating_chart_n.pdf",
+    "countUrl": "https://linecubeshibuya.com/facility",
+    "checkedAt": "2026-08-10",
+    "rationale": "公式図の全番号を独立2パスで照合し、1階1,176席、2階424席、3階352席、計1,952席、range差分ゼロ。現行公式利用案内が車椅子転換対象26席を番号指定し、多目的鑑賞室4席は無番号であるため通常のselectable numbered-seat setは一意。",
+    "officialFacilityUrl": "https://linecubeshibuya.com/facility",
+    "status": "complete",
+    "rangeEntry": "complete",
+    "decision": "production"
+  }
 }

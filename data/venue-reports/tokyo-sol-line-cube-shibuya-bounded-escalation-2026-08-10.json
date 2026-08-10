@@ -1,0 +1,53 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-sol-line-cube-shibuya-bounded-escalation-2026-08-10",
+  "generatedAt": "2026-08-10",
+  "scope": "Sol high bounded escalation for line-cube-shibuya only. No existing production venue, nissay-theatre, other Tokyo/Kanto hold, Tokyo COMPLEX target, or P2 target was reopened.",
+  "baseline": {
+    "head": "377db007fa0cf9876198dae52e5c423c7012584c",
+    "productionVenues": 56,
+    "productionSeats": 74959,
+    "catalogEntries": 56,
+    "fingerprints": 56
+  },
+  "outcome": {
+    "id": "line-cube-shibuya",
+    "sourceId": "line-cube-shibuya-standard",
+    "inventoryId": "tokyo-line-cube-shibuya",
+    "officialCapacity": 1956,
+    "officialFloorCounts": {
+      "1F": 1180,
+      "2F": 424,
+      "3F": 352
+    },
+    "calculatedNumberedSeatCount": 1952,
+    "calculatedNumberedFloorCounts": {
+      "1F": 1176,
+      "2F": 424,
+      "3F": 352
+    },
+    "firstPass": "The official seat map was rendered at original resolution and every printed numbered run was transcribed without fitting to the 1,956 capacity. The result was 1F 1,176, 2F 424, 3F 352, total 1,952. The four multipurpose-room positions are drawn separately without individual numbers.",
+    "independentSecondPass": "A fresh official-PDF reread independently re-extracted every row endpoint, each even-row 31 omission, the 2F/3F L and R side rows, and floor subtotals. The ranges matched with zero diff. The current official user guide separately identifies the wheelchair-conversion targets as 1F row 16 seats 1-13 and 32-44, exactly 26 numbered seats.",
+    "rangeDiff": 0,
+    "newOfficialEvidence": "The issuer-owned current user guide states that 1F row 16 seats 1-13 and 32-44 are removed for wheelchair seating. This resolves the previous unknown 26-seat conversion target without inference.",
+    "multipurposeEvidence": "The official map and facility page include four multipurpose-viewing-room seats in the 1F capacity but assign them no individual seat numbers. They are therefore not members of the map's selectable numbered-seat set.",
+    "finalClassification": "PRODUCTION",
+    "production": true,
+    "blocker": null,
+    "sources": [
+      "https://linecubeshibuya.com/cms/wp-content/uploads/2021/10/seating_chart_n.pdf",
+      "https://linecubeshibuya.com/facility",
+      "https://linecubeshibuya.com/cms/wp-content/uploads/2019/12/userguide.pdf"
+    ]
+  },
+  "summary": {
+    "productionPromotions": 1,
+    "afterProductionVenues": 57,
+    "afterProductionSeats": 76911,
+    "existingProductionRegression": false,
+    "catalogRegression": false,
+    "fingerprintRegression": false,
+    "releaseReady": false,
+    "nextRecommended": "No further model escalation for line-cube-shibuya. Return to the release macro after preserving nissay-theatre and all recorded Tokyo/Kanto holds; do not start Tokyo COMPLEX or P2 in this bounded task."
+  }
+}
