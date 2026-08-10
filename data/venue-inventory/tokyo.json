@@ -1034,8 +1034,8 @@
       "priority": "A",
       "venueSourceId": "nissay-theatre-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-09",
-      "blockingReason": "TERRA HANDOFF: 第1・独立第2パスで現行公式座席図の構造と公式1,334席を確認したが、左右曲面ボックスを含む全row・欠番・areaのlossless range転記はLunaの範囲を超える。総席数に合わせた補正は禁止。",
+      "lastCheckedAt": "2026-08-10",
+      "blockingReason": "SOURCE/SCHEMA HOLD: Terra第1・独立第2パスで公式1,334席と中央番号runを確認したが、左右曲面部の重複番号を結び付ける公式area/rowキーがない。1扉から16扉は扉ラベルである。issuer-owned seat-number key等が必要で、geometry由来のarea/row新設又は算術補正は禁止。",
       "discoveryUrlRaw": "http://www.nissaytheatre.or.jp/"
     },
     {
@@ -14500,8 +14500,8 @@
       "priority": "A",
       "venueSourceId": "line-cube-shibuya-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-09",
-      "blockingReason": "SOL HANDOFF / POLICY HOLD: 第1・独立第2パスで公式1,956席の階別内訳を確認したが、多目的鑑賞4席、車椅子スペース12台分、車椅子使用時の1階26席の番号包含関係が一意でない。総席数に合わせた除外は禁止。"
+      "lastCheckedAt": "2026-08-10",
+      "blockingReason": "SOL HANDOFF: Terra第1・独立第2パスで公式1,956席（1階1,180・2階424・3階352）を一致確認した。多目的鑑賞室4席は無番号で、車椅子12台分へ転換する1階26席の番号も公式資料にないため、fixed selectable numbered-seat setを一意に定義できない。推測又は算術差引きは禁止。"
     },
     {
       "inventoryId": "tokyo-official-0740",

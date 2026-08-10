@@ -31,7 +31,7 @@
       "publisher": "LINE CUBE SHIBUYA",
       "title": "座席表",
       "url": "https://linecubeshibuya.com/cms/wp-content/uploads/2021/10/seating_chart_n.pdf",
-      "checkedAt": "2026-08-09"
+      "checkedAt": "2026-08-10"
     },
     {
       "id": "official-facility-guide",
@@ -44,25 +44,26 @@
       "publisher": "LINE CUBE SHIBUYA",
       "title": "施設概要",
       "url": "https://linecubeshibuya.com/facility",
-      "checkedAt": "2026-08-09"
+      "checkedAt": "2026-08-10"
     }
   ],
-  "registeredScope": "通常全席配置の番号付き座席1956席を予定。",
-  "completenessBasis": "現行公式座席表と施設案内の1,956席（1階1,180・2階424・3階352）を確認した。通常席・多目的鑑賞席・車椅子転換席の包含関係を固定してから全rangeを独立抽出する。",
+  "registeredScope": "未登録。現行公式資料だけでは通常の固定番号付きseat setを一意に定義できない。",
+  "completenessBasis": "現行公式座席表と施設案内の1,956席（1階1,180・2階424・3階352）を確認したが、通常席・多目的鑑賞席・車椅子転換席の包含関係を公式根拠だけで固定できない。",
   "transformation": "1階・2階・3階をareaに分け、公式図に印刷された連続番号だけを明示rangeへ転記する。",
   "knownLimitations": [
-    "オーケストラピット利用時は前方126席を使用しない。",
-    "公式資料は多目的鑑賞席4席を1階1,180席に含め、車椅子スペース12台分と1階26席使用を別記している。通常抽選集合への包含関係を推測しない。"
+    "オーケストラピット利用時の126席を使わない配置は固定番号席集合と別パターンである。",
+    "公式座席表は定員1,956、1階1,180（多目的鑑賞室4席を含む）、2階424、3階352、車椅子スペース12台分／1階26席分を使用と明記する。ただし多目的鑑賞室4席には個別番号がなく、車椅子転換対象の26番号も明記しないため、一意のfixed selectable numbered-seat setを定義できない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": "2026-08-09",
+    "checkedAt": "2026-08-10",
     "method": "independent-official-source-review",
-    "seatStructure": "matched",
-    "seatCount": "pending",
+    "seatStructure": "mismatched",
+    "seatCount": "matched",
     "unresolvedIssues": [
-      "第1パスと独立第2パスは現行公式座席表の1階1,180・2階424・3階352と総数1,956を確認した。",
-      "多目的鑑賞4席、車椅子スペース12台分、車椅子使用時に変わる1階26席の番号包含関係が公式資料だけで一意に定義されていない。Solで固定代表配置を判定する。"
+      "Terra第1パスと独立第2パスは公式定員1,956、1階1,180（多目的鑑賞室4席含む）、2階424、3階352を一致確認した。",
+      "同じ公式座席表は車椅子スペース12台分に1階26席分を使用すると記すが、転換対象の番号を特定しない。多目的鑑賞室4席も個別番号を示さない。",
+      "1956定員、無番号4席を除く数、又は車椅子転換時の数のいずれを通常の固定番号席集合にするかは、公式資料だけで決められない。算術差引き又は推定範囲を作らず、Sol handoffで発行者根拠を要求する。"
     ]
   },
   "ranges": []

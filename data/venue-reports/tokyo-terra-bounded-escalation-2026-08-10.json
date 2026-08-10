@@ -1,0 +1,67 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-terra-bounded-escalation-2026-08-10",
+  "generatedAt": "2026-08-10",
+  "scope": "Terra high bounded escalation. Only nissay-theatre and line-cube-shibuya were reviewed; no other Tokyo COMPLEX, P2, or existing HOLD/MISMATCH target was reopened.",
+  "baseline": {
+    "head": "38020749f62d290e8778223a2beff9f4f8d36128",
+    "productionVenues": 56,
+    "productionSeats": 74959,
+    "catalogEntries": 56,
+    "fingerprints": 56
+  },
+  "outcomes": [
+    {
+      "id": "nissay-theatre",
+      "sourceId": "nissay-theatre-standard",
+      "inventoryId": "tokyo-nissay-theatre",
+      "officialSeatCount": 1334,
+      "calculatedSeatCount": null,
+      "firstPass": "Terra visually read the official current PDF at original resolution. It independently transcribed the complete readable 1F central core (XA-XC and A-Q), confirmed the G.C. and 2F central structure, and found that the curved positions repeat printed numbers without a complete official row/area key.",
+      "independentSecondPass": "A separate reread of the official PDF and official theatre overview confirmed the same 1,334-seat total and the same blocker: 1扉 through 16扉 are door labels, not seat areas; no issuer-owned mapping connects every repeated curve position to a row/area identity.",
+      "rangeDiff": null,
+      "finalClassification": "SOURCE/SCHEMA HOLD",
+      "production": false,
+      "modelHandoff": null,
+      "blocker": "The repository model requires a lossless seat identity. Creating curved areas or row labels from geometry, or using the 1,334 total to resolve duplicates, would manufacture non-official identities. A seat-number key, ticketing seat specification, or equivalent issuer-owned coordinate-to-row/area source is required.",
+      "sources": [
+        "https://www.nissaytheatre.or.jp/wptest/wp-content/themes/nissay/assets/pdf/seat/seat.pdf",
+        "https://www.nissaytheatre.or.jp/seat/",
+        "https://www.nissaytheatre.or.jp/theater/"
+      ]
+    },
+    {
+      "id": "line-cube-shibuya",
+      "sourceId": "line-cube-shibuya-standard",
+      "inventoryId": "tokyo-line-cube-shibuya",
+      "officialSeatCount": 1956,
+      "officialFloorCounts": {
+        "1F": 1180,
+        "2F": 424,
+        "3F": 352
+      },
+      "calculatedSeatCount": null,
+      "firstPass": "Terra reread the official three-page map and facility guide, confirming 1,956 total; 1F 1,180 including the four-seat multipurpose viewing room; 2F 424; and 3F 352.",
+      "independentSecondPass": "Independent official-source reread confirmed that the map separately states wheelchair space for 12 and use of 26 first-floor seats, while neither those 26 seat numbers nor individual multipurpose-room seat numbers are published.",
+      "rangeDiff": null,
+      "finalClassification": "SOL HANDOFF",
+      "production": false,
+      "modelHandoff": "Sol",
+      "blocker": "The official sources do not uniquely select between the 1,956 capacity including four unnumbered multipurpose seats, a derived numbered-only count, and a wheelchair-converted configuration. The 26 conversion targets are not identified. Arithmetic subtraction or guessed exclusions is prohibited.",
+      "sources": [
+        "https://linecubeshibuya.com/cms/wp-content/uploads/2021/10/seating_chart_n.pdf",
+        "https://linecubeshibuya.com/facility"
+      ]
+    }
+  ],
+  "summary": {
+    "productionPromotions": 0,
+    "afterProductionVenues": 56,
+    "afterProductionSeats": 74959,
+    "existingProductionRegression": false,
+    "catalogRegression": false,
+    "fingerprintRegression": false,
+    "nextRecommended": "Sol high bounded escalation for line-cube-shibuya only. Keep nissay-theatre on SOURCE/SCHEMA HOLD pending an issuer-owned curve seat-number key; keep kameari-lirio-hall and kioi-hall on their recorded post-renovation holds; do not start remaining Tokyo COMPLEX or P2 work.",
+    "releaseReady": false
+  }
+}

@@ -70,8 +70,8 @@
       "venueId": "line-cube-shibuya-standard",
       "readiness": "R5",
       "secondPass": "complete",
-      "blocker": "SOL HANDOFF / POLICY HOLD: 第1・独立第2パスで公式1,956席（1階1,180・2階424・3階352）を確認したが、多目的鑑賞4席、車椅子スペース12台分、車椅子使用時の1階26席の番号包含関係が一意でない。",
-      "nextAction": "Solで固定代表配置と通常抽選集合を決定し、車椅子・多目的席の番号を公式資料だけで確定する。"
+      "blocker": "SOL HANDOFF: Terra第1・独立第2パスで公式1,956席（1階1,180・2階424・3階352）を一致確認した。多目的鑑賞室4席は無番号で、車椅子12台分へ転換する1階26席の番号も公式資料にないため、fixed selectable numbered-seat setを一意に定義できない。",
+      "nextAction": "Solで発行者根拠に基づく固定代表配置を判定する。無番号4席の算術差引き又は車椅子転換26席の推測はしない。"
     },
     {
       "venueId": "meijiza-standard",
@@ -126,8 +126,8 @@
       "venueId": "nissay-theatre-standard",
       "readiness": "R5",
       "secondPass": "complete",
-      "blocker": "TERRA HANDOFF: 第1・独立第2パスで現行公式座席図と公式1,334席を確認したが、左右曲面ボックスを含む高密度全row・欠番・areaのlossless range転記はLunaの範囲を超える。",
-      "nextAction": "Terraで1階・グランドサークル階・2階と左右曲面ボックスを別areaとして独立抽出し、公式1,334席と照合する。"
+      "blocker": "SOURCE/SCHEMA HOLD: Terra第1・独立第2パスで公式1,334席と1階・G.C.・2階の中央番号runを確認したが、左右曲面部の重複番号を結び付ける公式area/rowキーがない。1扉から16扉は扉ラベルであり席areaではない。",
+      "nextAction": "発行者のseat-number key、ticketing seat specification、又は曲面位置を公式area/rowへ対応付ける一次資料を待つ。geometry由来のarea/row新設と1,334席への算術補正はしない。"
     },
     {
       "venueId": "nntt-opera-palace-standard",

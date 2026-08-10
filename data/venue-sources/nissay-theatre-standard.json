@@ -29,7 +29,7 @@
       "publisher": "日生劇場",
       "title": "日生劇場座席表",
       "url": "https://www.nissaytheatre.or.jp/wptest/wp-content/themes/nissay/assets/pdf/seat/seat.pdf",
-      "checkedAt": "2026-08-09"
+      "checkedAt": "2026-08-10"
     },
     {
       "id": "official-seat-guide",
@@ -40,7 +40,7 @@
       "publisher": "日生劇場",
       "title": "座席表",
       "url": "https://www.nissaytheatre.or.jp/seat/",
-      "checkedAt": "2026-08-09"
+      "checkedAt": "2026-08-10"
     },
     {
       "id": "official-theatre-overview",
@@ -52,24 +52,25 @@
       "publisher": "日生劇場",
       "title": "建築物としての日生劇場",
       "url": "https://www.nissaytheatre.or.jp/theater/",
-      "checkedAt": "2026-08-09"
+      "checkedAt": "2026-08-10"
     }
   ],
   "registeredScope": "公式座席表の番号付き固定席を予定。",
-  "completenessBasis": "公式座席表と公式施設資料の1,334席を確認した。1階・グランドサークル階・2階の曲面ボックスを含む全番号のlossless range化はTerraで独立抽出する。",
+  "completenessBasis": "2026-08-10のTerra第1パスと独立第2パスで公式座席表と公式施設資料の1,334席を再確認した。ただし、曲面部に公式のarea/row識別子がなく、同番号の位置をrepositoryのseat identityへlosslessに変換できない。",
   "transformation": "1階・グランドサークル階・2階をareaに分け、公式図に印刷された連続番号だけをrangeへ転記する。",
   "knownLimitations": [
-    "公式図は複数階と左右曲面ボックスを含む高密度配置で、Lunaの2パスでは全row・欠番・areaをlosslessに確定できない。"
+    "公式図の1扉から16扉は扉ラベルであり席area/rowラベルではない。左右曲面部には同じ番号が別位置に反復し、全位置を結び付ける公式row/areaキーがない。geometryでarea又はrowを新設すると非公式のseat identityとなる。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": "2026-08-09",
+    "checkedAt": "2026-08-10",
     "method": "independent-official-source-review",
-    "seatStructure": "matched",
+    "seatStructure": "mismatched",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "第1パスと独立第2パスは現行公式座席図の1階・グランドサークル階・2階と左右曲面ボックスの構造を確認したが、全row・欠番・areaのlossless range転記は未完了。",
-      "公式施設資料の現在1,334席と計算席数を一致させる全range抽出をTerraで実施する。総席数に合わせた補正は禁止。"
+      "Terra第1パスは公式図上で1階中央XA-XC及びA-Qの番号runを直接確認したが、曲面部の反復番号へ公式area/rowキーを対応付けられなかった。",
+      "独立第2パスも同じ公式PDFと1,334席を確認したが、扉ラベルを席areaへ読み替える根拠、又は曲面部の未記名rowを順序付ける根拠を確認できなかった。",
+      "発行者によるseat-number key、ticketing seat specification、又は各曲面位置を公式area/rowへ対応付ける一次資料が必要である。1,334席への算術補正、geometry由来のarea/row新設、fingerprint作成は禁止。"
     ]
   },
   "ranges": []

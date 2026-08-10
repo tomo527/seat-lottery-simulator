@@ -1,6 +1,6 @@
 # Current handoff
 
-Updated: 2026-08-09 (Asia/Tokyo)
+Updated: 2026-08-10 (Asia/Tokyo)
 
 ## Current state
 
@@ -8,6 +8,7 @@ Updated: 2026-08-09 (Asia/Tokyo)
 - Production: **56 venues / 74,959 seats**. Generated sources, catalog, runtime details, and production fingerprints are synchronized at 56 each.
 - Coverage: Tokyo **48**, Kanagawa **3**, Chiba **1**, Saitama **1**, Ibaraki **0**, Tochigi **1**, Gunma **0**; Osaka **2**. Kanto total: **54**.
 - The 2026-08-09 Kanto P1 Sol macro closed `takasaki-city-theatre-main-release-seed` as **CONTRADICTION** and preserved all 56 baseline production fingerprints and catalog entries unchanged.
+- The 2026-08-10 bounded Terra escalation made **0 promotions**: `nissay-theatre` is **SOURCE/SCHEMA HOLD** (official curve identities are not losslessly keyed), and `line-cube-shibuya` is **SOL HANDOFF** (no unique fixed selectable numbered-seat set in the official material). Production remains **56 venues / 74,959 seats**.
 
 ## Release goal
 
@@ -50,6 +51,12 @@ Release `release-seed-v1` with the production gate intact, prioritizing remainin
 
 ## Tokyo top-up
 
+### 2026-08-10 Terra bounded escalation
+
+- `nissay-theatre`: **SOURCE/SCHEMA HOLD**. Official PDF and theatre overview confirm 1,334 seats. Terra first pass and an independent second pass both read the labelled 1F central runs, G.C., 2F, and curves; however `1扉` through `16扉` are door labels, and the curved positions repeat printed numbers without an issuer-owned row/area key. No range, expected count, generated detail, catalog entry, or fingerprint was created. Do not invent areas from geometry or fit to 1,334. Reopen only with an issuer-owned seat-number key, ticketing seat specification, or equivalent coordinate-to-row/area mapping.
+- `line-cube-shibuya`: **SOL HANDOFF**. Both official-source passes confirm 1,956 total (1F 1,180 including the 4-seat multipurpose viewing room; 2F 424; 3F 352), plus wheelchair space for 12 using 26 first-floor seats. The four multipurpose seats have no individual numbers and the 26 conversion target numbers are not published. The official material does not uniquely define a fixed selectable numbered-seat set; do not subtract, include, or exclude seats arithmetically.
+- Production promotions: **0**. All 56 baseline catalog entries and fingerprints remain unchanged.
+
 The 2026-08-09 Luna high STANDARD macro 1 closed exactly three targets with no production promotion:
 
 - `tokyo-bunka-hall-main`: **HOLD**. Official current material shows the large hall is closed during renovation; the pre-renovation map must not be promoted as current.
@@ -74,8 +81,8 @@ No range was fitted to 610, and no generated catalog/runtime/fingerprint changed
 
 ## Model queues
 
-- **TERRA NEXT**: `nissay-theatre`; independently transcribe all numbered ranges and curved-box areas before any production decision.
-- **SOL ESCALATION**: `line-cube-shibuya`; resolve the fixed representative selectable set for multipurpose and wheelchair-conversion seats. Preserve macro-1 `tokyo-geigeki-concert` and `tokyo-opera-city-concert` closures.
+- **TERRA**: no queued target. Keep `nissay-theatre` on SOURCE/SCHEMA HOLD unless the issuer publishes a curve seat-number key; do not repeat diagram-only transcription.
+- **SOL ESCALATION**: `line-cube-shibuya` only; determine whether issuer-owned evidence can define the fixed representative selectable set for multipurpose and wheelchair-conversion seats. Preserve macro-1 `tokyo-geigeki-concert` and `tokyo-opera-city-concert` closures.
 - **LUNA CLOSED**: no Tokyo STANDARD candidate remains. Keep `kameari-lirio-hall` on source hold until post-renovation official material is published after the scheduled 2026-09-01 reopening.
 - **HOLD**: preserve `kioi-hall`, all recorded Kanto P0/P1 holds, and all macro-1 Tokyo closures. Reopen only when issuer-owned material explicitly resolves the recorded blocker; do not fit ranges to totals.
 
@@ -89,6 +96,7 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Validation status
 
+- 2026-08-10 bounded Terra escalation passed: `venues:build`, `venues:check`, `venues:validate`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report -- --batch tokyo-wave-1`, `venues:release:coverage`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check`. The 56-production catalog, runtime details, and fingerprints remain unchanged.
 - 2026-08-09 Tokyo macro 3 data checks passed: `venues:build`, `venues:check`, `venues:validate`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report`, `venues:release:coverage`, and `venues:report`; source hold recorded without changing production data. Production remains 56 venues / 74,959 seats.
 - Full application validation passed: `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests), and `git diff --check`.
 - Macro 3 deployment verification passed: `Workers Builds: seat-lottery-simulator` runs `https://github.com/tomo527/seat-lottery-simulator/runs/93256523368` and `https://github.com/tomo527/seat-lottery-simulator/runs/93256713037` succeeded; the public URL returned HTTP 200. The final HANDOFF-only follow-up must preserve this deployment state.
@@ -97,4 +105,4 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Exact next action
 
-Run the minimum bounded escalation in this order: **Terra high `nissay-theatre` first**, independently transcribing all numbered ranges and curved-box areas; then **Sol high `line-cube-shibuya`**, resolving the fixed representative selectable set and wheelchair/multipurpose-seat inclusion. Keep `kameari-lirio-hall` on source hold until after the scheduled 2026-09-01 reopening and post-renovation official seat material; keep `kioi-hall` closed until post-renovation material; preserve the three macro-1 Tokyo closures and every Kanto hold; do not start remaining COMPLEX candidates or P2 national-city work.
+Run **Sol high `line-cube-shibuya` only**: seek issuer-owned evidence that identifies the four multipurpose seats' selectable identity and each of the 26 wheelchair-conversion target numbers, then decide whether one fixed representative numbered-seat set exists. Keep `nissay-theatre` on SOURCE/SCHEMA HOLD until an issuer-owned curve seat-number key is available; keep `kameari-lirio-hall` and `kioi-hall` on their recorded post-renovation holds; preserve every existing Kanto/Tokyo closure; do not start remaining Tokyo COMPLEX or P2 work.
