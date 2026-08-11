@@ -9,10 +9,14 @@
     "denominatorPolicy": "Do not use the existing curated target count or regional fixed target counts as the Tokyo coverage denominator.",
     "releaseGate": {
       "mustUnresearched": 0,
-      "shouldProcessing": "大部分を処理済み（未調査を残さず、source-completeかつ現行schemaで表現可能なものは原則production化）",
+      "shouldUnresearched": 0,
+      "optionalIsReleaseBlocker": false,
+      "currentSourceCompleteSchemaExpressibleMustShouldProductionized": true,
+      "productionImpossibleMustShouldFormalHoldOrContradiction": true,
       "holds": "HOLD/CONTRADICTIONはissuer-owned official blocker、currentness、またはschema/policy blockerを明示記録する",
       "gapRule": "明らかな主要会場の候補漏れがないことを確認し、会場数だけで判定しない",
-      "readiness": "NO until the audited universe gate is satisfied; this audit does not change readiness to YES."
+      "productionQualityGate": "従来どおり変更しない（expectedSeatCount == calculatedSeatCount、独立公式第2パス差分ゼロ、verification.status=verified、unresolvedIssues=[]）",
+      "readiness": "NO until MUST and SHOULD unresearched are both zero and the audited universe gate is satisfied."
     }
   },
   "legacyTargetPolicy": "The existing targets remain traceable historical/preflight work items. They are not, by themselves, proof of Tokyo coverage or a release denominator.",

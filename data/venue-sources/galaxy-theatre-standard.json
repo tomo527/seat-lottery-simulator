@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "galaxy-theatre-standard",
+  "name": "天王洲 銀河劇場 通常番号席配置（車椅子転換番号未解決）",
+  "prefecture": "東京都",
+  "city": "品川区",
+  "aliases": ["銀河劇場", "The Galaxy Theatre"],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-numbered-seat-set",
+    "name": "通常三層番号席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "運営者の現行座席ページと公式PDFが1階516席、2階101席、3階129席、計746席の番号付き通常配置を示す。現行利用案内は車椅子対応時に座席を外して車椅子スペースとする運用を示すが、外す座席番号・公演別の置換規則を示さないため、通常配置のproduction gateを閉じる。",
+    "notIncludedPatterns": ["車椅子スペース利用時", "オーケストラピット使用時", "公演固有の販売停止席"]
+  },
+  "sources": [
+    {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "天王洲 銀河劇場",
+      "title": "座席表",
+      "url": "https://www.gingeki.jp/seat",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-seat-pdf",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "天王洲 銀河劇場",
+      "title": "天王洲 銀河劇場 公式座席表PDF",
+      "url": "https://www.gingeki.jp/pdf/seat.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-guide",
+      "official": true,
+      "roles": ["facility", "event-layout"],
+      "publisher": "天王洲 銀河劇場",
+      "title": "劇場について・車椅子でご来場のお客様へ",
+      "url": "https://www.gingeki.jp/guide",
+      "checkedAt": "2026-08-11"
+    }
+  ],
+  "registeredScope": "POLICY/SCHEMA HOLD。通常三層の公式番号図は確認したが、車椅子対応時の座席撤去番号と通常抽選集合の扱いを確定できないためrangeは登録しない。",
+  "completenessBasis": "第1パスで公式座席ページと公式PDFを確認し、1階516席・2階101席・3階129席の構造と番号を確認した。独立第2パスで現行利用案内を確認し、車椅子スペースは座席を外して対応すること、1階のみ利用可能であることを確認したが、撤去される列・番号は公表されていなかった。",
+  "transformation": "通常公称席数への算術合わせ、図形からの座席番号補完、車椅子転換番号の推測を行わず、range転記を停止する。",
+  "knownLimitations": [
+    "POLICY HOLD: 車椅子スペース利用時に外す番号席が現行公式資料で特定されていない。",
+    "SCHEMA HOLD: 通常配置と公演別車椅子転換配置を同一venueのlosslessなrepresentative patternとして表現する規則が未定義。",
+    "オーケストラピット使用時は1階A～D列の別配置となるため通常配置に混在させない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": "2026-08-11",
+    "method": "official-source-first-pass-independent-second-pass-hold",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": [
+      "車椅子対応で撤去される1階の具体的な列・番号が公式資料にない。",
+      "オーケストラピット使用時と通常配置を分けたsource/model policyが必要。"
+    ]
+  },
+  "ranges": []
+}

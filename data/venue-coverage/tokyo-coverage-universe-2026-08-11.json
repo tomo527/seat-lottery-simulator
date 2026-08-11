@@ -17,6 +17,27 @@
     "CONTRADICTION":"既存の独立確認または公式席数と番号読取に未解消差分がある。",
     "未調査":"本auditで候補化したが、現行inventoryに相当する調査状態がない、またはinventory上not-started。"
   },
+  "macroResults": {
+    "LUNA-STD-1": {
+      "completedAt": "2026-08-11",
+      "scope": ["theater-h", "pia-theater-yaesu", "galaxy-theatre"],
+      "productionPromotions": 0,
+      "formalHolds": 3,
+      "releaseReady": false,
+      "notes": "3件ともissuer-owned currentnessと代表pattern境界を確認。Theater Hは車椅子・補助席の番号対応、ぴあシアターは公開詳細座席図、銀河劇場は車椅子転換番号が未解決のためrange転記・production化を停止。"
+    }
+  },
+  "releaseGate": {
+    "mustUnresearched": 0,
+    "shouldUnresearched": 0,
+    "optionalIsReleaseBlocker": false,
+    "currentSourceCompleteSchemaExpressibleMustShouldProductionized": true,
+    "productionImpossibleMustShouldFormalHoldOrContradiction": true,
+    "noObviousMajorUniverseGap": true,
+    "productionQualityGateUnchanged": true,
+    "releaseReady": false,
+    "note": "暫定gateの定義を明文化。現時点はMUST/SHOULD未調査が残るためNO。"
+  },
   "candidates": [
     {"id":"tokyo-dome","name":"東京ドーム","area":"文京区・後楽","type":"dome","capacity":45500,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/dome/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0319","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"東京の大規模ライブ主要会場。野球・コンサート・可動ステージで代表パターン分離が必須。"},
     {"id":"nippon-budokan","name":"日本武道館","area":"千代田区・北の丸公園","type":"arena","capacity":13841,"operating":"active","officialFacilityUrl":"https://www.nipponbudokan.or.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-nippon-budokan-fixed-stands","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"音楽・舞台イベントの全国主要会場。既存HOLDを母集団へ維持し、再調査は新規公式証拠がある場合だけ。"},
@@ -54,14 +75,14 @@
     {"id":"shiki-umi","name":"大同生命ミュージカルシアター 電通四季劇場［海］","area":"港区・東新橋","type":"theater","capacity":1216,"operating":"active","officialFacilityUrl":"https://www.shiki.jp/theatres/umi/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0146","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"劇団四季の現役ミュージカル劇場。"},
     {"id":"ariake-shiki","name":"有明四季劇場","area":"江東区・有明","type":"theater","capacity":1200,"operating":"active","officialFacilityUrl":"https://www.shiki.jp/theatres/ariake/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0430","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"劇団四季の現役ミュージカル劇場。"},
     {"id":"brillia-hall","name":"東京建物 Brillia HALL","area":"豊島区・東池袋","type":"theater","capacity":1248,"operating":"active","officialFacilityUrl":"https://www.toshima-mirai.or.jp/ikebukuro/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-tokyo-tatemono-brillia-hall","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"ミュージカル・2.5次元舞台の主要劇場。"},
-    {"id":"theater-h","name":"シアターH","area":"品川区・勝島","type":"theater","capacity":747,"operating":"active","officialFacilityUrl":"https://theater-h.jp/overview/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":null,"tier":"MUST","difficulty":"STANDARD","model":"Luna","reason":"現行inventory未登録の主要新劇場。2024年開業、ミュージカル・2.5次元・ストレートプレイ・ライブの継続利用を運営者が明示。"},
-    {"id":"pia-theater-yaesu","name":"東京建物 ぴあ シアター","area":"中央区・八重洲","type":"theater","capacity":806,"operating":"active","officialFacilityUrl":"https://corporate.pia.jp/business/hall/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":null,"tier":"MUST","difficulty":"STANDARD","model":"Luna","reason":"現行inventory未登録。2026年プレオープンの東京駅直結・段床式劇場で、公式に約800席と演劇/エンタメ用途を確認。"},
+    {"id":"theater-h","name":"シアターH","area":"品川区・勝島","type":"theater","capacity":747,"operating":"active","officialFacilityUrl":"https://theater-h.jp/overview/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-coverage-theater-h","tier":"MUST","difficulty":"STANDARD","model":"Luna","reason":"LUNA-STD-1で現行公式施設概要・座席図・FAQを第1/第2パス確認。車椅子6席または補助席の具体的な置換・除外番号がissuer-owned資料にないためSOURCE/POLICY HOLD。"},
+    {"id":"pia-theater-yaesu","name":"東京建物 ぴあ シアター","area":"中央区・八重洲","type":"theater","capacity":806,"operating":"active","officialFacilityUrl":"https://corporate.pia.jp/business/hall/","seatMap":"official-partial","numberedMap":"event-specific-only","inventoryState":"HOLD","inventoryId":"tokyo-coverage-pia-theater-yaesu","tier":"MUST","difficulty":"STANDARD","model":"Luna","reason":"LUNA-STD-1で所有者・運営者の現行公式資料を第1/第2パス確認。公開資料は階別席数と固定席構造までで、完全なrow label・seat number図面は問い合わせ対象のためSOURCE/SCHEMA HOLD。"},
     {"id":"theater-milano-za","name":"THEATER MILANO-Za","area":"新宿区・歌舞伎町","type":"theater","capacity":907,"operating":"active","officialFacilityUrl":"https://www.tokyu.co.jp/area/shibuya/article/entertainment/theater-milano-za/","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-official-0285","tier":"MUST","difficulty":"STANDARD","model":"Luna","reason":"既存production。"},
     {"id":"sunshine-theatre","name":"サンシャイン劇場","area":"豊島区・東池袋","type":"theater","capacity":808,"operating":"active","officialFacilityUrl":"https://sunshine-theatre.co.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-official-0851","tier":"MUST","difficulty":"STANDARD","model":"Luna","reason":"既存production。"},
     {"id":"yurakucho-yomiuri","name":"有楽町よみうりホール","area":"千代田区・有楽町","type":"theater","capacity":1100,"operating":"active","officialFacilityUrl":"https://yomi-h.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0052","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"商業舞台・イベント・声優系公演の主要会場。"},
     {"id":"nihombashi-mitsui","name":"日本橋三井ホール","area":"中央区・日本橋室町","type":"hall","capacity":1000,"operating":"active","officialFacilityUrl":"https://www.nihonbashi-hall.jp/","seatMap":"partial","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0106","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"ライブ・アニメ/声優イベント・展示型公演に継続利用。可変平土間の代表patternが必要。"},
     {"id":"nihon-seinenkan","name":"日本青年館ホール","area":"新宿区・霞ヶ丘町","type":"theater","capacity":1249,"operating":"active","officialFacilityUrl":"https://seinenkan-hall.com/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0283","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"舞台・ミュージカル・2.5次元の主要会場。現行inventoryの名称/room metadataも正規化が必要。"},
-    {"id":"galaxy-theatre","name":"天王洲 銀河劇場","area":"品川区・東品川","type":"theater","capacity":746,"operating":"active","officialFacilityUrl":"https://www.gingeki.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0455","tier":"MUST","difficulty":"STANDARD","model":"Luna","reason":"ミュージカル・2.5次元・声優系舞台で継続利用される主要劇場。"},
+    {"id":"galaxy-theatre","name":"天王洲 銀河劇場","area":"品川区・東品川","type":"theater","capacity":746,"operating":"active","officialFacilityUrl":"https://www.gingeki.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0455","tier":"MUST","difficulty":"STANDARD","model":"Luna","reason":"LUNA-STD-1で現行公式座席ページ・PDF・利用案内を第1/第2パス確認。車椅子対応時に外す具体的な列・番号が未定義のためPOLICY/SCHEMA HOLD。"},
     {"id":"theater-g-rosso","name":"シアターGロッソ","area":"文京区・後楽","type":"theater","capacity":765,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/g-rosso/seat/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0299","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"著名な子ども向け/特撮・イベント劇場。用途限定のためMUSTより下位。"},
     {"id":"imm-theater","name":"IMM THEATER","area":"文京区・後楽","type":"theater","capacity":705,"operating":"active","officialFacilityUrl":"https://immtheater.com/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0320","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"現役の演劇・ミュージカル・イベント劇場。"},
     {"id":"ex-theater-roppongi","name":"EX THEATER ROPPONGI","area":"港区・西麻布","type":"hall","capacity":920,"operating":"active","officialFacilityUrl":"https://www.ex-theater.com/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"未調査","inventoryId":"tokyo-official-0129","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"ライブ・イベントの主要会場。座席/立見・可変レイアウトの公式定義が必要。"},

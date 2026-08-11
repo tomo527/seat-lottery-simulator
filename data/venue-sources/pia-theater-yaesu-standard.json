@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "pia-theater-yaesu-standard",
+  "name": "東京建物 ぴあ シアター 番号席構造（公式詳細図面未公開）",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": ["ぴあシアター", "東京建物 ぴあ シアター＆カンファレンス"],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-fixed-seats",
+    "name": "通常2層固定席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "所有者・運営者の現行公式資料は1階593席、2階213席、計806席と段床式固定席を示す。一方、運営者の主催者向けページは座席・舞台の詳細図面を問い合わせ対象としており、公開資料だけではrow label・seat numberの完全なselectable setを確定できない。",
+    "notIncludedPatterns": ["前舞台設置", "花道設置", "公演固有の販売停止席"]
+  },
+  "sources": [
+    {
+      "id": "official-pia-hall-business",
+      "official": true,
+      "roles": ["facility", "seat-count"],
+      "publisher": "ぴあ株式会社",
+      "title": "ホール・劇場ビジネス（東京建物 ぴあ シアター）",
+      "url": "https://corporate.pia.jp/business/hall/",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-yaesu-theater-organizers",
+      "official": true,
+      "roles": ["facility", "seat-structure", "event-layout"],
+      "publisher": "東京建物 ぴあ シアター＆カンファレンス",
+      "title": "シアター（主催者向け）",
+      "url": "https://www.yaesu.theater-conference.jp/facilities/theater/organizers",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-yaesu-event",
+      "official": true,
+      "roles": ["event-layout"],
+      "publisher": "東京建物 ぴあ シアター＆カンファレンス",
+      "title": "公式イベント情報（全席指定公演）",
+      "url": "https://www.yaesu.theater-conference.jp/event/Vt_lQrCs",
+      "checkedAt": "2026-08-11"
+    }
+  ],
+  "registeredScope": "SOURCE/SCHEMA HOLD。公開公式資料の容量・段床式固定席情報は登録したが、完全なrow/number図面が公開されていないためrangeは登録しない。",
+  "completenessBasis": "第1パスで所有者・運営者の現行公式施設ページから所在地、2026年5月プレオープン、1階593席・2階213席・計806席、固定席構造を確認した。独立第2パスで運営者の主催者向けページと公式イベントページを確認し、全席指定公演の存在は確認できたが、一般配置の全列・全番号を確定できる公開図面は確認できなかった。",
+  "transformation": "公式が問い合わせ対象とする詳細図面を推測・補完せず、番号席rangeの転記を開始しない。",
+  "knownLimitations": [
+    "SOURCE HOLD: 運営者ページは座席や舞台の詳細図面を問い合わせ対象としており、公開された全列・全番号の公式図面がない。",
+    "SCHEMA HOLD: 前舞台・花道の設置可能性と公演固有の座席設定を、公開資料だけで一意の代表patternへ確定できない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": "2026-08-11",
+    "method": "official-source-first-pass-independent-second-pass-hold",
+    "seatStructure": "pending",
+    "seatCount": "matched",
+    "unresolvedIssues": [
+      "公開公式資料に完全なrow label・seat numberがなく、番号席集合を確定できない。",
+      "前舞台・花道設置時の座席差分と、通常代表patternの境界が未定義。"
+    ]
+  },
+  "ranges": []
+}
