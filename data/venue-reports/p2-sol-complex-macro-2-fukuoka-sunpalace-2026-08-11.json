@@ -1,0 +1,65 @@
+{
+  "reportVersion": 1,
+  "reportId": "p2-sol-complex-macro-2-fukuoka-sunpalace-2026-08-11",
+  "generatedAt": "2026-08-11",
+  "scope": "Sol high P2 COMPLEX macro 2 for exactly fukuoka-sunpalace-hall-release-seed.",
+  "baseline": {
+    "productionVenues": 59,
+    "productionSeats": 80750
+  },
+  "outcome": {
+    "id": "fukuoka-sunpalace-hall-release-seed",
+    "classification": "SOURCE/SCHEMA HOLD",
+    "newIssuerOwnedResolution": {
+      "normalLayout": "The current operator organizer guide and seat map publish a nominal normal layout of 2,316 seats: 1F 1,468, including 1,344 fixed and 124 pit seats; 2F 360; 3F 488.",
+      "orchestraPit": "The operator pit close-up directly labels the 124-seat pit set as row 1 seats 16-41, row 2 seats 14-43, row 3 seats 12-45, and row 4 seats 12-45.",
+      "wheelchair": "The operator states six wheelchair-corner positions at the rear of 1F, three on each side, and the official map displays two unnumbered three-position groups. No issuer-owned source states whether those six are included in 2,316 or identifies numbered seats removed or replaced for wheelchair use."
+    },
+    "nominalSeatCount": 2316,
+    "expectedSeatCount": null,
+    "calculatedSeatCount": null,
+    "representativePattern": "unresolved before range transcription because the wheelchair relationship does not define one selectable numbered-seat set",
+    "firstPass": "not started: the required pre-range wheelchair inclusion and replacement gate failed",
+    "secondPass": "not started",
+    "rangeDiff": null,
+    "productionGate": "blocked before range transcription",
+    "blocker": "SOURCE/SCHEMA HOLD: issuer-owned material does not define whether the six wheelchair positions are inside or outside the nominal 2,316, or which numbered seats are removed or replaced if conversion occurs. Geometry inference, arithmetic allocation, repository policy, and range fitting are prohibited."
+  },
+  "sources": [
+    {
+      "publisher": "福岡サンパレス ホテル＆ホール",
+      "title": "客席のご案内",
+      "url": "https://www.f-sunpalace.com/hall/hall-seat-guide/"
+    },
+    {
+      "publisher": "福岡サンパレス ホテル＆ホール",
+      "title": "コンサートホール座席表",
+      "url": "https://www.f-sunpalace.com/wp-content/themes/f-sunpalace_theme/img/download/concert_hall/seating_chart.pdf"
+    },
+    {
+      "publisher": "福岡サンパレス ホテル＆ホール",
+      "title": "オーケストラピット拡大図",
+      "url": "https://www.f-sunpalace.com/wp-content/themes/f-sunpalace_theme/img/hall/hall01.gif"
+    },
+    {
+      "publisher": "福岡サンパレス ホテル＆ホール",
+      "title": "主催者の方へ",
+      "url": "https://www.f-sunpalace.com/hall/hall_organizer/"
+    },
+    {
+      "publisher": "福岡サンパレス ホテル＆ホール",
+      "title": "コンサートホールに関するご質問",
+      "url": "https://www.f-sunpalace.com/guide/faq_hall/"
+    }
+  ],
+  "productionPromotions": 0,
+  "productionFinal": 59,
+  "productionSeatFinal": 80750,
+  "baselineProductionRegression": "zero changes to all 59 baseline production source semantics, catalog entries, runtime details, and fingerprints",
+  "releaseReady": false,
+  "remainingP2SolQueue": [
+    "festival-hall-release-seed",
+    "aichi-arts-center-main-release-seed"
+  ],
+  "nextRecommended": "Sol high bounded P2 COMPLEX macro 3 for festival-hall-release-seed only. Keep Fukuoka Sunpalace on hold until the issuer publishes wheelchair inclusion and numbered replacement mapping."
+}

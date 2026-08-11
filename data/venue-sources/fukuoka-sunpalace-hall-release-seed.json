@@ -8,65 +8,102 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "normal-layout-wheelchair-source-schema-hold",
+    "name": "通常配置（車椅子包含・置換未解決）",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "selectionReason": "現行公式主催者向けページと座席図は通常時の公称配置を2,316席、1階1,468席（固定席1,344・pit席124）、2階360席、3階488席として掲載する。pit 124席の番号は公式拡大図から一意だが、車椅子6席の2,316席への包含と番号席置換がissuer-owned資料で定義されないため、代表selectable numbered-seat setを確定せずrange転記前に停止する。",
+    "notIncludedPatterns": [
+      "orchestra pit使用時に1階1～4列のpit席124席を使用しない配置",
+      "車椅子コーナー6席を使用する公演別配置"
+    ]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-seat-page",
       "official": true,
       "roles": [
-        "facility"
+        "seat-structure",
+        "facility",
+        "event-layout"
       ],
       "publisher": "福岡サンパレス ホテル＆ホール",
-      "title": "福岡サンパレス ホテル＆ホール 公式施設案内",
-      "url": "https://www.f-sunpalace.com/",
-      "checkedAt": "2026-08-02"
+      "title": "客席のご案内",
+      "url": "https://www.f-sunpalace.com/hall/hall-seat-guide/",
+      "checkedAt": "2026-08-11"
     },
     {
       "id": "official-seat-map",
       "official": true,
       "roles": [
-        "seat-structure"
+        "seat-structure",
+        "seat-count",
+        "event-layout"
       ],
       "publisher": "福岡サンパレス ホテル＆ホール",
-      "title": "公式座席図・座席案内",
+      "title": "コンサートホール座席表",
       "url": "https://www.f-sunpalace.com/wp-content/themes/f-sunpalace_theme/img/download/concert_hall/seating_chart.pdf",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-11"
     },
     {
-      "id": "official-seat-count",
+      "id": "official-pit-closeup",
       "official": true,
       "roles": [
-        "seat-count"
+        "seat-structure",
+        "event-layout"
       ],
       "publisher": "福岡サンパレス ホテル＆ホール",
-      "title": "公式施設・座席数案内",
-      "url": "https://www.f-sunpalace.com/hall/hall-seat-guide/",
-      "checkedAt": "2026-08-03"
+      "title": "オーケストラピット拡大図",
+      "url": "https://www.f-sunpalace.com/wp-content/themes/f-sunpalace_theme/img/hall/hall01.gif",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-organizer-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "福岡サンパレス ホテル＆ホール",
+      "title": "主催者の方へ",
+      "url": "https://www.f-sunpalace.com/hall/hall_organizer/",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-hall-faq",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "福岡サンパレス ホテル＆ホール",
+      "title": "コンサートホールに関するご質問",
+      "url": "https://www.f-sunpalace.com/guide/faq_hall/",
+      "checkedAt": "2026-08-11"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "SOURCE/SCHEMA HOLD。通常配置とpit番号は確認したが、車椅子包含・置換を解決できないため番号席rangeは登録しない。",
+  "completenessBasis": "運営者の現行主催者向けページと座席図は公称2,316席の階別内訳を示し、公式pit拡大図は124席の全番号を直接示す。車椅子6席は1階最後方の左右3席ずつとされるが、総数への包含又は番号席との置換関係は示されない。",
+  "transformation": "代表配置の事前ゲートで停止したためrange転記を開始しない。公式pit図から1列16～41番、2列14～43番、3列12～45番、4列12～45番を確認したが、車椅子図の空白位置から欠けた番号を推測せず、2,316席へのrange fittingも行わない。",
   "knownLimitations": [
-    "Regional Production Cohort 1 official review: SOL HANDOFF.",
-    "The official map has a 124-seat orchestra-pit component and dense multi-floor numbering; Sol must resolve the representative configuration and pit exclusions.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "通常時の公称配置は2,316席で、1階1,468席（固定席1,344・pit席124）、2階360席、3階488席である。",
+    "pit 124席は公式拡大図で1列16～41番（26席）、2列14～43番（30席）、3列12～45番（34席）、4列12～45番（34席）として直接確認できる。",
+    "公式案内は車椅子コーナー6席を1階最後方の左右3席ずつとし、座席図も二つの無番号グループを車椅子席と表示する。",
+    "SOURCE HOLD: 2,316席又は1階1,468席に車椅子6席を含むか、別建てで加えるかをissuer-owned資料が明記しない。",
+    "SCHEMA HOLD: 車椅子利用時に番号席を置換・撤去するか、する場合の具体的な列・番号をissuer-owned資料が示さない。",
+    "図形上の空白から1階32列の番号を補完すること、総数から番号席数を逆算すること、通常配置を独自policyで選ぶことは禁止する。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-11",
+    "method": "issuer-owned-representative-pattern-gate",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "The official map has a 124-seat orchestra-pit component and dense multi-floor numbering; Sol must resolve the representative configuration and pit exclusions.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
+      "SOURCE HOLD: 車椅子コーナー6席の公称2,316席への包含関係がissuer-owned資料にない。",
+      "SCHEMA HOLD: 車椅子利用時に置換・撤去される番号席があるか、ある場合の具体的番号が未定義である。",
+      "指定された事前ゲートが解決しないため、第1パス、独立第2パス、production gateを開始していない。"
     ]
   },
   "ranges": [],
@@ -75,22 +112,22 @@
     "officialSeatStructureSource": "あり",
     "officialSeatCountSource": "あり",
     "completeNumberedSeatMap": "あり",
-    "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
+    "exactNominalSeatCount": "2,316席",
+    "representativeLayout": "通常公称配置は一意、車椅子包含・置換は未解決",
     "fixedSeats": "あり",
-    "movableSeats": "なし",
-    "wheelchair": "不明",
-    "pit": "なし",
+    "movableSeats": "pit席124席",
+    "wheelchair": "1階最後方左右3席ずつ、包含・置換番号未公表",
+    "pit": "1～4列124席の番号を解決",
     "areas": "複数",
-    "processingRoute": "Sol",
-    "classification": "SOL HANDOFF",
+    "processingRoute": "Hold",
+    "classification": "SOURCE/SCHEMA HOLD",
     "mapUrl": "https://www.f-sunpalace.com/wp-content/themes/f-sunpalace_theme/img/download/concert_hall/seating_chart.pdf",
     "countUrl": "https://www.f-sunpalace.com/hall/hall-seat-guide/",
-    "checkedAt": "2026-08-03",
-    "rationale": "The official map has a 124-seat orchestra-pit component and dense multi-floor numbering; Sol must resolve the representative configuration and pit exclusions.",
-    "officialFacilityUrl": "https://www.f-sunpalace.com/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "handoff"
+    "checkedAt": "2026-08-11",
+    "rationale": "通常2,316席とpit 124席の番号は解決したが、公式は車椅子6席の総数への包含と番号席置換を定義しない。推測、図形補完、算術合わせ、独自policyを使わずrange転記前に閉じる。",
+    "officialFacilityUrl": "https://www.f-sunpalace.com/hall/hall_organizer/",
+    "status": "blocked",
+    "rangeEntry": "blocked-source-schema-hold",
+    "decision": "source-schema-hold"
   }
 }
