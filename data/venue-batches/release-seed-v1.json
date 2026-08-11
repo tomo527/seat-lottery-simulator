@@ -224,10 +224,10 @@
     },
     {
       "inventoryId": "sapporo-kitara-main",
-      "classification": "TERRA HANDOFF",
-      "rationale": "The official map is an arena-style, dense multi-area numbered layout; exact selectable range aggregation and independent second pass require Terra.",
+      "classification": "SOURCE/SCHEMA HOLD",
+      "rationale": "Issuer material resolves 2,008 fixed numbered seats plus 12 separate unnumbered wheelchair spaces, but two official-map passes did not converge on canonical block-boundary ownership without geometric inference.",
       "preflightComplete": true,
-      "processingRoute": "Terra"
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "sapporo-kitara-small",
@@ -287,17 +287,17 @@
     },
     {
       "inventoryId": "kyoto-concert-hall-main",
-      "classification": "TERRA HANDOFF",
-      "rationale": "The official total and floor subtotals are clear, but the shoe-box map has dense balcony/podium/center blocks requiring Terra range transcription and an independent second pass.",
+      "classification": "PRODUCTION",
+      "rationale": "Issuer-owned operator and Kyoto City material separate 1,833 fixed numbered seats from six unnumbered wheelchair spaces; two independent official-map passes matched all 75 ranges with zero diff.",
       "preflightComplete": true,
-      "processingRoute": "Terra"
+      "processingRoute": "Production"
     },
     {
       "inventoryId": "rohm-theatre-kyoto-main",
-      "classification": "TERRA HANDOFF / SCHEMA-POLICY HOLD",
-      "rationale": "現行フロアガイドの2026年4月版座席図と公式設備ページの通常2,005席・ピット時1,833席を再確認したが、4階・side areasをLunaでlossless転記できず、通常/ピット及び車いすschemaを解くTerra handoffとして第1パス前に停止。",
+      "classification": "SOURCE CONTRADICTION HOLD",
+      "rationale": "Wheelchair and 172-seat pit mappings are issuer-resolved, but complete official-map transcription yields 2,013 printed IDs against the official 2,005-seat total; the eight exclusions are not issuer-defined.",
       "preflightComplete": true,
-      "processingRoute": "Terra"
+      "processingRoute": "Hold"
     },
     {
       "inventoryId": "kyoto-art-theatre-shunjuza",

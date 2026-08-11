@@ -8,66 +8,78 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "source-schema-hold",
+    "name": "固定番号席2,008席（転記保留）",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "2026-08-10 Terra currentness review: the issuer publishes one fixed three-floor layout and 2,008-seat floor total, but separately labels 12 wheelchair spaces without stating whether they are included in that total or identifying a numbered-seat relationship. A selectable numbered-seat representative pattern is therefore not established.",
-    "notIncludedPatterns": []
+    "selectionReason": "公式貸館資料は客席2,020席を固定座席2,008席と車椅子専用席12席に直接分類し、車椅子12席が固定番号席2,008席の外で置換番号なしであることを解決した。ただし密集した複数ブロック接続部のローカル列番号反復について二つの公式図転記が境界所属までゼロ差に収束せず、lossless rangeを保存しない。",
+    "notIncludedPatterns": [
+      "無番号の車椅子専用席12席",
+      "公演ごとに車椅子鑑賞エリア・台数が変わる運用"
+    ]
   },
   "sources": [
     {
-      "id": "official-facility-page",
-      "official": true,
-      "roles": [
-        "facility"
-      ],
-      "publisher": "札幌コンサートホールKitara",
-      "title": "札幌コンサートホールKitara 公式施設案内",
-      "url": "https://www.kitara-sapporo.or.jp/",
-      "checkedAt": "2026-08-02"
-    },
-    {
       "id": "official-seat-map",
       "official": true,
-      "roles": [
-        "seat-structure"
-      ],
-      "publisher": "札幌コンサートホールKitara 大ホール",
-      "title": "公式座席図・座席案内",
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "札幌コンサートホールKitara",
+      "title": "大ホール座席表",
       "url": "https://www.kitara-sapporo.or.jp/facility/images/img_seat/seat_bighall.pdf",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-11"
     },
     {
-      "id": "official-seat-count",
+      "id": "official-rental-equipment",
       "official": true,
-      "roles": [
-        "seat-count"
-      ],
-      "publisher": "札幌コンサートホールKitara 大ホール",
-      "title": "公式施設・座席数案内",
-      "url": "https://www.kitara-sapporo.or.jp/facility/mainhall.html",
-      "checkedAt": "2026-08-03"
+      "roles": ["facility", "seat-count"],
+      "publisher": "公益財団法人札幌市芸術文化財団",
+      "title": "大ホール 設備概要",
+      "url": "https://www.kitara-sapporo.or.jp/rental/promoter_structure.html",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-barrier-free-guide",
+      "official": true,
+      "roles": ["facility"],
+      "publisher": "札幌コンサートホールKitara",
+      "title": "バリアフリー／サービス",
+      "url": "https://www.kitara-sapporo.or.jp/facility/barrierfree.html",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-city-specification",
+      "official": true,
+      "roles": ["facility", "seat-count"],
+      "publisher": "札幌市市民文化局",
+      "title": "札幌コンサートホール管理業務等仕様書",
+      "url": "https://www.city.sapporo.jp/shimin/bunka/shiteikanri/documents/shiyousho_hall.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-ticket-sales-guide",
+      "official": true,
+      "roles": ["facility"],
+      "publisher": "札幌コンサートホールKitara",
+      "title": "チケット販売委託のご案内",
+      "url": "https://www.kitara-sapporo.or.jp/rental/dl/ticket_sales_2.pdf?v=250401",
+      "checkedAt": "2026-08-11"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "issuer-owned evidence resolution and bounded first/second-pass attempt only; no selectable-seat range is registered.",
+  "completenessBasis": "固定番号席2,008席と無番号車椅子専用席12席の関係は解決。公式図のブロック境界所属について独立転記がゼロ差に収束しないためproduction completeness gateは未達。",
+  "transformation": "No range was retained. No total-based correction, geometric boundary guess, or range fitting was applied.",
   "knownLimitations": [
-    "Regional Production Cohort 1 official review: TERRA HANDOFF.",
-    "The official main-hall page gives 2,008 seats (1F 529, 2F 1,079, 3F 400) and separately states 12 wheelchair spaces.",
-    "The current issuer-owned PDF marks wheelchair-use spaces without individual seat numbers or an inclusion/replacement rule. The 2,008 total cannot be converted to a numbered-seat expectation by arithmetic.",
-    "No lossless range transcription, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "SOURCE/SCHEMA HOLD: LA/LB/LC、RA/RB/RC、P/CB/CCの接続部でローカル列番号が反復し、独立二パスが図形境界への依存なしに同一canonical area/rowへ収束しなかった。",
+    "車椅子専用席12席は固定座席2,008席に非包含であり、具体的な置換番号は該当なし。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": "2026-08-10",
-    "method": "issuer-owned-currentness-and-selectable-numbered-seat gate",
+    "checkedAt": "2026-08-11",
+    "method": "issuer-owned-evidence-resolution-plus-bounded-two-pass-attempt",
     "seatStructure": "pending",
-    "seatCount": "pending",
+    "seatCount": "matched",
     "unresolvedIssues": [
-      "The current official facility page gives 2,008 seats as 529 + 1,079 + 400 and separately states 12 wheelchair spaces, without an inclusion rule.",
-      "The current official numbered map labels wheelchair-use spaces but gives neither their individual numbers nor replacement numbers. Entering ranges or setting expectedSeatCount would require inferred grouping or arithmetic exclusion."
+      "公式図の複数ブロック接続部について、反復するローカル列番号のcanonical area/row所属が独立二パスで一致しない。"
     ]
   },
   "ranges": [],
@@ -75,23 +87,23 @@
     "officialFacilityPage": "あり",
     "officialSeatStructureSource": "あり",
     "officialSeatCountSource": "あり",
-    "completeNumberedSeatMap": "あり",
-    "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
+    "completeNumberedSeatMap": "あり（境界所属の独立転記不一致）",
+    "exactNominalSeatCount": "固定番号席2,008席、別建て車椅子専用席12席",
+    "representativeLayout": "固定番号席集合は一意、canonical rangeは未確定",
     "fixedSeats": "あり",
     "movableSeats": "なし",
-    "wheelchair": "不明",
+    "wheelchair": "無番号12席、固定2,008席の外、置換番号なし",
     "pit": "なし",
     "areas": "複数",
-    "processingRoute": "Sol",
-    "classification": "SOL HANDOFF / SCHEMA HOLD",
+    "processingRoute": "Hold",
+    "classification": "SOURCE/SCHEMA HOLD",
     "mapUrl": "https://www.kitara-sapporo.or.jp/facility/images/img_seat/seat_bighall.pdf",
-    "countUrl": "https://www.kitara-sapporo.or.jp/facility/mainhall.html",
-    "checkedAt": "2026-08-10",
-    "rationale": "The current official main-hall page establishes one physical layout and 2,008 floor-total seats, but its separate 12-wheelchair-space statement and the current map do not establish whether the spaces are included or provide a numbered replacement relation. Do not fit ranges to 2,008 or subtract 12.",
+    "countUrl": "https://www.kitara-sapporo.or.jp/rental/promoter_structure.html",
+    "checkedAt": "2026-08-11",
+    "rationale": "車椅子包含 blocker は解決したが、独立二パスのcanonical block/row境界がゼロ差に収束しないため、図形推測や2,008へのrange fittingを行わず閉じる。",
     "officialFacilityUrl": "https://www.kitara-sapporo.or.jp/",
     "status": "blocked",
-    "rangeEntry": "blocked-before-first-pass",
-    "decision": "sol-handoff"
+    "rangeEntry": "blocked-source-schema-hold",
+    "decision": "source-schema-hold"
   }
 }

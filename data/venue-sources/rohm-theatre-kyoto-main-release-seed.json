@@ -8,87 +8,103 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "sol-handoff-unselected",
-    "name": "代表番号席集合未確定",
+    "id": "source-contradiction-hold",
+    "name": "通常2,005席（公式図矛盾保留）",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "現行公式フロアガイドは2026年4月版の1〜4階座席図を表示し、公式設備ページは通常使用時2,005席（車いす10席含む）とオーケストラピット使用時1,833席を示す。Luna STANDARDの範囲では、4階・複数サイドエリア・1階通常/ピット構造を推測なしでcanonical area/rowへ完全転記できないため、Terra handoffとしてproduction gateを停止した。",
+    "selectionReason": "issuer-owned資料は通常2,005席（車いす10含む）、pit使用時1,833席、撤去172席と、車いす席の具体的番号を解決した。しかし現行公式図の全印字IDを転記すると1階1,126、2階266、3階349、4階272、計2,013となり、公称2,005席より8多い。発行者資料から8席を個別特定できないためSOURCE CONTRADICTION HOLD。",
     "notIncludedPatterns": [
-      "通常使用時2,005席又はピット使用時1,833席を番号rangeへfitする独自policy",
-      "車いす10席の個別置換番号を図形から推測すること"
+      "オーケストラピット使用時1,833席",
+      "公演別に1階25列2～10番を車いすスペースへ転換する追加variant"
     ]
   },
   "sources": [
     {
-      "id": "official-floor-guide",
+      "id": "official-current-seat-map",
       "official": true,
-      "roles": ["facility", "seat-structure"],
+      "roles": ["seat-structure", "seat-count"],
       "publisher": "ロームシアター京都",
-      "title": "メインホール現行フロアガイド（2026年4月版座席図表示）",
-      "url": "https://rohmtheatrekyoto.jp/floorguide/main-hall/",
-      "checkedAt": "2026-08-10"
+      "title": "メインホール座席表",
+      "url": "https://rohmtheatrekyoto.jp/wp-content/uploads/MainHall_seat_20210401.pdf",
+      "checkedAt": "2026-08-11"
     },
     {
-      "id": "official-facility-guide",
+      "id": "official-professional-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "ロームシアター京都",
+      "title": "メインホール座席表（2026年4月版）",
+      "url": "https://rohmtheatrekyoto.jp/wp-content/uploads/MainHall_seat_pro_20260413.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-facility-page",
       "official": true,
       "roles": ["facility", "seat-count"],
       "publisher": "ロームシアター京都",
-      "title": "公式設備ページ メインホール客席数・ピット使用時",
+      "title": "貸館施設 メインホール",
       "url": "https://rohmtheatrekyoto.jp/rental/facility/",
-      "checkedAt": "2026-08-10"
+      "checkedAt": "2026-08-11"
     },
     {
-      "id": "official-seat-map-pdf",
+      "id": "official-pit-map",
       "official": true,
       "roles": ["seat-structure", "seat-count"],
-      "publisher": "ロームシアター京都 メインホール",
-      "title": "メインホール座席表PDF（公式）",
-      "url": "https://rohmtheatrekyoto.jp/wp-content/uploads/MainHall_seat_20210401.pdf",
-      "checkedAt": "2026-08-10"
+      "publisher": "ロームシアター京都",
+      "title": "オーケストラピット仕様・撤去席172席",
+      "url": "https://rohmtheatrekyoto.jp/wp-content/uploads/rental_mainhall08_stageseats_orchestrapit_20170101.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-stage-plan",
+      "official": true,
+      "roles": ["seat-count"],
+      "publisher": "ロームシアター京都",
+      "title": "メインホール舞台平面図",
+      "url": "https://rohmtheatrekyoto.jp/wp-content/uploads/MainHall_ground_202410.pdf",
+      "checkedAt": "2026-08-11"
     }
   ],
-  "registeredScope": "Currentness and representative-pattern gate only; no selectable-seat range is registered.",
-  "completenessBasis": "Current official floor guide, current official facility page, and official seat-map PDF were checked. The issuer establishes current map imagery and normal/pit counts, but Luna has not registered a lossless canonical area/row transcription or an issuer-owned wheelchair replacement key.",
-  "transformation": "No seat-map transcription was performed after the representative selectable numbered-seat gate failed.",
+  "registeredScope": "issuer-owned evidence resolution and mismatch documentation only; no selectable-seat range is registered.",
+  "completenessBasis": "通常/pit/車いすの関係は解決したが、公式図の全印字ID2,013と公式通常総数2,005の8席差をissuer-owned資料から説明できない。",
+  "transformation": "No range was retained. The 8-seat difference was not subtracted, fitted, or assigned by geometry.",
   "knownLimitations": [
-    "TERRA HANDOFF: 1〜4階のmain/side areasと多数のrow/seat runのlossless転記がLuna STANDARDの範囲を超える。",
-    "SCHEMA HOLD: 通常使用時の車いす10席と番号席の個別包含・置換関係が公表資料で確定できない。",
-    "POLICY HOLD: オーケストラピット使用時は172席減の別構成であり、通常使用時を代表とするissuer-owned defaultの範囲を別途確認する必要がある。"
+    "通常図の車いすIDは1階10列5・42、1階25列11・13・15・32・34・36、2階5列1・48で、公称2,005席に包含。",
+    "pit撤去番号は公式通常図と公式pit図の直接差で1列14～33、2列7～40、3列6～41、4列4～43、5列3～44、計172席。",
+    "SOURCE CONTRADICTION HOLD: 全印字IDは2,013で、公称2,005との差8席を公式資料が特定しない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": "2026-08-10",
-    "method": "issuer-owned-representative-pattern-and-currentness-gate",
+    "checkedAt": "2026-08-11",
+    "method": "issuer-owned-evidence-resolution-plus-complete-first-pass-and-independent-mismatch-confirmation",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "現行公式フロアガイドで2026年4月版の1〜4階座席図、公式設備ページで通常2,005席（車いす10含む）・ピット時1,833席を確認した。",
-      "Terra handoff前にcanonical area/rowと個別番号を確定していないため、第1パス、独立第2パス、production gateを開始していない。",
-      "通常構成の明示的な番号席集合、車いす置換番号、又はTerraによるlossless map transcriptionが必要。"
+      "通常図の印字ID2,013と公式総数2,005の差8席について、除外対象となる具体的番号がissuer-owned資料にない。"
     ]
   },
   "ranges": [],
   "preflight": {
-    "officialFacilityPage": "あり（現行）",
-    "officialSeatStructureSource": "あり（2026年4月版座席図を現行ページで表示）",
-    "officialSeatCountSource": "あり（通常2,005、ピット時1,833、車いす10含む）",
-    "completeNumberedSeatMap": "図はあり、Lunaでのlossless canonical range転記未完了",
-    "exactNominalSeatCount": "通常2,005席（車いす10含む）、ピット時1,833席",
-    "representativeLayout": "通常/ピットの複数運用、通常構成を登録前",
+    "officialFacilityPage": "あり",
+    "officialSeatStructureSource": "あり",
+    "officialSeatCountSource": "あり",
+    "completeNumberedSeatMap": "あり（公式図内8席矛盾）",
+    "exactNominalSeatCount": "通常2,005席（車いす10含む）、pit1,833席",
+    "representativeLayout": "通常配置は指定済み、番号集合は公式矛盾",
     "fixedSeats": "あり",
-    "movableSeats": "ピット使用時172席減",
-    "wheelchair": "あり（通常10席、個別置換番号未確定）",
-    "pit": "あり（172席減）",
-    "areas": "複数階・複数サイドエリア",
-    "processingRoute": "Sol",
-    "classification": "SOL HANDOFF / POLICY-SCHEMA HOLD",
-    "mapUrl": "https://rohmtheatrekyoto.jp/floorguide/main-hall/",
+    "movableSeats": "pit使用時に公式指定172席撤去",
+    "wheelchair": "通常10席の具体的ID判明、2,005席に包含",
+    "pit": "あり（172席の具体的撤去番号判明）",
+    "areas": "複数",
+    "processingRoute": "Hold",
+    "classification": "SOURCE CONTRADICTION HOLD",
+    "mapUrl": "https://rohmtheatrekyoto.jp/wp-content/uploads/MainHall_seat_pro_20260413.pdf",
     "countUrl": "https://rohmtheatrekyoto.jp/rental/facility/",
-    "checkedAt": "2026-08-10",
-    "rationale": "currentnessと公式席数は確認したが、LunaのSTANDARD転記範囲を超える構造・運用・番号席schemaを推測なしで解けないため、Terraへhandoffし範囲転記前に停止した。",
+    "checkedAt": "2026-08-11",
+    "rationale": "blocker解消後の完全転記が2,013印字IDを再現し、公称2,005との差8席を公式資料から特定できない。差引きやrange fittingをせず閉じる。",
     "officialFacilityUrl": "https://rohmtheatrekyoto.jp/",
     "status": "blocked",
-    "rangeEntry": "blocked-before-first-pass",
-    "decision": "sol-handoff"
+    "rangeEntry": "blocked-source-contradiction",
+    "decision": "source-contradiction-hold"
   }
 }

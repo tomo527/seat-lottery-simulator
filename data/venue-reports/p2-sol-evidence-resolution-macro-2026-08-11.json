@@ -1,0 +1,60 @@
+{
+  "reportVersion": 1,
+  "reportId": "p2-sol-evidence-resolution-macro-2026-08-11",
+  "generatedAt": "2026-08-11",
+  "scope": "Sol high bounded issuer-owned evidence-resolution macro for exactly rohm-theatre-kyoto-main-release-seed, sapporo-kitara-main-release-seed, and kyoto-concert-hall-main-release-seed.",
+  "baseline": {
+    "productionVenues": 58,
+    "productionSeats": 78917
+  },
+  "outcomes": [
+    {
+      "id": "rohm-theatre-kyoto-main-release-seed",
+      "classification": "SOURCE CONTRADICTION HOLD",
+      "newIssuerOwnedResolution": "Normal use is 2,005 including ten wheelchair IDs; pit use is 1,833. The official normal/pit diagrams directly identify the 172 removed seats as row 1 seats 14-33, row 2 seats 7-40, row 3 seats 6-41, row 4 seats 4-43, and row 5 seats 3-44. Wheelchair IDs are 1F row 10 seats 5 and 42, 1F row 25 seats 11, 13, 15, 32, 34, and 36, and 2F row 5 seats 1 and 48.",
+      "expectedSeatCount": 2005,
+      "calculatedSeatCount": 2013,
+      "firstPass": "complete mismatch: 1F 1126, 2F 266, 3F 349, 4F 272, total 2013",
+      "secondPass": "independent mismatch confirmation reproduced the same +8 official-map discrepancy; no range set retained",
+      "rangeDiff": 0,
+      "productionGate": "blocked",
+      "blocker": "The official printed IDs total 2,013 against the official 2,005 normal count, and issuer-owned material does not identify the eight exclusions."
+    },
+    {
+      "id": "sapporo-kitara-main-release-seed",
+      "classification": "SOURCE/SCHEMA HOLD",
+      "newIssuerOwnedResolution": "The operator rental-equipment page explicitly decomposes 2,020 audience positions into 2,008 fixed seats and 12 dedicated wheelchair spaces; the City specification independently repeats 2,008 plus 12 wheelchair spaces. The 12 are outside the fixed numbered total and have no replacement seat numbers.",
+      "expectedSeatCount": 2008,
+      "calculatedSeatCount": null,
+      "firstPass": "not accepted: dense repeated local row/seat labels at joined blocks did not yield a lossless canonical boundary assignment",
+      "secondPass": "independent attempt did not converge on the same canonical area/row ownership",
+      "rangeDiff": null,
+      "productionGate": "blocked",
+      "blocker": "Canonical block-boundary ownership for repeated local identifiers did not converge without geometric inference; no total-based fitting was used."
+    },
+    {
+      "id": "kyoto-concert-hall-main-release-seed",
+      "classification": "PRODUCTION",
+      "newIssuerOwnedResolution": "The operator rental guide states capacity 1,839 including six wheelchair seats and separately states 1,833 fixed seats plus six wheelchair seats. Kyoto City independently states 1,839 including six wheelchair seats. The wheelchair positions are unnumbered and outside the 1,833 fixed numbered seats.",
+      "expectedSeatCount": 1833,
+      "calculatedSeatCount": 1833,
+      "firstPass": "complete: 75 ranges; 1F 980, 2F 453, 3F 400",
+      "secondPass": "complete independent official-map reread: zero range diff and identical floor totals",
+      "rangeDiff": 0,
+      "productionGate": "passed",
+      "blocker": null
+    }
+  ],
+  "productionPromotions": 1,
+  "productionFinal": 59,
+  "productionSeatFinal": 80750,
+  "baselineProductionRegression": "zero changes to all 58 baseline production source semantics, catalog entries, runtime details, and fingerprints",
+  "releaseReady": false,
+  "remainingSolQueue": [
+    "hbg-hall-release-seed",
+    "fukuoka-sunpalace-hall-release-seed",
+    "festival-hall-release-seed",
+    "aichi-arts-center-main-release-seed"
+  ],
+  "nextRecommended": "Sol high bounded macro for hbg-hall-release-seed only; keep the two new closed holds off model queues until changed issuer-owned evidence or a published canonical block key appears."
+}
