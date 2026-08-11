@@ -1,0 +1,116 @@
+{
+  "reportVersion": 1,
+  "reportId": "p2-sol-complex-macro-4-aichi-and-final-2026-08-11",
+  "generatedAt": "2026-08-11",
+  "scope": "Sol high P2 COMPLEX macro 4 for exactly aichi-arts-center-main-release-seed, followed by the final disposition of all 24 P2 targets.",
+  "baseline": {
+    "productionVenues": 59,
+    "productionSeats": 80750
+  },
+  "outcome": {
+    "id": "aichi-arts-center-main-release-seed",
+    "classification": "SOURCE CONTRADICTION HOLD",
+    "newIssuerOwnedResolution": {
+      "normalLayout": "The current official guide establishes large-scale use at 2,480 seats: 2,456 fixed numbered seats including 12 score seats, 8 unnumbered wheelchair positions, and 16 unnumbered parent-child-room seats.",
+      "wheelchair": "The eight wheelchair positions are explicitly inside the 2,480 total and outside the 2,456 fixed-seat subtotal. The current map draws them as two unnumbered four-position spaces behind 2F row 11, so there are no numbered replacement or withdrawal seats.",
+      "variants": "Medium-scale use is 1,880 seats and closes part of 4F plus the 5F front through the movable-wall/use-area configuration. Current meeting material also permits front seats to be removed, covered, or left in place. These are not mixed into the normal full-layout candidate.",
+      "sourceDate": "The current 1F-3F and 4F-5F official maps have PDF creation dates 2024-05-29 and 2024-04-12. The official rental page identifies the current guide as revised 2026-03-03; its PDF metadata is 2026-03-27. The current meeting sheet is marked 20260701版 with 2026-06-30 metadata. These current sources supersede the stale 2018 useguide for pit semantics.",
+      "pitContradiction": "The current official map and 2026 guide state a 176-seat orchestra-pit reduction and label rows 1-5 as the pit. The printed IDs in those rows total 177: row 1 seats 20-31 (12), row 2 seats 5-30 and 32-46 (41), rows 3 and 4 seats 4-47 (44 each), and row 5 seats 8-43 (36). No issuer-owned key identifies one ID outside the stated 176."
+    },
+    "nominalSeatCount": 2480,
+    "expectedSeatCount": 2456,
+    "calculatedSeatCount": null,
+    "representativePattern": "normal large-scale fixed-numbered candidate of 2,456 seats; not eligible for production while the pit mapping self-contradiction remains",
+    "firstPass": "not started: the required pre-range pit-number gate failed",
+    "secondPass": "not started",
+    "rangeDiff": null,
+    "productionGate": "blocked before range transcription",
+    "blocker": "SOURCE CONTRADICTION HOLD: current issuer-owned material says pit rows 1-5 contain 176 seats, but those rows print 177 seat IDs and do not identify the one-seat difference. Arithmetic fitting, geometry inference, cross-generation source mixing, and repository policy are prohibited."
+  },
+  "sources": [
+    {
+      "publisher": "愛知芸術文化センター",
+      "title": "愛知県芸術劇場 大ホール",
+      "url": "https://www-stage.aac.pref.aichi.jp/facility/main.html"
+    },
+    {
+      "publisher": "愛知県芸術劇場",
+      "title": "大ホール座席表 1F～3F（2024-05-29）",
+      "url": "https://www-stage.aac.pref.aichi.jp/facility/pdf/b1_3f.pdf"
+    },
+    {
+      "publisher": "愛知県芸術劇場",
+      "title": "大ホール座席表 4F～5F（2024-04-12）",
+      "url": "https://www-stage.aac.pref.aichi.jp/facility/pdf/b4_5f.pdf"
+    },
+    {
+      "publisher": "愛知県芸術劇場",
+      "title": "利用のご案内（2026-03-03改定）",
+      "url": "https://www.aac.pref.aichi.jp/rent/pdf/theater_annai.pdf"
+    },
+    {
+      "publisher": "愛知県芸術劇場",
+      "title": "大ホール打合せ資料（20260701版）",
+      "url": "https://www.aac.pref.aichi.jp/rent/pdf/uti_b_hole.pdf"
+    }
+  ],
+  "productionPromotions": 0,
+  "productionFinal": 59,
+  "productionSeatFinal": 80750,
+  "baselineProductionRegression": "zero changes to all 59 baseline production source semantics, catalog entries, runtime details, and fingerprints",
+  "p2Final": {
+    "targets": 24,
+    "production": {
+      "venues": 1,
+      "addedSeats": 1833,
+      "ids": [
+        "kyoto-concert-hall-main-release-seed"
+      ]
+    },
+    "nonProduction": 23,
+    "sourceClassifications": {
+      "PRODUCTION": 1,
+      "SOURCE HOLD": 11,
+      "SOURCE/SCHEMA HOLD": 4,
+      "SOURCE CONTRADICTION HOLD": 2,
+      "LUNA BOUNDARY / SCHEMA HOLD": 1,
+      "POLICY HOLD": 2,
+      "legacy TERRA HANDOFF dispositions": 3
+    },
+    "remainingHoldGroups": {
+      "newIssuerOwnedEvidenceRequired": {
+        "count": 19,
+        "definition": "Eleven source holds; HBG, Fukuoka Sunpalace, and Festival Hall source/schema holds; ROHM and Aichi source contradictions; Kitara Small schema hold; Umeda currentness/date hold; and the ACROS official contradiction. Reopen only when the issuer publishes the missing or corrected evidence."
+      },
+      "redesignPotential": {
+        "count": 4,
+        "definition": "Kitara Main dense block-boundary schema, plus Sapporo hitaru, Misonoza, and Sendai Sunplaza multi-pattern/default-policy semantics. A future explicit product/schema decision may help, but no repository-only policy is authorized in this macro."
+      }
+    }
+  },
+  "productionCoverage": {
+    "Tokyo": 50,
+    "Kanagawa": 3,
+    "Chiba": 1,
+    "Saitama": 1,
+    "Ibaraki": 0,
+    "Tochigi": 1,
+    "Gunma": 0,
+    "Kyoto": 1,
+    "Osaka": 2,
+    "KantoTotal": 56
+  },
+  "releaseReady": false,
+  "releaseBlockerRedefined": "The verified production artifacts are internally releaseable, but release-seed-v1 still defines readiness as promotion or formal closure of every curated target and region requirement. Its 48 targets include only 7 productions and 41 non-production dispositions; all 14 release regions remain below their target count. The blocker is therefore the seed manifest's exhaustive coverage/governance contract, not a regression or validation defect in the 59-venue production database.",
+  "releaseOptions": {
+    "releaseCurrentVerifiedSet": "Ship 59 verified venues / 80,750 seats with all holds disclosed. This has the lowest engineering and evidence cost, but requires an explicit governance change from 48-of-48 seed promotion to an approved verified-set release with documented exclusions.",
+    "continueExpansion": "Continue venue acquisition to improve geographic breadth. Yield is uncertain because 19 P2 holds require new issuer evidence and four require explicit schema/policy redesign; discovering new source-complete candidates is likely cheaper than repeatedly escalating closed holds."
+  },
+  "nextPhaseModelQueue": {
+    "nonModelGate": "First choose release-now versus a new bounded expansion target, and normalize the legacy Sendai/Umeda disposition semantics in release-seed-v1. Do not start venue research before this decision.",
+    "Luna": "If expansion is chosen, screen only a bounded 3-5 new standard candidates whose official current count and complete numbered map already exist.",
+    "Terra": "Use only for a candidate that passes semantics/currentness and then proves genuinely dense; keep empty until Luna identifies one.",
+    "Sol": "Keep empty by default. Reopen only when changed issuer-owned evidence directly addresses a recorded variant, wheelchair, currentness, or contradiction blocker."
+  },
+  "exactNextAction": "Run a non-model release-decision macro: choose whether to ship the verified 59-venue production set with documented holds or define a new bounded expansion target; align release-seed-v1 readiness semantics and normalize the legacy Sendai/Umeda disposition metadata. Do not begin additional venue research until that decision is recorded."
+}

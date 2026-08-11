@@ -8,89 +8,127 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "normal-full-fixed-numbered-candidate",
+    "name": "通常大規模利用・固定番号席候補",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "expectedSeatCount": 2456,
+    "selectionReason": "現行公式利用案内は大規模利用2,480席を、固定席2,456席（スコア席12席を含む）、車椅子席8席、おやこ室16席に区分する。通常時の番号付き候補は固定2,456席で一意だが、同じ現行公式図のorchestra pit 176席表記と1～5列の印字番号177席が矛盾するためproduction候補には進めない。",
+    "notIncludedPatterns": [
+      "無番号の常設車椅子スペース8席（総2,480席には含むが固定2,456席には含まない）",
+      "無番号のおやこ室16席（総2,480席には含むが固定2,456席には含まない）",
+      "中規模利用1,880席（4階の一部と5階前方を使用しない運用）",
+      "orchestra pit使用時の176席減配置（番号対応が現行公式図と自己矛盾）"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
-      ],
-      "publisher": "愛知県芸術劇場",
-      "title": "愛知県芸術劇場 公式施設案内",
-      "url": "https://www-stage.aac.pref.aichi.jp/",
-      "checkedAt": "2026-08-02"
-    },
-    {
-      "id": "official-seat-map",
-      "official": true,
-      "roles": [
-        "seat-structure"
-      ],
-      "publisher": "愛知県芸術劇場 大ホール",
-      "title": "公式座席図・座席案内",
-      "url": "https://www-stage.aac.pref.aichi.jp/facility/pdf/b1_3f.pdf",
-      "checkedAt": "2026-08-03"
-    },
-    {
-      "id": "official-seat-count",
-      "official": true,
-      "roles": [
+        "facility",
         "seat-count"
       ],
-      "publisher": "愛知県芸術劇場 大ホール",
-      "title": "公式施設・座席数案内",
-      "url": "https://www.aac.pref.aichi.jp/rent/theater/facility.html",
-      "checkedAt": "2026-08-03"
+      "publisher": "愛知芸術文化センター",
+      "title": "愛知県芸術劇場 大ホール",
+      "url": "https://www-stage.aac.pref.aichi.jp/facility/main.html",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-seat-map-1f-3f",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "愛知県芸術劇場",
+      "title": "大ホール座席表 1F～3F",
+      "url": "https://www-stage.aac.pref.aichi.jp/facility/pdf/b1_3f.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-seat-map-4f-5f",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "愛知県芸術劇場",
+      "title": "大ホール座席表 4F～5F",
+      "url": "https://www-stage.aac.pref.aichi.jp/facility/pdf/b4_5f.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-rental-guide-2026",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "愛知県芸術劇場",
+      "title": "愛知県芸術劇場 利用のご案内（2026年3月3日改定）",
+      "url": "https://www.aac.pref.aichi.jp/rent/pdf/theater_annai.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-meeting-sheet-2026",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "愛知県芸術劇場",
+      "title": "大ホール打合せ資料（20260701版）",
+      "url": "https://www.aac.pref.aichi.jp/rent/pdf/uti_b_hole.pdf",
+      "checkedAt": "2026-08-11"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "SOURCE CONTRADICTION HOLD。通常大規模利用の固定番号席候補2,456席は確定したが、pit番号対応の現行公式資料内矛盾を解決できないため番号席rangeは登録しない。",
+  "completenessBasis": "2026年3月改定の公式利用案内と2024年作成の現行座席図をcurrent canonical sourceとする。利用案内は総2,480席を固定2,456席、車椅子8席、おやこ室16席に直接区分し、車椅子スペースは2階11列後方に無番号で描かれる。同時に1～5列をpit 176席とするが、図面の印字番号を直接数えると177席である。",
+  "transformation": "代表配置の事前ゲートで停止したためrange転記を開始しない。公式総数から1席を逆算せず、図形位置や古い2018年資料を混ぜず、2,456席へのrange fittingを行わない。",
   "knownLimitations": [
-    "Regional Production Cohort 1 official review: SOL HANDOFF.",
-    "The official facility source exposes multiple use patterns, wheelchair/parent-child spaces, orchestra-pit reduction, and dense five-floor ranges; Sol must select and reconcile one representative configuration.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "通常大規模利用は総2,480席、内訳は固定2,456席（スコア席12席を含む）、車椅子8席、おやこ室16席である。",
+    "車椅子8席は総2,480席に含まれるが固定2,456席には含まれない常設無番号スペースであり、番号席の置換・撤去番号はない。",
+    "中規模利用1,880席は4階の一部と5階前方を使わない運用で、通常固定番号席候補とは別variantである。",
+    "SOURCE CONTRADICTION HOLD: 現行公式座席図はpitを1～5列176席とするが、印字番号は1列20～31番12席、2列5～30・32～46番41席、3列4～47番44席、4列4～47番44席、5列8～43番36席の計177席である。",
+    "issuer-owned資料は177番号のうち除外すべき1席を指定しない。総数合わせ、図形推測、source世代の混在、repository独自policyは禁止する。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-11",
+    "method": "issuer-owned-representative-pattern-and-currentness-gate",
     "seatStructure": "pending",
-    "seatCount": "pending",
+    "seatCount": "mismatched",
     "unresolvedIssues": [
-      "The official facility source exposes multiple use patterns, wheelchair/parent-child spaces, orchestra-pit reduction, and dense five-floor ranges; Sol must select and reconcile one representative configuration.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
+      "SOURCE CONTRADICTION HOLD: 現行公式資料のpit 176席に対し、同じ現行公式図の1～5列には177個の番号が印字される。",
+      "176席に合わせて除外する具体的番号をissuer-owned資料が定義していない。",
+      "指定された事前ゲートが解決しないため、第1パス、独立第2パス、production gateを開始していない。"
     ]
   },
   "ranges": [],
   "preflight": {
     "officialFacilityPage": "あり",
-    "officialSeatStructureSource": "あり",
-    "officialSeatCountSource": "あり",
-    "completeNumberedSeatMap": "あり",
-    "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
-    "fixedSeats": "あり",
-    "movableSeats": "なし",
-    "wheelchair": "不明",
-    "pit": "なし",
-    "areas": "複数",
-    "processingRoute": "Sol",
-    "classification": "SOL HANDOFF",
+    "officialSeatStructureSource": "あり（2024年現行座席図）",
+    "officialSeatCountSource": "あり（2026年3月改定利用案内）",
+    "completeNumberedSeatMap": "あり（通常配置）",
+    "exactNominalSeatCount": "総2,480席、固定番号席2,456席、車椅子8席、おやこ室16席",
+    "representativeLayout": "通常大規模利用の固定番号席候補は一意、pit番号対応は矛盾",
+    "fixedSeats": "2,456席（スコア席12席を含む）",
+    "movableSeats": "前方席の撤去・覆い運用と4・5階の可動壁variantあり",
+    "wheelchair": "常設無番号8席。総2,480席に包含、固定2,456席には非包含、番号席置換なし",
+    "pit": "公式176席減だが1～5列の印字番号は177席",
+    "areas": "1階～5階、左右バルコニー",
+    "processingRoute": "Hold",
+    "classification": "SOURCE CONTRADICTION HOLD",
     "mapUrl": "https://www-stage.aac.pref.aichi.jp/facility/pdf/b1_3f.pdf",
-    "countUrl": "https://www.aac.pref.aichi.jp/rent/theater/facility.html",
-    "checkedAt": "2026-08-03",
-    "rationale": "The official facility source exposes multiple use patterns, wheelchair/parent-child spaces, orchestra-pit reduction, and dense five-floor ranges; Sol must select and reconcile one representative configuration.",
-    "officialFacilityUrl": "https://www-stage.aac.pref.aichi.jp/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "handoff"
+    "countUrl": "https://www.aac.pref.aichi.jp/rent/pdf/theater_annai.pdf",
+    "checkedAt": "2026-08-11",
+    "rationale": "通常固定番号席候補2,456席と車椅子包含関係は解決したが、現行公式図のpit 176席表記と1～5列177番号が自己矛盾する。除外番号を推測せずrange転記前に閉じる。",
+    "officialFacilityUrl": "https://www-stage.aac.pref.aichi.jp/facility/main.html",
+    "status": "blocked",
+    "rangeEntry": "blocked-source-contradiction",
+    "decision": "source-contradiction-hold"
   }
 }
