@@ -8,89 +8,112 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "normal-numbered-map-source-schema-hold",
+    "name": "通常番号席配置（pit対応未解決）",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "expectedSeatCount": 2001,
+    "selectionReason": "現行公式座席ページと客席図は、通常配置を全2,001席、1階1,144席、2階857席として一意に掲載する。ただし、production前提として指定されたorchestra pit内52席の具体的番号対応がissuer-owned資料で解決しないため、range転記前に停止する。",
+    "notIncludedPatterns": [
+      "orchestra pit使用時に1～4列計82席を使用しない配置"
+    ]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-seat-page",
       "official": true,
       "roles": [
-        "facility"
+        "seat-count",
+        "facility",
+        "event-layout"
       ],
-      "publisher": "広島文化学園HBGホール",
-      "title": "広島文化学園HBGホール 公式施設案内",
-      "url": "https://h-bkk.jp/",
-      "checkedAt": "2026-08-02"
+      "publisher": "広島市文化交流会館（広島文化学園HBGホール）",
+      "title": "座席表",
+      "url": "https://h-bkk.jp/hall/seat/",
+      "checkedAt": "2026-08-11"
     },
     {
       "id": "official-seat-map",
       "official": true,
       "roles": [
-        "seat-structure"
+        "seat-structure",
+        "seat-count",
+        "event-layout"
       ],
-      "publisher": "広島文化学園HBGホール",
-      "title": "公式座席図・座席案内",
+      "publisher": "広島市文化交流会館（広島文化学園HBGホール）",
+      "title": "広島文化学園HBGホール客席図",
       "url": "https://h-bkk.jp/wp-design/pdf/hall/hall-stage-kyakusekizu.pdf",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-11"
     },
     {
-      "id": "official-seat-count",
+      "id": "official-facility-summary",
       "official": true,
       "roles": [
-        "seat-count"
+        "seat-count",
+        "facility",
+        "event-layout"
       ],
-      "publisher": "広島文化学園HBGホール",
-      "title": "公式施設・座席数案内",
+      "publisher": "広島市文化交流会館（広島文化学園HBGホール）",
+      "title": "施設概要",
       "url": "https://h-bkk.jp/hall/summary/",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "hiroshima-city-cultural-halls-survey",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "広島市",
+      "title": "文化ホールの現状と課題等について",
+      "url": "https://www.city.hiroshima.lg.jp/_res/projects/default_project/_page_/001/048/994/gg.pdf",
+      "checkedAt": "2026-08-11"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "SOURCE/SCHEMA HOLD。通常番号席集合の公式総数は確認したが、pit対応を解決できないため番号席rangeは登録しない。",
+  "completenessBasis": "運営者の現行座席ページと客席図は全2,001席、1階1,144席（車椅子用可動席20席）、2階857席を明記し、広島市資料も2,001席を独立確認する。客席図は車椅子用可動席20席の番号とpit使用時の使用不可範囲を明記するが、pit内52席の個別番号は示さない。",
+  "transformation": "代表配置の事前ゲートで停止したためrange転記を開始しない。1～4列の図形位置からpit内52番号を推測せず、82席との差30席を算術配分せず、2,001席へのrange fittingを行わない。",
   "knownLimitations": [
-    "Regional Production Cohort 1 official review: SOL HANDOFF.",
-    "The official count includes a 52-seat orchestra-pit component and 20 movable wheelchair positions; exact normal-layout exclusions and conversions require Sol.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "通常配置は全2,001席、1階1,144席、2階857席として現行公式資料上は一意である。",
+    "車椅子用可動席20席は1階13列12～17番、18～24番、25～31番で、1階1,144席に含まれる番号付き通常席の可動対象として公式客席図に明記される。",
+    "SOURCE HOLD: 公式資料は1階1,144席のうちorchestra pit内52席とするが、52席の個別番号一覧を公表していない。",
+    "SCHEMA HOLD: 同じ公式客席図はpit使用時に1～4列すべて計82席が使用不可と明記するが、pit内52席と追加使用不可30席の番号内訳を定義しない。",
+    "図形上のpit位置から52番号を選ぶこと、82から52又は30を逆算すること、通常配置だけを独自policyでproduction化することは禁止する。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-11",
+    "method": "issuer-owned-representative-pattern-gate",
     "seatStructure": "pending",
-    "seatCount": "pending",
+    "seatCount": "matched",
     "unresolvedIssues": [
-      "The official count includes a 52-seat orchestra-pit component and 20 movable wheelchair positions; exact normal-layout exclusions and conversions require Sol.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
+      "SOURCE HOLD: orchestra pit内52席の具体的な列・番号対応がissuer-owned資料にない。",
+      "SCHEMA HOLD: pit使用時の使用不可82席について、pit内52席と追加30席の番号別カテゴリ対応が未定義である。",
+      "指定された事前ゲートが解決しないため、第1パス、独立第2パス、production gateを開始していない。"
     ]
   },
   "ranges": [],
   "preflight": {
     "officialFacilityPage": "あり",
     "officialSeatStructureSource": "あり",
-    "officialSeatCountSource": "あり",
-    "completeNumberedSeatMap": "あり",
-    "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
+    "officialSeatCountSource": "あり（運営者2,001席、広島市2,001席）",
+    "completeNumberedSeatMap": "あり（通常配置）",
+    "exactNominalSeatCount": "2,001席",
+    "representativeLayout": "通常配置は一意、pit番号対応は未解決",
     "fixedSeats": "あり",
-    "movableSeats": "なし",
-    "wheelchair": "不明",
-    "pit": "なし",
-    "areas": "単純",
-    "processingRoute": "Sol",
-    "classification": "SOL HANDOFF",
+    "movableSeats": "1階13列12～31番のうち連続3群、計20席",
+    "wheelchair": "可動対象20番号を解決、1階1,144席に包含",
+    "pit": "pit内52席の番号未公表、使用時は1～4列計82席が使用不可",
+    "areas": "1階・2階",
+    "processingRoute": "Hold",
+    "classification": "SOURCE/SCHEMA HOLD",
     "mapUrl": "https://h-bkk.jp/wp-design/pdf/hall/hall-stage-kyakusekizu.pdf",
-    "countUrl": "https://h-bkk.jp/hall/summary/",
-    "checkedAt": "2026-08-03",
-    "rationale": "The official count includes a 52-seat orchestra-pit component and 20 movable wheelchair positions; exact normal-layout exclusions and conversions require Sol.",
-    "officialFacilityUrl": "https://h-bkk.jp/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "handoff"
+    "countUrl": "https://h-bkk.jp/hall/seat/",
+    "checkedAt": "2026-08-11",
+    "rationale": "通常2,001席と車椅子可動対象20番号は解決したが、公式はpit内52席の番号を示さず、pit使用時の使用不可82席との番号別内訳も定義しない。推測、算術合わせ、独自policyを使わずrange転記前に閉じる。",
+    "officialFacilityUrl": "https://h-bkk.jp/hall/summary/",
+    "status": "blocked",
+    "rangeEntry": "blocked-source-schema-hold",
+    "decision": "source-schema-hold"
   }
 }
