@@ -153,6 +153,8 @@ Existing closure holds also include `meijiza` policy/schema ambiguity, `kabukiza
 
 The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. The repository uses the established GitHub-to-Cloudflare Workers Builds flow. Before closing a macro, verify that the final pushed HEAD has a successful `Workers Builds: seat-lottery-simulator` check and that the public URL returns HTTP 200.
 
+- 2026-08-11 P2 Sol COMPLEX macro 4 deployment verification passed: data commit `05db51f` completed `Workers Builds: seat-lottery-simulator` check `https://github.com/tomo527/seat-lottery-simulator/runs/93759339906`; the public URL returned HTTP 200, displayed `絞り込み結果 59件`, returned zero Aichi Arts Center results as required by the hold, and emitted no console errors. The final HANDOFF-only follow-up preserves the same 59-venue / 80,750-seat deployment.
+
 ## Validation status
 
 - 2026-08-11 Sol high P2 COMPLEX macro 4 passed: `venues:review -- --id aichi-arts-center-main-release-seed`, `venues:inventory:report`, `venues:readiness:report`, `venues:batch:report -- --batch release-seed-v1`, `venues:release:coverage`, `venues:build`, `venues:check`, `venues:validate`, `venues:report`, `lint`, `typecheck`, `test` (16 files / 116 tests), `build`, `test:e2e` (11 tests, elevated Miniflare run), JSON parsing, baseline artifact comparison, and `git diff --check`. Aichi remains draft with empty ranges; all 59 production fingerprints, catalog entries, source semantics, and runtime details are unchanged at 80,750 seats. P2 is closed at 24/24 dispositions.
