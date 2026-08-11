@@ -8,65 +8,127 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "normal-layout-pit-wheelchair-source-schema-hold",
+    "name": "通常2,700席配置（pit・車椅子番号対応未解決）",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "selectionReason": "現行公式座席ページ・座席図・施設概要は通常2,700席とpit使用時2,524席を示すが、176席の具体的番号対応と、無番号の1階車椅子スペースの2,700席への包含・置換番号をissuer-owned資料が定義しない。通常時のrepresentative selectable numbered-seat setを確定せず、range転記前に停止する。",
+    "notIncludedPatterns": [
+      "オーケストラピット及び前舞台使用時の2,524席配置",
+      "公演により最前列が6列目となる配置",
+      "1階車椅子スペースを使用する公演別配置"
+    ]
   },
   "sources": [
     {
-      "id": "official-facility-page",
+      "id": "official-seat-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-structure",
+        "seat-count"
       ],
       "publisher": "フェスティバルホール",
-      "title": "フェスティバルホール 公式施設案内",
-      "url": "https://www.festivalhall.jp/",
-      "checkedAt": "2026-08-02"
+      "title": "座席表",
+      "url": "https://www.festivalhall.jp/about/zaseki.html",
+      "checkedAt": "2026-08-11"
     },
     {
       "id": "official-seat-map",
       "official": true,
       "roles": [
-        "seat-structure"
+        "seat-structure",
+        "seat-count",
+        "event-layout"
       ],
       "publisher": "フェスティバルホール",
-      "title": "公式座席図・座席案内",
+      "title": "座席表 全体図",
       "url": "https://www.festivalhall.jp/pdf/zaseki.pdf",
-      "checkedAt": "2026-08-03"
+      "checkedAt": "2026-08-11"
     },
     {
-      "id": "official-seat-count",
+      "id": "official-facility-outline",
       "official": true,
       "roles": [
-        "seat-count"
+        "facility",
+        "seat-count",
+        "event-layout"
       ],
       "publisher": "フェスティバルホール",
-      "title": "公式施設・座席数案内",
-      "url": "https://www.festivalhall.jp/about/zaseki.html",
-      "checkedAt": "2026-08-03"
+      "title": "施設概要",
+      "url": "https://www.festivalhall.jp/pdf/gaiyou.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-stage-drawings-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "フェスティバルホール",
+      "title": "ホール図面",
+      "url": "https://www.festivalhall.jp/about/zumen.html",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-stage-plan-1-100",
+      "official": true,
+      "roles": [
+        "event-layout"
+      ],
+      "publisher": "フェスティバルホール",
+      "title": "舞台平面図 1/100（Ver.2016.03.01）",
+      "url": "https://www.festivalhall.jp/pdf/zumen/h100.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-stage-plan-1-200",
+      "official": true,
+      "roles": [
+        "event-layout"
+      ],
+      "publisher": "フェスティバルホール",
+      "title": "舞台平面図 1/200（Ver.2014.01.11）",
+      "url": "https://www.festivalhall.jp/pdf/zumen/h200.pdf",
+      "checkedAt": "2026-08-11"
+    },
+    {
+      "id": "official-faq",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "フェスティバルホール",
+      "title": "よくあるご質問（車椅子でのご来場について）",
+      "url": "https://www.festivalhall.jp/faq/",
+      "checkedAt": "2026-08-11"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "SOURCE/SCHEMA HOLD。通常・pit・車椅子の関係を解決できないため、selectable numbered-seat rangeは登録しない。",
+  "completenessBasis": "運営者の現行公式ページが直接リンクする座席図、施設概要、舞台平面図、FAQを確認した。通常2,700席とpit使用時2,524席は直接確認できるが、176席及び車椅子スペースの番号関係は公表されない。",
+  "transformation": "代表配置の事前ゲートで停止したためrange転記を開始しない。図面上の位置からpit 176席又は車椅子スペースの置換番号を推測せず、2,700席へのrange fittingも行わない。",
   "knownLimitations": [
-    "Regional Production Cohort 1 official review: SOL HANDOFF.",
-    "The official map contains multiple floors, boxes, and a 176-seat orchestra-pit component; Sol must resolve the representative configuration and removal semantics.",
-    "No Luna range transcription, first pass, independent second pass, fingerprint, catalog entry, or runtime detail was created."
+    "現行公式座席図は通常2,700席を1階1,544席、2階576席、3階580席とし、内訳をボックス81席、一般2,411席、オーケストラピット176席、バルコニーBOX左右各16席とする。",
+    "現行公式座席図・施設概要はオーケストラピット使用時の総数を2,524席とする。1/100舞台平面図も『オケピ及び前舞台で使用する場合は客席が176席減』とするが、該当する列・番号を記載しない。",
+    "現行公式座席ページは、公演により最前列が6列目となる場合があると案内するが、その配置とpit・前舞台176席減との関係及び除外番号を定義しない。",
+    "現行公式FAQは定員に限りがある1階車椅子スペースを案内し、施設概要は車椅子スペースあり、座席図は無番号アイコンを表示するが、スペース数、2,700席への包含、置換・撤去番号を記載しない。",
+    "SOURCE HOLD: pit・前舞台使用時に除外される176席の具体的番号と、車椅子スペースの包含・置換番号がissuer-owned資料にない。",
+    "SCHEMA HOLD: 無番号車椅子スペースの通常総数との関係が未定義のため、通常時の一つのselectable numbered-seat setとexpectedSeatCountを確定できない。",
+    "source-date整理: 座席図PDFは内部メタデータ2014-05-20・HTTP Last-Modified 2021-12-14、施設概要は内部メタデータ2018-04-10/11・HTTP Last-Modified 2021-12-20、1/100舞台平面図は図面内Ver.2016.03.01・HTTP Last-Modified 2021-12-21、1/200舞台平面図は図面内Ver.2014.01.11・HTTP Last-Modified 2021-12-21である。2026-08-11現在、公式ページが全資料を直接リンクしている。",
+    "currentness方針: 座席番号・通常席数は現行座席ページとその全体図をcanonicalとし、stage semanticsは現行ホール図面ページのうち内部版が新しい1/100図を優先する。1/200旧版は日付比較用のみとし、異なる図の位置関係を番号対応へ混在させない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-11",
+    "method": "issuer-owned-representative-pattern-gate",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "The official map contains multiple floors, boxes, and a 176-seat orchestra-pit component; Sol must resolve the representative configuration and removal semantics.",
-      "Independent Terra/Sol handoff review is required before any range entry or production decision."
+      "SOURCE HOLD: pit・前舞台使用時に除外される176席の具体的な列・番号が公表されていない。",
+      "SOURCE/SCHEMA HOLD: 車椅子スペース数、2,700席への包含、置換・撤去される番号席が公表されていない。",
+      "指定された事前ゲートが解決しないため、第1パス、独立第2パス、production gateを開始していない。"
     ]
   },
   "ranges": [],
@@ -75,22 +137,22 @@
     "officialSeatStructureSource": "あり",
     "officialSeatCountSource": "あり",
     "completeNumberedSeatMap": "あり",
-    "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
+    "exactNominalSeatCount": "通常2,700席、pit使用時2,524席",
+    "representativeLayout": "通常公称配置は確認、selectable番号集合は未解決",
     "fixedSeats": "あり",
-    "movableSeats": "なし",
-    "wheelchair": "不明",
-    "pit": "なし",
+    "movableSeats": "pit・前舞台176席、具体的番号未公表",
+    "wheelchair": "1階無番号スペース、包含・定員・置換番号未公表",
+    "pit": "176席減、具体的番号未公表",
     "areas": "複数",
-    "processingRoute": "Sol",
-    "classification": "SOL HANDOFF",
+    "processingRoute": "Hold",
+    "classification": "SOURCE/SCHEMA HOLD",
     "mapUrl": "https://www.festivalhall.jp/pdf/zaseki.pdf",
     "countUrl": "https://www.festivalhall.jp/about/zaseki.html",
-    "checkedAt": "2026-08-03",
-    "rationale": "The official map contains multiple floors, boxes, and a 176-seat orchestra-pit component; Sol must resolve the representative configuration and removal semantics.",
-    "officialFacilityUrl": "https://www.festivalhall.jp/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "handoff"
+    "checkedAt": "2026-08-11",
+    "rationale": "通常2,700席、pit使用時2,524席、車椅子スペースの存在は現行公式資料で確認したが、pit 176席と車椅子利用時の具体的番号対応、車椅子の総数包含が未定義である。推測、図形補完、旧資料混在、算術合わせ、独自policyを使わずrange転記前に閉じる。",
+    "officialFacilityUrl": "https://www.festivalhall.jp/about/outline.html",
+    "status": "blocked",
+    "rangeEntry": "blocked-source-schema-hold",
+    "decision": "source-schema-hold"
   }
 }

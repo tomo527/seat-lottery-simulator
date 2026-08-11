@@ -1,0 +1,71 @@
+{
+  "reportVersion": 1,
+  "reportId": "p2-sol-complex-macro-3-festival-hall-2026-08-11",
+  "generatedAt": "2026-08-11",
+  "scope": "Sol high P2 COMPLEX macro 3 for exactly festival-hall-release-seed.",
+  "baseline": {
+    "productionVenues": 59,
+    "productionSeats": 80750
+  },
+  "outcome": {
+    "id": "festival-hall-release-seed",
+    "classification": "SOURCE/SCHEMA HOLD",
+    "newIssuerOwnedResolution": {
+      "normalLayout": "The current operator seat page, seat map, and facility outline publish 2,700 seats: 1F 1,544, 2F 576, and 3F 580; categories are 81 boxes, 2,411 general seats, 176 orchestra-pit seats, and 32 balcony-box seats.",
+      "pitAndForestage": "The operator publishes 2,524 seats with pit use. Its 1:100 stage-plan bundle states that using the orchestra pit and forestage reduces the audience by 176 seats, but no issuer-owned source maps those 176 seats to row and seat numbers. The seat page separately says some performances begin at row 6 without defining the relationship to that 176-seat reduction.",
+      "wheelchair": "The operator FAQ confirms a limited-capacity wheelchair space on 1F, the facility outline says wheelchair space is available, and the seat map displays an unnumbered wheelchair icon. No issuer-owned source publishes its capacity, inclusion in 2,700, or numbered seats removed or replaced.",
+      "sourceDate": "The live official seat page links the seat map (PDF metadata 2014-05-20; HTTP Last-Modified 2021-12-14). The live stage-drawings page links the 1:100 plan marked Ver.2016.03.01 and the 1:200 plan marked Ver.2014.01.11 (both HTTP Last-Modified 2021-12-21). Seat numbers/count use the live seat page/map as canonical; stage semantics prefer the later internal 1:100 revision. The older 1:200 plan is not mixed into seat-number mapping."
+    },
+    "nominalSeatCount": 2700,
+    "pitUseSeatCount": 2524,
+    "expectedSeatCount": null,
+    "calculatedSeatCount": null,
+    "representativePattern": "unresolved before range transcription because pit/forestage and wheelchair relationships do not define one selectable numbered-seat set",
+    "firstPass": "not started: the required pre-range pit-number and wheelchair inclusion/replacement gate failed",
+    "secondPass": "not started",
+    "rangeDiff": null,
+    "productionGate": "blocked before range transcription",
+    "blocker": "SOURCE/SCHEMA HOLD: issuer-owned material does not identify the 176 pit/forestage seat numbers and does not define the wheelchair-space capacity, inclusion in 2,700, or numbered replacements. Geometry inference, arithmetic allocation, cross-version mixing, repository policy, and range fitting are prohibited."
+  },
+  "sources": [
+    {
+      "publisher": "フェスティバルホール",
+      "title": "座席表",
+      "url": "https://www.festivalhall.jp/about/zaseki.html"
+    },
+    {
+      "publisher": "フェスティバルホール",
+      "title": "座席表 全体図",
+      "url": "https://www.festivalhall.jp/pdf/zaseki.pdf"
+    },
+    {
+      "publisher": "フェスティバルホール",
+      "title": "施設概要",
+      "url": "https://www.festivalhall.jp/pdf/gaiyou.pdf"
+    },
+    {
+      "publisher": "フェスティバルホール",
+      "title": "ホール図面",
+      "url": "https://www.festivalhall.jp/about/zumen.html"
+    },
+    {
+      "publisher": "フェスティバルホール",
+      "title": "舞台平面図 1/100（Ver.2016.03.01）",
+      "url": "https://www.festivalhall.jp/pdf/zumen/h100.pdf"
+    },
+    {
+      "publisher": "フェスティバルホール",
+      "title": "よくあるご質問（車椅子でのご来場について）",
+      "url": "https://www.festivalhall.jp/faq/"
+    }
+  ],
+  "productionPromotions": 0,
+  "productionFinal": 59,
+  "productionSeatFinal": 80750,
+  "baselineProductionRegression": "zero changes to all 59 baseline production source semantics, catalog entries, runtime details, and fingerprints",
+  "releaseReady": false,
+  "remainingP2SolQueue": [
+    "aichi-arts-center-main-release-seed"
+  ],
+  "nextRecommended": "Sol high bounded P2 COMPLEX macro 4 for aichi-arts-center-main-release-seed only. Keep Festival Hall on hold until the issuer publishes pit/forestage removal numbers and wheelchair inclusion/replacement mapping."
+}
