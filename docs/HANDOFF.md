@@ -7,6 +7,10 @@ Updated: 2026-08-11 (Asia/Tokyo)
 - Current HEAD is the commit containing this handoff; resolve the exact SHA with `git rev-parse HEAD`. Branch `main` is pushed to `origin/main`, local HEAD equals `origin/main`, and the working tree is clean at handoff completion.
 - Production: **59 venues / 80,750 seats**. Generated sources, catalog, runtime details, and production fingerprints are synchronized at 59 each.
 - Coverage: Tokyo **50**, Kanagawa **3**, Chiba **1**, Saitama **1**, Ibaraki **0**, Tochigi **1**, Gunma **0**; Kyoto **1**, Osaka **2**. Kanto total: **56**.
+- 2026-08-11 Tokyo coverage universe audit replaced the old 59-venue/curated-target release direction with a separate canonical audit inventory at `data/venue-coverage/tokyo-coverage-universe-2026-08-11.json`: **76 candidates**, **MUST 44 / SHOULD 28 / OPTIONAL 4**, and audit states **PRODUCTION 7 / HOLD 33 / CONTRADICTION 2 / 未調査 34**. The existing production/runtime/catalog/fingerprints remain unchanged.
+- The audit confirmed three required classifications: `品川プリンスホテル ステラボール` is MUST/HOLD (existing `tokyo-official-0121`), while `Kanadevia Hall` and `SGC HALL ARIAKE` are MUST/未調査 and absent from the current inventory. Newly discovered major unregistered gaps also include `EX THEATER ARIAKE`, `シアターH`, `東京建物 ぴあ シアター`, `武蔵野の森総合スポーツプラザ`, `大手町三井ホール`, and `MoN Takanawa: BOX 1000`.
+- `release-seed-v1` now records the audited Tokyo universe as its coverage denominator and the legacy 48 regional targets as traceable reference data only. The provisional gate is MUST 未調査=0, most SHOULD processed, source-complete/schema-expressible candidates generally productionized, all HOLD/CONTRADICTION blockers explicitly recorded, and no obvious major venue gap; readiness remains **NO**.
+- No Tokyo range transcription, production promotion, existing production seat-data change, HOLD re-investigation, readiness YES change, or next macro start was performed. The first proposed bounded macro is `LUNA-STD-1`: `theater-h`, `pia-theater-yaesu`, `galaxy-theatre`.
 - The 2026-08-09 Kanto P1 Sol macro closed `takasaki-city-theatre-main-release-seed` as **CONTRADICTION** and preserved all 56 baseline production fingerprints and catalog entries unchanged.
 - The 2026-08-10 bounded Terra escalation left `nissay-theatre` on **SOURCE/SCHEMA HOLD** and handed `line-cube-shibuya` to Sol. The bounded Sol escalation then found current issuer-owned operational evidence identifying all 26 wheelchair-conversion seats and promoted `line-cube-shibuya-standard` as **PRODUCTION**, 1,952 numbered seats. Production is now **57 venues / 76,911 seats**.
 - The 2026-08-10 Sol Tokyo COMPLEX macro 1 promoted `tokyo-wave3-0130` (`suntory-hall-main`) as **PRODUCTION**, 2,006 numbered seats. The prior 57 production fingerprints and catalog entries are unchanged; production is now **58 venues / 78,917 seats**.
@@ -24,7 +28,7 @@ Updated: 2026-08-11 (Asia/Tokyo)
 
 ## Release goal
 
-Release ready is **no under the current `release-seed-v1` contract**, not because of a production-data defect. The verified application contains **59 venues / 80,750 seats**, but the seed manifest still treats all 48 curated targets across 14 regions as release requirements; only seven targets are production and 41 are non-production dispositions, so every region remains below its manifest target count. The next step is an explicit governance decision between shipping the verified set with documented holds and defining a new bounded expansion target.
+Release ready is **NO under the new Tokyo coverage contract**, not because of a production-data defect. The verified application remains **59 venues / 80,750 seats**, but the audited Tokyo universe has **34 未調査** candidates, including **19 MUST**; the new gate is therefore not satisfied. The next action is the first bounded audit macro `LUNA-STD-1`, not a range-entry macro: confirm current official numbered-seat evidence for `theater-h`, `pia-theater-yaesu`, and `galaxy-theatre`, without returning existing HOLD/CONTRADICTION to queue unless new issuer-owned evidence appears.
 
 ## Kanto macro classification
 
@@ -185,4 +189,4 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Exact next action
 
-Run a **non-model release-decision macro**: choose whether to ship the verified **59-venue / 80,750-seat** production set with documented holds or define a new bounded expansion target; align `release-seed-v1` readiness semantics with that decision and normalize the legacy Sendai/Umeda disposition metadata. Do not begin additional venue research or implementation until the decision is recorded.
+Run the bounded **LUNA-STD-1 audit macro** for `theater-h`, `pia-theater-yaesu`, and `galaxy-theatre`: inspect only issuer/operator-owned current facility and numbered-seat sources, record currentness/seat-map availability/blockers in the Tokyo coverage audit, and do not create ranges or production entries. Existing HOLD/CONTRADICTION remains out of queue unless new issuer-owned evidence is found.
