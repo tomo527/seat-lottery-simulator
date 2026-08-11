@@ -3,7 +3,7 @@
 確認日: 2026-08-11（Asia/Tokyo）
 canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.json](../../data/venue-coverage/tokyo-coverage-universe-2026-08-11.json)
 
-初回監査後のbounded macro `LUNA-STD-1` を実施した。対象は `theater-h`、`pia-theater-yaesu`、`galaxy-theatre` の3件のみ。既存productionの座席data変更、既存HOLD/CONTRADICTIONの再調査、他の未調査候補への着手は行っていない。3件とも公式currentnessと代表pattern境界を確認したが、range転記・production gateは公式blockerのため停止した。
+初回監査後のbounded macro `LUNA-STD-1` と `LUNA-STD-2` を実施した。LUNA-STD-2の対象は `theater-g-rosso`、`imm-theater`、`nissho-hall` の3件のみ。既存productionの座席data変更、既存HOLD/CONTRADICTIONの再調査、他の未調査候補への着手は行っていない。G-ROSSOのみ公式currentness・代表pattern・2パスが一致しproduction化し、IMMとニッショーは公式blockerで停止した。
 
 ## 監査結果
 
@@ -12,15 +12,15 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 | 指標 | 件数 |
 |---|---:|
 | Tokyo候補総数 | 76 |
-| PRODUCTION | 7 |
-| HOLD | 36 |
+| PRODUCTION | 8 |
+| HOLD | 38 |
 | CONTRADICTION | 2 |
-| 未調査 | 31 |
+| 未調査 | 28 |
 | MUST | 44 |
 | SHOULD | 28 |
 | OPTIONAL | 4 |
 
-MUSTの内訳は PRODUCTION 4、HOLD 22、CONTRADICTION 2、未調査 16。LUNA-STD-1の3件は全てHOLDへ移し、range・productionは増加していない。したがって新しいgateではMUST/SHOULD未調査が残っており、release readinessはNOのまま。
+MUSTの内訳は PRODUCTION 4、HOLD 22、CONTRADICTION 2、未調査 16。SHOULDの未調査はLUNA-STD-2で3件減り、MUST未調査は16、SHOULD未調査は8となった。productionはG-ROSSOの765席・1件増加し、東京全体ではproduction 8、HOLD 38、CONTRADICTION 2、未調査28。したがって新しいgateではMUST/SHOULD未調査が残っており、release readinessはNOのまま。
 
 `HOLD` と `CONTRADICTION` は既存inventory/sourceの状態を監査用4値へ正規化したもの。既存HOLD/CONTRADICTIONは新しいissuer-owned evidenceなしにqueueへ戻さない。
 
@@ -59,6 +59,16 @@ MUSTの内訳は PRODUCTION 4、HOLD 22、CONTRADICTION 2、未調査 16。LUNA-
 
 このmacroの3件は、座席図を根拠に未確定番号を補完していない。正式HOLDは新しいissuer-owned evidenceが見つかった場合のみ再queueする。
 
+## LUNA-STD-2 結果
+
+| 会場 | currentness / representative pattern | 第1パス | 独立第2パス | 結果 |
+|---|---|---|---|---|
+| シアターGロッソ | 現行の東京ドームシティ施設。A〜Zの26列、765席。別枠車椅子3スペース。 | 現行公式座席図の全列・番号範囲を転記し、施設概要の765席・車椅子3台別枠と照合。expected 765 / calculated 765。 | 東京ドームシティ設備紹介と英語版公式座席案内で列数・番号範囲・765席・車椅子別枠を再照合。range差分0。 | **PRODUCTION**, `theater-g-rosso-standard`, 765席。 |
+| IMM THEATER | 現行運営。705席（一般703、車椅子2）。公式座席表は基本形状で、公演により配置が異なる。 | 施設概要・公式座席表・705席を確認。公演可変と車椅子詳細が固定setを定義しないためrange停止。 | 2026年7月改定の公式利用規約と座席表注記を再確認。公演別客席形状・車椅子問い合わせのため一意性なし。 | **SOURCE/SCHEMA HOLD**, expected/calculated `null`/`null`。 |
+| ニッショーホール | 現行運営。1,000席（1F 671＋車椅子1、2F 328）。現行公式1F/2F図あり。 | 現行ホールページ・客席図で容量と番号構造を確認。1F8列2番常時除外、3-4番・5-6番可変撤去注記のためrange停止。 | 現行客席PDFの注記を独立再確認。通常販売variantをissuerが指定していないため一意性なし。 | **SOURCE/POLICY/SCHEMA HOLD**, expected/calculated `null`/`null`。 |
+
+G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号schema・公演/販売variantを推測せず、正式HOLDとして記録した。既存59 production artifactsは不変。
+
 ## 重要なcoverage gap
 
 - 大規模ライブ: 東京ドーム、国立代々木競技場第一/第二、有明アリーナ、東京体育館、武蔵野の森、東京ガーデンシアター。
@@ -84,11 +94,11 @@ MUSTの内訳は PRODUCTION 4、HOLD 22、CONTRADICTION 2、未調査 16。LUNA-
 
 ## 未調査候補の queue
 
-未調査34件のうち、record-only/currentness holdは4件（閉館は国立劇場大劇場/小劇場、帝国劇場の3件。味の素スタジアムはactiveだがOPTIONAL扱い）。実装queueはactiveな30件だけを対象とし、既存HOLD/CONTRADICTIONは含めない。
+未調査28件のうち、record-only/currentness holdは4件（閉館は国立劇場大劇場/小劇場、帝国劇場の3件。味の素スタジアムはactiveだがOPTIONAL扱い）。実装queueはactiveな24件だけを対象とし、既存HOLD/CONTRADICTIONは含めない。
 
-### 1. Luna STANDARD（残り3件）
+### 1. Luna STANDARD（残り0件）
 
-`theater-g-rosso`, `imm-theater`, `nissho-hall`
+LUNA-STD-2で `theater-g-rosso` はPRODUCTION、`imm-theater` と `nissho-hall` は正式HOLD。残りのLuna STANDARD queueはない。
 
 ### 2. Terra DENSE（12件）
 
@@ -102,11 +112,11 @@ Record-only/currentness hold: `ajinomoto-stadium`, `national-theatre-large`, `na
 
 ## bounded macro案
 
-`LUNA-STD-1`（`theater-h` / `pia-theater-yaesu` / `galaxy-theatre`）は完了。production増加は0、正式HOLDは3件。
+`LUNA-STD-1`（`theater-h` / `pia-theater-yaesu` / `galaxy-theatre`）と `LUNA-STD-2`（`theater-g-rosso` / `imm-theater` / `nissho-hall`）は完了。LUNA-STD-2はproduction増加1件・765席、正式HOLD 2件。
 
-次に実行すべきbounded macroは `LUNA-STD-2`（Gロッソ/IMM/ニッショー）。
+次に実行すべきbounded macroは `TERRA-DENSE-1`（東京宝塚/四季［春］/四季［秋］）。
 
-次のbounded順序は、`LUNA-STD-2`（Gロッソ/IMM/ニッショー）、`TERRA-DENSE-1`（東京宝塚/四季［春］/四季［秋］）、`TERRA-DENSE-2`（四季［海］/有明四季/日本青年館）、`TERRA-DENSE-3`（代々木第一/第二/東京体育館）、`TERRA-DENSE-4`（有明アリーナ/武蔵野の森/東京ガーデンシアター）、その後に `SOL-CPLX-1`（Kanadevia/SGC/EX THEATER ARIAKE）とする。Solの東京ドームは単独macro、可変ライブハウス群は別macroに分離する。
+次のbounded順序は、`TERRA-DENSE-1`（東京宝塚/四季［春］/四季［秋］）、`TERRA-DENSE-2`（四季［海］/有明四季/日本青年館）、`TERRA-DENSE-3`（代々木第一/第二/東京体育館）、`TERRA-DENSE-4`（有明アリーナ/武蔵野の森/東京ガーデンシアター）、その後に `SOL-CPLX-1`（Kanadevia/SGC/EX THEATER ARIAKE）とする。Solの東京ドームは単独macro、可変ライブハウス群は別macroに分離する。
 
 ## source discipline
 

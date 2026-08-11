@@ -1,0 +1,35 @@
+{
+  "batchId": "tokyo-luna-std-2",
+  "createdAt": "2026-08-11",
+  "scope": "Tokyo coverage LUNA-STD-2: theater-g-rosso、imm-theater、nissho-hallのcurrentness・代表番号席pattern・第1/第2パス・production gate",
+  "status": "complete",
+  "priority": "B",
+  "targetVenueIds": [
+    "tokyo-official-0299",
+    "tokyo-official-0320",
+    "tokyo-official-0167"
+  ],
+  "complexityAssessments": [
+    {
+      "inventoryId": "tokyo-official-0299",
+      "classification": "PRODUCTION",
+      "rationale": "公式現行座席図と運営者施設資料でA〜Zの番号範囲、765番号席、車椅子3スペース別枠を確認し、第1/独立第2パス差分ゼロ。",
+      "preflightComplete": true,
+      "processingRoute": "Production"
+    },
+    {
+      "inventoryId": "tokyo-official-0320",
+      "classification": "SOURCE/SCHEMA HOLD",
+      "rationale": "現行公式座席図は基本形のみで、公演ごとに座席構成が変わり、車椅子席の詳細も公演問い合わせ扱い。通常の一意な番号席setを確定できない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
+    },
+    {
+      "inventoryId": "tokyo-official-0167",
+      "classification": "SOURCE/POLICY/SCHEMA HOLD",
+      "rationale": "現行公式図は1階672席（車椅子1席含む）・2階328席を示すが、1階8列2番の常時撤去と3-4番・5-6番の可変撤去を明記し、一意の通常販売variantを定義しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
+    }
+  ]
+}
