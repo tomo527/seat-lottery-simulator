@@ -12,22 +12,24 @@
     "name": "発行者定義の代表的な選択可能番号席セット",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "現行の東京都スポーツ文化事業団資料は最大9,308席、固定5,178席、車椅子130席を別建てで示し、北側・南側の別座席案内を公開する。可動・仮設・イベント床席と車椅子/同伴者席を含む1つの代表的選択可能番号席セットは定義していない。",
-    "notIncludedPatterns": ["北側座席案内configuration", "南側座席案内configuration", "固定スタンドのみの独自選択", "イベント床・仮設席", "車椅子・同伴者席の未定義置換variant"]
+    "selectionReason": "現行東京都スポーツ文化事業団は2F/3F固定スタンド5,178席を独立setとして定義し、北側/南側は同一setの方位別図、車いす/同伴者・arena/floorは別scopeと確認できる。しかし2F北Cブロックは印字subtotal 316に対し行別番号集合317で、独立2パスとも同じ矛盾となる。",
+    "notIncludedPatterns": ["イベント床・仮設席", "車いす席・同伴者席", "最大9,308席へのcapacity fitting"]
   },
   "sources": [
     {"id":"official-main-arena","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"公益財団法人東京都スポーツ文化事業団","title":"東京体育館 メインアリーナ","url":"https://www.tef.or.jp/tmg/arena/index.html","checkedAt":"2026-08-12"},
     {"id":"official-seat-guide","official":true,"roles":["seat-structure","event-layout"],"publisher":"公益財団法人東京都スポーツ文化事業団","title":"東京体育館 メインアリーナ 座席案内","url":"https://www.tef.or.jp/tmg/arena/seat.html","checkedAt":"2026-08-12"},
     {"id":"official-north-seat-map","official":true,"roles":["seat-structure","event-layout"],"publisher":"公益財団法人東京都スポーツ文化事業団","title":"東京体育館 メインアリーナ 座席案内 北側","url":"https://www.tef.or.jp/tmg/images/main_arena_seat_north.pdf","checkedAt":"2026-08-12"},
-    {"id":"official-south-seat-map","official":true,"roles":["seat-structure","event-layout"],"publisher":"公益財団法人東京都スポーツ文化事業団","title":"東京体育館 メインアリーナ 座席案内 南側","url":"https://www.tef.or.jp/tmg/images/main_arena_seat_south.pdf","checkedAt":"2026-08-12"}
+    {"id":"official-south-seat-map","official":true,"roles":["seat-structure","event-layout"],"publisher":"公益財団法人東京都スポーツ文化事業団","title":"東京体育館 メインアリーナ 座席案内 南側","url":"https://www.tef.or.jp/tmg/images/main_arena_seat_south.pdf","checkedAt":"2026-08-12"},
+    {"id":"official-barrier-free-arena","official":true,"roles":["facility","event-layout"],"publisher":"公益財団法人東京都スポーツ文化事業団","title":"みんなにやさしい 東京体育館 メインアリーナ","url":"https://www.tef.or.jp/tmg/barrierfree/facilities/arena.html","checkedAt":"2026-08-12"},
+    {"id":"official-barrier-free-seat-guide","official":true,"roles":["seat-structure","event-layout"],"publisher":"公益財団法人東京都スポーツ文化事業団","title":"みんなにやさしい 東京体育館 メインアリーナ座席表","url":"https://www.tef.or.jp/tmg/barrierfree/facilities/arena_sheet.html","checkedAt":"2026-08-12"}
   ],
-  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行公式は最大9,308席、固定5,178席、車椅子130席を示すが、残余の可動・仮設・イベント床席の通常capacityへの包含、車椅子/同伴者席の番号置換、北側/南側座席案内のいずれを代表configurationとするかを定義しない。",
-  "completenessBasis": "第1パスは現行メインアリーナ施設案内で最大・固定・車椅子席の別建てを確認し、range転記を停止した。独立第2パスは現行座席案内と北側/南側の別公式PDFを照合し、車椅子/同伴者席を含む複数configurationに対するissuer-defined representative setがないことを確認した。",
-  "transformation": "固定5,178席だけの独自選択、9,308席へのcapacity fitting、北側/南側PDFの混在、車椅子等の置換推測、イベント床席の恒久番号化を行わず、rangesは空のままとした。",
+  "registeredScope": "C_CONTRADICTION HOLD。issuer-defined固定スタンド5,178席だけをschema v2 fixed-only候補として再評価し、車いす130席、同伴者席、arena/floor・仮設席を明示的に除外した。2F北Cブロックのexact subtotal 316と番号集合317が一致しない。",
+  "completenessBasis": "第1パスは現行北側PDFの2F北Cブロックを行別に集計し317席。独立第2パスは現行公式バリアフリー座席表のCブロック詳細図を別に読んで317席、rangeDiff 0。両資料に印字されたblock subtotal 316との差+1が残ったため、全5,178席のrange transcriptionを停止した。",
+  "transformation": "北側/南側はconfigurationとして分割せず同一固定setの方位別sourceとして扱った。車いす/同伴者、arena/floor・仮設席を恒久ID化せず、Cブロック又は全体5,178へのcapacity fittingを行わない。",
   "knownLimitations": [
-    "SOURCE HOLD: 現行公式は最大・固定・車椅子席の内訳を示すが、可動・仮設・イベント床席を含む全選択可能番号席の構造と総数を公開していない。",
-    "POLICY/SCHEMA HOLD: 北側/南側configuration、車椅子/同伴者席の包含・置換、通常代表configurationが発行者により一意に定義されていない。"
+    "C_CONTRADICTION: 2F北Cブロックexpected 316に対しcurrent numbered-map calculated 317（+1）。",
+    "fixed-only scope自体とwheelchair semanticsは解決したが、issuer-owned correctionがなく全体expected 5,178を証明できない。"
   ],
-  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"official-source-first-pass-independent-second-pass-hold","seatStructure":"pending","seatCount":"pending","unresolvedIssues":["最大9,308、固定5,178、車椅子130の関係に可動・仮設・イベント床の番号集合が結び付けられていない。","北側/南側の別座席案内と車椅子/同伴者席から1つの代表選択可能番号席setを選べない。"]},
+  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"current-north-pdf-first-pass-independent-current-accessibility-block-guide-second-pass","seatStructure":"matched","seatCount":"mismatched","unresolvedIssues":["2F北Cブロックexpected 316に対しcurrent numbered-map calculated 317（+1）。","issuer-owned correction又は番号除外mappingがない。"]},
   "ranges": []
 }

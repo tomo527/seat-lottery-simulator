@@ -323,13 +323,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.t-i-forum.co.jp/visitors/facilities/a/seat/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料でホールAの5,012席を確認できるが、全5,012固定番号席のrange入力と独立照合が未完了。",
+      "eligibility": "needs-research",
+      "eligibilityReason": "B_SOURCE_LIMITED。現行公式は最大5,012席とpit/thrust-stage・車いす変換を示すが、通常configurationと変換対象番号を定義せず、schema変更だけではlosslessに解決できない。",
       "priority": "A",
       "venueSourceId": "tokyo-international-forum-hall-a-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "1・2階全5,012固定番号席のrangeを公式座席表から転記し、車椅子席・オーケストラピット相当席の扱いを独立照合する。"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-12",
+      "blockingReason": "B_SOURCE_LIMITED / POLICY HOLD: issuer-defined normal configuration、pit/thrust-stageの99席減の番号対応、車いす変換番号が未公表。新しいissuer-owned mappingが出るまで再開しない。"
     },
     {
       "inventoryId": "tokyo-official-0017",
@@ -362,8 +362,8 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.t-i-forum.co.jp/visitors/facilities/c/seat/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibility": "needs-research",
+      "eligibilityReason": "B_SOURCE_LIMITED。現行公式は番号席1,806、無番号車いす8、恒久pitを示すが、視覚的な側方番号位置をlosslessなarea/rowへ結ぶissuer-owned keyがない。",
       "priority": "A",
       "venueSourceId": "tokyo-international-forum-hall-c-standard",
       "researchStatus": "draft-created",
@@ -14400,9 +14400,10 @@
       "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
       "priority": "A",
       "venueSourceId": "nntt-opera-palace-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27",
-      "discoveryUrlRaw": "http://www.nntt.jac.go.jp/"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-12",
+      "discoveryUrlRaw": "http://www.nntt.jac.go.jp/",
+      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: issuer-owned seat-number key又はtabular area/row inventoryが未公表。1,806席への算術補正やrepository area創作をしない。"
     },
     {
       "inventoryId": "tokyo-nntt-playhouse",
@@ -14593,13 +14594,13 @@
         "officialFacilityUrl": "https://www.jpnsport.go.jp/yoyogi/tabid/70/Default.aspx",
         "operationalStatus": "active",
         "eligibility": "likely-eligible",
-        "eligibilityReason": "現行JSC資料は固定スタンド、車いす、VIP、イベントごとに変わるアリーナ床席を別建てで示し、全体の一意な代表番号席setを定義しない。",
+        "eligibilityReason": "C_CONTRADICTION。JSCは固定スタンドを独立setとして示すが、現行公称8,636席と現行44ブロック図の番号集合8,655席が一致しない。",
         "priority": "A",
         "venueSourceId": "yoyogi-1-standard",
         "researchStatus": "blocked",
         "lastCheckedAt": "2026-08-12",
         "discoveryUrlRaw": "http://www.jpnsport.go.jp/yoyogi/",
-        "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 固定スタンド、車いす、VIP、イベント床仮設席の包含/置換と代表configurationを現行JSCが定義しない。"
+        "blockingReason": "C_CONTRADICTION: 第1パスと独立第2パスは44ブロック図8,655席、rangeDiff 0で一致したが、issuer expected 8,636との差+19が未解決。arena/floor・車いす・VIPを混在又はcapacity fittingしない。"
     },
     {
       "inventoryId": "tokyo-official-0744",
@@ -14614,13 +14615,13 @@
         "officialFacilityUrl": "https://www.jpnsport.go.jp/yoyogi/sisetu/nitai/tabid/76/Default.aspx",
         "operationalStatus": "active",
         "eligibility": "likely-eligible",
-        "eligibilityReason": "現行JSC資料は固定席、車いす、可動席、アリーナ席を別建てで示し、用途により内訳が変わるため一意な代表番号席setを定義しない。",
+        "eligibilityReason": "C_CONTRADICTION。JSCは固定席を独立setとして示すが、現行公称2,803席と現行20ブロック図の固定番号行2,818席が一致しない。",
         "priority": "A",
         "venueSourceId": "yoyogi-2-standard",
         "researchStatus": "blocked",
         "lastCheckedAt": "2026-08-12",
         "discoveryUrlRaw": "http://www.jpnsport.go.jp/yoyogi/",
-        "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 可動席・アリーナ床席・車いす席の包含/置換と代表configurationを現行JSCが定義しない。"
+        "blockingReason": "C_CONTRADICTION: lettered movable rowsを除外した第1パスと独立第2パスは2,818席、rangeDiff 0で一致したが、issuer expected 2,803との差+15が未解決。可動席・arena/floor・車いすをcapacity fittingしない。"
     },
     {
       "inventoryId": "tokyo-official-0745",
@@ -14635,12 +14636,12 @@
       "officialFacilityUrl": "https://www.tef.or.jp/tmg/arena/index.html",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "現行東京都スポーツ文化事業団資料は最大9,308席、固定5,178席、車椅子130席と北側/南側座席案内を示すが、可動・仮設・イベント床・車椅子を含む一意な代表番号席setを定義しない。",
+      "eligibilityReason": "C_CONTRADICTION。発行者は固定5,178席を独立setとして定義し車いす・floor scopeを分離するが、現行北側PDFと現行公式バリアフリー詳細図はいずれも2F北Cブロック317番号席を示し、印字subtotal 316と一致しない。",
       "priority": "A",
       "venueSourceId": "tokyo-gymnasium-standard",
       "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-12",
-      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 最大・固定・車椅子席の別建て、北側/南側configuration、可動/仮設/イベント床席の包含・置換から、issuer-defined representative selectable numbered-seat setを確定できない。"
+      "blockingReason": "C_CONTRADICTION: 2F北Cブロックの現行公式subtotal 316に対し、行別番号集合は第1パス/独立第2パスとも317（rangeDiff 0）。固定5,178全体のexpected == calculatedを証明できず、capacity fittingしない。"
     },
     {
       "inventoryId": "tokyo-official-0746",

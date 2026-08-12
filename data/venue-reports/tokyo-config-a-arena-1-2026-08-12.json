@@ -1,0 +1,78 @@
+{
+  "reportId": "tokyo-config-a-arena-1-2026-08-12",
+  "asOf": "2026-08-12",
+  "model": "Sol high",
+  "scope": ["yoyogi-1", "yoyogi-2", "tokyo-gymnasium"],
+  "taxonomyCorrection": {
+    "basis": "fresh issuer evidence from TOKYO-CONFIG-A-CURRENT-1; no gate lowering",
+    "changes": [
+      {"id":"tokyo-international-forum-a","from":"A_SCHEMA_UNLOCKABLE","to":"B_SOURCE_LIMITED","reason":"issuer-defined normal configuration and numbered pit/thrust/wheelchair conversion mapping are absent"},
+      {"id":"nntt-opera","from":"A_SCHEMA_UNLOCKABLE","to":"B_SOURCE_LIMITED","reason":"issuer-owned lossless area/row key for the visually distinct numbered side positions is absent"}
+    ],
+    "afterCorrectionBeforeArenaReview": {"A":9,"B":23,"C":4,"D":3,"tokyoAddressable":22,"mustAddressable":14,"rawProductionFloor":{"MUST":14,"SHOULD":8,"MUST_AND_SHOULD":22,"TOKYO_UNIVERSE":22}}
+  },
+  "venues": [
+    {
+      "id": "yoyogi-1",
+      "sourceId": "yoyogi-1-standard",
+      "classification": "C_CONTRADICTION",
+      "fixedOnlyIssuerDefined": true,
+      "fixedOnlyProductionEligible": false,
+      "expectedSeatCount": 8636,
+      "calculatedSeatCount": 8655,
+      "rangeDiff": 0,
+      "difference": 19,
+      "currentOfficialSources": ["https://www.jpnsport.go.jp/yoyogi/tabid/70/Default.aspx", "https://www.jpnsport.go.jp/yoyogi/seat/tabid/61/Default.aspx", "https://www.jpnsport.go.jp/yoyogi/seat/tabid/62/Default.aspx"],
+      "firstPass": {"method":"fresh manual lossless read of all 44 current official block maps","blockSubtotals":{"A":730,"B":756,"C":708,"D":867,"E":829,"F":886,"G":829,"H":858,"J":704,"K":756,"L":732},"total":8655},
+      "independentSecondPass": {"method":"fresh reverse-order block/side/floor re-read of the same current issuer generation","total":8655,"rangeDiff":0},
+      "scope": "fixed stands only; excludes arena/floor maximum 4,124, wheelchair/companions 104, and VIP 34/max70",
+      "wheelchairSemantics": "official guide locates wheelchair scopes separately and directs event-specific disabled seating to the organizer; none were converted into permanent numbered IDs",
+      "blocker": "current issuer expected 8,636 and current official numbered-map set 8,655 conflict; no issuer-owned 19-seat correction mapping"
+    },
+    {
+      "id": "yoyogi-2",
+      "sourceId": "yoyogi-2-standard",
+      "classification": "C_CONTRADICTION",
+      "fixedOnlyIssuerDefined": true,
+      "fixedOnlyProductionEligible": false,
+      "expectedSeatCount": 2803,
+      "calculatedSeatCount": 2818,
+      "rangeDiff": 0,
+      "difference": 15,
+      "currentOfficialSources": ["https://www.jpnsport.go.jp/yoyogi/sisetu/nitai/tabid/76/Default.aspx", "https://www.jpnsport.go.jp/yoyogi/seat/tabid/111/Default.aspx"],
+      "firstPass": {"method":"fresh manual lossless read of all 20 current official block maps, excluding lettered movable rows","blockSubtotals":{"A":52,"B":66,"C":71,"D":94,"E":98,"F":140,"G":152,"H":196,"J":218,"K":239,"L":225,"M":239,"N":202,"O":196,"P":152,"Q":139,"R":98,"S":94,"T":81,"U":66},"total":2818},
+      "independentSecondPass": {"method":"fresh reverse-order block re-read with movable letters and wheelchair icons separately checked","total":2818,"rangeDiff":0},
+      "scope": "fixed numeric rows only; excludes movable lettered rows 314, arena/floor maximum 1,191, and wheelchair/companions 8",
+      "wheelchairSemantics": "the existing C-block wheelchair scope and event-specific alternatives remain outside permanent numbered IDs",
+      "blocker": "current issuer expected 2,803 and current official fixed numeric-row set 2,818 conflict; no issuer-owned 15-seat correction mapping"
+    },
+    {
+      "id": "tokyo-gymnasium",
+      "sourceId": "tokyo-gymnasium-standard",
+      "classification": "C_CONTRADICTION",
+      "fixedOnlyIssuerDefined": true,
+      "fixedOnlyProductionEligible": false,
+      "expectedSeatCount": 5178,
+      "calculatedSeatCount": null,
+      "rangeDiff": 0,
+      "difference": null,
+      "currentOfficialSources": ["https://www.tef.or.jp/tmg/arena/index.html", "https://www.tef.or.jp/tmg/arena/seat.html", "https://www.tef.or.jp/tmg/images/main_arena_seat_north.pdf", "https://www.tef.or.jp/tmg/images/main_arena_seat_south.pdf", "https://www.tef.or.jp/tmg/barrierfree/facilities/arena.html", "https://www.tef.or.jp/tmg/barrierfree/facilities/arena_sheet.html"],
+      "officialSubtotals": {"north2F":937,"north3F":1554,"south2F":1133,"south3F":1554,"total":5178,"north2FBlocks":{"A":180,"B":224,"C":316,"D":217}},
+      "firstPass": {"method":"current north PDF row-range read","checkedBlock":"2F north C","calculated":317,"expected":316},
+      "independentSecondPass": {"method":"current official accessibility C-block detail read","checkedBlock":"2F north C","calculated":317,"expected":316,"rangeDiff":0},
+      "scope": "issuer-defined fixed 2F/3F stand set only; north/south are directional views of the same set; excludes wheelchair/companions 130 and all arena/floor or temporary seats",
+      "wheelchairSemantics": "resolved as separately labelled non-numbered spaces in both current official families",
+      "blocker": "the first contradictory block prevents a lossless full-set calculation: current printed C subtotal 316 versus current row-number set 317; no capacity fitting or inferred exclusion"
+    }
+  ],
+  "result": {
+    "productionPromotions": 0,
+    "selectableConfigurationsAdded": 0,
+    "configurationSeatRecordsAdded": 0,
+    "productionAfter": {"venues":61,"selectableConfigurations":62,"configurationSeatRecords":84331},
+    "coverageAfter": {"tokyoProduction":"9/76","mustProduction":"5/44","tokyoAddressable":"19/76","mustAddressable":"11/44","rawProductionFloor":{"MUST":11,"SHOULD":8,"MUST_AND_SHOULD":19,"TOKYO_UNIVERSE":19}},
+    "currentTaxonomy": {"A":6,"B":23,"C":7,"D":3},
+    "releaseReady": false,
+    "exactNextAction": "TOKYO-CONFIG-A-ARENA-2 — ariake-arena, kanadevia-hall, sgc-hall-ariake only; Sol high fresh fixed-only review after confirming the recalculated A cohort"
+  }
+}

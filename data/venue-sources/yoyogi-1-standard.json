@@ -12,7 +12,7 @@
     "name": "発行者定義の代表的な選択可能番号席セット",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "現行の日本スポーツ振興センター資料はスタンド固定席、車いす観覧席、VIP席、イベントごとに変わるアリーナ床席を別建てで示すが、これらを含む一意の代表的選択可能番号席セットを定義していない。固定スタンドのみをrepository判断で選べない。",
+    "selectionReason": "現行JSCは固定スタンド8,636席を車いす、VIP、イベント依存arena/floorから独立して定義するためfixed-only候補自体はissuer-definedである。しかし現行44ブロック図の番号集合は独立2パスとも8,655席となり、exact subtotalと一致しない。",
     "notIncludedPatterns": ["イベントごとのアリーナ床仮設席", "スポーツ配置", "コンサート配置", "未定義の車いす席置換variant", "VIP席variant"]
   },
   "sources": [
@@ -20,13 +20,13 @@
     {"id":"official-seat-guide","official":true,"roles":["seat-structure","event-layout"],"publisher":"独立行政法人日本スポーツ振興センター","title":"国立代々木競技場 座席案内 第一体育館","url":"https://www.jpnsport.go.jp/yoyogi/seat/tabid/62/Default.aspx","checkedAt":"2026-08-12"},
     {"id":"official-organizer-guide","official":true,"roles":["event-layout"],"publisher":"独立行政法人日本スポーツ振興センター","title":"国立代々木競技場 主催者の方へ","url":"https://www.jpnsport.go.jp/yoyogi/syusaisya/tabid/90/Default.aspx","checkedAt":"2026-08-12"}
   ],
-  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行公式は固定スタンド8,636席、車いす観覧席104席、VIP席34席（最大70席）、イベントごとに配置が変わるアリーナ床最大4,124席を示す。固定スタンドだけ、または最大収容人数12,934席を、発行者が代表的な通常番号席セットとして定義していない。",
-  "completenessBasis": "第1パスは現行施設案内で固定・車いす・VIP・アリーナ床の別建てとイベント依存を確認し、番号範囲への転記を停止した。独立第2パスは現行座席案内と主催者資料で、アリーナ席・車いす席は主催者確認対象であり、主催者向け施工資料が別管理であることを確認した。",
-  "transformation": "アリーナ床の仮設席、車いす席の包含・置換番号、VIP席variantを公式が一意に結び付けないため、capacity fitting・図形推測・固定スタンドだけの選別は行わず、rangesは空のままとした。",
+  "registeredScope": "C_CONTRADICTION HOLD。固定スタンド8,636席だけをschema v2 fixed-only候補として再評価し、車いす104席、VIP34席（最大70席）、arena/floor最大4,124席を明示的に除外した。現行番号図は8,655席となりexpectedと一致しない。",
+  "completenessBasis": "第1パスは現行JSC施設案内と44ブロック詳細図をblock/階/方位別にlossless集計し8,655席。独立第2パスは同じ現行generationを別順序で再読し、全block subtotalと番号集合が一致、rangeDiff 0。issuer expected 8,636との差+19が残った。",
+  "transformation": "arena/floor、車いす、VIPを固定番号集合へ混在させず、8,636へのcapacity fitting、番号除外の推測、event-dependent seat ID化を行わない。expected mismatchのためrangesはproduction sourceへ保存しない。",
   "knownLimitations": [
-    "SOURCE HOLD: 現行公式座席案内はアリーナ席と車いす席を主催者確認としており、全体の現行選択可能番号席セットを公開していない。",
-    "POLICY/SCHEMA HOLD: 固定スタンド、車いす、VIP、イベント床仮設席の包含・置換と代表configurationが発行者により定義されていない。"
+    "C_CONTRADICTION: 現行固定スタンド公称8,636と現行44ブロック図8,655の差+19が未解決。",
+    "arena/floor、車いす、VIPはfixed-only scope外であり、差を埋めるために包含又は番号除外を推測しない。"
   ],
-  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"official-source-first-pass-independent-second-pass-hold","seatStructure":"pending","seatCount":"pending","unresolvedIssues":["固定・可動・仮設・VIP・車いすの一意な代表セットが未定義。","アリーナ床席はイベントごとに構成され、恒久番号席として混在させられない。"]},
+  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"current-official-44-block-first-pass-independent-second-pass","seatStructure":"matched","seatCount":"mismatched","unresolvedIssues":["固定スタンドexpected 8,636に対しcurrent numbered-map calculated 8,655（+19）。","issuer-owned correction又は番号除外mappingがない。"]},
   "ranges": []
 }

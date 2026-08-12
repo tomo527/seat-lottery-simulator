@@ -16,7 +16,7 @@
     {
       "id": "tokyo-international-forum-a",
       "sourceId": "tokyo-international-forum-hall-a-standard",
-      "classification": "POLICY HOLD",
+      "classification": "B_SOURCE_LIMITED / POLICY HOLD",
       "currentOfficialSources": [
         {
           "url": "https://www.t-i-forum.co.jp/visitors/facilities/a/seat/",
@@ -50,7 +50,7 @@
     {
       "id": "nntt-opera",
       "sourceId": "nntt-opera-palace-standard",
-      "classification": "SOURCE HOLD",
+      "classification": "B_SOURCE_LIMITED / SOURCE HOLD",
       "currentOfficialSources": [
         {
           "url": "https://www.nntt.jac.go.jp/guide/operapalace/",
@@ -89,7 +89,7 @@
     "selectableConfigurationsAdded": 0,
     "configurationSeatRecordsAdded": 0,
     "productionAfter": {"venues": 61, "selectableConfigurations": 62, "configurationSeatRecords": 84331},
-    "coverageAfter": {"tokyoProduction": "9/76", "mustProduction": "5/44", "currentASchemaUnlockable": 11, "totalAddressableConversion": "9/24"},
+    "coverageAfter": {"tokyoProduction": "9/76", "mustProduction": "5/44", "currentASchemaUnlockable": 9, "currentBSourceLimited": 23, "totalAddressableConversion": "9/22", "mustAddressable": "14/44", "rawProductionFloor": {"MUST":14,"SHOULD":8,"MUST_AND_SHOULD":22,"TOKYO_UNIVERSE":22}},
     "releaseReady": false,
     "exactNextAction": "TOKYO-CONFIG-A-ARENA-1 — yoyogi-1, yoyogi-2, tokyo-gymnasium only; Sol high"
   }
