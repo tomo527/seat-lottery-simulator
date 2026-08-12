@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "ariake-arena-standard",
+  "name": "有明アリーナ",
+  "prefecture": "東京都",
+  "city": "江東区",
+  "aliases": ["TOKYO ARIAKE ARENA"],
+  "venueType": "arena",
+  "representativePattern": {
+    "id": "issuer-defined-selectable-numbered-seat-set",
+    "name": "発行者定義の代表的な選択可能番号席セット",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行の株式会社東京有明アリーナ資料は約15,000席を仮設席を含む最大として示し、1階にイベントに応じた移動観覧席・仮設客席・スタンディング席を設けると明記する。現行利用案内にも2階可動観覧席の複数展開variantと車いす・同伴者・ゆったり席があり、発行者が1つの代表選択可能番号席セットを定義していない。",
+    "notIncludedPatterns": ["1階イベント仮設客席", "スタンディング配置", "2階可動観覧席full展開variant", "2階可動観覧席部分展開variant", "車いす・同伴者・ゆったり席の未定義置換variant"]
+  },
+  "sources": [
+    {"id":"official-main-arena-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"株式会社東京有明アリーナ","title":"有明アリーナ メインアリーナ","url":"https://ariake-arena.tokyo/main-arena/","checkedAt":"2026-08-12"},
+    {"id":"official-current-use-guide","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"株式会社東京有明アリーナ","title":"有明アリーナ 施設利用に関するご案内","url":"https://reserve.ariake-arena.tokyo/%E5%88%A9%E7%94%A8%E6%A1%88%E5%86%85%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.pdf","checkedAt":"2026-08-12"},
+    {"id":"official-facilities-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"株式会社東京有明アリーナ","title":"有明アリーナ 施設案内","url":"https://ariake-arena.tokyo/organizer/facilities/","checkedAt":"2026-08-12"}
+  ],
+  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行運営者ページは最大約15,000席を仮設席を含むものとし、1階アリーナはイベントに応じて移動観覧席・仮設客席・スタンディング席を設けるとする。現行利用案内は2階可動観覧席2,928席のfull展開と1,628席の部分展開を別variantとして示し、車いす・同伴者・ゆったり席の通常番号席との包含・置換を定義しない。",
+  "completenessBasis": "第1パスは現行運営者メインアリーナページで最大収容人数が仮設席込みかつイベントlayout依存であることを確認し、番号範囲への転記を停止した。独立第2パスは現行利用案内PDFと施設案内で可動観覧席の複数展開、固定席・車いす等の別建て、運営者の現行性を確認した。",
+  "transformation": "15,000席からの逆算、固定席のみの独自採用、可動観覧席variantの任意選択、イベント床仮設席の恒久番号化、車いす等の置換推測をせず、rangesは空のままとした。",
+  "knownLimitations": [
+    "SOURCE HOLD: 現行運営者は最大約15,000席を仮設席込みかつイベントlayout依存としており、全体の1つの選択可能番号席セットを公開していない。",
+    "POLICY/SCHEMA HOLD: 2階可動観覧席のfull/部分展開、1階仮設席、車いす・同伴者・ゆったり席の包含・置換に発行者定義の代表configurationがない。"
+  ],
+  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"official-source-first-pass-independent-second-pass-hold","seatStructure":"pending","seatCount":"pending","unresolvedIssues":["1階アリーナの移動・仮設・スタンディング席がイベントごとに変わる。","2階可動観覧席のfull/部分展開と車いす等の通常番号席への包含・置換関係が未定義。"]},
+  "ranges": []
+}

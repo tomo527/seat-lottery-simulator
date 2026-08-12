@@ -1,0 +1,13 @@
+{
+  "batchId": "tokyo-terra-dense-2",
+  "createdAt": "2026-08-12",
+  "scope": "Tokyo coverage TERRA-DENSE-2: yoyogi-1, yoyogi-2, ariake-arena の現行性・代表選択可能番号席pattern・第1/第2パス・production gate。大規模アリーナの固定/可動/仮設/車いす/イベント床席を公式根拠だけで判定する。",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["tokyo-official-0743", "tokyo-official-0744", "tokyo-official-0436"],
+  "complexityAssessments": [
+    {"inventoryId":"tokyo-official-0743","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"現行公式は固定スタンド、車いす、VIP、イベントごとに変わるアリーナ床席を別建てで示し、全体を1つの代表選択可能番号席setとして定義しない。固定スタンドだけをrepository判断で採用できない。","preflightComplete":true,"processingRoute":"Hold"},
+    {"inventoryId":"tokyo-official-0744","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"現行公式は固定席、車いす、可動席、アリーナ最大席数を別建てで示し、用途により内訳が変わる。可動席・アリーナ・車いすを含む1つの代表選択可能番号席setは定義されない。","preflightComplete":true,"processingRoute":"Hold"},
+    {"inventoryId":"tokyo-official-0436","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"現行運営者資料は最大約15,000席を仮設席込みかつイベントlayout依存とし、1階仮設席、2階可動観覧席full/部分展開、車いす等の一意な代表選択可能番号席setを定義しない。","preflightComplete":true,"processingRoute":"Hold"}
+  ]
+}

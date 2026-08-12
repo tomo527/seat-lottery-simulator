@@ -1,0 +1,18 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-terra-dense-2-2026-08-12",
+  "generatedAt": "2026-08-12",
+  "scope": "Terra high Tokyo coverage DENSE macro for exactly yoyogi-1, yoyogi-2, and ariake-arena.",
+  "baseline": {"productionVenues":60,"productionSeats":81515,"tokyoUniverse":76,"tokyoProduction":8,"tokyoHold":41,"tokyoContradiction":2,"tokyoUnresearched":25,"mustUnresearched":13,"shouldUnresearched":8},
+  "outcomes": [
+    {"id":"yoyogi-1","inventoryId":"tokyo-official-0743","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"JSC現行第一体育館施設案内、座席案内、主催者資料。固定スタンド8,636席、車いす104席、VIP34席（最大70席）、イベントごとに変わるアリーナ床最大4,124席を別建てで示す。","representativePattern":"発行者定義の一意な代表選択可能番号席setなし。固定スタンドだけを選ばない。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行施設案内でfixed/movable-equivalent event floor/wheelchair/VIPの境界とイベント依存を確認し、range転記を停止。","secondPass":"独立して現行座席案内・主催者資料を確認。アリーナ席と車いす席は主催者確認対象で、同じ未解決が残る。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: 固定、車いす、VIP、イベント床仮設席の包含・置換と代表configurationをissuerが定義しない。"},
+    {"id":"yoyogi-2","inventoryId":"tokyo-official-0744","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"JSC現行第二体育館施設案内、座席案内、主催者資料。固定席2,803席、車いす8席、可動席314席、アリーナ最大1,191席を示し、用途により内訳が変わる。","representativePattern":"発行者定義の一意な代表選択可能番号席setなし。固定ブロックのみを選ばない。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行施設案内でfixed/movable/arena-floor/wheelchair境界と用途別変動を確認し、range転記を停止。","secondPass":"独立して現行座席案内・主催者資料を確認。車いす配置は公演条件で変わり、アリーナ施工標準は主催者向け別管理であるため同じ未解決が残る。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: 可動席・アリーナ床席・車いす席の包含・置換と代表configurationをissuerが定義しない。"},
+    {"id":"ariake-arena","inventoryId":"tokyo-official-0436","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"株式会社東京有明アリーナの現行メインアリーナページ、施設利用案内PDF、施設案内。最大約15,000席は仮設席込みで、1階はイベントに応じて移動観覧席・仮設客席・スタンディング席を設ける。","representativePattern":"発行者定義の一意な代表選択可能番号席setなし。固定席だけ、又は2階可動観覧席の任意variantを選ばない。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行運営者ページで仮設席込み最大・イベントlayout依存を確認し、range転記を停止。","secondPass":"独立して現行利用案内PDF・施設案内を確認。可動観覧席full 2,928席/部分1,628席と車いす等の別建てにより同じ未解決が残る。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: 1階仮設席、2階可動観覧席variant、車いす・同伴者・ゆったり席の包含・置換を含む代表configurationをissuerが定義しない。"}
+  ],
+  "productionPromotions": 0,
+  "productionFinal": 60,
+  "productionSeatFinal": 81515,
+  "baselineProductionRegression": "zero changes to all 60 baseline production source semantics, catalog entries, runtime details, and fingerprints",
+  "releaseReady": false,
+  "exactNextAction": "Run TERRA-DENSE-3 exactly for tokyo-gymnasium, musashino-forest-sport-plaza, and tokyo-garden-theater; do not reopen TERRA-DENSE-2 HOLDs without changed issuer-owned evidence."
+}

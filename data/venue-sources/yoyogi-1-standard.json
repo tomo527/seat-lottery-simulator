@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "yoyogi-1-standard",
+  "name": "国立代々木競技場 第一体育館",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": ["代々木第一体育館"],
+  "venueType": "arena",
+  "representativePattern": {
+    "id": "issuer-defined-selectable-numbered-seat-set",
+    "name": "発行者定義の代表的な選択可能番号席セット",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行の日本スポーツ振興センター資料はスタンド固定席、車いす観覧席、VIP席、イベントごとに変わるアリーナ床席を別建てで示すが、これらを含む一意の代表的選択可能番号席セットを定義していない。固定スタンドのみをrepository判断で選べない。",
+    "notIncludedPatterns": ["イベントごとのアリーナ床仮設席", "スポーツ配置", "コンサート配置", "未定義の車いす席置換variant", "VIP席variant"]
+  },
+  "sources": [
+    {"id":"official-facility","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"独立行政法人日本スポーツ振興センター","title":"国立代々木競技場 第一体育館 施設案内","url":"https://www.jpnsport.go.jp/yoyogi/tabid/70/Default.aspx","checkedAt":"2026-08-12"},
+    {"id":"official-seat-guide","official":true,"roles":["seat-structure","event-layout"],"publisher":"独立行政法人日本スポーツ振興センター","title":"国立代々木競技場 座席案内 第一体育館","url":"https://www.jpnsport.go.jp/yoyogi/seat/tabid/62/Default.aspx","checkedAt":"2026-08-12"},
+    {"id":"official-organizer-guide","official":true,"roles":["event-layout"],"publisher":"独立行政法人日本スポーツ振興センター","title":"国立代々木競技場 主催者の方へ","url":"https://www.jpnsport.go.jp/yoyogi/syusaisya/tabid/90/Default.aspx","checkedAt":"2026-08-12"}
+  ],
+  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行公式は固定スタンド8,636席、車いす観覧席104席、VIP席34席（最大70席）、イベントごとに配置が変わるアリーナ床最大4,124席を示す。固定スタンドだけ、または最大収容人数12,934席を、発行者が代表的な通常番号席セットとして定義していない。",
+  "completenessBasis": "第1パスは現行施設案内で固定・車いす・VIP・アリーナ床の別建てとイベント依存を確認し、番号範囲への転記を停止した。独立第2パスは現行座席案内と主催者資料で、アリーナ席・車いす席は主催者確認対象であり、主催者向け施工資料が別管理であることを確認した。",
+  "transformation": "アリーナ床の仮設席、車いす席の包含・置換番号、VIP席variantを公式が一意に結び付けないため、capacity fitting・図形推測・固定スタンドだけの選別は行わず、rangesは空のままとした。",
+  "knownLimitations": [
+    "SOURCE HOLD: 現行公式座席案内はアリーナ席と車いす席を主催者確認としており、全体の現行選択可能番号席セットを公開していない。",
+    "POLICY/SCHEMA HOLD: 固定スタンド、車いす、VIP、イベント床仮設席の包含・置換と代表configurationが発行者により定義されていない。"
+  ],
+  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"official-source-first-pass-independent-second-pass-hold","seatStructure":"pending","seatCount":"pending","unresolvedIssues":["固定・可動・仮設・VIP・車いすの一意な代表セットが未定義。","アリーナ床席はイベントごとに構成され、恒久番号席として混在させられない。"]},
+  "ranges": []
+}
