@@ -1,0 +1,96 @@
+{
+  "reportId": "tokyo-config-a-current-1-2026-08-12",
+  "asOf": "2026-08-12",
+  "model": "Terra high",
+  "scope": ["tokyo-international-forum-a", "nntt-opera"],
+  "baseline": {
+    "productionVenues": 61,
+    "selectableConfigurations": 62,
+    "configurationSeatRecords": 84331,
+    "tokyoProduction": "9/76",
+    "mustProduction": "5/44",
+    "currentASchemaUnlockable": 11,
+    "totalAddressableConversion": "9/24"
+  },
+  "venues": [
+    {
+      "id": "tokyo-international-forum-a",
+      "sourceId": "tokyo-international-forum-hall-a-standard",
+      "classification": "POLICY HOLD",
+      "currentOfficialSources": [
+        {
+          "url": "https://www.t-i-forum.co.jp/visitors/facilities/a/seat/",
+          "roles": ["seat-map", "seat-count", "wheelchair-semantics"],
+          "facts": [
+            "maximum 5,012; 1F 3,025; 2F 1,987",
+            "1F is 2,926 when the orchestra pit is used",
+            "1F row 21 seats 1-6 and 62-67 are not permanently installed for wheelchair use",
+            "wheelchair seating varies by event"
+          ]
+        },
+        {
+          "url": "https://www.t-i-forum.co.jp/organizer/facilities/a/",
+          "roles": ["facility", "stage-variant"],
+          "facts": [
+            "pit or thrust-stage use changes 1F from 3,025 to 2,926",
+            "the facility states wheelchair capacity can be approximately 40"
+          ]
+        }
+      ],
+      "representativePattern": "not issuer-defined",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "firstPass": "stopped at representative-pattern gate; no ranges saved",
+      "secondPass": "independent current-page pass reproduced the same unresolved condition",
+      "wheelchairAndVariantSemantics": "The operator identifies twelve normally absent row-21 positions, says wheelchair handling varies by event, and publishes pit/thrust-stage reduction without identifying the 99 affected numbered IDs. It does not designate the maximum arrangement as a normal selectable configuration.",
+      "blocker": "The maximum, wheelchair-conversion, and pit/thrust-stage cases cannot be reduced to one issuer-defined representative selectable numbered-seat set without a repository policy choice. No capacity fitting or inferred 5,000-seat set was made.",
+      "nextAction": "Reopen only if the operator publishes a normal/default configuration and the numbered mapping for pit/thrust-stage and wheelchair conversions."
+    },
+    {
+      "id": "nntt-opera",
+      "sourceId": "nntt-opera-palace-standard",
+      "classification": "SOURCE HOLD",
+      "currentOfficialSources": [
+        {
+          "url": "https://www.nntt.jac.go.jp/guide/operapalace/",
+          "roles": ["seat-map", "seat-count", "facility", "stage-variant"],
+          "facts": [
+            "numbered seats total 1,806: 1F 860, 2F 354, 3F 292, 4F 300",
+            "up to eight additional, unnumbered 1F wheelchair spaces",
+            "the current seat-map caption defines 1F A-H as wheelchair spaces",
+            "the orchestra pit is permanent"
+          ]
+        },
+        {
+          "url": "https://www.nntt.jac.go.jp/guide/application/pdf/2024_operapalace.pdf",
+          "roles": ["pit-semantics"],
+          "facts": ["the orchestra pit is permanent and cannot be raised to add seats"]
+        },
+        {
+          "url": "https://www.nntt.jac.go.jp/guide/barrierfree/",
+          "roles": ["wheelchair-semantics"],
+          "facts": ["Opera Palace has eight 1F wheelchair spaces; the number can vary by programme"]
+        }
+      ],
+      "representativePattern": "one physical numbered configuration is indicated, but its lossless row/area transcription is not source-resolved",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "firstPass": "stopped before saving ranges",
+      "secondPass": "independent official PDF/page review found the same ambiguity",
+      "wheelchairAndVariantSemantics": "A-H are unnumbered wheelchair spaces outside the stated 1,806 numbered-seat total; the permanent pit creates no added-seat configuration.",
+      "blocker": "The only public numbered diagram uses visually distinct numbered side positions without an issuer-owned area/row key or legend that establishes their inclusion. The 1,806 floor totals cannot be used to resolve those positions by arithmetic. A lossless area/row/range set therefore cannot be recorded without repository inference.",
+      "nextAction": "Reopen on an issuer-owned seat-number key, accessible ticketing seat specification, or equivalent tabular area/row inventory."
+    }
+  ],
+  "result": {
+    "productionPromotions": 0,
+    "selectableConfigurationsAdded": 0,
+    "configurationSeatRecordsAdded": 0,
+    "productionAfter": {"venues": 61, "selectableConfigurations": 62, "configurationSeatRecords": 84331},
+    "coverageAfter": {"tokyoProduction": "9/76", "mustProduction": "5/44", "currentASchemaUnlockable": 11, "totalAddressableConversion": "9/24"},
+    "releaseReady": false,
+    "exactNextAction": "TOKYO-CONFIG-A-ARENA-1 — yoyogi-1, yoyogi-2, tokyo-gymnasium only; Sol high"
+  }
+}

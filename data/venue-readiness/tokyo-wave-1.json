@@ -132,9 +132,9 @@
     {
       "venueId": "nntt-opera-palace-standard",
       "readiness": "R3",
-      "secondPass": "not-started",
-      "blocker": "複数階・ボックス席・オーケストラピット使用時の集合差分が未確定。",
-      "nextAction": "基本配置の公式座席表と階別総数を固定してから全rangeを入力する。"
+      "secondPass": "complete",
+      "blocker": "SOURCE HOLD: current official sources fix 1,806 numbered seats, eight additional unnumbered wheelchair spaces, and a permanent pit, but no issuer-owned area/row key resolves the visual side-position treatment into lossless ranges.",
+      "nextAction": "Wait for an issuer-owned seat-number key, accessible ticketing seat specification, or equivalent tabular area/row inventory; do not resolve the visual positions from the 1,806 total."
     },
     {
       "venueId": "ota-aprico-main-standard",
@@ -181,9 +181,9 @@
     {
       "venueId": "tokyo-international-forum-hall-a-standard",
       "readiness": "R3",
-      "secondPass": "not-started",
-      "blocker": "5,000席の複数階・オーケストラピット差分を含む全range転記が未完了。",
-      "nextAction": "通常5,000席配置を公式資料から階別に独立抽出する。"
+      "secondPass": "complete",
+      "blocker": "POLICY HOLD: current official maximum/pit-or-thrust/wheelchair material does not define one issuer-designated normal selectable configuration or the numbered 99-seat removal mapping.",
+      "nextAction": "Wait for an issuer-defined normal configuration and numbered pit/thrust-stage and wheelchair conversion mapping; do not invent a 5,000-seat representative set."
     },
     {
       "venueId": "tokyo-international-forum-hall-c-standard",

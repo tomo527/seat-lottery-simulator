@@ -86,8 +86,8 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 
 ## MUST phase close
 
-- MUST 44件の最終dispositionは **PRODUCTION 4 / HOLD 38 / CONTRADICTION 2 / 未調査 0**。
-- Production化済みMUSTは `line-cube-shibuya`、`suntory-hall-main`、`theater-milano-za`、`sunshine-theatre`。HOLD 38件とCONTRADICTION 2件も未解決queueではなく、公式blockerを持つformal dispositionである。
+- **Historical pre-Meijiza snapshot:** MUST 44件の最終dispositionは **PRODUCTION 4 / HOLD 38 / CONTRADICTION 2 / 未調査 0**。
+- This historical snapshot predates `TOKYO-CONFIG-PILOT-1`. Current MUST disposition is **PRODUCTION 5 / HOLD 37 / CONTRADICTION 2 / 未調査 0**; the five production venues include `meijiza` in addition to `line-cube-shibuya`、`suntory-hall-main`、`theater-milano-za`、`sunshine-theatre`。
 - 初回universe監査と後続macroでライブ／コンサート、arena/dome、商業舞台、ミュージカル、2.5次元・声優系、地域clusterを照合し、現時点で明らかなMUST級会場漏れは確認されない。既存MUST HOLDは再調査していない。
 
 ## MUST非production 40件のblocker再分類
@@ -216,7 +216,7 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 
 ## current coverage gap
 
-- 大規模ライブ: 東京ドームを含むMUST大規模会場はすべてformal disposition済みだが、MUST user-visible production coverageは4/44 = **9.1%**に留まる。MUST active research queueが0でもcoverage完了ではない。
+- 大規模ライブ: 東京ドームを含むMUST大規模会場はすべてformal disposition済みだが、current MUST user-visible production coverageは5/44 = **11.4%**に留まる。MUST active research queueが0でもcoverage完了ではない。
 - 有明の新設cluster: SGC HALL ARIAKE、EX THEATER ARIAKEは正式inventory/sourceへ登録し、SOL-CPLX-1で公式blocker付きHOLD。未登録gapは解消済み。
 - 商業舞台/ミュージカル: 東京宝塚劇場、四季劇場［春］［秋］、電通四季劇場［海］、有明四季劇場、日本青年館、天王洲 銀河劇場、シアターH、東京建物 ぴあ シアター。
 - 都心の可変型中規模会場: Kanadevia Hallは正式HOLD。SHOULD未調査はEX THEATER ROPPONGI、Zepp Haneda/Shinjuku、豊洲PIT、ヒューリックホール東京、大手町三井ホール、東京国際フォーラムB7、MoN Takanawa: BOX 1000の8件。
@@ -296,7 +296,9 @@ pilotは`meijiza`を推奨する。既存issuer evidenceが花道あり1,368席�
 
 上記はschema macro完了時のhistorical next actionであり、`TOKYO-CONFIG-PILOT-1`は完了済み。
 
-**Exact next action:** `TOKYO-CONFIG-A-CURRENT-1`を`tokyo-international-forum-a`と`nntt-opera`の2会場だけ、**Terra high**で実行する。両会場はcurrent-schema addressableだが大型・高密度公式図のrange転記を要するため、Lunaではなく最小適切modelをTerraとする。他のA、SHOULD 8、OPTIONAL、B/C/D holdへ同じmacroで進まない。
+**Historical next action (completed):** `TOKYO-CONFIG-A-CURRENT-1` processed only `tokyo-international-forum-a` and `nntt-opera` with Terra high. It closed Forum A as POLICY HOLD and NNTT Opera Palace as SOURCE HOLD before range entry; see `data/venue-reports/tokyo-config-a-current-1-2026-08-12.json`.
+
+**Exact next action:** `TOKYO-CONFIG-A-ARENA-1`を`yoyogi-1`、`yoyogi-2`、`tokyo-gymnasium`の3会場だけ、**Sol high**で実行する。今回の2件はproduction conversionにならず、A/addressability denominatorを変更する新しいissuer evidenceも生じなかったため、bounded arena macroをそのまま次にする。
 
 ## source discipline
 
