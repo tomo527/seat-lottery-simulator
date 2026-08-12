@@ -1,0 +1,13 @@
+{
+  "batchId": "tokyo-sol-cplx-1",
+  "createdAt": "2026-08-12",
+  "scope": "Tokyo coverage SOL-CPLX-1: kanadevia-hall、sgc-hall-ariake、ex-theater-ariakeのcurrentness、fixed/movable/arena/wheelchair configuration、代表選択可能番号席pattern、第1/第2パス、production gate。イベント依存arena/floor番号の恒久ID化、fixed sectionだけの独自採用、capacity fittingを行わない。",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["tokyo-coverage-kanadevia-hall", "tokyo-coverage-sgc-hall-ariake", "tokyo-coverage-ex-theater-ariake"],
+  "complexityAssessments": [
+    {"inventoryId":"tokyo-coverage-kanadevia-hall","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"固定バルコニー1,365席は番号図があるが、着席990席のアリーナはイベント依存で恒久番号図がなく、2,471には立見106人が含まれ、車いす・同伴席とstandard configurationも未定義。","preflightComplete":true,"processingRoute":"Hold"},
+    {"inventoryId":"tokyo-coverage-sgc-hall-ariake","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"開業後の基本図と最大3,767は現行だが、1F dynamic floor 1,720席と車いす4＋同伴4のlayoutが公演依存で、恒久全館番号setがない。","preflightComplete":true,"processingRoute":"Hold"},
+    {"inventoryId":"tokyo-coverage-ex-theater-ariake","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"開場後の最大1,546番号図はあるが、中通路前全席が撤去可能でpit・張出し・花道・車いすspaceの番号差分とissuer-defined standard/normal configurationが未公表。","preflightComplete":true,"processingRoute":"Hold"}
+  ]
+}

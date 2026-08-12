@@ -1,0 +1,17 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-sol-cplx-1-2026-08-12",
+  "generatedAt": "2026-08-12",
+  "scope": "Sol high Tokyo coverage COMPLEX macro for exactly kanadevia-hall, sgc-hall-ariake, and ex-theater-ariake.",
+  "baseline": {"productionVenues":60,"productionSeats":81515,"tokyoUniverse":76,"tokyoProduction":8,"tokyoHold":50,"tokyoContradiction":2,"tokyoUnresearched":16,"mustUnresearched":4,"shouldUnresearched":8},
+  "outcomes": [
+    {"id":"kanadevia-hall","inventoryId":"tokyo-coverage-kanadevia-hall","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"株式会社東京ドームの現行施設概要、公開座席案内、利用料金表、資料ダウンロード案内。","configuration":"固定バルコニー1,365席（447/478/440）、イベント依存アリーナ着席990席、立見106人で最大2,471。車いす・スイートルームは最大内訳外。","representativePattern":"issuer-defined standard/normal selectable numbered-seat setなし。固定バルコニーだけは独自採用しない。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行施設概要と公開座席図で物理構成を確認し、arena ID gateで停止。","secondPass":"現行料金表と認証後資料一覧を独立確認し、恒久arena番号不在を再確認。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: アリーナ990席の恒久番号、車いす/同伴の包含・置換、単一standard configurationが未公表。"},
+    {"id":"sgc-hall-ariake","inventoryId":"tokyo-coverage-sgc-hall-ariake","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"株式会社テレビ朝日／東京ドリームパークの開業後ABOUT・原寸座席図・FAQ・主催者ページ。","configuration":"1F椅子1,720/standing3,259のdynamic floor、2F 595＋車いす4＋同伴4＋バルコニー16、3F 725＋VIP8、4F 687＋VIP8。最大3,767。","representativePattern":"公開図はissuer-defined basic patternだが、1Fと車いすlayoutが公演依存で恒久全館番号setではない。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行原寸図と階別内訳を確認し、event-dependent floor gateで停止。","secondPass":"FAQと主催者ページを独立確認し、基本図・車いすlayoutの公演依存を再確認。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: 1F番号の恒久性、車いす/同伴番号対応、permanent representative configurationが未定義。"},
+    {"id":"ex-theater-ariake","inventoryId":"tokyo-coverage-ex-theater-ariake","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"株式会社テレビ朝日／東京ドリームパークの開場後ABOUT・原寸座席図・主催者ページ・FAQ・こけら落とし公演案内。","configuration":"1F〜3F最大1,546。中通路前全席撤去可能、組立床、pit、張出し、花道、車いすspaceを公演別運用。standingは公式に標準構成として示されない。","representativePattern":"最大番号図はあるがissuer-defined standard/normal configurationなし。旧EX THEATER ROPPONGIは不使用。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"開場後の現行原寸図と最大席数を確認し、performance-variant gateで停止。","secondPass":"主催者ページ、FAQ、AmberS車いす案内を独立確認し、撤去席・stage・wheelchair公演依存を再確認。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: fixed/movable/wheelchair内訳と各variantの番号差分、standard/normal configurationが未公表。"}
+  ],
+  "productionPromotion": {"venuesAdded":0,"seatsAdded":0,"productionVenuesAfter":60,"productionSeatsAfter":81515},
+  "tokyoCoverageAfter": {"universe":76,"production":8,"hold":53,"contradiction":2,"unresearched":13,"mustUnresearched":1,"shouldUnresearched":8},
+  "rangeReview": {"firstPassCompletedAtRepresentativeGate":3,"independentSecondPassCompletedAtRepresentativeGate":3,"rangesEntered":0,"rangeDiff":null},
+  "releaseReady": false,
+  "exactNextAction": "Run a bounded Sol high macro for tokyo-dome only. Do not start Sol SHOULD, OPTIONAL record-only, existing HOLD/CONTRADICTION, Kanto/P2, or production seat data."
+}

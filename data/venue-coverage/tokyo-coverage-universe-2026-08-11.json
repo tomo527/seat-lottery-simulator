@@ -1,7 +1,7 @@
 {
   "auditVersion": 1,
   "jurisdiction": "東京都",
-  "asOf": "2026-08-11",
+  "asOf": "2026-08-12",
   "canonicalRule": "現役の舞台・ライブ・コンサート・ミュージカル・2.5次元・声優/アニメ系イベント等で、固定席または着席時に番号付き座席を設定できる主要会場を、既存inventoryの有無に関係なく統合する。座席rangeは本監査では作成しない。",
   "discoverySources": [
     {"title":"東京都 ①ホール・劇場・伝統芸能関連施設・ライブスペース","url":"https://www.seikatubunka.metro.tokyo.lg.jp/bunka/bunka_seisaku/houshin_torikumi/files/0000000823/hall.pdf"},
@@ -34,7 +34,36 @@
       "formalHolds": 2,
       "releaseReady": false,
       "notes": "G-ROSSOは現行公式図のA〜Z列765番号席と別枠車椅子3スペースを第1/第2パスで一致確認しproduction化。IMMは公演別配置・車椅子詳細、ニッショーは常時除外・可変撤去注記が代表setを一意にしないためSOURCE/SCHEMA/POLICY HOLD。"
+    },
+    "TERRA-DENSE-1-4": {
+      "completedAt": "2026-08-12",
+      "scopeCount": 12,
+      "productionPromotions": 0,
+      "formalHolds": 12,
+      "activeQueueAfter": 0,
+      "releaseReady": false,
+      "notes": "TERRA-DENSE-1から4までの12件は全て公式blocker付き正式HOLD。historical macroは完了済みでactive queueではない。"
+    },
+    "SOL-CPLX-1": {
+      "completedAt": "2026-08-12",
+      "scope": ["kanadevia-hall", "sgc-hall-ariake", "ex-theater-ariake"],
+      "productionPromotions": 0,
+      "formalHolds": 3,
+      "releaseReady": false,
+      "notes": "3件ともcurrent issuer/operator sourcesを第1/第2パスで確認。event-dependent arena/floor、車いす、可動・撤去席、stage variantを越える一意な恒久代表番号席setがないためrange転記前にSOURCE/POLICY/SCHEMA HOLD。"
     }
+  },
+  "currentSnapshot": {
+    "tokyoUniverse": 76,
+    "production": 8,
+    "hold": 53,
+    "contradiction": 2,
+    "unresearched": 13,
+    "mustUnresearched": 1,
+    "shouldUnresearched": 8,
+    "optionalUnresearched": 4,
+    "activeTerraQueue": 0,
+    "nextMacro": ["tokyo-dome"]
   },
   "releaseGate": {
     "mustUnresearched": 0,
@@ -45,7 +74,9 @@
     "noObviousMajorUniverseGap": true,
     "productionQualityGateUnchanged": true,
     "releaseReady": false,
-    "note": "暫定gateの定義を明文化。現時点はMUST/SHOULD未調査が残るためNO。"
+    "currentMustUnresearched": 1,
+    "currentShouldUnresearched": 8,
+    "note": "mustUnresearched=0 / shouldUnresearched=0はrelease gateの必要値。現在値はMUST 1 / SHOULD 8のためNO。"
   },
   "candidates": [
     {"id":"tokyo-dome","name":"東京ドーム","area":"文京区・後楽","type":"dome","capacity":45500,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/dome/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0319","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"東京の大規模ライブ主要会場。野球・コンサート・可動ステージで代表パターン分離が必須。"},
@@ -56,9 +87,9 @@
     {"id":"tokyo-gymnasium","name":"東京体育館 メインアリーナ","area":"渋谷区・千駄ヶ谷","type":"arena","capacity":9308,"operating":"active","officialFacilityUrl":"https://www.tef.or.jp/tmg/arena/index.html","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0745","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"2026-08-12 current official review: SOURCE/POLICY/SCHEMA HOLD. Maximum, fixed, and wheelchair seats are separately stated; north/south configurations and movable/temporary/event-floor inclusion have no issuer-defined representative selectable numbered-seat set."},
     {"id":"musashino-forest-sport-plaza","name":"武蔵野の森総合スポーツプラザ メインアリーナ","area":"調布市・西町","type":"arena","capacity":10000,"operating":"active","officialFacilityUrl":"https://keio-arena.tokyo/facility/mainarena.php","seatMap":"partial","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-coverage-musashino-forest-sport-plaza","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"2026-08-12 current official review: SOURCE/POLICY/SCHEMA HOLD. Fixed seats, roll-back chairs, temporary/event-floor seats, and event-dependent wheelchair/companion/box use have no issuer-defined representative selectable numbered-seat set."},
     {"id":"tokyo-garden-theater","name":"東京ガーデンシアター","area":"江東区・有明","type":"hall","capacity":8000,"operating":"active","officialFacilityUrl":"https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/org/facilities/events/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0429","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"2026-08-12 current official review: SOURCE/POLICY/SCHEMA HOLD. Every seat is removable; arena A/B, seating/standing, stage, and wheelchair-area configurations are event-dependent, with no issuer-defined representative selectable numbered-seat set."},
-    {"id":"kanadevia-hall","name":"Kanadevia Hall（旧東京ドームシティホール）","area":"文京区・後楽","type":"hall","capacity":2471,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/tdc-hall/organizer/facilities.html","seatMap":"official","numberedMap":"event-dependent","inventoryState":"未調査","inventoryId":null,"tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"必須候補。固定バルコニー＋可変アリーナで、公式は着席2,471・立見3,190を提示。現行inventory未登録。"},
-    {"id":"sgc-hall-ariake","name":"SGC HALL ARIAKE","area":"江東区・有明","type":"hall","capacity":3767,"operating":"active","officialFacilityUrl":"https://tdp.tv-asahi.co.jp/hall/about/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":null,"tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"必須候補。2026-03-27開業、着席最大3,767・立見5,306。固定席とアリーナ椅子席の境界を要確認。"},
-    {"id":"ex-theater-ariake","name":"EX THEATER ARIAKE","area":"江東区・有明","type":"theater","capacity":1546,"operating":"active","officialFacilityUrl":"https://tdp.tv-asahi.co.jp/theater/about/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":null,"tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"現行inventory未登録の主要新劇場。2026-04-25開場、演劇・ミュージカル向け、前方客席撤去・花道等の可変性あり。"},
+    {"id":"kanadevia-hall","name":"Kanadevia Hall（旧東京ドームシティホール）","area":"文京区・後楽","type":"hall","capacity":2471,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/tdc-hall/organizer/facilities.html","seatMap":"official","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-coverage-kanadevia-hall","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 SOL-CPLX-1: SOURCE/POLICY/SCHEMA HOLD。固定バルコニー1,365席に対しアリーナ着席990席はイベント依存で恒久番号図がなく、車いす・同伴席とissuer-defined standard configurationも未定義。"},
+    {"id":"sgc-hall-ariake","name":"SGC HALL ARIAKE","area":"江東区・有明","type":"hall","capacity":3767,"operating":"active","officialFacilityUrl":"https://tdp.tv-asahi.co.jp/hall/about/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-coverage-sgc-hall-ariake","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 SOL-CPLX-1: SOURCE/POLICY/SCHEMA HOLD。基本図と最大3,767は現行だが、1F dynamic floorと車いすlayoutが公演依存で、恒久全館番号setをissuerが定義しない。"},
+    {"id":"ex-theater-ariake","name":"EX THEATER ARIAKE","area":"江東区・有明","type":"theater","capacity":1546,"operating":"active","officialFacilityUrl":"https://tdp.tv-asahi.co.jp/theater/about/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-coverage-ex-theater-ariake","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 SOL-CPLX-1: SOURCE/POLICY/SCHEMA HOLD。現行最大1,546番号図はあるが、中通路前全席撤去、pit/張出し/花道、車いすspaceが公演依存でstandard/normal configurationが未定義。"},
     {"id":"tokyo-international-forum-a","name":"東京国際フォーラム ホールA","area":"千代田区・丸の内","type":"hall","capacity":5012,"operating":"active","officialFacilityUrl":"https://www.t-i-forum.co.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-tokyo-international-forum-hall-a","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"コンサート・ミュージカル・大型イベントの主要会場。"},
     {"id":"tokyo-international-forum-c","name":"東京国際フォーラム ホールC","area":"千代田区・丸の内","type":"hall","capacity":1502,"operating":"active","officialFacilityUrl":"https://www.t-i-forum.co.jp/organizer/facilities/c/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-tokyo-international-forum-hall-c","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"ミュージカル・舞台・コンサートの主要会場。"},
     {"id":"nhk-hall","name":"NHKホール","area":"渋谷区・神南","type":"hall","capacity":3601,"operating":"active","officialFacilityUrl":"https://www.nhk-sc.or.jp/nhk-hall/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-nhk-hall","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"音楽・舞台放送系の主要会場。"},
