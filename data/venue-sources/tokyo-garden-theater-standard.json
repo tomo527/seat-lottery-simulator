@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-garden-theater-standard",
+  "name": "東京ガーデンシアター",
+  "prefecture": "東京都",
+  "city": "江東区",
+  "aliases": ["TOKYO GARDEN THEATER"],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "issuer-defined-selectable-numbered-seat-set",
+    "name": "発行者定義の代表的な選択可能番号席セット",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行運営者資料は約8,000人を最大とし、全客席を1席ずつ外して自由に設営でき、着席・スタンディング、舞台位置、アリーナ着席の有無に複数パターンがあると明記する。アリーナ客席と車いすエリアも公演により位置が変わり、1つの代表的選択可能番号席セットは定義されていない。",
+    "notIncludedPatterns": ["アリーナパターンA", "アリーナパターンB", "アリーナ着席なし・スタンディング", "可搬席撤去variant", "舞台前後・袖・花道・センターステージvariant", "公演ごとの車いすエリア配置"]
+  },
+  "sources": [
+    {"id":"official-event-facility","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"東京ガーデンシアター","title":"東京ガーデンシアター イベントでのご利用","url":"https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/org/facilities/events/","checkedAt":"2026-08-12"},
+    {"id":"official-floor-guide","official":true,"roles":["seat-structure","event-layout"],"publisher":"東京ガーデンシアター","title":"東京ガーデンシアター フロアガイド","url":"https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/visitor/floor/","checkedAt":"2026-08-12"}
+  ],
+  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行公式は最大約8,000人を示すが、全客席を1席ずつ外して自由なlayoutへ設営可能とし、着席・スタンディング、舞台位置、アリーナ着席有無の複数パターンを明記する。フロアガイドはアリーナ客席の公演別layout変更、2FアリーナのパターンA/B、車いすエリアの公演別位置変更を示す。固定された代表通常番号席setは未定義である。",
+  "completenessBasis": "第1パスは現行主催者向け施設案内で全席可搬・着席/スタンディング・舞台/アリーナ複数patternを確認し、range転記を停止した。独立第2パスは現行フロアガイドでアリーナパターンA/B、公演別アリーナlayout、車いすエリア位置変更を確認した。両パスは代表pattern gateで同じ結論になった。",
+  "transformation": "約8,000人へのcapacity fitting、バルコニー又はアリーナだけの独自代表化、パターンA/Bの任意選択、可搬席・スタンディング・イベント舞台の恒久番号化、車いすエリアの置換推測を行わず、rangesは空のままとした。",
+  "knownLimitations": [
+    "SOURCE HOLD: 公開公式資料は客席を1席ずつ外して自由にlayout変更できるとし、単一の完全番号席図面/総数を公開していない。",
+    "POLICY/SCHEMA HOLD: アリーナA/B、着席/スタンディング、舞台variant、車いすエリアの公演別位置変更を越えて、issuer-defined representative configurationがない。"
+  ],
+  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"official-source-first-pass-independent-second-pass-hold","seatStructure":"pending","seatCount":"pending","unresolvedIssues":["全席が可搬で、アリーナ着席・スタンディング・舞台configurationが複数ある。","車いすエリアとアリーナ客席は公演により位置・layoutが変わり、通常番号席との包含・置換が未定義。"]},
+  "ranges": []
+}

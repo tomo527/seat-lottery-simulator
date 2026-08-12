@@ -1,0 +1,13 @@
+{
+  "batchId": "tokyo-terra-dense-3",
+  "createdAt": "2026-08-12",
+  "scope": "Tokyo coverage TERRA-DENSE-3: tokyo-gymnasium, musashino-forest-sport-plaza, tokyo-garden-theater の現行性・代表選択可能番号席pattern・第1/第2パス・production gate。固定/可動/仮設/イベント床/車いすとスポーツ・ライブconfigurationを公式根拠だけで判定する。",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["tokyo-official-0745", "tokyo-coverage-musashino-forest-sport-plaza", "tokyo-official-0429"],
+  "complexityAssessments": [
+    {"inventoryId":"tokyo-official-0745","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"現行公式は最大9,308、固定5,178、車椅子130を別建てで示し、北側/南側の別座席案内を公開する。可動・仮設・イベント床・車椅子を含むissuer-defined representative selectable numbered-seat setはない。","preflightComplete":true,"processingRoute":"Hold"},
+    {"inventoryId":"tokyo-coverage-musashino-forest-sport-plaza","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"現行指定管理者は最大約10,000、ロールバックチェア、競技・コンサート・展示会対応を示す。東京都公式は固定約6,000と仮設席による10,000超を示し、公開番号案内は3F/4Fだけで、全体の代表setはない。","preflightComplete":true,"processingRoute":"Hold"},
+    {"inventoryId":"tokyo-official-0429","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"現行運営者は全客席を1席ずつ外して自由にlayout変更でき、着席/スタンディング、舞台、アリーナA/B、車いす位置を公演依存として示す。issuer-defined representative selectable numbered-seat setはない。","preflightComplete":true,"processingRoute":"Hold"}
+  ]
+}

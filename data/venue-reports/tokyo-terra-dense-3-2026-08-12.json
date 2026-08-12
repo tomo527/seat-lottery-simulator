@@ -1,0 +1,18 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-terra-dense-3-2026-08-12",
+  "generatedAt": "2026-08-12",
+  "scope": "Terra high Tokyo coverage DENSE macro for exactly tokyo-gymnasium, musashino-forest-sport-plaza, and tokyo-garden-theater.",
+  "baseline": {"productionVenues":60,"productionSeats":81515,"tokyoUniverse":76,"tokyoProduction":8,"tokyoHold":44,"tokyoContradiction":2,"tokyoUnresearched":22,"mustUnresearched":10,"shouldUnresearched":8},
+  "outcomes": [
+    {"id":"tokyo-gymnasium","inventoryId":"tokyo-official-0745","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"東京都スポーツ文化事業団の現行メインアリーナ案内、座席案内、北側/南側座席PDF。最大9,308、固定5,178、車椅子130を別建てで示す。","configuration":"固定スタンド5,178、車椅子130、可動/仮設/イベント床の通常capacity関係は未定義。北側/南側別configuration。","representativePattern":"発行者定義の一意な代表選択可能番号席setなし。固定スタンドのみを選ばない。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行施設案内で最大・固定・車椅子の別建てを確認し、range転記を停止。","secondPass":"独立して現行座席案内と北側/南側PDFを確認。複数configurationと車椅子/同伴者席の未解決が残る。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: 可動・仮設・イベント床・車椅子の包含/置換と代表configurationをissuerが定義しない。"},
+    {"id":"musashino-forest-sport-plaza","inventoryId":"tokyo-coverage-musashino-forest-sport-plaza","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"京王アリーナTOKYOの現行メインアリーナ案内、座席案内、バリアフリー案内および東京都公式施設概要。最大約10,000、ロールバックチェア、固定約6,000と仮設席を示す。","configuration":"固定約6,000、ロールバックチェア、仮設/イベント床、競技/コンサート/展示会、イベント依存の車椅子・同伴者・ボックス席。","representativePattern":"発行者定義の一意な代表選択可能番号席setなし。公開番号案内の3F/4Fだけを選ばない。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行施設案内でロールバックチェア、多用途、最大約10,000を確認し、range転記を停止。","secondPass":"独立して現行座席案内、バリアフリー、東京都概要を確認。固定/仮設/イベント依存座席が同じ未解決を示す。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: 固定・可動・仮設・イベント床・車椅子等を含むissuer-defined representative configurationと全番号構造がない。"},
+    {"id":"tokyo-garden-theater","inventoryId":"tokyo-official-0429","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"東京ガーデンシアターの現行主催者向けイベント施設案内と来場者向けフロアガイド。最大約8,000、全客席可搬、着席/スタンディング、舞台/アリーナ複数patternを示す。","configuration":"全席可搬。アリーナA/B、着席/スタンディング、舞台前後・袖・花道・センターステージ、車いすエリア位置が公演依存。","representativePattern":"発行者定義の一意な代表選択可能番号席setなし。バルコニー又はアリーナだけ、又はA/Bの一方を選ばない。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行主催者案内で全席可搬と複数layoutを確認し、range転記を停止。","secondPass":"独立して現行フロアガイドを確認。アリーナA/B、layout変更、車いすエリア位置変更が同じ未解決を示す。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: 可搬席・アリーナA/B・舞台・車いすの公演variantを越えるissuer-defined representative configurationがない。"}
+  ],
+  "productionPromotions": 0,
+  "productionFinal": 60,
+  "productionSeatFinal": 81515,
+  "baselineProductionRegression": "zero changes to all 60 baseline production source semantics, catalog entries, runtime details, and fingerprints",
+  "releaseReady": false,
+  "exactNextAction": "Run TERRA-DENSE-4 exactly for shiki-umi, ariake-shiki, and nihon-seinenkan; do not reopen TERRA-DENSE-3 HOLDs without changed issuer-owned evidence."
+}

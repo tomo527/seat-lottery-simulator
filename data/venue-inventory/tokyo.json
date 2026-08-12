@@ -8470,14 +8470,15 @@
       "city": "江東区",
       "capacity": null,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。施設URL・概算席数は未回答。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "officialFacilityUrl": "https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/org/facilities/events/",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行運営者資料は最大約8,000人を示すが、全客席可搬・着席/スタンディング・舞台/アリーナ複数pattern・公演別車いすエリアから一意な代表番号席setを定義しない。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "venueSourceId": "tokyo-garden-theater-standard",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-12",
+      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 全席可搬、アリーナA/B、着席/スタンディング、舞台・車いすエリアの公演variantを越えるissuer-defined representative selectable numbered-seat setがない。"
     },
     {
       "inventoryId": "tokyo-official-0430",
@@ -14626,14 +14627,15 @@
       "city": "渋谷区",
       "capacity": 9308,
       "category": "arena",
-      "officialFacilityUrl": "https://www.tef.or.jp/tmg/index.jsp",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "officialFacilityUrl": "https://www.tef.or.jp/tmg/arena/index.html",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行東京都スポーツ文化事業団資料は最大9,308席、固定5,178席、車椅子130席と北側/南側座席案内を示すが、可動・仮設・イベント床・車椅子を含む一意な代表番号席setを定義しない。",
       "priority": "A",
-      "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "venueSourceId": "tokyo-gymnasium-standard",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-12",
+      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 最大・固定・車椅子席の別建て、北側/南側configuration、可動/仮設/イベント床席の包含・置換から、issuer-defined representative selectable numbered-seat setを確定できない。"
     },
     {
       "inventoryId": "tokyo-official-0746",
@@ -23749,6 +23751,27 @@
       "lastCheckedAt": "2026-08-11",
       "discoveryUrlRaw": "https://corporate.pia.jp/business/hall/",
       "blockingReason": "SOURCE/SCHEMA HOLD: 公開公式資料は階別容量と固定席構造を示すが、完全なrow label・seat number図面を公開していない。"
+    },
+    {
+      "inventoryId": "tokyo-coverage-musashino-forest-sport-plaza",
+      "officialRecordId": "coverage-terra-dense-3-musashino-forest-sport-plaza",
+      "facilityName": "武蔵野の森総合スポーツプラザ",
+      "spaceName": "メインアリーナ",
+      "officialDisplayName": "武蔵野の森総合スポーツプラザ メインアリーナ",
+      "prefecture": "東京都",
+      "city": "調布市",
+      "capacity": null,
+      "category": "arena",
+      "officialFacilityUrl": "https://keio-arena.tokyo/facility/mainarena.php",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行指定管理者は最大約10,000人、ロールバックチェア、競技・コンサート・展示会対応を示す。東京都公式は固定約6,000席と仮設席による10,000人超を示すが、全体の一意な代表番号席setは定義しない。",
+      "priority": "A",
+      "venueSourceId": "musashino-forest-sport-plaza-standard",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-12",
+      "discoveryUrlRaw": "https://keio-arena.tokyo/facility/mainarena.php",
+      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 固定・ロールバックチェア・仮設/イベント床・車椅子/同伴者/ボックス席を含むissuer-defined representative selectable numbered-seat setと全番号構造がない。"
     }
   ]
 }

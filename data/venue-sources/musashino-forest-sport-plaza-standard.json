@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "musashino-forest-sport-plaza-standard",
+  "name": "武蔵野の森総合スポーツプラザ メインアリーナ",
+  "prefecture": "東京都",
+  "city": "調布市",
+  "aliases": ["京王アリーナTOKYO", "武蔵野の森メインアリーナ"],
+  "venueType": "arena",
+  "representativePattern": {
+    "id": "issuer-defined-selectable-numbered-seat-set",
+    "name": "発行者定義の代表的な選択可能番号席セット",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行指定管理者は最大約10,000人、ロールバックチェア、競技・コンサート・展示会対応を示し、公開座席案内は3F/4Fブロックのみである。東京都の公式施設概要は固定約6,000席に仮設席を加えて10,000人超と示す。全体を1つの代表的選択可能番号席セットとして定義していない。",
+    "notIncludedPatterns": ["固定3F/4F席だけの独自選択", "ロールバックチェア展開variant", "競技配置", "コンサート配置", "仮設席・イベント床席", "車椅子・同伴者・ボックス席のイベント依存variant"]
+  },
+  "sources": [
+    {"id":"official-main-arena","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"京王アリーナTOKYO 指定管理者","title":"京王アリーナTOKYO メインアリーナ","url":"https://keio-arena.tokyo/facility/mainarena.php","checkedAt":"2026-08-12"},
+    {"id":"official-seat-guide","official":true,"roles":["seat-structure","event-layout"],"publisher":"京王アリーナTOKYO 指定管理者","title":"京王アリーナTOKYO 座席案内","url":"https://keio-arena.tokyo/seat/","checkedAt":"2026-08-12"},
+    {"id":"official-barrier-free","official":true,"roles":["facility","event-layout"],"publisher":"京王アリーナTOKYO 指定管理者","title":"京王アリーナTOKYO バリアフリー設備一覧","url":"https://keio-arena.tokyo/facility/barrier-free.php","checkedAt":"2026-08-12"},
+    {"id":"official-tokyo-facility-overview","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"東京都","title":"武蔵野の森総合スポーツプラザの施設概要","url":"https://www.sports-tokyo-info.metro.tokyo.lg.jp/policyinformation/files/ref1.pdf","checkedAt":"2026-08-12"}
+  ],
+  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行指定管理者は最大約10,000人、ロールバックチェア、競技・コンサート・展示会対応を示し、東京都公式資料は固定約6,000席と仮設席設置等による10,000人超を示す。公開番号案内は3F/4Fだけで、可動・仮設・イベント床・車椅子/同伴者/ボックス席を含む代表configurationは未定義である。",
+  "completenessBasis": "第1パスは現行メインアリーナ案内でロールバックチェアと多用途・最大約10,000人を確認し、range転記を停止した。独立第2パスは現行座席案内、バリアフリー案内、東京都公式施設概要を照合し、固定約6,000席と仮設席、イベントにより異なる車椅子/同伴者席、公開されないアリーナ階構造を確認した。",
+  "transformation": "固定3F/4F番号席だけの独自選択、約10,000人へのcapacity fitting、ロールバックチェア/仮設席の任意包含、スポーツ又はライブ配置の独自選択、車椅子等の置換推測を行わず、rangesは空のままとした。",
+  "knownLimitations": [
+    "SOURCE HOLD: 現行公開座席案内は3F/4Fブロックのみで、アリーナ階、ロールバックチェア、仮設席を含む全番号席構造を公開していない。",
+    "POLICY/SCHEMA HOLD: 固定約6,000席、仮設席、ロールバックチェア、イベント依存の車椅子/同伴者/ボックス席を含むissuer-defined representative configurationがない。"
+  ],
+  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"official-source-first-pass-independent-second-pass-hold","seatStructure":"pending","seatCount":"pending","unresolvedIssues":["固定席・ロールバックチェア・仮設席・イベント床席の1つの全番号席setが現行公式にない。","車椅子/同伴者/ボックス席はイベントにより利用が異なり、通常番号席への包含・置換が未公表。"]},
+  "ranges": []
+}
