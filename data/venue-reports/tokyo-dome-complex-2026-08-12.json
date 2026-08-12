@@ -1,0 +1,19 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-dome-complex-2026-08-12",
+  "generatedAt": "2026-08-12",
+  "scope": "Sol high Tokyo coverage bounded COMPLEX macro for tokyo-dome only.",
+  "baseline": {"productionVenues":60,"productionSeats":81515,"tokyoUniverse":76,"tokyoProduction":8,"tokyoHold":53,"tokyoContradiction":2,"tokyoUnresearched":13,"mustUnresearched":1,"shouldUnresearched":8,"optionalUnresearched":4},
+  "outcome": {"id":"tokyo-dome","inventoryId":"tokyo-official-0319","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"株式会社東京ドームの現行施設概要、座席案内、FAQ、主催者案内、巨人公式戦車いす案内、現行concert listとそこからリンクされた公演issuer公式案内。","configuration":"多目的施設の一般収容55,000人、野球時約43,500人。公開番号図は野球開催時stand用。concert arena/floorは催事別で非掲載。巨人公式戦車いす30席・付添2名は野球専用。suite/premium/special areasとconcert stage別販売範囲の共通番号setは未定義。","representativePattern":"issuer-defined standard/normal concert selectable numbered-seat setなし。野球map・fixed standsのみを独自採用しない。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行施設概要、公開座席案内、野球座席図、FAQを確認し、concert arena event-dependenceと用途別capacityを分離して代表pattern gateで停止。","secondPass":"主催者案内、野球専用車いす運用、現行公演issuerの機材席開放・注釈付・stage-side販売制御を独立確認し、standard concert set不在を再確認。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: concert floor恒久番号、stage別fixed stand不使用番号、車いす／同伴、suite／premium／special areaを含む一意なstandard configurationが未公表。"},
+  "productionPromotion": {"venuesAdded":0,"seatsAdded":0,"productionVenuesAfter":60,"productionSeatsAfter":81515},
+  "tokyoCoverageAfter": {"universe":76,"production":8,"hold":54,"contradiction":2,"unresearched":12,"mustUnresearched":0,"shouldUnresearched":8,"optionalUnresearched":4},
+  "mustPhaseFinal": {"mustTotal":44,"production":4,"hold":38,"contradiction":2,"unresearched":0,"productionIds":["line-cube-shibuya","suntory-hall-main","theater-milano-za","sunshine-theatre"],"formalDispositionComplete":true,"obviousMajorGap":false},
+  "rangeReview": {"firstPassCompletedAtRepresentativeGate":1,"independentSecondPassCompletedAtRepresentativeGate":1,"rangesEntered":0,"rangeDiff":null},
+  "recommendedShouldMacros": [
+    {"id":"SOL-SHOULD-1","targets":["ex-theater-roppongi","zepp-haneda","zepp-shinjuku"],"basis":"ライブハウス型。seated/standing、floor可変、上階固定席、車いす、公演別番号を共通gateで確認。"},
+    {"id":"SOL-SHOULD-2","targets":["toyosu-pit","otemachi-mitsui-hall","mon-takanawa-box1000"],"basis":"平土間・大規模event-space型。仮設席、standing、stage、issuer-defined seated layoutの恒久性を共通gateで確認。"},
+    {"id":"SOL-SHOULD-3","targets":["hulic-hall-tokyo","forum-b7"],"basis":"多目的event hall型。公式番号図／着席layoutと可変stage・販売variantの境界を確認。"}
+  ],
+  "releaseReady": false,
+  "exactNextAction": "Run SOL-SHOULD-1 exactly for ex-theater-roppongi, zepp-haneda, and zepp-shinjuku. Do not start the other SHOULD macros, OPTIONAL record-only, existing HOLD/CONTRADICTION, Kanto/P2, or production seat data."
+}

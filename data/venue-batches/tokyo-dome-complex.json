@@ -1,0 +1,11 @@
+{
+  "batchId": "tokyo-dome-complex",
+  "createdAt": "2026-08-12",
+  "scope": "Tokyo coverage TOKYO-DOME COMPLEX: tokyo-dome 1件のみのcurrentness、baseball/concert/fixed/arena/wheelchair/special-area configuration、代表選択可能番号席pattern、第1/第2パス、production gate。野球座席のconcert転用、fixed standsだけの独自採用、event-dependent floor番号の恒久ID化、capacity fittingを行わない。",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["tokyo-official-0319"],
+  "complexityAssessments": [
+    {"inventoryId":"tokyo-official-0319","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"公開stand番号図は野球開催時用で、concert arenaは催事ごとに異なり非掲載。55,000人は用途別最大収容で、stage別stand閉鎖、floor仮設番号、車いす／同伴、suite／premium／special areaを含むissuer-defined concert standardがない。","preflightComplete":true,"processingRoute":"Hold"}
+  ]
+}

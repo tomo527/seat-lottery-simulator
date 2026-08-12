@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-dome-concert",
+  "name": "東京ドーム",
+  "prefecture": "東京都",
+  "city": "文京区",
+  "aliases": ["TOKYO DOME", "ビッグエッグ"],
+  "venueType": "dome",
+  "representativePattern": {
+    "id": "issuer-defined-concert-selectable-numbered-seat-set",
+    "name": "発行者定義のライブ／コンサート代表番号席セット",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行運営者資料は東京ドームを野球・コンサート等の多目的施設とし、一般収容55,000人と野球時約43,500人を分けて示す。一方、公開座席表は野球開催時のスタンド席であり、コンサート／イベントのアリーナ席は催事ごとに異なるため非掲載と公式FAQが明記する。野球用固定スタンドだけをライブ代表setにせず、range転記前のrepresentative pattern gateで停止した。",
+    "notIncludedPatterns": ["野球開催時のスタンド座席表", "2026年巨人公式戦の販売席種", "公演別アリーナ／floor仮設席", "公演別stage-side・注釈付き・機材席開放", "野球専用車いす30席と付添席", "THE SUITE TOKYO・プレミアムラウンジ等の野球向けspecial area"]
+  },
+  "sources": [
+    {"id":"official-current-facility-overview","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"株式会社東京ドーム／東京ドームシティ","title":"東京ドームとは・施設規模","url":"https://www.tokyo-dome.co.jp/dome/about/","checkedAt":"2026-08-12"},
+    {"id":"official-current-seat-guide","official":true,"roles":["seat-structure","event-layout"],"publisher":"株式会社東京ドーム／東京ドームシティ","title":"東京ドーム 座席案内・場内MAP","url":"https://www.tokyo-dome.co.jp/dome/seat/","checkedAt":"2026-08-12"},
+    {"id":"official-current-seat-faq","official":true,"roles":["seat-structure","event-layout"],"publisher":"株式会社東京ドーム／東京ドームシティ","title":"東京ドーム よくあるご質問・座席について","url":"https://www.tokyo-dome.co.jp/faq/dome/","checkedAt":"2026-08-12"},
+    {"id":"official-current-organizer-overview","official":true,"roles":["facility","event-layout"],"publisher":"株式会社東京ドーム／東京ドームシティ","title":"東京ドーム イベントをお考えの方へ","url":"https://www.tokyo-dome.co.jp/dome/organizer/","checkedAt":"2026-08-12"},
+    {"id":"official-baseball-wheelchair-guide","official":true,"roles":["seat-structure","event-layout"],"publisher":"株式会社東京ドーム／東京ドームシティ","title":"東京ドーム 巨人公式戦 車いす席のご案内","url":"https://www.tokyo-dome.co.jp/dome/baseball/barrierfree/","checkedAt":"2026-08-12"},
+    {"id":"official-current-concert-list","official":true,"roles":["facility","event-layout"],"publisher":"株式会社東京ドーム／東京ドームシティ","title":"東京ドーム コンサート・イベント一覧","url":"https://www.tokyo-dome.co.jp/dome/event/","checkedAt":"2026-08-12"},
+    {"id":"official-current-concert-ticketing","official":true,"roles":["event-layout"],"publisher":"SEKAI NO OWARI DOME TOUR 2026公式","title":"SEKAI NO OWARI DOME TOUR 2026 THE CINEMA 公式公演・チケット案内","url":"https://www.sekainoowari-tour.jp/","checkedAt":"2026-08-12"}
+  ],
+  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。ライブ／コンサート用途でissuer-defined standard configuration、恒久arena番号、stage別の固定スタンド販売範囲、車いす／同伴／special areaの番号関係が公開されないため、登録可能な一意の代表番号席setはない。",
+  "completenessBasis": "第1パスは現行施設概要、公開座席案内、野球ダイヤモンドを前提とする2023改定座席表、2026年巨人戦座席図、公式FAQを確認した。一般55,000人と野球約43,500人は用途別収容人数で、公式FAQは公開スタンド図を野球開催時用とし、concert arenaを催事別・非掲載と明記するため代表pattern gateで停止した。独立第2パスは主催者向け現行案内、巨人公式戦車いす案内、現行concert scheduleからリンクされた2026年公演公式案内を確認した。野球車いす30席・付添2名は巨人公式戦専用で位置指定不可、現行concertは照明機材配置確定後の機材席開放、注釈付指定席、stage-side席を公演単位で販売する。両パスは一意なconcert setなしで一致し、rangesは0、range diffはnull。",
+  "transformation": "野球座席をconcert代表へ転用せず、固定スタンドだけを独自採用せず、55,000人へのcapacity fitting、arena番号の恒久ID化、stage閉鎖範囲・機材席・車いす席の番号推測を行わず、rangesは空のままとした。",
+  "knownLimitations": [
+    "SOURCE HOLD: 公開番号図は野球開催時スタンド用で、ライブ時にも同じ固定stand ID集合を全て販売するというissuer-owned concert mapは公開されない。恒久固定stand席だけのexact countも用途別収容人数から分離されない。",
+    "POLICY/SCHEMA HOLD: concert arena／floor席、stage位置、固定standの使用不能範囲、movable・temporary・supplementary席についてissuer-defined standard/normal configurationと恒久番号差分がない。",
+    "SOURCE/SCHEMA HOLD: 巨人公式戦の車いす30席・付添2名運用は野球専用で位置指定不可。concert時の車いす／同伴席の包含、置換番号、stage別配置は公開されない。",
+    "THE SUITE TOKYO、プレミアムラウンジ、野球別席種は公式に野球観戦・年間契約等の文脈で定義されるが、concert代表setへの包含と番号対応は定義されない。",
+    "現行concert issuer資料は機材配置確定後の追加開放、注釈付指定席、stage-side席等の公演別販売制御を示すが、東京ドーム全公演に共通するexact numbered-seat setを示さない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": "2026-08-12",
+    "method": "official-source-first-pass-independent-second-pass-hold",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": ["ライブ／コンサート用のissuer-defined standard/normal configurationが未公開。", "催事別arena／floor番号、stage別固定stand不使用番号、機材・補助・注釈席の恒久差分が未公開。", "concert時の車いす／同伴席とsuite／premium／special areaの包含・置換番号が未公開。"]
+  },
+  "ranges": []
+}
