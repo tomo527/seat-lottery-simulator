@@ -1,0 +1,93 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-config-pilot-1-meijiza-2026-08-12",
+  "generatedAt": "2026-08-12",
+  "scope": "Schema v2 real-venue pilot for meijiza only. No other A candidate, SHOULD candidate, or existing HOLD was researched or converted.",
+  "officialCurrentness": {
+    "seatPage": "https://www.meijiza.co.jp/theater-guide/seat/",
+    "withHanamichiMap": "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat.pdf",
+    "withoutHanamichiMap": "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat-none.pdf",
+    "capacityBasis": "Current official seat page: 1F 834 (914), 2F 390, 3F 144; use of hanamichi differs by performance.",
+    "wheelchairGuide": "https://www.meijiza.co.jp/theater-guide/barrierfree/",
+    "withHanamichiEventExample": "https://www.meijiza.co.jp/info/2025/2025_09_02/",
+    "withoutHanamichiEventExample": "https://www.meijiza.co.jp/info/2025/2025_12_01/",
+    "checkedAt": "2026-08-12"
+  },
+  "passes": {
+    "first": {
+      "method": "Fresh 300dpi visual transcription of both current issuer-owned PDFs, configuration by configuration.",
+      "stateAtCompletion": "draft, selectable=false, verification=pending"
+    },
+    "independentSecond": {
+      "method": "Fresh extraction from the current issuer-owned separate floor images and interactive seat-page wheelchair overlay without reading first-pass ranges as authority.",
+      "completedAt": "2026-08-12"
+    }
+  },
+  "configurations": [
+    {
+      "id": "with-hanamichi",
+      "canonicalName": "花道あり",
+      "classification": "production/selectable",
+      "expectedSeatCount": 1368,
+      "calculatedSeatCount": 1368,
+      "floorSubtotals": {"1F":834,"2F":390,"3F":144},
+      "rangeDiff": 0,
+      "verificationStatus": "verified",
+      "unresolvedIssues": []
+    },
+    {
+      "id": "without-hanamichi",
+      "canonicalName": "花道なし",
+      "classification": "production/selectable",
+      "expectedSeatCount": 1448,
+      "calculatedSeatCount": 1448,
+      "floorSubtotals": {"1F":914,"2F":390,"3F":144},
+      "rangeDiff": 0,
+      "verificationStatus": "verified",
+      "unresolvedIssues": []
+    }
+  ],
+  "configurationIdentity": {
+    "issuerCondition": "The issuer labels and publishes separate complete maps as 花道あり and 花道なし and says their use differs by performance.",
+    "exactDifference": "1階1～20列7～10番",
+    "differenceSeatCount": 80,
+    "otherRangeDifferences": 0,
+    "repositoryInventedDifferences": false
+  },
+  "wheelchairSemantics": {
+    "status": "resolved",
+    "interpretation": "The current official second-floor presentation displays all 390 numbered seats and separately places wheelchair-space icons in the unnumbered left/right corner spaces outside those numbered blocks. The barrier-free page identifies the same permanent corners and does not define removed or replaced numbered seats.",
+    "configurationTreatment": "Both selectable configurations contain the complete fixed numbered-seat set and exclude the common unnumbered wheelchair scope.",
+    "nonSelectableScope": "2階左右コーナー車いすスペース",
+    "inventedConfiguration": false
+  },
+  "outcome": {
+    "platform": "PASS",
+    "venueConversion": "PASS",
+    "productionVenueIncrease": 1,
+    "productionConfigurationIncrease": 2,
+    "configurationSeatRecordsAdded": 2816,
+    "afterProductionVenues": 61,
+    "afterSelectableConfigurations": 62,
+    "afterConfigurationSeatRecords": 84331,
+    "existing60Regression": "PASS; source, catalog projection, runtime, fingerprints, IDs, dataPath, aliases, search order, and lottery behavior unchanged"
+  },
+  "coverage": {
+    "tokyoProduction": "9/76",
+    "mustProduction": "5/44",
+    "shouldProduction": "4/28",
+    "schemaAddressable": "24/76",
+    "mustAddressableConversion": "5/16",
+    "taxonomyCurrent": {"A_SCHEMA_UNLOCKABLE":11,"B_SOURCE_LIMITED":21,"C_CONTRADICTION":4,"D_CURRENTNESS_CLOSED":3},
+    "taxonomyHistorical": {"A_SCHEMA_UNLOCKABLE":12,"B_SOURCE_LIMITED":21,"C_CONTRADICTION":4,"D_CURRENTNESS_CLOSED":3}
+  },
+  "remainingACohort": ["tokyo-international-forum-a","nntt-opera","yoyogi-1","yoyogi-2","ariake-arena","tokyo-gymnasium","kanadevia-hall","sgc-hall-ariake","ex-theater-ariake","nntt-playhouse","galaxy-theatre"],
+  "nextBoundedMacros": [
+    {"id":"TOKYO-CONFIG-A-CURRENT-1","venues":["tokyo-international-forum-a","nntt-opera"],"model":"Terra high","reason":"Both are current-schema addressable but require dense large-map extraction."},
+    {"id":"TOKYO-CONFIG-A-ARENA-1","venues":["yoyogi-1","yoyogi-2","tokyo-gymnasium"],"model":"Sol high","reason":"Fixed numbered subsets must be separated from dynamic floor and wheelchair scopes."},
+    {"id":"TOKYO-CONFIG-A-ARENA-2","venues":["ariake-arena","kanadevia-hall","sgc-hall-ariake"],"model":"Sol high","reason":"Movable, fixed, and event-floor scope boundaries require advanced configuration decisions."},
+    {"id":"TOKYO-CONFIG-A-THEATRE-1","venues":["ex-theater-ariake","nntt-playhouse","galaxy-theatre"],"model":"Sol high","reason":"Issuer variants, pit/hanamichi, and wheelchair conversion semantics must be isolated without inference."}
+  ],
+  "releaseReady": false,
+  "exactNextAction": "TOKYO-CONFIG-A-CURRENT-1 — tokyo-international-forum-a and nntt-opera only, Terra high"
+}

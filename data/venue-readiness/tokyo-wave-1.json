@@ -75,10 +75,10 @@
     },
     {
       "venueId": "meijiza-standard",
-      "readiness": "R3",
-      "secondPass": "not-started",
-      "blocker": "POLICY/SCHEMA HOLD。公式は花道あり1,368席と花道なし1,448席を公演ごとの有効配置として並列掲載し、通常代表を指定しない。2階左右の無番号車いすスペースと390番号席の包含・転換対象番号も未公表。",
-      "nextAction": "これ以上モデル再調査しない。発行者が通常代表配置と車いす運用の番号対応を公開した場合のみ、代表配置ゲートから再開する。"
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": "",
+      "nextAction": "schema v2の花道あり／なしconfigurationとconfiguration単位fingerprintを維持する。"
     },
     {
       "venueId": "mitaka-public-light-hall-standard",

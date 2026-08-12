@@ -33,7 +33,7 @@ const drawAndExpectNotification = async (page: Page, venueName: string, minimumD
   await expect(page.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeVisible({ timeout: 8_000 })
   expect(Date.now() - startedAt).toBeGreaterThanOrEqual(minimumDuration)
   const result = page.locator('.result-card')
-  await expect(result.getByText(venueName)).toBeVisible()
+  await expect(result.getByText(venueName, { exact: true })).toBeVisible()
   await expect(result.locator('.result-message')).toContainText('厳正なる抽選の結果、')
   await expect(result.locator('.result-message')).toContainText('以下のお席となりました。')
   await expect(result.getByText('列', { exact: true })).toBeVisible()
@@ -112,6 +112,35 @@ test('一橋講堂をalias検索し、detailをlazy loadして階表示付きで
   await drawAndExpectNotification(page, '一橋講堂')
   await expect(page.locator('.ticket-details').getByText('エリア', { exact: true })).toBeVisible()
   await expect(page.locator('.ticket-details dd').filter({ hasText: /1階|2階/ })).toBeVisible()
+})
+
+test('明治座を1会場として検索し、公式2configurationを選び分けて抽選できる', async ({ page }) => {
+  const consoleErrors: string[] = []
+  page.on('console', (message) => { if (message.type() === 'error') consoleErrors.push(message.text()) })
+  await page.goto('/')
+  await openPicker(page)
+  await page.getByLabel('会場名で検索').fill('明治座')
+  await expect(page.getByText('絞り込み結果 1件')).toBeVisible()
+  await page.getByRole('button', { name: '明治座を選ぶ' }).click()
+
+  await expect(page.getByRole('radio', { name: /花道あり.*1,368席/ })).toBeVisible()
+  await expect(page.getByRole('radio', { name: /花道なし.*1,448席/ })).toBeVisible()
+  await expect(page.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
+
+  const detailResponse = page.waitForResponse((response) => response.url().endsWith('/venue-db/venues/meijiza-standard--with-hanamichi.json') && response.ok())
+  await page.getByRole('radio', { name: /花道あり.*1,368席/ }).check()
+  await detailResponse
+  await expect(page.getByText('抽選対象 1,368席', { exact: true })).toBeVisible()
+  await drawAndExpectNotification(page, '明治座')
+  await expect(page.locator('.result-card').getByText('花道あり', { exact: true })).toBeVisible()
+
+  const withoutDetailResponse = page.waitForResponse((response) => response.url().endsWith('/venue-db/venues/meijiza-standard--without-hanamichi.json') && response.ok())
+  await page.getByRole('radio', { name: /花道なし.*1,448席/ }).check()
+  await withoutDetailResponse
+  await expect(page.getByText('抽選対象 1,448席', { exact: true })).toBeVisible()
+  await drawAndExpectNotification(page, '明治座')
+  await expect(page.locator('.result-card').getByText('花道なし', { exact: true })).toBeVisible()
+  expect(consoleErrors).toEqual([])
 })
 
 test('会場切替と自作座席でも通知カードが成立する', async ({ page }) => {

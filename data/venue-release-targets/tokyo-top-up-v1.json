@@ -127,7 +127,7 @@
       "venueId": "meijiza",
       "name": "明治座",
       "hallName": null,
-      "capacity": 1368,
+      "capacity": 1448,
       "prefecture": "東京都",
       "city": "東京都内",
       "priority": "A",
@@ -136,7 +136,7 @@
       "productionDifficulty": "complex",
       "recommendedOrder": 7,
       "officialNumberedSeatMap": "verified",
-      "note": "POLICY/SCHEMA HOLD。花道あり1,368席と花道なし1,448席の現行公式番号図は確認済みだが、発行者は通常代表を指定せず公演ごとの使用とする。2階無番号車いすスペースと390番号席の対応も未公表のためrange化しない。",
+      "note": "TOKYO-CONFIG-PILOT-1でschema v2 conversion成功。発行者定義の花道あり1,368席／花道なし1,448席を独立configurationとしてproduction化し、2階左右の車いすスペースは番号席外の共通無番号scopeとしてnon-selectableに分離。",
       "existingReference": {
         "inventoryId": "tokyo-meijiza",
         "venueSourceId": "meijiza-standard",

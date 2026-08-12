@@ -4,6 +4,7 @@ import type { Seat } from '../../types/venue'
 type Props = {
   seat: Seat
   venueName: string
+  configurationName?: string
   scopeDisclosure?: string
   shareStatus: string
   onRetry: () => void
@@ -11,7 +12,7 @@ type Props = {
   onShare: () => void
 }
 
-export function ResultCard({ seat, venueName, scopeDisclosure, shareStatus, onRetry, onChangeConditions, onShare }: Props) {
+export function ResultCard({ seat, venueName, configurationName, scopeDisclosure, shareStatus, onRetry, onChangeConditions, onShare }: Props) {
   return (
     <section className="result-card" aria-labelledby="result-heading">
       <article className="result-notification">
@@ -24,6 +25,7 @@ export function ResultCard({ seat, venueName, scopeDisclosure, shareStatus, onRe
         <div className="ticket-divider" aria-hidden="true" />
         <dl className="ticket-details">
           <div><dt>会場</dt><dd>{venueName}</dd></div>
+          {configurationName && <div><dt>座席配置</dt><dd>{configurationName}</dd></div>}
           {scopeDisclosure && <div><dt>抽選範囲</dt><dd>{scopeDisclosure}</dd></div>}
           {seat.sectionLabel && <div><dt>エリア</dt><dd>{seat.sectionLabel}</dd></div>}
           <div className="seat-value"><dt>列</dt><dd>{formatRowLabel(seat.rowLabel)}</dd></div>

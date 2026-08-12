@@ -54,4 +54,15 @@ describe('ResultCard', () => {
     expect(screen.getByText('抽選範囲')).toBeInTheDocument()
     expect(screen.getByText(/固定席のみ。アリーナ／floor席を含まず/)).toBeInTheDocument()
   })
+
+  it('schema v2の選択configuration名を抽選結果に表示する', () => {
+    render(<ResultCard {...{
+      seat: { ...baseSeat, layoutId: 'with-hanamichi', layoutName: '花道あり' },
+      venueName: '明治座',
+      configurationName: '花道あり',
+      shareStatus: '', onRetry: vi.fn(), onChangeConditions: vi.fn(), onShare: vi.fn(),
+    }} />)
+    expect(screen.getByText('座席配置')).toBeInTheDocument()
+    expect(screen.getByText('花道あり')).toBeInTheDocument()
+  })
 })

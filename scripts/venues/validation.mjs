@@ -193,12 +193,12 @@ export const validRangeSeatCount = (range) => {
     !isPlainObject(range) ||
     !Number.isSafeInteger(range.from) ||
     !Number.isSafeInteger(range.to) ||
-    range.from <= 0 ||
+    range.from < 0 ||
     range.to < range.from ||
     !Array.isArray(range.excluded ?? [])
   ) return undefined
   const excluded = range.excluded ?? []
-  if (excluded.some((number) => !Number.isSafeInteger(number) || number <= 0 || number < range.from || number > range.to)) return undefined
+  if (excluded.some((number) => !Number.isSafeInteger(number) || number < 0 || number < range.from || number > range.to)) return undefined
   if (new Set(excluded).size !== excluded.length) return undefined
   return range.to - range.from + 1 - excluded.length
 }
@@ -227,8 +227,8 @@ const validateRanges = (data, label, issues) => {
     }
     validateString(range.rowLabel, `${prefix} rowLabel`, issues, { nonEmpty: true })
     if (![range.from, range.to].every(Number.isSafeInteger)) issues.error(`${prefix} from/to must be safe integers`)
-    if (Number.isSafeInteger(range.from) && range.from <= 0) issues.error(`${prefix} from must be positive`)
-    if (Number.isSafeInteger(range.to) && range.to <= 0) issues.error(`${prefix} to must be positive`)
+    if (Number.isSafeInteger(range.from) && range.from < 0) issues.error(`${prefix} from must be non-negative`)
+    if (Number.isSafeInteger(range.to) && range.to < 0) issues.error(`${prefix} to must be non-negative`)
     if (Number.isSafeInteger(range.from) && Number.isSafeInteger(range.to) && range.from > range.to) {
       issues.error(`${prefix} has from > to`)
     }
@@ -238,7 +238,7 @@ const validateRanges = (data, label, issues) => {
     else {
       const seenExcluded = new Set()
       for (const number of excluded) {
-        if (!Number.isSafeInteger(number) || number <= 0) issues.error(`${prefix} excluded must contain safe positive integers`)
+        if (!Number.isSafeInteger(number) || number < 0) issues.error(`${prefix} excluded must contain safe non-negative integers`)
         if (seenExcluded.has(number)) issues.error(`${prefix} has duplicate exclusion ${number}`)
         seenExcluded.add(number)
         if (Number.isSafeInteger(range.from) && Number.isSafeInteger(range.to) && (number < range.from || number > range.to)) {

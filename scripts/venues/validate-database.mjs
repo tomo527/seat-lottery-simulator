@@ -31,23 +31,30 @@ for (const entry of catalog) {
   if (!productionIds.has(entry.id)) errors.push(`${entry.id}: non-production source is present in generated catalog`)
   if (!entry.region || entry.region !== regionForPrefecture(entry.prefecture)) errors.push(`${entry.id}: catalog region is invalid`)
   if (!entry.municipality?.trim()) errors.push(`${entry.id}: catalog municipality is missing`)
-  const detailPath = path.join(DETAIL_DIR, `${entry.id}.json`)
-  if (!(await exists(detailPath))) {
-    errors.push(`${entry.id}: generated detail file is missing`)
-    continue
-  }
-  try {
-    const detail = JSON.parse(await readFile(detailPath, 'utf8'))
-    if (detail.totalSeatCount !== entry.seatCount) errors.push(`${entry.id}: catalog/detail count mismatch`)
-    if (calculateSeatCount(detail.ranges ?? []) !== detail.totalSeatCount) errors.push(`${entry.id}: detail calculated count mismatch`)
-    if (/source|checkedAt|verification|completenessBasis|transformation|knownLimitations/.test(JSON.stringify(detail))) {
-      errors.push(`${entry.id}: source/research metadata leaked into runtime detail`)
+  const configurations = entry.schemaVersion === 2 ? entry.configurations : [entry]
+  for (const configuration of configurations) {
+    const detailId = entry.schemaVersion === 2 ? `${entry.id}--${configuration.id}` : entry.id
+    const detailPath = path.join(DETAIL_DIR, `${detailId}.json`)
+    if (!(await exists(detailPath))) {
+      errors.push(`${detailId}: generated detail file is missing`)
+      continue
     }
-  } catch (error) {
-    errors.push(`${entry.id}: generated detail cannot be read: ${error.message}`)
+    try {
+      const detail = JSON.parse(await readFile(detailPath, 'utf8'))
+      if (detail.totalSeatCount !== configuration.seatCount) errors.push(`${detailId}: catalog/detail count mismatch`)
+      if (calculateSeatCount(detail.ranges ?? []) !== detail.totalSeatCount) errors.push(`${detailId}: detail calculated count mismatch`)
+      if (detail.schemaVersion === 2 && (detail.venueId !== entry.id || detail.configurationId !== configuration.id)) {
+        errors.push(`${detailId}: configuration identity mismatch`)
+      }
+      if (/source|checkedAt|verification|completenessBasis|transformation|knownLimitations/.test(JSON.stringify(detail))) {
+        errors.push(`${detailId}: source/research metadata leaked into runtime detail`)
+      }
+    } catch (error) {
+      errors.push(`${detailId}: generated detail cannot be read: ${error.message}`)
+    }
   }
 }
-if (catalog.some((entry) => !expectedDetails.has(entry.id)) || catalog.length !== expectedCatalog.length) {
+if (catalog.length !== expectedCatalog.length || [...expectedDetails.keys()].some((id) => !catalog.some((entry) => entry.id === id || id.startsWith(`${entry.id}--`)))) {
   errors.push('generated catalog production membership is invalid')
 }
 
@@ -59,11 +66,12 @@ try {
 }
 const detailFiles = (await readdir(DETAIL_DIR).catch(() => [])).filter((file) => file.endsWith('.json')).sort()
 const detailSizes = []
+const expectedDetailIds = new Set(expectedDetails.keys())
 for (const file of detailFiles) {
   const fullPath = path.join(DETAIL_DIR, file)
   const size = (await stat(fullPath)).size
   detailSizes.push({ file, bytes: size })
-  if (!productionIds.has(path.basename(file, '.json'))) errors.push(`${file}: non-production generated detail exists`)
+  if (!expectedDetailIds.has(path.basename(file, '.json'))) errors.push(`${file}: non-production generated detail exists`)
 }
 const sizeAnalysis = analyzeDatabaseSizes({
   catalogBytes: catalogSize,
@@ -81,6 +89,7 @@ if (errors.length) {
   console.error(errors.join('\n'))
   process.exitCode = 1
 } else {
-  const totalSeats = catalog.reduce((sum, item) => sum + item.seatCount, 0)
-  console.log(`Validated ${catalog.length} production venues and ${totalSeats.toLocaleString('ja-JP')} seats (${validation.warnings.length + inventoryValidation.warnings.length + sizeIssues.warnings.length} warnings).`)
+  const configurations = catalog.flatMap((entry) => entry.schemaVersion === 2 ? entry.configurations : [entry])
+  const totalSeats = configurations.reduce((sum, item) => sum + item.seatCount, 0)
+  console.log(`Validated ${catalog.length} production venues, ${configurations.length} selectable configurations, and ${totalSeats.toLocaleString('ja-JP')} configuration-seat records (${validation.warnings.length + inventoryValidation.warnings.length + sizeIssues.warnings.length} warnings).`)
 }

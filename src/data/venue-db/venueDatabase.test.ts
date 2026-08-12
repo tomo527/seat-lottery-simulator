@@ -6,9 +6,10 @@ import { describe, expect, it } from 'vitest'
 import fingerprintJson from '../../../data/venue-fingerprints/production.json'
 import catalogJson from './catalog.generated.json'
 import { countRangeSeats, prepareVenueSampler, seatAtOffset } from '../../domain/seats/rangeSampler'
-import type { LegacyVenueCatalogEntry, VenueSeatDefinition } from '../../types/venue'
+import { isMultiConfigurationVenue, resolveVenueSelection } from './catalog'
+import type { VenueCatalogEntry, VenueRuntimeSelection, VenueSeatDefinition } from '../../types/venue'
 
-const catalog = catalogJson as LegacyVenueCatalogEntry[]
+const catalog = catalogJson as VenueCatalogEntry[]
 const legacyVenues = {
   'hakuju-hall-standard': { count: 300, samples: ['main/A/1', 'main/M/7', 'main/P/17'] },
   'hamarikyu-asahi-hall-standard': { count: 552, samples: ['first-floor/1/1', 'first-floor/14/13', 'second-floor-center/3/20'] },
@@ -23,14 +24,54 @@ const legacyVenues = {
   'tokyo-geigeki-theatre-east-pattern-a': { count: 272, samples: ['main/A/3', 'main/G/13', 'main/N/22'] },
   'toppan-hall-standard': { count: 408, samples: ['main/A/1', 'main/H/16', 'main/S/21'] },
 } as const
+type Fingerprint = { count: number; samples: string[]; sha256: string }
+type SourceReference = { id: string; official: boolean; roles: string[]; publisher: string; title: string; url: string; checkedAt: string }
+type SourceRange = { areaId?: string; rowLabel: string; from: number; to: number; excluded?: number[] }
+type V2ConfigurationSource = {
+  id: string
+  canonicalName: string
+  status: string
+  selectable: boolean
+  expectedSeatCount: number
+  sourceIds: string[]
+  sourceGeneration: string
+  wheelchairSemantics: unknown
+  verification: { status: string; method: string; unresolvedIssues: string[] }
+  ranges: SourceRange[]
+}
+type V2VenueSource = {
+  schemaVersion: 2
+  status: string
+  id: string
+  sources: SourceReference[]
+  configurations: V2ConfigurationSource[]
+}
+type LegacyVenueSource = {
+  schemaVersion?: 1
+  status: string
+  id: string
+  name: string
+  prefecture: string
+  city: string
+  aliases: string[]
+  venueType: string
+  sources: SourceReference[]
+  representativePattern: { id: string; name: string; coverage: string; expectedSeatCount: number }
+  verification: { status: string; method: string; unresolvedIssues: string[] }
+  ranges: SourceRange[]
+}
+type VenueSource = V2VenueSource | LegacyVenueSource
 const fingerprintManifest = fingerprintJson as {
   manifestVersion: number
   reviewPolicy: string
-  venues: Record<string, { count: number; samples: string[]; sha256: string }>
+  venues: Record<string, Fingerprint | { schemaVersion: 2; configurations: Record<string, Fingerprint> }>
 }
 const protectedVenues = fingerprintManifest.venues
-const detailFor = async (venue: LegacyVenueCatalogEntry): Promise<VenueSeatDefinition> =>
+const detailFor = async (venue: VenueRuntimeSelection): Promise<VenueSeatDefinition> =>
   JSON.parse(await readFile(path.join(process.cwd(), 'public', venue.dataPath), 'utf8')) as VenueSeatDefinition
+const selectionsFor = (venue: VenueCatalogEntry): VenueRuntimeSelection[] => isMultiConfigurationVenue(venue)
+  ? venue.configurations.map(({ id }) => resolveVenueSelection(venue, id)!).filter(Boolean)
+  : [resolveVenueSelection(venue)!]
 
 describe('production venue database', () => {
   it('既存12会場を軽量catalogに維持する', () => {
@@ -40,23 +81,28 @@ describe('production venue database', () => {
   })
 
   it('全production会場の圧縮range・総数・先頭中間末尾を検証する', async () => {
-    for (const venue of catalog) {
-      const definition = await detailFor(venue)
-      expect(JSON.stringify(definition), `${venue.id}: runtime detail leak`).not.toMatch(
-        /source|checkedAt|verification|completenessBasis|transformation|knownLimitations|https?:\/\//,
-      )
-      const total = definition.ranges.reduce((sum, range) => sum + countRangeSeats(range), 0)
-      expect(total, venue.id).toBe(venue.seatCount)
-      expect(definition.totalSeatCount, venue.id).toBe(venue.seatCount)
-      const prepared = prepareVenueSampler(definition)
-      const expected = protectedVenues[venue.id as keyof typeof protectedVenues]
-      expect(expected?.samples, `${venue.id}: fingerprint offset samples`).toHaveLength(3)
-      for (const [index, offset] of [0, Math.floor(total / 2), total - 1].entries()) {
-        const seat = seatAtOffset(prepared, venue, offset)
-        expect(seat.number, `${venue.id}:${offset}`).toBeGreaterThan(0)
-        if (expected) {
-          expect(total, venue.id).toBe(expected.count)
-          expect(`${seat.sectionId}/${seat.rowLabel}/${seat.number}`, `${venue.id}:${offset}`).toBe(expected.samples[index])
+    for (const venueGroup of catalog) {
+      for (const venue of selectionsFor(venueGroup)) {
+        const definition = await detailFor(venue)
+        expect(JSON.stringify(definition), `${venue.id}: runtime detail leak`).not.toMatch(
+          /source|checkedAt|verification|completenessBasis|transformation|knownLimitations|https?:\/\//,
+        )
+        const total = definition.ranges.reduce((sum, range) => sum + countRangeSeats(range), 0)
+        expect(total, venue.id).toBe(venue.seatCount)
+        expect(definition.totalSeatCount, venue.id).toBe(venue.seatCount)
+        const prepared = prepareVenueSampler(definition)
+        const manifestEntry = protectedVenues[venue.id]
+        const expected = 'configurationId' in venue && venue.configurationId && manifestEntry && 'configurations' in manifestEntry
+          ? manifestEntry.configurations[venue.configurationId]
+          : manifestEntry as Fingerprint
+        expect(expected?.samples, `${venue.id}: fingerprint offset samples`).toHaveLength(3)
+        for (const [index, offset] of [0, Math.floor(total / 2), total - 1].entries()) {
+          const seat = seatAtOffset(prepared, venue, offset)
+          expect(seat.number, `${venue.id}:${offset}`).toBeGreaterThanOrEqual(0)
+          if (expected) {
+            expect(total, venue.id).toBe(expected.count)
+            expect(`${seat.sectionId}/${seat.rowLabel}/${seat.number}`, `${venue.id}:${offset}`).toBe(expected.samples[index])
+          }
         }
       }
     }
@@ -68,43 +114,65 @@ describe('production venue database', () => {
     expect(Object.keys(fingerprintManifest.venues).sort()).toEqual(catalog.map(({ id }) => id).sort())
     for (const venue of catalog) {
       const sourcePath = path.join(process.cwd(), 'data', 'venue-sources', `${venue.id}.json`)
-      const source = JSON.parse(await readFile(sourcePath, 'utf8')) as {
-        status: string
-        id: string
-        name: string
-        prefecture: string
-        city: string
-        aliases: string[]
-        venueType: string
-        sources: { id: string; official: boolean; roles: string[]; publisher: string; title: string; url: string; checkedAt: string }[]
-        representativePattern: { id: string; name: string; coverage: string; expectedSeatCount: number }
-        verification: { status: string; method: string; unresolvedIssues: string[] }
-        ranges: { areaId?: string; rowLabel: string; from: number; to: number; excluded?: number[] }[]
-      }
+      const source = JSON.parse(await readFile(sourcePath, 'utf8')) as VenueSource
       expect(source.status, venue.id).toBe('production')
       expect(source.sources.length, venue.id).toBeGreaterThan(0)
       expect(source.sources.every((item) => item.official && item.roles.length > 0 && item.url.startsWith('https://') && Boolean(item.checkedAt)), venue.id).toBe(true)
-      expect(source.representativePattern.coverage, venue.id).toBe('complete')
-      expect(source.representativePattern.expectedSeatCount, venue.id).toBe(venue.seatCount)
-      expect(source.verification.status, venue.id).toBe('verified')
-      expect(source.verification.unresolvedIssues, venue.id).toEqual([])
-      const expectedHash = fingerprintManifest.venues[venue.id]?.sha256
+      if (source.schemaVersion === 2) {
+        const manifestEntry = fingerprintManifest.venues[venue.id]
+        expect(manifestEntry && 'configurations' in manifestEntry ? Object.keys(manifestEntry.configurations).sort() : [], venue.id)
+          .toEqual(source.configurations.filter((item) => item.status === 'production' && item.selectable).map((item) => item.id).sort())
+        expect(manifestEntry && 'configurations' in manifestEntry ? manifestEntry.schemaVersion : undefined, venue.id).toBe(2)
+        for (const configuration of source.configurations.filter((item) => item.status === 'production' && item.selectable)) {
+          expect(configuration.verification.status, venue.id + '/' + configuration.id).toBe('verified')
+          expect(configuration.verification.unresolvedIssues, venue.id + '/' + configuration.id).toEqual([])
+          const expected = manifestEntry && 'configurations' in manifestEntry ? manifestEntry.configurations[configuration.id] : undefined
+          expect(expected?.count, venue.id + '/' + configuration.id).toBe(configuration.expectedSeatCount)
+          const semanticSnapshot = {
+            venueId: source.id,
+            configurationId: configuration.id,
+            canonicalName: configuration.canonicalName,
+            expectedSeatCount: configuration.expectedSeatCount,
+            calculatedSeatCount: configuration.ranges.reduce((sum, range) => sum + countRangeSeats(range), 0),
+            sourceIds: [...configuration.sourceIds].sort(),
+            sourceGeneration: configuration.sourceGeneration,
+            wheelchairSemantics: configuration.wheelchairSemantics,
+            verificationMethod: configuration.verification.method,
+            ranges: configuration.ranges.map((range) => ({
+              areaId: range.areaId ?? 'main',
+              rowLabel: range.rowLabel,
+              from: range.from,
+              to: range.to,
+              excluded: [...(range.excluded ?? [])].sort((left: number, right: number) => left - right),
+            })),
+          }
+          expect(createHash('sha256').update(JSON.stringify(semanticSnapshot)).digest('hex'), venue.id + '/' + configuration.id).toBe(expected?.sha256)
+        }
+        continue
+      }
+      const legacySource = source
+      expect(legacySource.representativePattern.coverage, venue.id).toBe('complete')
+      expect(legacySource.representativePattern.expectedSeatCount, venue.id).toBe('seatCount' in venue ? venue.seatCount : undefined)
+      expect(legacySource.verification.status, venue.id).toBe('verified')
+      expect(legacySource.verification.unresolvedIssues, venue.id).toEqual([])
+      const legacyFingerprint = fingerprintManifest.venues[venue.id] as Fingerprint
+      const expectedHash = legacyFingerprint?.sha256
       expect(expectedHash, `${venue.id} must have a reviewed fingerprint`).toBeTruthy()
       if (expectedHash) {
         const semanticSnapshot = {
-          id: source.id,
-          name: source.name,
-          prefecture: source.prefecture,
-          city: source.city,
-          aliases: source.aliases,
-          venueType: source.venueType,
+          id: legacySource.id,
+          name: legacySource.name,
+          prefecture: legacySource.prefecture,
+          city: legacySource.city,
+          aliases: legacySource.aliases,
+          venueType: legacySource.venueType,
           pattern: {
-            id: source.representativePattern.id,
-            name: source.representativePattern.name,
-            expectedSeatCount: source.representativePattern.expectedSeatCount,
+            id: legacySource.representativePattern.id,
+            name: legacySource.representativePattern.name,
+            expectedSeatCount: legacySource.representativePattern.expectedSeatCount,
           },
-          calculatedSeatCount: source.ranges.reduce((sum, range) => sum + countRangeSeats(range), 0),
-          sources: source.sources.map((item) => ({
+          calculatedSeatCount: legacySource.ranges.reduce((sum, range) => sum + countRangeSeats(range), 0),
+          sources: legacySource.sources.map((item) => ({
             id: item.id,
             official: item.official,
             roles: [...item.roles].sort(),
@@ -113,8 +181,8 @@ describe('production venue database', () => {
             url: item.url,
             checkedAt: item.checkedAt,
           })),
-          verificationMethod: source.verification.method,
-          ranges: source.ranges.map((range) => ({
+          verificationMethod: legacySource.verification.method,
+          ranges: legacySource.ranges.map((range) => ({
             areaId: range.areaId ?? 'main',
             rowLabel: range.rowLabel,
             from: range.from,

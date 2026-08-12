@@ -273,6 +273,7 @@ function App() {
             <ResultCard
               seat={result}
               venueName={venueName}
+              configurationName={sourceMode === 'venue' && selectedVenueGroup && isMultiConfigurationVenue(selectedVenueGroup) ? selectedVenue?.representativePatternName : undefined}
               scopeDisclosure={sourceMode === 'venue' ? selectedVenue?.scopeDisclosure : undefined}
               shareStatus={shareStatus}
               onRetry={startDraw}

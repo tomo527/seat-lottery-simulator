@@ -372,6 +372,39 @@
     "dataPath": "/venue-db/venues/line-cube-shibuya-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "meijiza-standard",
+    "venueGroupId": "meijiza-standard",
+    "name": "明治座",
+    "searchAliases": [
+      "明治座東京"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "with-hanamichi",
+        "canonicalName": "花道あり",
+        "seatCount": 1368,
+        "dataPath": "/venue-db/venues/meijiza-standard--with-hanamichi.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "明治座が公式に定義する「花道あり」の固定番号席のみを抽選します。2階左右コーナーの無番号車いすスペース、補助席、注釈付き席、立ち見は抽選対象に含みません。",
+        "fixedOnly": false
+      },
+      {
+        "id": "without-hanamichi",
+        "canonicalName": "花道なし",
+        "seatCount": 1448,
+        "dataPath": "/venue-db/venues/meijiza-standard--without-hanamichi.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "明治座が公式に定義する「花道なし」の固定番号席のみを抽選します。2階左右コーナーの無番号車いすスペース、補助席、注釈付き席、立ち見は抽選対象に含みません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "mitaka-arts-wind-hall-standard",
     "name": "三鷹市芸術文化センター 風のホール",
     "searchAliases": [

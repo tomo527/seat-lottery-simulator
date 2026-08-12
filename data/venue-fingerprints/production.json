@@ -245,6 +245,29 @@
       ],
       "sha256": "8c2e957ee43f491d9f152734b1a3d9993c76e1078ce4da97703aabbd0efb890a"
     },
+    "meijiza-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "with-hanamichi": {
+          "count": 1368,
+          "samples": [
+            "first-floor-left-stairs/左1/1",
+            "first-floor-main/15/29",
+            "third-floor-right-side/右2/13"
+          ],
+          "sha256": "6ee12d780d6b444f940b914f5c57dca4aa1219f06a1140b8de7b023c27ab03da"
+        },
+        "without-hanamichi": {
+          "count": 1448,
+          "samples": [
+            "first-floor-left-stairs/左1/1",
+            "first-floor-main/15/9",
+            "third-floor-right-side/右2/13"
+          ],
+          "sha256": "e829c43fc2907876e004aaa636e0afd5562b22330925764e140b2ed28466a4aa"
+        }
+      }
+    },
     "mitaka-arts-wind-hall-standard": {
       "count": 622,
       "samples": [

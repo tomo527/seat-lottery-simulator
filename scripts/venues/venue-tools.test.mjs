@@ -180,6 +180,16 @@ describe('venue source validation', () => {
     expect(errors).toMatch(/overlaps range/)
   })
 
+  it('accepts an issuer-owned seat number 0 but rejects negative seat IDs', () => {
+    const numberedZero = sourceV2({ configurations: [configurationV2({
+      expectedSeatCount: 4,
+      ranges: [{ areaId: 'main', areaLabel: '客席', rowLabel: '左1', from: 0, to: 3, excluded: [] }],
+    })] })
+    expect(errorsFor(numberedZero)).toBe('')
+    numberedZero.configurations[0].ranges[0].from = -1
+    expect(errorsFor(numberedZero)).toMatch(/non-negative/)
+  })
+
   it('rejects count mismatch, incomplete verification, and incomplete coverage', () => {
     const mismatch = source({ representativePattern: { ...source().representativePattern, expectedSeatCount: 4 } })
     expect(errorsFor(mismatch)).toMatch(/expected 4, calculated 3/)

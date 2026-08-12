@@ -18,8 +18,16 @@ for (const key of Object.keys(byRegion).sort()) console.log(`  ${key}: ${byRegio
 console.log('By prefecture:')
 for (const key of Object.keys(byPrefecture).sort()) console.log(`  ${key}: ${byPrefecture[key].length}`)
 for (const entry of catalog) {
-  const ranges = sources.find(({ data }) => data.id === entry.id)?.data.ranges.length ?? 0
-  console.log(`  ${entry.id}: ${ranges} ranges, ${entry.seatCount.toLocaleString('ja-JP')} seats, ${entry.dataPath}`)
+  if (entry.schemaVersion === 2) {
+    const source = sources.find(({ data }) => data.id === entry.id)?.data
+    for (const configuration of entry.configurations) {
+      const ranges = source?.configurations?.find(({ id }) => id === configuration.id)?.ranges.length ?? 0
+      console.log(`  ${entry.id}/${configuration.id}: ${ranges} ranges, ${configuration.seatCount.toLocaleString('ja-JP')} seats, ${configuration.dataPath}`)
+    }
+  } else {
+    const ranges = sources.find(({ data }) => data.id === entry.id)?.data.ranges.length ?? 0
+    console.log(`  ${entry.id}: ${ranges} ranges, ${entry.seatCount.toLocaleString('ja-JP')} seats, ${entry.dataPath}`)
+  }
 }
 const total = sizes.reduce((sum, item) => sum + item.bytes, 0)
 const largest = sizes.reduce((left, right) => left.bytes >= right.bytes ? left : right)

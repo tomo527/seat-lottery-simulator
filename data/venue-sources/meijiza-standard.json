@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "meijiza-standard",
   "name": "明治座",
   "prefecture": "東京都",
@@ -9,17 +9,6 @@
     "明治座東京"
   ],
   "venueType": "theater",
-  "representativePattern": {
-    "id": "policy-schema-hold-unselected",
-    "name": "代表配置未選定",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式は花道あり1,368席と花道なし1,448席の2つの完全な番号席配置を並列掲載し、花道使用は公演ごとに異なると明記する。通常・標準・既定配置の指定がないため、どちらかを抽選用代表として選ぶとrepository側のpolicy創作になる。",
-    "notIncludedPatterns": [
-      "代表配置決定前の花道あり1,368席配置",
-      "代表配置決定前の花道なし1,448席配置"
-    ]
-  },
   "sources": [
     {
       "id": "official-seat-guide",
@@ -32,7 +21,7 @@
       "publisher": "株式会社明治座",
       "title": "劇場座席表",
       "url": "https://www.meijiza.co.jp/theater-guide/seat/",
-      "checkedAt": "2026-08-10"
+      "checkedAt": "2026-08-12"
     },
     {
       "id": "official-seat-map-without-hanamichi",
@@ -45,7 +34,7 @@
       "publisher": "株式会社明治座",
       "title": "花道なし座席表",
       "url": "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat-none.pdf",
-      "checkedAt": "2026-08-10"
+      "checkedAt": "2026-08-12"
     },
     {
       "id": "official-seat-map-with-hanamichi",
@@ -58,7 +47,7 @@
       "publisher": "株式会社明治座",
       "title": "花道あり座席表",
       "url": "https://www.meijiza.co.jp/wp-content/uploads/2023/01/seat.pdf",
-      "checkedAt": "2026-08-10"
+      "checkedAt": "2026-08-12"
     },
     {
       "id": "official-barrier-free-guide",
@@ -70,7 +59,7 @@
       "publisher": "株式会社明治座",
       "title": "バリアフリー",
       "url": "https://www.meijiza.co.jp/theater-guide/barrierfree/",
-      "checkedAt": "2026-08-10"
+      "checkedAt": "2026-08-12"
     },
     {
       "id": "official-event-without-hanamichi",
@@ -81,7 +70,7 @@
       "publisher": "株式会社明治座",
       "title": "『忠臣蔵』公演詳細",
       "url": "https://www.meijiza.co.jp/info/2025/2025_12_01/",
-      "checkedAt": "2026-08-10"
+      "checkedAt": "2026-08-12"
     },
     {
       "id": "official-event-with-hanamichi",
@@ -92,63 +81,2531 @@
       "publisher": "株式会社明治座",
       "title": "SHOW-WA&MATSURIコンサート2025 in 明治座",
       "url": "https://www.meijiza.co.jp/info/2025/2025_09_02/",
-      "checkedAt": "2026-08-10"
+      "checkedAt": "2026-08-12"
     },
     {
-      "id": "official-event-supplemental-sales",
+      "id": "official-current-first-floor-with-hanamichi",
       "official": true,
       "roles": [
+        "seat-structure",
+        "seat-count",
         "event-layout"
       ],
       "publisher": "株式会社明治座",
-      "title": "Ms.OOJA 明治座公演 2026",
-      "url": "https://www.meijiza.co.jp/info/2026/2026_06_01/",
-      "checkedAt": "2026-08-10"
+      "title": "現行1階座席図 花道あり",
+      "url": "https://www.meijiza.co.jp/wp-content/uploads/2023/03/seat-hanamichi.png",
+      "checkedAt": "2026-08-12"
+    },
+    {
+      "id": "official-current-first-floor-without-hanamichi",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "現行1階座席図 花道なし",
+      "url": "https://assets.meijiza.co.jp/wp-content/uploads/2023/03/01145821/seat1f.png",
+      "checkedAt": "2026-08-12"
+    },
+    {
+      "id": "official-current-second-floor-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "現行2階座席図",
+      "url": "https://www.meijiza.co.jp/wp-content/uploads/2023/03/seat2f.png",
+      "checkedAt": "2026-08-12"
+    },
+    {
+      "id": "official-current-third-floor-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "株式会社明治座",
+      "title": "現行3階座席図",
+      "url": "https://www.meijiza.co.jp/wp-content/uploads/2023/03/seat3f.png",
+      "checkedAt": "2026-08-12"
     }
   ],
-  "registeredScope": "POLICY/SCHEMA HOLD。代表配置を選定できないため番号席rangeは登録しない。",
-  "completenessBasis": "現行公式座席ページと2つの公式PDFは、花道ありを1F 834・2F 390・3F 144（計1,368）、花道なしを1F 914・2F 390・3F 144（計1,448）として完全に別掲載する。公式公演詳細にも花道あり・なしの双方の実運用例があり、施設ページは使用状態を公演ごとに確認するよう案内する。",
-  "transformation": "代表配置ゲートで停止したためrange転記を開始しない。1,368又は1,448を通常値として採用せず、両配置を混在させず、最大値選択や席数合わせを行わない。",
-  "knownLimitations": [
-    "POLICY HOLD: 花道あり・なしは同格の現行公式配置であり、発行者は通常・標準・既定の代表配置を指定していない。",
-    "公式2図の比較では花道あり配置で1F各1～20列の7～10番がなく、公式1F合計も914から834へ80席減る。ただし、この差は花道なしを代表にする根拠ではない。",
-    "SCHEMA HOLD: 公式は2階左右コーナーの車いすスペースを案内し、公演ごとの予約方法へ委ねるが、個別番号又は2階390番号席との撤去・置換対応を公表していない。",
-    "席選択可否、注釈付き席、補助席、立ち見の販売は公演・販売段階ごとに変わり、1つの通常固定番号席集合を選ぶ根拠にならない。"
+  "configurations": [
+    {
+      "id": "with-hanamichi",
+      "canonicalName": "花道あり",
+      "issuerDefinedCondition": "株式会社明治座の現行座席ページが「花道あり」として公演ごとに使用を分け、対応する完全座席図を公開している配置。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-12 current official seat page and current first/second/third-floor images; official downloadable PDF cross-check",
+      "sourceIds": [
+        "official-seat-guide",
+        "official-seat-map-with-hanamichi",
+        "official-current-first-floor-with-hanamichi",
+        "official-current-second-floor-map",
+        "official-current-third-floor-map",
+        "official-barrier-free-guide",
+        "official-event-with-hanamichi"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-guide",
+        "official-seat-map-without-hanamichi",
+        "official-seat-map-with-hanamichi",
+        "official-current-first-floor-with-hanamichi",
+        "official-current-first-floor-without-hanamichi",
+        "official-event-with-hanamichi"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1368,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "明治座が公式に定義する「花道あり」の固定番号席のみを抽選します。2階左右コーナーの無番号車いすスペース、補助席、注釈付き席、立ち見は抽選対象に含みません。",
+      "wheelchairSemantics": {
+        "status": "resolved",
+        "description": "現行公式座席ページは2階390番号席を全番号表示した上で、左右コーナーの車いすスペースを別の無番号アイコンとして番号席外に配置する。バリアフリー案内も同じ左右コーナーを恒久スペースとして示し、番号席の撤去・置換を示さないため、このconfigurationは固定番号席だけを含み、車いすスペースは共通の非selectable・無番号scopeとして除外する。",
+        "sourceIds": [
+          "official-seat-guide",
+          "official-current-second-floor-map",
+          "official-barrier-free-guide"
+        ]
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-12",
+        "method": "independent-official-source-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {
+          "areaId": "first-floor-left-stairs",
+          "areaLabel": "1階左上段席",
+          "rowLabel": "左1",
+          "from": 1,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-stairs",
+          "areaLabel": "1階左上段席",
+          "rowLabel": "左2",
+          "from": 2,
+          "to": 19,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "3",
+          "from": 3,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "3",
+          "from": 39,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "4",
+          "from": 39,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "5",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "6",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "7",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "8",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "9",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "10",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "11",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "12",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "13",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "14",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "15",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "16",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "17",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "18",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "19",
+          "from": 39,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-stairs",
+          "areaLabel": "1階右上段席",
+          "rowLabel": "右1",
+          "from": 1,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-stairs",
+          "areaLabel": "1階右上段席",
+          "rowLabel": "右2",
+          "from": 2,
+          "to": 19,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "1",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "1",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "1",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "2",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "2",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "2",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "3",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "3",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "3",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "4",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "4",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "4",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "5",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "5",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "5",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "6",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "6",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "6",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "7",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "7",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "7",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "8",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "8",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "8",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "9",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "9",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "9",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "10",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "10",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "10",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "11",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "11",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "11",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "12",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "12",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "12",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "13",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "13",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "13",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "14",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "14",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "14",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "15",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "15",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "15",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "16",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "16",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "16",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "17",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "17",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "17",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "18",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "18",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "18",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "19",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "19",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "19",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "20",
+          "from": 11,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "20",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "20",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-left-side",
+          "areaLabel": "2階左席",
+          "rowLabel": "左1",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-left-side",
+          "areaLabel": "2階左席",
+          "rowLabel": "左2",
+          "from": 1,
+          "to": 18,
+          "excluded": [
+            2
+          ]
+        },
+        {
+          "areaId": "second-floor-left-side",
+          "areaLabel": "2階左席",
+          "rowLabel": "左3",
+          "from": 3,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-left-side",
+          "areaLabel": "2階左席",
+          "rowLabel": "左4",
+          "from": 7,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "1",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "1",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "1",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 2,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 40,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 2,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 40,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 40,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "5",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "5",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "5",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 2,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 40,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 2,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 18,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 34,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 40,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-right-side",
+          "areaLabel": "2階右席",
+          "rowLabel": "右1",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-right-side",
+          "areaLabel": "2階右席",
+          "rowLabel": "右2",
+          "from": 1,
+          "to": 18,
+          "excluded": [
+            2
+          ]
+        },
+        {
+          "areaId": "second-floor-right-side",
+          "areaLabel": "2階右席",
+          "rowLabel": "右3",
+          "from": 3,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-right-side",
+          "areaLabel": "2階右席",
+          "rowLabel": "右4",
+          "from": 7,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-left-side",
+          "areaLabel": "3階左席",
+          "rowLabel": "左1",
+          "from": 0,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-left-side",
+          "areaLabel": "3階左席",
+          "rowLabel": "左2",
+          "from": 2,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-main",
+          "areaLabel": "3階席",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-main",
+          "areaLabel": "3階席",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-right-side",
+          "areaLabel": "3階右席",
+          "rowLabel": "右1",
+          "from": 0,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-right-side",
+          "areaLabel": "3階右席",
+          "rowLabel": "右2",
+          "from": 2,
+          "to": 13,
+          "excluded": []
+        }
+      ]
+    },
+    {
+      "id": "without-hanamichi",
+      "canonicalName": "花道なし",
+      "issuerDefinedCondition": "株式会社明治座の現行座席ページが「花道なし」として公演ごとに使用を分け、対応する完全座席図を公開している配置。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-12 current official seat page and current first/second/third-floor images; official downloadable PDF cross-check",
+      "sourceIds": [
+        "official-seat-guide",
+        "official-seat-map-without-hanamichi",
+        "official-current-first-floor-without-hanamichi",
+        "official-current-second-floor-map",
+        "official-current-third-floor-map",
+        "official-barrier-free-guide",
+        "official-event-without-hanamichi"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-guide",
+        "official-seat-map-without-hanamichi",
+        "official-seat-map-with-hanamichi",
+        "official-current-first-floor-with-hanamichi",
+        "official-current-first-floor-without-hanamichi",
+        "official-event-without-hanamichi"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1448,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "明治座が公式に定義する「花道なし」の固定番号席のみを抽選します。2階左右コーナーの無番号車いすスペース、補助席、注釈付き席、立ち見は抽選対象に含みません。",
+      "wheelchairSemantics": {
+        "status": "resolved",
+        "description": "現行公式座席ページは2階390番号席を全番号表示した上で、左右コーナーの車いすスペースを別の無番号アイコンとして番号席外に配置する。バリアフリー案内も同じ左右コーナーを恒久スペースとして示し、番号席の撤去・置換を示さないため、このconfigurationは固定番号席だけを含み、車いすスペースは共通の非selectable・無番号scopeとして除外する。",
+        "sourceIds": [
+          "official-seat-guide",
+          "official-current-second-floor-map",
+          "official-barrier-free-guide"
+        ]
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-12",
+        "method": "independent-official-source-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {
+          "areaId": "first-floor-left-stairs",
+          "areaLabel": "1階左上段席",
+          "rowLabel": "左1",
+          "from": 1,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-stairs",
+          "areaLabel": "1階左上段席",
+          "rowLabel": "左2",
+          "from": 2,
+          "to": 19,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "3",
+          "from": 3,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-left-main",
+          "areaLabel": "1階左席",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "3",
+          "from": 39,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "4",
+          "from": 39,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "5",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "6",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "7",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "8",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "9",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "10",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "11",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "12",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "13",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "14",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "15",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "16",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "17",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "18",
+          "from": 39,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-main",
+          "areaLabel": "1階右席",
+          "rowLabel": "19",
+          "from": 39,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-stairs",
+          "areaLabel": "1階右上段席",
+          "rowLabel": "右1",
+          "from": 1,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-right-stairs",
+          "areaLabel": "1階右上段席",
+          "rowLabel": "右2",
+          "from": 2,
+          "to": 19,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "1",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "1",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "1",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "2",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "2",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "2",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "3",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "3",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "3",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "4",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "4",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "4",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "5",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "5",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "5",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "6",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "6",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "6",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "7",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "7",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "7",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "8",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "8",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "8",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "9",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "9",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "9",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "10",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "10",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "10",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "11",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "11",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "11",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "12",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "12",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "12",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "13",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "13",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "13",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "14",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "14",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "14",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "15",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "15",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "15",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "16",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "16",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "16",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "17",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "17",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "17",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "18",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "18",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "18",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "19",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "19",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "19",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "20",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "20",
+          "from": 17,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-main",
+          "areaLabel": "1階席",
+          "rowLabel": "20",
+          "from": 29,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-left-side",
+          "areaLabel": "2階左席",
+          "rowLabel": "左1",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-left-side",
+          "areaLabel": "2階左席",
+          "rowLabel": "左2",
+          "from": 1,
+          "to": 18,
+          "excluded": [
+            2
+          ]
+        },
+        {
+          "areaId": "second-floor-left-side",
+          "areaLabel": "2階左席",
+          "rowLabel": "左3",
+          "from": 3,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-left-side",
+          "areaLabel": "2階左席",
+          "rowLabel": "左4",
+          "from": 7,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "1",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "1",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "1",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 2,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 40,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 2,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 40,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 40,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "5",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "5",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "5",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 2,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 28,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 40,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 2,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 4,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 18,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 34,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-main",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 40,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-right-side",
+          "areaLabel": "2階右席",
+          "rowLabel": "右1",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-right-side",
+          "areaLabel": "2階右席",
+          "rowLabel": "右2",
+          "from": 1,
+          "to": 18,
+          "excluded": [
+            2
+          ]
+        },
+        {
+          "areaId": "second-floor-right-side",
+          "areaLabel": "2階右席",
+          "rowLabel": "右3",
+          "from": 3,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-right-side",
+          "areaLabel": "2階右席",
+          "rowLabel": "右4",
+          "from": 7,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-left-side",
+          "areaLabel": "3階左席",
+          "rowLabel": "左1",
+          "from": 0,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-left-side",
+          "areaLabel": "3階左席",
+          "rowLabel": "左2",
+          "from": 2,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-main",
+          "areaLabel": "3階席",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-main",
+          "areaLabel": "3階席",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-right-side",
+          "areaLabel": "3階右席",
+          "rowLabel": "右1",
+          "from": 0,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor-right-side",
+          "areaLabel": "3階右席",
+          "rowLabel": "右2",
+          "from": 2,
+          "to": 13,
+          "excluded": []
+        }
+      ]
+    }
   ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": "2026-08-10",
-    "method": "issuer-owned-representative-pattern-gate",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "POLICY HOLD: 発行者が花道あり1,368席と花道なし1,448席のどちらを通常代表とするか指定していない。",
-      "SCHEMA HOLD: 2階左右の無番号車いすスペースと2階390番号席の包含・転換関係及び対象番号が未公表である。",
-      "代表配置が一意でないため、ユーザー指定に従い第1パス、独立第2パス、production gateを開始していない。発行者による通常配置指定と車いす運用の番号対応が必要である。"
-    ]
-  },
-  "ranges": [],
-  "preflight": {
-    "officialFacilityPage": "あり",
-    "officialSeatStructureSource": "あり（花道あり・なしの2配置）",
-    "officialSeatCountSource": "あり（1,368席・1,448席）",
-    "completeNumberedSeatMap": "あり（2配置）",
-    "exactNominalSeatCount": "複数（1,368席・1,448席）",
-    "representativeLayout": "非一意",
-    "fixedSeats": "あり",
-    "movableSeats": "花道設置時に1F 80席差",
-    "wheelchair": "2階左右に無番号スペース、番号席との対応未公表",
-    "pit": "なし",
-    "areas": "1F・2F・3F",
-    "processingRoute": "Hold",
-    "classification": "POLICY/SCHEMA HOLD",
-    "mapUrl": "https://www.meijiza.co.jp/theater-guide/seat/",
-    "countUrl": "https://www.meijiza.co.jp/theater-guide/seat/",
-    "checkedAt": "2026-08-10",
-    "rationale": "花道あり1,368席と花道なし1,448席はいずれも発行者の現行公式番号図で、公演ごとに選択される。通常代表の指定がなく、2階車いすスペースと390番号席の対応も未公表のため、推測による代表選択又はschema補完を禁止する。",
-    "officialFacilityUrl": "https://www.meijiza.co.jp/theater-guide/seat/",
-    "status": "blocked",
-    "rangeEntry": "blocked-policy-schema-hold",
-    "decision": "policy-schema-hold"
+  "officialNonSelectableScopes": [
+    {
+      "id": "wheelchair-spaces",
+      "canonicalName": "2階左右コーナー車いすスペース",
+      "status": "non-selectable",
+      "numberedSeatSet": false,
+      "sourceIds": [
+        "official-seat-guide",
+        "official-current-second-floor-map",
+        "official-barrier-free-guide"
+      ],
+      "reason": "発行者が左右コーナーの無番号スペースとして定義しており、恒久seat IDを持たないため抽選configurationを作成しない。"
+    }
+  ],
+  "pilotReview": {
+    "macro": "TOKYO-CONFIG-PILOT-1",
+    "firstPass": {
+      "sourceIds": [
+        "official-seat-map-without-hanamichi",
+        "official-seat-map-with-hanamichi"
+      ],
+      "completedAt": "2026-08-12",
+      "method": "300dpi official PDF visual transcription",
+      "statusAtCompletion": "draft/selectable-false/verification-pending before independent comparison"
+    },
+    "independentSecondPass": {
+      "sourceIds": [
+        "official-current-first-floor-with-hanamichi",
+        "official-current-first-floor-without-hanamichi",
+        "official-current-second-floor-map",
+        "official-current-third-floor-map",
+        "official-seat-guide",
+        "official-barrier-free-guide"
+      ],
+      "completedAt": "2026-08-12",
+      "method": "fresh current official image extraction and current interactive wheelchair-overlay review",
+      "rangeDiffByConfiguration": {
+        "with-hanamichi": 0,
+        "without-hanamichi": 0
+      },
+      "floorSubtotals": {
+        "with-hanamichi": {
+          "1F": 834,
+          "2F": 390,
+          "3F": 144,
+          "total": 1368
+        },
+        "without-hanamichi": {
+          "1F": 914,
+          "2F": 390,
+          "3F": 144,
+          "total": 1448
+        }
+      },
+      "configurationDifference": {
+        "count": 80,
+        "exactSeatIds": "1階1～20列7～10番",
+        "repositoryInventedDifferences": false
+      }
+    }
   }
 }

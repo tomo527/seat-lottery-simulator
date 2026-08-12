@@ -1,7 +1,7 @@
 # Tokyo coverage universe audit
 
 初回確認日: 2026-08-11（Asia/Tokyo）
-current snapshot更新: 2026-08-12（RELEASE-COVERAGE SCHEMA AUDIT完了後）
+current snapshot更新: 2026-08-12（TOKYO-CONFIG-PILOT-1完了後）
 canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.json](../../data/venue-coverage/tokyo-coverage-universe-2026-08-11.json)
 
 この文書は2026-08-11のuniverse監査結果を起点とする。過去macroの結果はhistorical recordとして保持するが、件数・active queue・Exact next actionは上記canonical inventoryの現在値を用いる。
@@ -13,27 +13,27 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 | 指標 | 件数 |
 |---|---:|
 | Tokyo候補総数 | 76 |
-| PRODUCTION | 8 |
-| HOLD | 54 |
+| PRODUCTION | 9 |
+| HOLD | 53 |
 | CONTRADICTION | 2 |
 | 未調査 | 12 |
 | MUST | 44 |
 | SHOULD | 28 |
 | OPTIONAL | 4 |
 
-現在のMUST内訳は PRODUCTION 4、HOLD 38、CONTRADICTION 2、未調査 0。MUST 44件はすべてformal disposition済みだが、ユーザーが抽選できるMUSTは4件だけである。SHOULD内訳は PRODUCTION 4、HOLD 16、未調査 8。OPTIONAL未調査は4でnon-blocking。formal dispositionは調査工程の完了であり、user-visible coverageの完了ではない。release readinessはNOのまま。
+現在のMUST内訳は PRODUCTION 5、HOLD 37、CONTRADICTION 2、未調査 0。MUST 44件はすべてformal disposition済みだが、ユーザーが抽選できるMUSTは5件だけである。SHOULD内訳は PRODUCTION 4、HOLD 16、未調査 8。OPTIONAL未調査は4でnon-blocking。formal dispositionは調査工程の完了であり、user-visible coverageの完了ではない。release readinessはNOのまま。
 
 ## coverage指標の分離
 
 | 指標 | Tokyo universe | MUST | SHOULD | OPTIONAL |
 |---|---:|---:|---:|---:|
 | Research completeness | 64/76 = **84.2%** | 44/44 = **100.0%** | 20/28 = **71.4%** | 0/4 = **0.0%** |
-| User-visible production coverage | 8/76 = **10.5%** | 4/44 = **9.1%** | 4/28 = **14.3%** | 0/4 = **0.0%** |
+| User-visible production coverage | 9/76 = **11.8%** | 5/44 = **11.4%** | 4/28 = **14.3%** | 0/4 = **0.0%** |
 | Confirmed schema-addressable coverage | 24/76 = **31.6%** | 16/44 = **36.4%** | 8/28 = **28.6%** | 0/4 = **0.0%** |
 
 - `Research completeness` は `PRODUCTION / HOLD / CONTRADICTION` のformal disposition率であり、抽選可能率ではない。
-- `User-visible production coverage` はproduction catalogへ入って実際に抽選できる候補だけを数える。アプリ全体の60会場中、Tokyo coverage universeに該当する主要会場は8件である。
-- `Schema-addressable coverage` は既存PRODUCTION 8件、現行schemaで処理可能と確認できる非production 5件、合理的なmulti-configuration / fixed-only拡張で処理可能性が高い非production 11件の計24件。未調査12件と、追加issuer evidenceが必要な候補は安全側で分子に含めない。
+- `User-visible production coverage` はproduction catalogへ入って実際に抽選できる候補だけを数える。アプリ全体の61会場中、Tokyo coverage universeに該当する主要会場は9件である。
+- `Schema-addressable coverage` は既存PRODUCTION 9件、現行schemaで処理可能と確認できる非production 5件、合理的なmulti-configuration / fixed-only拡張で処理可能性が高い非production 10件の計24件。未調査12件と、追加issuer evidenceが必要な候補は安全側で分子に含めない。
 - schema-addressableはproduction確約ではない。各configurationに完全なissuer-owned番号図・厳密総数・条件・wheelchair semanticsが揃い、従来どおり二つの独立公式source passと`expectedSeatCount == calculatedSeatCount`を通る必要がある。
 
 ### 件数のhistorical snapshot
@@ -43,7 +43,8 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 | LUNA-STD-2完了時 | 8 | 38 | 2 | 28 | 16 | 8 |
 | TERRA-DENSE-1〜4完了時 | 8 | 50 | 2 | 16 | 4 | 8 |
 | SOL-CPLX-1完了後 | 8 | 53 | 2 | 13 | 1 | 8 |
-| **TOKYO-DOME COMPLEX完了後（現在）** | **8** | **54** | **2** | **12** | **0** | **8** |
+| TOKYO-DOME COMPLEX完了後 | 8 | 54 | 2 | 12 | 0 | 8 |
+| **TOKYO-CONFIG-PILOT-1完了後（current）** | **9** | **53** | **2** | **12** | **0** | **8** |
 
 上表の旧件数は各macro当時の結果であり、current queueとして扱わない。
 
@@ -267,6 +268,16 @@ Terra active queueは0件。MUST active research queueも0件。SHOULD 8件の�
 2. `SOL-SHOULD-2`: `toyosu-pit`, `otemachi-mitsui-hall`, `mon-takanawa-box1000`。平土間・大規模event-space型の仮設席、standing、stage、issuer-defined seated layoutを確認。
 3. `SOL-SHOULD-3`: `hulic-hall-tokyo`, `forum-b7`。多目的event hall型の公式番号図／着席layoutと可変stage・販売variantを確認。
 
+### 2026-08-12 `TOKYO-CONFIG-PILOT-1` / 明治座 result
+
+schema v2 real-venue pilotは成功した。現行公式資料を再確認し、`meijiza-standard`を一会場・二configurationへ移行した。`花道あり`は1F 834 + 2F 390 + 3F 144 = 1,368席、`花道なし`は1F 914 + 2F 390 + 3F 144 = 1,448席。両方とも公式PDFからの第1パスと、現行公式floor imageからの独立第2パスが完全一致し、configurationごとの`rangeDiff = 0`、`expected == calculated`、`verified`、未解決issue 0でproduction/selectableになった。80席差は公式図上の`1階1～20列7～10番`だけであり、repository側の差分創作はない。
+
+2階左右コーナーの車いすスペースは、現行公式seat pageが2階390番号席を全て表示した上で番号席block外へ別の無番号アイコンとして表示し、barrier-free guideも同じ左右コーナーを恒久spaceとして案内する。番号席撤去・置換は公式資料に定義されないため、変換configurationを創作せず、二つの固定番号configurationに共通する`officialNonSelectableScope`として記録した。これにより固定番号集合の完全性は損なわれない。
+
+会場単位では明治座を1件だけ加算し、Tokyo user-visible productionは9/76、MUSTは5/44。schema-addressableはmeijizaが非production Aからproductionへ移っただけなので24/76のまま。historical blocker audit A12/B21/C4/D3は保持し、current MUST nonproductionは39件、A11/B21/C4/D3となる。明治座の2configurationは会場を二重計上しない。
+
+残るAは11件。bounded rolloutは `(1) TOKYO-CONFIG-A-CURRENT-1: tokyo-international-forum-a + nntt-opera / Terra high`、`(2) TOKYO-CONFIG-A-ARENA-1: yoyogi-1 + yoyogi-2 + tokyo-gymnasium / Sol high`、`(3) TOKYO-CONFIG-A-ARENA-2: ariake-arena + kanadevia-hall + sgc-hall-ariake / Sol high`、`(4) TOKYO-CONFIG-A-THEATRE-1: ex-theater-ariake + nntt-playhouse + galaxy-theatre / Sol high`とする。SHOULD 8件はA cohort後まで開始しない。
+
 ### 2026-08-12 `TOKYO-CONFIG-SCHEMA-1` implementation result
 
 schema v2、schema v1 single-configuration adapter、configuration-level production validation、`(venueId, configurationId)` runtime key、`venueGroupId` grouping、複数configuration選択UI、fixed-only disclosure、決定論的Tokyo release gateを実装した。既存60 production source、catalog、runtime detail、fingerprintは変更していない。legacy regional shortfallはinformational metricとして保持するが、最終`RELEASE READY`をblockしない。coverage JSONの手動`releaseReady` flagもauthorityから除外し、reporterがrepo stateから各gateをderiveする。
@@ -283,7 +294,9 @@ rolloutは次の順に固定する。
 
 pilotは`meijiza`を推奨する。既存issuer evidenceが花道あり1,368席／花道なし1,448席の二つの完全な固定番号configurationと各公式PDF・実運用例を明示しており、単一representative制約を直接検証できるためである。pilotでは既存のwheelchair semanticsをconfiguration単位で再確認し、未解決なら該当configurationをnon-selectableに保ち、gateを緩和しない。
 
-**Exact next action:** `TOKYO-CONFIG-PILOT-1`を`meijiza` 1会場だけで実行する。pilot成功前に他のA候補、`SOL-SHOULD-1`、残りSHOULD、OPTIONAL、B/C/D holdへ進まない。
+上記はschema macro完了時のhistorical next actionであり、`TOKYO-CONFIG-PILOT-1`は完了済み。
+
+**Exact next action:** `TOKYO-CONFIG-A-CURRENT-1`を`tokyo-international-forum-a`と`nntt-opera`の2会場だけ、**Terra high**で実行する。両会場はcurrent-schema addressableだが大型・高密度公式図のrange転記を要するため、Lunaではなく最小適切modelをTerraとする。他のA、SHOULD 8、OPTIONAL、B/C/D holdへ同じmacroで進まない。
 
 ## source discipline
 
