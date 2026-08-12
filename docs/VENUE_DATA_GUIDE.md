@@ -28,7 +28,7 @@ scripts/venues/                           authoring / build / check / validate /
 - `production`: 代表パターンが完全で、公式根拠と独立二回目照合が完了し、全ゲートを通過したデータ。
 - `rejected`: 公式資料不足、パターン非一意、完全構造化不能などで見送ったデータ。`rejectionReason`を必須とし、0席・`ranges: []`を許可してruntime生成対象外とする。
 
-`draft`や`rejected`をproductionと同じファイルに混在させません。1ファイルは1会場・1代表パターンです。
+schema v1では`draft`や`rejected`をproductionと同じファイルに混在させず、1ファイルを1会場・1代表パターンとして扱います。schema v2ではtop-level `status`を会場調査状態、`configurations[].status/selectable`をconfigurationごとの公開可否として分離します。完全なconfigurationと不完全な公式variantは同居できますが、不完全variantは`draft`かつ`selectable: false`でなければなりません。
 
 ## source schema
 
@@ -86,6 +86,78 @@ scripts/venues/                           authoring / build / check / validate /
 }
 ```
 
+schema v1は既存sourceと生成物の互換契約として維持します。build/runtime内部では1 configurationへ正規化しますが、既存source JSON、catalog、runtime detail、fingerprintへv2 fieldを追加しません。
+
+## schema v2: issuer-defined configurations
+
+1会場に、issuerがそれぞれ独立して完全定義した複数配置がある場合だけschema v2を使います。概形は次のとおりです。
+
+```json
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "example-theatre",
+  "name": "Example Theatre",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": [],
+  "venueType": "theater",
+  "sources": [],
+  "configurations": [
+    {
+      "id": "with-pit",
+      "canonicalName": "オーケストラピット使用時",
+      "issuerDefinedCondition": "施設運営者がピット使用時として公開した座席図を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08 current official seat map",
+      "sourceIds": ["official-seat-map", "official-seat-count"],
+      "differenceBasisSourceIds": ["official-seat-map"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 300,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "公式のオーケストラピット使用時配置です。",
+      "wheelchairSemantics": {
+        "status": "resolved",
+        "description": "公式資料記載の置換関係を反映。",
+        "sourceIds": ["official-seat-map"]
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-12",
+        "method": "independent-official-source-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        { "areaId": "main", "areaLabel": "客席", "rowLabel": "通し番号", "from": 1, "to": 300 }
+      ]
+    }
+  ]
+}
+```
+
+top-level `status: production`は、少なくとも1件の`production`かつ`selectable: true`のconfigurationがあることを意味します。会場に未完了variantが存在すること自体は、別の完全なconfigurationを妨げません。反対に、top-levelが`draft`または`rejected`ならselectable production configurationを持てません。
+
+各selectable production configurationは、issuer-owned configuration definition、完全な番号集合、厳密な`expectedSeatCount`、計算席数一致、公式`seat-structure`/`seat-count` source、source generation、解決済みwheelchair semantics、独立第2パス、`rangeDiff: 0`、`verification.status: verified`、空の`unresolvedIssues`を個別に満たします。複数configurationでは各`differenceBasisSourceIds`がissuer-owned資料を参照しなければなりません。同じ物理席集合の二重登録は、独立したissuer根拠を`duplicateSeatSetBasisSourceIds`で示せない限り拒否します。
+
+repositoryがconfigurationを創作すること、issuer conditionなし、event-dependent floor番号の恒久ID化、capacity fitting、不完全番号集合のproduction化、根拠のないconfiguration間差分、未解決wheelchair semanticsは禁止です。
+
+### fixed-only configuration
+
+`scope.kind: fixed-only`は、issuerが恒久固定番号席subsetを独立したseat setとして定義し、全番号、厳密subtotal、除外するarena/floor等、wheelchair semanticsをlosslessに確定できる場合だけ許可します。`canonicalName`は「固定席のみ」等の限定を明示し、`scope`には`excludesDynamicAreas: true`、`maximumCapacity: false`、非空の`excludedAreas`、`expectedSeatCount`と同じ`exactSubtotal`を記録します。`scopeDisclosure`には、固定席のみであること、arena/floor等を含まないこと、会場最大収容配置ではないことを明示します。単に固定席が画像から読めるだけでは採用しません。
+
+v2 catalogは会場を`venueGroupId`で1件にまとめ、configurationごとに`(venueId, configurationId)`と個別`dataPath`を持ちます。configurationが1件なら従来同様に直接利用し、複数なら会場選択後に明示選択します。fixed-only disclosureはconfiguration選択時と抽選結果の両方に表示します。
+
 `sources[].id`は会場内で安定かつ一意なslugにします。`official`は公式資料かを明示します。`roles`は`seat-structure`、`seat-count`、`facility`、`event-layout`から選び、同じ資料が座席構造と総席数の両方を裏付ける場合は同じsourceに複数roleを付けます。productionには公式の`seat-structure`と`seat-count`が少なくとも1件ずつ必要です。
 
 連続番号は`from`から`to`へ圧縮し、公式な欠番だけを`excluded`へ昇順で記録します。同一列が分断される場合はrangeを分けます。推測による補完はしません。`areaId`を指定するproduction rangeには、結果表示に使える一意の`areaLabel`も必須です。
@@ -94,7 +166,7 @@ areaのcanonical keyはruntime、validation、review、生成処理のすべて�
 
 ## 基本検証とproduction gate
 
-全statusで、ファイル名とID、schema version、slug、名称・所在地、都道府県マッピング、venue type、別名正規化、会場間検索語衝突、representativePattern、verification、source ID・role・HTTPS・確認日、range正整数、excluded、区間重複、area対応を検証します。draft/rejectedは空rangeと未確定席数`null`を許可し、productionだけ正のsafe integerの期待席数と1席以上を必須とします。rangeが存在するdraft/rejectedはproductionと同じrange構造検証を受けます。重複確認はcanonical area・NFKC rowごとにソートして区間比較し、全席`Seat[]`へ展開しません。
+全statusで、ファイル名とID、schema version、slug、名称・所在地、都道府県マッピング、venue type、別名正規化、会場間検索語衝突、source ID・role・HTTPS・確認日、range正整数、excluded、区間重複、area対応を検証します。schema v1は`representativePattern`とtop-level verification、schema v2は各configurationのcondition、scope、source参照、verificationを検証します。draft/rejected configurationは空rangeと未確定席数`null`を許可し、production/selectable configurationだけ正のsafe integerの期待席数と1席以上を必須とします。rangeが存在するdraft/rejected configurationも同じrange構造検証を受けます。重複確認はcanonical area・NFKC rowごとにソートして区間比較し、全席`Seat[]`へ展開しません。
 
 productionではさらに、単一の完全な代表パターン、期待席数との一致、登録範囲・完全性根拠・変換方法・制約、公式source、構造と席数の根拠、完了したverification、未解決事項なしを必須とします。`TODO`、`TBD`、`未設定`、`placeholder`を明確なtokenとして全production文字列から検出し、range、area、名称、別名、代表パターン、source、説明、制約、verificationに残っていれば拒否します。通常の文章に含まれる「未設定項目」のような部分一致は拒否しません。`demo`、`sample`、`partial`の不完全productionも拒否します。新規会場のverification methodは`independent-official-source-review`です。既存12会場の移行専用methodは固定IDだけに許可され、新規会場へは使えません。
 

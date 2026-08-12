@@ -9,6 +9,7 @@ import {
 } from './constants.mjs'
 import { INVENTORY_DIR } from './lib.mjs'
 import { dateInTokyo, normalizeSearchText } from './validation.mjs'
+import { sourceConfigurations, sourceHasProductionConfiguration } from './source-schema.mjs'
 
 const datePattern = /^\d{4}-\d{2}-\d{2}$/
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
@@ -184,10 +185,10 @@ export const validateInventories = (inventories, sources = [], options = {}) => 
       errors.push(`${item.file}: ${venue.inventoryId} references missing source ${venue.venueSourceId}`)
       continue
     }
-    if (venue.researchStatus === 'production' && source?.status !== 'production') {
+    if (venue.researchStatus === 'production' && !sourceHasProductionConfiguration(source)) {
       errors.push(`${item.file}: ${venue.inventoryId} is production but source ${venue.venueSourceId} is ${source?.status ?? 'missing'}`)
     }
-    if (source?.status === 'production' && venue.researchStatus !== 'production') {
+    if (sourceHasProductionConfiguration(source) && venue.researchStatus !== 'production') {
       errors.push(`${item.file}: source ${venue.venueSourceId} is production but inventory is ${venue.researchStatus}`)
     }
     if (source?.status === 'rejected' && venue.researchStatus !== 'rejected') {
@@ -197,27 +198,30 @@ export const validateInventories = (inventories, sources = [], options = {}) => 
       errors.push(`${item.file}: ${venue.inventoryId} is rejected but source ${venue.venueSourceId} is ${source?.status ?? 'missing'}`)
     }
     if (['first-pass-complete', 'independent-review-in-progress', 'independent-review-complete'].includes(venue.researchStatus) && source) {
-      const expected = source.representativePattern?.expectedSeatCount
-      const ranges = Array.isArray(source.ranges) ? source.ranges : []
-      const calculated = ranges.reduce((total, range) => {
-        if (!range || !Number.isSafeInteger(range.from) || !Number.isSafeInteger(range.to) || range.from > range.to) return total
-        return total + range.to - range.from + 1 - (Array.isArray(range.excluded) ? range.excluded.length : 0)
-      }, 0)
-      if (source.representativePattern?.coverage !== 'complete' ||
-          !Number.isSafeInteger(expected) ||
-          expected <= 0 ||
-          calculated !== expected) {
+      const completeConfigurations = sourceConfigurations(source).filter((configuration) => {
+        const expected = configuration.expectedSeatCount
+        const ranges = Array.isArray(configuration.ranges) ? configuration.ranges : []
+        const calculated = ranges.reduce((total, range) => {
+          if (!range || !Number.isSafeInteger(range.from) || !Number.isSafeInteger(range.to) || range.from > range.to) return total
+          return total + range.to - range.from + 1 - (Array.isArray(range.excluded) ? range.excluded.length : 0)
+        }, 0)
+        const complete = source.schemaVersion === 1
+          ? source.representativePattern?.coverage === 'complete'
+          : configuration.numberedSeatSetComplete === true
+        return complete && Number.isSafeInteger(expected) && expected > 0 && calculated === expected
+      })
+      if (completeConfigurations.length === 0) {
         errors.push(`${item.file}: ${venue.inventoryId} cannot be ${venue.researchStatus} until complete ranges match expectedSeatCount`)
       }
     }
     if (venue.researchStatus === 'independent-review-mismatch' && source &&
-        (!Array.isArray(source.ranges) || source.ranges.length === 0)) {
+        !sourceConfigurations(source).some((configuration) => Array.isArray(configuration.ranges) && configuration.ranges.length > 0)) {
       errors.push(`${item.file}: ${venue.inventoryId} cannot be independent-review-mismatch without the first-pass ranges`)
     }
   }
   const jurisdictions = new Set(inventories.map(({ data }) => data?.jurisdiction).filter(Boolean))
   for (const { file, data: source } of sources) {
-    if (source?.status !== 'production' || !jurisdictions.has(source.prefecture)) continue
+    if (!sourceHasProductionConfiguration(source) || !jurisdictions.has(source.prefecture)) continue
     if (!inventoryBySourceId.has(source.id)) errors.push(`${file}: production source is missing from the ${source.prefecture} inventory`)
   }
 

@@ -6,9 +6,9 @@ import { describe, expect, it } from 'vitest'
 import fingerprintJson from '../../../data/venue-fingerprints/production.json'
 import catalogJson from './catalog.generated.json'
 import { countRangeSeats, prepareVenueSampler, seatAtOffset } from '../../domain/seats/rangeSampler'
-import type { VenueCatalogEntry, VenueSeatDefinition } from '../../types/venue'
+import type { LegacyVenueCatalogEntry, VenueSeatDefinition } from '../../types/venue'
 
-const catalog = catalogJson as VenueCatalogEntry[]
+const catalog = catalogJson as LegacyVenueCatalogEntry[]
 const legacyVenues = {
   'hakuju-hall-standard': { count: 300, samples: ['main/A/1', 'main/M/7', 'main/P/17'] },
   'hamarikyu-asahi-hall-standard': { count: 552, samples: ['first-floor/1/1', 'first-floor/14/13', 'second-floor-center/3/20'] },
@@ -29,7 +29,7 @@ const fingerprintManifest = fingerprintJson as {
   venues: Record<string, { count: number; samples: string[]; sha256: string }>
 }
 const protectedVenues = fingerprintManifest.venues
-const detailFor = async (venue: VenueCatalogEntry): Promise<VenueSeatDefinition> =>
+const detailFor = async (venue: LegacyVenueCatalogEntry): Promise<VenueSeatDefinition> =>
   JSON.parse(await readFile(path.join(process.cwd(), 'public', venue.dataPath), 'utf8')) as VenueSeatDefinition
 
 describe('production venue database', () => {

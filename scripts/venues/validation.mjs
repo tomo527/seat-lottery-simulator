@@ -1,6 +1,7 @@
 import path from 'node:path'
 import {
   INDEPENDENT_VERIFICATION_METHOD,
+  CONFIGURATION_SCOPES,
   LEGACY_PRODUCTION_IDS,
   LEGACY_VERIFICATION_METHOD,
   PATTERN_COVERAGES,
@@ -389,6 +390,128 @@ export const productionGateIssues = (data, label = `${data?.id ?? '(unknown)'}:`
   return blockers
 }
 
+const referencedOfficialSources = (data, sourceIds) => {
+  const ids = new Set(Array.isArray(sourceIds) ? sourceIds : [])
+  return Array.isArray(data?.sources)
+    ? data.sources.filter((source) => ids.has(source?.id) && source?.official === true)
+    : []
+}
+
+export const configurationProductionGateIssues = (data, configuration, label = `${data?.id ?? '(unknown)'}/${configuration?.id ?? '(unknown)'}:`) => {
+  const blockers = []
+  const add = (condition, message) => {
+    if (condition) blockers.push(`${label} ${message}`)
+  }
+  add(configuration?.definitionAuthority !== 'issuer', 'configuration must be issuer-defined; repository-created configurations are forbidden')
+  add(typeof configuration?.issuerDefinedCondition !== 'string' || !configuration.issuerDefinedCondition.trim(), 'issuerDefinedCondition is missing')
+  add(typeof configuration?.sourceGeneration !== 'string' || !configuration.sourceGeneration.trim(), 'sourceGeneration is missing')
+  add(configuration?.numberedSeatSetComplete !== true, 'numbered seat set must be complete')
+  add(configuration?.capacityFitting === true, 'capacity fitting is forbidden')
+  add(configuration?.repositoryInventedDifferences === true, 'repository-invented configuration differences are forbidden')
+  add(configuration?.scope?.containsEventDependentSeatIds !== false, 'event-dependent floor seats cannot be stored as permanent seat IDs')
+  add(configuration?.scope?.issuerDefined !== true, 'scope must be independently defined by the issuer')
+  add(!CONFIGURATION_SCOPES.has(configuration?.scope?.kind), 'scope.kind is invalid')
+  add(!Array.isArray(configuration?.sourceIds) || configuration.sourceIds.length === 0, 'official sourceIds are required')
+
+  const officialSources = referencedOfficialSources(data, configuration?.sourceIds)
+  add(officialSources.length === 0, 'configuration requires issuer-owned source references')
+  add(!officialSources.some((source) => source?.roles?.includes('seat-structure')), 'configuration requires an official seat-structure source')
+  add(!officialSources.some((source) => source?.roles?.includes('seat-count')), 'configuration requires an official seat-count source')
+  add(!Number.isSafeInteger(configuration?.expectedSeatCount) || configuration.expectedSeatCount < 1, 'expectedSeatCount must be a positive safe integer')
+  if (Number.isSafeInteger(configuration?.expectedSeatCount) && Array.isArray(configuration?.ranges)) {
+    const counts = configuration.ranges.map(validRangeSeatCount)
+    const calculated = counts.every((count) => count !== undefined) ? counts.reduce((sum, count) => sum + count, 0) : undefined
+    add(calculated === undefined, 'seat count cannot be calculated until all ranges are valid')
+    add(calculated !== undefined && calculated !== configuration.expectedSeatCount, `expectedSeatCount ${configuration.expectedSeatCount} does not match calculated ${calculated}`)
+    add(calculated !== undefined && calculated < 1, 'at least one selectable seat is required')
+  }
+
+  const wheelchair = configuration?.wheelchairSemantics
+  add(!isPlainObject(wheelchair), 'wheelchairSemantics must be an object')
+  if (isPlainObject(wheelchair)) {
+    add(wheelchair.status !== 'resolved', 'wheelchair semantics must be resolved')
+    add(typeof wheelchair.description !== 'string' || !wheelchair.description.trim(), 'wheelchairSemantics.description is missing')
+    add(!Array.isArray(wheelchair.sourceIds) || wheelchair.sourceIds.length === 0, 'wheelchairSemantics.sourceIds are required')
+    const wheelchairSources = referencedOfficialSources(data, wheelchair.sourceIds)
+    add(wheelchairSources.length === 0, 'wheelchair semantics require an issuer-owned source')
+  }
+
+  const verification = configuration?.verification
+  add(!isPlainObject(verification), 'verification must be an object')
+  if (isPlainObject(verification)) {
+    add(verification.status !== 'verified', 'verification.status must be verified')
+    add(!parseDate(verification.checkedAt), 'verification.checkedAt must be a valid YYYY-MM-DD date')
+    add(verification.method !== INDEPENDENT_VERIFICATION_METHOD, 'verification.method must record an independent official-source review')
+    add(verification.seatStructure !== 'matched', 'verification.seatStructure must be matched')
+    add(verification.seatCount !== 'matched', 'verification.seatCount must be matched')
+    add(verification.rangeDiff !== 0, 'verification.rangeDiff must be 0')
+    add(!Array.isArray(verification.unresolvedIssues), 'verification.unresolvedIssues must be an array')
+    add(Array.isArray(verification.unresolvedIssues) && verification.unresolvedIssues.length > 0, 'verification has unresolved issues')
+  }
+
+  if (configuration?.scope?.kind === 'fixed-only') {
+    add(typeof configuration?.scopeDisclosure !== 'string' || !configuration.scopeDisclosure.trim(), 'fixed-only scopeDisclosure is required')
+    add(typeof configuration?.canonicalName !== 'string' || !configuration.canonicalName.includes('固定'), 'fixed-only canonicalName must identify the fixed-seat limitation')
+    add(configuration?.scope?.excludesDynamicAreas !== true, 'fixed-only scope must exclude dynamic arena/floor areas')
+    add(configuration?.scope?.maximumCapacity !== false, 'fixed-only scope must disclose that it is not the maximum-capacity layout')
+    add(!Array.isArray(configuration?.scope?.excludedAreas) || configuration.scope.excludedAreas.length === 0, 'fixed-only excludedAreas are required')
+    add(configuration?.scope?.exactSubtotal !== configuration?.expectedSeatCount, 'fixed-only exactSubtotal must equal expectedSeatCount')
+  }
+
+  for (const item of collectProductionStrings(configuration)) {
+    if (containsPlaceholderToken(item.value)) add(true, `placeholder token is forbidden at ${item.path}`)
+  }
+  return blockers
+}
+
+const validateConfigurationV2 = (data, configuration, index, label, today, issues) => {
+  const prefix = `${label} configuration ${index}`
+  if (!isPlainObject(configuration)) {
+    issues.error(`${prefix} must be a plain object`)
+    return
+  }
+  validateString(configuration.id, `${prefix}.id`, issues, { nonEmpty: true })
+  if (!slugPattern.test(configuration.id ?? '')) issues.error(`${prefix}.id must be a lowercase alphanumeric hyphen slug`)
+  validateString(configuration.canonicalName, `${prefix}.canonicalName`, issues, { nonEmpty: true })
+  validateString(configuration.issuerDefinedCondition, `${prefix}.issuerDefinedCondition`, issues, { nonEmpty: true })
+  validateString(configuration.sourceGeneration, `${prefix}.sourceGeneration`, issues, { nonEmpty: true })
+  if (configuration.definitionAuthority !== 'issuer') issues.error(`${prefix}.definitionAuthority must be issuer`)
+  if (configuration.capacityFitting !== false) issues.error(`${prefix}.capacityFitting must be false`)
+  if (configuration.repositoryInventedDifferences !== false) issues.error(`${prefix}.repositoryInventedDifferences must be false`)
+  if (!SOURCE_STATUSES.has(configuration.status)) issues.error(`${prefix}.status has unknown value ${String(configuration.status)}`)
+  if (typeof configuration.selectable !== 'boolean') issues.error(`${prefix}.selectable must be boolean`)
+  if (configuration.selectable && configuration.status !== 'production') issues.error(`${prefix} selectable configurations must have production status`)
+  if (configuration.status === 'production' && configuration.selectable !== true) issues.error(`${prefix} production configurations must be selectable`)
+  validateStringArray(configuration.sourceIds, `${prefix}.sourceIds`, issues, { nonEmpty: true })
+  if (Array.isArray(configuration.sourceIds) && new Set(configuration.sourceIds).size !== configuration.sourceIds.length) issues.error(`${prefix}.sourceIds must not contain duplicates`)
+  validateStringArray(configuration.differenceBasisSourceIds, `${prefix}.differenceBasisSourceIds`, issues, { nonEmpty: true })
+  if (!isPlainObject(configuration.scope)) issues.error(`${prefix}.scope must be a plain object`)
+  else {
+    if (!CONFIGURATION_SCOPES.has(configuration.scope.kind)) issues.error(`${prefix}.scope.kind has unknown value ${String(configuration.scope.kind)}`)
+    if (configuration.scope.containsEventDependentSeatIds !== false) issues.error(`${prefix}.scope.containsEventDependentSeatIds must be false`)
+    if (configuration.scope.issuerDefined !== true) issues.error(`${prefix}.scope.issuerDefined must be true`)
+  }
+  validateString(configuration.scopeDisclosure, `${prefix}.scopeDisclosure`, issues)
+  if (!isPlainObject(configuration.wheelchairSemantics)) issues.error(`${prefix}.wheelchairSemantics must be a plain object`)
+  else {
+    validateString(configuration.wheelchairSemantics.status, `${prefix}.wheelchairSemantics.status`, issues, { nonEmpty: true })
+    validateString(configuration.wheelchairSemantics.description, `${prefix}.wheelchairSemantics.description`, issues)
+    validateStringArray(configuration.wheelchairSemantics.sourceIds, `${prefix}.wheelchairSemantics.sourceIds`, issues, { nonEmpty: true })
+  }
+  validateVerification(configuration, prefix, today, issues)
+  const calculated = validateRanges(configuration, prefix, issues)
+  const officialIds = new Set((data.sources ?? []).filter((source) => source?.official === true).map((source) => source.id))
+  for (const sourceId of [...(configuration.sourceIds ?? []), ...(configuration.wheelchairSemantics?.sourceIds ?? [])]) {
+    if (!officialIds.has(sourceId)) issues.error(`${prefix} source reference ${String(sourceId)} must identify an issuer-owned source`)
+  }
+  if (configuration.status === 'production') {
+    for (const blocker of configurationProductionGateIssues(data, configuration, prefix)) issues.error(blocker)
+    if (Number.isSafeInteger(configuration.expectedSeatCount) && calculated !== configuration.expectedSeatCount) {
+      issues.error(`${prefix} expected ${configuration.expectedSeatCount}, calculated ${calculated}`)
+    }
+  }
+}
+
 export const validateSources = (sources, options = {}) => {
   const todayText = options.today ?? dateInTokyo(options.now ?? new Date())
   const today = parseDate(todayText)
@@ -438,25 +561,75 @@ export const validateSources = (sources, options = {}) => {
       if (new Set(aliases).size !== aliases.length) local.error(`${label} has duplicate normalized aliases`)
       if (aliases.includes(normalizeSearchText(sourceData.name))) local.error(`${label} alias duplicates the venue name`)
     }
-    validateRepresentativePattern(sourceData, label, local)
     validateSourceMetadata(sourceData, label, today, local)
-    validateString(sourceData.registeredScope, `${label} registeredScope`, local)
-    validateString(sourceData.completenessBasis, `${label} completenessBasis`, local)
-    validateString(sourceData.transformation, `${label} transformation`, local)
-    validateStringArray(sourceData.knownLimitations, `${label} knownLimitations`, local, { nonEmpty: true })
-    validateVerification(sourceData, label, today, local)
-    const calculated = validateRanges(sourceData, label, local)
+    if (sourceData.schemaVersion === 1) {
+      validateRepresentativePattern(sourceData, label, local)
+      validateString(sourceData.registeredScope, `${label} registeredScope`, local)
+      validateString(sourceData.completenessBasis, `${label} completenessBasis`, local)
+      validateString(sourceData.transformation, `${label} transformation`, local)
+      validateStringArray(sourceData.knownLimitations, `${label} knownLimitations`, local, { nonEmpty: true })
+      validateVerification(sourceData, label, today, local)
+      const calculated = validateRanges(sourceData, label, local)
+      if (sourceData.status === 'production') {
+        for (const blocker of productionGateIssues(sourceData, label)) local.error(blocker)
+        if (Number.isSafeInteger(sourceData.representativePattern?.expectedSeatCount) &&
+            calculated !== sourceData.representativePattern.expectedSeatCount) {
+          local.error(`${label} expected ${sourceData.representativePattern.expectedSeatCount}, calculated ${calculated}`)
+        }
+      }
+    } else if (sourceData.schemaVersion === 2) {
+      if (!Array.isArray(sourceData.configurations) || sourceData.configurations.length === 0) {
+        local.error(`${label} configurations must be a non-empty array`)
+      } else {
+        const configurationIds = new Set()
+        const physicalSeatSets = new Map()
+        for (const [index, configuration] of sourceData.configurations.entries()) {
+          validateConfigurationV2(sourceData, configuration, index, label, today, local)
+          if (typeof configuration?.id === 'string') {
+            if (configurationIds.has(configuration.id)) local.error(`${label} duplicate configuration ID ${configuration.id}`)
+            configurationIds.add(configuration.id)
+          }
+          if (Array.isArray(configuration?.ranges)) {
+            const signature = JSON.stringify(configuration.ranges.map((range) => ({
+              areaId: range?.areaId ?? 'main',
+              rowLabel: range?.rowLabel,
+              from: range?.from,
+              to: range?.to,
+              excluded: [...(range?.excluded ?? [])].sort((left, right) => left - right),
+            })).sort((left, right) => JSON.stringify(left).localeCompare(JSON.stringify(right))))
+            const previous = physicalSeatSets.get(signature)
+            if (previous) {
+              const officialIds = new Set((sourceData.sources ?? []).filter((source) => source?.official === true).map((source) => source.id))
+              if (!Array.isArray(configuration.duplicateSeatSetBasisSourceIds) || configuration.duplicateSeatSetBasisSourceIds.length === 0 ||
+                  !configuration.duplicateSeatSetBasisSourceIds.every((id) => officialIds.has(id))) {
+                local.error(`${label} configurations ${previous} and ${configuration.id ?? index} duplicate a physical seat set without issuer evidence`)
+              }
+            } else physicalSeatSets.set(signature, configuration.id ?? String(index))
+          }
+          if (sourceData.configurations.length > 1) {
+            if (!Array.isArray(configuration?.differenceBasisSourceIds) || configuration.differenceBasisSourceIds.length === 0) {
+              local.error(`${label} configuration ${configuration?.id ?? index} requires issuer evidence for configuration differences`)
+            } else {
+              const officialIds = new Set((sourceData.sources ?? []).filter((source) => source?.official === true).map((source) => source.id))
+              if (!configuration.differenceBasisSourceIds.every((id) => officialIds.has(id))) {
+                local.error(`${label} configuration ${configuration?.id ?? index} difference basis must reference issuer-owned sources`)
+              }
+            }
+          }
+        }
+        const productionConfigurations = sourceData.configurations.filter((configuration) => configuration?.status === 'production' && configuration?.selectable === true)
+        if (sourceData.status === 'production' && productionConfigurations.length === 0) {
+          local.error(`${label} production venue requires at least one production/selectable configuration`)
+        }
+        if (sourceData.status !== 'production' && productionConfigurations.length > 0) {
+          local.error(`${label} non-production venue cannot contain a production/selectable configuration`)
+        }
+      }
+    }
     if (sourceData.status === 'rejected') {
       validateString(sourceData.rejectionReason, `${label} rejectionReason`, local, { nonEmpty: true })
     } else if (sourceData.rejectionReason !== undefined) {
       validateString(sourceData.rejectionReason, `${label} rejectionReason`, local)
-    }
-    if (sourceData.status === 'production') {
-      for (const blocker of productionGateIssues(sourceData, label)) local.error(blocker)
-      if (Number.isSafeInteger(sourceData.representativePattern?.expectedSeatCount) &&
-          calculated !== sourceData.representativePattern.expectedSeatCount) {
-        local.error(`${label} expected ${sourceData.representativePattern.expectedSeatCount}, calculated ${calculated}`)
-      }
     }
     for (const message of local.errors) addError(file, message)
     for (const message of local.warnings) addWarning(file, message)

@@ -7,7 +7,7 @@ venue ID:
 inventory ID:
 batch ID:
 
-docs/VENUE_DATA_GUIDE.mdを守り、source JSONのrangeを先に信用せず、公式資料から代表パターン、全列、全番号、欠番、area、総席数を確認してください。異なる座席パターンが混在していないか、seat-structureとseat-countの根拠が明確かも確認してください。
+docs/VENUE_DATA_GUIDE.mdを守り、source JSONのrangeを先に信用せず、公式資料から代表パターンまたは各issuer-defined configuration、全列、全番号、欠番、area、総席数を確認してください。schema v2はconfigurationごとにissuer condition、source generation、scope、wheelchair semantics、seat-structureとseat-countの根拠を独立確認し、異なる配置を混在させないでください。
 
 venues:reviewの先頭・中央・末尾sample、不連続range、小さなgap候補、area別席数・row数を使って重点照合してください。推測やOCRだけで不足を埋めないでください。公式資料が曖昧、パターンが非一意、完全構造化できない場合はproductionへ変更せず、draftのunresolvedIssuesまたはrejectedのrejectionReasonへ記録してください。
 
@@ -16,9 +16,12 @@ venues:reviewの先頭・中央・末尾sample、不連続range、小さなgap�
 - method: independent-official-source-review
 - seatStructure: matched
 - seatCount: matched
+- rangeDiff: 0
 - unresolvedIssues: []
 
-独立抽出を終えるまで第1パスのrangeを比較元として読まないでください。独立抽出後はpattern ID・名称、canonical area、各rowのfrom/to/excluded、計算席数、source role、registeredScope、knownLimitations、先頭・中央・最終offsetを機械比較し、差分をすべて報告してください。差分が1件でも未解決ならinventoryをblockedまたはindependent-review-pendingに保ち、productionへ変更しないでください。
+独立抽出を終えるまで第1パスのrangeを比較元として読まないでください。独立抽出後はconfiguration ID・名称・issuer condition・source generation・scope、canonical area、各rowのfrom/to/excluded、計算席数、source role、wheelchair semantics、先頭・中央・最終offsetをconfiguration単位で機械比較し、差分をすべて報告してください。差分が1件でも未解決ならそのconfigurationをdraft/non-selectableに保ちます。他の完全なconfigurationを一律にblockしませんが、未完了variant自体はproductionへ変更しません。
+
+fixed-onlyでは、issuerによる独立seat set定義、全固定番号、厳密subtotal、arena/floor等の公式除外根拠、wheelchair semantics、3点のUI disclosureを独立に再確認してください。いずれかが欠ければfixed-onlyをproduction/selectableにしません。
 
 空range、架空の仮座席、TODO/TBD/未設定/placeholder tokenが残っている場合はproductionへ変更しないでください。area省略はruntime上`main`になるため、明示的mainとの混在がないことも確認してください。`checkedAt`はAsia/Tokyoの調査日を使ってください。
 

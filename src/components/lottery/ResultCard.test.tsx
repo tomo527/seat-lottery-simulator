@@ -43,4 +43,15 @@ describe('ResultCard', () => {
     expect(screen.getByRole('button', { name: '条件を変更する' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '結果を共有する' })).toBeInTheDocument()
   })
+
+  it('fixed-only configurationの抽選範囲を結果にも表示する', () => {
+    render(<ResultCard {...{
+      seat: baseSeat,
+      venueName: 'テストホール',
+      scopeDisclosure: '固定席のみ。アリーナ／floor席を含まず、会場最大収容配置ではありません。',
+      shareStatus: '', onRetry: vi.fn(), onChangeConditions: vi.fn(), onShare: vi.fn(),
+    }} />)
+    expect(screen.getByText('抽選範囲')).toBeInTheDocument()
+    expect(screen.getByText(/固定席のみ。アリーナ／floor席を含まず/)).toBeInTheDocument()
+  })
 })

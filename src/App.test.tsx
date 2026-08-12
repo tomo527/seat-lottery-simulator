@@ -4,14 +4,14 @@ import App from './App'
 import catalogJson from './data/venue-db/catalog.generated.json'
 import { DRAW_ANIMATION_DURATION_MS } from './domain/lottery/constants'
 import { prepareVenueSampler } from './domain/seats/rangeSampler'
-import type { VenueCatalogEntry } from './types/venue'
+import type { LegacyVenueCatalogEntry } from './types/venue'
 
-const tokyoVenueCount = (catalogJson as VenueCatalogEntry[]).filter((venue) => venue.prefecture === '東京都').length
+const tokyoVenueCount = (catalogJson as LegacyVenueCatalogEntry[]).filter((venue) => venue.prefecture === '東京都').length
 
 const loadVenueSeatData = vi.hoisted(() => vi.fn())
 vi.mock('./data/venue-db/loadVenue', () => ({ loadVenueSeatData }))
 
-const samplerFor = (venue: VenueCatalogEntry) => prepareVenueSampler({
+const samplerFor = (venue: LegacyVenueCatalogEntry) => prepareVenueSampler({
   schemaVersion: 1,
   venueId: venue.id,
   patternId: 'test-pattern',
@@ -23,7 +23,7 @@ beforeEach(() => {
   localStorage.clear()
   window.history.replaceState({}, '', '/')
   loadVenueSeatData.mockReset()
-  loadVenueSeatData.mockImplementation(async (venue: VenueCatalogEntry) => samplerFor(venue))
+  loadVenueSeatData.mockImplementation(async (venue: LegacyVenueCatalogEntry) => samplerFor(venue))
 })
 
 afterEach(() => {
@@ -66,7 +66,7 @@ describe('App', () => {
 
   it('選択した会場だけを読み込み、読込中は抽選できない', async () => {
     let resolve!: (value: ReturnType<typeof samplerFor>) => void
-    loadVenueSeatData.mockImplementationOnce((venue: VenueCatalogEntry) => new Promise((done) => { resolve = done }).then(() => samplerFor(venue)))
+    loadVenueSeatData.mockImplementationOnce((venue: LegacyVenueCatalogEntry) => new Promise((done) => { resolve = done }).then(() => samplerFor(venue)))
     render(<App />)
     const trigger = screen.getByRole('button', { name: '会場を選ぶ' })
     fireEvent.click(trigger)
@@ -112,15 +112,15 @@ describe('App', () => {
 
   it('会場切替時は遅れて届いた古いresponseを無視する', async () => {
     const pending = new Map<string, (value: ReturnType<typeof samplerFor>) => void>()
-    loadVenueSeatData.mockImplementation((venue: VenueCatalogEntry) => new Promise((resolve) => pending.set(venue.id, resolve)))
+    loadVenueSeatData.mockImplementation((venue: LegacyVenueCatalogEntry) => new Promise((resolve) => pending.set(venue.id, resolve)))
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
     fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
     fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
     fireEvent.change(screen.getByLabelText('会場名で検索'), { target: { value: 'TOPPANホール' } })
     fireEvent.click(screen.getByRole('button', { name: 'TOPPANホールを選ぶ' }))
-    const first = loadVenueSeatData.mock.calls[0][0] as VenueCatalogEntry
-    const second = loadVenueSeatData.mock.calls[1][0] as VenueCatalogEntry
+    const first = loadVenueSeatData.mock.calls[0][0] as LegacyVenueCatalogEntry
+    const second = loadVenueSeatData.mock.calls[1][0] as LegacyVenueCatalogEntry
     act(() => pending.get(second.id)?.(samplerFor(second)))
     await waitFor(() => expect(screen.getByText('408席から今日の1席を抽選します')).toBeInTheDocument())
     act(() => pending.get(first.id)?.(samplerFor(first)))

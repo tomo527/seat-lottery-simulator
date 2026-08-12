@@ -31,7 +31,8 @@
         "holds": "HOLD/CONTRADICTIONはA/B/C/D blocker taxonomy、issuer-owned official blocker、currentness、schema addressabilityを明示記録する",
         "gapRule": "明らかな主要会場の候補漏れがないことを確認し、会場数だけで判定しない",
         "productionQualityGate": "従来どおり変更しない（expectedSeatCount == calculatedSeatCount、独立公式第2パス差分ゼロ、verification.status=verified、unresolvedIssues=[]）",
-        "readiness": "NO until research completeness, addressable production conversion, evidence-based raw floors, configuration support, universe-gap, and unchanged production quality gates all pass. This audit does not set readiness to YES."
+        "releaseCoverageAdequacyReview": "After all mechanical gates pass, require one TOKYO RELEASE COVERAGE ADEQUACY REVIEW covering actual user-visible production coverage, B/C/D exclusions, and completed SHOULD research. Pending review always keeps RELEASE READY at NO.",
+        "readiness": "Derived by venues:release:coverage from repository state. NO until research completeness, addressable production conversion, dynamic raw floors, configuration/fixed-only support, universe-gap, unchanged production quality, and release coverage adequacy review all pass. Legacy regional shortfalls are informational only."
       }
   },
   "legacyTargetPolicy": "The existing targets remain traceable historical/preflight work items. They are not, by themselves, proof of Tokyo coverage or a release denominator.",

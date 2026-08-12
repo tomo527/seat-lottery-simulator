@@ -32,6 +32,39 @@ const openPicker = async (venues = baseVenues) => {
 }
 
 describe('VenueSelector', () => {
+  it('schema v2のconfigurationが1件なら追加選択なしで直接利用表示する', () => {
+    const singleVenue: VenueCatalogEntry = {
+      schemaVersion: 2,
+      id: 'single-v2', venueGroupId: 'single-v2', name: '単一配置ホール', searchAliases: [], region: '関東', prefecture: '東京都', municipality: '中央区', venueType: 'hall',
+      configurations: [{ id: 'standard', canonicalName: '通常配置', seatCount: 240, dataPath: '/single.json', scope: 'full-venue', scopeDisclosure: '公式通常配置です。', fixedOnly: false }],
+    }
+    render(<VenueSelector venues={[singleVenue]} selectedVenueId="single-v2" onSelect={vi.fn()} />)
+    expect(screen.queryByRole('group', { name: '座席配置を選ぶ' })).not.toBeInTheDocument()
+    expect(screen.getByText('抽選対象 240席')).toBeInTheDocument()
+    expect(screen.getByText('公式通常配置です。')).toBeInTheDocument()
+  })
+
+  it('schema v2の複数configurationを明示選択し、fixed-only disclosureを表示する', async () => {
+    const user = userEvent.setup()
+    const onSelectConfiguration = vi.fn()
+    const multiVenue: VenueCatalogEntry = {
+      schemaVersion: 2,
+      id: 'multi-hall', venueGroupId: 'multi-hall', name: 'マルチホール', searchAliases: [], region: '関東', prefecture: '東京都', municipality: '中央区', venueType: 'hall',
+      configurations: [
+        { id: 'standard', canonicalName: '通常配置', seatCount: 500, dataPath: '/standard.json', scope: 'official-variant', scopeDisclosure: '', fixedOnly: false },
+        { id: 'fixed-only', canonicalName: '固定席のみ', seatCount: 300, dataPath: '/fixed.json', scope: 'fixed-only', scopeDisclosure: '固定席のみ。アリーナ／floor席を含まず、会場最大収容配置ではありません。', fixedOnly: true },
+      ],
+    }
+    const { rerender } = render(
+      <VenueSelector venues={[multiVenue]} selectedVenueId="multi-hall" selectedConfigurationId="" onSelect={vi.fn()} onSelectConfiguration={onSelectConfiguration} />,
+    )
+    expect(screen.getByRole('group', { name: '座席配置を選ぶ' })).toBeInTheDocument()
+    await user.click(screen.getByRole('radio', { name: /固定席のみ/ }))
+    expect(onSelectConfiguration).toHaveBeenCalledWith('fixed-only')
+    rerender(<VenueSelector venues={[multiVenue]} selectedVenueId="multi-hall" selectedConfigurationId="fixed-only" onSelect={vi.fn()} onSelectConfiguration={onSelectConfiguration} />)
+    expect(screen.getByText('固定席のみ。アリーナ／floor席を含まず、会場最大収容配置ではありません。')).toBeInTheDocument()
+  })
+
   it('最初の20件だけを表示し、さらに表示できる', async () => {
     const user = await openPicker(manyVenues)
     expect(screen.getAllByRole('button', { name: /テスト会場\d+を選ぶ/ })).toHaveLength(20)

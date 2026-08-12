@@ -79,6 +79,7 @@
   },
   "configurationSchemaAudit": {
     "recommendation":"Option B",
+    "implementationStatus":"schema v2 platform implemented; no real venue v2 source or production promotion added",
     "model":"venue -> configurations[]",
     "requiredConfigurationFields":["id","canonicalName","issuerDefinedCondition","numberedSeatRanges","expectedSeatCount","sourceGeneration","wheelchairSemantics","selectable","status","verification"],
     "admissionRule":"issuer-owned資料がconfiguration自体を完全に定義し、expectedSeatCountとrangeを独立2パスで一致確認できる場合のみ収録する。",
@@ -147,21 +148,40 @@
     "mustProductionCoveragePercent":9.1,
     "shouldProductionCoveragePercent":14.3,
     "schemaAddressableCoveragePercent":31.6,
-    "nextMacro":"TOKYO-CONFIG-SCHEMA-1"
+    "nextMacro":"TOKYO-CONFIG-PILOT-1"
   },
   "releaseGate": {
-    "researchCompleteness":{"MUST":{"requiredPercent":100.0,"currentPercent":100.0},"SHOULD":{"requiredPercent":100.0,"currentPercent":71.4}},
-    "addressableProductionConversion":{"MUST":{"requiredPercent":100.0,"currentNumerator":4,"currentDenominator":16,"currentPercent":25.0},"SHOULD":{"requiredPercent":100.0,"currentNumerator":4,"currentDenominator":8,"currentPercent":50.0}},
-    "currentEvidenceBasedRawProductionFloor":{"MUST":{"requiredNumerator":16,"denominator":44,"percent":36.4},"SHOULD":{"requiredNumerator":8,"denominator":28,"percent":28.6},"MUST_AND_SHOULD":{"requiredNumerator":24,"denominator":72,"percent":33.3},"TOKYO_UNIVERSE":{"requiredNumerator":24,"denominator":76,"percent":31.6}},
-    "dynamicFloorRule":"SHOULD未調査8件のうちschema-addressableと判定された各候補をrequired numeratorとaddressable denominatorへ1件ずつ追加する。既存productionとの置換は認めない。",
-    "exclusionRule":"raw denominatorから候補を削除しない。production未達の免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのissuer-owned blockerが記録された場合だけで、A SCHEMA-UNLOCKABLEは免責しない。",
-    "configurationSupportRequired":true,
-    "fixedOnlyDisclosureRequired":true,
-    "optionalIsReleaseBlocker":false,
-    "noObviousMajorUniverseGap":true,
-    "productionQualityGateUnchanged":true,
-    "releaseReady":false,
-    "note":"formal disposition 100%をuser-visible coverage 100%として扱わない。現時点はSHOULD research、schema migration、A群production conversion、raw production floorの全てが未達のためNO。"
+    "requirements": {
+      "researchCompleteness":{"MUST":100.0,"SHOULD":100.0},
+      "addressableProductionConversion":{"MUST":100.0,"SHOULD":100.0},
+      "rawProductionFloor":{"MUST":16,"SHOULD":8,"MUST_AND_SHOULD":24,"TOKYO_UNIVERSE":24},
+      "configurationSupport":true,
+      "fixedOnlyDisclosure":true,
+      "productionQuality":true,
+      "universeGapReview":true,
+      "releaseCoverageAdequacyReview":true
+    },
+    "policy": {
+      "dynamicFloorRule":"SHOULD未調査8件のうちschema-addressableと判定された各候補をrequired numeratorとaddressable denominatorへ1件ずつ追加する。既存productionとの置換は認めない。",
+      "exclusionRule":"raw denominatorから候補を削除しない。production未達の免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのissuer-owned blockerが記録された場合だけで、A SCHEMA-UNLOCKABLEは免責しない。",
+      "optionalIsReleaseBlocker":false,
+      "authority":"current readiness and RELEASE READY are derived by venues:release:coverage from repository state; this object contains policy only.",
+      "note":"formal disposition 100%をuser-visible coverage 100%として扱わない。raw floor達成だけでも東京の主要会場をほぼ網羅したとは扱わず、初回release直前のadequacy reviewを必須とする。"
+    }
+  },
+  "universeGapReview": {
+    "status":"complete",
+    "checkedAt":"2026-08-12",
+    "blockerIds":[],
+    "basis":"Tokyo coverage universe auditで既知の主要舞台・ライブ会場候補の明白な漏れがないことを確認。新規候補が判明した場合は再オープンする。"
+  },
+  "releaseCoverageAdequacyReview": {
+    "id":"TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
+    "status":"pending",
+    "completedAt":null,
+    "blockerIds":["TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW"],
+    "requiredEvidence":["actual user-visible production coverage","B SOURCE-LIMITED exclusions","C CONTRADICTION","D CURRENTNESS/CLOSED","SHOULD research results"],
+    "note":"機械的gateがすべてPASSした後、初回release直前にユーザー視点のcoverage adequacyを1回確認する。"
   },
   "candidates": [
     {"id":"tokyo-dome","name":"東京ドーム","area":"文京区・後楽","type":"dome","capacity":55000,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/dome/about/","seatMap":"official-baseball-only","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0319","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 TOKYO-DOME COMPLEX: SOURCE/POLICY/SCHEMA HOLD。公開stand番号図は野球開催時用、concert arenaは催事別・非掲載で、stage別stand閉鎖、floor仮設番号、車いす／同伴、suite／premium／special areaを含むissuer-defined concert standardがない。"},

@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { clearVenueSeatDataCache, loadVenueSeatData } from './loadVenue'
-import type { VenueCatalogEntry, VenueSeatDefinition } from '../../types/venue'
+import type { VenueCatalogEntry, VenueRuntimeSelection, VenueSeatDefinition } from '../../types/venue'
 
 const venue: VenueCatalogEntry = {
   id: 'test-hall', name: 'Test Hall', searchAliases: [], region: '関東', prefecture: '東京都', municipality: 'テスト区', venueType: 'hall',
@@ -36,5 +36,34 @@ describe('loadVenueSeatData', () => {
       return new Response(JSON.stringify(detail))
     })
     await loadVenueSeatData(venue, controller.signal, fetcher)
+  })
+
+  it('schema v2 runtimeを(venueId, configurationId)で照合し別々にcacheする', async () => {
+    const selection: VenueRuntimeSelection = {
+      ...venue,
+      venueGroupId: venue.id,
+      configurationId: 'fixed-only',
+      representativePatternName: '固定席のみ',
+      dataPath: '/venue-db/venues/test-hall--fixed-only.json',
+      scopeDisclosure: '固定席のみ。floor席を含みません。',
+      fixedOnly: true,
+    }
+    const runtime = {
+      schemaVersion: 2,
+      venueId: venue.id,
+      venueGroupId: venue.id,
+      configurationId: 'fixed-only',
+      configurationName: '固定席のみ',
+      scope: 'fixed-only',
+      scopeDisclosure: '固定席のみ。floor席を含みません。',
+      ranges: detail.ranges,
+      totalSeatCount: 3,
+    } satisfies VenueSeatDefinition
+    const fetcher = vi.fn(async () => new Response(JSON.stringify(runtime)))
+    const first = await loadVenueSeatData(selection, undefined, fetcher)
+    const second = await loadVenueSeatData(selection, undefined, fetcher)
+    expect(first.definition.schemaVersion).toBe(2)
+    expect(second).toBe(first)
+    expect(fetcher).toHaveBeenCalledOnce()
   })
 })

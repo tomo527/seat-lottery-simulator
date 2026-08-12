@@ -1,8 +1,12 @@
 import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { parseArgs } from './cli.mjs'
-import { readInventories } from './inventory.mjs'
-import { ROOT, readSources } from './lib.mjs'
+import { PLATFORM_CAPABILITIES } from './constants.mjs'
+import { deriveTokyoCoverageContract } from './coverage-contract.mjs'
+import { readInventories, validateInventories } from './inventory.mjs'
+import { ROOT, buildOutputs, readSources } from './lib.mjs'
+import { sourceHasProductionConfiguration } from './source-schema.mjs'
+import { validateSources } from './validation.mjs'
 
 const formalHoldStatuses = new Set(['blocked', 'rejected', 'independent-review-mismatch'])
 const formalHoldManifestStatuses = new Set(['source-hold', 'policy-hold', 'contradiction', 'independent-review-mismatch'])
@@ -59,7 +63,8 @@ if (coverage && !Array.isArray(coverage.candidates)) {
 
 const inventories = await readInventories()
 const inventoryById = new Map(inventories.flatMap(({ data }) => (data.venues ?? []).map((venue) => [venue.inventoryId, venue])))
-const sourceById = new Map((await readSources()).map(({ data }) => [data.id, data]))
+const sources = await readSources()
+const sourceById = new Map(sources.map(({ data }) => [data.id, data]))
 const groups = new Map()
 const totals = {
   target: 0,
@@ -123,8 +128,22 @@ const unassessedPriorityA = manifest.targets.filter((target) => {
   return !preflightManifestStatuses.has(target.currentStatus)
 })
 const legacyReleaseReady = !unmet.length && !unassessedPriorityA.length
-const coverageReady = coverage ? coverage.releaseGate?.releaseReady === true : true
-const releaseReady = legacyReleaseReady && coverageReady
+const sourceValidation = validateSources(sources)
+const inventoryValidation = validateInventories(inventories, sources)
+const catalogIds = new Set(buildOutputs(sources).catalog.map(({ id }) => id))
+const productionCandidateIds = coverage ? coverage.candidates.filter((candidate) => {
+  const inventory = inventoryById.get(candidate.inventoryId)
+  const source = sourceById.get(inventory?.venueSourceId)
+  return inventory?.researchStatus === 'production' && sourceHasProductionConfiguration(source) && catalogIds.has(source.id)
+}).map(({ id }) => id) : []
+const tokyoContract = coverage ? deriveTokyoCoverageContract({
+  coverage,
+  productionCandidateIds,
+  sourceValidationErrors: sourceValidation.errors,
+  inventoryValidationErrors: inventoryValidation.errors,
+  capabilities: PLATFORM_CAPABILITIES,
+}) : null
+const releaseReady = tokyoContract?.releaseReady === true
 
 console.log('Manifest: ' + path.relative(ROOT, manifestPath))
 console.log('targetCount: ' + totals.target)
@@ -152,20 +171,15 @@ for (const [key, group] of [...groups].sort(([left], [right]) => left.localeComp
 console.log('Unmet regions: ' + (unmet.length ? unmet.map(([key]) => key).join(', ') : '(none)'))
 console.log('Unassessed Priority A: ' + (unassessedPriorityA.length ? unassessedPriorityA.map((target) => target.name).join(', ') : '(none)'))
 if (coverage) {
-  const candidates = coverage.candidates
-  const byTier = (tier) => candidates.filter((candidate) => candidate.tier === tier)
-  const dispositioned = (items) => items.filter((candidate) => candidate.inventoryState !== '未調査').length
-  const production = (items) => items.filter((candidate) => candidate.inventoryState === 'PRODUCTION').length
-  const addressableIds = new Set([
-    ...candidates.filter((candidate) => candidate.inventoryState === 'PRODUCTION').map((candidate) => candidate.id),
-    ...(coverage.coverageMetrics?.schemaAddressableCoverage?.confirmedCurrentSchemaNonProductionIds ?? []),
-    ...(coverage.coverageMetrics?.schemaAddressableCoverage?.confirmedSchemaExtensionNonProductionIds ?? []),
-  ])
-  const addressable = (items) => items.filter((candidate) => addressableIds.has(candidate.id)).length
+  const metric = (value) => `${value.numerator}/${value.denominator} (${percentage(value.numerator, value.denominator)})`
+  const gateLine = (label, value) => console.log(`  ${label}: ${value.status} ${value.numerator}/${value.denominator}; blockers=${value.blockerIds.length ? value.blockerIds.join(', ') : '(none)'}`)
   console.log('Tokyo coverage contract: ' + path.relative(ROOT, coveragePath))
-  for (const [label, items] of [['Tokyo universe', candidates], ['MUST', byTier('MUST')], ['SHOULD', byTier('SHOULD')], ['OPTIONAL', byTier('OPTIONAL')]]) {
-    console.log(`  ${label}: researchCompleteness=${percentage(dispositioned(items), items.length)}, userVisibleProductionCoverage=${percentage(production(items), items.length)}, schemaAddressableCoverage=${percentage(addressable(items), items.length)}`)
+  for (const [label, key] of [['Tokyo', 'tokyo'], ['MUST', 'must'], ['SHOULD', 'should']]) {
+    const metrics = tokyoContract.metrics[key]
+    console.log(`  ${label}: researchCompleteness=${metric(metrics.research)}, userVisibleProductionCoverage=${metric(metrics.production)}, schemaAddressableCohort=${metric(metrics.addressable)}`)
   }
+  console.log('  Schema-addressable cohort IDs: ' + tokyoContract.addressableIds.join(', '))
+  console.log('  Dynamic SHOULD addressable additions: ' + (tokyoContract.dynamicShouldIds.length ? tokyoContract.dynamicShouldIds.join(', ') : '(none)'))
   const classes = coverage.mustNonProductionBlockerAudit?.classes ?? {}
   console.log('  MUST nonproduction blockers: ' + [
     `A=${classes.A_SCHEMA_UNLOCKABLE?.count ?? 0}`,
@@ -173,8 +187,9 @@ if (coverage) {
     `C=${classes.C_CONTRADICTION?.count ?? 0}`,
     `D=${classes.D_CURRENTNESS_CLOSED?.count ?? 0}`,
   ].join(', '))
-  console.log('  Addressable production conversion: MUST=' + percentage(production(byTier('MUST')), addressable(byTier('MUST'))) + ', SHOULD=' + percentage(production(byTier('SHOULD')), addressable(byTier('SHOULD'))))
-  console.log('  Coverage contract ready: ' + (coverage.releaseGate?.releaseReady === true ? 'yes' : 'no'))
+  console.log('  Deterministic Tokyo gates:')
+  for (const [label, value] of Object.entries(tokyoContract.gates)) gateLine(label, value)
+  console.log('  Coverage gate result: ' + tokyoContract.coverageGateResult)
 }
-console.log('Legacy regional gate ready: ' + (legacyReleaseReady ? 'yes' : 'no'))
+console.log('Legacy regional gate ready (informational only): ' + (legacyReleaseReady ? 'yes' : 'no'))
 console.log('RELEASE READY: ' + (releaseReady ? 'yes' : 'no'))

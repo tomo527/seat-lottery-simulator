@@ -4,7 +4,7 @@ import { parseArgs } from './cli.mjs'
 import { readBatches, resolveBatch, validateBatches } from './batches.mjs'
 import { readInventories, validateInventories } from './inventory.mjs'
 import { canonicalAreaId, readSources } from './lib.mjs'
-import { productionGateIssues, validRangeSeatCount, validateSources } from './validation.mjs'
+import { configurationProductionGateIssues, productionGateIssues, validRangeSeatCount, validateSources } from './validation.mjs'
 
 const isPlainObject = (value) => value !== null && typeof value === 'object' && !Array.isArray(value)
 
@@ -85,6 +85,41 @@ const list = (items, empty = '(none)', limit = 20) => {
 export const formatVenueReview = (source, validation) => {
   const { file } = source
   const data = isPlainObject(source.data) ? source.data : {}
+  if (data.schemaVersion === 2) {
+    const venueValidation = validation.byVenue.get(file) ?? { errors: [], warnings: [] }
+    const configurationReviews = (Array.isArray(data.configurations) ? data.configurations : []).map((configuration) => {
+      const rawRanges = Array.isArray(configuration?.ranges) ? configuration.ranges : []
+      const ranges = rawRanges.filter(isReviewableRange)
+      const calculated = ranges.reduce((sum, range) => sum + validRangeSeatCount(range), 0)
+      const blockers = configuration?.status === 'production'
+        ? configurationProductionGateIssues(data, configuration, `${file}/${configuration?.id ?? '(missing)'}:`)
+        : [`${file}/${configuration?.id ?? '(missing)'}: status must be production/selectable`]
+      return [
+        `Configuration: ${configuration?.id ?? '(missing)'} | ${configuration?.canonicalName ?? '(missing)'}`,
+        `Status: ${configuration?.status ?? '(missing)'} | selectable=${String(configuration?.selectable)}`,
+        `Condition: ${configuration?.issuerDefinedCondition ?? '(missing)'}`,
+        `Source generation: ${configuration?.sourceGeneration ?? '(missing)'}`,
+        `Scope: ${configuration?.scope?.kind ?? '(missing)'}`,
+        `Scope disclosure: ${configuration?.scopeDisclosure || '(none)'}`,
+        `Seat count: expected=${configuration?.expectedSeatCount ?? '(unconfirmed)'}, calculated=${calculated}`,
+        `Verification: ${configuration?.verification?.status ?? '(missing)'} | rangeDiff=${String(configuration?.verification?.rangeDiff ?? '(missing)')}`,
+        'Production blockers:',
+        ...list(blockers, '(none)', Number.POSITIVE_INFINITY),
+      ].join('\n')
+    })
+    return [
+      `ID: ${data.id ?? '(missing)'}`,
+      `Schema: v2`,
+      `Venue research status: ${data.status ?? '(missing)'}`,
+      `Name: ${data.name ?? '(missing)'}`,
+      `Configurations: ${configurationReviews.length}`,
+      ...configurationReviews,
+      'Validation errors:',
+      ...list(venueValidation.errors, '(none)', Number.POSITIVE_INFINITY),
+      'Validation warnings:',
+      ...list(venueValidation.warnings),
+    ].join('\n')
+  }
   const rawRanges = Array.isArray(data.ranges) ? data.ranges : []
   const ranges = rawRanges.filter(isReviewableRange)
   const skippedRanges = rawRanges.length - ranges.length

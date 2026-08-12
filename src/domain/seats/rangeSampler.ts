@@ -1,5 +1,5 @@
 import { cryptoRandomSource, randomInt, type RandomSource } from '../lottery/random'
-import type { Seat, VenueCatalogEntry, VenueSeatDefinition, VenueSeatRange } from '../../types/venue'
+import type { LegacyVenueCatalogEntry, Seat, VenueRuntimeSelection, VenueSeatDefinition, VenueSeatRange } from '../../types/venue'
 
 export const countRangeSeats = (range: VenueSeatRange): number => {
   const excluded = new Set(range.excluded ?? [])
@@ -32,7 +32,7 @@ const resolveSeatNumber = (range: VenueSeatRange, offset: number): number => {
   throw new RangeError('Seat offset is outside the range.')
 }
 
-export const seatAtOffset = (prepared: PreparedVenueSampler, venue: VenueCatalogEntry, offset: number): Seat => {
+export const seatAtOffset = (prepared: PreparedVenueSampler, venue: LegacyVenueCatalogEntry | VenueRuntimeSelection, offset: number): Seat => {
   if (!Number.isSafeInteger(offset) || offset < 0 || offset >= prepared.totalSeatCount) throw new RangeError('Seat offset is invalid.')
   let low = 0
   let high = prepared.cumulativeCounts.length - 1
@@ -47,7 +47,7 @@ export const seatAtOffset = (prepared: PreparedVenueSampler, venue: VenueCatalog
   return {
     venueId: venue.id,
     venueName: venue.name,
-    layoutId: prepared.definition.patternId,
+    layoutId: prepared.definition.schemaVersion === 1 ? prepared.definition.patternId : prepared.definition.configurationId,
     layoutName: venue.representativePatternName,
     sectionId: areaId,
     sectionLabel: prepared.definition.areas?.[areaId],
@@ -56,5 +56,5 @@ export const seatAtOffset = (prepared: PreparedVenueSampler, venue: VenueCatalog
   }
 }
 
-export const drawVenueSeat = (prepared: PreparedVenueSampler, venue: VenueCatalogEntry, source: RandomSource = cryptoRandomSource): Seat =>
+export const drawVenueSeat = (prepared: PreparedVenueSampler, venue: LegacyVenueCatalogEntry | VenueRuntimeSelection, source: RandomSource = cryptoRandomSource): Seat =>
   seatAtOffset(prepared, venue, randomInt(prepared.totalSeatCount, source))

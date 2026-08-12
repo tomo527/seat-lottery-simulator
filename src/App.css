@@ -38,6 +38,11 @@ input[aria-invalid="true"] { border-color: #ce3445; }
 .selected-venue-summary span:not(.selected-venue-label) { color: var(--muted); font-size: .72rem; }
 .selected-venue-summary small { width: fit-content; margin-top: 3px; color: #5e5872; font-size: .64rem; line-height: 1.5; }
 .selected-venue-summary button { flex: none; min-height: 42px; padding: 9px 14px; border: 1px solid #aaa2d4; border-radius: 11px; background: #fff; color: var(--violet-dark); font-size: .73rem; font-weight: 800; }
+.venue-configuration-picker { margin: 14px 0 0; padding: 16px; display: grid; gap: 10px; border: 1px solid #c8c2df; border-radius: 14px; }
+.venue-configuration-picker legend { padding: 0 6px; color: var(--violet-dark); font-size: .8rem; font-weight: 900; }
+.venue-configuration-picker label { display: flex; align-items: flex-start; gap: 9px; font-size: .78rem; line-height: 1.55; }
+.venue-configuration-picker input { margin-top: 4px; }
+.venue-scope-disclosure { margin: 10px 0 0; padding: 10px 12px; border-left: 4px solid var(--violet); background: #f7f5ff; color: #4f4964; font-size: .72rem; line-height: 1.7; }
 .venue-picker-panel { margin-top: 14px; padding: 18px; border: 1px solid #bbb4dc; border-radius: 17px; background: #fff; box-shadow: 0 18px 45px rgba(38,27,93,.13); }
 .venue-picker-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 15px; }
 .venue-picker-header h3 { margin: 0; font-size: 1rem; }

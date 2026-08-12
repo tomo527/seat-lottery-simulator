@@ -5,6 +5,7 @@ import { batchMembershipVenueIds, readBatches, resolveBatch } from './batches.mj
 import { parseArgs } from './cli.mjs'
 import { readInventories, validateInventories } from './inventory.mjs'
 import { SOURCE_DIR, readSources } from './lib.mjs'
+import { sourceConfigurations } from './source-schema.mjs'
 
 export const reportPathForBatch = (batch) => path.resolve(`data/venue-readiness/${batch}.json`)
 const READINESS = new Set(['R1', 'R2', 'R3', 'R4', 'R5'])
@@ -154,14 +155,15 @@ export const readinessReport = async (options = {}) => {
     if (!source) errors.push(`missing source for readiness venueId: ${item.venueId}`)
     if (!READINESS.has(item.readiness)) errors.push(`unknown readiness ${item.readiness}: ${item.venueId}`)
     if (typeof item.nextAction !== 'string' || !item.nextAction.trim()) errors.push(`nextAction is required: ${item.venueId}`)
-    const ranges = Array.isArray(source?.ranges) ? source.ranges.length : 0
-    const calculated = calculatedSeatCount(source?.ranges)
-    const expected = source?.representativePattern?.expectedSeatCount ?? 'null'
+    const configurations = sourceConfigurations(source)
+    const ranges = configurations.reduce((total, configuration) => total + (Array.isArray(configuration.ranges) ? configuration.ranges.length : 0), 0)
+    const calculated = configurations.map((configuration) => calculatedSeatCount(configuration.ranges)).join('/') || '0'
+    const expected = configurations.map((configuration) => configuration.expectedSeatCount ?? 'null').join('/') || 'null'
     lines.push([
       item.venueId,
       source?.name ?? '(missing)',
       item.readiness,
-      `${ranges} ranges`,
+      `${configurations.length} config / ${ranges} ranges`,
       calculated,
       expected,
       item.secondPass,

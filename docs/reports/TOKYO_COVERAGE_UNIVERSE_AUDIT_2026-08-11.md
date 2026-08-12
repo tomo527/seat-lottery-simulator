@@ -267,7 +267,23 @@ Terra active queueは0件。MUST active research queueも0件。SHOULD 8件の�
 2. `SOL-SHOULD-2`: `toyosu-pit`, `otemachi-mitsui-hall`, `mon-takanawa-box1000`。平土間・大規模event-space型の仮設席、standing、stage、issuer-defined seated layoutを確認。
 3. `SOL-SHOULD-3`: `hulic-hall-tokyo`, `forum-b7`。多目的event hall型の公式番号図／着席layoutと可変stage・販売variantを確認。
 
-**Exact next action:** `TOKYO-CONFIG-SCHEMA-1`を実行する。schema v2、v1 adapter、configuration-level validation、fixed-only disclosure、既存60 production artifactsのbyte-for-byte regressionを実装し、pilot production dataはまだ追加しない。完了後に`SOL-SHOULD-1`を上記3件だけで再開する。
+### 2026-08-12 `TOKYO-CONFIG-SCHEMA-1` implementation result
+
+schema v2、schema v1 single-configuration adapter、configuration-level production validation、`(venueId, configurationId)` runtime key、`venueGroupId` grouping、複数configuration選択UI、fixed-only disclosure、決定論的Tokyo release gateを実装した。既存60 production source、catalog、runtime detail、fingerprintは変更していない。legacy regional shortfallはinformational metricとして保持するが、最終`RELEASE READY`をblockしない。coverage JSONの手動`releaseReady` flagもauthorityから除外し、reporterがrepo stateから各gateをderiveする。
+
+rolloutは次の順に固定する。
+
+1. `TOKYO-CONFIG-SCHEMA-1`（完了）
+2. `TOKYO-CONFIG-PILOT-1` — A SCHEMA-UNLOCKABLE 1会場
+3. pilot成功後、A cohortをbounded batchesでconversion
+4. その後SHOULD 8件research
+5. addressable candidatesをすべてproduction gateへ
+6. `TOKYO RELEASE COVERAGE ADEQUACY REVIEW`
+7. release decision
+
+pilotは`meijiza`を推奨する。既存issuer evidenceが花道あり1,368席／花道なし1,448席の二つの完全な固定番号configurationと各公式PDF・実運用例を明示しており、単一representative制約を直接検証できるためである。pilotでは既存のwheelchair semanticsをconfiguration単位で再確認し、未解決なら該当configurationをnon-selectableに保ち、gateを緩和しない。
+
+**Exact next action:** `TOKYO-CONFIG-PILOT-1`を`meijiza` 1会場だけで実行する。pilot成功前に他のA候補、`SOL-SHOULD-1`、残りSHOULD、OPTIONAL、B/C/D holdへ進まない。
 
 ## source discipline
 

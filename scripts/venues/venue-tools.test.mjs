@@ -50,6 +50,56 @@ const source = (overrides = {}) => ({
   ranges: [{ areaId: 'main', areaLabel: 'メイン', rowLabel: 'A', from: 1, to: 3 }],
   ...overrides,
 })
+const configurationV2 = (overrides = {}) => ({
+  id: 'standard',
+  canonicalName: '通常配置',
+  issuerDefinedCondition: '施設運営者が通常配置として公開した座席図を使用する場合。',
+  definitionAuthority: 'issuer',
+  sourceGeneration: '2026-07 official seat map',
+  sourceIds: ['official-seat-map'],
+  differenceBasisSourceIds: [],
+  status: 'production',
+  selectable: true,
+  numberedSeatSetComplete: true,
+  capacityFitting: false,
+  repositoryInventedDifferences: false,
+  expectedSeatCount: 3,
+  scope: {
+    kind: 'full-venue',
+    issuerDefined: true,
+    containsEventDependentSeatIds: false,
+  },
+  scopeDisclosure: '',
+  wheelchairSemantics: {
+    status: 'resolved',
+    description: '公式座席図上に車いす置換席はない。',
+    sourceIds: ['official-seat-map'],
+  },
+  verification: {
+    status: 'verified',
+    checkedAt: TODAY,
+    method: 'independent-official-source-review',
+    seatStructure: 'matched',
+    seatCount: 'matched',
+    rangeDiff: 0,
+    unresolvedIssues: [],
+  },
+  ranges: [{ areaId: 'main', areaLabel: 'メイン', rowLabel: 'A', from: 1, to: 3 }],
+  ...overrides,
+})
+const sourceV2 = (overrides = {}) => ({
+  schemaVersion: 2,
+  status: 'production',
+  id: 'test-hall-v2',
+  name: 'Test Hall V2',
+  prefecture: '東京都',
+  city: '渋谷区',
+  aliases: ['テストホールV2'],
+  venueType: 'hall',
+  sources: source().sources,
+  configurations: [configurationV2()],
+  ...overrides,
+})
 const unfinishedSource = (status, id) => source({
   status,
   id,
@@ -139,6 +189,102 @@ describe('venue source validation', () => {
     const coverage = source()
     coverage.representativePattern.coverage = 'partial'
     expect(errorsFor(coverage)).toMatch(/coverage must be complete/)
+  })
+})
+
+describe('schema v2 configuration validation and output', () => {
+  it('accepts one configuration, multiple issuer-defined configurations, and fixed-only configurations', () => {
+    expect(errorsFor(sourceV2())).toBe('')
+    const multi = sourceV2({ configurations: [
+      configurationV2({ differenceBasisSourceIds: ['official-seat-map'] }),
+      configurationV2({
+        id: 'with-pit',
+        canonicalName: 'オーケストラピット使用時',
+        issuerDefinedCondition: '施設運営者がピット使用時として公開した座席図を使用する場合。',
+        differenceBasisSourceIds: ['official-seat-map'],
+        expectedSeatCount: 2,
+        ranges: [{ areaId: 'main', areaLabel: 'メイン', rowLabel: 'B', from: 1, to: 2 }],
+      }),
+    ] })
+    expect(errorsFor(multi)).toBe('')
+    const fixedOnly = sourceV2({ configurations: [configurationV2({
+      id: 'fixed-only',
+      canonicalName: '固定席のみ',
+      issuerDefinedCondition: '施設運営者が独立した恒久固定席として定義した範囲。',
+      scope: {
+        kind: 'fixed-only',
+        issuerDefined: true,
+        containsEventDependentSeatIds: false,
+        excludesDynamicAreas: true,
+        maximumCapacity: false,
+        excludedAreas: ['アリーナ・floor席'],
+        exactSubtotal: 3,
+      },
+      scopeDisclosure: '固定席のみ。アリーナ／floor席を含まず、会場最大収容配置ではありません。',
+    })] })
+    expect(errorsFor(fixedOnly)).toBe('')
+  })
+
+  it('keeps a complete configuration selectable when an incomplete official variant is non-selectable', () => {
+    const data = sourceV2({ configurations: [
+      configurationV2({ differenceBasisSourceIds: ['official-seat-map'] }),
+      configurationV2({
+        id: 'future-variant',
+        canonicalName: '公式別配置（保留）',
+        issuerDefinedCondition: '施設運営者が別配置として公開した場合。',
+        differenceBasisSourceIds: ['official-seat-map'],
+        status: 'draft',
+        selectable: false,
+        numberedSeatSetComplete: false,
+        expectedSeatCount: null,
+        verification: { status: 'pending', checkedAt: null, method: '', seatStructure: 'pending', seatCount: 'pending', rangeDiff: null, unresolvedIssues: ['番号範囲未公開'] },
+        ranges: [],
+      }),
+    ] })
+    expect(errorsFor(data)).toBe('')
+    const outputs = buildOutputs(wrapped(data))
+    expect(outputs.catalog[0].configurations.map(({ id }) => id)).toEqual(['standard'])
+    expect([...outputs.details.keys()]).toEqual(['test-hall-v2--standard'])
+  })
+
+  it.each([
+    ['repository-created configuration', (data) => { data.configurations[0].definitionAuthority = 'repository' }, /definitionAuthority|repository-created/],
+    ['missing issuer condition', (data) => { data.configurations[0].issuerDefinedCondition = '' }, /issuerDefinedCondition/],
+    ['event-dependent permanent IDs', (data) => { data.configurations[0].scope.containsEventDependentSeatIds = true }, /event-dependent floor seats/],
+    ['capacity fitting', (data) => { data.configurations[0].capacityFitting = true }, /capacity fitting/],
+    ['incomplete production configuration', (data) => { data.configurations[0].numberedSeatSetComplete = false }, /numbered seat set must be complete/],
+    ['count mismatch', (data) => { data.configurations[0].expectedSeatCount = 4 }, /expected 4, calculated 3|does not match calculated/],
+    ['unresolved wheelchair semantics', (data) => { data.configurations[0].wheelchairSemantics.status = 'unresolved' }, /wheelchair semantics must be resolved/],
+    ['missing source generation', (data) => { data.configurations[0].sourceGeneration = '' }, /sourceGeneration/],
+    ['incomplete verification', (data) => { data.configurations[0].verification.status = 'pending' }, /verification.status must be verified/],
+  ])('rejects %s', (_name, mutate, expected) => {
+    const data = sourceV2()
+    mutate(data)
+    expect(errorsFor(data)).toMatch(expected)
+  })
+
+  it('rejects duplicate IDs, ungrounded duplicate seat sets, and configurations without difference evidence', () => {
+    const duplicateId = sourceV2({ configurations: [
+      configurationV2({ differenceBasisSourceIds: ['official-seat-map'] }),
+      configurationV2({ differenceBasisSourceIds: ['official-seat-map'] }),
+    ] })
+    expect(errorsFor(duplicateId)).toMatch(/duplicate configuration ID/)
+    expect(errorsFor(duplicateId)).toMatch(/duplicate a physical seat set without issuer evidence/)
+    const noDifferenceEvidence = sourceV2({ configurations: [
+      configurationV2(),
+      configurationV2({ id: 'variant', ranges: [{ areaId: 'main', areaLabel: 'メイン', rowLabel: 'B', from: 1, to: 3 }] }),
+    ] })
+    expect(errorsFor(noDifferenceEvidence)).toMatch(/requires issuer evidence for configuration differences/)
+  })
+
+  it('rejects fixed-only configurations without complete scope disclosure', () => {
+    const data = sourceV2({ configurations: [configurationV2({
+      id: 'fixed-only',
+      canonicalName: '固定席のみ',
+      scope: { kind: 'fixed-only', issuerDefined: true, containsEventDependentSeatIds: false, excludesDynamicAreas: true, maximumCapacity: false, excludedAreas: ['floor'], exactSubtotal: 3 },
+      scopeDisclosure: '',
+    })] })
+    expect(errorsFor(data)).toMatch(/fixed-only scopeDisclosure is required/)
   })
 })
 

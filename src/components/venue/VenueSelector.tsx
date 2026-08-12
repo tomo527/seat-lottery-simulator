@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { VenueCatalogEntry } from '../../types/venue'
+import { isMultiConfigurationVenue, resolveVenueSelection, venueSeatCountLabel } from '../../data/venue-db/catalog'
 
 type Props = {
   venues: VenueCatalogEntry[]
   selectedVenueId: string
+  selectedConfigurationId?: string
   onSelect: (venueId: string) => void
+  onSelectConfiguration?: (configurationId: string) => void
 }
 
 const PAGE_SIZE = 20
@@ -12,7 +15,7 @@ const normalizeVenueSearchText = (value: string) => value.normalize('NFKC').trim
 const sortedUnique = (values: string[]) => [...new Set(values)].sort((left, right) => left.localeCompare(right, 'ja'))
 const locationLabel = (venue: VenueCatalogEntry) => [venue.prefecture, venue.municipality].filter(Boolean).join(' ')
 
-export function VenueSelector({ venues, selectedVenueId, onSelect }: Props) {
+export function VenueSelector({ venues, selectedVenueId, selectedConfigurationId, onSelect, onSelectConfiguration }: Props) {
   const [query, setQuery] = useState('')
   const [region, setRegion] = useState('')
   const [prefecture, setPrefecture] = useState('')
@@ -24,6 +27,7 @@ export function VenueSelector({ venues, selectedVenueId, onSelect }: Props) {
   const listRef = useRef<HTMLUListElement>(null)
   const returnFocusRef = useRef(false)
   const selectedVenue = venues.find((venue) => venue.id === selectedVenueId)
+  const selectedConfiguration = resolveVenueSelection(selectedVenue, selectedConfigurationId)
 
   const regions = useMemo(() => sortedUnique(venues.map((venue) => venue.region)), [venues])
   const prefectures = useMemo(
@@ -111,7 +115,9 @@ export function VenueSelector({ venues, selectedVenueId, onSelect }: Props) {
             <span className="selected-venue-label">選択中の会場</span>
             <strong>{selectedVenue.name}</strong>
             <span>{locationLabel(selectedVenue)}</span>
-            <small>抽選対象 {selectedVenue.seatCount.toLocaleString('ja-JP')}席</small>
+            {isMultiConfigurationVenue(selectedVenue) ? (
+              <small>{selectedConfiguration ? `抽選対象 ${selectedConfiguration.seatCount.toLocaleString('ja-JP')}席` : `利用可能な配置 ${selectedVenue.configurations.length.toLocaleString('ja-JP')}件`}</small>
+            ) : <small>抽選対象 {selectedVenue.seatCount.toLocaleString('ja-JP')}席</small>}
           </div>
           <button ref={triggerRef} type="button" aria-expanded={panelOpen} aria-controls="venue-picker-panel" onClick={() => setPanelOpen((open) => !open)}>会場を変更</button>
         </div>
@@ -120,6 +126,28 @@ export function VenueSelector({ venues, selectedVenueId, onSelect }: Props) {
           <p>まだ会場が選択されていません。</p>
           <button ref={triggerRef} className="primary-button venue-picker-trigger" type="button" aria-expanded={panelOpen} aria-controls="venue-picker-panel" onClick={() => setPanelOpen((open) => !open)}>会場を選ぶ</button>
         </div>
+      )}
+
+      {selectedVenue && isMultiConfigurationVenue(selectedVenue) && selectedVenue.configurations.length > 1 && (
+        <fieldset className="venue-configuration-picker">
+          <legend>座席配置を選ぶ</legend>
+          {selectedVenue.configurations.map((configuration) => (
+            <label key={configuration.id}>
+              <input
+                type="radio"
+                name={`configuration-${selectedVenue.id}`}
+                value={configuration.id}
+                checked={selectedConfigurationId === configuration.id}
+                onChange={() => onSelectConfiguration?.(configuration.id)}
+              />
+              <span><strong>{configuration.canonicalName}</strong>（抽選対象 {configuration.seatCount.toLocaleString('ja-JP')}席）</span>
+            </label>
+          ))}
+          {selectedConfiguration?.scopeDisclosure && <p className="venue-scope-disclosure">{selectedConfiguration.scopeDisclosure}</p>}
+        </fieldset>
+      )}
+      {selectedVenue && isMultiConfigurationVenue(selectedVenue) && selectedVenue.configurations.length === 1 && selectedConfiguration?.scopeDisclosure && (
+        <p className="venue-scope-disclosure">{selectedConfiguration.scopeDisclosure}</p>
       )}
 
       {panelOpen && (
@@ -145,7 +173,7 @@ export function VenueSelector({ venues, selectedVenueId, onSelect }: Props) {
               {visibleVenues.map((venue) => (
                 <li key={venue.id}><button type="button" aria-label={`${venue.name}を選ぶ`} aria-pressed={selectedVenueId === venue.id} onClick={() => selectVenue(venue.id)}>
                   <span className="venue-compact-main"><strong>{venue.name}</strong><small>{locationLabel(venue)}</small></span>
-                  <span className="venue-seat-total">抽選対象 {venue.seatCount.toLocaleString('ja-JP')}席</span>
+                  <span className="venue-seat-total">{isMultiConfigurationVenue(venue) && venue.configurations.length > 1 ? `利用可能な配置 ${venue.configurations.length.toLocaleString('ja-JP')}件` : `抽選対象 ${venueSeatCountLabel(venue).toLocaleString('ja-JP')}席`}</span>
                 </button></li>
               ))}
             </ul>

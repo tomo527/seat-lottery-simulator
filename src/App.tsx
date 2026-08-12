@@ -7,6 +7,7 @@ import { SiteHeader } from './components/layout/SiteHeader'
 import { CustomSeatBuilder } from './components/venue/CustomSeatBuilder'
 import { VenueSelector } from './components/venue/VenueSelector'
 import { loadVenueSeatData } from './data/venue-db/loadVenue'
+import { isMultiConfigurationVenue, resolveVenueSelection } from './data/venue-db/catalog'
 import { venues } from './data/venues'
 import { DRAW_ANIMATION_DURATION_MS } from './domain/lottery/constants'
 import { drawSeat, formatSeatLabel } from './domain/lottery/lottery'
@@ -37,16 +38,22 @@ const initialVenueId = (): string => {
   return storedVenueId && venues.some((venue) => venue.id === storedVenueId) ? storedVenueId : ''
 }
 
+const defaultConfigurationId = (venueId: string): string => {
+  const venue = venues.find((candidate) => candidate.id === venueId)
+  return venue && isMultiConfigurationVenue(venue) && venue.configurations.length === 1 ? venue.configurations[0].id : ''
+}
+
 function App() {
   const [sourceMode, setSourceMode] = useState<SourceMode>('venue')
   const [selectedVenueId, setSelectedVenueId] = useState(initialVenueId)
+  const [selectedConfigurationId, setSelectedConfigurationId] = useState(() => defaultConfigurationId(initialVenueId()))
   const [customInput, setCustomInput] = useState(DEFAULT_CUSTOM)
   const [phase, setPhase] = useState<Phase>('idle')
   const [result, setResult] = useState<Seat | null>(null)
   const [userError, setUserError] = useState('')
   const [shareStatus, setShareStatus] = useState('')
   const [venueSampler, setVenueSampler] = useState<PreparedVenueSampler | null>(null)
-  const [venueDataStatus, setVenueDataStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>(() => selectedVenueId ? 'loading' : 'idle')
+  const [venueDataStatus, setVenueDataStatus] = useState<'idle' | 'loading' | 'ready' | 'error'>(() => resolveVenueSelection(venues.find((venue) => venue.id === selectedVenueId), defaultConfigurationId(selectedVenueId)) ? 'loading' : 'idle')
   const [venueLoadAttempt, setVenueLoadAttempt] = useState(0)
   const timeoutRef = useRef<number | null>(null)
   const drawSequenceRef = useRef(0)
@@ -56,7 +63,11 @@ function App() {
   const venueAbortRef = useRef<AbortController | null>(null)
   const reducedMotion = useReducedMotion()
 
-  const selectedVenue = venues.find((venue) => venue.id === selectedVenueId)
+  const selectedVenueGroup = venues.find((venue) => venue.id === selectedVenueId)
+  const selectedVenue = useMemo(
+    () => resolveVenueSelection(selectedVenueGroup, selectedConfigurationId),
+    [selectedConfigurationId, selectedVenueGroup],
+  )
   const customValidation = useMemo(() => validateCustomSeatInput(customInput), [customInput])
   const customSeats = useMemo(() => generateCustomSeats(customInput), [customInput])
   const venueName = sourceMode === 'venue' ? selectedVenue?.name ?? '未選択の会場' : customInput.venueName.trim() || 'マイ会場'
@@ -126,13 +137,23 @@ function App() {
 
   const changeVenue = (venueId: string) => {
     setSelectedVenueId(venueId)
+    const configurationId = defaultConfigurationId(venueId)
+    setSelectedConfigurationId(configurationId)
     setVenueLoadAttempt((attempt) => attempt + 1)
     setVenueSampler(null)
-    setVenueDataStatus('loading')
+    setVenueDataStatus(resolveVenueSelection(venues.find((venue) => venue.id === venueId), configurationId) ? 'loading' : 'idle')
     resetResult()
     const url = new URL(window.location.href)
     url.searchParams.set('venue', venueId)
     window.history.replaceState({}, '', url)
+  }
+
+  const changeConfiguration = (configurationId: string) => {
+    setSelectedConfigurationId(configurationId)
+    setVenueLoadAttempt((attempt) => attempt + 1)
+    setVenueSampler(null)
+    setVenueDataStatus('loading')
+    resetResult()
   }
 
   const changeCustomInput = (next: CustomSeatInput) => {
@@ -219,7 +240,13 @@ function App() {
 
           <div id="seat-source-panel" aria-labelledby={sourceMode === 'venue' ? 'venue-source-button' : 'custom-source-button'} className="source-panel">
             {sourceMode === 'venue' ? (
-              <VenueSelector venues={venues} selectedVenueId={selectedVenueId} onSelect={changeVenue} />
+              <VenueSelector
+                venues={venues}
+                selectedVenueId={selectedVenueId}
+                selectedConfigurationId={selectedConfigurationId}
+                onSelect={changeVenue}
+                onSelectConfiguration={changeConfiguration}
+              />
             ) : (
               <CustomSeatBuilder value={customInput} onChange={changeCustomInput} />
             )}
@@ -246,6 +273,7 @@ function App() {
             <ResultCard
               seat={result}
               venueName={venueName}
+              scopeDisclosure={sourceMode === 'venue' ? selectedVenue?.scopeDisclosure : undefined}
               shareStatus={shareStatus}
               onRetry={startDraw}
               onChangeConditions={changeConditions}
