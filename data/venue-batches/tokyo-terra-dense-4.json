@@ -1,0 +1,13 @@
+{
+  "batchId": "tokyo-terra-dense-4",
+  "createdAt": "2026-08-12",
+  "scope": "Tokyo coverage TERRA-DENSE-4: shiki-umi, ariake-shiki, nihon-seinenkan の現行性・代表選択可能番号席pattern・第1/第2パス・production gate。作品別sales map、車いす、補助・撤去席、pit/forestage、source generationとcanonical row/area ownershipを公式根拠だけで判定する。",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["tokyo-official-0146", "tokyo-official-0430", "tokyo-official-0283"],
+  "complexityAssessments": [
+    {"inventoryId":"tokyo-official-0146","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"現行劇団四季資料は『アラジン』の作品別非販売/ファミリーゾーンmap、約1,200席、個別予約の車いすスペースを示す。恒久physical set、厳密総数、車いす置換番号を定義しない。","preflightComplete":true,"processingRoute":"Hold"},
+    {"inventoryId":"tokyo-official-0430","classification":"SOURCE/POLICY/SCHEMA HOLD","rationale":"現行劇団四季資料は『ライオンキング』の作品別非販売/ファミリーゾーンmap、約1,200席、個別予約の車いすスペースを示す。恒久physical set、厳密総数、車いす置換番号を定義しない。","preflightComplete":true,"processingRoute":"Hold"},
+    {"inventoryId":"tokyo-official-0283","classification":"SCHEMA HOLD","rationale":"現行運営者資料は固定番号席1,245、車いす4別枠、1階811・2階434を一致して示すが、分割番号blockのcanonical row/area ownershipを図形位置による補完なしに定義しない。","preflightComplete":true,"processingRoute":"Hold"}
+  ]
+}

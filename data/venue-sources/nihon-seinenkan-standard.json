@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "nihon-seinenkan-standard",
+  "name": "日本青年館ホール",
+  "prefecture": "東京都",
+  "city": "新宿区",
+  "aliases": ["日本青年館", "Nippon Seinenkan Hall"],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "operator-fixed-numbered-seat-set",
+    "name": "運営者掲載の固定番号席配置",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行運営者ページと図面は総数1,249席、固定席1,245席、別枠車いす4席、1階固定811席・2階434席を明記する。しかし図面の分割された番号ブロックについて、行名とareaのcanonical ownershipをテキストで定義せず、図形位置による補完なしにはlossless range mappingを作れない。",
+    "notIncludedPatterns": ["別枠の車いす4席", "図面から推測するblock-to-row/area対応", "公演別の席種・販売制御"]
+  },
+  "sources": [
+    {"id":"official-current-hall-guide","official":true,"roles":["facility","seat-count","seat-structure"],"publisher":"日本青年館ホール","title":"ホールのご案内","url":"https://seinenkan-hall.com/hall","checkedAt":"2026-08-12"},
+    {"id":"official-seat-plan","official":true,"roles":["seat-structure","seat-count"],"publisher":"日本青年館ホール","title":"日本青年館ホール座席表","url":"https://seinenkan-hall.com/wp-content/themes/seinenkan/asset/pdf/%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf","checkedAt":"2026-08-12"},
+    {"id":"official-stage-plan","official":true,"roles":["seat-structure","seat-count","facility"],"publisher":"日本青年館ホール","title":"日本青年館ホール舞台図面（客席図併載）","url":"https://seinenkan-hall.com/wp-content/themes/seinenkan/asset/pdf/%E8%88%9E%E5%8F%B0.pdf","checkedAt":"2026-08-12"}
+  ],
+  "registeredScope": "SCHEMA HOLD。現行運営者資料は固定番号席1,245席と別枠車いす4席を一意に示すが、分割された番号ブロックのrow/area帰属を図形位置から補完せずに表現するcanonical schemaを公開していない。",
+  "completenessBasis": "第1パスは現行ホール案内と座席表で1階固定811席、2階434席、車いす4席別枠、1,245固定番号席を確認した。独立第2パスは運営者の現行約款がリンクする舞台図面で同じ階別数・番号図・車いす別枠を確認した。両者はcountと固定configurationで一致するが、row/areaのlossless canonical ownershipを文章又は表で定義しない。",
+  "transformation": "総数へのfitting、図形位置からのrow/area帰属推測、車いす4席の番号化、舞台前室をforestage/pit variantとして扱う補完を行わず、rangesは空のままとした。",
+  "knownLimitations": ["SCHEMA HOLD: 1,245の印字番号を固定番号席として確認できる一方、分割blockのcanonical row/area ownershipをissuerが明示しない。", "車いす4席は公式に別枠で番号席集合へ含めない。", "現行ページがリンクする座席表は2017-01-17作成、舞台図面は2019-04現在であり、現行ページでの個別revision/versionの明示がない。"],
+  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"official-source-first-pass-independent-second-pass-hold","seatStructure":"matched","seatCount":"matched","unresolvedIssues":["fixed-seat count is resolved, but issuer-owned material does not define lossless canonical row/area ownership for split numbered blocks.","The linked PDFs have different printed generations without a current revision designation for the numbered mapping."]},
+  "ranges": []
+}

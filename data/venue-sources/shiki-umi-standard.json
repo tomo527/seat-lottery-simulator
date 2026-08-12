@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "shiki-umi-standard",
+  "name": "大同生命ミュージカルシアター 電通四季劇場［海］",
+  "prefecture": "東京都",
+  "city": "港区",
+  "aliases": ["電通四季劇場［海］", "四季劇場［海］"],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "issuer-defined-selectable-numbered-seat-set",
+    "name": "発行者定義の代表的な選択可能番号席セット",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "劇団四季の現行劇場ページは『アラジン』東京公演の作品別座席表だけを掲載し、非販売席とファミリーゾーンを明記する。客席数は約1,200席であり、車いすスペースは予約前の個別連絡扱いで、恒久的な番号席集合・厳密総数・置換番号を定義しない。",
+    "notIncludedPatterns": ["『アラジン』東京公演の販売制御", "非販売席", "ファミリーゾーン", "個別予約の車いすスペース"]
+  },
+  "sources": [
+    {"id":"official-current-theater-page","official":true,"roles":["facility","seat-count","seat-structure","event-layout"],"publisher":"劇団四季","title":"電通四季劇場［海］ 劇場情報","url":"https://www.shiki.jp/theatres/0905/","checkedAt":"2026-08-12"},
+    {"id":"official-current-show-seat-map","official":true,"roles":["seat-structure","event-layout"],"publisher":"劇団四季","title":"『アラジン』東京公演 座席表（電通四季劇場［海］）","url":"https://www.shiki.jp/theatres/pdf_seat/09050077.pdf","checkedAt":"2026-08-12"}
+  ],
+  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行作品別販売図から物理的な恒久番号席setを切り分けるissuer-owned根拠がなく、約1,200席と個別予約の車いすスペースを番号範囲へ変換しない。",
+  "completenessBasis": "第1パスで現行劇場ページと現行『アラジン』座席表の非販売席・ファミリーゾーンを確認してrange転記を停止した。独立第2パスで同ページの車いす予約手続と約1,200席表記を再確認し、厳密な恒久番号席総数・車いす置換番号が公開されないことを確認した。",
+  "transformation": "作品別販売制御を恒久物理mapとして扱わず、約数からのrange作成、非販売席の補完、車いすスペースの番号置換推測を行わず、rangesは空のままとした。",
+  "knownLimitations": ["SOURCE HOLD: 現行施設総数は約1,200席で厳密なexpectedSeatCountではない。", "POLICY/SCHEMA HOLD: 非販売席が販売制御か物理configuration差か、及び車いすスペースの包含・置換番号をissuerが定義しない。"],
+  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"official-source-first-pass-independent-second-pass-hold","seatStructure":"pending","seatCount":"pending","unresolvedIssues":["作品別販売mapだけが公開され、恒久physical numbered-seat setが定義されない。","車いすスペースの番号・包含・置換関係が未公表。"]},
+  "ranges": []
+}

@@ -1,0 +1,18 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-terra-dense-4-2026-08-12",
+  "generatedAt": "2026-08-12",
+  "scope": "Terra high Tokyo coverage DENSE macro for exactly shiki-umi, ariake-shiki, and nihon-seinenkan.",
+  "baseline": {"productionVenues":60,"productionSeats":81515,"tokyoUniverse":76,"tokyoProduction":8,"tokyoHold":47,"tokyoContradiction":2,"tokyoUnresearched":19,"mustUnresearched":7,"shouldUnresearched":8},
+  "outcomes": [
+    {"id":"shiki-umi","inventoryId":"tokyo-official-0146","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"劇団四季の現行劇場ページと『アラジン』東京公演座席表。約1,200席、非販売席、ファミリーゾーン、個別予約の車いすスペースを示す。","configuration":"作品別sales map。非販売席の物理configurationとの関係、車いす包含・置換番号、厳密総数が未定義。","representativePattern":"発行者定義の恒久selectable numbered-seat setなし。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行作品別mapで非販売席を確認しrange転記を停止。","secondPass":"現行劇場ページの約数・車いす予約手続を独立確認。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: sales controlとphysical mapの関係、厳密総数、車いす置換番号がissuer-owned資料で未定義。"},
+    {"id":"ariake-shiki","inventoryId":"tokyo-official-0430","classification":"SOURCE/POLICY/SCHEMA HOLD","currentOfficialSource":"劇団四季の現行劇場ページと『ライオンキング』東京公演座席表。約1,200席、非販売席、ファミリーゾーン、個別予約の車いすスペースを示す。","configuration":"作品別sales map。非販売席の物理configurationとの関係、車いす包含・置換番号、厳密総数が未定義。","representativePattern":"発行者定義の恒久selectable numbered-seat setなし。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行作品別mapで非販売席を確認しrange転記を停止。","secondPass":"現行劇場ページの約数・車いす予約手続を独立確認。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SOURCE/POLICY/SCHEMA HOLD: sales controlとphysical mapの関係、厳密総数、車いす置換番号がissuer-owned資料で未定義。"},
+    {"id":"nihon-seinenkan","inventoryId":"tokyo-official-0283","classification":"SCHEMA HOLD","currentOfficialSource":"日本青年館ホールの現行ホール案内、座席表、舞台図面。総数1,249、固定1,245、車いす4別枠、1階811・2階434を一致して示す。","configuration":"固定番号席1,245と別枠車いす4。公開図面にsupplementary/removable seat、pit/forestageの番号variantは示されない。","representativePattern":"固定番号席configurationは一意だが、分割番号blockのcanonical row/area ownershipはissuerテキストで未定義。","expectedSeatCount":null,"calculatedSeatCount":null,"firstPass":"現行案内・座席表で固定総数、階別数、別枠車いすを確認し、row/area mapping gateで停止。","secondPass":"現行約款がリンクする舞台図面で同じ番号図・階別数・車いす別枠を独立確認。","rangeDiff":null,"productionGate":"blocked before range transcription","blocker":"SCHEMA HOLD: 図形位置によるblock-to-row/area補完を禁止するため、lossless canonical range mappingを確定できない。"}
+  ],
+  "productionPromotions": 0,
+  "productionFinal": 60,
+  "productionSeatFinal": 81515,
+  "baselineProductionRegression": "zero changes to all 60 baseline production source semantics, catalog entries, runtime details, and fingerprints",
+  "releaseReady": false,
+  "exactNextAction": "Run SOL-CPLX-1 exactly for kanadevia-hall, sgc-hall-ariake, and ex-theater-ariake; then process tokyo-dome as a single-venue macro. Do not reopen TERRA-DENSE-4 HOLDs without changed issuer-owned evidence."
+}

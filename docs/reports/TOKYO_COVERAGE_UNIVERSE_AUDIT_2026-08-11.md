@@ -114,9 +114,9 @@ Record-only/currentness hold: `ajinomoto-stadium`, `national-theatre-large`, `na
 
 `LUNA-STD-1`（`theater-h` / `pia-theater-yaesu` / `galaxy-theatre`）と `LUNA-STD-2`（`theater-g-rosso` / `imm-theater` / `nissho-hall`）は完了。LUNA-STD-2はproduction増加1件・765席、正式HOLD 2件。
 
-次に実行すべきbounded macroは `TERRA-DENSE-1`（東京宝塚/四季［春］/四季［秋］）。
+Terra DENSEの12件は `TERRA-DENSE-1` から `TERRA-DENSE-4` で全て正式disposition済みであり、active Terra queueは0件である。
 
-次のbounded順序は、`TERRA-DENSE-1`（東京宝塚/四季［春］/四季［秋］）、`TERRA-DENSE-2`（四季［海］/有明四季/日本青年館）、`TERRA-DENSE-3`（代々木第一/第二/東京体育館）、`TERRA-DENSE-4`（有明アリーナ/武蔵野の森/東京ガーデンシアター）、その後に `SOL-CPLX-1`（Kanadevia/SGC/EX THEATER ARIAKE）とする。Solの東京ドームは単独macro、可変ライブハウス群は別macroに分離する。
+次に実行すべきbounded macroは `SOL-CPLX-1`（Kanadevia Hall / SGC HALL ARIAKE / EX THEATER ARIAKE）。その後はcoverage importanceとconfiguration complexityを踏まえ、`tokyo-dome` を単独macroとして処理する。可変ライブハウス群は別macroに分離する。
 
 ## source discipline
 
