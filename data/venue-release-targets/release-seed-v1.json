@@ -6,18 +6,33 @@
   "coverageUniverse": {
     "file": "data/venue-coverage/tokyo-coverage-universe-2026-08-11.json",
     "jurisdiction": "東京都",
-    "denominatorPolicy": "Do not use the existing curated target count or regional fixed target counts as the Tokyo coverage denominator.",
-    "releaseGate": {
-      "mustUnresearched": 0,
-      "shouldUnresearched": 0,
-      "optionalIsReleaseBlocker": false,
-      "currentSourceCompleteSchemaExpressibleMustShouldProductionized": true,
-      "productionImpossibleMustShouldFormalHoldOrContradiction": true,
-      "holds": "HOLD/CONTRADICTIONはissuer-owned official blocker、currentness、またはschema/policy blockerを明示記録する",
-      "gapRule": "明らかな主要会場の候補漏れがないことを確認し、会場数だけで判定しない",
-      "productionQualityGate": "従来どおり変更しない（expectedSeatCount == calculatedSeatCount、独立公式第2パス差分ゼロ、verification.status=verified、unresolvedIssues=[]）",
-      "readiness": "NO until MUST and SHOULD unresearched are both zero and the audited universe gate is satisfied."
-    }
+      "denominatorPolicy": "Do not use the existing curated target count or regional fixed target counts as the Tokyo coverage denominator.",
+      "releaseGate": {
+        "metricSeparation": "Research completeness, user-visible production coverage, and schema-addressable coverage are independent release metrics. Formal disposition is not production availability.",
+        "researchCompleteness": {
+          "mustRequiredPercent": 100.0,
+          "shouldRequiredPercent": 100.0
+        },
+        "addressableProductionConversion": {
+          "mustRequiredPercent": 100.0,
+          "shouldRequiredPercent": 100.0,
+          "rule": "Every current-schema or approved-schema-extension addressable MUST/SHOULD candidate must be production before release."
+        },
+        "currentEvidenceBasedRawProductionFloor": {
+          "must": "16/44 (36.4%)",
+          "should": "8/28 (28.6%)",
+          "mustAndShould": "24/72 (33.3%)",
+          "tokyoUniverse": "24/76 (31.6%)",
+          "dynamicRule": "Each of the eight unresearched SHOULD candidates later classified as schema-addressable increases the required numerator by one; it cannot replace an existing required venue."
+        },
+        "optionalIsReleaseBlocker": false,
+        "exclusions": "候補はraw denominatorから削除しない。非production免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDだけで、A SCHEMA-UNLOCKABLEは免責しない。",
+        "configurationSupport": "issuer-defined complete configurations and independently defined fixed-only subsets must be supported before the A cohort can count as covered.",
+        "holds": "HOLD/CONTRADICTIONはA/B/C/D blocker taxonomy、issuer-owned official blocker、currentness、schema addressabilityを明示記録する",
+        "gapRule": "明らかな主要会場の候補漏れがないことを確認し、会場数だけで判定しない",
+        "productionQualityGate": "従来どおり変更しない（expectedSeatCount == calculatedSeatCount、独立公式第2パス差分ゼロ、verification.status=verified、unresolvedIssues=[]）",
+        "readiness": "NO until research completeness, addressable production conversion, evidence-based raw floors, configuration support, universe-gap, and unchanged production quality gates all pass. This audit does not set readiness to YES."
+      }
   },
   "legacyTargetPolicy": "The existing targets remain traceable historical/preflight work items. They are not, by themselves, proof of Tokyo coverage or a release denominator.",
   "targets": [

@@ -206,6 +206,18 @@ eligible production coverage
 
 `eligible production coverage`だけを上げるために未調査候補を除外してはいけません。production inventoryはactiveかつeligibleで、同じIDのsourceもproductionである必要があります。production sourceが対象都道府県inventoryに存在しない場合もエラーです。
 
+### release coverageの3指標
+
+主要会場universeのrelease判断では、次を混同しません。
+
+- `research completeness` = PRODUCTION / HOLD / CONTRADICTIONへformal disposition済みの候補数 / universe総数。
+- `user-visible production coverage` = production catalogから実際に抽選できる候補数 / universe総数。
+- `schema-addressable coverage` = production済み、現行schemaでlosslessに処理可能、またはissuerが完全定義したconfiguration/fixed-only subsetを承認済みschema拡張で処理可能な候補数 / universe総数。
+
+formal dispositionは調査工程の完了であり、user-visible coverageではありません。HOLD/CONTRADICTIONをraw denominatorから削除しません。release免責にできる非production候補は、issuer-owned evidenceでB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのいずれかを示すものだけです。A SCHEMA-UNLOCKABLEはschema移行とproduction gateの対象であり、HOLDのままrelease完了に数えません。
+
+multi-configuration / fixed-only configurationは、configurationごとにissuer-defined condition、完全番号range、厳密総数、source generation、wheelchair semantics、独立第2パスを持つ場合だけ認めます。repository側のvariant創作、event-dependent floor番号の恒久ID化、capacity fitting、不完全variantの補完は禁止です。
+
 ## batch運用
 
 `data/venue-batches/<batch-id>.json`は大量調査の作業範囲を固定します。1件のsourceへ複数inventory itemを割り当てず、batch targetはinventoryに存在するstable IDまたは`venueSourceId`を参照します。

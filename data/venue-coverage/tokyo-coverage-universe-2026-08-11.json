@@ -18,6 +18,75 @@
     "CONTRADICTION":"既存の独立確認または公式席数と番号読取に未解消差分がある。",
     "未調査":"本auditで候補化したが、現行inventoryに相当する調査状態がない、またはinventory上not-started。"
   },
+  "metricDefinitions": {
+    "researchCompleteness":"PRODUCTION、HOLD、CONTRADICTIONのいずれかへformal dispositionされた候補数 / universe候補数。production availabilityを意味しない。",
+    "userVisibleProductionCoverage":"production catalogに入り、ユーザーが実際に座席抽選できる候補数 / universe候補数。",
+    "schemaAddressableCoverage":"既にPRODUCTION、現行schemaで公式range作成が可能、またはissuerが完全に定義したconfiguration/fixed-only subsetを合理的schema拡張でlosslessに収録可能とrepo evidenceから確認できる候補数 / universe候補数。未調査候補は分子に入れない。"
+  },
+  "coverageMetrics": {
+    "researchCompleteness": {
+      "tokyoUniverse":{"numerator":64,"denominator":76,"percent":84.2},
+      "MUST":{"numerator":44,"denominator":44,"percent":100.0},
+      "SHOULD":{"numerator":20,"denominator":28,"percent":71.4},
+      "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0}
+    },
+    "userVisibleProductionCoverage": {
+      "tokyoUniverse":{"numerator":8,"denominator":76,"percent":10.5},
+      "MUST":{"numerator":4,"denominator":44,"percent":9.1},
+      "SHOULD":{"numerator":4,"denominator":28,"percent":14.3},
+      "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0}
+    },
+    "schemaAddressableCoverage": {
+      "tokyoUniverse":{"numerator":24,"denominator":76,"percent":31.6},
+      "MUST":{"numerator":16,"denominator":44,"percent":36.4},
+      "SHOULD":{"numerator":8,"denominator":28,"percent":28.6},
+      "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0},
+      "confirmedCurrentSchemaNonProductionIds":["tokyo-international-forum-a","nntt-opera","national-noh-theatre","musashino-civic-main","jcom-hall-hachioji"],
+      "confirmedSchemaExtensionNonProductionIds":["yoyogi-1","yoyogi-2","ariake-arena","tokyo-gymnasium","kanadevia-hall","sgc-hall-ariake","ex-theater-ariake","nntt-playhouse","meijiza","galaxy-theatre","nissho-hall"],
+      "note":"24 = current PRODUCTION 8 + current-schema addressable 5 + schema-extension addressable 11。未調査12件、及び追加issuer evidenceが必要な候補は安全側で分子に含めない。"
+    }
+  },
+  "mustNonProductionBlockerAudit": {
+    "auditedCount":40,
+    "basis":"2026-08-12時点の既存inventory/source/reportのみを再評価。新しい会場調査は実施していない。Aはproduction確約ではなく、同じ公式sourceを用いたrange二重確認と全production quality gateをなお必要とする。",
+    "classes": {
+      "A_SCHEMA_UNLOCKABLE": {
+        "count":12,
+        "currentSchemaAddressable":["tokyo-international-forum-a","nntt-opera"],
+        "schemaExtensionAddressable":["yoyogi-1","yoyogi-2","ariake-arena","tokyo-gymnasium","kanadevia-hall","sgc-hall-ariake","ex-theater-ariake","nntt-playhouse","meijiza","galaxy-theatre"],
+        "representativeVenues":["meijiza","nntt-playhouse","kanadevia-hall","yoyogi-1"],
+        "note":"完全な公式通常図、複数の完全公式configuration、または公式に独立した固定番号席subsetが既存evidence上確認できる。configuration条件とwheelchair semanticsが未解決の対象は、issuer定義を越えて創作せずmigration macroで再gateする。"
+      },
+      "B_SOURCE_LIMITED": {
+        "count":21,
+        "venueIds":["tokyo-dome","nippon-budokan","musashino-forest-sport-plaza","tokyo-garden-theater","tokyo-international-forum-c","nhk-hall","tokyu-theatre-orb","tbs-akasaka-act","nissay-theatre","tokyo-takarazuka","kabukiza","shiki-haru","shiki-aki","shiki-umi","ariake-shiki","brillia-hall","theater-h","pia-theater-yaesu","yurakucho-yomiuri","nihombashi-mitsui","nihon-seinenkan"],
+        "representativeVenues":["tokyo-dome","pia-theater-yaesu","tokyo-takarazuka","nihon-seinenkan"],
+        "note":"完全番号図、厳密総数、canonical seat identity、車いす置換番号、または恒久configuration条件のissuer-owned情報が欠け、schema変更だけでは救済できない。"
+      },
+      "C_CONTRADICTION": {
+        "count":4,
+        "venueIds":["tokyo-geigeki-concert","tokyo-operacity-concert","sumida-triphony-main","shinbashi-enbujo"],
+        "representativeVenues":["tokyo-geigeki-concert","tokyo-operacity-concert"],
+        "note":"formal CONTRADICTION 2件に加え、HOLD正規化されていた公式席数差分2件をblocker taxonomy上CONTRADICTIONへ分類した。coverage inventoryのhistorical disposition値は変更しない。"
+      },
+      "D_CURRENTNESS_CLOSED": {
+        "count":3,
+        "venueIds":["tokyo-geigeki-playhouse","tokyo-bunka-main","bunkamura-orchard"],
+        "representativeVenues":["tokyo-bunka-main","bunkamura-orchard"],
+        "note":"休館・改修・営業期限により現行production evidenceとして使用できない。再開後または新source generationで再評価する。"
+      }
+    }
+  },
+  "configurationSchemaAudit": {
+    "recommendation":"Option B",
+    "model":"venue -> configurations[]",
+    "requiredConfigurationFields":["id","canonicalName","issuerDefinedCondition","numberedSeatRanges","expectedSeatCount","sourceGeneration","wheelchairSemantics","selectable","status","verification"],
+    "admissionRule":"issuer-owned資料がconfiguration自体を完全に定義し、expectedSeatCountとrangeを独立2パスで一致確認できる場合のみ収録する。",
+    "prohibitions":["repository側でconfigurationを創作しない","event-dependent floor番号を恒久seat ID化しない","不完全variantをcapacity fittingしない","wheelchair/pit/花道差分を推測しない","既存production quality gateを緩和しない"],
+    "fixedOnlyPolicy":"公式が恒久固定番号席subsetを独立したseat setとして明示し、subsetの完全番号・厳密総数・除外範囲・wheelchair semanticsを確定できる場合のみ、固定席のみconfigurationとしてselectableにできる。会場全体の最大収容を意味しないことをUIで明示する。",
+    "knownSchemaExtensionPotential":{"MUST":10,"SHOULD":1,"total":11},
+    "shouldResearchTiming":"8件すべてschema migration macro完了後。current schemaで先行すると、可変floor/standing/fixed upper-tierを再度単一representativeへ押し込む判断を繰り返すため。"
+  },
   "macroResults": {
     "LUNA-STD-1": {
       "completedAt": "2026-08-11",
@@ -73,20 +142,26 @@
     "shouldUnresearched": 8,
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
-    "nextMacro": ["ex-theater-roppongi", "zepp-haneda", "zepp-shinjuku"]
+    "researchCompletenessPercent":84.2,
+    "userVisibleProductionCoveragePercent":10.5,
+    "mustProductionCoveragePercent":9.1,
+    "shouldProductionCoveragePercent":14.3,
+    "schemaAddressableCoveragePercent":31.6,
+    "nextMacro":"TOKYO-CONFIG-SCHEMA-1"
   },
   "releaseGate": {
-    "mustUnresearched": 0,
-    "shouldUnresearched": 0,
-    "optionalIsReleaseBlocker": false,
-    "currentSourceCompleteSchemaExpressibleMustShouldProductionized": true,
-    "productionImpossibleMustShouldFormalHoldOrContradiction": true,
-    "noObviousMajorUniverseGap": true,
-    "productionQualityGateUnchanged": true,
-    "releaseReady": false,
-    "currentMustUnresearched": 0,
-    "currentShouldUnresearched": 8,
-    "note": "MUST phaseは44件すべてformal disposition済みでcurrentMustUnresearched=0。現在SHOULD未調査8件が残るためreleaseReadyはNO。"
+    "researchCompleteness":{"MUST":{"requiredPercent":100.0,"currentPercent":100.0},"SHOULD":{"requiredPercent":100.0,"currentPercent":71.4}},
+    "addressableProductionConversion":{"MUST":{"requiredPercent":100.0,"currentNumerator":4,"currentDenominator":16,"currentPercent":25.0},"SHOULD":{"requiredPercent":100.0,"currentNumerator":4,"currentDenominator":8,"currentPercent":50.0}},
+    "currentEvidenceBasedRawProductionFloor":{"MUST":{"requiredNumerator":16,"denominator":44,"percent":36.4},"SHOULD":{"requiredNumerator":8,"denominator":28,"percent":28.6},"MUST_AND_SHOULD":{"requiredNumerator":24,"denominator":72,"percent":33.3},"TOKYO_UNIVERSE":{"requiredNumerator":24,"denominator":76,"percent":31.6}},
+    "dynamicFloorRule":"SHOULD未調査8件のうちschema-addressableと判定された各候補をrequired numeratorとaddressable denominatorへ1件ずつ追加する。既存productionとの置換は認めない。",
+    "exclusionRule":"raw denominatorから候補を削除しない。production未達の免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのissuer-owned blockerが記録された場合だけで、A SCHEMA-UNLOCKABLEは免責しない。",
+    "configurationSupportRequired":true,
+    "fixedOnlyDisclosureRequired":true,
+    "optionalIsReleaseBlocker":false,
+    "noObviousMajorUniverseGap":true,
+    "productionQualityGateUnchanged":true,
+    "releaseReady":false,
+    "note":"formal disposition 100%をuser-visible coverage 100%として扱わない。現時点はSHOULD research、schema migration、A群production conversion、raw production floorの全てが未達のためNO。"
   },
   "candidates": [
     {"id":"tokyo-dome","name":"東京ドーム","area":"文京区・後楽","type":"dome","capacity":55000,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/dome/about/","seatMap":"official-baseball-only","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0319","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 TOKYO-DOME COMPLEX: SOURCE/POLICY/SCHEMA HOLD。公開stand番号図は野球開催時用、concert arenaは催事別・非掲載で、stage別stand閉鎖、floor仮設番号、車いす／同伴、suite／premium／special areaを含むissuer-defined concert standardがない。"},

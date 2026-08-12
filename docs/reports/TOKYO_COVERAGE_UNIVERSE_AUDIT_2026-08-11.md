@@ -1,7 +1,7 @@
 # Tokyo coverage universe audit
 
 初回確認日: 2026-08-11（Asia/Tokyo）
-current snapshot更新: 2026-08-12（TOKYO-DOME COMPLEX完了後）
+current snapshot更新: 2026-08-12（RELEASE-COVERAGE SCHEMA AUDIT完了後）
 canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.json](../../data/venue-coverage/tokyo-coverage-universe-2026-08-11.json)
 
 この文書は2026-08-11のuniverse監査結果を起点とする。過去macroの結果はhistorical recordとして保持するが、件数・active queue・Exact next actionは上記canonical inventoryの現在値を用いる。
@@ -21,7 +21,20 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 | SHOULD | 28 |
 | OPTIONAL | 4 |
 
-現在のMUST内訳は PRODUCTION 4、HOLD 38、CONTRADICTION 2、未調査 0。MUST 44件はすべてformal disposition済み。SHOULD内訳は PRODUCTION 4、HOLD 16、未調査 8。OPTIONAL未調査は4でnon-blocking。SHOULD未調査が残るためrelease readinessはNOのまま。
+現在のMUST内訳は PRODUCTION 4、HOLD 38、CONTRADICTION 2、未調査 0。MUST 44件はすべてformal disposition済みだが、ユーザーが抽選できるMUSTは4件だけである。SHOULD内訳は PRODUCTION 4、HOLD 16、未調査 8。OPTIONAL未調査は4でnon-blocking。formal dispositionは調査工程の完了であり、user-visible coverageの完了ではない。release readinessはNOのまま。
+
+## coverage指標の分離
+
+| 指標 | Tokyo universe | MUST | SHOULD | OPTIONAL |
+|---|---:|---:|---:|---:|
+| Research completeness | 64/76 = **84.2%** | 44/44 = **100.0%** | 20/28 = **71.4%** | 0/4 = **0.0%** |
+| User-visible production coverage | 8/76 = **10.5%** | 4/44 = **9.1%** | 4/28 = **14.3%** | 0/4 = **0.0%** |
+| Confirmed schema-addressable coverage | 24/76 = **31.6%** | 16/44 = **36.4%** | 8/28 = **28.6%** | 0/4 = **0.0%** |
+
+- `Research completeness` は `PRODUCTION / HOLD / CONTRADICTION` のformal disposition率であり、抽選可能率ではない。
+- `User-visible production coverage` はproduction catalogへ入って実際に抽選できる候補だけを数える。アプリ全体の60会場中、Tokyo coverage universeに該当する主要会場は8件である。
+- `Schema-addressable coverage` は既存PRODUCTION 8件、現行schemaで処理可能と確認できる非production 5件、合理的なmulti-configuration / fixed-only拡張で処理可能性が高い非production 11件の計24件。未調査12件と、追加issuer evidenceが必要な候補は安全側で分子に含めない。
+- schema-addressableはproduction確約ではない。各configurationに完全なissuer-owned番号図・厳密総数・条件・wheelchair semanticsが揃い、従来どおり二つの独立公式source passと`expectedSeatCount == calculatedSeatCount`を通る必要がある。
 
 ### 件数のhistorical snapshot
 
@@ -76,6 +89,110 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 - Production化済みMUSTは `line-cube-shibuya`、`suntory-hall-main`、`theater-milano-za`、`sunshine-theatre`。HOLD 38件とCONTRADICTION 2件も未解決queueではなく、公式blockerを持つformal dispositionである。
 - 初回universe監査と後続macroでライブ／コンサート、arena/dome、商業舞台、ミュージカル、2.5次元・声優系、地域clusterを照合し、現時点で明らかなMUST級会場漏れは確認されない。既存MUST HOLDは再調査していない。
 
+## MUST非production 40件のblocker再分類
+
+この再分類は既存repo evidenceだけを使用し、新しい会場調査を行っていない。Aは「即production」ではなく、現行schemaまたは厳格なschema拡張で安全に処理できる可能性が高いという分類である。
+
+| class | 件数 | 代表会場 | release上の意味 |
+|---|---:|---|---|
+| A. SCHEMA-UNLOCKABLE | **12** | 明治座、新国立劇場 中劇場、Kanadevia Hall、代々木第一体育館 | 現行schema 2件、schema拡張依存10件。Aのまま非productionをrelease免責にしない。 |
+| B. SOURCE-LIMITED | **21** | 東京ドーム、東京建物 ぴあ シアター、東京宝塚劇場、日本青年館 | 完全番号、厳密総数、canonical identity、車いす置換番号等がissuer資料にない。schemaだけでは救えない。 |
+| C. CONTRADICTION | **4** | 東京芸術劇場コンサートホール、東京オペラシティ コンサートホール | 公式資料内の席数・番号包含が矛盾。formal CONTRADICTION 2件に、HOLD正規化されていた2件をtaxonomy上追加。 |
+| D. CURRENTNESS / CLOSED | **3** | 東京文化会館 大ホール、Bunkamura オーチャードホール | 休館・改修・営業期限。再開後または新source generation待ち。 |
+
+### A. SCHEMA-UNLOCKABLE 12件
+
+現行schemaでaddressableな2件:
+
+- `tokyo-international-forum-a`
+- `nntt-opera`
+
+multi-configuration / fixed-only schema拡張でaddressableな10件:
+
+- `yoyogi-1`
+- `yoyogi-2`
+- `ariake-arena`
+- `tokyo-gymnasium`
+- `kanadevia-hall`
+- `sgc-hall-ariake`
+- `ex-theater-ariake`
+- `nntt-playhouse`
+- `meijiza`
+- `galaxy-theatre`
+
+### B. SOURCE-LIMITED 21件
+
+`tokyo-dome`、`nippon-budokan`、`musashino-forest-sport-plaza`、`tokyo-garden-theater`、`tokyo-international-forum-c`、`nhk-hall`、`tokyu-theatre-orb`、`tbs-akasaka-act`、`nissay-theatre`、`tokyo-takarazuka`、`kabukiza`、`shiki-haru`、`shiki-aki`、`shiki-umi`、`ariake-shiki`、`brillia-hall`、`theater-h`、`pia-theater-yaesu`、`yurakucho-yomiuri`、`nihombashi-mitsui`、`nihon-seinenkan`。
+
+ここには、schemaを増やしても番号情報そのものがない会場、公式area/row keyがなくseat identityを創作しないとrange化できない会場、車いす置換番号・厳密総数・恒久configuration条件が未公開の会場を含む。
+
+### C. CONTRADICTION 4件
+
+`tokyo-geigeki-concert`、`tokyo-operacity-concert`、`sumida-triphony-main`、`shinbashi-enbujo`。後者2件はcanonical inventoryのhistorical dispositionをHOLDのまま保持するが、release blocker taxonomyでは公式数値差分のためCとする。
+
+### D. CURRENTNESS / CLOSED 3件
+
+`tokyo-geigeki-playhouse`、`tokyo-bunka-main`、`bunkamura-orchard`。旧図や改修前図をcurrent productionへ流用しない。
+
+## multi-configuration schemaの実現性
+
+結論は実現可能で、現行の単一`representativePattern`を直ちに削除せず、schema v2を追加して段階移行する。
+
+```text
+venue
+└─ configurations[]
+   ├─ id / canonicalName
+   ├─ issuerDefinedCondition
+   ├─ numberedSeatRanges / expectedSeatCount
+   ├─ sourceGeneration
+   ├─ wheelchairSemantics
+   ├─ selectable / status
+   └─ verification / source references
+```
+
+収録条件:
+
+- 通常配置、花道あり／なし、pitあり／なし、固定席配置等をissuer自身が別configurationとして完全に定義している。
+- configurationごとに完全な番号range、厳密な`expectedSeatCount`、source generation、適用条件、wheelchair semanticsを持つ。
+- configurationごとに独立第2パス差分ゼロ、`verification.status: verified`、`unresolvedIssues: []`を要求する。
+- 1つでも不完全なvariantがあっても、完全な別configurationの収録を妨げない。ただし不完全variantは非selectable HOLDとして残し、存在を隠さない。
+- repository側でconfiguration名・条件・番号差分を創作せず、event-dependent floor番号を恒久seat ID化しない。
+
+## 「固定番号席のみ」configuration
+
+限定的に可とする。対象は、固定席subsetがissuer evidence上で独立したseat setとして成立し、全番号・厳密総数・除外範囲・wheelchair semanticsを完全に確認できる場合だけである。候補例は代々木第一／第二の固定席、東京体育館の固定席、Kanadevia Hallの固定バルコニー、SGC HALL ARIAKEの固定上層席である。
+
+UIは「固定スタンド席configurationのみ」「アリーナ／floor席を含まない」「最大収容配置ではない」を会場選択時と抽選結果に明示する。単に図から固定席が読める、固定席数だけが公表される、またはevent floorを除けば合計が合う、という理由だけでは採用しない。東京ドームはconcert用途の固定stand subsetのexact count・stage別使用範囲がissuerにより独立定義されていないため、この救済対象にしない。
+
+## Option Bとmigration方針
+
+**Option Bを推奨する。** 既存evidenceだけでMUST 10件、SHOULD 1件、計11件にschema拡張によるproduction化可能性がある。schema migrationだけでTokyo production候補は8件から最大19件へ増え得る。その後、現行schemaでaddressableな5件を完了すれば確認済みaddressable cohortは24件になる。
+
+Affected files / modules:
+
+- source/build validation: `scripts/venues/validation.mjs`、`lib.mjs`、`atomic-build.mjs`、`inventory.mjs`、`review-venue.mjs`、`readiness-report.mjs`と対応test。
+- runtime types/loading: `src/types/venue.ts`、`src/data/venue-db/loadVenue.ts`、`venueDatabase.test.ts`。
+- UI: venue/configuration選択を扱う`src/components/venue/`とapp state。既存の単一configuration UXは維持する。
+- governance/data: `docs/VENUE_DATA_GUIDE.md`、`docs/prompts/`、source schema v2 fixtures、production fingerprint validation。
+
+Migration strategy / backward compatibility:
+
+1. schema v1の単一`representativePattern`を引き続き受理し、内部で1 configurationとして正規化する。
+2. schema v2の`venue.configurations[]`を追加する。catalogはselectable configuration単位でentryを生成し、同一会場を`venueGroupId`でgroup化する。
+3. v1の既存60 production sourceは移行macroで書き換えない。v1 build outputをbyte-for-byte維持し、optional v2 fieldsも既存entryへ出力しない。
+4. v2 configurationは`(venueId, configurationId)`を一意keyとし、fingerprintもconfiguration単位で追加する。既存60 fingerprintは変更しない。
+5. UIはconfigurationが1件なら従来どおり直接抽選し、複数またはfixed-onlyならissuer-defined conditionと限定範囲を選択前に表示する。
+
+Validation追加:
+
+- configuration ID/name/condition/source generationの必須性と重複禁止。
+- selectable production configurationごとの完全range、expected/calculated一致、独立第2パス、verified、unresolved zero。
+- 同じphysical seat setの重複、configuration間の無根拠差分、event floor恒久ID、capacity fittingを拒否するfixture。
+- fixed-onlyは`scopeDisclosure`、excluded dynamic areas、wheelchair semantics、issuer-owned independent-set evidenceを必須化。
+- v1の60 production catalog/runtime/fingerprintがbyte-for-byte不変であるbaseline regression。
+
+Rollout順序は、schema v2 validationとv1 adapter → build/runtime互換 → UI configuration selector/disclosure → fixture/negative tests → 既存60 baseline regression → A群から1会場pilot → bounded batchで残りA群 → その後にSHOULD 8件の順とする。
+
 ## LUNA-STD-1 結果
 
 | 会場 | currentness / representative pattern | 第1パス | 独立第2パス | 結果 |
@@ -98,7 +215,7 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 
 ## current coverage gap
 
-- 大規模ライブ: 東京ドームを含むMUST大規模会場はすべてPRODUCTION/HOLD/CONTRADICTIONへformal disposition済みで、MUST active queueは0。
+- 大規模ライブ: 東京ドームを含むMUST大規模会場はすべてformal disposition済みだが、MUST user-visible production coverageは4/44 = **9.1%**に留まる。MUST active research queueが0でもcoverage完了ではない。
 - 有明の新設cluster: SGC HALL ARIAKE、EX THEATER ARIAKEは正式inventory/sourceへ登録し、SOL-CPLX-1で公式blocker付きHOLD。未登録gapは解消済み。
 - 商業舞台/ミュージカル: 東京宝塚劇場、四季劇場［春］［秋］、電通四季劇場［海］、有明四季劇場、日本青年館、天王洲 銀河劇場、シアターH、東京建物 ぴあ シアター。
 - 都心の可変型中規模会場: Kanadevia Hallは正式HOLD。SHOULD未調査はEX THEATER ROPPONGI、Zepp Haneda/Shinjuku、豊洲PIT、ヒューリックホール東京、大手町三井ホール、東京国際フォーラムB7、MoN Takanawa: BOX 1000の8件。
@@ -108,12 +225,14 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 
 `data/venue-release-targets/release-seed-v1.json` に、旧48 targetをlegacy referenceへ降格し、Tokyo coverage universeを新しい分母とする契約を記録した。
 
-- MUSTの未調査 = 0。
-- SHOULDの未調査 = 0。
+- Research completeness: MUST **100%**、SHOULD **100%**。
+- Schema-addressable production conversion: MUST **100%**、SHOULD **100%**。AをHOLDのままrelease免責にしない。
+- 現時点のrepo evidenceに基づくraw production floor: MUST **16/44 = 36.4%**、SHOULD **8/28 = 28.6%**、MUST+SHOULD **24/72 = 33.3%**、Tokyo universe **24/76 = 31.6%**。
+- 上記floorは任意の目標率ではなく、「既存production + 現行schema addressable + 承認済みschema extension addressable」を全件production化した必要数である。
+- SHOULD未調査8件から新たなschema-addressable候補が判明するたび、required numeratorを1件増やす。既存required venueとの置換は認めない。
 - OPTIONALはrelease blockerにしない。
-- currentかつsource-completeで現行schemaにlosslessに表現可能なMUST/SHOULDは原則production化済みとする。
-- production化不能なMUST/SHOULDは、issuer-owned blockerを持つ正式HOLD / CONTRADICTIONとして処理済みとする。
-- HOLD / CONTRADICTIONは、issuer-owned official blocker、currentness、またはschema/policy blockerを明記する。
+- raw denominatorからHOLD/CONTRADICTIONを削除しない。非production免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのissuer-owned blockerがある場合だけとする。
+- multi-configuration / fixed-only supportとuser-facing scope disclosureをrelease必須にする。
 - 閉館・長期休館はcurrent active universeから除外するが、再開監視のrecord-only候補として削除しない。
 - 明らかな主要会場の候補漏れがないことを、会場数ではなく用途・規模・地域cluster・currentnessで確認する。
 - 既存productionの品質gate、二つの公式source pass、`expectedSeatCount == calculatedSeatCount`、生成物/fingerprint整合性は変更しない。
@@ -121,7 +240,7 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 
 ## current 未調査queue
 
-未調査12件のうちOPTIONAL record-only/non-blockingは4件（国立劇場大劇場/小劇場、帝国劇場、味の素スタジアム）。pre-release active queueはSHOULD 8件のみ。MUST未調査は0、既存HOLD/CONTRADICTIONは含めない。
+未調査12件のうちOPTIONAL record-only/non-blockingは4件（国立劇場大劇場/小劇場、帝国劇場、味の素スタジアム）。MUST未調査は0。SHOULD 8件はresearch queueとして残るが、schema migration完了まで開始しない。
 
 ### 1. Luna STANDARD（残り0件）
 
@@ -131,10 +250,10 @@ LUNA-STD-2で `theater-g-rosso` はPRODUCTION、`imm-theater` と `nissho-hall` 
 
 `TERRA-DENSE-1`〜`TERRA-DENSE-4`で12件すべて正式disposition済み。active Terra queueは0件であり、完了済みmacroを再度activeとして扱わない。
 
-### 3. Sol COMPLEX（8 active件）
+### 3. Sol COMPLEX（8 deferred件）
 
 MUST: 0件。`tokyo-dome` はTOKYO-DOME COMPLEXで正式HOLD。
-SHOULD: `ex-theater-roppongi`, `zepp-haneda`, `zepp-shinjuku`, `toyosu-pit`, `hulic-hall-tokyo`, `otemachi-mitsui-hall`, `forum-b7`, `mon-takanawa-box1000` の8件。
+SHOULD: `ex-theater-roppongi`, `zepp-haneda`, `zepp-shinjuku`, `toyosu-pit`, `hulic-hall-tokyo`, `otemachi-mitsui-hall`, `forum-b7`, `mon-takanawa-box1000` の8件。可変floor、standing、固定上層席、複数公式layoutを単一representativeへ押し込む再作業を避けるため、全件multi-configuration schema導入後に処理する。
 
 Record-only/currentness hold: `ajinomoto-stadium`, `national-theatre-large`, `national-theatre-small`, `teikoku-theatre`。閉館/用途依存のためactive queueへ入れず、公式再開・公演利用の新証拠が出た時に再分類する。
 
@@ -142,13 +261,13 @@ Record-only/currentness hold: `ajinomoto-stadium`, `national-theatre-large`, `na
 
 `LUNA-STD-1`、`LUNA-STD-2`、`TERRA-DENSE-1`〜`TERRA-DENSE-4`、`SOL-CPLX-1`、`TOKYO-DOME COMPLEX`は完了済み。historical resultは保持するがactive macroではない。TOKYO-DOME COMPLEXは正式HOLD、production増加0、MUST phaseを閉じた。
 
-Terra active queueは0件。MUST active queueも0件。SHOULD 8件をconfigurationの類似性で次の3 macroへ分割する。
+Terra active queueは0件。MUST active research queueも0件。SHOULD 8件の実調査は開始せず、historicalな分割案をmigration後のqueueとして保持する。
 
 1. `SOL-SHOULD-1`: `ex-theater-roppongi`, `zepp-haneda`, `zepp-shinjuku`。ライブハウス型のseated/standing、floor可変、上階固定席、車いす、公演別番号を共通gateで確認。
 2. `SOL-SHOULD-2`: `toyosu-pit`, `otemachi-mitsui-hall`, `mon-takanawa-box1000`。平土間・大規模event-space型の仮設席、standing、stage、issuer-defined seated layoutを確認。
 3. `SOL-SHOULD-3`: `hulic-hall-tokyo`, `forum-b7`。多目的event hall型の公式番号図／着席layoutと可変stage・販売variantを確認。
 
-**Exact next action:** `SOL-SHOULD-1`を上記3件だけで実行する。他のSHOULD macro、OPTIONAL、既存HOLD/CONTRADICTIONには着手しない。
+**Exact next action:** `TOKYO-CONFIG-SCHEMA-1`を実行する。schema v2、v1 adapter、configuration-level validation、fixed-only disclosure、既存60 production artifactsのbyte-for-byte regressionを実装し、pilot production dataはまだ追加しない。完了後に`SOL-SHOULD-1`を上記3件だけで再開する。
 
 ## source discipline
 

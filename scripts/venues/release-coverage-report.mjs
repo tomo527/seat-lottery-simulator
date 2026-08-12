@@ -51,6 +51,12 @@ for (const [index, target] of manifest.targets.entries()) {
 }
 if (errors.length) throw new Error(errors.join('\n'))
 
+const coveragePath = manifest.coverageUniverse?.file ? path.resolve(ROOT, manifest.coverageUniverse.file) : null
+const coverage = coveragePath ? JSON.parse(await readFile(coveragePath, 'utf8')) : null
+if (coverage && !Array.isArray(coverage.candidates)) {
+  throw new Error('Coverage universe must contain a candidates array.')
+}
+
 const inventories = await readInventories()
 const inventoryById = new Map(inventories.flatMap(({ data }) => (data.venues ?? []).map((venue) => [venue.inventoryId, venue])))
 const sourceById = new Map((await readSources()).map(({ data }) => [data.id, data]))
@@ -116,7 +122,9 @@ const unassessedPriorityA = manifest.targets.filter((target) => {
   if (target.priority !== 'A') return false
   return !preflightManifestStatuses.has(target.currentStatus)
 })
-const releaseReady = !unmet.length && !unassessedPriorityA.length
+const legacyReleaseReady = !unmet.length && !unassessedPriorityA.length
+const coverageReady = coverage ? coverage.releaseGate?.releaseReady === true : true
+const releaseReady = legacyReleaseReady && coverageReady
 
 console.log('Manifest: ' + path.relative(ROOT, manifestPath))
 console.log('targetCount: ' + totals.target)
@@ -141,6 +149,32 @@ for (const [key, group] of [...groups].sort(([left], [right]) => left.localeComp
   const requirement = requirements.get(key) ?? 0
   console.log('  ' + key + ': target=' + group.target + ', sourceLocated=' + group.sourceLocated + ', preflightComplete=' + group.preflightComplete + ', decisionComplete=' + group.decisionComplete + ', production=' + group.production + ', formalHold=' + group.formalHold + ', notStarted=' + group.notStarted + ', releaseRequirement=' + requirement + ', shortfall=' + Math.max(0, requirement - group.production))
 }
-console.log('RELEASE READY: ' + (releaseReady ? 'yes' : 'no'))
 console.log('Unmet regions: ' + (unmet.length ? unmet.map(([key]) => key).join(', ') : '(none)'))
 console.log('Unassessed Priority A: ' + (unassessedPriorityA.length ? unassessedPriorityA.map((target) => target.name).join(', ') : '(none)'))
+if (coverage) {
+  const candidates = coverage.candidates
+  const byTier = (tier) => candidates.filter((candidate) => candidate.tier === tier)
+  const dispositioned = (items) => items.filter((candidate) => candidate.inventoryState !== '未調査').length
+  const production = (items) => items.filter((candidate) => candidate.inventoryState === 'PRODUCTION').length
+  const addressableIds = new Set([
+    ...candidates.filter((candidate) => candidate.inventoryState === 'PRODUCTION').map((candidate) => candidate.id),
+    ...(coverage.coverageMetrics?.schemaAddressableCoverage?.confirmedCurrentSchemaNonProductionIds ?? []),
+    ...(coverage.coverageMetrics?.schemaAddressableCoverage?.confirmedSchemaExtensionNonProductionIds ?? []),
+  ])
+  const addressable = (items) => items.filter((candidate) => addressableIds.has(candidate.id)).length
+  console.log('Tokyo coverage contract: ' + path.relative(ROOT, coveragePath))
+  for (const [label, items] of [['Tokyo universe', candidates], ['MUST', byTier('MUST')], ['SHOULD', byTier('SHOULD')], ['OPTIONAL', byTier('OPTIONAL')]]) {
+    console.log(`  ${label}: researchCompleteness=${percentage(dispositioned(items), items.length)}, userVisibleProductionCoverage=${percentage(production(items), items.length)}, schemaAddressableCoverage=${percentage(addressable(items), items.length)}`)
+  }
+  const classes = coverage.mustNonProductionBlockerAudit?.classes ?? {}
+  console.log('  MUST nonproduction blockers: ' + [
+    `A=${classes.A_SCHEMA_UNLOCKABLE?.count ?? 0}`,
+    `B=${classes.B_SOURCE_LIMITED?.count ?? 0}`,
+    `C=${classes.C_CONTRADICTION?.count ?? 0}`,
+    `D=${classes.D_CURRENTNESS_CLOSED?.count ?? 0}`,
+  ].join(', '))
+  console.log('  Addressable production conversion: MUST=' + percentage(production(byTier('MUST')), addressable(byTier('MUST'))) + ', SHOULD=' + percentage(production(byTier('SHOULD')), addressable(byTier('SHOULD'))))
+  console.log('  Coverage contract ready: ' + (coverage.releaseGate?.releaseReady === true ? 'yes' : 'no'))
+}
+console.log('Legacy regional gate ready: ' + (legacyReleaseReady ? 'yes' : 'no'))
+console.log('RELEASE READY: ' + (releaseReady ? 'yes' : 'no'))
