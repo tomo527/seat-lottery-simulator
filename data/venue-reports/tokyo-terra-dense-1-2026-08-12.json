@@ -1,0 +1,65 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-terra-dense-1-2026-08-12",
+  "generatedAt": "2026-08-12",
+  "scope": "Terra high Tokyo coverage DENSE macro for exactly tokyo-takarazuka, shiki-haru, and shiki-aki.",
+  "baseline": {
+    "productionVenues": 60,
+    "productionSeats": 81515,
+    "tokyoUniverse": 76,
+    "tokyoProduction": 8,
+    "tokyoHold": 38,
+    "tokyoContradiction": 2,
+    "tokyoUnresearched": 28
+  },
+  "outcomes": [
+    {
+      "id": "tokyo-takarazuka",
+      "inventoryId": "tokyo-official-0053",
+      "classification": "SOURCE/POLICY/SCHEMA HOLD",
+      "currentOfficialSource": "宝塚歌劇の現行劇場案内、現行座席表、バリアフリー情報。一般公演料金区分は2,079席だが、限定数・事前申込の車いす観劇スペースについて番号席との包含・置換を公表しない。",
+      "representativePattern": "2026年1月改定後の一般公演番号席候補。固定selectable setとしては未確定。",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "completed through representative-pattern gate; range transcription not started because wheelchair inclusion/replacement is unresolved",
+      "secondPass": "completed independently against issuer barrier-free information; the same unresolved relation remains",
+      "rangeDiff": null,
+      "productionGate": "blocked before range transcription",
+      "blocker": "SOURCE/POLICY/SCHEMA HOLD: 2,079 priced seats and a wheelchair viewing space are both official, but the issuer does not define their inclusion or numbered-seat replacement relationship."
+    },
+    {
+      "id": "shiki-haru",
+      "inventoryId": "tokyo-official-0113",
+      "classification": "SOURCE/POLICY/SCHEMA HOLD",
+      "currentOfficialSource": "劇団四季の現行劇場ページと現行『アナと雪の女王』座席表。客席数は約1,500席、作品別図には非販売席があり、車いすスペースは予約前の個別連絡。",
+      "representativePattern": "現行『アナと雪の女王』東京公演の番号席候補。恒久のselectable setとしては未確定。",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "completed through representative-pattern gate; range transcription not started because the live map is a show-specific sales variant",
+      "secondPass": "completed independently against the current operator page and wheelchair procedure; no issuer-defined fixed set or exact total was found",
+      "rangeDiff": null,
+      "productionGate": "blocked before range transcription",
+      "blocker": "SOURCE/POLICY/SCHEMA HOLD: the issuer publishes a show-specific non-sale configuration, an approximate facility count, and a separate wheelchair procedure, not one lossless fixed numbered-seat set."
+    },
+    {
+      "id": "shiki-aki",
+      "inventoryId": "tokyo-official-0114",
+      "classification": "SOURCE/POLICY/SCHEMA HOLD",
+      "currentOfficialSource": "劇団四季の現行劇場ページと現行『バック・トゥ・ザ・フューチャー』販売図。客席数は約1,200席、9月30日以前・10月1日以降の図を分け、非販売席と車いす個別予約を明示する。",
+      "representativePattern": "現行『バック・トゥ・ザ・フューチャー』東京公演の番号席候補。日付別販売variantのため恒久setとしては未確定。",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "firstPass": "completed through representative-pattern gate; range transcription not started because the current pre-October map is sales-variant specific",
+      "secondPass": "completed independently by confirming the separate post-October map, non-sale notices, and wheelchair procedure",
+      "rangeDiff": null,
+      "productionGate": "blocked before range transcription",
+      "blocker": "SOURCE/POLICY/SCHEMA HOLD: the issuer defines date-specific show sales maps and does not define a fixed exact numbered-seat set or wheelchair replacement mapping."
+    }
+  ],
+  "productionPromotions": 0,
+  "productionFinal": 60,
+  "productionSeatFinal": 81515,
+  "baselineProductionRegression": "zero changes to all 60 baseline production source semantics, catalog entries, runtime details, and fingerprints",
+  "releaseReady": false,
+  "exactNextAction": "Run the next bounded Tokyo coverage macro only for the canonical remaining unresearched candidates selected by the updated Terra/Sol queue; do not reopen these holds without changed issuer-owned evidence."
+}

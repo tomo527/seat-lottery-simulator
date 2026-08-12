@@ -1,16 +1,17 @@
 # Current handoff
 
-Updated: 2026-08-11 (Asia/Tokyo)
+Updated: 2026-08-12 (Asia/Tokyo)
 
 ## Current state
 
 - Current HEAD is the commit containing this handoff; resolve the exact SHA with `git rev-parse HEAD`. Branch `main` is pushed to `origin/main`, local HEAD equals `origin/main`, and the working tree is clean at handoff completion.
 - Production: **60 venues / 81,515 seats**. Generated sources, catalog, runtime details, and production fingerprints are synchronized at 60 each.
 - Coverage: Tokyo **51**, Kanagawa **3**, Chiba **1**, Saitama **1**, Ibaraki **0**, Tochigi **1**, Gunma **0**; Kyoto **1**, Osaka **2**. Kanto total: **57**.
-- 2026-08-11 Tokyo coverage universe audit replaced the old 59-venue/curated-target release direction with a separate canonical audit inventory at `data/venue-coverage/tokyo-coverage-universe-2026-08-11.json`: **76 candidates**, **MUST 44 / SHOULD 28 / OPTIONAL 4**, and current audit states **PRODUCTION 8 / HOLD 38 / CONTRADICTION 2 / 未調査 28**. MUST未調査は16、SHOULD未調査は8。既存59 production artifactsは不変で、G-ROSSOのproduction source 1件のみ追加した。
+- 2026-08-11 Tokyo coverage universe audit replaced the old 59-venue/curated-target release direction with a separate canonical audit inventory at `data/venue-coverage/tokyo-coverage-universe-2026-08-11.json`: **76 candidates**, **MUST 44 / SHOULD 28 / OPTIONAL 4**, and current audit states **PRODUCTION 8 / HOLD 41 / CONTRADICTION 2 / 未調査 25**. MUST未調査は13、SHOULD未調査は8。既存60 production artifactsは不変である。
 - The audit confirmed three required classifications: `品川プリンスホテル ステラボール` is MUST/HOLD (existing `tokyo-official-0121`), while `Kanadevia Hall` and `SGC HALL ARIAKE` are MUST/未調査 and absent from the current inventory. Newly discovered major unregistered gaps also include `EX THEATER ARIAKE`, `シアターH`, `東京建物 ぴあ シアター`, `武蔵野の森総合スポーツプラザ`, `大手町三井ホール`, and `MoN Takanawa: BOX 1000`.
 - `release-seed-v1` now records the audited Tokyo universe as its coverage denominator and the legacy 48 regional targets as traceable reference data only. The explicit gate is MUST 未調査=0, SHOULD 未調査=0, OPTIONAL non-blocking, source-complete/schema-expressible MUST/SHOULD productionized, production-impossible MUST/SHOULD formal HOLD/CONTRADICTION, no obvious major universe gap, and the existing production quality gate unchanged; readiness remains **NO**.
-- `LUNA-STD-1` completed for exactly `theater-h`, `pia-theater-yaesu`, and `galaxy-theatre`. Production promotion: **0**; formal holds: **3**. `LUNA-STD-2` then completed exactly `theater-g-rosso`, `imm-theater`, and `nissho-hall`: G-ROSSO **PRODUCTION 765 seats**、IMM **SOURCE/SCHEMA HOLD**、ニッショー **SOURCE/POLICY/SCHEMA HOLD**. Production is now **60 venues / 81,515 seats**; the 59-venue baseline production artifacts remain unchanged.
+- `LUNA-STD-1` completed for exactly `theater-h`, `pia-theater-yaesu`, and `galaxy-theatre`. Production promotion: **0**; formal holds: **3**. `LUNA-STD-2` then completed exactly `theater-g-rosso`, `imm-theater`, and `nissho-hall`: G-ROSSO **PRODUCTION 765 seats**、IMM **SOURCE/SCHEMA HOLD**、ニッショー **SOURCE/POLICY/SCHEMA HOLD**. Production is **60 venues / 81,515 seats**.
+- `TERRA-DENSE-1` completed for exactly `tokyo-takarazuka`, `shiki-haru`, and `shiki-aki`: all three are **SOURCE/POLICY/SCHEMA HOLD** before range transcription. 東京宝塚劇場の現行一般公演2,079席は公式確認済みだが車いす観劇スペースの包含・置換番号が未公表。四季［春］は約1,500席、［秋］は約1,200席と現行作品別非販売図・車いす個別予約を公式確認したが、固定されたselectable numbered-seat set・厳密総数・車いす置換番号が定義されない。第1パスと独立第2パスは代表pattern gateまで完了し、rangeはゼロ、range diffは`null`。production昇格は0、baseline 60 production artifactsは不変。
 - The 2026-08-09 Kanto P1 Sol macro closed `takasaki-city-theatre-main-release-seed` as **CONTRADICTION** and preserved all 56 baseline production fingerprints and catalog entries unchanged.
 - The 2026-08-10 bounded Terra escalation left `nissay-theatre` on **SOURCE/SCHEMA HOLD** and handed `line-cube-shibuya` to Sol. The bounded Sol escalation then found current issuer-owned operational evidence identifying all 26 wheelchair-conversion seats and promoted `line-cube-shibuya-standard` as **PRODUCTION**, 1,952 numbered seats. Production is now **57 venues / 76,911 seats**.
 - The 2026-08-10 Sol Tokyo COMPLEX macro 1 promoted `tokyo-wave3-0130` (`suntory-hall-main`) as **PRODUCTION**, 2,006 numbered seats. The prior 57 production fingerprints and catalog entries are unchanged; production is now **58 venues / 78,917 seats**.
@@ -28,7 +29,7 @@ Updated: 2026-08-11 (Asia/Tokyo)
 
 ## Release goal
 
-Release ready is **NO under the new Tokyo coverage contract**, not because of a production-data defect. The verified application is **60 venues / 81,515 seats**, but the audited Tokyo universe has **28 未調査** candidates, including **16 MUST** and **8 SHOULD**; the new gate is therefore not satisfied. `LUNA-STD-2` closed G-ROSSO as production and IMM/ニッショー as formal holds. Existing HOLD/CONTRADICTION remains out of queue unless new issuer-owned evidence appears.
+Release ready is **NO under the new Tokyo coverage contract**, not because of a production-data defect. The verified application is **60 venues / 81,515 seats**, but the audited Tokyo universe has **25 未調査** candidates, including **13 MUST** and **8 SHOULD**; the new gate is therefore not satisfied. `TERRA-DENSE-1` closed its three MUST targets as formal holds. Existing HOLD/CONTRADICTION remains out of queue unless changed issuer-owned evidence appears.
 
 ## 2026-08-11 Tokyo coverage `LUNA-STD-1`
 
@@ -154,11 +155,11 @@ No range was fitted to 610, and no generated catalog/runtime/fingerprint changed
 
 ## Model queues
 
-- **TOKYO CLOSED**: no active Tokyo top-up queue remains. Preserve the two promotions and all 14 non-production closures. Keep `nissay-theatre`, `meijiza`, `kabukiza`, and `setagaya-public-theatre` off model queues unless issuer-owned evidence resolves their exact blockers.
-- **P2 CLOSED — 24/24**: `kyoto-concert-hall-main-release-seed` is the only promotion. The other 23 are closed holds and no P2 Luna, Terra, or Sol queue remains.
-- **New issuer-owned evidence required — 19**: 11 SOURCE HOLDs; the HBG, Fukuoka Sunpalace, and Festival Hall SOURCE/SCHEMA HOLDs; ROHM and Aichi SOURCE CONTRADICTION HOLDs; Kitara Small schema hold; Umeda currentness/date hold; and the ACROS contradiction. Reopen only when the issuer publishes the missing or corrected evidence.
-- **Separate redesign potential — 4**: Kitara Main's dense block-boundary schema plus Sapporo hitaru, Misonoza, and Sendai Sunplaza multi-pattern/default-policy semantics. These need an explicit product/schema decision, not another evidence-resolution model escalation.
-- **Next-phase queue proposal, not authorized work**: first run the non-model release decision. If expansion is selected, Luna screens only 3–5 new source-complete standard candidates; Terra remains empty until a Luna-passed candidate proves dense; Sol remains empty unless changed issuer evidence directly resolves a recorded complex blocker.
+- **Tokyo coverage active — Terra, MUST 9**: `yoyogi-1`, `yoyogi-2`, `ariake-arena`, `tokyo-gymnasium`, `musashino-forest-sport-plaza`, `tokyo-garden-theater`, `shiki-umi`, `ariake-shiki`, `nihon-seinenkan`. `TERRA-DENSE-2` is the next bounded macro: exactly `yoyogi-1`, `yoyogi-2`, and `ariake-arena`.
+- **Tokyo coverage active — Sol, MUST 4**: `tokyo-dome`, `kanadevia-hall`, `sgc-hall-ariake`, `ex-theater-ariake`.
+- **Tokyo coverage active — Sol, SHOULD 8**: `ex-theater-roppongi`, `zepp-haneda`, `zepp-shinjuku`, `toyosu-pit`, `hulic-hall-tokyo`, `otemachi-mitsui-hall`, `forum-b7`, `mon-takanawa-box1000`.
+- **Tokyo coverage active — Sol, OPTIONAL 4 (non-blocking)**: `ajinomoto-stadium`, `national-theatre-large`, `national-theatre-small`, `teikoku-theatre`.
+- **Tokyo coverage Luna**: none. The three `TERRA-DENSE-1` targets and all pre-existing Tokyo HOLD/CONTRADICTION are closed, not model queues; reopen only on changed issuer-owned evidence. P2 remains closed at 24/24 dispositions and is outside the Tokyo coverage sequence.
 
 ## Holds
 
@@ -206,4 +207,4 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Exact next action
 
-Run the bounded **TERRA-DENSE-1** macro for exactly `tokyo-takarazuka`, `shiki-haru`, and `shiki-aki` as `Terra DENSE`: perform issuer/operator-owned currentness confirmation, representative selectable numbered-seat-set gate, first pass, independent second pass, and production gate; if any currentness/schema/wheelchair/movable-seat/sales-variant issue remains, close that venue with a concrete SOURCE/SCHEMA/POLICY/CONTRADICTION HOLD or appropriate Sol handoff. Do not touch other Tokyo unresearched candidates, existing HOLD/CONTRADICTION, or production seat data.
+Run the bounded **TERRA-DENSE-2** macro for exactly `yoyogi-1`, `yoyogi-2`, and `ariake-arena` as `Terra DENSE`: perform issuer/operator-owned currentness confirmation, representative selectable numbered-seat-set gate, lossless first pass, independent second pass, and production gate. If any currentness/schema/wheelchair/movable-seat/orchestra-pit/sales-variant issue remains, close that venue with a concrete SOURCE/SCHEMA/POLICY/CONTRADICTION HOLD or only a necessary Sol handoff. Do not touch other Tokyo unresearched candidates, existing HOLD/CONTRADICTION, or production seat data.

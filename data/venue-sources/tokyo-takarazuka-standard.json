@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "tokyo-takarazuka-standard",
+  "name": "東京宝塚劇場 現行番号席候補（車いす観劇スペース運用未解決）",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": ["東京宝塚劇場"],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-numbered-seat-set",
+    "name": "2026年1月改定後の一般公演番号席候補",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "宝塚歌劇の現行座席表は一般公演の料金区分をSS 137席、S 1,446席、A 230席、B 266席（計2,079席）としている。一方、同じ発行者は東京宝塚劇場の車いす観劇スペースを事前申込・数に限りありとしているが、2,079席への包含、通常番号席との置換、対象番号を公表しない。固定されたselectable numbered-seat setを一意に確定しない。",
+    "notIncludedPatterns": ["車いす観劇スペース利用", "車いす利用時の番号席置換・販売停止", "立見"]
+  },
+  "sources": [
+    { "id": "official-theater-page", "official": true, "roles": ["facility", "seat-count"], "publisher": "宝塚歌劇", "title": "東京宝塚劇場 劇場案内・アクセス", "url": "https://kageki.hankyu.co.jp/theater/tokyo/index.html", "checkedAt": "2026-08-12" },
+    { "id": "official-seat-map", "official": true, "roles": ["seat-structure", "seat-count", "event-layout"], "publisher": "宝塚歌劇", "title": "東京宝塚劇場 座席表", "url": "https://kageki.hankyu.co.jp/theater/tokyo/ttseat.html", "checkedAt": "2026-08-12" },
+    { "id": "official-barrier-free", "official": true, "roles": ["facility", "event-layout"], "publisher": "宝塚歌劇", "title": "バリアフリー情報", "url": "https://kageki.hankyu.co.jp/barrierfree/index.html", "checkedAt": "2026-08-12" }
+  ],
+  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行の一般公演料金区分・座席図・2,079席候補は記録するが、車いす観劇スペースと通常番号席の包含・置換関係を推測してrange化しない。",
+  "completenessBasis": "第1パスで宝塚歌劇の現行劇場ページ、現行座席表、一般公演2,079席の内訳を確認した。独立第2パスで同発行者のバリアフリー情報を確認し、東京宝塚劇場に車いす観劇スペースがあり事前申込かつ数に限りがある一方、番号席との包含・置換番号・通常販売variantが定義されないことを確認した。",
+  "transformation": "一般公演の料金区分合計2,079を番号rangeへfittingせず、車いす観劇スペースの公式な番号対応が得られるまでrangeは登録しない。",
+  "knownLimitations": ["SOURCE HOLD: 現行公式資料は車いす観劇スペースの番号席との包含・置換関係を示さない。", "POLICY/SCHEMA HOLD: 事前申込・限定数の車いす観劇スペースを固定代表selectable setへlosslessに表現できない。"],
+  "verification": { "status": "pending", "checkedAt": "2026-08-12", "method": "official-source-first-pass-independent-second-pass-hold", "seatStructure": "pending", "seatCount": "matched", "unresolvedIssues": ["公式の一般公演2,079席と車いす観劇スペースの包含関係が未公表。", "車いす利用時に通常番号席のどれが置換又は非販売になるか未公表。"] },
+  "ranges": []
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "shiki-haru-standard",
+  "name": "JR東日本四季劇場［春］ 現行作品別番号席候補（販売variant未解決）",
+  "prefecture": "東京都",
+  "city": "港区",
+  "aliases": ["JR東日本アートセンター 四季劇場［春］", "四季劇場［春］"],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-numbered-seat-set",
+    "name": "現行『アナと雪の女王』東京公演の番号席候補",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "劇団四季の現行劇場ページは客席数を約1,500席とし、現行『アナと雪の女王』座席表では非販売席を明示する。車いすスペースでの観劇は予約前の個別連絡としており、非販売席・車いすスペース・通常番号席の固定関係及び厳密な代表総数を公表しない。作品別販売図を恒久の代表selectable setとして選択しない。",
+    "notIncludedPatterns": ["作品別の非販売席", "ファミリーゾーン", "車いすスペース利用", "将来作品の販売variant"]
+  },
+  "sources": [
+    { "id": "official-theater-page", "official": true, "roles": ["facility", "seat-count", "event-layout"], "publisher": "劇団四季", "title": "JR東日本四季劇場［春］ 劇場情報", "url": "https://www.shiki.jp/theatres/4023/", "checkedAt": "2026-08-12" },
+    { "id": "official-current-seat-map", "official": true, "roles": ["seat-structure", "event-layout"], "publisher": "劇団四季", "title": "『アナと雪の女王』東京公演 座席表（JR東日本四季劇場［春］）", "url": "https://www.shiki.jp/theatres/pdf_seat/40230084.pdf", "checkedAt": "2026-08-12" }
+  ],
+  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行施設・作品別座席表・非販売席表示は記録するが、作品別販売variant又は車いすスペースの関係を推測してrange化しない。",
+  "completenessBasis": "第1パスで劇団四季の現行劇場ページ、現行『アナと雪の女王』座席表、約1,500席の施設表示、非販売席及びファミリーゾーンの注記を確認した。独立第2パスで同ページの車いすスペース予約前連絡の案内と現行座席表を再確認し、固定の通常販売番号席set・厳密総数・車いす利用時の置換番号が発行者により定義されないことを確認した。",
+  "transformation": "作品別の色分け又は座席図形から恒久の非販売・車いす置換番号を補完せず、rangeは登録しない。",
+  "knownLimitations": ["SOURCE HOLD: 現行公式施設ページは客席数を約1,500席とし、固定番号席の厳密総数を公表しない。", "POLICY/SCHEMA HOLD: 現行作品別の非販売席と車いすスペース利用を一意な通常代表patternへlosslessに固定できない。"],
+  "verification": { "status": "pending", "checkedAt": "2026-08-12", "method": "official-source-first-pass-independent-second-pass-hold", "seatStructure": "pending", "seatCount": "pending", "unresolvedIssues": ["作品別非販売席を除く恒久の通常番号席setが公式に定義されない。", "車いすスペースと通常番号席の番号対応・置換関係が未公表。", "現行公式資料に固定番号席の厳密総数がない。"] },
+  "ranges": []
+}

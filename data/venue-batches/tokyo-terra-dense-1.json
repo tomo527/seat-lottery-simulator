@@ -1,0 +1,35 @@
+{
+  "batchId": "tokyo-terra-dense-1",
+  "createdAt": "2026-08-12",
+  "scope": "Tokyo coverage TERRA-DENSE-1: tokyo-takarazuka、shiki-haru、shiki-akiのcurrentness・代表番号席pattern・第1/第2パス・production gate。既存HOLD/CONTRADICTION及び他候補は対象外。",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [
+    "tokyo-official-0053",
+    "tokyo-official-0113",
+    "tokyo-official-0114"
+  ],
+  "complexityAssessments": [
+    {
+      "inventoryId": "tokyo-official-0053",
+      "classification": "SOURCE/POLICY/SCHEMA HOLD",
+      "rationale": "現行公式座席表は一般公演2,079席と番号図を示すが、同発行者は限定数・事前申込の車いす観劇スペースを示すのみで、その包含・置換番号・通常販売variantを定義しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
+    },
+    {
+      "inventoryId": "tokyo-official-0113",
+      "classification": "SOURCE/POLICY/SCHEMA HOLD",
+      "rationale": "現行公式ページは約1,500席、現行作品別座席表の非販売席、車いすスペースの個別予約を示すが、厳密で恒久的な通常番号席set・置換関係を定義しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
+    },
+    {
+      "inventoryId": "tokyo-official-0114",
+      "classification": "SOURCE/POLICY/SCHEMA HOLD",
+      "rationale": "現行公式ページは約1,200席、9月30日以前・10月1日以降の別販売図、非販売席、車いすスペースの個別予約を示し、一意の通常番号席setを定義しない。",
+      "preflightComplete": true,
+      "processingRoute": "Hold"
+    }
+  ]
+}

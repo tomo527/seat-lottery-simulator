@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "shiki-aki-standard",
+  "name": "JR東日本四季劇場［秋］ 現行作品別番号席候補（販売variant未解決）",
+  "prefecture": "東京都",
+  "city": "港区",
+  "aliases": ["JR東日本アートセンター 四季劇場［秋］", "四季劇場［秋］"],
+  "venueType": "theater",
+  "representativePattern": {
+    "id": "standard-numbered-seat-set",
+    "name": "現行『バック・トゥ・ザ・フューチャー』東京公演の番号席候補",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "劇団四季の現行劇場ページは客席数を約1,200席とし、現行『バック・トゥ・ザ・フューチャー』座席表を2026年9月30日以前と10月1日以降に分け、いずれも非販売席を明示する。9月30日以前の図には1階4・5列サイド席を今後販売しないとの注記がある。車いすスペースは予約前の個別連絡としており、固定されたselectable numbered-seat setを一意に確定しない。",
+    "notIncludedPatterns": ["2026年9月30日以前の販売variant", "2026年10月1日以降の販売variant", "1階4・5列サイド非販売席", "車いすスペース利用", "将来作品の販売variant"]
+  },
+  "sources": [
+    { "id": "official-theater-page", "official": true, "roles": ["facility", "seat-count", "event-layout"], "publisher": "劇団四季", "title": "JR東日本四季劇場［秋］ 劇場情報", "url": "https://www.shiki.jp/theatres/4024/", "checkedAt": "2026-08-12" },
+    { "id": "official-current-seat-map-pre-october", "official": true, "roles": ["seat-structure", "event-layout"], "publisher": "劇団四季", "title": "『バック・トゥ・ザ・フューチャー』東京公演 座席表（2026年9月30日まで）", "url": "https://www.shiki.jp/theatres/pdf_seat/40240092_2.pdf", "checkedAt": "2026-08-12" }
+  ],
+  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行施設と作品別販売図は記録するが、日付別・作品別の非販売席及び車いすスペース運用を固定代表rangeへ選択しない。",
+  "completenessBasis": "第1パスで劇団四季の現行劇場ページ、2026年9月30日までの公式座席表、約1,200席の施設表示、非販売席と1階4・5列サイドの恒久的な販売停止注記を確認した。独立第2パスで同ページが2026年10月1日以降用の別座席表も掲示すること、車いすスペースが予約前の個別連絡であること、両日付variantに非販売席注記があることを確認した。発行者は恒久の通常販売番号席set・厳密総数・車いす置換番号を定義しない。",
+  "transformation": "日付別の色分け又は座席図形から販売停止・車いす置換番号を補完せず、rangeは登録しない。",
+  "knownLimitations": ["SOURCE HOLD: 現行公式施設ページは客席数を約1,200席とし、固定番号席の厳密総数を公表しない。", "POLICY/SCHEMA HOLD: 同一現行公演内でも日付別販売図と非販売席があり、車いすスペースを含む一意な通常代表patternをlosslessに表現できない。"],
+  "verification": { "status": "pending", "checkedAt": "2026-08-12", "method": "official-source-first-pass-independent-second-pass-hold", "seatStructure": "pending", "seatCount": "pending", "unresolvedIssues": ["日付別・作品別非販売席を除く恒久の通常番号席setが公式に定義されない。", "車いすスペースと通常番号席の番号対応・置換関係が未公表。", "現行公式資料に固定番号席の厳密総数がない。"] },
+  "ranges": []
+}
