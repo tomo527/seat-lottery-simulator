@@ -12,7 +12,7 @@
     "name": "発行者定義の代表的な選択可能番号席セット",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "2026年3月27日開業後の現行運営者ページは1F〜4Fの番号図を『基本パターン』として公開するが、同図自体が公演による座席配置変更を明記する。1Fは着席1,720席またはstanding3,259人へ転換するダイナミック・ライブ・フロアで、FAQは車いすlayoutも公演依存とする。イベント依存1F番号を恒久ID化せず、固定上層階だけを独自代表setにしないためrange転記を停止した。",
+    "selectionReason": "TOKYO-CONFIG-A-ARENA-2のfresh reviewでは、現行運営者が1F arenaと固定席を区別し、2F〜4Fを合計2,047（車いす4＋同伴4を含む）として階別内訳を公開することを確認した。ただし公開座席図は『基本パターン』で、公演別変更を明記し、上層階も各rowの全seat numberをlosslessに表示しない。issuerは2F〜4Fだけを独立fixed-only configurationとして定義せず、FAQは車いすlayoutも公演依存とするためproductionにはしない。",
     "notIncludedPatterns": ["1F椅子席1,720席の公演別配置", "1Fstanding3,259人", "2F車いす4席＋同伴4席の公演別layout", "2Fバルコニー16席", "3F/4F VIP各8席", "舞台・機材・見切りによる公演variant"]
   },
   "sources": [
@@ -21,21 +21,21 @@
     {"id":"official-organizer-overview","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"株式会社テレビ朝日／東京ドリームパーク","title":"SGCホール有明 主催者ページ","url":"https://tdp.tv-asahi.co.jp/organizer/hall/","checkedAt":"2026-08-12"},
     {"id":"official-opening-currentness","official":true,"roles":["facility","event-layout"],"publisher":"株式会社テレビ朝日／東京ドリームパーク","title":"東京ドリームパーク 2026年3月27日開業ニュース","url":"https://tdp.tv-asahi.co.jp/news/0008/","checkedAt":"2026-08-12"}
   ],
-  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。最大3,767は1F椅子1,720、2F 595＋車いす4＋同伴4＋バルコニー16、3F 725＋VIP8、4F 687＋VIP8の合計として公式に一意だが、1F可動floorと車いすlayoutを含む公演別variantで、恒久selectable numbered-seat setではない。",
-  "completenessBasis": "第1パスは現行ABOUTページの原寸座席図、階別内訳、dynamic live floorを確認し、イベント依存1Fと車いす配置のため代表pattern gateで停止した。独立第2パスは現行FAQと主催者ページで、公開図があくまで基本パターン、座席/車いすlayoutは公演別、詳細SPECは認証対象であることを再確認した。両パスは同じHOLD結論で、rangesは0、range diffはnull。",
+  "registeredScope": "B_SOURCE_LIMITED / SOURCE/POLICY HOLD。最大3,767は1F椅子1,720＋上層固定scope2,047で公式算術一致する。上層内訳は2F 595＋車いす4＋同伴4＋バルコニー16、3F 725＋VIP8、4F 687＋VIP8だが、固定番号席だけのissuer-defined subtotal／configuration、全番号、車いす置換規則は公開されない。",
+  "completenessBasis": "第1パスは現行ABOUTページの原寸基本図と階別内訳をfreshに確認し、上層scope2,047と全館3,767の算術を確認したが、各rowの完全番号集合と固定番号席だけのissuer-defined conditionを確認できず停止した。独立第2パスは現行FAQと主催者ページで、掲載図が基本パターン、公演別座席変更、車いすlayout公演依存、詳細SPEC認証対象であることを再確認した。両パスは同じB_SOURCE_LIMITEDとなり、rangesは0、rangeDiffはnull。",
   "transformation": "3,767へのcapacity fitting、公開基本図の1F番号を恒久IDとすること、固定2F〜4Fだけの独自採用、車いす4席の番号置換推測を行わず、rangesは空のままとした。",
   "knownLimitations": [
-    "SOURCE HOLD: 公開公式資料は1F椅子席番号の公演間恒久性、車いす4席・同伴4席の不変番号/包含・置換規則を定義しない。詳細SPECは認証対象である。",
-    "POLICY/SCHEMA HOLD: issuerは公開図を基本パターンとするが、1F座席配置と車いすlayoutを公演依存と明記し、恒久fixed numbered-seat setとして扱える全館代表configurationを定義しない。",
+    "SOURCE HOLD: 公開基本図は上層固定席の各row・全seat number、車いす4席・同伴4席の不変番号／置換規則を定義せず、詳細SPECは認証対象である。",
+    "POLICY HOLD: issuerは2F〜4Fだけのfixed-only利用configurationを定義せず、公開図を基本パターン、公演別座席／車いすlayoutを可変と明記する。",
     "最大3,767への階別算術は一致するが、合計一致を理由にイベント依存席をproduction化できない。"
   ],
   "verification": {
     "status": "pending",
     "checkedAt": "2026-08-12",
-    "method": "official-source-first-pass-independent-second-pass-hold",
+    "method": "fresh-fixed-only-official-source-first-pass-independent-second-pass-hold",
     "seatStructure": "pending",
     "seatCount": "pending",
-    "unresolvedIssues": ["1F椅子席1,720席の番号配置が公演間で恒久か未定義。", "車いす4席・同伴4席の番号対応と公演別layoutが未確定。", "全館を一意に恒久選択可能なissuer-defined representative configurationがない。"]
+    "unresolvedIssues": ["2F〜4F固定席の各row・全seat numberが公開されない。", "車いす4席・同伴4席の番号対応と公演別layoutが未確定。", "2F〜4Fだけを利用するissuer-defined fixed-only configurationがない。"]
   },
   "ranges": []
 }

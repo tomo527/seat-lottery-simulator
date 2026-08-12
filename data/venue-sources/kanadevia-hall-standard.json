@@ -12,7 +12,7 @@
     "name": "発行者定義の代表的な選択可能番号席セット",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "現行運営者資料は着席最大2,471人を第3バルコニー447席、第2バルコニー478席、第1バルコニー440席、アリーナ990席、立見106人の合計として示す。固定バルコニーの番号図は公開される一方、公開アリーナ図には恒久seat IDがなく、アリーナ仕様はイベントごとに異なると明記される。固定バルコニーだけを代表setにせず、range転記を停止した。",
+    "selectionReason": "TOKYO-CONFIG-A-ARENA-2のfresh reviewでは、現行運営者が第3／第2／第1バルコニーを別々の番号図と447／478／440席（計1,365席）で示し、arena 990席と立見106人を別建てにすることを確認した。しかしissuerが定義する利用configurationは着席2,471人又はstanding 3,190人等の全館形式であり、3バルコニーだけを独立した利用・selectable configurationとして指定していない。固定図が存在するだけではrepository独自fixed-onlyを作れないためproductionにはしない。",
     "notIncludedPatterns": ["イベント別アリーナ着席990席", "アリーナスタンディング1,709人", "エンドステージ", "センターステージ", "サークルステージ", "立見106人", "収容人数外の車いす席・スイートルーム席", "見切り・可動・撤去席variant"]
   },
   "sources": [
@@ -21,21 +21,21 @@
     {"id":"official-download-guide","official":true,"roles":["seat-structure"],"publisher":"株式会社東京ドーム／東京ドームシティ","title":"Kanadevia Hall 資料ダウンロード","url":"https://www.tokyo-dome.co.jp/tdc-hall/organizer/download.html","checkedAt":"2026-08-12"},
     {"id":"official-current-fee-schedule","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"株式会社東京ドーム／東京ドームシティ","title":"Kanadevia Hall 利用料金一覧","url":"https://www.tokyo-dome.co.jp/tdc-hall/organizer/pdf/hall_fee.pdf","checkedAt":"2026-08-12"}
   ],
-  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。固定バルコニーは447+478+440=1,365番号席として公開されるが、着席最大2,471はこれにイベント依存のアリーナ990席と立見106人を加えた人数で、車いす席・スイートルーム席は別枠。issuer-defined standard/normalアリーナ番号setは公開されない。",
-  "completenessBasis": "第1パスは現行施設概要と公開座席案内から固定バルコニー、アリーナ、立見、車いす・スイートルーム除外、複数stage形式を確認し、代表pattern gateで停止した。独立第2パスは現行利用料金表と資料ダウンロード案内を用い、着席/standing別料金、詳細座席図面が認証後資料であること、公開アリーナに恒久番号がないことを再確認した。両パスは同じHOLD結論で、rangesは0、range diffはnull。",
+  "registeredScope": "B_SOURCE_LIMITED / SOURCE/POLICY HOLD。公開番号図とexact subtotalは固定バルコニー1,365席を確認できるが、issuerはそれだけを独立fixed-only configurationとして定義しない。現行全館着席2,471人は1,365席＋イベント依存arena 990席＋立見106人で、車いす席・スイートルーム席は別枠。車いす・同伴の番号対応、認証後Seat Planのsource generation、issuer-defined fixed-only利用条件が公開されないためschema変更だけではproduction化できない。",
+  "completenessBasis": "第1パスは現行施設概要と公開3バルコニー番号図をfreshに確認し、447＋478＋440＝1,365と、arena 990／standing 1,709／立見106、車いす・スイートルーム除外を確認した。独立第2パスは現行利用規定・料金表・資料ダウンロード案内・FAQを確認し、利用単位が全館着席／standing等で、バルコニーのみの独立configurationがなく、詳細Seat Planは認証後資料であることを再確認した。両パスはfixed-only authority gateで同じHOLDとなり、rangesは0、rangeDiffはnull。",
   "transformation": "2,471へのcapacity fitting、990席の番号逆算、図形位置による番号補完、イベント依存アリーナ席の恒久ID化、固定バルコニーだけの独自代表化を行わず、rangesは空のままとした。",
   "knownLimitations": [
-    "SOURCE HOLD: 公開公式資料はアリーナ着席990席の恒久row/seat番号と、車いす席・同伴席の番号対応を公開していない。詳細座席図面は認証後資料である。",
-    "POLICY/SCHEMA HOLD: エンド/センター/サークル/standingの各variantとイベント別アリーナ仕様を越えてissuer-defined standard/normal selectable numbered-seat setがない。",
+    "SOURCE HOLD: 公開公式資料は車いす席・同伴席の番号対応と認証後Seat Planのsource generationを公開していない。",
+    "POLICY HOLD: 発行者は3固定バルコニーだけを独立利用configurationとして定義せず、番号図が存在することだけを根拠にrepository独自fixed-onlyを作れない。",
     "公式2,471人は固定バルコニー1,365席＋アリーナ990席＋立見106人であり、全員が番号席ではない。車いす席・スイートルーム席は明示的に含まれない。"
   ],
   "verification": {
     "status": "pending",
     "checkedAt": "2026-08-12",
-    "method": "official-source-first-pass-independent-second-pass-hold",
+    "method": "fresh-fixed-only-official-source-first-pass-independent-second-pass-hold",
     "seatStructure": "pending",
     "seatCount": "pending",
-    "unresolvedIssues": ["アリーナ着席990席の恒久番号体系が未公開。", "車いす席・同伴席の数、包含、置換番号が未公開。", "単一のstandard/normal configurationがissuerにより定義されていない。"]
+    "unresolvedIssues": ["3固定バルコニーだけを利用するissuer-defined configurationがない。", "車いす席・同伴席の数、包含、置換番号が未公開。", "認証後Seat Planのsource generationを公開確認できない。"]
   },
   "ranges": []
 }

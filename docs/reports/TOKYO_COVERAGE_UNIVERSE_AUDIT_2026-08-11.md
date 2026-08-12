@@ -1,7 +1,7 @@
 # Tokyo coverage universe audit
 
 初回確認日: 2026-08-11（Asia/Tokyo）
-current snapshot更新: 2026-08-12（TOKYO-CONFIG-A-ARENA-1完了後）
+current snapshot更新: 2026-08-12（TOKYO-CONFIG-A-ARENA-2完了後）
 canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.json](../../data/venue-coverage/tokyo-coverage-universe-2026-08-11.json)
 
 この文書は2026-08-11のuniverse監査結果を起点とする。過去macroの結果はhistorical recordとして保持するが、件数・active queue・Exact next actionは上記canonical inventoryの現在値を用いる。
@@ -29,11 +29,11 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 |---|---:|---:|---:|---:|
 | Research completeness | 64/76 = **84.2%** | 44/44 = **100.0%** | 20/28 = **71.4%** | 0/4 = **0.0%** |
 | User-visible production coverage | 9/76 = **11.8%** | 5/44 = **11.4%** | 4/28 = **14.3%** | 0/4 = **0.0%** |
-| Confirmed schema-addressable coverage | 19/76 = **25.0%** | 11/44 = **25.0%** | 8/28 = **28.6%** | 0/4 = **0.0%** |
+| Confirmed schema-addressable coverage | 16/76 = **21.1%** | 8/44 = **18.2%** | 8/28 = **28.6%** | 0/4 = **0.0%** |
 
 - `Research completeness` は `PRODUCTION / HOLD / CONTRADICTION` のformal disposition率であり、抽選可能率ではない。
 - `User-visible production coverage` はproduction catalogへ入って実際に抽選できる候補だけを数える。アプリ全体の61会場中、Tokyo coverage universeに該当する主要会場は9件である。
-- `Schema-addressable coverage` は既存PRODUCTION 9件、現行schemaで処理可能な非production 3件、issuer-defined configuration / fixed-onlyをlosslessに収録可能と確認済みの非production 7件の計19件。Forum A / NNTT OperaはBへ、代々木2件 / 東京体育館はCへfresh issuer evidenceに基づき再分類し、安全側で分子から除外した。
+- `Schema-addressable coverage` は既存PRODUCTION 9件、現行schemaで処理可能な非production 3件、issuer-defined configuration / fixed-onlyをlosslessに収録可能と確認済みの非production 4件の計16件。ARENA-2の3件はfresh issuer evidenceで全番号、独立configuration、wheelchair semantics又はsource generationが不足するためBへ再分類し、安全側で分子から除外した。
 - schema-addressableはproduction確約ではない。各configurationに完全なissuer-owned番号図・厳密総数・条件・wheelchair semanticsが揃い、従来どおり二つの独立公式source passと`expectedSeatCount == calculatedSeatCount`を通る必要がある。
 
 ### 件数のhistorical snapshot
@@ -137,7 +137,7 @@ multi-configuration / fixed-only schema拡張でaddressableな10件:
 
 ### Current taxonomy after configuration reviews
 
-明治座はAからproductionへ移行済み。fresh issuer reviewでForum A / NNTT OperaをA→B、代々木第一 / 第二 / 東京体育館をA→Cへ移したため、current nonproduction 39件は **A6 / B23 / C7 / D3**。current Aは `ariake-arena`、`kanadevia-hall`、`sgc-hall-ariake`、`ex-theater-ariake`、`nntt-playhouse`、`galaxy-theatre` の6件だけである。
+明治座はAからproductionへ移行済み。fresh issuer reviewでForum A / NNTT OperaとARENA-2の3件をA→B、代々木第一 / 第二 / 東京体育館をA→Cへ移したため、current nonproduction 39件は **A3 / B26 / C7 / D3**。current Aは `ex-theater-ariake`、`nntt-playhouse`、`galaxy-theatre` の3件だけである。
 
 ## multi-configuration schemaの実現性
 
@@ -165,13 +165,13 @@ venue
 
 ## 「固定番号席のみ」configuration
 
-限定的に可とする。対象は、固定席subsetがissuer evidence上で独立したseat setとして成立し、全番号・厳密総数・除外範囲・wheelchair semanticsを完全に確認できる場合だけである。候補例は代々木第一／第二の固定席、東京体育館の固定席、Kanadevia Hallの固定バルコニー、SGC HALL ARIAKEの固定上層席である。
+限定的に可とする。対象は、固定席subsetがissuer evidence上で独立したseat setとして成立し、全番号・厳密総数・除外範囲・wheelchair semanticsを完全に確認できる場合だけである。ARENA-1の3件は公式count／番号集合矛盾、ARENA-2の3件は全番号・独立configuration・wheelchair semantics等のsource不足により不成立となった。
 
 UIは「固定スタンド席configurationのみ」「アリーナ／floor席を含まない」「最大収容配置ではない」を会場選択時と抽選結果に明示する。単に図から固定席が読める、固定席数だけが公表される、またはevent floorを除けば合計が合う、という理由だけでは採用しない。東京ドームはconcert用途の固定stand subsetのexact count・stage別使用範囲がissuerにより独立定義されていないため、この救済対象にしない。
 
 ## Historical: Option Bとmigration方針
 
-**初回監査時点ではOption Bを推奨した。** 当時はMUST 10件、SHOULD 1件、計11件をschema拡張候補と見積もったが、current値は後続のfresh configuration reviewによるA6 / addressable 19を優先する。
+**初回監査時点ではOption Bを推奨した。** 当時はMUST 10件、SHOULD 1件、計11件をschema拡張候補と見積もったが、current値は後続のfresh configuration reviewによるA3 / addressable 16を優先する。
 
 Affected files / modules:
 
@@ -232,7 +232,7 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 
 - Research completeness: MUST **100%**、SHOULD **100%**。
 - Schema-addressable production conversion: MUST **100%**、SHOULD **100%**。AをHOLDのままrelease免責にしない。
-- 現時点のrepo evidenceに基づくraw production floor: MUST **11/44 = 25.0%**、SHOULD **8/28 = 28.6%**、MUST+SHOULD **19/72 = 26.4%**、Tokyo universe **19/76 = 25.0%**。
+- 現時点のrepo evidenceに基づくraw production floor: MUST **8/44 = 18.2%**、SHOULD **8/28 = 28.6%**、MUST+SHOULD **16/72 = 22.2%**、Tokyo universe **16/76 = 21.1%**。
 - 上記floorは任意の目標率ではなく、「既存production + 現行schema addressable + 承認済みschema extension addressable」を全件production化した必要数である。
 - SHOULD未調査8件から新たなschema-addressable候補が判明するたび、required numeratorを1件増やす。既存required venueとの置換は認めない。
 - OPTIONALはrelease blockerにしない。
@@ -306,9 +306,15 @@ Forum Aはnormal configurationとpit/thrust/wheelchairの番号対応がissuer e
 
 arena 3件は固定席scopeそのものをissuer-definedとして確認したが、全件で現行公式のexact subtotalと現行番号集合が矛盾した。代々木第一は8,636対8,655（+19）、代々木第二は2,803対2,818（+15）で、第1/独立第2パスのrangeDiffは0。東京体育館は固定5,178・車いす/floor分離・source generationを解決した一方、2F北Cブロックが印字316対番号集合317（+1）で、現行北側PDFと現行公式バリアフリー詳細図の独立2パスが同じ矛盾を再現した。capacity fittingせず3件を`C_CONTRADICTION`へ再分類し、production増加は0。
 
-current MUST nonproduction taxonomyは **A6 / B23 / C7 / D3**。schema-addressableはTokyo **19/76**、MUST **11/44**、SHOULD **8/28**。raw floorはMUST 11、SHOULD 8、MUST+SHOULD/Tokyo 19。詳細は `data/venue-reports/tokyo-config-a-arena-1-2026-08-12.json`。
+current MUST nonproduction taxonomyは **A3 / B26 / C7 / D3**。schema-addressableはTokyo **16/76**、MUST **8/44**、SHOULD **8/28**。raw floorはMUST 8、SHOULD 8、MUST+SHOULD/Tokyo 16。
 
-**Exact next action:** 再計算後のA cohort先頭である`TOKYO-CONFIG-A-ARENA-2`を`ariake-arena`、`kanadevia-hall`、`sgc-hall-ariake`の3会場だけ、**Sol high**のfresh fixed-only reviewとして実行する。B/C/DまたはSHOULDを混在させない。
+### 2026-08-12 `TOKYO-CONFIG-A-ARENA-2` result
+
+3件ともfresh issuer-owned fixed-only reviewで **B_SOURCE_LIMITED**。有明アリーナは固定席2F 2,734＋3F 4,408＋4F 4,090＝11,232と動的除外scopeを公式確認したが、全固定番号と車いす／随行者／付加アメニティー番号対応が未公開。Kanadevia Hallは3固定バルコニー447＋478＋440＝1,365の公式番号図があるが、issuerはバルコニーのみを独立利用configurationとして定義せず、車いす・同伴と認証後Seat Plan generationも未公開。SGC HALL ARIAKEは1F 1,720＋上層固定scope 2,047＝3,767を公式確認したが、上層各rowの全番号、固定番号席だけのissuer condition、車いす4＋同伴4の恒久番号対応がない。
+
+いずれもproduction gate前に停止し、ranges 0。expected/calculated/rangeDiffは、有明11,232/null/null、Kanadevia 1,365/null/null、SGC null/null/null。production増加0で61 venues / 62 selectable configurations / 84,331 records、Tokyo 9/76、MUST 5/44を維持する。詳細は `data/venue-reports/tokyo-config-a-arena-2-2026-08-12.json`。
+
+**Exact next action:** current A cohort 3件だけの`TOKYO-CONFIG-A-THEATRE-1`を`ex-theater-ariake`、`nntt-playhouse`、`galaxy-theatre`の **Sol high** fresh configuration reviewとして実行する。B/C/DまたはSHOULDを混在させない。
 
 ## source discipline
 

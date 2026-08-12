@@ -8618,12 +8618,12 @@
       "officialFacilityUrl": "https://ariake-arena.tokyo/main-arena/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "現行の運営者資料は最大約15,000席を仮設席込みかつイベントlayout依存とし、固定・可動・仮設・車いす席を含む一意な代表番号席setを定義しない。",
+      "eligibilityReason": "B_SOURCE_LIMITED。現行運営者は固定席11,232を可動・arena/floorから独立集計するが、公開資料は固定席の全row・全seat numberと車いす／随行者／付加アメニティーの番号対応を示さない。",
       "priority": "D",
       "venueSourceId": "ariake-arena-standard",
       "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-12",
-      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 最大収容人数は仮設席込みで、1階イベント床・2階可動観覧席variant・車いす等の包含/置換を含む代表選択可能番号席setを現行運営者が定義しない。"
+      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: fixed-only exact subtotal 11,232と動的除外scopeは公式に確認できるが、全固定番号とwheelchair／随行者／付加アメニティーの番号対応が公開されず、schema v2でもlosslessに構造化できない。"
     },
     {
       "inventoryId": "tokyo-official-0437",
@@ -23771,13 +23771,13 @@
       "officialFacilityUrl": "https://www.tokyo-dome.co.jp/tdc-hall/organizer/facilities.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "現行運営者資料が固定バルコニー1,365席、アリーナ着席990席、立見106人で最大2,471人を示すが、アリーナ仕様はイベント依存で恒久番号図を公開しないため正式HOLD。",
+      "eligibilityReason": "B_SOURCE_LIMITED。現行運営者は3固定バルコニー1,365席を個別番号図で示すが、バルコニーだけを独立利用configurationとして定義せず、車いす・同伴と認証後Seat Planのsource generationも公開しない。",
       "priority": "A",
       "venueSourceId": "kanadevia-hall-standard",
       "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-12",
       "discoveryUrlRaw": "https://www.tokyo-dome.co.jp/tdc-hall/organizer/facilities.html",
-      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: アリーナ着席990席の恒久番号、車いす・同伴席の包含/置換、issuer-defined standard configurationが公開されず、固定バルコニーだけの独自採用は不可。"
+      "blockingReason": "B_SOURCE_LIMITED / SOURCE/POLICY HOLD: exact subtotalと固定番号図だけではissuer-defined fixed-only configurationにならない。車いす・同伴の番号対応と認証後Seat Plan generationも未公開で、repository独自configurationを作成しない。"
     },
     {
       "inventoryId": "tokyo-coverage-sgc-hall-ariake",
@@ -23792,13 +23792,13 @@
       "officialFacilityUrl": "https://tdp.tv-asahi.co.jp/hall/about/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026年3月27日開業後の現行運営者資料が最大3,767と基本座席図を公開するが、1F dynamic floorと車いすlayoutは公演依存で恒久全館番号setを定義しないため正式HOLD。",
+      "eligibilityReason": "B_SOURCE_LIMITED。現行運営者は1F arenaと上層固定scope2,047を区別するが、公開基本図は上層各rowの全番号を示さず、2F〜4Fだけの独立fixed-only configurationと車いす番号対応も定義しない。",
       "priority": "A",
       "venueSourceId": "sgc-hall-ariake-basic",
       "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-12",
       "discoveryUrlRaw": "https://tdp.tv-asahi.co.jp/hall/about/",
-      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 基本図はあるが1F椅子席1,720の公演間恒久性、車いす4＋同伴4の番号対応、全館のissuer-defined permanent representative configurationが未定義。"
+      "blockingReason": "B_SOURCE_LIMITED / SOURCE/POLICY HOLD: 上層固定scope2,047の内訳は公式だが、固定番号席だけのexact subtotal、各rowの全番号、車いす4＋同伴4の番号対応、issuer-defined fixed-only conditionが未公開。"
     },
     {
       "inventoryId": "tokyo-coverage-ex-theater-ariake",
