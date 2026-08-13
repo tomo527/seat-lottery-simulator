@@ -104,9 +104,9 @@
     {
       "venueId": "national-noh-theatre-standard",
       "readiness": "R3",
-      "secondPass": "in-progress",
-      "blocker": "正面・脇正面・中正面の全番号転記と総席数照合が未完了。",
-      "nextAction": "公式座席図を3 areaに分けて独立転記する。"
+      "secondPass": "blocked",
+      "blocker": "B_SOURCE_LIMITED: 627席・全番号図は確認したが、正面最前列付近の車椅子スペースの包含・置換番号・同伴席と中正面可動6席の関係が未公表。",
+      "nextAction": "issuerが車椅子・同伴・可動席の完全番号対応を公開した場合だけ再開する。"
     },
     {
       "venueId": "nerima-culture-main-standard",

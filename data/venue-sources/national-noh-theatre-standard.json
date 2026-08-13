@@ -14,7 +14,7 @@
     "name": "通常客席配置",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "公式施設案内の通常627席を候補とする。",
+    "selectionReason": "現行公式は627席と完全番号図を示すが、正面最前列付近の車椅子スペースについて番号席の包含・置換・同伴対応を公開せず、中正面可動6席との関係もlosslessに確定できないためB_SOURCE_LIMITED。",
     "notIncludedPatterns": [
       "中正面可動席の別状態"
     ]
@@ -30,7 +30,7 @@
       "publisher": "独立行政法人日本芸術文化振興会",
       "title": "国立能楽堂座席表",
       "url": "https://www.ntj.jac.go.jp/assets/files/nou/zaseki/zaseki_nou_2.pdf",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-13"
     },
     {
       "id": "official-facility-guide",
@@ -42,24 +42,49 @@
       "publisher": "独立行政法人日本芸術文化振興会",
       "title": "国立能楽堂施設案内",
       "url": "https://www.ntj.jac.go.jp/nou/facilities/",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-barrier-free-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "独立行政法人日本芸術文化振興会",
+      "title": "国立能楽堂 バリアフリー設備",
+      "url": "https://www.ntj.jac.go.jp/about/barrier_free/facility_nou/",
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-current-event-wheelchair-guide",
+      "official": true,
+      "roles": [
+        "event-layout"
+      ],
+      "publisher": "独立行政法人日本芸術文化振興会",
+      "title": "7月国立能楽堂ショーケース 鐘の音・天鼓",
+      "url": "https://www.ntj.jac.go.jp/schedule/nou/2026/85015/",
+      "checkedAt": "2026-08-13"
     }
   ],
-  "registeredScope": "正面・脇正面・中正面・GBの番号付き座席627席を予定。",
-  "completenessBasis": "公式座席表とarea別合計627席を確認済み。可動6席を含む通常状態を独立照合する。",
-  "transformation": "公式座席表のarea・列・番号を明示rangeへ転記する予定。",
+  "registeredScope": "B_SOURCE_LIMITED / SOURCE HOLD。627席の番号図は確認したが、車椅子・同伴・可動席の一意なissuer-defined configurationを作らずrangeは登録しない。",
+  "completenessBasis": "現行公式座席図と施設案内は正面245・脇正面190・中正面156・GB36＝627を一致して示す。独立確認した現行バリアフリー案内と2026年度主催公演は正面最前列付近の車椅子スペースを案内するが、627席への包含、置換番号、同伴席、中正面可動6席との関係を示さない。",
+  "transformation": "車椅子・同伴・可動席の番号対応を補完せず、公式blockerとして記録する。",
   "knownLimitations": [
-    "中正面に可動席6席がある。"
+    "B_SOURCE_LIMITED: 正面最前列付近の車椅子スペースについて番号席の包含・置換・同伴対応が未公表。",
+    "B_SOURCE_LIMITED: 中正面可動6席と車椅子利用時configurationの関係が未公表。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
+    "checkedAt": "2026-08-13",
+    "method": "official-source-first-pass-independent-second-pass-hold",
+    "seatStructure": "matched",
+    "seatCount": "matched",
     "unresolvedIssues": [
-      "正面・脇正面・中正面の全番号転記と総席数照合が未完了。",
-      "公式座席図を3 areaに分けて独立転記する。"
+      "車椅子スペースが置換する番号席と627席への包含関係が未公表。",
+      "車椅子同伴席と中正面可動6席のconfiguration条件が未公表。",
+      "同一source generationの番号図以外に全IDを独立照合できる公式資料がない。"
     ]
   },
   "ranges": []

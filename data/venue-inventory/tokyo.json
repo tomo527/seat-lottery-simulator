@@ -3360,13 +3360,13 @@
       "officialFacilityUrl": "https://nissho-hall.jp/hall.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "現行公式ホールページ・客席図で1,000席（1F 671席＋車椅子1席、2F 328席）とcurrentnessを確認。1Fの常時除外・可変撤去注記によりproductionは保留。",
+      "eligibilityReason": "B_SOURCE_LIMITED。現行公式客席図と音響客席回路図はfull図の999番号席を独立一致させるが、1F8列3-4番・5-6番撤去variantのissuer condition・厳密expectedと車椅子同伴配置を公開しない。",
       "priority": "B",
       "venueSourceId": "nissho-hall-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-11",
+      "lastCheckedAt": "2026-08-13",
       "discoveryUrlRaw": "https://nissho-hall.jp/hall.html",
-      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 現行公式図が1F8列2番の常時除外と3-4番・5-6番の可変撤去を示すが、通常販売variantを一意に指定しない。"
+      "blockingReason": "B_SOURCE_LIMITED / SOURCE-POLICY HOLD: full図999/999/rangeDiff 0だが、3-4番・5-6番撤去のissuer-defined configuration条件・厳密expectedと車椅子同伴席が未公表。"
     },
     {
       "inventoryId": "tokyo-official-0168",
@@ -11096,8 +11096,8 @@
       "category": "hall",
       "officialFacilityUrl": "https://hall.swu.ac.jp/seat.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "B_SOURCE_LIMITED。現行公式は627席・完全番号図を示すが、正面最前列付近の車椅子スペースの包含・置換番号・同伴席と中正面可動6席の関係を公開しない。",
       "priority": "A",
       "venueSourceId": "hitomi-memorial-hall-standard",
       "researchStatus": "draft-created",
@@ -13513,8 +13513,9 @@
       "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
       "priority": "B",
       "venueSourceId": "national-noh-theatre-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-13",
+      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: 627席・番号構造は確認済みだが、車椅子・同伴・可動6席の完全番号対応と独立source generationが未公表。"
     },
     {
       "inventoryId": "tokyo-official-0688",

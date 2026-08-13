@@ -1,0 +1,126 @@
+{
+  "reportVersion": 1,
+  "macro": "TOKYO-ADDRESSABLE-CONVERSION-1B",
+  "completedAt": "2026-08-13",
+  "model": "Sol high",
+  "scope": ["national-noh-theatre", "nissho-hall"],
+  "rules": {
+    "onlyIssuerOrOperatorOwnedEvidence": true,
+    "freshClassification": true,
+    "noCapacityFitting": true,
+    "noGeometryInference": true,
+    "noOcrAuthority": true,
+    "noRepositoryInventedConfiguration": true,
+    "independentTwoPassRequired": true,
+    "wheelchairCompanionRemovableSemanticsRequired": true
+  },
+  "venues": [
+    {
+      "id": "national-noh-theatre",
+      "classification": "B_SOURCE_LIMITED",
+      "production": false,
+      "selectable": false,
+      "currentness": {
+        "status": "confirmed-active",
+        "checkedAt": "2026-08-13",
+        "evidence": [
+          "https://www.ntj.jac.go.jp/nou/",
+          "https://www.ntj.jac.go.jp/schedule/nou/2026/85015/"
+        ]
+      },
+      "officialSeatEvidence": {
+        "seatMap": "https://www.ntj.jac.go.jp/assets/files/nou/zaseki/zaseki_nou_2.pdf",
+        "facilityCounts": "https://www.ntj.jac.go.jp/nou/facilities/",
+        "areaCounts": {"正面": 245, "脇正面": 190, "中正面": 156, "GB": 36, "total": 627},
+        "movableSeats": "中正面可動席6席"
+      },
+      "wheelchairCompanionRemovableSemantics": {
+        "status": "unresolved",
+        "evidence": "Current issuer barrier-free and event pages confirm a wheelchair space near the front of the shomen area, but publish no inclusion in 627, numbered replacements, companion arrangement, or relation to the six movable chushomen seats.",
+        "barrierFreeUrl": "https://www.ntj.jac.go.jp/about/barrier_free/facility_nou/",
+        "repositoryAssumptions": false
+      },
+      "sourceGeneration": {
+        "status": "insufficient-for-production",
+        "result": "The current complete numbered map is one generation; the facility and event pages independently confirm totals/current use but do not provide a second complete numbered identity set."
+      },
+      "firstPass": {
+        "status": "stopped-before-range-commit",
+        "result": "The official map and area subtotals reconcile to 627, but no lossless selectable configuration exists while wheelchair/movable semantics are unmapped."
+      },
+      "independentSecondPass": {
+        "status": "blocked",
+        "result": "Current barrier-free and 2026 event evidence reconfirms wheelchair use without the required numbered mapping."
+      },
+      "expectedSeatCount": 627,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "unresolvedIssuesCount": 3,
+      "reopenOnlyWhen": "The issuer publishes complete numbered wheelchair/companion/movable-seat semantics and an independently checkable complete seat-set generation."
+    },
+    {
+      "id": "nissho-hall",
+      "classification": "B_SOURCE_LIMITED",
+      "production": false,
+      "selectable": false,
+      "currentness": {
+        "status": "confirmed-active",
+        "checkedAt": "2026-08-13",
+        "evidence": [
+          "https://nissho-hall.jp/hall.html",
+          "https://nissho-hall.jp/pdf/hall-kiyaku.pdf"
+        ]
+      },
+      "officialFullDiagramCandidate": {
+        "seatMap": "https://nissho-hall.jp/pdf/hall-seat.pdf",
+        "independentPlan": "https://nissho-hall.jp/pdf/hall-audio.pdf",
+        "officialTotal": 1000,
+        "numberedSeatCount": 999,
+        "wheelchairSpaces": 1,
+        "floorSubtotals": {"1F-numbered": 671, "1F-wheelchair": 1, "2F-numbered": 328},
+        "firstPassCalculated": 999,
+        "secondPassCalculated": 999,
+        "rangeDiff": 0
+      },
+      "wheelchairCompanionRemovableSemantics": {
+        "status": "partially-resolved-not-production-safe",
+        "resolved": "1F row 8 seat 2 is always removed and occupied by the single wheelchair space included in the official 1,000 total.",
+        "unresolved": "The issuer does not publish a permanent companion-seat arrangement or issuer-defined conditions and exact totals for removal of row 8 seats 3-4 and/or 5-6.",
+        "repositoryAssumptions": false
+      },
+      "configurationDecision": {
+        "status": "no-production-configuration",
+        "reason": "The full diagram is internally exact, but the operator does not independently name it as the permanent default configuration against the explicitly variable removals. Creating a repository-defined standard configuration or derived 997/995-seat variants is prohibited."
+      },
+      "firstPass": {
+        "status": "complete-full-diagram-candidate",
+        "source": "official seat map",
+        "numberedSeatCount": 999
+      },
+      "independentSecondPass": {
+        "status": "matched-but-gate-blocked",
+        "source": "official audio seating circuit plan",
+        "numberedSeatCount": 999,
+        "rangeDiff": 0
+      },
+      "expectedSeatCount": 999,
+      "calculatedSeatCount": 999,
+      "rangeDiff": 0,
+      "unresolvedIssuesCount": 2,
+      "reopenOnlyWhen": "The operator publishes issuer-defined conditions, exact totals, and wheelchair/companion treatment for a specific full or removal configuration."
+    }
+  ],
+  "summary": {
+    "productionPromotions": 0,
+    "productionVenueCount": 62,
+    "productionConfigurationCount": 63,
+    "productionSeatRecords": 85237,
+    "addressableCohortBefore": {"MUST": 6, "SHOULD": 6, "total": 12},
+    "addressableCohortAfter": {"MUST": 6, "SHOULD": 4, "total": 10},
+    "rawProductionFloor": {"MUST": "6/44", "SHOULD": "4/28", "MUST_AND_SHOULD": "10/72", "Tokyo": "10/76"},
+    "conversionAfter": {"MUST": "6/6", "SHOULD": "4/4", "total": "10/10", "percent": 100.0},
+    "remainingNonProductionAddressableIds": [],
+    "releaseReady": false,
+    "exactNextAction": "TOKYO RELEASE COVERAGE ADEQUACY REVIEW"
+  }
+}

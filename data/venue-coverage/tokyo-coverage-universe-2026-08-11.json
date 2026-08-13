@@ -37,13 +37,13 @@
       "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0}
     },
     "schemaAddressableCoverage": {
-      "tokyoUniverse":{"numerator":12,"denominator":76,"percent":15.8},
+      "tokyoUniverse":{"numerator":10,"denominator":76,"percent":13.2},
       "MUST":{"numerator":6,"denominator":44,"percent":13.6},
-      "SHOULD":{"numerator":6,"denominator":28,"percent":21.4},
+      "SHOULD":{"numerator":4,"denominator":28,"percent":14.3},
       "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0},
-      "confirmedCurrentSchemaNonProductionIds":["national-noh-theatre"],
-      "confirmedSchemaExtensionNonProductionIds":["nissho-hall"],
-      "note":"12 = current PRODUCTION 10（meijizaとNNTT中劇場のconfiguration conversionを含む）+ current-schema addressable 1 + schema-extension nonproduction 1。TOKYO-ADDRESSABLE-CONVERSION-1AでJ:COMホール八王子と武蔵野市民文化会館 大ホールをB_SOURCE_LIMITEDへ再分類し、非production addressable cohortから除外した。"
+      "confirmedCurrentSchemaNonProductionIds":[],
+      "confirmedSchemaExtensionNonProductionIds":[],
+      "note":"10 = current PRODUCTION 10（meijizaとNNTT中劇場のconfiguration conversionを含む）。TOKYO-ADDRESSABLE-CONVERSION-1A/1Bのfresh issuer-owned reviewで非production4件を全てB_SOURCE_LIMITEDへ再分類し、current nonproduction addressable cohortは0件。"
     }
   },
   "mustNonProductionBlockerAudit": {
@@ -88,7 +88,7 @@
     "admissionRule":"issuer-owned資料がconfiguration自体を完全に定義し、expectedSeatCountとrangeを独立2パスで一致確認できる場合のみ収録する。",
     "prohibitions":["repository側でconfigurationを創作しない","event-dependent floor番号を恒久seat ID化しない","不完全variantをcapacity fittingしない","wheelchair/pit/花道差分を推測しない","既存production quality gateを緩和しない"],
     "fixedOnlyPolicy":"公式が恒久固定番号席subsetを独立したseat setとして明示し、subsetの完全番号・厳密総数・除外範囲・wheelchair semanticsを確定できる場合のみ、固定席のみconfigurationとしてselectableにできる。会場全体の最大収容を意味しないことをUIで明示する。",
-    "knownSchemaExtensionPotential":{"MUST":0,"SHOULD":1,"total":1},
+    "knownSchemaExtensionPotential":{"MUST":0,"SHOULD":0,"total":0},
     "shouldResearchTiming":"schema migration後のSOL-SHOULD-1/2/3を完了。SHOULD 28/28は全件formal disposition済み。"
   },
   "macroResults": {
@@ -195,6 +195,16 @@
       "addressableCohortChanged": true,
       "releaseReady": false,
       "notes": "2件ともfresh issuer/operator-owned evidenceでB_SOURCE_LIMITED。J:COMホール八王子は固定1,869席だが車椅子有無で各階席数が変わり、ピット／可倒席と車椅子／同伴の番号対応が未公表。武蔵野市民文化会館 大ホールは固定1,252席と車椅子4席を確認したが、別現行技術客席図は車椅子・着脱／背もたれ記号に番号対応がなく、独立第2パスの全ID・rangeDiffを確定できない。"
+    },
+    "TOKYO-ADDRESSABLE-CONVERSION-1B": {
+      "completedAt": "2026-08-13",
+      "scope": ["national-noh-theatre", "nissho-hall"],
+      "productionPromotions": 0,
+      "formalHolds": 2,
+      "addressableCohortChanged": true,
+      "conversionGatePercent": 100.0,
+      "releaseReady": false,
+      "notes": "2件ともfresh issuer/operator-owned evidenceでB_SOURCE_LIMITED。国立能楽堂は627席・全番号図を確認したが車椅子スペースの包含・置換番号・同伴席と中正面可動6席の関係が未公表。ニッショーホールはfull図の999番号席を独立公式2図で999/999/rangeDiff 0まで一致したが、3-4番／5-6番撤去variantのissuer condition・厳密expectedと車椅子同伴配置が未公表で、repository独自の標準configurationを作らない。"
     }
   },
   "currentSnapshot": {
@@ -211,14 +221,14 @@
     "userVisibleProductionCoveragePercent":13.2,
     "mustProductionCoveragePercent":13.6,
     "shouldProductionCoveragePercent":14.3,
-    "schemaAddressableCoveragePercent":15.8,
-    "nextMacro":"TOKYO-ADDRESSABLE-CONVERSION-1B"
+    "schemaAddressableCoveragePercent":13.2,
+    "nextMacro":"TOKYO RELEASE COVERAGE ADEQUACY REVIEW"
   },
   "releaseGate": {
     "requirements": {
       "researchCompleteness":{"MUST":100.0,"SHOULD":100.0},
       "addressableProductionConversion":{"MUST":100.0,"SHOULD":100.0},
-      "rawProductionFloor":{"MUST":6,"SHOULD":6,"MUST_AND_SHOULD":12,"TOKYO_UNIVERSE":12},
+      "rawProductionFloor":{"MUST":6,"SHOULD":4,"MUST_AND_SHOULD":10,"TOKYO_UNIVERSE":10},
       "configurationSupport":true,
       "fixedOnlyDisclosure":true,
       "productionQuality":true,
@@ -304,7 +314,7 @@
     {"id":"kioi-hall","name":"日本製鉄紀尾井ホール","area":"千代田区・紀尾井町","type":"hall","capacity":800,"operating":"renovation","officialFacilityUrl":"https://kioihall.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0025","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"音楽・舞台の著名ホールだがinventory上は改修中。再開・現行図を待つ。"},
     {"id":"yomiuri-otemachi","name":"よみうり大手町ホール","area":"千代田区・大手町","type":"theater","capacity":501,"operating":"active","officialFacilityUrl":"https://www.yomiuri.co.jp/otemachi/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0041","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"舞台・講演・イベント利用。500席基準の下限で継続利用を確認する対象。"},
     {"id":"otemachi-mitsui-hall","name":"大手町三井ホール","area":"千代田区・大手町","type":"hall","capacity":560,"operating":"active","officialFacilityUrl":"https://otemachi-hall.jp/","seatMap":"official-multiple-configurations","numberedMap":"yes-current-configurations","inventoryState":"HOLD","inventoryId":"tokyo-coverage-otemachi-mitsui-hall","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-2: B_SOURCE_LIMITED。現行公式560席配置560/560/rangeDiff 0とフラット572席配置572/572/0を全番号2パス一致したが、車いす位置・番号席の置換／包含・同伴席が非公開のためproduction gate不成立。"},
-    {"id":"national-noh-theatre","name":"国立能楽堂","area":"渋谷区・千駄ヶ谷","type":"theater","capacity":627,"operating":"active","officialFacilityUrl":"https://www.ntj.jac.go.jp/engei/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-national-noh-theatre","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"座席指定型の伝統芸能主要会場。花道・脇正面等のschema表現を要確認。"},
+    {"id":"national-noh-theatre","name":"国立能楽堂","area":"渋谷区・千駄ヶ谷","type":"theater","capacity":627,"operating":"active","officialFacilityUrl":"https://www.ntj.jac.go.jp/nou/facilities/","seatMap":"official-current-numbered-map","numberedMap":"yes-but-wheelchair-mapping-incomplete","inventoryState":"HOLD","inventoryId":"tokyo-national-noh-theatre","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 TOKYO-ADDRESSABLE-CONVERSION-1B: B_SOURCE_LIMITED。627席・全番号図はあるが、正面最前列付近の車椅子スペースの包含・置換番号・同伴席と中正面可動6席の関係が未公表。"},
     {"id":"hamarikyu-asahi","name":"浜離宮朝日ホール 音楽ホール","area":"中央区・築地","type":"hall","capacity":552,"operating":"active","officialFacilityUrl":"https://www.asahi-hall.jp/hamarikyu/ticket/seat.html","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-hamarikyu-asahi-hall","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"既存production。"},
     {"id":"yurakucho-asahi","name":"有楽町朝日ホール","area":"千代田区・有楽町","type":"hall","capacity":772,"operating":"active","officialFacilityUrl":"https://www.asahi-hall.jp/yurakucho/seat/","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-yurakucho-asahi-hall","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"既存production。"},
     {"id":"forum-b7","name":"東京国際フォーラム ホールB7","area":"千代田区・丸の内","type":"hall","capacity":1200,"operating":"active","officialFacilityUrl":"https://www.t-i-forum.co.jp/organizer/facilities/b7/","seatMap":"official-layout-examples","numberedMap":"no-permanent-numbered-set","inventoryState":"HOLD","inventoryId":"tokyo-official-0017","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-3: B_SOURCE_LIMITED。1,400㎡の可変平土間に公式シアター1,200人例があるが、公式自身が人数を目安とし、恒久番号席set・厳密expected・車いす／同伴転換を定義しない。"},
@@ -318,7 +328,7 @@
     {"id":"geidai-sogakudo","name":"東京藝術大学 奏楽堂","area":"台東区・上野公園","type":"hall","capacity":1100,"operating":"active","officialFacilityUrl":"https://www.geidai.ac.jp/department/music/sogakudo","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0330","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"音楽公演の著名会場。"},
     {"id":"setagaya-public-theatre","name":"世田谷パブリックシアター","area":"世田谷区・太子堂","type":"theater","capacity":612,"operating":"renovation","officialFacilityUrl":"https://setagaya-pt.jp/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-setagaya-public-theatre","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"既存POLICY/SCHEMA/SOURCE HOLD。2026-04-01〜2027-03-31予定休館で、再開後current map待ち。"},
     {"id":"mon-takanawa-box1000","name":"MoN Takanawa: BOX 1000","area":"港区・高輪","type":"hall","capacity":1048,"operating":"active","officialFacilityUrl":"https://montakanawa.jp/facilities/box1000/","seatMap":"official-seating-example","numberedMap":"yes-current-example","inventoryState":"HOLD","inventoryId":"tokyo-coverage-mon-takanawa-box1000","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-2: B_SOURCE_LIMITED。現行公式の着席例はA/B/C/E各area合計182＋402＋216＋248＝1,048で1048/1048/rangeDiff 0を全番号2パス一致。公演別変更注記はあるが完全configuration候補として扱える一方、車いす位置・包含・置換番号・同伴席が非公開でnon-selectable。"},
-    {"id":"nissho-hall","name":"ニッショーホール","area":"港区・虎ノ門","type":"theater","capacity":1000,"operating":"active","officialFacilityUrl":"https://nissho-hall.jp/hall.html","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0167","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"LUNA-STD-2で現行公式ホールページ・客席図・施設案内を第1/第2パス確認。1,000席の現行図に1F8列2番常時除外と3-4番・5-6番の可変撤去注記があり、販売variantを一意に固定できないためSOURCE/POLICY/SCHEMA HOLD。"},
+    {"id":"nissho-hall","name":"ニッショーホール","area":"港区・虎ノ門","type":"theater","capacity":1000,"operating":"active","officialFacilityUrl":"https://nissho-hall.jp/hall.html","seatMap":"official-current-seat-and-audio-plans","numberedMap":"yes-full-diagram-only","inventoryState":"HOLD","inventoryId":"tokyo-official-0167","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 TOKYO-ADDRESSABLE-CONVERSION-1B: B_SOURCE_LIMITED。full図999番号席は999/999/rangeDiff 0だが、8列3-4番・5-6番撤去variantのissuer condition・厳密expectedと車椅子同伴配置が未公表。full図をrepository独自の標準configurationにしない。"},
     {"id":"tokyo-bunka-small","name":"東京文化会館 小ホール","area":"台東区・上野公園","type":"hall","capacity":653,"operating":"renovation","officialFacilityUrl":"https://www.t-bunka.jp/hall/small.html","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-tokyo-bunka-small-hall","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"主要音楽会場だが大ホールと同じ改修currentness blocker。"},
     {"id":"ajinomoto-stadium","name":"味の素スタジアム","area":"調布市・西町","type":"stadium","capacity":48013,"operating":"active","officialFacilityUrl":"https://www.ajinomotostadium.com/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-1072","tier":"OPTIONAL","difficulty":"COMPLEX","model":"Sol","reason":"大規模公演時に座席番号を持つが、スタジアム用途・仮設客席依存で初回release後。"},
     {"id":"national-theatre-large","name":"国立劇場 大劇場","area":"千代田区・隼町","type":"theater","capacity":1610,"operating":"closed","officialFacilityUrl":"https://www.ntj.jac.go.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0048","tier":"OPTIONAL","difficulty":"COMPLEX","model":"Sol","reason":"記録対象だが2023年閉場後の再開/再整備待ち。現行release universeからはcurrentness除外。"},

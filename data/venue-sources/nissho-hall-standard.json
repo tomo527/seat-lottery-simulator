@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "draft",
   "id": "nissho-hall-standard",
-  "name": "ニッショーホール 現行通常配置（可変撤去注記あり）",
+  "name": "ニッショーホール 現行1,000席図（可変撤去注記あり）",
   "prefecture": "東京都",
   "city": "港区",
   "aliases": ["NISSHO HALL", "日本消防会館 ニッショーホール"],
@@ -12,18 +12,20 @@
     "name": "現行1,000席図の番号席候補",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "現行運営者は1,000席（1階671席＋車椅子1席、2階328席）と公式1F/2F座席図を掲載する。一方、同じ公式図は1階8列2番を常時外し、3番4番・5番6番を2席ずつ外せると注記するため、販売可能な番号席setに一意な通常variantを確定しない。",
+    "selectionReason": "現行運営者は1,000席（一般番号席999＋車椅子1）とfull図を示し、公式音響客席回路図も999番号席で一致する。一方、1階8列3-4番・5-6番を2席ずつ外せる条件・用途・厳密variant総数と車椅子同伴運用を定義しないため、full図をrepository独自の標準configurationとして固定しない。",
     "notIncludedPatterns": ["1階8列の常時除外・可変撤去variant", "車椅子席", "公演固有の販売停止席"]
   },
   "sources": [
-    { "id": "official-hall-page", "official": true, "roles": ["facility", "seat-count"], "publisher": "ニッショーホール・会議室", "title": "ニッショーホール", "url": "https://nissho-hall.jp/hall.html", "checkedAt": "2026-08-11" },
-    { "id": "official-seat-map", "official": true, "roles": ["seat-structure", "seat-count", "event-layout"], "publisher": "ニッショーホール・会議室", "title": "ニッショーホール客席図", "url": "https://nissho-hall.jp/pdf/hall-seat.pdf", "checkedAt": "2026-08-11" },
-    { "id": "official-facility-guide", "official": true, "roles": ["facility", "seat-count"], "publisher": "ニッショーホール・会議室", "title": "施設案内", "url": "https://nissho-hall.jp/shisetsu.html", "checkedAt": "2026-08-11" }
+    { "id": "official-hall-page", "official": true, "roles": ["facility", "seat-count"], "publisher": "ニッショーホール・会議室", "title": "ニッショーホール", "url": "https://nissho-hall.jp/hall.html", "checkedAt": "2026-08-13" },
+    { "id": "official-seat-map", "official": true, "roles": ["seat-structure", "seat-count", "event-layout"], "publisher": "ニッショーホール・会議室", "title": "ニッショーホール客席図", "url": "https://nissho-hall.jp/pdf/hall-seat.pdf", "checkedAt": "2026-08-13" },
+    { "id": "official-audio-seat-plan", "official": true, "roles": ["seat-structure", "seat-count", "facility"], "publisher": "ニッショーホール・会議室", "title": "ニッショーホール音響客席回路図", "url": "https://nissho-hall.jp/pdf/hall-audio.pdf", "checkedAt": "2026-08-13" },
+    { "id": "official-facility-guide", "official": true, "roles": ["facility", "seat-count"], "publisher": "ニッショーホール・会議室", "title": "施設案内", "url": "https://nissho-hall.jp/shisetsu.html", "checkedAt": "2026-08-13" },
+    { "id": "official-use-rules", "official": true, "roles": ["facility", "seat-count", "event-layout"], "publisher": "ニッショーホール・会議室", "title": "ホール利用規約", "url": "https://nissho-hall.jp/pdf/hall-kiyaku.pdf", "checkedAt": "2026-08-13" }
   ],
-  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行1,000席・公式図は確認したが、可変撤去席の販売variantを固定代表patternへ決めず、rangeは登録しない。",
-  "completenessBasis": "第1パスで現行ホールページと現行客席図から1,000席、1F 672（一般671＋車椅子1）、2F 328、列・番号構造を確認した。独立第2パスで現行PDFの注記を再確認し、1F 8列2番の常時除外と3-4番・5-6番の可変撤去が明記されているため、通常番号席setの販売variantが一意でないことを確認した。",
-  "transformation": "可変撤去の対象番号を標準variantとして選択せず、公式図の注記をそのままblockerとして記録する。",
-  "knownLimitations": ["POLICY HOLD: 常時除外と可変撤去の運用を代表patternへ固定するissuer-owned defaultがない。", "SCHEMA HOLD: 1Fの可変撤去・車椅子席を販売variant込みでlosslessに表現する追加モデルが必要。"],
-  "verification": { "status": "pending", "checkedAt": "2026-08-11", "method": "official-source-first-pass-independent-second-pass-hold", "seatStructure": "matched", "seatCount": "matched", "unresolvedIssues": ["現行公式図が複数の撤去可能番号を示すが、通常販売variantを指定しない。", "車椅子席と通常番号席の販売・置換関係が代表patternとして未定義。"] },
+  "registeredScope": "B_SOURCE_LIMITED / SOURCE-POLICY HOLD。full図の999番号席は確認したが、可変撤去variantと車椅子同伴運用をissuerが独立configurationとして完全定義しないためrangeは登録しない。",
+  "completenessBasis": "第1パスの現行客席図と独立第2パスの現行音響客席回路図は、1F一般671＋車椅子1、2F一般328、合計1,000と全999番号席でrangeDiff 0。両図は1F8列2番を車椅子スペースとして常時外し、客席図注記は3-4番・5-6番を2席ずつ外せるとするが、撤去条件・各variantの厳密expected・同伴席を定義しない。",
+  "transformation": "full図をrepository独自の標準configurationへ固定せず、3-4番・5-6番の撤去variantや同伴席を推測しない。",
+  "knownLimitations": ["B_SOURCE_LIMITED: 3-4番・5-6番の可変撤去についてissuer-defined condition・用途・厳密variant総数が未公表。", "B_SOURCE_LIMITED: 車椅子1席の位置と1,000席への包含は解決したが、同伴席の恒久配置が未公表。"],
+  "verification": { "status": "pending", "checkedAt": "2026-08-13", "method": "official-source-first-pass-independent-second-pass-hold", "seatStructure": "matched", "seatCount": "matched", "unresolvedIssues": ["可変撤去の各configurationをissuerが独立定義せず、full図を恒久defaultとして指定しない。", "車椅子同伴席の恒久配置が未公表。"] },
   "ranges": []
 }

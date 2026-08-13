@@ -29,7 +29,7 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 |---|---:|---:|---:|---:|
 | Research completeness | 72/76 = **94.7%** | 44/44 = **100.0%** | 28/28 = **100.0%** | 0/4 = **0.0%** |
 | User-visible production coverage | 10/76 = **13.2%** | 6/44 = **13.6%** | 4/28 = **14.3%** | 0/4 = **0.0%** |
-| Confirmed schema-addressable coverage | 12/76 = **15.8%** | 6/44 = **13.6%** | 6/28 = **21.4%** | 0/4 = **0.0%** |
+| Confirmed schema-addressable coverage | 10/76 = **13.2%** | 6/44 = **13.6%** | 4/28 = **14.3%** | 0/4 = **0.0%** |
 
 - `Research completeness` は `PRODUCTION / HOLD / CONTRADICTION` のformal disposition率であり、抽選可能率ではない。
 - `User-visible production coverage` はproduction catalogへ入って実際に抽選できる候補だけを数える。アプリ全体の62会場中、Tokyo coverage universeに該当する主要会場は10件である。
@@ -365,6 +365,17 @@ production増加は0 venue / 0 selectable configuration / 0 records。production
 この fresh evidence により canonical addressable cohort とrepo-derived raw production floorは MUST **6/44**、SHOULD **6/28**、Tokyo **12/76** に再計算された。これはcurrent confirmed addressableを全件production化する既存定義に従ったもので、issuer-owned evidenceなしにgateを下げてはいない。addressable conversion progress は MUST **6/6**、SHOULD **4/6**、total **10/12**。remaining nonproduction addressable IDs は `national-noh-theatre` と `nissho-hall` のみ。詳細は `data/venue-reports/tokyo-addressable-conversion-1a-2026-08-13.json`。
 
 **Exact next action:** `TOKYO-ADDRESSABLE-CONVERSION-1B` を `national-noh-theatre`、`nissho-hall` のみで **Sol high** として実行する。adequacy reviewには着手しない。
+
+### 2026-08-13 `TOKYO-ADDRESSABLE-CONVERSION-1B` result
+
+`national-noh-theatre` と `nissho-hall` を既存addressable判定から独立してfresh current issuer/operator-owned evidenceで再審査し、両方を **B_SOURCE_LIMITED** とした。production/selectable増加は **0 venue / 0 configuration / 0 records**、productionは **62 venues / 63 selectable configurations / 85,237 records** のまま。
+
+- 国立能楽堂は現行公式座席図と施設案内で正面245・脇正面190・中正面156・GB36＝**627**、中正面可動6席、2026公演での車椅子スペース利用を確認した。しかし車椅子スペースの627席への包含・置換番号・同伴席・中正面可動6席との関係が未公表で、完全なconfigurationと独立source generationを確定できない。production値は **627/null/null**。
+- ニッショーホールは現行公式客席図と独立の公式音響客席回路図から、full図の一般番号席 **999/999/rangeDiff 0**（1F一般671＋車椅子1、2F一般328、合計1,000）を全番号一致した。1F8列2番は車椅子スペースとして常時外される。一方、3-4番／5-6番を2席ずつ外すvariantについてissuer-defined condition・用途・厳密expectedがなく、車椅子同伴席も未公表。full図や997/995席variantをrepository側で標準configurationとして創作しない。
+
+fresh evidence後のschema-addressableとrepo-derived raw production floorはMUST **6/44**、SHOULD **4/28**、Tokyo **10/76**。addressable conversionはMUST **6/6**、SHOULD **4/4**、total **10/10 = 100%**。全nonproduction addressableは **0件**。`RELEASE READY: NO`はadequacy review未完了により維持する。詳細は `data/venue-reports/tokyo-addressable-conversion-1b-2026-08-13.json`。
+
+**Exact next action:** `TOKYO RELEASE COVERAGE ADEQUACY REVIEW`。本macroではreview自体に着手していない。
 
 ## source discipline
 
