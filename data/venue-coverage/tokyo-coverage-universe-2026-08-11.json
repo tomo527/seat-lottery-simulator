@@ -1,7 +1,7 @@
 {
   "auditVersion": 1,
   "jurisdiction": "東京都",
-  "asOf": "2026-08-12",
+  "asOf": "2026-08-13",
   "canonicalRule": "現役の舞台・ライブ・コンサート・ミュージカル・2.5次元・声優/アニメ系イベント等で、固定席または着席時に番号付き座席を設定できる主要会場を、既存inventoryの有無に関係なく統合する。座席rangeは本監査では作成しない。",
   "discoverySources": [
     {"title":"東京都 ①ホール・劇場・伝統芸能関連施設・ライブスペース","url":"https://www.seikatubunka.metro.tokyo.lg.jp/bunka/bunka_seisaku/houshin_torikumi/files/0000000823/hall.pdf"},
@@ -25,9 +25,9 @@
   },
   "coverageMetrics": {
     "researchCompleteness": {
-      "tokyoUniverse":{"numerator":64,"denominator":76,"percent":84.2},
+      "tokyoUniverse":{"numerator":67,"denominator":76,"percent":88.2},
       "MUST":{"numerator":44,"denominator":44,"percent":100.0},
-      "SHOULD":{"numerator":20,"denominator":28,"percent":71.4},
+      "SHOULD":{"numerator":23,"denominator":28,"percent":82.1},
       "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0}
     },
     "userVisibleProductionCoverage": {
@@ -89,7 +89,7 @@
     "prohibitions":["repository側でconfigurationを創作しない","event-dependent floor番号を恒久seat ID化しない","不完全variantをcapacity fittingしない","wheelchair/pit/花道差分を推測しない","既存production quality gateを緩和しない"],
     "fixedOnlyPolicy":"公式が恒久固定番号席subsetを独立したseat setとして明示し、subsetの完全番号・厳密総数・除外範囲・wheelchair semanticsを確定できる場合のみ、固定席のみconfigurationとしてselectableにできる。会場全体の最大収容を意味しないことをUIで明示する。",
     "knownSchemaExtensionPotential":{"MUST":0,"SHOULD":1,"total":1},
-    "shouldResearchTiming":"8件すべてschema migration macro完了後。current schemaで先行すると、可変floor/standing/fixed upper-tierを再度単一representativeへ押し込む判断を繰り返すため。"
+    "shouldResearchTiming":"schema migration後に開始。SOL-SHOULD-1の3件は完了し、残る5件をbounded macroで継続する。"
   },
   "macroResults": {
     "TOKYO-CONFIG-PILOT-1": {
@@ -161,24 +161,32 @@
       "mustPhaseClosed": true,
       "releaseReady": false,
       "notes": "現行operator資料は公開stand番号図を野球開催時用とし、concert arenaは催事別で非掲載。55,000人は用途別収容人数で、stage別stand閉鎖、floor仮設番号、車いす／同伴、suite／premium／special areaを含むissuer-defined concert standardがないためrange転記前にSOURCE/POLICY/SCHEMA HOLD。"
+    },
+    "SOL-SHOULD-1": {
+      "completedAt": "2026-08-13",
+      "scope": ["ex-theater-roppongi", "zepp-haneda", "zepp-shinjuku"],
+      "productionPromotions": 0,
+      "formalHolds": 3,
+      "releaseReady": false,
+      "notes": "3件ともB_SOURCE_LIMITED。EX六本木は公式着席920だがundated map generationと車いす包含・置換番号が未解決。Zepp Hanedaは基本着席1,207/1,207/rangeDiff 0、Zepp ShinjukuはB4F番号席530/530/0まで2パス一致したが、両館ともbarrier-free配置・同伴・置換番号が催事依存で非公開のためnon-selectable。"
     }
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
     "production": 10,
-    "hold": 52,
+    "hold": 55,
     "contradiction": 2,
-    "unresearched": 12,
+    "unresearched": 9,
     "mustUnresearched": 0,
-    "shouldUnresearched": 8,
+    "shouldUnresearched": 5,
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
-    "researchCompletenessPercent":84.2,
+    "researchCompletenessPercent":88.2,
     "userVisibleProductionCoveragePercent":13.2,
     "mustProductionCoveragePercent":13.6,
     "shouldProductionCoveragePercent":14.3,
     "schemaAddressableCoveragePercent":18.4,
-    "nextMacro":"SOL-SHOULD-1"
+    "nextMacro":"SOL-SHOULD-2"
   },
   "releaseGate": {
     "requirements": {
@@ -192,7 +200,7 @@
       "releaseCoverageAdequacyReview":true
     },
     "policy": {
-      "dynamicFloorRule":"SHOULD未調査8件のうちschema-addressableと判定された各候補をrequired numeratorとaddressable denominatorへ1件ずつ追加する。既存productionとの置換は認めない。",
+      "dynamicFloorRule":"残るSHOULD未調査5件のうちschema-addressableと判定された各候補をrequired numeratorとaddressable denominatorへ1件ずつ追加する。既存productionとの置換は認めない。",
       "exclusionRule":"raw denominatorから候補を削除しない。production未達の免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのissuer-owned blockerが記録された場合だけで、A SCHEMA-UNLOCKABLEは免責しない。",
       "optionalIsReleaseBlocker":false,
       "authority":"current readiness and RELEASE READY are derived by venues:release:coverage from repository state; this object contains policy only.",
@@ -260,10 +268,10 @@
     {"id":"galaxy-theatre","name":"天王洲 銀河劇場","area":"品川区・東品川","type":"theater","capacity":746,"operating":"active","officialFacilityUrl":"https://www.gingeki.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0455","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 TOKYO-CONFIG-A-THEATRE-1: C_CONTRADICTION. 現行HTML画像と公式PDFは750番号（516/113/121）だが公式表示は746（516/101/129）。rangeDiff 0、expected mismatch +4。"},
     {"id":"theater-g-rosso","name":"シアターGロッソ","area":"文京区・後楽","type":"theater","capacity":765,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/g-rosso/seat/","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-official-0299","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"LUNA-STD-2で現行公式座席図・施設概要・設備紹介を第1/第2パス確認。A〜Zの765番号席が一意に表現可能で、別枠車椅子3スペースを除外したrangeがexpected/calculated 765で一致したためPRODUCTION。"},
     {"id":"imm-theater","name":"IMM THEATER","area":"文京区・後楽","type":"theater","capacity":705,"operating":"active","officialFacilityUrl":"https://imm.theater/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0320","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"LUNA-STD-2で現行公式施設資料・座席表・2026年7月改定規約を第1/第2パス確認。公式座席表が公演ごとの配置変更と車椅子詳細の問い合わせを明記するためSOURCE/SCHEMA HOLD。"},
-    {"id":"ex-theater-roppongi","name":"EX THEATER ROPPONGI","area":"港区・西麻布","type":"hall","capacity":920,"operating":"active","officialFacilityUrl":"https://www.ex-theater.com/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"未調査","inventoryId":"tokyo-official-0129","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"ライブ・イベントの主要会場。座席/立見・可変レイアウトの公式定義が必要。"},
-    {"id":"zepp-haneda","name":"Zepp Haneda (TOKYO)","area":"大田区・羽田","type":"hall","capacity":1207,"operating":"active","officialFacilityUrl":"https://www.zepp.co.jp/hall/haneda/","seatMap":"partial","numberedMap":"event-dependent","inventoryState":"未調査","inventoryId":"tokyo-official-0536","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"着席公演もある大型ライブハウス。スタンディング主体のためbounded対象。"},
+    {"id":"ex-theater-roppongi","name":"EX THEATER ROPPONGI","area":"港区・西麻布","type":"hall","capacity":920,"operating":"active","officialFacilityUrl":"https://www.ex-theater.com/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0129","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-1: B_SOURCE_LIMITED. 現行operatorはSEATING／STANDING図を公開しissuerは着席920を確認するが、座席図generationがundatedで、図上の無番号車いすspaceと920の包含・置換番号・同伴mappingを公開しない。"},
+    {"id":"zepp-haneda","name":"Zepp Haneda (TOKYO)","area":"大田区・羽田","type":"hall","capacity":1207,"operating":"active","officialFacilityUrl":"https://www.zepp.co.jp/hall/haneda/","seatMap":"official-basic-pattern","numberedMap":"yes-basic-pattern","inventoryState":"HOLD","inventoryId":"tokyo-official-0536","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-1: B_SOURCE_LIMITED. 公式基本着席図は1F 888＋2F 319＝1,207を全番号2パスで一致（rangeDiff 0）するが、barrier-free配置・車いす／同伴の置換番号が催事依存で非公開。"},
     {"id":"zepp-divercity","name":"Zepp DiverCity (TOKYO)","area":"江東区・青海","type":"hall","capacity":2473,"operating":"active","officialFacilityUrl":"https://www.zepp.co.jp/hall/divercity/","seatMap":"partial","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0438","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"ライブ主要会場だが着席時の代表patternが公演依存。既存blockedを維持。"},
-    {"id":"zepp-shinjuku","name":"Zepp Shinjuku (TOKYO)","area":"新宿区・歌舞伎町","type":"hall","capacity":1505,"operating":"active","officialFacilityUrl":"https://www.zepp.co.jp/hall/shinjuku/","seatMap":"partial","numberedMap":"event-dependent","inventoryState":"未調査","inventoryId":"tokyo-official-0284","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"現役ライブ会場。着席公演があるがスタンディング主体。"},
+    {"id":"zepp-shinjuku","name":"Zepp Shinjuku (TOKYO)","area":"新宿区・歌舞伎町","type":"hall","capacity":1500,"operating":"active","officialFacilityUrl":"https://www.zepp.co.jp/hall/shinjuku/","seatMap":"official-basic-pattern","numberedMap":"yes-b4f-subset","inventoryState":"HOLD","inventoryId":"tokyo-official-0284","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-1: B_SOURCE_LIMITED. 公式椅子使用時はB4F可動番号席530＋B3F standing 163＝693で、B4F 530は全番号2パス一致（rangeDiff 0）するが、barrier-free配置・車いす／同伴の置換番号が催事依存で非公開。"},
     {"id":"toyosu-pit","name":"チームスマイル・豊洲PIT","area":"江東区・豊洲","type":"hall","capacity":3103,"operating":"active","officialFacilityUrl":"https://toyosupit.team-smile.org/","seatMap":"partial","numberedMap":"event-dependent","inventoryState":"未調査","inventoryId":"tokyo-official-0417","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"大型ライブ会場。座席指定公演の継続性と番号構造を公式資料で確認する対象。"},
     {"id":"hulic-hall-tokyo","name":"ヒューリックホール東京","area":"千代田区・有楽町","type":"hall","capacity":900,"operating":"active","officialFacilityUrl":"https://hulic-hall.com/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"未調査","inventoryId":"tokyo-official-0057","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2.5次元・声優・ライブイベントで利用される可変ホール。"},
     {"id":"bunkamura-cocoon","name":"Bunkamura シアターコクーン","area":"渋谷区・道玄坂","type":"theater","capacity":747,"operating":"active","officialFacilityUrl":"https://www.bunkamura.co.jp/cocoon/","seatMap":"partial","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0726","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"演劇の著名会場。公演layoutの可変性とcurrentnessを公式公演単位で分ける。"},

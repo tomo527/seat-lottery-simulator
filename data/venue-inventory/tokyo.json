@@ -142,14 +142,15 @@
       "city": "千代田区",
       "capacity": null,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。施設URL・概算席数は未回答。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "officialFacilityUrl": "https://www.ex-theater.com/",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行operatorのSEATING／STANDING図とissuerの着席920を確認したが、座席図generationと無番号車いすspaceの920包含・置換番号・同伴mappingが未公表。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-13",
+      "blockingReason": "B_SOURCE_LIMITED: complete numbered-seat setとwheelchair semanticsをlosslessに確定できない。issuerが現行generationと車いす包含・置換番号を公開した場合のみ再確認する。"
     },
     {
       "inventoryId": "tokyo-official-0008",
@@ -5635,13 +5636,14 @@
       "capacity": null,
       "category": "hall",
       "officialFacilityUrl": "https://www.zepp.co.jp/hall/shinjuku/",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。概算席数は未回答。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行公式基本図は椅子使用時B4F可動番号席530＋B3F standing 163を独立定義し、B4F全番号は2パス一致するが、barrier-free配置・車いす／同伴の置換番号は催事依存。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-13",
+      "blockingReason": "B_SOURCE_LIMITED: B4F 530番号席は530/530/rangeDiff 0だが、車いす／同伴の恒久置換番号をissuerが公開しないためproduction不可。"
     },
     {
       "inventoryId": "tokyo-official-0285",
@@ -5672,14 +5674,15 @@
       "city": "新宿区",
       "capacity": null,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。施設URL・概算席数は未回答。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "officialFacilityUrl": "https://www.zepp.co.jp/hall/haneda/",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行公式基本着席図は1F可動888＋2F固定319＝1,207を独立定義し全番号は2パス一致するが、barrier-free配置・車いす／同伴の置換番号は催事依存。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-13",
+      "blockingReason": "B_SOURCE_LIMITED: 基本着席1,207番号席は1,207/1,207/rangeDiff 0だが、車いす／同伴の恒久置換番号をissuerが公開しないためproduction不可。"
     },
     {
       "inventoryId": "tokyo-official-0287",

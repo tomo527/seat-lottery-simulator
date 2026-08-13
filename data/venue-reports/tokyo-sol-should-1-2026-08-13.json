@@ -1,0 +1,132 @@
+{
+  "reportId": "tokyo-sol-should-1-2026-08-13",
+  "asOf": "2026-08-13",
+  "model": "Sol high",
+  "scope": ["ex-theater-roppongi", "zepp-haneda", "zepp-shinjuku"],
+  "baseline": {
+    "productionVenues": 62,
+    "selectableConfigurations": 63,
+    "configurationSeatRecords": 85237,
+    "tokyoUniverse": 76,
+    "tokyoProduction": 10,
+    "tokyoHold": 52,
+    "tokyoContradiction": 2,
+    "tokyoUnresearched": 12,
+    "shouldUnresearched": 8
+  },
+  "venues": [
+    {
+      "id": "ex-theater-roppongi",
+      "classification": "B_SOURCE_LIMITED",
+      "productionConfigurations": [],
+      "currentness": "The current operator site links the seating/standing maps and carries an active 2026 schedule. TV Asahi issuer material independently states seated 920 / standing 1,746, but the live seating image itself is undated.",
+      "issuerDefinedConfigurations": [
+        {"name":"SEATING / 座席指定","numberedSeatExpected":920,"status":"non-selectable"},
+        {"name":"STANDING / 立見","numberedSeatExpected":null,"status":"non-selectable"}
+      ],
+      "completeNumberedSeatSetGate": "FAIL",
+      "expectedSeatCount": 920,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "ranges": 0,
+      "sourceGeneration": "Current-linked undated operator seating image; 2013 TV Asahi opening release and FY2014 issuer report independently state the 920-seat configuration.",
+      "firstPass": "Reviewed the current operator SEATING and STANDING maps independently. The seating map identifies numbered floor/stand rows and two unnumbered wheelchair icons; the standing map removes the movable floor scope while retaining balcony/stand seating.",
+      "independentSecondPass": "TV Asahi's issuer opening material and annual report independently confirm seated 920 and standing 1,746. Current 2026 event guidance says wheelchair users are assigned a venue position irrespective of the purchased seat number and allows one companion, but does not publish the numbered replacement/inclusion rule.",
+      "wheelchairSemantics": "Unresolved: the current map marks unnumbered wheelchair spaces, but issuer material does not state whether they are additional to 920 or replace which numbered seats, nor the exact companion-seat mapping.",
+      "blocker": "The undated map generation and wheelchair inclusion/replacement semantics prevent a lossless complete numbered-seat configuration. No capacity fitting or inferred wheelchair conversion was used.",
+      "officialSources": [
+        "https://www.ex-theater.com/",
+        "https://www.ex-theater.com/floormap/",
+        "https://www.ex-theater.com/schedule/2157/index.html",
+        "https://tvablog.tv-asahi.co.jp/reading/touch/12566/",
+        "https://www.tv-asahihd.co.jp/ir_houkoku/data/2014/t_0331001302606.pdf"
+      ]
+    },
+    {
+      "id": "zepp-haneda",
+      "classification": "B_SOURCE_LIMITED",
+      "productionConfigurations": [],
+      "currentness": "The live operator page links the official basic-pattern PDF and carries an active August 2026 schedule. The linked PDF metadata is 2021-10-19.",
+      "issuerDefinedConfigurations": [
+        {"name":"椅子使用時 基本パターン","numberedSeatExpected":1207,"status":"non-selectable"},
+        {"name":"スタンディング時 基本パターン","numberedSeatExpected":319,"status":"non-selectable"}
+      ],
+      "completeNumberedSeatSetGate": "PASS_FOR_BASIC_SEATED_PATTERN",
+      "expectedSeatCount": 1207,
+      "calculatedSeatCount": 1207,
+      "rangeDiff": 0,
+      "ranges": 34,
+      "subtotals": {
+        "official": {"firstFloorMovable":888,"secondFloorVip":32,"secondFloorFixed":287,"secondFloorTotal":319,"total":1207},
+        "calculated": {"firstFloorMovable":888,"secondFloorVip":32,"secondFloorFixed":287,"secondFloorTotal":319,"total":1207}
+      },
+      "rangeSummary": [
+        "1F A-P: each 1-38 (16 rows / 608 seats)",
+        "1F Q-Z: each 1-28 (10 rows / 280 seats)",
+        "2F VIP/2A: 1-32 (32 seats)",
+        "2F 2B-2H: each 1-41 (7 rows / 287 seats)"
+      ],
+      "sourceGeneration": "2021-10-19 PDF metadata; still directly linked by the current 2026-08-13 operator page.",
+      "firstPass": "Fresh visual transcription of every official basic seated-pattern row produced 888 + 319 = 1,207 numbered seats.",
+      "independentSecondPass": "Re-extracted rows without using the first-pass ranges, then reconciled the official three-tier 1F subtotals 418 + 246 + 224 and 2F VIP 32 + fixed 287. The second extraction also totals 1,207 with rangeDiff 0.",
+      "wheelchairSemantics": "Unresolved: the operator states barrier-free arrangements vary with each event, and current events separately sell wheelchair tickets, but no stable removed/replaced seat numbers or companion mapping are published.",
+      "blocker": "Although the official basic seated numbered set is complete and exact, wheelchair/companion conversion is event-dependent and cannot satisfy the configuration-level production gate.",
+      "officialSources": [
+        "https://www.zepp.co.jp/hall/haneda/",
+        "https://www.zepp.co.jp/~pj-zepp/wordpress/wp-content/uploads/2020/02/15040716/hn_seat.pdf",
+        "https://www.zepp.co.jp/hall/haneda/schedule/"
+      ]
+    },
+    {
+      "id": "zepp-shinjuku",
+      "classification": "B_SOURCE_LIMITED",
+      "productionConfigurations": [],
+      "currentness": "The live operator page links the official basic-pattern PDF and carries an active August 2026 schedule. The linked PDF metadata is 2023-03-02.",
+      "issuerDefinedConfigurations": [
+        {"name":"椅子使用時 基本パターン","officialModeTotal":693,"numberedSeatExpected":530,"nonNumberedStanding":163,"status":"non-selectable"},
+        {"name":"オールスタンディング 基本パターン","numberedSeatExpected":null,"status":"non-selectable"}
+      ],
+      "completeNumberedSeatSetGate": "PASS_FOR_B4F_NUMBERED_SUBSET",
+      "expectedSeatCount": 530,
+      "calculatedSeatCount": 530,
+      "rangeDiff": 0,
+      "ranges": 33,
+      "subtotals": {
+        "official": {"b4MovableNumbered":530,"b3Standing":163,"mixedModeTotal":693},
+        "calculated": {"b4MovableNumbered":530}
+      },
+      "rangeSummary": [
+        "B4F A-M: each 1-26 (13 rows / 338 seats)",
+        "B4F N: 2-9 and 18-25 (16 seats)",
+        "B4F O-S: each 1-10 and 17-26 (5 rows / 100 seats)",
+        "B4F T: 2-9 and 18-25 (16 seats)",
+        "B4F U-W: each 1-10 and 17-26 (3 rows / 60 seats)"
+      ],
+      "sourceGeneration": "2023-03-02 PDF metadata; still directly linked by the current 2026-08-13 operator page.",
+      "firstPass": "Fresh visual transcription of the B4F movable numbered subset produced 530 seats; B3F 163 is explicitly standing in the issuer-defined mixed seated-use mode and was not assigned permanent seat IDs.",
+      "independentSecondPass": "Re-extracted all B4F rows without using the first-pass ranges and independently reconciled 338 + 16 + 100 + 16 + 60 = 530 with rangeDiff 0; the current page separately confirms mixed-mode total 693.",
+      "wheelchairSemantics": "Unresolved: the operator states barrier-free arrangements vary by event, and a current 2026 event offers a wheelchair ticket with advance contact, but no stable B4F removed/replaced numbers or companion mapping are published.",
+      "blocker": "The issuer-defined B4F numbered subset is complete and exact, but event-dependent wheelchair/companion conversion prevents production/selectable status.",
+      "officialSources": [
+        "https://www.zepp.co.jp/hall/shinjuku/",
+        "https://www.zepp.co.jp/~pj-zepp/wordpress/wp-content/uploads/2023/02/23012831/sh_seat.pdf",
+        "https://www.zepp.co.jp/hall/shinjuku/schedule/"
+      ]
+    }
+  ],
+  "result": {
+    "productionPromotions": 0,
+    "selectableConfigurationsAdded": 0,
+    "configurationSeatRecordsAdded": 0,
+    "formalHolds": 3,
+    "productionAfter": {"venues":62,"selectableConfigurations":63,"configurationSeatRecords":85237},
+    "tokyoCoverageAfter": {"universe":76,"production":10,"hold":55,"contradiction":2,"unresearched":9,"mustUnresearched":0,"shouldUnresearched":5,"optionalUnresearched":4},
+    "researchCompletenessAfter": {"tokyo":"67/76 (88.2%)","MUST":"44/44 (100.0%)","SHOULD":"23/28 (82.1%)","OPTIONAL":"0/4 (0.0%)"},
+    "schemaAddressableAfter": {"tokyo":"14/76","MUST":"6/44","SHOULD":"8/28"},
+    "rawProductionFloor": {"MUST":"6/44","SHOULD":"8/28","MUST_AND_SHOULD":"14/72","TOKYO":"14/76"},
+    "addressableConversionProgress": {"MUST":"6/6","SHOULD":"4/8","TOTAL":"10/14"},
+    "releaseReady": false,
+    "remainingShould": ["toyosu-pit","hulic-hall-tokyo","otemachi-mitsui-hall","forum-b7","mon-takanawa-box1000"],
+    "exactNextAction": "SOL-SHOULD-2 — toyosu-pit, otemachi-mitsui-hall, mon-takanawa-box1000 only; Sol high"
+  }
+}
