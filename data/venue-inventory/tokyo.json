@@ -8999,13 +8999,13 @@
       "officialFacilityUrl": "https://www.gingeki.jp/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "現行運営者が746席の三層番号席図、演劇・ミュージカル・音楽等の利用、車椅子時の座席撤去運用を公開。通常rangeは車椅子転換番号未定義のため正式HOLD。",
+      "eligibilityReason": "現行運営者が746席の三層番号席図を公開するが、fresh two-pass集計は図上750番号となり、公式階別subtotalと矛盾するためproduction不可。",
       "priority": "A",
       "venueSourceId": "galaxy-theatre-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-11",
+      "lastCheckedAt": "2026-08-12",
       "discoveryUrlRaw": "https://www.gingeki.jp/",
-      "blockingReason": "POLICY/SCHEMA HOLD: 現行公式案内は車椅子スペース対応時に座席を外すことを示すが、撤去される具体的な列・番号と通常抽選集合の差分を定義していない。"
+      "blockingReason": "C_CONTRADICTION: 現行HTML画像と公式PDFはいずれも750番号（1F 516 / 2F 113 / 3F 121）だが、同じ公式資料は516 / 101 / 129、計746とする。rangeDiff 0でもexpected 746 != calculated 750。"
     },
     {
       "inventoryId": "tokyo-official-0456",
@@ -14415,16 +14415,15 @@
       "city": "渋谷区",
       "capacity": 1038,
       "category": "hall",
-      "officialFacilityUrl": null,
+      "officialFacilityUrl": "https://www.nntt.jac.go.jp/guide/playhouse/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "複数の公式客席配置があり、代表パターンを一意に確定できない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "issuer-definedプロセニアム形式③ A・B号迫り使用を全番号two-pass照合し、1F 719 + 2F 187 = 906、rangeDiff 0、wheelchair別scopeを確認。schema v2 production sourceに紐付く。",
       "priority": "A",
       "venueSourceId": "nntt-playhouse-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-26",
-      "discoveryUrlRaw": "http://www.nntt.jac.go.jp/",
-      "blockingReason": "複数の公式客席配置があり、代表パターンを一意に確定できない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-12",
+      "discoveryUrlRaw": "http://www.nntt.jac.go.jp/"
     },
     {
       "inventoryId": "tokyo-nntt-pit",
@@ -23813,13 +23812,13 @@
       "officialFacilityUrl": "https://tdp.tv-asahi.co.jp/theater/about/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026年4月25日開場後の現行番号図と最大1,546席は確認できるが、中通路前全席撤去、pit/張出し/花道、車いすspaceが公演依存でstandard configurationを定義しないため正式HOLD。",
+      "eligibilityReason": "最大1,546席configuration候補をfresh reviewしたが、最大図の車いすspace包含・可動前方席の全装着条件・stage variant差分をlosslessに確定できず正式HOLD。",
       "priority": "A",
       "venueSourceId": "ex-theater-ariake-standard",
       "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-12",
       "discoveryUrlRaw": "https://tdp.tv-asahi.co.jp/theater/about/",
-      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 最大1,546のfixed/movable/wheelchair内訳と、前方撤去・pit・張出し・花道・車いすspaceの番号差分、issuer-defined standard/normal configurationが未公表。"
+      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: 最大1,546のfixed/movable/wheelchair内訳、前方撤去・pit・張出し・花道・車いすspaceの番号差分、全番号が同時成立するissuer conditionが未公表。"
     },
     {
       "inventoryId": "tokyo-coverage-musashino-forest-sport-plaza",

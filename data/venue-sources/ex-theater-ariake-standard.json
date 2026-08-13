@@ -12,7 +12,7 @@
     "name": "発行者定義の代表的な選択可能番号席セット",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "2026年4月25日開場後の現行運営者ページは最大1,546席と1F〜3F番号図を公開するが、図は公演別座席配置変更と車いすspaceを明記する。主催者資料は中通路より前の全席が取り外し可能で、オーケストラpit、張り出し舞台、花道の設営範囲を作品ごとに変えられるとする。最大図を独自にstandard扱いせず、旧EX THEATER ROPPONGIのschemaも流用せずrange転記を停止した。",
+    "selectionReason": "現行運営者は最大1,546席の全館番号図を公開するが、同じ図が公演による座席配置変更と車いすspaceを明記する。最大着席配置をconfiguration候補としてfresh reviewしたものの、1,546に含まれる車いすspace／可動前方席の番号関係と、最大配置が成立するissuer conditionをlosslessに確定できないためrange転記を停止した。",
     "notIncludedPatterns": ["最大1,546席の公演別配置", "1F中通路前の全撤去可能席", "オーケストラpit", "張り出し舞台", "花道", "組立床・stage configuration", "車いすspaceと購入番号の公演別運用", "旧EX THEATER ROPPONGIの配置"]
   },
   "sources": [
@@ -22,12 +22,12 @@
     {"id":"official-opening-lineup-currentness","official":true,"roles":["facility","seat-count","seat-structure"],"publisher":"株式会社テレビ朝日／東京ドリームパーク","title":"2026年4月25日開場 EX THEATER ARIAKE オープニングラインナップ発表会","url":"https://tdp.tv-asahi.co.jp/theater/news/0017/","checkedAt":"2026-08-12"},
     {"id":"official-opening-production-accessibility","official":true,"roles":["facility","event-layout"],"publisher":"株式会社テレビ朝日／STARTO ENTERTAINMENT","title":"AmberS 公演情報・座席表・車いす案内","url":"https://tdp.tv-asahi.co.jp/ambers/","checkedAt":"2026-08-12"}
   ],
-  "registeredScope": "SOURCE/POLICY/SCHEMA HOLD。現行公開図は1F〜3Fの詳細番号体系と最大1,546席を示すが、最大configurationをstandard/normalと定義せず、公演ごとの座席変更、前方全席撤去、pit/張出し/花道、車いすspaceの個別運用を明記する。",
-  "completenessBasis": "第1パスは開場後の現行ABOUT原寸座席図と最大1,546席を確認したうえで、公演別変更注記と車いすspaceの関係が一意でないため代表pattern gateで停止した。独立第2パスは主催者ページ、FAQ、こけら落とし公演案内から、中通路前全席撤去、pit/張出し/花道、車いす利用時の購入番号事前連絡を再確認した。両パスは同じHOLD結論で、rangesは0、range diffはnull。",
+  "registeredScope": "B_SOURCE_LIMITED / SOURCE HOLD。最大1,546席図そのものをconfiguration候補として評価したが、最大配置の車いすspace包含、可動前方席の全装着条件、pit／張出し／花道との差分番号をissuer資料から確定できない。",
+  "completenessBasis": "第1パスは現行ABOUT原寸座席図を最大1,546席configuration候補として全階確認し、normal/defaultでないことはreject理由にしなかった。独立第2パスは主催者ページ、FAQ、開場公演の公式座席案内を確認し、中通路前全席撤去、pit／張出し／花道、車いすspaceが公演別である一方、最大図と1,546の包含規則は公開されないことを再確認した。ranges 0、expected/calculated/rangeDiffはnull。",
   "transformation": "最大1,546へのcapacity fitting、最大図の独自standard化、前方可動席の恒久ID化、車いすspaceの置換番号推測、旧EX THEATER ROPPONGI schemaの流用を行わず、rangesは空のままとした。",
   "knownLimitations": [
     "SOURCE HOLD: 公開公式資料は最大1,546のfixed/movable/wheelchair内訳、車いすspaceの包含・置換番号、各pit/張出し/花道variantの番号差分を公開しない。",
-    "POLICY/SCHEMA HOLD: 公開最大番号図はあるがissuer-defined standard/normal configurationではなく、中通路前全席とstage configurationが作品依存である。",
+    "最大着席配置であること自体はreject理由にしていないが、issuerが1,546席図の全番号が同時成立する条件と車いすspaceの関係をlosslessに定義していない。",
     "着席ライブ/演劇の公演固有seat mapは存在しても、恒久全館代表setとして一般化できない。"
   ],
   "verification": {
@@ -36,7 +36,7 @@
     "method": "official-source-first-pass-independent-second-pass-hold",
     "seatStructure": "pending",
     "seatCount": "pending",
-    "unresolvedIssues": ["最大1,546席のfixed/movable/wheelchair内訳が未公表。", "中通路前撤去、pit、張出し、花道ごとの番号差分が未公表。", "車いすspaceの番号包含・置換関係が公演別で未確定。", "issuer-defined standard/normal configurationがない。"]
+    "unresolvedIssues": ["最大1,546席のfixed/movable/wheelchair内訳が未公表。", "中通路前撤去、pit、張出し、花道ごとの番号差分が未公表。", "車いすspaceの番号包含・置換関係が公演別で未確定。", "最大1,546席図の全番号が同時成立するissuer conditionが未公表。"]
   },
   "ranges": []
 }

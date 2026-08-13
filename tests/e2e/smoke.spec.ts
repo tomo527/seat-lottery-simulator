@@ -143,6 +143,27 @@ test('明治座を1会場として検索し、公式2configurationを選び分�
   expect(consoleErrors).toEqual([])
 })
 
+test('新国立劇場 中劇場の公式AB迫りconfigurationと限定scopeを表示して抽選できる', async ({ page }) => {
+  const consoleErrors: string[] = []
+  page.on('console', (message) => { if (message.type() === 'error') consoleErrors.push(message.text()) })
+  await page.goto('/')
+  await openPicker(page)
+  await page.getByLabel('会場名で検索').fill('NNTT Playhouse')
+  await expect(page.getByText('絞り込み結果 1件')).toBeVisible()
+
+  const detailResponse = page.waitForResponse((response) =>
+    response.url().endsWith('/venue-db/venues/nntt-playhouse-standard--proscenium-ab-seri.json') && response.ok())
+  await page.getByRole('button', { name: '新国立劇場 中劇場を選ぶ' }).click()
+  await detailResponse
+
+  await expect(page.getByText(/公式定義するプロセニアム形式③（A・B号迫り使用）/)).toBeVisible()
+  await expect(page.getByText('抽選対象 906席', { exact: true })).toBeVisible()
+  await expect(page.getByText(/他の4基本パターン、最大8席の無番号車椅子スペース、公演別の最前列販売停止は含みません/)).toBeVisible()
+  await drawAndExpectNotification(page, '新国立劇場 中劇場')
+  await expect(page.locator('.result-card').getByText('プロセニアム形式③ A・B号迫り使用', { exact: true })).toBeVisible()
+  expect(consoleErrors).toEqual([])
+})
+
 test('会場切替と自作座席でも通知カードが成立する', async ({ page }) => {
   await page.goto('/')
   await chooseVenue(page, '東京芸術劇場', '東京芸術劇場 シアターイースト')

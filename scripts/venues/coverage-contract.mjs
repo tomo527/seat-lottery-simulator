@@ -48,8 +48,16 @@ export const deriveTokyoCoverageContract = ({
   const mustItems = byTier('MUST')
   const shouldItems = byTier('SHOULD')
   const mustAndShould = candidates.filter((candidate) => ['MUST', 'SHOULD'].includes(candidate.tier))
-  const rawGate = (items, baselineRequired, addressableItems) => {
-    const required = Math.max(Number(baselineRequired ?? 0), addressableItems.filter((candidate) => addressableIds.has(candidate.id)).length)
+  const rawFloorRequired = (baselineRequired, addressableItems) => Math.max(
+    Number(baselineRequired ?? 0),
+    addressableItems.filter((candidate) => addressableIds.has(candidate.id)).length,
+  )
+  const rawFloorMetric = (universeItems, baselineRequired, addressableItems) => ({
+    numerator: rawFloorRequired(baselineRequired, addressableItems),
+    denominator: universeItems.length,
+  })
+  const rawFloorAttainmentGate = (items, baselineRequired, addressableItems) => {
+    const required = rawFloorRequired(baselineRequired, addressableItems)
     const actual = productionCount(items)
     return {
       status: actual >= required ? 'PASS' : 'FAIL',
@@ -90,10 +98,10 @@ export const deriveTokyoCoverageContract = ({
     mustAddressableProductionConversion: addressableGate(mustItems),
     shouldAddressableProductionConversion: addressableGate(shouldItems),
     dynamicShouldAddressableAdditions: addressableGate(candidates.filter((candidate) => dynamicShouldIds.includes(candidate.id))),
-    rawProductionFloorMust: rawGate(mustItems, rawPolicy.MUST, mustItems),
-    rawProductionFloorShould: rawGate(shouldItems, rawPolicy.SHOULD, shouldItems),
-    rawProductionFloorMustAndShould: rawGate(mustAndShould, rawPolicy.MUST_AND_SHOULD, mustAndShould),
-    rawProductionFloorTokyo: rawGate(candidates, rawPolicy.TOKYO_UNIVERSE, mustAndShould),
+    rawProductionFloorAttainmentMust: rawFloorAttainmentGate(mustItems, rawPolicy.MUST, mustItems),
+    rawProductionFloorAttainmentShould: rawFloorAttainmentGate(shouldItems, rawPolicy.SHOULD, shouldItems),
+    rawProductionFloorAttainmentMustAndShould: rawFloorAttainmentGate(mustAndShould, rawPolicy.MUST_AND_SHOULD, mustAndShould),
+    rawProductionFloorAttainmentTokyo: rawFloorAttainmentGate(candidates, rawPolicy.TOKYO_UNIVERSE, mustAndShould),
     configurationSupport,
     fixedOnlyDisclosure,
     productionQuality,
@@ -102,6 +110,17 @@ export const deriveTokyoCoverageContract = ({
   }
   return {
     metrics: { tokyo, must, should, optional },
+    rawProductionFloor: {
+      must: rawFloorMetric(mustItems, rawPolicy.MUST, mustItems),
+      should: rawFloorMetric(shouldItems, rawPolicy.SHOULD, shouldItems),
+      mustAndShould: rawFloorMetric(mustAndShould, rawPolicy.MUST_AND_SHOULD, mustAndShould),
+      tokyo: rawFloorMetric(candidates, rawPolicy.TOKYO_UNIVERSE, mustAndShould),
+    },
+    addressableConversionProgress: {
+      must: addressableGate(mustItems),
+      should: addressableGate(shouldItems),
+      total: addressableGate(mustAndShould),
+    },
     addressableIds: [...addressableIds].sort(),
     dynamicShouldIds: [...dynamicShouldIds].sort(),
     gates,

@@ -19,10 +19,10 @@
           "rule": "Every current-schema or approved-schema-extension addressable MUST/SHOULD candidate must be production before release."
         },
         "currentEvidenceBasedRawProductionFloor": {
-          "must": "8/44 (18.2%)",
+          "must": "6/44 (13.6%)",
           "should": "8/28 (28.6%)",
-          "mustAndShould": "16/72 (22.2%)",
-          "tokyoUniverse": "16/76 (21.1%)",
+          "mustAndShould": "14/72 (19.4%)",
+          "tokyoUniverse": "14/76 (18.4%)",
           "dynamicRule": "Each of the eight unresearched SHOULD candidates later classified as schema-addressable increases the required numerator by one; it cannot replace an existing required venue."
         },
         "optionalIsReleaseBlocker": false,

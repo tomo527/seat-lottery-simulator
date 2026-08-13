@@ -31,46 +31,46 @@
       "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0}
     },
     "userVisibleProductionCoverage": {
-      "tokyoUniverse":{"numerator":9,"denominator":76,"percent":11.8},
-      "MUST":{"numerator":5,"denominator":44,"percent":11.4},
+      "tokyoUniverse":{"numerator":10,"denominator":76,"percent":13.2},
+      "MUST":{"numerator":6,"denominator":44,"percent":13.6},
       "SHOULD":{"numerator":4,"denominator":28,"percent":14.3},
       "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0}
     },
     "schemaAddressableCoverage": {
-      "tokyoUniverse":{"numerator":16,"denominator":76,"percent":21.1},
-      "MUST":{"numerator":8,"denominator":44,"percent":18.2},
+      "tokyoUniverse":{"numerator":14,"denominator":76,"percent":18.4},
+      "MUST":{"numerator":6,"denominator":44,"percent":13.6},
       "SHOULD":{"numerator":8,"denominator":28,"percent":28.6},
       "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0},
       "confirmedCurrentSchemaNonProductionIds":["national-noh-theatre","musashino-civic-main","jcom-hall-hachioji"],
-      "confirmedSchemaExtensionNonProductionIds":["ex-theater-ariake","nntt-playhouse","galaxy-theatre","nissho-hall"],
-      "note":"16 = current PRODUCTION 9（meijiza conversion成功を含む）+ current-schema addressable 3 + schema-extension nonproduction 4。TOKYO-CONFIG-A-ARENA-2の3件はfresh issuer evidenceにより、fixed-onlyの全番号、issuer-defined独立configuration、wheelchair semantics又はsource generationが不足するB_SOURCE_LIMITEDへ再分類し、安全側で分子から除外した。"
+      "confirmedSchemaExtensionNonProductionIds":["nissho-hall"],
+      "note":"14 = current PRODUCTION 10（meijizaとNNTT中劇場のconfiguration conversionを含む）+ current-schema addressable 3 + schema-extension nonproduction 1。TOKYO-CONFIG-A-THEATRE-1でEX THEATER ARIAKEをB、銀河劇場をCへ再分類し、NNTT中劇場の公式プロセニアム形式③をproduction化してcurrent A cohortを0件で閉じた。"
     }
   },
   "mustNonProductionBlockerAudit": {
     "auditedCount":40,
     "historicalClassCounts":{"A_SCHEMA_UNLOCKABLE":12,"B_SOURCE_LIMITED":21,"C_CONTRADICTION":4,"D_CURRENTNESS_CLOSED":3},
-    "currentNonProductionCount":39,
-    "basis":"40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。TOKYO-CONFIG-PILOT-1でmeijizaがAからproductionへconversion成功し、CURRENT-1の2件とARENA-2の3件をB、ARENA-1の3件をCへfresh issuer evidenceに基づき再分類した。current nonproductionは39件、current Aは3件。",
+    "currentNonProductionCount":38,
+    "basis":"40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。meijizaとNNTT中劇場をproductionへconversionし、CURRENT-1／ARENA-2／THEATRE-1の6件をB、ARENA-1／THEATRE-1の4件をCへfresh issuer evidenceに基づき再分類した。current nonproductionは38件、current Aは0件。",
     "classes": {
       "A_SCHEMA_UNLOCKABLE": {
-        "count":3,
+        "count":0,
         "currentSchemaAddressable":[],
-        "schemaExtensionAddressable":["ex-theater-ariake","nntt-playhouse","galaxy-theatre"],
-        "converted":["meijiza"],
-        "representativeVenues":["ex-theater-ariake","nntt-playhouse","galaxy-theatre"],
-        "note":"完全な公式通常図、複数の完全公式configuration、または公式に独立した固定番号席subsetが既存evidence上確認できる。configuration条件とwheelchair semanticsが未解決の対象は、issuer定義を越えて創作せずmigration macroで再gateする。"
+        "schemaExtensionAddressable":[],
+        "converted":["meijiza","nntt-playhouse"],
+        "representativeVenues":[],
+        "note":"TOKYO-CONFIG-A-THEATRE-1完了後、current A cohortは0件。"
       },
       "B_SOURCE_LIMITED": {
-        "count":26,
-        "venueIds":["tokyo-dome","nippon-budokan","musashino-forest-sport-plaza","tokyo-garden-theater","tokyo-international-forum-c","nhk-hall","tokyu-theatre-orb","tbs-akasaka-act","nissay-theatre","tokyo-takarazuka","kabukiza","shiki-haru","shiki-aki","shiki-umi","ariake-shiki","brillia-hall","theater-h","pia-theater-yaesu","yurakucho-yomiuri","nihombashi-mitsui","nihon-seinenkan","tokyo-international-forum-a","nntt-opera","ariake-arena","kanadevia-hall","sgc-hall-ariake"],
+        "count":27,
+        "venueIds":["tokyo-dome","nippon-budokan","musashino-forest-sport-plaza","tokyo-garden-theater","tokyo-international-forum-c","nhk-hall","tokyu-theatre-orb","tbs-akasaka-act","nissay-theatre","tokyo-takarazuka","kabukiza","shiki-haru","shiki-aki","shiki-umi","ariake-shiki","brillia-hall","theater-h","pia-theater-yaesu","yurakucho-yomiuri","nihombashi-mitsui","nihon-seinenkan","tokyo-international-forum-a","nntt-opera","ariake-arena","kanadevia-hall","sgc-hall-ariake","ex-theater-ariake"],
         "representativeVenues":["tokyo-dome","ariake-arena","kanadevia-hall","sgc-hall-ariake"],
         "note":"完全番号図、厳密総数、canonical seat identity、車いす置換番号、または恒久configuration条件のissuer-owned情報が欠け、schema変更だけでは救済できない。"
       },
       "C_CONTRADICTION": {
-        "count":7,
-        "venueIds":["tokyo-geigeki-concert","tokyo-operacity-concert","sumida-triphony-main","shinbashi-enbujo","yoyogi-1","yoyogi-2","tokyo-gymnasium"],
-        "representativeVenues":["tokyo-geigeki-concert","yoyogi-1","tokyo-gymnasium"],
-        "note":"formal CONTRADICTION 2件に、HOLD正規化されていた公式席数差分2件とTOKYO-CONFIG-A-ARENA-1のfresh official contradiction 3件を加えた。coverage inventoryのformal disposition値は変更しない。"
+        "count":8,
+        "venueIds":["tokyo-geigeki-concert","tokyo-operacity-concert","sumida-triphony-main","shinbashi-enbujo","yoyogi-1","yoyogi-2","tokyo-gymnasium","galaxy-theatre"],
+        "representativeVenues":["tokyo-geigeki-concert","yoyogi-1","galaxy-theatre"],
+        "note":"formal CONTRADICTION 2件に、HOLD正規化されていた公式席数差分2件、ARENA-1の3件、THEATRE-1の銀河劇場を加えた。NNTT中劇場は矛盾するABC配置を非selectableに分離し、完全一致するAB配置だけをproduction化した。"
       },
       "D_CURRENTNESS_CLOSED": {
         "count":3,
@@ -88,7 +88,7 @@
     "admissionRule":"issuer-owned資料がconfiguration自体を完全に定義し、expectedSeatCountとrangeを独立2パスで一致確認できる場合のみ収録する。",
     "prohibitions":["repository側でconfigurationを創作しない","event-dependent floor番号を恒久seat ID化しない","不完全variantをcapacity fittingしない","wheelchair/pit/花道差分を推測しない","既存production quality gateを緩和しない"],
     "fixedOnlyPolicy":"公式が恒久固定番号席subsetを独立したseat setとして明示し、subsetの完全番号・厳密総数・除外範囲・wheelchair semanticsを確定できる場合のみ、固定席のみconfigurationとしてselectableにできる。会場全体の最大収容を意味しないことをUIで明示する。",
-    "knownSchemaExtensionPotential":{"MUST":3,"SHOULD":1,"total":4},
+    "knownSchemaExtensionPotential":{"MUST":0,"SHOULD":1,"total":1},
     "shouldResearchTiming":"8件すべてschema migration macro完了後。current schemaで先行すると、可変floor/standing/fixed upper-tierを再度単一representativeへ押し込む判断を繰り返すため。"
   },
   "macroResults": {
@@ -104,10 +104,20 @@
     "TOKYO-CONFIG-A-ARENA-2": {
       "completedAt":"2026-08-12",
       "scope":["ariake-arena","kanadevia-hall","sgc-hall-ariake"],
+      "productionPromotions":1,
+      "productionConfigurations":1,
+      "configurationSeatRecordsAdded":906,
+      "formalHolds":2,
+      "releaseReady":false,
+      "notes":"fresh fixed-only reviewで3件をB_SOURCE_LIMITEDへ再分類。有明は固定11,232の全番号なし、Kanadeviaは固定バルコニーのみのissuer-defined configurationと車いす/source generation不足、SGCは上層固定scopeの全番号・独立configuration・車いす番号対応不足。"
+    },
+    "TOKYO-CONFIG-A-THEATRE-1": {
+      "completedAt":"2026-08-12",
+      "scope":["ex-theater-ariake","nntt-playhouse","galaxy-theatre"],
       "productionPromotions":0,
       "formalHolds":3,
       "releaseReady":false,
-      "notes":"fresh fixed-only reviewで3件をB_SOURCE_LIMITEDへ再分類。有明は固定11,232の全番号なし、Kanadeviaは固定バルコニーのみのissuer-defined configurationと車いす/source generation不足、SGCは上層固定scopeの全番号・独立configuration・車いす番号対応不足。"
+      "notes":"EXは最大1,546配置のwheelchair／可動前方席／stage variant包含をlosslessに定義できずB。NNTT中劇場は他variantを巻き添えにせず、公式プロセニアム形式③ A・B号迫り使用906をtwo-pass rangeDiff 0でproduction化し、ABC配置788/791は非selectable contradictionに分離。銀河劇場は公式746に対し図750でC。current A cohortは0。"
     },
     "LUNA-STD-1": {
       "completedAt": "2026-08-11",
@@ -155,8 +165,8 @@
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
-    "production": 9,
-    "hold": 53,
+    "production": 10,
+    "hold": 52,
     "contradiction": 2,
     "unresearched": 12,
     "mustUnresearched": 0,
@@ -164,17 +174,17 @@
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
     "researchCompletenessPercent":84.2,
-    "userVisibleProductionCoveragePercent":11.8,
-    "mustProductionCoveragePercent":11.4,
+    "userVisibleProductionCoveragePercent":13.2,
+    "mustProductionCoveragePercent":13.6,
     "shouldProductionCoveragePercent":14.3,
-    "schemaAddressableCoveragePercent":21.1,
-    "nextMacro":"TOKYO-CONFIG-A-THEATRE-1"
+    "schemaAddressableCoveragePercent":18.4,
+    "nextMacro":"SOL-SHOULD-1"
   },
   "releaseGate": {
     "requirements": {
       "researchCompleteness":{"MUST":100.0,"SHOULD":100.0},
       "addressableProductionConversion":{"MUST":100.0,"SHOULD":100.0},
-      "rawProductionFloor":{"MUST":8,"SHOULD":8,"MUST_AND_SHOULD":16,"TOKYO_UNIVERSE":16},
+      "rawProductionFloor":{"MUST":6,"SHOULD":8,"MUST_AND_SHOULD":14,"TOKYO_UNIVERSE":14},
       "configurationSupport":true,
       "fixedOnlyDisclosure":true,
       "productionQuality":true,
@@ -214,7 +224,7 @@
     {"id":"tokyo-garden-theater","name":"東京ガーデンシアター","area":"江東区・有明","type":"hall","capacity":8000,"operating":"active","officialFacilityUrl":"https://www.shopping-sumitomo-rd.com/tokyo_garden_theater/org/facilities/events/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0429","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"2026-08-12 current official review: SOURCE/POLICY/SCHEMA HOLD. Every seat is removable; arena A/B, seating/standing, stage, and wheelchair-area configurations are event-dependent, with no issuer-defined representative selectable numbered-seat set."},
     {"id":"kanadevia-hall","name":"Kanadevia Hall（旧東京ドームシティホール）","area":"文京区・後楽","type":"hall","capacity":2471,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/tdc-hall/organizer/facilities.html","seatMap":"official","numberedMap":"fixed-balconies-only","inventoryState":"HOLD","inventoryId":"tokyo-coverage-kanadevia-hall","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 TOKYO-CONFIG-A-ARENA-2: B_SOURCE_LIMITED. Three fixed balcony maps and exact 1,365 subtotal exist, but the issuer does not define balcony-only as a selectable configuration; wheelchair/companion mapping and authenticated Seat Plan generation remain unpublished."},
     {"id":"sgc-hall-ariake","name":"SGC HALL ARIAKE","area":"江東区・有明","type":"hall","capacity":3767,"operating":"active","officialFacilityUrl":"https://tdp.tv-asahi.co.jp/hall/about/","seatMap":"official-basic-pattern","numberedMap":"partial","inventoryState":"HOLD","inventoryId":"tokyo-coverage-sgc-hall-ariake","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 TOKYO-CONFIG-A-ARENA-2: B_SOURCE_LIMITED. Issuer separates the 1F arena from an upper fixed scope of 2,047, but the basic map lacks all upper row/seat numbers, a fixed-only issuer condition, and stable wheelchair/companion number semantics."},
-    {"id":"ex-theater-ariake","name":"EX THEATER ARIAKE","area":"江東区・有明","type":"theater","capacity":1546,"operating":"active","officialFacilityUrl":"https://tdp.tv-asahi.co.jp/theater/about/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-coverage-ex-theater-ariake","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 SOL-CPLX-1: SOURCE/POLICY/SCHEMA HOLD。現行最大1,546番号図はあるが、中通路前全席撤去、pit/張出し/花道、車いすspaceが公演依存でstandard/normal configurationが未定義。"},
+    {"id":"ex-theater-ariake","name":"EX THEATER ARIAKE","area":"江東区・有明","type":"theater","capacity":1546,"operating":"active","officialFacilityUrl":"https://tdp.tv-asahi.co.jp/theater/about/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-coverage-ex-theater-ariake","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 TOKYO-CONFIG-A-THEATRE-1: B_SOURCE_LIMITED. 最大1,546配置候補をnormal/default要件なしで評価したが、wheelchair space包含、可動前方席の全装着条件、pit/張出し/花道との差分番号が未公表。"},
     {"id":"tokyo-international-forum-a","name":"東京国際フォーラム ホールA","area":"千代田区・丸の内","type":"hall","capacity":5012,"operating":"active","officialFacilityUrl":"https://www.t-i-forum.co.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-tokyo-international-forum-hall-a","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"2026-08-12 TOKYO-CONFIG-A-CURRENT-1 taxonomy correction: B_SOURCE_LIMITED / POLICY HOLD. Current issuer evidence does not designate one normal selectable configuration or map pit/thrust-stage and wheelchair conversions to numbered removals; schema change alone cannot resolve it."},
     {"id":"tokyo-international-forum-c","name":"東京国際フォーラム ホールC","area":"千代田区・丸の内","type":"hall","capacity":1502,"operating":"active","officialFacilityUrl":"https://www.t-i-forum.co.jp/organizer/facilities/c/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-tokyo-international-forum-hall-c","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"ミュージカル・舞台・コンサートの主要会場。"},
     {"id":"nhk-hall","name":"NHKホール","area":"渋谷区・神南","type":"hall","capacity":3601,"operating":"active","officialFacilityUrl":"https://www.nhk-sc.or.jp/nhk-hall/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-nhk-hall","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"音楽・舞台放送系の主要会場。"},
@@ -231,7 +241,7 @@
     {"id":"nissay-theatre","name":"日生劇場","area":"千代田区・有楽町","type":"theater","capacity":1334,"operating":"active","officialFacilityUrl":"https://www.nissaytheatre.or.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-nissay-theatre","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"舞台・ミュージカルの主要劇場。既存SOURCE/SCHEMA HOLDを維持。"},
     {"id":"tokyo-takarazuka","name":"東京宝塚劇場","area":"千代田区・有楽町","type":"theater","capacity":2079,"operating":"active","officialFacilityUrl":"https://kageki.hankyu.co.jp/theatre/tokyo/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0053","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"ミュージカル・歌劇の明確な主要会場。2026-08-12 current official review: SOURCE/POLICY/SCHEMA HOLD; wheelchair-space inclusion/replacement mapping is not published."},
     {"id":"nntt-opera","name":"新国立劇場 オペラ劇場","area":"渋谷区・本町","type":"theater","capacity":1814,"operating":"active","officialFacilityUrl":"https://www.nntt.jac.go.jp/guide/opera/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-nntt-opera-palace","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"2026-08-12 TOKYO-CONFIG-A-CURRENT-1 taxonomy correction: B_SOURCE_LIMITED / SOURCE HOLD. Current issuer evidence fixes the 1,806 numbered total, wheelchair scope and permanent pit but lacks a lossless issuer-owned area/row key; schema change alone cannot supply it."},
-    {"id":"nntt-playhouse","name":"新国立劇場 中劇場","area":"渋谷区・本町","type":"theater","capacity":1038,"operating":"active","officialFacilityUrl":"https://cms.nntt.jac.go.jp/guide/playhouse/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-nntt-playhouse","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"演劇・舞踊・ミュージカルの可変客席。公式は5パターンを提示し公演別にlayoutが異なる。"},
+    {"id":"nntt-playhouse","name":"新国立劇場 中劇場","area":"渋谷区・本町","type":"theater","capacity":1038,"operating":"active","officialFacilityUrl":"https://www.nntt.jac.go.jp/guide/playhouse/","seatMap":"official","numberedMap":"yes-five-configurations","inventoryState":"PRODUCTION","inventoryId":"tokyo-nntt-playhouse","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 TOKYO-CONFIG-A-THEATRE-1: schema v2 PRODUCTION. issuer-definedプロセニアム形式③ A・B号迫り使用は公式906席と全番号906がtwo-pass rangeDiff 0で一致。最大8車椅子spaceは別無番号scope。ABC配置788/791は非selectableに分離。"},
     {"id":"meijiza","name":"明治座","area":"中央区・日本橋浜町","type":"theater","capacity":1448,"operating":"active","officialFacilityUrl":"https://www.meijiza.co.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-meijiza","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"TOKYO-CONFIG-PILOT-1でschema v2 conversion成功。花道あり1,368席／花道なし1,448席を独立selectable configurationとして2パスrange diff 0、車いすspaceは共通無番号scope。"},
     {"id":"kabukiza","name":"歌舞伎座","area":"中央区・銀座","type":"theater","capacity":1808,"operating":"active","officialFacilityUrl":"https://www.kabuki-za.co.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-kabukiza","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"伝統芸能・座席指定型公演の主要劇場。既存SCHEMA HOLDを維持。"},
     {"id":"shinbashi-enbujo","name":"新橋演舞場","area":"中央区・銀座","type":"theater","capacity":1428,"operating":"active","officialFacilityUrl":"https://www.shochiku.co.jp/play/theater/shimbashi/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-shinbashi-enbujo","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"商業演劇・歌舞伎・ミュージカルの主要劇場。"},
@@ -247,7 +257,7 @@
     {"id":"yurakucho-yomiuri","name":"有楽町よみうりホール","area":"千代田区・有楽町","type":"theater","capacity":1100,"operating":"active","officialFacilityUrl":"https://yomi-h.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0052","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"商業舞台・イベント・声優系公演の主要会場。"},
     {"id":"nihombashi-mitsui","name":"日本橋三井ホール","area":"中央区・日本橋室町","type":"hall","capacity":1000,"operating":"active","officialFacilityUrl":"https://www.nihonbashi-hall.jp/","seatMap":"partial","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0106","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"ライブ・アニメ/声優イベント・展示型公演に継続利用。可変平土間の代表patternが必要。"},
     {"id":"nihon-seinenkan","name":"日本青年館ホール","area":"新宿区・霞ヶ丘町","type":"theater","capacity":1249,"operating":"active","officialFacilityUrl":"https://seinenkan-hall.com/hall","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0283","tier":"MUST","difficulty":"DENSE","model":"Terra","reason":"2026-08-12 TERRA-DENSE-4: SCHEMA HOLD。現行運営者資料は固定番号席1,245、車いす4別枠、1階811・2階434を示すが、分割番号blockのcanonical row/area ownershipを図形位置による補完なしに定義しない。"},
-    {"id":"galaxy-theatre","name":"天王洲 銀河劇場","area":"品川区・東品川","type":"theater","capacity":746,"operating":"active","officialFacilityUrl":"https://www.gingeki.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0455","tier":"MUST","difficulty":"STANDARD","model":"Luna","reason":"LUNA-STD-1で現行公式座席ページ・PDF・利用案内を第1/第2パス確認。車椅子対応時に外す具体的な列・番号が未定義のためPOLICY/SCHEMA HOLD。"},
+    {"id":"galaxy-theatre","name":"天王洲 銀河劇場","area":"品川区・東品川","type":"theater","capacity":746,"operating":"active","officialFacilityUrl":"https://www.gingeki.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0455","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 TOKYO-CONFIG-A-THEATRE-1: C_CONTRADICTION. 現行HTML画像と公式PDFは750番号（516/113/121）だが公式表示は746（516/101/129）。rangeDiff 0、expected mismatch +4。"},
     {"id":"theater-g-rosso","name":"シアターGロッソ","area":"文京区・後楽","type":"theater","capacity":765,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/g-rosso/seat/","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-official-0299","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"LUNA-STD-2で現行公式座席図・施設概要・設備紹介を第1/第2パス確認。A〜Zの765番号席が一意に表現可能で、別枠車椅子3スペースを除外したrangeがexpected/calculated 765で一致したためPRODUCTION。"},
     {"id":"imm-theater","name":"IMM THEATER","area":"文京区・後楽","type":"theater","capacity":705,"operating":"active","officialFacilityUrl":"https://imm.theater/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0320","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"LUNA-STD-2で現行公式施設資料・座席表・2026年7月改定規約を第1/第2パス確認。公式座席表が公演ごとの配置変更と車椅子詳細の問い合わせを明記するためSOURCE/SCHEMA HOLD。"},
     {"id":"ex-theater-roppongi","name":"EX THEATER ROPPONGI","area":"港区・西麻布","type":"hall","capacity":920,"operating":"active","officialFacilityUrl":"https://www.ex-theater.com/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"未調査","inventoryId":"tokyo-official-0129","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"ライブ・イベントの主要会場。座席/立見・可変レイアウトの公式定義が必要。"},

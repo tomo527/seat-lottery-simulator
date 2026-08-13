@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "nntt-playhouse-standard",
+  "name": "新国立劇場 中劇場",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": [
+    "新国立劇場〔中劇場〕",
+    "NNTT Playhouse"
+  ],
+  "venueType": "theater",
+  "sources": [
+    {
+      "id": "official-playhouse-page",
+      "official": true,
+      "roles": ["facility", "seat-count", "event-layout"],
+      "publisher": "公益財団法人新国立劇場運営財団",
+      "title": "中劇場 施設・客席",
+      "url": "https://www.nntt.jac.go.jp/guide/playhouse/",
+      "checkedAt": "2026-08-12"
+    },
+    {
+      "id": "official-five-pattern-seat-pdf",
+      "official": true,
+      "roles": ["seat-structure", "seat-count", "event-layout"],
+      "publisher": "公益財団法人新国立劇場運営財団",
+      "title": "中劇場座席表（5パターン）",
+      "url": "https://www.nntt.jac.go.jp/guide/uploads/seat_playhouse.pdf",
+      "checkedAt": "2026-08-12"
+    },
+    {
+      "id": "official-proscenium-floor-plan",
+      "official": true,
+      "roles": ["facility", "event-layout"],
+      "publisher": "公益財団法人新国立劇場運営財団",
+      "title": "プロセニアム形式 A・B号迫りオケピ使用時 平面図",
+      "url": "https://www.nntt.jac.go.jp/assets/images/guide/PDF/playhouse_orp_heimen250.pdf",
+      "checkedAt": "2026-08-12"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "proscenium-ab-seri",
+      "canonicalName": "プロセニアム形式③ A・B号迫り使用",
+      "issuerDefinedCondition": "新国立劇場が中劇場の基本5パターンの一つ、プロセニアム形式③としてA・B号迫り使用を独立定義し、1階719席・2階187席・合計906席の完全座席図を公開している配置。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-12 current official playhouse page and its current five-pattern seat PDF; official A/B-seri floor plan cross-check",
+      "sourceIds": [
+        "official-playhouse-page",
+        "official-five-pattern-seat-pdf",
+        "official-proscenium-floor-plan"
+      ],
+      "differenceBasisSourceIds": [
+        "official-playhouse-page",
+        "official-five-pattern-seat-pdf",
+        "official-proscenium-floor-plan"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 906,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "新国立劇場が公式定義するプロセニアム形式③（A・B号迫り使用）の番号席だけを抽選します。他の4基本パターン、最大8席の無番号車椅子スペース、公演別の最前列販売停止は含みません。",
+      "wheelchairSemantics": {
+        "status": "resolved",
+        "description": "公式ページと座席PDFは1階最大8席の車椅子スペースを『上記のほか』とし、906席の番号席合計とは別の無番号scopeとして定義する。番号席の置換・減算を行わず、車椅子スペースは非selectableとして除外する。",
+        "sourceIds": ["official-playhouse-page", "official-five-pattern-seat-pdf"]
+      },
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-12",
+        "method": "independent-official-source-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"6","from":24,"to":55,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"7","from":23,"to":56,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"8","from":24,"to":55,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"9","from":33,"to":46,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"10","from":33,"to":64,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"11","from":19,"to":66,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"12","from":18,"to":66,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"13","from":18,"to":68,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"14","from":17,"to":68,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"15","from":17,"to":70,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"16","from":16,"to":70,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"17","from":16,"to":72,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"18","from":15,"to":72,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"19","from":15,"to":74,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"20","from":14,"to":74,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"21","from":23,"to":38,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"21","from":50,"to":55,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階","rowLabel":"21","from":58,"to":65,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階","rowLabel":"1","from":13,"to":73,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階","rowLabel":"2","from":13,"to":74,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階","rowLabel":"3","from":12,"to":75,"excluded":[]}
+      ]
+    }
+  ],
+  "officialNonSelectableScopes": [
+    {
+      "id": "wheelchair-spaces",
+      "canonicalName": "1階車椅子スペース最大8席",
+      "status": "non-selectable",
+      "numberedSeatSet": false,
+      "sourceIds": ["official-playhouse-page", "official-five-pattern-seat-pdf"],
+      "reason": "発行者が906番号席のほかに設ける無番号スペースとして定義しているため、恒久seat IDを作成しない。"
+    },
+    {
+      "id": "other-basic-patterns",
+      "canonicalName": "他の公式基本4パターン",
+      "status": "non-selectable",
+      "numberedSeatSet": true,
+      "sourceIds": ["official-playhouse-page", "official-five-pattern-seat-pdf"],
+      "reason": "本macroでproduction gateを完全通過したのはプロセニアム形式③だけ。別configurationを推測・補完せず、個別のlossless two-pass完了までselectableにしない。"
+    },
+    {
+      "id": "event-sales-suspension",
+      "canonicalName": "公演別最前列販売停止",
+      "status": "non-selectable",
+      "numberedSeatSet": false,
+      "sourceIds": ["official-five-pattern-seat-pdf"],
+      "reason": "公演別販売状態であり、恒久configuration差分として固定しない。"
+    }
+  ],
+  "theatreReview": {
+    "macro": "TOKYO-CONFIG-A-THEATRE-1",
+    "firstPass": {
+      "sourceIds": ["official-five-pattern-seat-pdf"],
+      "completedAt": "2026-08-12",
+      "method": "current official PDF visual transcription",
+      "floorSubtotals": {"1F":719,"2F":187,"total":906}
+    },
+    "independentSecondPass": {
+      "sourceIds": ["official-playhouse-page", "official-five-pattern-seat-pdf", "official-proscenium-floor-plan"],
+      "completedAt": "2026-08-12",
+      "method": "fresh independent range transcription with issuer condition, floor subtotal, stage-form and wheelchair-scope cross-check",
+      "floorSubtotals": {"1F":719,"2F":187,"total":906},
+      "rangeDiffByConfiguration": {"proscenium-ab-seri":0}
+    },
+    "heldConfigurationEvidence": {
+      "proscenium-abc-seri": {"expected":788,"calculated":791,"rangeDiff":0,"classification":"C_CONTRADICTION"}
+    }
+  }
+}

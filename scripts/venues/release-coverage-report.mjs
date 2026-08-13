@@ -180,6 +180,17 @@ if (coverage) {
   }
   console.log('  Schema-addressable cohort IDs: ' + tokyoContract.addressableIds.join(', '))
   console.log('  Dynamic SHOULD addressable additions: ' + (tokyoContract.dynamicShouldIds.length ? tokyoContract.dynamicShouldIds.join(', ') : '(none)'))
+  console.log('  Raw production floor: ' + [
+    `MUST=${metric(tokyoContract.rawProductionFloor.must)}`,
+    `SHOULD=${metric(tokyoContract.rawProductionFloor.should)}`,
+    `MUST+SHOULD=${metric(tokyoContract.rawProductionFloor.mustAndShould)}`,
+    `Tokyo=${metric(tokyoContract.rawProductionFloor.tokyo)}`,
+  ].join(', '))
+  console.log('  Addressable conversion progress: ' + [
+    `MUST=${metric(tokyoContract.addressableConversionProgress.must)}`,
+    `SHOULD=${metric(tokyoContract.addressableConversionProgress.should)}`,
+    `total=${metric(tokyoContract.addressableConversionProgress.total)}`,
+  ].join(', '))
   const classes = coverage.mustNonProductionBlockerAudit?.classes ?? {}
   console.log('  MUST nonproduction blockers: ' + [
     `A=${classes.A_SCHEMA_UNLOCKABLE?.count ?? 0}`,

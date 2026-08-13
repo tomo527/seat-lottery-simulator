@@ -2,66 +2,78 @@
   "schemaVersion": 1,
   "status": "draft",
   "id": "galaxy-theatre-standard",
-  "name": "天王洲 銀河劇場 通常番号席配置（車椅子転換番号未解決）",
+  "name": "天王洲 銀河劇場 通常番号席配置（公式階別席数矛盾）",
   "prefecture": "東京都",
   "city": "品川区",
   "aliases": ["銀河劇場", "The Galaxy Theatre"],
   "venueType": "theater",
   "representativePattern": {
-    "id": "standard-numbered-seat-set",
-    "name": "通常三層番号席配置",
+    "id": "official-746-numbered-seat-map",
+    "name": "公式通常746番号席図",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "運営者の現行座席ページと公式PDFが1階516席、2階101席、3階129席、計746席の番号付き通常配置を示す。現行利用案内は車椅子対応時に座席を外して車椅子スペースとする運用を示すが、外す座席番号・公演別の置換規則を示さないため、通常配置のproduction gateを閉じる。",
+    "expectedSeatCount": 746,
+    "selectionReason": "運営者が客席数746席として現行座席ページ、階別画像、公式PDFを公開する通常三層配置を独立集計したが、図上番号は1階516、2階113、3階121、計750となり、公式階別subtotal 516/101/129および総数746と一致しない。",
     "notIncludedPatterns": ["車椅子スペース利用時", "オーケストラピット使用時", "公演固有の販売停止席"]
   },
   "sources": [
-    {
-      "id": "official-seat-page",
-      "official": true,
-      "roles": ["seat-structure", "seat-count"],
-      "publisher": "天王洲 銀河劇場",
-      "title": "座席表",
-      "url": "https://www.gingeki.jp/seat",
-      "checkedAt": "2026-08-11"
-    },
-    {
-      "id": "official-seat-pdf",
-      "official": true,
-      "roles": ["seat-structure", "seat-count"],
-      "publisher": "天王洲 銀河劇場",
-      "title": "天王洲 銀河劇場 公式座席表PDF",
-      "url": "https://www.gingeki.jp/pdf/seat.pdf",
-      "checkedAt": "2026-08-11"
-    },
-    {
-      "id": "official-guide",
-      "official": true,
-      "roles": ["facility", "event-layout"],
-      "publisher": "天王洲 銀河劇場",
-      "title": "劇場について・車椅子でご来場のお客様へ",
-      "url": "https://www.gingeki.jp/guide",
-      "checkedAt": "2026-08-11"
-    }
+    {"id":"official-seat-page","official":true,"roles":["seat-structure","seat-count"],"publisher":"天王洲 銀河劇場","title":"座席表（現行階別画像）","url":"https://www.gingeki.jp/seat","checkedAt":"2026-08-12"},
+    {"id":"official-seat-pdf","official":true,"roles":["seat-structure","seat-count"],"publisher":"天王洲 銀河劇場","title":"天王洲 銀河劇場 公式座席表PDF","url":"https://www.gingeki.jp/pdf/seat.pdf","checkedAt":"2026-08-12"},
+    {"id":"official-guide","official":true,"roles":["facility","event-layout"],"publisher":"天王洲 銀河劇場","title":"劇場について・車椅子でご来場のお客様へ","url":"https://www.gingeki.jp/guide","checkedAt":"2026-08-12"}
   ],
-  "registeredScope": "POLICY/SCHEMA HOLD。通常三層の公式番号図は確認したが、車椅子対応時の座席撤去番号と通常抽選集合の扱いを確定できないためrangeは登録しない。",
-  "completenessBasis": "第1パスで公式座席ページと公式PDFを確認し、1階516席・2階101席・3階129席の構造と番号を確認した。独立第2パスで現行利用案内を確認し、車椅子スペースは座席を外して対応すること、1階のみ利用可能であることを確認したが、撤去される列・番号は公表されていなかった。",
-  "transformation": "通常公称席数への算術合わせ、図形からの座席番号補完、車椅子転換番号の推測を行わず、range転記を停止する。",
+  "registeredScope": "C_CONTRADICTION。通常746番号席図だけを対象とし、車椅子転換、オーケストラピット、公演固有販売停止は混在させない。",
+  "completenessBasis": "第1パスは現行HTML階別画像6点から全row・box番号を転記。独立第2パスは公式PDFを先に見ず再抽出し、同じ750番号、rangeDiff 0を得た。公式表示746とは+4、階別では1F 516=516、2F 113対101（+12）、3F 121対129（-8）。",
+  "transformation": "各階の明示番号を連続rangeへlossless圧縮。欠番13/24/25等は図どおりrange分割し、capacity fittingや車椅子撤去番号の推測を行わない。",
   "knownLimitations": [
-    "POLICY HOLD: 車椅子スペース利用時に外す番号席が現行公式資料で特定されていない。",
-    "SCHEMA HOLD: 通常配置と公演別車椅子転換配置を同一venueのlosslessなrepresentative patternとして表現する規則が未定義。",
-    "オーケストラピット使用時は1階A～D列の別配置となるため通常配置に混在させない。"
+    "C_CONTRADICTION: 現行HTML画像と公式PDFの図上番号は双方750だが、同じ資料が階別516/101/129、計746と表示する。",
+    "車椅子利用時は座席を外すが具体番号は未公表であり、通常配置とは別の不完全variantとして除外する。",
+    "オーケストラピット使用時は1階A～D列最大130席を外す別配置であり、通常配置へ混在させない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": "2026-08-11",
-    "method": "official-source-first-pass-independent-second-pass-hold",
+    "checkedAt": "2026-08-12",
+    "method": "independent-official-source-review-mismatch",
     "seatStructure": "matched",
-    "seatCount": "matched",
-    "unresolvedIssues": [
-      "車椅子対応で撤去される1階の具体的な列・番号が公式資料にない。",
-      "オーケストラピット使用時と通常配置を分けたsource/model policyが必要。"
-    ]
+    "seatCount": "pending",
+    "unresolvedIssues": ["公式図750番号と公式総数746が4席不一致。", "2階図113対公式101、3階図121対公式129の階別矛盾が相殺されず残る。"]
   },
-  "ranges": []
+  "ranges": [
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"A","from":5,"to":32,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"B","from":3,"to":34,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"C","from":2,"to":35,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"D","from":1,"to":36,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"E","from":1,"to":36,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"F","from":1,"to":36,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"G","from":1,"to":36,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"H","from":1,"to":36,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"I","from":1,"to":36,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"J","from":2,"to":35,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"K","from":2,"to":35,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"L","from":3,"to":34,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"M","from":4,"to":33,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"N","from":6,"to":31,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"O","from":8,"to":29,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"P","from":10,"to":27,"excluded":[13,24]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"Q","from":13,"to":24,"excluded":[]},
+    {"areaId":"second-floor-boxes","areaLabel":"2階ボックス席","rowLabel":"ボックス1","from":1,"to":4,"excluded":[]},
+    {"areaId":"second-floor-boxes","areaLabel":"2階ボックス席","rowLabel":"ボックス2","from":1,"to":4,"excluded":[]},
+    {"areaId":"second-floor-boxes","areaLabel":"2階ボックス席","rowLabel":"ボックス3","from":1,"to":4,"excluded":[]},
+    {"areaId":"second-floor-boxes","areaLabel":"2階ボックス席","rowLabel":"ボックス4","from":1,"to":4,"excluded":[]},
+    {"areaId":"second-floor-boxes","areaLabel":"2階ボックス席","rowLabel":"ボックス5","from":1,"to":4,"excluded":[]},
+    {"areaId":"second-floor-boxes","areaLabel":"2階ボックス席","rowLabel":"ボックス6","from":1,"to":4,"excluded":[]},
+    {"areaId":"second-floor-boxes","areaLabel":"2階ボックス席","rowLabel":"ボックス7","from":1,"to":4,"excluded":[]},
+    {"areaId":"second-floor-boxes","areaLabel":"2階ボックス席","rowLabel":"ボックス8","from":1,"to":4,"excluded":[]},
+    {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"A","from":4,"to":33,"excluded":[24]},
+    {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"B","from":5,"to":32,"excluded":[]},
+    {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"C","from":6,"to":31,"excluded":[12,25]},
+    {"areaId":"third-floor-boxes","areaLabel":"3階ボックス席","rowLabel":"ボックス9","from":1,"to":4,"excluded":[]},
+    {"areaId":"third-floor-boxes","areaLabel":"3階ボックス席","rowLabel":"ボックス10","from":1,"to":4,"excluded":[]},
+    {"areaId":"third-floor-boxes","areaLabel":"3階ボックス席","rowLabel":"ボックス11","from":1,"to":4,"excluded":[]},
+    {"areaId":"third-floor-boxes","areaLabel":"3階ボックス席","rowLabel":"ボックス12","from":1,"to":4,"excluded":[]},
+    {"areaId":"third-floor-boxes","areaLabel":"3階ボックス席","rowLabel":"ボックス13","from":1,"to":4,"excluded":[]},
+    {"areaId":"third-floor-boxes","areaLabel":"3階ボックス席","rowLabel":"ボックス14","from":1,"to":4,"excluded":[]},
+    {"areaId":"third-floor","areaLabel":"3階席","rowLabel":"A","from":2,"to":35,"excluded":[23,24]},
+    {"areaId":"third-floor","areaLabel":"3階席","rowLabel":"B","from":4,"to":33,"excluded":[24]},
+    {"areaId":"third-floor","areaLabel":"3階席","rowLabel":"C","from":6,"to":31,"excluded":[12,25]},
+    {"areaId":"third-floor","areaLabel":"3階席","rowLabel":"D","from":13,"to":24,"excluded":[]}
+  ]
 }

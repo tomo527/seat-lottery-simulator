@@ -487,6 +487,31 @@
     "dataPath": "/venue-db/venues/nihon-education-center-hitotsubashi-hall-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "nntt-playhouse-standard",
+    "venueGroupId": "nntt-playhouse-standard",
+    "name": "新国立劇場 中劇場",
+    "searchAliases": [
+      "NNTT Playhouse",
+      "新国立劇場〔中劇場〕"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "proscenium-ab-seri",
+        "canonicalName": "プロセニアム形式③ A・B号迫り使用",
+        "seatCount": 906,
+        "dataPath": "/venue-db/venues/nntt-playhouse-standard--proscenium-ab-seri.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "新国立劇場が公式定義するプロセニアム形式③（A・B号迫り使用）の番号席だけを抽選します。他の4基本パターン、最大8席の無番号車椅子スペース、公演別の最前列販売停止は含みません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "oji-hall-standard",
     "name": "銀座 王子ホール",
     "searchAliases": [

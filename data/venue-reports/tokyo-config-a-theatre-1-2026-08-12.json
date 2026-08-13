@@ -1,0 +1,62 @@
+{
+  "reportId":"tokyo-config-a-theatre-1-2026-08-12",
+  "asOf":"2026-08-12",
+  "model":"Sol high",
+  "scope":["ex-theater-ariake","nntt-playhouse","galaxy-theatre"],
+  "venues":[
+    {
+      "id":"ex-theater-ariake",
+      "sourceId":"ex-theater-ariake-standard",
+      "classification":"B_SOURCE_LIMITED",
+      "productionConfigurations":[],
+      "expectedSeatCount":null,
+      "calculatedSeatCount":null,
+      "rangeDiff":null,
+      "ranges":0,
+      "firstPass":"現行ABOUT最大1,546席図を、normal/default要件を課さず最大着席configuration候補として全階確認。",
+      "independentSecondPass":"主催者ページ、FAQ、開場公演公式案内は中通路前全撤去、pit／張出し／花道、車いすspaceを公演別とし、最大図の包含条件・差分番号を公開しない。",
+      "blocker":"最大1,546図の全番号が同時成立するissuer condition、fixed/movable/wheelchair内訳、車いす置換番号をlosslessに確定できない。"
+    },
+    {
+      "id":"nntt-playhouse",
+      "sourceId":"nntt-playhouse-standard",
+      "classification":"PRODUCTION",
+      "productionConfigurations":["proscenium-ab-seri"],
+      "configurationReviewed":"プロセニアム形式③ A・B号迫り使用",
+      "expectedSeatCount":906,
+      "calculatedSeatCount":906,
+      "rangeDiff":0,
+      "ranges":21,
+      "subtotals":{"official":{"firstFloor":719,"secondFloor":187,"total":906},"calculated":{"firstFloor":719,"secondFloor":187,"total":906}},
+      "firstPass":"現行5パターンPDFからA・B号迫り使用の全番号をlossless転記し1F 719 + 2F 187 = 906。",
+      "independentSecondPass":"現行施設ページのissuer condition・階別subtotal・最大8車椅子別scopeを確認後、公式図を独立再抽出し906番号・rangeDiff 0で一致。",
+      "blocker":null,
+      "heldConfigurations":[{"id":"proscenium-abc-seri","expectedSeatCount":788,"calculatedSeatCount":791,"rangeDiff":0,"reason":"C_CONTRADICTIONとして非selectableに分離"}]
+    },
+    {
+      "id":"galaxy-theatre",
+      "sourceId":"galaxy-theatre-standard",
+      "classification":"C_CONTRADICTION",
+      "productionConfigurations":[],
+      "configurationReviewed":"公式通常746番号席図",
+      "expectedSeatCount":746,
+      "calculatedSeatCount":750,
+      "rangeDiff":0,
+      "ranges":38,
+      "subtotals":{"official":{"firstFloor":516,"secondFloor":101,"thirdFloor":129,"total":746},"calculated":{"firstFloor":516,"secondFloor":113,"thirdFloor":121,"total":750}},
+      "firstPass":"現行HTML階別画像から全row・box番号を転記。",
+      "independentSecondPass":"公式PDFを独立再抽出し、同じ750番号・rangeDiff 0で一致。車いす利用時variantは通常配置から分離。",
+      "blocker":"official expected 746 != calculated 750 (+4)。2階+12と3階-8の公式階別矛盾が残る。"
+    }
+  ],
+  "result":{
+    "productionPromotions":1,
+    "selectableConfigurationsAdded":1,
+    "configurationSeatRecordsAdded":906,
+    "productionAfter":{"venues":62,"selectableConfigurations":63,"configurationSeatRecords":85237},
+    "coverageAfter":{"tokyoProduction":"10/76","mustProduction":"6/44","schemaAddressable":{"tokyo":"14/76","MUST":"6/44","SHOULD":"8/28"},"rawProductionFloor":{"MUST":"6/44","SHOULD":"8/28","TOKYO":"14/76"},"addressableConversionProgress":{"MUST":"6/6","SHOULD":"4/8","TOTAL":"10/14"}},
+    "currentTaxonomy":{"A":0,"B":27,"C":8,"D":3},
+    "releaseReady":false,
+    "exactNextAction":"SOL-SHOULD-1 — ex-theater-roppongi, zepp-haneda, zepp-shinjuku only; Sol high"
+  }
+}
