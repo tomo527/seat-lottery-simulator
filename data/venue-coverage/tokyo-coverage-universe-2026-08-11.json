@@ -37,13 +37,13 @@
       "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0}
     },
     "schemaAddressableCoverage": {
-      "tokyoUniverse":{"numerator":14,"denominator":76,"percent":18.4},
+      "tokyoUniverse":{"numerator":12,"denominator":76,"percent":15.8},
       "MUST":{"numerator":6,"denominator":44,"percent":13.6},
-      "SHOULD":{"numerator":8,"denominator":28,"percent":28.6},
+      "SHOULD":{"numerator":6,"denominator":28,"percent":21.4},
       "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0},
-      "confirmedCurrentSchemaNonProductionIds":["national-noh-theatre","musashino-civic-main","jcom-hall-hachioji"],
+      "confirmedCurrentSchemaNonProductionIds":["national-noh-theatre"],
       "confirmedSchemaExtensionNonProductionIds":["nissho-hall"],
-      "note":"14 = current PRODUCTION 10（meijizaとNNTT中劇場のconfiguration conversionを含む）+ current-schema addressable 3 + schema-extension nonproduction 1。TOKYO-CONFIG-A-THEATRE-1でEX THEATER ARIAKEをB、銀河劇場をCへ再分類し、NNTT中劇場の公式プロセニアム形式③をproduction化してcurrent A cohortを0件で閉じた。"
+      "note":"12 = current PRODUCTION 10（meijizaとNNTT中劇場のconfiguration conversionを含む）+ current-schema addressable 1 + schema-extension nonproduction 1。TOKYO-ADDRESSABLE-CONVERSION-1AでJ:COMホール八王子と武蔵野市民文化会館 大ホールをB_SOURCE_LIMITEDへ再分類し、非production addressable cohortから除外した。"
     }
   },
   "mustNonProductionBlockerAudit": {
@@ -186,6 +186,15 @@
       "shouldResearchComplete": true,
       "releaseReady": false,
       "notes": "2件ともB_SOURCE_LIMITED。ヒューリックホール東京は現行リンク公式図の固定886席を886/886/rangeDiff 0で全番号2パス一致し、車いす転換時の撤去対象J列2・3・32・33番と最大2台も確認したが、companion配置が非公開。舞台別の876/856席は見切れ例であり恒久configuration化しない。Forum B7は可変平土間のシアター1,200人例を示すが、公式自身が人数を目安とし、番号席setと車いす／同伴転換を定義しない。"
+    },
+    "TOKYO-ADDRESSABLE-CONVERSION-1A": {
+      "completedAt": "2026-08-13",
+      "scope": ["jcom-hall-hachioji", "musashino-civic-main"],
+      "productionPromotions": 0,
+      "formalHolds": 2,
+      "addressableCohortChanged": true,
+      "releaseReady": false,
+      "notes": "2件ともfresh issuer/operator-owned evidenceでB_SOURCE_LIMITED。J:COMホール八王子は固定1,869席だが車椅子有無で各階席数が変わり、ピット／可倒席と車椅子／同伴の番号対応が未公表。武蔵野市民文化会館 大ホールは固定1,252席と車椅子4席を確認したが、別現行技術客席図は車椅子・着脱／背もたれ記号に番号対応がなく、独立第2パスの全ID・rangeDiffを確定できない。"
     }
   },
   "currentSnapshot": {
@@ -202,14 +211,14 @@
     "userVisibleProductionCoveragePercent":13.2,
     "mustProductionCoveragePercent":13.6,
     "shouldProductionCoveragePercent":14.3,
-    "schemaAddressableCoveragePercent":18.4,
-    "nextMacro":"TOKYO-ADDRESSABLE-CONVERSION-1"
+    "schemaAddressableCoveragePercent":15.8,
+    "nextMacro":"TOKYO-ADDRESSABLE-CONVERSION-1B"
   },
   "releaseGate": {
     "requirements": {
       "researchCompleteness":{"MUST":100.0,"SHOULD":100.0},
       "addressableProductionConversion":{"MUST":100.0,"SHOULD":100.0},
-      "rawProductionFloor":{"MUST":6,"SHOULD":8,"MUST_AND_SHOULD":14,"TOKYO_UNIVERSE":14},
+      "rawProductionFloor":{"MUST":6,"SHOULD":6,"MUST_AND_SHOULD":12,"TOKYO_UNIVERSE":12},
       "configurationSupport":true,
       "fixedOnlyDisclosure":true,
       "productionQuality":true,
@@ -217,7 +226,7 @@
       "releaseCoverageAdequacyReview":true
     },
     "policy": {
-      "dynamicFloorRule":"SHOULD 28/28のformal dispositionが完了。今後のfresh issuer evidenceでschema-addressableと判明した各候補はrequired numeratorとaddressable denominatorへ1件ずつ追加する。既存productionとの置換は認めない。",
+      "rawFloorRule":"raw production floorはcurrent confirmed schema-addressableを全件production化した必要数としてrepo stateからderiveする。B/C/Dへのfresh再分類では減り、新規addressable判明時は増える。既存productionとの置換は認めない。",
       "exclusionRule":"raw denominatorから候補を削除しない。production未達の免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのissuer-owned blockerが記録された場合だけで、A SCHEMA-UNLOCKABLEは免責しない。",
       "optionalIsReleaseBlocker":false,
       "authority":"current readiness and RELEASE READY are derived by venues:release:coverage from repository state; this object contains policy only.",
@@ -299,11 +308,11 @@
     {"id":"hamarikyu-asahi","name":"浜離宮朝日ホール 音楽ホール","area":"中央区・築地","type":"hall","capacity":552,"operating":"active","officialFacilityUrl":"https://www.asahi-hall.jp/hamarikyu/ticket/seat.html","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-hamarikyu-asahi-hall","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"既存production。"},
     {"id":"yurakucho-asahi","name":"有楽町朝日ホール","area":"千代田区・有楽町","type":"hall","capacity":772,"operating":"active","officialFacilityUrl":"https://www.asahi-hall.jp/yurakucho/seat/","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-yurakucho-asahi-hall","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"既存production。"},
     {"id":"forum-b7","name":"東京国際フォーラム ホールB7","area":"千代田区・丸の内","type":"hall","capacity":1200,"operating":"active","officialFacilityUrl":"https://www.t-i-forum.co.jp/organizer/facilities/b7/","seatMap":"official-layout-examples","numberedMap":"no-permanent-numbered-set","inventoryState":"HOLD","inventoryId":"tokyo-official-0017","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-3: B_SOURCE_LIMITED。1,400㎡の可変平土間に公式シアター1,200人例があるが、公式自身が人数を目安とし、恒久番号席set・厳密expected・車いす／同伴転換を定義しない。"},
-    {"id":"musashino-civic-main","name":"武蔵野市民文化会館 大ホール","area":"武蔵野市・中町","type":"hall","capacity":1256,"operating":"active","officialFacilityUrl":"https://www.musashino.or.jp/bunka/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-musashino-civic-main","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"西東京の主要文化ホール。"},
+    {"id":"musashino-civic-main","name":"武蔵野市民文化会館 大ホール","area":"武蔵野市・中町","type":"hall","capacity":1252,"operating":"active","officialFacilityUrl":"https://www.musashino.or.jp/bunka/1002094/1002099.html","seatMap":"official-current-numbered-and-technical-plans","numberedMap":"yes-first-pass-only","inventoryState":"HOLD","inventoryId":"tokyo-musashino-civic-main","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"2026-08-13 TOKYO-ADDRESSABLE-CONVERSION-1A: B_SOURCE_LIMITED。固定1,252（1F 912・2F 340）と車椅子4を現行公式で確認したが、別現行技術客席図は車椅子・着脱／背もたれ記号に番号対応がなく、独立full-ID第2パス／rangeDiffを確定できない。"},
     {"id":"bunkyo-civic-main","name":"文京シビックホール 大ホール","area":"文京区・春日","type":"hall","capacity":1802,"operating":"active","officialFacilityUrl":"https://www.b-academy.jp/hall/large/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0306","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"都心北部の主要文化ホール。"},
     {"id":"meguro-persimmon-main","name":"めぐろパーシモンホール 大ホール","area":"目黒区・八雲","type":"hall","capacity":1200,"operating":"active","officialFacilityUrl":"https://www.persimmon.or.jp/hall/large.html","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-meguro-persimmon-main","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"クラシック・舞台・ライブの地域主要ホール。"},
     {"id":"ota-aprico-main","name":"大田区民ホール・アプリコ 大ホール","area":"大田区・蒲田","type":"hall","capacity":1477,"operating":"active","officialFacilityUrl":"https://www.ota-bunka.or.jp/facilities/aprico/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-ota-aprico-main","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"南東京の主要文化ホール。"},
-    {"id":"jcom-hall-hachioji","name":"J:COMホール八王子","area":"八王子市・子安町","type":"hall","capacity":1877,"operating":"active","officialFacilityUrl":"https://www.hachiojibunka.or.jp/jcom/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-jcom-hall-hachioji","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"多摩地域の大型ライブ・舞台会場。"},
+    {"id":"jcom-hall-hachioji","name":"J:COMホール八王子","area":"八王子市・子安町","type":"hall","capacity":2021,"operating":"active","officialFacilityUrl":"https://jcom.hall-info.jp/about/big_hall.html","seatMap":"official-current-numbered-plans","numberedMap":"yes-unresolved-wheelchair-removable-semantics","inventoryState":"HOLD","inventoryId":"tokyo-jcom-hall-hachioji","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"2026-08-13 TOKYO-ADDRESSABLE-CONVERSION-1A: B_SOURCE_LIMITED。固定1,869と全番号図を確認したが、車椅子有無で各階席数が変わり、ピット／可倒席と車椅子／同伴の番号対応が未公表。"},
     {"id":"risuru-main","name":"たましんRISURUホール 大ホール","area":"立川市・錦町","type":"hall","capacity":1201,"operating":"active","officialFacilityUrl":"https://risuru.hall-info.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-risuru-main","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"既存production。"},
     {"id":"fuchu-dream","name":"府中の森芸術劇場 どりーむホール","area":"府中市・浅間町","type":"hall","capacity":2027,"operating":"active","officialFacilityUrl":"https://www.fuchu-cpf.or.jp/theater/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-fuchu-dream-hall","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"多摩地域の主要舞台・コンサート会場。"},
     {"id":"geidai-sogakudo","name":"東京藝術大学 奏楽堂","area":"台東区・上野公園","type":"hall","capacity":1100,"operating":"active","officialFacilityUrl":"https://www.geidai.ac.jp/department/music/sogakudo","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0330","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"音楽公演の著名会場。"},

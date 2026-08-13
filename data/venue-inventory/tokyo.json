@@ -19356,9 +19356,9 @@
       "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
       "priority": "A",
       "venueSourceId": "jcom-hall-hachioji-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27",
-      "blockingReason": "側面列、車椅子転換席、可倒席を含む固定席1,869席の全range独立照合が未完了。"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-13",
+      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: current official plans publish 1,869 fixed seats and seat IDs, but wheelchair-on/off floor totals plus pit/removable-seat exclusions are not mapped to complete numbered replacement and companion semantics."
     },
     {
       "inventoryId": "tokyo-official-0988",
@@ -20462,13 +20462,13 @@
       "officialFacilityUrl": "https://www.musashino.or.jp/bunka/1002094/1002099.html",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibilityReason": "B_SOURCE_LIMITED。現行公式は固定席1,252（1階912・2階340）と車椅子4席を別掲するが、別現行技術客席図は車椅子・着脱／背もたれ記号のみで番号対応を示さない。独立第2パスで全IDと車椅子／可動席意味を確定できない。",
       "priority": "A",
       "venueSourceId": "musashino-civic-main-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-13",
       "discoveryUrlRaw": "http://www.musashino.or.jp/index.html",
-      "blockingReason": "左右側面ブロックと中央ブロックの同一列統合を含む全range転記が未完了。"
+      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: the current numbered map states 1,252 fixed seats, but the separate current technical seating plan omits seat-number mappings for wheelchair/removable/backrest semantics, so an independent full-ID second pass and rangeDiff cannot be established."
     },
     {
       "inventoryId": "tokyo-official-1044",

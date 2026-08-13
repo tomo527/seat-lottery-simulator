@@ -20,10 +20,10 @@
         },
         "currentEvidenceBasedRawProductionFloor": {
           "must": "6/44 (13.6%)",
-          "should": "8/28 (28.6%)",
-          "mustAndShould": "14/72 (19.4%)",
-          "tokyoUniverse": "14/76 (18.4%)",
-          "dynamicRule": "Each remaining unresearched SHOULD candidate later classified as schema-addressable increases the required numerator by one; it cannot replace an existing required venue."
+          "should": "6/28 (21.4%)",
+          "mustAndShould": "12/72 (16.7%)",
+          "tokyoUniverse": "12/76 (15.8%)",
+          "dynamicRule": "Derive the required numerator from every currently confirmed schema-addressable candidate. Fresh issuer-owned B/C/D reclassification removes a candidate; each newly addressable candidate adds one. It cannot replace an existing required venue."
         },
         "optionalIsReleaseBlocker": false,
         "exclusions": "候補はraw denominatorから削除しない。非production免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDだけで、A SCHEMA-UNLOCKABLEは免責しない。",

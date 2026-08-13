@@ -59,4 +59,15 @@ describe('deterministic Tokyo release coverage contract', () => {
     expect(result.addressableConversionProgress.should).toMatchObject({ status: 'FAIL', numerator: 1, denominator: 2 })
     expect(result.gates.rawProductionFloorAttainmentShould).toMatchObject({ status: 'FAIL', numerator: 1, denominator: 2 })
   })
+
+  it('derives the raw floor from the current addressable cohort instead of a stale stored baseline', () => {
+    const input = coverage({
+      releaseGate: {
+        requirements: { rawProductionFloor: { MUST: 2, SHOULD: 2, MUST_AND_SHOULD: 4, TOKYO_UNIVERSE: 4 } },
+      },
+    })
+    const result = deriveTokyoCoverageContract({ coverage: input, productionCandidateIds: ['must', 'should'], capabilities })
+    expect(result.rawProductionFloor.should).toEqual({ numerator: 1, denominator: 1 })
+    expect(result.gates.rawProductionFloorAttainmentShould.status).toBe('PASS')
+  })
 })

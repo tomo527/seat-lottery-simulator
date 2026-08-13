@@ -29,7 +29,7 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 |---|---:|---:|---:|---:|
 | Research completeness | 72/76 = **94.7%** | 44/44 = **100.0%** | 28/28 = **100.0%** | 0/4 = **0.0%** |
 | User-visible production coverage | 10/76 = **13.2%** | 6/44 = **13.6%** | 4/28 = **14.3%** | 0/4 = **0.0%** |
-| Confirmed schema-addressable coverage | 14/76 = **18.4%** | 6/44 = **13.6%** | 8/28 = **28.6%** | 0/4 = **0.0%** |
+| Confirmed schema-addressable coverage | 12/76 = **15.8%** | 6/44 = **13.6%** | 6/28 = **21.4%** | 0/4 = **0.0%** |
 
 - `Research completeness` は `PRODUCTION / HOLD / CONTRADICTION` のformal disposition率であり、抽選可能率ではない。
 - `User-visible production coverage` はproduction catalogへ入って実際に抽選できる候補だけを数える。アプリ全体の62会場中、Tokyo coverage universeに該当する主要会場は10件である。
@@ -235,7 +235,7 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 
 - Research completeness: MUST **100%**、SHOULD **100%**。
 - Schema-addressable production conversion: MUST **100%**、SHOULD **100%**。AをHOLDのままrelease免責にしない。
-- 現時点のrepo evidenceに基づくraw production floor: MUST **6/44 = 13.6%**、SHOULD **8/28 = 28.6%**、MUST+SHOULD **14/72 = 19.4%**、Tokyo universe **14/76 = 18.4%**。これはaddressable conversion progress（MUST **6/6**、SHOULD **4/8**、全体 **10/14**）とは別指標である。
+- 現時点のrepo evidenceに基づくraw production floor（current confirmed addressableを全件production化した必要数）: MUST **6/44 = 13.6%**、SHOULD **6/28 = 21.4%**、MUST+SHOULD **12/72 = 16.7%**、Tokyo universe **12/76 = 15.8%**。addressable conversion progressはMUST **6/6**、SHOULD **4/6**、全体 **10/12**。
 - 上記floorは任意の目標率ではなく、「既存production + 現行schema addressable + 承認済みschema extension addressable」を全件production化した必要数である。
 - SHOULD 28/28のformal dispositionは完了。今後fresh issuer evidenceで新たなschema-addressable候補が判明するたび、required numeratorとconversion denominatorを1件増やす。既存required venueとの置換は認めない。
 - OPTIONALはrelease blockerにしない。
@@ -354,6 +354,17 @@ production増加は0 venue / 0 selectable configuration / 0 records。production
 production増加は0 venue / 0 selectable configuration / 0 records。productionは **62 venues / 63 selectable configurations / 85,237 records** のまま。research completenessはTokyo **72/76 = 94.7%**、SHOULD **28/28 = 100.0%**。新たなschema-addressable判定はなく、raw production floorはMUST **6/44**、SHOULD **8/28**、Tokyo **14/76**、addressable conversion progressはMUST **6/6**、SHOULD **4/8**、全体 **10/14** で不変。未production addressable全IDは `jcom-hall-hachioji`、`musashino-civic-main`、`national-noh-theatre`、`nissho-hall`。詳細は `data/venue-reports/tokyo-sol-should-3-2026-08-13.json`。
 
 **Exact next action:** `TOKYO-ADDRESSABLE-CONVERSION-1` を `jcom-hall-hachioji`、`musashino-civic-main`、`national-noh-theatre`、`nissho-hall` のみで実行する。前2件は **Terra high**、後2件は **Sol high**。adequacy review自体にはまだ着手しない。
+
+### 2026-08-13 `TOKYO-ADDRESSABLE-CONVERSION-1A` result
+
+`jcom-hall-hachioji` と `musashino-civic-main` を、既存の addressable 判定に依存せず current issuer/operator-owned evidence から再審査した。両方とも **B_SOURCE_LIMITED**。production / selectable の増加は **0 venue / 0 configuration / 0 records** で、production は **62 venues / 63 selectable configurations / 85,237 records** のまま。
+
+- J:COMホール八王子は現行の施設・座席案内と2枚の公式座席図で固定席 **1,869**、最大 **2,021** を確認した。しかし車椅子有無で階別総数が変化し、ピット時の使用不可席と可倒席も併記する一方、車椅子／同伴・可倒席の完全な番号対応がない。よって unique selectable configuration、独立 range pass、`expected == calculated`、`rangeDiff 0` を作らない。
+- 武蔵野市民文化会館 大ホールは現行ページ・番号座席図で固定席 **1,252**（1F 912 + 2F 340）、車椅子 **4** を確認した。だが別現行の技術客席図は車椅子・着脱・背もたれ記号に番号対応を示さず、barrier-free pageも4席だけを確認する。独立第2パスの全ID／車椅子意味／`rangeDiff` は確定できないため、番号を補完しない。
+
+この fresh evidence により canonical addressable cohort とrepo-derived raw production floorは MUST **6/44**、SHOULD **6/28**、Tokyo **12/76** に再計算された。これはcurrent confirmed addressableを全件production化する既存定義に従ったもので、issuer-owned evidenceなしにgateを下げてはいない。addressable conversion progress は MUST **6/6**、SHOULD **4/6**、total **10/12**。remaining nonproduction addressable IDs は `national-noh-theatre` と `nissho-hall` のみ。詳細は `data/venue-reports/tokyo-addressable-conversion-1a-2026-08-13.json`。
+
+**Exact next action:** `TOKYO-ADDRESSABLE-CONVERSION-1B` を `national-noh-theatre`、`nissho-hall` のみで **Sol high** として実行する。adequacy reviewには着手しない。
 
 ## source discipline
 

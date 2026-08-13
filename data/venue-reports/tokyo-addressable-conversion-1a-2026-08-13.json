@@ -1,0 +1,126 @@
+{
+  "reportVersion": 1,
+  "macro": "TOKYO-ADDRESSABLE-CONVERSION-1A",
+  "completedAt": "2026-08-13",
+  "model": "Terra high",
+  "scope": ["jcom-hall-hachioji", "musashino-civic-main"],
+  "rules": {
+    "onlyIssuerOrOperatorOwnedEvidence": true,
+    "noCapacityFitting": true,
+    "noGeometryInference": true,
+    "noOcr": true,
+    "noRepositoryInventedConfiguration": true,
+    "noUnknownNumberCompletion": true,
+    "noPublishedTotalDrivenExclusion": true
+  },
+  "venues": [
+    {
+      "id": "jcom-hall-hachioji",
+      "classification": "B_SOURCE_LIMITED",
+      "production": false,
+      "selectable": false,
+      "currentness": {
+        "status": "confirmed-active",
+        "evidence": [
+          "https://jcom.hall-info.jp/about/big_hall.html",
+          "https://jcom.hall-info.jp/event/seat.html"
+        ],
+        "checkedAt": "2026-08-13"
+      },
+      "issuerDefinedNumberedConfiguration": {
+        "status": "not-losslessly-defined",
+        "normalFixedSeatCount": 1869,
+        "totalCapacity": 2021,
+        "officialPlanUrls": [
+          "https://jcom.hall-info.jp/file/seat120210401.pdf",
+          "https://jcom.hall-info.jp/file/seat220210401.pdf"
+        ]
+      },
+      "wheelchairRemovableVariantSemantics": {
+        "status": "unresolved",
+        "evidence": "Official plans distinguish wheelchair-on/off floor totals, orchestra-pit unavailable seats, and yellow removable seats, but do not map complete numbered wheelchair replacement, companion, and removable-seat semantics.",
+        "repositoryAssumptions": false
+      },
+      "firstPass": {
+        "status": "stopped-before-range-commit",
+        "method": "visual review of current issuer seat plan 1",
+        "result": "Full numbered drawing exists, but it cannot be turned into a unique selectable configuration while official wheelchair/removable semantics remain unmapped."
+      },
+      "independentSecondPass": {
+        "status": "blocked",
+        "method": "current issuer seat plan 2 and current facility/seat pages",
+        "result": "Floor totals change with wheelchair use, but no independent numbered replacement or companion mapping is published."
+      },
+      "expectedSeatCount": 1869,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "productionGate": {
+        "completeRepresentativePattern": false,
+        "independentSecondOfficialSourcePass": false,
+        "wheelchairSemantics": false,
+        "expectedEqualsCalculated": false,
+        "rangeDiffZero": false
+      },
+      "reopenOnlyWhen": "The operator publishes complete numbered mappings for wheelchair/companion use and every removable/pit exclusion for one issuer-defined configuration."
+    },
+    {
+      "id": "musashino-civic-main",
+      "classification": "B_SOURCE_LIMITED",
+      "production": false,
+      "selectable": false,
+      "currentness": {
+        "status": "confirmed-active",
+        "evidence": [
+          "https://www.musashino.or.jp/bunka/1002094/1002099.html",
+          "https://www.musashino.or.jp/bunka/1002098/1002101.html"
+        ],
+        "checkedAt": "2026-08-13"
+      },
+      "issuerDefinedNumberedConfiguration": {
+        "status": "first-pass-only",
+        "normalFixedSeatCount": 1252,
+        "floorSubtotals": {"1F": 912, "2F": 340},
+        "officialNumberedPlanUrl": "https://www.musashino.or.jp/_res/projects/default_project/_page_/001/002/099/dai_hall.pdf"
+      },
+      "wheelchairRemovableVariantSemantics": {
+        "status": "not-independently-mapped",
+        "evidence": "The current facility page separately lists four wheelchair spaces. The separate current technical seating plan marks wheelchair, removable, and reclining/backrest symbols but does not supply their seat-number correspondence or companion semantics.",
+        "technicalPlanUrl": "https://www.musashino.or.jp/_res/projects/default_project/_page_/001/002/101/sisetu-bunka-download_783.pdf",
+        "repositoryAssumptions": false
+      },
+      "firstPass": {
+        "status": "completed-count-and-structure",
+        "method": "300dpi visual review of current official numbered plan",
+        "result": "The plan directly states 1,252 fixed seats (1F 912, 2F 340) and separately marks four wheelchair spaces."
+      },
+      "independentSecondPass": {
+        "status": "blocked",
+        "method": "current official technical seating plan plus barrier-free page",
+        "result": "The technical plan provides wheelchair/removable/backrest symbols without numbered-seat mapping; the barrier-free page confirms four wheelchair spaces but no companion or replacement IDs. A full-ID independent comparison and rangeDiff cannot be established without invention."
+      },
+      "expectedSeatCount": 1252,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "productionGate": {
+        "completeRepresentativePattern": false,
+        "independentSecondOfficialSourcePass": false,
+        "wheelchairSemantics": false,
+        "expectedEqualsCalculated": false,
+        "rangeDiffZero": false
+      },
+      "reopenOnlyWhen": "The operator publishes a current numbered technical plan that maps all wheelchair/removable/backrest positions and companion/replacement treatment, or a second independently published complete numbered plan with zero diff."
+    }
+  ],
+  "summary": {
+    "productionPromotions": 0,
+    "productionVenueCount": 62,
+    "productionConfigurationCount": 63,
+    "productionSeatRecords": 85237,
+    "addressableCohortBefore": {"MUST": 6, "SHOULD": 8, "total": 14},
+    "addressableCohortAfter": {"MUST": 6, "SHOULD": 6, "total": 12},
+    "conversionAfter": {"MUST": "6/6", "SHOULD": "4/6", "total": "10/12"},
+    "rawProductionFloor": {"MUST": "6/44", "SHOULD": "6/28", "Tokyo": "12/76"},
+    "remainingNonProductionAddressableIds": ["national-noh-theatre", "nissho-hall"],
+    "releaseReady": false
+  }
+}
