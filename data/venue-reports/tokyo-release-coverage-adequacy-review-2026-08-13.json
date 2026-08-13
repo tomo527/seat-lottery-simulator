@@ -1,0 +1,112 @@
+{
+  "macro": "TOKYO RELEASE COVERAGE ADEQUACY REVIEW",
+  "reviewedAt": "2026-08-13",
+  "model": "Sol high",
+  "scope": "Independent product-utility review of the canonical 76-venue Tokyo universe after TOKYO-ADDRESSABLE-CONVERSION-1B. No venue promotion, range transcription, production artifact change, or release execution.",
+  "decision": "ADEQUACY FAIL",
+  "decisionBasis": {
+    "notMechanical": "The decision is not derived from the 13.2% rate alone and does not treat B/C/D closure or 10/10 conversion as coverage adequacy.",
+    "coverage": {
+      "Tokyo": "10/76 = 13.2%",
+      "MUST": "6/44 = 13.6%",
+      "SHOULD": "4/28 = 14.3%",
+      "research": {"MUST": "44/44 = 100%", "SHOULD": "28/28 = 100%"},
+      "schemaAddressable": {"production": 10, "nonproduction": 0, "conversion": "10/10 = 100%"}
+    },
+    "utility": {
+      "largeLiveArenaDome": "FAIL: canonical production contains 0 dome, 0 arena, and 0 venue at or above the review-only 3,000-seat large band.",
+      "concertHall": "PARTIAL PASS: Suntory Hall, LINE CUBE SHIBUYA, Hamarikyu Asahi Hall, Yurakucho Asahi Hall, and RISURU provide useful choices, but major 3,000+ multipurpose/live halls remain absent.",
+      "commercialTheatreMusical25d": "PARTIAL PASS: Meijiza, NNTT Playhouse, THEATER MILANO-Za, Sunshine Theatre, and Theater G-Rosso provide real utility, but Tokyo Takarazuka, Shiki theatres, Theatre Orb, ACT, Kabukiza, Nissay, Brillia, and other high-demand MUST venues remain absent.",
+      "mediumLiveHouse": "FAIL: Zepp, EX THEATER, Toyosu PIT, and comparable live-house candidates are all nonproduction.",
+      "otherReservedEvents": "PASS WITH GAPS: the broader 53-venue Tokyo production catalog supplies many civic, classical, lecture, and small theatre choices.",
+      "scale": {"canonicalProduction":{"largeAtLeast3000":0,"medium1000To2999":5,"smallUnder1000":5},"allTokyoProduction":{"largeAtLeast3000":0,"medium1000To2999":12,"smallUnder1000":41}},
+      "clusters": {"centralCore":"usable but selective","majorBayfrontAriakeOdaibaToyosu":"critical gap","Tama":"usable through RISURU and broader civic-hall production","otherMunicipalTokyo":"broadly represented by the noncanonical production catalog"},
+      "claimFit": "An explicit statement that the site offers a verified curated subset would be accurate, but disclosure cannot support a claim that major Tokyo venues are substantially covered while every large arena/dome and all medium live-house candidates are absent."
+    }
+  },
+  "holdTaxonomy": {
+    "currentMustNonProduction": {"total": 38, "A_SCHEMA_UNLOCKABLE": 0, "B_SOURCE_LIMITED": 27, "C_CONTRADICTION": 8, "D_CURRENTNESS_CLOSED": 3},
+    "assessment": "The taxonomy is safety-preserving and the fresh A-to-B/C moves are tied to issuer-owned source gaps or exact contradictions rather than release convenience. It is sufficient to prevent unsafe promotion, but not sufficient to turn missing user-visible venues into positive coverage.",
+    "evidencePackagingCaveat": {
+      "missingLocalSourceJson": ["nippon-budokan","nihombashi-mitsui","shinbashi-enbujo","bunkamura-orchard"],
+      "draftSourceVerificationCheckedAtUnset": ["tokyo-international-forum-c","nhk-hall","tbs-akasaka-act","brillia-hall","yurakucho-yomiuri","tokyo-international-forum-a","nntt-opera","tokyo-geigeki-playhouse"],
+      "impact": "These records remain nonproduction and therefore do not weaken production quality, but they reduce the strength of a positive release-coverage claim and should be normalized only in bounded, utility-prioritized work."
+    }
+  },
+  "criticalCoverageGaps": [
+    {
+      "priority": 1,
+      "venueId": "tokyo-dome",
+      "tier": "MUST",
+      "useCase": "dome / largest-scale live",
+      "currentBlocker": "B_SOURCE_LIMITED with SOURCE/POLICY/SCHEMA HOLD: the public numbered stand map is baseball-only; concert floor, stage closures, accessibility, and special areas are event-dependent.",
+      "adequacyImportance": "It is an obvious high-frequency search target and exposes the complete absence of dome/arena production utility.",
+      "resolvableWithCurrentEvidence": false,
+      "newOfficialMaterialPotential": "low; improvement requires an issuer-owned concert configuration or stable fixed-stand subset with complete numbering and accessibility semantics."
+    },
+    {
+      "priority": 2,
+      "venueId": "nippon-budokan",
+      "tier": "MUST",
+      "useCase": "iconic large arena / central Tokyo live",
+      "currentBlocker": "B_SOURCE_LIMITED: current repository evidence does not completely reconcile the fixed-stand number system and exact fixed-seat total; the local source artifact is also absent.",
+      "adequacyImportance": "A major-Tokyo-venues product without Budokan has a conspicuous search and live-event gap.",
+      "resolvableWithCurrentEvidence": false,
+      "newOfficialMaterialPotential": "moderate; current issuer technical, accessibility, or organizer material may supply a complete fixed subset and also normalize the local evidence package."
+    },
+    {
+      "priority": 3,
+      "venueId": "ariake-arena",
+      "tier": "MUST",
+      "useCase": "large arena / Ariake bayfront",
+      "currentBlocker": "B_SOURCE_LIMITED: issuer gives an 11,232 fixed-seat subtotal but not every fixed row/number or wheelchair/companion/amenity mapping.",
+      "adequacyImportance": "It is the highest-leverage single venue for both large-arena utility and the empty major bayfront cluster.",
+      "resolvableWithCurrentEvidence": false,
+      "newOfficialMaterialPotential": "low to moderate; only a newly published detailed issuer seating or technical package can close it."
+    },
+    {
+      "priority": 4,
+      "venueId": "zepp-haneda",
+      "tier": "SHOULD",
+      "useCase": "medium live-house / Haneda bayfront",
+      "currentBlocker": "B_SOURCE_LIMITED: the basic seated layout is 1,207/1,207 with rangeDiff 0, but wheelchair and companion replacement mapping is event-dependent and unpublished.",
+      "adequacyImportance": "It represents the missing medium live-house use case and adds a practical south-bay option.",
+      "resolvableWithCurrentEvidence": false,
+      "newOfficialMaterialPotential": "moderate because the numbered configuration is already reconciled; an issuer accessibility/organizer document could close the remaining semantics."
+    },
+    {
+      "priority": 5,
+      "venueId": "tokyo-takarazuka",
+      "tier": "MUST",
+      "useCase": "flagship commercial musical / revue theatre",
+      "currentBlocker": "B_SOURCE_LIMITED: the official 2,079-seat general-performance count and map exist, but wheelchair-space inclusion and replacement numbers are unpublished.",
+      "adequacyImportance": "Existing theatre choices make the category partially usable, but this is a conspicuous flagship omission in the commercial-musical experience.",
+      "resolvableWithCurrentEvidence": false,
+      "newOfficialMaterialPotential": "moderate; an issuer-owned accessibility or technical plan could close the narrow remaining mapping gap."
+    }
+  ],
+  "releaseGateAfterReview": {
+    "coverageGate": "FAIL",
+    "releaseReady": false,
+    "soleMechanicalConversionStatus": "PASS 10/10",
+    "adequacyGate": "FAIL",
+    "releaseExecuted": false,
+    "productionArtifactsChanged": false
+  },
+  "validation": {
+    "jsonParsing": "PASS",
+    "reports": ["venues:inventory:report","venues:readiness:report","venues:release:coverage","venues:report"],
+    "venueDatabase": ["venues:build","venues:check","venues:validate"],
+    "application": {"lint":"PASS","typecheck":"PASS","unitTests":"17 files / 140 tests PASS","productionBuild":"PASS","e2e":"13/13 PASS in elevated Miniflare run after expected sandbox registry EPERM"},
+    "productionArtifactRegression": "PASS: no diff from 7f533819ae5745ae826cba660c9cd6912f80a815 under data/venue-sources, public/venue-db, generated catalog, or production fingerprints.",
+    "gitDiffCheck": "PASS",
+    "deploy": "not required; production/selectable data did not change"
+  },
+  "exactNextAction": {
+    "macro": "TOKYO-ADEQUACY-CRITICAL-GAPS-1",
+    "scope": ["nippon-budokan","nhk-hall","zepp-haneda"],
+    "mode": "official-source-discovery-only",
+    "whyThisMinimum": "One iconic large arena, one high-frequency large hall with an older incomplete review package, and one near-complete medium live-house candidate test the three highest-utility gaps without reopening the full 66-venue nonproduction cohort.",
+    "stopConditions": ["Do not transcribe ranges before issuer-defined configuration and accessibility semantics are complete.","Do not infer geometry or fit capacity.","Do not reopen TOKYO-ADDRESSABLE-CONVERSION-1A/1B without changed issuer-owned evidence.","Re-run adequacy before any release decision."]
+  }
+}

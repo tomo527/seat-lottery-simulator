@@ -222,7 +222,7 @@
     "mustProductionCoveragePercent":13.6,
     "shouldProductionCoveragePercent":14.3,
     "schemaAddressableCoveragePercent":13.2,
-    "nextMacro":"TOKYO RELEASE COVERAGE ADEQUACY REVIEW"
+    "nextMacro":"TOKYO-ADEQUACY-CRITICAL-GAPS-1"
   },
   "releaseGate": {
     "requirements": {
@@ -251,11 +251,29 @@
   },
   "releaseCoverageAdequacyReview": {
     "id":"TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
-    "status":"pending",
-    "completedAt":null,
-    "blockerIds":["TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW"],
+    "status":"complete",
+    "completedAt":"2026-08-13",
+    "outcome":"ADEQUACY FAIL",
+    "blockerIds":["TOKYO-ADEQUACY-LARGE-LIVE","TOKYO-ADEQUACY-MEDIUM-LIVE","TOKYO-ADEQUACY-BAYFRONT","TOKYO-ADEQUACY-MAJOR-MUST-DENSITY"],
     "requiredEvidence":["actual user-visible production coverage","B SOURCE-LIMITED exclusions","C CONTRADICTION","D CURRENTNESS/CLOSED","SHOULD research results"],
-    "note":"機械的gateがすべてPASSした後、初回release直前にユーザー視点のcoverage adequacyを1回確認する。"
+    "metrics": {
+      "userVisibleProduction":{"Tokyo":"10/76 = 13.2%","MUST":"6/44 = 13.6%","SHOULD":"4/28 = 14.3%"},
+      "schemaAddressable":{"Tokyo":"10/76 = 13.2%","nonProduction":0},
+      "rawProductionFloor":{"MUST":"6/44","SHOULD":"4/28","MUST_AND_SHOULD":"10/72","Tokyo":"10/76"},
+      "addressableConversion":"10/10 = 100%",
+      "canonicalProductionByType":{"dome":0,"arena":0,"hall":5,"theater":5},
+      "canonicalProductionByReviewScale":{"largeAtLeast3000":0,"medium1000To2999":5,"smallUnder1000":5},
+      "allTokyoProductionByReviewScale":{"largeAtLeast3000":0,"medium1000To2999":12,"smallUnder1000":41}
+    },
+    "findings":[
+      "Conversion 100% is not adequacy: every confirmed addressable venue is production, but the resulting cohort contains no dome, arena, or venue of at least 3,000 seats.",
+      "Concert-hall and commercial-theatre utility exists through Suntory Hall, LINE CUBE SHIBUYA, Meijiza, NNTT Playhouse, THEATER MILANO-Za, Sunshine Theatre, and smaller halls; medium and small selections are practically usable.",
+      "Large-scale live utility is absent, the Ariake/Odaiba/Toyosu major bayfront cluster has no canonical production venue, and no medium live-house candidate is production.",
+      "The 38 nonproduction MUST venues include many venues users are likely to search for; disclosure cannot make a major-Tokyo-venues coverage claim consistent with zero large production choices.",
+      "B/C/D classifications remain safety-preserving and the fresh A-to-B/C reclassifications are issuer-evidence-based, but historical HOLD evidence packaging is uneven: four MUST blocker records have no local source JSON and eight existing draft sources have verification.checkedAt unset."
+    ],
+    "criticalGapVenueIds":["tokyo-dome","nippon-budokan","ariake-arena","zepp-haneda","tokyo-takarazuka"],
+    "exactNextAction":"Run TOKYO-ADEQUACY-CRITICAL-GAPS-1 as an official-source-discovery-only macro for nippon-budokan, nhk-hall, and zepp-haneda. Do not transcribe ranges unless a complete issuer-defined configuration, wheelchair/companion semantics, exact count, and independent current source generation are first established. Re-run adequacy after the bounded macro; do not release or start broad research."
   },
   "candidates": [
     {"id":"tokyo-dome","name":"東京ドーム","area":"文京区・後楽","type":"dome","capacity":55000,"operating":"active","officialFacilityUrl":"https://www.tokyo-dome.co.jp/dome/about/","seatMap":"official-baseball-only","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0319","tier":"MUST","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-12 TOKYO-DOME COMPLEX: SOURCE/POLICY/SCHEMA HOLD。公開stand番号図は野球開催時用、concert arenaは催事別・非掲載で、stage別stand閉鎖、floor仮設番号、車いす／同伴、suite／premium／special areaを含むissuer-defined concert standardがない。"},

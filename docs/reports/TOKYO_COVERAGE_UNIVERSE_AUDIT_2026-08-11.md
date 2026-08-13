@@ -235,7 +235,7 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 
 - Research completeness: MUST **100%**、SHOULD **100%**。
 - Schema-addressable production conversion: MUST **100%**、SHOULD **100%**。AをHOLDのままrelease免責にしない。
-- 現時点のrepo evidenceに基づくraw production floor（current confirmed addressableを全件production化した必要数）: MUST **6/44 = 13.6%**、SHOULD **6/28 = 21.4%**、MUST+SHOULD **12/72 = 16.7%**、Tokyo universe **12/76 = 15.8%**。addressable conversion progressはMUST **6/6**、SHOULD **4/6**、全体 **10/12**。
+- 現時点のrepo evidenceに基づくraw production floor（current confirmed addressableを全件production化した必要数）: MUST **6/44 = 13.6%**、SHOULD **4/28 = 14.3%**、MUST+SHOULD **10/72 = 13.9%**、Tokyo universe **10/76 = 13.2%**。addressable conversion progressはMUST **6/6**、SHOULD **4/4**、全体 **10/10 = 100%**。schema-addressable currentはproduction 10件のみで、nonproduction addressableは0件。
 - 上記floorは任意の目標率ではなく、「既存production + 現行schema addressable + 承認済みschema extension addressable」を全件production化した必要数である。
 - SHOULD 28/28のformal dispositionは完了。今後fresh issuer evidenceで新たなschema-addressable候補が判明するたび、required numeratorとconversion denominatorを1件増やす。既存required venueとの置換は認めない。
 - OPTIONALはrelease blockerにしない。
@@ -269,12 +269,16 @@ Record-only/currentness hold: `ajinomoto-stadium`, `national-theatre-large`, `na
 
 `LUNA-STD-1`、`LUNA-STD-2`、`TERRA-DENSE-1`〜`TERRA-DENSE-4`、`SOL-CPLX-1`、`TOKYO-DOME COMPLEX`は完了済み。historical resultは保持するがactive macroではない。TOKYO-DOME COMPLEXは正式HOLD、production増加0、MUST phaseを閉じた。
 
-Terra active queueは0件。MUST/SHOULD active research queueも0件。SOL-SHOULD-1/2/3は完了し、SHOULD researchは28/28。次はrepo-derived nonproduction addressable 4件のconversionを一つのbounded macroで閉じる。
+Terra active queueは0件。MUST/SHOULD active research queueも0件。SOL-SHOULD-1/2/3とTOKYO-ADDRESSABLE-CONVERSION-1A/1Bは完了し、SHOULD researchは28/28、nonproduction addressableは0件。adequacy reviewは **ADEQUACY FAIL** で完了したため、次は `TOKYO-ADEQUACY-CRITICAL-GAPS-1` を `nippon-budokan`、`nhk-hall`、`zepp-haneda` の公式資料discoveryだけに限定して実行する。
 
 1. `SOL-SHOULD-1`（完了）: `ex-theater-roppongi`, `zepp-haneda`, `zepp-shinjuku`。3件ともB_SOURCE_LIMITEDで正式HOLD。
 2. `SOL-SHOULD-2`（完了）: `toyosu-pit`, `otemachi-mitsui-hall`, `mon-takanawa-box1000`。3件ともB_SOURCE_LIMITEDで正式HOLD。
 3. `SOL-SHOULD-3`（完了）: `hulic-hall-tokyo`, `forum-b7`。2件ともB_SOURCE_LIMITEDで正式HOLD。
-4. `TOKYO-ADDRESSABLE-CONVERSION-1`: `jcom-hall-hachioji`, `musashino-civic-main`, `national-noh-theatre`, `nissho-hall`のみ。これがcurrent repo stateの未production addressable全件。
+4. `TOKYO-ADDRESSABLE-CONVERSION-1A/1B`（完了）: `jcom-hall-hachioji`, `musashino-civic-main`, `national-noh-theatre`, `nissho-hall`。4件ともfresh issuer evidenceでB_SOURCE_LIMITEDとなり、current nonproduction addressableは0件。
+
+## Historical transition log（superseded snapshots）
+
+以下のdated macro内の14/76、10/14、12/76等は、そのmacro終了時点のhistorical snapshotである。current authorityではない。currentはschema-addressable **production 10のみ**、nonproduction addressable **0**、raw floor MUST **6/44**、SHOULD **4/28**、Tokyo **10/76**、conversion **10/10 = 100%**。
 
 ### 2026-08-12 `TOKYO-CONFIG-PILOT-1` / 明治座 result
 
@@ -373,9 +377,25 @@ production増加は0 venue / 0 selectable configuration / 0 records。production
 - 国立能楽堂は現行公式座席図と施設案内で正面245・脇正面190・中正面156・GB36＝**627**、中正面可動6席、2026公演での車椅子スペース利用を確認した。しかし車椅子スペースの627席への包含・置換番号・同伴席・中正面可動6席との関係が未公表で、完全なconfigurationと独立source generationを確定できない。production値は **627/null/null**。
 - ニッショーホールは現行公式客席図と独立の公式音響客席回路図から、full図の一般番号席 **999/999/rangeDiff 0**（1F一般671＋車椅子1、2F一般328、合計1,000）を全番号一致した。1F8列2番は車椅子スペースとして常時外される。一方、3-4番／5-6番を2席ずつ外すvariantについてissuer-defined condition・用途・厳密expectedがなく、車椅子同伴席も未公表。full図や997/995席variantをrepository側で標準configurationとして創作しない。
 
-fresh evidence後のschema-addressableとrepo-derived raw production floorはMUST **6/44**、SHOULD **4/28**、Tokyo **10/76**。addressable conversionはMUST **6/6**、SHOULD **4/4**、total **10/10 = 100%**。全nonproduction addressableは **0件**。`RELEASE READY: NO`はadequacy review未完了により維持する。詳細は `data/venue-reports/tokyo-addressable-conversion-1b-2026-08-13.json`。
+fresh evidence後のschema-addressableとrepo-derived raw production floorはMUST **6/44**、SHOULD **4/28**、Tokyo **10/76**。addressable conversionはMUST **6/6**、SHOULD **4/4**、total **10/10 = 100%**。全nonproduction addressableは **0件**。この1B終了時点では`RELEASE READY: NO`をadequacy review未完了により維持した。現在はadequacy reviewが **ADEQUACY FAIL** で完了し、別のutility blockerによりNOである。詳細は `data/venue-reports/tokyo-addressable-conversion-1b-2026-08-13.json`。
 
 **Exact next action:** `TOKYO RELEASE COVERAGE ADEQUACY REVIEW`。本macroではreview自体に着手していない。
+
+## 2026-08-13 `TOKYO RELEASE COVERAGE ADEQUACY REVIEW` result
+
+判定は **`ADEQUACY FAIL`**。これはcoverage率13.2%だけから機械的に決めたものではなく、conversion 10/10をadequacyとして扱った結果でもない。
+
+- canonical production 10件はhall 5 / theater 5で、dome 0 / arena 0。review用の規模帯ではlarge（3,000席以上）0、medium（1,000〜2,999席）5、small（1,000席未満）5。
+- Tokyo全production 53件はmedium 12 / small 41で、市民ホール・小中規模concert/theatreには実用性がある。サントリーホール、LINE CUBE SHIBUYA、明治座、NNTT中劇場、THEATER MILANO-Za、サンシャイン劇場等によりconcert hallと商業演劇は部分的に利用可能。
+- 一方で大規模live / arena / domeは選択肢0、中規模live-house型も0、主要湾岸Ariake/Odaiba/Toyosu clusterもcanonical production 0。MUST 38 nonproductionには東京ドーム、日本武道館、有明アリーナ、国際フォーラムA、NHKホール、宝塚・四季等の高頻度検索候補が集中する。
+- explicit scope disclosureで「厳選した検証済み会場のみ」と表現することは可能だが、「主要な東京会場をかなり網羅」というproduct experienceとは整合しない。大型用途が0である以上、disclosureだけでは不足を許容できない。
+- HOLD taxonomyはcurrent MUST nonproduction 38 = A0 / B27 / C8 / D3。fresh A→B/Cはissuer-owned不足またはexact contradictionに基づき、release都合の一括除外ではない。ただしhistorical evidence packagingには、local source JSONなし4件、draft sourceの`verification.checkedAt`未設定8件が残る。production品質を弱めないが、positive coverage claimの根拠としては弱い。
+
+critical gapの最小集合は `tokyo-dome`、`nippon-budokan`、`ariake-arena`、`zepp-haneda`、`tokyo-takarazuka`。詳細は `data/venue-reports/tokyo-release-coverage-adequacy-review-2026-08-13.json` と `docs/reports/TOKYO_RELEASE_COVERAGE_ADEQUACY_REVIEW_2026-08-13.md`。
+
+ValidationはJSON parsing、inventory/readiness/release reports、`venues:build/check/validate/report`、lint、typecheck、unit **17 files / 140 tests**、production build、E2E **13/13**、production artifact regression、`git diff --check`がPASS。production data変更なし、deploy不要。
+
+**Exact next action:** `TOKYO-ADEQUACY-CRITICAL-GAPS-1` を `nippon-budokan`、`nhk-hall`、`zepp-haneda` の公式資料discoveryだけに限定して実行する。complete issuer-defined configuration、wheelchair/companion semantics、exact count、独立current source generationが揃う前にrange transcriptionを開始しない。完了後にadequacyを再評価し、releaseはまだ実行しない。
 
 ## source discipline
 
