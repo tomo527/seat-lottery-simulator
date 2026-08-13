@@ -1,0 +1,126 @@
+{
+  "reportId": "tokyo-sol-should-2-2026-08-13",
+  "asOf": "2026-08-13",
+  "model": "Sol high",
+  "scope": ["toyosu-pit", "otemachi-mitsui-hall", "mon-takanawa-box1000"],
+  "baseline": {
+    "productionVenues": 62,
+    "selectableConfigurations": 63,
+    "configurationSeatRecords": 85237,
+    "tokyoUniverse": 76,
+    "tokyoProduction": 10,
+    "tokyoHold": 55,
+    "tokyoContradiction": 2,
+    "tokyoUnresearched": 9,
+    "shouldUnresearched": 5
+  },
+  "venues": [
+    {
+      "id": "toyosu-pit",
+      "classification": "B_SOURCE_LIMITED",
+      "productionConfigurations": [],
+      "currentness": "The current Pia-operated site carries an active August 2026 schedule and directly links the official facility guide. The guide is still the current public technical document; its PDF metadata was last modified 2023-11-27.",
+      "issuerDefinedConfigurations": [
+        {"name":"スタンディング","officialTotal":3103,"numberedSeatExpected":null,"status":"non-selectable"},
+        {"name":"着席","officialTotal":1328,"numberedSeatExpected":1325,"unnumberedWheelchairSpaces":3,"status":"non-selectable"}
+      ],
+      "completeNumberedSeatSetGate": "FAIL",
+      "expectedSeatCount": 1328,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "ranges": 0,
+      "sourceGeneration": "Current operator-linked facility guide, PDF modified 2023-11-27; the live FLOOR page was checked 2026-08-13.",
+      "firstPass": "The live FLOOR page and official guide independently separate standing 3,103 from seated 1,325 chairs plus three wheelchair spaces. The floor is a temporary/event layout and the operator explicitly states that seated placement differs by performance, so no permanent row/seat IDs were transcribed.",
+      "independentSecondPass": "The current public utilization sheet independently recognizes all-seated, standing, and mixed standing-plus-seated use. The FAQ independently states wheelchair arrangements are performance-specific and must be agreed with the promoter. No issuer-owned numbered seating diagram or replacement mapping was found.",
+      "wheelchairSemantics": "Unresolved: three spaces are stated, but their inclusion is only an aggregate 1,325 chairs plus three spaces; no removed/replaced chair numbers or companion positions are published.",
+      "blocker": "The issuer expressly makes the seated layout and wheelchair response performance-dependent. A permanent 1,325-seat floor set would be a repository-created configuration, so range transcription stopped before production review.",
+      "officialSources": [
+        "https://toyosu.pia-pit.jp/",
+        "https://toyosu.pia-pit.jp/floor/index.html",
+        "https://toyosu.pia-pit.jp/spec/index.html",
+        "https://toyosu.pia-pit.jp/assets/images/pdf/spec_01.pdf",
+        "https://toyosu.pia-pit.jp/assets/images/pdf/spec_02.pdf",
+        "https://toyosu.pia-pit.jp/faq/index.html"
+      ]
+    },
+    {
+      "id": "otemachi-mitsui-hall",
+      "classification": "B_SOURCE_LIMITED",
+      "productionConfigurations": [],
+      "currentness": "The current operator site carries an active August 2026 schedule and links current entertainment seat-number drawings. The reviewed 560-seat rollback and 572-seat flat drawings are titled as the 2026-05-29 revisions and their PDF metadata was modified on that date.",
+      "issuerDefinedConfigurations": [
+        {"name":"移動観覧席＋スタッキングチェア 560席","numberedSeatExpected":560,"calculatedSeatCount":560,"rangeDiff":0,"ranges":25,"status":"non-selectable"},
+        {"name":"平土間／RBなし 572席","numberedSeatExpected":572,"calculatedSeatCount":572,"rangeDiff":0,"ranges":22,"status":"non-selectable"},
+        {"name":"エンターテインメント548席","numberedSeatExpected":548,"calculatedSeatCount":null,"rangeDiff":null,"ranges":0,"status":"non-selectable-not-transcribed"},
+        {"name":"平土間／見切れカット560席","numberedSeatExpected":560,"calculatedSeatCount":null,"rangeDiff":null,"ranges":0,"status":"non-selectable-not-transcribed"},
+        {"name":"ポータブルステージ使用時 最大638席","numberedSeatExpected":null,"calculatedSeatCount":null,"rangeDiff":null,"ranges":0,"status":"non-selectable-capacity-only"}
+      ],
+      "completeNumberedSeatSetGate": "PASS_FOR_2026_560_AND_FLAT_572_DRAWINGS",
+      "expectedSeatCount": 560,
+      "calculatedSeatCount": 560,
+      "rangeDiff": 0,
+      "ranges": 25,
+      "secondaryExactConfiguration": {"expectedSeatCount":572,"calculatedSeatCount":572,"rangeDiff":0,"ranges":22},
+      "sourceGeneration": "Both fully transcribed candidate drawings are issuer-titled 2026-05-29 revisions and have matching 2026-05-29 PDF modification dates; they remain linked from the current operator download surface.",
+      "firstPass": "For the rollback 560 drawing, A-J each 1-26 = 260, K 1-20 = 20, and RA-RN each 1-20 = 280, totaling 560. For the flat 572 drawing, A-V each 1-26 = 572.",
+      "independentSecondPass": "Without reusing first-pass ranges, the official equipment sheet independently reconciles the 560 configuration as 280 rollback plus 280 stacking seats. The flat drawing independently provides 22 complete rows of 26 and its issuer title states 572; both passes agree with rangeDiff 0.",
+      "wheelchairSemantics": "Unresolved: the complete drawings contain no dedicated wheelchair IDs or conversion notation, and the current operator material does not publish which temporary/rollback seats are removed or where a companion is placed for accessible viewing.",
+      "blocker": "Two issuer-defined numbered configurations are complete and exact, but configuration-level wheelchair and companion replacement semantics are absent. They cannot be selectable until the operator publishes stable placement and numbered removals or states that wheelchair positions are additional to the numbered set.",
+      "officialSources": [
+        "https://otemachi-hall.jp/",
+        "https://otemachi-hall.jp/website/about_entertainment.html",
+        "https://otemachi-hall.jp/website/equipment.html",
+        "https://otemachi-hall.jp/download.html",
+        "https://otemachi-hall.jp/website/pdf/layout/entertainment/sekiban_560.pdf",
+        "https://otemachi-hall.jp/pdf/layout/entertainment/sekiban_flat_572.pdf",
+        "https://otemachi-hall.jp/schedule/schedule_202608.html"
+      ]
+    },
+    {
+      "id": "mon-takanawa-box1000",
+      "classification": "B_SOURCE_LIMITED",
+      "productionConfigurations": [],
+      "currentness": "The venue opened in 2026 and the live operator page carries current programs, defines seated maximum 1,048 and standing maximum 2,000, and directly links the reviewed seating PDF. The PDF was created 2025-12-06 and is served from the operator's 2025-10 source path.",
+      "issuerDefinedConfigurations": [
+        {"name":"着席仕様 座席配置例","numberedSeatExpected":1048,"calculatedSeatCount":1048,"rangeDiff":0,"ranges":44,"status":"non-selectable"},
+        {"name":"スタンディング仕様","officialTotal":2000,"numberedSeatExpected":null,"status":"non-selectable"}
+      ],
+      "completeNumberedSeatSetGate": "PASS_FOR_OFFICIAL_SEATED_EXAMPLE",
+      "expectedSeatCount": 1048,
+      "calculatedSeatCount": 1048,
+      "rangeDiff": 0,
+      "ranges": 44,
+      "subtotals": {
+        "official": {"A1-A5":182,"B1-B11":402,"C1-C6":216,"E1-E7":248,"total":1048},
+        "calculated": {"A1-A5":182,"B1-B11":402,"C1-C6":216,"E1-E7":248,"total":1048}
+      },
+      "sourceGeneration": "Operator PDF created 2025-12-06, published under the 2025-10 source path, and still directly linked from the current 2026-08-13 Box1000 page.",
+      "firstPass": "Fresh visual transcription covered every A1-A5, B1-B11, C1-C6, and E1-E7 number. The four areas calculate to 182 + 402 + 216 + 248 = 1,048 in 44 explicit ranges.",
+      "independentSecondPass": "A second extraction grouped the map by issuer-printed area subtotals rather than first-pass ranges. Each subtotal and the 1,048 total matched, producing rangeDiff 0.",
+      "wheelchairSemantics": "Unresolved: the seat map contains no wheelchair space or numbered conversion notation. The current accessibility page and current Box1000 ticket pages require wheelchair users and companions to contact the venue before purchase, but do not identify placement, inclusion in 1,048, or removed/replaced seat numbers.",
+      "blocker": "The official seating example is complete and exact, but accessible seating is handled individually without published configuration-level replacement/inclusion semantics. The outdated repository estimate of 1,200 was corrected to the current issuer maximum 1,048 and was not used for capacity fitting.",
+      "officialSources": [
+        "https://montakanawa.jp/facilities/box1000/",
+        "https://montakanawa.jp/wp-content/uploads/2025/10/Box1000%E5%BA%A7%E5%B8%AD%E8%A1%A8_MoN_Takanawa-1.pdf",
+        "https://montakanawa.jp/accessibility/",
+        "https://montakanawa.jp/programs/",
+        "https://ticket.montakanawa.jp/project/s1Oypt1mEm?lang=ja"
+      ]
+    }
+  ],
+  "result": {
+    "productionPromotions": 0,
+    "selectableConfigurationsAdded": 0,
+    "configurationSeatRecordsAdded": 0,
+    "formalHolds": 3,
+    "productionAfter": {"venues":62,"selectableConfigurations":63,"configurationSeatRecords":85237},
+    "tokyoCoverageAfter": {"universe":76,"production":10,"hold":58,"contradiction":2,"unresearched":6,"mustUnresearched":0,"shouldUnresearched":2,"optionalUnresearched":4},
+    "researchCompletenessAfter": {"tokyo":"70/76 (92.1%)","MUST":"44/44 (100.0%)","SHOULD":"26/28 (92.9%)","OPTIONAL":"0/4 (0.0%)"},
+    "schemaAddressableAfter": {"tokyo":"14/76","MUST":"6/44","SHOULD":"8/28"},
+    "rawProductionFloor": {"MUST":"6/44","SHOULD":"8/28","MUST_AND_SHOULD":"14/72","TOKYO":"14/76"},
+    "addressableConversionProgress": {"MUST":"6/6","SHOULD":"4/8","TOTAL":"10/14"},
+    "releaseReady": false,
+    "remainingShould": ["hulic-hall-tokyo","forum-b7"],
+    "exactNextAction": "SOL-SHOULD-3 — hulic-hall-tokyo and forum-b7 only; Sol high"
+  }
+}
