@@ -179,6 +179,7 @@ if (coverage) {
     console.log(`  ${label}: researchCompleteness=${metric(metrics.research)}, userVisibleProductionCoverage=${metric(metrics.production)}, schemaAddressableCohort=${metric(metrics.addressable)}`)
   }
   console.log('  Schema-addressable cohort IDs: ' + tokyoContract.addressableIds.join(', '))
+  console.log('  Nonproduction schema-addressable IDs: ' + (tokyoContract.nonProductionAddressableIds.length ? tokyoContract.nonProductionAddressableIds.join(', ') : '(none)'))
   console.log('  Dynamic SHOULD addressable additions: ' + (tokyoContract.dynamicShouldIds.length ? tokyoContract.dynamicShouldIds.join(', ') : '(none)'))
   console.log('  Raw production floor: ' + [
     `MUST=${metric(tokyoContract.rawProductionFloor.must)}`,

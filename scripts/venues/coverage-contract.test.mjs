@@ -32,6 +32,7 @@ describe('deterministic Tokyo release coverage contract', () => {
   it('does not shrink the addressable cohort when a formally production venue disappears from runtime state', () => {
     const result = deriveTokyoCoverageContract({ coverage: coverage(), productionCandidateIds: ['should'], capabilities })
     expect(result.gates.mustAddressableProductionConversion).toMatchObject({ status: 'FAIL', numerator: 0, denominator: 1, blockerIds: ['must'] })
+    expect(result.nonProductionAddressableIds).toEqual(['must'])
   })
 
   it('derives YES only when every Tokyo gate passes and does not accept a legacy regional input', () => {
@@ -52,6 +53,7 @@ describe('deterministic Tokyo release coverage contract', () => {
     })
     const result = deriveTokyoCoverageContract({ coverage: input, productionCandidateIds: ['must', 'should'], capabilities })
     expect(result.dynamicShouldIds).toEqual(['new-addressable'])
+    expect(result.nonProductionAddressableIds).toEqual(['new-addressable'])
     expect(result.gates.shouldAddressableProductionConversion).toMatchObject({ status: 'FAIL', numerator: 1, denominator: 2, blockerIds: ['new-addressable'] })
     expect(result.rawProductionFloor.should).toEqual({ numerator: 2, denominator: 2 })
     expect(result.addressableConversionProgress.should).toMatchObject({ status: 'FAIL', numerator: 1, denominator: 2 })

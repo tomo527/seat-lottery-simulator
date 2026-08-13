@@ -26,6 +26,10 @@ export const deriveTokyoCoverageContract = ({
     .filter((candidate) => candidate.tier === 'SHOULD' && ['current-schema', 'schema-v2'].includes(candidate.schemaAddressability) && !baselineAddressable.has(candidate.id))
     .map(({ id }) => id)
   const addressableIds = new Set([...baselineAddressable, ...dynamicShouldIds])
+  const nonProductionAddressableIds = candidates
+    .filter((candidate) => addressableIds.has(candidate.id) && !productionIds.has(candidate.id))
+    .map(({ id }) => id)
+    .sort()
   const byTier = (tier) => candidates.filter((candidate) => candidate.tier === tier)
   const tierMetrics = (items) => ({
     research: gate(items.filter((candidate) => candidate.inventoryState !== undispositionedState).length, items.length, idsFor(items.filter((candidate) => candidate.inventoryState === undispositionedState))),
@@ -122,6 +126,7 @@ export const deriveTokyoCoverageContract = ({
       total: addressableGate(mustAndShould),
     },
     addressableIds: [...addressableIds].sort(),
+    nonProductionAddressableIds,
     dynamicShouldIds: [...dynamicShouldIds].sort(),
     gates,
     coverageGateResult: Object.values(gates).every(({ status }) => status === 'PASS') ? 'PASS' : 'FAIL',

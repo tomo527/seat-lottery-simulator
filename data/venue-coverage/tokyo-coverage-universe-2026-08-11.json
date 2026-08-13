@@ -25,9 +25,9 @@
   },
   "coverageMetrics": {
     "researchCompleteness": {
-      "tokyoUniverse":{"numerator":70,"denominator":76,"percent":92.1},
+      "tokyoUniverse":{"numerator":72,"denominator":76,"percent":94.7},
       "MUST":{"numerator":44,"denominator":44,"percent":100.0},
-      "SHOULD":{"numerator":26,"denominator":28,"percent":92.9},
+      "SHOULD":{"numerator":28,"denominator":28,"percent":100.0},
       "OPTIONAL":{"numerator":0,"denominator":4,"percent":0.0}
     },
     "userVisibleProductionCoverage": {
@@ -89,7 +89,7 @@
     "prohibitions":["repository側でconfigurationを創作しない","event-dependent floor番号を恒久seat ID化しない","不完全variantをcapacity fittingしない","wheelchair/pit/花道差分を推測しない","既存production quality gateを緩和しない"],
     "fixedOnlyPolicy":"公式が恒久固定番号席subsetを独立したseat setとして明示し、subsetの完全番号・厳密総数・除外範囲・wheelchair semanticsを確定できる場合のみ、固定席のみconfigurationとしてselectableにできる。会場全体の最大収容を意味しないことをUIで明示する。",
     "knownSchemaExtensionPotential":{"MUST":0,"SHOULD":1,"total":1},
-    "shouldResearchTiming":"schema migration後に開始。SOL-SHOULD-1/2の6件は完了し、残る2件をSOL-SHOULD-3で継続する。"
+    "shouldResearchTiming":"schema migration後のSOL-SHOULD-1/2/3を完了。SHOULD 28/28は全件formal disposition済み。"
   },
   "macroResults": {
     "TOKYO-CONFIG-PILOT-1": {
@@ -177,24 +177,33 @@
       "formalHolds": 3,
       "releaseReady": false,
       "notes": "3件ともB_SOURCE_LIMITED。豊洲PITは着席1,328（椅子1,325＋車いす3）を確認したがfloor番号図がなく配置・車いす対応が催事依存。大手町三井ホールは現行公式560席配置560/560/0とフラット572席配置572/572/0を全番号2パス一致したが、車いす位置・置換番号・同伴席が非公開。MoN Takanawa BOX1000は公式着席例1048/1048/0を全番号2パス一致したが、車いす位置・包含・置換番号・同伴席が非公開。全件non-selectable。"
+    },
+    "SOL-SHOULD-3": {
+      "completedAt": "2026-08-13",
+      "scope": ["hulic-hall-tokyo", "forum-b7"],
+      "productionPromotions": 0,
+      "formalHolds": 2,
+      "shouldResearchComplete": true,
+      "releaseReady": false,
+      "notes": "2件ともB_SOURCE_LIMITED。ヒューリックホール東京は現行リンク公式図の固定886席を886/886/rangeDiff 0で全番号2パス一致し、車いす転換時の撤去対象J列2・3・32・33番と最大2台も確認したが、companion配置が非公開。舞台別の876/856席は見切れ例であり恒久configuration化しない。Forum B7は可変平土間のシアター1,200人例を示すが、公式自身が人数を目安とし、番号席setと車いす／同伴転換を定義しない。"
     }
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
     "production": 10,
-    "hold": 58,
+    "hold": 60,
     "contradiction": 2,
-    "unresearched": 6,
+    "unresearched": 4,
     "mustUnresearched": 0,
-    "shouldUnresearched": 2,
+    "shouldUnresearched": 0,
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
-    "researchCompletenessPercent":92.1,
+    "researchCompletenessPercent":94.7,
     "userVisibleProductionCoveragePercent":13.2,
     "mustProductionCoveragePercent":13.6,
     "shouldProductionCoveragePercent":14.3,
     "schemaAddressableCoveragePercent":18.4,
-    "nextMacro":"SOL-SHOULD-3"
+    "nextMacro":"TOKYO-ADDRESSABLE-CONVERSION-1"
   },
   "releaseGate": {
     "requirements": {
@@ -208,7 +217,7 @@
       "releaseCoverageAdequacyReview":true
     },
     "policy": {
-      "dynamicFloorRule":"残るSHOULD未調査2件のうちschema-addressableと判定された各候補をrequired numeratorとaddressable denominatorへ1件ずつ追加する。既存productionとの置換は認めない。",
+      "dynamicFloorRule":"SHOULD 28/28のformal dispositionが完了。今後のfresh issuer evidenceでschema-addressableと判明した各候補はrequired numeratorとaddressable denominatorへ1件ずつ追加する。既存productionとの置換は認めない。",
       "exclusionRule":"raw denominatorから候補を削除しない。production未達の免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのissuer-owned blockerが記録された場合だけで、A SCHEMA-UNLOCKABLEは免責しない。",
       "optionalIsReleaseBlocker":false,
       "authority":"current readiness and RELEASE READY are derived by venues:release:coverage from repository state; this object contains policy only.",
@@ -281,7 +290,7 @@
     {"id":"zepp-divercity","name":"Zepp DiverCity (TOKYO)","area":"江東区・青海","type":"hall","capacity":2473,"operating":"active","officialFacilityUrl":"https://www.zepp.co.jp/hall/divercity/","seatMap":"partial","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0438","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"ライブ主要会場だが着席時の代表patternが公演依存。既存blockedを維持。"},
     {"id":"zepp-shinjuku","name":"Zepp Shinjuku (TOKYO)","area":"新宿区・歌舞伎町","type":"hall","capacity":1500,"operating":"active","officialFacilityUrl":"https://www.zepp.co.jp/hall/shinjuku/","seatMap":"official-basic-pattern","numberedMap":"yes-b4f-subset","inventoryState":"HOLD","inventoryId":"tokyo-official-0284","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-1: B_SOURCE_LIMITED. 公式椅子使用時はB4F可動番号席530＋B3F standing 163＝693で、B4F 530は全番号2パス一致（rangeDiff 0）するが、barrier-free配置・車いす／同伴の置換番号が催事依存で非公開。"},
     {"id":"toyosu-pit","name":"チームスマイル・豊洲PIT","area":"江東区・豊洲","type":"hall","capacity":3103,"operating":"active","officialFacilityUrl":"https://toyosu.pia-pit.jp/","seatMap":"official-capacity-only","numberedMap":"no-current-complete-map","inventoryState":"HOLD","inventoryId":"tokyo-official-0417","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-2: B_SOURCE_LIMITED。公式着席1,328は椅子1,325＋車いす3だが、1F floorはstanding／seated／mixedの催事別仮設配置で全番号図がなく、車いす対応も主催者確認。恒久番号席setを定義できない。"},
-    {"id":"hulic-hall-tokyo","name":"ヒューリックホール東京","area":"千代田区・有楽町","type":"hall","capacity":900,"operating":"active","officialFacilityUrl":"https://hulic-hall.com/","seatMap":"official","numberedMap":"event-dependent","inventoryState":"未調査","inventoryId":"tokyo-official-0057","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2.5次元・声優・ライブイベントで利用される可変ホール。"},
+    {"id":"hulic-hall-tokyo","name":"ヒューリックホール東京","area":"千代田区・有楽町","type":"hall","capacity":886,"operating":"active","officialFacilityUrl":"https://hulic-theater.com/about-hall/","seatMap":"official-current-fixed-seat-map","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0057","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-3: B_SOURCE_LIMITED。公式固定886席は886/886/rangeDiff 0で全番号2パス一致。車いす転換はJ列2・3・32・33番を撤去し最大2台まで確定するが、companion配置が非公開のためnon-selectable。"},
     {"id":"bunkamura-cocoon","name":"Bunkamura シアターコクーン","area":"渋谷区・道玄坂","type":"theater","capacity":747,"operating":"active","officialFacilityUrl":"https://www.bunkamura.co.jp/cocoon/","seatMap":"partial","numberedMap":"event-dependent","inventoryState":"HOLD","inventoryId":"tokyo-official-0726","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"演劇の著名会場。公演layoutの可変性とcurrentnessを公式公演単位で分ける。"},
     {"id":"kioi-hall","name":"日本製鉄紀尾井ホール","area":"千代田区・紀尾井町","type":"hall","capacity":800,"operating":"renovation","officialFacilityUrl":"https://kioihall.jp/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0025","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"音楽・舞台の著名ホールだがinventory上は改修中。再開・現行図を待つ。"},
     {"id":"yomiuri-otemachi","name":"よみうり大手町ホール","area":"千代田区・大手町","type":"theater","capacity":501,"operating":"active","officialFacilityUrl":"https://www.yomiuri.co.jp/otemachi/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0041","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"舞台・講演・イベント利用。500席基準の下限で継続利用を確認する対象。"},
@@ -289,7 +298,7 @@
     {"id":"national-noh-theatre","name":"国立能楽堂","area":"渋谷区・千駄ヶ谷","type":"theater","capacity":627,"operating":"active","officialFacilityUrl":"https://www.ntj.jac.go.jp/engei/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-national-noh-theatre","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"座席指定型の伝統芸能主要会場。花道・脇正面等のschema表現を要確認。"},
     {"id":"hamarikyu-asahi","name":"浜離宮朝日ホール 音楽ホール","area":"中央区・築地","type":"hall","capacity":552,"operating":"active","officialFacilityUrl":"https://www.asahi-hall.jp/hamarikyu/ticket/seat.html","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-hamarikyu-asahi-hall","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"既存production。"},
     {"id":"yurakucho-asahi","name":"有楽町朝日ホール","area":"千代田区・有楽町","type":"hall","capacity":772,"operating":"active","officialFacilityUrl":"https://www.asahi-hall.jp/yurakucho/seat/","seatMap":"official","numberedMap":"yes","inventoryState":"PRODUCTION","inventoryId":"tokyo-yurakucho-asahi-hall","tier":"SHOULD","difficulty":"STANDARD","model":"Luna","reason":"既存production。"},
-    {"id":"forum-b7","name":"東京国際フォーラム ホールB7","area":"千代田区・丸の内","type":"hall","capacity":1300,"operating":"active","officialFacilityUrl":"https://www.t-i-forum.co.jp/organizer/facilities/b7/","seatMap":"official","numberedMap":"yes","inventoryState":"未調査","inventoryId":"tokyo-official-0017","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"多目的イベント・着席公演の主要候補。"},
+    {"id":"forum-b7","name":"東京国際フォーラム ホールB7","area":"千代田区・丸の内","type":"hall","capacity":1200,"operating":"active","officialFacilityUrl":"https://www.t-i-forum.co.jp/organizer/facilities/b7/","seatMap":"official-layout-examples","numberedMap":"no-permanent-numbered-set","inventoryState":"HOLD","inventoryId":"tokyo-official-0017","tier":"SHOULD","difficulty":"COMPLEX","model":"Sol","reason":"2026-08-13 SOL-SHOULD-3: B_SOURCE_LIMITED。1,400㎡の可変平土間に公式シアター1,200人例があるが、公式自身が人数を目安とし、恒久番号席set・厳密expected・車いす／同伴転換を定義しない。"},
     {"id":"musashino-civic-main","name":"武蔵野市民文化会館 大ホール","area":"武蔵野市・中町","type":"hall","capacity":1256,"operating":"active","officialFacilityUrl":"https://www.musashino.or.jp/bunka/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-musashino-civic-main","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"西東京の主要文化ホール。"},
     {"id":"bunkyo-civic-main","name":"文京シビックホール 大ホール","area":"文京区・春日","type":"hall","capacity":1802,"operating":"active","officialFacilityUrl":"https://www.b-academy.jp/hall/large/","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-official-0306","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"都心北部の主要文化ホール。"},
     {"id":"meguro-persimmon-main","name":"めぐろパーシモンホール 大ホール","area":"目黒区・八雲","type":"hall","capacity":1200,"operating":"active","officialFacilityUrl":"https://www.persimmon.or.jp/hall/large.html","seatMap":"official","numberedMap":"yes","inventoryState":"HOLD","inventoryId":"tokyo-meguro-persimmon-main","tier":"SHOULD","difficulty":"DENSE","model":"Terra","reason":"クラシック・舞台・ライブの地域主要ホール。"},

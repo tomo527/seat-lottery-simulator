@@ -1,0 +1,106 @@
+{
+  "reportId": "tokyo-sol-should-3-2026-08-13",
+  "asOf": "2026-08-13",
+  "model": "Sol high",
+  "scope": ["hulic-hall-tokyo", "forum-b7"],
+  "baseline": {
+    "productionVenues": 62,
+    "selectableConfigurations": 63,
+    "configurationSeatRecords": 85237,
+    "tokyoUniverse": 76,
+    "tokyoProduction": 10,
+    "tokyoHold": 58,
+    "tokyoContradiction": 2,
+    "tokyoUnresearched": 6,
+    "shouldUnresearched": 2
+  },
+  "venues": [
+    {
+      "id": "hulic-hall-tokyo",
+      "classification": "B_SOURCE_LIMITED",
+      "productionConfigurations": [],
+      "currentness": "The active operator site publishes a July 2026 schedule and currently links the reviewed seat chart and equipment material from its download page. The seat chart was created and modified 2018-03-12 and remains the operator's current linked fixed-seat drawing as of 2026-08-13.",
+      "issuerDefinedConfigurations": [
+        {
+          "name": "固定客席886席",
+          "numberedSeatExpected": 886,
+          "calculatedSeatCount": 886,
+          "rangeDiff": 0,
+          "ranges": 31,
+          "status": "non-selectable"
+        }
+      ],
+      "nonConfigurationStageGuides": [
+        {"description":"見切れ10席が発生する場合の使用席数例","guideSeatCount":876},
+        {"description":"見切れ30席が発生する場合の使用席数例","guideSeatCount":856}
+      ],
+      "completeNumberedSeatSetGate": "PASS_FOR_FIXED_886_DRAWING",
+      "expectedSeatCount": 886,
+      "calculatedSeatCount": 886,
+      "rangeDiff": 0,
+      "ranges": 31,
+      "subtotals": {
+        "firstPass": {"B":16,"C":30,"D-BB":800,"CC":20,"DD":20,"total":886},
+        "independentSecondPass": {"B-C":46,"D-BB":800,"CC-DD":40,"total":886}
+      },
+      "sourceGeneration": "Operator seat chart PDF created and modified 2018-03-12 with Adobe Illustrator CC 2017; the current operator download surface still directly links it on 2026-08-13.",
+      "firstPass": "Fresh visual transcription of the current official map produced B 10-25 = 16; C 3-32 = 30; each of D through BB 2-33 = 25 x 32 = 800; and CC/DD each 2-11 plus 24-33 = 20, totaling 886 in 31 explicit ranges.",
+      "independentSecondPass": "Without reusing the first-pass grouping, the fixed rows were re-counted as B-C 46, the 25 full-width rows D-BB 800, and the two split rear rows CC-DD 40. The total independently reconciles to the operator overview/equipment count of 886 and the alternate official visibility PDF's base total of 886, with rangeDiff 0.",
+      "wheelchairSemantics": "Partially resolved but production-blocking: the official seat chart identifies the exact conversion removals as J2, J3, J32, and J33 and states that removing them permits a maximum of two wheelchair positions. It does not define where a companion is seated or whether a companion uses any remaining numbered seat.",
+      "blocker": "The complete fixed 886-seat set, exact count, source generation, and two-pass ranges are resolved, but companion semantics for the official two-position wheelchair conversion are not issuer-defined. The 876/856 visibility drawings are stage-dependent examples rather than named stable configurations and were not permanentized.",
+      "officialSources": [
+        "https://hulic-theater.com/",
+        "https://hulic-theater.com/about-hall/",
+        "https://hulic-theater.com/about-hall/equipment/",
+        "https://hulic-theater.com/download/",
+        "https://hulic-theater.com/wordpress/wp-content/themes/mgs-yht/pdf/layout/seating_chart.pdf",
+        "https://hulic-theater.com/wordpress/wp-content/themes/mgs-yht/pdf/layout/seating_chart_mikire.pdf",
+        "https://hulic-theater.com/entertainment/schedules/"
+      ]
+    },
+    {
+      "id": "forum-b7",
+      "classification": "B_SOURCE_LIMITED",
+      "productionConfigurations": [],
+      "currentness": "The current operator organizer site actively presents Hall B7 as a 1,400-square-metre flat-floor venue and directly links the reviewed full-hall and split-hall layout examples. The screen-equipped theatre PDF was created and modified 2019-04-03; the other current-linked theatre PDF exposes no creation or modification date.",
+      "issuerDefinedConfigurations": [
+        {"name":"全ホール シアター形式例","guideCapacity":1200,"numberedSeatExpected":null,"status":"non-selectable-layout-example"},
+        {"name":"分割ホール シアター形式例","guideCapacityPerHalf":600,"numberedSeatExpected":null,"status":"non-selectable-layout-example"}
+      ],
+      "completeNumberedSeatSetGate": "FAIL",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "ranges": 0,
+      "sourceGeneration": "Current operator-linked theatre-layout PDF 241-02-01-03.pdf has no creation/modification metadata; the current operator-linked theatre-with-screen PDF was created and modified 2019-04-03. Both remain linked from the live B7 layout page on 2026-08-13.",
+      "firstPass": "The live facility and layout pages define a flexible flat floor with theatre, school, reception, exhibition, and split-hall examples. The theatre PDFs draw temporary chairs and stage/screen variants but print no row or seat IDs. The operator expressly states that all B7 layout numbers are estimates.",
+      "independentSecondPass": "The current all-facilities capacity table independently repeats B7 theatre 1,200, school 612, and reception 900 while stating that all capacities other than Halls A and C are estimates. The current barrier-free page identifies permanent wheelchair audience spaces only for Halls A and C, not a stable B7 placement or companion conversion.",
+      "wheelchairSemantics": "Unresolved: no stable B7 wheelchair position, numbered-chair removal, inclusion rule, or companion placement is published for the temporary flat-floor theatre examples.",
+      "blocker": "B7 is an issuer-defined flexible flat-floor space, but its 1,200-seat theatre drawing is an approximate unnumbered temporary layout example rather than a complete exact numbered-seat configuration. Permanent seat IDs, exact expected count, and wheelchair/companion conversion cannot be supplied without repository invention.",
+      "officialSources": [
+        "https://www.t-i-forum.co.jp/organizer/facilities/b7/",
+        "https://www.t-i-forum.co.jp/organizer/facilities/b7/layout/",
+        "https://www.t-i-forum.co.jp/organizer/facilities/b7/layout/241-02-01-03.pdf",
+        "https://www.t-i-forum.co.jp/mt_images/organizer/facilities/b7/layout/b7_layout_theater1200-1screen.pdf",
+        "https://www.t-i-forum.co.jp/organizer/facilities/",
+        "https://www.t-i-forum.co.jp/access/barrier_free/"
+      ]
+    }
+  ],
+  "result": {
+    "productionPromotions": 0,
+    "selectableConfigurationsAdded": 0,
+    "configurationSeatRecordsAdded": 0,
+    "formalHolds": 2,
+    "productionAfter": {"venues":62,"selectableConfigurations":63,"configurationSeatRecords":85237},
+    "tokyoCoverageAfter": {"universe":76,"production":10,"hold":60,"contradiction":2,"unresearched":4,"mustUnresearched":0,"shouldUnresearched":0,"optionalUnresearched":4},
+    "researchCompletenessAfter": {"tokyo":"72/76 (94.7%)","MUST":"44/44 (100.0%)","SHOULD":"28/28 (100.0%)","OPTIONAL":"0/4 (0.0%)"},
+    "schemaAddressableAfter": {"tokyo":"14/76","MUST":"6/44","SHOULD":"8/28"},
+    "rawProductionFloor": {"MUST":"6/44","SHOULD":"8/28","MUST_AND_SHOULD":"14/72","TOKYO":"14/76"},
+    "addressableConversionProgress": {"MUST":"6/6","SHOULD":"4/8","TOTAL":"10/14"},
+    "nonProductionAddressableIds": ["jcom-hall-hachioji","musashino-civic-main","national-noh-theatre","nissho-hall"],
+    "releaseReady": false,
+    "remainingShould": [],
+    "exactNextAction": "TOKYO-ADDRESSABLE-CONVERSION-1 — jcom-hall-hachioji, musashino-civic-main, national-noh-theatre, and nissho-hall only; Terra high for the two dense halls and Sol high for the two complex/schema cases"
+  }
+}

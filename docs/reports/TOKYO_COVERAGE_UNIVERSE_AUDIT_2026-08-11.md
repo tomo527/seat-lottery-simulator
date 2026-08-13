@@ -1,7 +1,7 @@
 # Tokyo coverage universe audit
 
 初回確認日: 2026-08-11（Asia/Tokyo）
-current snapshot更新: 2026-08-13（SOL-SHOULD-2完了後）
+current snapshot更新: 2026-08-13（SOL-SHOULD-3完了後）
 canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.json](../../data/venue-coverage/tokyo-coverage-universe-2026-08-11.json)
 
 この文書は2026-08-11のuniverse監査結果を起点とする。過去macroの結果はhistorical recordとして保持するが、件数・active queue・Exact next actionは上記canonical inventoryの現在値を用いる。
@@ -14,20 +14,20 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 |---|---:|
 | Tokyo候補総数 | 76 |
 | PRODUCTION | 10 |
-| HOLD | 58 |
+| HOLD | 60 |
 | CONTRADICTION | 2 |
-| 未調査 | 6 |
+| 未調査 | 4 |
 | MUST | 44 |
 | SHOULD | 28 |
 | OPTIONAL | 4 |
 
-現在のMUST内訳は PRODUCTION 6、HOLD 36、CONTRADICTION 2、未調査 0。MUST 44件はすべてformal disposition済みだが、ユーザーが抽選できるMUSTは6件だけである。SHOULD内訳は PRODUCTION 4、HOLD 22、未調査 2。OPTIONAL未調査は4でnon-blocking。formal dispositionは調査工程の完了であり、user-visible coverageの完了ではない。release readinessはNOのまま。
+現在のMUST内訳は PRODUCTION 6、HOLD 36、CONTRADICTION 2、未調査 0。MUST 44件はすべてformal disposition済みだが、ユーザーが抽選できるMUSTは6件だけである。SHOULD内訳は PRODUCTION 4、HOLD 24、未調査 0。OPTIONAL未調査は4でnon-blocking。formal dispositionは調査工程の完了であり、user-visible coverageの完了ではない。release readinessはNOのまま。
 
 ## coverage指標の分離
 
 | 指標 | Tokyo universe | MUST | SHOULD | OPTIONAL |
 |---|---:|---:|---:|---:|
-| Research completeness | 70/76 = **92.1%** | 44/44 = **100.0%** | 26/28 = **92.9%** | 0/4 = **0.0%** |
+| Research completeness | 72/76 = **94.7%** | 44/44 = **100.0%** | 28/28 = **100.0%** | 0/4 = **0.0%** |
 | User-visible production coverage | 10/76 = **13.2%** | 6/44 = **13.6%** | 4/28 = **14.3%** | 0/4 = **0.0%** |
 | Confirmed schema-addressable coverage | 14/76 = **18.4%** | 6/44 = **13.6%** | 8/28 = **28.6%** | 0/4 = **0.0%** |
 
@@ -45,7 +45,8 @@ canonical inventory: [data/venue-coverage/tokyo-coverage-universe-2026-08-11.jso
 | SOL-CPLX-1完了後 | 8 | 53 | 2 | 13 | 1 | 8 |
 | TOKYO-DOME COMPLEX完了後 | 8 | 54 | 2 | 12 | 0 | 8 |
 | SOL-SHOULD-1完了後 | 10 | 55 | 2 | 9 | 0 | 5 |
-| SOL-SHOULD-2完了後（current） | 10 | 58 | 2 | 6 | 0 | 2 |
+| SOL-SHOULD-2完了後 | 10 | 58 | 2 | 6 | 0 | 2 |
+| SOL-SHOULD-3完了後（current） | 10 | 60 | 2 | 4 | 0 | 0 |
 | **TOKYO-CONFIG-PILOT-1完了時（historical snapshot）** | **9** | **53** | **2** | **12** | **0** | **8** |
 
 上表の旧件数は各macro当時の結果であり、current queueとして扱わない。
@@ -225,7 +226,7 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 - 大規模ライブ: 東京ドームを含むMUST大規模会場はすべてformal disposition済みだが、current MUST user-visible production coverageは6/44 = **13.6%**に留まる。MUST active research queueが0でもcoverage完了ではない。
 - 有明の新設cluster: SGC HALL ARIAKE、EX THEATER ARIAKEは正式inventory/sourceへ登録し、SOL-CPLX-1で公式blocker付きHOLD。未登録gapは解消済み。
 - 商業舞台/ミュージカル: 東京宝塚劇場、四季劇場［春］［秋］、電通四季劇場［海］、有明四季劇場、日本青年館、天王洲 銀河劇場、シアターH、東京建物 ぴあ シアター。
-- 都心の可変型中規模会場: Kanadevia Hall、EX THEATER ROPPONGI、Zepp Haneda/Shinjukuは正式HOLD。SHOULD未調査は豊洲PIT、ヒューリックホール東京、大手町三井ホール、東京国際フォーラムB7、MoN Takanawa: BOX 1000の5件。
+- 都心の可変型中規模会場: Kanadevia Hall、EX THEATER ROPPONGI、Zepp Haneda/Shinjuku、豊洲PIT、ヒューリックホール東京、大手町三井ホール、東京国際フォーラムB7、MoN Takanawa: BOX 1000は全て公式blocker付きHOLD。SHOULD未調査は0。
 - 既存major HOLD/CONTRADICTION: 東京芸術劇場コンサートホール、東京オペラシティ、日生劇場、歌舞伎座、東京文化会館、Bunkamura、国立代々木等。明治座はhistorical HOLDをschema-v2 pilotで解消済みのproductionであり、このcurrent列挙には含めない。
 
 ## 新しい release-seed-v1 gate
@@ -236,7 +237,7 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 - Schema-addressable production conversion: MUST **100%**、SHOULD **100%**。AをHOLDのままrelease免責にしない。
 - 現時点のrepo evidenceに基づくraw production floor: MUST **6/44 = 13.6%**、SHOULD **8/28 = 28.6%**、MUST+SHOULD **14/72 = 19.4%**、Tokyo universe **14/76 = 18.4%**。これはaddressable conversion progress（MUST **6/6**、SHOULD **4/8**、全体 **10/14**）とは別指標である。
 - 上記floorは任意の目標率ではなく、「既存production + 現行schema addressable + 承認済みschema extension addressable」を全件production化した必要数である。
-- 残るSHOULD未調査5件から新たなschema-addressable候補が判明するたび、required numeratorを1件増やす。既存required venueとの置換は認めない。
+- SHOULD 28/28のformal dispositionは完了。今後fresh issuer evidenceで新たなschema-addressable候補が判明するたび、required numeratorとconversion denominatorを1件増やす。既存required venueとの置換は認めない。
 - OPTIONALはrelease blockerにしない。
 - raw denominatorからHOLD/CONTRADICTIONを削除しない。非production免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのissuer-owned blockerがある場合だけとする。
 - multi-configuration / fixed-only supportとuser-facing scope disclosureをrelease必須にする。
@@ -247,7 +248,7 @@ G-ROSSOのみproduction gateを通過した。IMMとニッショーは番号sche
 
 ## current 未調査queue
 
-未調査6件のうちOPTIONAL record-only/non-blockingは4件（国立劇場大劇場/小劇場、帝国劇場、味の素スタジアム）。MUST未調査は0。SHOULD 2件がactive research queueとして残る。
+未調査4件はすべてOPTIONAL record-only/non-blocking（国立劇場大劇場/小劇場、帝国劇場、味の素スタジアム）。MUST未調査0、SHOULD未調査0で、active research queueはない。
 
 ### 1. Luna STANDARD（残り0件）
 
@@ -257,10 +258,10 @@ LUNA-STD-2で `theater-g-rosso` はPRODUCTION、`imm-theater` と `nissho-hall` 
 
 `TERRA-DENSE-1`〜`TERRA-DENSE-4`で12件すべて正式disposition済み。active Terra queueは0件であり、完了済みmacroを再度activeとして扱わない。
 
-### 3. Sol COMPLEX（残り2件）
+### 3. Sol COMPLEX（残り0件）
 
 MUST: 0件。`tokyo-dome` はTOKYO-DOME COMPLEXで正式HOLD。
-SHOULD: `ex-theater-roppongi`, `zepp-haneda`, `zepp-shinjuku` はSOL-SHOULD-1、`toyosu-pit`, `otemachi-mitsui-hall`, `mon-takanawa-box1000` はSOL-SHOULD-2で正式HOLD。残るactive queueは `hulic-hall-tokyo`, `forum-b7` の2件。
+SHOULD: `ex-theater-roppongi`, `zepp-haneda`, `zepp-shinjuku` はSOL-SHOULD-1、`toyosu-pit`, `otemachi-mitsui-hall`, `mon-takanawa-box1000` はSOL-SHOULD-2、`hulic-hall-tokyo`, `forum-b7` はSOL-SHOULD-3で正式HOLD。active queueは0件。
 
 Record-only/currentness hold: `ajinomoto-stadium`, `national-theatre-large`, `national-theatre-small`, `teikoku-theatre`。閉館/用途依存のためactive queueへ入れず、公式再開・公演利用の新証拠が出た時に再分類する。
 
@@ -268,11 +269,12 @@ Record-only/currentness hold: `ajinomoto-stadium`, `national-theatre-large`, `na
 
 `LUNA-STD-1`、`LUNA-STD-2`、`TERRA-DENSE-1`〜`TERRA-DENSE-4`、`SOL-CPLX-1`、`TOKYO-DOME COMPLEX`は完了済み。historical resultは保持するがactive macroではない。TOKYO-DOME COMPLEXは正式HOLD、production増加0、MUST phaseを閉じた。
 
-Terra active queueは0件。MUST active research queueも0件。SOL-SHOULD-1/2は完了し、SHOULD 2件をSOL-SHOULD-3で継続する。
+Terra active queueは0件。MUST/SHOULD active research queueも0件。SOL-SHOULD-1/2/3は完了し、SHOULD researchは28/28。次はrepo-derived nonproduction addressable 4件のconversionを一つのbounded macroで閉じる。
 
 1. `SOL-SHOULD-1`（完了）: `ex-theater-roppongi`, `zepp-haneda`, `zepp-shinjuku`。3件ともB_SOURCE_LIMITEDで正式HOLD。
 2. `SOL-SHOULD-2`（完了）: `toyosu-pit`, `otemachi-mitsui-hall`, `mon-takanawa-box1000`。3件ともB_SOURCE_LIMITEDで正式HOLD。
-3. `SOL-SHOULD-3`: `hulic-hall-tokyo`, `forum-b7`。多目的event hall型の公式番号図／着席layoutと可変stage・販売variantを確認。
+3. `SOL-SHOULD-3`（完了）: `hulic-hall-tokyo`, `forum-b7`。2件ともB_SOURCE_LIMITEDで正式HOLD。
+4. `TOKYO-ADDRESSABLE-CONVERSION-1`: `jcom-hall-hachioji`, `musashino-civic-main`, `national-noh-theatre`, `nissho-hall`のみ。これがcurrent repo stateの未production addressable全件。
 
 ### 2026-08-12 `TOKYO-CONFIG-PILOT-1` / 明治座 result
 
@@ -282,7 +284,7 @@ schema v2 real-venue pilotは成功した。現行公式資料を再確認し、
 
 会場単位では明治座を1件だけ加算し、Tokyo user-visible productionは9/76、MUSTは5/44。以下はpilot完了時のhistorical snapshotであり、後続fresh reviewsによりcurrent schema-addressable/taxonomyは更新済み。明治座の2configurationは会場を二重計上しない。
 
-pilot時点では残るAを11件として上記4 macroへ分割した。このrolloutは全て完了し、current A cohortは0件。後続のSHOULD 8件research phaseはSOL-SHOULD-2まで完了し、現在は2件が残る。
+pilot時点では残るAを11件として上記4 macroへ分割した。このrolloutは全て完了し、current A cohortは0件。後続のSHOULD 8件research phaseもSOL-SHOULD-3まで完了し、SHOULDは28/28 formal disposition済み。
 
 ### 2026-08-12 `TOKYO-CONFIG-SCHEMA-1` implementation result
 
@@ -342,7 +344,16 @@ production増加は0 venue / 0 selectable configuration / 0 records。production
 
 production増加は0 venue / 0 selectable configuration / 0 records。productionは **62 venues / 63 selectable configurations / 85,237 records** のまま。research completenessはTokyo **70/76 = 92.1%**、SHOULD **26/28 = 92.9%**。新たなschema-addressable判定はないため、raw production floorはMUST **6/44**、SHOULD **8/28**、Tokyo **14/76**、addressable conversion progressはMUST **6/6**、SHOULD **4/8**、全体 **10/14** で不変。詳細は `data/venue-reports/tokyo-sol-should-2-2026-08-13.json`。
 
-**Exact next action:** 残るSHOULD 2件の最終bounded macroとして `SOL-SHOULD-3` を `hulic-hall-tokyo`、`forum-b7` のみ、**Sol high** で実行する。
+### 2026-08-13 `SOL-SHOULD-3` result
+
+`hulic-hall-tokyo`、`forum-b7` は、current issuer/operator-owned evidenceを会場ごとに独立確認し、ともに **B_SOURCE_LIMITED** で正式HOLDとした。
+
+- ヒューリックホール東京はcurrent-linked公式固定席図からB 16、C 30、D〜BB 800、CC 20、DD 20の計886を **886/886/rangeDiff 0** で全番号2パス一致。車いす転換はJ列2・3・32・33番撤去、最大2台まで公式確認したが、companion配置が非公開。舞台による876/856席は見切れ例であり、未定義variantを恒久configuration化していない。
+- 東京国際フォーラムB7は1,400㎡の可変平土間とシアター1,200人例を公式確認。公式自身が人数を目安とし、PDFの仮設椅子には列／席番号がない。厳密expected、complete numbered-seat set、wheelchair／companion転換がないため **null/null/null**。
+
+production増加は0 venue / 0 selectable configuration / 0 records。productionは **62 venues / 63 selectable configurations / 85,237 records** のまま。research completenessはTokyo **72/76 = 94.7%**、SHOULD **28/28 = 100.0%**。新たなschema-addressable判定はなく、raw production floorはMUST **6/44**、SHOULD **8/28**、Tokyo **14/76**、addressable conversion progressはMUST **6/6**、SHOULD **4/8**、全体 **10/14** で不変。未production addressable全IDは `jcom-hall-hachioji`、`musashino-civic-main`、`national-noh-theatre`、`nissho-hall`。詳細は `data/venue-reports/tokyo-sol-should-3-2026-08-13.json`。
+
+**Exact next action:** `TOKYO-ADDRESSABLE-CONVERSION-1` を `jcom-hall-hachioji`、`musashino-civic-main`、`national-noh-theatre`、`nissho-hall` のみで実行する。前2件は **Terra high**、後2件は **Sol high**。adequacy review自体にはまだ着手しない。
 
 ## source discipline
 
