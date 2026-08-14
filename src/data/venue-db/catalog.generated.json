@@ -655,6 +655,31 @@
   },
   {
     "schemaVersion": 2,
+    "id": "nippon-budokan-fixed-stands",
+    "venueGroupId": "nippon-budokan-fixed-stands",
+    "name": "日本武道館",
+    "searchAliases": [
+      "NIPPON BUDOKAN",
+      "武道館"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "fixed-stands-numbered-set",
+        "canonicalName": "固定スタンド全8方向代表配置",
+        "seatCount": 11142,
+        "dataPath": "/venue-db/venues/nippon-budokan-fixed-stands--fixed-stands-numbered-set.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "公式番号図に印字された1階～3階の固定スタンド席を代表配置として抽選します。催事依存のアリーナ仮設席、3階Y列の立見席、番号のない車いす・同伴者運用、ステージ閉鎖席は含みません。",
+        "fixedOnly": true
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "nntt-playhouse-standard",
     "venueGroupId": "nntt-playhouse-standard",
     "name": "新国立劇場 中劇場",

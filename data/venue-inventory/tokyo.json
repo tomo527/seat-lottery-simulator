@@ -1401,13 +1401,12 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.nipponbudokan.or.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "B_SOURCE_LIMITED。2026年版公式施設概要は階別固定席候補11,075席を示すが、固定スタンド全番号、車椅子置換番号、同伴席、独立current番号source generationがない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "TOKYO-WAVE-8C: 現行公式施設概要で固定席候補11,075席を基準化し、公式サイト配下の全8方向番号図を直接転記した11,142席のfixed-only代表配置をproduction化。公称差+67、車いす・同伴、arena、立見、催事閉鎖差はmetadata保持。",
       "priority": "A",
       "venueSourceId": "nippon-budokan-fixed-stands",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: exact current tier subtotals exist, but the complete fixed numbered-seat set and wheelchair/companion replacement mapping are unpublished."
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14"
     },
     {
       "inventoryId": "tokyo-official-0070",

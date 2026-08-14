@@ -69,14 +69,14 @@
     },
     "userVisibleProductionCoverage": {
       "tokyoUniverse": {
-        "numerator": 21,
+        "numerator": 22,
         "denominator": 76,
-        "percent": 27.6
+        "percent": 28.9
       },
       "MUST": {
-        "numerator": 12,
+        "numerator": 13,
         "denominator": 44,
-        "percent": 27.3
+        "percent": 29.5
       },
       "SHOULD": {
         "numerator": 9,
@@ -91,14 +91,14 @@
     },
     "schemaAddressableCoverage": {
       "tokyoUniverse": {
-        "numerator": 21,
+        "numerator": 22,
         "denominator": 76,
-        "percent": 27.6
+        "percent": 28.9
       },
       "MUST": {
-        "numerator": 12,
+        "numerator": 13,
         "denominator": 44,
-        "percent": 27.3
+        "percent": 29.5
       },
       "SHOULD": {
         "numerator": 9,
@@ -112,7 +112,7 @@
       },
       "confirmedCurrentSchemaNonProductionIds": [],
       "confirmedSchemaExtensionNonProductionIds": [],
-      "note": "21 = current PRODUCTION 21（TOKYO-WAVE-8Bの代々木第一固定8,636番号席と東京体育館固定5,179番号席を含む）。車椅子・可動席・arena/floor・公式総数差はscope/confidence metadataに保持する。"
+      "note": "22 = current PRODUCTION 22（TOKYO-WAVE-8Cの日本武道館fixed-only代表番号集合11,142席を含む）。車椅子・可動席・arena/floor・公式総数差はscope/confidence metadataに保持する。"
     }
   },
   "mustNonProductionBlockerAudit": {
@@ -123,8 +123,8 @@
       "C_CONTRADICTION": 4,
       "D_CURRENTNESS_CLOSED": 3
     },
-    "currentNonProductionCount": 34,
-    "basis": "40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。meijizaとNNTT中劇場、TOKYO-WAVE-8 RECOVERYの東京宝塚劇場と代々木第二、TOKYO-WAVE-8Bの代々木第一と東京体育館をproduction化した。current nonproductionは34件、current Aは0件。",
+    "currentNonProductionCount": 33,
+    "basis": "40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。meijizaとNNTT中劇場、TOKYO-WAVE-8 RECOVERYの東京宝塚劇場と代々木第二、TOKYO-WAVE-8Bの代々木第一と東京体育館、TOKYO-WAVE-8Cの日本武道館をproduction化した。current nonproductionは33件、current Aは0件。",
     "classes": {
       "A_SCHEMA_UNLOCKABLE": {
         "count": 0,
@@ -138,10 +138,9 @@
         "note": "TOKYO-CONFIG-A-THEATRE-1完了後、current A cohortは0件。"
       },
       "B_SOURCE_LIMITED": {
-        "count": 26,
+        "count": 25,
         "venueIds": [
           "tokyo-dome",
-          "nippon-budokan",
           "musashino-forest-sport-plaza",
           "tokyo-garden-theater",
           "tokyo-international-forum-c",
@@ -408,6 +407,19 @@
       "releaseReady": false,
       "notes": "3件ともB_SOURCE_LIMITED維持。日本武道館は2026年版施設概要で固定階別候補11,075席を確認したが全番号・wheelchair／companion mapping・独立current番号generationなし。NHKは固定3,400席と2016番号図を確認したがcurrent独立generationとwheelchair semanticsなし。Zepp Hanedaは1,207/1,207/rangeDiff 0を維持するがoperatorが基本図・barrier-free配置を催事依存と明記し、新しい恒久置換資料なし。range転記、production promotion、gate緩和なし。"
     },
+    "TOKYO-WAVE-8C": {
+      "completedAt": "2026-08-14",
+      "scope": [
+        "nippon-budokan"
+      ],
+      "productionPromotions": 1,
+      "mappedConfigurationSeats": 11142,
+      "officialFixedSubtotal": 11075,
+      "difference": 67,
+      "confidence": "approximate",
+      "releaseReady": true,
+      "notes": "現行2026年版公式施設概要で固定3層11,075席を基準化し、公式サイト配下で現行掲載される旧generationの全8方向番号図を600 DPIで直接転記。方向別secondary詳細図で局所照合し、1階3,190・2階3,680・3階4,272＝11,142印字IDを採用した。+67はmetadata保持し、capacity fitting・架空ID追加なし。arena仮設、Y列立見、車いす／同伴変換、催事閉鎖はscope外。"
+    },
     "REPRESENTATIVE-COVERAGE-POLICY-MIGRATION": {
       "completedAt": "2026-08-14",
       "productionPromotions": 0,
@@ -420,8 +432,8 @@
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
-    "production": 21,
-    "hold": 50,
+    "production": 22,
+    "hold": 49,
     "contradiction": 1,
     "unresearched": 4,
     "mustUnresearched": 0,
@@ -429,11 +441,11 @@
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
     "researchCompletenessPercent": 94.7,
-    "userVisibleProductionCoveragePercent": 27.6,
-    "mustProductionCoveragePercent": 27.3,
+    "userVisibleProductionCoveragePercent": 28.9,
+    "mustProductionCoveragePercent": 29.5,
     "shouldProductionCoveragePercent": 32.1,
-    "schemaAddressableCoveragePercent": 27.6,
-    "nextMacro": "TOKYO-WAVE-8C — nippon-budokan"
+    "schemaAddressableCoveragePercent": 28.9,
+    "nextMacro": "TOKYO-WAVE-9 proposal — tokyo-garden-theater, nhk-hall, nihon-seinenkan, nissho-hall, national-noh-theatre"
   },
   "releaseGate": {
     "policyVersion": "representative-coverage-v2",
@@ -466,16 +478,16 @@
     "id": "TOKYO-REPRESENTATIVE-COVERAGE-RELEASE-REVIEW",
     "status": "complete",
     "completedAt": "2026-08-14",
-    "outcome": "RELEASE READY AFTER TOKYO-WAVE-8 RECOVERY",
+    "outcome": "RELEASE READY AFTER TOKYO-WAVE-8",
     "blockerIds": [],
     "criteria": {
       "applicationHealth": "PASS: TOKYO-WAVE-5 completed the full venue/application regression after production generation.",
       "representativeMajorUseCoverage": "PASS: Galaxy Theatre adds a high-demand Tokyo theatre representative and Zepp Haneda adds a medium live-house representative.",
-      "practicalTokyoMajorVenueCoverage": "PASS: Wave 8 recovery adds Tokyo Takarazuka Theatre and Yoyogi Second Gymnasium from complete current official numbered maps without inventing seat IDs or fitting capacity.",
+      "practicalTokyoMajorVenueCoverage": "PASS: Wave 8 adds Tokyo Takarazuka Theatre, both Yoyogi gymnasiums, Tokyo Gymnasium, and Nippon Budokan fixed-stand representative configurations without inventing seat IDs or fitting capacity.",
       "representativeCoverageDisclosure": "PASS: global UI and terms disclosure remains present for representative configurations.",
-      "productionQuality": "PASS: both Wave 8 recovery configurations record current official sources, complete mapped ranges, scope/accessibility differences, and the no-fitting/no-invented-ID controls."
+      "productionQuality": "PASS: all Wave 8 configurations record official sources, complete mapped ranges for their declared scope, total/accessibility/dynamic-area differences, and the no-fitting/no-invented-ID controls."
     },
-    "exactNextAction": "TOKYO-WAVE-8C — 日本武道館. Continue the current official numbered-map recovery under representative-coverage-v2 without capacity fitting or invented seat IDs."
+    "exactNextAction": "Propose TOKYO-WAVE-9 for tokyo-garden-theater, nhk-hall, nihon-seinenkan, nissho-hall, and national-noh-theatre, prioritizing current complete numbered maps and fixed-only/representative scopes."
   },
   "historicalReleaseCoverageAdequacyReview": {
     "id": "TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
@@ -571,14 +583,14 @@
       "capacity": 14501,
       "operating": "active",
       "officialFacilityUrl": "https://www.nipponbudokan.or.jp/",
-      "seatMap": "official-facility-overview-only",
-      "numberedMap": "incomplete-public-current-generation",
-      "inventoryState": "HOLD",
+      "seatMap": "official-current-linked-complete-fixed-stand-map",
+      "numberedMap": "yes",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-nippon-budokan-fixed-stands",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Sol",
-      "reason": "2026-08-13 TOKYO-ADEQUACY-CRITICAL-GAPS-1: B_SOURCE_LIMITED。2026年版公式施設概要は固定階別3,199＋3,604＋4,272＝11,075席候補を示すが、全固定番号、車いす／同伴置換番号、独立current番号generationがない。"
+      "reason": "TOKYO-WAVE-8C: current-linked official complete numbered map directly yields a fixed-stand representative set of 11,142 printed IDs (1F 3,190 / 2F 3,680 / 3F 4,272). The +67 versus the current official fixed subtotal 11,075 is preserved without fitting; arena, standing Y, wheelchair/companion conversion and event closures are excluded metadata. confidence=approximate."
     },
     {
       "id": "yoyogi-1",

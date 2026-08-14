@@ -1,0 +1,17 @@
+{
+  "batchId": "tokyo-wave-8c-representative-coverage",
+  "createdAt": "2026-08-14",
+  "scope": "TOKYO-WAVE-8C bounded batch for Nippon Budokan only. Anchor fixed-stand structure and official subtotals in current official material, directly transcribe every printed ID from the complete current-linked official numbered map at high resolution, use reputable secondary direction maps only for local cross-check, and preserve total/accessibility/arena/standing differences without capacity fitting or invented identifiers.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["nippon-budokan-fixed-stands"],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-nippon-budokan-fixed-stands",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "Representative coverage v2 permits production from one complete printed fixed-stand ID set with published differences retained as metadata; do not return to HOLD solely because the complete numbered map is an older current-linked official generation or wheelchair conversion is unpublished.",
+      "recheckNotBefore": "2026-08-14"
+    }
+  ]
+}

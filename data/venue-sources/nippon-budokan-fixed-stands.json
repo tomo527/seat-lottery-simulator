@@ -1,68 +1,2712 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "nippon-budokan-fixed-stands",
-  "name": "日本武道館 固定スタンド席候補",
+  "name": "日本武道館",
   "prefecture": "東京都",
   "city": "千代田区",
-  "aliases": ["NIPPON BUDOKAN"],
+  "aliases": [
+    "NIPPON BUDOKAN",
+    "武道館"
+  ],
   "venueType": "arena",
-  "representativePattern": {
-    "id": "fixed-stands-only",
-    "name": "固定スタンド席のみ候補",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "現行2026年版の発行者施設概要は1階3,199席、2階3,604席、3階4,272席を、アリーナ仮設2,946席と3階立見480席から分離して示す。しかし固定スタンドの完全なrow・seat number集合、車椅子利用時の置換番号、同伴席を公開しないためB_SOURCE_LIMITED。",
-    "notIncludedPatterns": ["アリーナ仮設席", "3階立見席", "催事別ステージ閉鎖席", "車椅子・同伴者の未定義置換variant"]
-  },
   "sources": [
     {
       "id": "official-current-facility-brochure",
       "official": true,
-      "roles": ["facility", "seat-count", "seat-structure", "event-layout"],
+      "roles": [
+        "facility",
+        "seat-count",
+        "seat-structure",
+        "event-layout"
+      ],
       "publisher": "公益財団法人日本武道館",
       "title": "日本武道館 2026年版施設概要パンフレット",
       "url": "https://www.nipponbudokan.or.jp/pdf/202604.pdf",
-      "checkedAt": "2026-08-13"
+      "checkedAt": "2026-08-14"
     },
     {
-      "id": "official-current-site",
+      "id": "official-numbered-seat-map",
       "official": true,
-      "roles": ["facility", "event-layout"],
+      "roles": [
+        "seat-structure",
+        "event-layout"
+      ],
       "publisher": "公益財団法人日本武道館",
-      "title": "日本武道館 公式サイト",
-      "url": "https://www.nipponbudokan.or.jp/",
-      "checkedAt": "2026-08-13"
+      "title": "日本武道館座席図（全8方向・1階～3階番号入り固定スタンド図）",
+      "url": "https://www.nipponbudokan.or.jp/pdf/about/2007.pdf",
+      "checkedAt": "2026-08-14"
     },
     {
-      "id": "official-current-access",
+      "id": "official-seat-finding-guide",
       "official": true,
-      "roles": ["facility"],
+      "roles": [
+        "seat-structure"
+      ],
       "publisher": "公益財団法人日本武道館",
-      "title": "日本武道館 アクセス",
-      "url": "https://www.nipponbudokan.or.jp/about/access",
-      "checkedAt": "2026-08-13"
+      "title": "座席の探し方（方向・階・列・番号の座席表示例）",
+      "url": "https://www.nipponbudokan.or.jp/pdf/shinkoujigyou/rensei/2025/kendo_zaseki_sagashikata.pdf",
+      "checkedAt": "2026-08-14"
     }
   ],
-  "registeredScope": "B_SOURCE_LIMITED / SOURCE HOLD。現行発行者資料の階別固定席候補11,075席は確認したが、全固定番号と車椅子・同伴者の恒久置換規則を確認できないためrangeを登録しない。",
-  "completenessBasis": "第1パスで2026年版施設概要PDFの現行metadataと施設概要ページを目視し、1階3,199、2階3,604、3階4,272、別scopeのアリーナ仮設2,946、3階立見480、最大14,501を確認した。独立current sourceとして公式サイトとアクセス資料を確認したが、完全番号図・wheelchair replacement map・companion mappingはなく、全IDを独立照合できるcurrent source generationも発見できなかった。",
-  "transformation": "階別subtotalからseat IDsをcapacity fittingせず、写真・geometryからrow/numberを補完せず、historical brochureの車椅子数をcurrent configurationへ混在させない。",
-  "knownLimitations": [
-    "B_SOURCE_LIMITED: 現行発行者資料は固定スタンド全席のrow・seat numberを公開しない。",
-    "B_SOURCE_LIMITED: 車椅子スペースが置換する固定番号席と同伴席の恒久mappingが未公表。",
-    "B_SOURCE_LIMITED: 全固定番号を独立照合できる同一current source generationがない。"
-  ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": "2026-08-13",
-    "method": "current-official-source-discovery-and-independent-generation-hold",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "固定スタンド11,075席候補の全row・全seat numberが未公表。",
-      "車椅子・同伴者の置換番号と固定席総数への包含関係が未公表。",
-      "完全番号集合を独立照合できるcurrent issuer source generationがない。"
-    ]
-  },
-  "ranges": []
+  "configurations": [
+    {
+      "id": "fixed-stands-numbered-set",
+      "canonicalName": "固定スタンド全8方向代表配置",
+      "selectionBasis": "現行公式施設概要で固定3層と公称内訳を基準化し、公式サイトで現行掲載されている全8方向・全列番号入り座席図を600 DPIで方向別に直接転記した。方向別詳細図を公開するsecondaryで局所照合し、公式図に印字された固定スタンド番号席だけを採用する。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "current 2026 official capacity brochure plus current-linked older official complete numbered map, visually transcribed at 600 DPI and locally cross-checked against eight secondary direction maps on 2026-08-14",
+      "sourceIds": [
+        "official-current-facility-brochure",
+        "official-numbered-seat-map",
+        "official-seat-finding-guide"
+      ],
+      "differenceBasisSourceIds": [
+        "official-current-facility-brochure",
+        "official-numbered-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 11075,
+      "scope": {
+        "kind": "fixed-only",
+        "issuerDefined": false,
+        "containsEventDependentSeatIds": false,
+        "excludesDynamicAreas": true,
+        "maximumCapacity": false,
+        "excludedAreas": [
+          "アリーナ仮設席2,946席",
+          "3階Y列の立見席480席",
+          "催事別ステージ・機材による閉鎖席",
+          "番号のない車いす・同伴者運用"
+        ],
+        "exactSubtotal": 11142
+      },
+      "scopeDisclosure": "公式番号図に印字された1階～3階の固定スタンド席を代表配置として抽選します。催事依存のアリーナ仮設席、3階Y列の立見席、番号のない車いす・同伴者運用、ステージ閉鎖席は含みません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "固定番号席から車いす・同伴者位置へ転換する恒久的なseat ID対応は公表されていないため、通常の印字番号集合を保持し、番号のないspaceはseat IDとして作成しない。",
+        "sourceIds": [
+          "official-current-facility-brochure",
+          "official-numbered-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "approximate",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-14",
+        "method": "official-600dpi-eight-direction-direct-visual-transcription-with-secondary-local-cross-check",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "公式番号図の印字集合は1階3,190席、2階3,680席、3階4,272席、計11,142席。現行2026年版公式固定席内訳1階3,199席、2階3,604席、3階4,272席、計11,075席に対して+67席であり、階別差は-9/+76/0。番号を削除・補完して公称値へ合わせていない。",
+          "公式番号図は現在も公式サイト配下で公開される完全図だがPDF generationは旧版で、現行公称内訳との差があるためconfidenceをapproximateとする。",
+          "東・西1階はA列がなく、南1階K列はミキシングルーム脇の1～12番、他方向1階K列は1～20番・25～34番。2階G～M列は26～35番が出入口欠番であることを公式高解像度図と方向別secondary図で一致確認した。",
+          "アリーナ仮設席、3階Y列立見席、番号のない車いす・同伴者運用、催事別閉鎖席はfixed-only代表配置へ含めない。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "A",
+          "from": 7,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "B",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "C",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "E",
+          "from": 4,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "G",
+          "from": 2,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "north-1f",
+          "areaLabel": "1階 北",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 34,
+          "excluded": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "A",
+          "from": 12,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "B",
+          "from": 11,
+          "to": 50,
+          "excluded": []
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "C",
+          "from": 10,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "D",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "E",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "F",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "G",
+          "from": 11,
+          "to": 50,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 51,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 52,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "K",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "L",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "north-2f",
+          "areaLabel": "2階 北",
+          "rowLabel": "M",
+          "from": 7,
+          "to": 54,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "N",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "P",
+          "from": 7,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "Q",
+          "from": 6,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "R",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "S",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "T",
+          "from": 4,
+          "to": 57,
+          "excluded": []
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "U",
+          "from": 3,
+          "to": 58,
+          "excluded": []
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "V",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "W",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "north-3f",
+          "areaLabel": "3階 北",
+          "rowLabel": "X",
+          "from": 1,
+          "to": 60,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "A",
+          "from": 7,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "B",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "C",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "E",
+          "from": 4,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "G",
+          "from": 2,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-1f",
+          "areaLabel": "1階 北東",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 34,
+          "excluded": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "A",
+          "from": 12,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "B",
+          "from": 11,
+          "to": 50,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "C",
+          "from": 10,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "D",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "E",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "F",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "G",
+          "from": 11,
+          "to": 50,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 51,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 52,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "K",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "L",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northeast-2f",
+          "areaLabel": "2階 北東",
+          "rowLabel": "M",
+          "from": 7,
+          "to": 54,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "N",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "P",
+          "from": 7,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "Q",
+          "from": 6,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "R",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "S",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "T",
+          "from": 4,
+          "to": 57,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "U",
+          "from": 3,
+          "to": 58,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "V",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "W",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "northeast-3f",
+          "areaLabel": "3階 北東",
+          "rowLabel": "X",
+          "from": 1,
+          "to": 60,
+          "excluded": []
+        },
+        {
+          "areaId": "east-1f",
+          "areaLabel": "1階 東",
+          "rowLabel": "B",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "east-1f",
+          "areaLabel": "1階 東",
+          "rowLabel": "C",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "east-1f",
+          "areaLabel": "1階 東",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "east-1f",
+          "areaLabel": "1階 東",
+          "rowLabel": "E",
+          "from": 4,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "east-1f",
+          "areaLabel": "1階 東",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "areaId": "east-1f",
+          "areaLabel": "1階 東",
+          "rowLabel": "G",
+          "from": 2,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "east-1f",
+          "areaLabel": "1階 東",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "east-1f",
+          "areaLabel": "1階 東",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "east-1f",
+          "areaLabel": "1階 東",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 34,
+          "excluded": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "A",
+          "from": 12,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "B",
+          "from": 11,
+          "to": 50,
+          "excluded": []
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "C",
+          "from": 10,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "D",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "E",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "F",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "G",
+          "from": 11,
+          "to": 50,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 51,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 52,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "K",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "L",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "east-2f",
+          "areaLabel": "2階 東",
+          "rowLabel": "M",
+          "from": 7,
+          "to": 54,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "N",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "P",
+          "from": 7,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "Q",
+          "from": 6,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "R",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "S",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "T",
+          "from": 4,
+          "to": 57,
+          "excluded": []
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "U",
+          "from": 3,
+          "to": 58,
+          "excluded": []
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "V",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "W",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "east-3f",
+          "areaLabel": "3階 東",
+          "rowLabel": "X",
+          "from": 1,
+          "to": 60,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "A",
+          "from": 7,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "B",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "C",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "E",
+          "from": 4,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "G",
+          "from": 2,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-1f",
+          "areaLabel": "1階 南東",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 34,
+          "excluded": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "A",
+          "from": 12,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "B",
+          "from": 11,
+          "to": 50,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "C",
+          "from": 10,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "D",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "E",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "F",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "G",
+          "from": 11,
+          "to": 50,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 51,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 52,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "K",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "L",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southeast-2f",
+          "areaLabel": "2階 南東",
+          "rowLabel": "M",
+          "from": 7,
+          "to": 54,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "N",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "P",
+          "from": 7,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "Q",
+          "from": 6,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "R",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "S",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "T",
+          "from": 4,
+          "to": 57,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "U",
+          "from": 3,
+          "to": 58,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "V",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "W",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "southeast-3f",
+          "areaLabel": "3階 南東",
+          "rowLabel": "X",
+          "from": 1,
+          "to": 60,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "A",
+          "from": 7,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "B",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "C",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "E",
+          "from": 4,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "G",
+          "from": 2,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "south-1f",
+          "areaLabel": "1階 南",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "A",
+          "from": 12,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "B",
+          "from": 11,
+          "to": 50,
+          "excluded": []
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "C",
+          "from": 10,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "D",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "E",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "F",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "G",
+          "from": 11,
+          "to": 50,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 51,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 52,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "K",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "L",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "south-2f",
+          "areaLabel": "2階 南",
+          "rowLabel": "M",
+          "from": 7,
+          "to": 54,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "N",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "P",
+          "from": 7,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "Q",
+          "from": 6,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "R",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "S",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "T",
+          "from": 4,
+          "to": 57,
+          "excluded": []
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "U",
+          "from": 3,
+          "to": 58,
+          "excluded": []
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "V",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "W",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "south-3f",
+          "areaLabel": "3階 南",
+          "rowLabel": "X",
+          "from": 1,
+          "to": 60,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "A",
+          "from": 7,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "B",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "C",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "E",
+          "from": 4,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "G",
+          "from": 2,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-1f",
+          "areaLabel": "1階 南西",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 34,
+          "excluded": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "A",
+          "from": 12,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "B",
+          "from": 11,
+          "to": 50,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "C",
+          "from": 10,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "D",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "E",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "F",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "G",
+          "from": 11,
+          "to": 50,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 51,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 52,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "K",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "L",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southwest-2f",
+          "areaLabel": "2階 南西",
+          "rowLabel": "M",
+          "from": 7,
+          "to": 54,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "N",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "P",
+          "from": 7,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "Q",
+          "from": 6,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "R",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "S",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "T",
+          "from": 4,
+          "to": 57,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "U",
+          "from": 3,
+          "to": 58,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "V",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "W",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "southwest-3f",
+          "areaLabel": "3階 南西",
+          "rowLabel": "X",
+          "from": 1,
+          "to": 60,
+          "excluded": []
+        },
+        {
+          "areaId": "west-1f",
+          "areaLabel": "1階 西",
+          "rowLabel": "B",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "west-1f",
+          "areaLabel": "1階 西",
+          "rowLabel": "C",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "west-1f",
+          "areaLabel": "1階 西",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "west-1f",
+          "areaLabel": "1階 西",
+          "rowLabel": "E",
+          "from": 4,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "west-1f",
+          "areaLabel": "1階 西",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "areaId": "west-1f",
+          "areaLabel": "1階 西",
+          "rowLabel": "G",
+          "from": 2,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "west-1f",
+          "areaLabel": "1階 西",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "west-1f",
+          "areaLabel": "1階 西",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "west-1f",
+          "areaLabel": "1階 西",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 34,
+          "excluded": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "A",
+          "from": 12,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "B",
+          "from": 11,
+          "to": 50,
+          "excluded": []
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "C",
+          "from": 10,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "D",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "E",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "F",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "G",
+          "from": 11,
+          "to": 50,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 51,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 52,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "K",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "L",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "west-2f",
+          "areaLabel": "2階 西",
+          "rowLabel": "M",
+          "from": 7,
+          "to": 54,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "N",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "P",
+          "from": 7,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "Q",
+          "from": 6,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "R",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "S",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "T",
+          "from": 4,
+          "to": 57,
+          "excluded": []
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "U",
+          "from": 3,
+          "to": 58,
+          "excluded": []
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "V",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "W",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "west-3f",
+          "areaLabel": "3階 西",
+          "rowLabel": "X",
+          "from": 1,
+          "to": 60,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "A",
+          "from": 7,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "B",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "C",
+          "from": 6,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "E",
+          "from": 4,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "G",
+          "from": 2,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-1f",
+          "areaLabel": "1階 北西",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 34,
+          "excluded": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "A",
+          "from": 12,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "B",
+          "from": 11,
+          "to": 50,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "C",
+          "from": 10,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "D",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "E",
+          "from": 9,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "F",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "G",
+          "from": 11,
+          "to": 50,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 51,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 52,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "K",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "L",
+          "from": 8,
+          "to": 53,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northwest-2f",
+          "areaLabel": "2階 北西",
+          "rowLabel": "M",
+          "from": 7,
+          "to": 54,
+          "excluded": [
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "N",
+          "from": 8,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "P",
+          "from": 7,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "Q",
+          "from": 6,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "R",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "S",
+          "from": 5,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "T",
+          "from": 4,
+          "to": 57,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "U",
+          "from": 3,
+          "to": 58,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "V",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "W",
+          "from": 2,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "areaId": "northwest-3f",
+          "areaLabel": "3階 北西",
+          "rowLabel": "X",
+          "from": 1,
+          "to": 60,
+          "excluded": []
+        }
+      ]
+    }
+  ]
 }
