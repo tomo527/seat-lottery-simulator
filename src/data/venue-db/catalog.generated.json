@@ -1015,6 +1015,30 @@
   },
   {
     "schemaVersion": 2,
+    "id": "tokyo-gymnasium-standard",
+    "venueGroupId": "tokyo-gymnasium-standard",
+    "name": "東京体育館 メインアリーナ",
+    "searchAliases": [
+      "東京体育館メインアリーナ"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "fixed-stands-numbered-set",
+        "canonicalName": "固定スタンド南北14ブロック代表配置",
+        "seatCount": 5179,
+        "dataPath": "/venue-db/venues/tokyo-gymnasium-standard--fixed-stands-numbered-set.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "現行公式北側・南側図に印字された固定スタンド番号席を代表配置として抽選します。番号のない車いす席・同伴者席、アリーナ床・仮設席は含みません。",
+        "fixedOnly": true
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "tokyo-takarazuka-standard",
     "venueGroupId": "tokyo-takarazuka-standard",
     "name": "東京宝塚劇場",
@@ -1116,6 +1140,31 @@
     "representativePatternName": "通常固定番号席配置",
     "seatCount": 392,
     "dataPath": "/venue-db/venues/yotsuya-civic-hall-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "yoyogi-1-standard",
+    "venueGroupId": "yoyogi-1-standard",
+    "name": "国立代々木競技場 第一体育館",
+    "searchAliases": [
+      "国立代々木競技場第一体育館",
+      "代々木第一体育館"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "fixed-stands-numbered-set",
+        "canonicalName": "固定スタンド44ブロック代表配置",
+        "seatCount": 8636,
+        "dataPath": "/venue-db/venues/yoyogi-1-standard--fixed-stands-numbered-set.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "現行公式44ブロック図に数字で印字された固定スタンド番号席だけを抽選します。番号のない車いす位置、VIP席、催事依存のアリーナ床席は含みません。",
+        "fixedOnly": true
+      }
+    ]
   },
   {
     "schemaVersion": 2,

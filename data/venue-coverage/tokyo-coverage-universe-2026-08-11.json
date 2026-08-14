@@ -1,7 +1,7 @@
 {
   "auditVersion": 1,
   "jurisdiction": "東京都",
-  "asOf": "2026-08-13",
+  "asOf": "2026-08-14",
   "canonicalRule": "現役の舞台・ライブ・コンサート・ミュージカル・2.5次元・声優/アニメ系イベント等で、固定席または着席時に番号付き座席を設定できる主要会場を、既存inventoryの有無に関係なく統合する。座席rangeは本監査では作成しない。",
   "discoverySources": [
     {
@@ -69,14 +69,14 @@
     },
     "userVisibleProductionCoverage": {
       "tokyoUniverse": {
-        "numerator": 19,
+        "numerator": 21,
         "denominator": 76,
-        "percent": 25.0
+        "percent": 27.6
       },
       "MUST": {
-        "numerator": 10,
+        "numerator": 12,
         "denominator": 44,
-        "percent": 22.7
+        "percent": 27.3
       },
       "SHOULD": {
         "numerator": 9,
@@ -91,14 +91,14 @@
     },
     "schemaAddressableCoverage": {
       "tokyoUniverse": {
-        "numerator": 19,
+        "numerator": 21,
         "denominator": 76,
-        "percent": 25.0
+        "percent": 27.6
       },
       "MUST": {
-        "numerator": 10,
+        "numerator": 12,
         "denominator": 44,
-        "percent": 22.7
+        "percent": 27.3
       },
       "SHOULD": {
         "numerator": 9,
@@ -112,7 +112,7 @@
       },
       "confirmedCurrentSchemaNonProductionIds": [],
       "confirmedSchemaExtensionNonProductionIds": [],
-      "note": "19 = current PRODUCTION 19（TOKYO-WAVE-8 RECOVERYの東京宝塚劇場2,070番号席と代々木第二固定2,803番号席を含む）。車椅子・可動席・公式総数差はscope/confidence metadataに保持する。"
+      "note": "21 = current PRODUCTION 21（TOKYO-WAVE-8Bの代々木第一固定8,636番号席と東京体育館固定5,179番号席を含む）。車椅子・可動席・arena/floor・公式総数差はscope/confidence metadataに保持する。"
     }
   },
   "mustNonProductionBlockerAudit": {
@@ -123,8 +123,8 @@
       "C_CONTRADICTION": 4,
       "D_CURRENTNESS_CLOSED": 3
     },
-    "currentNonProductionCount": 36,
-    "basis": "40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。meijizaとNNTT中劇場に加え、TOKYO-WAVE-8 RECOVERYで東京宝塚劇場と代々木第二をproduction化した。current nonproductionは36件、current Aは0件。",
+    "currentNonProductionCount": 34,
+    "basis": "40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。meijizaとNNTT中劇場、TOKYO-WAVE-8 RECOVERYの東京宝塚劇場と代々木第二、TOKYO-WAVE-8Bの代々木第一と東京体育館をproduction化した。current nonproductionは34件、current Aは0件。",
     "classes": {
       "A_SCHEMA_UNLOCKABLE": {
         "count": 0,
@@ -176,22 +176,19 @@
         "note": "完全番号図、厳密総数、canonical seat identity、車いす置換番号、または恒久configuration条件のissuer-owned情報が欠け、schema変更だけでは救済できない。"
       },
       "C_CONTRADICTION": {
-        "count": 7,
+        "count": 5,
         "venueIds": [
           "tokyo-geigeki-concert",
           "tokyo-operacity-concert",
           "sumida-triphony-main",
           "shinbashi-enbujo",
-          "yoyogi-1",
-          "tokyo-gymnasium",
           "galaxy-theatre"
         ],
         "representativeVenues": [
           "tokyo-geigeki-concert",
-          "yoyogi-1",
           "galaxy-theatre"
         ],
-        "note": "formal CONTRADICTION 2件に、HOLD正規化されていた公式席数差分2件、ARENA-1の3件、THEATRE-1の銀河劇場を加えた。NNTT中劇場は矛盾するABC配置を非selectableに分離し、完全一致するAB配置だけをproduction化した。"
+        "note": "formal CONTRADICTION 2件に、HOLD正規化されていた公式席数差分2件とTHEATRE-1の銀河劇場を加えた。TOKYO-WAVE-8Bで代々木第一の旧集計誤りを訂正し、東京体育館の+1を代表配置metadataとして保持してproduction化した。"
       },
       "D_CURRENTNESS_CLOSED": {
         "count": 3,
@@ -423,8 +420,8 @@
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
-    "production": 19,
-    "hold": 52,
+    "production": 21,
+    "hold": 50,
     "contradiction": 1,
     "unresearched": 4,
     "mustUnresearched": 0,
@@ -432,11 +429,11 @@
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
     "researchCompletenessPercent": 94.7,
-    "userVisibleProductionCoveragePercent": 25.0,
-    "mustProductionCoveragePercent": 22.7,
+    "userVisibleProductionCoveragePercent": 27.6,
+    "mustProductionCoveragePercent": 27.3,
     "shouldProductionCoveragePercent": 32.1,
-    "schemaAddressableCoveragePercent": 25.0,
-    "nextMacro": "TOKYO-WAVE-8B — yoyogi-1 and tokyo-gymnasium"
+    "schemaAddressableCoveragePercent": 27.6,
+    "nextMacro": "TOKYO-WAVE-8C — nippon-budokan"
   },
   "releaseGate": {
     "policyVersion": "representative-coverage-v2",
@@ -478,7 +475,7 @@
       "representativeCoverageDisclosure": "PASS: global UI and terms disclosure remains present for representative configurations.",
       "productionQuality": "PASS: both Wave 8 recovery configurations record current official sources, complete mapped ranges, scope/accessibility differences, and the no-fitting/no-invented-ID controls."
     },
-    "exactNextAction": "TOKYO-WAVE-8B — 国立代々木競技場 第一体育館 and 東京体育館. Rebuild each range set directly from current official numbered maps; preserve fixed-only, total, accessibility, and dynamic-area differences without capacity fitting."
+    "exactNextAction": "TOKYO-WAVE-8C — 日本武道館. Continue the current official numbered-map recovery under representative-coverage-v2 without capacity fitting or invented seat IDs."
   },
   "historicalReleaseCoverageAdequacyReview": {
     "id": "TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
@@ -559,7 +556,7 @@
       "officialFacilityUrl": "https://www.tokyo-dome.co.jp/dome/about/",
       "seatMap": "official-baseball-only",
       "numberedMap": "event-dependent",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0319",
       "tier": "MUST",
       "difficulty": "COMPLEX",
@@ -598,7 +595,7 @@
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Sol",
-      "reason": "2026-08-12 TOKYO-CONFIG-A-ARENA-1: C_CONTRADICTION. Current JSC fixed-stand expected 8,636 conflicts with two independent lossless reads of the current 44 official block maps at 8,655 numbered positions; rangeDiff 0, expected mismatch +19. Arena/floor, wheelchair and VIP scopes were not fitted or invented."
+      "reason": "TOKYO-WAVE-8B: fresh direct visual transcription of all 44 current official block maps yields exactly 8,636 printed fixed-stand numbered seats, matching the issuer subtotal. The prior 8,655 aggregate contained range errors. Arena/floor, unnumbered wheelchair positions and VIP seats remain excluded metadata."
     },
     {
       "id": "yoyogi-2",
@@ -627,7 +624,7 @@
       "officialFacilityUrl": "https://ariake-arena.tokyo/main-arena/",
       "seatMap": "official",
       "numberedMap": "partial",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0436",
       "tier": "MUST",
       "difficulty": "COMPLEX",
@@ -649,7 +646,7 @@
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Sol",
-      "reason": "2026-08-12 TOKYO-CONFIG-A-ARENA-1: C_CONTRADICTION. The issuer independently defines the 5,178 fixed-seat set and separates wheelchair/floor scopes, but the current north PDF and current official accessibility block guide both yield 317 numbered positions for 2F north C block against the printed exact subtotal 316. The full fixed-only set cannot pass expected == calculated."
+      "reason": "TOKYO-WAVE-8B: fresh direct visual transcription of the current official north/south numbered maps yields 5,179 printed fixed-stand seat IDs. The +1 versus the official 5,178 fixed-seat total is localized to north 2F C (317 printed IDs versus block subtotal 316) and retained as metadata without capacity fitting. Unnumbered wheelchair and arena/floor scope remains excluded."
     },
     {
       "id": "musashino-forest-sport-plaza",

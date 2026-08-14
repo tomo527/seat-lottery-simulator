@@ -1,32 +1,5186 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "yoyogi-1-standard",
   "name": "国立代々木競技場 第一体育館",
   "prefecture": "東京都",
   "city": "渋谷区",
-  "aliases": ["代々木第一体育館"],
+  "aliases": [
+    "代々木第一体育館",
+    "国立代々木競技場第一体育館"
+  ],
   "venueType": "arena",
-  "representativePattern": {
-    "id": "issuer-defined-selectable-numbered-seat-set",
-    "name": "発行者定義の代表的な選択可能番号席セット",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "現行JSCは固定スタンド8,636席を車いす、VIP、イベント依存arena/floorから独立して定義するためfixed-only候補自体はissuer-definedである。しかし現行44ブロック図の番号集合は独立2パスとも8,655席となり、exact subtotalと一致しない。",
-    "notIncludedPatterns": ["イベントごとのアリーナ床仮設席", "スポーツ配置", "コンサート配置", "未定義の車いす席置換variant", "VIP席variant"]
-  },
   "sources": [
-    {"id":"official-facility","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"独立行政法人日本スポーツ振興センター","title":"国立代々木競技場 第一体育館 施設案内","url":"https://www.jpnsport.go.jp/yoyogi/tabid/70/Default.aspx","checkedAt":"2026-08-12"},
-    {"id":"official-seat-guide","official":true,"roles":["seat-structure","event-layout"],"publisher":"独立行政法人日本スポーツ振興センター","title":"国立代々木競技場 座席案内 第一体育館","url":"https://www.jpnsport.go.jp/yoyogi/seat/tabid/62/Default.aspx","checkedAt":"2026-08-12"},
-    {"id":"official-organizer-guide","official":true,"roles":["event-layout"],"publisher":"独立行政法人日本スポーツ振興センター","title":"国立代々木競技場 主催者の方へ","url":"https://www.jpnsport.go.jp/yoyogi/syusaisya/tabid/90/Default.aspx","checkedAt":"2026-08-12"}
+    {
+      "id": "official-facility",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "独立行政法人日本スポーツ振興センター",
+      "title": "国立代々木競技場 第一体育館 施設案内",
+      "url": "https://www.jpnsport.go.jp/yoyogi/tabid/70/Default.aspx",
+      "checkedAt": "2026-08-14"
+    },
+    {
+      "id": "official-seat-guide",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "event-layout"
+      ],
+      "publisher": "独立行政法人日本スポーツ振興センター",
+      "title": "国立代々木競技場 座席案内 第一体育館（南北・1階2階・A-L全44ブロック詳細図）",
+      "url": "https://www.jpnsport.go.jp/yoyogi/seat/tabid/62/Default.aspx",
+      "checkedAt": "2026-08-14"
+    },
+    {
+      "id": "official-organizer-guide",
+      "official": true,
+      "roles": [
+        "event-layout"
+      ],
+      "publisher": "独立行政法人日本スポーツ振興センター",
+      "title": "国立代々木競技場 主催者の方へ",
+      "url": "https://www.jpnsport.go.jp/yoyogi/syusaisya/tabid/90/Default.aspx",
+      "checkedAt": "2026-08-14"
+    }
   ],
-  "registeredScope": "C_CONTRADICTION HOLD。固定スタンド8,636席だけをschema v2 fixed-only候補として再評価し、車いす104席、VIP34席（最大70席）、arena/floor最大4,124席を明示的に除外した。現行番号図は8,655席となりexpectedと一致しない。",
-  "completenessBasis": "第1パスは現行JSC施設案内と44ブロック詳細図をblock/階/方位別にlossless集計し8,655席。独立第2パスは同じ現行generationを別順序で再読し、全block subtotalと番号集合が一致、rangeDiff 0。issuer expected 8,636との差+19が残った。",
-  "transformation": "arena/floor、車いす、VIPを固定番号集合へ混在させず、8,636へのcapacity fitting、番号除外の推測、event-dependent seat ID化を行わない。expected mismatchのためrangesはproduction sourceへ保存しない。",
-  "knownLimitations": [
-    "C_CONTRADICTION: 現行固定スタンド公称8,636と現行44ブロック図8,655の差+19が未解決。",
-    "arena/floor、車いす、VIPはfixed-only scope外であり、差を埋めるために包含又は番号除外を推測しない。"
-  ],
-  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"current-official-44-block-first-pass-independent-second-pass","seatStructure":"matched","seatCount":"mismatched","unresolvedIssues":["固定スタンドexpected 8,636に対しcurrent numbered-map calculated 8,655（+19）。","issuer-owned correction又は番号除外mappingがない。"]},
-  "ranges": []
+  "configurations": [
+    {
+      "id": "fixed-stands-numbered-set",
+      "canonicalName": "固定スタンド44ブロック代表配置",
+      "selectionBasis": "現行JSC座席案内の南北・1階2階・A-L全44ブロック詳細図から、数字で印字された固定スタンド席を直接転記した完全な番号席集合を採用する。番号のない車いす位置、VIP席、アリーナ床席は別運用のため含めない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "current official 44-block detail images freshly and directly visually transcribed on 2026-08-14",
+      "sourceIds": [
+        "official-facility",
+        "official-seat-guide",
+        "official-organizer-guide"
+      ],
+      "differenceBasisSourceIds": [
+        "official-facility",
+        "official-seat-guide"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 8636,
+      "scope": {
+        "kind": "fixed-only",
+        "issuerDefined": false,
+        "containsEventDependentSeatIds": false,
+        "excludesDynamicAreas": true,
+        "maximumCapacity": false,
+        "excludedAreas": [
+          "番号のない車いす位置104席（同伴者を含む）",
+          "VIP席34席（最大70席）",
+          "アリーナ床席（最大4,124席）"
+        ],
+        "exactSubtotal": 8636
+      },
+      "scopeDisclosure": "現行公式44ブロック図に数字で印字された固定スタンド番号席だけを抽選します。番号のない車いす位置、VIP席、催事依存のアリーナ床席は含みません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式詳細図の番号のない車いす位置はseat IDとして追加せず、通常番号席との催事別変換も固定番号席集合へ反映しない。",
+        "sourceIds": [
+          "official-seat-guide",
+          "official-facility"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-14",
+        "method": "fresh-current-official-44-block-direct-visual-transcription",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "現行公式44ブロック図の印字番号席集合8,636席は公式固定スタンド公称8,636席と一致する。",
+          "過去レビューの8,655席は複数ブロックのrange集計誤りであり、fresh direct transcriptionにより8,636席へ訂正した。",
+          "番号のない車いす位置、VIP席、催事依存アリーナ床席はfixed-only代表配置へ含めない。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "2",
+          "from": 3,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "3",
+          "from": 4,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "4",
+          "from": 6,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "5",
+          "from": 8,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "6",
+          "from": 10,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "7",
+          "from": 12,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "8",
+          "from": 14,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "9",
+          "from": 16,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "10",
+          "from": 19,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "11",
+          "from": 21,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-a",
+          "areaLabel": "北1階 Aブロック",
+          "rowLabel": "12",
+          "from": 24,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-b",
+          "areaLabel": "北1階 Bブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-c",
+          "areaLabel": "北1階 Cブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "13",
+          "from": 10,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "14",
+          "from": 12,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-d",
+          "areaLabel": "北1階 Dブロック",
+          "rowLabel": "15",
+          "from": 13,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-e",
+          "areaLabel": "北1階 Eブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-f",
+          "areaLabel": "北1階 Fブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-g",
+          "areaLabel": "北1階 Gブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-h",
+          "areaLabel": "北1階 Hブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 2,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-j",
+          "areaLabel": "北1階 Jブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-k",
+          "areaLabel": "北1階 Kブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 9,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 7,
+          "excluded": []
+        },
+        {
+          "areaId": "n-1f-l",
+          "areaLabel": "北1階 Lブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-a",
+          "areaLabel": "北2階 Aブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-a",
+          "areaLabel": "北2階 Aブロック",
+          "rowLabel": "2",
+          "from": 5,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-a",
+          "areaLabel": "北2階 Aブロック",
+          "rowLabel": "3",
+          "from": 8,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-a",
+          "areaLabel": "北2階 Aブロック",
+          "rowLabel": "4",
+          "from": 10,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-a",
+          "areaLabel": "北2階 Aブロック",
+          "rowLabel": "5",
+          "from": 14,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-a",
+          "areaLabel": "北2階 Aブロック",
+          "rowLabel": "6",
+          "from": 19,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-a",
+          "areaLabel": "北2階 Aブロック",
+          "rowLabel": "7",
+          "from": 23,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-a",
+          "areaLabel": "北2階 Aブロック",
+          "rowLabel": "8",
+          "from": 28,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "10",
+          "from": 5,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "11",
+          "from": 10,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-b",
+          "areaLabel": "北2階 Bブロック",
+          "rowLabel": "12",
+          "from": 15,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "3",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "4",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "5",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "14",
+          "from": 8,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-c",
+          "areaLabel": "北2階 Cブロック",
+          "rowLabel": "15",
+          "from": 14,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-d",
+          "areaLabel": "北2階 Dブロック",
+          "rowLabel": "17",
+          "from": 8,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "3",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "4",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "5",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-e",
+          "areaLabel": "北2階 Eブロック",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-f",
+          "areaLabel": "北2階 Fブロック",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "3",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "4",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "5",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-g",
+          "areaLabel": "北2階 Gブロック",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-h",
+          "areaLabel": "北2階 Hブロック",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "3",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "4",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "5",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-j",
+          "areaLabel": "北2階 Jブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-k",
+          "areaLabel": "北2階 Kブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 9,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 29,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "n-2f-l",
+          "areaLabel": "北2階 Lブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "2",
+          "from": 3,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "3",
+          "from": 5,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "4",
+          "from": 6,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "5",
+          "from": 8,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "6",
+          "from": 10,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "7",
+          "from": 12,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "8",
+          "from": 14,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "9",
+          "from": 16,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "10",
+          "from": 19,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "11",
+          "from": 21,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-a",
+          "areaLabel": "南1階 Aブロック",
+          "rowLabel": "12",
+          "from": 24,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-b",
+          "areaLabel": "南1階 Bブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-c",
+          "areaLabel": "南1階 Cブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "13",
+          "from": 10,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "14",
+          "from": 12,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-d",
+          "areaLabel": "南1階 Dブロック",
+          "rowLabel": "15",
+          "from": 13,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-e",
+          "areaLabel": "南1階 Eブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "7",
+          "from": 11,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "8",
+          "from": 11,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "9",
+          "from": 11,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "10",
+          "from": 11,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-f",
+          "areaLabel": "南1階 Fブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "1",
+          "from": 8,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "2",
+          "from": 8,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "3",
+          "from": 8,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "4",
+          "from": 8,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "5",
+          "from": 8,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "6",
+          "from": 8,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-g",
+          "areaLabel": "南1階 Gブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 13,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-h",
+          "areaLabel": "南1階 Hブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 2,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-j",
+          "areaLabel": "南1階 Jブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-k",
+          "areaLabel": "南1階 Kブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "s-1f-l",
+          "areaLabel": "南1階 Lブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 2,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "2",
+          "from": 3,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "3",
+          "from": 5,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "4",
+          "from": 7,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "5",
+          "from": 9,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "6",
+          "from": 11,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "7",
+          "from": 14,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "8",
+          "from": 14,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "9",
+          "from": 15,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "10",
+          "from": 23,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-a",
+          "areaLabel": "南2階 Aブロック",
+          "rowLabel": "11",
+          "from": 30,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "12",
+          "from": 3,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-b",
+          "areaLabel": "南2階 Bブロック",
+          "rowLabel": "13",
+          "from": 9,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "3",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "4",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "5",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "15",
+          "from": 6,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-c",
+          "areaLabel": "南2階 Cブロック",
+          "rowLabel": "16",
+          "from": 14,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-d",
+          "areaLabel": "南2階 Dブロック",
+          "rowLabel": "17",
+          "from": 4,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "3",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "4",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "5",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-e",
+          "areaLabel": "南2階 Eブロック",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-f",
+          "areaLabel": "南2階 Fブロック",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "3",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "4",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "5",
+          "from": 12,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-g",
+          "areaLabel": "南2階 Gブロック",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 15,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-h",
+          "areaLabel": "南2階 Hブロック",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "3",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "4",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "5",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-j",
+          "areaLabel": "南2階 Jブロック",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 17,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-k",
+          "areaLabel": "南2階 Kブロック",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-l",
+          "areaLabel": "南2階 Lブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-l",
+          "areaLabel": "南2階 Lブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-l",
+          "areaLabel": "南2階 Lブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-l",
+          "areaLabel": "南2階 Lブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-l",
+          "areaLabel": "南2階 Lブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-l",
+          "areaLabel": "南2階 Lブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-l",
+          "areaLabel": "南2階 Lブロック",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "areaId": "s-2f-l",
+          "areaLabel": "南2階 Lブロック",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        }
+      ]
+    }
+  ]
 }

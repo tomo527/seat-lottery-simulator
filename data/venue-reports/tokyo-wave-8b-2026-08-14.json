@@ -1,0 +1,48 @@
+{
+  "reportId": "tokyo-wave-8b-2026-08-14",
+  "asOf": "2026-08-14",
+  "model": "Sol high",
+  "policyVersion": "representative-coverage-v2",
+  "scope": ["yoyogi-1", "tokyo-gymnasium"],
+  "venues": [
+    {
+      "id": "yoyogi-1",
+      "sourceId": "yoyogi-1-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "fixed-stands-numbered-set",
+      "expectedSeatCount": 8636,
+      "calculatedSeatCount": 8636,
+      "rangeDiff": 0,
+      "difference": 0,
+      "method": "fresh direct visual transcription of every printed seat ID in all 44 current official north/south, 1F/2F block maps",
+      "blockLetterSubtotals": {"A":728,"B":752,"C":704,"D":858,"E":829,"F":888,"G":828,"H":856,"J":704,"K":756,"L":733},
+      "correction": "The prior 8,655 aggregate contained multiple block-range errors; the fresh current-map result is 8,636 and matches the issuer fixed-stand subtotal.",
+      "scope": "printed fixed-stand numbered seats only; excludes unnumbered wheelchair positions, VIP seats, and event-dependent arena/floor seats",
+      "confidence": "representative"
+    },
+    {
+      "id": "tokyo-gymnasium",
+      "sourceId": "tokyo-gymnasium-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "fixed-stands-numbered-set",
+      "expectedSeatCount": 5178,
+      "calculatedSeatCount": 5179,
+      "rangeDiff": 0,
+      "difference": 1,
+      "method": "current official north and south numbered PDFs rendered at 500 DPI and directly visually transcribed through all 2F and 3F blocks",
+      "blockSubtotals": {"A":180,"B":224,"C":317,"D":217,"E":217,"F":368,"G":368,"H":180,"I":523,"J":508,"K":523,"L":523,"M":508,"N":523},
+      "differenceNote": "North 2F C contains 317 printed seat IDs while its official block subtotal says 316. The complete printed set is retained, yielding +1 versus the official fixed-seat total without capacity fitting.",
+      "scope": "printed fixed-stand numbered seats only; excludes unnumbered wheelchair/companion positions and event-dependent arena/floor seats",
+      "confidence": "representative"
+    }
+  ],
+  "result": {
+    "productionPromotions": 2,
+    "selectableConfigurationsAdded": 2,
+    "configurationSeatRecordsAdded": 13815,
+    "productionAfter": {"venues":77,"selectableConfigurations":79,"configurationSeatRecords":114213},
+    "coverageAfter": {"tokyoProduction":"21/76 (27.6%)","mustProduction":"12/44 (27.3%)","shouldProduction":"9/28 (32.1%)"},
+    "releaseReady": true,
+    "exactNextAction": "TOKYO-WAVE-8C — 日本武道館"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "batchId": "tokyo-wave-8b-representative-coverage",
+  "createdAt": "2026-08-14",
+  "scope": "TOKYO-WAVE-8B bounded batch for Yoyogi National Gymnasium First Gymnasium and Tokyo Gymnasium only. Freshly transcribe every printed fixed-stand seat ID from current official numbered maps; preserve official-total, wheelchair, VIP, and arena/floor differences as metadata; do not capacity-fit or invent identifiers.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["yoyogi-1-standard", "tokyo-gymnasium-standard"],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-official-0743",
+      "carryOverFrom": "tokyo-terra-dense-2",
+      "previousStatus": "blocked",
+      "recheckReason": "Discard the prior 8,655 aggregate and directly rebuild all current official 44 fixed-stand blocks under representative coverage v2.",
+      "recheckNotBefore": "2026-08-14"
+    },
+    {
+      "inventoryId": "tokyo-official-0745",
+      "carryOverFrom": "tokyo-terra-dense-3",
+      "previousStatus": "blocked",
+      "recheckReason": "Complete the north/south current-map transcription; retain the north C and official-total difference as metadata rather than fitting or blocking.",
+      "recheckNotBefore": "2026-08-14"
+    }
+  ],
+  "recommendedModel": "Sol high",
+  "stopRule": "Complete every printed range in the declared fixed-stand scope. Do not stop for image-only sources, total differences, unpublished wheelchair conversion, VIP operation, or dynamic arena/floor seats; do not invent unprinted seat IDs.",
+  "completedAt": "2026-08-14",
+  "result": {
+    "productionVenuesAdded": 2,
+    "selectableConfigurationsAdded": 2,
+    "configurationSeatRecordsAdded": 13815,
+    "mappedSeats": {
+      "yoyogi-1-standard": 8636,
+      "tokyo-gymnasium-standard": 5179
+    },
+    "corrections": {
+      "yoyogi-1": "The prior 8,655 aggregate contained multiple block-range errors. Fresh direct transcription of all 44 current official block maps is 8,636 and matches the issuer fixed-seat subtotal.",
+      "tokyo-gymnasium": "Fresh direct transcription is 5,179. North 2F C contains 317 printed seat IDs against its printed subtotal 316, producing +1 versus the official fixed-seat total; no seat ID was removed to fit capacity."
+    },
+    "nextBatchProposal": "TOKYO-WAVE-8C — nippon-budokan"
+  }
+}

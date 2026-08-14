@@ -14596,14 +14596,13 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.jpnsport.go.jp/yoyogi/tabid/70/Default.aspx",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "C_CONTRADICTION。JSCは固定スタンドを独立setとして示すが、現行公称8,636席と現行44ブロック図の番号集合8,655席が一致しない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行JSCの44ブロック詳細図をfreshに直接再転記し、印字された固定スタンド番号席8,636席が公式固定席公称8,636席と一致。過去8,655席はrange集計誤りとして訂正し、arena/floor・車いす・VIPを除外したfixed-only代表配置としてproduction化。",
       "priority": "A",
       "venueSourceId": "yoyogi-1-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-12",
-      "discoveryUrlRaw": "http://www.jpnsport.go.jp/yoyogi/",
-      "blockingReason": "C_CONTRADICTION: 第1パスと独立第2パスは44ブロック図8,655席、rangeDiff 0で一致したが、issuer expected 8,636との差+19が未解決。arena/floor・車いす・VIPを混在又はcapacity fittingしない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14",
+      "discoveryUrlRaw": "http://www.jpnsport.go.jp/yoyogi/"
     },
     {
       "inventoryId": "tokyo-official-0744",
@@ -14637,13 +14636,12 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.tef.or.jp/tmg/arena/index.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "C_CONTRADICTION。発行者は固定5,178席を独立setとして定義し車いす・floor scopeを分離するが、現行北側PDFと現行公式バリアフリー詳細図はいずれも2F北Cブロック317番号席を示し、印字subtotal 316と一致しない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式北側・南側番号図をfreshに直接再転記し、固定スタンド印字番号席5,179席をproduction化。公式固定席公称5,178との差+1は北2階Cブロックの印字番号317席対図中subtotal 316に局在し、番号席を削らずmetadataとして保持。",
       "priority": "A",
       "venueSourceId": "tokyo-gymnasium-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-12",
-      "blockingReason": "C_CONTRADICTION: 2F北Cブロックの現行公式subtotal 316に対し、行別番号集合は第1パス/独立第2パスとも317（rangeDiff 0）。固定5,178全体のexpected == calculatedを証明できず、capacity fittingしない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14"
     },
     {
       "inventoryId": "tokyo-official-0746",

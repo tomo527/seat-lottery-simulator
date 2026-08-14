@@ -769,6 +769,34 @@
           "sha256": "c70e36a569e8bc94be4858989a41f9ec706659dd5f3c8c086844f92ed505df4d"
         }
       }
+    },
+    "yoyogi-1-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-stands-numbered-set": {
+          "count": 8636,
+          "samples": [
+            "n-1f-a/1/1",
+            "n-2f-l/5/19",
+            "s-2f-l/8/3"
+          ],
+          "sha256": "f22400120934cdca6620b8a1b8700e27b45d7386f5c0df9e55027ecb7b921c71"
+        }
+      }
+    },
+    "tokyo-gymnasium-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-stands-numbered-set": {
+          "count": 5179,
+          "samples": [
+            "north-2f-a/1/1",
+            "north-3f-i/15/55",
+            "south-3f-n/16/4"
+          ],
+          "sha256": "ee12f69268382fb567a23ffb2090959fe7b9213d1e8d4e14edefdec863816c8c"
+        }
+      }
     }
   }
 }
