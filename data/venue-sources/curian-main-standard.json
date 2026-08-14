@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "curian-main-standard",
   "name": "きゅりあん 大ホール",
   "prefecture": "東京都",
@@ -9,18 +9,6 @@
     "きゅりあん大ホール"
   ],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設案内の番号付き椅子1074席を候補とする。",
-    "notIncludedPatterns": [
-      "車椅子席6席",
-      "母子席8席",
-      "立見席54席"
-    ]
-  },
   "sources": [
     {
       "id": "official-seat-map",
@@ -47,197 +35,231 @@
       "checkedAt": "2026-07-26"
     }
   ],
-  "registeredScope": "通常配置の番号付き椅子を予定。",
-  "completenessBasis": "公式座席表の可視番号を転記したが、range計算1084席と公式椅子席1074席が10席一致しない。",
-  "transformation": "公式座席表で可視の連続番号を列ごとの明示rangeへ転記し、総数へ合わせる推測除外は行っていない。",
-  "knownLimitations": [
-    "番号のない車椅子席・母子席・立見席は対象外。"
-  ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "mismatched",
-    "seatCount": "mismatched",
-    "unresolvedIssues": [
-      "公式座席図の番号席1,084席と公式公称1,074席が10席不一致。",
-      "差の10席を説明する公式資料が公開された場合に全rangeを再照合する。"
-    ]
-  },
-  "ranges": [
+  "configurations": [
     {
-      "rowLabel": "SA",
-      "from": 15,
-      "to": 32,
-      "excluded": []
-    },
-    {
-      "rowLabel": "SB",
-      "from": 14,
-      "to": 33,
-      "excluded": []
-    },
-    {
-      "rowLabel": "SC",
-      "from": 12,
-      "to": 35,
-      "excluded": []
-    },
-    {
-      "rowLabel": "SD",
-      "from": 11,
-      "to": 36,
-      "excluded": []
-    },
-    {
-      "rowLabel": "SE",
-      "from": 9,
-      "to": 38,
-      "excluded": []
-    },
-    {
-      "rowLabel": "SF",
-      "from": 8,
-      "to": 39,
-      "excluded": []
-    },
-    {
-      "rowLabel": "A",
-      "from": 11,
-      "to": 36,
-      "excluded": []
-    },
-    {
-      "rowLabel": "B",
-      "from": 6,
-      "to": 41,
-      "excluded": []
-    },
-    {
-      "rowLabel": "C",
-      "from": 4,
-      "to": 43,
-      "excluded": []
-    },
-    {
-      "rowLabel": "D",
-      "from": 4,
-      "to": 43,
-      "excluded": []
-    },
-    {
-      "rowLabel": "E",
-      "from": 4,
-      "to": 43,
-      "excluded": []
-    },
-    {
-      "rowLabel": "F",
-      "from": 3,
-      "to": 44,
-      "excluded": []
-    },
-    {
-      "rowLabel": "G",
-      "from": 3,
-      "to": 44,
-      "excluded": []
-    },
-    {
-      "rowLabel": "H",
-      "from": 3,
-      "to": 44,
-      "excluded": []
-    },
-    {
-      "rowLabel": "I",
-      "from": 3,
-      "to": 44,
-      "excluded": []
-    },
-    {
-      "rowLabel": "J",
-      "from": 6,
-      "to": 41,
-      "excluded": []
-    },
-    {
-      "rowLabel": "K",
-      "from": 6,
-      "to": 41,
-      "excluded": []
-    },
-    {
-      "rowLabel": "L",
-      "from": 6,
-      "to": 41,
-      "excluded": []
-    },
-    {
-      "rowLabel": "M",
-      "from": 6,
-      "to": 41,
-      "excluded": []
-    },
-    {
-      "rowLabel": "N",
-      "from": 6,
-      "to": 41,
-      "excluded": []
-    },
-    {
-      "rowLabel": "O",
-      "from": 1,
-      "to": 46,
-      "excluded": []
-    },
-    {
-      "rowLabel": "P",
-      "from": 1,
-      "to": 46,
-      "excluded": []
-    },
-    {
-      "rowLabel": "Q",
-      "from": 1,
-      "to": 46,
-      "excluded": []
-    },
-    {
-      "rowLabel": "R",
-      "from": 1,
-      "to": 46,
-      "excluded": []
-    },
-    {
-      "rowLabel": "S",
-      "from": 1,
-      "to": 46,
-      "excluded": []
-    },
-    {
-      "rowLabel": "T",
-      "from": 1,
-      "to": 46,
-      "excluded": []
-    },
-    {
-      "rowLabel": "U",
-      "from": 1,
-      "to": 46,
-      "excluded": []
-    },
-    {
-      "rowLabel": "V",
-      "from": 1,
-      "to": 46,
-      "excluded": []
-    },
-    {
-      "rowLabel": "W",
-      "from": 6,
-      "to": 41,
-      "excluded": []
+      "id": "standard",
+      "canonicalName": "通常番号席配置",
+      "selectionBasis": "公式座席図が示す完全な1,084番号席を代表配置として採用する。公式施設案内の椅子席1,074席との差10席は番号を削除して調整せず、そのまま記録する。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "current official numbered seat map and facility guide checked 2026-08-14",
+      "sourceIds": [
+        "official-seat-map",
+        "official-facility-guide"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-facility-guide"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1074,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": false,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式施設案内の車椅子席6席・母子席8席・立見54席は番号図の1,084席との包含関係および転換番号が未公表のため、番号席集合へ反映しない。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-facility-guide"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-14",
+        "method": "independent-current-official-numbered-map-review",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "公式図上の完全な番号集合は1,084席だが、公式施設案内の椅子席は1,074席で10席差がある。",
+          "車椅子・母子・立見の番号対応および転換番号は未公表。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "SA",
+          "from": 15,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "rowLabel": "SB",
+          "from": 14,
+          "to": 33,
+          "excluded": []
+        },
+        {
+          "rowLabel": "SC",
+          "from": 12,
+          "to": 35,
+          "excluded": []
+        },
+        {
+          "rowLabel": "SD",
+          "from": 11,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "rowLabel": "SE",
+          "from": 9,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "SF",
+          "from": 8,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "rowLabel": "A",
+          "from": 11,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "C",
+          "from": 4,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D",
+          "from": 4,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "rowLabel": "E",
+          "from": 4,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F",
+          "from": 3,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "G",
+          "from": 3,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 3,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "I",
+          "from": 3,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "J",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "K",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "M",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "N",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "O",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "P",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "Q",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "R",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "S",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "T",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "U",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "V",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "W",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        }
+      ]
     }
   ]
 }

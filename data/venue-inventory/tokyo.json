@@ -2595,16 +2595,16 @@
       "officialDisplayName": "EX THEATER ROPPONGI",
       "prefecture": "東京都",
       "city": "港区",
-      "capacity": null,
+      "capacity": 920,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。施設URL・概算席数は未回答。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
-      "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "officialFacilityUrl": "https://www.ex-theater.com/",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式SEATING図の完全な906番号席を代表配置としてproduction化。公式着席920との差14席と車椅子・SB席の番号対応は未反映。",
+      "priority": "A",
+      "venueSourceId": "ex-theater-roppongi-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14"
     },
     {
       "inventoryId": "tokyo-official-0130",
@@ -5641,13 +5641,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.zepp.co.jp/hall/shinjuku/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行公式基本図は椅子使用時B4F可動番号席530＋B3F standing 163を独立定義し、B4F全番号は2パス一致するが、barrier-free配置・車いす／同伴の置換番号は催事依存。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式椅子使用時基本図のB4F可動番号席530を代表配置としてproduction化。B3Fスタンディング163と車椅子・同伴者転換は未反映。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "blockingReason": "B_SOURCE_LIMITED: B4F 530番号席は530/530/rangeDiff 0だが、車いす／同伴の恒久置換番号をissuerが公開しないためproduction不可。"
+      "venueSourceId": "zepp-shinjuku-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14"
     },
     {
       "inventoryId": "tokyo-official-0285",
@@ -7324,13 +7323,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.triphony.com/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "第1パス番号席1,795に対し現行公式公称1,801。車椅子4区画を考慮しても2席差が残り、公式説明までproduction条件を満たさない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式座席図の完全な1,795番号席を代表配置としてproduction化。公式施設案内1,801席との差6席と車椅子転換は未反映。",
       "priority": "A",
       "venueSourceId": "sumida-triphony-main-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-08-02",
-      "blockingReason": "1階番号席1,034、公称1,040、車椅子4区画の包含関係と残る2席の公式説明が必要。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14"
     },
     {
       "inventoryId": "tokyo-sumida-triphony-small-hall",
@@ -8964,13 +8962,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.shinagawa-culture.or.jp/curian/facility/guide/floors.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式座席図の可視番号1084席と公式椅子席1074席が10席一致せず、除外番号を確定できない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式座席図の完全な1,084番号席を代表配置としてproduction化。公式椅子席1,074との差10席と車椅子等の番号対応は未反映。",
       "priority": "A",
       "venueSourceId": "curian-main-standard",
-      "researchStatus": "independent-review-mismatch",
-      "lastCheckedAt": "2026-07-27",
-      "blockingReason": "公式座席図の番号席1,084席と公式公称1,074席が10席不一致。",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14",
       "discoveryUrlRaw": "http://www.shinagawa-culture.or.jp/hp/menu000000300/hpg000000242.htm"
     },
     {
@@ -17968,13 +17965,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.itabashi-ci.org/culturehall/institution/bunka-h2.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式座席図には番号席306席と車椅子4区画が別に描かれるが、公称306席は車椅子4席を含む。車椅子利用時に外す番号席を公式資料から一意に特定できずproduction条件を満たさない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "公式座席図の完全な306番号席を代表配置としてproduction化。車椅子4区画の転換番号は未反映。",
       "priority": "C",
       "venueSourceId": "itabashi-culture-small-standard",
-      "researchStatus": "independent-review-mismatch",
-      "lastCheckedAt": "2026-07-29",
-      "blockingReason": "公称306席（車椅子4席を含む）と番号席306席の包含関係、および車椅子利用時に撤去・転換する4番号が公式資料で未解決。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14"
     },
     {
       "inventoryId": "tokyo-official-0917",

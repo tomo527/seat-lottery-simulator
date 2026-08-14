@@ -1,0 +1,409 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "ex-theater-roppongi-standard",
+  "name": "EX THEATER ROPPONGI",
+  "prefecture": "東京都",
+  "city": "港区",
+  "aliases": [
+    "EXシアター六本木",
+    "EX THEATER"
+  ],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-current-floor-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "event-layout"
+      ],
+      "publisher": "EX THEATER ROPPONGI",
+      "title": "フロアマップ SEATING・座席指定",
+      "url": "https://www.ex-theater.com/floormap/",
+      "checkedAt": "2026-08-14"
+    },
+    {
+      "id": "official-current-seating-image",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "EX THEATER ROPPONGI",
+      "title": "SEATING・座席指定 座席図",
+      "url": "https://www.ex-theater.com/floormap/img/floormap_seating.jpg",
+      "checkedAt": "2026-08-14"
+    },
+    {
+      "id": "official-seated-capacity",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "テレビ朝日",
+      "title": "EX THEATER ROPPONGI 開業資料（着席920席）",
+      "url": "https://www.tv-asahihd.co.jp/ir_houkoku/data/2014/t_0331001302606.pdf",
+      "checkedAt": "2026-08-14"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "seating-standard",
+      "canonicalName": "座席指定 通常番号席配置",
+      "selectionBasis": "現行公式SEATING図に表示された完全な906番号席を、座席指定時の代表配置として採用する。公式着席920席との差14席は、図に番号がない車椅子2席とSB-L/SB-R各6席を番号集合へ創作追加せず、そのまま記録する。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "current official SEATING map checked 2026-08-14; legacy public seat-table transcription used only as recorded secondary corroboration of displayed IDs",
+      "sourceIds": [
+        "official-current-floor-map",
+        "official-current-seating-image",
+        "official-seated-capacity"
+      ],
+      "differenceBasisSourceIds": [
+        "official-current-seating-image",
+        "official-seated-capacity"
+      ],
+      "secondaryProvenance": [
+        {
+          "publisher": "enjoy-live.net",
+          "title": "EX THEATER ROPPONGI 座席表（現行公式図の番号列を照合する公開二次資料）",
+          "url": "https://enjoy-live.net/detail/data/2178/seat_table1.pdf",
+          "checkedAt": "2026-08-14"
+        }
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "representativeEventLayout": true,
+      "expectedSeatCount": 920,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": false,
+        "containsEventDependentSeatIds": true
+      },
+      "scopeDisclosure": "公開SEATING図に表示された906番号席を代表配置として抽選します。番号のない車椅子2席・SB-L/SB-R各6席、販売停止席、公演ごとの可変配置は含めません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式図にある車椅子位置2席とSB-L/SB-R各6席は番号がなく、置換番号・同伴者配置も未公表のため、906番号席集合へ反映しない。",
+        "sourceIds": [
+          "official-current-floor-map",
+          "official-current-seating-image"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-14",
+        "method": "current-official-seating-map-review-with-secondary-numbered-table-corroboration",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "公式着席920席と完全な番号集合906席との差14席は、公式図上で番号のない車椅子2席およびSB-L/SB-R各6席に対応する。",
+          "車椅子・同伴者利用時の恒久的な置換番号は未公表。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "A",
+          "from": 3,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "B",
+          "from": 3,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "C",
+          "from": 3,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "D",
+          "from": 3,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "E",
+          "from": 3,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "G",
+          "from": 3,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 1,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "H",
+          "from": 27,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "H",
+          "from": 36,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "I",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b3-floor",
+          "areaLabel": "B3F フロア席",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-floor",
+          "areaLabel": "B2F フロア席",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-floor",
+          "areaLabel": "B2F フロア席",
+          "rowLabel": "M",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-floor",
+          "areaLabel": "B2F フロア席",
+          "rowLabel": "N",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-floor",
+          "areaLabel": "B2F フロア席",
+          "rowLabel": "O",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-floor",
+          "areaLabel": "B2F フロア席",
+          "rowLabel": "P",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-floor",
+          "areaLabel": "B2F フロア席",
+          "rowLabel": "Q",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-floor",
+          "areaLabel": "B2F フロア席",
+          "rowLabel": "R",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-floor",
+          "areaLabel": "B2F フロア席",
+          "rowLabel": "S",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-balcony",
+          "areaLabel": "B2F バルコニー席",
+          "rowLabel": "T",
+          "from": 1,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-balcony",
+          "areaLabel": "B2F バルコニー席",
+          "rowLabel": "T",
+          "from": 29,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-balcony",
+          "areaLabel": "B2F バルコニー席",
+          "rowLabel": "U",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-balcony",
+          "areaLabel": "B2F バルコニー席",
+          "rowLabel": "U",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-balcony",
+          "areaLabel": "B2F バルコニー席",
+          "rowLabel": "V",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "areaId": "b2-balcony",
+          "areaLabel": "B2F バルコニー席",
+          "rowLabel": "V",
+          "from": 32,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b1-stand",
+          "areaLabel": "B1F スタンド席",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b1-stand",
+          "areaLabel": "B1F スタンド席",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b1-stand",
+          "areaLabel": "B1F スタンド席",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b1-stand",
+          "areaLabel": "B1F スタンド席",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b1-stand",
+          "areaLabel": "B1F スタンド席",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b1-stand",
+          "areaLabel": "B1F スタンド席",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "b1-stand",
+          "areaLabel": "B1F スタンド席",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "areaId": "b1-stand",
+          "areaLabel": "B1F スタンド席",
+          "rowLabel": "7",
+          "from": 11,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b1-stand",
+          "areaLabel": "B1F スタンド席",
+          "rowLabel": "7",
+          "from": 29,
+          "to": 36,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

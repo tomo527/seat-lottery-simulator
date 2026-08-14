@@ -69,19 +69,19 @@
     },
     "userVisibleProductionCoverage": {
       "tokyoUniverse": {
-        "numerator": 12,
+        "numerator": 15,
         "denominator": 76,
-        "percent": 15.8
+        "percent": 19.7
       },
       "MUST": {
-        "numerator": 7,
+        "numerator": 8,
         "denominator": 44,
-        "percent": 15.9
+        "percent": 18.2
       },
       "SHOULD": {
-        "numerator": 5,
+        "numerator": 7,
         "denominator": 28,
-        "percent": 17.9
+        "percent": 25
       },
       "OPTIONAL": {
         "numerator": 0,
@@ -91,19 +91,19 @@
     },
     "schemaAddressableCoverage": {
       "tokyoUniverse": {
-        "numerator": 12,
+        "numerator": 15,
         "denominator": 76,
-        "percent": 15.8
+        "percent": 19.7
       },
       "MUST": {
-        "numerator": 7,
+        "numerator": 8,
         "denominator": 44,
-        "percent": 15.9
+        "percent": 18.2
       },
       "SHOULD": {
-        "numerator": 5,
+        "numerator": 7,
         "denominator": 28,
-        "percent": 17.9
+        "percent": 25
       },
       "OPTIONAL": {
         "numerator": 0,
@@ -112,7 +112,7 @@
       },
       "confirmedCurrentSchemaNonProductionIds": [],
       "confirmedSchemaExtensionNonProductionIds": [],
-      "note": "12 = current PRODUCTION 12（TOKYO-WAVE-5の銀河劇場とZepp Hanedaの代表配置、および既存のmeijizaとNNTT中劇場のconfiguration conversionを含む）。車椅子・同伴者の未反映差分と公式総数差はconfidence metadataに保持する。"
+      "note": "15 = current PRODUCTION 15（TOKYO-WAVE-6のすみだトリフォニー、Zepp Shinjuku、EX THEATER ROPPONGIの代表配置を含む）。車椅子・同伴者の未反映差分と公式総数差はconfidence metadataに保持する。"
     }
   },
   "mustNonProductionBlockerAudit": {
@@ -425,8 +425,8 @@
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
-    "production": 12,
-    "hold": 59,
+    "production": 15,
+    "hold": 56,
     "contradiction": 1,
     "unresearched": 4,
     "mustUnresearched": 0,
@@ -434,11 +434,11 @@
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
     "researchCompletenessPercent": 94.7,
-    "userVisibleProductionCoveragePercent": 15.8,
-    "mustProductionCoveragePercent": 15.9,
-    "shouldProductionCoveragePercent": 17.9,
-    "schemaAddressableCoveragePercent": 15.8,
-    "nextMacro": "tokyo-wave-6-representative-coverage"
+    "userVisibleProductionCoveragePercent": 19.7,
+    "mustProductionCoveragePercent": 18.2,
+    "shouldProductionCoveragePercent": 25,
+    "schemaAddressableCoveragePercent": 19.7,
+    "nextMacro": "tokyo-wave-7-representative-coverage"
   },
   "releaseGate": {
     "policyVersion": "representative-coverage-v2",
@@ -471,16 +471,16 @@
     "id": "TOKYO-REPRESENTATIVE-COVERAGE-RELEASE-REVIEW",
     "status": "complete",
     "completedAt": "2026-08-14",
-    "outcome": "RELEASE READY AFTER TOKYO-WAVE-5 REPRESENTATIVE EXPANSION",
+    "outcome": "RELEASE READY AFTER TOKYO-WAVE-6 REPRESENTATIVE EXPANSION",
     "blockerIds": [],
     "criteria": {
       "applicationHealth": "PASS: TOKYO-WAVE-5 completed the full venue/application regression after production generation.",
       "representativeMajorUseCoverage": "PASS: Galaxy Theatre adds a high-demand Tokyo theatre representative and Zepp Haneda adds a medium live-house representative.",
-      "practicalTokyoMajorVenueCoverage": "PASS: four bounded representative additions improve the searchable Tokyo catalog without inventing seat IDs or fitting capacity.",
+      "practicalTokyoMajorVenueCoverage": "PASS: five bounded representative additions improve the searchable Tokyo catalog without inventing seat IDs or fitting capacity.",
       "representativeCoverageDisclosure": "PASS: global UI and terms disclosure remains present for representative configurations.",
-      "productionQuality": "PASS: every new configuration records public sources, complete mapped ranges, confidence, total/accessibility differences, and the no-fitting/no-invented-ID controls."
+      "productionQuality": "PASS: every Wave 6 configuration records public sources, complete mapped ranges, confidence, total/accessibility differences, and the no-fitting/no-invented-ID controls."
     },
-    "exactNextAction": "Run tokyo-wave-6-representative-coverage only: sumida-triphony-main, curian-main, itabashi-culture-small, zepp-shinjuku, and ex-theater-roppongi. Promote only declared complete public numbered-seat representative sets; preserve total/accessibility differences and do not invent IDs or expand the batch."
+    "exactNextAction": "Run tokyo-wave-7-representative-coverage only: nhk-hall, tokyo-takarazuka, toyosu-pit, hulic-hall-tokyo, and otemachi-mitsui-hall. Promote only declared complete public numbered-seat representative sets; preserve total/accessibility differences and do not invent IDs or expand the batch."
   },
   "historicalReleaseCoverageAdequacyReview": {
     "id": "TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
@@ -901,12 +901,12 @@
       "officialFacilityUrl": "https://www.triphony.com/seat/",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0370",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Terra",
-      "reason": "クラシック・舞台・ライブの主要ホール。"
+      "reason": "TOKYO-WAVE-6 representative coverage: complete public numbered-seat set promoted without capacity fitting; official-total and accessibility/event differences remain metadata."
     },
     {
       "id": "bunkamura-orchard",
@@ -1343,12 +1343,12 @@
       "officialFacilityUrl": "https://www.ex-theater.com/",
       "seatMap": "official",
       "numberedMap": "event-dependent",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0129",
       "tier": "SHOULD",
       "difficulty": "COMPLEX",
       "model": "Sol",
-      "reason": "2026-08-13 SOL-SHOULD-1: B_SOURCE_LIMITED. 現行operatorはSEATING／STANDING図を公開しissuerは着席920を確認するが、座席図generationがundatedで、図上の無番号車いすspaceと920の包含・置換番号・同伴mappingを公開しない。"
+      "reason": "TOKYO-WAVE-6 representative coverage: complete public numbered-seat set promoted without capacity fitting; official-total and accessibility/event differences remain metadata."
     },
     {
       "id": "zepp-haneda",
@@ -1394,12 +1394,12 @@
       "officialFacilityUrl": "https://www.zepp.co.jp/hall/shinjuku/",
       "seatMap": "official-basic-pattern",
       "numberedMap": "yes-b4f-subset",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0284",
       "tier": "SHOULD",
       "difficulty": "COMPLEX",
       "model": "Sol",
-      "reason": "2026-08-13 SOL-SHOULD-1: B_SOURCE_LIMITED. 公式椅子使用時はB4F可動番号席530＋B3F standing 163＝693で、B4F 530は全番号2パス一致（rangeDiff 0）するが、barrier-free配置・車いす／同伴の置換番号が催事依存で非公開。"
+      "reason": "TOKYO-WAVE-6 representative coverage: complete public numbered-seat set promoted without capacity fitting; official-total and accessibility/event differences remain metadata."
     },
     {
       "id": "toyosu-pit",

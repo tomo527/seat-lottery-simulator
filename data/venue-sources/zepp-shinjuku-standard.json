@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "zepp-shinjuku-standard",
+  "name": "Zepp Shinjuku (TOKYO)",
+  "prefecture": "東京都",
+  "city": "新宿区",
+  "aliases": [
+    "Zepp Shinjuku",
+    "ゼップ新宿"
+  ],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-current-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "Zepp Hall Network",
+      "title": "Zepp Shinjuku (TOKYO) 公式ホール案内",
+      "url": "https://www.zepp.co.jp/hall/shinjuku/",
+      "checkedAt": "2026-08-14"
+    },
+    {
+      "id": "official-current-linked-basic-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "Zepp Hall Network",
+      "title": "Zepp Shinjuku (TOKYO) 座席／スタンディング図",
+      "url": "https://www.zepp.co.jp/~pj-zepp/wordpress/wp-content/uploads/2023/02/23012831/sh_seat.pdf",
+      "checkedAt": "2026-08-14"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "b4-seated-basic",
+      "canonicalName": "椅子使用時 B4F可動番号席",
+      "issuerDefinedCondition": "Zepp Hall Networkが公開する「椅子席でご利用の場合」のB4階可動椅子席530名。B3階は163名のスタンディングとして別記される。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2023-03-02 official basic seating/standing PDF, directly linked by the current operator page checked 2026-08-14",
+      "sourceIds": [
+        "official-current-hall-page",
+        "official-current-linked-basic-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-current-linked-basic-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "representativeEventLayout": true,
+      "expectedSeatCount": 530,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": true
+      },
+      "scopeDisclosure": "公式の椅子使用時基本図にあるB4F可動椅子530番号席を代表配置として抽選します。B3Fスタンディング163名、販売停止席、車いす・同伴者配置は含めません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "車椅子・同伴者の位置と置換番号は公演ごとに異なり恒久的に公開されていないため、B4Fの530番号席集合へ反映しない。",
+        "sourceIds": [
+          "official-current-hall-page",
+          "official-current-linked-basic-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-14",
+        "method": "two-pass-current-linked-official-basic-map-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "公式の椅子使用時総数693名にはB3Fスタンディング163名を含むが、同階に恒久的な座席IDはない。",
+          "車椅子・同伴者の恒久的な置換番号は未公表。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "I",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "M",
+          "from": 1,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "N",
+          "from": 2,
+          "to": 9,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "N",
+          "from": 18,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "O",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "O",
+          "from": 17,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "P",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "P",
+          "from": 17,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "Q",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "Q",
+          "from": 17,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "R",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "R",
+          "from": 17,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "S",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "S",
+          "from": 17,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "T",
+          "from": 2,
+          "to": 9,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "T",
+          "from": 18,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "U",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "U",
+          "from": 17,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "V",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "V",
+          "from": 17,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "W",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "b4-floor",
+          "areaLabel": "B4F 可動椅子席",
+          "rowLabel": "W",
+          "from": 17,
+          "to": 26,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

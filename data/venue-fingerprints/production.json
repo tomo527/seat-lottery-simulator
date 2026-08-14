@@ -618,6 +618,56 @@
           "sha256": "3c20e9a7ba38efebc72fe9a882cb201c7f7303e4adc934ff3a83adf87e25b177"
         }
       }
+    },
+    "sumida-triphony-main-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1795,
+          "samples": ["first-floor/1/4", "first-floor/26/16", "third-floor/RB/42"],
+          "sha256": "44ceec8e4f20e9f26f33a400399691d390c241060063fd33b936099a4ba6d186"
+        }
+      }
+    },
+    "curian-main-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1084,
+          "samples": ["main/SA/15", "main/K/12", "main/W/41"],
+          "sha256": "f5dcc88be6f9774feeee21d82ff64301567c0b091706c3150b162435425b5ea8"
+        }
+      }
+    },
+    "itabashi-culture-small-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 306,
+          "samples": ["main/A/6", "main/I/10", "main/P/15"],
+          "sha256": "f2f436a1129c94e1061728272daeb57d7a604251eaddd9e6b619a45d174ebe46"
+        }
+      }
+    },
+    "zepp-shinjuku-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "b4-seated-basic": {
+          "count": 530,
+          "samples": ["b4-floor/A/1", "b4-floor/K/6", "b4-floor/W/26"],
+          "sha256": "3757d1f7ed0a819c75eeadec1d5862e7b386b92332eb9f887dbda6b12eff6a57"
+        }
+      }
+    },
+    "ex-theater-roppongi-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "seating-standard": {
+          "count": 906,
+          "samples": ["b3-floor/A/3", "b2-floor/O/10", "b1-stand/7/36"],
+          "sha256": "b6a51b2de41cee3e6f437d701fc1b4c98b8592376abca16d33f38e1f87b3c8db"
+        }
+      }
     }
   }
 }

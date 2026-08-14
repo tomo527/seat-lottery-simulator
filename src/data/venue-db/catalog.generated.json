@@ -68,6 +68,30 @@
     "dataPath": "/venue-db/venues/culttz-kawasaki-hall-release-seed.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "curian-main-standard",
+    "venueGroupId": "curian-main-standard",
+    "name": "きゅりあん 大ホール",
+    "searchAliases": [
+      "きゅりあん大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "品川区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常番号席配置",
+        "seatCount": 1084,
+        "dataPath": "/venue-db/venues/curian-main-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "ebara-culture-main-standard",
     "name": "荏原文化センター 大ホール",
     "searchAliases": [
@@ -80,6 +104,31 @@
     "representativePatternName": "公式座席表配置",
     "seatCount": 437,
     "dataPath": "/venue-db/venues/ebara-culture-main-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "ex-theater-roppongi-standard",
+    "venueGroupId": "ex-theater-roppongi-standard",
+    "name": "EX THEATER ROPPONGI",
+    "searchAliases": [
+      "EX THEATER",
+      "EXシアター六本木"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "seating-standard",
+        "canonicalName": "座席指定 通常番号席配置",
+        "seatCount": 906,
+        "dataPath": "/venue-db/venues/ex-theater-roppongi-standard--seating-standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公開SEATING図に表示された906番号席を代表配置として抽選します。番号のない車椅子2席・SB-L/SB-R各6席、販売停止席、公演ごとの可変配置は含めません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "fuchu-vienna-hall-standard",
@@ -299,6 +348,28 @@
     "representativePatternName": "通常配置（オーケストラピットなし）",
     "seatCount": 1263,
     "dataPath": "/venue-db/venues/itabashi-culture-main-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "itabashi-culture-small-standard",
+    "venueGroupId": "itabashi-culture-small-standard",
+    "name": "板橋区立文化会館 小ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "板橋区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常番号席配置",
+        "seatCount": 306,
+        "dataPath": "/venue-db/venues/itabashi-culture-small-standard--standard.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "schemaVersion": 2,
@@ -736,6 +807,28 @@
     "dataPath": "/venue-db/venues/suginami-kokaido-main-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "sumida-triphony-main-hall-standard",
+    "venueGroupId": "sumida-triphony-main-hall-standard",
+    "name": "すみだトリフォニーホール 大ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "墨田区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常番号席配置（オーケストラピットなし）",
+        "seatCount": 1795,
+        "dataPath": "/venue-db/venues/sumida-triphony-main-hall-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "sumida-triphony-small-hall-standard",
     "name": "すみだトリフォニーホール 小ホール",
     "searchAliases": [
@@ -976,6 +1069,31 @@
         "dataPath": "/venue-db/venues/zepp-haneda-standard--standard.json",
         "scope": "full-venue",
         "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "zepp-shinjuku-standard",
+    "venueGroupId": "zepp-shinjuku-standard",
+    "name": "Zepp Shinjuku (TOKYO)",
+    "searchAliases": [
+      "Zepp Shinjuku",
+      "ゼップ新宿"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "新宿区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "b4-seated-basic",
+        "canonicalName": "椅子使用時 B4F可動番号席",
+        "seatCount": 530,
+        "dataPath": "/venue-db/venues/zepp-shinjuku-standard--b4-seated-basic.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式の椅子使用時基本図にあるB4F可動椅子530番号席を代表配置として抽選します。B3Fスタンディング163名、販売停止席、車いす・同伴者配置は含めません。",
         "fixedOnly": false
       }
     ]

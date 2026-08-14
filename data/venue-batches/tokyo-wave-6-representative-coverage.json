@@ -1,0 +1,53 @@
+{
+  "batchId": "tokyo-wave-6-representative-coverage",
+  "createdAt": "2026-08-14",
+  "scope": "Representative coverage v2 bounded production batch. Promote only declared public numbered-seat representative sets for すみだトリフォニーホール 大ホール、きゅりあん 大ホール、板橋区立文化会館 小ホール、Zepp Shinjuku (TOKYO)、EX THEATER ROPPONGI. Preserve official-total and accessibility/event differences as metadata; do not capacity-fit, invent seat IDs, or expand the batch.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [
+    "sumida-triphony-main-hall-standard",
+    "curian-main-standard",
+    "itabashi-culture-small-standard",
+    "zepp-shinjuku-standard",
+    "ex-theater-roppongi-standard"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-official-0370",
+      "carryOverFrom": "tokyo-wave-2",
+      "previousStatus": "draft-created",
+      "recheckReason": "Representative coverage v2 permits the complete official 1,795-seat numbered map while retaining total and wheelchair differences as metadata.",
+      "recheckNotBefore": "2026-08-14"
+    },
+    {
+      "inventoryId": "tokyo-curian-main",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "independent-review-mismatch",
+      "recheckReason": "Representative coverage v2 permits the complete official 1,084-seat numbered map while retaining the official-total difference as metadata.",
+      "recheckNotBefore": "2026-08-14"
+    },
+    {
+      "inventoryId": "tokyo-official-0916",
+      "carryOverFrom": "tokyo-wave-2",
+      "previousStatus": "independent-review-mismatch",
+      "recheckReason": "Representative coverage v2 permits the complete official 306-seat numbered map while retaining the wheelchair conversion uncertainty as metadata.",
+      "recheckNotBefore": "2026-08-14"
+    }
+  ],
+  "recommendedModel": "Terra high",
+  "stopRule": "Keep a target nonproduction only if its declared numbered scope cannot be completely reconstructed from the cited public evidence. Never infer a missing seat ID or remove a mapped seat to match capacity.",
+  "completedAt": "2026-08-14",
+  "result": {
+    "productionVenuesAdded": 5,
+    "selectableConfigurationsAdded": 5,
+    "configurationSeatRecordsAdded": 4621,
+    "mappedSeats": {
+      "sumida-triphony-main-hall-standard": 1795,
+      "curian-main-standard": 1084,
+      "itabashi-culture-small-standard": 306,
+      "zepp-shinjuku-standard": 530,
+      "ex-theater-roppongi-standard": 906
+    },
+    "nextBatchProposal": "tokyo-wave-7-representative-coverage"
+  }
+}
