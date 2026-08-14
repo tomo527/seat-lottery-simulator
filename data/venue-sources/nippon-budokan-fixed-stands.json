@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "nippon-budokan-fixed-stands",
+  "name": "日本武道館 固定スタンド席候補",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": ["NIPPON BUDOKAN"],
+  "venueType": "arena",
+  "representativePattern": {
+    "id": "fixed-stands-only",
+    "name": "固定スタンド席のみ候補",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行2026年版の発行者施設概要は1階3,199席、2階3,604席、3階4,272席を、アリーナ仮設2,946席と3階立見480席から分離して示す。しかし固定スタンドの完全なrow・seat number集合、車椅子利用時の置換番号、同伴席を公開しないためB_SOURCE_LIMITED。",
+    "notIncludedPatterns": ["アリーナ仮設席", "3階立見席", "催事別ステージ閉鎖席", "車椅子・同伴者の未定義置換variant"]
+  },
+  "sources": [
+    {
+      "id": "official-current-facility-brochure",
+      "official": true,
+      "roles": ["facility", "seat-count", "seat-structure", "event-layout"],
+      "publisher": "公益財団法人日本武道館",
+      "title": "日本武道館 2026年版施設概要パンフレット",
+      "url": "https://www.nipponbudokan.or.jp/pdf/202604.pdf",
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-current-site",
+      "official": true,
+      "roles": ["facility", "event-layout"],
+      "publisher": "公益財団法人日本武道館",
+      "title": "日本武道館 公式サイト",
+      "url": "https://www.nipponbudokan.or.jp/",
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-current-access",
+      "official": true,
+      "roles": ["facility"],
+      "publisher": "公益財団法人日本武道館",
+      "title": "日本武道館 アクセス",
+      "url": "https://www.nipponbudokan.or.jp/about/access",
+      "checkedAt": "2026-08-13"
+    }
+  ],
+  "registeredScope": "B_SOURCE_LIMITED / SOURCE HOLD。現行発行者資料の階別固定席候補11,075席は確認したが、全固定番号と車椅子・同伴者の恒久置換規則を確認できないためrangeを登録しない。",
+  "completenessBasis": "第1パスで2026年版施設概要PDFの現行metadataと施設概要ページを目視し、1階3,199、2階3,604、3階4,272、別scopeのアリーナ仮設2,946、3階立見480、最大14,501を確認した。独立current sourceとして公式サイトとアクセス資料を確認したが、完全番号図・wheelchair replacement map・companion mappingはなく、全IDを独立照合できるcurrent source generationも発見できなかった。",
+  "transformation": "階別subtotalからseat IDsをcapacity fittingせず、写真・geometryからrow/numberを補完せず、historical brochureの車椅子数をcurrent configurationへ混在させない。",
+  "knownLimitations": [
+    "B_SOURCE_LIMITED: 現行発行者資料は固定スタンド全席のrow・seat numberを公開しない。",
+    "B_SOURCE_LIMITED: 車椅子スペースが置換する固定番号席と同伴席の恒久mappingが未公表。",
+    "B_SOURCE_LIMITED: 全固定番号を独立照合できる同一current source generationがない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": "2026-08-13",
+    "method": "current-official-source-discovery-and-independent-generation-hold",
+    "seatStructure": "pending",
+    "seatCount": "pending",
+    "unresolvedIssues": [
+      "固定スタンド11,075席候補の全row・全seat numberが未公表。",
+      "車椅子・同伴者の置換番号と固定席総数への包含関係が未公表。",
+      "完全番号集合を独立照合できるcurrent issuer source generationがない。"
+    ]
+  },
+  "ranges": []
+}

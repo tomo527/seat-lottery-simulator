@@ -14,7 +14,7 @@
     "name": "通常固定席のみ",
     "coverage": "draft",
     "expectedSeatCount": null,
-    "selectionReason": "イベントごとの差を避け、公式施設概要が固定席と明示する3400席だけを代表パターン候補とする。",
+    "selectionReason": "現行施設概要は固定席3,400席と可動席201席を分離し、公式番号図は固定席と可動席範囲を表示する。しかし番号図のsource generationは2016年12月で、現行accessibility案内は車椅子のまま観覧できることだけを示し、置換番号・同伴席・3,400席への包含関係を公開しないためB_SOURCE_LIMITED。",
     "notIncludedPatterns": [
       "可動席201席",
       "オーケストラピット席160席",
@@ -32,7 +32,7 @@
       "publisher": "一般財団法人NHK財団",
       "title": "NHKホール座席表",
       "url": "https://www.nhk-fdn.or.jp/nhk_hall/pdf/nhk_hall.pdf",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-13"
     },
     {
       "id": "official-facility-guide",
@@ -45,24 +45,64 @@
       "publisher": "一般財団法人NHK財団",
       "title": "NHKホール施設概要",
       "url": "https://www.nhk-fdn.or.jp/nhk_hall/organizer.html",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-current-seat-page",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "一般財団法人NHK財団",
+      "title": "NHKホール座席案内",
+      "url": "https://www.nhk-fdn.or.jp/nhk_hall/seat.html",
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-current-access",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "一般財団法人NHK財団",
+      "title": "NHKホール アクセス・車椅子利用案内",
+      "url": "https://www.nhk-fdn.or.jp/nhk_hall/access.html",
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-current-events",
+      "official": true,
+      "roles": [
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "一般財団法人NHK財団",
+      "title": "NHKホール予定一覧",
+      "url": "https://www.nhk-fdn.or.jp/nhk_hall/event.html",
+      "checkedAt": "2026-08-13"
     }
   ],
-  "registeredScope": "公式施設概要の固定席3400席のみを予定。",
-  "completenessBasis": "固定席3400席と可動席201席の内訳を公式資料で確認済み。固定席番号の全rangeを転記中。",
-  "transformation": "階・ブロック別に固定席だけをrangeへ転記する予定。",
+  "registeredScope": "B_SOURCE_LIMITED / SOURCE HOLD。固定席3,400席候補は確認したが、current accessibility semanticsと独立current numbered-map generationが揃わないためrangeを登録しない。",
+  "completenessBasis": "第1パスで2016年12月の公式番号図を目視し、固定1F 890・2F 1,335・3F 1,175＝3,400、可動pit 160＋R11・12 20＋L11・12 21＝201を確認した。独立current passで施設概要、座席案内、access、2026 eventsを確認し、施設の現役性と3,601席内訳、車椅子のまま客席で観覧可能なことは再確認できたが、2016番号図から独立したcurrent全番号資料、車椅子置換番号、同伴席、固定3,400への包含関係は確認できなかった。",
+  "transformation": "2016番号図をcurrent production configurationへ推定更新せず、固定3,400へのcapacity fitting、wheelchair replacement、companion seatを補完しない。",
   "knownLimitations": [
-    "オーケストラピット席とL・R補助席は可動席のため対象外。"
+    "B_SOURCE_LIMITED: オーケストラピット160席とL・R補助席41席は可動席として別scope。",
+    "B_SOURCE_LIMITED: 車椅子のまま観覧可能だが、置換番号・同伴席・固定3,400席への包含関係が未公表。",
+    "B_SOURCE_LIMITED: 完全番号図は2016年12月版で、独立current source generationがない。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-13",
+    "method": "official-numbered-map-first-pass-current-facility-accessibility-independent-pass-hold",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "固定席、可動席、車椅子転換席の境界を公式資料だけで確定していない。",
-      "通常配置の階別番号席と転換対象番号を公式資料で特定する。"
+      "2016番号図から独立したcurrent完全番号資料がない。",
+      "車椅子スペースが置換する番号席、同伴席、固定3,400席への包含関係が未公表。",
+      "発行者が固定席のみを恒久selectable configurationとして独立定義していない。"
     ]
   },
   "ranges": []

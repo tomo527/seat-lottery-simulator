@@ -1,0 +1,122 @@
+{
+  "reportId": "tokyo-adequacy-critical-gaps-1-2026-08-13",
+  "macro": "TOKYO-ADEQUACY-CRITICAL-GAPS-1",
+  "asOf": "2026-08-13",
+  "model": "Sol high",
+  "scope": ["nippon-budokan", "nhk-hall", "zepp-haneda"],
+  "mode": "official-source-discovery-and-evidence-normalization-only",
+  "rangeTranscriptionStarted": false,
+  "venues": [
+    {
+      "id": "nippon-budokan",
+      "sourceId": "nippon-budokan-fixed-stands",
+      "tier": "MUST",
+      "useCase": "iconic large arena / central Tokyo live",
+      "classification": "B_SOURCE_LIMITED",
+      "currentness": "The directly published official brochure has 2026-03-26 creation metadata and is linked from the current issuer site.",
+      "currentOfficialEvidence": [
+        "The 2026 issuer brochure separately lists arena temporary 2,946, first-floor 3,199, second-floor 3,604, third-floor 4,272, third-floor standing 480, and maximum 14,501.",
+        "Current official site and access material confirm the active facility but do not publish a complete numbered stand map or accessibility conversion plan."
+      ],
+      "officialFixedStandCandidate": 11075,
+      "expectedSeatCount": 11075,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "ranges": 0,
+      "completeNumberedSeatSetGate": "FAIL",
+      "wheelchairCompanionSemanticsGate": "FAIL",
+      "independentCurrentSourceGenerationGate": "FAIL",
+      "historicalEvidenceTreatment": "Older issuer brochures are not used to define the current configuration; their prior wheelchair-capacity note is not mixed into the 2026 evidence package.",
+      "blocker": "Current official material supplies exact tier subtotals but not every fixed stand row/number, the wheelchair replacement IDs or companion mapping, or an independent current numbered source generation.",
+      "officialSources": [
+        "https://www.nipponbudokan.or.jp/pdf/202604.pdf",
+        "https://www.nipponbudokan.or.jp/",
+        "https://www.nipponbudokan.or.jp/about/access"
+      ]
+    },
+    {
+      "id": "nhk-hall",
+      "sourceId": "nhk-hall-standard",
+      "tier": "MUST",
+      "useCase": "large multipurpose/concert hall",
+      "classification": "B_SOURCE_LIMITED",
+      "currentness": "The current NHK Foundation site, 2026 event list, facility overview, seat page, and access page are active; the detailed numbered-map PDF metadata and printed date remain 2016-12.",
+      "currentOfficialEvidence": [
+        "The current facility overview gives fixed 3,400 and movable 201: 1F fixed 890 plus pit 160, R11/12 20, L11/12 21; 2F fixed 1,335; 3F fixed 1,175; total 3,601.",
+        "The current seat page says wheelchair users may enter and watch from the audience area, but no replacement IDs, inclusion rule, or companion-seat mapping are published."
+      ],
+      "officialFixedSeatCandidate": 3400,
+      "expectedSeatCount": 3400,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "ranges": 0,
+      "completeNumberedSeatSetGate": "PASS_FOR_2016_MAP_ONLY",
+      "wheelchairCompanionSemanticsGate": "FAIL",
+      "independentCurrentSourceGenerationGate": "FAIL",
+      "historicalEvidenceTreatment": "The 2016 map is identified as an older numbered source generation and is not represented as an independently current map.",
+      "blocker": "The exact fixed subtotal and numbered map are insufficient without current independent full-ID evidence and lossless wheelchair/companion inclusion or replacement semantics.",
+      "officialSources": [
+        "https://www.nhk-fdn.or.jp/nhk_hall/pdf/nhk_hall.pdf",
+        "https://www.nhk-fdn.or.jp/nhk_hall/organizer.html",
+        "https://www.nhk-fdn.or.jp/nhk_hall/seat.html",
+        "https://www.nhk-fdn.or.jp/nhk_hall/access.html",
+        "https://www.nhk-fdn.or.jp/nhk_hall/event.html"
+      ]
+    },
+    {
+      "id": "zepp-haneda",
+      "sourceId": "zepp-haneda-standard",
+      "tier": "SHOULD",
+      "useCase": "medium live-house / Haneda south-bay",
+      "classification": "B_SOURCE_LIMITED",
+      "currentness": "The active operator page and 2026 schedule still link the official basic-pattern PDF; the PDF metadata remains 2021-10-19.",
+      "currentOfficialEvidence": [
+        "The operator page still publishes seated 1,207: 1F movable 888 and 2F fixed 319.",
+        "The operator explicitly states barrier-free arrangements vary by event and its FAQ states the public map is only a basic pattern that may differ by performance; current events can sell wheelchair tickets without a stable replacement map."
+      ],
+      "expectedSeatCount": 1207,
+      "calculatedSeatCount": 1207,
+      "rangeDiff": 0,
+      "rangesPreviouslyReconciled": 34,
+      "rangesStoredInHoldSource": 0,
+      "completeNumberedSeatSetGate": "PASS_FOR_2021_CURRENT_LINKED_BASIC_PATTERN",
+      "wheelchairCompanionSemanticsGate": "FAIL",
+      "independentCurrentSourceGenerationGate": "FAIL",
+      "historicalEvidenceTreatment": "The prior same-day 1,207/1,207/rangeDiff 0 transcription is retained as a completed audit result for the current-linked 2021 basic-map generation; no newer map is substituted or inferred.",
+      "blocker": "No new issuer evidence defines a permanent wheelchair replacement set, companion mapping, or a current independent numbered-map generation; the operator expressly keeps the layout event-dependent.",
+      "officialSources": [
+        "https://www.zepp.co.jp/hall/haneda/",
+        "https://www.zepp.co.jp/~pj-zepp/wordpress/wp-content/uploads/2020/02/15040716/hn_seat.pdf",
+        "https://www.zepp.co.jp/hall/haneda/schedule/",
+        "https://www.zepp.co.jp/faq/135/"
+      ]
+    }
+  ],
+  "evidencePackaging": {
+    "createdLocalSourceJson": ["nippon-budokan-fixed-stands.json", "zepp-haneda-standard.json"],
+    "normalizedExistingSourceJson": ["nhk-hall-standard.json"],
+    "verificationCheckedAt": "2026-08-13",
+    "historicalCurrentSeparation": "PASS",
+    "gateRelaxed": false
+  },
+  "result": {
+    "productionPromotions": 0,
+    "selectableConfigurationsAdded": 0,
+    "configurationSeatRecordsAdded": 0,
+    "formalHolds": 3,
+    "productionAfter": {"venues": 62, "selectableConfigurations": 63, "configurationSeatRecords": 85237},
+    "tokyoCoverageAfter": {"Tokyo": "10/76 = 13.2%", "MUST": "6/44 = 13.6%", "SHOULD": "4/28 = 14.3%"},
+    "releaseReady": false,
+    "deployRequired": false
+  },
+  "validation": {
+    "jsonParsing": "PASS",
+    "targetSourceReviews": "PASS: all three validation error sets are empty and all remain draft HOLD sources",
+    "reports": ["venues:inventory:report", "venues:readiness:report", "venues:release:coverage", "venues:report"],
+    "venueDatabase": ["venues:build", "venues:check", "venues:validate"],
+    "application": {"lint": "PASS", "typecheck": "PASS", "unitTests": "17 files / 140 tests PASS", "productionBuild": "PASS", "e2e": "13/13 PASS in elevated Miniflare run after the expected sandbox-only wait"},
+    "productionArtifactRegression": "PASS: no diff from a0f2ef5559db94e33e841c5a6a17ddbdde4041c0 under public/venue-db, generated catalog, or production fingerprints",
+    "gitDiffCheck": "PASS",
+    "deploy": "not required; production/selectable data did not change"
+  }
+}

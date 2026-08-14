@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "zepp-haneda-standard",
+  "name": "Zepp Haneda (TOKYO)",
+  "prefecture": "東京都",
+  "city": "大田区",
+  "aliases": ["ゼップ羽田"],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "basic-seated-pattern",
+    "name": "椅子使用時 基本パターン候補",
+    "coverage": "draft",
+    "expectedSeatCount": null,
+    "selectionReason": "現行operator pageが直接リンクする公式基本図は1F可動888席と2F固定319席、計1,207席を示し、既存の独立2パスは1,207/1,207/rangeDiff 0で一致する。しかしoperator自身が座席図を基本パターン、公演・催事ごとに異なるとし、barrier-free配置、車椅子・同伴者の置換番号を公開しないためB_SOURCE_LIMITED。",
+    "notIncludedPatterns": ["スタンディング配置", "催事別の座席とfloorの組合せ", "車椅子・同伴者の未定義置換variant"]
+  },
+  "sources": [
+    {
+      "id": "official-current-hall-page",
+      "official": true,
+      "roles": ["facility", "seat-count", "event-layout"],
+      "publisher": "Zeppホールネットワーク",
+      "title": "Zepp Haneda (TOKYO) フロアガイド",
+      "url": "https://www.zepp.co.jp/hall/haneda/",
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-current-linked-basic-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count", "event-layout"],
+      "publisher": "Zeppホールネットワーク",
+      "title": "Zepp Haneda (TOKYO) 座席・スタンディング図",
+      "url": "https://www.zepp.co.jp/~pj-zepp/wordpress/wp-content/uploads/2020/02/15040716/hn_seat.pdf",
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-current-schedule",
+      "official": true,
+      "roles": ["facility", "event-layout"],
+      "publisher": "Zeppホールネットワーク",
+      "title": "Zepp Haneda (TOKYO) スケジュール",
+      "url": "https://www.zepp.co.jp/hall/haneda/schedule/",
+      "checkedAt": "2026-08-13"
+    },
+    {
+      "id": "official-seat-map-faq",
+      "official": true,
+      "roles": ["event-layout"],
+      "publisher": "Zeppホールネットワーク",
+      "title": "座席指定の場所が知りたいです。",
+      "url": "https://www.zepp.co.jp/faq/135/",
+      "checkedAt": "2026-08-13"
+    }
+  ],
+  "registeredScope": "B_SOURCE_LIMITED / SOURCE HOLD。基本着席番号集合は既存2パスで1,207/1,207/rangeDiff 0だが、current issuer evidenceは催事依存の車椅子・同伴者配置を恒久configurationとして定義しないためrangeを登録しない。",
+  "completenessBasis": "既存SOL-SHOULD-1の独立2パスは、current pageが直接リンクする2021-10-19 metadataの基本図から1F 888、2F VIP 32＋固定287＝319、計1,207を全番号で一致させた。今回のcurrent discoveryではoperator page、2026 schedule、FAQを別に再確認したが、barrier-free対応は催事ごとのhall使用状況により異なり、基本図も公演・催事により異なると明記される。新しい恒久置換番号、同伴席、独立current numbered-map generationは発見できなかった。",
+  "transformation": "既存の一致済み基本図をproduction defaultへ昇格せず、event-dependent wheelchair seat IDsやcompanion mappingを恒久化しない。",
+  "knownLimitations": [
+    "B_SOURCE_LIMITED: 車椅子・同伴者の恒久位置、置換番号、1,207席への包含関係が未公表。",
+    "B_SOURCE_LIMITED: operatorは公開座席図を基本パターンとし、公演・催事による相違を明記する。",
+    "B_SOURCE_LIMITED: 2021基本図と独立したcurrent numbered-map generationがない。"
+  ],
+  "verification": {
+    "status": "pending",
+    "checkedAt": "2026-08-13",
+    "method": "current-accessibility-source-discovery-after-matched-two-pass-hold",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "unresolvedIssues": [
+      "車椅子スペースが置換する番号席と同伴席が未公表。",
+      "基本図を恒久default configurationとするissuer conditionがない。",
+      "完全番号集合を独立照合できるcurrent issuer source generationがない。"
+    ]
+  },
+  "ranges": []
+}

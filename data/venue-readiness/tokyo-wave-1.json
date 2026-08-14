@@ -118,9 +118,9 @@
     {
       "venueId": "nhk-hall-standard",
       "readiness": "R3",
-      "secondPass": "not-started",
-      "blocker": "固定席、可動席、車椅子転換席の境界を公式資料だけで確定していない。",
-      "nextAction": "通常配置の階別番号席と転換対象番号を公式資料で特定する。"
+      "secondPass": "blocked",
+      "blocker": "B_SOURCE_LIMITED: 固定3,400席と2016公式番号図は確認したが、current独立番号generationと車椅子置換・同伴・包含semanticsがない。",
+      "nextAction": "issuerがcurrent完全番号図とfixed-only configurationのwheelchair/companion mappingを公開した場合だけ再開する。"
     },
     {
       "venueId": "nissay-theatre-standard",

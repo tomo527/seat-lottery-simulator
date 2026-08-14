@@ -1,0 +1,98 @@
+{
+  "macro": "TOKYO RELEASE COVERAGE ADEQUACY REVIEW",
+  "reviewIteration": "after TOKYO-ADEQUACY-CRITICAL-GAPS-1",
+  "reviewedAt": "2026-08-13",
+  "model": "Sol high",
+  "scope": "Independent product-utility re-review of the canonical 76-venue Tokyo universe after bounded current-evidence discovery for nippon-budokan, nhk-hall, and zepp-haneda. No range transcription, venue promotion, production artifact change, or release execution.",
+  "decision": "ADEQUACY FAIL",
+  "decisionBasis": {
+    "notMechanical": "The decision is not derived from 13.2% alone, does not treat B/C/D closure as positive coverage, and does not treat 10/10 conversion as adequacy.",
+    "coverage": {
+      "Tokyo": "10/76 = 13.2%",
+      "MUST": "6/44 = 13.6%",
+      "SHOULD": "4/28 = 14.3%",
+      "research": {"MUST": "44/44 = 100%", "SHOULD": "28/28 = 100%"},
+      "schemaAddressable": {"production": 10, "nonproduction": 0, "conversion": "10/10 = 100%"}
+    },
+    "utility": {
+      "largeLiveArenaDome": "FAIL: the bounded macro did not produce a selectable Budokan or NHK configuration; canonical production still has 0 dome, 0 arena, and 0 venue at or above 3,000 seats.",
+      "concertHall": "PARTIAL PASS: useful verified concert-hall choices remain, but there is no 3,000+ production hall and NHK Hall remains unavailable.",
+      "commercialTheatreMusical25d": "PARTIAL PASS: existing verified theatres are genuinely useful, but the flagship omissions remain substantial.",
+      "mediumLiveHouse": "FAIL: Zepp Haneda remains event-dependent and no Zepp, EX THEATER, Toyosu PIT, or comparable medium live-house is production.",
+      "otherReservedEvents": "PASS WITH GAPS: the broader Tokyo catalog remains useful for civic, classical, lecture, and small-theatre events.",
+      "scale": {"canonicalProduction": {"largeAtLeast3000": 0, "medium1000To2999": 5, "smallUnder1000": 5}, "allTokyoProduction": {"largeAtLeast3000": 0, "medium1000To2999": 12, "smallUnder1000": 41}},
+      "clusters": {"centralCore": "usable but selective", "majorBayfrontAriakeOdaibaToyosu": "critical gap", "HanedaSouthBayLiveHouse": "critical gap because Zepp Haneda remains HOLD", "Tama": "usable through RISURU and broader civic-hall production"},
+      "claimFit": "The site can accurately claim a verified curated subset, but explicit disclosure cannot make a major-Tokyo-venues or substantially-covered claim consistent with zero large production choices and zero medium live-house choices."
+    }
+  },
+  "criticalGapMacroEffect": {
+    "nippon-budokan": {"classification": "B_SOURCE_LIMITED", "expected": 11075, "calculated": null, "rangeDiff": null, "utilityGapClosed": false, "improvementPotential": "public-source discovery exhausted; improvement now depends on issuer-supplied complete numbered and accessibility mapping"},
+    "nhk-hall": {"classification": "B_SOURCE_LIMITED", "expected": 3400, "calculated": null, "rangeDiff": null, "utilityGapClosed": false, "improvementPotential": "public currentness is strong, but the only complete numbered generation is 2016 and accessibility mapping remains unpublished"},
+    "zepp-haneda": {"classification": "B_SOURCE_LIMITED", "expected": 1207, "calculated": 1207, "rangeDiff": 0, "utilityGapClosed": false, "improvementPotential": "low through public search because operator expressly defines the layout and barrier-free arrangement as event-dependent; issuer clarification is the remaining path"}
+  },
+  "holdTaxonomy": {
+    "currentMustNonProduction": {"total": 38, "A_SCHEMA_UNLOCKABLE": 0, "B_SOURCE_LIMITED": 27, "C_CONTRADICTION": 8, "D_CURRENTNESS_CLOSED": 3},
+    "assessment": "PASS FOR SAFETY: the three bounded B classifications are tied to issuer evidence gaps and explicit event-dependent semantics, not release convenience. No blocker was broadened and no HOLD was promoted.",
+    "scopedPackagingFix": {
+      "createdLocalSourceJson": ["nippon-budokan", "zepp-haneda"],
+      "normalizedCurrentProvenance": ["nhk-hall"],
+      "historicalCurrentSeparation": "PASS",
+      "remainingRepositoryWideHistoricalCaveatOutsideScope": "Three MUST blocker records still lack local source JSON and seven older draft sources still have verification.checkedAt unset; these are nonproduction and do not weaken production quality, but remain audit-packaging debt."
+    }
+  },
+  "remainingCriticalUtilityGaps": [
+    {
+      "priority": 1,
+      "venueIds": ["tokyo-dome", "nippon-budokan", "ariake-arena", "nhk-hall"],
+      "useCase": "large live / dome / arena / 3,000+ hall",
+      "impact": "There is no selectable large Tokyo venue, making the core major-venue claim and common live-event searches materially incomplete."
+    },
+    {
+      "priority": 2,
+      "venueIds": ["zepp-haneda", "zepp-shinjuku", "ex-theater-roppongi", "toyosu-pit"],
+      "useCase": "medium live-house",
+      "impact": "No production choice represents the mainstream medium live-house experience."
+    },
+    {
+      "priority": 3,
+      "venueIds": ["ariake-arena", "sgc-hall-ariake", "ex-theater-ariake", "toyosu-pit"],
+      "useCase": "major bayfront cluster",
+      "impact": "Ariake/Odaiba/Toyosu remains a conspicuous geographic and event-utility blank."
+    },
+    {
+      "priority": 4,
+      "venueIds": ["tokyo-takarazuka", "tokyu-theatre-orb", "tbs-akasaka-act", "kabukiza"],
+      "useCase": "flagship commercial theatre / musical",
+      "impact": "Existing theatre utility prevents category-wide failure, but high-frequency flagship omissions remain visible."
+    }
+  ],
+  "releaseGateAfterReview": {
+    "researchGate": "PASS: MUST 100%, SHOULD 100%",
+    "addressableConversionGate": "PASS: 10/10 = 100%",
+    "rawFloorGate": "PASS: MUST 6/44, SHOULD 4/28, MUST+SHOULD 10/72, Tokyo 10/76",
+    "productionQualityGate": "PASS",
+    "adequacyGate": "FAIL",
+    "releaseReady": false,
+    "releaseExecuted": false,
+    "productionArtifactsChanged": false
+  },
+  "validation": {
+    "jsonParsing": "PASS",
+    "releaseCoverageReport": "PASS with deterministic adequacy blockers; Coverage gate FAIL and RELEASE READY no",
+    "productionState": "62 venues / 63 selectable configurations / 85,237 configuration-seat records",
+    "regression": "PASS: lint, typecheck, 140 unit tests, production build, 13 E2E tests, production-artifact diff, and git diff check",
+    "deploy": "not required because production additions are zero"
+  },
+  "exactNextAction": {
+    "macro": "TOKYO-ADEQUACY-ISSUER-EVIDENCE-REQUEST-1",
+    "scope": ["nippon-budokan", "zepp-haneda"],
+    "mode": "prepare-not-send-without-separate-authority",
+    "whyThisMinimum": "The two unresolved categories that independently fail adequacy are large arena and medium live-house. Public-source discovery is now exhausted for the bounded candidates; the remaining potentially decisive evidence is an issuer-owned current complete numbered configuration and wheelchair/companion replacement mapping.",
+    "deliverables": [
+      "an exact source-generation and complete-numbered-set request for Nippon Budokan fixed stands",
+      "an exact stable-basic-configuration and wheelchair/companion replacement request for Zepp Haneda",
+      "a stop rule that keeps both B_SOURCE_LIMITED if the issuer cannot provide shareable primary evidence"
+    ],
+    "prohibitions": ["do not send externally without separate authority", "do not transcribe ranges", "do not infer geometry or capacity-fit", "do not expand to ariake-arena or tokyo-takarazuka", "do not release"]
+  }
+}
