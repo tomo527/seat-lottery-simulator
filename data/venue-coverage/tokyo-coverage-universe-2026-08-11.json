@@ -69,14 +69,14 @@
     },
     "userVisibleProductionCoverage": {
       "tokyoUniverse": {
-        "numerator": 17,
+        "numerator": 19,
         "denominator": 76,
-        "percent": 22.4
+        "percent": 25.0
       },
       "MUST": {
-        "numerator": 8,
+        "numerator": 10,
         "denominator": 44,
-        "percent": 18.2
+        "percent": 22.7
       },
       "SHOULD": {
         "numerator": 9,
@@ -91,14 +91,14 @@
     },
     "schemaAddressableCoverage": {
       "tokyoUniverse": {
-        "numerator": 17,
+        "numerator": 19,
         "denominator": 76,
-        "percent": 22.4
+        "percent": 25.0
       },
       "MUST": {
-        "numerator": 8,
+        "numerator": 10,
         "denominator": 44,
-        "percent": 18.2
+        "percent": 22.7
       },
       "SHOULD": {
         "numerator": 9,
@@ -112,7 +112,7 @@
       },
       "confirmedCurrentSchemaNonProductionIds": [],
       "confirmedSchemaExtensionNonProductionIds": [],
-      "note": "17 = current PRODUCTION 17（TOKYO-WAVE-7のヒューリックホール東京と大手町三井ホールの代表配置を含む）。車椅子・同伴者の未反映差分と公式総数差はconfidence metadataに保持する。"
+      "note": "19 = current PRODUCTION 19（TOKYO-WAVE-8 RECOVERYの東京宝塚劇場2,070番号席と代々木第二固定2,803番号席を含む）。車椅子・可動席・公式総数差はscope/confidence metadataに保持する。"
     }
   },
   "mustNonProductionBlockerAudit": {
@@ -123,8 +123,8 @@
       "C_CONTRADICTION": 4,
       "D_CURRENTNESS_CLOSED": 3
     },
-    "currentNonProductionCount": 38,
-    "basis": "40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。meijizaとNNTT中劇場をproductionへconversionし、CURRENT-1／ARENA-2／THEATRE-1の6件をB、ARENA-1／THEATRE-1の4件をCへfresh issuer evidenceに基づき再分類した。current nonproductionは38件、current Aは0件。",
+    "currentNonProductionCount": 36,
+    "basis": "40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。meijizaとNNTT中劇場に加え、TOKYO-WAVE-8 RECOVERYで東京宝塚劇場と代々木第二をproduction化した。current nonproductionは36件、current Aは0件。",
     "classes": {
       "A_SCHEMA_UNLOCKABLE": {
         "count": 0,
@@ -138,7 +138,7 @@
         "note": "TOKYO-CONFIG-A-THEATRE-1完了後、current A cohortは0件。"
       },
       "B_SOURCE_LIMITED": {
-        "count": 27,
+        "count": 26,
         "venueIds": [
           "tokyo-dome",
           "nippon-budokan",
@@ -149,7 +149,6 @@
           "tokyu-theatre-orb",
           "tbs-akasaka-act",
           "nissay-theatre",
-          "tokyo-takarazuka",
           "kabukiza",
           "shiki-haru",
           "shiki-aki",
@@ -177,14 +176,13 @@
         "note": "完全番号図、厳密総数、canonical seat identity、車いす置換番号、または恒久configuration条件のissuer-owned情報が欠け、schema変更だけでは救済できない。"
       },
       "C_CONTRADICTION": {
-        "count": 8,
+        "count": 7,
         "venueIds": [
           "tokyo-geigeki-concert",
           "tokyo-operacity-concert",
           "sumida-triphony-main",
           "shinbashi-enbujo",
           "yoyogi-1",
-          "yoyogi-2",
           "tokyo-gymnasium",
           "galaxy-theatre"
         ],
@@ -425,8 +423,8 @@
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
-    "production": 17,
-    "hold": 54,
+    "production": 19,
+    "hold": 52,
     "contradiction": 1,
     "unresearched": 4,
     "mustUnresearched": 0,
@@ -434,11 +432,11 @@
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
     "researchCompletenessPercent": 94.7,
-    "userVisibleProductionCoveragePercent": 22.4,
-    "mustProductionCoveragePercent": 18.2,
+    "userVisibleProductionCoveragePercent": 25.0,
+    "mustProductionCoveragePercent": 22.7,
     "shouldProductionCoveragePercent": 32.1,
-    "schemaAddressableCoveragePercent": 22.4,
-    "nextMacro": "tokyo-wave-8-representative-coverage"
+    "schemaAddressableCoveragePercent": 25.0,
+    "nextMacro": "TOKYO-WAVE-8B — yoyogi-1 and tokyo-gymnasium"
   },
   "releaseGate": {
     "policyVersion": "representative-coverage-v2",
@@ -471,16 +469,16 @@
     "id": "TOKYO-REPRESENTATIVE-COVERAGE-RELEASE-REVIEW",
     "status": "complete",
     "completedAt": "2026-08-14",
-    "outcome": "RELEASE READY AFTER TOKYO-WAVE-7 REPRESENTATIVE EXPANSION",
+    "outcome": "RELEASE READY AFTER TOKYO-WAVE-8 RECOVERY",
     "blockerIds": [],
     "criteria": {
       "applicationHealth": "PASS: TOKYO-WAVE-5 completed the full venue/application regression after production generation.",
       "representativeMajorUseCoverage": "PASS: Galaxy Theatre adds a high-demand Tokyo theatre representative and Zepp Haneda adds a medium live-house representative.",
-      "practicalTokyoMajorVenueCoverage": "PASS: Wave 7 adds two official numbered representative configurations in high-demand central Tokyo without inventing seat IDs or fitting capacity.",
+      "practicalTokyoMajorVenueCoverage": "PASS: Wave 8 recovery adds Tokyo Takarazuka Theatre and Yoyogi Second Gymnasium from complete current official numbered maps without inventing seat IDs or fitting capacity.",
       "representativeCoverageDisclosure": "PASS: global UI and terms disclosure remains present for representative configurations.",
-      "productionQuality": "PASS: every Wave 7 configuration records public sources, complete mapped ranges, confidence, total/accessibility differences, and the no-fitting/no-invented-ID controls."
+      "productionQuality": "PASS: both Wave 8 recovery configurations record current official sources, complete mapped ranges, scope/accessibility differences, and the no-fitting/no-invented-ID controls."
     },
-    "exactNextAction": "Run tokyo-wave-8-representative-coverage only: yoyogi-1, yoyogi-2, tokyo-gymnasium, nippon-budokan, and tokyo-takarazuka. Promote only declared complete public numbered-seat representative sets; preserve total/accessibility differences and do not invent IDs or expand the batch."
+    "exactNextAction": "TOKYO-WAVE-8B — 国立代々木競技場 第一体育館 and 東京体育館. Rebuild each range set directly from current official numbered maps; preserve fixed-only, total, accessibility, and dynamic-area differences without capacity fitting."
   },
   "historicalReleaseCoverageAdequacyReview": {
     "id": "TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
@@ -612,12 +610,12 @@
       "officialFacilityUrl": "https://www.jpnsport.go.jp/yoyogi/sisetu/nitai/tabid/76/Default.aspx",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0744",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Sol",
-      "reason": "2026-08-12 TOKYO-CONFIG-A-ARENA-1: C_CONTRADICTION. Current JSC fixed-seat expected 2,803 conflicts with two independent reads of the current 20 official block maps at 2,818 numbered fixed-row positions after excluding lettered movable rows; rangeDiff 0, expected mismatch +15."
+      "reason": "TOKYO-WAVE-8 RECOVERY: fresh direct transcription of all current official A-U block images yields exactly 2,803 fixed numeric-row seats. The old 2,818 review had a J-block +16 and Q-block -1 aggregation error. Lettered movable rows, arena/floor seats, and unnumbered wheelchair positions remain excluded metadata."
     },
     {
       "id": "ariake-arena",
@@ -986,12 +984,12 @@
       "officialFacilityUrl": "https://kageki.hankyu.co.jp/theatre/tokyo/",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0053",
       "tier": "MUST",
       "difficulty": "DENSE",
-      "model": "Terra",
-      "reason": "TOKYO-WAVE-7: official numbered map retained for future bounded transcription. It was not promoted in this pass because an independently verified complete range transcription was not completed; official total and wheelchair differences are not the blocker."
+      "model": "Sol",
+      "reason": "TOKYO-WAVE-8 RECOVERY: current 2026 official map was rendered at high resolution and all printed ranges were transcribed. The complete printed set is 2,070 seats versus official total 2,079; the 9-seat difference and unnumbered wheelchair-space operation remain metadata."
     },
     {
       "id": "nntt-opera",

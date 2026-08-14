@@ -1,0 +1,23 @@
+{
+  "batchId": "tokyo-wave-8-representative-coverage",
+  "createdAt": "2026-08-14",
+  "scope": "TOKYO-WAVE-8 RECOVERY bounded batch for Tokyo Takarazuka Theatre and Yoyogi National Gymnasium Second Gymnasium only. Directly transcribe complete current official numbered maps; retain official-total, wheelchair, movable-seat, and dynamic-area differences as metadata; do not capacity-fit or invent identifiers.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["tokyo-takarazuka-standard", "yoyogi-2-standard"],
+  "carryOvers": [
+    {"inventoryId":"tokyo-official-0053","carryOverFrom":"tokyo-terra-dense-1","previousStatus":"blocked","recheckReason":"Complete the high-resolution direct transcription of the current 2026 official numbered map; wheelchair and total differences are metadata rather than blockers.","recheckNotBefore":"2026-08-14"},
+    {"inventoryId":"tokyo-official-0744","carryOverFrom":"tokyo-terra-dense-2","previousStatus":"blocked","recheckReason":"Discard the old aggregate and rebuild all A-U fixed numeric rows directly from the current official block images under representative coverage v2.","recheckNotBefore":"2026-08-14"}
+  ],
+  "recommendedModel": "Sol high",
+  "stopRule": "Complete every printed range in the declared scope. Do not stop for image-only sources, total differences, movable-seat operation, or unpublished wheelchair conversion; do not invent unprinted seat IDs.",
+  "completedAt": "2026-08-14",
+  "result": {
+    "productionVenuesAdded": 2,
+    "selectableConfigurationsAdded": 2,
+    "configurationSeatRecordsAdded": 4873,
+    "mappedSeats": {"tokyo-takarazuka-standard":2070,"yoyogi-2-standard":2803},
+    "corrections": {"yoyogi-2":"The old 2,818 aggregate overcounted J by 16 and undercounted Q by 1. Fresh direct transcription of the current A-U images is 2,803 and matches the issuer fixed-seat subtotal."},
+    "nextBatchProposal": "TOKYO-WAVE-8B — yoyogi-1 and tokyo-gymnasium"
+  }
+}

@@ -1070,18 +1070,17 @@
       "officialDisplayName": "東京宝塚劇場",
       "prefecture": "東京都",
       "city": "千代田区",
-      "capacity": null,
+      "capacity": 2079,
       "category": "hall",
       "officialFacilityUrl": "https://kageki.hankyu.co.jp/theater/tokyo/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行の宝塚歌劇公式劇場案内・座席表で一般公演2,079席の番号席候補を確認したが、車いす観劇スペースの包含・置換番号が未公表のため、固定代表patternは未確定。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式座席表の1階24列・2階16列から2,070番号席を完全転記し、公式総客席数2,079との差9席と車いす運用をmetadataへ保持した代表配置としてproduction化。",
       "priority": "A",
       "venueSourceId": "tokyo-takarazuka-standard",
-      "researchStatus": "blocked",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-14",
-      "discoveryUrlRaw": "http://kageki.hankyu.co.jp/theater/tokyo/",
-      "blockingReason": "SOURCE HOLD: a public official numbered map exists, but this bounded pass did not complete an independently verified full range transcription; total and wheelchair differences are not the blocker."
+      "discoveryUrlRaw": "http://kageki.hankyu.co.jp/theater/tokyo/"
     },
     {
       "inventoryId": "tokyo-official-0054",
@@ -14618,14 +14617,13 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.jpnsport.go.jp/yoyogi/sisetu/nitai/tabid/76/Default.aspx",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "C_CONTRADICTION。JSCは固定席を独立setとして示すが、現行公称2,803席と現行20ブロック図の固定番号行2,818席が一致しない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行JSCのA-U全20ブロック詳細図を直接再転記し、数字列の固定席2,803席が公称固定席2,803と一致。文字列可動席・arena/floor・車いす位置を除外したfixed-only代表配置としてproduction化。",
       "priority": "A",
       "venueSourceId": "yoyogi-2-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-12",
-      "discoveryUrlRaw": "http://www.jpnsport.go.jp/yoyogi/",
-      "blockingReason": "C_CONTRADICTION: lettered movable rowsを除外した第1パスと独立第2パスは2,818席、rangeDiff 0で一致したが、issuer expected 2,803との差+15が未解決。可動席・arena/floor・車いすをcapacity fittingしない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14",
+      "discoveryUrlRaw": "http://www.jpnsport.go.jp/yoyogi/"
     },
     {
       "inventoryId": "tokyo-official-0745",

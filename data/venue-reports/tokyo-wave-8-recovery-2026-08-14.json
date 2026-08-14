@@ -1,0 +1,46 @@
+{
+  "reportId": "tokyo-wave-8-recovery-2026-08-14",
+  "asOf": "2026-08-14",
+  "model": "Sol high",
+  "policyVersion": "representative-coverage-v2",
+  "scope": ["tokyo-takarazuka", "yoyogi-2"],
+  "venues": [
+    {
+      "id": "tokyo-takarazuka",
+      "sourceId": "tokyo-takarazuka-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "standard-numbered-seat-set",
+      "expectedSeatCount": 2079,
+      "calculatedSeatCount": 2070,
+      "rangeDiff": 0,
+      "difference": -9,
+      "method": "current 2026 official PDF rendered at high resolution and directly transcribed through all 1F 24 rows and 2F 16 rows",
+      "scope": "all seat IDs printed on the current general-performance chart; excludes unnumbered wheelchair spaces and standing",
+      "confidence": "representative"
+    },
+    {
+      "id": "yoyogi-2",
+      "sourceId": "yoyogi-2-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "fixed-stands-2803",
+      "expectedSeatCount": 2803,
+      "calculatedSeatCount": 2803,
+      "rangeDiff": 0,
+      "difference": 0,
+      "method": "fresh direct transcription of every current official A-U block image, using numeric fixed rows only",
+      "blockSubtotals": {"A":52,"B":66,"C":71,"D":94,"E":98,"F":140,"G":152,"H":196,"J":202,"K":239,"L":225,"M":239,"N":202,"O":196,"P":152,"Q":140,"R":98,"S":94,"T":81,"U":66},
+      "correction": "The prior 2,818 aggregate counted J as 218 instead of the printed 202 and Q as 139 instead of the printed 140; the direct current-map result is 2,803.",
+      "scope": "issuer-defined fixed numeric rows only; excludes lettered movable rows, arena/floor seats, and unnumbered wheelchair positions",
+      "confidence": "representative"
+    }
+  ],
+  "result": {
+    "productionPromotions": 2,
+    "selectableConfigurationsAdded": 2,
+    "configurationSeatRecordsAdded": 4873,
+    "productionAfter": {"venues":75,"selectableConfigurations":77,"configurationSeatRecords":100398},
+    "coverageAfter": {"tokyoProduction":"19/76 (25.0%)","mustProduction":"10/44 (22.7%)","shouldProduction":"9/28 (32.1%)"},
+    "releaseReady": true,
+    "exactNextAction": "TOKYO-WAVE-8B — 国立代々木競技場 第一体育館 and 東京体育館"
+  }
+}

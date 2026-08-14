@@ -741,6 +741,34 @@
           "sha256": "f106a81dc0e1a60e8dfe22cc92523dcbd9e893abd24152e2ddcef16988c82688"
         }
       }
+    },
+    "tokyo-takarazuka-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard-numbered-seat-set": {
+          "count": 2070,
+          "samples": [
+            "first-floor/1/11",
+            "first-floor/20/29",
+            "second-floor/16/73"
+          ],
+          "sha256": "2efbcb0249499cbc0a867e1f1bfa80977dd456f633c4569032e0ae0b34c7b24a"
+        }
+      }
+    },
+    "yoyogi-2-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-stands-2803": {
+          "count": 2803,
+          "samples": [
+            "block-a/1/1",
+            "block-l/8/13",
+            "block-u/5/14"
+          ],
+          "sha256": "c70e36a569e8bc94be4858989a41f9ec706659dd5f3c8c086844f92ed505df4d"
+        }
+      }
     }
   }
 }

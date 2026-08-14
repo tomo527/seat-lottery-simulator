@@ -1014,6 +1014,30 @@
     "dataPath": "/venue-db/venues/tokyo-geigeki-theatre-east-pattern-a.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "tokyo-takarazuka-standard",
+    "venueGroupId": "tokyo-takarazuka-standard",
+    "name": "東京宝塚劇場",
+    "searchAliases": [
+      "東京宝塚"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard-numbered-seat-set",
+        "canonicalName": "一般公演番号席代表配置（2026年1月改定）",
+        "seatCount": 2070,
+        "dataPath": "/venue-db/venues/tokyo-takarazuka-standard--standard-numbered-seat-set.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式座席表に印字された一般公演の番号席集合を代表配置として抽選します。番号のない車いすスペース、立見、公演ごとの販売停止は番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "tokyo-wave3-0130",
     "name": "サントリーホール〔大ホール〕",
     "searchAliases": [
@@ -1092,6 +1116,31 @@
     "representativePatternName": "通常固定番号席配置",
     "seatCount": 392,
     "dataPath": "/venue-db/venues/yotsuya-civic-hall-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "yoyogi-2-standard",
+    "venueGroupId": "yoyogi-2-standard",
+    "name": "国立代々木競技場 第二体育館",
+    "searchAliases": [
+      "国立代々木競技場第二体育館",
+      "代々木第二体育館"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "fixed-stands-2803",
+        "canonicalName": "固定席20ブロック代表配置",
+        "seatCount": 2803,
+        "dataPath": "/venue-db/venues/yoyogi-2-standard--fixed-stands-2803.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "公式20ブロック図の数字列として印字された固定2,803番号席だけを抽選します。文字列A-Dの可動席、車いす位置、アリーナ床席は含みません。",
+        "fixedOnly": true
+      }
+    ]
   },
   {
     "id": "yurakucho-asahi-hall-standard",
