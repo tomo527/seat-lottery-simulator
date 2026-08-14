@@ -578,6 +578,46 @@
         "main/U/32"
       ],
       "sha256": "1623e69088e6cef0ae7400d0e06864c6f9ba31849890eb37d1b40088045a1ac7"
+    },
+    "galaxy-theatre-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 750,
+          "samples": ["first-floor/A/5","first-floor/K/33","third-floor/D/24"],
+          "sha256": "f1a81d936fb72922c31c600085aafddb206fbfd831ac5b54c52b6a318c551b39"
+        }
+      }
+    },
+    "zepp-haneda-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1207,
+          "samples": ["first-floor/A/1","first-floor/P/34","second-floor/2H/41"],
+          "sha256": "736443c4f34d095f776d741cd7dc6890de08902588ec724d0e637cf564ecebb3"
+        }
+      }
+    },
+    "nakano-zero-main-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1292,
+          "samples": ["first-floor/1/12","first-floor/16/17","second-floor/7/50"],
+          "sha256": "a729910c30a4aa90000a6be60fa23d73b1e5b31fec337d639135ef09bbdc4886"
+        }
+      }
+    },
+    "kameido-camelia-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 400,
+          "samples": ["main/A/3","main/I/13","main/Q/22"],
+          "sha256": "3c20e9a7ba38efebc72fe9a882cb201c7f7303e4adc934ff3a83adf87e25b177"
+        }
+      }
     }
   }
 }

@@ -122,6 +122,31 @@
     "dataPath": "/venue-db/venues/fussa-civic-small-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "galaxy-theatre-standard",
+    "venueGroupId": "galaxy-theatre-standard",
+    "name": "天王洲 銀河劇場 通常番号席配置（公式階別席数矛盾）",
+    "searchAliases": [
+      "The Galaxy Theatre",
+      "銀河劇場"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "品川区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常番号席配置（公式図上750席）",
+        "seatCount": 750,
+        "dataPath": "/venue-db/venues/galaxy-theatre-standard--standard.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "hakuju-hall-standard",
     "name": "Hakuju Hall",
     "searchAliases": [
@@ -274,6 +299,30 @@
     "representativePatternName": "通常配置（オーケストラピットなし）",
     "seatCount": 1263,
     "dataPath": "/venue-db/venues/itabashi-culture-main-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "kameido-camelia-hall-standard",
+    "venueGroupId": "kameido-camelia-hall-standard",
+    "name": "亀戸文化センター カメリアホール",
+    "searchAliases": [
+      "カメリアホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "江東区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常番号席配置",
+        "seatCount": 400,
+        "dataPath": "/venue-db/venues/kameido-camelia-hall-standard--standard.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "karasuyama-civic-hall-standard",
@@ -431,6 +480,28 @@
     "representativePatternName": "通常固定席配置",
     "seatCount": 425,
     "dataPath": "/venue-db/venues/musashino-civic-small-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "nakano-zero-main-standard",
+    "venueGroupId": "nakano-zero-main-standard",
+    "name": "なかのZERO 大ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中野区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常番号席配置",
+        "seatCount": 1292,
+        "dataPath": "/venue-db/venues/nakano-zero-main-standard--standard.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "national-bunraku-theatre-standard",
@@ -884,5 +955,29 @@
     "representativePatternName": "Aタイプ（通常タイプ）",
     "seatCount": 636,
     "dataPath": "/venue-db/venues/yurakucho-asahi-hall-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "zepp-haneda-standard",
+    "venueGroupId": "zepp-haneda-standard",
+    "name": "Zepp Haneda (TOKYO)",
+    "searchAliases": [
+      "ゼップ羽田"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "大田区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "椅子使用時 基本パターン",
+        "seatCount": 1207,
+        "dataPath": "/venue-db/venues/zepp-haneda-standard--standard.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
   }
 ]
