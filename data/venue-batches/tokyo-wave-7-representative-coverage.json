@@ -1,0 +1,26 @@
+{
+  "batchId": "tokyo-wave-7-representative-coverage",
+  "createdAt": "2026-08-14",
+  "scope": "Representative coverage v2 bounded batch for NHK Hall, Tokyo Takarazuka Theatre, Toyosu PIT, Hulic Hall Tokyo, and Otemachi Mitsui Hall only. Promote only complete public numbered representative sets; preserve total and accessibility differences; do not capacity-fit or invent identifiers.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["nhk-hall-standard", "tokyo-takarazuka-standard", "toyosu-pit-standard", "hulic-hall-tokyo-standard", "otemachi-mitsui-hall-standard"],
+  "carryOvers": [
+    {"inventoryId":"tokyo-nhk-hall","carryOverFrom":"tokyo-wave-1","previousStatus":"blocked","recheckReason":"Representative v2 removes exact-total and wheelchair-conversion gating, but only an independently transcribed complete ID set can be promoted.","recheckNotBefore":"2026-08-14"},
+    {"inventoryId":"tokyo-official-0053","carryOverFrom":"tokyo-terra-dense-1","previousStatus":"blocked","recheckReason":"Representative v2 permits normal numbered seats with wheelchair conversion recorded as metadata.","recheckNotBefore":"2026-08-14"},
+    {"inventoryId":"tokyo-official-0417","carryOverFrom":"tokyo-sol-should-2","previousStatus":"blocked","recheckReason":"Recheck only for a complete public numbered seated layout; do not synthesize event-dependent floor IDs.","recheckNotBefore":"2026-08-14"},
+    {"inventoryId":"tokyo-official-0057","carryOverFrom":"tokyo-sol-should-3","previousStatus":"blocked","recheckReason":"Representative v2 permits the complete official 886-seat fixed numbered map with accessibility conversion retained as metadata.","recheckNotBefore":"2026-08-14"},
+    {"inventoryId":"tokyo-coverage-otemachi-mitsui-hall","carryOverFrom":"tokyo-sol-should-2","previousStatus":"blocked","recheckReason":"Representative v2 permits complete official 560/572 numbered event layouts with accessibility conversion retained as metadata.","recheckNotBefore":"2026-08-14"}
+  ],
+  "recommendedModel": "Terra high",
+  "stopRule": "Keep a target nonproduction only when a cited public source does not expose a complete numbered seat-ID set for the declared scope. Do not infer rows, fill capacity, or create event-dependent IDs.",
+  "completedAt": "2026-08-14",
+  "result": {
+    "productionVenuesAdded": 2,
+    "selectableConfigurationsAdded": 3,
+    "configurationSeatRecordsAdded": 2018,
+    "mappedSeats": {"hulic-hall-tokyo-standard":886,"otemachi-mitsui-hall-standard":{"rollback-560":560,"flat-572":572}},
+    "notPromoted": {"nhk-hall-standard":"Complete official map exists, but a complete independently verified range transcription was not produced in this bounded pass.","tokyo-takarazuka-standard":"Complete official map exists, but a complete independently verified range transcription was not produced in this bounded pass.","toyosu-pit-standard":"Current official source explicitly makes seated layout and wheelchair handling event-dependent and exposes no complete numbered map."},
+    "nextBatchProposal": "tokyo-wave-8-representative-coverage"
+  }
+}

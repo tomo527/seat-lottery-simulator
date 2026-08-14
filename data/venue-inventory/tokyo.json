@@ -1079,9 +1079,9 @@
       "priority": "A",
       "venueSourceId": "tokyo-takarazuka-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-12",
+      "lastCheckedAt": "2026-08-14",
       "discoveryUrlRaw": "http://kageki.hankyu.co.jp/theater/tokyo/",
-      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: 現行公式は一般公演2,079席と車いす観劇スペースを確認するが、車いすスペースの通常番号席への包含・置換・販売variantを定義しない。"
+      "blockingReason": "SOURCE HOLD: a public official numbered map exists, but this bounded pass did not complete an independently verified full range transcription; total and wheelchair differences are not the blocker."
     },
     {
       "inventoryId": "tokyo-official-0054",
@@ -1155,14 +1155,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://hulic-theater.com/about-hall/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "B_SOURCE_LIMITED。現行公式固定886席を全番号・厳密総数・2パス一致で確認。車いす転換はJ列2・3・32・33番撤去、最大2台まで確定するが、companion配置が非公開。",
+      "eligibility": "eligible",
+      "eligibilityReason": "Representative coverage v2: complete current official numbered-seat set is selectable; total and accessibility conversion differences remain configuration metadata.",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "discoveryUrlRaw": "https://hulic-theater.com/download/",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: fixed 886-seat numbering and the four wheelchair-conversion removals are exact, but issuer-owned material does not define companion placement for the maximum two wheelchair positions."
+      "venueSourceId": "hulic-hall-tokyo-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14",
+      "discoveryUrlRaw": "https://hulic-theater.com/download/"
     },
     {
       "inventoryId": "tokyo-official-0058",
@@ -8253,11 +8252,11 @@
       "eligibility": "likely-eligible",
       "eligibilityReason": "B_SOURCE_LIMITED。現行公式資料はstanding 3,103、seated 1,328（椅子1,325＋車いす3）を定義するが、1F floorの番号席配置は催事別で、完全番号図・車いす置換番号・同伴席を公開しない。",
       "priority": "D",
-      "venueSourceId": null,
+      "venueSourceId": "toyosu-pit-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
+      "lastCheckedAt": "2026-08-14",
       "discoveryUrlRaw": "https://toyosu.pia-pit.jp/",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: event-dependent temporary floor numbers cannot be permanent seat IDs; no complete current numbered map or wheelchair/companion replacement mapping is published."
+      "blockingReason": "SOURCE HOLD: current official FLOOR page states that seated placement and wheelchair handling vary by performance and publishes no complete numbered seat map; no IDs were inferred."
     },
     {
       "inventoryId": "tokyo-official-0418",
@@ -13470,8 +13469,8 @@
       "priority": "A",
       "venueSourceId": "nhk-hall-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: the fixed 3,400-seat candidate lacks a current independent full-ID source and lossless wheelchair/companion mapping.",
+      "lastCheckedAt": "2026-08-14",
+      "blockingReason": "SOURCE HOLD: a public official numbered map exists, but this bounded pass did not complete an independently verified full range transcription; total and wheelchair differences are not the blocker.",
       "discoveryUrlRaw": "http://www.nhk-sc.or.jp/nhk_hall/index.html"
     },
     {
@@ -23857,14 +23856,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://otemachi-hall.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "B_SOURCE_LIMITED。現行公式番号図で560席配置とフラット572席配置を全番号・厳密総数・2パス一致まで確認したが、車いす位置・番号席の置換／包含・同伴席が未公表。",
+      "eligibility": "eligible",
+      "eligibilityReason": "Representative coverage v2: complete current official numbered-seat set is selectable; total and accessibility conversion differences remain configuration metadata.",
       "priority": "B",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "discoveryUrlRaw": "https://otemachi-hall.jp/download.html",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: complete issuer-defined numbered configurations exist, but public operator material does not define stable wheelchair positions, removed/replaced numbered seats, inclusion in the totals, or companion-seat mapping."
+      "venueSourceId": "otemachi-mitsui-hall-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-14",
+      "discoveryUrlRaw": "https://otemachi-hall.jp/download.html"
     },
     {
       "inventoryId": "tokyo-coverage-mon-takanawa-box1000",

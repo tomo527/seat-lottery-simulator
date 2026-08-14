@@ -584,7 +584,11 @@
       "configurations": {
         "standard": {
           "count": 750,
-          "samples": ["first-floor/A/5","first-floor/K/33","third-floor/D/24"],
+          "samples": [
+            "first-floor/A/5",
+            "first-floor/K/33",
+            "third-floor/D/24"
+          ],
           "sha256": "f1a81d936fb72922c31c600085aafddb206fbfd831ac5b54c52b6a318c551b39"
         }
       }
@@ -594,7 +598,11 @@
       "configurations": {
         "standard": {
           "count": 1207,
-          "samples": ["first-floor/A/1","first-floor/P/34","second-floor/2H/41"],
+          "samples": [
+            "first-floor/A/1",
+            "first-floor/P/34",
+            "second-floor/2H/41"
+          ],
           "sha256": "736443c4f34d095f776d741cd7dc6890de08902588ec724d0e637cf564ecebb3"
         }
       }
@@ -604,7 +612,11 @@
       "configurations": {
         "standard": {
           "count": 1292,
-          "samples": ["first-floor/1/12","first-floor/16/17","second-floor/7/50"],
+          "samples": [
+            "first-floor/1/12",
+            "first-floor/16/17",
+            "second-floor/7/50"
+          ],
           "sha256": "a729910c30a4aa90000a6be60fa23d73b1e5b31fec337d639135ef09bbdc4886"
         }
       }
@@ -614,7 +626,11 @@
       "configurations": {
         "standard": {
           "count": 400,
-          "samples": ["main/A/3","main/I/13","main/Q/22"],
+          "samples": [
+            "main/A/3",
+            "main/I/13",
+            "main/Q/22"
+          ],
           "sha256": "3c20e9a7ba38efebc72fe9a882cb201c7f7303e4adc934ff3a83adf87e25b177"
         }
       }
@@ -624,7 +640,11 @@
       "configurations": {
         "standard": {
           "count": 1795,
-          "samples": ["first-floor/1/4", "first-floor/26/16", "third-floor/RB/42"],
+          "samples": [
+            "first-floor/1/4",
+            "first-floor/26/16",
+            "third-floor/RB/42"
+          ],
           "sha256": "44ceec8e4f20e9f26f33a400399691d390c241060063fd33b936099a4ba6d186"
         }
       }
@@ -634,7 +654,11 @@
       "configurations": {
         "standard": {
           "count": 1084,
-          "samples": ["main/SA/15", "main/K/12", "main/W/41"],
+          "samples": [
+            "main/SA/15",
+            "main/K/12",
+            "main/W/41"
+          ],
           "sha256": "f5dcc88be6f9774feeee21d82ff64301567c0b091706c3150b162435425b5ea8"
         }
       }
@@ -644,7 +668,11 @@
       "configurations": {
         "standard": {
           "count": 306,
-          "samples": ["main/A/6", "main/I/10", "main/P/15"],
+          "samples": [
+            "main/A/6",
+            "main/I/10",
+            "main/P/15"
+          ],
           "sha256": "f2f436a1129c94e1061728272daeb57d7a604251eaddd9e6b619a45d174ebe46"
         }
       }
@@ -654,7 +682,11 @@
       "configurations": {
         "b4-seated-basic": {
           "count": 530,
-          "samples": ["b4-floor/A/1", "b4-floor/K/6", "b4-floor/W/26"],
+          "samples": [
+            "b4-floor/A/1",
+            "b4-floor/K/6",
+            "b4-floor/W/26"
+          ],
           "sha256": "3757d1f7ed0a819c75eeadec1d5862e7b386b92332eb9f887dbda6b12eff6a57"
         }
       }
@@ -664,8 +696,49 @@
       "configurations": {
         "seating-standard": {
           "count": 906,
-          "samples": ["b3-floor/A/3", "b2-floor/O/10", "b1-stand/7/36"],
+          "samples": [
+            "b3-floor/A/3",
+            "b2-floor/O/10",
+            "b1-stand/7/36"
+          ],
           "sha256": "b6a51b2de41cee3e6f437d701fc1b4c98b8592376abca16d33f38e1f87b3c8db"
+        }
+      }
+    },
+    "hulic-hall-tokyo-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-886": {
+          "count": 886,
+          "samples": [
+            "main/B/10",
+            "main/P/15",
+            "main/DD/33"
+          ],
+          "sha256": "5ab0fd4aae1485f6840b6160227b7b7501d2a5f780549fbd306b702187731476"
+        }
+      }
+    },
+    "otemachi-mitsui-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "rollback-560": {
+          "count": 560,
+          "samples": [
+            "front/A/1",
+            "rear/RA/1",
+            "rear/RN/20"
+          ],
+          "sha256": "0678bf73d5f8ed9630ced5ebd9e72885953358055f09c572aaa1b57813cdd776"
+        },
+        "flat-572": {
+          "count": 572,
+          "samples": [
+            "flat/A/1",
+            "flat/L/1",
+            "flat/V/26"
+          ],
+          "sha256": "f106a81dc0e1a60e8dfe22cc92523dcbd9e893abd24152e2ddcef16988c82688"
         }
       }
     }

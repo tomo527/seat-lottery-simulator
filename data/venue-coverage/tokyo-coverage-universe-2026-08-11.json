@@ -69,9 +69,9 @@
     },
     "userVisibleProductionCoverage": {
       "tokyoUniverse": {
-        "numerator": 15,
+        "numerator": 17,
         "denominator": 76,
-        "percent": 19.7
+        "percent": 22.4
       },
       "MUST": {
         "numerator": 8,
@@ -79,9 +79,9 @@
         "percent": 18.2
       },
       "SHOULD": {
-        "numerator": 7,
+        "numerator": 9,
         "denominator": 28,
-        "percent": 25
+        "percent": 32.1
       },
       "OPTIONAL": {
         "numerator": 0,
@@ -91,9 +91,9 @@
     },
     "schemaAddressableCoverage": {
       "tokyoUniverse": {
-        "numerator": 15,
+        "numerator": 17,
         "denominator": 76,
-        "percent": 19.7
+        "percent": 22.4
       },
       "MUST": {
         "numerator": 8,
@@ -101,9 +101,9 @@
         "percent": 18.2
       },
       "SHOULD": {
-        "numerator": 7,
+        "numerator": 9,
         "denominator": 28,
-        "percent": 25
+        "percent": 32.1
       },
       "OPTIONAL": {
         "numerator": 0,
@@ -112,7 +112,7 @@
       },
       "confirmedCurrentSchemaNonProductionIds": [],
       "confirmedSchemaExtensionNonProductionIds": [],
-      "note": "15 = current PRODUCTION 15（TOKYO-WAVE-6のすみだトリフォニー、Zepp Shinjuku、EX THEATER ROPPONGIの代表配置を含む）。車椅子・同伴者の未反映差分と公式総数差はconfidence metadataに保持する。"
+      "note": "17 = current PRODUCTION 17（TOKYO-WAVE-7のヒューリックホール東京と大手町三井ホールの代表配置を含む）。車椅子・同伴者の未反映差分と公式総数差はconfidence metadataに保持する。"
     }
   },
   "mustNonProductionBlockerAudit": {
@@ -425,8 +425,8 @@
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
-    "production": 15,
-    "hold": 56,
+    "production": 17,
+    "hold": 54,
     "contradiction": 1,
     "unresearched": 4,
     "mustUnresearched": 0,
@@ -434,11 +434,11 @@
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
     "researchCompletenessPercent": 94.7,
-    "userVisibleProductionCoveragePercent": 19.7,
+    "userVisibleProductionCoveragePercent": 22.4,
     "mustProductionCoveragePercent": 18.2,
-    "shouldProductionCoveragePercent": 25,
-    "schemaAddressableCoveragePercent": 19.7,
-    "nextMacro": "tokyo-wave-7-representative-coverage"
+    "shouldProductionCoveragePercent": 32.1,
+    "schemaAddressableCoveragePercent": 22.4,
+    "nextMacro": "tokyo-wave-8-representative-coverage"
   },
   "releaseGate": {
     "policyVersion": "representative-coverage-v2",
@@ -471,16 +471,16 @@
     "id": "TOKYO-REPRESENTATIVE-COVERAGE-RELEASE-REVIEW",
     "status": "complete",
     "completedAt": "2026-08-14",
-    "outcome": "RELEASE READY AFTER TOKYO-WAVE-6 REPRESENTATIVE EXPANSION",
+    "outcome": "RELEASE READY AFTER TOKYO-WAVE-7 REPRESENTATIVE EXPANSION",
     "blockerIds": [],
     "criteria": {
       "applicationHealth": "PASS: TOKYO-WAVE-5 completed the full venue/application regression after production generation.",
       "representativeMajorUseCoverage": "PASS: Galaxy Theatre adds a high-demand Tokyo theatre representative and Zepp Haneda adds a medium live-house representative.",
-      "practicalTokyoMajorVenueCoverage": "PASS: five bounded representative additions improve the searchable Tokyo catalog without inventing seat IDs or fitting capacity.",
+      "practicalTokyoMajorVenueCoverage": "PASS: Wave 7 adds two official numbered representative configurations in high-demand central Tokyo without inventing seat IDs or fitting capacity.",
       "representativeCoverageDisclosure": "PASS: global UI and terms disclosure remains present for representative configurations.",
-      "productionQuality": "PASS: every Wave 6 configuration records public sources, complete mapped ranges, confidence, total/accessibility differences, and the no-fitting/no-invented-ID controls."
+      "productionQuality": "PASS: every Wave 7 configuration records public sources, complete mapped ranges, confidence, total/accessibility differences, and the no-fitting/no-invented-ID controls."
     },
-    "exactNextAction": "Run tokyo-wave-7-representative-coverage only: nhk-hall, tokyo-takarazuka, toyosu-pit, hulic-hall-tokyo, and otemachi-mitsui-hall. Promote only declared complete public numbered-seat representative sets; preserve total/accessibility differences and do not invent IDs or expand the batch."
+    "exactNextAction": "Run tokyo-wave-8-representative-coverage only: yoyogi-1, yoyogi-2, tokyo-gymnasium, nippon-budokan, and tokyo-takarazuka. Promote only declared complete public numbered-seat representative sets; preserve total/accessibility differences and do not invent IDs or expand the batch."
   },
   "historicalReleaseCoverageAdequacyReview": {
     "id": "TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
@@ -787,7 +787,7 @@
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Sol",
-      "reason": "2026-08-13 TOKYO-ADEQUACY-CRITICAL-GAPS-1: B_SOURCE_LIMITED。固定3,400＋可動201＝3,601と2016全番号図はあるが、current独立番号generation、車いす置換・同伴・固定3,400への包含semanticsがない。"
+      "reason": "TOKYO-WAVE-7: official numbered map retained for future bounded transcription. It was not promoted in this pass because an independently verified complete range transcription was not completed; official total and wheelchair differences are not the blocker."
     },
     {
       "id": "line-cube-shibuya",
@@ -991,7 +991,7 @@
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Terra",
-      "reason": "ミュージカル・歌劇の明確な主要会場。2026-08-12 current official review: SOURCE/POLICY/SCHEMA HOLD; wheelchair-space inclusion/replacement mapping is not published."
+      "reason": "TOKYO-WAVE-7: official numbered map retained for future bounded transcription. It was not promoted in this pass because an independently verified complete range transcription was not completed; official total and wheelchair differences are not the blocker."
     },
     {
       "id": "nntt-opera",
@@ -1428,12 +1428,12 @@
       "officialFacilityUrl": "https://hulic-theater.com/about-hall/",
       "seatMap": "official-current-fixed-seat-map",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0057",
       "tier": "SHOULD",
       "difficulty": "COMPLEX",
       "model": "Sol",
-      "reason": "2026-08-13 SOL-SHOULD-3: B_SOURCE_LIMITED。公式固定886席は886/886/rangeDiff 0で全番号2パス一致。車いす転換はJ列2・3・32・33番を撤去し最大2台まで確定するが、companion配置が非公開のためnon-selectable。"
+      "reason": "TOKYO-WAVE-7 representative coverage: complete current official numbered-seat configuration promoted; wheelchair/event differences remain metadata."
     },
     {
       "id": "bunkamura-cocoon",
@@ -1496,12 +1496,12 @@
       "officialFacilityUrl": "https://otemachi-hall.jp/",
       "seatMap": "official-multiple-configurations",
       "numberedMap": "yes-current-configurations",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-coverage-otemachi-mitsui-hall",
       "tier": "SHOULD",
       "difficulty": "COMPLEX",
       "model": "Sol",
-      "reason": "2026-08-13 SOL-SHOULD-2: B_SOURCE_LIMITED。現行公式560席配置560/560/rangeDiff 0とフラット572席配置572/572/0を全番号2パス一致したが、車いす位置・番号席の置換／包含・同伴席が非公開のためproduction gate不成立。"
+      "reason": "TOKYO-WAVE-7 representative coverage: complete current official numbered-seat configuration promoted; wheelchair/event differences remain metadata."
     },
     {
       "id": "national-noh-theatre",

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "draft",
+  "id": "toyosu-pit-standard",
+  "name": "豊洲PIT",
+  "prefecture": "東京都",
+  "city": "江東区",
+  "aliases": ["チームスマイル・豊洲PIT", "TOYOSU PIT"],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "seated-event-dependent",
+    "name": "着席時公演別配置",
+    "coverage": "draft",
+    "expectedSeatCount": 1328,
+    "selectionReason": "現行公式は着席時1,328席（椅子1,325＋車椅子3）を示すが、座席配置と車椅子対応は公演ごとに異なると明記し、完全な番号図を公開していない。",
+    "notIncludedPatterns": ["スタンディング3,103名", "公演別の仮設座席・車椅子・同伴者配置"]
+  },
+  "sources": [
+    {"id":"official-current-floor","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"豊洲PIT","title":"FLOOR","url":"https://toyosu.pia-pit.jp/floor/index.html","checkedAt":"2026-08-14"},
+    {"id":"official-current-spec","official":true,"roles":["facility","event-layout"],"publisher":"豊洲PIT","title":"施設仕様","url":"https://toyosu.pia-pit.jp/spec/index.html","checkedAt":"2026-08-14"}
+  ],
+  "registeredScope": "SOURCE HOLD: 現行公式は着席時配置・車椅子対応が公演ごとに異なると明記し、恒久的な完全番号席集合を公開しない。",
+  "completenessBasis": "現行公式FLOORはスタンディング3,103、着席1,328を示すが、番号付きの座席図はない。",
+  "transformation": "capacity fitting、番号推測、二次図だけによる仮設配置作成を行わない。",
+  "knownLimitations": ["完全な公開番号集合なし", "車椅子・同伴者配置は公演ごとに主催者対応"],
+  "verification": {"status":"pending","checkedAt":"2026-08-14","method":"current-official-floor-and-spec-review","seatStructure":"pending","seatCount":"pending","unresolvedIssues":["完全番号図が未公開"]},
+  "ranges": []
+}

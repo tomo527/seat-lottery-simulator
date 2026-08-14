@@ -281,6 +281,31 @@
     "dataPath": "/venue-db/venues/hoya-komorebi-main-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "hulic-hall-tokyo-standard",
+    "venueGroupId": "hulic-hall-tokyo-standard",
+    "name": "ヒューリックホール東京",
+    "searchAliases": [
+      "HULIC HALL TOKYO",
+      "ヒューリックホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "fixed-886",
+        "canonicalName": "通常固定番号席配置",
+        "seatCount": 886,
+        "dataPath": "/venue-db/venues/hulic-hall-tokyo-standard--fixed-886.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式固定座席表に印字された886番号席を代表配置として抽選します。舞台・販売条件により使われない席、車椅子転換、同伴者席はこの番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "ichikawa-culture-hall-main-release-seed",
     "name": "市川市文化会館 大ホール",
     "searchAliases": [],
@@ -693,6 +718,39 @@
     "representativePatternName": "通常固定番号席配置",
     "seatCount": 509,
     "dataPath": "/venue-db/venues/ota-plaza-main-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "otemachi-mitsui-hall-standard",
+    "venueGroupId": "otemachi-mitsui-hall-standard",
+    "name": "大手町三井ホール",
+    "searchAliases": [
+      "OTEMACHI MITSUI HALL"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "rollback-560",
+        "canonicalName": "スケール入り560席配置",
+        "seatCount": 560,
+        "dataPath": "/venue-db/venues/otemachi-mitsui-hall-standard--rollback-560.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式560席番号図に印字された可動・スタッキング椅子の番号席を代表配置として抽選します。公演ごとのレイアウト、車椅子転換、同伴者席、販売停止席は含めません。",
+        "fixedOnly": false
+      },
+      {
+        "id": "flat-572",
+        "canonicalName": "フラット572席配置",
+        "seatCount": 572,
+        "dataPath": "/venue-db/venues/otemachi-mitsui-hall-standard--flat-572.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式フラット572席番号図に印字された番号席を代表配置として抽選します。公演ごとのレイアウト、車椅子転換、同伴者席、販売停止席は含めません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "owlspot-theatre-standard",
