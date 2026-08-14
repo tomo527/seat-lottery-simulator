@@ -46,7 +46,6 @@ export const deriveTokyoCoverageContract = ({
     return gate(converted.length, cohort.length, idsFor(cohort.filter((candidate) => !productionIds.has(candidate.id))))
   }
 
-  const productionCount = (items) => items.filter((candidate) => productionIds.has(candidate.id)).length
   const mustItems = byTier('MUST')
   const shouldItems = byTier('SHOULD')
   const mustAndShould = candidates.filter((candidate) => ['MUST', 'SHOULD'].includes(candidate.tier))
@@ -55,17 +54,6 @@ export const deriveTokyoCoverageContract = ({
     numerator: required,
     denominator: universeItems.length,
   })
-  const floorAttainmentGate = (items, required, blockerIds) => {
-    const actual = productionCount(items)
-    return {
-      status: actual >= required ? 'PASS' : 'FAIL',
-      numerator: actual,
-      denominator: required,
-      blockerIds: [...new Set(blockerIds)].sort(),
-    }
-  }
-  const addressableBlockerIds = (items) => idsFor(items.filter((candidate) => addressableIds.has(candidate.id) && !productionIds.has(candidate.id)))
-
   const configurationSupport = gate(
     Number(capabilities?.multiConfiguration === true && capabilities?.configurationLevelProductionGate === true),
     1,
@@ -76,6 +64,11 @@ export const deriveTokyoCoverageContract = ({
     1,
     capabilities?.fixedOnlyDisclosure === true ? [] : ['PLATFORM-FIXED-ONLY-DISCLOSURE'],
   )
+  const representativeCoverageDisclosure = gate(
+    Number(capabilities?.representativeCoverageDisclosure === true),
+    1,
+    capabilities?.representativeCoverageDisclosure === true ? [] : ['PLATFORM-REPRESENTATIVE-COVERAGE-DISCLOSURE'],
+  )
   const qualityErrors = [...sourceValidationErrors, ...inventoryValidationErrors]
   const productionQuality = gate(Number(qualityErrors.length === 0), 1, qualityErrors.length ? qualityErrors : [])
   const universeBlockers = coverage.universeGapReview?.blockerIds ?? []
@@ -84,28 +77,21 @@ export const deriveTokyoCoverageContract = ({
     1,
     coverage.universeGapReview?.status === 'complete' && universeBlockers.length === 0 ? [] : universeBlockers.length ? universeBlockers : ['TOKYO-UNIVERSE-GAP-REVIEW'],
   )
-  const adequacyBlockers = coverage.releaseCoverageAdequacyReview?.blockerIds ?? []
-  const adequacyReview = gate(
-    Number(coverage.releaseCoverageAdequacyReview?.status === 'complete' && adequacyBlockers.length === 0),
+  const representativeReview = coverage.representativeCoverageReleaseReview
+  const representativeBlockers = representativeReview?.blockerIds ?? []
+  const representativeCoverageReview = gate(
+    Number(representativeReview?.status === 'complete' && representativeBlockers.length === 0),
     1,
-    coverage.releaseCoverageAdequacyReview?.status === 'complete' && adequacyBlockers.length === 0 ? [] : adequacyBlockers.length ? adequacyBlockers : ['TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW'],
+    representativeReview?.status === 'complete' && representativeBlockers.length === 0 ? [] : representativeBlockers.length ? representativeBlockers : ['TOKYO-REPRESENTATIVE-COVERAGE-RELEASE-REVIEW'],
   )
 
   const gates = {
-    mustResearchCompleteness: must.research,
-    shouldResearchCompleteness: should.research,
-    mustAddressableProductionConversion: addressableGate(mustItems),
-    shouldAddressableProductionConversion: addressableGate(shouldItems),
-    dynamicShouldAddressableAdditions: addressableGate(candidates.filter((candidate) => dynamicShouldIds.includes(candidate.id))),
-    rawProductionFloorAttainmentMust: floorAttainmentGate(mustItems, addressableRequired(mustItems), addressableBlockerIds(mustItems)),
-    rawProductionFloorAttainmentShould: floorAttainmentGate(shouldItems, addressableRequired(shouldItems), addressableBlockerIds(shouldItems)),
-    rawProductionFloorAttainmentMustAndShould: floorAttainmentGate(mustAndShould, addressableRequired(mustAndShould), addressableBlockerIds(mustAndShould)),
-    rawProductionFloorAttainmentTokyo: floorAttainmentGate(candidates, addressableRequired(mustAndShould), addressableBlockerIds(mustAndShould)),
     configurationSupport,
     fixedOnlyDisclosure,
+    representativeCoverageDisclosure,
     productionQuality,
     universeGap,
-    releaseCoverageAdequacyReview: adequacyReview,
+    representativeCoverageReview,
   }
   return {
     metrics: { tokyo, must, should, optional },

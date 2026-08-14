@@ -199,7 +199,7 @@ if (coverage) {
     `C=${classes.C_CONTRADICTION?.count ?? 0}`,
     `D=${classes.D_CURRENTNESS_CLOSED?.count ?? 0}`,
   ].join(', '))
-  console.log('  Deterministic Tokyo gates:')
+  console.log('  Representative-coverage release gates:')
   for (const [label, value] of Object.entries(tokyoContract.gates)) gateLine(label, value)
   console.log('  Coverage gate result: ' + tokyoContract.coverageGateResult)
 }

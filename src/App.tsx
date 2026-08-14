@@ -240,13 +240,16 @@ function App() {
 
           <div id="seat-source-panel" aria-labelledby={sourceMode === 'venue' ? 'venue-source-button' : 'custom-source-button'} className="source-panel">
             {sourceMode === 'venue' ? (
-              <VenueSelector
-                venues={venues}
-                selectedVenueId={selectedVenueId}
-                selectedConfigurationId={selectedConfigurationId}
-                onSelect={changeVenue}
-                onSelectConfiguration={changeConfiguration}
-              />
+              <>
+                <VenueSelector
+                  venues={venues}
+                  selectedVenueId={selectedVenueId}
+                  selectedConfigurationId={selectedConfigurationId}
+                  onSelect={changeVenue}
+                  onSelectConfiguration={changeConfiguration}
+                />
+                <p className="representative-layout-disclosure">座席配置は各会場の公開情報をもとにした代表的なものです。公演・舞台構成・車いす利用等により、実際の座席配置と異なる場合があります。</p>
+              </>
             ) : (
               <CustomSeatBuilder value={customInput} onChange={changeCustomInput} />
             )}

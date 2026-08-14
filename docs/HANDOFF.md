@@ -1,9 +1,17 @@
 # Current handoff
 
-Updated: 2026-08-13 (Asia/Tokyo)
+Updated: 2026-08-14 (Asia/Tokyo)
 
 ## Current state
 
+- `TOKYO-ADEQUACY-CRITICAL-GAPS-1` was committed as `0c0096008a6498996c496369a1a0eb1a64182adc` and pushed to `origin/main`; `main == origin/main` and the working tree were confirmed clean before the representative-coverage migration began.
+- `REPRESENTATIVE-COVERAGE POLICY PIVOT` is implemented. Production may now use a complete public numbered-seat set as a representative configuration when it is supported by current or current-linked official material, an official basic/typical layout, an official event layout, or carefully disclosed secondary seat-map evidence that is consistent with official structure/capacity evidence. Exact wheelchair replacement IDs, an independent second generation, exact official-total reconciliation, `rangeDiff === 0`, issuer wording such as `standard/default`, and exhaustive variant coverage are confidence information rather than production blockers. Invented seat IDs, capacity fitting, incomplete declared numbered sets, and unsupported secondary-only layouts remain blockers.
+- Additive confidence values are `verified`, `representative`, and `approximate`. Accessibility conversion may be recorded as not reflected, and fixed-stand-only or representative-event configurations are supported with explicit metadata and shared disclosure.
+- The UI now states: 「座席配置は各会場の公開情報をもとにした代表的なものです。公演・舞台構成・車いす利用等により、実際の座席配置と異なる場合があります。」 The Terms of Use carries the same meaning. The release contract requires both representative-coverage and fixed-seat disclosures.
+- Production remains unchanged at **62 venues / 63 selectable configurations / 85,237 configuration-seat records**; all 63 current configurations infer `verified`. Regression against `0c0096008a6498996c496369a1a0eb1a64182adc` is byte-for-byte clean for generated catalog, runtime details, and production fingerprints. No deploy is required for this policy-only migration.
+- Current release result is **RELEASE READY: NO**, but the obsolete exactness/adequacy gate is gone. The current actionable blockers are representative coverage of a major live venue, a medium live-house, and major-Tokyo venue density. Research completeness, former addressable conversion, wheelchair exactness, exact published totals, and independent second generations are informational rather than release blockers.
+- Candidate triage is canonical at `data/venue-reports/representative-coverage-policy-migration-2026-08-14.json`. The first bounded production batch is `data/venue-batches/tokyo-wave-5-representative-coverage.json`: `galaxy-theatre-standard`, `zepp-haneda-standard`, `nakano-zero-main-standard`, and `kameido-camelia-hall-standard` only.
+- Migration validation passed: inventory/readiness/release reports, batch report, `venues:build`, `venues:check`, `venues:validate`, `venues:report`, lint, typecheck, unit tests (**17 files / 142 tests**), production build, E2E (**13/13** in the approved elevated Miniflare run after the known sandbox Wrangler-registry `EPERM`), production-artifact regression, and `git diff --check`.
 - `TOKYO RELEASE COVERAGE ADEQUACY REVIEW` commit `a0f2ef5559db94e33e841c5a6a17ddbdde4041c0` was pushed to `origin/main`; `main == origin/main` and the working tree was clean before `TOKYO-ADEQUACY-CRITICAL-GAPS-1` began. The underlying 1B commit remains `7f533819ae5745ae826cba660c9cd6912f80a815`; 1A remains `d82b59c94098a49ac4bf9b6ffa7ad4e287f95f70`.
 - Production: **62 venues / 63 selectable configurations / 85,237 configuration-seat records**. The 60 schema-v1 venues remain unchanged at 81,515 seats; 明治座 adds two schema-v2 configurations totaling 2,816 records and NNTT中劇場 adds one 906-seat schema-v2 configuration.
 - Coverage: Tokyo **53**, Kanagawa **3**, Chiba **1**, Saitama **1**, Ibaraki **0**, Tochigi **1**, Gunma **0**; Kyoto **1**, Osaka **2**. Kanto total: **59**.
@@ -56,7 +64,7 @@ Updated: 2026-08-13 (Asia/Tokyo)
 
 ## Release goal
 
-Release ready is **NO under the deterministic Tokyo coverage contract**, not because of a production-data defect. The verified application is **62 venues / 63 selectable configurations / 85,237 configuration-seat records**. Tokyo is **10/76 user-visible PRODUCTION**. A conversion is complete at A0, SHOULD research is 28/28, nonproduction addressable is 0, raw floor and conversion are 100%, but the completed adequacy review is **ADEQUACY FAIL** because there is no large/dome/arena production choice, no medium live-house production, a major bayfront gap, and low coverage of high-demand MUST venues. B/C/D exclusions remain visible in the raw denominator.
+Release ready is **NO under representative-coverage policy v2**, not because of a production-data defect or unresolved exactness. The verified application remains **62 venues / 63 selectable configurations / 85,237 configuration-seat records**. Release readiness now asks whether the application works, offers representative venues for the main use cases, has practically sufficient major-Tokyo coverage, clearly discloses representative/approximate limitations, and contains no damaged or invented seat IDs. The current bounded blockers are `TOKYO-REPRESENTATIVE-MAJOR-LIVE`, `TOKYO-REPRESENTATIVE-MEDIUM-LIVEHOUSE`, and `TOKYO-REPRESENTATIVE-MAJOR-VENUE-DENSITY`; the first representative production batch is planned but not yet promoted.
 
 - `RELEASE-COVERAGE SCHEMA AUDIT` changed only coverage governance, report/docs, and the release coverage reporter. It did not change venue sources, catalog, runtime details, or production fingerprints.
 - Validation passed: coverage JSON/classification consistency (40/40 unique MUST nonproduction assignments), `venues:inventory:report`, `venues:readiness:report`, `venues:release:coverage`, `venues:build`, `venues:check`, `venues:validate`, `venues:report`, lint, typecheck, unit tests (16 files / 116 tests), build, E2E (11 tests in the approved elevated Miniflare run), production artifact baseline regression, and `git diff --check`. The sandbox-only E2E attempt hit the known Wrangler registry `EPERM`; the elevated rerun passed.
@@ -203,13 +211,14 @@ No range was fitted to 610, and no generated catalog/runtime/fingerprint changed
 
 ## Model queues
 
-- **Tokyo coverage active — Terra**: **0**. `TERRA-DENSE-1` through `TERRA-DENSE-4` are closed formal holds; no Terra→Sol handoff was created.
+- **Representative coverage active — bounded batch**: `tokyo-wave-5-representative-coverage` only. Luna high owns `galaxy-theatre-standard`, `nakano-zero-main-standard`, and `kameido-camelia-hall-standard`; Terra high owns the denser `zepp-haneda-standard`. Use Sol high only if a genuine configuration contradiction requires an advanced decision.
+- **Tokyo coverage active — Terra**: **1** (`zepp-haneda-standard`) under the bounded representative batch. Historical `TERRA-DENSE-1` through `TERRA-DENSE-4` are no longer permanent closures merely because exact reconciliation or wheelchair conversion is incomplete.
 - **Tokyo coverage active — Sol, MUST 0**: `tokyo-dome` is a closed TOKYO-DOME COMPLEX formal hold. MUST phase is 44/44 formally disposed.
 - **Tokyo coverage active — Sol, SHOULD 0**: `SOL-SHOULD-1/2/3` are complete; SHOULD research is **28/28**.
 - **Bounded addressable conversion queue**: **0**. `TOKYO-ADDRESSABLE-CONVERSION-1A/1B` removed all four prior candidates as B_SOURCE_LIMITED after fresh evidence; repo-derived nonproduction addressable IDs are none.
-- **Adequacy remediation — proposed, not authorized for external send**: `TOKYO-ADEQUACY-ISSUER-EVIDENCE-REQUEST-1` for `nippon-budokan` and `zepp-haneda` only. Prepare exact issuer questions for a current complete numbered configuration and wheelchair/companion replacement mapping; do not send without separate authority and do not expand public-source research.
+- **Issuer evidence request**: **none**. The project does not contact facilities; use public evidence only.
 - **Record-only / post-release — Sol, OPTIONAL 4 (non-blocking; not an active model queue)**: `ajinomoto-stadium`, `national-theatre-large`, `national-theatre-small`, `teikoku-theatre`.
-- **Tokyo coverage Luna**: none. The twelve `TERRA-DENSE-1`/`TERRA-DENSE-2`/`TERRA-DENSE-3`/`TERRA-DENSE-4` targets and all pre-existing Tokyo HOLD/CONTRADICTION are closed, not model queues; reopen only on changed issuer-owned evidence. Active pre-release queue is MUST/SHOULD only. P2 remains closed at 24/24 dispositions and is outside the Tokyo coverage sequence.
+- **Tokyo coverage Luna**: **3** in `tokyo-wave-5-representative-coverage`: Galaxy Theatre, Nakano ZERO Main Hall, and Kameido Camellia Hall. P2 remains outside this bounded Tokyo batch.
 
 ## Holds
 
@@ -269,4 +278,4 @@ The official URL is `https://seat-lottery-simulator.studiotomo.workers.dev/`. Th
 
 ## Exact next action
 
-Propose **`TOKYO-ADEQUACY-ISSUER-EVIDENCE-REQUEST-1`** for `nippon-budokan` and `zepp-haneda` only. Prepare—but do not send without separate authority—exact issuer questions requesting a current complete numbered configuration and wheelchair/companion replacement mapping. Keep both `B_SOURCE_LIMITED` if shareable primary evidence is unavailable. Do not transcribe ranges, release, deploy, expand to `ariake-arena` / `tokyo-takarazuka`, or repeat public-source scraping.
+Execute **`tokyo-wave-5-representative-coverage` only**. Promote `galaxy-theatre-standard`, `zepp-haneda-standard`, `nakano-zero-main-standard`, and `kameido-camelia-hall-standard` from their already collected public numbered-seat evidence. Preserve the map-drawn seat IDs exactly; do not capacity-fit or invent IDs. Record `confidence`, official-total differences, `accessibilityConversionNotReflected`, and representative-event/fixed-only metadata where applicable. Use Luna high for Galaxy/Nakano/Kameido and Terra high for Zepp Haneda; use Sol high only for a real unresolved configuration decision. Run the full venue/application regression suite after the four-target batch. Do not expand the batch, contact facilities, deploy before a production commit, or begin Tokyo Dome / Nippon Budokan / Ariake Arena transcription in this batch.

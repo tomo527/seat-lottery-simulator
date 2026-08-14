@@ -45,6 +45,7 @@ describe('App', () => {
   it('初期表示では詳細を読まず、全東京会場を絞り込める', () => {
     render(<App />)
     expect(screen.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeInTheDocument()
+    expect(screen.getByText(/座席配置は各会場の公開情報をもとにした代表的なものです/)).toBeInTheDocument()
     expect(screen.getByText('まだ会場が選択されていません。')).toBeInTheDocument()
     expect(loadVenueSeatData).not.toHaveBeenCalled()
     fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))

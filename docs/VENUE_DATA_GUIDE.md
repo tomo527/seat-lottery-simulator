@@ -25,8 +25,8 @@ scripts/venues/                           authoring / build / check / validate /
 `status`は必須で、次の3値だけを許可します。未知値や未指定はエラーです。
 
 - `draft`: 調査、range入力、検証中。runtime生成対象外だが、ID、所在地、source、rangeなどの基本検証対象。未入力時は`expectedSeatCount: null`、`ranges: []`で表現する。
-- `production`: 代表パターンが完全で、公式根拠と独立二回目照合が完了し、全ゲートを通過したデータ。
-- `rejected`: 公式資料不足、パターン非一意、完全構造化不能などで見送ったデータ。`rejectionReason`を必須とし、0席・`ranges: []`を許可してruntime生成対象外とする。
+- `production`: 宣言した代表scopeの実在番号集合を公開根拠から完全転記し、捏造防止・source・range・runtime gateを通過したデータ。全variant、独立2 generation、厳密総数一致、wheelchair完全解決は必須ではない。
+- `rejected`: 閉館、対象外、または信頼できる公開情報から実在番号集合を作れないため見送ったデータ。`rejectionReason`を必須とし、0席・`ranges: []`を許可してruntime生成対象外とする。
 
 schema v1では`draft`や`rejected`をproductionと同じファイルに混在させず、1ファイルを1会場・1代表パターンとして扱います。schema v2ではtop-level `status`を会場調査状態、`configurations[].status/selectable`をconfigurationごとの公開可否として分離します。完全なconfigurationと不完全な公式variantは同居できますが、不完全variantは`draft`かつ`selectable: false`でなければなりません。
 
@@ -88,9 +88,9 @@ schema v1では`draft`や`rejected`をproductionと同じファイルに混在�
 
 schema v1は既存sourceと生成物の互換契約として維持します。build/runtime内部では1 configurationへ正規化しますが、既存source JSON、catalog、runtime detail、fingerprintへv2 fieldを追加しません。
 
-## schema v2: issuer-defined configurations
+## schema v2: representative configurations
 
-1会場に、issuerがそれぞれ独立して完全定義した複数配置がある場合だけschema v2を使います。概形は次のとおりです。
+1会場に複数の明確な代表配置がある場合、固定standだけを登録する場合、または代表実公演layoutを明示する場合にschema v2を使います。最初から全variantを揃える必要はなく、まず1つの有用なconfigurationをproduction化できます。概形は次のとおりです。
 
 ```json
 {
@@ -148,17 +148,19 @@ schema v1は既存sourceと生成物の互換契約として維持します。bu
 
 top-level `status: production`は、少なくとも1件の`production`かつ`selectable: true`のconfigurationがあることを意味します。会場に未完了variantが存在すること自体は、別の完全なconfigurationを妨げません。反対に、top-levelが`draft`または`rejected`ならselectable production configurationを持てません。
 
-各selectable production configurationは、issuer-owned configuration definition、完全な番号集合、厳密な`expectedSeatCount`、計算席数一致、公式`seat-structure`/`seat-count` source、source generation、解決済みwheelchair semantics、独立第2パス、`rangeDiff: 0`、`verification.status: verified`、空の`unresolvedIssues`を個別に満たします。複数configurationでは各`differenceBasisSourceIds`がissuer-owned資料を参照しなければなりません。同じ物理席集合の二重登録は、独立したissuer根拠を`duplicateSeatSetBasisSourceIds`で示せない限り拒否します。
+各selectable production configurationは、宣言したscopeに対する完全な番号集合、source generation、参照source、1席以上の機械検証、`capacityFitting: false`、`repositoryInventedDifferences: false`を満たします。`definitionAuthority`は`issuer`、`official-event`、`representative-evidence`のいずれかで、issuerがdefaultと明記していなくても`selectionBasis`に採用理由を残せます。`confidence`は`verified`、`representative`、`approximate`です。既存productionは後方互換のため、厳密verificationから`verified`を推定します。
 
-repositoryがconfigurationを創作すること、issuer conditionなし、event-dependent floor番号の恒久ID化、capacity fitting、不完全番号集合のproduction化、根拠のないconfiguration間差分、未解決wheelchair semanticsは禁止です。
+`expectedSeatCount`は文章上の公式総数として保持でき、番号図から計算したmapped countとの差はwarningとquality metadataに残します。差を消すために番号を削除してはいけません。`verification.status`は`reviewed`または`verified`、`seatStructure: matched`をproductionに要求しますが、`seatCount: mismatched`、非0/`null`の`rangeDiff`、具体的な`unresolvedIssues`はblockerではありません。
+
+車いす転換番号が不明なら通常番号席をそのまま登録し、`wheelchairSemantics.status: not-reflected`と`accessibilityConversionNotReflected: true`を記録します。実公演で使われた仮設番号を採用する場合は`representativeEventLayout: true`、`scope.kind: representative-event`、公式`event-layout` source、共通またはconfiguration disclosureを必須にします。repositoryによるseat ID創作、capacity fitting、根拠のないconfiguration差分は引き続き禁止です。
 
 ### fixed-only configuration
 
-`scope.kind: fixed-only`は、issuerが恒久固定番号席subsetを独立したseat setとして定義し、全番号、厳密subtotal、除外するarena/floor等、wheelchair semanticsをlosslessに確定できる場合だけ許可します。`canonicalName`は「固定席のみ」等の限定を明示し、`scope`には`excludesDynamicAreas: true`、`maximumCapacity: false`、非空の`excludedAreas`、`expectedSeatCount`と同じ`exactSubtotal`を記録します。`scopeDisclosure`には、固定席のみであること、arena/floor等を含まないこと、会場最大収容配置ではないことを明示します。単に固定席が画像から読めるだけでは採用しません。
+`scope.kind: fixed-only`は、公開された固定stand番号図を宣言scopeの全番号として転記できる場合に許可します。`canonicalName`は「固定スタンド席・代表配置」等の限定を明示し、`scope`には`excludesDynamicAreas: true`、`maximumCapacity: false`、非空の`excludedAreas`、mapped countと同じ`exactSubtotal`を記録します。`scopeDisclosure`には固定席のみでarena/floor等を含まないことを明示します。公称固定席subtotalとの差はmetadataに残し、番号を削って合わせません。
 
 v2 catalogは会場を`venueGroupId`で1件にまとめ、configurationごとに`(venueId, configurationId)`と個別`dataPath`を持ちます。configurationが1件なら従来同様に直接利用し、複数なら会場選択後に明示選択します。fixed-only disclosureはconfiguration選択時と抽選結果の両方に表示します。
 
-`sources[].id`は会場内で安定かつ一意なslugにします。`official`は公式資料かを明示します。`roles`は`seat-structure`、`seat-count`、`facility`、`event-layout`から選び、同じ資料が座席構造と総席数の両方を裏付ける場合は同じsourceに複数roleを付けます。productionには公式の`seat-structure`と`seat-count`が少なくとも1件ずつ必要です。
+`sources[].id`は会場内で安定かつ一意なslugにします。`official`は公式資料かを明示します。`roles`は`seat-structure`、`seat-count`、`facility`、`event-layout`から選びます。productionにはseat-structure sourceと、施設・構造・席数・実公演layoutのいずれかを支える公式sourceが必要です。公式資料だけで番号が不足する場合は、信頼できるsecondaryを`official: false`かつ`seat-structure`として参照し、公式資料との非矛盾確認と採用理由をmetadataに残せます。SNS単独・出所不明画像は不可です。
 
 連続番号は`from`から`to`へ圧縮し、公式な欠番だけを`excluded`へ昇順で記録します。同一列が分断される場合はrangeを分けます。推測による補完はしません。`areaId`を指定するproduction rangeには、結果表示に使える一意の`areaLabel`も必須です。
 
@@ -166,9 +168,9 @@ areaのcanonical keyはruntime、validation、review、生成処理のすべて�
 
 ## 基本検証とproduction gate
 
-全statusで、ファイル名とID、schema version、slug、名称・所在地、都道府県マッピング、venue type、別名正規化、会場間検索語衝突、source ID・role・HTTPS・確認日、range正整数、excluded、区間重複、area対応を検証します。schema v1は`representativePattern`とtop-level verification、schema v2は各configurationのcondition、scope、source参照、verificationを検証します。draft/rejected configurationは空rangeと未確定席数`null`を許可し、production/selectable configurationだけ正のsafe integerの期待席数と1席以上を必須とします。rangeが存在するdraft/rejected configurationも同じrange構造検証を受けます。重複確認はcanonical area・NFKC rowごとにソートして区間比較し、全席`Seat[]`へ展開しません。
+全statusで、ファイル名とID、schema version、slug、名称・所在地、都道府県マッピング、venue type、別名正規化、会場間検索語衝突、source ID・role・HTTPS・確認日、range正整数、excluded、区間重複、area対応を検証します。schema v1は`representativePattern`とtop-level verification、schema v2は各configurationのselection basis、scope、source参照、wheelchair metadata、confidence、verificationを検証します。draft/rejected configurationは空rangeと未確定席数`null`を許可し、production/selectable configurationは1席以上の有効mapped setを必須とします。重複確認はcanonical area・NFKC rowごとに行い、全席`Seat[]`へ展開しません。
 
-productionではさらに、単一の完全な代表パターン、期待席数との一致、登録範囲・完全性根拠・変換方法・制約、公式source、構造と席数の根拠、完了したverification、未解決事項なしを必須とします。`TODO`、`TBD`、`未設定`、`placeholder`を明確なtokenとして全production文字列から検出し、range、area、名称、別名、代表パターン、source、説明、制約、verificationに残っていれば拒否します。通常の文章に含まれる「未設定項目」のような部分一致は拒否しません。`demo`、`sample`、`partial`の不完全productionも拒否します。新規会場のverification methodは`independent-official-source-review`です。既存12会場の移行専用methodは固定IDだけに許可され、新規会場へは使えません。
+productionのhard gateは、宣言scopeの完全な番号range、登録範囲・根拠・変換方法・制約、seat-structure source、公式supporting source、source参照、reviewed/verifiedかつmatchedなstructure、capacity fitting禁止、repository-invented IDs/differences禁止です。公式総数との一致、独立2 generation、`rangeDiff: 0`、wheelchair/companion完全置換、全variant、空の`unresolvedIssues`はconfidence情報でありhard gateではありません。`TODO`、`TBD`、`未設定`、`placeholder`や`demo`/`sample`/`partial`の不完全productionは引き続き拒否します。
 
 文字列の前後空白は保存時エラーです。`rowLabel`、`areaId`、`areaLabel`はNFKC比較も行い、NFKC後に同じrow/areaになる別表記の重複を拒否します。`venues:new`のCLI引数は暗黙にtrimせず、前後空白を明確なエラーとして拒否します。
 
@@ -218,11 +220,11 @@ npm run venues:review -- --all
 3. `venues:new`でdraftを生成する。
 4. 代表パターンを1つ決め、異なるパターンを混ぜない。
 5. 公式資料から空の`ranges`へ明示rangeを入力する。架空の仮座席は作らない。
-6. `expectedSeatCount`と計算席数を照合する。
+6. 公表総数があれば`expectedSeatCount`へ記録し、mapped countとの差を照合する。差を消すためのseat削除はしない。
 7. `venues:review -- --id ...`で要約、gap、warning、blockerを確認する。
-8. 1回目の記録を正解とみなさず、独立した二回目の公式資料照合を行う。
-9. 列、番号、欠番、area、総席数、パターン混在を確認し、verificationを完了する。
-10. 未解決事項がなければstatusを`production`へ変更する。曖昧なら`draft`または`rejected`のままにする。
+8. 可能なら独立照合し、結果をconfidenceへ反映する。独立2 generationがなくてもcurrent-linked公式図や合理的な代表図なら進められる。
+9. 列、番号、欠番、area、総席数差、パターン混在、accessibility未反映を確認し、verificationへ具体的に記録する。
+10. 宣言scopeの番号集合が根拠付きで完全ならstatusを`production`へ変更する。未確認seat IDを補完しないと完成しない場合だけdraft/rejectedを維持する。
 11. `npm run venues:build`を実行する。
 12. `npm run venues:check`を実行する。
 13. `npm run venues:validate`を実行する。
@@ -235,13 +237,13 @@ npm run venues:review -- --all
 - 小規模・中規模会場は1バッチ3～5会場。
 - 大規模アリーナ、スタジアム、ドームは1バッチ1会場。
 - 調査・入力と独立照合を同じ作業として一度に済ませない。
-- 公式資料が曖昧な会場は無理にproductionへ入れない。
-- 推測で穴を埋めず、draftまたはrejectedとして理由・未解決事項を残す。
+- 100%確定できないことだけでHOLDにせず、一般ユーザーが想像する配置に概ね近いかを判断する。
+- 推測でseat IDの穴を埋めない。番号集合自体が作れない場合だけdraft/rejectedとして理由を残す。
 - 1バッチごとに生成物、検証結果、席数・offset sample差分をレビューする。
 
 ## Codexでの二段階作業
 
-第1パスは公式資料調査とdraft作成です。第2パスは第1パスの結論を正解とみなさず、公式資料から独立再確認します。第2パスでは列、番号、欠番、area、総席数、代表パターン混在を重点確認し、完了するまでproductionへ変更しません。
+第1パスは公開資料調査とdraft作成です。第2パスは可能な範囲で第1パスを独立再確認し、列、番号、欠番、area、総席数差、代表パターン混在を重点確認します。独立generation不足はconfidenceを`representative`へ下げる理由であり、宣言scopeの実在番号集合が確認できていればproduction blockerではありません。
 
 `checkedAt`とverification日付は日本の調査暦日として扱い、通常検証のtodayはOS・CI timezoneに依存しない`Asia/Tokyo`基準です。テストでは`options.today`を注入できます。
 
@@ -286,9 +288,9 @@ eligible production coverage
 - `user-visible production coverage` = production catalogから実際に抽選できる候補数 / universe総数。
 - `schema-addressable coverage` = production済み、現行schemaでlosslessに処理可能、またはissuerが完全定義したconfiguration/fixed-only subsetを承認済みschema拡張で処理可能な候補数 / universe総数。
 
-formal dispositionは調査工程の完了であり、user-visible coverageではありません。HOLD/CONTRADICTIONをraw denominatorから削除しません。release免責にできる非production候補は、issuer-owned evidenceでB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのいずれかを示すものだけです。A SCHEMA-UNLOCKABLEはschema移行とproduction gateの対象であり、HOLDのままrelease完了に数えません。
+formal dispositionは調査工程の完了であり、user-visible coverageではありません。旧B/Cのうち、公式basic/current-linked map、実公演layout、固定stand番号図、またはofficial+secondaryで実在番号集合を作れる候補は新policyで再評価します。
 
-multi-configuration / fixed-only configurationは、configurationごとにissuer-defined condition、完全番号range、厳密総数、source generation、wheelchair semantics、独立第2パスを持つ場合だけ認めます。repository側のvariant創作、event-dependent floor番号の恒久ID化、capacity fitting、不完全variantの補完は禁止です。
+release gateは「全addressable変換」や旧adequacy blockerではなく、アプリ正常動作、主要用途を代表する会場、東京主要会場の実用的な厚み、代表配置であることの共通開示、データ破損・架空seat IDなしで判断します。research completeness、addressable conversion、raw floorは情報指標として残してもrelease blockerにはしません。
 
 ## batch運用
 

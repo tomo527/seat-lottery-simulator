@@ -1,0 +1,36 @@
+{
+  "batchId": "tokyo-wave-5-representative-coverage",
+  "createdAt": "2026-08-14",
+  "scope": "Representative coverage policy first bounded production batch. Promote only the declared public numbered-seat representative set for 天王洲 銀河劇場、Zepp Haneda、なかのZERO 大ホール、亀戸文化センター カメリアホール. Preserve official-total and accessibility differences as metadata; do not capacity-fit, invent seat IDs, or expand to other venues.",
+  "status": "planned",
+  "priority": "A",
+  "targetVenueIds": [
+    "galaxy-theatre-standard",
+    "zepp-haneda-standard",
+    "nakano-zero-main-standard",
+    "kameido-camelia-hall-standard"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-official-0760",
+      "carryOverFrom": "tokyo-wave-2",
+      "previousStatus": "draft-created",
+      "recheckReason": "Representative coverage v2 makes the complete 1,292-seat official numbered map production-eligible while preserving wheelchair conversion uncertainty as confidence metadata.",
+      "recheckNotBefore": "2026-08-14"
+    },
+    {
+      "inventoryId": "tokyo-official-0392",
+      "carryOverFrom": "tokyo-wave-2",
+      "previousStatus": "draft-created",
+      "recheckReason": "Representative coverage v2 makes the complete 400-seat official numbered map production-eligible while preserving conflicting wheelchair-removal wording as confidence metadata.",
+      "recheckNotBefore": "2026-08-14"
+    }
+  ],
+  "recommendedModels": {
+    "galaxy-theatre-standard": "Luna high",
+    "zepp-haneda-standard": "Terra high",
+    "nakano-zero-main-standard": "Luna high",
+    "kameido-camelia-hall-standard": "Luna high"
+  },
+  "stopRule": "Keep a target nonproduction only if its declared numbered scope cannot be completely reconstructed from the cited public evidence. Never infer a missing seat ID or remove a mapped seat to match capacity."
+}

@@ -3,13 +3,17 @@ export const SOURCE_STATUSES = new Set(['draft', 'production', 'rejected'])
 export const VENUE_TYPES = new Set(['theater', 'hall', 'arena', 'stadium', 'dome'])
 export const SOURCE_ROLES = new Set(['seat-structure', 'seat-count', 'facility', 'event-layout'])
 export const PATTERN_COVERAGES = new Set(['draft', 'partial', 'complete'])
-export const VERIFICATION_STATUSES = new Set(['pending', 'verified'])
+export const VERIFICATION_STATUSES = new Set(['pending', 'reviewed', 'verified'])
 export const VERIFICATION_RESULTS = new Set(['pending', 'matched', 'mismatched'])
-export const CONFIGURATION_SCOPES = new Set(['full-venue', 'official-variant', 'fixed-only'])
+export const CONFIDENCE_LEVELS = new Set(['verified', 'representative', 'approximate'])
+export const CONFIGURATION_AUTHORITIES = new Set(['issuer', 'official-event', 'representative-evidence'])
+export const CONFIGURATION_SCOPES = new Set(['full-venue', 'official-variant', 'fixed-only', 'representative-event'])
+export const WHEELCHAIR_STATUSES = new Set(['resolved', 'not-reflected', 'not-applicable', 'unknown', 'legacy-reviewed'])
 export const PLATFORM_CAPABILITIES = Object.freeze({
   multiConfiguration: true,
   fixedOnlyDisclosure: true,
   configurationLevelProductionGate: true,
+  representativeCoverageDisclosure: true,
 })
 export const LEGACY_VERIFICATION_METHOD = 'legacy-official-source-metadata-review-and-range-reconciliation'
 export const INDEPENDENT_VERIFICATION_METHOD = 'independent-official-source-review'

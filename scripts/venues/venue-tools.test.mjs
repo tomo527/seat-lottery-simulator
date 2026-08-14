@@ -190,12 +190,14 @@ describe('venue source validation', () => {
     expect(errorsFor(numberedZero)).toMatch(/non-negative/)
   })
 
-  it('rejects count mismatch, incomplete verification, and incomplete coverage', () => {
+  it('keeps official-total mismatch as quality information but rejects unreviewed structure and incomplete coverage', () => {
     const mismatch = source({ representativePattern: { ...source().representativePattern, expectedSeatCount: 4 } })
-    expect(errorsFor(mismatch)).toMatch(/expected 4, calculated 3/)
+    const mismatchResult = resultFor(mismatch)
+    expect(mismatchResult.errors).toEqual([])
+    expect(mismatchResult.warnings.join('\n')).toMatch(/official total 4 differs from mapped seat count 3/)
     const verification = source()
     verification.verification.status = 'pending'
-    expect(errorsFor(verification)).toMatch(/verification.status must be verified/)
+    expect(errorsFor(verification)).toMatch(/verification.status must be reviewed or verified/)
     const coverage = source()
     coverage.representativePattern.coverage = 'partial'
     expect(errorsFor(coverage)).toMatch(/coverage must be complete/)
@@ -258,19 +260,75 @@ describe('schema v2 configuration validation and output', () => {
   })
 
   it.each([
-    ['repository-created configuration', (data) => { data.configurations[0].definitionAuthority = 'repository' }, /definitionAuthority|repository-created/],
-    ['missing issuer condition', (data) => { data.configurations[0].issuerDefinedCondition = '' }, /issuerDefinedCondition/],
-    ['event-dependent permanent IDs', (data) => { data.configurations[0].scope.containsEventDependentSeatIds = true }, /event-dependent floor seats/],
+    ['unknown configuration authority', (data) => { data.configurations[0].definitionAuthority = 'repository' }, /definitionAuthority/],
+    ['missing selection basis', (data) => { data.configurations[0].issuerDefinedCondition = '' }, /issuerDefinedCondition or selectionBasis/],
+    ['event-dependent permanent IDs', (data) => { data.configurations[0].scope.containsEventDependentSeatIds = true }, /event-dependent seat IDs require representativeEventLayout/],
     ['capacity fitting', (data) => { data.configurations[0].capacityFitting = true }, /capacity fitting/],
     ['incomplete production configuration', (data) => { data.configurations[0].numberedSeatSetComplete = false }, /numbered seat set must be complete/],
-    ['count mismatch', (data) => { data.configurations[0].expectedSeatCount = 4 }, /expected 4, calculated 3|does not match calculated/],
-    ['unresolved wheelchair semantics', (data) => { data.configurations[0].wheelchairSemantics.status = 'unresolved' }, /wheelchair semantics must be resolved/],
     ['missing source generation', (data) => { data.configurations[0].sourceGeneration = '' }, /sourceGeneration/],
-    ['incomplete verification', (data) => { data.configurations[0].verification.status = 'pending' }, /verification.status must be verified/],
+    ['incomplete verification', (data) => { data.configurations[0].verification.status = 'pending' }, /verification.status must be reviewed or verified/],
   ])('rejects %s', (_name, mutate, expected) => {
     const data = sourceV2()
     mutate(data)
     expect(errorsFor(data)).toMatch(expected)
+  })
+
+  it('accepts representative quality metadata, count differences, and accessibility conversion not reflected', () => {
+    const data = sourceV2({ configurations: [configurationV2({
+      definitionAuthority: 'representative-evidence',
+      issuerDefinedCondition: undefined,
+      selectionBasis: '現行公式サイトがリンクする基本着席図を代表配置として採用。',
+      confidence: 'representative',
+      expectedSeatCount: 4,
+      wheelchairSemantics: {
+        status: 'not-reflected',
+        description: '通常番号席を登録し、公演別の車いす転換は反映しない。',
+        sourceIds: ['official-seat-map'],
+        accessibilityConversionNotReflected: true,
+      },
+      verification: {
+        status: 'reviewed', checkedAt: TODAY, method: 'representative-public-source-review',
+        seatStructure: 'matched', seatCount: 'mismatched', rangeDiff: 1,
+        unresolvedIssues: ['公式文章上の総数と番号図に1席差がある。'],
+      },
+    })] })
+    const result = resultFor(data)
+    expect(result.errors).toEqual([])
+    expect(result.warnings.join('\n')).toMatch(/official total 4 differs from mapped seat count 3/)
+  })
+
+  it('accepts a secondary numbered map only when official supporting evidence is also referenced', () => {
+    const data = sourceV2({
+      sources: [
+        { ...source().sources[0], id: 'official-facility', roles: ['facility', 'seat-count'] },
+        { ...source().sources[0], id: 'secondary-seat-map', official: false, roles: ['seat-structure'], publisher: '座席資料提供者' },
+      ],
+      configurations: [configurationV2({
+        definitionAuthority: 'representative-evidence',
+        issuerDefinedCondition: undefined,
+        selectionBasis: '公式施設資料と矛盾しないsecondary番号図を補助利用。',
+        sourceIds: ['official-facility', 'secondary-seat-map'],
+        wheelchairSemantics: { status: 'unknown', description: '公開資料で置換番号は不明。', sourceIds: [] },
+        confidence: 'approximate',
+      })],
+    })
+    expect(errorsFor(data)).toBe('')
+  })
+
+  it('accepts an official real-event layout as an explicitly representative configuration', () => {
+    const data = sourceV2({
+      sources: [{ ...source().sources[0], roles: ['seat-structure', 'seat-count', 'event-layout'] }],
+      configurations: [configurationV2({
+        definitionAuthority: 'official-event',
+        issuerDefinedCondition: undefined,
+        selectionBasis: '公式主催者が公開した実公演配置を代表例として採用。',
+        representativeEventLayout: true,
+        confidence: 'representative',
+        scope: { kind: 'representative-event', issuerDefined: false, containsEventDependentSeatIds: true },
+        scopeDisclosure: '公式実公演の代表配置です。公演ごとに異なる場合があります。',
+      })],
+    })
+    expect(errorsFor(data)).toBe('')
   })
 
   it('rejects duplicate IDs, ungrounded duplicate seat sets, and configurations without difference evidence', () => {
@@ -279,7 +337,7 @@ describe('schema v2 configuration validation and output', () => {
       configurationV2({ differenceBasisSourceIds: ['official-seat-map'] }),
     ] })
     expect(errorsFor(duplicateId)).toMatch(/duplicate configuration ID/)
-    expect(errorsFor(duplicateId)).toMatch(/duplicate a physical seat set without issuer evidence/)
+    expect(errorsFor(duplicateId)).toMatch(/duplicate a physical seat set without source evidence/)
     const noDifferenceEvidence = sourceV2({ configurations: [
       configurationV2(),
       configurationV2({ id: 'variant', ranges: [{ areaId: 'main', areaLabel: 'メイン', rowLabel: 'B', from: 1, to: 3 }] }),

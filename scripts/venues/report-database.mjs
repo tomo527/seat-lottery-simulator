@@ -2,6 +2,7 @@ import { readdir, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { CATALOG_PATH, DETAIL_DIR, readSources, ROOT } from './lib.mjs'
 import { analyzeDatabaseSizes, evaluateSizeLimits } from './capacity.mjs'
+import { configurationConfidence, productionConfigurations } from './source-schema.mjs'
 
 const sources = await readSources()
 const catalog = JSON.parse(await (await import('node:fs/promises')).readFile(CATALOG_PATH, 'utf8'))
@@ -10,9 +11,15 @@ const sizes = await Promise.all(files.map(async (file) => ({ file, bytes: (await
 const byRegion = Object.groupBy(catalog, (entry) => entry.region)
 const byPrefecture = Object.groupBy(catalog, (entry) => entry.prefecture)
 const byStatus = Object.groupBy(sources, ({ data }) => data.status)
+const confidenceCounts = Object.groupBy(
+  sources.flatMap(({ data }) => productionConfigurations(data).map((configuration) => configurationConfidence(configuration))),
+  (confidence) => confidence,
+)
 console.log(`Venues: ${catalog.length}`)
 console.log('Source status:')
 for (const key of Object.keys(byStatus).sort()) console.log(`  ${key}: ${byStatus[key].length}`)
+console.log('Production confidence:')
+for (const key of ['verified', 'representative', 'approximate']) console.log(`  ${key}: ${confidenceCounts[key]?.length ?? 0}`)
 console.log('By region:')
 for (const key of Object.keys(byRegion).sort()) console.log(`  ${key}: ${byRegion[key].length}`)
 console.log('By prefecture:')

@@ -15,6 +15,7 @@ describe('LegalPage', () => {
     expect(screen.getByText(/チケット販売会社その他の事業者とは提携・関係していません/)).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '第4条（禁止事項）' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: '第8条（免責事項）' })).toBeInTheDocument()
+    expect(screen.getByText(/各会場が公開する座席図・施設資料/)).toBeInTheDocument()
     expect(screen.getByText(/日本法を準拠法/)).toBeInTheDocument()
     expect(screen.queryByText(/問い合わせ|メールアドレス|電話番号|運営会社/)).not.toBeInTheDocument()
     expect(screen.queryByText(/took\.jp|webサクッとツールズ/)).not.toBeInTheDocument()

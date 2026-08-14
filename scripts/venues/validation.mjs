@@ -1,9 +1,8 @@
 import path from 'node:path'
 import {
-  INDEPENDENT_VERIFICATION_METHOD,
+  CONFIDENCE_LEVELS,
+  CONFIGURATION_AUTHORITIES,
   CONFIGURATION_SCOPES,
-  LEGACY_PRODUCTION_IDS,
-  LEGACY_VERIFICATION_METHOD,
   PATTERN_COVERAGES,
   SOURCE_ROLES,
   SOURCE_STATUSES,
@@ -11,6 +10,7 @@ import {
   VENUE_TYPES,
   VERIFICATION_RESULTS,
   VERIFICATION_STATUSES,
+  WHEELCHAIR_STATUSES,
   WARNING_LIMITS,
 } from './constants.mjs'
 import { canonicalAreaId } from './lib.mjs'
@@ -112,10 +112,11 @@ const validateRepresentativePattern = (data, label, issues) => {
   if (!expectedIsValid) {
     issues.error(`${label} representativePattern.expectedSeatCount must be null or a positive safe integer`)
   }
-  if (data.status === 'production' && !(Number.isSafeInteger(pattern.expectedSeatCount) && pattern.expectedSeatCount > 0)) {
-    issues.error(`${label} production expectedSeatCount must be a positive safe integer`)
-  }
   validateStringArray(pattern.notIncludedPatterns, `${label} representativePattern.notIncludedPatterns`, issues, { nonEmpty: true })
+}
+
+const validateConfidence = (value, label, issues) => {
+  if (value !== undefined && !CONFIDENCE_LEVELS.has(value)) issues.error(`${label} has unknown value ${String(value)}`)
 }
 
 const validateVerification = (data, label, today, issues) => {
@@ -342,14 +343,12 @@ export const productionGateIssues = (data, label = `${data?.id ?? '(unknown)'}:`
     add(typeof pattern.id !== 'string' || !pattern.id.trim(), 'representativePattern.id is missing')
     add(typeof pattern.name !== 'string' || !pattern.name.trim(), 'representativePattern.name is missing')
     add(pattern.coverage !== 'complete', 'coverage must be complete')
-    add(!Number.isSafeInteger(pattern.expectedSeatCount) || pattern.expectedSeatCount < 1, 'expectedSeatCount must be a positive safe integer')
     add(typeof pattern.selectionReason !== 'string' || !pattern.selectionReason.trim(), 'selectionReason is missing')
     add(!Array.isArray(pattern.notIncludedPatterns), 'notIncludedPatterns must be an array')
     if (Number.isSafeInteger(pattern.expectedSeatCount) && Array.isArray(data?.ranges)) {
       const counts = data.ranges.map(validRangeSeatCount)
       const calculated = counts.every((count) => count !== undefined) ? counts.reduce((sum, count) => sum + count, 0) : undefined
       add(calculated === undefined, 'seat count cannot be calculated until all ranges are valid')
-      add(calculated !== undefined && calculated !== pattern.expectedSeatCount, `expectedSeatCount ${pattern.expectedSeatCount} does not match calculated ${calculated}`)
       add(calculated !== undefined && calculated < 1, 'at least one selectable seat is required')
     }
   }
@@ -360,22 +359,21 @@ export const productionGateIssues = (data, label = `${data?.id ?? '(unknown)'}:`
 
   const officialSources = Array.isArray(data?.sources) ? data.sources.filter((source) => source?.official === true) : []
   add(officialSources.length === 0, 'at least one official source is required')
-  add(!officialSources.some((source) => source?.roles?.includes('seat-structure')), 'an official seat-structure source is required')
-  add(!officialSources.some((source) => source?.roles?.includes('seat-count')), 'an official seat-count source is required')
+  const evidenceSources = Array.isArray(data?.sources) ? data.sources : []
+  add(!evidenceSources.some((source) => source?.roles?.includes('seat-structure')), 'a seat-structure source is required')
+  add(!officialSources.some((source) => source?.roles?.some((role) => ['seat-structure', 'seat-count', 'facility', 'event-layout'].includes(role))), 'an official supporting source is required')
+  const usesSecondarySeatStructure = evidenceSources.some((source) => source?.official === false && source?.roles?.includes('seat-structure')) &&
+    !evidenceSources.some((source) => source?.official === true && source?.roles?.includes('seat-structure'))
+  add(usesSecondarySeatStructure && data?.confidence !== 'approximate', 'secondary-only seat structure requires approximate confidence')
 
   const verification = data?.verification
   add(!isPlainObject(verification), 'verification must be an object')
   if (isPlainObject(verification)) {
-    add(verification.status !== 'verified', 'verification.status must be verified')
+    add(!['reviewed', 'verified'].includes(verification.status), 'verification.status must be reviewed or verified')
     add(!parseDate(verification.checkedAt), 'verification.checkedAt must be a valid YYYY-MM-DD date')
-    const allowedMethod =
-      verification.method === INDEPENDENT_VERIFICATION_METHOD ||
-      (verification.method === LEGACY_VERIFICATION_METHOD && LEGACY_PRODUCTION_IDS.has(data?.id))
-    add(!allowedMethod, 'verification.method must record an independent official-source review')
+    add(typeof verification.method !== 'string' || !verification.method.trim(), 'verification.method is missing')
     add(verification.seatStructure !== 'matched', 'verification.seatStructure must be matched')
-    add(verification.seatCount !== 'matched', 'verification.seatCount must be matched')
     add(!Array.isArray(verification.unresolvedIssues), 'verification.unresolvedIssues must be an array')
-    add(Array.isArray(verification.unresolvedIssues) && verification.unresolvedIssues.length > 0, 'verification has unresolved issues')
   }
 
   for (const item of collectProductionStrings(data)) {
@@ -390,63 +388,58 @@ export const productionGateIssues = (data, label = `${data?.id ?? '(unknown)'}:`
   return blockers
 }
 
-const referencedOfficialSources = (data, sourceIds) => {
-  const ids = new Set(Array.isArray(sourceIds) ? sourceIds : [])
-  return Array.isArray(data?.sources)
-    ? data.sources.filter((source) => ids.has(source?.id) && source?.official === true)
-    : []
-}
-
 export const configurationProductionGateIssues = (data, configuration, label = `${data?.id ?? '(unknown)'}/${configuration?.id ?? '(unknown)'}:`) => {
   const blockers = []
   const add = (condition, message) => {
     if (condition) blockers.push(`${label} ${message}`)
   }
-  add(configuration?.definitionAuthority !== 'issuer', 'configuration must be issuer-defined; repository-created configurations are forbidden')
-  add(typeof configuration?.issuerDefinedCondition !== 'string' || !configuration.issuerDefinedCondition.trim(), 'issuerDefinedCondition is missing')
+  add(!CONFIGURATION_AUTHORITIES.has(configuration?.definitionAuthority), 'definitionAuthority is invalid')
+  add(configuration?.definitionAuthority !== 'issuer' && !['representative', 'approximate'].includes(configuration?.confidence), 'non-issuer representative selection requires explicit representative or approximate confidence')
+  add(![configuration?.issuerDefinedCondition, configuration?.selectionBasis].some((value) => typeof value === 'string' && value.trim()), 'issuerDefinedCondition or selectionBasis is required')
   add(typeof configuration?.sourceGeneration !== 'string' || !configuration.sourceGeneration.trim(), 'sourceGeneration is missing')
   add(configuration?.numberedSeatSetComplete !== true, 'numbered seat set must be complete')
   add(configuration?.capacityFitting === true, 'capacity fitting is forbidden')
   add(configuration?.repositoryInventedDifferences === true, 'repository-invented configuration differences are forbidden')
-  add(configuration?.scope?.containsEventDependentSeatIds !== false, 'event-dependent floor seats cannot be stored as permanent seat IDs')
-  add(configuration?.scope?.issuerDefined !== true, 'scope must be independently defined by the issuer')
+  add(configuration?.scope?.containsEventDependentSeatIds === true && configuration?.representativeEventLayout !== true, 'event-dependent seat IDs require representativeEventLayout metadata')
   add(!CONFIGURATION_SCOPES.has(configuration?.scope?.kind), 'scope.kind is invalid')
   add(!Array.isArray(configuration?.sourceIds) || configuration.sourceIds.length === 0, 'official sourceIds are required')
 
-  const officialSources = referencedOfficialSources(data, configuration?.sourceIds)
-  add(officialSources.length === 0, 'configuration requires issuer-owned source references')
-  add(!officialSources.some((source) => source?.roles?.includes('seat-structure')), 'configuration requires an official seat-structure source')
-  add(!officialSources.some((source) => source?.roles?.includes('seat-count')), 'configuration requires an official seat-count source')
-  add(!Number.isSafeInteger(configuration?.expectedSeatCount) || configuration.expectedSeatCount < 1, 'expectedSeatCount must be a positive safe integer')
+  const allSources = Array.isArray(data?.sources) ? data.sources : []
+  const referencedSources = allSources.filter((source) => configuration?.sourceIds?.includes(source?.id))
+  const officialSources = referencedSources.filter((source) => source?.official === true)
+  add(referencedSources.length === 0, 'configuration requires evidence source references')
+  add(!referencedSources.some((source) => source?.roles?.includes('seat-structure')), 'configuration requires a seat-structure source')
+  add(!officialSources.some((source) => source?.roles?.some((role) => ['seat-structure', 'seat-count', 'facility', 'event-layout'].includes(role))), 'configuration requires an official supporting source')
+  if (configuration?.scope?.containsEventDependentSeatIds === true) {
+    add(!officialSources.some((source) => source?.roles?.includes('event-layout')), 'representative event layouts require an official event-layout source')
+  }
+  const usesSecondarySeatStructure = referencedSources.some((source) => source?.official === false && source?.roles?.includes('seat-structure')) &&
+    !referencedSources.some((source) => source?.official === true && source?.roles?.includes('seat-structure'))
+  add(usesSecondarySeatStructure && configuration?.confidence !== 'approximate', 'secondary-only seat structure requires approximate confidence')
   if (Number.isSafeInteger(configuration?.expectedSeatCount) && Array.isArray(configuration?.ranges)) {
     const counts = configuration.ranges.map(validRangeSeatCount)
     const calculated = counts.every((count) => count !== undefined) ? counts.reduce((sum, count) => sum + count, 0) : undefined
     add(calculated === undefined, 'seat count cannot be calculated until all ranges are valid')
-    add(calculated !== undefined && calculated !== configuration.expectedSeatCount, `expectedSeatCount ${configuration.expectedSeatCount} does not match calculated ${calculated}`)
     add(calculated !== undefined && calculated < 1, 'at least one selectable seat is required')
   }
 
   const wheelchair = configuration?.wheelchairSemantics
   add(!isPlainObject(wheelchair), 'wheelchairSemantics must be an object')
   if (isPlainObject(wheelchair)) {
-    add(wheelchair.status !== 'resolved', 'wheelchair semantics must be resolved')
+    add(!WHEELCHAIR_STATUSES.has(wheelchair.status), 'wheelchairSemantics.status is invalid')
     add(typeof wheelchair.description !== 'string' || !wheelchair.description.trim(), 'wheelchairSemantics.description is missing')
-    add(!Array.isArray(wheelchair.sourceIds) || wheelchair.sourceIds.length === 0, 'wheelchairSemantics.sourceIds are required')
-    const wheelchairSources = referencedOfficialSources(data, wheelchair.sourceIds)
-    add(wheelchairSources.length === 0, 'wheelchair semantics require an issuer-owned source')
+    add(!Array.isArray(wheelchair.sourceIds), 'wheelchairSemantics.sourceIds must be an array')
+    add(wheelchair.status === 'not-reflected' && wheelchair.accessibilityConversionNotReflected !== true, 'not-reflected wheelchair semantics require accessibilityConversionNotReflected')
   }
 
   const verification = configuration?.verification
   add(!isPlainObject(verification), 'verification must be an object')
   if (isPlainObject(verification)) {
-    add(verification.status !== 'verified', 'verification.status must be verified')
+    add(!['reviewed', 'verified'].includes(verification.status), 'verification.status must be reviewed or verified')
     add(!parseDate(verification.checkedAt), 'verification.checkedAt must be a valid YYYY-MM-DD date')
-    add(verification.method !== INDEPENDENT_VERIFICATION_METHOD, 'verification.method must record an independent official-source review')
+    add(typeof verification.method !== 'string' || !verification.method.trim(), 'verification.method is missing')
     add(verification.seatStructure !== 'matched', 'verification.seatStructure must be matched')
-    add(verification.seatCount !== 'matched', 'verification.seatCount must be matched')
-    add(verification.rangeDiff !== 0, 'verification.rangeDiff must be 0')
     add(!Array.isArray(verification.unresolvedIssues), 'verification.unresolvedIssues must be an array')
-    add(Array.isArray(verification.unresolvedIssues) && verification.unresolvedIssues.length > 0, 'verification has unresolved issues')
   }
 
   if (configuration?.scope?.kind === 'fixed-only') {
@@ -455,7 +448,10 @@ export const configurationProductionGateIssues = (data, configuration, label = `
     add(configuration?.scope?.excludesDynamicAreas !== true, 'fixed-only scope must exclude dynamic arena/floor areas')
     add(configuration?.scope?.maximumCapacity !== false, 'fixed-only scope must disclose that it is not the maximum-capacity layout')
     add(!Array.isArray(configuration?.scope?.excludedAreas) || configuration.scope.excludedAreas.length === 0, 'fixed-only excludedAreas are required')
-    add(configuration?.scope?.exactSubtotal !== configuration?.expectedSeatCount, 'fixed-only exactSubtotal must equal expectedSeatCount')
+    const calculated = Array.isArray(configuration?.ranges) && configuration.ranges.every((range) => validRangeSeatCount(range) !== undefined)
+      ? configuration.ranges.reduce((sum, range) => sum + validRangeSeatCount(range), 0)
+      : undefined
+    add(calculated !== undefined && configuration?.scope?.exactSubtotal !== calculated, 'fixed-only exactSubtotal must equal the mapped seat count')
   }
 
   for (const item of collectProductionStrings(configuration)) {
@@ -473,9 +469,13 @@ const validateConfigurationV2 = (data, configuration, index, label, today, issue
   validateString(configuration.id, `${prefix}.id`, issues, { nonEmpty: true })
   if (!slugPattern.test(configuration.id ?? '')) issues.error(`${prefix}.id must be a lowercase alphanumeric hyphen slug`)
   validateString(configuration.canonicalName, `${prefix}.canonicalName`, issues, { nonEmpty: true })
-  validateString(configuration.issuerDefinedCondition, `${prefix}.issuerDefinedCondition`, issues, { nonEmpty: true })
+  if (configuration.issuerDefinedCondition !== undefined) validateString(configuration.issuerDefinedCondition, `${prefix}.issuerDefinedCondition`, issues, { nonEmpty: true })
+  if (configuration.selectionBasis !== undefined) validateString(configuration.selectionBasis, `${prefix}.selectionBasis`, issues, { nonEmpty: true })
   validateString(configuration.sourceGeneration, `${prefix}.sourceGeneration`, issues, { nonEmpty: true })
-  if (configuration.definitionAuthority !== 'issuer') issues.error(`${prefix}.definitionAuthority must be issuer`)
+  const expectedIsValid = configuration.expectedSeatCount === null ||
+    (Number.isSafeInteger(configuration.expectedSeatCount) && configuration.expectedSeatCount > 0)
+  if (!expectedIsValid) issues.error(`${prefix}.expectedSeatCount must be null or a positive safe integer`)
+  if (!CONFIGURATION_AUTHORITIES.has(configuration.definitionAuthority)) issues.error(`${prefix}.definitionAuthority has unknown value ${String(configuration.definitionAuthority)}`)
   if (configuration.capacityFitting !== false) issues.error(`${prefix}.capacityFitting must be false`)
   if (configuration.repositoryInventedDifferences !== false) issues.error(`${prefix}.repositoryInventedDifferences must be false`)
   if (!SOURCE_STATUSES.has(configuration.status)) issues.error(`${prefix}.status has unknown value ${String(configuration.status)}`)
@@ -488,27 +488,31 @@ const validateConfigurationV2 = (data, configuration, index, label, today, issue
   if (!isPlainObject(configuration.scope)) issues.error(`${prefix}.scope must be a plain object`)
   else {
     if (!CONFIGURATION_SCOPES.has(configuration.scope.kind)) issues.error(`${prefix}.scope.kind has unknown value ${String(configuration.scope.kind)}`)
-    if (configuration.scope.containsEventDependentSeatIds !== false) issues.error(`${prefix}.scope.containsEventDependentSeatIds must be false`)
-    if (configuration.scope.issuerDefined !== true) issues.error(`${prefix}.scope.issuerDefined must be true`)
+    if (typeof configuration.scope.containsEventDependentSeatIds !== 'boolean') issues.error(`${prefix}.scope.containsEventDependentSeatIds must be boolean`)
+    if (configuration.scope.issuerDefined !== undefined && typeof configuration.scope.issuerDefined !== 'boolean') issues.error(`${prefix}.scope.issuerDefined must be boolean when present`)
   }
   validateString(configuration.scopeDisclosure, `${prefix}.scopeDisclosure`, issues)
   if (!isPlainObject(configuration.wheelchairSemantics)) issues.error(`${prefix}.wheelchairSemantics must be a plain object`)
   else {
     validateString(configuration.wheelchairSemantics.status, `${prefix}.wheelchairSemantics.status`, issues, { nonEmpty: true })
+    if (!WHEELCHAIR_STATUSES.has(configuration.wheelchairSemantics.status)) issues.error(`${prefix}.wheelchairSemantics.status has unknown value ${String(configuration.wheelchairSemantics.status)}`)
     validateString(configuration.wheelchairSemantics.description, `${prefix}.wheelchairSemantics.description`, issues)
     validateStringArray(configuration.wheelchairSemantics.sourceIds, `${prefix}.wheelchairSemantics.sourceIds`, issues, { nonEmpty: true })
   }
+  if (configuration.representativeEventLayout !== undefined && typeof configuration.representativeEventLayout !== 'boolean') issues.error(`${prefix}.representativeEventLayout must be boolean when present`)
+  validateConfidence(configuration.confidence, `${prefix}.confidence`, issues)
   validateVerification(configuration, prefix, today, issues)
+  if (configuration.verification?.rangeDiff !== undefined && configuration.verification.rangeDiff !== null && !Number.isSafeInteger(configuration.verification.rangeDiff)) {
+    issues.error(`${prefix}.verification.rangeDiff must be null or a safe integer`)
+  }
   const calculated = validateRanges(configuration, prefix, issues)
-  const officialIds = new Set((data.sources ?? []).filter((source) => source?.official === true).map((source) => source.id))
+  const sourceIds = new Set((data.sources ?? []).map((source) => source?.id))
   for (const sourceId of [...(configuration.sourceIds ?? []), ...(configuration.wheelchairSemantics?.sourceIds ?? [])]) {
-    if (!officialIds.has(sourceId)) issues.error(`${prefix} source reference ${String(sourceId)} must identify an issuer-owned source`)
+    if (!sourceIds.has(sourceId)) issues.error(`${prefix} source reference ${String(sourceId)} does not exist`)
   }
   if (configuration.status === 'production') {
     for (const blocker of configurationProductionGateIssues(data, configuration, prefix)) issues.error(blocker)
-    if (Number.isSafeInteger(configuration.expectedSeatCount) && calculated !== configuration.expectedSeatCount) {
-      issues.error(`${prefix} expected ${configuration.expectedSeatCount}, calculated ${calculated}`)
-    }
+    if (Number.isSafeInteger(configuration.expectedSeatCount) && calculated !== configuration.expectedSeatCount) issues.warn(`${prefix} official total ${configuration.expectedSeatCount} differs from mapped seat count ${calculated}`)
   }
 }
 
@@ -569,12 +573,13 @@ export const validateSources = (sources, options = {}) => {
       validateString(sourceData.transformation, `${label} transformation`, local)
       validateStringArray(sourceData.knownLimitations, `${label} knownLimitations`, local, { nonEmpty: true })
       validateVerification(sourceData, label, today, local)
+      validateConfidence(sourceData.confidence, `${label} confidence`, local)
       const calculated = validateRanges(sourceData, label, local)
       if (sourceData.status === 'production') {
         for (const blocker of productionGateIssues(sourceData, label)) local.error(blocker)
         if (Number.isSafeInteger(sourceData.representativePattern?.expectedSeatCount) &&
             calculated !== sourceData.representativePattern.expectedSeatCount) {
-          local.error(`${label} expected ${sourceData.representativePattern.expectedSeatCount}, calculated ${calculated}`)
+          local.warn(`${label} official total ${sourceData.representativePattern.expectedSeatCount} differs from mapped seat count ${calculated}`)
         }
       }
     } else if (sourceData.schemaVersion === 2) {
@@ -599,10 +604,10 @@ export const validateSources = (sources, options = {}) => {
             })).sort((left, right) => JSON.stringify(left).localeCompare(JSON.stringify(right))))
             const previous = physicalSeatSets.get(signature)
             if (previous) {
-              const officialIds = new Set((sourceData.sources ?? []).filter((source) => source?.official === true).map((source) => source.id))
+              const sourceIds = new Set((sourceData.sources ?? []).map((source) => source?.id))
               if (!Array.isArray(configuration.duplicateSeatSetBasisSourceIds) || configuration.duplicateSeatSetBasisSourceIds.length === 0 ||
-                  !configuration.duplicateSeatSetBasisSourceIds.every((id) => officialIds.has(id))) {
-                local.error(`${label} configurations ${previous} and ${configuration.id ?? index} duplicate a physical seat set without issuer evidence`)
+                  !configuration.duplicateSeatSetBasisSourceIds.every((id) => sourceIds.has(id))) {
+                local.error(`${label} configurations ${previous} and ${configuration.id ?? index} duplicate a physical seat set without source evidence`)
               }
             } else physicalSeatSets.set(signature, configuration.id ?? String(index))
           }
@@ -610,9 +615,9 @@ export const validateSources = (sources, options = {}) => {
             if (!Array.isArray(configuration?.differenceBasisSourceIds) || configuration.differenceBasisSourceIds.length === 0) {
               local.error(`${label} configuration ${configuration?.id ?? index} requires issuer evidence for configuration differences`)
             } else {
-              const officialIds = new Set((sourceData.sources ?? []).filter((source) => source?.official === true).map((source) => source.id))
-              if (!configuration.differenceBasisSourceIds.every((id) => officialIds.has(id))) {
-                local.error(`${label} configuration ${configuration?.id ?? index} difference basis must reference issuer-owned sources`)
+              const sourceIds = new Set((sourceData.sources ?? []).map((source) => source?.id))
+              if (!configuration.differenceBasisSourceIds.every((id) => sourceIds.has(id))) {
+                local.error(`${label} configuration ${configuration?.id ?? index} difference basis must reference existing sources`)
               }
             }
           }

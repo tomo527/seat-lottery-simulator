@@ -1,0 +1,50 @@
+{
+  "reportId": "representative-coverage-policy-migration-2026-08-14",
+  "policyVersion": "representative-coverage-v2",
+  "asOf": "2026-08-14",
+  "productionChanged": false,
+  "principles": [
+    "Prefer current official maps, current-linked older official maps, official basic/seated examples, official event layouts, then reputable secondary numbered maps supported by non-contradictory official evidence.",
+    "Use the complete mapped seat-ID set for the declared representative scope; never delete seats to fit a published total.",
+    "Treat exact total agreement, independent second generation, rangeDiff 0, wheelchair/companion conversion, and complete variant coverage as confidence signals rather than production blockers.",
+    "Keep capacity fitting, repository-invented seat IDs, anonymous-image sourcing, invalid ranges, overlaps, and empty runtime sets as hard blockers."
+  ],
+  "confidence": {
+    "verified": "Official numbered map and total substantially reconcile with strong review evidence.",
+    "representative": "Official basic/current-linked/typical map is used; event and accessibility differences may exist.",
+    "approximate": "Official supporting evidence plus a reputable secondary numbered map provides the most reasonable representative layout."
+  },
+  "immediateCandidates": [
+    {"venueId":"galaxy-theatre","sourceId":"galaxy-theatre-standard","sourceQuality":"A: current official HTML images and official PDF; two mapped passes both yield 750","confidence":"representative","expectedEffort":"low","mappedState":"38 ranges already stored; official total 746 versus mapped 750"},
+    {"venueId":"nakano-zero-main","sourceId":"nakano-zero-main-standard","sourceQuality":"A: official complete numbered map and official total","confidence":"representative","expectedEffort":"low","mappedState":"32 ranges / 1,292 mapped; accessibility conversion only unresolved"},
+    {"venueId":"kameido-camelia-hall","sourceId":"kameido-camelia-hall-standard","sourceQuality":"A: official complete numbered map and official 400-seat total","confidence":"representative","expectedEffort":"low","mappedState":"17 ranges / 400 mapped; wheelchair removal wording conflicts"},
+    {"venueId":"sumida-triphony-main","sourceId":"sumida-triphony-main-hall-standard","sourceQuality":"A: official complete numbered map and official floor totals","confidence":"representative","expectedEffort":"low","mappedState":"52 ranges / 1,795 mapped; published total 1,801"},
+    {"venueId":"curian-main","sourceId":"curian-main-standard","sourceQuality":"A: official complete numbered map and official total","confidence":"representative","expectedEffort":"low","mappedState":"29 ranges / 1,084 mapped; published total 1,074"},
+    {"venueId":"itabashi-culture-small","sourceId":"itabashi-culture-small-standard","sourceQuality":"A: official complete numbered map and official total","confidence":"representative","expectedEffort":"low","mappedState":"16 ranges / 306 mapped; wheelchair conversion not reflected"},
+    {"venueId":"zepp-haneda","sourceId":"zepp-haneda-standard","sourceQuality":"A/B: current operator page links the 2021 official basic seated map; prior two-pass result 1,207/1,207","confidence":"representative","expectedEffort":"medium","mappedState":"34 reconciled ranges must be restored into schema v2 source"},
+    {"venueId":"zepp-shinjuku","sourceId":null,"sourceQuality":"A: official seated-use map; prior two-pass B4F numbered subset 530/530","confidence":"representative","expectedEffort":"medium","mappedState":"create source and transcribe the B4F numbered-seat representative subset"},
+    {"venueId":"ex-theater-roppongi","sourceId":null,"sourceQuality":"A: operator seating map and official seated capacity 920","confidence":"representative","expectedEffort":"medium","mappedState":"create source and transcribe normal numbered seating; accessibility conversion not reflected"},
+    {"venueId":"nhk-hall","sourceId":"nhk-hall-standard","sourceQuality":"B: 2016 official numbered map remains linked by the current official site; current official fixed total 3,400","confidence":"representative","expectedEffort":"medium-high","mappedState":"dense full-map transcription required"},
+    {"venueId":"tokyo-takarazuka","sourceId":"tokyo-takarazuka-standard","sourceQuality":"A: current official general-performance seating map and 2,079-seat figure","confidence":"representative","expectedEffort":"medium-high","mappedState":"dense full-map transcription required; wheelchair conversion not reflected"},
+    {"venueId":"yoyogi-1","sourceId":"yoyogi-1-standard","sourceQuality":"A: current official 44-block fixed-stand maps; two mapped passes agree","confidence":"representative","expectedEffort":"high","mappedState":"transcribe 8,655 mapped fixed stands; published subtotal 8,636"},
+    {"venueId":"yoyogi-2","sourceId":"yoyogi-2-standard","sourceQuality":"A: current official 20-block maps; two fixed-row passes agree","confidence":"representative","expectedEffort":"high","mappedState":"transcribe 2,818 mapped fixed seats; published subtotal 2,803"},
+    {"venueId":"tokyo-gymnasium","sourceId":"tokyo-gymnasium-standard","sourceQuality":"A: current official fixed-stand and accessibility block maps","confidence":"representative","expectedEffort":"high","mappedState":"full fixed-stand transcription required; known north-C subtotal difference +1"},
+    {"venueId":"tokyo-dome","sourceId":"tokyo-dome-concert","sourceQuality":"A for physical stand numbering, not for concert floor","confidence":"representative","expectedEffort":"very-high","mappedState":"candidate fixed-stand representative only; re-scope official baseball stand map and exclude floor/temporary seating"}
+  ],
+  "needsAdditionalNumberedEvidence": [
+    {"venueId":"nippon-budokan","reason":"Current official material has fixed subtotals but no complete public numbered set; locate reputable secondary numbering consistent with official structure before transcription.","confidenceIfResolved":"approximate","expectedEffort":"high"},
+    {"venueId":"ariake-arena","reason":"Current official material lacks every fixed row/seat number; secondary complete numbering must be found and checked against official fixed structure.","confidenceIfResolved":"approximate","expectedEffort":"high"}
+  ],
+  "recommendedFirstBatch": {
+    "batchId":"tokyo-wave-5-representative-coverage",
+    "venueIds":["galaxy-theatre","zepp-haneda","nakano-zero-main","kameido-camelia-hall"],
+    "why":"One high-demand theatre and one medium live-house close visible utility gaps, while two already-complete official-map halls provide low-risk policy proofs. Three sources already contain ranges or a prior reconciled range result.",
+    "models":{"galaxy-theatre":"Luna high","zepp-haneda":"Terra high","nakano-zero-main":"Luna high","kameido-camelia-hall":"Luna high"},
+    "stopRule":"Do not invent or capacity-fit any seat ID. Keep a venue nonproduction only if its declared numbered scope cannot be completely reconstructed from the cited evidence."
+  },
+  "releaseReady": false,
+  "releaseBlockers": [
+    "No newly unlocked representative venue has been promoted yet.",
+    "Current runtime still lacks a medium live-house and a large live/arena representative."
+  ]
+}

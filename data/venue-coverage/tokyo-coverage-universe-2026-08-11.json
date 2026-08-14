@@ -216,6 +216,15 @@
       "adequacyOutcomeAfter": "ADEQUACY FAIL",
       "releaseReady": false,
       "notes": "3件ともB_SOURCE_LIMITED維持。日本武道館は2026年版施設概要で固定階別候補11,075席を確認したが全番号・wheelchair／companion mapping・独立current番号generationなし。NHKは固定3,400席と2016番号図を確認したがcurrent独立generationとwheelchair semanticsなし。Zepp Hanedaは1,207/1,207/rangeDiff 0を維持するがoperatorが基本図・barrier-free配置を催事依存と明記し、新しい恒久置換資料なし。range転記、production promotion、gate緩和なし。"
+    },
+    "REPRESENTATIVE-COVERAGE-POLICY-MIGRATION": {
+      "completedAt": "2026-08-14",
+      "productionPromotions": 0,
+      "policyVersion": "representative-coverage-v2",
+      "immediateCandidates": 15,
+      "recommendedNextBatch": "tokyo-wave-5-representative-coverage",
+      "releaseReady": false,
+      "notes": "expected/calculated一致、独立2 generation、rangeDiff 0、wheelchair/companion完全置換、全variantをproduction blockerからconfidence情報へ移した。公開番号の完全転記、source参照、capacity fitting禁止、repository-invented seat ID禁止はhard gateとして維持。global disclosureを追加し、旧ADEQUACY gateをrepresentative coverage reviewへ置換した。"
     }
   },
   "currentSnapshot": {
@@ -233,25 +242,27 @@
     "mustProductionCoveragePercent":13.6,
     "shouldProductionCoveragePercent":14.3,
     "schemaAddressableCoveragePercent":13.2,
-    "nextMacro":"TOKYO-ADEQUACY-ISSUER-EVIDENCE-REQUEST-1"
+    "nextMacro":"tokyo-wave-5-representative-coverage"
   },
   "releaseGate": {
+    "policyVersion": "representative-coverage-v2",
     "requirements": {
-      "researchCompleteness":{"MUST":100.0,"SHOULD":100.0},
-      "addressableProductionConversion":{"MUST":100.0,"SHOULD":100.0},
-      "rawProductionFloor":{"MUST":6,"SHOULD":4,"MUST_AND_SHOULD":10,"TOKYO_UNIVERSE":10},
+      "applicationHealth":true,
+      "representativeMajorUseCoverage":true,
+      "practicalTokyoMajorVenueCoverage":true,
+      "representativeCoverageDisclosure":true,
+      "productionQuality":true,
+      "noInventedSeatIds":true,
       "configurationSupport":true,
       "fixedOnlyDisclosure":true,
-      "productionQuality":true,
-      "universeGapReview":true,
-      "releaseCoverageAdequacyReview":true
+      "universeGapReview":true
     },
     "policy": {
-      "rawFloorRule":"raw production floorはcurrent confirmed schema-addressableを全件production化した必要数としてrepo stateからderiveする。B/C/Dへのfresh再分類では減り、新規addressable判明時は増える。既存productionとの置換は認めない。",
-      "exclusionRule":"raw denominatorから候補を削除しない。production未達の免責はB SOURCE-LIMITED、C CONTRADICTION、D CURRENTNESS/CLOSEDのissuer-owned blockerが記録された場合だけで、A SCHEMA-UNLOCKABLEは免責しない。",
+      "productionRule":"公開情報から宣言scopeの実在番号集合を完全転記でき、capacity fitting・repository-invented seat IDがなければ代表配置としてproduction化できる。",
+      "qualitySignals":"公式総数一致、独立2 generation、rangeDiff 0、wheelchair/companion完全置換、全variantはconfidence情報でありrelease blockerではない。",
+      "coverageRule":"releaseはアプリ正常動作、主要用途の代表会場、東京主要会場の実用的な厚み、共通開示、破損・架空seat IDなしで判断する。research completeness、addressable conversion、raw floorは情報指標。",
       "optionalIsReleaseBlocker":false,
-      "authority":"current readiness and RELEASE READY are derived by venues:release:coverage from repository state; this object contains policy only.",
-      "note":"formal disposition 100%をuser-visible coverage 100%として扱わない。raw floor達成だけでも東京の主要会場をほぼ網羅したとは扱わず、初回release直前のadequacy reviewを必須とする。"
+      "authority":"current readiness and RELEASE READY are derived by venues:release:coverage from repository state and representativeCoverageReleaseReview."
     }
   },
   "universeGapReview": {
@@ -260,7 +271,22 @@
     "blockerIds":[],
     "basis":"Tokyo coverage universe auditで既知の主要舞台・ライブ会場候補の明白な漏れがないことを確認。新規候補が判明した場合は再オープンする。"
   },
-  "releaseCoverageAdequacyReview": {
+  "representativeCoverageReleaseReview": {
+    "id":"TOKYO-REPRESENTATIVE-COVERAGE-RELEASE-REVIEW",
+    "status":"complete",
+    "completedAt":"2026-08-14",
+    "outcome":"NOT READY BEFORE FIRST REPRESENTATIVE EXPANSION",
+    "blockerIds":["TOKYO-REPRESENTATIVE-MAJOR-LIVE","TOKYO-REPRESENTATIVE-MEDIUM-LIVEHOUSE","TOKYO-REPRESENTATIVE-MAJOR-VENUE-DENSITY"],
+    "criteria": {
+      "applicationHealth":"PASS: existing production regression remains intact; full migration validation is required before commit.",
+      "representativeMajorUseCoverage":"FAIL: current production still has no large live/arena representative and no medium live-house representative.",
+      "practicalTokyoMajorVenueCoverage":"FAIL: policy unlocks candidates, but no newly unlocked high-demand venue is production yet.",
+      "representativeCoverageDisclosure":"PASS: global UI and terms disclosure implemented in policy migration.",
+      "productionQuality":"PASS: explicit mapped ranges, overlap checks, source references, capacity-fitting prohibition, and invented-ID prohibition remain hard gates."
+    },
+    "exactNextAction":"Run tokyo-wave-5-representative-coverage for galaxy-theatre, zepp-haneda, nakano-zero-main, and kameido-camelia-hall. Promote only the declared representative numbered set; record total/accessibility differences without fitting."
+  },
+  "historicalReleaseCoverageAdequacyReview": {
     "id":"TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
     "status":"complete",
     "completedAt":"2026-08-13",
