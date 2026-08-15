@@ -167,7 +167,7 @@ describe('App', () => {
     vi.useFakeTimers()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     expect(screen.getByTestId('lottery-animation')).toBeInTheDocument()
-    expect(document.querySelector('.miko-scene')).toHaveAttribute('aria-hidden', 'true')
+    expect(document.querySelector('.lottery-sprite-wrap')).toHaveAttribute('aria-hidden', 'true')
     expect(document.querySelector('.drawing-progress')).toHaveAttribute('aria-hidden', 'true')
     expect(screen.queryByText(/[A-Z]列/)).not.toBeInTheDocument()
     expect(screen.queryByText(/\d+番/)).not.toBeInTheDocument()

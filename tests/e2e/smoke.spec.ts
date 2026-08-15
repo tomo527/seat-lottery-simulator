@@ -27,7 +27,7 @@ const drawAndExpectNotification = async (page: Page, venueName: string, minimumD
   const startedAt = Date.now()
   await page.getByRole('button', { name: '座席を抽選する' }).click()
   await expect(page.getByRole('heading', { name: '抽選中……' })).toBeVisible()
-  await expect(page.getByTestId('lottery-animation').locator('.miko-scene')).toBeVisible()
+  await expect(page.getByTestId('lottery-animation').locator('.lottery-sprite-wrap')).toBeVisible()
   await expect(page.getByTestId('lottery-animation').locator('.drawing-progress')).toBeVisible()
   await expect(page.getByRole('button', { name: '抽選中……' })).toBeDisabled()
   await expect(page.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeVisible({ timeout: 8_000 })
@@ -201,7 +201,7 @@ test('会場切替と自作座席でも通知カードが成立する', async ({
   await expect(page.locator('.ticket-details').getByText('エリア')).toHaveCount(0)
 })
 
-test('reduced motionでも4秒程度待ち、位置移動と回転を止める', async ({ page }) => {
+test('reduced motionでも4秒程度待ち、スプライトの表示を固定する', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')
   await chooseVenue(page, 'イイノ', 'イイノホール')
@@ -209,32 +209,38 @@ test('reduced motionでも4秒程度待ち、位置移動と回転を止める',
   await page.getByRole('button', { name: '座席を抽選する' }).click()
   const animation = page.getByTestId('lottery-animation')
   await expect(animation).toBeVisible()
-  const motionStyles = await animation.evaluate((element) => {
-    const figure = getComputedStyle(element.querySelector('.miko-figure')!)
-    const arm = getComputedStyle(element.querySelector('.miko-arm.right')!)
-    const box = getComputedStyle(element.querySelector('.lottery-box')!)
-    const glow = getComputedStyle(element.querySelector('.drawing-glow')!)
-    return {
-      figureAnimation: figure.animationName,
-      figureTransform: figure.transform,
-      armAnimation: arm.animationName,
-      armTransform: arm.transform,
-      boxAnimation: box.animationName,
-      boxTransform: box.transform,
-      glowAnimation: glow.animationName,
-    }
-  })
-  expect(motionStyles).toEqual({
-    figureAnimation: 'none',
-    figureTransform: 'none',
-    armAnimation: 'none',
-    armTransform: 'none',
-    boxAnimation: 'none',
-    boxTransform: 'none',
-    glowAnimation: 'reduced-breathe',
-  })
+  const readState = () => animation.evaluate((element) => ({
+    spritePosition: getComputedStyle(element.querySelector('.lottery-sprite')!).backgroundPosition,
+    glowAnimation: getComputedStyle(element.querySelector('.drawing-glow')!).animationName,
+  }))
+  const first = await readState()
+  expect(first.glowAnimation).toBe('reduced-breathe')
+  await page.waitForTimeout(1_500)
+  const second = await readState()
+  expect(second.spritePosition).toBe(first.spritePosition)
   await expect(page.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeVisible({ timeout: 8_000 })
   expect(Date.now() - startedAt).toBeGreaterThanOrEqual(3_800)
+})
+
+test('抽選中はスプライトのフレームが実際の時間経過で切り替わる', async ({ page }) => {
+  await page.goto('/')
+  await chooseVenue(page, 'イイノ', 'イイノホール')
+  expect(await page.evaluate(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(false)
+  await page.getByRole('button', { name: '座席を抽選する' }).click()
+  const sprite = page.getByTestId('lottery-sprite')
+  await expect(sprite).toBeVisible()
+  const readPosition = () => sprite.evaluate((el) => getComputedStyle(el).backgroundPosition)
+  // 累積で0.2/0.7/1.3/2.0/3.0/3.7秒付近をサンプリング（4秒の抽選中に収まる範囲）
+  const deltas = [200, 500, 600, 700, 1_000, 700]
+  const samples: string[] = []
+  for (const ms of deltas) {
+    await page.waitForTimeout(ms)
+    samples.push(await readPosition())
+  }
+  expect(new Set(samples).size).toBeGreaterThan(1)
+  // 1.3秒以降（探るループ区間）でも複数フレームが観測されること
+  const loopSamples = samples.slice(2)
+  expect(new Set(loopSamples).size).toBeGreaterThan(1)
 })
 
 for (const viewport of [{ width: 360, height: 800 }, { width: 768, height: 900 }, { width: 1280, height: 900 }]) {
