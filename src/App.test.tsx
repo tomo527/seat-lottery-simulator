@@ -129,15 +129,13 @@ describe('App', () => {
     expect(screen.queryByText('300席から今日の1席を抽選します')).not.toBeInTheDocument()
   })
 
-  it('2,999msと3,199msでは結果を出さず、3,200msで通知風のテキスト結果だけを表示する', async () => {
+  it('2,799msでは結果を出さず、2,800msで通知風のテキスト結果だけを表示する', async () => {
     render(<App />)
     await chooseVenue()
     vi.useFakeTimers()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     expect(screen.getByRole('heading', { name: '抽選中……' })).toBeInTheDocument()
-    act(() => vi.advanceTimersByTime(2_999))
-    expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
-    act(() => vi.advanceTimersByTime(200))
+    act(() => vi.advanceTimersByTime(2_799))
     expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
     act(() => vi.advanceTimersByTime(1))
     expect(screen.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeInTheDocument()
@@ -148,7 +146,7 @@ describe('App', () => {
     expect(document.querySelector('svg')).not.toBeInTheDocument()
   })
 
-  it('reduced motionでも3,200ms待ってから結果を表示する', async () => {
+  it('reduced motionでも2,800ms待ってから結果を表示する', async () => {
     vi.spyOn(window, 'matchMedia').mockImplementation((query) => ({
       matches: query === '(prefers-reduced-motion: reduce)', media: query, onchange: null,
       addEventListener: vi.fn(), removeEventListener: vi.fn(), addListener: vi.fn(), removeListener: vi.fn(), dispatchEvent: vi.fn(),

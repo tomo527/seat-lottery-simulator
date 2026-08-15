@@ -1,0 +1,25 @@
+.support-section { margin: 0 0 72px; padding: clamp(22px, 5vw, 34px) clamp(18px, 5vw, 32px); border: 1px dashed #d3cdec; border-radius: 24px; background: rgba(255,255,255,.72); text-align: center; }
+
+.offertory-box { position: relative; width: 108px; height: 62px; margin: 0 auto 16px; border-radius: 9px 9px 12px 12px; background: repeating-linear-gradient(90deg, #e6dcc8 0 13px, #dcd0b8 13px 26px); box-shadow: inset 0 -8px 14px rgba(88,66,32,.16), 0 8px 18px rgba(38,27,93,.1); }
+.offertory-plank { position: absolute; left: -7px; right: -7px; top: 12px; height: 11px; border-radius: 4px; background: linear-gradient(180deg, #cbb894, #b89f75); }
+.offertory-slot { position: absolute; left: 22%; right: 22%; top: 3px; height: 6px; border-radius: 3px; background: #574733; box-shadow: inset 0 2px 3px rgba(0,0,0,.45); }
+.offertory-coin { position: absolute; left: 50%; top: -13px; width: 17px; height: 17px; margin-left: -8.5px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe9a8, var(--yellow) 62%, #e8b93c); box-shadow: 0 3px 8px rgba(216,163,44,.45); transition: transform .28s ease; }
+.support-section:hover .offertory-coin, .support-section:focus-within .offertory-coin { transform: translateY(8px) rotate(12deg); }
+
+.support-kicker { margin: 0; color: var(--muted); font-size: .58rem; font-weight: 900; letter-spacing: .18em; }
+.support-section h2 { margin: 8px 0 0; color: var(--violet-dark); font-size: clamp(1.02rem, 3.4vw, 1.22rem); letter-spacing: -.02em; }
+.support-lead { max-width: 460px; margin: 12px auto 0; color: var(--muted); font-size: .78rem; line-height: 1.85; }
+
+.support-button { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; margin-top: 20px; padding: 12px 26px; border-radius: 15px; background: var(--violet-pale); color: var(--violet-dark); font-size: .86rem; font-weight: 900; letter-spacing: .03em; text-decoration: none; box-shadow: 0 6px 16px rgba(81,64,199,.14); transition: transform .2s, box-shadow .2s; }
+.support-button:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(81,64,199,.2); }
+.support-button span { font-size: .74rem; }
+
+.support-notes { max-width: 430px; margin: 20px auto 0; padding: 0; list-style: none; color: var(--muted); font-size: .68rem; line-height: 1.8; text-align: left; }
+.support-notes li { position: relative; padding-left: 15px; }
+.support-notes li::before { content: '・'; position: absolute; left: 0; color: #b3abd4; }
+.support-fineprint { margin: 14px 0 0; color: #8d86a3; font-size: .62rem; line-height: 1.7; }
+
+@media (prefers-reduced-motion: reduce) {
+  .support-section:hover .offertory-coin, .support-section:focus-within .offertory-coin { transform: none; }
+  .support-button:hover { transform: none; }
+}

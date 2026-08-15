@@ -15,7 +15,12 @@ type Props = {
 export function ResultCard({ seat, venueName, configurationName, scopeDisclosure, shareStatus, onRetry, onChangeConditions, onShare }: Props) {
   return (
     <section className="result-card" aria-labelledby="result-heading">
+      <div className="result-celebration" aria-hidden="true">
+        <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
+      </div>
       <article className="result-notification">
+        <div className="result-burst" aria-hidden="true" />
+        <div className="result-sparkles" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i></div>
         <header className="result-notification-header">
           <p>SEAT LOTTERY NOTICE</p>
           <h2 id="result-heading">抽選結果のお知らせ</h2>

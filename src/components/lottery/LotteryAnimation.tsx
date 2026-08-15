@@ -3,6 +3,9 @@ export function LotteryAnimation() {
     <div className="drawing-card" aria-labelledby="drawing-heading" data-testid="lottery-animation">
       <div className="drawing-glow" aria-hidden="true" />
       <div className="stage-lights" aria-hidden="true"><i /><i /></div>
+      <div className="drawing-particles" aria-hidden="true">
+        <i /><i /><i /><i /><i /><i />
+      </div>
       <div className="drawing-sparkles" aria-hidden="true">
         <i>✦</i><i>●</i><i>✧</i><i>●</i><i>✦</i>
       </div>
@@ -13,6 +16,7 @@ export function LotteryAnimation() {
           <span className="ticket-numbers"><i>A列</i><i>12番</i></span>
         </div>
       </div>
+      <div className="drawing-flash" aria-hidden="true" />
       <h2 id="drawing-heading">抽選中……</h2>
       <div className="drawing-copy">
         <p>今日の席運を確認しています</p>

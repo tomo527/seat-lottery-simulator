@@ -13,6 +13,10 @@ export const PAGE_META = {
     title: 'プライバシーポリシー｜座席抽選シミュレーター',
     description: '座席抽選シミュレーターにおけるブラウザ保存情報やアクセス情報の取り扱いをご案内します。',
   },
+  tokushoho: {
+    title: '特定商取引法に基づく表記｜座席抽選シミュレーター',
+    description: '座席抽選シミュレーターで任意にお受けする開発支援について、特定商取引法に基づく表記をご案内します。',
+  },
 } as const
 
 export function applyPageMeta(meta: { title: string; description: string }) {

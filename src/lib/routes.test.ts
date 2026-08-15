@@ -7,6 +7,8 @@ describe('resolvePageRoute', () => {
     ['/terms/', 'terms'],
     ['/privacy', 'privacy'],
     ['/privacy/', 'privacy'],
+    ['/tokushoho', 'tokushoho'],
+    ['/tokushoho/', 'tokushoho'],
     ['/', 'home'],
     ['/unknown-path', 'home'],
   ] as const)('%sを%sへ解決する', (pathname, expected) => {

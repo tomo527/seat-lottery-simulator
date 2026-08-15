@@ -23,7 +23,7 @@ const chooseVenue = async (page: Page, query: string, name: string) => {
   await expect(page.getByRole('button', { name: '会場を変更' })).toBeFocused()
 }
 
-const drawAndExpectNotification = async (page: Page, venueName: string, minimumDuration = 3_000) => {
+const drawAndExpectNotification = async (page: Page, venueName: string, minimumDuration = 2_600) => {
   const startedAt = Date.now()
   await page.getByRole('button', { name: '座席を抽選する' }).click()
   await expect(page.getByRole('heading', { name: '抽選中……' })).toBeVisible()
@@ -70,8 +70,24 @@ test('フッターから法務ページを往復し、直接URLでも表示で�
   await page.getByRole('link', { name: '← TOPへ戻る' }).click()
   await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
 
+  await page.getByRole('link', { name: '特定商取引法に基づく表記' }).click()
+  await expect(page).toHaveURL(/\/tokushoho$/)
+  await expect(page).toHaveTitle('特定商取引法に基づく表記｜座席抽選シミュレーター')
+  await expect(page.getByRole('heading', { name: '特定商取引法に基づく表記', level: 1 })).toBeVisible()
+  await expect(page.getByText('現在、開発支援の受付は無効です。')).toHaveCount(0)
+  await page.reload()
+  await expect(page.getByText('キャンセル・返金')).toBeVisible()
+  await expect(page.getByRole('link', { name: 'studiotomo99@gmail.com' })).toHaveAttribute('href', 'mailto:studiotomo99@gmail.com')
+  await page.getByRole('link', { name: '← TOPへ戻る' }).click()
+  await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
+  await expect(page.locator('.support-section')).toBeVisible()
+  await expect(page.getByRole('link', { name: /お賽銭を入れる/ })).toHaveAttribute('href', 'https://buy.stripe.com/cNidRbb7kfvKgiA4mbdnW00')
+  await expect(page.locator('.result-card .support-section')).toHaveCount(0)
+
   await page.goto('/terms')
   await expect(page.getByRole('heading', { name: '利用規約', level: 1 })).toBeVisible()
+  await page.goto('/tokushoho')
+  await expect(page.getByRole('heading', { name: '特定商取引法に基づく表記', level: 1 })).toBeVisible()
   await page.goto('/unknown-spa-path')
   await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
 })
@@ -185,7 +201,7 @@ test('会場切替と自作座席でも通知カードが成立する', async ({
   await expect(page.locator('.ticket-details').getByText('エリア')).toHaveCount(0)
 })
 
-test('reduced motionでも3秒以上待ち、位置移動と回転を止める', async ({ page }) => {
+test('reduced motionでも2.8秒程度待ち、位置移動と回転を止める', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')
   await chooseVenue(page, 'イイノ', 'イイノホール')
@@ -213,7 +229,7 @@ test('reduced motionでも3秒以上待ち、位置移動と回転を止める',
     glowAnimation: 'reduced-breathe',
   })
   await expect(page.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeVisible({ timeout: 8_000 })
-  expect(Date.now() - startedAt).toBeGreaterThanOrEqual(3_000)
+  expect(Date.now() - startedAt).toBeGreaterThanOrEqual(2_600)
 })
 
 for (const viewport of [{ width: 360, height: 800 }, { width: 768, height: 900 }, { width: 1280, height: 900 }]) {

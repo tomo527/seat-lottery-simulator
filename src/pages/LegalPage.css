@@ -67,6 +67,39 @@
 .legal-document li + li { margin-top: 5px; }
 .legal-document code { overflow-wrap: anywhere; color: var(--violet-dark); font-size: .82em; }
 
+.legal-status {
+  margin: 0 0 34px;
+  padding: 15px 18px;
+  border: 1px solid #f0c9c6;
+  border-radius: 14px;
+  background: var(--coral-pale);
+  color: #7a3b3f;
+  font-size: .8rem;
+  line-height: 1.85;
+}
+
+.legal-disclosure { margin: 0; }
+
+.legal-disclosure > div {
+  padding: 14px 0;
+  display: grid;
+  grid-template-columns: minmax(148px, .8fr) minmax(0, 2fr);
+  gap: 5px 18px;
+  align-items: baseline;
+  border-bottom: 1px solid #efecf2;
+}
+
+.legal-disclosure > div:last-child { border-bottom: 0; }
+.legal-disclosure dt { color: var(--ink); font-size: .78rem; font-weight: 800; }
+
+.legal-disclosure dd {
+  margin: 0;
+  color: #4f4963;
+  font-size: .86rem;
+  line-height: 1.95;
+  overflow-wrap: anywhere;
+}
+
 .effective-date {
   margin: 42px 0 0;
   padding-top: 20px;
@@ -80,4 +113,5 @@
   .legal-main { margin-top: 8px; }
   .legal-document { border-radius: 18px; }
   .legal-document section + section { margin-top: 29px; }
+  .legal-disclosure > div { grid-template-columns: 1fr; }
 }

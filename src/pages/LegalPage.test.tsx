@@ -45,4 +45,66 @@ describe('LegalPage', () => {
     expect(document.title).toBe('プライバシーポリシー｜座席抽選シミュレーター')
     expect(fetchSpy).not.toHaveBeenCalled()
   })
+
+  it('利用規約で開発支援を任意・無償・特典なしとして定める', () => {
+    render(<LegalPage route="terms" />)
+    expect(screen.getByRole('heading', { name: '第10条（任意の開発支援）' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: '第11条（準拠法）' })).toBeInTheDocument()
+    expect(screen.getByText(/支援の有無にかかわらず、すべての機能を無料で利用できます/)).toBeInTheDocument()
+    expect(screen.getByText(/開発支援は完全に任意であり、本サイトの利用条件ではありません/)).toBeInTheDocument()
+    expect(screen.getByText(/抽選結果、当たりやすさ、抽選対象の座席が変わることはありません/)).toBeInTheDocument()
+    expect(screen.getByText(/対価となる商品または役務の提供はありません/)).toBeInTheDocument()
+    expect(screen.getByText(/Stripe社が提供するPayment Linkの決済ページ/)).toBeInTheDocument()
+    expect(screen.getByText(/Stripeの管理画面等を通じて/)).toBeInTheDocument()
+    expect(screen.getByText(/法令上返金が必要な場合/)).toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/運営者は決済情報を取得しません/)
+  })
+
+  it('プライバシーポリシーで外部決済ページの構造を正確に説明する', () => {
+    render(<LegalPage route="privacy" />)
+    expect(screen.getByRole('heading', { name: '7. 開発支援（外部の決済ページ）' })).toBeInTheDocument()
+    expect(screen.getByText(/本サイトがカード番号等の決済情報を取得・保存することはありません/)).toBeInTheDocument()
+    expect(screen.getByText(/決済に関するSDKや埋め込みの決済フォームも読み込んでいない/)).toBeInTheDocument()
+    expect(screen.getByText(/支援用のリンクを開かない限り、本サイトからStripe社への通信は発生しません/)).toBeInTheDocument()
+    expect(screen.getByText(/運営者は、Stripeの管理画面等を通じて、支援額、決済状況その他Stripe社が提供する支払いに関する情報を確認できる場合があります/)).toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/運営者は決済情報を取得しません/)
+  })
+
+  it('特定商取引法に基づく表記の必須項目を表示する', () => {
+    const fetchSpy = vi.spyOn(window, 'fetch')
+    render(<LegalPage route="tokushoho" />)
+    expect(screen.getByRole('heading', { name: '特定商取引法に基づく表記', level: 1 })).toBeInTheDocument()
+    for (const term of ['販売事業者（氏名）', '所在地', '電話番号', '開示請求・連絡方法', '販売価格', '販売価格以外に必要となる料金', '支払方法', '支払時期', '提供時期', 'キャンセル・返金', '支援による特典・役務の有無']) {
+      expect(screen.getByText(term)).toBeInTheDocument()
+    }
+    expect(screen.getAllByText(/支援のお申込み前にご確認いただけるよう、遅滞なく開示します/)).toHaveLength(3)
+    expect(screen.getByText(/1回あたり50円以上/)).toBeInTheDocument()
+    expect(screen.getByText(/対価として引き渡す商品やデジタルコンテンツ、提供する役務はありません/)).toBeInTheDocument()
+    expect(screen.getByText(/カード番号等の決済情報の入力と処理はStripe社の決済ページ上で行われ/)).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '特定商取引法に基づく表記' })).toHaveAttribute('aria-current', 'page')
+    expect(document.title).toBe('特定商取引法に基づく表記｜座席抽選シミュレーター')
+    expect(fetchSpy).not.toHaveBeenCalled()
+  })
+
+  it('開示請求先のメールを表示し、氏名・住所・電話番号は請求時開示にとどめる', () => {
+    render(<LegalPage route="tokushoho" />)
+    const mail = screen.getByRole('link', { name: 'studiotomo99@gmail.com' })
+    expect(mail).toHaveAttribute('href', 'mailto:studiotomo99@gmail.com')
+    expect(screen.getByText(/氏名、所在地および電話番号の開示のご請求は、このメールアドレスで受け付けます/)).toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/7日以内|営業日以内/)
+    expect(document.body.textContent).not.toMatch(/https?:\/\//)
+  })
+
+  it('Payment Link設定後は受付無効の注意書きを表示しない', () => {
+    render(<LegalPage route="tokushoho" />)
+    expect(screen.queryByRole('status')).not.toBeInTheDocument()
+    expect(document.body.textContent).not.toMatch(/現在、開発支援の受付は無効です。/)
+  })
+
+  it('フッターから3つの法務ページへ移動できる', () => {
+    render(<LegalPage route="terms" />)
+    expect(screen.getByRole('link', { name: '利用規約' })).toHaveAttribute('href', '/terms')
+    expect(screen.getByRole('link', { name: 'プライバシーポリシー' })).toHaveAttribute('href', '/privacy')
+    expect(screen.getByRole('link', { name: '特定商取引法に基づく表記' })).toHaveAttribute('href', '/tokushoho')
+  })
 })

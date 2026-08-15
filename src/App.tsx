@@ -4,6 +4,7 @@ import { LotteryAnimation } from './components/lottery/LotteryAnimation'
 import { ResultCard } from './components/lottery/ResultCard'
 import { SiteFooter } from './components/layout/SiteFooter'
 import { SiteHeader } from './components/layout/SiteHeader'
+import { SupportSection } from './components/support/SupportSection'
 import { CustomSeatBuilder } from './components/venue/CustomSeatBuilder'
 import { VenueSelector } from './components/venue/VenueSelector'
 import { loadVenueSeatData } from './data/venue-db/loadVenue'
@@ -285,6 +286,7 @@ function App() {
             />
           )}
         </div>
+        <SupportSection />
       </main>
 
       <SiteFooter currentPath="/" />

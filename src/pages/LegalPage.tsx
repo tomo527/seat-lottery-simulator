@@ -1,13 +1,27 @@
 import { useEffect } from 'react'
 import { SiteFooter } from '../components/layout/SiteFooter'
 import { SiteHeader } from '../components/layout/SiteHeader'
+import { contactMailtoHref, MINIMUM_SUPPORT_AMOUNT_JPY, SELLER_DISCLOSURE } from '../config/legal'
+import { resolveSupportPaymentLink } from '../config/support'
 import { applyPageMeta, PAGE_META } from '../lib/pageMeta'
 import type { PageRoute } from '../lib/routes'
 import './LegalPage.css'
 
-type LegalRoute = Extract<PageRoute, 'terms' | 'privacy'>
+type LegalRoute = Exclude<PageRoute, 'home'>
 
-const effectiveDate = '2026年8月14日'
+const effectiveDate = '2026年8月15日'
+
+const PAGE_TITLES: Record<LegalRoute, string> = {
+  terms: '利用規約',
+  privacy: 'プライバシーポリシー',
+  tokushoho: '特定商取引法に基づく表記',
+}
+
+const FOOTER_PATHS: Record<LegalRoute, '/terms' | '/privacy' | '/tokushoho'> = {
+  terms: '/terms',
+  privacy: '/privacy',
+  tokushoho: '/tokushoho',
+}
 
 function TermsContent() {
   return (
@@ -21,7 +35,7 @@ function TermsContent() {
 
       <section>
         <h2>第2条（本サイトの性質）</h2>
-        <p>本サイトは、無料で利用できるエンターテインメント用の座席抽選シミュレーターです。実際のチケット抽選や座席割り当てを予測または再現するものではなく、実在する会場、興行主、チケット販売会社その他の事業者とは提携・関係していません。本サイトの結果は、チケット、入場券その他の権利として利用できません。</p>
+        <p>本サイトは、無料で利用できるエンターテインメント用の座席抽選シミュレーターです。実際のチケット抽選や座席割り当てを予測または再現するものではなく、実在する会場、興行主、チケット販売会社その他の事業者とは提携・関係していません。本サイトの結果は、チケット、入場券その他の権利として利用できません。第10条に定める開発支援は本サイトの利用条件ではなく、支援の有無にかかわらず、すべての機能を無料で利用できます。</p>
       </section>
 
       <section>
@@ -69,7 +83,21 @@ function TermsContent() {
       </section>
 
       <section>
-        <h2>第10条（準拠法）</h2>
+        <h2>第10条（任意の開発支援）</h2>
+        <p>本サイトは、無料で提供している本サイトの開発を応援したい利用者から、任意の開発支援をお受けすることがあります。開発支援には次の条件が適用されます。</p>
+        <ul>
+          <li>開発支援は完全に任意であり、本サイトの利用条件ではありません。支援を行わなくても、すべての機能を無料で利用できます。</li>
+          <li>開発支援によって、抽選結果、当たりやすさ、抽選対象の座席が変わることはありません。</li>
+          <li>支援者限定の機能、特典、優遇その他、対価となる商品または役務の提供はありません。</li>
+          <li>開発支援は一回限りの支払いであり、継続課金や自動更新は行いません。金額は決済ページ上で利用者が指定します。</li>
+          <li>決済は、Stripe社が提供するPayment Linkの決済ページで行われます。当該決済にはStripe社の規約およびポリシーが適用され、本サイトの画面でカード番号等の決済情報を入力することはありません。運営者は、Stripeの管理画面等を通じて、支援額、決済状況その他Stripe社が提供する支払いに関する情報を確認できる場合がありますが、これらを抽選結果やブラウザ内の設定と結び付けて利用することはありません。</li>
+          <li>対価となる商品・役務の提供がないため、決済完了後のキャンセルおよび返金は原則としてお受けできません。ただし、重複決済、金額の誤り、システム上の不具合による場合、および法令上返金が必要な場合は、特定商取引法に基づく表記に記載の連絡先へご連絡いただくことで、遅滞なく対応します。</li>
+        </ul>
+        <p>開発支援に関するその他の条件は、特定商取引法に基づく表記に定めます。</p>
+      </section>
+
+      <section>
+        <h2>第11条（準拠法）</h2>
         <p>本規約および本サイトの利用に関しては、日本法を準拠法とします。</p>
       </section>
     </>
@@ -88,7 +116,7 @@ function PrivacyContent() {
 
       <section>
         <h2>2. 利用者が直接入力する個人情報</h2>
-        <p>現在、本サイトには、アカウント登録、氏名・住所・メールアドレスの入力、問い合わせフォーム、決済、位置情報の取得機能はありません。そのため、これらの個人情報を本サイトの画面から直接取得していません。自作座席機能で入力する会場名や座席範囲は、抽選処理のためにブラウザ内で使用され、保存対象にはしていません。</p>
+        <p>現在、本サイトには、アカウント登録、氏名・住所・メールアドレスの入力、問い合わせフォーム、位置情報の取得機能はありません。そのため、これらの個人情報を本サイトの画面から直接取得していません。開発支援の決済は、7項のとおり外部の決済ページで行われ、本サイトの画面ではカード番号等の決済情報を入力しません。自作座席機能で入力する会場名や座席範囲は、抽選処理のためにブラウザ内で使用され、保存対象にはしていません。</p>
       </section>
 
       <section>
@@ -103,7 +131,7 @@ function PrivacyContent() {
 
       <section>
         <h2>5. Cookie、アクセス解析および広告</h2>
-        <p>本サイトのアプリケーションコードでは、広告配信や行動追跡を目的とするCookie、アクセス解析ツール、広告SDKを現在使用していません。Cloudflareの管理画面側で提供される機能やログの設定については、コードから確認できる範囲を超えるため、Cloudflareの設定および方針に従います。Cookie同意バナーは設置していません。</p>
+        <p>本サイトのアプリケーションコードでは、広告配信や行動追跡を目的とするCookie、アクセス解析ツール、広告SDKを現在使用していません。決済に関するSDKや埋め込みの決済フォームも読み込んでいないため、本サイトを閲覧しているだけで決済事業者のスクリプトが動作したり、そのCookieが設定されたりすることはありません。Cloudflareの管理画面側で提供される機能やログの設定については、コードから確認できる範囲を超えるため、Cloudflareの設定および方針に従います。Cookie同意バナーは設置していません。</p>
       </section>
 
       <section>
@@ -112,27 +140,112 @@ function PrivacyContent() {
       </section>
 
       <section>
-        <h2>7. 第三者提供および外部サービス</h2>
-        <p>運営者は、法令に基づく場合などを除き、取得した個人情報を本人の同意なく第三者へ販売・提供しません。ホスティング等、サイト運営上必要な外部サービスの利用は、個人情報の販売とは異なります。</p>
+        <h2>7. 開発支援（外部の決済ページ）</h2>
+        <p>本サイトの開発支援は、支援用のリンクからStripe社が提供するPayment Linkの決済ページへ移動する方式です。決済に必要な情報の入力、処理および保存はStripe社の決済ページ上で行われ、本サイトがカード番号等の決済情報を取得・保存することはありません。決済ページで入力された情報の取り扱いは、Stripe社の規約およびプライバシーポリシーに従います。運営者は、Stripeの管理画面等を通じて、支援額、決済状況その他Stripe社が提供する支払いに関する情報を確認できる場合があります。もっとも、本サイトはこれらの情報を受け取る仕組みを持たず、支援の有無や決済の結果を、抽選の利用状況やブラウザ内の設定と結び付けて記録することもありません。支援用のリンクを開かない限り、本サイトからStripe社への通信は発生しません。</p>
       </section>
 
       <section>
-        <h2>8. 安全管理</h2>
+        <h2>8. 第三者提供および外部サービス</h2>
+        <p>運営者は、法令に基づく場合などを除き、取得した個人情報を本人の同意なく第三者へ販売・提供しません。ホスティングや外部の決済ページの利用など、サイト運営上必要な外部サービスの利用は、個人情報の販売とは異なります。</p>
+      </section>
+
+      <section>
+        <h2>9. 安全管理</h2>
         <p>本サイトは、不正アクセス、情報の漏えい、改ざん等を防ぐため、合理的な安全管理措置を講じるよう努めます。ただし、インターネット上の通信やシステムについて、完全な安全性を保証するものではありません。</p>
       </section>
 
       <section>
-        <h2>9. プライバシーポリシーの変更</h2>
+        <h2>10. プライバシーポリシーの変更</h2>
         <p>サービス内容や利用する外部サービスの変更、法令の改正等に応じて、本ポリシーを改定する場合があります。最新版は本ページに掲載します。</p>
       </section>
     </>
   )
 }
 
-export function LegalPage({ route }: { route: LegalRoute }) {
-  const isTerms = route === 'terms'
-  const title = isTerms ? '利用規約' : 'プライバシーポリシー'
+function TokushohoContent() {
+  const supportEnabled = resolveSupportPaymentLink() !== null
+  const mailtoHref = contactMailtoHref()
+  const onRequest = '個人事業者のため掲載していません。下記の開示請求・連絡方法によりご請求いただいた場合、支援のお申込み前にご確認いただけるよう、遅滞なく開示します。'
 
+  return (
+    <>
+      <p className="legal-intro">本表記は、座席抽選シミュレーターで任意にお受けする開発支援について、特定商取引法に基づき表示するものです。本サイトの座席抽選シミュレーターは、支援の有無にかかわらず、すべての機能を無料で利用できます。</p>
+
+      {!supportEnabled && (
+        <p className="legal-status" role="status">
+          <strong>現在、開発支援の受付は無効です。</strong>決済リンクが未設定のため、支援用のリンクは表示されません。受付を開始する場合も、本表記の内容は支援のお申込み前にご確認いただけます。
+        </p>
+      )}
+
+      <section>
+        <h2>事業者に関する表示</h2>
+        <dl className="legal-disclosure">
+          <div>
+            <dt>販売事業者（氏名）</dt>
+            <dd>{onRequest}</dd>
+          </div>
+          <div>
+            <dt>所在地</dt>
+            <dd>{onRequest}</dd>
+          </div>
+          <div>
+            <dt>電話番号</dt>
+            <dd>{onRequest}</dd>
+          </div>
+          <div>
+            <dt>開示請求・連絡方法</dt>
+            <dd>
+              メール：{mailtoHref
+                ? <a href={mailtoHref}>{SELLER_DISCLOSURE.contactEmail}</a>
+                : '未設定です。設定が完了するまで、開発支援の受付は有効化されません。'}
+              {mailtoHref && '（氏名、所在地および電話番号の開示のご請求は、このメールアドレスで受け付けます。ご請求があった場合、支援のお申込み前にご確認いただけるよう遅滞なく開示します。）'}
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>開発支援に関する表示</h2>
+        <dl className="legal-disclosure">
+          <div>
+            <dt>販売価格</dt>
+            <dd>1回あたり{MINIMUM_SUPPORT_AMOUNT_JPY}円以上で、決済ページ上で利用者が金額を指定します。通貨は日本円です。</dd>
+          </div>
+          <div>
+            <dt>販売価格以外に必要となる料金</dt>
+            <dd>本サイトおよび決済ページの閲覧に必要な通信料は利用者のご負担となります。それ以外に運営者が請求する手数料はありません。</dd>
+          </div>
+          <div>
+            <dt>支払方法</dt>
+            <dd>Stripe社の決済ページで利用できる方法（クレジットカード、PayPay等）。実際に利用できる方法は決済ページに表示されます。</dd>
+          </div>
+          <div>
+            <dt>支払時期</dt>
+            <dd>決済ページでのお手続きが完了した時点で、一回限りの支払いとして確定します。継続課金や自動更新はありません。</dd>
+          </div>
+          <div>
+            <dt>提供時期</dt>
+            <dd>本支援は、無料で提供している本サイトの開発を任意で支援いただくものであり、対価として引き渡す商品やデジタルコンテンツ、提供する役務はありません。そのため、商品の引渡時期や役務の提供時期はありません。本サイトの全機能は、支援の前後を問わず無料で利用できます。</dd>
+          </div>
+          <div>
+            <dt>キャンセル・返金</dt>
+            <dd>対価となる商品・役務の提供がないため、決済完了後のキャンセルおよび返金は原則としてお受けできません。ただし、重複決済、金額の誤り、システム上の不具合による場合、および法令上返金が必要な場合は、上記の開示請求・連絡方法によりご連絡いただいた後、遅滞なく対応します。決済手段側での取消手続きが必要な場合は、Stripe社または各決済事業者の手続きに従います。</dd>
+          </div>
+          <div>
+            <dt>支援による特典・役務の有無</dt>
+            <dd>支援者限定の機能、特典、優遇、広告の非表示等はありません。支援の有無や金額によって、抽選結果や当たりやすさが変わることもありません。</dd>
+          </div>
+          <div>
+            <dt>決済事業者</dt>
+            <dd>Stripe社（Stripe Payment Linkの決済ページへ移動します）。カード番号等の決済情報の入力と処理はStripe社の決済ページ上で行われ、本サイトがこれらを取得・保存することはありません。運営者は、Stripeの管理画面等を通じて、支援額、決済状況その他Stripe社が提供する支払いに関する情報を確認できる場合があります。</dd>
+          </div>
+        </dl>
+      </section>
+    </>
+  )
+}
+
+export function LegalPage({ route }: { route: LegalRoute }) {
   useEffect(() => {
     applyPageMeta(PAGE_META[route])
   }, [route])
@@ -144,12 +257,12 @@ export function LegalPage({ route }: { route: LegalRoute }) {
         <article className="legal-document">
           <a className="back-to-top" href="/">← TOPへ戻る</a>
           <p className="legal-kicker">SEAT LOTTERY SIMULATOR</p>
-          <h1>{title}</h1>
-          {isTerms ? <TermsContent /> : <PrivacyContent />}
+          <h1>{PAGE_TITLES[route]}</h1>
+          {route === 'terms' ? <TermsContent /> : route === 'privacy' ? <PrivacyContent /> : <TokushohoContent />}
           <p className="effective-date">制定日・最終更新日：{effectiveDate}</p>
         </article>
       </main>
-      <SiteFooter currentPath={isTerms ? '/terms' : '/privacy'} />
+      <SiteFooter currentPath={FOOTER_PATHS[route]} />
     </div>
   )
 }

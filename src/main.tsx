@@ -8,7 +8,7 @@ import { LegalPage } from './pages/LegalPage'
 const root = createRoot(document.getElementById('root')!)
 const route = resolvePageRoute(window.location.pathname)
 
-if (route === 'terms' || route === 'privacy') {
+if (route !== 'home') {
   root.render(
     <StrictMode>
       <LegalPage route={route} />
