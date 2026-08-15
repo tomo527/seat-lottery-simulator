@@ -9,8 +9,14 @@ describe('LotteryAnimation', () => {
     expect(screen.getByText('今日の席運を確認しています')).toBeInTheDocument()
     expect(screen.getByText('運命の1席を選んでいます')).toBeInTheDocument()
     expect(screen.getByText('もうすぐ結果が届きます')).toBeInTheDocument()
-    expect(document.querySelector('.drawing-envelope')).toHaveAttribute('aria-hidden', 'true')
-    expect(document.querySelector('.drawing-sparkles')).toHaveAttribute('aria-hidden', 'true')
-    expect(document.querySelector('video, audio, img')).not.toBeInTheDocument()
+    expect(document.querySelector('.miko-scene')).toHaveAttribute('aria-hidden', 'true')
+    expect(document.querySelector('.drawing-progress')).toHaveAttribute('aria-hidden', 'true')
+    expect(document.querySelector('video, audio, img, svg')).not.toBeInTheDocument()
+  })
+
+  it('抽選中に具体的な座席番号・列番号を表示しない', () => {
+    render(<LotteryAnimation />)
+    expect(screen.queryByText(/[A-Z]列/)).not.toBeInTheDocument()
+    expect(screen.queryByText(/\d+番/)).not.toBeInTheDocument()
   })
 })

@@ -23,12 +23,12 @@ const chooseVenue = async (page: Page, query: string, name: string) => {
   await expect(page.getByRole('button', { name: '会場を変更' })).toBeFocused()
 }
 
-const drawAndExpectNotification = async (page: Page, venueName: string, minimumDuration = 2_600) => {
+const drawAndExpectNotification = async (page: Page, venueName: string, minimumDuration = 3_800) => {
   const startedAt = Date.now()
   await page.getByRole('button', { name: '座席を抽選する' }).click()
   await expect(page.getByRole('heading', { name: '抽選中……' })).toBeVisible()
-  await expect(page.getByTestId('lottery-animation').locator('.drawing-envelope')).toBeVisible()
-  await expect(page.getByTestId('lottery-animation').locator('.drawing-sparkles')).toBeVisible()
+  await expect(page.getByTestId('lottery-animation').locator('.miko-scene')).toBeVisible()
+  await expect(page.getByTestId('lottery-animation').locator('.drawing-progress')).toBeVisible()
   await expect(page.getByRole('button', { name: '抽選中……' })).toBeDisabled()
   await expect(page.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeVisible({ timeout: 8_000 })
   expect(Date.now() - startedAt).toBeGreaterThanOrEqual(minimumDuration)
@@ -201,7 +201,7 @@ test('会場切替と自作座席でも通知カードが成立する', async ({
   await expect(page.locator('.ticket-details').getByText('エリア')).toHaveCount(0)
 })
 
-test('reduced motionでも2.8秒程度待ち、位置移動と回転を止める', async ({ page }) => {
+test('reduced motionでも4秒程度待ち、位置移動と回転を止める', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')
   await chooseVenue(page, 'イイノ', 'イイノホール')
@@ -210,26 +210,31 @@ test('reduced motionでも2.8秒程度待ち、位置移動と回転を止める
   const animation = page.getByTestId('lottery-animation')
   await expect(animation).toBeVisible()
   const motionStyles = await animation.evaluate((element) => {
-    const envelope = getComputedStyle(element.querySelector('.drawing-envelope')!)
-    const ticket = getComputedStyle(element.querySelector('.drawing-ticket')!)
+    const figure = getComputedStyle(element.querySelector('.miko-figure')!)
+    const arm = getComputedStyle(element.querySelector('.miko-arm.right')!)
+    const box = getComputedStyle(element.querySelector('.lottery-box')!)
     const glow = getComputedStyle(element.querySelector('.drawing-glow')!)
     return {
-      envelopeAnimation: envelope.animationName,
-      envelopeTransform: envelope.transform,
-      ticketAnimation: ticket.animationName,
-      ticketTransform: ticket.transform,
+      figureAnimation: figure.animationName,
+      figureTransform: figure.transform,
+      armAnimation: arm.animationName,
+      armTransform: arm.transform,
+      boxAnimation: box.animationName,
+      boxTransform: box.transform,
       glowAnimation: glow.animationName,
     }
   })
   expect(motionStyles).toEqual({
-    envelopeAnimation: 'none',
-    envelopeTransform: 'none',
-    ticketAnimation: 'none',
-    ticketTransform: 'none',
+    figureAnimation: 'none',
+    figureTransform: 'none',
+    armAnimation: 'none',
+    armTransform: 'none',
+    boxAnimation: 'none',
+    boxTransform: 'none',
     glowAnimation: 'reduced-breathe',
   })
   await expect(page.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeVisible({ timeout: 8_000 })
-  expect(Date.now() - startedAt).toBeGreaterThanOrEqual(2_600)
+  expect(Date.now() - startedAt).toBeGreaterThanOrEqual(3_800)
 })
 
 for (const viewport of [{ width: 360, height: 800 }, { width: 768, height: 900 }, { width: 1280, height: 900 }]) {

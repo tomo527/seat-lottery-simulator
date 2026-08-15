@@ -19,8 +19,9 @@ export function ResultCard({ seat, venueName, configurationName, scopeDisclosure
         <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
       </div>
       <article className="result-notification">
+        <div className="result-flash" aria-hidden="true" />
         <div className="result-burst" aria-hidden="true" />
-        <div className="result-sparkles" aria-hidden="true"><i>✦</i><i>✧</i><i>✦</i></div>
+        <div className="result-rings" aria-hidden="true"><i /><i /></div>
         <header className="result-notification-header">
           <p>SEAT LOTTERY NOTICE</p>
           <h2 id="result-heading">抽選結果のお知らせ</h2>

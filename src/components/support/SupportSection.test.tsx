@@ -35,11 +35,11 @@ describe('SupportSection', () => {
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')
   })
 
-  it('無料利用・抽選結果不変・見返りなしを明示する', () => {
+  it('無料利用・抽選結果不変・金額自由を明示する', () => {
     render(<SupportSection paymentLinkUrl={VALID_LINK} />)
-    expect(screen.getByText(/すべての機能をこのまま無料で使えます/)).toBeInTheDocument()
+    expect(screen.getByText(/すべての機能は無料です/)).toBeInTheDocument()
     expect(screen.getByText(/抽選結果や当たりやすさは変わりません/)).toBeInTheDocument()
-    expect(screen.getByText(/特典やお返しはありません/)).toBeInTheDocument()
+    expect(screen.getByText(/金額は自由に決めていただけます/)).toBeInTheDocument()
     expect(screen.getByText(/Stripeの決済ページ/)).toBeInTheDocument()
   })
 

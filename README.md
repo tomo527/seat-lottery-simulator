@@ -86,7 +86,7 @@ docs/venues/             会場別の内部調査記録
 - アルファベット列・数字列の自作座席（最大50,000席、巨大入力を配列生成前に拒否）
 - `crypto.getRandomValues()`とrejection samplingによる座席抽選。会場席は全席配列へ展開せず、累積rangeを二分探索
 - 初期表示は約5KBのcatalogだけを読込み、選択会場の詳細JSONだけをfetch・メモリキャッシュ
-- 通常・reduced motionともに2,800msの決定論的な抽選演出。reduced motionでは待ち時間を変えず、位置移動・回転を止めて静かな明暗変化へ簡略化
+- 通常・reduced motionともに4,000msの決定論的な抽選演出。reduced motionでは待ち時間を変えず、位置移動・回転を止めて静かな明暗変化へ簡略化
 - 二重実行防止、条件変更・unmount時のタイマー取消、sequence guard
 - Web Share APIとClipboardフォールバック
 - 結果は一般的なイベント通知を着想源にした独自カードで、会場・エリア（存在時のみ）・列・番号を表示します。特定のチケットサービスを模倣せず、`SIMULATION`と注記を常時表示し、座席図や公式情報リンクは表示しません
