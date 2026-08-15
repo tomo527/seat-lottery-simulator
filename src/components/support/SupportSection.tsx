@@ -16,7 +16,7 @@ export function SupportSection({ paymentLinkUrl }: Props) {
       <h2 id="support-heading">願掛け（開発への支援）はこちらから</h2>
       <p className="support-lead">「良い席が当たりますように」。願掛けしたくなったら、お賽銭の気持ちで開発を応援できます。</p>
       <a className="support-button" href={href} target="_blank" rel="noopener noreferrer">
-        お賽銭を入れる
+        支援する
       </a>
       <ul className="support-notes">
         <li>ご支援の有無に関わらず、すべての機能は無料です。</li>

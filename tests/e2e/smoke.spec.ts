@@ -81,7 +81,7 @@ test('フッターから法務ページを往復し、直接URLでも表示で�
   await page.getByRole('link', { name: '← TOPへ戻る' }).click()
   await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
   await expect(page.locator('.support-section')).toBeVisible()
-  await expect(page.getByRole('link', { name: /お賽銭を入れる/ })).toHaveAttribute('href', 'https://buy.stripe.com/cNidRbb7kfvKgiA4mbdnW00')
+  await expect(page.getByRole('link', { name: /支援する/ })).toHaveAttribute('href', 'https://buy.stripe.com/cNidRbb7kfvKgiA4mbdnW00')
   await expect(page.locator('.result-card .support-section')).toHaveCount(0)
 
   await page.goto('/terms')

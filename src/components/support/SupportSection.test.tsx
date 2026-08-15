@@ -22,14 +22,14 @@ describe('SupportSection', () => {
   it('現在の設定値では本番Payment Linkへのリンクを表示する', () => {
     expect(resolveSupportPaymentLink(SUPPORT_PAYMENT_LINK_URL)).toBe('https://buy.stripe.com/cNidRbb7kfvKgiA4mbdnW00')
     render(<SupportSection />)
-    expect(screen.getByRole('link', { name: /お賽銭を入れる/ })).toHaveAttribute('href', 'https://buy.stripe.com/cNidRbb7kfvKgiA4mbdnW00')
+    expect(screen.getByRole('link', { name: /支援する/ })).toHaveAttribute('href', 'https://buy.stripe.com/cNidRbb7kfvKgiA4mbdnW00')
   })
 
   it('Payment Link設定後は願掛けの案内と外部リンクを表示する', () => {
     render(<SupportSection paymentLinkUrl={VALID_LINK} />)
     expect(screen.getByRole('heading', { name: '願掛け（開発への支援）はこちらから', level: 2 })).toBeInTheDocument()
     expect(screen.getByText(/良い席が当たりますように/)).toBeInTheDocument()
-    const link = screen.getByRole('link', { name: /お賽銭を入れる/ })
+    const link = screen.getByRole('link', { name: /支援する/ })
     expect(link).toHaveAttribute('href', VALID_LINK)
     expect(link).toHaveAttribute('target', '_blank')
     expect(link).toHaveAttribute('rel', 'noopener noreferrer')
