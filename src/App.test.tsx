@@ -4,7 +4,6 @@ import App from './App'
 import catalogJson from './data/venue-db/catalog.generated.json'
 import { DRAW_ANIMATION_DURATION_MS } from './domain/lottery/constants'
 import { prepareVenueSampler } from './domain/seats/rangeSampler'
-import { installCanvasStub, restoreCanvasStub } from './test/canvasStub'
 import type { LegacyVenueCatalogEntry } from './types/venue'
 
 const tokyoVenueCount = (catalogJson as LegacyVenueCatalogEntry[]).filter((venue) => venue.prefecture === '東京都').length
@@ -21,7 +20,6 @@ const samplerFor = (venue: LegacyVenueCatalogEntry) => prepareVenueSampler({
 })
 
 beforeEach(() => {
-  installCanvasStub()
   localStorage.clear()
   window.history.replaceState({}, '', '/')
   loadVenueSeatData.mockReset()
@@ -29,7 +27,6 @@ beforeEach(() => {
 })
 
 afterEach(() => {
-  restoreCanvasStub()
   vi.restoreAllMocks()
   vi.useRealTimers()
 })
@@ -225,77 +222,40 @@ describe('App', () => {
     vi.useFakeTimers()
     fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
     act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS))
-    await act(async () => { await Promise.resolve() })
     return {
       row: screen.getByText(/^[A-Z]列$/).textContent,
       number: screen.getByText(/^\d+番$/).textContent,
     }
   }
 
-  it('結果表示時に共有PNGを事前生成し、クリック直後にX Web Intentを開く', async () => {
-    const canvas = installCanvasStub()
-    Object.defineProperty(navigator, 'share', { configurable: true, value: undefined })
-    Object.defineProperty(navigator, 'canShare', { configurable: true, value: undefined })
+  it('OS共有メニューを経由せず、クリック直後にX Web Intentを開く', async () => {
+    const share = vi.fn()
+    const canShare = vi.fn()
+    Object.defineProperty(navigator, 'share', { configurable: true, value: share })
+    Object.defineProperty(navigator, 'canShare', { configurable: true, value: canShare })
     const open = vi.spyOn(window, 'open').mockReturnValue({ focus: vi.fn() } as unknown as Window)
     render(<App />)
     const seat = await drawResultFor()
-
-    expect(canvas.blobType).toBe('image/png')
-    expect(canvas.texts.join('\n')).toContain('抽選結果のお知らせ')
     expect(open).not.toHaveBeenCalled()
 
     fireEvent.click(screen.getByRole('button', { name: 'Xで共有する' }))
-    expect(open).toHaveBeenCalledTimes(1)
 
+    expect(open).toHaveBeenCalledTimes(1)
+    expect(share).not.toHaveBeenCalled()
+    expect(canShare).not.toHaveBeenCalled()
     const intent = new URL(String(open.mock.calls[0][0]))
     expect(intent.origin + intent.pathname).toBe('https://x.com/intent/tweet')
-    expect(intent.searchParams.get('text')).toBe(`座席はHakuju Hallの${seat.row}${seat.number}でした！`)
+    expect(intent.searchParams.get('text')).toBe(`座席抽選シミュレーターの結果、Hakuju Hallの${seat.row}${seat.number}でした！`)
     expect(intent.searchParams.get('url')).toContain('?venue=hakuju-hall-standard')
-    await act(async () => { await Promise.resolve() })
     expect(screen.getByText('Xの投稿画面を開きました。投稿内容を確認してください。')).toBeInTheDocument()
   })
 
-  it('ファイル共有対応環境では事前生成PNG付きで即座にnavigator.shareを呼ぶ', async () => {
-    installCanvasStub()
-    const share = vi.fn().mockResolvedValue(undefined)
-    Object.defineProperty(navigator, 'share', { configurable: true, value: share })
-    Object.defineProperty(navigator, 'canShare', { configurable: true, value: vi.fn().mockReturnValue(true) })
+  it('ポップアップを開けなかった場合はブロック設定を案内する', async () => {
     const open = vi.spyOn(window, 'open').mockReturnValue(null)
     render(<App />)
-    const seat = await drawResultFor()
-
-    fireEvent.click(screen.getByRole('button', { name: 'Xで共有する' }))
-    expect(share).toHaveBeenCalledTimes(1)
-
-    const payload = share.mock.calls[0][0] as { files: File[]; text: string; url: string }
-    expect(payload.files[0]).toBeInstanceOf(File)
-    expect(payload.files[0].type).toBe('image/png')
-    expect(payload.text).toBe(`座席はHakuju Hallの${seat.row}${seat.number}でした！`)
-    expect(payload.url).toContain('?venue=hakuju-hall-standard')
-    expect(open).not.toHaveBeenCalled()
-    await act(async () => { await Promise.resolve() })
-    expect(screen.getByText('共有メニューを開きました。')).toBeInTheDocument()
-  })
-
-  it('共有シートのキャンセルは何も表示せず、失敗は再試行を案内する', async () => {
-    vi.spyOn(console, 'warn').mockImplementation(() => undefined)
-    installCanvasStub()
-    const share = vi.fn().mockRejectedValue(new DOMException('cancelled', 'AbortError'))
-    Object.defineProperty(navigator, 'share', { configurable: true, value: share })
-    Object.defineProperty(navigator, 'canShare', { configurable: true, value: vi.fn().mockReturnValue(true) })
-    const open = vi.spyOn(window, 'open').mockReturnValue({ focus: vi.fn() } as unknown as Window)
-    render(<App />)
     await drawResultFor()
-
     fireEvent.click(screen.getByRole('button', { name: 'Xで共有する' }))
-    await act(async () => { await Promise.resolve() })
-    expect(document.querySelector('.share-status')?.textContent).toBe('')
-    expect(open).not.toHaveBeenCalled()
-
-    share.mockRejectedValueOnce(new DOMException('failed', 'NotAllowedError'))
-    fireEvent.click(screen.getByRole('button', { name: 'Xで共有する' }))
-    await act(async () => { await Promise.resolve() })
-    expect(screen.getByText('共有できませんでした。もう一度お試しください。')).toBeInTheDocument()
-    expect(open).not.toHaveBeenCalled()
+    expect(open).toHaveBeenCalledTimes(1)
+    expect(screen.getByText('Xの投稿画面を開けませんでした。ポップアップブロックの設定を確認してください。')).toBeInTheDocument()
   })
 })

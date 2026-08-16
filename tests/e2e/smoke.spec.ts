@@ -1,6 +1,10 @@
 import { readFileSync } from 'node:fs'
 import { expect, test, type Page } from '@playwright/test'
 
+declare global {
+  interface Window { __osShareCalls: number }
+}
+
 const catalog = JSON.parse(readFileSync(new URL('../../src/data/venue-db/catalog.generated.json', import.meta.url), 'utf8')) as {
   prefecture: string
 }[]
@@ -206,20 +210,25 @@ test('抽選結果をXで共有し、投稿文とサイトURLをX Web Intentへ�
   await page.goto('/')
   await chooseVenue(page, '一橋大学一橋講堂', '一橋講堂')
   await drawAndExpectNotification(page, '一橋講堂')
+  const seatArea = await page.locator('.ticket-details div').filter({ hasText: 'エリア' }).locator('dd').textContent()
   const seatRow = await page.locator('.ticket-details .seat-value dd').first().textContent()
   const seatNumber = await page.locator('.ticket-details .seat-value dd').last().textContent()
 
   const share = page.getByRole('button', { name: 'Xで共有する' })
   await expect(share).toBeVisible()
   await expect(page.getByRole('button', { name: '結果を共有する' })).toHaveCount(0)
+  await page.evaluate(() => {
+    window.__osShareCalls = 0
+    // OS標準共有メニューが使われないことを実ブラウザで検証する
+    Object.defineProperty(navigator, 'share', { configurable: true, value: () => { window.__osShareCalls += 1; return Promise.resolve() } })
+    Object.defineProperty(navigator, 'canShare', { configurable: true, value: () => { window.__osShareCalls += 1; return true } })
+  })
   const [popup] = await Promise.all([page.waitForEvent('popup'), share.click()])
+  expect(await page.evaluate(() => window.__osShareCalls)).toBe(0)
 
   const intent = new URL(popup.url())
   expect(`${intent.origin}${intent.pathname}`).toBe('https://x.com/intent/tweet')
-  expect(intent.searchParams.get('text')).toContain(`列${seatNumber}でした！`)
-  expect(intent.searchParams.get('text')).toContain('座席は一橋講堂の')
-  expect(intent.searchParams.get('text')).toContain(String(seatRow))
-  expect(intent.searchParams.get('text')).not.toMatch(/シミュレーター|シミュレーション/)
+  expect(intent.searchParams.get('text')).toBe(`座席抽選シミュレーターの結果、一橋講堂の${seatArea} ${seatRow}${seatNumber}でした！`)
   expect(intent.searchParams.get('url')).toContain('?venue=hitotsubashi-hall-standard')
   expect(popup.url()).toContain(`text=${encodeURIComponent(String(intent.searchParams.get('text')))}`)
   await expect(page.locator('.share-status')).toHaveText('Xの投稿画面を開きました。投稿内容を確認してください。')
