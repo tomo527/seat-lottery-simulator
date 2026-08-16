@@ -16,7 +16,7 @@ import { generateCustomSeats, validateCustomSeatInput, type CustomSeatInput } fr
 import { drawVenueSeat, type PreparedVenueSampler } from './domain/seats/rangeSampler'
 import { useReducedMotion } from './hooks/useReducedMotion'
 import { loadPreferences, savePreferences } from './lib/preferences'
-import { buildShareText, shareResult } from './lib/share'
+import { buildShareText, prepareShareImage, shareResult } from './lib/share'
 import type { Seat } from './types/venue'
 
 type SourceMode = 'venue' | 'custom'
@@ -59,6 +59,7 @@ function App() {
   const timeoutRef = useRef<number | null>(null)
   const drawSequenceRef = useRef(0)
   const shareSequenceRef = useRef(0)
+  const shareImageRef = useRef<File | null>(null)
   const settingsRef = useRef<HTMLElement>(null)
   const venueRequestSequenceRef = useRef(0)
   const venueAbortRef = useRef<AbortController | null>(null)
@@ -199,20 +200,34 @@ function App() {
     }, 0)
   }
 
-  const handleShare = async () => {
+  const configurationName = sourceMode === 'venue' && selectedVenueGroup && isMultiConfigurationVenue(selectedVenueGroup) ? selectedVenue?.representativePatternName : undefined
+  const scopeDisclosure = sourceMode === 'venue' ? selectedVenue?.scopeDisclosure : undefined
+
+  useEffect(() => {
+    shareImageRef.current = null
+    if (!result) return
+    let active = true
+    prepareShareImage({ seat: result, venueName, configurationName, scopeDisclosure }).then((file) => {
+      if (active) shareImageRef.current = file
+    })
+    return () => { active = false }
+  }, [configurationName, result, scopeDisclosure, venueName])
+
+  const handleShare = () => {
     if (!result) return
     const shareSequence = ++shareSequenceRef.current
     const url = new URL(window.location.href)
     if (sourceMode === 'venue' && selectedVenueId) url.searchParams.set('venue', selectedVenueId)
-    const text = buildShareText(venueName, result)
-    const outcome = await shareResult(text, url.toString())
-    if (shareSequenceRef.current !== shareSequence) return
-    setShareStatus(
-      outcome === 'copied' ? '共有文をクリップボードにコピーしました。' :
-      outcome === 'shared' ? '共有メニューを開きました。' :
-      outcome === 'cancelled' ? '' :
-      'この環境では共有やコピーを利用できません。共有文を手動でコピーしてください。',
-    )
+    void shareResult(buildShareText(venueName, result), url.toString(), shareImageRef.current).then((outcome) => {
+      if (shareSequenceRef.current !== shareSequence) return
+      setShareStatus(
+        outcome === 'shared' ? '共有メニューを開きました。' :
+        outcome === 'intent' ? 'Xの投稿画面を開きました。投稿内容を確認してください。' :
+        outcome === 'cancelled' ? '' :
+        outcome === 'failed' ? '共有できませんでした。もう一度お試しください。' :
+        'Xの投稿画面を開けませんでした。ポップアップブロックの設定を確認してください。',
+      )
+    })
   }
 
   return (
@@ -277,8 +292,8 @@ function App() {
             <ResultCard
               seat={result}
               venueName={venueName}
-              configurationName={sourceMode === 'venue' && selectedVenueGroup && isMultiConfigurationVenue(selectedVenueGroup) ? selectedVenue?.representativePatternName : undefined}
-              scopeDisclosure={sourceMode === 'venue' ? selectedVenue?.scopeDisclosure : undefined}
+              configurationName={configurationName}
+              scopeDisclosure={scopeDisclosure}
               shareStatus={shareStatus}
               onRetry={startDraw}
               onChangeConditions={changeConditions}

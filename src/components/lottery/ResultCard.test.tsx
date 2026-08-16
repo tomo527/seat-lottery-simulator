@@ -41,7 +41,8 @@ describe('ResultCard', () => {
     const notification = container.querySelector('.result-notification')
     expect(notification).not.toContainElement(screen.getByRole('button', { name: 'もう一度抽選する' }))
     expect(screen.getByRole('button', { name: '条件を変更する' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: '結果を共有する' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Xで共有する' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: '結果を共有する' })).not.toBeInTheDocument()
   })
 
   it('fixed-only configurationの抽選範囲を結果にも表示する', () => {

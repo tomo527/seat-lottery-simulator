@@ -201,6 +201,31 @@ test('会場切替と自作座席でも通知カードが成立する', async ({
   await expect(page.locator('.ticket-details').getByText('エリア')).toHaveCount(0)
 })
 
+test('抽選結果をXで共有し、投稿文とサイトURLをX Web Intentへ渡す', async ({ page, context }) => {
+  await context.route('https://x.com/**', (route) => route.fulfill({ status: 200, contentType: 'text/html', body: '<title>X intent stub</title>' }))
+  await page.goto('/')
+  await chooseVenue(page, '一橋大学一橋講堂', '一橋講堂')
+  await drawAndExpectNotification(page, '一橋講堂')
+  const seatRow = await page.locator('.ticket-details .seat-value dd').first().textContent()
+  const seatNumber = await page.locator('.ticket-details .seat-value dd').last().textContent()
+
+  const share = page.getByRole('button', { name: 'Xで共有する' })
+  await expect(share).toBeVisible()
+  await expect(page.getByRole('button', { name: '結果を共有する' })).toHaveCount(0)
+  const [popup] = await Promise.all([page.waitForEvent('popup'), share.click()])
+
+  const intent = new URL(popup.url())
+  expect(`${intent.origin}${intent.pathname}`).toBe('https://x.com/intent/tweet')
+  expect(intent.searchParams.get('text')).toContain(`列${seatNumber}でした！`)
+  expect(intent.searchParams.get('text')).toContain('座席は一橋講堂の')
+  expect(intent.searchParams.get('text')).toContain(String(seatRow))
+  expect(intent.searchParams.get('text')).not.toMatch(/シミュレーター|シミュレーション/)
+  expect(intent.searchParams.get('url')).toContain('?venue=hitotsubashi-hall-standard')
+  expect(popup.url()).toContain(`text=${encodeURIComponent(String(intent.searchParams.get('text')))}`)
+  await expect(page.locator('.share-status')).toHaveText('Xの投稿画面を開きました。投稿内容を確認してください。')
+  await popup.close()
+})
+
 test('reduced motionでも4秒程度待ち、スプライトの表示を固定する', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')

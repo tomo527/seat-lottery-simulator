@@ -43,7 +43,7 @@ export function ResultCard({ seat, venueName, configurationName, scopeDisclosure
       <div className="result-actions" aria-label="結果の操作">
         <button className="primary-button" type="button" onClick={onRetry}>もう一度抽選する</button>
         <button className="secondary-button" type="button" onClick={onChangeConditions}>条件を変更する</button>
-        <button className="secondary-button share-button" type="button" onClick={onShare}>結果を共有する</button>
+        <button className="secondary-button share-button" type="button" onClick={onShare}>Xで共有する</button>
       </div>
       <p className="share-status" role="status" aria-live="polite">{shareStatus}</p>
     </section>
