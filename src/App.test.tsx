@@ -228,7 +228,15 @@ describe('App', () => {
     }
   }
 
-  it('OS共有メニューを経由せず、クリック直後にX Web Intentを開く', async () => {
+  const setDesktopViewport = () => {
+    vi.spyOn(window, 'matchMedia').mockImplementation((query: string) => ({
+      matches: query.includes('min-width'), media: query, onchange: null,
+      addEventListener: vi.fn(), removeEventListener: vi.fn(), addListener: vi.fn(), removeListener: vi.fn(), dispatchEvent: vi.fn(),
+    }))
+  }
+
+  it('PCでもOS共有メニューを経由せず、クリック直後にX Web Intentのポップアップを開く', async () => {
+    setDesktopViewport()
     const share = vi.fn()
     const canShare = vi.fn()
     Object.defineProperty(navigator, 'share', { configurable: true, value: share })
@@ -243,8 +251,11 @@ describe('App', () => {
     expect(open).toHaveBeenCalledTimes(1)
     expect(share).not.toHaveBeenCalled()
     expect(canShare).not.toHaveBeenCalled()
-    const intent = new URL(String(open.mock.calls[0][0]))
+    const [intentUrl, target, features] = open.mock.calls[0]
+    const intent = new URL(String(intentUrl))
     expect(intent.origin + intent.pathname).toBe('https://x.com/intent/tweet')
+    expect(target).toBe('intent')
+    expect(String(features)).toContain('width=600')
     expect(intent.searchParams.get('text')).toBe(`座席抽選シミュレーターの結果、Hakuju Hallの${seat.row}${seat.number}でした！`)
     expect(intent.searchParams.get('url')).toContain('?venue=hakuju-hall-standard')
     expect(screen.getByText('Xの投稿画面を開きました。投稿内容を確認してください。')).toBeInTheDocument()

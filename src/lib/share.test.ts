@@ -6,6 +6,14 @@ const seat: Seat = { venueId: 'v', venueName: '会場', layoutId: 'l', layoutNam
 const url = 'https://seat-lottery.example.com/?venue=nippon-budokan-standard'
 const text = '座席抽選シミュレーターの結果、日本武道館の2階 南A列15番でした！'
 
+const setViewport = (kind: 'desktop' | 'mobile') => {
+  Object.defineProperty(window, 'matchMedia', {
+    configurable: true,
+    writable: true,
+    value: (query: string) => ({ matches: kind === 'desktop' && query.includes('min-width'), media: query, onchange: null, addEventListener: () => undefined, removeEventListener: () => undefined, addListener: () => undefined, removeListener: () => undefined, dispatchEvent: () => false }),
+  })
+}
+
 afterEach(() => { vi.restoreAllMocks() })
 
 describe('buildShareText', () => {
@@ -47,7 +55,8 @@ describe('buildXIntentUrl', () => {
 })
 
 describe('shareResult', () => {
-  it('OS共有APIを使わず、同期でX Web Intentのウィンドウを開く', () => {
+  it('PCではOS共有APIを使わず、X公式と同じ名前付きポップアップでX Web Intentを開く', () => {
+    setViewport('desktop')
     const share = vi.fn()
     const canShare = vi.fn()
     Object.defineProperty(navigator, 'share', { configurable: true, value: share })
@@ -62,11 +71,33 @@ describe('shareResult', () => {
     expect(intentUrl).toBe(buildXIntentUrl(text, url))
     expect(new URL(String(intentUrl)).searchParams.get('text')).toBe(text)
     expect(new URL(String(intentUrl)).searchParams.get('url')).toBe(url)
-    expect(target).toBe('_blank')
-    expect(String(features)).toContain('width=620')
+    expect(target).toBe('intent')
+    expect(String(features)).toContain('popup=yes')
+    expect(String(features)).toContain('width=600')
+    expect(String(features)).toContain('height=560')
+    expect(String(features)).toContain('scrollbars=yes')
+    expect(String(features)).toContain('resizable=yes')
+  })
+
+  it('モバイル幅ではサイズ指定なしでX Web Intentへ遷移させる', () => {
+    setViewport('mobile')
+    const open = vi.spyOn(window, 'open').mockReturnValue({ focus: vi.fn() } as unknown as Window)
+
+    expect(shareResult(text, url)).toBe('intent')
+
+    expect(open).toHaveBeenCalledWith(buildXIntentUrl(text, url), '_blank')
+    expect(open.mock.calls[0]).toHaveLength(2)
+  })
+
+  it('matchMediaが無い環境ではPCと同じポップアップにフォールバックする', () => {
+    Object.defineProperty(window, 'matchMedia', { configurable: true, writable: true, value: undefined })
+    const open = vi.spyOn(window, 'open').mockReturnValue({ focus: vi.fn() } as unknown as Window)
+    expect(shareResult(text, url)).toBe('intent')
+    expect(open.mock.calls[0][1]).toBe('intent')
   })
 
   it('開いたウィンドウへフォーカスする', () => {
+    setViewport('desktop')
     const focus = vi.fn()
     vi.spyOn(window, 'open').mockReturnValue({ focus } as unknown as Window)
     shareResult(text, url)
@@ -74,6 +105,7 @@ describe('shareResult', () => {
   })
 
   it('ポップアップがブロックされた場合はblockedを返す', () => {
+    setViewport('desktop')
     vi.spyOn(window, 'open').mockReturnValue(null)
     expect(shareResult(text, url)).toBe('blocked')
   })

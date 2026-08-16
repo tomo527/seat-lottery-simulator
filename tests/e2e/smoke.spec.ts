@@ -228,6 +228,7 @@ test('抽選結果をXで共有し、投稿文とサイトURLをX Web Intentへ�
 
   const intent = new URL(popup.url())
   expect(`${intent.origin}${intent.pathname}`).toBe('https://x.com/intent/tweet')
+  expect(await popup.evaluate(() => ({ width: window.outerWidth, height: window.outerHeight }))).toEqual({ width: 600, height: 560 })
   expect(intent.searchParams.get('text')).toBe(`座席抽選シミュレーターの結果、一橋講堂の${seatArea} ${seatRow}${seatNumber}でした！`)
   expect(intent.searchParams.get('url')).toContain('?venue=hitotsubashi-hall-standard')
   expect(popup.url()).toContain(`text=${encodeURIComponent(String(intent.searchParams.get('text')))}`)
