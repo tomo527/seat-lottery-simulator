@@ -1,8 +1,8 @@
-import { formatRowLabel, formatSeatNumber } from '../../domain/lottery/lottery'
+import { formatRowLabel, formatSeatNumbers } from '../../domain/lottery/lottery'
 import type { Seat } from '../../types/venue'
 
 type Props = {
-  seat: Seat
+  seats: readonly Seat[]
   venueName: string
   configurationName?: string
   scopeDisclosure?: string
@@ -12,7 +12,8 @@ type Props = {
   onShare: () => void
 }
 
-export function ResultCard({ seat, venueName, configurationName, scopeDisclosure, shareStatus, onRetry, onChangeConditions, onShare }: Props) {
+export function ResultCard({ seats, venueName, configurationName, scopeDisclosure, shareStatus, onRetry, onChangeConditions, onShare }: Props) {
+  const [seat] = seats
   return (
     <section className="result-card" aria-labelledby="result-heading">
       <div className="result-celebration" aria-hidden="true">
@@ -35,7 +36,7 @@ export function ResultCard({ seat, venueName, configurationName, scopeDisclosure
           {scopeDisclosure && <div><dt>抽選範囲</dt><dd>{scopeDisclosure}</dd></div>}
           {seat.sectionLabel && <div><dt>エリア</dt><dd>{seat.sectionLabel}</dd></div>}
           <div className="seat-value"><dt>列</dt><dd>{formatRowLabel(seat.rowLabel)}</dd></div>
-          <div className="seat-value"><dt>座席番号</dt><dd>{formatSeatNumber(seat.number)}</dd></div>
+          <div className="seat-value"><dt>座席番号</dt><dd>{formatSeatNumbers(seats)}</dd></div>
         </dl>
         <div className="ticket-divider" aria-hidden="true" />
         <p className="simulation-notice">※これは遊びのためのシミュレーションです。実際の座席割り当てとは関係ありません。</p>

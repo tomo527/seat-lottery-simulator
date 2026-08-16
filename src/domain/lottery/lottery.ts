@@ -18,3 +18,17 @@ export const formatSeatNumber = (seatNumber: number | string): string => {
 
 export const formatSeatLabel = (seat: Seat): string =>
   `${seat.sectionLabel ? `${seat.sectionLabel} ` : ''}${formatRowLabel(seat.rowLabel)} ${formatSeatNumber(seat.number)}`
+
+// 複数枚は同一エリア・同一列の連番なので、先頭と末尾だけを範囲表示する。
+export const formatSeatNumbers = (seats: readonly Seat[]): string => {
+  if (seats.length === 0) throw new RangeError('No seats are available to format.')
+  const first = seats[0].number
+  const last = seats[seats.length - 1].number
+  return first === last ? formatSeatNumber(first) : `${formatSeatNumber(first)}〜${formatSeatNumber(last)}`
+}
+
+export const formatSeatGroupLabel = (seats: readonly Seat[]): string => {
+  if (seats.length === 0) throw new RangeError('No seats are available to format.')
+  const [seat] = seats
+  return `${seat.sectionLabel ? `${seat.sectionLabel} ` : ''}${formatRowLabel(seat.rowLabel)} ${formatSeatNumbers(seats)}`
+}

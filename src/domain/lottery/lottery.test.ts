@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Seat } from '../../types/venue'
-import { drawSeat, formatSeatLabel } from './lottery'
+import { drawSeat, formatSeatGroupLabel, formatSeatLabel, formatSeatNumbers } from './lottery'
 import { randomInt, type RandomSource } from './random'
 
 const source = (...values: number[]): RandomSource => {
@@ -16,5 +16,12 @@ describe('lottery domain', () => {
   it('表示用文字列はエリアを自然に省略できる', () => {
     expect(formatSeatLabel(seat)).toBe('Aブロック B列 12番')
     expect(formatSeatLabel({ ...seat, sectionLabel: undefined })).toBe('B列 12番')
+  })
+  it('1枚は単独の番号、複数枚は範囲で表示する', () => {
+    expect(formatSeatNumbers([seat])).toBe('12番')
+    expect(formatSeatNumbers([seat, { ...seat, number: 13 }, { ...seat, number: 14 }])).toBe('12番〜14番')
+    expect(formatSeatGroupLabel([seat])).toBe('Aブロック B列 12番')
+    expect(formatSeatGroupLabel([seat, { ...seat, number: 13 }])).toBe('Aブロック B列 12番〜13番')
+    expect(() => formatSeatNumbers([])).toThrow(RangeError)
   })
 })

@@ -269,4 +269,109 @@ describe('App', () => {
     expect(open).toHaveBeenCalledTimes(1)
     expect(screen.getByText('Xの投稿画面を開けませんでした。ポップアップブロックの設定を確認してください。')).toBeInTheDocument()
   })
+
+  const seatNumbersOf = (pattern: RegExp) => screen.getByText(pattern).textContent!.match(/\d+/g)!.map(Number)
+
+  it('申込枚数は初期値1枚で、1〜4枚から選べる', async () => {
+    render(<App />)
+    await chooseVenue()
+    const select = screen.getByLabelText('申込枚数') as HTMLSelectElement
+    expect(select.value).toBe('1')
+    expect([...select.options].map((option) => option.textContent)).toEqual(['1枚', '2枚', '3枚', '4枚'])
+    expect(screen.getByText('300席から今日の1席を抽選します')).toBeInTheDocument()
+    fireEvent.change(select, { target: { value: '3' } })
+    expect(select.value).toBe('3')
+    expect(screen.getByText('300席から今日の3席を抽選します')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled()
+  })
+
+  it('3枚でも4,000ms待ってから、同一列の連番を範囲表示する', async () => {
+    render(<App />)
+    await chooseVenue()
+    fireEvent.change(screen.getByLabelText('申込枚数'), { target: { value: '3' } })
+    vi.useFakeTimers()
+    fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
+    act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS - 1))
+    expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
+    act(() => vi.advanceTimersByTime(1))
+    expect(screen.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeInTheDocument()
+    expect(screen.getAllByText(/^[A-Z]列$/)).toHaveLength(1)
+    expect(screen.queryByText(/^\d+番$/)).not.toBeInTheDocument()
+    const [first, last] = seatNumbersOf(/^\d+番〜\d+番$/)
+    expect(last - first).toBe(2)
+    expect(first).toBeGreaterThanOrEqual(1)
+    expect(last).toBeLessThanOrEqual(300)
+  })
+
+  it('複数枚のX共有文は座席番号を範囲で表す', async () => {
+    setDesktopViewport()
+    const open = vi.spyOn(window, 'open').mockReturnValue({ focus: vi.fn() } as unknown as Window)
+    render(<App />)
+    await chooseVenue()
+    fireEvent.change(screen.getByLabelText('申込枚数'), { target: { value: '2' } })
+    vi.useFakeTimers()
+    fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
+    act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS))
+    const row = screen.getByText(/^[A-Z]列$/).textContent
+    const numbers = screen.getByText(/^\d+番〜\d+番$/).textContent
+    fireEvent.click(screen.getByRole('button', { name: 'Xで共有する' }))
+    const intent = new URL(String(open.mock.calls[0][0]))
+    expect(intent.searchParams.get('text')).toBe(`座席抽選シミュレーターの結果、Hakuju Hallの${row}${numbers}でした！`)
+  })
+
+  it('連番が足りない会場では抽選できず、枚数を戻せば抽選できる', async () => {
+    loadVenueSeatData.mockImplementation(async (venue: LegacyVenueCatalogEntry) => prepareVenueSampler({
+      schemaVersion: 1,
+      venueId: venue.id,
+      patternId: 'single-seat-rows',
+      ranges: Array.from({ length: venue.seatCount }, (_, index) => ({ rowLabel: String(index + 1), from: 1, to: 1 })),
+      totalSeatCount: venue.seatCount,
+    }))
+    render(<App />)
+    await chooseVenue()
+    fireEvent.change(screen.getByLabelText('申込枚数'), { target: { value: '2' } })
+    expect(screen.getByText('この条件では2枚連番で抽選できる座席がありません。')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
+    fireEvent.change(screen.getByLabelText('申込枚数'), { target: { value: '1' } })
+    expect(screen.queryByText('この条件では1枚連番で抽選できる座席がありません。')).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled()
+  })
+
+  it('自作座席でも複数枚を連番で抽選し、枚数変更後に再抽選できる', () => {
+    vi.useFakeTimers()
+    render(<App />)
+    fireEvent.click(screen.getByRole('button', { name: '自分で作る' }))
+    fireEvent.change(screen.getByLabelText('申込枚数'), { target: { value: '4' } })
+    fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
+    act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS))
+    const [first, last] = seatNumbersOf(/^\d+番〜\d+番$/)
+    expect(last - first).toBe(3)
+    expect(last).toBeLessThanOrEqual(40)
+    expect(screen.getAllByText(/^[A-S]列$/)).toHaveLength(1)
+
+    fireEvent.change(screen.getByLabelText('申込枚数'), { target: { value: '2' } })
+    expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: '座席を抽選する' }))
+    act(() => vi.advanceTimersByTime(DRAW_ANIMATION_DURATION_MS))
+    const [retryFirst, retryLast] = seatNumbersOf(/^\d+番〜\d+番$/)
+    expect(retryLast - retryFirst).toBe(1)
+
+    fireEvent.change(screen.getByLabelText('最後の座席番号'), { target: { value: '1' } })
+    expect(screen.getByText('この条件では2枚連番で抽選できる座席がありません。')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
+  })
+
+  it('不正な申込枚数が届いてもクラッシュせず、現在の枚数を維持する', async () => {
+    render(<App />)
+    await chooseVenue()
+    const select = screen.getByLabelText('申込枚数') as HTMLSelectElement
+    fireEvent.change(select, { target: { value: '2' } })
+    expect(screen.getByText('300席から今日の2席を抽選します')).toBeInTheDocument()
+    for (const invalid of ['9', '0', '-1', 'abc', '']) {
+      fireEvent.change(select, { target: { value: invalid } })
+      expect(select.value).toBe('2')
+      expect(screen.getByText('300席から今日の2席を抽選します')).toBeInTheDocument()
+    }
+    expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled()
+  })
 })

@@ -11,9 +11,10 @@ import { loadVenueSeatData } from './data/venue-db/loadVenue'
 import { isMultiConfigurationVenue, resolveVenueSelection } from './data/venue-db/catalog'
 import { venues } from './data/venues'
 import { DRAW_ANIMATION_DURATION_MS } from './domain/lottery/constants'
-import { drawSeat, formatSeatLabel } from './domain/lottery/lottery'
+import { drawSeat, formatSeatGroupLabel } from './domain/lottery/lottery'
 import { generateCustomSeats, validateCustomSeatInput, type CustomSeatInput } from './domain/seats/customSeats'
 import { drawVenueSeat, type PreparedVenueSampler } from './domain/seats/rangeSampler'
+import { countSeatGroups, countVenueSeatGroups, drawSeatGroup, drawVenueSeatGroup, isTicketCount, TICKET_COUNT_OPTIONS, type TicketCount } from './domain/seats/seatGroups'
 import { useReducedMotion } from './hooks/useReducedMotion'
 import { loadPreferences, savePreferences } from './lib/preferences'
 import { buildShareText, shareResult } from './lib/share'
@@ -49,8 +50,9 @@ function App() {
   const [selectedVenueId, setSelectedVenueId] = useState(initialVenueId)
   const [selectedConfigurationId, setSelectedConfigurationId] = useState(() => defaultConfigurationId(initialVenueId()))
   const [customInput, setCustomInput] = useState(DEFAULT_CUSTOM)
+  const [ticketCount, setTicketCount] = useState<TicketCount>(1)
   const [phase, setPhase] = useState<Phase>('idle')
-  const [result, setResult] = useState<Seat | null>(null)
+  const [result, setResult] = useState<readonly Seat[] | null>(null)
   const [userError, setUserError] = useState('')
   const [shareStatus, setShareStatus] = useState('')
   const [venueSampler, setVenueSampler] = useState<PreparedVenueSampler | null>(null)
@@ -73,9 +75,17 @@ function App() {
   const customSeats = useMemo(() => generateCustomSeats(customInput), [customInput])
   const venueName = sourceMode === 'venue' ? selectedVenue?.name ?? '未選択の会場' : customInput.venueName.trim() || 'マイ会場'
   const availableSeatCount = sourceMode === 'venue' ? venueSampler?.totalSeatCount ?? 0 : customSeats.length
-  const canDraw = sourceMode === 'venue'
+  const seatsReady = sourceMode === 'venue'
     ? Boolean(selectedVenue && venueSampler && venueDataStatus === 'ready')
     : customSeats.length > 0 && Object.keys(customValidation.errors).length === 0
+  // 1枚は既存の抽選をそのまま使うため、連番グループの集計は2枚以上のときだけ行う。
+  const seatGroupCount = useMemo(() => {
+    if (ticketCount === 1) return null
+    if (sourceMode === 'venue') return venueSampler ? countVenueSeatGroups(venueSampler, ticketCount) : null
+    return countSeatGroups(customSeats, ticketCount)
+  }, [customSeats, sourceMode, ticketCount, venueSampler])
+  const seatGroupShortage = seatsReady && seatGroupCount !== null && seatGroupCount <= 0
+  const canDraw = seatsReady && !seatGroupShortage
 
   useEffect(() => {
     savePreferences({ venueId: selectedVenueId || undefined })
@@ -162,18 +172,30 @@ function App() {
     resetResult()
   }
 
+  const changeTicketCount = (value: string) => {
+    const next = Number(value)
+    // 想定外の値が届いた場合は現在の枚数を維持する。
+    if (!isTicketCount(next) || next === ticketCount) return
+    setTicketCount(next)
+    resetResult()
+  }
+
   const startDraw = () => {
     if (phase === 'drawing') return
     if (!canDraw) {
-      setUserError(sourceMode === 'venue' ? '会場を選択してください。' : '座席範囲のエラーを直してから抽選してください。')
+      setUserError(seatGroupShortage
+        ? `この条件では${ticketCount}枚連番で抽選できる座席がありません。`
+        : sourceMode === 'venue' ? '会場を選択してください。' : '座席範囲のエラーを直してから抽選してください。')
       return
     }
     try {
       shareSequenceRef.current += 1
       const drawSequence = cancelPendingDraw()
-      const nextSeat = sourceMode === 'venue'
-        ? drawVenueSeat(venueSampler!, selectedVenue!)
-        : drawSeat(customSeats)
+      const nextSeats = ticketCount === 1
+        ? [sourceMode === 'venue' ? drawVenueSeat(venueSampler!, selectedVenue!) : drawSeat(customSeats)]
+        : sourceMode === 'venue'
+          ? drawVenueSeatGroup(venueSampler!, selectedVenue!, ticketCount)
+          : drawSeatGroup(customSeats, ticketCount)
       setPhase('drawing')
       setResult(null)
       setShareStatus('')
@@ -181,7 +203,7 @@ function App() {
       timeoutRef.current = window.setTimeout(() => {
         if (drawSequenceRef.current !== drawSequence) return
         timeoutRef.current = null
-        setResult(nextSeat)
+        setResult(nextSeats)
         setPhase('result')
       }, DRAW_ANIMATION_DURATION_MS)
     } catch (error) {
@@ -203,7 +225,7 @@ function App() {
   const scopeDisclosure = sourceMode === 'venue' ? selectedVenue?.scopeDisclosure : undefined
 
   const handleShare = () => {
-    if (!result) return
+    if (!result || result.length === 0) return
     shareSequenceRef.current += 1
     const url = new URL(window.location.href)
     if (sourceMode === 'venue' && selectedVenueId) url.searchParams.set('venue', selectedVenueId)
@@ -260,7 +282,13 @@ function App() {
           {sourceMode === 'venue' && venueDataStatus === 'error' && <p className="form-error centered" role="alert">座席データを読み込めませんでした。もう一度会場を選択してください。</p>}
 
           <form className="draw-area" onSubmit={(event) => { event.preventDefault(); startDraw() }}>
-            <p>{canDraw ? `${availableSeatCount.toLocaleString('ja-JP')}席から今日の1席を抽選します` : sourceMode === 'venue' ? selectedVenueId && venueDataStatus === 'loading' ? '座席データの読み込みをお待ちください' : selectedVenueId && venueDataStatus === 'error' ? '座席データを再読み込みしてください' : '会場を選択してください' : '有効な座席範囲を設定してください'}</p>
+            <p className={`draw-summary${seatGroupShortage ? ' is-unavailable' : ''}`}>{seatGroupShortage ? `この条件では${ticketCount}枚連番で抽選できる座席がありません。` : canDraw ? `${availableSeatCount.toLocaleString('ja-JP')}席から今日の${ticketCount}席を抽選します` : sourceMode === 'venue' ? selectedVenueId && venueDataStatus === 'loading' ? '座席データの読み込みをお待ちください' : selectedVenueId && venueDataStatus === 'error' ? '座席データを再読み込みしてください' : '会場を選択してください' : '有効な座席範囲を設定してください'}</p>
+            <div className="ticket-count-field">
+              <label htmlFor="ticket-count">申込枚数</label>
+              <select id="ticket-count" value={ticketCount} onChange={(event) => changeTicketCount(event.target.value)}>
+                {TICKET_COUNT_OPTIONS.map((count) => <option key={count} value={count}>{count}枚</option>)}
+              </select>
+            </div>
             <button className="draw-button" type="submit" disabled={!canDraw || phase === 'drawing'}>
               <span aria-hidden="true">✦</span>{phase === 'drawing' ? '抽選中……' : '座席を抽選する'}<span aria-hidden="true">→</span>
             </button>
@@ -269,13 +297,13 @@ function App() {
         </section>
 
         <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">
-          {phase === 'drawing' ? '抽選中です。今日の席運を確認しています。' : phase === 'result' && result ? `抽選結果を表示しました。${formatSeatLabel(result)}です。` : ''}
+          {phase === 'drawing' ? '抽選中です。今日の席運を確認しています。' : phase === 'result' && result ? `抽選結果を表示しました。${formatSeatGroupLabel(result)}です。` : ''}
         </div>
         <div className="result-region">
           {phase === 'drawing' && <LotteryAnimation />}
           {phase === 'result' && result && (
             <ResultCard
-              seat={result}
+              seats={result}
               venueName={venueName}
               configurationName={configurationName}
               scopeDisclosure={scopeDisclosure}

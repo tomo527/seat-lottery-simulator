@@ -1,4 +1,4 @@
-import { formatRowLabel, formatSeatNumber } from '../domain/lottery/lottery'
+import { formatRowLabel, formatSeatNumbers } from '../domain/lottery/lottery'
 import type { Seat } from '../types/venue'
 
 export type ShareOutcome = 'intent' | 'blocked'
@@ -9,8 +9,10 @@ const INTENT_WINDOW = { width: 600, height: 560 }
 const INTENT_WINDOW_NAME = 'intent'
 const DESKTOP_QUERY = '(min-width: 640px)'
 
-export const buildShareText = (venueName: string, seat: Seat): string =>
-  `座席抽選シミュレーターの結果、${venueName}の${seat.sectionLabel ? `${seat.sectionLabel} ` : ''}${formatRowLabel(seat.rowLabel)}${formatSeatNumber(seat.number)}でした！`
+export const buildShareText = (venueName: string, seats: readonly Seat[]): string => {
+  const [seat] = seats
+  return `座席抽選シミュレーターの結果、${venueName}の${seat.sectionLabel ? `${seat.sectionLabel} ` : ''}${formatRowLabel(seat.rowLabel)}${formatSeatNumbers(seats)}でした！`
+}
 
 export const buildXIntentUrl = (text: string, url: string): string =>
   `${X_INTENT_ENDPOINT}?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`

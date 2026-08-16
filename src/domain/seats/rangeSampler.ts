@@ -32,6 +32,23 @@ const resolveSeatNumber = (range: VenueSeatRange, offset: number): number => {
   throw new RangeError('Seat offset is outside the range.')
 }
 
+export const buildSeat = (
+  definition: VenueSeatDefinition,
+  venue: LegacyVenueCatalogEntry | VenueRuntimeSelection,
+  areaId: string,
+  rowLabel: string,
+  number: number,
+): Seat => ({
+  venueId: venue.id,
+  venueName: venue.name,
+  layoutId: definition.schemaVersion === 1 ? definition.patternId : definition.configurationId,
+  layoutName: venue.representativePatternName,
+  sectionId: areaId,
+  sectionLabel: definition.areas?.[areaId],
+  rowLabel,
+  number,
+})
+
 export const seatAtOffset = (prepared: PreparedVenueSampler, venue: LegacyVenueCatalogEntry | VenueRuntimeSelection, offset: number): Seat => {
   if (!Number.isSafeInteger(offset) || offset < 0 || offset >= prepared.totalSeatCount) throw new RangeError('Seat offset is invalid.')
   let low = 0
@@ -43,17 +60,7 @@ export const seatAtOffset = (prepared: PreparedVenueSampler, venue: LegacyVenueC
   }
   const range = prepared.definition.ranges[low]
   const previousTotal = low === 0 ? 0 : prepared.cumulativeCounts[low - 1]
-  const areaId = range.areaId ?? 'main'
-  return {
-    venueId: venue.id,
-    venueName: venue.name,
-    layoutId: prepared.definition.schemaVersion === 1 ? prepared.definition.patternId : prepared.definition.configurationId,
-    layoutName: venue.representativePatternName,
-    sectionId: areaId,
-    sectionLabel: prepared.definition.areas?.[areaId],
-    rowLabel: range.rowLabel,
-    number: resolveSeatNumber(range, offset - previousTotal),
-  }
+  return buildSeat(prepared.definition, venue, range.areaId ?? 'main', range.rowLabel, resolveSeatNumber(range, offset - previousTotal))
 }
 
 export const drawVenueSeat = (prepared: PreparedVenueSampler, venue: LegacyVenueCatalogEntry | VenueRuntimeSelection, source: RandomSource = cryptoRandomSource): Seat =>

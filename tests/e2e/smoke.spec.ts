@@ -236,6 +236,34 @@ test('抽選結果をXで共有し、投稿文とサイトURLをX Web Intentへ�
   await popup.close()
 })
 
+test('申込枚数を3枚にすると同一列の連番3席を範囲表示し、X共有文も範囲になる', async ({ page, context }) => {
+  await context.route('https://x.com/**', (route) => route.fulfill({ status: 200, contentType: 'text/html', body: '<title>X intent stub</title>' }))
+  await page.goto('/')
+  await chooseVenue(page, 'イイノ', 'イイノホール')
+  const ticketCount = page.getByLabel('申込枚数')
+  await expect(ticketCount).toHaveValue('1')
+  await expect(page.getByText('500席から今日の1席を抽選します')).toBeVisible()
+  await ticketCount.selectOption('3')
+  await expect(page.getByText('500席から今日の3席を抽選します')).toBeVisible()
+
+  await drawAndExpectNotification(page, 'イイノホール')
+  await expect(page.locator('.ticket-details .seat-value')).toHaveCount(2)
+  const seatRow = await page.locator('.ticket-details .seat-value dd').first().textContent()
+  const seatNumbers = await page.locator('.ticket-details .seat-value dd').last().textContent()
+  expect(seatNumbers).toMatch(/^\d+番〜\d+番$/)
+  const [firstSeat, lastSeat] = seatNumbers!.match(/\d+/g)!.map(Number)
+  expect(lastSeat - firstSeat).toBe(2)
+
+  const [popup] = await Promise.all([page.waitForEvent('popup'), page.getByRole('button', { name: 'Xで共有する' }).click()])
+  expect(new URL(popup.url()).searchParams.get('text')).toBe(`座席抽選シミュレーターの結果、イイノホールの${seatRow}${seatNumbers}でした！`)
+  await popup.close()
+
+  await ticketCount.selectOption('1')
+  await expect(page.getByRole('heading', { name: '抽選結果のお知らせ' })).toHaveCount(0)
+  await drawAndExpectNotification(page, 'イイノホール')
+  await expect(page.locator('.ticket-details .seat-value dd').last()).toHaveText(/^\d+番$/)
+})
+
 test('reduced motionでも4秒程度待ち、スプライトの表示を固定する', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/')
