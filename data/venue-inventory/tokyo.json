@@ -1030,13 +1030,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.nissaytheatre.or.jp/seat/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行公式施設資料は1,334席、公式座席図は1階・グランドサークル階・2階と左右曲面ボックスを示す。高密度全range転記はTerraで完了させるまでproduction化しない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式座席ページの画像マップは1階 A1〜C3、G.C D1〜D9、2階 E1〜F3を発行者ブロックとして示し、各ブロックの列・番号範囲をissuer-owned textで掲載する。全ブロック・列・番号範囲1,490席を完全転記した代表配置をproduction化し、公式施設資料1,334席との差156席はmetadataに保持する。",
       "priority": "A",
       "venueSourceId": "nissay-theatre-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-10",
-      "blockingReason": "SOURCE/SCHEMA HOLD: Terra第1・独立第2パスで公式1,334席と中央番号runを確認したが、左右曲面部の重複番号を結び付ける公式area/rowキーがない。1扉から16扉は扉ラベルである。issuer-owned seat-number key等が必要で、geometry由来のarea/row新設又は算術補正は禁止。",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20",
       "discoveryUrlRaw": "http://www.nissaytheatre.or.jp/"
     },
     {
@@ -1716,16 +1715,16 @@
       "city": "中央区",
       "capacity": 1426,
       "category": "hall",
-      "officialFacilityUrl": null,
+      "officialFacilityUrl": "https://www.shochiku.co.jp/play/theater/enbujyo/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "公式資料間で総席数1424席・1428席が一致せず、東京都リスト1426席とも不一致。",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行松竹公式客席表が1〜3階の番号図を掲載。総数差はproduction blockerではないが、2・3階側方番号群のissuer-defined row/area ownershipが公開されず、lossless range化はSol判断待ち。",
       "priority": "A",
       "venueSourceId": "shinbashi-enbujo-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-26",
-      "discoveryUrlRaw": "http://www.shinbashi-enbujo.co.jp/",
-      "blockingReason": "公式資料間で総席数1424席・1428席が一致せず、東京都リスト1426席とも不一致。"
+      "lastCheckedAt": "2026-08-20",
+      "discoveryUrlRaw": "https://www.shochiku.co.jp/play/theater/enbujyo/seats/",
+      "blockingReason": "SOL HANDOFF / SOURCE-SCHEMA: 現行公式図の2・3階側方番号群はfloorとseat numberのみでrow/area ownershipを一意に示さない。図形位置からarea/rowを創作せず、Sol policy/schema判断又は追加issuer資料まで停止。1424・1426・1428席の資料差はmetadataであり、本停止理由ではない。"
     },
     {
       "inventoryId": "tokyo-official-0086",
@@ -6063,12 +6062,12 @@
       "officialFacilityUrl": "https://www.b-academy.jp",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式公称は1階1,242・2階560の計1,802だが、列ラベルのない1階側方セルを図どおり接続すると1階1,258となり16席超過する。推測除外せずdraftを維持。",
+      "eligibilityReason": "2026-08-20の現行公式資料再確認でも、公式公称は1階1,242・2階560の計1,802だが、列ラベルのない1階側方セルを図どおり接続すると1階1,258となり16席超過する。推測除外せずdraftを維持する。",
       "priority": "A",
       "venueSourceId": "bunkyo-civic-main-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-08-02",
-      "blockingReason": "1階側方段差席の正式な列・番号対応と、公称1,242席への包含を示す公式資料が必要。"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-20",
+      "blockingReason": "SOL HANDOFF: 現行公式施設ページ・現行利用手引き・現行座席表を再確認しても、1階側方段差席のseat ID area/row ownershipが一意に読めない。公称1,242席との差16席ではなく列帰属の非一意性がblocker。Solは現行図だけでの帰属をpolicy上許容するか、別の公式列対応資料を要求するかを判断する必要がある。"
     },
     {
       "inventoryId": "tokyo-official-0307",
@@ -16159,13 +16158,13 @@
       "officialFacilityUrl": "https://www.geigeki.jp/facilities/playhouse/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibilityReason": "現行公式施設ページが829席、同ページ直結座席表が全印字番号を示す。だが同PDFの1階A〜E内訳116席と印字番号132席が16席相違し、issuer内矛盾のSol判断待ち。",
       "priority": "B",
       "venueSourceId": "tokyo-geigeki-playhouse-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-27",
+      "lastCheckedAt": "2026-08-20",
       "discoveryUrlRaw": "http://www.geigeki.jp/rent/playhouse/index.html",
-      "blockingReason": "設備更新工事による休館中で、2026年7月27日時点で再開未確認。"
+      "blockingReason": "SOL HANDOFF / OFFICIAL-CONTRADICTION: 2026-08-20に現行公式施設ページ829席と同ページ直結PDFを再確認。PDFは1階A〜Eを116席とするが、印字番号を直接合算すると132席、全印字番号は845席で公式829席と16席相違する。どの番号を除外するかはissuerが示さず、capacity fittingや推測をせずSol判断まで停止。"
     },
     {
       "inventoryId": "tokyo-tokyo-geigeki-theatre-east",

@@ -13,8 +13,8 @@
     "id": "standard-without-orchestra-pit",
     "name": "オーケストラピット未使用時通常客席",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "現行公式資料が通常全客席として示す829席配置を代表パターン候補とする。",
+    "expectedSeatCount": 829,
+    "selectionReason": "現行公式施設ページが829席とし、同ページが直接掲示する現行座席表を通常番号席配置候補として再確認した。ただし、同一PDFの印字番号集合と階別小計が実質的に矛盾するため、range化はSol判断まで停止する。",
     "notIncludedPatterns": [
       "オーケストラピット使用時713席"
     ]
@@ -30,7 +30,7 @@
       "publisher": "東京芸術劇場",
       "title": "プレイハウス座席表",
       "url": "https://www.geigeki.jp/facilities/pdf/playhouse.pdf",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-20"
     },
     {
       "id": "official-facility-guide",
@@ -43,25 +43,26 @@
       "publisher": "東京芸術劇場",
       "title": "プレイハウス",
       "url": "https://www.geigeki.jp/facilities/playhouse/",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-20"
     }
   ],
-  "registeredScope": "通常全客席の1階626席と2階203席、合計829席を予定。",
-  "completenessBasis": "現行公式施設案内と座席表で829席を確認済み。全rangeを転記中。",
-  "transformation": "1階と2階をareaに分けて番号席をrangeへ転記する予定。",
+  "registeredScope": "SOL HANDOFF。現行公式PDFが掲示する1階・2階の印字番号全体を通常候補として再確認したが、完全な番号集合をrepository側で選別せず、rangeは空のまま維持する。",
+  "completenessBasis": "2026-08-20に現行公式施設ページの829席と同ページ直結PDFを再確認。PDF内訳は1階626席・2階203席・計829席だが、図上の1階A〜E列の印字番号は132席（4〜26、3〜27、2〜28、1〜29、1〜29の各3区間）で、同PDF内訳の116席と16席相違する。ほかの1階F〜J 145席、K〜V 335席、バルコニー30席、2階203席を同じ方式で合算すると印字番号集合は845席となり829席と16席相違する。どの印字番号を除外するかはissuerが示していない。",
+  "transformation": "16席をcapacity fitting、wheelchair推測、又は図形位置による除外で解消せず、Solによる公式内矛盾の取扱い判断までrange転記を停止する。",
   "knownLimitations": [
-    "オーケストラピット使用時はA列からE列の116席を使用しない。",
-    "旧資料の834席ではなく2026年時点の現行公式829席を使用する。"
+    "オーケストラピット使用時はA列からE列の116席を使用しないとPDF内訳は記載するが、同じ図の印字番号は132席である。",
+    "PDFは車椅子用スペース11席を別記するが、16席差との対応又は印字番号の置換を示さない。",
+    "旧資料の834席ではなく2026年時点の現行公式829席を確認した。"
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "checkedAt": "2026-08-20",
+    "method": "current-official-page-and-pdf-first-pass; SOL-HANDOFF-official-internal-seat-count-contradiction",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "設備更新工事による休館中で、2026年7月27日時点で再開未確認。",
-      "2026年9月以降に公式の再開と公演実施を確認して再レビューする。"
+      "SOL HANDOFF: 同一の現行公式PDF内で1階A〜E列の印字番号132席と内訳116席が16席相違し、全印字番号845席と公式829席も16席相違する。",
+      "Sol判断に必要なのは、829席configurationとしてどの印字番号を採用・除外できるかについてissuer資料から根拠を特定できるか、又は番号集合845席をrepresentative configurationとして採用できるpolicy判断である。"
     ]
   },
   "ranges": []

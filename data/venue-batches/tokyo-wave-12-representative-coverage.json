@@ -1,0 +1,43 @@
+{
+  "batchId": "tokyo-wave-12-representative-coverage",
+  "createdAt": "2026-08-20",
+  "scope": "TOKYO-WAVE-12 bounded batch for exactly Nissay Theatre, Tokyo Metropolitan Theatre Playhouse, Shinbashi Enbujo, and Bunkyo Civic Hall Main Hall. Reconfirm current official/current-linked seat material under representative-coverage-v2, prioritize issuer-owned structured row/number data, preserve total/accessibility/pit/performance differences as metadata, and prohibit capacity fitting, invented seat IDs, or geometry-derived row/area ownership.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [
+    "nissay-theatre-standard",
+    "tokyo-geigeki-playhouse-standard",
+    "shinbashi-enbujo-standard",
+    "bunkyo-civic-main-standard"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-nissay-theatre",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "The current official seating HTML now publishes issuer-owned A1–F3 block, row, and number-range data that resolves the prior curve-area ownership hold for a representative numbered configuration.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-tokyo-geigeki-playhouse",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "The planned recheck verifies whether the now-active official facility page and its current-linked numbered PDF form one lossless representative configuration.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-shinbashi-enbujo",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "The current Shochiku official seat page is rechecked for a lossless issuer-defined row/area key rather than treating historical capacity differences as a blocker.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-official-0306",
+      "carryOverFrom": "tokyo-wave-2",
+      "previousStatus": "draft-created",
+      "recheckReason": "The current official facility page, guide, and seat map are rechecked to determine whether the first-floor side-seat row ownership is now losslessly issuer-defined.",
+      "recheckNotBefore": "2026-08-20"
+    }
+  ]
+}

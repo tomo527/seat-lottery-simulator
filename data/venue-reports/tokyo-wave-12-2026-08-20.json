@@ -1,0 +1,70 @@
+{
+  "reportId": "tokyo-wave-12-2026-08-20",
+  "asOf": "2026-08-20",
+  "model": "Terra high",
+  "policyVersion": "representative-coverage-v2",
+  "scope": [
+    "nissay-theatre",
+    "tokyo-geigeki-playhouse",
+    "shinbashi-enbujo",
+    "bunkyo-civic-main"
+  ],
+  "venues": [
+    {
+      "id": "nissay-theatre",
+      "sourceId": "nissay-theatre-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "current-official-block-numbered-seat-map",
+      "expectedSeatCount": 1334,
+      "calculatedSeatCount": 1490,
+      "rangeDiff": 156,
+      "difference": 156,
+      "method": "direct transcription of the current issuer-owned seating HTML image-map block, row, and number-range text with current-linked official PDF visual cross-check",
+      "scope": "current official block-numbered seat set; wheelchair and performance differences retained as metadata",
+      "confidence": "approximate"
+    },
+    {
+      "id": "tokyo-geigeki-playhouse",
+      "sourceId": "tokyo-geigeki-playhouse-standard",
+      "classification": "SOL HANDOFF",
+      "expectedSeatCount": 829,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "reason": "The current official PDF's printed seat IDs total 845 while its own subtotal and the current facility page state 829; the issuer does not identify the 16-seat difference."
+    },
+    {
+      "id": "shinbashi-enbujo",
+      "sourceId": "shinbashi-enbujo-standard",
+      "classification": "SOL HANDOFF",
+      "expectedSeatCount": null,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "reason": "The current official second- and third-floor side-seat number groups do not have issuer-defined row/area ownership."
+    },
+    {
+      "id": "bunkyo-civic-main",
+      "sourceId": "bunkyo-civic-main-standard",
+      "classification": "SOL HANDOFF",
+      "expectedSeatCount": 1802,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "reason": "The current official first-floor side cells do not have unique issuer-defined row ownership; visual attachment yields 1,258 versus the stated 1,242 first-floor seats."
+    }
+  ],
+  "result": {
+    "terraOnlyProductionPromotions": 1,
+    "solHandoffs": 3,
+    "productionAfter": {
+      "venues": 94,
+      "selectableConfigurations": 96,
+      "configurationSeatRecords": 151748
+    },
+    "coverageAfter": {
+      "tokyoProduction": "38/76 (50.0%)",
+      "mustProduction": "24/44 (54.5%)",
+      "shouldProduction": "14/28 (50.0%)"
+    },
+    "releaseReady": true,
+    "exactNextAction": "Proposal only: choose one bounded remaining Tokyo candidate after a separate Sol decision on the three Wave 12 handoffs; do not begin work without explicit scope selection."
+  }
+}

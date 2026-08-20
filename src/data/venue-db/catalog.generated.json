@@ -855,6 +855,30 @@
   },
   {
     "schemaVersion": 2,
+    "id": "nissay-theatre-standard",
+    "venueGroupId": "nissay-theatre-standard",
+    "name": "日生劇場",
+    "searchAliases": [
+      "Nissay Theatre"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-official-block-numbered-seat-map",
+        "canonicalName": "現行公式ブロック番号席1,490席",
+        "seatCount": 1490,
+        "dataPath": "/venue-db/venues/nissay-theatre-standard--current-official-block-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式座席ページでブロック別に案内された番号席1,490席を抽選します。公式施設資料の1,334席との差156席、車椅子対応、及び公演ごとの販売停止・見切れ席は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "nissho-hall-standard",
     "venueGroupId": "nissho-hall-standard",
     "name": "ニッショーホール",

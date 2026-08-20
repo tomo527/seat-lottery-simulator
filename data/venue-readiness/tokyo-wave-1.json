@@ -124,10 +124,10 @@
     },
     {
       "venueId": "nissay-theatre-standard",
-      "readiness": "R5",
+      "readiness": "R1",
       "secondPass": "complete",
-      "blocker": "SOURCE/SCHEMA HOLD: Terra第1・独立第2パスで公式1,334席と1階・G.C.・2階の中央番号runを確認したが、左右曲面部の重複番号を結び付ける公式area/rowキーがない。1扉から16扉は扉ラベルであり席areaではない。",
-      "nextAction": "発行者のseat-number key、ticketing seat specification、又は曲面位置を公式area/rowへ対応付ける一次資料を待つ。geometry由来のarea/row新設と1,334席への算術補正はしない。"
+      "blocker": null,
+      "nextAction": "現行公式座席ページの発行者ブロック A1〜F3、列・番号範囲を直接転記した1,490席の代表配置を維持する。公式1,334席との差156席、車椅子対応及び公演差はmetadataを維持する。"
     },
     {
       "venueId": "nntt-opera-palace-standard",
