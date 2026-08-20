@@ -47,10 +47,10 @@
     },
     {
       "venueId": "jcom-hall-hachioji-standard",
-      "readiness": "R3",
-      "secondPass": "in-progress",
-      "blocker": "側面列、車椅子転換席、可倒席を含む固定席1,869席の全range独立照合が未完了。",
-      "nextAction": "通常配置PDFだけから階・側面列を再抽出し、音響反射板配置と混在していないことを確認する。"
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": null,
+      "nextAction": "production sourceの公式固定番号図1,870件と公式固定総数1,869席との差1、車いす・pit・可倒席metadataを維持する。"
     },
     {
       "venueId": "kabukiza-standard",
@@ -187,10 +187,10 @@
     },
     {
       "venueId": "tokyo-international-forum-hall-c-standard",
-      "readiness": "R3",
-      "secondPass": "in-progress",
-      "blocker": "1階17列6～8番が非常設で、最大1,502席との包含関係が未解決。",
-      "nextAction": "常設番号席だけの総数を示す公式資料を確認して代表集合を確定する。"
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": null,
+      "nextAction": "production sourceの公式3階番号図1,504件と公式総数1,502席との階別差、車いす・pit metadataを維持する。"
     },
     {
       "venueId": "tokyo-tatemono-brillia-hall-standard",

@@ -1,29 +1,59 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "imm-theater-standard",
-  "name": "IMM THEATER 通常番号席配置（公演可変）",
+  "name": "IMM THEATER",
   "prefecture": "東京都",
   "city": "文京区",
-  "aliases": ["IMM THEATER"],
+  "aliases": ["IMMシアター"],
   "venueType": "theater",
-  "representativePattern": {
-    "id": "standard-numbered-seat-set",
-    "name": "基本形状の番号席候補",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "運営者の現行施設資料は705席（一般703席、車椅子2席）を示すが、公式座席表は基本形状であり座席配置は公演により異なると明記し、車椅子スペースの詳細も各公演への問い合わせとしている。固定された代表selectable setを確定しない。",
-    "notIncludedPatterns": ["公演別座席配置", "車椅子スペース利用", "公演固有の販売variant"]
-  },
   "sources": [
-    { "id": "official-facilities", "official": true, "roles": ["facility", "seat-count"], "publisher": "LIVE FORWARD／IMM THEATER", "title": "劇場概要・施設利用資料", "url": "https://imm.theater/rental/facilities.html", "checkedAt": "2026-08-11" },
-    { "id": "official-seat-map", "official": true, "roles": ["seat-structure", "event-layout"], "publisher": "IMM THEATER", "title": "SEAT 座席表", "url": "https://imm.theater/theater/seat.html", "checkedAt": "2026-08-11" },
-    { "id": "official-terms", "official": true, "roles": ["event-layout", "seat-count"], "publisher": "LIVE FORWARD／IMM THEATER", "title": "IMM THEATER 施設利用規約（2026年7月31日改定）", "url": "https://imm.theater/document/kiyaku_20260731.pdf", "checkedAt": "2026-08-11" }
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"IMM THEATER","title":"客席図","url":"https://imm.theater/theater/seat.html","checkedAt":"2026-08-20"},
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"IMM THEATER","title":"劇場施設","url":"https://imm.theater/theater/","checkedAt":"2026-08-20"}
   ],
-  "registeredScope": "SOURCE/SCHEMA HOLD。公式の705席と基本形状は記録するが、公演可変の配置・車椅子運用を推測してrange化しない。",
-  "completenessBasis": "第1パスで現行運営者の施設概要、公式座席表、705席（一般703・車椅子2）を確認した。独立第2パスで2026年7月改定の利用規約と公式座席表の注記を再確認し、公演別の客席形状・車椅子詳細が固定代表patternを定義しないことを確認した。",
-  "transformation": "公式座席表の基本形状から列・番号を補完せず、rangeは登録しない。",
-  "knownLimitations": ["SOURCE HOLD: 公演により座席配置が異なる。", "SCHEMA/POLICY HOLD: 車椅子スペースの公演別運用と販売variantを固定番号席setへlosslessに表現できない。"],
-  "verification": { "status": "pending", "checkedAt": "2026-08-11", "method": "official-source-first-pass-independent-second-pass-hold", "seatStructure": "pending", "seatCount": "matched", "unresolvedIssues": ["公式が公演別配置を明記しており、通常代表patternが一意でない。", "車椅子スペースの番号・置換関係が公式に定義されていない。"] },
-  "ranges": []
+  "configurations": [
+    {
+      "id": "official-basic-numbered-seat-map",
+      "canonicalName": "公式基本座席図の一般番号席703席",
+      "selectionBasis": "現行公式基本座席図に印字されたA列からU列の一般番号席703席を直接転記して代表配置とする。別枠の車椅子2席と、公演ごとに異なる座席設定は番号席集合へ変換しない。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "2026-08-20 current official basic seat map",
+      "sourceIds": ["official-seat-map", "official-facility-page"],
+      "differenceBasisSourceIds": ["official-seat-map", "official-facility-page"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 703,
+      "scope": {"kind":"full-venue","issuerDefined":false,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "公式基本座席図の一般番号席703席を抽選します。車椅子2席と公演ごとの座席設定差は反映しません。",
+      "wheelchairSemantics": {"status":"not-reflected","description":"公式公表総数705席は一般席703席と車椅子席2席。車椅子位置は一般番号席へ変換しない。","sourceIds":["official-seat-map","official-facility-page"],"accessibilityConversionNotReflected":true},
+      "confidence": "representative",
+      "verification": {"status":"reviewed","checkedAt":"2026-08-20","method":"current-official-basic-map-direct-visual-transcription","seatStructure":"matched","seatCount":"matched","rangeDiff":0,"unresolvedIssues":["公演により基本座席図から座席設定が変わる場合がある。"]},
+      "ranges": [
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"A","from":7,"to":30,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"B","from":5,"to":32,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"C","from":2,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"D","from":2,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"E","from":2,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"F","from":2,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"G","from":2,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"H","from":2,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"I","from":4,"to":33,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"J","from":4,"to":33,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"K","from":1,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"L","from":1,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"M","from":1,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"N","from":1,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"O","from":1,"to":35,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"P","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"Q","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"R","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"S","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"T","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"U","from":1,"to":36,"excluded":[10,11,26,27]}
+      ]
+    }
+  ]
 }

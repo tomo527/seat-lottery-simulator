@@ -1,0 +1,97 @@
+{
+  "reportId": "tokyo-wave-10-2026-08-20",
+  "asOf": "2026-08-20",
+  "model": "Sol high",
+  "policyVersion": "representative-coverage-v2",
+  "scope": [
+    "theater-h",
+    "tokyo-international-forum-c",
+    "imm-theater",
+    "mon-takanawa-box1000",
+    "jcom-hall-hachioji"
+  ],
+  "venues": [
+    {
+      "id": "theater-h",
+      "sourceId": "theater-h-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "current-numbered-seat-map",
+      "expectedSeatCount": 747,
+      "calculatedSeatCount": 704,
+      "rangeDiff": -43,
+      "difference": -43,
+      "method": "direct visual transcription of the current official first- and second-floor numbered maps",
+      "scope": "printed normal numbered seats; wheelchair, auxiliary-seat, and performance differences excluded",
+      "confidence": "approximate"
+    },
+    {
+      "id": "tokyo-international-forum-c",
+      "sourceId": "tokyo-international-forum-hall-c-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "current-official-numbered-seat-map",
+      "expectedSeatCount": 1502,
+      "calculatedSeatCount": 1504,
+      "rangeDiff": 2,
+      "difference": 2,
+      "method": "direct visual transcription of the current official first-, second-, and third-floor numbered maps",
+      "scope": "printed normal numbered seats; wheelchair conversion and orchestra-pit differences excluded",
+      "confidence": "approximate"
+    },
+    {
+      "id": "imm-theater",
+      "sourceId": "imm-theater-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "official-basic-numbered-seat-map",
+      "expectedSeatCount": 703,
+      "calculatedSeatCount": 703,
+      "rangeDiff": 0,
+      "difference": 0,
+      "method": "direct visual transcription of the current official basic numbered map",
+      "scope": "general numbered seats; two wheelchair seats and performance differences excluded",
+      "confidence": "representative"
+    },
+    {
+      "id": "mon-takanawa-box1000",
+      "sourceId": "mon-takanawa-box1000-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "official-seated-layout",
+      "expectedSeatCount": 1048,
+      "calculatedSeatCount": 1048,
+      "rangeDiff": 0,
+      "difference": 0,
+      "method": "direct visual transcription of the current official seated-layout map",
+      "scope": "official seated representative layout; standing and performance differences excluded",
+      "confidence": "representative"
+    },
+    {
+      "id": "jcom-hall-hachioji",
+      "sourceId": "jcom-hall-hachioji-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "current-fixed-numbered-seat-map",
+      "expectedSeatCount": 1869,
+      "calculatedSeatCount": 1870,
+      "rangeDiff": 1,
+      "difference": 1,
+      "method": "direct visual transcription of the current official first-, second-, and third-floor fixed-numbered maps",
+      "scope": "printed fixed numbered seats; family, standing, wheelchair, pit, and foldable-seat differences excluded",
+      "confidence": "approximate"
+    }
+  ],
+  "result": {
+    "productionPromotions": 5,
+    "selectableConfigurationsAdded": 5,
+    "configurationSeatRecordsAdded": 5829,
+    "productionAfter": {
+      "venues": 88,
+      "selectableConfigurations": 90,
+      "configurationSeatRecords": 138833
+    },
+    "coverageAfter": {
+      "tokyoProduction": "32/76 (42.1%)",
+      "mustProduction": "18/44 (40.9%)",
+      "shouldProduction": "14/28 (50.0%)"
+    },
+    "releaseReady": true,
+    "exactNextAction": "TOKYO-WAVE-11 proposal — select about five remaining high-demand Tokyo venues as a bounded batch"
+  }
+}

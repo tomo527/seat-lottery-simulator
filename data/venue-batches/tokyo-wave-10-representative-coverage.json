@@ -1,0 +1,37 @@
+{
+  "batchId": "tokyo-wave-10-representative-coverage",
+  "createdAt": "2026-08-20",
+  "scope": "TOKYO-WAVE-10 bounded batch for exactly Theater H, Tokyo International Forum Hall C, IMM THEATER, MoN Takanawa BOX1000, and J:COM Hall Hachioji. Directly transcribe current official/current-linked numbered maps, preserve total/accessibility/movable/event differences as metadata, and prohibit capacity fitting or invented seat IDs.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [
+    "theater-h-standard",
+    "tokyo-international-forum-hall-c-standard",
+    "imm-theater-standard",
+    "mon-takanawa-box1000-standard",
+    "jcom-hall-hachioji-standard"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-tokyo-international-forum-hall-c",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "draft-created",
+      "recheckReason": "Representative coverage v2 permits direct transcription of the complete current official numbered maps while floor total, wheelchair, and orchestra-pit differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-official-0320",
+      "carryOverFrom": "tokyo-luna-std-2",
+      "previousStatus": "blocked",
+      "recheckReason": "The complete current official basic numbered map is an admissible representative configuration; performance and wheelchair differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-jcom-hall-hachioji",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "The complete current official fixed-numbered map is admissible under representative coverage v2; total, wheelchair, pit, and foldable-seat differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    }
+  ]
+}

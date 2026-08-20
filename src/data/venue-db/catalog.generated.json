@@ -346,6 +346,30 @@
     "dataPath": "/venue-db/venues/iino-hall-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "imm-theater-standard",
+    "venueGroupId": "imm-theater-standard",
+    "name": "IMM THEATER",
+    "searchAliases": [
+      "IMMシアター"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "文京区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "official-basic-numbered-seat-map",
+        "canonicalName": "公式基本座席図の一般番号席703席",
+        "seatCount": 703,
+        "dataPath": "/venue-db/venues/imm-theater-standard--official-basic-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "公式基本座席図の一般番号席703席を抽選します。車椅子2席と公演ごとの座席設定差は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "iris-hall-standard",
     "name": "かつしかシンフォニーヒルズ アイリスホール",
     "searchAliases": [
@@ -392,6 +416,32 @@
         "dataPath": "/venue-db/venues/itabashi-culture-small-standard--standard.json",
         "scope": "full-venue",
         "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "jcom-hall-hachioji-standard",
+    "venueGroupId": "jcom-hall-hachioji-standard",
+    "name": "J:COMホール八王子",
+    "searchAliases": [
+      "Jホール八王子",
+      "オリンパスホール八王子",
+      "八王子市民会館"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "八王子市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-fixed-numbered-seat-map",
+        "canonicalName": "現行公式座席図の固定番号席1,870席",
+        "seatCount": 1870,
+        "dataPath": "/venue-db/venues/jcom-hall-hachioji-standard--current-fixed-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式座席図の固定番号席1,870席を抽選します。公式固定席1,869席との差1席は2階に残ります。親子席8席、立見席144席、車椅子・オーケストラピット・音響反射板・可倒席の運用差は反映しません。",
         "fixedOnly": false
       }
     ]
@@ -587,6 +637,32 @@
     "representativePatternName": "通常固定席配置",
     "seatCount": 622,
     "dataPath": "/venue-db/venues/mitaka-arts-wind-hall-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "mon-takanawa-box1000-standard",
+    "venueGroupId": "mon-takanawa-box1000-standard",
+    "name": "MoN Takanawa: BOX 1000",
+    "searchAliases": [
+      "BOX1000",
+      "MoN Takanawa BOX1000",
+      "MoN Takanawa: BOX1000"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "official-seated-layout",
+        "canonicalName": "公式着席配置1,048席",
+        "seatCount": 1048,
+        "dataPath": "/venue-db/venues/mon-takanawa-box1000-standard--official-seated-layout.json",
+        "scope": "representative-event",
+        "scopeDisclosure": "現行公式客席図の着席配置1,048席を抽選します。スタンディング配置と公演ごとの販売停止は反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "musashino-civic-small-standard",
@@ -1107,6 +1183,30 @@
     "dataPath": "/venue-db/venues/theater-g-rosso-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "theater-h-standard",
+    "venueGroupId": "theater-h-standard",
+    "name": "シアターH",
+    "searchAliases": [
+      "Theater H"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "品川区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-numbered-seat-map",
+        "canonicalName": "現行公式座席図の通常番号席704席",
+        "seatCount": 704,
+        "dataPath": "/venue-db/venues/theater-h-standard--current-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式座席図に印字された通常番号席704席を抽選します。施設概要の最大747席との差43席に相当する車椅子・補助席運用と公演ごとの販売停止は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "theater-milano-za-standard",
     "name": "THEATER MILANO-Za",
     "searchAliases": [],
@@ -1183,6 +1283,31 @@
         "scope": "fixed-only",
         "scopeDisclosure": "現行公式北側・南側図に印字された固定スタンド番号席を代表配置として抽選します。番号のない車いす席・同伴者席、アリーナ床・仮設席は含みません。",
         "fixedOnly": true
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-international-forum-hall-c-standard",
+    "venueGroupId": "tokyo-international-forum-hall-c-standard",
+    "name": "東京国際フォーラム ホールC",
+    "searchAliases": [
+      "Tokyo International Forum Hall C",
+      "東京国際フォーラムC"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-official-numbered-seat-map",
+        "canonicalName": "現行公式座席図の番号席1,504席",
+        "seatCount": 1504,
+        "dataPath": "/venue-db/venues/tokyo-international-forum-hall-c-standard--current-official-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式番号図から転記した1,504席を抽選します。公式公表1,502席との差2席（1階+6、2階-4、3階一致）、1階17列6〜8番の車椅子転用、オーケストラピット時の変更はmetadataに保持し、図面の番号席を改変していません。",
+        "fixedOnly": false
       }
     ]
   },

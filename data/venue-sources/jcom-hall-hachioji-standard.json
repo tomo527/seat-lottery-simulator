@@ -1,83 +1,90 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "jcom-hall-hachioji-standard",
   "name": "J:COMホール八王子",
   "prefecture": "東京都",
   "city": "八王子市",
-  "aliases": [
-    "オリンパスホール八王子",
-    "八王子市民会館"
-  ],
+  "aliases": ["Jホール八王子", "オリンパスホール八王子", "八王子市民会館"],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常利用時固定席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式座席案内の通常利用時固定席1869席を候補とし、親子席と立見席を含めない。",
-    "notIncludedPatterns": [
-      "音響反射板設置・オーケストラピット使用時",
-      "親子席8席",
-      "立見席144席"
-    ]
-  },
   "sources": [
+    {"id":"official-seat-map-1","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"八王子市民会館共同事業体","title":"J:COMホール八王子 座席表1","url":"https://jcom.hall-info.jp/file/seat120210401.pdf","checkedAt":"2026-08-20"},
+    {"id":"official-seat-map-2","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"八王子市民会館共同事業体","title":"J:COMホール八王子 座席表2","url":"https://jcom.hall-info.jp/file/seat220210401.pdf","checkedAt":"2026-08-20"},
+    {"id":"official-seat-guide","official":true,"roles":["seat-count","facility","event-layout"],"publisher":"八王子市民会館共同事業体","title":"座席のご案内","url":"https://jcom.hall-info.jp/event/seat.html","checkedAt":"2026-08-20"},
+    {"id":"official-facility-guide","official":true,"roles":["seat-count","facility"],"publisher":"八王子市民会館共同事業体","title":"ホールのご案内","url":"https://jcom.hall-info.jp/about/big_hall.html","checkedAt":"2026-08-20"}
+  ],
+  "configurations": [
     {
-      "id": "official-seat-map-1",
-      "official": true,
-      "roles": [
-        "seat-structure",
-        "seat-count"
-      ],
-      "publisher": "八王子市民会館共同事業体",
-      "title": "J:COMホール八王子 座席表1",
-      "url": "https://jcom.hall-info.jp/file/seat120210401.pdf",
-      "checkedAt": "2026-08-13"
-    },
-    {
-      "id": "official-seat-map-2",
-      "official": true,
-      "roles": [
-        "seat-structure",
-        "seat-count",
-        "event-layout"
-      ],
-      "publisher": "八王子市民会館共同事業体",
-      "title": "J:COMホール八王子 座席表2",
-      "url": "https://jcom.hall-info.jp/file/seat220210401.pdf",
-      "checkedAt": "2026-08-13"
-    },
-    {
-      "id": "official-facility-guide",
-      "official": true,
-      "roles": [
-        "seat-count",
-        "facility"
-      ],
-      "publisher": "八王子市民会館共同事業体",
-      "title": "ホールのご案内",
-      "url": "https://jcom.hall-info.jp/about/big_hall.html",
-      "checkedAt": "2026-08-13"
+      "id": "current-fixed-numbered-seat-map",
+      "canonicalName": "現行公式座席図の固定番号席1,870席",
+      "selectionBasis": "現行公式座席表に印字された1階1,132席、2階427席、3階311席の固定番号席を直接転記した代表配置。親子席8席と立見席144席を含めず、公式固定席内訳の2階426席との差1席はmetadataに保持して番号を削除しない。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "2026-08-20 current official seat map PDFs",
+      "sourceIds": ["official-seat-map-1", "official-seat-map-2", "official-seat-guide"],
+      "differenceBasisSourceIds": ["official-seat-map-1", "official-seat-map-2", "official-seat-guide", "official-facility-guide"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1869,
+      "scope": {"kind":"full-venue","issuerDefined":false,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式座席図の固定番号席1,870席を抽選します。公式固定席1,869席との差1席は2階に残ります。親子席8席、立見席144席、車椅子・オーケストラピット・音響反射板・可倒席の運用差は反映しません。",
+      "wheelchairSemantics": {"status":"not-reflected","description":"車椅子利用時の固定番号席との恒久的な置換対応は公表されていないため、通常図に印字された固定番号席集合を保持する。","sourceIds":["official-seat-map-1","official-seat-map-2","official-seat-guide"],"accessibilityConversionNotReflected":true},
+      "confidence": "approximate",
+      "verification": {"status":"reviewed","checkedAt":"2026-08-20","method":"current-official-seat-map-pdfs-direct-visual-transcription","seatStructure":"matched","seatCount":"mismatched","rangeDiff":1,"unresolvedIssues":["図面転記は2階427席で公式内訳426席より1席多い。1階1,132席と3階311席は一致する。","1階の黄色表示の可倒席、青色表示のピット関連席、車椅子転換の公演別扱いは固定代表集合へ反映しない。","音響反射板設置・オーケストラピット使用時は客席数が異なる。"]},
+      "ranges": [
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"1","from":8,"to":38,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"2","from":6,"to":40,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"3","from":6,"to":40,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"4","from":6,"to":40,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"5","from":5,"to":41,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"6","from":5,"to":41,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"7","from":4,"to":42,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"8","from":4,"to":42,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"9","from":4,"to":42,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"10","from":4,"to":42,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"11","from":4,"to":42,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"12","from":4,"to":42,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"13","from":4,"to":42,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"14","from":4,"to":42,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"15","from":3,"to":43,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"16","from":3,"to":43,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"17","from":3,"to":43,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"18","from":3,"to":43,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"19","from":3,"to":43,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"20","from":2,"to":44,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"21","from":1,"to":45,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"22","from":1,"to":45,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"23","from":1,"to":45,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"24","from":1,"to":45,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"25","from":1,"to":45,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"26","from":1,"to":45,"excluded":[32]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"27","from":1,"to":45,"excluded":[]},
+        {"areaId":"first-floor-main","areaLabel":"1階中央席","rowLabel":"28","from":1,"to":45,"excluded":[10,11,12,13,32]},
+        {"areaId":"first-floor-left-side","areaLabel":"1階左側面席","rowLabel":"L1","from":1,"to":10,"excluded":[]},
+        {"areaId":"first-floor-right-side","areaLabel":"1階右側面席","rowLabel":"R1","from":1,"to":10,"excluded":[]},
+        {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"1","from":6,"to":42,"excluded":[31]},
+        {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"2","from":5,"to":43,"excluded":[]},
+        {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"3","from":4,"to":44,"excluded":[31]},
+        {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"4","from":3,"to":45,"excluded":[]},
+        {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"5","from":2,"to":46,"excluded":[31]},
+        {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"6","from":2,"to":47,"excluded":[]},
+        {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"7","from":1,"to":47,"excluded":[31]},
+        {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"8","from":1,"to":47,"excluded":[]},
+        {"areaId":"second-floor-left-l1","areaLabel":"2階左側面L1席","rowLabel":"L1","from":1,"to":24,"excluded":[]},
+        {"areaId":"second-floor-left-l2","areaLabel":"2階左側面L2席","rowLabel":"L2","from":7,"to":25,"excluded":[]},
+        {"areaId":"second-floor-right-r1","areaLabel":"2階右側面R1席","rowLabel":"R1","from":1,"to":24,"excluded":[]},
+        {"areaId":"second-floor-right-r2","areaLabel":"2階右側面R2席","rowLabel":"R2","from":7,"to":25,"excluded":[]},
+        {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"1","from":4,"to":45,"excluded":[]},
+        {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"2","from":3,"to":46,"excluded":[32]},
+        {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"3","from":2,"to":47,"excluded":[]},
+        {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"4","from":1,"to":48,"excluded":[32]},
+        {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"5","from":1,"to":48,"excluded":[]},
+        {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"6","from":3,"to":46,"excluded":[32]},
+        {"areaId":"third-floor-left-side","areaLabel":"3階左側面席","rowLabel":"L1","from":1,"to":21,"excluded":[]},
+        {"areaId":"third-floor-right-side","areaLabel":"3階右側面席","rowLabel":"R1","from":1,"to":21,"excluded":[]}
+      ]
     }
-  ],
-  "registeredScope": "通常利用時の番号付き固定席1869席を予定。",
-  "completenessBasis": "公式座席表は確認済み。階別固定席、側面席、親子席、立見席、車椅子席の最終切り分けを転記中。",
-  "transformation": "階・中央客席・左右側面席をareaとし、番号付き固定席だけを明示rangeへ転記する予定。",
-  "knownLimitations": [
-    "音響反射板・オーケストラピット使用時は客席数が異なる。",
-    "黄色表示の音響・照明等専用可倒席の通常配置での扱いを独立確認する必要がある。"
-  ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "側面列、車椅子転換席、可倒席を含む固定席1,869席の全range独立照合が未完了。",
-      "通常配置PDFだけから階・側面列を再抽出し、音響反射板配置と混在していないことを確認する。"
-    ]
-  },
-  "ranges": []
+  ]
 }

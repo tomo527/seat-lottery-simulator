@@ -363,15 +363,14 @@
       "city": "千代田区",
       "capacity": 1502,
       "category": "hall",
-      "officialFacilityUrl": "https://www.t-i-forum.co.jp/visitors/facilities/c/seat/",
+      "officialFacilityUrl": "https://www.t-i-forum.co.jp/organizer/facilities/c/seat/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "B_SOURCE_LIMITED。現行公式は番号席1,806、無番号車いす8、恒久pitを示すが、視覚的な側方番号位置をlosslessなarea/rowへ結ぶissuer-owned keyがない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式1階・2階・3階番号図を直接転記した1,504席をproduction化。公表1,502席との階別差、車椅子転用、オーケストラピット差はmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "tokyo-international-forum-hall-c-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27",
-      "blockingReason": "1階17列6～8番が非常設で、最大1,502席との包含関係が未解決。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20"
     },
     {
       "inventoryId": "tokyo-official-0019",
@@ -6340,13 +6339,12 @@
       "officialFacilityUrl": "https://imm.theater/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "現行運営者資料が705席（一般703席、車椅子2席）と現役運営を示すが、公式座席表は公演ごとに配置が異なるためproductionは保留。",
+      "eligibilityReason": "現行公式基本座席図の一般番号席703席をproduction化。別枠の車椅子2席と公演差はmetadataで保持する。",
       "priority": "B",
       "venueSourceId": "imm-theater-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-11",
-      "discoveryUrlRaw": "https://imm.theater/",
-      "blockingReason": "SOURCE/SCHEMA HOLD: 公式座席表が公演別配置と車椅子詳細の問い合わせを明記し、一意の代表番号席setを定義しない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20",
+      "discoveryUrlRaw": "https://imm.theater/"
     },
     {
       "inventoryId": "tokyo-official-0321",
@@ -19337,13 +19335,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://jcom.hall-info.jp/about/big_hall.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式座席図の固定番号席1,870席をproduction化。公表固定席1,869席との差1席、車椅子・pit・可倒席差はmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "jcom-hall-hachioji-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: current official plans publish 1,869 fixed seats and seat IDs, but wheelchair-on/off floor totals plus pit/removable-seat exclusions are not mapped to complete numbered replacement and companion semantics."
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20"
     },
     {
       "inventoryId": "tokyo-official-0988",
@@ -23722,13 +23719,12 @@
       "officialFacilityUrl": "https://theater-h.jp/overview/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "運営会社が2024年開業後の演劇・ミュージカル・2.5次元舞台・ストレートプレイ・音楽ライブ利用と747名の施設定員を公開。車椅子6席または補助席の番号対応未解決のため正式HOLD。",
+      "eligibilityReason": "現行公式座席図に印字された通常番号席704席をproduction化。最大747席との差と車椅子・補助席運用はmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "theater-h-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-11",
-      "discoveryUrlRaw": "https://theater-h.jp/overview/",
-      "blockingReason": "SOURCE/POLICY HOLD: 1階581席に車椅子6席または補助席を加える現行定員表示と番号図はあるが、補助席設定時の具体的な置換・除外番号がissuer-owned資料にない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20",
+      "discoveryUrlRaw": "https://theater-h.jp/overview/"
     },
     {
       "inventoryId": "tokyo-coverage-pia-theater-yaesu",
@@ -23866,14 +23862,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://montakanawa.jp/facilities/box1000/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "B_SOURCE_LIMITED。現行公式着席例はA/B/C/E area合計1,048席を完全番号・厳密総数・2パス一致で定義するが、車いす位置・包含・番号席置換・同伴席が未公表。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式着席例のA/B/C/E area合計1,048席を代表配置としてproduction化。車椅子・公演差はmetadataで保持する。",
       "priority": "B",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "discoveryUrlRaw": "https://montakanawa.jp/facilities/box1000/",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: the 1,048-seat official example is complete, but public issuer material does not define wheelchair placement, whether it is included in 1,048, which numbered seats are removed/replaced, or companion-seat mapping."
+      "venueSourceId": "mon-takanawa-box1000-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20",
+      "discoveryUrlRaw": "https://montakanawa.jp/facilities/box1000/"
     }
   ]
 }

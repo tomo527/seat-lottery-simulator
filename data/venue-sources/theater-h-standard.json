@@ -1,66 +1,66 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "theater-h-standard",
-  "name": "シアターH 通常番号席配置（車椅子・補助席関係未解決）",
+  "name": "シアターH",
   "prefecture": "東京都",
   "city": "品川区",
-  "aliases": ["Theater H", "シアターH"],
+  "aliases": ["Theater H"],
   "venueType": "theater",
-  "representativePattern": {
-    "id": "standard-numbered-seat-set",
-    "name": "通常配置の番号付き座席候補",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "運営会社の現行施設概要は1階581席に車椅子席6席または補助席を加えた最大589席、2階158席を示し、現行座席図は番号席と車椅子アイコンを併記する。通常番号席の集合は候補化できるが、車椅子6席と補助席への切替が同一の番号席集合にどう対応するかを公式資料が定義していないため、代表selectable setを確定しない。",
-    "notIncludedPatterns": ["車椅子スペース利用時", "補助席設定時", "公演ごとの座席設定"]
-  },
   "sources": [
+    {"id":"official-overview","official":true,"roles":["facility","seat-count"],"publisher":"株式会社シアターH","title":"劇場「シアターH」施設概要","url":"https://theater-h.jp/overview/","checkedAt":"2026-08-20"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"株式会社シアターH","title":"シアターH 座席表","url":"https://theater-h.jp/seating-chart/","checkedAt":"2026-08-20"},
+    {"id":"official-faq","official":true,"roles":["event-layout","facility"],"publisher":"株式会社シアターH","title":"シアターH よくある質問（車椅子での観覧）","url":"https://theater-h.jp/faq/","checkedAt":"2026-08-20"}
+  ],
+  "configurations": [
     {
-      "id": "official-overview",
-      "official": true,
-      "roles": ["facility", "seat-count"],
-      "publisher": "株式会社シアターH",
-      "title": "劇場「シアターH」施設概要",
-      "url": "https://theater-h.jp/overview/",
-      "checkedAt": "2026-08-11"
-    },
-    {
-      "id": "official-seat-map",
-      "official": true,
-      "roles": ["seat-structure", "seat-count"],
-      "publisher": "株式会社シアターH",
-      "title": "シアターH 座席表",
-      "url": "https://theater-h.jp/seating-chart/",
-      "checkedAt": "2026-08-11"
-    },
-    {
-      "id": "official-faq",
-      "official": true,
-      "roles": ["event-layout", "facility"],
-      "publisher": "株式会社シアターH",
-      "title": "シアターH よくある質問（車椅子での観覧）",
-      "url": "https://theater-h.jp/faq/",
-      "checkedAt": "2026-08-11"
+      "id": "current-numbered-seat-map",
+      "canonicalName": "現行公式座席図の通常番号席704席",
+      "selectionBasis": "現行公式座席図に印字された1階546席と2階158席の通常番号席を直接転記し、代表配置として採用する。施設概要の1階最大589席は通常581席に車椅子6席または補助席を加える運用を含むため、未公表の置換番号を推定しない。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "2026-08-20 current official web seat maps",
+      "sourceIds": ["official-seat-map", "official-overview"],
+      "differenceBasisSourceIds": ["official-seat-map", "official-overview", "official-faq"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 747,
+      "scope": {"kind":"full-venue","issuerDefined":false,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式座席図に印字された通常番号席704席を抽選します。施設概要の最大747席との差43席に相当する車椅子・補助席運用と公演ごとの販売停止は反映しません。",
+      "wheelchairSemantics": {"status":"not-reflected","description":"施設概要は1階581席に車椅子6席または補助席を加えて最大589席とするが、通常番号席との恒久的な置換対応を公表していないため、公式図の通常番号席集合を保持する。","sourceIds":["official-overview","official-seat-map","official-faq"],"accessibilityConversionNotReflected":true},
+      "confidence": "approximate",
+      "verification": {"status":"reviewed","checkedAt":"2026-08-20","method":"current-official-web-map-direct-visual-transcription","seatStructure":"matched","seatCount":"mismatched","rangeDiff":-43,"unresolvedIssues":["施設概要の1階581席と現行座席図の通常番号席546席の包含関係は未公表。","車椅子6席または補助席への切替と通常番号席の置換対応は未公表。"]},
+      "ranges": [
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"A","from":6,"to":25,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"B","from":5,"to":26,"excluded":[21]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"C","from":4,"to":27,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"D","from":2,"to":29,"excluded":[21]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"E","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"F","from":1,"to":30,"excluded":[21]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"G","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"H","from":1,"to":30,"excluded":[21]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"I","from":10,"to":21,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"J","from":7,"to":24,"excluded":[21]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"K","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"L","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"M","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"N","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"O","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"P","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"Q","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"R","from":1,"to":30,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"S","from":1,"to":29,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"T","from":1,"to":28,"excluded":[8,9]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"U","from":10,"to":21,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"A","from":9,"to":23,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"B","from":4,"to":28,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"C","from":4,"to":28,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"D","from":1,"to":31,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"E","from":1,"to":31,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"F","from":1,"to":31,"excluded":[]}
+      ]
     }
-  ],
-  "registeredScope": "SOURCE/POLICY HOLD。現行公式座席図の番号席候補は確認したが、車椅子6席と補助席への切替時に除外・置換される番号を公式資料が示さないため、rangeは登録しない。",
-  "completenessBasis": "第1パスで現行運営者の施設概要、座席図、FAQを確認し、開業後も演劇・ミュージカル・2.5次元舞台・音楽ライブを継続開催しているcurrentnessを確認した。独立第2パスでは座席図の番号席・車椅子アイコンと施設概要の581席／6席または補助席の関係を再確認したが、補助席の番号対応は見つからなかった。",
-  "transformation": "代表配置の事前ゲートで停止。座席図の形状や公称最大席数への算術合わせから、車椅子・補助席の置換番号や除外番号を生成しない。",
-  "knownLimitations": [
-    "SOURCE HOLD: 1階の車椅子6席または補助席が通常581席の番号席集合へどう対応するか未定義。",
-    "POLICY/SCHEMA HOLD: 公演ごとに異なる車椅子・補助席設定を、固定された通常代表patternへlosslessに表現できない。"
-  ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": "2026-08-11",
-    "method": "official-source-first-pass-independent-second-pass-hold",
-    "seatStructure": "pending",
-    "seatCount": "mismatched",
-    "unresolvedIssues": [
-      "車椅子6席または補助席への切替時に、通常番号席のどの列・番号が除外または置換されるか公式資料が定義していない。",
-      "車椅子・補助席の公演別設定を固定代表patternへ変換する方針が未確定。"
-    ]
-  },
-  "ranges": []
+  ]
 }

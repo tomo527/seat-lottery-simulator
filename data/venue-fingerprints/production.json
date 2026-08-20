@@ -881,6 +881,76 @@
           "sha256": "7311e08a2ade8af40d19844d6a50ae57ca8d8a4c52ba95692b95564d3b839873"
         }
       }
+    },
+    "theater-h-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-numbered-seat-map": {
+          "count": 704,
+          "samples": [
+            "first-floor/A/6",
+            "first-floor/N/24",
+            "second-floor/F/31"
+          ],
+          "sha256": "4d16323be7ba2e0893c1ac0517b1c9c1b643ccc3b408a5cb57cf4e718b9c7422"
+        }
+      }
+    },
+    "tokyo-international-forum-hall-c-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-numbered-seat-map": {
+          "count": 1504,
+          "samples": [
+            "first-floor/1/15",
+            "second-floor/1/52",
+            "third-floor/10/43"
+          ],
+          "sha256": "9984ae5b54fb71d3058890db35dc69657b9cb3b29d46c553d393d1828bca83df"
+        }
+      }
+    },
+    "imm-theater-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "official-basic-numbered-seat-map": {
+          "count": 703,
+          "samples": [
+            "main-floor/A/7",
+            "main-floor/L/1",
+            "main-floor/U/36"
+          ],
+          "sha256": "dd79a661370412186c482c58e0829e4332a8067392e170f6b8597f3dc0f32e65"
+        }
+      }
+    },
+    "mon-takanawa-box1000-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "official-seated-layout": {
+          "count": 1048,
+          "samples": [
+            "first-floor-a/A1/1",
+            "first-floor-b/B10/14",
+            "second-floor-e/E7/33"
+          ],
+          "sha256": "9014736b17908de200df341f8f14774bb451df185779e35d685770e3795310ea"
+        }
+      }
+    },
+    "jcom-hall-hachioji-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-fixed-numbered-seat-map": {
+          "count": 1870,
+          "samples": [
+            "first-floor-main/1/8",
+            "first-floor-main/24/43",
+            "third-floor-right-side/R1/21"
+          ],
+          "sha256": "06be9380bc6c0651c57a038389d49ca509ff4001d003a7a1c7e2f5fb4686394e"
+        }
+      }
     }
   }
 }
