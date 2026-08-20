@@ -4,7 +4,7 @@ import path from 'node:path'
 import { afterEach, describe, expect, it } from 'vitest'
 import { buildVenueDatabase, writeGeneratedDatabaseAtomically } from './atomic-build.mjs'
 import { batchReport } from './batch-report.mjs'
-import { validateBatches } from './batches.mjs'
+import { readBatches, validateBatches } from './batches.mjs'
 import { analyzeDatabaseSizes, evaluateSizeLimits } from './capacity.mjs'
 import { inventoryReport } from './inventory-report.mjs'
 import { findInventoryDuplicateCandidates, summarizeInventory, validateInventories } from './inventory.mjs'
@@ -241,6 +241,19 @@ describe('inventory validation and coverage', () => {
 })
 
 describe('batch reporting and review', () => {
+  it('reads numbered wave batches in natural chronological order', async () => {
+    const root = await mkdtemp(path.join(os.tmpdir(), 'venue-batches-'))
+    temporaryDirectories.push(root)
+    await Promise.all(['tokyo-wave-1.json', 'tokyo-wave-2.json', 'tokyo-wave-11.json'].map((file) =>
+      writeFile(path.join(root, file), '{}', 'utf8')))
+
+    expect((await readBatches(root)).map(({ file }) => file)).toEqual([
+      'tokyo-wave-1.json',
+      'tokyo-wave-2.json',
+      'tokyo-wave-11.json',
+    ])
+  })
+
   it('rejects duplicate batch IDs and unknown venue targets', () => {
     const items = validateInventories(inventory(), sources(), { today: TODAY }).items
     expect(validateBatches([...batch(), ...batch()], items).errors.join('\n')).toMatch(/duplicate batchId/)

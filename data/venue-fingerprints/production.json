@@ -951,6 +951,76 @@
           "sha256": "06be9380bc6c0651c57a038389d49ca509ff4001d003a7a1c7e2f5fb4686394e"
         }
       }
+    },
+    "tokyo-international-forum-hall-a-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-numbered-seat-map": {
+          "count": 5074,
+          "samples": [
+            "first-floor/1/22",
+            "first-floor/42/25",
+            "second-floor/26/95"
+          ],
+          "sha256": "cabeed56ccf5a63c656b4e522a3f8af29daaf307d2f31f455e1b7592a9e300cb"
+        }
+      }
+    },
+    "tokyu-theatre-orb-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-numbered-seat-map": {
+          "count": 1948,
+          "samples": [
+            "first-floor-main/1/6",
+            "first-floor-main/23/28",
+            "third-floor-right-box/RB/12"
+          ],
+          "sha256": "02bafe5c7e2ac5bd119952dc343ffa2e1b230cb3ed8dd2642d3e12da9b32ad12"
+        }
+      }
+    },
+    "nntt-opera-palace-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-numbered-seat-map": {
+          "count": 1810,
+          "samples": [
+            "first-floor-main/1/6",
+            "second-floor-main/1/42",
+            "fourth-floor-right/R8/5"
+          ],
+          "sha256": "1ce7e3b7e3ad5d3cbb812618f6d3f4af91ae33d4f2805eea48e3e68e604b71bb"
+        }
+      }
+    },
+    "tokyo-tatemono-brillia-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-installable-numbered-seat-map": {
+          "count": 1275,
+          "samples": [
+            "first-floor-main/A/7",
+            "first-floor-main/R/11",
+            "third-floor-right/R5/40"
+          ],
+          "sha256": "0d20747f473a0b62625a85b6ee61e942d2530080a670f80238a4593fef80f8fe"
+        }
+      }
+    },
+    "tokyo-wave3-0136": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-event-seat-map": {
+          "count": 1318,
+          "samples": [
+            "first-floor-main/A/11",
+            "first-floor-main/T/8",
+            "second-floor-main/K/39"
+          ],
+          "sha256": "f81a3a4e2e0b2e0d189334cbdf921a0c8127ff64cec2be36e03c7a1453e9cc0f"
+        }
+      }
     }
   }
 }

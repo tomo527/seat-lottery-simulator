@@ -1,58 +1,90 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-tatemono-brillia-hall-standard",
   "name": "東京建物 Brillia HALL",
   "prefecture": "東京都",
   "city": "豊島区",
-  "aliases": [
-    "豊島区立芸術文化劇場"
-  ],
+  "aliases": ["豊島区立芸術文化劇場", "Brillia HALL", "ブリリアホール"],
   "venueType": "theater",
-  "representativePattern": {
-    "id": "standard-seating",
-    "name": "通常客席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式座席案内の通常配置を候補とする。",
-    "notIncludedPatterns": [
-      "オーケストラピット使用時",
-      "車椅子利用時"
-    ]
-  },
   "sources": [
-    {
-      "id": "official-seat-map",
-      "official": true,
-      "roles": [
-        "seat-structure",
-        "seat-count",
-        "facility",
-        "event-layout"
-      ],
-      "publisher": "東京建物 Brillia HALL",
-      "title": "座席案内",
-      "url": "https://toshima-theatre.jp/about/seating/",
-      "checkedAt": "2026-07-26"
-    }
+    {"id":"official-seating-page","official":true,"roles":["seat-count","facility","event-layout"],"publisher":"東京建物 Brillia HALL","title":"座席案内","url":"https://toshima-theatre.jp/about/seating/","checkedAt":"2026-08-20"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"東京建物 Brillia HALL","title":"座席表","url":"https://toshima-theatre.jp/about/seating/pdf/zasekihyo.pdf","checkedAt":"2026-08-20"}
   ],
-  "registeredScope": "通常配置の番号付き座席を予定。",
-  "completenessBasis": "公式座席案内と総数1248席を確認済み。車椅子転換席の通常状態を独立照合する。",
-  "transformation": "公式座席表のarea・列・番号を明示rangeへ転記する予定。",
-  "knownLimitations": [
-    "公式総数1248席は車椅子15席を含む。",
-    "オーケストラピット使用時は1139席。"
-  ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "車椅子スペース15席と座席装着時番号席の集合が公称1,248席と一致するか未解決。",
-      "座席装着時の番号と階別小計を公式運用資料で確認する。"
+  "configurations": [{
+    "id": "current-installable-numbered-seat-map",
+    "canonicalName": "現行公式座席図の装着可能番号席1,275席",
+    "selectionBasis": "現行公式座席表に印字された1階779席、2階246席、3階250席を直接転記した代表配置。車椅子利用時に外す座席を含む装着時番号席であり、通常公表1,248席との差27席をmetadataに保持する。",
+    "definitionAuthority": "representative-evidence",
+    "sourceGeneration": "2026-08-20 current official numbered seat map",
+    "sourceIds": ["official-seat-map", "official-seating-page"],
+    "differenceBasisSourceIds": ["official-seat-map", "official-seating-page"],
+    "status": "production",
+    "selectable": true,
+    "numberedSeatSetComplete": true,
+    "capacityFitting": false,
+    "repositoryInventedDifferences": false,
+    "expectedSeatCount": 1248,
+    "scope": {"kind":"official-variant","issuerDefined":true,"containsEventDependentSeatIds":false},
+    "scopeDisclosure": "現行公式座席図に印字された座席装着時の番号席1,275席を抽選します。通常公表1,248席との差27席、車椅子利用時の取り外し、オーケストラピット使用時1,139席、公演ごとの販売停止は反映しません。",
+    "wheelchairSemantics": {"status":"not-reflected","description":"公式図は車椅子スペースに通常座席を設置できる位置も番号付きで示す。通常公表には1階12席・2階3席の車椅子席が含まれるため、装着時番号席との差を保持する。","sourceIds":["official-seat-map","official-seating-page"],"accessibilityConversionNotReflected":true},
+    "confidence": "approximate",
+    "verification": {"status":"reviewed","checkedAt":"2026-08-20","method":"current-official-numbered-map-direct-visual-transcription","seatStructure":"matched","seatCount":"mismatched","rangeDiff":27,"unresolvedIssues":["印字番号席は1階779、2階246、3階250の計1,275席で通常公表1,248席より27席多い。","車椅子利用時とピット使用時の取り外し番号集合は代表配置へ反映しない。"]},
+    "ranges": [
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"A","from":7,"to":34,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"B","from":6,"to":35,"excluded":[30]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"C","from":5,"to":36,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"D","from":4,"to":37,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"E","from":3,"to":38,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"F","from":3,"to":38,"excluded":[30]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"G","from":2,"to":39,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"H","from":1,"to":40,"excluded":[30]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"I","from":1,"to":40,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"J","from":1,"to":40,"excluded":[30]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"K","from":1,"to":40,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"L","from":1,"to":40,"excluded":[30]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"M","from":1,"to":40,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"N","from":1,"to":40,"excluded":[30]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"O","from":1,"to":40,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"P","from":1,"to":40,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"Q","from":1,"to":40,"excluded":[30]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"R","from":1,"to":40,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"S","from":2,"to":39,"excluded":[30]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"T","from":2,"to":39,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"U","from":2,"to":39,"excluded":[30]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"A","from":2,"to":39,"excluded":[]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"B","from":1,"to":39,"excluded":[]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"C","from":2,"to":40,"excluded":[]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"D","from":2,"to":39,"excluded":[]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"E","from":2,"to":39,"excluded":[]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"F","from":3,"to":37,"excluded":[33]},
+      {"areaId":"second-floor-left","areaLabel":"2階左側席","rowLabel":"L1","from":1,"to":2,"excluded":[]},
+      {"areaId":"second-floor-left","areaLabel":"2階左側席","rowLabel":"L2","from":1,"to":2,"excluded":[]},
+      {"areaId":"second-floor-left","areaLabel":"2階左側席","rowLabel":"L3","from":1,"to":2,"excluded":[]},
+      {"areaId":"second-floor-left","areaLabel":"2階左側席","rowLabel":"L4","from":1,"to":2,"excluded":[]},
+      {"areaId":"second-floor-left","areaLabel":"2階左側席","rowLabel":"L5","from":1,"to":2,"excluded":[]},
+      {"areaId":"second-floor-right","areaLabel":"2階右側席","rowLabel":"R1","from":39,"to":40,"excluded":[]},
+      {"areaId":"second-floor-right","areaLabel":"2階右側席","rowLabel":"R2","from":39,"to":40,"excluded":[]},
+      {"areaId":"second-floor-right","areaLabel":"2階右側席","rowLabel":"R3","from":39,"to":40,"excluded":[]},
+      {"areaId":"second-floor-right","areaLabel":"2階右側席","rowLabel":"R4","from":39,"to":40,"excluded":[]},
+      {"areaId":"second-floor-right","areaLabel":"2階右側席","rowLabel":"R5","from":39,"to":40,"excluded":[]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"A","from":3,"to":38,"excluded":[]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"B","from":2,"to":39,"excluded":[30]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"C","from":1,"to":40,"excluded":[]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"D","from":1,"to":40,"excluded":[30]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"E","from":2,"to":39,"excluded":[]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"F","from":4,"to":37,"excluded":[10,11,12,29,30,31]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"G","from":15,"to":26,"excluded":[]},
+      {"areaId":"third-floor-left","areaLabel":"3階左側席","rowLabel":"L1","from":1,"to":2,"excluded":[]},
+      {"areaId":"third-floor-left","areaLabel":"3階左側席","rowLabel":"L2","from":1,"to":2,"excluded":[]},
+      {"areaId":"third-floor-left","areaLabel":"3階左側席","rowLabel":"L3","from":1,"to":2,"excluded":[]},
+      {"areaId":"third-floor-left","areaLabel":"3階左側席","rowLabel":"L4","from":1,"to":2,"excluded":[]},
+      {"areaId":"third-floor-left","areaLabel":"3階左側席","rowLabel":"L5","from":1,"to":2,"excluded":[]},
+      {"areaId":"third-floor-right","areaLabel":"3階右側席","rowLabel":"R1","from":39,"to":40,"excluded":[]},
+      {"areaId":"third-floor-right","areaLabel":"3階右側席","rowLabel":"R2","from":39,"to":40,"excluded":[]},
+      {"areaId":"third-floor-right","areaLabel":"3階右側席","rowLabel":"R3","from":39,"to":40,"excluded":[]},
+      {"areaId":"third-floor-right","areaLabel":"3階右側席","rowLabel":"R4","from":39,"to":40,"excluded":[]},
+      {"areaId":"third-floor-right","areaLabel":"3階右側席","rowLabel":"R5","from":39,"to":40,"excluded":[]}
     ]
-  },
-  "ranges": []
+  }]
 }

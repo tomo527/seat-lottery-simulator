@@ -1,88 +1,88 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyu-theatre-orb-standard",
   "name": "東急シアターオーブ",
   "prefecture": "東京都",
   "city": "渋谷区",
-  "aliases": [],
+  "aliases": ["TOKYU THEATRE Orb", "シアターオーブ"],
   "venueType": "theater",
-  "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式座席表の3階分固定番号席を通常配置候補とするが、1階の車椅子対応エリアとして転換・一般販売される番号席が公式図で特定されないため確定しない。",
-    "notIncludedPatterns": [
-      "公演ごとの販売停止席",
-      "車椅子対応エリアへの公演別転換"
-    ]
-  },
   "sources": [
-    {
-      "id": "official-facility-page",
-      "official": true,
-      "roles": [
-        "facility"
-      ],
-      "publisher": "東急シアターオーブ",
-      "title": "東急シアターオーブ 公式施設案内",
-      "url": "https://theatre-orb.com/",
-      "checkedAt": "2026-08-02"
-    },
-    {
-      "id": "official-seating-page",
-      "official": true,
-      "roles": ["facility", "event-layout"],
-      "publisher": "東急シアターオーブ",
-      "title": "東急シアターオーブ 座席表のご案内・車椅子席案内",
-      "url": "https://theatre-orb.com/seating/",
-      "checkedAt": "2026-08-02"
-    },
-    {
-      "id": "official-seat-map",
-      "official": true,
-      "roles": ["seat-structure"],
-      "publisher": "東急シアターオーブ",
-      "title": "東急シアターオーブ 座席表",
-      "url": "https://theatre-orb.com/seating/seat.pdf",
-      "checkedAt": "2026-08-02"
-    },
-    {
-      "id": "official-capacity-record",
-      "official": true,
-      "roles": ["seat-count"],
-      "publisher": "東急シアターオーブ",
-      "title": "東急シアターオーブ収容定員1,972人を記載した公式イベント資料",
-      "url": "https://theatre-orb.com/lineup/23_nmc/topics/images/img_6761/NYMC2023_checklist.pdf",
-      "checkedAt": "2026-08-02"
-    },
-    {
-      "id": "official-wheelchair-policy",
-      "official": true,
-      "roles": ["event-layout"],
-      "publisher": "東急シアターオーブ",
-      "title": "Concert for LEVAY 車椅子対応エリアの一般席販売方針",
-      "url": "https://theatre-orb.com/lineup/26_levay/",
-      "checkedAt": "2026-08-02"
-    }
+    {"id":"official-seating-page","official":true,"roles":["facility","seat-structure","event-layout"],"publisher":"東急シアターオーブ","title":"座席表のご案内","url":"https://theatre-orb.com/seating/","checkedAt":"2026-08-20"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","event-layout"],"publisher":"東急シアターオーブ","title":"東急シアターオーブ 座席表","url":"https://theatre-orb.com/seating/seat.pdf","checkedAt":"2026-08-20"},
+    {"id":"official-capacity-record","official":true,"roles":["seat-count"],"publisher":"東急シアターオーブ","title":"東急シアターオーブ収容定員1,972人を記載した公式イベント資料","url":"https://theatre-orb.com/lineup/23_nmc/topics/images/img_6761/NYMC2023_checklist.pdf","checkedAt":"2026-08-20"},
+    {"id":"official-wheelchair-policy","official":true,"roles":["event-layout"],"publisher":"東急シアターオーブ","title":"車椅子席のご案内","url":"https://theatre-orb.com/faq/handicapped/2.html","checkedAt":"2026-08-20"}
   ],
-  "registeredScope": "通常配置の1階・2階・3階番号付き固定席を候補として調査中。公演別販売停止席と車椅子対応エリアへの転換時配置は含めない。",
-  "completenessBasis": "公式座席表PDFは3階分の番号セルを示し、公式資料は客席数1,972席と記載する。公式座席ページとFAQは1階席エリアに車椅子席があると案内し、公式公演ページは車椅子対応エリアが未予約の場合に一般席として発売される場合があると明記する。したがって通常番号席の一部が転換対象と判断できるが、公式座席表は対象番号を示さず、公演ページも場所は当日案内としている。番号セル総数と1,972席の関係、および通常時に番号席として含める転換位置を公式資料だけで一意に確定できない。",
-  "transformation": "階・左右ブロックをareaへ分け、公式図の番号セルだけをrange化する方針だが、車椅子対応エリアの通常番号席との置換位置が公式に特定されるまでrangeは作成しない。公演別販売停止から恒久欠番を推測しない。",
-  "knownLimitations": [
-    "車椅子対応エリアは公演により一般席として販売される場合があるが、対象番号が公式資料で非公開のためproductionへ昇格しない。",
-    "公演別の販売停止席は恒久欠番として扱わない。"
-  ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": "2026-08-02",
-    "method": "official-source-first-pass-layout-policy-review",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式資料は客席数1,972席、1階の車椅子席エリア、未予約時に対応エリアを一般席販売する場合があることを示すが、転換対象となる通常番号席を公開していない。公式座席表にも車椅子対応位置の表示がなく、1,972席と番号セル集合の置換関係を一意に確定できないためrangesを空のまま維持する。"
+  "configurations": [{
+    "id": "current-official-numbered-seat-map",
+    "canonicalName": "現行公式座席図の番号席1,948席",
+    "selectionBasis": "現行公式座席ページからリンクされた3階分の公式番号図に印字された1階1,203席、2階495席、3階250席を直接転記した代表配置。公式収容定員1,972人との差24席はmetadataに保持する。",
+    "definitionAuthority": "representative-evidence",
+    "sourceGeneration": "2026-08-20 current-linked official three-floor seat map",
+    "sourceIds": ["official-seat-map", "official-seating-page"],
+    "differenceBasisSourceIds": ["official-seat-map", "official-seating-page", "official-capacity-record", "official-wheelchair-policy"],
+    "status": "production",
+    "selectable": true,
+    "numberedSeatSetComplete": true,
+    "capacityFitting": false,
+    "repositoryInventedDifferences": false,
+    "expectedSeatCount": 1972,
+    "scope": {"kind":"full-venue","issuerDefined":false,"containsEventDependentSeatIds":false},
+    "scopeDisclosure": "現行公式座席図に印字された番号席1,948席を抽選します。公式収容定員1,972人との差24席、1階車椅子対応、公演ごとの販売停止・見切れ席は反映しません。",
+    "wheelchairSemantics": {"status":"not-reflected","description":"公式案内は全公演で1階に車椅子席を用意するとするが、通常番号席との置換番号を公表しないため、公式図の印字番号席集合を保持する。","sourceIds":["official-seating-page","official-wheelchair-policy"],"accessibilityConversionNotReflected":true},
+    "confidence": "approximate",
+    "verification": {"status":"reviewed","checkedAt":"2026-08-20","method":"current-linked-official-pdf-and-current-svg-direct-visual-transcription","seatStructure":"matched","seatCount":"mismatched","rangeDiff":-24,"unresolvedIssues":["印字番号席1,948席と公式収容定員1,972人との差24席は補正しない。","車椅子対応エリアの置換番号と公演別販売停止は反映しない。"]},
+    "ranges": [
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"1","from":6,"to":40,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"2","from":5,"to":41,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"3","from":4,"to":42,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"4","from":3,"to":43,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"5","from":2,"to":44,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"6","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"7","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"8","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"9","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"10","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"11","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"12","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"13","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"14","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"15","from":2,"to":44,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"16","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"17","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"18","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"19","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"20","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"21","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"22","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"23","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"24","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"25","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"26","from":1,"to":45,"excluded":[]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"27","from":1,"to":45,"excluded":[32]},
+      {"areaId":"first-floor-main","areaLabel":"1階番号席","rowLabel":"28","from":1,"to":45,"excluded":[11,12,13,14,15,30,31,32,33,34,35]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"1","from":2,"to":44,"excluded":[13]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"2","from":2,"to":44,"excluded":[]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"3","from":1,"to":45,"excluded":[32]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"4","from":1,"to":45,"excluded":[]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"5","from":1,"to":45,"excluded":[32]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"6","from":1,"to":45,"excluded":[32]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"7","from":1,"to":45,"excluded":[]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"8","from":1,"to":45,"excluded":[32]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"9","from":1,"to":45,"excluded":[]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"10","from":7,"to":39,"excluded":[32]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"11","from":8,"to":38,"excluded":[13,33]},
+      {"areaId":"second-floor-main","areaLabel":"2階中央席","rowLabel":"12","from":14,"to":31,"excluded":[]},
+      {"areaId":"second-floor-left-box","areaLabel":"2階左バルコニー席","rowLabel":"LB","from":1,"to":10,"excluded":[]},
+      {"areaId":"second-floor-right-box","areaLabel":"2階右バルコニー席","rowLabel":"RB","from":1,"to":10,"excluded":[]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"1","from":1,"to":45,"excluded":[12,13,34]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"2","from":1,"to":45,"excluded":[13,33]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"3","from":1,"to":45,"excluded":[32]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"4","from":3,"to":43,"excluded":[]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"5","from":1,"to":44,"excluded":[5,6,7,8,9,32,33,34,39]},
+      {"areaId":"third-floor-main","areaLabel":"3階中央席","rowLabel":"6","from":10,"to":37,"excluded":[14,15,23,24,25,26,33]},
+      {"areaId":"third-floor-left-box","areaLabel":"3階左バルコニー席","rowLabel":"LB","from":1,"to":12,"excluded":[]},
+      {"areaId":"third-floor-right-box","areaLabel":"3階右バルコニー席","rowLabel":"RB","from":1,"to":12,"excluded":[]}
     ]
-  },
-  "ranges": []
+  }]
 }

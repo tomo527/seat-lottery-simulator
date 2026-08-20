@@ -12,7 +12,7 @@ export const readBatches = async (batchDir = BATCH_DIR) => {
   const files = (await readdir(batchDir).catch((error) => {
     if (error.code === 'ENOENT') return []
     throw error
-  })).filter((file) => file.endsWith('.json')).sort()
+  })).filter((file) => file.endsWith('.json')).sort((left, right) => left.localeCompare(right, 'en', { numeric: true }))
   return Promise.all(files.map(async (file) => {
     try {
       return { file, data: JSON.parse(await readFile(path.join(batchDir, file), 'utf8')) }

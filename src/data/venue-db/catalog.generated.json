@@ -880,6 +880,31 @@
   },
   {
     "schemaVersion": 2,
+    "id": "nntt-opera-palace-standard",
+    "venueGroupId": "nntt-opera-palace-standard",
+    "name": "新国立劇場 オペラパレス",
+    "searchAliases": [
+      "オペラパレス",
+      "新国立劇場オペラ劇場"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-official-numbered-seat-map",
+        "canonicalName": "現行公式座席図の番号席1,810席",
+        "seatCount": 1810,
+        "dataPath": "/venue-db/venues/nntt-opera-palace-standard--current-official-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式座席図に印字された番号席1,810席を抽選します。公式公表番号席1,806席との差4席、最大8席の車椅子スペース、公演ごとの販売停止は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "nntt-playhouse-standard",
     "venueGroupId": "nntt-playhouse-standard",
     "name": "新国立劇場 中劇場",
@@ -1288,6 +1313,31 @@
   },
   {
     "schemaVersion": 2,
+    "id": "tokyo-international-forum-hall-a-standard",
+    "venueGroupId": "tokyo-international-forum-hall-a-standard",
+    "name": "東京国際フォーラム ホールA",
+    "searchAliases": [
+      "Forum Hall A",
+      "東京国際フォーラムA"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-official-numbered-seat-map",
+        "canonicalName": "現行公式座席図の番号席5,074席",
+        "seatCount": 5074,
+        "dataPath": "/venue-db/venues/tokyo-international-forum-hall-a-standard--current-official-numbered-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式番号図に印字された1階・2階の番号席5,074席を抽選します。公式最大5,012席との差62席、1階21列の非常設12席、車椅子転換、オーケストラピット使用時4,913席、公演ごとの販売停止は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "tokyo-international-forum-hall-c-standard",
     "venueGroupId": "tokyo-international-forum-hall-c-standard",
     "name": "東京国際フォーラム ホールC",
@@ -1336,6 +1386,32 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "tokyo-tatemono-brillia-hall-standard",
+    "venueGroupId": "tokyo-tatemono-brillia-hall-standard",
+    "name": "東京建物 Brillia HALL",
+    "searchAliases": [
+      "Brillia HALL",
+      "ブリリアホール",
+      "豊島区立芸術文化劇場"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "豊島区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-installable-numbered-seat-map",
+        "canonicalName": "現行公式座席図の装着可能番号席1,275席",
+        "seatCount": 1275,
+        "dataPath": "/venue-db/venues/tokyo-tatemono-brillia-hall-standard--current-installable-numbered-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席図に印字された座席装着時の番号席1,275席を抽選します。通常公表1,248席との差27席、車椅子利用時の取り外し、オーケストラピット使用時1,139席、公演ごとの販売停止は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "tokyo-wave3-0130",
     "name": "サントリーホール〔大ホール〕",
     "searchAliases": [
@@ -1348,6 +1424,56 @@
     "representativePatternName": "通常2,006番号席配置",
     "seatCount": 2006,
     "dataPath": "/venue-db/venues/tokyo-wave3-0130.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-0136",
+    "venueGroupId": "tokyo-wave3-0136",
+    "name": "TBS赤坂ACTシアター",
+    "searchAliases": [
+      "TBS ACTシアター",
+      "赤坂ACTシアター"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-official-event-seat-map",
+        "canonicalName": "現行公式公演座席図の番号席1,318席",
+        "seatCount": 1318,
+        "dataPath": "/venue-db/venues/tokyo-wave3-0136--current-official-event-seat-map.json",
+        "scope": "representative-event",
+        "scopeDisclosure": "現行公式座席ページの公演用番号席1,318席を抽選します。施設公表最大1,324席との差6席、別公演の舞台・販売・車椅子配置差は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyu-theatre-orb-standard",
+    "venueGroupId": "tokyu-theatre-orb-standard",
+    "name": "東急シアターオーブ",
+    "searchAliases": [
+      "TOKYU THEATRE Orb",
+      "シアターオーブ"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-official-numbered-seat-map",
+        "canonicalName": "現行公式座席図の番号席1,948席",
+        "seatCount": 1948,
+        "dataPath": "/venue-db/venues/tokyu-theatre-orb-standard--current-official-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式座席図に印字された番号席1,948席を抽選します。公式収容定員1,972人との差24席、1階車椅子対応、公演ごとの販売停止・見切れ席は反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "toppan-hall-standard",

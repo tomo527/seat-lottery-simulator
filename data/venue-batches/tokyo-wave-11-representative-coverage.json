@@ -1,0 +1,51 @@
+{
+  "batchId": "tokyo-wave-11-representative-coverage",
+  "createdAt": "2026-08-20",
+  "scope": "TOKYO-WAVE-11 bounded batch for exactly Tokyo International Forum Hall A, Tokyu Theatre Orb, New National Theatre Tokyo Opera Palace, Tokyo Tatemono Brillia Hall, and TBS Akasaka ACT Theater. Reconfirm current/current-linked official numbered maps, directly transcribe printed seat IDs under representative-coverage-v2, preserve total/accessibility/pit/movable/performance differences as metadata, and prohibit capacity fitting or invented seat IDs.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [
+    "tokyo-international-forum-hall-a-standard",
+    "tokyu-theatre-orb-standard",
+    "nntt-opera-palace-standard",
+    "tokyo-tatemono-brillia-hall-standard",
+    "tokyo-wave3-0136"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-tokyo-international-forum-hall-a",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "Representative coverage v2 permits direct production of the complete current official printed numbered set while total, wheelchair, pit, and thrust-stage differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-official-0658",
+      "carryOverFrom": "tokyo-wave-2",
+      "previousStatus": "draft-created",
+      "recheckReason": "The complete current official three-floor printed set is an admissible representative configuration; wheelchair and performance differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-nntt-opera-palace",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "Direct visual transcription of the complete current official numbered map is admissible under representative coverage v2; the four-seat total difference and unnumbered wheelchair spaces remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-tokyo-tatemono-brillia-hall",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "draft-created",
+      "recheckReason": "The complete official installable numbered-seat map is admissible; wheelchair and pit differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-official-0136",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "draft-created",
+      "recheckReason": "The current official long-run event map defines a complete representative event configuration; facility-total and performance differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    }
+  ]
+}

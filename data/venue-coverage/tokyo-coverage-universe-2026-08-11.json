@@ -488,8 +488,8 @@
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
-    "production": 32,
-    "hold": 38,
+    "production": 37,
+    "hold": 33,
     "contradiction": 2,
     "unresearched": 4,
     "mustUnresearched": 0,
@@ -497,11 +497,11 @@
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
     "researchCompletenessPercent": 94.7,
-    "userVisibleProductionCoveragePercent": 42.1,
-    "mustProductionCoveragePercent": 40.9,
+    "userVisibleProductionCoveragePercent": 48.7,
+    "mustProductionCoveragePercent": 52.3,
     "shouldProductionCoveragePercent": 50.0,
-    "schemaAddressableCoveragePercent": 42.1,
-    "nextMacro": "TOKYO-WAVE-11 proposal — five remaining high-demand Tokyo venues, bounded after Wave 10 review"
+    "schemaAddressableCoveragePercent": 48.7,
+    "nextMacro": "TOKYO-WAVE-12 proposal only — select about five remaining high-demand Tokyo venues; do not begin without explicit scope selection"
   },
   "releaseGate": {
     "policyVersion": "representative-coverage-v2",
@@ -533,17 +533,17 @@
   "representativeCoverageReleaseReview": {
     "id": "TOKYO-REPRESENTATIVE-COVERAGE-RELEASE-REVIEW",
     "status": "complete",
-    "completedAt": "2026-08-14",
-    "outcome": "RELEASE READY AFTER TOKYO-WAVE-10",
+    "completedAt": "2026-08-20",
+    "outcome": "RELEASE READY AFTER TOKYO-WAVE-11",
     "blockerIds": [],
     "criteria": {
       "applicationHealth": "PASS: TOKYO-WAVE-5 completed the full venue/application regression after production generation.",
       "representativeMajorUseCoverage": "PASS: Galaxy Theatre adds a high-demand Tokyo theatre representative and Zepp Haneda adds a medium live-house representative.",
-      "practicalTokyoMajorVenueCoverage": "PASS: Wave 10 adds Theater H, Tokyo International Forum Hall C, IMM THEATER, MoN Takanawa BOX1000, and J:COM Hall Hachioji representative configurations without inventing seat IDs or fitting capacity.",
+      "practicalTokyoMajorVenueCoverage": "PASS: Wave 11 adds Tokyo International Forum Hall A, Tokyu Theatre Orb, New National Theatre Tokyo Opera Palace, Tokyo Tatemono Brillia HALL, and TBS Akasaka ACT Theater representative configurations without capacity fitting or invented seat IDs.",
       "representativeCoverageDisclosure": "PASS: global UI and terms disclosure remains present for representative configurations.",
-      "productionQuality": "PASS: all Wave 10 configurations record official sources, complete mapped ranges for their declared scope, total/accessibility/movable/event differences, and the no-fitting/no-invented-ID controls."
+      "productionQuality": "PASS: all Wave 11 configurations record official sources, complete mapped printed ranges for their declared scope, total/accessibility/pit/performance differences, and the no-fitting/no-invented-ID controls."
     },
-    "exactNextAction": "Propose a bounded TOKYO-WAVE-11 of about five remaining high-demand Tokyo venues, then begin only after explicit scope selection."
+    "exactNextAction": "Propose a bounded TOKYO-WAVE-12 of about five remaining high-demand Tokyo venues; do not begin until the scope is explicitly selected."
   },
   "historicalReleaseCoverageAdequacyReview": {
     "id": "TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
@@ -811,12 +811,12 @@
       "officialFacilityUrl": "https://www.t-i-forum.co.jp/",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-tokyo-international-forum-hall-a",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Terra",
-      "reason": "2026-08-12 TOKYO-CONFIG-A-CURRENT-1 taxonomy correction: B_SOURCE_LIMITED / POLICY HOLD. Current issuer evidence does not designate one normal selectable configuration or map pit/thrust-stage and wheelchair conversions to numbered removals; schema change alone cannot resolve it."
+      "reason": "TOKYO-WAVE-11: current official 1F/2F numbered maps were directly transcribed as a 5,074-seat representative configuration. The official 5,012 maximum, floor differences, nonstationary row-21 seats, wheelchair, pit, and thrust-stage differences remain metadata."
     },
     {
       "id": "tokyo-international-forum-c",
@@ -998,12 +998,12 @@
       "officialFacilityUrl": "https://theatre-orb.com/",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0658",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Terra",
-      "reason": "大型ミュージカルの主要劇場。"
+      "reason": "TOKYO-WAVE-11: the current official three-floor printed map was directly transcribed as 1,948 representative numbered seats; the 24-seat official-total difference and wheelchair/performance variants remain metadata."
     },
     {
       "id": "tbs-akasaka-act",
@@ -1015,12 +1015,12 @@
       "officialFacilityUrl": "https://www.tbs.co.jp/act/",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0136",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Terra",
-      "reason": "『ハリー・ポッターと呪いの子』等、舞台・ミュージカルの継続利用が公式に確認できる。"
+      "reason": "TOKYO-WAVE-11: the current official long-run event map was directly transcribed as a 1,318-seat representative event configuration; the six-seat facility-total difference and other performance/wheelchair variants remain metadata."
     },
     {
       "id": "nissay-theatre",
@@ -1066,12 +1066,12 @@
       "officialFacilityUrl": "https://www.nntt.jac.go.jp/guide/opera/",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-nntt-opera-palace",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Terra",
-      "reason": "2026-08-12 TOKYO-CONFIG-A-CURRENT-1 taxonomy correction: B_SOURCE_LIMITED / SOURCE HOLD. Current issuer evidence fixes the 1,806 numbered total, wheelchair scope and permanent pit but lacks a lossless issuer-owned area/row key; schema change alone cannot supply it."
+      "reason": "TOKYO-WAVE-11: the current official four-floor numbered map was directly transcribed as 1,810 printed seats; the four-seat official-total difference and up to eight unnumbered wheelchair spaces remain metadata."
     },
     {
       "id": "nntt-playhouse",
@@ -1219,12 +1219,12 @@
       "officialFacilityUrl": "https://www.toshima-mirai.or.jp/ikebukuro/",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-tokyo-tatemono-brillia-hall",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Terra",
-      "reason": "ミュージカル・2.5次元舞台の主要劇場。"
+      "reason": "TOKYO-WAVE-11: the current official installable numbered-seat map was directly transcribed as 1,275 seats; the 27-seat normal-total difference, wheelchair conversion, and pit variants remain metadata."
     },
     {
       "id": "theater-h",

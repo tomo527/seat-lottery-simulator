@@ -324,13 +324,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.t-i-forum.co.jp/visitors/facilities/a/seat/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "B_SOURCE_LIMITED。現行公式は最大5,012席とpit/thrust-stage・車いす変換を示すが、通常configurationと変換対象番号を定義せず、schema変更だけではlosslessに解決できない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式1階・2階番号図に印字された5,074席を代表配置としてproduction化。公式最大5,012席との階別差、非常設12席、車椅子・pit差はmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "tokyo-international-forum-hall-a-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-12",
-      "blockingReason": "B_SOURCE_LIMITED / POLICY HOLD: issuer-defined normal configuration、pit/thrust-stageの99席減の番号対応、車いす変換番号が未公表。新しいissuer-owned mappingが出るまで再開しない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20"
     },
     {
       "inventoryId": "tokyo-official-0017",
@@ -2740,16 +2739,15 @@
       "city": "港区",
       "capacity": 1324,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "officialFacilityUrl": "https://www.tbs.co.jp/act/seat/",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式公演座席図に印字された1,318席を代表公演配置としてproduction化。施設最大1,324席との差6席、車椅子・別公演差はmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0136",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
-      "discoveryUrlRaw": "http://www.tbs.co.jp/act/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20",
+      "discoveryUrlRaw": "http://www.tbs.co.jp/act/"
     },
     {
       "inventoryId": "tokyo-official-0137",
@@ -12934,13 +12932,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://theatre-orb.com/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式公称1,972席と座席図は確認したが、1階車椅子対応エリアで通常販売される置換対象番号が公式非公開で、完全な通常番号席集合を確定できない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式3階分番号図に印字された1,948席をproduction化。公式収容定員1,972席との差24席と車椅子・公演差はmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "tokyu-theatre-orb-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-08-02",
-      "blockingReason": "車椅子転換対象番号と通常販売時の番号席集合を示す公式資料が必要。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20"
     },
     {
       "inventoryId": "tokyo-official-0659",
@@ -14393,14 +14390,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://cms.nntt.jac.go.jp/guide/operapalace/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式4階層番号図に印字された1,810席をproduction化。公式番号席1,806席との差4席と最大8席の番号なし車椅子スペースはmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "nntt-opera-palace-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-12",
-      "discoveryUrlRaw": "http://www.nntt.jac.go.jp/",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: issuer-owned seat-number key又はtabular area/row inventoryが未公表。1,806席への算術補正やrepository area創作をしない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20",
+      "discoveryUrlRaw": "http://www.nntt.jac.go.jp/"
     },
     {
       "inventoryId": "tokyo-nntt-playhouse",
@@ -17042,13 +17038,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://toshima-theatre.jp/about/seating/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式座席図に印字された座席装着時1,275席をproduction化。通常公表1,248席との差27席、車椅子・pit差はmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "tokyo-tatemono-brillia-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-27",
-      "blockingReason": "車椅子スペース15席と座席装着時番号席の集合が公称1,248席と一致するか未解決。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20"
     },
     {
       "inventoryId": "tokyo-official-0870",

@@ -1,0 +1,44 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-11-representative-coverage",
+  "baselineDate": "2026-08-20",
+  "scope": "TOKYO-WAVE-11 representative-coverage-v2 completion readiness for exactly five selected Tokyo venues",
+  "expectedVenueCount": 5,
+  "venues": [
+    {
+      "venueId": "tokyo-international-forum-hall-a-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": null,
+      "nextAction": "Maintain the reviewed 5,074-seat printed representative set and its official-total, nonstationary, wheelchair, pit, and thrust-stage metadata."
+    },
+    {
+      "venueId": "tokyu-theatre-orb-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": null,
+      "nextAction": "Maintain the reviewed 1,948-seat printed representative set and its 24-seat total difference and wheelchair/performance metadata."
+    },
+    {
+      "venueId": "nntt-opera-palace-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": null,
+      "nextAction": "Maintain the reviewed 1,810-seat printed set, four-seat official-total difference, and unnumbered wheelchair-space metadata."
+    },
+    {
+      "venueId": "tokyo-tatemono-brillia-hall-standard",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": null,
+      "nextAction": "Maintain the reviewed 1,275-seat installable printed set and its wheelchair, pit, and 27-seat total-difference metadata."
+    },
+    {
+      "venueId": "tokyo-wave3-0136",
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": null,
+      "nextAction": "Maintain the reviewed 1,318-seat current official event set and its six-seat facility-total and performance-variant metadata."
+    }
+  ]
+}

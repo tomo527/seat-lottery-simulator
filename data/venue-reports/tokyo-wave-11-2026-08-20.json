@@ -1,0 +1,97 @@
+{
+  "reportId": "tokyo-wave-11-2026-08-20",
+  "asOf": "2026-08-20",
+  "model": "Sol high",
+  "policyVersion": "representative-coverage-v2",
+  "scope": [
+    "tokyo-international-forum-a",
+    "tokyu-theatre-orb",
+    "nntt-opera",
+    "brillia-hall",
+    "tbs-akasaka-act"
+  ],
+  "venues": [
+    {
+      "id": "tokyo-international-forum-a",
+      "sourceId": "tokyo-international-forum-hall-a-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "current-official-numbered-seat-map",
+      "expectedSeatCount": 5012,
+      "calculatedSeatCount": 5074,
+      "rangeDiff": 62,
+      "difference": 62,
+      "method": "direct visual transcription of the current official first- and second-floor numbered maps",
+      "scope": "printed numbered seats; nonstationary, wheelchair, pit, thrust-stage, and performance differences retained as metadata",
+      "confidence": "approximate"
+    },
+    {
+      "id": "tokyu-theatre-orb",
+      "sourceId": "tokyu-theatre-orb-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "current-official-numbered-seat-map",
+      "expectedSeatCount": 1972,
+      "calculatedSeatCount": 1948,
+      "rangeDiff": -24,
+      "difference": -24,
+      "method": "direct visual transcription of the current-linked official PDF and current floor SVG maps",
+      "scope": "printed three-floor numbered seats; wheelchair and performance differences retained as metadata",
+      "confidence": "approximate"
+    },
+    {
+      "id": "nntt-opera",
+      "sourceId": "nntt-opera-palace-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "current-official-numbered-seat-map",
+      "expectedSeatCount": 1806,
+      "calculatedSeatCount": 1810,
+      "rangeDiff": 4,
+      "difference": 4,
+      "method": "direct visual transcription of the current official four-floor numbered map",
+      "scope": "printed numbered seats; unnumbered wheelchair spaces and performance differences retained as metadata",
+      "confidence": "approximate"
+    },
+    {
+      "id": "brillia-hall",
+      "sourceId": "tokyo-tatemono-brillia-hall-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "current-installable-numbered-seat-map",
+      "expectedSeatCount": 1248,
+      "calculatedSeatCount": 1275,
+      "rangeDiff": 27,
+      "difference": 27,
+      "method": "direct visual transcription of the current official installable numbered-seat map",
+      "scope": "installable printed numbered seats; wheelchair, pit, and performance differences retained as metadata",
+      "confidence": "approximate"
+    },
+    {
+      "id": "tbs-akasaka-act",
+      "sourceId": "tokyo-wave3-0136",
+      "classification": "PRODUCTION",
+      "configurationId": "current-official-event-seat-map",
+      "expectedSeatCount": 1324,
+      "calculatedSeatCount": 1318,
+      "rangeDiff": -6,
+      "difference": -6,
+      "method": "direct visual transcription of the current official long-run event seat map",
+      "scope": "current official representative event layout; wheelchair and other performance variants retained as metadata",
+      "confidence": "representative"
+    }
+  ],
+  "result": {
+    "productionPromotions": 5,
+    "selectableConfigurationsAdded": 5,
+    "configurationSeatRecordsAdded": 11425,
+    "productionAfter": {
+      "venues": 93,
+      "selectableConfigurations": 95,
+      "configurationSeatRecords": 150258
+    },
+    "coverageAfter": {
+      "tokyoProduction": "37/76 (48.7%)",
+      "mustProduction": "23/44 (52.3%)",
+      "shouldProduction": "14/28 (50.0%)"
+    },
+    "releaseReady": true,
+    "exactNextAction": "Propose TOKYO-WAVE-12 from remaining high-demand Tokyo venues; do not begin without explicit scope selection."
+  }
+}
