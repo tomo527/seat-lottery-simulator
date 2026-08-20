@@ -1,0 +1,97 @@
+{
+  "reportId": "tokyo-wave-9-2026-08-20",
+  "asOf": "2026-08-20",
+  "model": "Sol high",
+  "policyVersion": "representative-coverage-v2",
+  "scope": [
+    "nhk-hall",
+    "kanadevia-hall",
+    "nihon-seinenkan",
+    "nissho-hall",
+    "national-noh-theatre"
+  ],
+  "venues": [
+    {
+      "id": "nhk-hall",
+      "sourceId": "nhk-hall-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "fixed-numbered-seats-only",
+      "expectedSeatCount": 3400,
+      "calculatedSeatCount": 3408,
+      "rangeDiff": 8,
+      "difference": 8,
+      "method": "direct visual transcription of the complete current-linked official numbered map, excluding the 201 officially movable seats",
+      "scope": "fixed numbered seats only",
+      "confidence": "approximate"
+    },
+    {
+      "id": "kanadevia-hall",
+      "sourceId": "kanadevia-hall-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "fixed-balconies-only",
+      "expectedSeatCount": 1365,
+      "calculatedSeatCount": 1365,
+      "rangeDiff": 0,
+      "difference": 0,
+      "method": "direct visual transcription of the three current official balcony maps",
+      "scope": "fixed balconies only; excludes event-dependent arena and standing",
+      "confidence": "representative"
+    },
+    {
+      "id": "nihon-seinenkan",
+      "sourceId": "nihon-seinenkan-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "fixed-numbered-seat-map",
+      "expectedSeatCount": 1245,
+      "calculatedSeatCount": 1249,
+      "rangeDiff": 4,
+      "difference": 4,
+      "method": "direct visual transcription of the current official complete numbered map",
+      "scope": "printed normal numbered seats; wheelchair conversion excluded",
+      "confidence": "approximate"
+    },
+    {
+      "id": "nissho-hall",
+      "sourceId": "nissho-hall-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "full-numbered-seat-map",
+      "expectedSeatCount": 999,
+      "calculatedSeatCount": 999,
+      "rangeDiff": 0,
+      "difference": 0,
+      "method": "direct visual transcription of the current official full map and independent official audio-plan cross-check",
+      "scope": "general numbered seats; movable-removal and wheelchair differences excluded",
+      "confidence": "representative"
+    },
+    {
+      "id": "national-noh-theatre",
+      "sourceId": "national-noh-theatre-standard",
+      "classification": "PRODUCTION",
+      "configurationId": "full-numbered-seat-map",
+      "expectedSeatCount": 627,
+      "calculatedSeatCount": 628,
+      "rangeDiff": 1,
+      "difference": 1,
+      "method": "direct visual transcription of the current official complete numbered map",
+      "scope": "printed normal numbered seats; wheelchair and six movable-seat conversion excluded",
+      "confidence": "approximate"
+    }
+  ],
+  "result": {
+    "productionPromotions": 5,
+    "selectableConfigurationsAdded": 5,
+    "configurationSeatRecordsAdded": 7649,
+    "productionAfter": {
+      "venues": 83,
+      "selectableConfigurations": 85,
+      "configurationSeatRecords": 133004
+    },
+    "coverageAfter": {
+      "tokyoProduction": "27/76 (35.5%)",
+      "mustProduction": "16/44 (36.4%)",
+      "shouldProduction": "11/28 (39.3%)"
+    },
+    "releaseReady": true,
+    "exactNextAction": "TOKYO-WAVE-10 proposal — theater-h, tokyo-international-forum-c, imm-theater, mon-takanawa-box1000, jcom-hall-hachioji"
+  }
+}

@@ -3357,13 +3357,12 @@
       "officialFacilityUrl": "https://nissho-hall.jp/hall.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "B_SOURCE_LIMITED。現行公式客席図と音響客席回路図はfull図の999番号席を独立一致させるが、1F8列3-4番・5-6番撤去variantのissuer condition・厳密expectedと車椅子同伴配置を公開しない。",
+      "eligibilityReason": "現行公式客席図と独立した公式音響客席回路図の一般番号席999件を代表配置としてproduction化。可動撤去差分と車いす1席はmetadataで保持する。",
       "priority": "B",
       "venueSourceId": "nissho-hall-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "discoveryUrlRaw": "https://nissho-hall.jp/hall.html",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE-POLICY HOLD: full図999/999/rangeDiff 0だが、3-4番・5-6番撤去のissuer-defined configuration条件・厳密expectedと車椅子同伴席が未公表。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20",
+      "discoveryUrlRaw": "https://nissho-hall.jp/hall.html"
     },
     {
       "inventoryId": "tokyo-official-0168",
@@ -5618,13 +5617,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://seinenkan-hall.com/hall",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行運営者資料は総数1,249、固定番号席1,245、車いす4別枠、1階811・2階434を示すが、分割番号blockのcanonical row/area ownershipが未定義。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式番号図の通常番号ID1,249件を直接転記してproduction化。公式固定席内訳1,245席との差4と車いす4席の転換はmetadataで保持する。",
       "priority": "D",
       "venueSourceId": "nihon-seinenkan-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-12",
-      "blockingReason": "SCHEMA HOLD: 図形位置によるblock-to-row/area補完を禁止するため、lossless canonical range mappingを確定できない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20"
     },
     {
       "inventoryId": "tokyo-official-0284",
@@ -13462,13 +13460,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.nhk-fdn.or.jp/nhk_hall/organizer.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "B_SOURCE_LIMITED。固定3,400席と2016公式番号図は確認したが、current独立番号generationと車椅子置換・同伴・包含semanticsがない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式サイトがリンクする公式番号図の固定番号ID3,408件を直接転記してproduction化。公式固定席総数3,400席との差8、可動201席、車いす転換はmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "nhk-hall-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-14",
-      "blockingReason": "SOURCE HOLD: a public official numbered map exists, but this bounded pass did not complete an independently verified full range transcription; total and wheelchair differences are not the blocker.",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20",
       "discoveryUrlRaw": "http://www.nhk-sc.or.jp/nhk_hall/index.html"
     },
     {
@@ -13502,13 +13499,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.ntj.jac.go.jp/nou/facilities/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式全番号図の通常番号ID628件を直接転記してproduction化。公式総数627席との差1、車いす・可動6席の転換はmetadataで保持する。",
       "priority": "B",
       "venueSourceId": "national-noh-theatre-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: 627席・番号構造は確認済みだが、車椅子・同伴・可動6席の完全番号対応と独立source generationが未公表。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20"
     },
     {
       "inventoryId": "tokyo-official-0688",
@@ -23768,13 +23764,12 @@
       "officialFacilityUrl": "https://www.tokyo-dome.co.jp/tdc-hall/organizer/facilities.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "B_SOURCE_LIMITED。現行運営者は3固定バルコニー1,365席を個別番号図で示すが、バルコニーだけを独立利用configurationとして定義せず、車いす・同伴と認証後Seat Planのsource generationも公開しない。",
+      "eligibilityReason": "現行公式3バルコニー番号図の固定席1,365件をfixed-only代表配置としてproduction化。イベント依存アリーナ、立見、車いす・同伴は対象外としてmetadataで保持する。",
       "priority": "A",
       "venueSourceId": "kanadevia-hall-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-12",
-      "discoveryUrlRaw": "https://www.tokyo-dome.co.jp/tdc-hall/organizer/facilities.html",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE/POLICY HOLD: exact subtotalと固定番号図だけではissuer-defined fixed-only configurationにならない。車いす・同伴の番号対応と認証後Seat Plan generationも未公開で、repository独自configurationを作成しない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-20",
+      "discoveryUrlRaw": "https://www.tokyo-dome.co.jp/tdc-hall/organizer/facilities.html"
     },
     {
       "inventoryId": "tokyo-coverage-sgc-hall-ariake",

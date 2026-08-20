@@ -1,0 +1,51 @@
+{
+  "batchId": "tokyo-wave-9-representative-coverage",
+  "createdAt": "2026-08-20",
+  "scope": "TOKYO-WAVE-9 bounded batch for exactly NHK Hall, Kanadevia Hall, Nihon Seinenkan Hall, Nissho Hall, and National Noh Theatre. Directly transcribe current/current-linked official numbered maps, preserve total/accessibility/movable/event differences as metadata, and prohibit capacity fitting or invented seat IDs.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [
+    "nhk-hall-standard",
+    "kanadevia-hall-standard",
+    "nihon-seinenkan-standard",
+    "nissho-hall-standard",
+    "national-noh-theatre-standard"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-nhk-hall",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "Representative coverage v2 permits the complete current-linked official fixed-numbered set with total/accessibility differences retained as metadata.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-coverage-kanadevia-hall",
+      "carryOverFrom": "tokyo-sol-cplx-1",
+      "previousStatus": "blocked",
+      "recheckReason": "Representative coverage v2 permits the complete fixed-balcony numbered subset when dynamic arena and maximum-capacity exclusions are disclosed.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-official-0283",
+      "carryOverFrom": "tokyo-terra-dense-4",
+      "previousStatus": "blocked",
+      "recheckReason": "Direct visual transcription resolves the complete printed ID set; total and wheelchair differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-official-0167",
+      "carryOverFrom": "tokyo-luna-std-2",
+      "previousStatus": "blocked",
+      "recheckReason": "The official full map is an admissible representative configuration under representative coverage v2; movable-removal and wheelchair differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    },
+    {
+      "inventoryId": "tokyo-national-noh-theatre",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "The complete official numbered map is admissible under representative coverage v2; wheelchair and movable-seat differences remain metadata.",
+      "recheckNotBefore": "2026-08-20"
+    }
+  ]
+}

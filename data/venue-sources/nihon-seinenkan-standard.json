@@ -1,29 +1,393 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "nihon-seinenkan-standard",
-  "name": "日本青年館ホール",
+  "name": "日本青年館ホール 固定番号席代表配置",
   "prefecture": "東京都",
   "city": "新宿区",
-  "aliases": ["日本青年館", "Nippon Seinenkan Hall"],
-  "venueType": "theater",
-  "representativePattern": {
-    "id": "operator-fixed-numbered-seat-set",
-    "name": "運営者掲載の固定番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "現行運営者ページと図面は総数1,249席、固定席1,245席、別枠車いす4席、1階固定811席・2階434席を明記する。しかし図面の分割された番号ブロックについて、行名とareaのcanonical ownershipをテキストで定義せず、図形位置による補完なしにはlossless range mappingを作れない。",
-    "notIncludedPatterns": ["別枠の車いす4席", "図面から推測するblock-to-row/area対応", "公演別の席種・販売制御"]
-  },
-  "sources": [
-    {"id":"official-current-hall-guide","official":true,"roles":["facility","seat-count","seat-structure"],"publisher":"日本青年館ホール","title":"ホールのご案内","url":"https://seinenkan-hall.com/hall","checkedAt":"2026-08-12"},
-    {"id":"official-seat-plan","official":true,"roles":["seat-structure","seat-count"],"publisher":"日本青年館ホール","title":"日本青年館ホール座席表","url":"https://seinenkan-hall.com/wp-content/themes/seinenkan/asset/pdf/%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf","checkedAt":"2026-08-12"},
-    {"id":"official-stage-plan","official":true,"roles":["seat-structure","seat-count","facility"],"publisher":"日本青年館ホール","title":"日本青年館ホール舞台図面（客席図併載）","url":"https://seinenkan-hall.com/wp-content/themes/seinenkan/asset/pdf/%E8%88%9E%E5%8F%B0.pdf","checkedAt":"2026-08-12"}
+  "aliases": [
+    "日本青年館",
+    "Nippon Seinenkan Hall"
   ],
-  "registeredScope": "SCHEMA HOLD。現行運営者資料は固定番号席1,245席と別枠車いす4席を一意に示すが、分割された番号ブロックのrow/area帰属を図形位置から補完せずに表現するcanonical schemaを公開していない。",
-  "completenessBasis": "第1パスは現行ホール案内と座席表で1階固定811席、2階434席、車いす4席別枠、1,245固定番号席を確認した。独立第2パスは運営者の現行約款がリンクする舞台図面で同じ階別数・番号図・車いす別枠を確認した。両者はcountと固定configurationで一致するが、row/areaのlossless canonical ownershipを文章又は表で定義しない。",
-  "transformation": "総数へのfitting、図形位置からのrow/area帰属推測、車いす4席の番号化、舞台前室をforestage/pit variantとして扱う補完を行わず、rangesは空のままとした。",
-  "knownLimitations": ["SCHEMA HOLD: 1,245の印字番号を固定番号席として確認できる一方、分割blockのcanonical row/area ownershipをissuerが明示しない。", "車いす4席は公式に別枠で番号席集合へ含めない。", "現行ページがリンクする座席表は2017-01-17作成、舞台図面は2019-04現在であり、現行ページでの個別revision/versionの明示がない。"],
-  "verification": {"status":"pending","checkedAt":"2026-08-12","method":"official-source-first-pass-independent-second-pass-hold","seatStructure":"matched","seatCount":"matched","unresolvedIssues":["fixed-seat count is resolved, but issuer-owned material does not define lossless canonical row/area ownership for split numbered blocks.","The linked PDFs have different printed generations without a current revision designation for the numbered mapping."]},
-  "ranges": []
+  "venueType": "theater",
+  "sources": [
+    {
+      "id": "official-current-hall-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "日本青年館ホール",
+      "title": "ホールのご案内",
+      "url": "https://seinenkan-hall.com/hall",
+      "checkedAt": "2026-08-20"
+    },
+    {
+      "id": "official-seat-plan",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "日本青年館ホール",
+      "title": "日本青年館ホール座席表",
+      "url": "https://seinenkan-hall.com/wp-content/themes/seinenkan/asset/pdf/%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf",
+      "checkedAt": "2026-08-20"
+    },
+    {
+      "id": "official-stage-plan",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "日本青年館ホール",
+      "title": "日本青年館ホール舞台図面",
+      "url": "https://seinenkan-hall.com/wp-content/themes/seinenkan/asset/pdf/%E8%88%9E%E5%8F%B0.pdf",
+      "checkedAt": "2026-08-20"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "fixed-numbered-seat-map",
+      "canonicalName": "公式固定番号席図の代表配置",
+      "selectionBasis": "現行公式座席表に印刷された通常番号席を直接転記する。公式固定席内訳1,245席に対し図面上の通常番号IDは1,249件であり、差4は車いす席4席との扱いが公開資料で一意でないため削らず保持する。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "2026-08-20 current official numbered seat map",
+      "sourceIds": [
+        "official-seat-plan",
+        "official-stage-plan"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-plan",
+        "official-current-hall-guide"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1245,
+      "scope": {
+        "kind": "full-venue",
+        "issuerDefined": false,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式番号図に印刷された通常番号席1,249件を抽選します。公式固定席内訳1,245席との差4、車いす4席と同伴席の転換、公演ごとの販売停止は反映しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式図は車いす席4席を別記する一方、通常番号席との置換対応を公表していないため、印刷された通常番号IDを保持する。",
+        "sourceIds": [
+          "official-seat-plan",
+          "official-current-hall-guide"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "approximate",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-20",
+        "method": "current-official-full-map-direct-visual-transcription-and-current-linked-stage-plan-cross-check",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": 4,
+        "unresolvedIssues": [
+          "公式固定席内訳1,245席に対し図面上の通常番号IDは1,249件。",
+          "車いす4席と通常番号席の変換対応は未公表。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "A",
+          "from": 16,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "B",
+          "from": 11,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "C",
+          "from": 10,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "D",
+          "from": 8,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "E",
+          "from": 7,
+          "to": 43,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "F",
+          "from": 5,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "G",
+          "from": 4,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "H",
+          "from": 3,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "I",
+          "from": 3,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "J",
+          "from": 2,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "M",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "N",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "O",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "P",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "Q",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "R",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "S",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "F",
+          "from": 2,
+          "to": 48,
+          "excluded": [
+            15,
+            34,
+            35
+          ]
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 49,
+          "excluded": [
+            34
+          ]
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "I",
+          "from": 1,
+          "to": 49,
+          "excluded": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36
+          ]
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 49,
+          "excluded": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37
+          ]
+        }
+      ]
+    }
+  ]
 }

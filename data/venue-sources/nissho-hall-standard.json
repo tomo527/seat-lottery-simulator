@@ -1,31 +1,397 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "nissho-hall-standard",
-  "name": "ニッショーホール 現行1,000席図（可変撤去注記あり）",
+  "name": "ニッショーホール 現行full番号席配置",
   "prefecture": "東京都",
   "city": "港区",
-  "aliases": ["NISSHO HALL", "日本消防会館 ニッショーホール"],
-  "venueType": "theater",
-  "representativePattern": {
-    "id": "standard-numbered-seat-set",
-    "name": "現行1,000席図の番号席候補",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "現行運営者は1,000席（一般番号席999＋車椅子1）とfull図を示し、公式音響客席回路図も999番号席で一致する。一方、1階8列3-4番・5-6番を2席ずつ外せる条件・用途・厳密variant総数と車椅子同伴運用を定義しないため、full図をrepository独自の標準configurationとして固定しない。",
-    "notIncludedPatterns": ["1階8列の常時除外・可変撤去variant", "車椅子席", "公演固有の販売停止席"]
-  },
-  "sources": [
-    { "id": "official-hall-page", "official": true, "roles": ["facility", "seat-count"], "publisher": "ニッショーホール・会議室", "title": "ニッショーホール", "url": "https://nissho-hall.jp/hall.html", "checkedAt": "2026-08-13" },
-    { "id": "official-seat-map", "official": true, "roles": ["seat-structure", "seat-count", "event-layout"], "publisher": "ニッショーホール・会議室", "title": "ニッショーホール客席図", "url": "https://nissho-hall.jp/pdf/hall-seat.pdf", "checkedAt": "2026-08-13" },
-    { "id": "official-audio-seat-plan", "official": true, "roles": ["seat-structure", "seat-count", "facility"], "publisher": "ニッショーホール・会議室", "title": "ニッショーホール音響客席回路図", "url": "https://nissho-hall.jp/pdf/hall-audio.pdf", "checkedAt": "2026-08-13" },
-    { "id": "official-facility-guide", "official": true, "roles": ["facility", "seat-count"], "publisher": "ニッショーホール・会議室", "title": "施設案内", "url": "https://nissho-hall.jp/shisetsu.html", "checkedAt": "2026-08-13" },
-    { "id": "official-use-rules", "official": true, "roles": ["facility", "seat-count", "event-layout"], "publisher": "ニッショーホール・会議室", "title": "ホール利用規約", "url": "https://nissho-hall.jp/pdf/hall-kiyaku.pdf", "checkedAt": "2026-08-13" }
+  "aliases": [
+    "NISSHO HALL",
+    "日本消防会館 ニッショーホール"
   ],
-  "registeredScope": "B_SOURCE_LIMITED / SOURCE-POLICY HOLD。full図の999番号席は確認したが、可変撤去variantと車椅子同伴運用をissuerが独立configurationとして完全定義しないためrangeは登録しない。",
-  "completenessBasis": "第1パスの現行客席図と独立第2パスの現行音響客席回路図は、1F一般671＋車椅子1、2F一般328、合計1,000と全999番号席でrangeDiff 0。両図は1F8列2番を車椅子スペースとして常時外し、客席図注記は3-4番・5-6番を2席ずつ外せるとするが、撤去条件・各variantの厳密expected・同伴席を定義しない。",
-  "transformation": "full図をrepository独自の標準configurationへ固定せず、3-4番・5-6番の撤去variantや同伴席を推測しない。",
-  "knownLimitations": ["B_SOURCE_LIMITED: 3-4番・5-6番の可変撤去についてissuer-defined condition・用途・厳密variant総数が未公表。", "B_SOURCE_LIMITED: 車椅子1席の位置と1,000席への包含は解決したが、同伴席の恒久配置が未公表。"],
-  "verification": { "status": "pending", "checkedAt": "2026-08-13", "method": "official-source-first-pass-independent-second-pass-hold", "seatStructure": "matched", "seatCount": "matched", "unresolvedIssues": ["可変撤去の各configurationをissuerが独立定義せず、full図を恒久defaultとして指定しない。", "車椅子同伴席の恒久配置が未公表。"] },
-  "ranges": []
+  "venueType": "theater",
+  "sources": [
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "ニッショーホール・会議室",
+      "title": "ニッショーホール",
+      "url": "https://nissho-hall.jp/hall.html",
+      "checkedAt": "2026-08-20"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "ニッショーホール・会議室",
+      "title": "ニッショーホール客席図",
+      "url": "https://nissho-hall.jp/pdf/hall-seat.pdf",
+      "checkedAt": "2026-08-20"
+    },
+    {
+      "id": "official-audio-seat-plan",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "ニッショーホール・会議室",
+      "title": "ニッショーホール音響客席回路図",
+      "url": "https://nissho-hall.jp/pdf/hall-audio.pdf",
+      "checkedAt": "2026-08-20"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "ニッショーホール・会議室",
+      "title": "施設案内",
+      "url": "https://nissho-hall.jp/shisetsu.html",
+      "checkedAt": "2026-08-20"
+    },
+    {
+      "id": "official-use-rules",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count",
+        "event-layout"
+      ],
+      "publisher": "ニッショーホール・会議室",
+      "title": "ホール利用規約",
+      "url": "https://nissho-hall.jp/pdf/hall-kiyaku.pdf",
+      "checkedAt": "2026-08-20"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "full-numbered-seat-map",
+      "canonicalName": "現行full図の一般番号席999席",
+      "selectionBasis": "現行公式客席図と独立した公式音響客席回路図が共通して示す一般番号席999席を代表配置として採用する。1階8列3-4番・5-6番の可動撤去差分と別枠の車いす1席は番号席集合へ反映しない。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "2026-08-20 current official seat map and current official audio seat plan",
+      "sourceIds": [
+        "official-seat-map",
+        "official-audio-seat-plan",
+        "official-hall-page"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-hall-page",
+        "official-use-rules"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 999,
+      "scope": {
+        "kind": "full-venue",
+        "issuerDefined": false,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式full図の一般番号席999席を抽選します。車いす1席、1階8列3-4番・5-6番の可動撤去、公演ごとの販売停止席は反映しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式総数1,000席には別枠の車いす1席を含む。車いす同伴席の恒久番号対応は未公表のため、一般番号席999席へ変換を反映しない。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-hall-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-20",
+        "method": "current-official-full-map-direct-visual-transcription-and-independent-official-audio-plan-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "1階8列3-4番・5-6番を撤去する条件と各variant総数は未公表。",
+          "車いす同伴席の恒久番号対応は未公表。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "1",
+          "from": 7,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "2",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "8",
+          "from": 3,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "9",
+          "from": 3,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "20",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "21",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "22",
+          "from": 8,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor-balcony",
+          "areaLabel": "2階バルコニー席",
+          "rowLabel": "バルコニー",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "7",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        }
+      ]
+    }
+  ]
 }

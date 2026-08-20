@@ -811,6 +811,76 @@
           "sha256": "c3e0477e475c5080c8dae55a8f5d28f577bd38fa0fe69b9996a18ced800748c3"
         }
       }
+    },
+    "kanadevia-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-balconies-only": {
+          "count": 1365,
+          "samples": [
+            "first-balcony/1/1",
+            "second-balcony/3/61",
+            "third-balcony/7/66"
+          ],
+          "sha256": "e583b4713ed3b22161aa78548a76fd8968a2a8fb234f2c643a8fa1753dca5514"
+        }
+      }
+    },
+    "national-noh-theatre-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "full-numbered-seat-map": {
+          "count": 628,
+          "samples": [
+            "shomen/1/2",
+            "waki-shomen/9/14",
+            "naka-shomen/9/24"
+          ],
+          "sha256": "71041cc46e7be547f3a526949e6505bbecf84cd6b84a7d9356cf5ed534e626b7"
+        }
+      }
+    },
+    "nhk-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-numbered-seats-only": {
+          "count": 3408,
+          "samples": [
+            "first-floor-center/C1/5",
+            "second-floor-left/L9/4",
+            "third-floor-right/R20/15"
+          ],
+          "sha256": "39a8120878428ab446e3d907f42f340ea771c8ec09b0cdfbcc43e95f4bf9c088"
+        }
+      }
+    },
+    "nihon-seinenkan-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-numbered-seat-map": {
+          "count": 1249,
+          "samples": [
+            "first-floor/A/16",
+            "first-floor/P/8",
+            "second-floor/J/49"
+          ],
+          "sha256": "fdb03303117f89e302df1953d38836f620a4b2807d9ec75b59d3394ecf3a457d"
+        }
+      }
+    },
+    "nissho-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "full-numbered-seat-map": {
+          "count": 999,
+          "samples": [
+            "first-floor/1/7",
+            "first-floor/17/7",
+            "second-floor/10/32"
+          ],
+          "sha256": "7311e08a2ade8af40d19844d6a50ae57ca8d8a4c52ba95692b95564d3b839873"
+        }
+      }
     }
   }
 }

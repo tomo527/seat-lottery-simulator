@@ -103,10 +103,10 @@
     },
     {
       "venueId": "national-noh-theatre-standard",
-      "readiness": "R3",
-      "secondPass": "blocked",
-      "blocker": "B_SOURCE_LIMITED: 627席・全番号図は確認したが、正面最前列付近の車椅子スペースの包含・置換番号・同伴席と中正面可動6席の関係が未公表。",
-      "nextAction": "issuerが車椅子・同伴・可動席の完全番号対応を公開した場合だけ再開する。"
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": null,
+      "nextAction": "production sourceの公式全番号図628件と公式総数627席との差1、車いす・可動6席metadataを維持する。"
     },
     {
       "venueId": "nerima-culture-main-standard",
@@ -117,10 +117,10 @@
     },
     {
       "venueId": "nhk-hall-standard",
-      "readiness": "R3",
-      "secondPass": "blocked",
-      "blocker": "B_SOURCE_LIMITED: 固定3,400席と2016公式番号図は確認したが、current独立番号generationと車椅子置換・同伴・包含semanticsがない。",
-      "nextAction": "issuerがcurrent完全番号図とfixed-only configurationのwheelchair/companion mappingを公開した場合だけ再開する。"
+      "readiness": "R1",
+      "secondPass": "complete",
+      "blocker": null,
+      "nextAction": "production sourceのcurrent-linked公式固定番号ID3,408件と公式固定総数3,400席との差8、可動201席metadataを維持する。"
     },
     {
       "venueId": "nissay-theatre-standard",

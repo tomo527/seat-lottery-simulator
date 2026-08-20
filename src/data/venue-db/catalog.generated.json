@@ -421,6 +421,32 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "kanadevia-hall-standard",
+    "venueGroupId": "kanadevia-hall-standard",
+    "name": "Kanadevia Hall 固定バルコニー代表配置",
+    "searchAliases": [
+      "Kanadevia Hall",
+      "TOKYO DOME CITY HALL",
+      "東京ドームシティホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "文京区",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "fixed-balconies-only",
+        "canonicalName": "固定バルコニー1,365席",
+        "seatCount": 1365,
+        "dataPath": "/venue-db/venues/kanadevia-hall-standard--fixed-balconies-only.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "固定バルコニー1,365席だけを抽選します。最大収容配置ではなく、イベントごとに変わるアリーナ席、立見、スイートルーム、車いす席は含みません。",
+        "fixedOnly": true
+      }
+    ]
+  },
+  {
     "id": "karasuyama-civic-hall-standard",
     "name": "烏山区民会館 ホール",
     "searchAliases": [
@@ -614,6 +640,31 @@
     "dataPath": "/venue-db/venues/national-bunraku-theatre-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "national-noh-theatre-standard",
+    "venueGroupId": "national-noh-theatre-standard",
+    "name": "国立能楽堂 全番号席代表配置",
+    "searchAliases": [
+      "National Noh Theatre",
+      "国立能楽堂 能舞台"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "full-numbered-seat-map",
+        "canonicalName": "公式全番号図の代表配置",
+        "seatCount": 628,
+        "dataPath": "/venue-db/venues/national-noh-theatre-standard--full-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式番号図の通常番号席628件を抽選します。公式総数627席との差1、車いす席および正面・中正面の可動6席の転換、公演ごとの販売停止は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "nerima-culture-main-standard",
     "name": "練馬文化センター 大ホール",
     "searchAliases": [
@@ -642,6 +693,30 @@
     "dataPath": "/venue-db/venues/nerima-culture-small-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "nhk-hall-standard",
+    "venueGroupId": "nhk-hall-standard",
+    "name": "NHKホール 固定番号席代表配置",
+    "searchAliases": [
+      "NHK Hall"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "fixed-numbered-seats-only",
+        "canonicalName": "current-linked公式番号図の固定席代表配置",
+        "seatCount": 3408,
+        "dataPath": "/venue-db/venues/nhk-hall-standard--fixed-numbered-seats-only.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "current-linked公式番号図の固定番号席3,408件だけを抽選します。最大収容配置ではなく、公式固定席総数3,400席との差8、可動201席、車いす転換、公演ごとの販売停止は反映しません。",
+        "fixedOnly": true
+      }
+    ]
+  },
+  {
     "id": "nihon-education-center-hitotsubashi-hall-standard",
     "name": "日本教育会館 一ツ橋ホール",
     "searchAliases": [],
@@ -652,6 +727,31 @@
     "representativePatternName": "通常番号席配置（1・2・22列可動席含む）",
     "seatCount": 802,
     "dataPath": "/venue-db/venues/nihon-education-center-hitotsubashi-hall-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "nihon-seinenkan-standard",
+    "venueGroupId": "nihon-seinenkan-standard",
+    "name": "日本青年館ホール 固定番号席代表配置",
+    "searchAliases": [
+      "Nippon Seinenkan Hall",
+      "日本青年館"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "新宿区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "fixed-numbered-seat-map",
+        "canonicalName": "公式固定番号席図の代表配置",
+        "seatCount": 1249,
+        "dataPath": "/venue-db/venues/nihon-seinenkan-standard--fixed-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式番号図に印刷された通常番号席1,249件を抽選します。公式固定席内訳1,245席との差4、車いす4席と同伴席の転換、公演ごとの販売停止は反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "schemaVersion": 2,
@@ -675,6 +775,31 @@
         "scope": "fixed-only",
         "scopeDisclosure": "公式番号図に印字された1階～3階の固定スタンド席を代表配置として抽選します。催事依存のアリーナ仮設席、3階Y列の立見席、番号のない車いす・同伴者運用、ステージ閉鎖席は含みません。",
         "fixedOnly": true
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "nissho-hall-standard",
+    "venueGroupId": "nissho-hall-standard",
+    "name": "ニッショーホール 現行full番号席配置",
+    "searchAliases": [
+      "NISSHO HALL",
+      "日本消防会館 ニッショーホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "full-numbered-seat-map",
+        "canonicalName": "現行full図の一般番号席999席",
+        "seatCount": 999,
+        "dataPath": "/venue-db/venues/nissho-hall-standard--full-numbered-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式full図の一般番号席999席を抽選します。車いす1席、1階8列3-4番・5-6番の可動撤去、公演ごとの販売停止席は反映しません。",
+        "fixedOnly": false
       }
     ]
   },

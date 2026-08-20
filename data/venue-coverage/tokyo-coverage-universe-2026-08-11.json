@@ -1,7 +1,7 @@
 {
   "auditVersion": 1,
   "jurisdiction": "東京都",
-  "asOf": "2026-08-14",
+  "asOf": "2026-08-20",
   "canonicalRule": "現役の舞台・ライブ・コンサート・ミュージカル・2.5次元・声優/アニメ系イベント等で、固定席または着席時に番号付き座席を設定できる主要会場を、既存inventoryの有無に関係なく統合する。座席rangeは本監査では作成しない。",
   "discoverySources": [
     {
@@ -69,19 +69,19 @@
     },
     "userVisibleProductionCoverage": {
       "tokyoUniverse": {
-        "numerator": 22,
+        "numerator": 27,
         "denominator": 76,
-        "percent": 28.9
+        "percent": 35.5
       },
       "MUST": {
-        "numerator": 13,
+        "numerator": 16,
         "denominator": 44,
-        "percent": 29.5
+        "percent": 36.4
       },
       "SHOULD": {
-        "numerator": 9,
+        "numerator": 11,
         "denominator": 28,
-        "percent": 32.1
+        "percent": 39.3
       },
       "OPTIONAL": {
         "numerator": 0,
@@ -91,19 +91,19 @@
     },
     "schemaAddressableCoverage": {
       "tokyoUniverse": {
-        "numerator": 22,
+        "numerator": 27,
         "denominator": 76,
-        "percent": 28.9
+        "percent": 35.5
       },
       "MUST": {
-        "numerator": 13,
+        "numerator": 16,
         "denominator": 44,
-        "percent": 29.5
+        "percent": 36.4
       },
       "SHOULD": {
-        "numerator": 9,
+        "numerator": 11,
         "denominator": 28,
-        "percent": 32.1
+        "percent": 39.3
       },
       "OPTIONAL": {
         "numerator": 0,
@@ -112,7 +112,7 @@
       },
       "confirmedCurrentSchemaNonProductionIds": [],
       "confirmedSchemaExtensionNonProductionIds": [],
-      "note": "22 = current PRODUCTION 22（TOKYO-WAVE-8Cの日本武道館fixed-only代表番号集合11,142席を含む）。車椅子・可動席・arena/floor・公式総数差はscope/confidence metadataに保持する。"
+      "note": "27 = current PRODUCTION 27（TOKYO-WAVE-9の5会場7,649番号席を含む）。車椅子・可動席・arena/floor・公式総数差はscope/confidence metadataに保持する。"
     }
   },
   "mustNonProductionBlockerAudit": {
@@ -123,8 +123,8 @@
       "C_CONTRADICTION": 4,
       "D_CURRENTNESS_CLOSED": 3
     },
-    "currentNonProductionCount": 33,
-    "basis": "40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。meijizaとNNTT中劇場、TOKYO-WAVE-8 RECOVERYの東京宝塚劇場と代々木第二、TOKYO-WAVE-8Bの代々木第一と東京体育館、TOKYO-WAVE-8Cの日本武道館をproduction化した。current nonproductionは33件、current Aは0件。",
+    "currentNonProductionCount": 30,
+    "basis": "40件はRELEASE-COVERAGE SCHEMA AUDIT時点のhistorical audited cohort。meijiza、NNTT中劇場、TOKYO-WAVE-8の5会場、TOKYO-WAVE-9のMUST 3会場をproduction化した。current nonproductionは30件、current Aは0件。",
     "classes": {
       "A_SCHEMA_UNLOCKABLE": {
         "count": 0,
@@ -220,7 +220,7 @@
       "status",
       "verification"
     ],
-    "admissionRule": "issuer-owned資料がconfiguration自体を完全に定義し、expectedSeatCountとrangeを独立2パスで一致確認できる場合のみ収録する。",
+    "admissionRule": "representative-coverage-v2: declared representative scopeの完全な公開番号席set、明示range/exclusion、traceable public evidence、no capacity fitting/no invented IDs、mechanically valid non-empty runtimeを満たす場合に収録する。exact official-total agreement、独立2 generation、wheelchair/companion完全mapping、全variantはconfidence情報でありblockerではない。",
     "prohibitions": [
       "repository側でconfigurationを創作しない",
       "event-dependent floor番号を恒久seat ID化しない",
@@ -228,7 +228,7 @@
       "wheelchair/pit/花道差分を推測しない",
       "既存production quality gateを緩和しない"
     ],
-    "fixedOnlyPolicy": "公式が恒久固定番号席subsetを独立したseat setとして明示し、subsetの完全番号・厳密総数・除外範囲・wheelchair semanticsを確定できる場合のみ、固定席のみconfigurationとしてselectableにできる。会場全体の最大収容を意味しないことをUIで明示する。",
+    "fixedOnlyPolicy": "current又はcurrent-linked公式資料が固定番号席subsetの完全な印字seat-ID setを示す場合、dynamic arena/floor、可動席、wheelchair/companion conversion、公式総数差をscope/confidence metadataに保持してfixed-only代表configurationをselectableにできる。会場全体の最大収容を意味しないことをUIで明示する。",
     "knownSchemaExtensionPotential": {
       "MUST": 0,
       "SHOULD": 0,
@@ -255,10 +255,10 @@
         "kanadevia-hall",
         "sgc-hall-ariake"
       ],
-      "productionPromotions": 1,
-      "productionConfigurations": 1,
-      "configurationSeatRecordsAdded": 906,
-      "formalHolds": 2,
+      "productionPromotions": 0,
+      "productionConfigurations": 0,
+      "configurationSeatRecordsAdded": 0,
+      "formalHolds": 3,
       "releaseReady": false,
       "notes": "fresh fixed-only reviewで3件をB_SOURCE_LIMITEDへ再分類。有明は固定11,232の全番号なし、Kanadeviaは固定バルコニーのみのissuer-defined configurationと車いす/source generation不足、SGCは上層固定scopeの全番号・独立configuration・車いす番号対応不足。"
     },
@@ -269,8 +269,10 @@
         "nntt-playhouse",
         "galaxy-theatre"
       ],
-      "productionPromotions": 0,
-      "formalHolds": 3,
+      "productionPromotions": 1,
+      "productionConfigurations": 1,
+      "configurationSeatRecordsAdded": 906,
+      "formalHolds": 2,
       "releaseReady": false,
       "notes": "EXは最大1,546配置のwheelchair／可動前方席／stage variant包含をlosslessに定義できずB。NNTT中劇場は他variantを巻き添えにせず、公式プロセニアム形式③ A・B号迫り使用906をtwo-pass rangeDiff 0でproduction化し、ABC配置788/791は非selectable contradictionに分離。銀河劇場は公式746に対し図750でC。current A cohortは0。"
     },
@@ -420,6 +422,45 @@
       "releaseReady": true,
       "notes": "現行2026年版公式施設概要で固定3層11,075席を基準化し、公式サイト配下で現行掲載される旧generationの全8方向番号図を600 DPIで直接転記。方向別secondary詳細図で局所照合し、1階3,190・2階3,680・3階4,272＝11,142印字IDを採用した。+67はmetadata保持し、capacity fitting・架空ID追加なし。arena仮設、Y列立見、車いす／同伴変換、催事閉鎖はscope外。"
     },
+    "TOKYO-WAVE-8-RECOVERY": {
+      "completedAt": "2026-08-14",
+      "scope": [
+        "tokyo-takarazuka",
+        "yoyogi-2"
+      ],
+      "productionPromotions": 2,
+      "productionConfigurations": 2,
+      "configurationSeatRecordsAdded": 4873,
+      "releaseReady": true,
+      "notes": "東京宝塚劇場は現行公式図の全印字rangeを直接転記して2,070席、代々木第二は現行公式20 block図を直接転記して固定2,803席をproduction化。公式総数差、車いす、可動席、arena/floor差分はmetadata保持し、capacity fitting・架空ID追加なし。"
+    },
+    "TOKYO-WAVE-8B": {
+      "completedAt": "2026-08-14",
+      "scope": [
+        "yoyogi-1",
+        "tokyo-gymnasium"
+      ],
+      "productionPromotions": 2,
+      "productionConfigurations": 2,
+      "configurationSeatRecordsAdded": 13815,
+      "releaseReady": true,
+      "notes": "代々木第一は現行公式44 block図を直接転記して固定8,636席、東京体育館は現行公式南北図を直接転記して固定5,179席をproduction化。東京体育館の公式固定総数+1差、車いす、VIP、arena/floor差分はmetadata保持し、capacity fitting・架空ID追加なし。"
+    },
+    "TOKYO-WAVE-9": {
+      "completedAt": "2026-08-20",
+      "scope": [
+        "nhk-hall",
+        "kanadevia-hall",
+        "nihon-seinenkan",
+        "nissho-hall",
+        "national-noh-theatre"
+      ],
+      "productionPromotions": 5,
+      "productionConfigurations": 5,
+      "configurationSeatRecordsAdded": 7649,
+      "releaseReady": true,
+      "notes": "NHKホール3,408席、Kanadevia Hall固定バルコニー1,365席、日本青年館ホール1,249席、ニッショーホール999席、国立能楽堂628席をcurrent/current-linked公式番号図の直接視覚転記でproduction化。公式総数差、wheelchair、可動席、公演差分はmetadata保持し、capacity fitting・架空ID追加なし。"
+    },
     "REPRESENTATIVE-COVERAGE-POLICY-MIGRATION": {
       "completedAt": "2026-08-14",
       "productionPromotions": 0,
@@ -432,20 +473,20 @@
   },
   "currentSnapshot": {
     "tokyoUniverse": 76,
-    "production": 22,
-    "hold": 49,
-    "contradiction": 1,
+    "production": 27,
+    "hold": 43,
+    "contradiction": 2,
     "unresearched": 4,
     "mustUnresearched": 0,
     "shouldUnresearched": 0,
     "optionalUnresearched": 4,
     "activeTerraQueue": 0,
     "researchCompletenessPercent": 94.7,
-    "userVisibleProductionCoveragePercent": 28.9,
-    "mustProductionCoveragePercent": 29.5,
-    "shouldProductionCoveragePercent": 32.1,
-    "schemaAddressableCoveragePercent": 28.9,
-    "nextMacro": "TOKYO-WAVE-9 proposal — tokyo-garden-theater, nhk-hall, nihon-seinenkan, nissho-hall, national-noh-theatre"
+    "userVisibleProductionCoveragePercent": 35.5,
+    "mustProductionCoveragePercent": 36.4,
+    "shouldProductionCoveragePercent": 39.3,
+    "schemaAddressableCoveragePercent": 35.5,
+    "nextMacro": "TOKYO-WAVE-10 proposal — theater-h, tokyo-international-forum-c, imm-theater, mon-takanawa-box1000, jcom-hall-hachioji"
   },
   "releaseGate": {
     "policyVersion": "representative-coverage-v2",
@@ -478,16 +519,16 @@
     "id": "TOKYO-REPRESENTATIVE-COVERAGE-RELEASE-REVIEW",
     "status": "complete",
     "completedAt": "2026-08-14",
-    "outcome": "RELEASE READY AFTER TOKYO-WAVE-8",
+    "outcome": "RELEASE READY AFTER TOKYO-WAVE-9",
     "blockerIds": [],
     "criteria": {
       "applicationHealth": "PASS: TOKYO-WAVE-5 completed the full venue/application regression after production generation.",
       "representativeMajorUseCoverage": "PASS: Galaxy Theatre adds a high-demand Tokyo theatre representative and Zepp Haneda adds a medium live-house representative.",
-      "practicalTokyoMajorVenueCoverage": "PASS: Wave 8 adds Tokyo Takarazuka Theatre, both Yoyogi gymnasiums, Tokyo Gymnasium, and Nippon Budokan fixed-stand representative configurations without inventing seat IDs or fitting capacity.",
+      "practicalTokyoMajorVenueCoverage": "PASS: Wave 9 adds NHK Hall, Kanadevia Hall fixed balconies, Nihon Seinenkan Hall, Nissho Hall, and National Noh Theatre representative configurations without inventing seat IDs or fitting capacity.",
       "representativeCoverageDisclosure": "PASS: global UI and terms disclosure remains present for representative configurations.",
       "productionQuality": "PASS: all Wave 8 configurations record official sources, complete mapped ranges for their declared scope, total/accessibility/dynamic-area differences, and the no-fitting/no-invented-ID controls."
     },
-    "exactNextAction": "Propose TOKYO-WAVE-9 for tokyo-garden-theater, nhk-hall, nihon-seinenkan, nissho-hall, and national-noh-theatre, prioritizing current complete numbered maps and fixed-only/representative scopes."
+    "exactNextAction": "Prepare TOKYO-WAVE-10 for theater-h, tokyo-international-forum-c, imm-theater, mon-takanawa-box1000, and jcom-hall-hachioji, prioritizing already-located complete official representative maps."
   },
   "historicalReleaseCoverageAdequacyReview": {
     "id": "TOKYO-RELEASE-COVERAGE-ADEQUACY-REVIEW",
@@ -568,7 +609,7 @@
       "officialFacilityUrl": "https://www.tokyo-dome.co.jp/dome/about/",
       "seatMap": "official-baseball-only",
       "numberedMap": "event-dependent",
-      "inventoryState": "PRODUCTION",
+      "inventoryState": "HOLD",
       "inventoryId": "tokyo-official-0319",
       "tier": "MUST",
       "difficulty": "COMPLEX",
@@ -602,7 +643,7 @@
       "officialFacilityUrl": "https://www.jpnsport.go.jp/yoyogi/tabid/70/Default.aspx",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0743",
       "tier": "MUST",
       "difficulty": "DENSE",
@@ -636,7 +677,7 @@
       "officialFacilityUrl": "https://ariake-arena.tokyo/main-arena/",
       "seatMap": "official",
       "numberedMap": "partial",
-      "inventoryState": "PRODUCTION",
+      "inventoryState": "HOLD",
       "inventoryId": "tokyo-official-0436",
       "tier": "MUST",
       "difficulty": "COMPLEX",
@@ -653,7 +694,7 @@
       "officialFacilityUrl": "https://www.tef.or.jp/tmg/arena/index.html",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0745",
       "tier": "MUST",
       "difficulty": "DENSE",
@@ -704,12 +745,12 @@
       "officialFacilityUrl": "https://www.tokyo-dome.co.jp/tdc-hall/organizer/facilities.html",
       "seatMap": "official",
       "numberedMap": "fixed-balconies-only",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-coverage-kanadevia-hall",
       "tier": "MUST",
       "difficulty": "COMPLEX",
       "model": "Sol",
-      "reason": "2026-08-12 TOKYO-CONFIG-A-ARENA-2: B_SOURCE_LIMITED. Three fixed balcony maps and exact 1,365 subtotal exist, but the issuer does not define balcony-only as a selectable configuration; wheelchair/companion mapping and authenticated Seat Plan generation remain unpublished."
+      "reason": "2026-08-20 TOKYO-WAVE-9: 現行公式3バルコニー番号図の固定1,365席をfixed-only代表配置としてproduction化。イベント依存アリーナ、立見、車いす・同伴はmetadata保持。"
     },
     {
       "id": "sgc-hall-ariake",
@@ -789,12 +830,12 @@
       "officialFacilityUrl": "https://www.nhk-fdn.or.jp/nhk_hall/",
       "seatMap": "official-2016-current-linked",
       "numberedMap": "yes-2016-generation",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-nhk-hall",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Sol",
-      "reason": "TOKYO-WAVE-7: official numbered map retained for future bounded transcription. It was not promoted in this pass because an independently verified complete range transcription was not completed; official total and wheelchair differences are not the blocker."
+      "reason": "2026-08-20 TOKYO-WAVE-9: current-linked公式番号図の固定番号ID3,408件をproduction化。公式固定総数3,400との差8、可動201席、車いす転換はmetadata保持。"
     },
     {
       "id": "line-cube-shibuya",
@@ -1282,12 +1323,12 @@
       "officialFacilityUrl": "https://seinenkan-hall.com/hall",
       "seatMap": "official",
       "numberedMap": "yes",
-      "inventoryState": "HOLD",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0283",
       "tier": "MUST",
       "difficulty": "DENSE",
       "model": "Terra",
-      "reason": "2026-08-12 TERRA-DENSE-4: SCHEMA HOLD。現行運営者資料は固定番号席1,245、車いす4別枠、1階811・2階434を示すが、分割番号blockのcanonical row/area ownershipを図形位置による補完なしに定義しない。"
+      "reason": "2026-08-20 TOKYO-WAVE-9: 現行公式番号図の通常番号ID1,249件をproduction化。公式固定内訳1,245との差4と車いす4席の転換はmetadata保持。"
     },
     {
       "id": "galaxy-theatre",
@@ -1519,13 +1560,13 @@
       "operating": "active",
       "officialFacilityUrl": "https://www.ntj.jac.go.jp/nou/facilities/",
       "seatMap": "official-current-numbered-map",
-      "numberedMap": "yes-but-wheelchair-mapping-incomplete",
-      "inventoryState": "HOLD",
+      "numberedMap": "yes",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-national-noh-theatre",
       "tier": "SHOULD",
       "difficulty": "COMPLEX",
       "model": "Sol",
-      "reason": "2026-08-13 TOKYO-ADDRESSABLE-CONVERSION-1B: B_SOURCE_LIMITED。627席・全番号図はあるが、正面最前列付近の車椅子スペースの包含・置換番号・同伴席と中正面可動6席の関係が未公表。"
+      "reason": "2026-08-20 TOKYO-WAVE-9: 現行公式全番号図の通常番号ID628件をproduction化。公式総数627との差1、車いす・可動6席の転換はmetadata保持。"
     },
     {
       "id": "hamarikyu-asahi",
@@ -1757,13 +1798,13 @@
       "operating": "active",
       "officialFacilityUrl": "https://nissho-hall.jp/hall.html",
       "seatMap": "official-current-seat-and-audio-plans",
-      "numberedMap": "yes-full-diagram-only",
-      "inventoryState": "HOLD",
+      "numberedMap": "yes",
+      "inventoryState": "PRODUCTION",
       "inventoryId": "tokyo-official-0167",
       "tier": "SHOULD",
       "difficulty": "COMPLEX",
       "model": "Sol",
-      "reason": "2026-08-13 TOKYO-ADDRESSABLE-CONVERSION-1B: B_SOURCE_LIMITED。full図999番号席は999/999/rangeDiff 0だが、8列3-4番・5-6番撤去variantのissuer condition・厳密expectedと車椅子同伴配置が未公表。full図をrepository独自の標準configurationにしない。"
+      "reason": "2026-08-20 TOKYO-WAVE-9: 現行公式full図と独立公式音響図の一般番号席999件をproduction化。可動撤去差分と車いす1席はmetadata保持。"
     },
     {
       "id": "tokyo-bunka-small",
