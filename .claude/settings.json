@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "disableBypassPermissionsMode": "disable",
+    "ask": [
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "PowerShell(git commit *)",
+      "PowerShell(git push *)"
+    ],
+    "deny": [
+      "Bash(git push *--force*)",
+      "Bash(git push * -f *)",
+      "Bash(git reset --hard *)",
+      "Bash(git reset * --hard *)",
+      "Bash(git clean *-f*)",
+      "Bash(git checkout -- *)",
+      "Bash(git restore *)",
+      "Bash(git branch -D *)",
+      "Bash(git stash drop *)",
+      "Bash(git stash clear *)",
+      "Bash(npm run deploy *)",
+      "Bash(npx wrangler deploy *)",
+      "Bash(npx * wrangler deploy *)",
+      "Bash(npm exec wrangler deploy *)",
+      "Bash(wrangler deploy *)",
+      "PowerShell(git push *--force*)",
+      "PowerShell(git push * -f *)",
+      "PowerShell(git reset --hard *)",
+      "PowerShell(git reset * --hard *)",
+      "PowerShell(git clean *-f*)",
+      "PowerShell(git checkout -- *)",
+      "PowerShell(git restore *)",
+      "PowerShell(git branch -D *)",
+      "PowerShell(git stash drop *)",
+      "PowerShell(git stash clear *)",
+      "PowerShell(npm run deploy *)",
+      "PowerShell(npx wrangler deploy *)",
+      "PowerShell(npx * wrangler deploy *)",
+      "PowerShell(npm exec wrangler deploy *)",
+      "PowerShell(wrangler deploy *)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact|fork",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/scripts/session-context.mjs"
+            ],
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

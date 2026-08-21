@@ -6,7 +6,7 @@ At the start of every new agent session:
 
 1. Read this file and [`docs/HANDOFF.md`](docs/HANDOFF.md).
 2. Inspect the current branch, local `HEAD`, `origin/main`, and the working tree. Repository evidence is authoritative when notes disagree.
-3. Use [`docs/PROJECT_MAP.md`](docs/PROJECT_MAP.md) for repository topology, [`docs/VALIDATION.md`](docs/VALIDATION.md) for proportional checks, and [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for the release path.
+3. Use [`docs/PROJECT_MAP.md`](docs/PROJECT_MAP.md) for repository topology, [`docs/VALIDATION.md`](docs/VALIDATION.md) for proportional checks, [`docs/COMMAND_GUARDRAILS.md`](docs/COMMAND_GUARDRAILS.md) for command approval boundaries, and [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for the release path.
 4. For venue-data work, use [`docs/VENUE_WORKFLOW.md`](docs/VENUE_WORKFLOW.md) as the canonical workflow and follow [`docs/VENUE_DATA_GUIDE.md`](docs/VENUE_DATA_GUIDE.md) for the data contract.
 
 ## Permanent rules

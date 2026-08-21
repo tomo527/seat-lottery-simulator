@@ -1,0 +1,133 @@
+# Thin Codex adapter. Policy intent is canonical in docs/COMMAND_GUARDRAILS.md.
+
+prefix_rule(
+    pattern = ["git", "commit"],
+    decision = "prompt",
+    justification = "Repository commits require explicit user approval.",
+    match = ["git commit -m checkpoint"],
+    not_match = ["git status", "git diff --check"],
+)
+
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "prompt",
+    justification = "Repository pushes require explicit user approval.",
+    match = ["git push", "git push origin main"],
+    not_match = ["git status", "git fetch origin"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", ["--force", "-f", "--force-with-lease"]],
+    decision = "forbidden",
+    justification = "Force pushes are prohibited; use a normal approved push.",
+    match = [
+        "git push --force origin main",
+        "git push -f origin main",
+        "git push --force-with-lease origin main",
+    ],
+    not_match = ["git push origin main"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", ["origin", "upstream"], ["--force", "-f", "--force-with-lease"]],
+    decision = "forbidden",
+    justification = "Force pushes are prohibited; use a normal approved push.",
+    match = ["git push origin --force main", "git push upstream -f main"],
+    not_match = ["git push origin main"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", ["origin", "upstream"], ["main", "HEAD"], ["--force", "-f", "--force-with-lease"]],
+    decision = "forbidden",
+    justification = "Force pushes are prohibited; use a normal approved push.",
+    match = ["git push origin main --force", "git push upstream HEAD --force-with-lease"],
+    not_match = ["git push origin main"],
+)
+
+prefix_rule(
+    pattern = ["git", "reset", "--hard"],
+    decision = "forbidden",
+    justification = "Destructive reset is prohibited; inspect the diff and use a recoverable edit.",
+    match = ["git reset --hard", "git reset --hard HEAD"],
+    not_match = ["git reset", "git reset HEAD file.txt"],
+)
+
+prefix_rule(
+    pattern = ["git", "clean", ["-f", "-fd", "-df", "-fx", "-xf", "-xfd", "-dfx", "--force"]],
+    decision = "forbidden",
+    justification = "Forced git clean is prohibited; inspect and remove only an explicit recoverable target.",
+    match = ["git clean -f", "git clean -fd", "git clean --force"],
+    not_match = ["git clean -n", "git clean --dry-run"],
+)
+
+prefix_rule(
+    pattern = ["git", "checkout", "--"],
+    decision = "forbidden",
+    justification = "Discarding working-tree changes through git checkout is prohibited; preserve or patch the file explicitly.",
+    match = ["git checkout -- file.txt"],
+    not_match = ["git checkout main", "git switch main"],
+)
+
+prefix_rule(
+    pattern = ["git", "restore"],
+    decision = "forbidden",
+    justification = "Git restore can discard work; inspect the diff and apply a targeted recoverable edit instead.",
+    match = ["git restore file.txt", "git restore --source HEAD file.txt"],
+    not_match = ["git status", "git diff file.txt"],
+)
+
+prefix_rule(
+    pattern = ["git", "branch", "-D"],
+    decision = "forbidden",
+    justification = "Forced branch deletion is prohibited; use a reviewed non-forced branch cleanup.",
+    match = ["git branch -D old-branch"],
+    not_match = ["git branch", "git branch -d merged-branch"],
+)
+
+prefix_rule(
+    pattern = ["git", "stash", ["drop", "clear"]],
+    decision = "forbidden",
+    justification = "Deleting stash recovery points is prohibited; retain them or obtain explicit out-of-band guidance.",
+    match = ["git stash drop", "git stash clear"],
+    not_match = ["git stash list", "git stash show"],
+)
+
+prefix_rule(
+    pattern = ["npm", "run", "deploy"],
+    decision = "forbidden",
+    justification = "Local production deploy bypasses the repository release path; use an authorized commit and normal push.",
+    match = ["npm run deploy", "npm run deploy -- --env production"],
+    not_match = ["npm run build", "npm run verify:full"],
+)
+
+prefix_rule(
+    pattern = ["npx", "wrangler", "deploy"],
+    decision = "forbidden",
+    justification = "Local production deploy bypasses the repository release path; use an authorized commit and normal push.",
+    match = ["npx wrangler deploy"],
+    not_match = ["npx wrangler --version"],
+)
+
+prefix_rule(
+    pattern = ["npx", ["--yes", "-y"], "wrangler", "deploy"],
+    decision = "forbidden",
+    justification = "Local production deploy bypasses the repository release path; use an authorized commit and normal push.",
+    match = ["npx --yes wrangler deploy", "npx -y wrangler deploy"],
+    not_match = ["npx --yes wrangler --version"],
+)
+
+prefix_rule(
+    pattern = ["npm", "exec", "wrangler", "deploy"],
+    decision = "forbidden",
+    justification = "Local production deploy bypasses the repository release path; use an authorized commit and normal push.",
+    match = ["npm exec wrangler deploy"],
+    not_match = ["npm exec wrangler --version"],
+)
+
+prefix_rule(
+    pattern = ["wrangler", "deploy"],
+    decision = "forbidden",
+    justification = "Local production deploy bypasses the repository release path; use an authorized commit and normal push.",
+    match = ["wrangler deploy"],
+    not_match = ["wrangler --version"],
+)

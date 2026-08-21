@@ -1,0 +1,20 @@
+{
+  "description": "Thin SessionStart adapter for the shared repository context script.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/scripts/session-context.mjs\"",
+            "commandWindows": "node -e \"const{execFileSync}=require('node:child_process');const{pathToFileURL}=require('node:url');const root=execFileSync('git',['rev-parse','--show-toplevel'],{encoding:'utf8'}).trim();import(pathToFileURL(root+'/scripts/session-context.mjs').href)\"",
+            "timeout": 5,
+            "statusMessage": "Restoring repository state",
+            "additionalContextLimit": 600
+          }
+        ]
+      }
+    ]
+  }
+}
