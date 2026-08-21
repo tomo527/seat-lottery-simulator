@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+import { readFile, readdir } from 'node:fs/promises'
 import { spawnSync } from 'node:child_process'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -8,6 +8,22 @@ const sessionScript = path.join(repositoryRoot, 'scripts', 'session-context.mjs'
 const codexHooksPath = path.join(repositoryRoot, '.codex', 'hooks.json')
 const codexRulesPath = path.join(repositoryRoot, '.codex', 'rules', 'project.rules')
 const claudeSettingsPath = path.join(repositoryRoot, '.claude', 'settings.json')
+const canonicalRolesPath = path.join(repositoryRoot, 'docs', 'VENUE_SUBAGENT_ROLES.md')
+const venueWorkflowPath = path.join(repositoryRoot, 'docs', 'VENUE_WORKFLOW.md')
+const roleAdapters = [
+  {
+    codexName: 'venue_researcher',
+    claudeName: 'venue-researcher',
+    codexPath: path.join(repositoryRoot, '.codex', 'agents', 'venue-researcher.toml'),
+    claudePath: path.join(repositoryRoot, '.claude', 'agents', 'venue-researcher.md'),
+  },
+  {
+    codexName: 'independent_venue_reviewer',
+    claudeName: 'independent-venue-reviewer',
+    codexPath: path.join(repositoryRoot, '.codex', 'agents', 'independent-venue-reviewer.toml'),
+    claudePath: path.join(repositoryRoot, '.claude', 'agents', 'independent-venue-reviewer.md'),
+  },
+]
 
 function assert(condition, message) {
   if (!condition) throw new Error(message)
@@ -37,6 +53,12 @@ function checkSessionOutput(output, label) {
   const normalizedOutput = output.replaceAll('\\', '/').toLowerCase()
   const normalizedRoot = repositoryRoot.replaceAll('\\', '/').toLowerCase()
   assert(!normalizedOutput.includes(normalizedRoot), label + ' output exposes an absolute repository path')
+}
+
+function claudeAgentFrontmatter(content, label) {
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/u)
+  assert(match, label + ' has invalid Markdown frontmatter')
+  return match[1]
 }
 
 function wildcardMatch(pattern, command) {
@@ -77,10 +99,18 @@ function codexExecpolicyCheck(args, expected) {
 }
 
 const beforeStatus = gitStatus()
-const [codexHooks, claudeSettings, codexRules] = await Promise.all([
+const [
+  codexHooks, claudeSettings, codexRules, canonicalRoles, venueWorkflow, ...adapterContents
+] = await Promise.all([
   readFile(codexHooksPath, 'utf8').then(JSON.parse),
   readFile(claudeSettingsPath, 'utf8').then(JSON.parse),
   readFile(codexRulesPath, 'utf8'),
+  readFile(canonicalRolesPath, 'utf8'),
+  readFile(venueWorkflowPath, 'utf8'),
+  ...roleAdapters.flatMap((adapter) => [
+    readFile(adapter.codexPath, 'utf8'),
+    readFile(adapter.claudePath, 'utf8'),
+  ]),
 ])
 
 assert(Object.keys(codexHooks.hooks).join(',') === 'SessionStart', 'Codex hooks must contain only SessionStart')
@@ -135,6 +165,81 @@ for (const tool of ['Bash', 'PowerShell']) {
   }
 }
 
+const canonicalRoleFiles = (await readdir(path.join(repositoryRoot, 'docs')))
+  .filter((name) => /^VENUE_.*SUBAGENT.*ROLES?.*\.md$/iu.test(name))
+assert(canonicalRoleFiles.length === 1 && canonicalRoleFiles[0] === 'VENUE_SUBAGENT_ROLES.md',
+  'Venue subagent roles must have exactly one canonical document')
+
+for (const marker of [
+  'This file is the only canonical definition',
+  'The main agent is the sole repository integration owner.',
+  'Subagents are read-only.',
+  'Role adapters do not select or pin a provider or model.',
+  'Parallel delegation is limited to mutually independent, read-only scopes.',
+  'If subagents are unavailable',
+  'Do not treat the first-pass ranges or conclusions as ground truth',
+  'must not inspect in-scope source, inventory, batch, fingerprint, generated, or review-output files',
+  '**Independent extraction:**',
+  '**Comparison:**',
+  '## Main-agent integration',
+]) {
+  assert(canonicalRoles.includes(marker), 'Canonical role contract omits ' + marker)
+}
+
+for (const marker of [
+  'Delegation is optional.',
+  'Do not expose first-pass ranges, totals, conclusions',
+  'Then resume that reviewer',
+  'If subagents or resumption are unavailable',
+  'The main agent alone integrates and edits repository',
+  'adapter files deliberately omit model and reasoning settings',
+]) {
+  assert(venueWorkflow.includes(marker), 'Venue workflow omits ' + marker)
+}
+
+for (const [index, adapter] of roleAdapters.entries()) {
+  const codexContent = adapterContents[index * 2]
+  const claudeContent = adapterContents[index * 2 + 1]
+  const codexLabel = path.relative(repositoryRoot, adapter.codexPath)
+  const claudeLabel = path.relative(repositoryRoot, adapter.claudePath)
+  const claudeFrontmatter = claudeAgentFrontmatter(claudeContent, claudeLabel)
+
+  assert(codexContent.length <= 650, codexLabel + ' is no longer a thin adapter')
+  assert(claudeContent.length <= 650, claudeLabel + ' is no longer a thin adapter')
+  assert(codexContent.includes('name = "' + adapter.codexName + '"'), codexLabel + ' name drifted')
+  assert(/^description = "\S.+?"$/mu.test(codexContent), codexLabel + ' omits its required description')
+  assert(codexContent.includes('sandbox_mode = "read-only"'), codexLabel + ' is not read-only')
+  assert(codexContent.includes('developer_instructions = """'), codexLabel + ' omits developer_instructions')
+  assert((codexContent.match(/"""/gu) ?? []).length === 2, codexLabel + ' has invalid instruction quoting')
+  assert((codexContent.match(/docs\/VENUE_SUBAGENT_ROLES\.md/gu) ?? []).length === 1,
+    codexLabel + ' must point once to the canonical roles')
+  assert(!/^\s*(?:model|model_reasoning_effort)\s*=/mu.test(codexContent),
+    codexLabel + ' must inherit difficulty-based model routing')
+
+  assert(new RegExp('^name: ' + adapter.claudeName + '$', 'mu').test(claudeFrontmatter),
+    claudeLabel + ' name drifted')
+  assert(/^description: \S.+$/mu.test(claudeFrontmatter), claudeLabel + ' omits its required description')
+  assert(/^tools: Read, Grep, Glob, WebFetch, WebSearch$/mu.test(claudeFrontmatter),
+    claudeLabel + ' must keep the read-only research tool allowlist')
+  assert(/^permissionMode: plan$/mu.test(claudeFrontmatter), claudeLabel + ' must use plan mode')
+  assert(!/^\s*(?:model|effort):/mu.test(claudeFrontmatter),
+    claudeLabel + ' must inherit difficulty-based model routing')
+  assert(!/\b(?:Write|Edit|NotebookEdit|Bash|PowerShell|Agent)\b/u.test(
+    claudeFrontmatter.match(/^tools:.*$/mu)?.[0] ?? '',
+  ), claudeLabel + ' exposes a write-capable or delegation tool')
+  assert((claudeContent.match(/\.\.\/\.\.\/docs\/VENUE_SUBAGENT_ROLES\.md/gu) ?? []).length === 1,
+    claudeLabel + ' must point once to the canonical roles')
+
+  for (const duplicatedPolicy of [
+    'Configuration candidates',
+    'Production-gate impact',
+    'If subagents are unavailable',
+  ]) {
+    assert(!codexContent.includes(duplicatedPolicy), codexLabel + ' duplicates canonical policy')
+    assert(!claudeContent.includes(duplicatedPolicy), claudeLabel + ' duplicates canonical policy')
+  }
+}
+
 for (const requiredText of [
   'pattern = ["git", "commit"]',
   'pattern = ["git", "push"]',
@@ -186,6 +291,7 @@ for (const testCase of codexCases) {
 console.log('Shared SessionStart passed from the repository root and docs/ with no working-tree side effect.')
 console.log('Codex and Claude SessionStart adapters use the same concise context script.')
 console.log('Claude Bash/PowerShell ask, deny, and non-blocking validation cases passed.')
+console.log('Canonical venue subagent roles and thin read-only Codex/Claude adapters passed.')
 if (codexAvailable) {
   console.log('Codex execpolicy matching cases passed.')
 } else {

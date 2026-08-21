@@ -8,6 +8,7 @@ This repository is the mobile-first React / TypeScript / Vite **座席抽選シ�
 - [`../CLAUDE.md`](../CLAUDE.md): Claude Code discovery adapter; imports `AGENTS.md` and owns no duplicate project rules.
 - [`HANDOFF.md`](HANDOFF.md): current save state only. Repository state wins if it is stale.
 - [`VENUE_WORKFLOW.md`](VENUE_WORKFLOW.md): canonical venue-wave sequence, difficulty routing, and provider-neutral handoff contract.
+- [`VENUE_SUBAGENT_ROLES.md`](VENUE_SUBAGENT_ROLES.md): canonical optional read-only researcher/reviewer contracts; provider agent files only point here.
 - [`VALIDATION.md`](VALIDATION.md): validation profiles and the change-to-check matrix.
 - [`COMMAND_GUARDRAILS.md`](COMMAND_GUARDRAILS.md): canonical command approval and denial intent shared by Codex and Claude Code adapters.
 - [`DEPLOYMENT.md`](DEPLOYMENT.md): the established production path and release checks.
@@ -33,7 +34,7 @@ tests/e2e/                            Playwright browser smoke coverage
 
 `src/App.test.tsx` and colocated `*.test.ts(x)` files provide Vitest coverage. `playwright.config.ts`, `vitest.config.ts`, `vite.config.ts`, and the TypeScript/ESLint configs define the validation and build environment.
 
-Repository-scoped agent adapters live in `.agents/skills/venue-wave/` for Codex and `.claude/skills/venue-wave/` for Claude Code. They intentionally contain no independent venue policy and both lead to `VENUE_WORKFLOW.md`. SessionStart and command-policy adapters live under `.codex/` and `.claude/settings.json`; both SessionStart hooks execute `scripts/session-context.mjs`, while command intent remains canonical in `COMMAND_GUARDRAILS.md`.
+Repository-scoped Skill adapters live in `.agents/skills/venue-wave/` for Codex and `.claude/skills/venue-wave/` for Claude Code; both lead to `VENUE_WORKFLOW.md`. Optional role adapters live in `.codex/agents/` and `.claude/agents/`; all four lead to `VENUE_SUBAGENT_ROLES.md` and keep repository integration with the main agent. SessionStart and command-policy adapters live under `.codex/` and `.claude/settings.json`; both SessionStart hooks execute `scripts/session-context.mjs`, while command intent remains canonical in `COMMAND_GUARDRAILS.md`.
 
 ## Venue-data flow
 

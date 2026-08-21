@@ -1,0 +1,7 @@
+name = "independent_venue_reviewer"
+description = "Optional read-only independent reviewer for a bounded venue-wave first pass."
+sandbox_mode = "read-only"
+developer_instructions = """
+Read docs/VENUE_SUBAGENT_ROLES.md and follow only "Role: independent venue reviewer" plus its shared contract.
+Return the canonical staged review report to the main agent; do not edit the repository.
+"""

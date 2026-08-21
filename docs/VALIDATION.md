@@ -12,8 +12,8 @@ Use the smallest profile that covers the changed behavior. The `verify:*` script
 | `npm run verify:venues` | Venue source, inventory, batch, coverage, fingerprint, or generated venue artifacts | inventory/readiness/release reports, venue build/check/validate/report, then `verify:full` |
 
 `npm run build` already includes `venues:check`, `venues:validate`, and TypeScript build checks. The venue profile still runs the explicit venue sequence because its generated-artifact and reporting steps have separate review value.
-`verify:docs` includes `CLAUDE.md`, repository-scoped `.agents/skills/` and `.claude/skills/`, and their canonical workflow links. It also checks the `@AGENTS.md` import, required venue-wave frontmatter, canonical-workflow reachability, and adapter drift.
-It also runs `verify:harness`, which checks the shared SessionStart script from the repository root and a subdirectory, verifies concise side-effect-free output, validates both Hook adapters and Claude permission cases, and runs Codex `execpolicy check` cases when that CLI function is available.
+`verify:docs` includes `CLAUDE.md`, the repository-scoped Skill adapters, the Claude agent adapters, and their canonical links. It checks the `@AGENTS.md` import, required venue-wave frontmatter, canonical-workflow reachability, and Skill adapter drift.
+It also runs `verify:harness`, which checks the shared SessionStart script from the repository root and a subdirectory, concise side-effect-free output, both Hook adapters, Claude permission cases, and Codex `execpolicy check` cases when available. The same command validates one canonical subagent-role contract, thin reachable provider adapters, read-only reviewer constraints, independent-first comparison, main-only integration, model inheritance, and the no-subagent fallback.
 
 
 ## Change-specific additions
