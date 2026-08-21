@@ -213,46 +213,20 @@ npm run venues:review -- --all
 
 小さなgapはあくまで人間が確認する候補です。自動補完しません。規則的な入力のために一時的なCSV/TSV変換を行う場合も、最終source JSONには明示rangeだけを残し、previewで重複、欠番、総数を確認してください。OCRだけで確定せず、公式資料にない列や番号を生成しません。
 
-## 1会場の追加フロー
+## 会場追加workflowと二段階レビュー
 
-1. 候補会場を選ぶ。
-2. 公式資料の有無を確認する。公式座席表、公式PDF、施設運営者・主催者の公式資料を優先する。
-3. `venues:new`でdraftを生成する。
-4. 代表パターンを1つ決め、異なるパターンを混ぜない。
-5. 公式資料から空の`ranges`へ明示rangeを入力する。架空の仮座席は作らない。
-6. 公表総数があれば`expectedSeatCount`へ記録し、mapped countとの差を照合する。差を消すためのseat削除はしない。
-7. `venues:review -- --id ...`で要約、gap、warning、blockerを確認する。
-8. 可能なら独立照合し、結果をconfidenceへ反映する。独立2 generationがなくてもcurrent-linked公式図や合理的な代表図なら進められる。
-9. 列、番号、欠番、area、総席数差、パターン混在、accessibility未反映を確認し、verificationへ具体的に記録する。
-10. 宣言scopeの番号集合が根拠付きで完全ならstatusを`production`へ変更する。未確認seat IDを補完しないと完成しない場合だけdraft/rejectedを維持する。
-11. `npm run venues:build`を実行する。
-12. `npm run venues:check`を実行する。
-13. `npm run venues:validate`を実行する。
-14. `npm run venues:report`を実行する。
-15. `npm run lint`、`npm run typecheck`、`npm run test`、`npm run build`、`npm run test:e2e`を実行する。
-16. UIで検索、地域絞り込み、lazy load、抽選結果を確認する。
+会場・バッチの選定、難度routing、第1パス、独立レビュー、統合、検証、HANDOFFの順序は[`VENUE_WORKFLOW.md`](VENUE_WORKFLOW.md)だけをcanonical workflowとします。このガイドはschema、evidence、production gate、range/inventory/batchのデータ契約を定義し、agent別の手順書は持ちません。
 
-## バッチ運用
+第1パスと独立レビューの入力テンプレートは次を再利用します。テンプレートは作業開始用であり、ルールの正本ではありません。
 
-- 小規模・中規模会場は1バッチ3～5会場。
-- 大規模アリーナ、スタジアム、ドームは1バッチ1会場。
-- 調査・入力と独立照合を同じ作業として一度に済ませない。
-- 100%確定できないことだけでHOLDにせず、一般ユーザーが想像する配置に概ね近いかを判断する。
-- 推測でseat IDの穴を埋めない。番号集合自体が作れない場合だけdraft/rejectedとして理由を残す。
-- 1バッチごとに生成物、検証結果、席数・offset sample差分をレビューする。
+- [第1パス: 会場追加draft作成](prompts/VENUE_ADD_DRAFT.md)
+- [第2パス: 独立レビュー](prompts/VENUE_INDEPENDENT_REVIEW.md)
 
-## Codexでの二段階作業
-
-第1パスは公開資料調査とdraft作成です。第2パスは可能な範囲で第1パスを独立再確認し、列、番号、欠番、area、総席数差、代表パターン混在を重点確認します。独立generation不足はconfidenceを`representative`へ下げる理由であり、宣言scopeの実在番号集合が確認できていればproduction blockerではありません。
+独立generation不足はconfidenceを`representative`へ下げる理由であり、宣言scopeの実在番号集合が確認できていればproduction blockerではありません。
 
 `checkedAt`とverification日付は日本の調査暦日として扱い、通常検証のtodayはOS・CI timezoneに依存しない`Asia/Tokyo`基準です。テストでは`options.today`を注入できます。
 
 全production会場のfingerprintは`data/venue-fingerprints/production.json`へ集約します。ID、名称、所在地、aliases、type、代表パターン、期待・計算席数、全range、source metadata、verification method、先頭・中央・末尾offsetを固定し、catalogのproduction ID集合とmanifestのID集合が完全一致することをテストします。fingerprintはbuild時に自動更新しません。値が変わった場合はsnapshot値だけを更新せず、公式資料から独立再確認してからreview対象manifestを更新します。
-
-再利用用プロンプト:
-
-- [第1パス: 会場追加draft作成](prompts/VENUE_ADD_DRAFT.md)
-- [第2パス: 独立レビュー](prompts/VENUE_INDEPENDENT_REVIEW.md)
 
 ## runtimeと抽選
 
