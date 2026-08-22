@@ -1,0 +1,43 @@
+{
+  "batchId": "tokyo-wave-13-representative-coverage",
+  "createdAt": "2026-08-22",
+  "scope": "TOKYO-WAVE-13 closure for exactly Hitomi Memorial Hall, Kunitachi College of Music Auditorium Main Hall, Koganei Miyaji Music Hall Main Hall, and Theatre1010. Preserve representative-coverage-v2 and record SOURCE HOLD when current/current-linked official numbered maps lack issuer-defined row/area ownership for segmented or side-number groups; prohibit capacity fitting, invented seat IDs, repository-defined ownership, and configuration mixing.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [
+    "hitomi-memorial-hall-standard",
+    "tokyo-wave3-1019",
+    "koganei-miyaji-main-standard",
+    "theatre-1010-standard"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-hitomi-memorial-hall",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "draft-created",
+      "recheckReason": "Current official numbered material and the 2,070-seat structure were confirmed; closure records the unresolved issuer-defined ownership gap without geometric transcription.",
+      "recheckNotBefore": "2026-08-22"
+    },
+    {
+      "inventoryId": "tokyo-official-1019",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "draft-created",
+      "recheckReason": "The current official facility page still links the 1,290-seat numbered PDF; closure records the unresolved issuer-defined ownership gap without mixing the pit variant.",
+      "recheckNotBefore": "2026-08-22"
+    },
+    {
+      "inventoryId": "tokyo-koganei-miyaji-main",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "draft-created",
+      "recheckReason": "The current official normal 569-seat configuration and its separate variants were confirmed; closure records the unresolved issuer-defined ownership gap without configuration mixing.",
+      "recheckNotBefore": "2026-08-22"
+    },
+    {
+      "inventoryId": "tokyo-theatre-1010",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "draft-created",
+      "recheckReason": "The current official 701-seat numbered material was independently checked; closure records the unresolved issuer-defined ownership gap without geometric transcription.",
+      "recheckNotBefore": "2026-08-22"
+    }
+  ]
+}

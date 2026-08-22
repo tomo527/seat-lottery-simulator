@@ -1,0 +1,71 @@
+{
+  "reportId": "tokyo-wave-13-2026-08-22",
+  "asOf": "2026-08-22",
+  "model": "Terra high closure",
+  "policyVersion": "representative-coverage-v2",
+  "scope": [
+    "hitomi-memorial-hall",
+    "kunitachi-college-of-music-auditorium-main-hall",
+    "koganei-miyaji-music-hall-main-hall",
+    "theatre-1010"
+  ],
+  "venues": [
+    {
+      "id": "hitomi-memorial-hall",
+      "sourceId": "hitomi-memorial-hall-standard",
+      "classification": "HOLD",
+      "expectedSeatCount": 2070,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "confidence": "source-hold",
+      "reason": "Current official numbered map exists, but curved side-number groups lack issuer-defined row/area ownership. The 1F 1,538 / 2F 532 structure and row-8 wheelchair-compatible IDs 8, 9, 10, 45, 46, 47 are retained as metadata; no geometric transcription was made."
+    },
+    {
+      "id": "kunitachi-college-of-music-auditorium-main-hall",
+      "sourceId": "tokyo-wave3-1019",
+      "classification": "HOLD",
+      "expectedSeatCount": 1290,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "confidence": "source-hold",
+      "reason": "The current official facility page still links the official numbered PDF, but segmented number groups lack issuer-defined row/area ownership. The pit variant remains separate from the standard configuration."
+    },
+    {
+      "id": "koganei-miyaji-music-hall-main-hall",
+      "sourceId": "koganei-miyaji-main-standard",
+      "classification": "HOLD",
+      "expectedSeatCount": 569,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "confidence": "source-hold",
+      "reason": "Current official material defines the normal 569-seat configuration but not issuer-defined row/area ownership for every segmented number group. The 578-seat and first/second-row-removal operations remain separate."
+    },
+    {
+      "id": "theatre-1010",
+      "sourceId": "theatre-1010-standard",
+      "classification": "HOLD",
+      "expectedSeatCount": 701,
+      "calculatedSeatCount": null,
+      "rangeDiff": null,
+      "confidence": "source-hold",
+      "reason": "Current official numbered material exists, but independent read-only confirmation also found no issuer-defined row/area ownership for segmented 1F/2F number groups. Movable seats and performance wheelchair operations remain separate."
+    }
+  ],
+  "result": {
+    "holds": 4,
+    "productionPromotions": 0,
+    "solHandoffs": 0,
+    "productionAfter": {
+      "venues": 95,
+      "selectableConfigurations": 97,
+      "configurationSeatRecords": 152438
+    },
+    "coverageAfter": {
+      "tokyoProduction": "39/76 (51.3%)",
+      "mustProduction": "25/44 (56.8%)",
+      "shouldProduction": "14/28 (50.0%)"
+    },
+    "releaseReady": true,
+    "exactNextAction": "Do not reopen these four sources, begin Wave 14, or create repository-defined ownership without explicit authorization. Reopen an individual source only if an issuer-defined row/area key or equivalently explicit official numbered-group labels become available."
+  }
+}

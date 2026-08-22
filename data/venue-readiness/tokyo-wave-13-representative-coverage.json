@@ -1,0 +1,37 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-13-representative-coverage",
+  "baselineDate": "2026-08-22",
+  "scope": "TOKYO-WAVE-13 representative-coverage-v2 closure for exactly four source-held Tokyo venues",
+  "expectedVenueCount": 4,
+  "venues": [
+    {
+      "venueId": "hitomi-memorial-hall-standard",
+      "readiness": "R5",
+      "secondPass": "source-hold",
+      "blocker": "SOURCE HOLD: current official map has no issuer-defined row/area ownership for its curved side-number groups.",
+      "nextAction": "Require an issuer-defined row/area key or an official map that explicitly labels every numbered group before reopening; preserve 2,070 seats and the six wheelchair-compatible row-8 IDs as metadata only."
+    },
+    {
+      "venueId": "tokyo-wave3-1019",
+      "readiness": "R5",
+      "secondPass": "source-hold",
+      "blocker": "SOURCE HOLD: the current-linked official 1,290-seat PDF has no issuer-defined row/area ownership for segmented number groups.",
+      "nextAction": "Require an issuer-defined row/area key or an official map that explicitly labels every numbered group before reopening; do not mix pit operations into the standard configuration."
+    },
+    {
+      "venueId": "koganei-miyaji-main-standard",
+      "readiness": "R5",
+      "secondPass": "source-hold",
+      "blocker": "SOURCE HOLD: the current official normal 569-seat map has no issuer-defined row/area ownership for segmented number groups.",
+      "nextAction": "Require an issuer-defined row/area key or an official map that explicitly labels every numbered group before reopening; keep the 578-seat and first/second-row-removal operations separate."
+    },
+    {
+      "venueId": "theatre-1010-standard",
+      "readiness": "R5",
+      "secondPass": "source-hold",
+      "blocker": "SOURCE HOLD: independent read-only confirmation also found no issuer-defined row/area ownership for segmented 1F/2F number groups.",
+      "nextAction": "Require an issuer-defined row/area key or an official map that explicitly labels every numbered group before reopening; keep movable seats and performance wheelchair operations separate."
+    }
+  ]
+}

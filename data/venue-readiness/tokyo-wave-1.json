@@ -33,10 +33,10 @@
     },
     {
       "venueId": "hitomi-memorial-hall-standard",
-      "readiness": "R3",
-      "secondPass": "in-progress",
-      "blocker": "公式座席表の全range転記が未完了。",
-      "nextAction": "1階・2階の全列と欠番を転記し、公称席数と照合する。"
+      "readiness": "R5",
+      "secondPass": "source-hold",
+      "blocker": "SOURCE HOLD: 現行公式番号図の曲線状側方番号群にissuer-definedなrow/area ownershipがない。",
+      "nextAction": "issuer-definedなrow/area対応表または各番号群を明示する現行公式資料が公開された場合のみ再開する。"
     },
     {
       "venueId": "itabashi-culture-main-standard",
@@ -61,10 +61,10 @@
     },
     {
       "venueId": "koganei-miyaji-main-standard",
-      "readiness": "R3",
-      "secondPass": "in-progress",
-      "blocker": "通常569席配置で外れる番号席と側面席の全range転記が未完了。",
-      "nextAction": "公式座席図の各ブロックを拡大確認し、569席となる番号集合を転記する。"
+      "readiness": "R5",
+      "secondPass": "source-hold",
+      "blocker": "SOURCE HOLD: 通常569席の分割番号群にissuer-definedなrow/area ownershipがない。",
+      "nextAction": "issuer-definedなrow/area対応表または各番号群を明示する通常569席の公式資料が公開された場合のみ再開する。"
     },
     {
       "venueId": "line-cube-shibuya-standard",
@@ -159,10 +159,10 @@
     },
     {
       "venueId": "theatre-1010-standard",
-      "readiness": "R3",
-      "secondPass": "in-progress",
-      "blocker": "複数階と可動席の全range転記が未完了。",
-      "nextAction": "通常舞台配置の公式座席図だけから全rangeを再抽出する。"
+      "readiness": "R5",
+      "secondPass": "source-hold",
+      "blocker": "SOURCE HOLD: independent read-only確認でも現行公式番号図の分割番号群にissuer-definedなrow/area ownershipがない。",
+      "nextAction": "issuer-definedなrow/area対応表または各番号群を明示する現行公式資料が公開された場合のみ再開する。"
     },
     {
       "venueId": "tokyo-geigeki-concert-hall-standard",

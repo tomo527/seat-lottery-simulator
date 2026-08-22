@@ -13,8 +13,8 @@
     "id": "standard-seating",
     "name": "通常客席配置",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設案内の通常客席569席を候補とする。",
+    "expectedSeatCount": 569,
+    "selectionReason": "2026-08-22に現行公式施設案内が通常569席、1階385席・2階184席、578席および前方列撤去を別運用として案内することを再確認。通常番号図のrow/area対応は範囲化できず保留する。",
     "notIncludedPatterns": [
       "車椅子スペースへ座席を設置した578席配置",
       "1階1列・2列を撤去した配置"
@@ -31,7 +31,7 @@
       "publisher": "小金井 宮地楽器ホール",
       "title": "大ホール客席案内図",
       "url": "https://koganei-civic-center.jp/common2025/pdf/mainhall_03.pdf",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-22"
     },
     {
       "id": "official-facility-guide",
@@ -44,25 +44,25 @@
       "publisher": "小金井 宮地楽器ホール",
       "title": "大ホール",
       "url": "https://koganei-civic-center.jp/facilities/mainhall.html",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-22"
     }
   ],
-  "registeredScope": "公式の通常客席569席を予定。",
-  "completenessBasis": "公式施設案内と客席図を確認済み。車椅子スペースと着脱可能番号席の標準状態を照合中。",
-  "transformation": "通常配置で実在する番号付き座席だけを階別rangeへ転記する予定。",
+  "registeredScope": "現行公式案内の通常客席569席（1階385席・2階184席）。範囲は未登録。",
+  "completenessBasis": "現行公式案内は通常569席、車椅子スペースへ座席を設けた578席、および1階1・2列の全撤去可能を区別する。通常番号図の分割番号群とarea/rowの対応をissuer-definedに列挙した表またはラベルはない。",
+  "transformation": "通常569席configurationだけを対象とし、578席・前方列撤去を混在させない。図形上の近接で側方番号群をarea/rowへ割り当てない。",
   "knownLimitations": [
     "車椅子スペースへ座席を設ける場合は578席となる。",
     "1階1列と2列は全撤去可能。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "status": "reviewed",
+    "checkedAt": "2026-08-22",
+    "method": "Current official facility guide and its official numbered map link were checked; no geometric row/area inference was used.",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "通常569席配置で外れる番号席と側面席の全range転記が未完了。",
-      "公式座席図の各ブロックを拡大確認し、569席となる番号集合を転記する。"
+      "通常番号図の分割番号群について、issuer-definedなarea/row対応表または明示ラベルがない。",
+      "通常569席と、車椅子スペースへ座席を設ける578席、1階1・2列撤去を同一configurationへ混在させてはならない。"
     ]
   },
   "ranges": []

@@ -8,28 +8,28 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
+    "id": "standard-numbered-seating",
+    "name": "通常番号席配置",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
+    "expectedSeatCount": 1290,
+    "selectionReason": "2026-08-22に現行公式施設ページから大ホール座席表PDFが現在もリンクされ、通常1,290席と案内されることを確認した。row/area対応を図形から推測しないため範囲化は保留する。",
     "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
   },
   "sources": [
-    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"国立音楽大学","title":"国立音楽大学〔講堂大ホール〕 施設案内","url":"https://www.kunitachi.ac.jp/introduction/organization/hall.html","checkedAt":"2026-08-02"},
-    {"id":"official-seat-map","official":true,"roles":["seat-structure"],"publisher":"国立音楽大学","title":"国立音楽大学 講堂大ホール座席表","url":"https://www.kunitachi.ac.jp/documents/organization/l_hall_seating.pdf","checkedAt":"2026-08-02"}
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"国立音楽大学","title":"国立音楽大学〔講堂大ホール〕 施設案内","url":"https://www.kunitachi.ac.jp/introduction/organization/hall.html","checkedAt":"2026-08-22"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure"],"publisher":"国立音楽大学","title":"国立音楽大学 講堂大ホール座席表","url":"https://www.kunitachi.ac.jp/documents/organization/l_hall_seating.pdf","checkedAt":"2026-08-22"}
   ],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式資料は大ホールを1,290席と案内し番号図を公開するが、図の全area・全rowを目視で独立転記・照合するまでrangeを確定してはならない。オーケストラピット使用時の扱いを推測してはならない。"],
+  "registeredScope": "現行施設ページがリンクする通常1,290席の公式番号図。範囲は未登録。",
+  "completenessBasis": "現行公式施設ページがPDFを座席表として現在もリンクし、通常1,290席を案内することを確認した。分割番号群とarea/rowの関係をissuer-definedに列挙した表またはラベルはない。",
+  "transformation": "通常番号図とオーケストラピット使用時の運用を混在させず、図形上の近接でarea/rowを割り当てない。",
+  "knownLimitations": ["オーケストラピット使用時に除外されるseat IDは公式の番号リストを得るまで推測しない。", "分割番号群のarea/row対応はissuer-definedな対応表または明示ラベルを要する。"],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "status": "reviewed",
+    "checkedAt": "2026-08-22",
+    "method": "Current-linked official numbered PDF was confirmed from the issuer facility page; no geometric row/area inference was used.",
     "seatStructure": "pending",
     "seatCount": "pending",
-    "unresolvedIssues": ["通常1,290席の全番号range、area別小計、ピット使用時に除外される番号の公式根拠、独立第2パスが未完了。"]
+    "unresolvedIssues": ["通常番号図の分割番号群に対するissuer-definedなarea/row対応表または明示ラベルがない。", "ピット運用の除外seat IDは通常configurationに混在させない。"]
   },
   "ranges": []
 }

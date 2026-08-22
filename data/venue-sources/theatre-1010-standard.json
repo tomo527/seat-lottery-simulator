@@ -13,8 +13,8 @@
     "id": "standard-seating",
     "name": "通常客席配置",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式座席表の1階553席・2階148席を候補とする。",
+    "expectedSeatCount": 701,
+    "selectionReason": "2026-08-22に現行公式座席表と公式案内の1階553席・2階148席（計701席）を再確認。row/area対応を図形から推測しないため範囲化は保留する。",
     "notIncludedPatterns": []
   },
   "sources": [
@@ -28,7 +28,7 @@
       "publisher": "シアター1010",
       "title": "劇場座席表",
       "url": "https://www.t1010.jp/html/guide/pdf/06_theatre_seat.pdf",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-22"
     },
     {
       "id": "official-facility-guide",
@@ -40,22 +40,25 @@
       "publisher": "シアター1010",
       "title": "よくある質問",
       "url": "https://www.t1010.jp/html/news/faq.html",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-22"
     }
   ],
-  "registeredScope": "通常配置の番号付き座席701席を予定。",
-  "completenessBasis": "公式座席表と階別合計701席を確認済み。全rangeを独立照合する。",
-  "transformation": "公式座席表のarea・列・番号を明示rangeへ転記する予定。",
-  "knownLimitations": [],
+  "registeredScope": "現行公式座席表の通常番号配置（1階553席・2階148席、計701席）。範囲は未登録。",
+  "completenessBasis": "現行公式座席表と案内で階別合計701席を確認した。独立read-only確認でも、分割番号群とrow/areaの対応をissuer-definedに列挙した表またはラベルは確認できなかった。",
+  "transformation": "可動席・公演別wheelchair運用を通常番号配置へ混在させず、図形上の近接でarea/rowを割り当てない。",
+  "knownLimitations": [
+    "可動席および公演別wheelchair operationは通常printed numbered setとは別metadataとしてのみ扱う。",
+    "分割番号群のrow/area対応にはissuer-definedな対応表または明示ラベルを要する。"
+  ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
+    "status": "reviewed",
+    "checkedAt": "2026-08-22",
+    "method": "Current official numbered PDF and official 1F/2F counts were checked, including an independent read-only source review; no geometric row/area inference was used.",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "複数階と可動席の全range転記が未完了。",
-      "通常舞台配置の公式座席図だけから全rangeを再抽出する。"
+      "分割された1階・2階番号群とrow/areaの関係にissuer-definedな対応表または明示ラベルがない。",
+      "可動席および公演別wheelchair operationを通常番号配置に混在させない。"
     ]
   },
   "ranges": []
