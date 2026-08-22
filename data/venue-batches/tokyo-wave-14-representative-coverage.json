@@ -1,0 +1,27 @@
+{
+  "batchId": "tokyo-wave-14-representative-coverage",
+  "createdAt": "2026-08-22",
+  "scope": "TOKYO-WAVE-14 production promotion for exactly 星陵会館〔ホール〕 and 府中の森芸術劇場〔ふるさとホール〕. Preserve representative-coverage-v2; use only current official printed numbered seat maps; prohibit capacity fitting, invented seat IDs, unrecorded duplicate suppression, geometry-defined ownership, and configuration mixing.",
+  "status": "complete",
+  "priority": "B",
+  "targetVenueIds": [
+    "tokyo-official-0004",
+    "tokyo-official-1054"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-official-0004",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "draft-created",
+      "recheckReason": "Current official facility page directly links the current complete numbered map; normal 400-seat configuration is explicitly defined.",
+      "recheckNotBefore": "2026-08-22"
+    },
+    {
+      "inventoryId": "tokyo-official-1054",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "draft-created",
+      "recheckReason": "Current official facility page directly links the post-renovation complete numbered map; 518 numbered general seats and six unnumbered wheelchair spaces are explicitly separated.",
+      "recheckNotBefore": "2026-08-22"
+    }
+  ]
+}

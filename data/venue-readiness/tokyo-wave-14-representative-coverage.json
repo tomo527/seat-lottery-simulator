@@ -1,0 +1,23 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-14-representative-coverage",
+  "baselineDate": "2026-08-22",
+  "scope": "TOKYO-WAVE-14 representative-coverage-v2 production promotion for exactly two Tokyo halls",
+  "expectedVenueCount": 2,
+  "venues": [
+    {
+      "venueId": "tokyo-wave3-0004",
+      "readiness": "R4",
+      "secondPass": "approved",
+      "blocker": null,
+      "nextAction": "Production: retain the normal 400-seat printed set; do not infer the 36 seats omitted with the lift stage."
+    },
+    {
+      "venueId": "tokyo-wave3-1054",
+      "readiness": "R4",
+      "secondPass": "approved",
+      "blocker": null,
+      "nextAction": "Production: retain the 518 printed general-seat IDs; preserve six unnumbered wheelchair spaces and the separate hanamichi 64-seat storage operation as metadata."
+    }
+  ]
+}

@@ -1,35 +1,95 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-wave3-0004",
   "name": "星陵会館〔ホール〕",
   "prefecture": "東京都",
   "city": "千代田区",
-  "aliases": [],
+  "aliases": ["星陵会館 ホール"],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
   "sources": [
-    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"星陵会館","title":"星陵会館〔ホール〕 施設案内","url":"https://www.seiryokai.org/kaikan.html","checkedAt":"2026-08-02"},
-    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"星陵会館","title":"星陵会館ホール 舞台客席平面図","url":"https://www.seiryokai.org/kaikan/img/seatinglist2019.pdf","checkedAt":"2026-08-02"}
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": ["facility", "seat-count", "event-layout"],
+      "publisher": "星陵会館",
+      "title": "施設案内",
+      "url": "https://www.seiryokai.org/kaikan/facility.html",
+      "checkedAt": "2026-08-22"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "星陵会館",
+      "title": "星陵会館ホール 舞台客席平面図",
+      "url": "https://www.seiryokai.org/pdf/2-1_seatingmap.pdf",
+      "checkedAt": "2026-08-22"
+    }
   ],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式図は通常400席（1階370・2階30）とセリ舞台使用時364席を併記する。通常400席の全番号rangeは、図面を目視で独立転記・照合するまで確定してはならない。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["通常400席図の全番号range、セリ舞台使用時に除外される36席、独立第2パスが未完了。番号規則や公称400席からrangeを推測してはならない。"]
-  },
-  "ranges": []
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常400席配置（せり舞台なし）",
+      "selectionBasis": "現行公式図に印字された1階370席・2階30席、計400席の番号集合を直接転記した通常配置。固定193席と可動207席は同一通常配置の内訳として扱う。",
+      "issuerDefinedCondition": "施設運営者が通常400席（せり舞台なし）として公開する現行座席図を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-22 current official printed seat map",
+      "sourceIds": ["official-facility-page", "official-seat-map"],
+      "differenceBasisSourceIds": ["official-facility-page", "official-seat-map"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 400,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式図の通常400席（1階370席・2階30席）の印字番号席を抽選します。固定193席と可動207席は同じ通常配置の内訳です。せり舞台使用時364席は別配置であり、この番号集合へ混在させません。",
+      "wheelchairSemantics": {
+        "status": "resolved",
+        "description": "現行公式座席図は通常400席の印字番号集合を直接示し、車椅子転換用の別番号席は記載しない。",
+        "sourceIds": ["official-seat-map"]
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-22",
+        "method": "current-official-pdf-printed-seat-set-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "せり舞台使用時364席は公式に別配置として示されるが、通常400席の番号集合から除外番号を推測しない。"
+        ]
+      },
+      "ranges": [
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"A","from":1,"to":25,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"B","from":1,"to":25,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"C","from":2,"to":25,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"D","from":2,"to":25,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"E","from":2,"to":25,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"F","from":2,"to":25,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"G","from":2,"to":25,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"H","from":2,"to":27,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"I","from":2,"to":29,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"J","from":2,"to":31,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"K","from":2,"to":33,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"L","from":2,"to":6,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"L","from":8,"to":15,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"L","from":17,"to":24,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"L","from":27,"to":32,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"M","from":1,"to":11,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"N","from":1,"to":12,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"O","from":1,"to":14,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"P","from":1,"to":17,"excluded":[]},
+        {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"Q","from":1,"to":3,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"R","from":1,"to":15,"excluded":[]},
+        {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"S","from":1,"to":15,"excluded":[]}
+      ]
+    }
+  ]
 }

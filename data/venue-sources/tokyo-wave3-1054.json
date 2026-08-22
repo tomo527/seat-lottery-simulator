@@ -1,35 +1,93 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-wave3-1054",
-  "name": "府中の森芸術劇場 〔ふるさとホール〕",
+  "name": "府中の森芸術劇場〔ふるさとホール〕",
   "prefecture": "東京都",
   "city": "府中市",
-  "aliases": [],
+  "aliases": ["府中の森芸術劇場 ふるさとホール"],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
   "sources": [
-    {"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"府中の森芸術劇場","title":"ふるさとホール紹介","url":"https://www.fuchu-cpf.or.jp/theater/1000160/1000184.html","checkedAt":"2026-08-02"},
-    {"id":"official-seat-map","official":true,"roles":["seat-structure"],"publisher":"府中の森芸術劇場","title":"ふるさとホール座席表（改修工事後）","url":"https://www.fuchu-cpf.or.jp/_res/projects/default_project/_page_/001/000/184/furusatoseat.pdf","checkedAt":"2026-08-02"}
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": ["facility", "seat-count", "event-layout"],
+      "publisher": "府中の森芸術劇場",
+      "title": "ふるさとホール",
+      "url": "https://www.fuchu-cpf.or.jp/theater/1000160/1000184.html",
+      "checkedAt": "2026-08-22"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "府中の森芸術劇場",
+      "title": "ふるさとホール座席表",
+      "url": "https://www.fuchu-cpf.or.jp/_res/projects/default_project/_page_/001/000/184/furusatoseat.pdf",
+      "checkedAt": "2026-08-22"
+    }
   ],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["令和7年5月以降の通常配置は一般518席・車椅子6席・計524席。花道使用時は一般席460席となり、全列の客席4席分（64席）を格納する別配置である。通常配置へ花道使用時の除外を混在させてはならない。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["改修後通常518番号席の全range、車椅子6席との包含関係、花道使用時に格納する64番号の対応、独立第2パスが未完了。"]
-  },
-  "ranges": []
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置・公式番号席518席",
+      "selectionBasis": "2026-05-21更新の現行公式施設ページと現行公式座席表に基づく通常配置。図に印字された一般席518席を直接転記し、番号が付与されない車椅子6スペースは番号席集合に加えない。",
+      "issuerDefinedCondition": "施設運営者が改修後の通常配置として公開する現行座席図を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-22 current official post-renovation printed seat map",
+      "sourceIds": ["official-facility-page", "official-seat-map"],
+      "differenceBasisSourceIds": ["official-facility-page", "official-seat-map"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 524,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式座席表の印字番号付き一般席518席を抽選します。公式総数524席との差6は、番号の付かない車椅子6スペースとしてメタデータに保持します。花道使用時は全列の7〜10番計64席を格納する別配置であり、通常518席から削除しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式は車椅子6スペースを別記するが、現行座席表に座席IDを付していないため、番号席518席へIDを作成して反映しない。",
+        "sourceIds": ["official-facility-page", "official-seat-map"],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-22",
+        "method": "current-official-pdf-printed-seat-set-review",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -6,
+        "unresolvedIssues": [
+          "公式総数524席との差6は、公式が別記する番号なし車椅子6スペースである。seat IDを作成しない。",
+          "花道使用時は全列7〜10番の計64席を格納する別配置であり、通常518席の番号集合へ混在させない。"
+        ]
+      },
+      "ranges": [
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"1","from":7,"to":30,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"2","from":7,"to":30,"excluded":[24]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"3","from":7,"to":30,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"4","from":7,"to":30,"excluded":[24]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"5","from":7,"to":30,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"6","from":2,"to":35,"excluded":[24]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"7","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"8","from":1,"to":36,"excluded":[24]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"9","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"10","from":1,"to":36,"excluded":[24]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"11","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"12","from":1,"to":36,"excluded":[24]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"13","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"14","from":1,"to":36,"excluded":[24]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"15","from":1,"to":36,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"16","from":1,"to":36,"excluded":[24]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"17","from":1,"to":6,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"客席","rowLabel":"17","from":31,"to":36,"excluded":[]}
+      ]
+    }
+  ]
 }

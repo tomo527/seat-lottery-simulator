@@ -1460,6 +1460,30 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-0004",
+    "venueGroupId": "tokyo-wave3-0004",
+    "name": "星陵会館〔ホール〕",
+    "searchAliases": [
+      "星陵会館 ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常400席配置（せり舞台なし）",
+        "seatCount": 400,
+        "dataPath": "/venue-db/venues/tokyo-wave3-0004--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式図の通常400席（1階370席・2階30席）の印字番号席を抽選します。固定193席と可動207席は同じ通常配置の内訳です。せり舞台使用時364席は別配置であり、この番号集合へ混在させません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "tokyo-wave3-0130",
     "name": "サントリーホール〔大ホール〕",
     "searchAliases": [
@@ -1494,6 +1518,30 @@
         "dataPath": "/venue-db/venues/tokyo-wave3-0136--current-official-event-seat-map.json",
         "scope": "representative-event",
         "scopeDisclosure": "現行公式座席ページの公演用番号席1,318席を抽選します。施設公表最大1,324席との差6席、別公演の舞台・販売・車椅子配置差は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-1054",
+    "venueGroupId": "tokyo-wave3-1054",
+    "name": "府中の森芸術劇場〔ふるさとホール〕",
+    "searchAliases": [
+      "府中の森芸術劇場 ふるさとホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "府中市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置・公式番号席518席",
+        "seatCount": 518,
+        "dataPath": "/venue-db/venues/tokyo-wave3-1054--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席表の印字番号付き一般席518席を抽選します。公式総数524席との差6は、番号の付かない車椅子6スペースとしてメタデータに保持します。花道使用時は全列の7〜10番計64席を格納する別配置であり、通常518席から削除しません。",
         "fixedOnly": false
       }
     ]

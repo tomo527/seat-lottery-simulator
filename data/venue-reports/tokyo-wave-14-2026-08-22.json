@@ -1,0 +1,40 @@
+{
+  "reportId": "tokyo-wave-14-2026-08-22",
+  "asOf": "2026-08-22",
+  "model": "Terra high implementation",
+  "policyVersion": "representative-coverage-v2",
+  "scope": ["seiryo-kaikan-hall", "fuchu-no-mori-furusato-hall"],
+  "venues": [
+    {
+      "id": "seiryo-kaikan-hall",
+      "sourceId": "tokyo-wave3-0004",
+      "classification": "PRODUCTION",
+      "expectedSeatCount": 400,
+      "calculatedSeatCount": 400,
+      "rangeDiff": 0,
+      "confidence": "representative",
+      "reason": "Current official map directly defines the normal 1F 370 / 2F 30 printed seat set. Fixed 193 and movable 207 are components of that same configuration. Lift-stage 364 is preserved as a separate untranscribed operation."
+    },
+    {
+      "id": "fuchu-no-mori-furusato-hall",
+      "sourceId": "tokyo-wave3-1054",
+      "classification": "PRODUCTION",
+      "expectedSeatCount": 524,
+      "calculatedSeatCount": 518,
+      "rangeDiff": -6,
+      "confidence": "representative",
+      "reason": "Current post-renovation official map directly defines the 518 printed general-seat IDs. The official six wheelchair spaces have no printed seat IDs and remain metadata. Hanamichi storage of all-row seats 7-10 (64 seats) is a separate operation."
+    }
+  ],
+  "result": {
+    "holds": 0,
+    "productionPromotions": 2,
+    "solHandoffs": 0,
+    "productionAfter": {
+      "venues": 97,
+      "selectableConfigurations": 99,
+      "configurationSeatRecords": 153356
+    },
+    "exactNextAction": "Do not research or implement Wave 15 without separate authorization."
+  }
+}
