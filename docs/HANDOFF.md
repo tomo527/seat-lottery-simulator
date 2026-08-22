@@ -4,7 +4,7 @@ Updated: 2026-08-22 (Asia/Tokyo)
 
 ## Current state
 
-- TOKYO-WAVE-14 source integration is staged for exactly 星陵会館〔ホール〕 and 府中の森芸術劇場〔ふるさとホール〕. Their source, Tokyo inventory, bounded batch/readiness/result report, production fingerprint, catalog, and runtime artifacts are synchronized; canonical full validation is the remaining gate before commit/push/deployment.
+- TOKYO-WAVE-14 promoted exactly 星陵会館〔ホール〕 and 府中の森芸術劇場〔ふるさとホール〕 in commit `bdc6372`, pushed to `main`. The managed Workers Builds check for that SHA succeeded (build `e2dd01c5-d154-4169-9611-8bd3f11e4400`; version `6301c80d-fa02-4a22-bd60-8ca22d356aef`), and both public runtime detail endpoints returned HTTP 200 with their expected seat totals.
 - Staged production data is **97 venues / 99 selectable configurations / 153,356 configuration-seat records**. `venues:release:coverage` remains **RELEASE READY: yes**; the fixed Tokyo coverage universe remains **39/76 (51.3%)**, MUST **25/44 (56.8%)**, SHOULD **14/28 (50.0%)** because neither Wave14 venue is an addressable member of that universe.
 - tokyo-wave3-0004/standard is staged with **400 mapped / 400 official / rangeDiff 0 / representative**. It preserves 1F370 + 2F30 and treats fixed193 + movable207 as one normal configuration; lift-stage364 is separate and its omitted IDs are not inferred.
 - tokyo-wave3-1054/standard is staged with **518 mapped / 524 official / rangeDiff -6 / representative**. The six-seat difference is the official, unnumbered wheelchair-space metadata. The all-row 7-10, 64-seat hanamichi storage operation remains separate and does not remove standard IDs.
@@ -21,10 +21,11 @@ Updated: 2026-08-22 (Asia/Tokyo)
 
 ## Exact next action
 
-Complete the single canonical Wave14 validation path; if it passes, commit, normally push `main`, confirm the managed Workers deployment, and perform the bounded production checks. Do not begin Wave15 without explicit authorization.
+Do not begin Wave15 without explicit authorization. Reopen an individual Wave13 source only if an issuer-defined row/area key or an equivalently explicit current official numbered-group label becomes available; do not infer it from diagram geometry.
 
 ## Recent completed work
 
 - 2026-08-22: Integrated the two adopted TOKYO-WAVE-12 Sol audit conclusions only; source, inventory, Wave 1/Wave 12 readiness, Wave 12 result report, production fingerprint, catalog, and runtime artifacts are synchronized. Targeted review passed: Nissay 1,335 and Playhouse 845. Canonical venue validation is recorded in the active task before commit/push.
 - 2026-08-22: Closed the explicitly bounded TOKYO-WAVE-13 scope as four source holds. Source, Tokyo inventory, carry-over batch, Wave 1/Wave 13 readiness, and Wave13 result report record the same evidence-based ownership blocker; production source data, generated catalog/runtime artifacts, and fingerprints remain unchanged. Targeted batch review/report and canonical `verify:venues` passed in the approved environment (including inventory/readiness/release coverage, build/check/validate/report, lint, typecheck, 212 unit tests, production build, 16 Playwright E2E tests, docs, and diff check).
 - 2026-08-22: TOKYO-WAVE-14 directly transcribed the adopted current official printed sets only: 星陵会館〔ホール〕 normal400 and 府中の森芸術劇場〔ふるさとホール〕 numbered-general518. The latter preserves the official six unnumbered wheelchair spaces and separate 64-seat hanamichi operation as metadata; no capacity fitting or inferred IDs were used.
+- 2026-08-22: Canonical `verify:venues` passed in the approved environment: targeted review, inventory/readiness/release coverage, build/check/validate/report, lint, typecheck, 212 unit tests, production build, 16 Playwright E2E tests, docs, and diff check. The restricted sandbox hit a Vite child-process `spawn EPERM` before unit tests; its approved-environment rerun passed. The in-app browser exposed no actionable deployed-app tab, so search/draw/console remain unconfirmed; public runtime JSON and managed deployment status are confirmed.
