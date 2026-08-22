@@ -5,161 +5,452 @@
   "name": "日生劇場",
   "prefecture": "東京都",
   "city": "千代田区",
-  "aliases": ["Nissay Theatre"],
+  "aliases": [
+    "Nissay Theatre"
+  ],
   "venueType": "theater",
   "sources": [
-    {"id":"official-seat-page","official":true,"roles":["seat-structure","facility","event-layout"],"publisher":"日生劇場","title":"座席表","url":"https://www.nissaytheatre.or.jp/seat/","checkedAt":"2026-08-20"},
-    {"id":"official-seat-map","official":true,"roles":["seat-structure","event-layout"],"publisher":"日生劇場","title":"日生劇場座席表","url":"https://www.nissaytheatre.or.jp/wptest/wp-content/themes/nissay/assets/pdf/seat/seat.pdf","checkedAt":"2026-08-20"},
-    {"id":"official-theatre-overview","official":true,"roles":["facility","seat-count"],"publisher":"日生劇場","title":"建築物としての日生劇場","url":"https://www.nissaytheatre.or.jp/theater/","checkedAt":"2026-08-20"}
+    {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "facility",
+        "event-layout"
+      ],
+      "publisher": "日生劇場",
+      "title": "座席表",
+      "url": "https://www.nissaytheatre.or.jp/seat/",
+      "checkedAt": "2026-08-22"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "event-layout"
+      ],
+      "publisher": "日生劇場",
+      "title": "日生劇場座席表",
+      "url": "https://www.nissaytheatre.or.jp/wptest/wp-content/themes/nissay/assets/pdf/seat/seat.pdf",
+      "checkedAt": "2026-08-22"
+    },
+    {
+      "id": "official-theatre-overview",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "日生劇場",
+      "title": "建築物としての日生劇場",
+      "url": "https://www.nissaytheatre.or.jp/theater/",
+      "checkedAt": "2026-08-22"
+    }
   ],
-  "configurations": [{
-    "id": "current-official-block-numbered-seat-map",
-    "canonicalName": "現行公式ブロック番号席1,490席",
-    "selectionBasis": "現行公式座席ページの発行者ブロック A1〜F3、各ブロックの列・番号範囲、及び同ページからダウンロードできる公式番号図を直接転記した代表配置。公式施設資料の1,334席との差156席は補正せずmetadataに保持する。",
-    "definitionAuthority": "representative-evidence",
-    "sourceGeneration": "2026-08-20 current official seating page block map and current-linked official numbered PDF",
-    "sourceIds": ["official-seat-page", "official-seat-map"],
-    "differenceBasisSourceIds": ["official-seat-page", "official-seat-map", "official-theatre-overview"],
-    "status": "production",
-    "selectable": true,
-    "numberedSeatSetComplete": true,
-    "capacityFitting": false,
-    "repositoryInventedDifferences": false,
-    "expectedSeatCount": 1334,
-    "scope": {"kind":"full-venue","issuerDefined":false,"containsEventDependentSeatIds":false},
-    "scopeDisclosure": "現行公式座席ページでブロック別に案内された番号席1,490席を抽選します。公式施設資料の1,334席との差156席、車椅子対応、及び公演ごとの販売停止・見切れ席は反映しません。",
-    "wheelchairSemantics": {"status":"not-reflected","description":"現行公式座席ページと公式番号図は車椅子利用時に置換される個別番号を公表しないため、発行者が掲載する通常のブロック別番号席集合を保持する。","sourceIds":["official-seat-page","official-seat-map"],"accessibilityConversionNotReflected":true},
-    "confidence": "approximate",
-    "verification": {"status":"reviewed","checkedAt":"2026-08-20","method":"current-official-html-image-map-and-block-range-review-with-current-linked-official-pdf-visual-cross-check","seatStructure":"matched","seatCount":"mismatched","rangeDiff":156,"unresolvedIssues":["現行公式座席ページの発行者ブロック A1〜F3 と各ブロックの列・番号範囲を転記した1,490席は、公式施設資料の1,334席より156席多い。総数へ合わせる削除はしない。","車椅子利用時の置換番号、公演ごとの販売停止・見切れ席は公開されていないため反映しない。"]},
-    "ranges": [
-      {"areaId":"first-floor-a1","areaLabel":"1階 A1ブロック","rowLabel":"XA","from":6,"to":14,"excluded":[]},
-      {"areaId":"first-floor-a1","areaLabel":"1階 A1ブロック","rowLabel":"XB","from":6,"to":14,"excluded":[]},
-      {"areaId":"first-floor-a1","areaLabel":"1階 A1ブロック","rowLabel":"XC","from":6,"to":14,"excluded":[]},
-      {"areaId":"first-floor-a2","areaLabel":"1階 A2ブロック","rowLabel":"XA","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-a2","areaLabel":"1階 A2ブロック","rowLabel":"XB","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-a2","areaLabel":"1階 A2ブロック","rowLabel":"XC","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-a3","areaLabel":"1階 A3ブロック","rowLabel":"XA","from":29,"to":37,"excluded":[]},
-      {"areaId":"first-floor-a3","areaLabel":"1階 A3ブロック","rowLabel":"XB","from":29,"to":37,"excluded":[]},
-      {"areaId":"first-floor-a3","areaLabel":"1階 A3ブロック","rowLabel":"XC","from":29,"to":37,"excluded":[]},
-      {"areaId":"first-floor-b1","areaLabel":"1階 B1ブロック","rowLabel":"A","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-b1","areaLabel":"1階 B1ブロック","rowLabel":"B","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-b1","areaLabel":"1階 B1ブロック","rowLabel":"C","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-b1","areaLabel":"1階 B1ブロック","rowLabel":"D","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-b1","areaLabel":"1階 B1ブロック","rowLabel":"E","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-b1","areaLabel":"1階 B1ブロック","rowLabel":"F","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-b1","areaLabel":"1階 B1ブロック","rowLabel":"G","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-b1","areaLabel":"1階 B1ブロック","rowLabel":"H","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-b2","areaLabel":"1階 B2ブロック","rowLabel":"A","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-b2","areaLabel":"1階 B2ブロック","rowLabel":"B","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-b2","areaLabel":"1階 B2ブロック","rowLabel":"C","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-b2","areaLabel":"1階 B2ブロック","rowLabel":"D","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-b2","areaLabel":"1階 B2ブロック","rowLabel":"E","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-b2","areaLabel":"1階 B2ブロック","rowLabel":"F","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-b2","areaLabel":"1階 B2ブロック","rowLabel":"G","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-b2","areaLabel":"1階 B2ブロック","rowLabel":"H","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-b3","areaLabel":"1階 B3ブロック","rowLabel":"A","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-b3","areaLabel":"1階 B3ブロック","rowLabel":"B","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-b3","areaLabel":"1階 B3ブロック","rowLabel":"C","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-b3","areaLabel":"1階 B3ブロック","rowLabel":"D","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-b3","areaLabel":"1階 B3ブロック","rowLabel":"E","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-b3","areaLabel":"1階 B3ブロック","rowLabel":"F","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-b3","areaLabel":"1階 B3ブロック","rowLabel":"G","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-b3","areaLabel":"1階 B3ブロック","rowLabel":"H","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-c1","areaLabel":"1階 C1ブロック","rowLabel":"I","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-c1","areaLabel":"1階 C1ブロック","rowLabel":"J","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-c1","areaLabel":"1階 C1ブロック","rowLabel":"K","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-c1","areaLabel":"1階 C1ブロック","rowLabel":"L","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-c1","areaLabel":"1階 C1ブロック","rowLabel":"M","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-c1","areaLabel":"1階 C1ブロック","rowLabel":"N","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-c1","areaLabel":"1階 C1ブロック","rowLabel":"O","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-c1","areaLabel":"1階 C1ブロック","rowLabel":"P","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-c1","areaLabel":"1階 C1ブロック","rowLabel":"Q","from":1,"to":14,"excluded":[]},
-      {"areaId":"first-floor-c2","areaLabel":"1階 C2ブロック","rowLabel":"I","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-c2","areaLabel":"1階 C2ブロック","rowLabel":"J","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-c2","areaLabel":"1階 C2ブロック","rowLabel":"K","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-c2","areaLabel":"1階 C2ブロック","rowLabel":"L","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-c2","areaLabel":"1階 C2ブロック","rowLabel":"M","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-c2","areaLabel":"1階 C2ブロック","rowLabel":"N","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-c2","areaLabel":"1階 C2ブロック","rowLabel":"O","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-c2","areaLabel":"1階 C2ブロック","rowLabel":"P","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-c2","areaLabel":"1階 C2ブロック","rowLabel":"Q","from":15,"to":28,"excluded":[]},
-      {"areaId":"first-floor-c3","areaLabel":"1階 C3ブロック","rowLabel":"I","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-c3","areaLabel":"1階 C3ブロック","rowLabel":"J","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-c3","areaLabel":"1階 C3ブロック","rowLabel":"K","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-c3","areaLabel":"1階 C3ブロック","rowLabel":"L","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-c3","areaLabel":"1階 C3ブロック","rowLabel":"M","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-c3","areaLabel":"1階 C3ブロック","rowLabel":"N","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-c3","areaLabel":"1階 C3ブロック","rowLabel":"O","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-c3","areaLabel":"1階 C3ブロック","rowLabel":"P","from":29,"to":42,"excluded":[]},
-      {"areaId":"first-floor-c3","areaLabel":"1階 C3ブロック","rowLabel":"Q","from":29,"to":42,"excluded":[]},
-      {"areaId":"gc-d1","areaLabel":"G.C（中2）階 D1ブロック","rowLabel":"A","from":1,"to":2,"excluded":[]},
-      {"areaId":"gc-d1","areaLabel":"G.C（中2）階 D1ブロック","rowLabel":"B","from":1,"to":2,"excluded":[]},
-      {"areaId":"gc-d1","areaLabel":"G.C（中2）階 D1ブロック","rowLabel":"C","from":1,"to":2,"excluded":[]},
-      {"areaId":"gc-d2","areaLabel":"G.C（中2）階 D2ブロック","rowLabel":"A","from":3,"to":11,"excluded":[]},
-      {"areaId":"gc-d2","areaLabel":"G.C（中2）階 D2ブロック","rowLabel":"B","from":3,"to":11,"excluded":[]},
-      {"areaId":"gc-d3","areaLabel":"G.C（中2）階 D3ブロック","rowLabel":"A","from":12,"to":21,"excluded":[]},
-      {"areaId":"gc-d3","areaLabel":"G.C（中2）階 D3ブロック","rowLabel":"B","from":12,"to":21,"excluded":[]},
-      {"areaId":"gc-d4","areaLabel":"G.C（中2）階 D4ブロック","rowLabel":"A","from":22,"to":29,"excluded":[]},
-      {"areaId":"gc-d4","areaLabel":"G.C（中2）階 D4ブロック","rowLabel":"B","from":22,"to":29,"excluded":[]},
-      {"areaId":"gc-d5","areaLabel":"G.C（中2）階 D5ブロック","rowLabel":"A","from":30,"to":41,"excluded":[]},
-      {"areaId":"gc-d5","areaLabel":"G.C（中2）階 D5ブロック","rowLabel":"B","from":30,"to":41,"excluded":[]},
-      {"areaId":"gc-d6","areaLabel":"G.C（中2）階 D6ブロック","rowLabel":"A","from":42,"to":49,"excluded":[]},
-      {"areaId":"gc-d6","areaLabel":"G.C（中2）階 D6ブロック","rowLabel":"B","from":42,"to":49,"excluded":[]},
-      {"areaId":"gc-d7","areaLabel":"G.C（中2）階 D7ブロック","rowLabel":"A","from":50,"to":59,"excluded":[]},
-      {"areaId":"gc-d7","areaLabel":"G.C（中2）階 D7ブロック","rowLabel":"B","from":50,"to":59,"excluded":[]},
-      {"areaId":"gc-d8","areaLabel":"G.C（中2）階 D8ブロック","rowLabel":"A","from":60,"to":68,"excluded":[]},
-      {"areaId":"gc-d8","areaLabel":"G.C（中2）階 D8ブロック","rowLabel":"B","from":60,"to":68,"excluded":[]},
-      {"areaId":"gc-d9","areaLabel":"G.C（中2）階 D9ブロック","rowLabel":"A","from":69,"to":70,"excluded":[]},
-      {"areaId":"gc-d9","areaLabel":"G.C（中2）階 D9ブロック","rowLabel":"B","from":69,"to":70,"excluded":[]},
-      {"areaId":"gc-d9","areaLabel":"G.C（中2）階 D9ブロック","rowLabel":"C","from":69,"to":70,"excluded":[]},
-      {"areaId":"second-floor-e1","areaLabel":"2階 E1ブロック","rowLabel":"A","from":1,"to":8,"excluded":[]},
-      {"areaId":"second-floor-e1","areaLabel":"2階 E1ブロック","rowLabel":"B","from":1,"to":8,"excluded":[]},
-      {"areaId":"second-floor-e1","areaLabel":"2階 E1ブロック","rowLabel":"C","from":1,"to":8,"excluded":[]},
-      {"areaId":"second-floor-e2","areaLabel":"2階 E2ブロック","rowLabel":"A","from":4,"to":14,"excluded":[]},
-      {"areaId":"second-floor-e2","areaLabel":"2階 E2ブロック","rowLabel":"B","from":4,"to":14,"excluded":[]},
-      {"areaId":"second-floor-e2","areaLabel":"2階 E2ブロック","rowLabel":"C","from":4,"to":14,"excluded":[]},
-      {"areaId":"second-floor-e2","areaLabel":"2階 E2ブロック","rowLabel":"D","from":4,"to":14,"excluded":[]},
-      {"areaId":"second-floor-e2","areaLabel":"2階 E2ブロック","rowLabel":"E","from":4,"to":14,"excluded":[]},
-      {"areaId":"second-floor-e3","areaLabel":"2階 E3ブロック","rowLabel":"A","from":15,"to":23,"excluded":[]},
-      {"areaId":"second-floor-e3","areaLabel":"2階 E3ブロック","rowLabel":"B","from":15,"to":23,"excluded":[]},
-      {"areaId":"second-floor-e3","areaLabel":"2階 E3ブロック","rowLabel":"C","from":15,"to":23,"excluded":[]},
-      {"areaId":"second-floor-e3","areaLabel":"2階 E3ブロック","rowLabel":"D","from":15,"to":23,"excluded":[]},
-      {"areaId":"second-floor-e3","areaLabel":"2階 E3ブロック","rowLabel":"E","from":15,"to":23,"excluded":[]},
-      {"areaId":"second-floor-e4","areaLabel":"2階 E4ブロック","rowLabel":"A","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-e4","areaLabel":"2階 E4ブロック","rowLabel":"B","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-e4","areaLabel":"2階 E4ブロック","rowLabel":"C","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-e4","areaLabel":"2階 E4ブロック","rowLabel":"D","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-e4","areaLabel":"2階 E4ブロック","rowLabel":"E","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-e5","areaLabel":"2階 E5ブロック","rowLabel":"A","from":36,"to":44,"excluded":[]},
-      {"areaId":"second-floor-e5","areaLabel":"2階 E5ブロック","rowLabel":"B","from":36,"to":44,"excluded":[]},
-      {"areaId":"second-floor-e5","areaLabel":"2階 E5ブロック","rowLabel":"C","from":36,"to":44,"excluded":[]},
-      {"areaId":"second-floor-e5","areaLabel":"2階 E5ブロック","rowLabel":"D","from":36,"to":44,"excluded":[]},
-      {"areaId":"second-floor-e5","areaLabel":"2階 E5ブロック","rowLabel":"E","from":36,"to":44,"excluded":[]},
-      {"areaId":"second-floor-e6","areaLabel":"2階 E6ブロック","rowLabel":"A","from":45,"to":55,"excluded":[]},
-      {"areaId":"second-floor-e6","areaLabel":"2階 E6ブロック","rowLabel":"B","from":45,"to":55,"excluded":[]},
-      {"areaId":"second-floor-e6","areaLabel":"2階 E6ブロック","rowLabel":"C","from":45,"to":55,"excluded":[]},
-      {"areaId":"second-floor-e6","areaLabel":"2階 E6ブロック","rowLabel":"D","from":45,"to":55,"excluded":[]},
-      {"areaId":"second-floor-e6","areaLabel":"2階 E6ブロック","rowLabel":"E","from":45,"to":55,"excluded":[]},
-      {"areaId":"second-floor-e7","areaLabel":"2階 E7ブロック","rowLabel":"A","from":51,"to":58,"excluded":[]},
-      {"areaId":"second-floor-e7","areaLabel":"2階 E7ブロック","rowLabel":"B","from":51,"to":58,"excluded":[]},
-      {"areaId":"second-floor-e7","areaLabel":"2階 E7ブロック","rowLabel":"C","from":51,"to":58,"excluded":[]},
-      {"areaId":"second-floor-f1","areaLabel":"2階 F1ブロック","rowLabel":"F","from":10,"to":23,"excluded":[]},
-      {"areaId":"second-floor-f1","areaLabel":"2階 F1ブロック","rowLabel":"G","from":10,"to":23,"excluded":[]},
-      {"areaId":"second-floor-f1","areaLabel":"2階 F1ブロック","rowLabel":"H","from":10,"to":23,"excluded":[]},
-      {"areaId":"second-floor-f1","areaLabel":"2階 F1ブロック","rowLabel":"I","from":10,"to":23,"excluded":[]},
-      {"areaId":"second-floor-f1","areaLabel":"2階 F1ブロック","rowLabel":"J","from":10,"to":23,"excluded":[]},
-      {"areaId":"second-floor-f1","areaLabel":"2階 F1ブロック","rowLabel":"K","from":10,"to":23,"excluded":[]},
-      {"areaId":"second-floor-f2","areaLabel":"2階 F2ブロック","rowLabel":"F","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-f2","areaLabel":"2階 F2ブロック","rowLabel":"G","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-f2","areaLabel":"2階 F2ブロック","rowLabel":"H","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-f2","areaLabel":"2階 F2ブロック","rowLabel":"I","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-f2","areaLabel":"2階 F2ブロック","rowLabel":"J","from":24,"to":35,"excluded":[]},
-      {"areaId":"second-floor-f3","areaLabel":"2階 F3ブロック","rowLabel":"F","from":36,"to":49,"excluded":[]},
-      {"areaId":"second-floor-f3","areaLabel":"2階 F3ブロック","rowLabel":"G","from":36,"to":49,"excluded":[]},
-      {"areaId":"second-floor-f3","areaLabel":"2階 F3ブロック","rowLabel":"H","from":36,"to":49,"excluded":[]},
-      {"areaId":"second-floor-f3","areaLabel":"2階 F3ブロック","rowLabel":"I","from":36,"to":49,"excluded":[]},
-      {"areaId":"second-floor-f3","areaLabel":"2階 F3ブロック","rowLabel":"J","from":36,"to":49,"excluded":[]},
-      {"areaId":"second-floor-f3","areaLabel":"2階 F3ブロック","rowLabel":"K","from":36,"to":49,"excluded":[]}
-    ]
-  }]
+  "configurations": [
+    {
+      "id": "current-official-block-numbered-seat-map",
+      "canonicalName": "現行公式番号席1,335席",
+      "selectionBasis": "現行公式PDFに実際に印字された1,335席を直接転記した代表配置。旧HTMLブロックの直積155席と、同一印字席をブロック境界ごとにareaIdで重複計上した表現を採用しない。公式施設資料の1,334席との差1席は補正せず保持する。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "2026-08-22 current-linked official numbered PDF printed seat set",
+      "sourceIds": [
+        "official-seat-map",
+        "official-seat-page"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-theatre-overview"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1334,
+      "scope": {
+        "kind": "full-venue",
+        "issuerDefined": false,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式PDFに印字された番号席1,335席を抽選します。公式施設資料の1,334席との差1席、車椅子対応、及び公演ごとの販売停止・見切れ席は反映しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行公式資料は車椅子利用時に置換される個別番号を公表しないため、PDFの通常番号席集合を保持する。",
+        "sourceIds": [
+          "official-seat-page",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-22",
+        "method": "SOL-audit-adopted-current-official-pdf-printed-seat-set-integration",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": 1,
+        "unresolvedIssues": [
+          "公式PDFの印字番号席1,335席と公式施設資料の1,334席との差1席は補正しない。",
+          "車椅子利用時の置換番号、公演ごとの販売停止・見切れ席は公開されていないため反映しない。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "XA",
+          "from": 6,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "XB",
+          "from": 6,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "XC",
+          "from": 6,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "A",
+          "from": 4,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "B",
+          "from": 4,
+          "to": 39,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "C",
+          "from": 3,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 38,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "E",
+          "from": 4,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "F",
+          "from": 2,
+          "to": 41,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "H",
+          "from": 2,
+          "to": 41,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "I",
+          "from": 1,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "J",
+          "from": 2,
+          "to": 41,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "L",
+          "from": 2,
+          "to": 41,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "M",
+          "from": 2,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "N",
+          "from": 2,
+          "to": 41,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "O",
+          "from": 3,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "P",
+          "from": 4,
+          "to": 39,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "Q",
+          "from": 7,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "gc-floor",
+          "areaLabel": "G.C（中2）階席",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 70,
+          "excluded": []
+        },
+        {
+          "areaId": "gc-floor",
+          "areaLabel": "G.C（中2）階席",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 70,
+          "excluded": []
+        },
+        {
+          "areaId": "gc-floor",
+          "areaLabel": "G.C（中2）階席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 2,
+          "excluded": []
+        },
+        {
+          "areaId": "gc-floor",
+          "areaLabel": "G.C（中2）階席",
+          "rowLabel": "C",
+          "from": 69,
+          "to": 70,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "D",
+          "from": 2,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "E",
+          "from": 2,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "F",
+          "from": 7,
+          "to": 19,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "F",
+          "from": 24,
+          "to": 35,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "F",
+          "from": 40,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "G",
+          "from": 7,
+          "to": 19,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "G",
+          "from": 24,
+          "to": 35,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "G",
+          "from": 40,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "H",
+          "from": 10,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "I",
+          "from": 15,
+          "to": 49,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "J",
+          "from": 14,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "J",
+          "from": 24,
+          "to": 35,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "J",
+          "from": 38,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "K",
+          "from": 12,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "K",
+          "from": 37,
+          "to": 47,
+          "excluded": []
+        }
+      ]
+    }
+  ]
 }

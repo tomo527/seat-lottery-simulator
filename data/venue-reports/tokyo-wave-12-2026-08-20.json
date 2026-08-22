@@ -1,7 +1,7 @@
 {
   "reportId": "tokyo-wave-12-2026-08-20",
-  "asOf": "2026-08-20",
-  "model": "Terra high",
+  "asOf": "2026-08-22",
+  "model": "Sol audit integration",
   "policyVersion": "representative-coverage-v2",
   "scope": [
     "nissay-theatre",
@@ -16,21 +16,25 @@
       "classification": "PRODUCTION",
       "configurationId": "current-official-block-numbered-seat-map",
       "expectedSeatCount": 1334,
-      "calculatedSeatCount": 1490,
-      "rangeDiff": 156,
-      "difference": 156,
-      "method": "direct transcription of the current issuer-owned seating HTML image-map block, row, and number-range text with current-linked official PDF visual cross-check",
-      "scope": "current official block-numbered seat set; wheelchair and performance differences retained as metadata",
-      "confidence": "approximate"
+      "calculatedSeatCount": 1335,
+      "rangeDiff": 1,
+      "difference": 1,
+      "method": "Sol-audit-adopted direct transcription of the current official PDF printed seat set",
+      "scope": "current official PDF printed seat set; wheelchair and performance differences retained as metadata",
+      "confidence": "representative"
     },
     {
       "id": "tokyo-geigeki-playhouse",
       "sourceId": "tokyo-geigeki-playhouse-standard",
-      "classification": "SOL HANDOFF",
+      "classification": "PRODUCTION",
       "expectedSeatCount": 829,
-      "calculatedSeatCount": null,
-      "rangeDiff": null,
-      "reason": "The current official PDF's printed seat IDs total 845 while its own subtotal and the current facility page state 829; the issuer does not identify the 16-seat difference."
+      "calculatedSeatCount": 845,
+      "rangeDiff": 16,
+      "configurationId": "current-official-printed-seat-map",
+      "difference": 16,
+      "method": "Sol-audit-adopted direct transcription of the current official PDF printed seat set",
+      "scope": "current official PDF printed seat set; pit, A-E removal, wheelchair, and performance differences retained as metadata",
+      "confidence": "representative"
     },
     {
       "id": "shinbashi-enbujo",
@@ -52,19 +56,19 @@
     }
   ],
   "result": {
-    "terraOnlyProductionPromotions": 1,
-    "solHandoffs": 3,
+    "solHandoffs": 2,
     "productionAfter": {
-      "venues": 94,
-      "selectableConfigurations": 96,
-      "configurationSeatRecords": 151748
+      "venues": 95,
+      "selectableConfigurations": 97,
+      "configurationSeatRecords": 152438
     },
     "coverageAfter": {
-      "tokyoProduction": "38/76 (50.0%)",
-      "mustProduction": "24/44 (54.5%)",
+      "tokyoProduction": "39/76 (51.3%)",
+      "mustProduction": "25/44 (56.8%)",
       "shouldProduction": "14/28 (50.0%)"
     },
     "releaseReady": true,
-    "exactNextAction": "Proposal only: choose one bounded remaining Tokyo candidate after a separate Sol decision on the three Wave 12 handoffs; do not begin work without explicit scope selection."
+    "exactNextAction": "USER CONFIRMATION REQUIRED: do not productionize shinbashi-enbujo-standard or bunkyo-civic-main-standard, create repository-defined row/area ownership, or begin Wave 13 until the user resolves the recorded official-source ambiguities.",
+    "solAuditIntegrations": 2
   }
 }

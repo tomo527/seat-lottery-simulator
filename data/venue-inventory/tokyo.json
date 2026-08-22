@@ -1031,11 +1031,11 @@
       "officialFacilityUrl": "https://www.nissaytheatre.or.jp/seat/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "現行公式座席ページの画像マップは1階 A1〜C3、G.C D1〜D9、2階 E1〜F3を発行者ブロックとして示し、各ブロックの列・番号範囲をissuer-owned textで掲載する。全ブロック・列・番号範囲1,490席を完全転記した代表配置をproduction化し、公式施設資料1,334席との差156席はmetadataに保持する。",
+      "eligibilityReason": "Sol auditで現行リンク公式PDFの印字番号集合1,335席をlosslessに確定しproduction source nissay-theatre-standardへ紐付けた。公式施設資料1,334席との差1席はmetadataに保持し、capacity fittingをしていない。",
       "priority": "A",
       "venueSourceId": "nissay-theatre-standard",
       "researchStatus": "production",
-      "lastCheckedAt": "2026-08-20",
+      "lastCheckedAt": "2026-08-22",
       "discoveryUrlRaw": "http://www.nissaytheatre.or.jp/"
     },
     {
@@ -16153,18 +16153,17 @@
       "officialDisplayName": "東京芸術劇場〔プレイハウス〕",
       "prefecture": "東京都",
       "city": "豊島区",
-      "capacity": 834,
+      "capacity": 829,
       "category": "hall",
       "officialFacilityUrl": "https://www.geigeki.jp/facilities/playhouse/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行公式施設ページが829席、同ページ直結座席表が全印字番号を示す。だが同PDFの1階A〜E内訳116席と印字番号132席が16席相違し、issuer内矛盾のSol判断待ち。",
+      "eligibility": "eligible",
+      "eligibilityReason": "Sol auditで現行公式PDFの印字番号集合1階642席・2階203席、計845席をlosslessに確定しproduction source tokyo-geigeki-playhouse-standardへ紐付けた。公式829席との差16席とA〜E列132対116、ピット・車椅子・公演差はmetadataに保持し、capacity fittingをしていない。",
       "priority": "B",
       "venueSourceId": "tokyo-geigeki-playhouse-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-20",
-      "discoveryUrlRaw": "http://www.geigeki.jp/rent/playhouse/index.html",
-      "blockingReason": "SOL HANDOFF / OFFICIAL-CONTRADICTION: 2026-08-20に現行公式施設ページ829席と同ページ直結PDFを再確認。PDFは1階A〜Eを116席とするが、印字番号を直接合算すると132席、全印字番号は845席で公式829席と16席相違する。どの番号を除外するかはissuerが示さず、capacity fittingや推測をせずSol判断まで停止。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-22",
+      "discoveryUrlRaw": "http://www.geigeki.jp/rent/playhouse/index.html"
     },
     {
       "inventoryId": "tokyo-tokyo-geigeki-theatre-east",

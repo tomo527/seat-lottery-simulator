@@ -868,11 +868,11 @@
     "configurations": [
       {
         "id": "current-official-block-numbered-seat-map",
-        "canonicalName": "現行公式ブロック番号席1,490席",
-        "seatCount": 1490,
+        "canonicalName": "現行公式番号席1,335席",
+        "seatCount": 1335,
         "dataPath": "/venue-db/venues/nissay-theatre-standard--current-official-block-numbered-seat-map.json",
         "scope": "full-venue",
-        "scopeDisclosure": "現行公式座席ページでブロック別に案内された番号席1,490席を抽選します。公式施設資料の1,334席との差156席、車椅子対応、及び公演ごとの販売停止・見切れ席は反映しません。",
+        "scopeDisclosure": "現行公式PDFに印字された番号席1,335席を抽選します。公式施設資料の1,334席との差1席、車椅子対応、及び公演ごとの販売停止・見切れ席は反映しません。",
         "fixedOnly": false
       }
     ]
@@ -1295,6 +1295,30 @@
     "representativePatternName": "Aステージ",
     "seatCount": 308,
     "dataPath": "/venue-db/venues/tokyo-fm-hall-a-stage.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-geigeki-playhouse-standard",
+    "venueGroupId": "tokyo-geigeki-playhouse-standard",
+    "name": "東京芸術劇場 プレイハウス",
+    "searchAliases": [
+      "東京芸術劇場中ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "豊島区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "現行公式印字番号席845席",
+        "seatCount": 845,
+        "dataPath": "/venue-db/venues/tokyo-geigeki-playhouse-standard--current-official-printed-seat-map.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式PDFに印字された番号席845席を抽選します。公式の829席との差16席、オーケストラピット使用時のA〜E列撤去、車椅子転換、及び公演ごとの座席差は反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "tokyo-geigeki-theatre-east-pattern-a",

@@ -886,13 +886,13 @@
       "schemaVersion": 2,
       "configurations": {
         "current-official-block-numbered-seat-map": {
-          "count": 1490,
+          "count": 1335,
           "samples": [
-            "first-floor-a1/XA/6",
-            "first-floor-c3/M/34",
-            "second-floor-f3/K/49"
+            "first-floor/XA/6",
+            "first-floor/O/35",
+            "second-floor/K/47"
           ],
-          "sha256": "e1156fe5783f6954cf0f75836ec4d35405f07dae0e8ae750c20c9ae0661525eb"
+          "sha256": "6be47f379a088cba39d0e2e610a0f843d88702b82e757446a3f7f8a248916678"
         }
       }
     },
@@ -1033,6 +1033,20 @@
             "second-floor-main/K/39"
           ],
           "sha256": "f81a3a4e2e0b2e0d189334cbdf921a0c8127ff64cec2be36e03c7a1453e9cc0f"
+        }
+      }
+    },
+    "tokyo-geigeki-playhouse-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-printed-seat-map": {
+          "count": 845,
+          "samples": [
+            "first-floor-main/A/4",
+            "first-floor-main/P/4",
+            "second-floor-right-balcony/RB/9"
+          ],
+          "sha256": "ad19162df31ec5d67d42436f3a119d46f6ab00d57aa9399106fbde2b09597e38"
         }
       }
     }

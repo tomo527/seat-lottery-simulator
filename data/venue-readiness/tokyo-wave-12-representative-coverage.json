@@ -1,7 +1,7 @@
 {
   "reportVersion": 1,
   "batchId": "tokyo-wave-12-representative-coverage",
-  "baselineDate": "2026-08-20",
+  "baselineDate": "2026-08-22",
   "scope": "TOKYO-WAVE-12 representative-coverage-v2 completion readiness for exactly four selected Tokyo venues",
   "expectedVenueCount": 4,
   "venues": [
@@ -10,14 +10,14 @@
       "readiness": "R1",
       "secondPass": "complete",
       "blocker": null,
-      "nextAction": "Maintain the reviewed 1,490-seat current official block-numbered representative set and its +156 official-total, wheelchair, and performance-difference metadata."
+      "nextAction": "Maintain the Sol-audit-adopted 1,335-seat current official PDF printed representative set and its +1 official-total, wheelchair, and performance-difference metadata."
     },
     {
       "venueId": "tokyo-geigeki-playhouse-standard",
-      "readiness": "R5",
+      "readiness": "R1",
       "secondPass": "complete",
-      "blocker": "SOL HANDOFF: current official PDF prints 845 numbered seats while its own and the facility page's total is 829; the issuer does not identify the 16-seat difference.",
-      "nextAction": "Require a Sol decision only on resolving the official internal contradiction; do not select or exclude printed IDs by capacity fitting."
+      "blocker": null,
+      "nextAction": "Maintain the Sol-audit-adopted 845-seat current official PDF printed representative set, its +16 official-total and A〜E 132-versus-116 metadata, and pit, wheelchair, and performance-difference disclosures."
     },
     {
       "venueId": "shinbashi-enbujo-standard",
