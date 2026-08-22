@@ -4,7 +4,7 @@ Updated: 2026-08-22 (Asia/Tokyo)
 
 ## Current state
 
-- main, local HEAD, and origin/main were 6fdb500314d2cad1c7068beb1a4e4a8b4c0c5b52 at integration start. The working tree now contains only the uncommitted TOKYO-WAVE-12 Sol-audit integration and its generated artifacts.
+- The adopted TOKYO-WAVE-12 integration was committed and pushed to main as 5b62098. Public static runtime endpoints serve both new venue artifacts. The in-app browser connector remains unavailable in this environment because of the documented Windows sandbox EPERM; canonical local E2E passed.
 - Production data is **95 venues / 97 selectable configurations / 152,438 configuration-seat records**. Tokyo user-visible production coverage is **39/76 (51.3%)**, MUST **25/44 (56.8%)**, SHOULD **14/28 (50.0%)**; venues:release:coverage reports **RELEASE READY: yes**.
 - nissay-theatre-standard/current-official-block-numbered-seat-map is corrected atomically to the current official PDF printed set: **1,335 mapped / 1,334 official / rangeDiff +1 / representative**. No capacity fitting was used.
 - tokyo-geigeki-playhouse-standard/current-official-printed-seat-map is production: **845 mapped / 829 official / rangeDiff +16 / representative**. It preserves the official PDF's 1F A-E **132 printed versus 116 table** difference, the pit-removal, wheelchair-conversion, and performance-difference disclosures; no capacity fitting was used.
