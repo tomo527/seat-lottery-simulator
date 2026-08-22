@@ -1,32 +1,64 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-wave3-0991",
   "name": "八王子市南大沢文化会館〔主ホール〕",
   "prefecture": "東京都",
   "city": "八王子市",
-  "aliases": [],
+  "aliases": ["南大沢文化会館 主ホール"],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"八王子市南大沢文化会館","title":"八王子市南大沢文化会館〔主ホール〕 施設案内","url":"https://www.hachiojibunka.or.jp/minami/","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
-  },
-  "ranges": []
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"八王子市南大沢文化会館","title":"主ホール 客席図","url":"https://www.hachiojibunka.or.jp/minami/facility/main_hall/","checkedAt":"2026-08-22"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"八王子市南大沢文化会館","title":"南大沢文化会館 主ホール座席表","url":"https://www.hachiojibunka.or.jp/minami/assets/doc/008.pdf","checkedAt":"2026-08-22"}
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置・公式番号席496席",
+      "selectionBasis": "現行公式施設ページと公式座席表の全印字番号席496席を直接転記した通常配置。A〜Qの行ラベルが左右・中央の分節番号群をissuer-definedに一意化する。",
+      "issuerDefinedCondition": "施設運営者が定員500名、固定席496席、車椅子席4席として公開する主ホール座席表を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-22 current official printed seat map",
+      "sourceIds": ["official-facility-page", "official-seat-map"],
+      "differenceBasisSourceIds": ["official-facility-page", "official-seat-map"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 500,
+      "scope": {"kind":"official-variant","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "公式座席表の印字番号席496席を抽選します。公式定員500名との差4は番号のない車椅子4席です。点線で示される取り外し可能席は、番号が印字される限り通常番号集合に含めます。",
+      "wheelchairSemantics": {"status":"not-reflected","description":"公式は車椅子席4席を別記するが、座席IDを印字しないため、番号席496席へIDを作成して反映しない。","sourceIds":["official-facility-page","official-seat-map"],"accessibilityConversionNotReflected":true},
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-22",
+        "method": "current-official-pdf-printed-seat-set-review",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -4,
+        "unresolvedIssues": ["公式定員500名との差4は、公式が別記する番号なしの車椅子4席である。seat IDを作成しない。","点線の取り外し可能席は印字番号がある限り通常496席の番号集合に含め、取り外し運用で推測除外しない。"]
+      },
+      "ranges": [
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"A","from":6,"to":27,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"B","from":5,"to":28,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"C","from":4,"to":29,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"D","from":3,"to":30,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"E","from":2,"to":31,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"F","from":1,"to":32,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"G","from":4,"to":29,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"H","from":1,"to":32,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"I","from":1,"to":32,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"J","from":1,"to":32,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"K","from":1,"to":32,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"L","from":1,"to":32,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"M","from":1,"to":32,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"N","from":1,"to":32,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"O","from":2,"to":31,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"P","from":3,"to":30,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"主ホール客席","rowLabel":"Q","from":4,"to":29,"excluded":[]}
+      ]
+    }
+  ]
 }

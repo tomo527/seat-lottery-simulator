@@ -1,0 +1,40 @@
+{
+  "reportId": "tokyo-wave-15-2026-08-22",
+  "asOf": "2026-08-22",
+  "model": "Terra high implementation",
+  "policyVersion": "representative-coverage-v2",
+  "scope": ["yomiuri-otemachi-hall", "minami-osawa-cultural-hall-main"],
+  "venues": [
+    {
+      "id": "yomiuri-otemachi-hall",
+      "sourceId": "tokyo-wave3-0041",
+      "classification": "PRODUCTION",
+      "expectedSeatCount": 501,
+      "calculatedSeatCount": 501,
+      "rangeDiff": 0,
+      "confidence": "representative",
+      "reason": "The current official documents page directly links the normal one-floor 501-seat map. Every printed row and left/centre/right number group is issuer-defined. The maximum-eight-wheelchair conversion removes unspecified seats only in a separate operation."
+    },
+    {
+      "id": "minami-osawa-cultural-hall-main",
+      "sourceId": "tokyo-wave3-0991",
+      "classification": "PRODUCTION",
+      "expectedSeatCount": 500,
+      "calculatedSeatCount": 496,
+      "rangeDiff": -4,
+      "confidence": "representative",
+      "reason": "The current official map directly defines A-Q printed ranges totaling 496 fixed seats. Its published capacity separately identifies four unnumbered wheelchair spaces; dotted removable-seat IDs remain in the normal printed configuration."
+    }
+  ],
+  "result": {
+    "holds": 0,
+    "productionPromotions": 2,
+    "solHandoffs": 0,
+    "productionAfter": {
+      "venues": 99,
+      "selectableConfigurations": 101,
+      "configurationSeatRecords": 154353
+    },
+    "exactNextAction": "Do not research or implement Wave 16 without separate authorization."
+  }
+}

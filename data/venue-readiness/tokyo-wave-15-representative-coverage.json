@@ -1,0 +1,23 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-15-representative-coverage",
+  "baselineDate": "2026-08-22",
+  "scope": "TOKYO-WAVE-15 representative-coverage-v2 production promotion for exactly two Tokyo halls",
+  "expectedVenueCount": 2,
+  "venues": [
+    {
+      "venueId": "tokyo-wave3-0041",
+      "readiness": "R4",
+      "secondPass": "approved",
+      "blocker": null,
+      "nextAction": "Production: retain all 501 normal printed IDs; preserve the maximum-eight-wheelchair conversion as metadata because the removed IDs are not specified officially."
+    },
+    {
+      "venueId": "tokyo-wave3-0991",
+      "readiness": "R4",
+      "secondPass": "approved",
+      "blocker": null,
+      "nextAction": "Production: retain all 496 printed IDs, including dotted removable-seat IDs; preserve four unnumbered wheelchair spaces as metadata rather than creating IDs."
+    }
+  ]
+}

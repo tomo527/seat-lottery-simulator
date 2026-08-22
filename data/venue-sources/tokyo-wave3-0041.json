@@ -1,32 +1,70 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-wave3-0041",
   "name": "よみうり大手町ホール〔よみうり大手町ホール〕",
   "prefecture": "東京都",
   "city": "千代田区",
-  "aliases": [],
+  "aliases": ["よみうり大手町ホール"],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"よみうり大手町ホール","title":"よみうり大手町ホール〔よみうり大手町ホール〕 施設案内","url":"https://yomi.otemachi-hall.com/","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
-  },
-  "ranges": []
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"よみうり大手町ホール","title":"よみうり大手町ホール概要","url":"https://yomi.otemachi-hall.com/hall/index.html","checkedAt":"2026-08-22"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"よみうり大手町ホール","title":"よみうり大手町ホール 座席表","url":"https://yomi.otemachi-hall.com/hall/images/hall01/seatmap.pdf","checkedAt":"2026-08-22"}
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置・公式番号席501席",
+      "selectionBasis": "現行の公式施設ページが直接リンクする公式座席表の全印字番号席501席を直接転記した通常配置。各行の左右・中央の分節番号群は、図に印字された行番号で一意化する。",
+      "issuerDefinedCondition": "施設運営者が501席として公開する通常の固定1層客席図を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-22 current-linked official printed seat map",
+      "sourceIds": ["official-facility-page", "official-seat-map"],
+      "differenceBasisSourceIds": ["official-facility-page", "official-seat-map"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 501,
+      "scope": {"kind":"official-variant","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式ページが直接リンクする座席表の印字番号席501席を抽選します。車椅子利用時は一部座席を外して最大8台に対応する別運用であり、通常501席の番号集合から座席IDを削除しません。",
+      "wheelchairSemantics": {"status":"not-reflected","description":"公式は車椅子利用時に一部座席を外して最大8台へ対応すると説明するが、取り外す個別の座席IDを指定しないため、通常501席の番号集合を変更しない。","sourceIds":["official-facility-page","official-seat-map"],"accessibilityConversionNotReflected":true},
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-22",
+        "method": "current-linked-official-pdf-printed-seat-set-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": ["公式PDFは2014年1月6日現在と表記するが、現行の施設ページが同PDFを直接リンクしている。車椅子最大8台時の取り外し座席IDは公開されていないため、通常501席から推測で除外しない。"]
+      },
+      "ranges": [
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"1","from":3,"to":23,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"2","from":2,"to":24,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"3","from":2,"to":24,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"4","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"5","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"6","from":6,"to":20,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"7","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"8","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"9","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"10","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"11","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"12","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"13","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"14","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"15","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"16","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"17","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"18","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"19","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"20","from":1,"to":25,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"21","from":1,"to":2,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"21","from":6,"to":20,"excluded":[]},
+        {"areaId":"main-floor","areaLabel":"ホール客席","rowLabel":"21","from":24,"to":25,"excluded":[]}
+      ]
+    }
+  ]
 }

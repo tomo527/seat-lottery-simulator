@@ -1,0 +1,27 @@
+{
+  "batchId": "tokyo-wave-15-representative-coverage",
+  "createdAt": "2026-08-22",
+  "scope": "TOKYO-WAVE-15 production promotion for exactly よみうり大手町ホール and 八王子市南大沢文化会館〔主ホール〕. Preserve representative-coverage-v2; use only current official printed numbered seat maps; prohibit capacity fitting, invented seat IDs, unrecorded duplicate suppression, geometry-defined ownership, and configuration mixing.",
+  "status": "complete",
+  "priority": "B",
+  "targetVenueIds": [
+    "tokyo-official-0041",
+    "tokyo-official-0991"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-official-0041",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "draft-created",
+      "recheckReason": "Current official documents page directly links the complete normal 501-seat numbered map; wheelchair conversion is separately disclosed.",
+      "recheckNotBefore": "2026-08-22"
+    },
+    {
+      "inventoryId": "tokyo-official-0991",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "draft-created",
+      "recheckReason": "Current official hall page and numbered map explicitly separate 496 fixed printed seats from four unnumbered wheelchair spaces.",
+      "recheckNotBefore": "2026-08-22"
+    }
+  ]
+}

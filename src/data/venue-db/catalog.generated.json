@@ -1484,6 +1484,30 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-0041",
+    "venueGroupId": "tokyo-wave3-0041",
+    "name": "よみうり大手町ホール〔よみうり大手町ホール〕",
+    "searchAliases": [
+      "よみうり大手町ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置・公式番号席501席",
+        "seatCount": 501,
+        "dataPath": "/venue-db/venues/tokyo-wave3-0041--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式ページが直接リンクする座席表の印字番号席501席を抽選します。車椅子利用時は一部座席を外して最大8台に対応する別運用であり、通常501席の番号集合から座席IDを削除しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "tokyo-wave3-0130",
     "name": "サントリーホール〔大ホール〕",
     "searchAliases": [
@@ -1518,6 +1542,30 @@
         "dataPath": "/venue-db/venues/tokyo-wave3-0136--current-official-event-seat-map.json",
         "scope": "representative-event",
         "scopeDisclosure": "現行公式座席ページの公演用番号席1,318席を抽選します。施設公表最大1,324席との差6席、別公演の舞台・販売・車椅子配置差は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-0991",
+    "venueGroupId": "tokyo-wave3-0991",
+    "name": "八王子市南大沢文化会館〔主ホール〕",
+    "searchAliases": [
+      "南大沢文化会館 主ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "八王子市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置・公式番号席496席",
+        "seatCount": 496,
+        "dataPath": "/venue-db/venues/tokyo-wave3-0991--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式座席表の印字番号席496席を抽選します。公式定員500名との差4は番号のない車椅子4席です。点線で示される取り外し可能席は、番号が印字される限り通常番号集合に含めます。",
         "fixedOnly": false
       }
     ]
