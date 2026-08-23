@@ -11,22 +11,22 @@
     "id": "",
     "name": "",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
+    "expectedSeatCount": 902,
+    "selectionReason": "2026-08-23に現行ギャラクシティ施設案内と公式座席図を照合した。図の印字番号セル902席と、同図の階別定員・無番号車椅子6席の内訳が矛盾するため代表配置は確定しない。",
     "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"西新井文化ホール","title":"西新井文化ホール 施設案内","url":"https://www.galaxcity.jp/modules/site/index.php?action=CatView&cat_id=2","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
+  "sources": [{"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"ギャラクシティ","title":"西新井文化ホール ご利用案内","url":"https://hoshizora.galaxcity.jp/cultural-hall/guide/","checkedAt":"2026-08-23"},{"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"足立区／ギャラクシティ","title":"足立区西新井文化ホール客席図","url":"https://www.galaxcity.jp/assets/docs/cultural-hall/nishiarai_zasekihyou.pdf","checkedAt":"2026-08-23"}],
+  "registeredScope": "現行公式座席図の全印字番号902席を確認したが、同図の480席・422席・車椅子6席の表示と整合しないためrangeは未登録。",
+  "completenessBasis": "床・あ〜に/ぬ〜ふの行・分節番号群は公式図で明示されるが、番号セル902と階別内訳との矛盾がある。",
+  "transformation": "896席に合わせて印字番号を削除せず、無番号車椅子6区画へIDを作らず、別のissuer-defined番号集合が提示されるまでrange化しない。",
+  "knownLimitations": ["現行PDFの印字番号902と階別定員内訳の矛盾を訂正するissuer資料が必要。"],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
+    "status": "reviewed",
+    "checkedAt": "2026-08-23",
+    "method": "current-official-pdf-printed-seat-set-review-and-independent-conflict-check",
+    "seatStructure": "matched",
+    "seatCount": "mismatched",
+    "unresolvedIssues": ["現行公式PDFの印字番号902席と同PDFの階別定員・無番号車椅子6席の関係が重大に矛盾する。"]
   },
   "ranges": []
 }

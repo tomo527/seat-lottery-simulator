@@ -1,0 +1,14 @@
+{
+  "batchId": "tokyo-wave-17-representative-coverage",
+  "createdAt": "2026-08-23",
+  "scope": "TOKYO-WAVE-17 bounded execution for exactly セシオン杉並〔ホール〕, 西新井文化ホール, プリモホールゆとろぎ〔大ホール〕, and 瑞穂ビューパーク・スカイホール〔大ホール〕. Preserve representative-coverage-v2; directly transcribe only complete current official printed sets; prohibit capacity fitting, invented seat IDs, duplicate suppression, geometry-defined ownership, and configuration mixing.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["tokyo-official-0804", "tokyo-official-0937", "tokyo-official-1188", "tokyo-official-1205"],
+  "carryOvers": [
+    {"inventoryId":"tokyo-official-0804","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"Bounded Wave17 direct official-map count found497 printed seats versus the current official503-person figure; the unresolved six-seat difference is recorded without inferring wheelchair capacity.","recheckNotBefore":"2026-08-23"},
+    {"inventoryId":"tokyo-official-0937","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"Bounded Wave17 direct count and independent conflict check found902 visible numbered cells but a materially inconsistent official breakdown; no numbers were deleted.","recheckNotBefore":"2026-08-23"},
+    {"inventoryId":"tokyo-official-1188","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"Bounded Wave17 direct transcription established850 printed seats and four issuer-defined unnumbered wheelchair spaces; promotion is limited to the normal official numbered set.","recheckNotBefore":"2026-08-23"},
+    {"inventoryId":"tokyo-official-1205","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"Bounded Wave17 direct count and independent conflict check found1,006 printed cells but an unresolved four-seat conflict with the current official fixed-seat statement; removable rows stay unmodified.","recheckNotBefore":"2026-08-23"}
+  ]
+}

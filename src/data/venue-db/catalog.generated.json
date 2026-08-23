@@ -1620,6 +1620,30 @@
   },
   {
     "schemaVersion": 2,
+    "id": "tokyo-wave3-1188",
+    "venueGroupId": "tokyo-wave3-1188",
+    "name": "羽村市生涯学習センターゆとろぎ〔大ホール〕",
+    "searchAliases": [
+      "プリモホールゆとろぎ 大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "羽村市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置・公式番号席850席",
+        "seatCount": 850,
+        "dataPath": "/venue-db/venues/tokyo-wave3-1188--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式座席表の印字番号席850席を抽選します。公式定員854席との差4は番号のない車椅子席4席です。親子席とpit用可動席は番号が印字される限り通常番号集合に含め、運用時の除外IDは推測しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "tokyu-theatre-orb-standard",
     "venueGroupId": "tokyu-theatre-orb-standard",
     "name": "東急シアターオーブ",

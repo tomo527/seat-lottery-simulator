@@ -1,0 +1,22 @@
+{
+  "reportId": "tokyo-wave-17-2026-08-23",
+  "asOf": "2026-08-23",
+  "model": "Terra high implementation",
+  "policyVersion": "representative-coverage-v2",
+  "scope": ["sesion-suginami-hall", "nishiarai-cultural-hall", "primo-hall-yutorogi-large-hall", "mizuho-viewpark-skyhall-large-hall"],
+  "venues": [
+    {"id":"sesion-suginami-hall","sourceId":"tokyo-wave3-0804","classification":"HOLD","expectedSeatCount":503,"calculatedSeatCount":497,"rangeDiff":-6,"confidence":"source-hold","reason":"Current official map directly prints497 numbered seats; the current official facility page says503. The map contains unnumbered wheelchair areas, but does not issuer-define six positions, so no IDs or capacity fitting were applied."},
+    {"id":"nishiarai-cultural-hall","sourceId":"tokyo-wave3-0937","classification":"HOLD","expectedSeatCount":902,"calculatedSeatCount":902,"rangeDiff":0,"confidence":"source-hold","reason":"Current official PDF visibly prints902 numbered cells, while the same PDF states1F480, 2F422, and six unnumbered wheelchair spaces. The required896-seat mapping cannot be created by deleting numbers."},
+    {"id":"primo-hall-yutorogi-large-hall","sourceId":"tokyo-wave3-1188","configurationId":"standard","classification":"PRODUCTION","expectedSeatCount":854,"calculatedSeatCount":850,"rangeDiff":-4,"confidence":"representative","reason":"Current official page and PDF directly establish the complete850-seat printed set. The four unnumbered wheelchair spaces explain the official854-seat capacity; numbered parent and pit-movable seats remain in the standard set without inferred exclusions."},
+    {"id":"mizuho-viewpark-skyhall-large-hall","sourceId":"tokyo-wave3-1205","classification":"HOLD","expectedSeatCount":1008,"calculatedSeatCount":1006,"rangeDiff":-2,"confidence":"source-hold","reason":"Independent direct transcription found1,006 numbered cells, but the same current plan states1,002 fixed seats and six unnumbered wheelchair spaces. Rows1〜3 remain printed removable seats; no four IDs were inferred away."}
+  ],
+  "result": {
+    "holds": 3,
+    "productionPromotions": 1,
+    "solHandoffs": 0,
+    "productionAfter": {"venues":101,"selectableConfigurations":103,"configurationSeatRecords":155513},
+    "coverageAfter": {"tokyoProduction":"40/76 (52.6%)","mustProduction":"25/44 (56.8%)","shouldProduction":"15/28 (53.6%)"},
+    "releaseReady": true,
+    "exactNextAction": "Do not reopen the three held Wave17 sources or begin Wave18 research without explicit authorization. Reopen a held source only with issuer material that resolves its printed-count contradiction."
+  }
+}

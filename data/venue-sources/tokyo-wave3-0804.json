@@ -11,22 +11,22 @@
     "id": "",
     "name": "",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
+    "expectedSeatCount": 503,
+    "selectionReason": "2026-08-23に現行杉並区施設案内と公式座席表を照合した。全印字番号を直接数えると497席で、施設案内の503人との差6をissuer-definedに説明できないため代表配置は確定しない。",
     "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"杉並区立社会教育センター・高円寺地域区民センター(セシオン杉並)","title":"杉並区立社会教育センター・高円寺地域区民センター(セシオン杉並)〔ホール〕 施設案内","url":"https://www.city.suginami.tokyo.jp/shisetsu/katsudo/center/1006947.html","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
+  "sources": [{"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"杉並区","title":"社会教育センター（建物名：セシオン杉並）","url":"https://www.city.suginami.tokyo.jp/s113/shisetsu/14532.html","checkedAt":"2026-08-23"},{"id":"official-seat-map","official":true,"roles":["seat-structure"],"publisher":"杉並区","title":"セシオン杉並 ホール座席表","url":"https://www.city.suginami.tokyo.jp/documents/13870/sesion_hall.pdf","checkedAt":"2026-08-23"}],
+  "registeredScope": "現行公式座席表の印字番号497席を確認したが、定員503との差6は未解決のためrangeは未登録。",
+  "completenessBasis": "row 1〜20と左右・中央番号群は公式図で明示される一方、図の無番号車椅子領域に対応する人数が明示されない。",
+  "transformation": "497印字番号を503へcapacity fittingせず、無番号領域をseat ID化せず、差の公式説明が得られるまでrangeへ転記しない。",
+  "knownLimitations": ["公式503人と497印字番号席との差6のissuer-defined内訳が必要。"],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
+    "status": "reviewed",
+    "checkedAt": "2026-08-23",
+    "method": "current-official-pdf-printed-seat-set-review",
+    "seatStructure": "matched",
+    "seatCount": "mismatched",
+    "unresolvedIssues": ["公式図の497印字番号席と施設案内503人との差6を、issuer-definedな無番号区画数で説明できない。"]
   },
   "ranges": []
 }

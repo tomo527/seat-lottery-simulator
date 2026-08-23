@@ -11,22 +11,22 @@
     "id": "",
     "name": "",
     "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
+    "expectedSeatCount": 1008,
+    "selectionReason": "2026-08-23に現行瑞穂町施設案内と公式平面図を照合した。図の印字番号1,006席と固定席1,002・無番号車いす6席の表示が矛盾するため代表配置は確定しない。",
     "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"瑞穂ビューパーク・スカイホール","title":"瑞穂ビューパーク・スカイホール〔大ホール〕 施設案内","url":"https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
+  "sources": [{"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"瑞穂町","title":"瑞穂ビューパーク・スカイホール 大ホール","url":"https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html","checkedAt":"2026-08-23"},{"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"瑞穂町","title":"瑞穂ビューパーク・スカイホール 大ホール平面図","url":"https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144_d/fil/daiho-ruheimen.pdf","checkedAt":"2026-08-23"}],
+  "registeredScope": "現行公式平面図の全印字番号1,006席を確認したが、同図の固定席1,002席・無番号車いす6席の表示と整合しないためrangeは未登録。",
+  "completenessBasis": "No.1〜27、花道側分節番号群、無番号車いす6区画、No.1〜3の取外し可能席は公式図で明示されるが、番号総数と固定席表示が差4で矛盾する。",
+  "transformation": "No.1〜3列や花道側の印字番号を推測除外せず、車いす区画へIDを作らず、差4のissuer-defined説明が得られるまでrange化しない。",
+  "knownLimitations": ["現行PDFの印字番号1,006と固定席1,002の差4を説明するissuer資料が必要。"],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
+    "status": "reviewed",
+    "checkedAt": "2026-08-23",
+    "method": "current-official-pdf-printed-seat-set-review-and-independent-conflict-check",
+    "seatStructure": "matched",
+    "seatCount": "mismatched",
+    "unresolvedIssues": ["現行公式平面図の印字番号1,006席と固定席1,002席の差4にissuer-definedな説明がない。"]
   },
   "ranges": []
 }
