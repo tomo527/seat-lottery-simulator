@@ -1,0 +1,37 @@
+{
+  "reportId": "tokyo-wave-16-2026-08-23",
+  "asOf": "2026-08-23",
+  "model": "Terra high implementation",
+  "policyVersion": "representative-coverage-v2",
+  "scope": ["old-tokyo-music-school-sogakudo"],
+  "venues": [
+    {
+      "id": "old-tokyo-music-school-sogakudo",
+      "sourceId": "tokyo-wave3-0339",
+      "configurationId": "standard",
+      "classification": "PRODUCTION",
+      "expectedSeatCount": 310,
+      "calculatedSeatCount": 310,
+      "rangeDiff": 0,
+      "confidence": "representative",
+      "reason": "The current official seat-map page directly links the 310-seat PDF. Independent counting confirms twelve full 1-24 rows plus row き 1-22, for 310 printed numbered seats. The PDF's unnumbered 車椅子席 and the official historic-building accessibility limitation remain metadata only; no seat ID was created or removed."
+    }
+  ],
+  "result": {
+    "holds": 0,
+    "productionPromotions": 1,
+    "solHandoffs": 0,
+    "productionAfter": {
+      "venues": 100,
+      "selectableConfigurations": 102,
+      "configurationSeatRecords": 154663
+    },
+    "coverageAfter": {
+      "tokyoProduction": "40/76 (52.6%)",
+      "mustProduction": "25/44 (56.8%)",
+      "shouldProduction": "15/28 (53.6%)"
+    },
+    "releaseReady": true,
+    "exactNextAction": "Do not research or implement Wave 17 without separate authorization."
+  }
+}

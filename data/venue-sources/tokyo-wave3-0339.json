@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "tokyo-wave3-0339",
+  "name": "台東区立旧東京音楽学校奏楽堂〔音楽ホール〕",
+  "prefecture": "東京都",
+  "city": "台東区",
+  "aliases": ["旧東京音楽学校奏楽堂 音楽ホール"],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": ["facility"],
+      "publisher": "公益財団法人台東区芸術文化財団",
+      "title": "旧奏楽堂について",
+      "url": "https://www.taitogeibun.net/sougakudou/rekishi/",
+      "checkedAt": "2026-08-23"
+    },
+    {
+      "id": "official-seat-map-page",
+      "official": true,
+      "roles": ["facility", "seat-structure", "seat-count"],
+      "publisher": "公益財団法人台東区芸術文化財団",
+      "title": "座席表（定員：310席）",
+      "url": "https://www.taitogeibun.net/sougakudou/rekishi/zasekihyo/",
+      "checkedAt": "2026-08-23"
+    },
+    {
+      "id": "official-seat-map-pdf",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "公益財団法人台東区芸術文化財団",
+      "title": "旧東京音楽学校奏楽堂 座席表",
+      "url": "https://www.taitogeibun.net/sougakudou/wp-content/uploads/sites/6/2023/07/hallzaseki.pdf",
+      "checkedAt": "2026-08-23"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常固定配置・公式番号席310席",
+      "selectionBasis": "現行公式座席表ページが直接リンクする定員310席の公式PDFについて、全印字番号を直接数え、24席の12行と1〜22番のき行から成る310席の番号集合をlosslessに転記した固定配置。左右・中央の分節群は公式図の同一行ラベルと連続番号で一意化する。",
+      "issuerDefinedCondition": "公益財団法人台東区芸術文化財団が定員310席として公開する旧東京音楽学校奏楽堂の座席表を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08 current-linked official printed seat map",
+      "sourceIds": ["official-facility-page", "official-seat-map-page", "official-seat-map-pdf"],
+      "differenceBasisSourceIds": ["official-seat-map-page", "official-seat-map-pdf"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 310,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式ページが直接リンクする座席表の印字番号席310席を抽選します。き行で公式図が車椅子席と表示する位置には座席番号が印字されないため、seat IDを作成せず番号集合へ含めません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式座席図はき行に番号のない車椅子席を表示するが、seat IDまたは番号席との置換関係を公開しない。公式施設ページの歴史的建築ゆえのバリアフリー非対応記載を超える運用は推測せず、印字番号席310席だけを登録する。",
+        "sourceIds": ["official-facility-page", "official-seat-map-pdf"],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-23",
+        "method": "independent-current-linked-official-pdf-printed-seat-set-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "公式図がき行に番号なしの車椅子席を表示するが、seat ID、番号席との置換関係、定員310席への包含関係を説明しない。印字番号集合310席へ推測でIDを追加・削除しない。"
+        ]
+      },
+      "ranges": [
+        {"rowLabel":"す","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"し","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"さ","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"こ","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"け","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"く","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"き","from":1,"to":22,"excluded":[]},
+        {"rowLabel":"か","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"お","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"え","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"う","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"い","from":1,"to":24,"excluded":[]},
+        {"rowLabel":"あ","from":1,"to":24,"excluded":[]}
+      ]
+    }
+  ]
+}

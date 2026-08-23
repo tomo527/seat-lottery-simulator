@@ -1548,6 +1548,30 @@
   },
   {
     "schemaVersion": 2,
+    "id": "tokyo-wave3-0339",
+    "venueGroupId": "tokyo-wave3-0339",
+    "name": "台東区立旧東京音楽学校奏楽堂〔音楽ホール〕",
+    "searchAliases": [
+      "旧東京音楽学校奏楽堂 音楽ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常固定配置・公式番号席310席",
+        "seatCount": 310,
+        "dataPath": "/venue-db/venues/tokyo-wave3-0339--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式ページが直接リンクする座席表の印字番号席310席を抽選します。き行で公式図が車椅子席と表示する位置には座席番号が印字されないため、seat IDを作成せず番号集合へ含めません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "tokyo-wave3-0991",
     "venueGroupId": "tokyo-wave3-0991",
     "name": "八王子市南大沢文化会館〔主ホール〕",

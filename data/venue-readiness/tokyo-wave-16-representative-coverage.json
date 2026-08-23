@@ -1,0 +1,16 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-16-representative-coverage",
+  "baselineDate": "2026-08-23",
+  "scope": "TOKYO-WAVE-16 representative-coverage-v2 production promotion for exactly one Tokyo hall",
+  "expectedVenueCount": 1,
+  "venues": [
+    {
+      "venueId": "tokyo-wave3-0339",
+      "readiness": "R4",
+      "secondPass": "approved",
+      "blocker": null,
+      "nextAction": "Production: retain the complete 310-seat official printed set; keep the unnumbered 車椅子席 and the official historic-building accessibility limitation as metadata without creating or inferring seat IDs."
+    }
+  ]
+}
