@@ -131,6 +131,31 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "fuchu-dream-hall-standard",
+    "venueGroupId": "fuchu-dream-hall-standard",
+    "name": "府中の森芸術劇場 どりーむホール",
+    "searchAliases": [
+      "どりーむホール",
+      "府中の森芸術劇場どりーむホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "府中市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard-fixed-seats",
+        "canonicalName": "通常固定席配置・公式番号席2,017席",
+        "seatCount": 2017,
+        "dataPath": "/venue-db/venues/fuchu-dream-hall-standard--standard-fixed-seats.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式座席表の印字番号席2,017席（1階1,527席・2・3階490席）を抽選します。公式の総席数2,027席との差10は、固定席とは別項目で計上される番号のない車椅子席10席です。オーケストラピット使用時の1,863席配置は反映しません。番号席を容量に合わせて削除していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "fuchu-vienna-hall-standard",
     "name": "府中の森芸術劇場 ウィーンホール",
     "searchAliases": [
@@ -1323,6 +1348,31 @@
   },
   {
     "schemaVersion": 2,
+    "id": "tokyo-geigeki-concert-hall-standard",
+    "venueGroupId": "tokyo-geigeki-concert-hall-standard",
+    "name": "東京芸術劇場 コンサートホール",
+    "searchAliases": [
+      "東京芸術劇場コンサートホール",
+      "東京芸術劇場大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "豊島区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式番号席1,999席",
+        "seatCount": 1999,
+        "dataPath": "/venue-db/venues/tokyo-geigeki-concert-hall-standard--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席表に印字された番号席1,999席を抽選します。公式が別枠とする車いす用スペース8席は番号を持たないため含みません。8席フル使用時に取り外される1階C列1〜3番・34〜36番およびD列1〜3番・34〜36番は、通常配置の番号席として保持します。公演ごとの販売停止席は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "tokyo-geigeki-playhouse-standard",
     "venueGroupId": "tokyo-geigeki-playhouse-standard",
     "name": "東京芸術劇場 プレイハウス",
@@ -1705,6 +1755,31 @@
     "representativePatternName": "通常座席",
     "seatCount": 408,
     "dataPath": "/venue-db/venues/toppan-hall-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tower-hall-funabori-main-standard",
+    "venueGroupId": "tower-hall-funabori-main-standard",
+    "name": "タワーホール船堀 大ホール",
+    "searchAliases": [
+      "タワーホール船堀大ホール",
+      "江戸川区総合区民ホール タワーホール船堀 大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "江戸川区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard-fixed-seats",
+        "canonicalName": "通常固定席配置・公式図面の印字番号席757席",
+        "seatCount": 757,
+        "dataPath": "/venue-db/venues/tower-hall-funabori-main-standard--standard-fixed-seats.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式客席図面に印字された番号席757席を抽選します。施設案内の座席数750席、および同図面の表題「総数753席」との差は反映せず、番号席を容量に合わせて削除していません。図面が「太枠の席は取り外し可能です」とする席も印字番号を持つため通常配置に含みます。番号のない車椅子スペースは含みません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "toyosu-civic-center-hall-standard",

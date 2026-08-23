@@ -1,34 +1,38 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tower-hall-funabori-main-standard",
   "name": "タワーホール船堀 大ホール",
   "prefecture": "東京都",
   "city": "江戸川区",
-  "aliases": [
-    "タワーホール船堀大ホール"
-  ],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "standard-fixed-seats",
-    "name": "通常固定席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式座席表の750席を候補とする。",
-    "notIncludedPatterns": []
-  },
+  "aliases": [
+    "タワーホール船堀大ホール",
+    "江戸川区総合区民ホール タワーホール船堀 大ホール"
+  ],
   "sources": [
     {
-      "id": "official-seat-map",
+      "id": "official-seat-map-pdf",
       "official": true,
       "roles": [
         "seat-structure",
         "seat-count"
       ],
       "publisher": "タワーホール船堀",
-      "title": "大ホール座席表",
+      "title": "大ホール客席図面（総数753席）",
       "url": "https://www.towerhall.jp/tower/wp-content/uploads/2022/06/gb05.pdf",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-23"
+    },
+    {
+      "id": "official-seat-map-linked",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "タワーホール船堀",
+      "title": "大ホール座席表（施設案内ページ掲載画像・同一図面）",
+      "url": "https://www.towerhall.jp/tower/wp-content/uploads/2022/04/hallbig-za.jpg",
+      "checkedAt": "2026-08-23"
     },
     {
       "id": "official-facility-guide",
@@ -38,25 +42,205 @@
         "facility"
       ],
       "publisher": "タワーホール船堀",
-      "title": "施設案内",
+      "title": "施設案内（大ホール 座席数750席）",
       "url": "https://www.towerhall.jp/facility/",
-      "checkedAt": "2026-07-26"
+      "checkedAt": "2026-08-23"
     }
   ],
-  "registeredScope": "公式座席表の番号付き座席750席を予定。",
-  "completenessBasis": "公式座席PDFの表示番号753席と、公式施設ページ・料金表・ガイドの750席が3席一致しない。",
-  "transformation": "総数へ合わせる推測除外は行わず、公式な750席の番号内訳または訂正版PDFを待つ。",
-  "knownLimitations": [],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "公式座席図の表示番号753席と公式公称750席が3席不一致。",
-      "恒常的に外す3番号を示す公式資料が公開された場合に再照合する。"
-    ]
-  },
-  "ranges": []
+  "configurations": [
+    {
+      "id": "standard-fixed-seats",
+      "canonicalName": "通常固定席配置・公式図面の印字番号席757席",
+      "selectionBasis": "現行公式施設ページが「大ホール座席表」としてリンクする客席図面の印字番号席を直接転記した通常配置。左ブロック1〜11番、中央ブロック12〜24番（1・3・5・7列のみ12〜23番）、右ブロック25〜35番の全印字セルを保持する。図面自身の表題「総数753席」および施設案内の「座席数750席」との差は補正せず、番号席を削除していない。",
+      "issuerDefinedCondition": "タワーホール船堀が大ホール客席図面として公開する通常固定席配置を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2022 official 大ホール客席図面 (gb05.pdf / hallbig-za.jpg, same drawing)",
+      "sourceIds": [
+        "official-seat-map-pdf",
+        "official-seat-map-linked",
+        "official-facility-guide"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map-pdf",
+        "official-facility-guide"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 750,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "公式客席図面に印字された番号席757席を抽選します。施設案内の座席数750席、および同図面の表題「総数753席」との差は反映せず、番号席を容量に合わせて削除していません。図面が「太枠の席は取り外し可能です」とする席も印字番号を持つため通常配置に含みます。番号のない車椅子スペースは含みません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行公式施設ページがリンクする図面は最終列右端に「車椅子スペース」の区画を別記するが、当該区画に座席番号は印字されないためseat IDを作成しない。車椅子利用時に取り外される番号席も公表されていない。",
+        "sourceIds": [
+          "official-seat-map-linked"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-23",
+        "method": "issuer-drawing-pixel-block-measurement-and-direct-number-reading",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": 7,
+        "unresolvedIssues": [
+          "公式図面の印字番号セルを実測すると757席である。同図面の表題は「総数753席」、施設案内・料金表・ガイドは「座席数750席」であり、三者が一致しない。いずれにも合わせて番号席を削除していない。",
+          "内訳は左ブロック1〜11番・中央12〜24番・右25〜35番で、1・3・5・7列の中央は12〜23番の千鳥配置である。1列は6〜23番と25〜30番、24列は2〜35番。",
+          "車椅子スペースは番号なしの別区画であり、取り外し可能席（太枠）の個別番号も通常配置から除外していない。",
+          "図面世代は2022年アップロードで、現行施設ページからリンクされている。休館・改修の告知は確認されない。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "1",
+          "from": 6,
+          "to": 23
+        },
+        {
+          "rowLabel": "1",
+          "from": 25,
+          "to": 30
+        },
+        {
+          "rowLabel": "2",
+          "from": 5,
+          "to": 31
+        },
+        {
+          "rowLabel": "3",
+          "from": 5,
+          "to": 23
+        },
+        {
+          "rowLabel": "3",
+          "from": 25,
+          "to": 31
+        },
+        {
+          "rowLabel": "4",
+          "from": 5,
+          "to": 31
+        },
+        {
+          "rowLabel": "5",
+          "from": 5,
+          "to": 23
+        },
+        {
+          "rowLabel": "5",
+          "from": 25,
+          "to": 31
+        },
+        {
+          "rowLabel": "6",
+          "from": 5,
+          "to": 31
+        },
+        {
+          "rowLabel": "7",
+          "from": 5,
+          "to": 23
+        },
+        {
+          "rowLabel": "7",
+          "from": 25,
+          "to": 31
+        },
+        {
+          "rowLabel": "8",
+          "from": 5,
+          "to": 31
+        },
+        {
+          "rowLabel": "9",
+          "from": 4,
+          "to": 32
+        },
+        {
+          "rowLabel": "10",
+          "from": 3,
+          "to": 33
+        },
+        {
+          "rowLabel": "11",
+          "from": 2,
+          "to": 34
+        },
+        {
+          "rowLabel": "12",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "13",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "14",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "15",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "16",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "17",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "18",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "19",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "20",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "21",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "22",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "23",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "rowLabel": "24",
+          "from": 2,
+          "to": 35
+        }
+      ]
+    }
+  ]
 }

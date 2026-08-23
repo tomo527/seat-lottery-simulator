@@ -1,0 +1,31 @@
+{
+  "batchId": "tokyo-wave-20-representative-coverage",
+  "createdAt": "2026-08-23",
+  "scope": "TOKYO-WAVE-20: promote only the three venues the hard-case resolution audit classified as SAFE TO INTEGRATE — 東京芸術劇場 コンサートホール, 府中の森芸術劇場 どりーむホール, タワーホール船堀 大ホール. Each was previously held for a printed-count contradiction; transcribe the complete printed numbered set and keep any published-total difference as metadata without capacity fitting.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-tokyo-geigeki-concert-hall",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "The recorded Q〜T 10-seat contradiction was re-derived from the current official PDF's own vector text layer. The printed set is 1,999 seats and reconciles exactly with all twelve issuer subtotals, so the contradiction does not exist in the current generation.",
+      "recheckNotBefore": "2026-08-23"
+    },
+    {
+      "inventoryId": "tokyo-fuchu-dream-hall",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "The seat map publishes its own block subtotals (1F 1,527 / 2F-3F 490). The printed numbered set reconciles with them exactly, so the recorded one-seat first-floor difference was a transcription artefact.",
+      "recheckNotBefore": "2026-08-23"
+    },
+    {
+      "inventoryId": "tokyo-tower-hall-funabori-main",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "Representative-coverage policy treats a printed-versus-published total difference as confidence metadata rather than a production blocker. The complete printed numbered set is transcribed without capacity fitting.",
+      "recheckNotBefore": "2026-08-23"
+    }
+  ]
+}

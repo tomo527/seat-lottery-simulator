@@ -1,25 +1,15 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-geigeki-concert-hall-standard",
   "name": "東京芸術劇場 コンサートホール",
   "prefecture": "東京都",
   "city": "豊島区",
-  "aliases": [
-    "東京芸術劇場大ホール"
-  ],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "standard-numbered-seats",
-    "name": "通常番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式座席図を第1パスと独立第2パスで照合した結果、Q〜T列の印刷番号と公式小計が一致しないため、通常番号席集合を確定しない。",
-    "notIncludedPatterns": [
-      "公式図で別掲される車椅子用スペース8席",
-      "総席数に合わせた任意の番号除外"
-    ]
-  },
+  "aliases": [
+    "東京芸術劇場大ホール",
+    "東京芸術劇場コンサートホール"
+  ],
   "sources": [
     {
       "id": "official-seat-map",
@@ -29,9 +19,9 @@
         "seat-count"
       ],
       "publisher": "東京芸術劇場",
-      "title": "コンサートホール座席表",
+      "title": "コンサートホール（大ホール）座席表",
       "url": "https://www.geigeki.jp/facilities/pdf/concert.pdf",
-      "checkedAt": "2026-08-09"
+      "checkedAt": "2026-08-23"
     },
     {
       "id": "official-facility-guide",
@@ -41,28 +31,1021 @@
         "facility"
       ],
       "publisher": "東京芸術劇場",
-      "title": "コンサートホール",
+      "title": "コンサートホール（大ホール）",
       "url": "https://www.geigeki.jp/facilities/concerthall/",
-      "checkedAt": "2026-08-09"
+      "checkedAt": "2026-08-23"
+    },
+    {
+      "id": "official-rental-guide",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "東京芸術劇場",
+      "title": "施設貸出情報 コンサートホール（大ホール）",
+      "url": "https://www.geigeki.jp/rent/concerthall/",
+      "checkedAt": "2026-08-23"
     }
   ],
-  "registeredScope": "現行公式座席表に印刷された番号席を対象候補とするが、公式小計との矛盾解消までrangeは登録しない。",
-  "completenessBasis": "公式PDFの第1パスと独立第2パスで、Q〜T列の印刷番号を各22・22・22・22ではなく図示どおり92席として読める一方、同PDFの公式小計はQ〜T列82席。差10席を説明できない。",
-  "transformation": "公式PDFの階・サイド席を独立に再読したが、公式小計と印刷番号の差を総席数合わせで補正せず、range登録を保留。",
-  "knownLimitations": [
-    "公式PDFの公式合計は1,999席、車椅子用スペースは8席と別掲。",
-    "Q〜T列の図示番号と公式小計の10席差について、除外番号または包含関係の公式説明が必要。"
-  ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": "2026-08-09",
-    "method": "independent-official-source-review",
-    "seatStructure": "matched",
-    "seatCount": "mismatched",
-    "unresolvedIssues": [
-      "CONTRADICTION/MISMATCH: 第1パスと独立第2パスがともにQ〜T列の図示番号を92席と読めるが、公式小計は82席で10席差。",
-      "差の10席を説明する公式資料がないため、総席数に合わせたrange補正・番号除外は行わない。"
-    ]
-  },
-  "ranges": []
+  "configurations": [
+    {
+      "id": "current-official-printed-seat-map",
+      "canonicalName": "通常配置・公式番号席1,999席",
+      "selectionBasis": "現行公式PDF座席表に印字された1,999席をそのまま転記した通常配置。同PDFの「座席数 内訳」表が示す1階A〜P列536席・Q〜T列82席・1-LB29席・1-RB29席（小計676席）、2階A〜H列274席・I〜O列287席・2-LB61席・2-RB61席（小計683席）、3階A〜G列414席・H〜K列136席・3-LB45席・3-RB45席（小計640席）の全12小計と、転記した各ブロックの席数が完全に一致する。公式総数1,999席と一致するため容量合わせは一切行っていない。",
+      "issuerDefinedCondition": "東京芸術劇場が施設ページおよび施設貸出ページから公開するコンサートホール座席表の通常配置を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-23 current official seat-map PDF (geigeki.jp/facilities/pdf/concert.pdf)",
+      "sourceIds": [
+        "official-seat-map",
+        "official-facility-guide",
+        "official-rental-guide"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1999,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式座席表に印字された番号席1,999席を抽選します。公式が別枠とする車いす用スペース8席は番号を持たないため含みません。8席フル使用時に取り外される1階C列1〜3番・34〜36番およびD列1〜3番・34〜36番は、通常配置の番号席として保持します。公演ごとの販売停止席は反映しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式座席表は「車椅子用スペース 8席（常設4席。8席フル使用時 C列1〜3番＆D列1〜3番 C列34〜36番＆D列34〜36番 取り外し）」と記載し、施設ページも「客席数1,999席（別に車いす用スペース8席）」として1,999席の外に置く。車いす用スペース自体に座席番号は印字されないためseat IDを作成せず、取り外し対象として明示される12番号席も通常配置から削除しない。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-facility-guide"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-23",
+        "method": "issuer-vector-text-extraction-with-published-subtotal-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "公式PDFの印字番号席は1,999席で、公式総数1,999席および同PDFの全12ブロック小計と一致する。",
+          "車いす用スペース8席は公式に1,999席の別枠であり、番号が印字されないためseat IDを作成しない。",
+          "過去に記録された「Q〜T列の図示92席と公式小計82席の10席差」は現行PDFでは再現しない。実際の後方帯はQ列7〜30番、R列7〜30番、S列8〜29番、T列13〜24番の82席であり、袖ブロックは片側3列である。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "I",
+          "from": 2,
+          "to": 35
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "J",
+          "from": 2,
+          "to": 35
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "K",
+          "from": 3,
+          "to": 34
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "L",
+          "from": 3,
+          "to": 34
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "M",
+          "from": 3,
+          "to": 34
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "N",
+          "from": 3,
+          "to": 34
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "O",
+          "from": 4,
+          "to": 33
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "P",
+          "from": 8,
+          "to": 29
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "Q",
+          "from": 13,
+          "to": 24
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "R",
+          "from": 7,
+          "to": 30
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "S",
+          "from": 7,
+          "to": 30
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "T",
+          "from": 8,
+          "to": 29
+        },
+        {
+          "areaId": "first-floor-left-balcony",
+          "areaLabel": "1階バルコニー左（1-LB）",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 2
+        },
+        {
+          "areaId": "first-floor-left-balcony",
+          "areaLabel": "1階バルコニー左（1-LB）",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "first-floor-left-balcony",
+          "areaLabel": "1階バルコニー左（1-LB）",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "first-floor-left-balcony",
+          "areaLabel": "1階バルコニー左（1-LB）",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "first-floor-left-balcony",
+          "areaLabel": "1階バルコニー左（1-LB）",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "first-floor-left-balcony",
+          "areaLabel": "1階バルコニー左（1-LB）",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "first-floor-left-balcony",
+          "areaLabel": "1階バルコニー左（1-LB）",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "first-floor-right-balcony",
+          "areaLabel": "1階バルコニー右（1-RB）",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 2
+        },
+        {
+          "areaId": "first-floor-right-balcony",
+          "areaLabel": "1階バルコニー右（1-RB）",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "first-floor-right-balcony",
+          "areaLabel": "1階バルコニー右（1-RB）",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "first-floor-right-balcony",
+          "areaLabel": "1階バルコニー右（1-RB）",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "first-floor-right-balcony",
+          "areaLabel": "1階バルコニー右（1-RB）",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "first-floor-right-balcony",
+          "areaLabel": "1階バルコニー右（1-RB）",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "first-floor-right-balcony",
+          "areaLabel": "1階バルコニー右（1-RB）",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "A",
+          "from": 3,
+          "to": 9
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "A",
+          "from": 23,
+          "to": 32
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "A",
+          "from": 46,
+          "to": 52
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "B",
+          "from": 3,
+          "to": 9
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "B",
+          "from": 17,
+          "to": 38
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "B",
+          "from": 46,
+          "to": 52
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "C",
+          "from": 3,
+          "to": 11
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "C",
+          "from": 17,
+          "to": 38
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "C",
+          "from": 44,
+          "to": 52
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "D",
+          "from": 17,
+          "to": 38
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "D",
+          "from": 43,
+          "to": 54
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 13
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "E",
+          "from": 18,
+          "to": 37
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "E",
+          "from": 42,
+          "to": 54
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "F",
+          "from": 18,
+          "to": 37
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "F",
+          "from": 41,
+          "to": 54
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "G",
+          "from": 4,
+          "to": 15
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "G",
+          "from": 40,
+          "to": 51
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "H",
+          "from": 12,
+          "to": 16
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "H",
+          "from": 39,
+          "to": 43
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "I",
+          "from": 6,
+          "to": 7
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "I",
+          "from": 49,
+          "to": 50
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "J",
+          "from": 2,
+          "to": 8
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "J",
+          "from": 10,
+          "to": 21
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "J",
+          "from": 24,
+          "to": 32
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "J",
+          "from": 35,
+          "to": 46
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "J",
+          "from": 48,
+          "to": 54
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "K",
+          "from": 2,
+          "to": 21
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "K",
+          "from": 23,
+          "to": 33
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "K",
+          "from": 35,
+          "to": 54
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "L",
+          "from": 2,
+          "to": 33
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "L",
+          "from": 35,
+          "to": 54
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "M",
+          "from": 2,
+          "to": 54
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "N",
+          "from": 2,
+          "to": 5
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "N",
+          "from": 10,
+          "to": 46
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "N",
+          "from": 51,
+          "to": 54
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "O",
+          "from": 11,
+          "to": 45
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 24
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "I",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-left-balcony",
+          "areaLabel": "2階バルコニー左（2-LB）",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 24
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "I",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "second-floor-right-balcony",
+          "areaLabel": "2階バルコニー右（2-RB）",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "A",
+          "from": 8,
+          "to": 27
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "A",
+          "from": 31,
+          "to": 38
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "A",
+          "from": 43,
+          "to": 62
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "B",
+          "from": 8,
+          "to": 27
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "B",
+          "from": 31,
+          "to": 39
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "B",
+          "from": 43,
+          "to": 62
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 27
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "C",
+          "from": 30,
+          "to": 40
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "C",
+          "from": 43,
+          "to": 69
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "D",
+          "from": 2,
+          "to": 27
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "D",
+          "from": 29,
+          "to": 40
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "D",
+          "from": 43,
+          "to": 68
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "E",
+          "from": 3,
+          "to": 41
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "E",
+          "from": 43,
+          "to": 67
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "F",
+          "from": 4,
+          "to": 66
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "G",
+          "from": 5,
+          "to": 65
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "H",
+          "from": 11,
+          "to": 26
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "H",
+          "from": 44,
+          "to": 59
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "I",
+          "from": 11,
+          "to": 26
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "I",
+          "from": 44,
+          "to": 59
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "J",
+          "from": 11,
+          "to": 28
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "J",
+          "from": 42,
+          "to": 59
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "K",
+          "from": 11,
+          "to": 28
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "K",
+          "from": 42,
+          "to": 59
+        },
+        {
+          "areaId": "third-floor-left-balcony",
+          "areaLabel": "3階バルコニー左（3-LB）",
+          "rowLabel": "A",
+          "from": 5,
+          "to": 8
+        },
+        {
+          "areaId": "third-floor-left-balcony",
+          "areaLabel": "3階バルコニー左（3-LB）",
+          "rowLabel": "B",
+          "from": 5,
+          "to": 10
+        },
+        {
+          "areaId": "third-floor-left-balcony",
+          "areaLabel": "3階バルコニー左（3-LB）",
+          "rowLabel": "C",
+          "from": 5,
+          "to": 10
+        },
+        {
+          "areaId": "third-floor-left-balcony",
+          "areaLabel": "3階バルコニー左（3-LB）",
+          "rowLabel": "D",
+          "from": 5,
+          "to": 10
+        },
+        {
+          "areaId": "third-floor-left-balcony",
+          "areaLabel": "3階バルコニー左（3-LB）",
+          "rowLabel": "E",
+          "from": 5,
+          "to": 10
+        },
+        {
+          "areaId": "third-floor-left-balcony",
+          "areaLabel": "3階バルコニー左（3-LB）",
+          "rowLabel": "F",
+          "from": 5,
+          "to": 10
+        },
+        {
+          "areaId": "third-floor-left-balcony",
+          "areaLabel": "3階バルコニー左（3-LB）",
+          "rowLabel": "G",
+          "from": 5,
+          "to": 10
+        },
+        {
+          "areaId": "third-floor-left-balcony",
+          "areaLabel": "3階バルコニー左（3-LB）",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 2
+        },
+        {
+          "areaId": "third-floor-left-balcony",
+          "areaLabel": "3階バルコニー左（3-LB）",
+          "rowLabel": "I",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "third-floor-right-balcony",
+          "areaLabel": "3階バルコニー右（3-RB）",
+          "rowLabel": "A",
+          "from": 3,
+          "to": 6
+        },
+        {
+          "areaId": "third-floor-right-balcony",
+          "areaLabel": "3階バルコニー右（3-RB）",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "third-floor-right-balcony",
+          "areaLabel": "3階バルコニー右（3-RB）",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "third-floor-right-balcony",
+          "areaLabel": "3階バルコニー右（3-RB）",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "third-floor-right-balcony",
+          "areaLabel": "3階バルコニー右（3-RB）",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "third-floor-right-balcony",
+          "areaLabel": "3階バルコニー右（3-RB）",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "third-floor-right-balcony",
+          "areaLabel": "3階バルコニー右（3-RB）",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "third-floor-right-balcony",
+          "areaLabel": "3階バルコニー右（3-RB）",
+          "rowLabel": "H",
+          "from": 9,
+          "to": 10
+        },
+        {
+          "areaId": "third-floor-right-balcony",
+          "areaLabel": "3階バルコニー右（3-RB）",
+          "rowLabel": "I",
+          "from": 8,
+          "to": 10
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,94 @@
+{
+  "wave": "TOKYO-WAVE-20",
+  "date": "2026-08-23",
+  "scope": [
+    "tokyo-geigeki-concert-hall-standard",
+    "fuchu-dream-hall-standard",
+    "tower-hall-funabori-main-standard"
+  ],
+  "originPolicyNote": "Scope comes from the hard-case resolution audit, not from new candidate discovery. All three were previously HOLD for a printed-count contradiction. docs/VENUE_DATA_GUIDE.md treats exact agreement with a published total and rangeDiff 0 as confidence signals, not production gates, and production precedent already carries unexplained differences (curian-main +10, nhk-hall +8, sumida-triphony-main -6, galaxy-theatre +4, tokyo-geigeki-playhouse +16).",
+  "venues": [
+    {
+      "canonicalId": "tokyo-geigeki-concert-hall-standard",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-tokyo-geigeki-concert-hall",
+      "venue": "東京芸術劇場 コンサートホール",
+      "priority": "A",
+      "tier": "MUST",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.geigeki.jp/facilities/pdf/concert.pdf",
+      "ownership": "PASS: every printed number is addressable as (floor/balcony area, printed row letter, printed number) using only issuer-printed labels.",
+      "publishedTotal": 1999,
+      "printedCount": 1999,
+      "rangeDiff": 0,
+      "blockSubtotalReconciliation": {
+        "1F": { "A-P": 536, "Q-T": 82, "1-LB": 29, "1-RB": 29, "floor": 676 },
+        "2F": { "A-H": 274, "I-O": 287, "2-LB": 61, "2-RB": 61, "floor": 683 },
+        "3F": { "A-G": 414, "H-K": 136, "3-LB": 45, "3-RB": 45, "floor": 640 },
+        "allTwelveSubtotalsMatched": true
+      },
+      "confidence": "verified",
+      "priorBlockerResolution": "The recorded contradiction — Q〜T read as 92 printed versus an 82 subtotal — does not exist in the current PDF. The rear band has three side wings per side, not four: Q 7-30, R 7-30, S 8-29, T 13-24 = 82, matching the issuer table. The earlier passes mirrored a fourth wing onto the wing-less row, producing exactly +5 per side.",
+      "reason": "The PDF's vector text layer contains exactly 1,999 numeric objects and every one of the issuer's twelve published block subtotals is reproduced exactly. No seat ID was invented and none was removed."
+    },
+    {
+      "canonicalId": "fuchu-dream-hall-standard",
+      "configurationId": "standard-fixed-seats",
+      "inventoryId": "tokyo-fuchu-dream-hall",
+      "venue": "府中の森芸術劇場 どりーむホール",
+      "priority": "A",
+      "tier": "SHOULD",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.fuchu-cpf.or.jp/_res/projects/default_project/_page_/001/000/175/dream-seat.pdf",
+      "ownership": "PASS: printed floor label plus printed row number plus printed seat number.",
+      "publishedTotal": 2027,
+      "publishedFixedTotal": 2017,
+      "printedCount": 2017,
+      "rangeDiff": 0,
+      "blockSubtotalReconciliation": {
+        "1F": { "tier1": 164, "tier2": 617, "tier3": 746, "floor": 1527 },
+        "2F-3F": { "tierA": 146, "tierB": 150, "tierC": 194, "floor": 490 },
+        "allSixTierSubtotalsMatched": true
+      },
+      "issuerDefinedMetadataDifference": "10 unnumbered wheelchair seats, listed by the issuer as a separate line from the fixed-seat subtotals.",
+      "confidence": "representative",
+      "priorBlockerResolution": "The recorded one-seat first-floor difference was a transcription artefact. The map publishes its own block subtotals and the printed set reconciles with 1,527 and 490 exactly.",
+      "reason": "Complete printed set transcribed; the orchestra-pit 1,863-seat operation is kept as metadata because the issuer does not publish the individual removed numbers."
+    },
+    {
+      "canonicalId": "tower-hall-funabori-main-standard",
+      "configurationId": "standard-fixed-seats",
+      "inventoryId": "tokyo-tower-hall-funabori-main",
+      "venue": "タワーホール船堀 大ホール",
+      "priority": "B",
+      "tier": "outside the fixed Tokyo coverage universe",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.towerhall.jp/tower/wp-content/uploads/2022/06/gb05.pdf",
+      "ownership": "PASS: single floor, printed 列番号 gutter 1-24 plus printed seat numbers 1-35.",
+      "publishedTotal": 750,
+      "drawingTitleTotal": 753,
+      "printedCount": 757,
+      "rangeDiff": 7,
+      "confidence": "representative",
+      "priorBlockerResolution": "Reopened because a printed-versus-published difference is confidence metadata under the current guide, not a blocker.",
+      "deviationFromAuditExpectation": "The audit reported the printed set as 753 on the strength of the drawing's own title 「大ホール客席図面【総数753席】」. Pixel-level block measurement of the drawing gives 757 printed cells (left 1-11, centre 12-24 with rows 1/3/5/7 printing 12-23, right 25-35). The drawing therefore contradicts its own title by 4, and the facility page states 750. No number was deleted to reach 753 or 750.",
+      "reason": "Complete printed set transcribed with both published totals preserved as metadata."
+    }
+  ],
+  "result": {
+    "productionPromotions": 3,
+    "holds": 0,
+    "sourceHolds": 0,
+    "solHandoffs": 0,
+    "productionAfter": {
+      "venues": 105,
+      "selectableConfigurations": 107,
+      "configurationSeatRecords": 160792,
+      "tokyo": "42/76",
+      "must": "26/44",
+      "should": "16/28",
+      "releaseReady": true
+    }
+  },
+  "exactNextAction": "TOKYO-WAVE-21 implements the three USER DECISION venues (歌舞伎座, 新橋演舞場, 文京シビックホール 大ホール) under the approved repository-defined display-area policy."
+}

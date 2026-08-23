@@ -47,6 +47,20 @@
       ],
       "sha256": "5a33bee82a1a6e4da9459ed6973422275cb1ec4610b400e0b560c51377194927"
     },
+    "curian-main-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1084,
+          "samples": [
+            "main/SA/15",
+            "main/K/12",
+            "main/W/41"
+          ],
+          "sha256": "f5dcc88be6f9774feeee21d82ff64301567c0b091706c3150b162435425b5ea8"
+        }
+      }
+    },
     "ebara-culture-main-standard": {
       "count": 437,
       "samples": [
@@ -55,6 +69,34 @@
         "main/U/21"
       ],
       "sha256": "2c530e1d3f6222b4a91afd230129b5837415e29672937a24082cfb37c53226d3"
+    },
+    "ex-theater-roppongi-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "seating-standard": {
+          "count": 906,
+          "samples": [
+            "b3-floor/A/3",
+            "b2-floor/O/10",
+            "b1-stand/7/36"
+          ],
+          "sha256": "b6a51b2de41cee3e6f437d701fc1b4c98b8592376abca16d33f38e1f87b3c8db"
+        }
+      }
+    },
+    "fuchu-dream-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard-fixed-seats": {
+          "count": 2017,
+          "samples": [
+            "first-floor/1/14",
+            "first-floor/23/37",
+            "second-third-floor/13/51"
+          ],
+          "sha256": "1beb97a94b2195f999eb59bc65b5d1e61c79b3b32c117a1e4d514648ccba363c"
+        }
+      }
     },
     "fuchu-vienna-hall-standard": {
       "count": 504,
@@ -83,6 +125,20 @@
       ],
       "sha256": "7cfd5b2468bbe4183429a1a937b993fc4100c5e1525161dd71ee4bd63d78bd34"
     },
+    "galaxy-theatre-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 750,
+          "samples": [
+            "first-floor/A/5",
+            "first-floor/K/33",
+            "third-floor/D/24"
+          ],
+          "sha256": "f1a81d936fb72922c31c600085aafddb206fbfd831ac5b54c52b6a318c551b39"
+        }
+      }
+    },
     "hakuju-hall-standard": {
       "count": 300,
       "samples": [
@@ -91,20 +147,6 @@
         "main/P/17"
       ],
       "sha256": "28350eea648aa10e87fabf88d9af19904a905f62fdd83689ee44ec14d0e68cba"
-    },
-    "hikosen-theater-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard": {
-          "count": 506,
-          "samples": [
-            "first-floor/A/1",
-            "first-floor/J/8",
-            "second-floor/C2/14"
-          ],
-          "sha256": "d6c627f54100cd0dc8cbbdc578c67f5899e67037164cc48e1897a1b037bee028"
-        }
-      }
     },
     "hamarikyu-asahi-hall-standard": {
       "count": 552,
@@ -123,6 +165,20 @@
         "main/22/32"
       ],
       "sha256": "dbb232b19f3a24ac7933d15cff36b2dd3197554a98e076288b6c49da49b5d6e9"
+    },
+    "hikosen-theater-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 506,
+          "samples": [
+            "first-floor/A/1",
+            "first-floor/J/8",
+            "second-floor/C2/14"
+          ],
+          "sha256": "d6c627f54100cd0dc8cbbdc578c67f5899e67037164cc48e1897a1b037bee028"
+        }
+      }
     },
     "hitotsubashi-hall-standard": {
       "count": 521,
@@ -151,6 +207,20 @@
       ],
       "sha256": "3e7ac806784b59df298ba92aae5790bc7a222cf78efad56a3fb9b0a72c16d656"
     },
+    "hulic-hall-tokyo-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-886": {
+          "count": 886,
+          "samples": [
+            "main/B/10",
+            "main/P/15",
+            "main/DD/33"
+          ],
+          "sha256": "5ab0fd4aae1485f6840b6160227b7b7501d2a5f780549fbd306b702187731476"
+        }
+      }
+    },
     "ichikawa-culture-hall-main-release-seed": {
       "count": 1758,
       "samples": [
@@ -178,14 +248,19 @@
       ],
       "sha256": "ae76597d0b3d2a208a40174f2fab6639523ad20da3e83d43b47142370053ac95"
     },
-    "itabashi-culture-main-standard": {
-      "count": 1263,
-      "samples": [
-        "first-floor/1/10",
-        "first-floor/18/25",
-        "second-floor/37/43"
-      ],
-      "sha256": "8f52e47022150d429bf4d5c0ac276f5a6c89e1908752b8f7ceb67e9cd52ce91b"
+    "imm-theater-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "official-basic-numbered-seat-map": {
+          "count": 703,
+          "samples": [
+            "main-floor/A/7",
+            "main-floor/L/1",
+            "main-floor/U/36"
+          ],
+          "sha256": "dd79a661370412186c482c58e0829e4332a8067392e170f6b8597f3dc0f32e65"
+        }
+      }
     },
     "iris-hall-standard": {
       "count": 298,
@@ -195,6 +270,71 @@
         "main/P/19"
       ],
       "sha256": "5cc9bd05611c2306e2d6c671a944be0ce3d44bff4dc12809a8516c69edf3ccfc"
+    },
+    "itabashi-culture-main-standard": {
+      "count": 1263,
+      "samples": [
+        "first-floor/1/10",
+        "first-floor/18/25",
+        "second-floor/37/43"
+      ],
+      "sha256": "8f52e47022150d429bf4d5c0ac276f5a6c89e1908752b8f7ceb67e9cd52ce91b"
+    },
+    "itabashi-culture-small-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 306,
+          "samples": [
+            "main/A/6",
+            "main/I/10",
+            "main/P/15"
+          ],
+          "sha256": "f2f436a1129c94e1061728272daeb57d7a604251eaddd9e6b619a45d174ebe46"
+        }
+      }
+    },
+    "jcom-hall-hachioji-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-fixed-numbered-seat-map": {
+          "count": 1870,
+          "samples": [
+            "first-floor-main/1/8",
+            "first-floor-main/24/43",
+            "third-floor-right-side/R1/21"
+          ],
+          "sha256": "06be9380bc6c0651c57a038389d49ca509ff4001d003a7a1c7e2f5fb4686394e"
+        }
+      }
+    },
+    "kameido-camelia-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 400,
+          "samples": [
+            "main/A/3",
+            "main/I/13",
+            "main/Q/22"
+          ],
+          "sha256": "3c20e9a7ba38efebc72fe9a882cb201c7f7303e4adc934ff3a83adf87e25b177"
+        }
+      }
+    },
+    "kanadevia-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-balconies-only": {
+          "count": 1365,
+          "samples": [
+            "first-balcony/1/1",
+            "second-balcony/3/61",
+            "third-balcony/7/66"
+          ],
+          "sha256": "e583b4713ed3b22161aa78548a76fd8968a2a8fb234f2c643a8fa1753dca5514"
+        }
+      }
     },
     "karasuyama-civic-hall-standard": {
       "count": 382,
@@ -291,6 +431,20 @@
       ],
       "sha256": "00b88c003da14c556df384cd6cc74c16fe2ab26315e7a38124a4706a6a7ac6f4"
     },
+    "mon-takanawa-box1000-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "official-seated-layout": {
+          "count": 1048,
+          "samples": [
+            "first-floor-a/A1/1",
+            "first-floor-b/B10/14",
+            "second-floor-e/E7/33"
+          ],
+          "sha256": "9014736b17908de200df341f8f14774bb451df185779e35d685770e3795310ea"
+        }
+      }
+    },
     "musashino-civic-small-standard": {
       "count": 425,
       "samples": [
@@ -300,6 +454,20 @@
       ],
       "sha256": "e82af28ef86df7a84f9885f9a986403b31371562aba25fb3b1895b446e67068b"
     },
+    "nakano-zero-main-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1292,
+          "samples": [
+            "first-floor/1/12",
+            "first-floor/16/17",
+            "second-floor/7/50"
+          ],
+          "sha256": "a729910c30a4aa90000a6be60fa23d73b1e5b31fec337d639135ef09bbdc4886"
+        }
+      }
+    },
     "national-bunraku-theatre-standard": {
       "count": 753,
       "samples": [
@@ -308,6 +476,20 @@
         "right-seats/12/4"
       ],
       "sha256": "3e921c72a1eb74a508c7d05068db38cc954d82a8e345efa759c29d9adf084622"
+    },
+    "national-noh-theatre-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "full-numbered-seat-map": {
+          "count": 628,
+          "samples": [
+            "shomen/1/2",
+            "waki-shomen/9/14",
+            "naka-shomen/9/24"
+          ],
+          "sha256": "71041cc46e7be547f3a526949e6505bbecf84cd6b84a7d9356cf5ed534e626b7"
+        }
+      }
     },
     "nerima-culture-main-standard": {
       "count": 1332,
@@ -327,6 +509,20 @@
       ],
       "sha256": "ee8eb3a9b06aee9afb6f8006fd68d4059c0d9b73175b8eb9d3f5d3f27ec5d500"
     },
+    "nhk-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-numbered-seats-only": {
+          "count": 3408,
+          "samples": [
+            "first-floor-center/C1/5",
+            "second-floor-left/L9/4",
+            "third-floor-right/R20/15"
+          ],
+          "sha256": "39a8120878428ab446e3d907f42f340ea771c8ec09b0cdfbcc43e95f4bf9c088"
+        }
+      }
+    },
     "nihon-education-center-hitotsubashi-hall-standard": {
       "count": 802,
       "samples": [
@@ -335,6 +531,76 @@
         "main/29/28"
       ],
       "sha256": "af7f06dbb8eda9cd1ab3b3b823f301d6486b354ed2df68ffe45744521893cf45"
+    },
+    "nihon-seinenkan-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-numbered-seat-map": {
+          "count": 1249,
+          "samples": [
+            "first-floor/A/16",
+            "first-floor/P/8",
+            "second-floor/J/49"
+          ],
+          "sha256": "fdb03303117f89e302df1953d38836f620a4b2807d9ec75b59d3394ecf3a457d"
+        }
+      }
+    },
+    "nippon-budokan-fixed-stands": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-stands-numbered-set": {
+          "count": 11142,
+          "samples": [
+            "north-1f/A/7",
+            "southeast-3f/X/52",
+            "northwest-3f/X/60"
+          ],
+          "sha256": "c3e0477e475c5080c8dae55a8f5d28f577bd38fa0fe69b9996a18ced800748c3"
+        }
+      }
+    },
+    "nissay-theatre-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-block-numbered-seat-map": {
+          "count": 1335,
+          "samples": [
+            "first-floor/XA/6",
+            "first-floor/O/35",
+            "second-floor/K/47"
+          ],
+          "sha256": "6be47f379a088cba39d0e2e610a0f843d88702b82e757446a3f7f8a248916678"
+        }
+      }
+    },
+    "nissho-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "full-numbered-seat-map": {
+          "count": 999,
+          "samples": [
+            "first-floor/1/7",
+            "first-floor/17/7",
+            "second-floor/10/32"
+          ],
+          "sha256": "7311e08a2ade8af40d19844d6a50ae57ca8d8a4c52ba95692b95564d3b839873"
+        }
+      }
+    },
+    "nntt-opera-palace-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-numbered-seat-map": {
+          "count": 1810,
+          "samples": [
+            "first-floor-main/1/6",
+            "second-floor-main/1/42",
+            "fourth-floor-right/R8/5"
+          ],
+          "sha256": "1ce7e3b7e3ad5d3cbb812618f6d3f4af91ae33d4f2805eea48e3e68e604b71bb"
+        }
+      }
     },
     "nntt-playhouse-standard": {
       "schemaVersion": 2,
@@ -376,6 +642,29 @@
         "main/U/29"
       ],
       "sha256": "34f5c4543e7c603d890fa5b297980fcc0dc9081fcac0051c5bf288b344552b5b"
+    },
+    "otemachi-mitsui-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "rollback-560": {
+          "count": 560,
+          "samples": [
+            "front/A/1",
+            "rear/RA/1",
+            "rear/RN/20"
+          ],
+          "sha256": "0678bf73d5f8ed9630ced5ebd9e72885953358055f09c572aaa1b57813cdd776"
+        },
+        "flat-572": {
+          "count": 572,
+          "samples": [
+            "flat/A/1",
+            "flat/L/1",
+            "flat/V/26"
+          ],
+          "sha256": "f106a81dc0e1a60e8dfe22cc92523dcbd9e893abd24152e2ddcef16988c82688"
+        }
+      }
     },
     "owlspot-theatre-standard": {
       "count": 301,
@@ -431,6 +720,15 @@
       ],
       "sha256": "b1c92145340050dfd72125a6c9bb633e2696dba2510b9d3ff100e67838cda8aa"
     },
+    "square-ebara-hiratsuka-hall-standard": {
+      "count": 362,
+      "samples": [
+        "main/1/3",
+        "main/10/13",
+        "main/18/22"
+      ],
+      "sha256": "148ac402b9c08d4301591372dafa63eb95ffeecc502320743646853f6ed150da"
+    },
     "suginami-kokaido-main-standard": {
       "count": 1186,
       "samples": [
@@ -440,6 +738,20 @@
       ],
       "sha256": "f157b57576f7d2a2d2d2baf5686f17357e81e4b3fdf9c2bde03510c382caedec"
     },
+    "sumida-triphony-main-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1795,
+          "samples": [
+            "first-floor/1/4",
+            "first-floor/26/16",
+            "third-floor/RB/42"
+          ],
+          "sha256": "44ceec8e4f20e9f26f33a400399691d390c241060063fd33b936099a4ba6d186"
+        }
+      }
+    },
     "sumida-triphony-small-hall-standard": {
       "count": 252,
       "samples": [
@@ -448,42 +760,6 @@
         "main/16/14"
       ],
       "sha256": "f78c53616b90045206f054aa373c1c19187bbdce9f1e0f78e12bc32bcf630e1b"
-    },
-    "taito-millennium-hall-standard": {
-      "count": 300,
-      "samples": [
-        "main/A/1",
-        "main/H/7",
-        "main/O/21"
-      ],
-      "sha256": "6a4b1c00032b08aa8e1c816ff943709f4e401b798fb2c5b0cea8afcc81ff8719"
-    },
-    "theater-milano-za-standard": {
-      "count": 907,
-      "samples": [
-        "first-floor/A/5",
-        "first-floor/O/32",
-        "third-floor-right-balcony/RB/9"
-      ],
-      "sha256": "d37810093399228c70c3b01f2e5b54768cc2600b691acbe8234d476b19e00375"
-    },
-    "theater-g-rosso-standard": {
-      "count": 765,
-      "samples": [
-        "main/A/1",
-        "main/M/7",
-        "main/Z/26"
-      ],
-      "sha256": "abecbac97dc2d0cc4ba9079888d834422b02fe0dcdf3594be4a74c2e746bf2e1"
-    },
-    "square-ebara-hiratsuka-hall-standard": {
-      "count": 362,
-      "samples": [
-        "main/1/3",
-        "main/10/13",
-        "main/18/22"
-      ],
-      "sha256": "148ac402b9c08d4301591372dafa63eb95ffeecc502320743646853f6ed150da"
     },
     "sunshine-theatre-standard": {
       "count": 808,
@@ -503,412 +779,23 @@
       ],
       "sha256": "76a880cdd4fd5280a6d4ea141d6559fdc9c3aecbd7e047e465ccf86d048f62d3"
     },
-    "tokyo-fm-hall-a-stage": {
-      "count": 308,
-      "samples": [
-        "main/A/1",
-        "main/G/11",
-        "main/M/23"
-      ],
-      "sha256": "e1a168df3da04577f88cdbcf09d2126f043c0c80b7145661a254b73cc3b3dee9"
-    },
-    "tokyo-geigeki-theatre-east-pattern-a": {
-      "count": 272,
-      "samples": [
-        "main/A/3",
-        "main/G/13",
-        "main/N/22"
-      ],
-      "sha256": "73c2fb73d4a17f0b92753f6ca57b55167d1e1a2acc22bd10ebf992b55df9eede"
-    },
-    "tokyo-wave3-0130": {
-      "count": 2006,
-      "samples": [
-        "first-floor/1/5",
-        "second-floor-lb/5/7",
-        "second-floor-p/7/39"
-      ],
-      "sha256": "1a5f676ae98c9f323621187232c38b585d12b235e7651e334c695901369767cd"
-    },
-    "theatre-crea-standard": {
-      "count": 609,
-      "samples": [
-        "main/1/4",
-        "main/12/13",
-        "box-l3/L3/2"
-      ],
-      "sha256": "4ef3256389b4c4293304971fbc842ca8dd155a9d4387ef40d3f42870e08a9770"
-    },
-    "toppan-hall-standard": {
-      "count": 408,
-      "samples": [
-        "main/A/1",
-        "main/H/16",
-        "main/S/21"
-      ],
-      "sha256": "57320b1ff750111ecdf85d4088f7b3366ceaa188714e16a652972af08488315e"
-    },
-    "toyosu-civic-center-hall-standard": {
+    "taito-millennium-hall-standard": {
       "count": 300,
       "samples": [
-        "main/1/3",
-        "main/8/14",
-        "main/14/24"
+        "main/A/1",
+        "main/H/7",
+        "main/O/21"
       ],
-      "sha256": "e2be5b57098e80e783cba1d4977baec0cc6cd8c80dd90f847768ca44ee2c4b5b"
+      "sha256": "6a4b1c00032b08aa8e1c816ff943709f4e401b798fb2c5b0cea8afcc81ff8719"
     },
-    "utsunomiya-city-culture-hall-release-seed": {
-      "count": 2000,
+    "theater-g-rosso-standard": {
+      "count": 765,
       "samples": [
-        "1-left-outer/6/9",
-        "1-right/12/40",
-        "3-right-outer/4/47"
+        "main/A/1",
+        "main/M/7",
+        "main/Z/26"
       ],
-      "sha256": "65c3ed67b73fcd5e99aced4ee7b6ede5181263d9ef925910fee9d96889f7d109"
-    },
-    "yokohama-minatomirai-hall-main-release-seed": {
-      "count": 2020,
-      "samples": [
-        "1-center/1/1",
-        "1-center/29/3",
-        "3-right-re/side/7"
-      ],
-      "sha256": "b4999e7cb9042e94984c8efc763577be112eeb7444a28e97e9930da8f674f76e"
-    },
-    "yotsuya-civic-hall-standard": {
-      "count": 392,
-      "samples": [
-        "first-floor/A/3",
-        "first-floor/K/6",
-        "second-floor/V/18"
-      ],
-      "sha256": "2d9248d59faf9af56f1b4318d13d9d683e5792c5592575f4cacb3b4a223b6513"
-    },
-    "yurakucho-asahi-hall-standard": {
-      "count": 636,
-      "samples": [
-        "main/A/2",
-        "main/L/3",
-        "main/U/32"
-      ],
-      "sha256": "1623e69088e6cef0ae7400d0e06864c6f9ba31849890eb37d1b40088045a1ac7"
-    },
-    "galaxy-theatre-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard": {
-          "count": 750,
-          "samples": [
-            "first-floor/A/5",
-            "first-floor/K/33",
-            "third-floor/D/24"
-          ],
-          "sha256": "f1a81d936fb72922c31c600085aafddb206fbfd831ac5b54c52b6a318c551b39"
-        }
-      }
-    },
-    "zepp-haneda-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard": {
-          "count": 1207,
-          "samples": [
-            "first-floor/A/1",
-            "first-floor/P/34",
-            "second-floor/2H/41"
-          ],
-          "sha256": "736443c4f34d095f776d741cd7dc6890de08902588ec724d0e637cf564ecebb3"
-        }
-      }
-    },
-    "nakano-zero-main-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard": {
-          "count": 1292,
-          "samples": [
-            "first-floor/1/12",
-            "first-floor/16/17",
-            "second-floor/7/50"
-          ],
-          "sha256": "a729910c30a4aa90000a6be60fa23d73b1e5b31fec337d639135ef09bbdc4886"
-        }
-      }
-    },
-    "kameido-camelia-hall-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard": {
-          "count": 400,
-          "samples": [
-            "main/A/3",
-            "main/I/13",
-            "main/Q/22"
-          ],
-          "sha256": "3c20e9a7ba38efebc72fe9a882cb201c7f7303e4adc934ff3a83adf87e25b177"
-        }
-      }
-    },
-    "sumida-triphony-main-hall-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard": {
-          "count": 1795,
-          "samples": [
-            "first-floor/1/4",
-            "first-floor/26/16",
-            "third-floor/RB/42"
-          ],
-          "sha256": "44ceec8e4f20e9f26f33a400399691d390c241060063fd33b936099a4ba6d186"
-        }
-      }
-    },
-    "curian-main-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard": {
-          "count": 1084,
-          "samples": [
-            "main/SA/15",
-            "main/K/12",
-            "main/W/41"
-          ],
-          "sha256": "f5dcc88be6f9774feeee21d82ff64301567c0b091706c3150b162435425b5ea8"
-        }
-      }
-    },
-    "itabashi-culture-small-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard": {
-          "count": 306,
-          "samples": [
-            "main/A/6",
-            "main/I/10",
-            "main/P/15"
-          ],
-          "sha256": "f2f436a1129c94e1061728272daeb57d7a604251eaddd9e6b619a45d174ebe46"
-        }
-      }
-    },
-    "zepp-shinjuku-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "b4-seated-basic": {
-          "count": 530,
-          "samples": [
-            "b4-floor/A/1",
-            "b4-floor/K/6",
-            "b4-floor/W/26"
-          ],
-          "sha256": "3757d1f7ed0a819c75eeadec1d5862e7b386b92332eb9f887dbda6b12eff6a57"
-        }
-      }
-    },
-    "ex-theater-roppongi-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "seating-standard": {
-          "count": 906,
-          "samples": [
-            "b3-floor/A/3",
-            "b2-floor/O/10",
-            "b1-stand/7/36"
-          ],
-          "sha256": "b6a51b2de41cee3e6f437d701fc1b4c98b8592376abca16d33f38e1f87b3c8db"
-        }
-      }
-    },
-    "hulic-hall-tokyo-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "fixed-886": {
-          "count": 886,
-          "samples": [
-            "main/B/10",
-            "main/P/15",
-            "main/DD/33"
-          ],
-          "sha256": "5ab0fd4aae1485f6840b6160227b7b7501d2a5f780549fbd306b702187731476"
-        }
-      }
-    },
-    "otemachi-mitsui-hall-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "rollback-560": {
-          "count": 560,
-          "samples": [
-            "front/A/1",
-            "rear/RA/1",
-            "rear/RN/20"
-          ],
-          "sha256": "0678bf73d5f8ed9630ced5ebd9e72885953358055f09c572aaa1b57813cdd776"
-        },
-        "flat-572": {
-          "count": 572,
-          "samples": [
-            "flat/A/1",
-            "flat/L/1",
-            "flat/V/26"
-          ],
-          "sha256": "f106a81dc0e1a60e8dfe22cc92523dcbd9e893abd24152e2ddcef16988c82688"
-        }
-      }
-    },
-    "tokyo-takarazuka-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard-numbered-seat-set": {
-          "count": 2070,
-          "samples": [
-            "first-floor/1/11",
-            "first-floor/20/29",
-            "second-floor/16/73"
-          ],
-          "sha256": "2efbcb0249499cbc0a867e1f1bfa80977dd456f633c4569032e0ae0b34c7b24a"
-        }
-      }
-    },
-    "yoyogi-2-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "fixed-stands-2803": {
-          "count": 2803,
-          "samples": [
-            "block-a/1/1",
-            "block-l/8/13",
-            "block-u/5/14"
-          ],
-          "sha256": "c70e36a569e8bc94be4858989a41f9ec706659dd5f3c8c086844f92ed505df4d"
-        }
-      }
-    },
-    "yoyogi-1-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "fixed-stands-numbered-set": {
-          "count": 8636,
-          "samples": [
-            "n-1f-a/1/1",
-            "n-2f-l/5/19",
-            "s-2f-l/8/3"
-          ],
-          "sha256": "f22400120934cdca6620b8a1b8700e27b45d7386f5c0df9e55027ecb7b921c71"
-        }
-      }
-    },
-    "tokyo-gymnasium-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "fixed-stands-numbered-set": {
-          "count": 5179,
-          "samples": [
-            "north-2f-a/1/1",
-            "north-3f-i/15/55",
-            "south-3f-n/16/4"
-          ],
-          "sha256": "ee12f69268382fb567a23ffb2090959fe7b9213d1e8d4e14edefdec863816c8c"
-        }
-      }
-    },
-    "nippon-budokan-fixed-stands": {
-      "schemaVersion": 2,
-      "configurations": {
-        "fixed-stands-numbered-set": {
-          "count": 11142,
-          "samples": [
-            "north-1f/A/7",
-            "southeast-3f/X/52",
-            "northwest-3f/X/60"
-          ],
-          "sha256": "c3e0477e475c5080c8dae55a8f5d28f577bd38fa0fe69b9996a18ced800748c3"
-        }
-      }
-    },
-    "kanadevia-hall-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "fixed-balconies-only": {
-          "count": 1365,
-          "samples": [
-            "first-balcony/1/1",
-            "second-balcony/3/61",
-            "third-balcony/7/66"
-          ],
-          "sha256": "e583b4713ed3b22161aa78548a76fd8968a2a8fb234f2c643a8fa1753dca5514"
-        }
-      }
-    },
-    "national-noh-theatre-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "full-numbered-seat-map": {
-          "count": 628,
-          "samples": [
-            "shomen/1/2",
-            "waki-shomen/9/14",
-            "naka-shomen/9/24"
-          ],
-          "sha256": "71041cc46e7be547f3a526949e6505bbecf84cd6b84a7d9356cf5ed534e626b7"
-        }
-      }
-    },
-    "nhk-hall-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "fixed-numbered-seats-only": {
-          "count": 3408,
-          "samples": [
-            "first-floor-center/C1/5",
-            "second-floor-left/L9/4",
-            "third-floor-right/R20/15"
-          ],
-          "sha256": "39a8120878428ab446e3d907f42f340ea771c8ec09b0cdfbcc43e95f4bf9c088"
-        }
-      }
-    },
-    "nihon-seinenkan-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "fixed-numbered-seat-map": {
-          "count": 1249,
-          "samples": [
-            "first-floor/A/16",
-            "first-floor/P/8",
-            "second-floor/J/49"
-          ],
-          "sha256": "fdb03303117f89e302df1953d38836f620a4b2807d9ec75b59d3394ecf3a457d"
-        }
-      }
-    },
-    "nissho-hall-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "full-numbered-seat-map": {
-          "count": 999,
-          "samples": [
-            "first-floor/1/7",
-            "first-floor/17/7",
-            "second-floor/10/32"
-          ],
-          "sha256": "7311e08a2ade8af40d19844d6a50ae57ca8d8a4c52ba95692b95564d3b839873"
-        }
-      }
-    },
-    "nissay-theatre-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "current-official-block-numbered-seat-map": {
-          "count": 1335,
-          "samples": [
-            "first-floor/XA/6",
-            "first-floor/O/35",
-            "second-floor/K/47"
-          ],
-          "sha256": "6be47f379a088cba39d0e2e610a0f843d88702b82e757446a3f7f8a248916678"
-        }
-      }
+      "sha256": "abecbac97dc2d0cc4ba9079888d834422b02fe0dcdf3594be4a74c2e746bf2e1"
     },
     "theater-h-standard": {
       "schemaVersion": 2,
@@ -924,59 +811,81 @@
         }
       }
     },
-    "tokyo-international-forum-hall-c-standard": {
+    "theater-milano-za-standard": {
+      "count": 907,
+      "samples": [
+        "first-floor/A/5",
+        "first-floor/O/32",
+        "third-floor-right-balcony/RB/9"
+      ],
+      "sha256": "d37810093399228c70c3b01f2e5b54768cc2600b691acbe8234d476b19e00375"
+    },
+    "theatre-crea-standard": {
+      "count": 609,
+      "samples": [
+        "main/1/4",
+        "main/12/13",
+        "box-l3/L3/2"
+      ],
+      "sha256": "4ef3256389b4c4293304971fbc842ca8dd155a9d4387ef40d3f42870e08a9770"
+    },
+    "tokyo-fm-hall-a-stage": {
+      "count": 308,
+      "samples": [
+        "main/A/1",
+        "main/G/11",
+        "main/M/23"
+      ],
+      "sha256": "e1a168df3da04577f88cdbcf09d2126f043c0c80b7145661a254b73cc3b3dee9"
+    },
+    "tokyo-geigeki-concert-hall-standard": {
       "schemaVersion": 2,
       "configurations": {
-        "current-official-numbered-seat-map": {
-          "count": 1504,
+        "current-official-printed-seat-map": {
+          "count": 1999,
           "samples": [
-            "first-floor/1/15",
-            "second-floor/1/52",
-            "third-floor/10/43"
+            "first-floor/A/1",
+            "second-floor/J/53",
+            "third-floor-right-balcony/I/10"
           ],
-          "sha256": "9984ae5b54fb71d3058890db35dc69657b9cb3b29d46c553d393d1828bca83df"
+          "sha256": "4b3352bfd6ec8b3a948cd83e4a75708d3c905f535b5837b5a7bda503299934d1"
         }
       }
     },
-    "imm-theater-standard": {
+    "tokyo-geigeki-playhouse-standard": {
       "schemaVersion": 2,
       "configurations": {
-        "official-basic-numbered-seat-map": {
-          "count": 703,
+        "current-official-printed-seat-map": {
+          "count": 845,
           "samples": [
-            "main-floor/A/7",
-            "main-floor/L/1",
-            "main-floor/U/36"
+            "first-floor-main/A/4",
+            "first-floor-main/P/4",
+            "second-floor-right-balcony/RB/9"
           ],
-          "sha256": "dd79a661370412186c482c58e0829e4332a8067392e170f6b8597f3dc0f32e65"
+          "sha256": "ad19162df31ec5d67d42436f3a119d46f6ab00d57aa9399106fbde2b09597e38"
         }
       }
     },
-    "mon-takanawa-box1000-standard": {
-      "schemaVersion": 2,
-      "configurations": {
-        "official-seated-layout": {
-          "count": 1048,
-          "samples": [
-            "first-floor-a/A1/1",
-            "first-floor-b/B10/14",
-            "second-floor-e/E7/33"
-          ],
-          "sha256": "9014736b17908de200df341f8f14774bb451df185779e35d685770e3795310ea"
-        }
-      }
+    "tokyo-geigeki-theatre-east-pattern-a": {
+      "count": 272,
+      "samples": [
+        "main/A/3",
+        "main/G/13",
+        "main/N/22"
+      ],
+      "sha256": "73c2fb73d4a17f0b92753f6ca57b55167d1e1a2acc22bd10ebf992b55df9eede"
     },
-    "jcom-hall-hachioji-standard": {
+    "tokyo-gymnasium-standard": {
       "schemaVersion": 2,
       "configurations": {
-        "current-fixed-numbered-seat-map": {
-          "count": 1870,
+        "fixed-stands-numbered-set": {
+          "count": 5179,
           "samples": [
-            "first-floor-main/1/8",
-            "first-floor-main/24/43",
-            "third-floor-right-side/R1/21"
+            "north-2f-a/1/1",
+            "north-3f-i/15/55",
+            "south-3f-n/16/4"
           ],
-          "sha256": "06be9380bc6c0651c57a038389d49ca509ff4001d003a7a1c7e2f5fb4686394e"
+          "sha256": "ee12f69268382fb567a23ffb2090959fe7b9213d1e8d4e14edefdec863816c8c"
         }
       }
     },
@@ -994,31 +903,31 @@
         }
       }
     },
-    "tokyu-theatre-orb-standard": {
+    "tokyo-international-forum-hall-c-standard": {
       "schemaVersion": 2,
       "configurations": {
         "current-official-numbered-seat-map": {
-          "count": 1948,
+          "count": 1504,
           "samples": [
-            "first-floor-main/1/6",
-            "first-floor-main/23/28",
-            "third-floor-right-box/RB/12"
+            "first-floor/1/15",
+            "second-floor/1/52",
+            "third-floor/10/43"
           ],
-          "sha256": "02bafe5c7e2ac5bd119952dc343ffa2e1b230cb3ed8dd2642d3e12da9b32ad12"
+          "sha256": "9984ae5b54fb71d3058890db35dc69657b9cb3b29d46c553d393d1828bca83df"
         }
       }
     },
-    "nntt-opera-palace-standard": {
+    "tokyo-takarazuka-standard": {
       "schemaVersion": 2,
       "configurations": {
-        "current-official-numbered-seat-map": {
-          "count": 1810,
+        "standard-numbered-seat-set": {
+          "count": 2070,
           "samples": [
-            "first-floor-main/1/6",
-            "second-floor-main/1/42",
-            "fourth-floor-right/R8/5"
+            "first-floor/1/11",
+            "first-floor/20/29",
+            "second-floor/16/73"
           ],
-          "sha256": "1ce7e3b7e3ad5d3cbb812618f6d3f4af91ae33d4f2805eea48e3e68e604b71bb"
+          "sha256": "2efbcb0249499cbc0a867e1f1bfa80977dd456f633c4569032e0ae0b34c7b24a"
         }
       }
     },
@@ -1036,20 +945,6 @@
         }
       }
     },
-    "tokyo-wave3-0136": {
-      "schemaVersion": 2,
-      "configurations": {
-        "current-official-event-seat-map": {
-          "count": 1318,
-          "samples": [
-            "first-floor-main/A/11",
-            "first-floor-main/T/8",
-            "second-floor-main/K/39"
-          ],
-          "sha256": "f81a3a4e2e0b2e0d189334cbdf921a0c8127ff64cec2be36e03c7a1453e9cc0f"
-        }
-      }
-    },
     "tokyo-wave3-0004": {
       "schemaVersion": 2,
       "configurations": {
@@ -1064,20 +959,6 @@
         }
       }
     },
-    "tokyo-wave3-0339": {
-      "schemaVersion": 2,
-      "configurations": {
-        "standard": {
-          "count": 310,
-          "samples": [
-            "main/す/1",
-            "main/き/12",
-            "main/あ/24"
-          ],
-          "sha256": "ea14393a90fb49bbf714d36e6513a6f2cb9f8ac2687c9d8d8d39822492c86c7f"
-        }
-      }
-    },
     "tokyo-wave3-0041": {
       "schemaVersion": 2,
       "configurations": {
@@ -1089,6 +970,43 @@
             "main-floor/21/25"
           ],
           "sha256": "a29f0dc59082069e04bb84ed01f3d71fe9c47222bcfe8b773141d1dee22b1d0f"
+        }
+      }
+    },
+    "tokyo-wave3-0130": {
+      "count": 2006,
+      "samples": [
+        "first-floor/1/5",
+        "second-floor-lb/5/7",
+        "second-floor-p/7/39"
+      ],
+      "sha256": "1a5f676ae98c9f323621187232c38b585d12b235e7651e334c695901369767cd"
+    },
+    "tokyo-wave3-0136": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-event-seat-map": {
+          "count": 1318,
+          "samples": [
+            "first-floor-main/A/11",
+            "first-floor-main/T/8",
+            "second-floor-main/K/39"
+          ],
+          "sha256": "f81a3a4e2e0b2e0d189334cbdf921a0c8127ff64cec2be36e03c7a1453e9cc0f"
+        }
+      }
+    },
+    "tokyo-wave3-0339": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 310,
+          "samples": [
+            "main/す/1",
+            "main/き/12",
+            "main/あ/24"
+          ],
+          "sha256": "ea14393a90fb49bbf714d36e6513a6f2cb9f8ac2687c9d8d8d39822492c86c7f"
         }
       }
     },
@@ -1134,17 +1052,141 @@
         }
       }
     },
-    "tokyo-geigeki-playhouse-standard": {
+    "tokyu-theatre-orb-standard": {
       "schemaVersion": 2,
       "configurations": {
-        "current-official-printed-seat-map": {
-          "count": 845,
+        "current-official-numbered-seat-map": {
+          "count": 1948,
           "samples": [
-            "first-floor-main/A/4",
-            "first-floor-main/P/4",
-            "second-floor-right-balcony/RB/9"
+            "first-floor-main/1/6",
+            "first-floor-main/23/28",
+            "third-floor-right-box/RB/12"
           ],
-          "sha256": "ad19162df31ec5d67d42436f3a119d46f6ab00d57aa9399106fbde2b09597e38"
+          "sha256": "02bafe5c7e2ac5bd119952dc343ffa2e1b230cb3ed8dd2642d3e12da9b32ad12"
+        }
+      }
+    },
+    "toppan-hall-standard": {
+      "count": 408,
+      "samples": [
+        "main/A/1",
+        "main/H/16",
+        "main/S/21"
+      ],
+      "sha256": "57320b1ff750111ecdf85d4088f7b3366ceaa188714e16a652972af08488315e"
+    },
+    "tower-hall-funabori-main-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard-fixed-seats": {
+          "count": 757,
+          "samples": [
+            "main/1/6",
+            "main/14/6",
+            "main/24/35"
+          ],
+          "sha256": "6a7b28a54247d866114c67002e4c1e637b9128d7e6a81ee70a6f6db87e39ec4d"
+        }
+      }
+    },
+    "toyosu-civic-center-hall-standard": {
+      "count": 300,
+      "samples": [
+        "main/1/3",
+        "main/8/14",
+        "main/14/24"
+      ],
+      "sha256": "e2be5b57098e80e783cba1d4977baec0cc6cd8c80dd90f847768ca44ee2c4b5b"
+    },
+    "utsunomiya-city-culture-hall-release-seed": {
+      "count": 2000,
+      "samples": [
+        "1-left-outer/6/9",
+        "1-right/12/40",
+        "3-right-outer/4/47"
+      ],
+      "sha256": "65c3ed67b73fcd5e99aced4ee7b6ede5181263d9ef925910fee9d96889f7d109"
+    },
+    "yokohama-minatomirai-hall-main-release-seed": {
+      "count": 2020,
+      "samples": [
+        "1-center/1/1",
+        "1-center/29/3",
+        "3-right-re/side/7"
+      ],
+      "sha256": "b4999e7cb9042e94984c8efc763577be112eeb7444a28e97e9930da8f674f76e"
+    },
+    "yotsuya-civic-hall-standard": {
+      "count": 392,
+      "samples": [
+        "first-floor/A/3",
+        "first-floor/K/6",
+        "second-floor/V/18"
+      ],
+      "sha256": "2d9248d59faf9af56f1b4318d13d9d683e5792c5592575f4cacb3b4a223b6513"
+    },
+    "yoyogi-1-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-stands-numbered-set": {
+          "count": 8636,
+          "samples": [
+            "n-1f-a/1/1",
+            "n-2f-l/5/19",
+            "s-2f-l/8/3"
+          ],
+          "sha256": "f22400120934cdca6620b8a1b8700e27b45d7386f5c0df9e55027ecb7b921c71"
+        }
+      }
+    },
+    "yoyogi-2-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-stands-2803": {
+          "count": 2803,
+          "samples": [
+            "block-a/1/1",
+            "block-l/8/13",
+            "block-u/5/14"
+          ],
+          "sha256": "c70e36a569e8bc94be4858989a41f9ec706659dd5f3c8c086844f92ed505df4d"
+        }
+      }
+    },
+    "yurakucho-asahi-hall-standard": {
+      "count": 636,
+      "samples": [
+        "main/A/2",
+        "main/L/3",
+        "main/U/32"
+      ],
+      "sha256": "1623e69088e6cef0ae7400d0e06864c6f9ba31849890eb37d1b40088045a1ac7"
+    },
+    "zepp-haneda-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1207,
+          "samples": [
+            "first-floor/A/1",
+            "first-floor/P/34",
+            "second-floor/2H/41"
+          ],
+          "sha256": "736443c4f34d095f776d741cd7dc6890de08902588ec724d0e637cf564ecebb3"
+        }
+      }
+    },
+    "zepp-shinjuku-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "b4-seated-basic": {
+          "count": 530,
+          "samples": [
+            "b4-floor/A/1",
+            "b4-floor/K/6",
+            "b4-floor/W/26"
+          ],
+          "sha256": "3757d1f7ed0a819c75eeadec1d5862e7b386b92332eb9f887dbda6b12eff6a57"
         }
       }
     }
