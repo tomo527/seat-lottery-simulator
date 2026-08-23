@@ -240,6 +240,28 @@
     "dataPath": "/venue-db/venues/hikifune-culture-hall-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "hikosen-theater-standard",
+    "venueGroupId": "hikosen-theater-standard",
+    "name": "飛行船シアター",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置・公式番号席506席",
+        "seatCount": 506,
+        "dataPath": "/venue-db/venues/hikosen-theater-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席表の印字番号席506席を抽選します。公式総数508席との差2は、1階430席に含まれる番号のない車椅子席2席です。seat IDを作成せず、番号席を容量に合わせて削除しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "hitotsubashi-hall-standard",
     "name": "一橋講堂",
     "searchAliases": [

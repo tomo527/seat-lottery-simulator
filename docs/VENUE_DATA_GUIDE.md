@@ -150,6 +150,8 @@ top-level `status: production`は、少なくとも1件の`production`かつ`sel
 
 各selectable production configurationは、宣言したscopeに対する完全な番号集合、source generation、参照source、1席以上の機械検証、`capacityFitting: false`、`repositoryInventedDifferences: false`を満たします。`definitionAuthority`は`issuer`、`official-event`、`representative-evidence`のいずれかで、issuerがdefaultと明記していなくても`selectionBasis`に採用理由を残せます。`confidence`は`verified`、`representative`、`approximate`です。既存productionは後方互換のため、厳密verificationから`verified`を推定します。
 
+代表 configuration の可否を、固定席か、arena・gymnasium・event/convention hall 等の venue type かだけで決めない。現行の公式 standard/default/recommended layout、明確に基本とされた複数 configuration、又は issuer 資料・通常利用実績から代表性を合理的に説明できる番号席配置は production 候補にできる。固定でないこと自体は blocker ではない。一方、代表性の根拠がなく恣意的、seat ID 又は row/area ownership の創作が必要、又は印字数の矛盾を capacity fitting なしに説明できない場合は HOLD/reject とする。
+
 `expectedSeatCount`は文章上の公式総数として保持でき、番号図から計算したmapped countとの差はwarningとquality metadataに残します。差を消すために番号を削除してはいけません。`verification.status`は`reviewed`または`verified`、`seatStructure: matched`をproductionに要求しますが、`seatCount: mismatched`、非0/`null`の`rangeDiff`、具体的な`unresolvedIssues`はblockerではありません。
 
 車いす転換番号が不明なら通常番号席をそのまま登録し、`wheelchairSemantics.status: not-reflected`と`accessibilityConversionNotReflected: true`を記録します。実公演で使われた仮設番号を採用する場合は`representativeEventLayout: true`、`scope.kind: representative-event`、公式`event-layout` source、共通またはconfiguration disclosureを必須にします。repositoryによるseat ID創作、capacity fitting、根拠のないconfiguration差分は引き続き禁止です。

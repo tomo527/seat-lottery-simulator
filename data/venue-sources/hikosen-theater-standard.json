@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "hikosen-theater-standard",
+  "name": "飛行船シアター",
+  "prefecture": "東京都",
+  "city": "台東区",
+  "venueType": "hall",
+  "aliases": [],
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": ["facility", "seat-count", "event-layout"],
+      "publisher": "飛行船シアター",
+      "title": "飛行船シアター",
+      "url": "https://hikosen-theater.com/",
+      "checkedAt": "2026-08-23"
+    },
+    {
+      "id": "official-seat-map-page",
+      "official": true,
+      "roles": ["seat-structure", "seat-count"],
+      "publisher": "飛行船シアター",
+      "title": "座席表",
+      "url": "https://hikosen-theater.com/guide/seatmap",
+      "checkedAt": "2026-08-23"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置・公式番号席506席",
+      "selectionBasis": "現行公式サイトが公開する1階430席（車椅子2席を含む）・2階78席、計508席の座席表について、1階A〜Rと2階L1/L2/R1/R2/C1/C2の全印字番号506席を直接転記した通常配置。各分節群は公式図の階・行/群ラベル・番号で一意化する。",
+      "issuerDefinedCondition": "施設運営者が1階430席（車椅子2席を含む）・2階78席、計508席として公開する飛行船シアター座席表を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-23 current official printed seat map",
+      "sourceIds": ["official-facility-page", "official-seat-map-page"],
+      "differenceBasisSourceIds": ["official-seat-map-page"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 508,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式座席表の印字番号席506席を抽選します。公式総数508席との差2は、1階430席に含まれる番号のない車椅子席2席です。seat IDを作成せず、番号席を容量に合わせて削除しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式座席表は1階430席に車椅子席2席を含むと明記するが、当該2席へ通常の座席番号を印字しないためseat IDを作成しない。",
+        "sourceIds": ["official-seat-map-page"],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-23",
+        "method": "independent-current-official-printed-seat-set-review",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -2,
+        "unresolvedIssues": [
+          "公式総数508席との差2は、公式が1階430席に含むと明記する番号なしの車椅子席2席である。seat IDを作成しない。",
+          "1階は428印字番号席、2階は78印字番号席であり、独立再計数も506席で一致した。"
+        ]
+      },
+      "ranges": [
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "A", "from": 1, "to": 28 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "B", "from": 1, "to": 28 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "C", "from": 1, "to": 28 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "D", "from": 1, "to": 28 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "E", "from": 1, "to": 28 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "F", "from": 1, "to": 28 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "G", "from": 4, "to": 25 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "H", "from": 1, "to": 28 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "I", "from": 1, "to": 28 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "J", "from": 1, "to": 28 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "K", "from": 2, "to": 27 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "L", "from": 3, "to": 26 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "M", "from": 4, "to": 25 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "N", "from": 5, "to": 24 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "O", "from": 6, "to": 23 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "P", "from": 7, "to": 22 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "Q", "from": 7, "to": 22 },
+        { "areaId": "first-floor", "areaLabel": "1階席", "rowLabel": "R", "from": 9, "to": 20 },
+        { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "L1", "from": 1, "to": 8 },
+        { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "L2", "from": 1, "to": 15 },
+        { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "R1", "from": 1, "to": 15 },
+        { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "R2", "from": 1, "to": 12 },
+        { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "C1", "from": 1, "to": 14 },
+        { "areaId": "second-floor", "areaLabel": "2階席", "rowLabel": "C2", "from": 1, "to": 14 }
+      ]
+    }
+  ]
+}

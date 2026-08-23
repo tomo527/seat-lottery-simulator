@@ -1,0 +1,41 @@
+{
+  "wave": "TOKYO-WAVE-19",
+  "date": "2026-08-23",
+  "scope": ["hikosen-theater-standard"],
+  "preflightPolicyNote": "A venue type such as arena, gymnasium, event hall, or convention hall is not by itself a permanent rejection. Type-only structural prefilters remain DEFERRED until representative-layout preflight can establish or reject an issuer-grounded representative numbered configuration.",
+  "venues": [
+    {
+      "canonicalId": "hikosen-theater-standard",
+      "inventoryId": "tokyo-official-0363",
+      "venue": "飛行船シアター",
+      "priority": "B",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://hikosen-theater.com/guide/seatmap",
+      "ownership": "PASS: current issuer map defines floor, row/group, and printed seat number without geometry inference.",
+      "publishedTotal": 508,
+      "floorSubtotals": { "1F": 430, "2F": 78 },
+      "printedCount": 506,
+      "printedFloorSubtotals": { "1F": 428, "2F": 78 },
+      "issuerDefinedMetadataDifference": "2 unnumbered wheelchair spaces included in the issuer-defined 1F subtotal of 430.",
+      "independentPrintedCount": 506,
+      "confidence": "representative",
+      "reason": "Current official map, issuer ownership, and independent printed-count reconciliation pass. The -2 range difference is fully explained by the issuer-defined unnumbered wheelchair spaces; no seat IDs were invented and no printed seats were removed."
+    }
+  ],
+  "result": {
+    "productionPromotions": 1,
+    "holds": 0,
+    "sourceHolds": 0,
+    "solHandoffs": 0,
+    "productionAfter": {
+      "venues": 102,
+      "selectableConfigurations": 104,
+      "seatRecords": 156019,
+      "tokyo": "40/76",
+      "must": "25/44",
+      "should": "15/28",
+      "releaseReady": true
+    }
+  },
+  "exactNextAction": "For Wave20 discovery only, keep type-only deferred dynamic or event venues eligible for representative-layout preflight; require issuer-grounded configuration ownership and count reconciliation before any promotion."
+}
