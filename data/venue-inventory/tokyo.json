@@ -171,7 +171,7 @@
       "researchStatus": "draft-created",
       "lastCheckedAt": "2026-07-29",
       "discoveryUrlRaw": "http://myoujin-hall.jp/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "SOURCE HOLD (TOKYO-WAVE-18): current official capacity is1,192 with two wheelchair spaces, but use-dependent multiple layouts provide no fixed clear standard numbered configuration. The inventory's legacy1,055 value also conflicts. Reopen only with current issuer material defining one complete fixed numbered standard."
     },
     {
       "inventoryId": "tokyo-official-0009",
@@ -616,7 +616,7 @@
       "researchStatus": "draft-created",
       "lastCheckedAt": "2026-07-29",
       "discoveryUrlRaw": "http://www.nishogakusha-u.ac.jp/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "SOURCE HOLD (TOKYO-WAVE-18): ownership passes, but the current official map prints1,125 numbered seats (1F525 + 2F600) versus the published1,100. Independent recount also found1,125; removing wheelchair-compatible A10/A11/A24/A25 still gives1,121. The issuer contradiction cannot be capacity-fitted."
     },
     {
       "inventoryId": "tokyo-official-0031",
@@ -654,8 +654,8 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0032",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-23",
       "discoveryUrlRaw": "http://www.meiji.ac.jp/kanzai/academyhall.html",
       "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
     },
@@ -1054,8 +1054,8 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0052",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-23",
       "discoveryUrlRaw": "http://yomi-h.jp/",
       "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
     },
@@ -10986,9 +10986,9 @@
       "eligibilityReason": "通常図の番号席929に対し公式定員は車椅子席を含む933。差4席と複数の車椅子転換パターンの包含関係を公式資料だけで確定できない。",
       "priority": "B",
       "venueSourceId": "setagaya-eagle-hall-standard",
-      "researchStatus": "draft-created",
+      "researchStatus": "rejected",
       "lastCheckedAt": "2026-08-02",
-      "blockingReason": "通常933席に含まれる4席と、各車椅子転換時に撤去する番号席を明示する公式資料が必要。"
+      "blockingReason": "CARRY-OVER REJECT / UNCHANGED: preflight-rejected before TOKYO-WAVE-18. Wave18 created no new evidence or disposition; exclude from candidate discovery unless new issuer evidence resolves the existing count and wheelchair-conversion contradiction."
     },
     {
       "inventoryId": "tokyo-official-0558",
@@ -13887,9 +13887,9 @@
       "eligibilityReason": "公式配置図が可変舞台246・312・318・384席を正規配置として並列掲載し、通常・標準・基本配置を指定していないため代表配置の方針判断が必要。",
       "priority": "C",
       "venueSourceId": "olympic-center-small-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-08-02",
-      "blockingReason": "POLICY DECISION REQUIRED: 246・312・318・384席から代表配置を選定し、その配置の鮮明な公式番号図が必要。"
+      "researchStatus": "rejected",
+      "lastCheckedAt": "2026-08-23",
+      "blockingReason": "REJECT (TOKYO-WAVE-18): maximum384 and a312-seat example are issuer-defined variable-stage configurations, not one complete fixed numbered standard. Reopen only with current issuer material defining a fixed standard configuration."
     },
     {
       "inventoryId": "tokyo-official-0708",
@@ -17525,9 +17525,10 @@
       "eligibilityReason": "現行公式番号図と701席（1階553席・2階148席）を確認済み。ただし分割番号群にissuer-definedなrow/area ownershipがなく、図形推測なしにlosslessなseat IDを作れない。",
       "priority": "B",
       "venueSourceId": "sunpearl-arakawa-main-standard",
-      "researchStatus": "draft-created",
+      "researchStatus": "rejected",
       "lastCheckedAt": "2026-07-27",
-      "discoveryUrlRaw": "http://www.sunpearl-arakawa.com/"
+      "discoveryUrlRaw": "http://www.sunpearl-arakawa.com/",
+      "blockingReason": "CARRY-OVER REJECT / UNCHANGED: preflight-rejected before TOKYO-WAVE-18. Wave18 created no new evidence or disposition; exclude from candidate discovery unless new issuer evidence resolves the existing ownership blocker."
     },
     {
       "inventoryId": "tokyo-official-0895",
@@ -22479,9 +22480,9 @@
       "eligibilityReason": "公式がエンド270、プロセニアム336、スラスト99・132・369・402席を正規使用スタイルとして並列掲載し、通常代表を指定していないため方針判断が必要。",
       "priority": "C",
       "venueSourceId": "kunitachi-arts-small-hall-standard",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-08-02",
-      "blockingReason": "POLICY DECISION REQUIRED: 正規使用スタイルから代表配置を選定し、その配置の鮮明な公式番号図が必要。"
+      "researchStatus": "rejected",
+      "lastCheckedAt": "2026-08-23",
+      "blockingReason": "REJECT (TOKYO-WAVE-18): issuer-defined270/336/99/132/369/402-seat configurations use a movable floor and rollback chairs; there is no single standard numbered configuration. Reopen only with current issuer material defining one fixed standard."
     },
     {
       "inventoryId": "tokyo-official-1147",

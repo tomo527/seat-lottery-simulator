@@ -1,0 +1,16 @@
+{
+  "batchId": "tokyo-wave-18-representative-coverage",
+  "createdAt": "2026-08-23",
+  "scope": "TOKYO-WAVE-18 bounded preflight closure for six carry-over Tokyo inventory candidates. Record four newly evaluated no-safe-candidate outcomes and two prior preflight rejects as carry-over reject / unchanged; do not promote production data or create new evidence.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["tokyo-official-0032", "tokyo-official-0052", "tokyo-official-0707", "tokyo-official-1146", "tokyo-sunpearl-arakawa-main", "tokyo-official-0557"],
+  "carryOvers": [
+    {"inventoryId":"tokyo-official-0032","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"TOKYO-WAVE-18 bounded preflight found no fixed clear standard numbered configuration; record SOURCE HOLD without capacity fitting.","recheckNotBefore":"2026-08-23"},
+    {"inventoryId":"tokyo-official-0052","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"TOKYO-WAVE-18 ownership passed, but direct and independent counts found1,125 printed versus1,100 published; record SOURCE HOLD without removing printed seats.","recheckNotBefore":"2026-08-23"},
+    {"inventoryId":"tokyo-official-0707","carryOverFrom":"tokyo-wave-2","previousStatus":"draft-created","recheckReason":"TOKYO-WAVE-18 confirmed variable-stage configurations and no single fixed numbered standard; record REJECT.","recheckNotBefore":"2026-08-23"},
+    {"inventoryId":"tokyo-official-1146","carryOverFrom":"tokyo-wave-2","previousStatus":"draft-created","recheckReason":"TOKYO-WAVE-18 confirmed multiple movable-floor configurations and no single fixed numbered standard; record REJECT.","recheckNotBefore":"2026-08-23"},
+    {"inventoryId":"tokyo-sunpearl-arakawa-main","carryOverFrom":"tokyo-wave-1","previousStatus":"draft-created","recheckReason":"Carry-over reject / unchanged: this venue was already preflight-rejected before Wave18; no new evidence or disposition was created.","recheckNotBefore":"2026-08-23"},
+    {"inventoryId":"tokyo-official-0557","carryOverFrom":"tokyo-wave-2","previousStatus":"draft-created","recheckReason":"Carry-over reject / unchanged: this venue was already preflight-rejected before Wave18; no new evidence or disposition was created.","recheckNotBefore":"2026-08-23"}
+  ]
+}

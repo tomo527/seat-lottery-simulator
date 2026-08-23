@@ -1,0 +1,27 @@
+{
+  "reportId": "tokyo-wave-18-2026-08-23",
+  "asOf": "2026-08-23",
+  "model": "Terra high preflight closure",
+  "policyVersion": "representative-coverage-v2",
+  "scope": ["meiji-university-academy-hall", "yurakucho-yomiuri-hall", "olympic-center-small-hall", "kunitachi-arts-small-hall", "sunpearl-arakawa-main-hall", "setagaya-eagle-hall"],
+  "venues": [
+    {"id":"meiji-university-academy-hall","sourceId":"tokyo-wave3-0032","classification":"SOURCE HOLD","expectedSeatCount":1192,"calculatedSeatCount":null,"rangeDiff":null,"confidence":"source-hold","reason":"Ownership-stage reject: current official capacity is1,192 with two wheelchair spaces, but usage-dependent multiple layouts provide no fixed clear standard numbered configuration. The inventory's legacy1,055 value also conflicts."},
+    {"id":"yurakucho-yomiuri-hall","sourceId":"tokyo-wave3-0052","classification":"SOURCE HOLD","expectedSeatCount":1100,"calculatedSeatCount":1125,"rangeDiff":25,"confidence":"source-hold","reason":"Ownership passes. The current official map prints1,125 numbered seats (1F525 + 2F600) versus published1,100; the independent recount also found1,125. Removing wheelchair-compatible A10/A11/A24/A25 still gives1,121, so the issuer contradiction cannot be capacity-fitted."},
+    {"id":"olympic-center-small-hall","sourceId":"olympic-center-small-hall-standard","classification":"REJECT","expectedSeatCount":384,"calculatedSeatCount":null,"rangeDiff":null,"confidence":"rejected","reason":"Ownership-stage reject: maximum384 and a312-seat example are variable-stage configurations, not one complete fixed numbered standard."},
+    {"id":"kunitachi-arts-small-hall","sourceId":"kunitachi-arts-small-hall-standard","classification":"REJECT","expectedSeatCount":null,"calculatedSeatCount":null,"rangeDiff":null,"confidence":"rejected","reason":"Ownership-stage reject: issuer-defined270/336/99/132/369/402-seat movable-floor and rollback-chair configurations provide no single standard numbered configuration."},
+    {"id":"sunpearl-arakawa-main-hall","sourceId":"sunpearl-arakawa-main-standard","classification":"REJECT","expectedSeatCount":null,"calculatedSeatCount":null,"rangeDiff":null,"confidence":"carry-over-reject","reason":"Carry-over reject / unchanged: this venue was already preflight-rejected before Wave18. Wave18 created no new evidence or disposition."},
+    {"id":"setagaya-eagle-hall","sourceId":"setagaya-eagle-hall-standard","classification":"REJECT","expectedSeatCount":null,"calculatedSeatCount":null,"rangeDiff":null,"confidence":"carry-over-reject","reason":"Carry-over reject / unchanged: this venue was already preflight-rejected before Wave18. Wave18 created no new evidence or disposition."}
+  ],
+  "result": {
+    "candidatesChecked": 6,
+    "ownershipStageRejects": 5,
+    "countReconciliationRejects": 1,
+    "adoptedCandidates": 0,
+    "productionPromotions": 0,
+    "solHandoffs": 0,
+    "productionAfter": {"venues":101,"selectableConfigurations":103,"configurationSeatRecords":155513},
+    "coverageAfter": {"tokyoProduction":"40/76 (52.6%)","mustProduction":"25/44 (56.8%)","shouldProduction":"15/28 (53.6%)"},
+    "releaseReady": true,
+    "exactNextAction": "Before any Wave19 ranking, construct the excluded ID set from production, USER REVIEW HOLD, SOURCE HOLD, past preflight REJECT, and separate follow-up records; rank only remaining unexcluded A/B inventory candidates."
+  }
+}

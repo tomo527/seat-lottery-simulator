@@ -1,0 +1,15 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-18-representative-coverage",
+  "baselineDate": "2026-08-23",
+  "scope": "TOKYO-WAVE-18 bounded preflight closure: NO SAFE CANDIDATE and zero production promotions",
+  "expectedVenueCount": 6,
+  "venues": [
+    {"venueId":"tokyo-wave3-0032","readiness":"R5","secondPass":"ownership-reject-source-hold","blocker":"SOURCE HOLD: current official capacity is1,192 with two wheelchair spaces, but usage-dependent multiple layouts provide no fixed clear standard numbered configuration; legacy inventory is1,055.","nextAction":"Require current issuer material that defines one complete fixed numbered standard before reopening; do not reconcile by capacity fitting."},
+    {"venueId":"tokyo-wave3-0052","readiness":"R5","secondPass":"count-reconciliation-reject-source-hold","blocker":"SOURCE HOLD: ownership passes, but the current official map prints1,125 numbered seats (1F525 + 2F600) versus published1,100; independent recount also found1,125 and removing A10/A11/A24/A25 still gives1,121.","nextAction":"Require corrected issuer material that reconciles all printed numbered seats before reopening; do not delete or exclude printed seats to fit capacity."},
+    {"venueId":"olympic-center-small-hall-standard","readiness":"R5","secondPass":"ownership-reject","blocker":"REJECT: maximum384 and a312-seat example are variable-stage configurations, with no complete fixed numbered standard.","nextAction":"Exclude from discovery unless current issuer material defines one fixed standard configuration."},
+    {"venueId":"kunitachi-arts-small-hall-standard","readiness":"R5","secondPass":"ownership-reject","blocker":"REJECT: multiple issuer-defined270/336/99/132/369/402-seat movable-floor and rollback-chair configurations provide no single standard numbered configuration.","nextAction":"Exclude from discovery unless current issuer material defines one fixed standard configuration."},
+    {"venueId":"sunpearl-arakawa-main-standard","readiness":"R5","secondPass":"carry-over-reject-unchanged","blocker":"CARRY-OVER REJECT / UNCHANGED: preflight-rejected before Wave18; no new evidence or disposition was created.","nextAction":"Exclude from discovery unless new issuer evidence resolves the existing ownership blocker."},
+    {"venueId":"setagaya-eagle-hall-standard","readiness":"R5","secondPass":"carry-over-reject-unchanged","blocker":"CARRY-OVER REJECT / UNCHANGED: preflight-rejected before Wave18; no new evidence or disposition was created.","nextAction":"Exclude from discovery unless new issuer evidence resolves the existing count and wheelchair-conversion contradiction."}
+  ]
+}
