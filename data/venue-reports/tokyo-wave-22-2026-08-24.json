@@ -1,0 +1,158 @@
+{
+  "wave": "TOKYO-WAVE-22",
+  "date": "2026-08-24",
+  "scope": ["tokyo-wave3-0937", "tokyo-wave3-0804", "tokyo-wave3-1205", "hitomi-memorial-hall-standard", "tokyo-wave3-0241"],
+  "scopeBasis": "Bounded re-evaluation of five residual hard cases carried over from TOKYO-WAVE-3, -13 and -17. No new candidate discovery.",
+  "policyBasis": "docs/VENUE_DATA_GUIDE.md as it now stands. Exact agreement with a published total, rangeDiff 0, a fully resolved wheelchair substitution and an issuer-authored explanation of a mapped-versus-published difference are confidence metadata, not production gates. The gate is a complete, losslessly structured printed numbered set for the declared representative scope, with no invented seat IDs, no capacity fitting, no unsupported seat deletion and no invented block ownership. The Wave21 display-area policy was available but was not needed for any of these five venues.",
+  "venues": [
+    {
+      "canonicalId": "tokyo-wave3-0937",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-official-0937",
+      "venue": "西新井文化ホール",
+      "priority": "B",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.galaxcity.jp/assets/docs/cultural-hall/nishiarai_zasekihyou.pdf",
+      "publishedTotal": 902,
+      "mapped": 902,
+      "rangeDiff": 0,
+      "confidence": "representative",
+      "floorReconciliation": { "1F": 480, "2F": 422, "allMatched": true },
+      "priorBlockerResolution": "The Wave17 hold rested on a false premise. It assumed the printed 902 had to be reduced to 896 because the chart also names six wheelchair spaces. The chart's own heading table reads 1階客席数480席 (固定席436 + 移動可能席44) and 2階客席数422席, whose sum is exactly 902 = 総客席数902席, and 車椅子スペース6席 is a separate line outside that arithmetic. The vector text layer holds exactly 902 printed numbers, and the transcription splits 480 / 422 across the two printed area names, so there is no contradiction and no seat had to be deleted.",
+      "structureNote": "1階席 rows あ〜て and 2階席 rows け〜ふ. Both area names are printed on the chart. The 2F side wings (け〜つ, seats 1-4 and 33-36) and the 2F rear block share one 1-36 numbering axis, exactly as the 1F rows do; the wings are 2F because 1F front + 1F centre is exactly the issuer's 480.",
+      "notIncluded": ["車椅子スペース6席（無番号・見出し表の別項目）"]
+    },
+    {
+      "canonicalId": "tokyo-wave3-0804",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-official-0804",
+      "venue": "杉並区立社会教育センター(セシオン杉並)〔ホール〕",
+      "priority": "B",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.city.suginami.tokyo.jp/documents/13870/sesion_hall.pdf",
+      "publishedTotal": 503,
+      "mapped": 497,
+      "rangeDiff": -6,
+      "confidence": "representative",
+      "priorBlockerResolution": "The Wave17 hold cited only the six-seat difference between 497 printed numbers and the 503 published room capacity. Under the current guide that difference alone is not a blocker. The 497 printed set was re-extracted from the PDF's text layer and is complete: rows 1-19 (15/17/21/23/25/9/9 then twelve rows of 31) plus the printed 親子席 row 20 seats 1-6.",
+      "unresolvedDifference": "The six-seat gap is plausibly the two unnumbered wheelchair marks drawn beside rows 6 and 7, but the issuer states no count, so it is kept as metadata. No seat number was added.",
+      "notIncluded": ["6・7列左右の無番号車椅子マーク区画"]
+    },
+    {
+      "canonicalId": "tokyo-wave3-1205",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-official-1205",
+      "venue": "瑞穂ビューパーク・スカイホール〔大ホール〕",
+      "priority": "A",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144_d/fil/daiho-ruheimen.pdf",
+      "publishedTotal": 1008,
+      "publishedBreakdown": { "固定席": 1002, "車いす席": 6, "座席数": 1008 },
+      "mapped": 1000,
+      "rangeDiff": -8,
+      "confidence": "representative",
+      "priorBlockerResolution": "The Wave17 hold cited 1,006 printed cells against the issuer's 1,002 fixed seats. The source is a 4677x6614 monochrome scan with no text layer, so the count was redone twice and independently: magnified block-by-block visual transcription (far-left 1-4, left 5-16, centre 17-28, right 29-40, far-right 41-44 across rows 1-27) gives 1,000, and connected-component seat-cell detection on a 500 dpi render gives 997-999 with the missed cells individually identified as ones crossed by dimension lines or dashed borders. The recorded 1,006 does not reproduce under either method.",
+      "expectedSeatCountChoice": "expectedSeatCount is the venue's published 座席数 1,008席, matching the repository convention already used for tokyo-wave3-1188 (854) and tokyo-wave3-0991 (500) where the headline capacity includes unnumbered wheelchair spaces. The 固定席1,002 subtotal and the 車いす席6 line are held separately in scopeDisclosure, wheelchairSemantics and unresolvedIssues, so the explained 6 and the unexplained 2 stay distinguishable.",
+      "unresolvedDifference": "1,000 printed numbers versus the issuer's own 固定席1,002. Two seats are unexplained; nothing was added or removed.",
+      "notIncluded": ["車いす席6席（無番号）"]
+    },
+    {
+      "canonicalId": "hitomi-memorial-hall-standard",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-hitomi-memorial-hall",
+      "venue": "昭和女子大学 人見記念講堂",
+      "priority": "A",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://hall.swu.ac.jp/seat.html",
+      "publishedTotal": 2070,
+      "mapped": 2070,
+      "rangeDiff": 0,
+      "confidence": "representative",
+      "floorReconciliation": { "1F": 1538, "2F": 532, "allMatched": true },
+      "priorBlockerResolution": "The Wave13 hold said the curved side number groups carry no issuer-defined row/area ownership. They do not need one to be read: each block is drawn as a set of straight row lines, and the line counts match the issuer's printed row labels one-to-one (1F left and right 34 lines each against rows 2-35; 1F outermost 26 lines; 2F all blocks 12 lines against rows A-L). The issuer's own note 「8列8,9,10,45,46,47は車椅子兼用席」 identifies the first outermost line as row 8 on both sides. Reconstructing the blocks with their rake offsets yields 1階ホール 1,538席 and 2階ホール 532席, matching the issuer's client-count table exactly, and 2,070 in total.",
+      "structureNote": "1F rows 2-35 on a 1-54 numbering axis; 2F rows A-L on a 1-50 axis. Rows 20 and 35 have no outermost-block seats and 2F rows G-I are cut by the staircases, both matching the drawing.",
+      "wheelchair": "8列8,9,10,45,46,47 are printed numbered seats flagged as 車椅子兼用席 and are kept in the set."
+    },
+    {
+      "canonicalId": "tokyo-wave3-0241",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-official-0241",
+      "venue": "東京オペラシティ コンサートホール:タケミツ メモリアル",
+      "priority": "A",
+      "tier": "MUST",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.operacity.jp/concert/rental/download/pdf/1_CH_seat.pdf",
+      "publishedTotal": 1632,
+      "publishedBreakdown": { "1階席": 972, "2階バルコニー席": 358, "3階バルコニー席": 302, "車いす席": 10 },
+      "mapped": 1622,
+      "rangeDiff": -10,
+      "confidence": "representative",
+      "priorBlockerResolution": "The recorded blocker was that the chart drew 1-LB/1-RB blocks totalling 58 seats that the published 972/358/302 subtotals did not account for. That does not reproduce on the current chart dated 2026.8: the first floor is rows 1-31 with left 1-10, centre 11-22 and right 23-32 only, with no LB/RB blocks. Every floor now reconciles: 1F 964 printed + 8 wheelchair = 972; 2F 356 printed (side L1 61 + L2 39 + R1 61 + R2 39, rear C1-C5 130, organ-front P 26) + 2 wheelchair = 358; 3F 302 printed (side L1 66 + L2 40 + R1 66 + R2 40, rear C1-C3 90). Total 1,622 printed + 10 wheelchair = 1,632.",
+      "structureNote": "Odd/even first-floor rows alternate between 32 seats (1-32) and 31 seats (1-32 without 22); rows 12 and 31 hold 4-29 without 22 because the wheelchair positions replace the block ends. All row labels (1-31, L1/L2/R1/R2, C1-C5, C1-C3, P) are issuer-printed.",
+      "notIncluded": ["車いす席10席（無番号・1階8席／2階2席）", "張出舞台使用時の1階1・2列取外し（客席63席減）", "パイプオルガン使用時のP列26席取外し"]
+    }
+  ],
+  "result": {
+    "productionPromotions": 5,
+    "holds": 0,
+    "productionAfter": {
+      "venues": 113,
+      "selectableConfigurations": 115,
+      "configurationSeatRecords": 171917,
+      "tokyo": "46/76",
+      "must": "29/44",
+      "should": "17/28",
+      "releaseReady": true
+    }
+  },
+  "stateCleanup": {
+    "iinoHallFollowUp": "Resolved. iino-hall-standard is production with 500 mapped / 500 expected, verification verified, inventory researchStatus production and no blocking reason. The HANDOFF line calling it a separate unresolved follow-up was stale and is removed.",
+    "wave17HoldGuidance": "Removed. The Wave17 statement that tokyo-wave3-0937, tokyo-wave3-0804 and tokyo-wave3-1205 could not be reopened without corrected issuer material is superseded: two of the three contradictions were disproved from the same official documents and the third is metadata under the current guide. All three are production.",
+    "wave18SourceHolds": "Reclassified, not re-researched. tokyo-wave3-0032 and tokyo-wave3-0052 stay non-production, but the phrase requiring new issuer material is stale in the same way. Their recorded blockers are a missing single fixed complete numbered standard and an unreconciled printed numbered set; both are re-openable under the current guide by re-reading the existing official material, without waiting for a new publication."
+  },
+  "hardCaseRecount": {
+    "method": "Mechanical recount over all 15 files in data/venue-inventory (1,266 items) after the Wave22 integration. Buckets are mutually exclusive; each item falls in exactly one.",
+    "researchStatus": {
+      "production": 113,
+      "not-started": 780,
+      "source-located": 80,
+      "draft-created": 21,
+      "blocked": 266,
+      "rejected": 4,
+      "independent-review-mismatch": 2
+    },
+    "blockedBreakdown": {
+      "type-only-deferred": 130,
+      "missing-numbered-map": 58,
+      "count-contradiction": 7,
+      "ownership": 5,
+      "evidence-hold-other": 29,
+      "closed-or-renovation": 15,
+      "other-blocked": 22,
+      "total": 266
+    },
+    "bucketDefinitions": {
+      "type-only-deferred": "Blocked only by the pre-representative-layout structural prefilter (\"固定番号席による単一代表パターンを定義できない\" / \"固定番号席の一意な代表配置を定義できない\"). DEFERRED, not a permanent reject.",
+      "missing-numbered-map": "The official facility page is located or unreachable but no complete numbered map has been read yet; ordinary un-done research, not a hard case.",
+      "count-contradiction": "A named CONTRADICTION or MISMATCH hold between the printed numbered set and an issuer subtotal.",
+      "ownership": "A named hold because segmented or side number groups have no issuer-defined row/area ownership.",
+      "evidence-hold-other": "Any other named SOURCE / POLICY / SCHEMA / B_SOURCE_LIMITED / DATE hold against an identified current official source.",
+      "closed-or-renovation": "Closed, long-term closed, or under seat-changing renovation.",
+      "other-blocked": "Blocked with no recorded reason or a reason that matches none of the above."
+    },
+    "hardCaseIndicator": {
+      "definition": "hard case = a blocked inventory item carrying an evidence-grade hold against an identified current official source, i.e. count-contradiction + ownership + evidence-hold-other. It excludes the 130 type-only deferrals, the 58 not-yet-researched or unreachable sources, the 15 closed/renovation entries, the 22 unattributed blocks, the 780 not-started candidates, the 4 REJECTs and the 2 independent-review-mismatch records.",
+      "count": 41,
+      "byJurisdiction": { "tokyo": 20, "release-seed": 21 },
+      "byPriority": { "A": 27, "B": 5, "C": 1, "D": 8 },
+      "relatedFigures": {
+        "blockedAndActive": 82,
+        "reject": 4,
+        "independentReviewMismatch": 2
+      },
+      "priorFigureNote": "The previously reported \"本当に難案件: 86件\" is not reproducible from the inventory under any of these definitions. The closest reproducible figure is blocked-and-operationally-active, which was 87 before this wave and is 82 after it; that measure mixes the type-only deferrals and un-researched sources into the same number. Use the 41-item hard-case indicator above instead."
+    }
+  },
+  "validation": "Targeted reviews for all five venues, Wave22 batch report, inventory report, readiness report, release coverage, venues:build/check/validate/report, production fingerprint additions, then canonical npm run verify:venues.",
+  "exactNextAction": "Do not open a new wave without explicit authorization. The reopenable hard-case inventory is the 41 items enumerated by the recount above; the highest-value Tokyo entries are listed in the NEXT OPUS BATCH note in docs/HANDOFF.md."
+}

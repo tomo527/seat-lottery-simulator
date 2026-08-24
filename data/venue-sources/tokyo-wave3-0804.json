@@ -1,32 +1,265 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-wave3-0804",
   "name": "杉並区立社会教育センター・高円寺地域区民センター(セシオン杉並)〔ホール〕",
   "prefecture": "東京都",
   "city": "杉並区",
-  "aliases": [],
+  "aliases": [
+    "セシオン杉並 ホール"
+  ],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": 503,
-    "selectionReason": "2026-08-23に現行杉並区施設案内と公式座席表を照合した。全印字番号を直接数えると497席で、施設案内の503人との差6をissuer-definedに説明できないため代表配置は確定しない。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"杉並区","title":"社会教育センター（建物名：セシオン杉並）","url":"https://www.city.suginami.tokyo.jp/s113/shisetsu/14532.html","checkedAt":"2026-08-23"},{"id":"official-seat-map","official":true,"roles":["seat-structure"],"publisher":"杉並区","title":"セシオン杉並 ホール座席表","url":"https://www.city.suginami.tokyo.jp/documents/13870/sesion_hall.pdf","checkedAt":"2026-08-23"}],
-  "registeredScope": "現行公式座席表の印字番号497席を確認したが、定員503との差6は未解決のためrangeは未登録。",
-  "completenessBasis": "row 1〜20と左右・中央番号群は公式図で明示される一方、図の無番号車椅子領域に対応する人数が明示されない。",
-  "transformation": "497印字番号を503へcapacity fittingせず、無番号領域をseat ID化せず、差の公式説明が得られるまでrangeへ転記しない。",
-  "knownLimitations": ["公式503人と497印字番号席との差6のissuer-defined内訳が必要。"],
-  "verification": {
-    "status": "reviewed",
-    "checkedAt": "2026-08-23",
-    "method": "current-official-pdf-printed-seat-set-review",
-    "seatStructure": "matched",
-    "seatCount": "mismatched",
-    "unresolvedIssues": ["公式図の497印字番号席と施設案内503人との差6を、issuer-definedな無番号区画数で説明できない。"]
-  },
-  "ranges": []
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "杉並区",
+      "title": "社会教育センター（建物名：セシオン杉並）",
+      "url": "https://www.city.suginami.tokyo.jp/s113/shisetsu/14532.html",
+      "checkedAt": "2026-08-24"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "杉並区",
+      "title": "セシオン杉並 ホール座席表",
+      "url": "https://www.city.suginami.tokyo.jp/documents/13870/sesion_hall.pdf",
+      "checkedAt": "2026-08-24"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "current-official-printed-seat-map",
+      "canonicalName": "通常配置・公式座席表の印字番号席497席",
+      "selectionBasis": "現行公式座席表に印字された全番号席497席を直接転記した通常配置。1〜19列の客席と、図に「親子席」と明記された20列1〜6番で一意化する。",
+      "issuerDefinedCondition": "杉並区が公開するセシオン杉並ホール座席表を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-24 current official printed seat map",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 503,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "公式座席表の印字番号席497席を抽選します。公式施設案内のホール定員503人との差6は、図の6・7列左右に描かれた無番号の車椅子マーク区画に対応する可能性がありますが、issuerは席数を明示していないため未解決の差分として保持し、番号席を追加していません。親子席（20列1〜6番）は公式座席表に番号付きで印字されるため通常番号集合へ含めます。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式座席表は6・7列の左右に無番号の車椅子マーク区画を描くが、席数も番号も印字しないためseat IDを作成しない。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-24",
+        "method": "current-official-pdf-vector-text-layer-extraction-and-rendered-chart-review",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -6,
+        "unresolvedIssues": [
+          "公式施設案内のホール定員503人と印字番号席497席の差6について、issuerによる内訳の明示がない。無番号の車椅子区画数として推定せず、番号を追加しない。",
+          "親子席20列1〜6番が定員503人に含まれるかどうかは公式資料に明示されていない。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "1",
+          "from": 8,
+          "to": 24,
+          "excluded": [
+            11,
+            21
+          ]
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "2",
+          "from": 7,
+          "to": 25,
+          "excluded": [
+            11,
+            21
+          ]
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "3",
+          "from": 5,
+          "to": 27,
+          "excluded": [
+            11,
+            21
+          ]
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "4",
+          "from": 4,
+          "to": 28,
+          "excluded": [
+            11,
+            21
+          ]
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "5",
+          "from": 3,
+          "to": 29,
+          "excluded": [
+            11,
+            21
+          ]
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "6",
+          "from": 12,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "7",
+          "from": 12,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "parent-child",
+          "areaLabel": "親子席",
+          "rowLabel": "20",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        }
+      ]
+    }
+  ]
 }

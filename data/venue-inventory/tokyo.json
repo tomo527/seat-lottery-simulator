@@ -4785,14 +4785,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.operacity.jp/concert/seat/index.php",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryと施設公式座席ページを確認。公式座席図の第1・独立第2パスで1F側方ブロックの席数包含関係に矛盾が残るためproduction化しない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026年8月版の現行公式座席図の印字番号席1,622席を転記し、公式階別小計1階972席（車いす8席含む）・2階358席（車いす2席含む）・3階302席と完全一致した。以前記録された1-LB／1-RBの矛盾は現行図では再現しない。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0241",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-09",
-      "discoveryUrlRaw": "http://www.operacity.jp/",
-      "blockingReason": "CONTRADICTION/MISMATCH: 公式図の1-LB/1-RB計58番号席と、公式小計1,632席（1F972・2F358・3F302）の包含関係を公式資料だけで説明できない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-24",
+      "discoveryUrlRaw": "http://www.operacity.jp/"
     },
     {
       "inventoryId": "tokyo-official-0242",
@@ -11080,13 +11079,12 @@
       "officialFacilityUrl": "https://hall.swu.ac.jp/seat.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "現行公式番号図と2,070席（1階1,538席・2階532席）を確認済み。ただし曲線状の側方番号群にissuer-definedなrow/area ownershipがなく、図形推測なしにlosslessなseat IDを作れない。",
+      "eligibilityReason": "現行公式座席表（B）の印字番号席2,070席を転記し、公式客席数表の1階ホール1,538席・2階ホール532席・合計2,070席と完全一致した。列ラベルのない側方ブロックは列線数の1対1対応と公式注記「8列8,9,10,45,46,47は車椅子兼用席」を起点に対応付けた。",
       "priority": "A",
       "venueSourceId": "hitomi-memorial-hall-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-22",
-      "discoveryUrlRaw": "http://hall.swu.ac.jp/",
-      "blockingReason": "SOURCE HOLD: 曲線状の側方番号群にissuer-definedなrow/area ownershipがない。8列の8、9、10、45、46、47は車椅子兼用として確認したが、図形位置からrangeを作成しない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-24",
+      "discoveryUrlRaw": "http://hall.swu.ac.jp/"
     },
     {
       "inventoryId": "tokyo-official-0563",
@@ -15764,14 +15762,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.city.suginami.tokyo.jp/s113/shisetsu/14532.html",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "現行公式座席表の全印字番号を直接数えると497席だが、同区公式施設案内は503人とする。図に番号のない車椅子領域はあるものの6席のissuer-defined説明がなく、差を推測しない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式座席表の印字番号席497席（1〜19列および親子席20列）を完全に転記した。公式施設案内の定員503人との差6はissuer未説明の差分としてmetadataに保持し、番号を追加しない。",
       "priority": "B",
       "venueSourceId": "tokyo-wave3-0804",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-23",
-      "discoveryUrlRaw": "http://www.city.suginami.tokyo.jp/shisetsu/katsudo/center/1006947.html",
-      "blockingReason": "現行公式図の497印字番号席と公式定員503の差6を、issuer-definedな番号なし区画数で説明できない。capacity fittingやgeometry推測をせずHOLD。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-24",
+      "discoveryUrlRaw": "http://www.city.suginami.tokyo.jp/shisetsu/katsudo/center/1006947.html"
     },
     {
       "inventoryId": "tokyo-official-0805",
@@ -18350,14 +18347,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://hoshizora.galaxcity.jp/cultural-hall/guide/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "現行公式座席図は902の番号セルを直接示す一方、図中の1階480・2階422・車椅子6の内訳と整合しない。896番号席へ番号を削除して合わせない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式客席図の印字番号席902席を転記し、同図の見出し表が示す1階客席数480席・2階客席数422席・総客席数902席と完全一致した。無番号の車椅子スペース6席は同表の別項目であり反映しない。",
       "priority": "B",
       "venueSourceId": "tokyo-wave3-0937",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-23",
-      "discoveryUrlRaw": "http://www.galaxcity.jp/modules/site/index.php?action=CatView&cat_id=2",
-      "blockingReason": "現行公式PDFの全印字番号902席と、同PDFの階別定員内訳および無番号車椅子6席が重大に矛盾する。番号席を削除せずHOLD。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-24",
+      "discoveryUrlRaw": "http://www.galaxcity.jp/modules/site/index.php?action=CatView&cat_id=2"
     },
     {
       "inventoryId": "tokyo-official-0938",
@@ -23629,14 +23625,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "現行公式平面図は番号セル1,006席を直接示すが、同図の固定1,002席・車いす6席という記載と差4で整合しない。No.1〜3列の取外し可能席を推測除外しない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式大ホール平面図の印字番号席1,000席（No.1〜27列・1〜44番）を拡大転記と独立セル検出の二方法で確認した。公式座席数1,008席＝固定席1,002席＋車いす席6席との差はmetadataに保持する。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-1205",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-23",
-      "discoveryUrlRaw": "http://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html",
-      "blockingReason": "現行公式平面図の印字番号1,006席と固定席1,002の差4にissuer-defined説明がない。番号席の推測除外はせずHOLD。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-24",
+      "discoveryUrlRaw": "http://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html"
     },
     {
       "inventoryId": "tokyo-official-1206",

@@ -1,0 +1,45 @@
+{
+  "batchId": "tokyo-wave-22-representative-coverage",
+  "createdAt": "2026-08-24",
+  "scope": "TOKYO-WAVE-22: re-evaluate five residual hard cases against the current production contract in docs/VENUE_DATA_GUIDE.md instead of the historical holds — 西新井文化ホール, セシオン杉並〔ホール〕, 瑞穂ビューパーク・スカイホール〔大ホール〕, 昭和女子大学 人見記念講堂, 東京オペラシティ コンサートホール. No new candidates. Exact agreement with a published total, rangeDiff 0 and a fully resolved wheelchair substitution are confidence metadata, not production gates; the gate is a complete, losslessly structured printed numbered set with no invented seat IDs, no capacity fitting, no unsupported deletion and no invented block ownership.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-official-0937",
+      "carryOverFrom": "tokyo-wave-17",
+      "previousStatus": "blocked",
+      "recheckReason": "The Wave17 hold assumed the printed 902 had to be reduced to 896 because of six unnumbered wheelchair spaces. The chart's own heading table states 固定席436 + 移動可能席44 = 1階480 and 2階422, whose sum is exactly the printed 902; the wheelchair spaces are a separate line item outside that total, so no contradiction exists and no seat has to be deleted.",
+      "recheckNotBefore": "2026-08-24"
+    },
+    {
+      "inventoryId": "tokyo-official-0804",
+      "carryOverFrom": "tokyo-wave-17",
+      "previousStatus": "blocked",
+      "recheckReason": "The Wave17 hold cited only the unexplained six-seat gap between the 497 printed numbers and the 503 published room capacity. Under the current guide that difference is confidence metadata, and the 497 printed set is complete and losslessly structurable.",
+      "recheckNotBefore": "2026-08-24"
+    },
+    {
+      "inventoryId": "tokyo-official-1205",
+      "carryOverFrom": "tokyo-wave-17",
+      "previousStatus": "blocked",
+      "recheckReason": "The Wave17 hold cited a printed 1,006 against the issuer's 1,002 fixed seats. Two independent methods on the scanned plan — magnified block-by-block transcription and image-processing cell detection — both give 1,000 printed numbers, so the recorded 1,006 does not reproduce. The remaining difference against the issuer's own figures is kept as metadata.",
+      "recheckNotBefore": "2026-08-24"
+    },
+    {
+      "inventoryId": "tokyo-hitomi-memorial-hall",
+      "carryOverFrom": "tokyo-wave-13",
+      "previousStatus": "blocked",
+      "recheckReason": "The Wave13 hold said the curved side number groups had no issuer-defined row/area ownership. Each block's row lines map one-to-one onto the issuer-printed row labels, the issuer's own note fixes 8列8,9,10,45,46,47 as the first outermost line, and the resulting transcription reproduces the issuer's 1,538 / 532 / 2,070 subtotals exactly.",
+      "recheckNotBefore": "2026-08-24"
+    },
+    {
+      "inventoryId": "tokyo-official-0241",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "blocked",
+      "recheckReason": "The recorded blocker was the 1-LB/1-RB 58-seat inclusion question raised against the 2026-08-09 chart. The current official chart dated 2026.8 has no such blocks: the first floor is rows 1-31 with seats 1-32 only, and the transcription reconciles exactly with the issuer's 972 / 358 / 302 floor subtotals.",
+      "recheckNotBefore": "2026-08-24"
+    }
+  ]
+}

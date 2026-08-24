@@ -315,6 +315,30 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "hitomi-memorial-hall-standard",
+    "venueGroupId": "hitomi-memorial-hall-standard",
+    "name": "昭和女子大学 人見記念講堂",
+    "searchAliases": [
+      "人見記念講堂"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "世田谷区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式座席表の印字番号席2,070席",
+        "seatCount": 2070,
+        "dataPath": "/venue-db/venues/hitomi-memorial-hall-standard--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式座席表（B）の印字番号席2,070席を抽選します。転記結果の階別内訳は1階ホール1,538席・2階ホール532席で、公式の客席数表と完全一致します。8列の8・9・10・45・46・47番は公式に車椅子兼用席と注記された番号席であり、通常番号集合に含めています。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "hitotsubashi-hall-standard",
     "name": "一橋講堂",
     "searchAliases": [
@@ -1697,6 +1721,31 @@
   },
   {
     "schemaVersion": 2,
+    "id": "tokyo-wave3-0241",
+    "venueGroupId": "tokyo-wave3-0241",
+    "name": "東京オペラシティ コンサートホール/リサイタルホール〔東京オペラシティ コンサートホール:タケミツ メモリアル〕",
+    "searchAliases": [
+      "タケミツメモリアル",
+      "東京オペラシティ コンサートホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "新宿区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式座席図の印字番号席1,622席",
+        "seatCount": 1622,
+        "dataPath": "/venue-db/venues/tokyo-wave3-0241--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式座席図（2026.8）の印字番号席1,622席を抽選します。公式定員1,632席は車いす席10席を含む数であり、番号のない車いす席10席（1階8席・2階2席）は登録しません。転記結果の階別内訳は1階964席＋車いす8席＝972席、2階356席＋車いす2席＝358席、3階302席で、いずれも公式の階別小計と一致します。張出舞台使用時の1階1・2列取外し、パイプオルガン使用時のP列26席取外しは通常配置に反映していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "tokyo-wave3-0339",
     "venueGroupId": "tokyo-wave3-0339",
     "name": "台東区立旧東京音楽学校奏楽堂〔音楽ホール〕",
@@ -1715,6 +1764,54 @@
         "dataPath": "/venue-db/venues/tokyo-wave3-0339--standard.json",
         "scope": "official-variant",
         "scopeDisclosure": "現行公式ページが直接リンクする座席表の印字番号席310席を抽選します。き行で公式図が車椅子席と表示する位置には座席番号が印字されないため、seat IDを作成せず番号集合へ含めません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-0804",
+    "venueGroupId": "tokyo-wave3-0804",
+    "name": "杉並区立社会教育センター・高円寺地域区民センター(セシオン杉並)〔ホール〕",
+    "searchAliases": [
+      "セシオン杉並 ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "杉並区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式座席表の印字番号席497席",
+        "seatCount": 497,
+        "dataPath": "/venue-db/venues/tokyo-wave3-0804--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式座席表の印字番号席497席を抽選します。公式施設案内のホール定員503人との差6は、図の6・7列左右に描かれた無番号の車椅子マーク区画に対応する可能性がありますが、issuerは席数を明示していないため未解決の差分として保持し、番号席を追加していません。親子席（20列1〜6番）は公式座席表に番号付きで印字されるため通常番号集合へ含めます。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-0937",
+    "venueGroupId": "tokyo-wave3-0937",
+    "name": "西新井文化ホール",
+    "searchAliases": [
+      "ギャラクシティ 西新井文化ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "足立区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式客席図の印字番号席902席",
+        "seatCount": 902,
+        "dataPath": "/venue-db/venues/tokyo-wave3-0937--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式客席図の印字番号席902席を抽選します。図の見出し表が示す1階客席数480席と2階客席数422席の和が902席であり、転記結果の階別内訳（1階あ〜て列480席・2階け〜ふ列422席）と完全一致します。番号のない車椅子スペース6席は同表で別項目として示されるため登録しません。",
         "fixedOnly": false
       }
     ]
@@ -1787,6 +1884,30 @@
         "dataPath": "/venue-db/venues/tokyo-wave3-1188--standard.json",
         "scope": "official-variant",
         "scopeDisclosure": "公式座席表の印字番号席850席を抽選します。公式定員854席との差4は番号のない車椅子席4席です。親子席とpit用可動席は番号が印字される限り通常番号集合に含め、運用時の除外IDは推測しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-1205",
+    "venueGroupId": "tokyo-wave3-1205",
+    "name": "瑞穂ビューパーク・スカイホール〔大ホール〕",
+    "searchAliases": [
+      "スカイホール 大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "瑞穂町",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式平面図の印字番号席1,000席",
+        "seatCount": 1000,
+        "dataPath": "/venue-db/venues/tokyo-wave3-1205--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式平面図の印字番号席1,000席を抽選します。公式の座席数1,008席は固定席1,002席と車いす席6席の合計として公表されており、番号のない車いす席6席は登録しません。印字番号1,000席と固定席1,002席の差2はissuerが説明しておらず、未解決の差分として保持します。No.1〜No.3列は公式に取外し可能席とされますが、番号が印字されるため通常番号集合へ含めます。",
         "fixedOnly": false
       }
     ]

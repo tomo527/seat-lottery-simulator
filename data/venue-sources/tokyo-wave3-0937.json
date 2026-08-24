@@ -1,32 +1,493 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-wave3-0937",
   "name": "西新井文化ホール",
   "prefecture": "東京都",
   "city": "足立区",
-  "aliases": [],
+  "aliases": [
+    "ギャラクシティ 西新井文化ホール"
+  ],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": 902,
-    "selectionReason": "2026-08-23に現行ギャラクシティ施設案内と公式座席図を照合した。図の印字番号セル902席と、同図の階別定員・無番号車椅子6席の内訳が矛盾するため代表配置は確定しない。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"ギャラクシティ","title":"西新井文化ホール ご利用案内","url":"https://hoshizora.galaxcity.jp/cultural-hall/guide/","checkedAt":"2026-08-23"},{"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"足立区／ギャラクシティ","title":"足立区西新井文化ホール客席図","url":"https://www.galaxcity.jp/assets/docs/cultural-hall/nishiarai_zasekihyou.pdf","checkedAt":"2026-08-23"}],
-  "registeredScope": "現行公式座席図の全印字番号902席を確認したが、同図の480席・422席・車椅子6席の表示と整合しないためrangeは未登録。",
-  "completenessBasis": "床・あ〜に/ぬ〜ふの行・分節番号群は公式図で明示されるが、番号セル902と階別内訳との矛盾がある。",
-  "transformation": "896席に合わせて印字番号を削除せず、無番号車椅子6区画へIDを作らず、別のissuer-defined番号集合が提示されるまでrange化しない。",
-  "knownLimitations": ["現行PDFの印字番号902と階別定員内訳の矛盾を訂正するissuer資料が必要。"],
-  "verification": {
-    "status": "reviewed",
-    "checkedAt": "2026-08-23",
-    "method": "current-official-pdf-printed-seat-set-review-and-independent-conflict-check",
-    "seatStructure": "matched",
-    "seatCount": "mismatched",
-    "unresolvedIssues": ["現行公式PDFの印字番号902席と同PDFの階別定員・無番号車椅子6席の関係が重大に矛盾する。"]
-  },
-  "ranges": []
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "ギャラクシティ",
+      "title": "西新井文化ホール ご利用案内",
+      "url": "https://hoshizora.galaxcity.jp/cultural-hall/guide/",
+      "checkedAt": "2026-08-24"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "足立区／ギャラクシティ",
+      "title": "足立区西新井文化ホール客席図",
+      "url": "https://www.galaxcity.jp/assets/docs/cultural-hall/nishiarai_zasekihyou.pdf",
+      "checkedAt": "2026-08-24"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "current-official-printed-seat-map",
+      "canonicalName": "通常配置・公式客席図の印字番号席902席",
+      "selectionBasis": "現行公式客席図に印字された全番号席902席を直接転記した通常配置。1階席あ〜て列、2階席け〜ふ列というissuer印字の行ラベルと、図に明記された「1階席」「2階席」のarea名称で一意化する。",
+      "issuerDefinedCondition": "施設運営者が総客席数902席（1階480席・2階422席）として公開する客席図を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-24 current official printed seat map",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 902,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "公式客席図の印字番号席902席を抽選します。図の見出し表が示す1階客席数480席と2階客席数422席の和が902席であり、転記結果の階別内訳（1階あ〜て列480席・2階け〜ふ列422席）と完全一致します。番号のない車椅子スペース6席は同表で別項目として示されるため登録しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式図は1階て列後方の左右に無番号の車椅子スペースを描き、見出し表で車椅子スペース6席を固定席436席・移動可能席44席とは別行に記載する。番号を印字しないためseat IDを作成しない。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-24",
+        "method": "current-official-pdf-vector-text-layer-extraction-and-rendered-chart-review",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "移動可能席44席が印字番号席のどれに当たるかは公式図に明示されないため、通常配置では区別せず902席全体を登録する。",
+          "無番号の車椅子スペース6席は総客席数902席の外側にあり、置換される番号席は公開されていない。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "あ",
+          "from": 13,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "い",
+          "from": 5,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "う",
+          "from": 4,
+          "to": 33,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "え",
+          "from": 3,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "お",
+          "from": 2,
+          "to": 35,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "か",
+          "from": 2,
+          "to": 35,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "き",
+          "from": 2,
+          "to": 35,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "く",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "け",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "こ",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "さ",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "し",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "す",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "せ",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "そ",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "た",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "ち",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "つ",
+          "from": 7,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "て",
+          "from": 13,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "け",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "け",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "こ",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "こ",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "さ",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "さ",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "し",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "し",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "す",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "す",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "せ",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "せ",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "そ",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "そ",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "た",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "た",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "ち",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "ち",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "つ",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "つ",
+          "from": 33,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "て",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "て",
+          "from": 25,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "と",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "な",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "に",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "ぬ",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "ね",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "の",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "は",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "ひ",
+          "from": 1,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "ふ",
+          "from": 3,
+          "to": 34,
+          "excluded": [
+            12,
+            25
+          ]
+        }
+      ]
+    }
+  ]
 }

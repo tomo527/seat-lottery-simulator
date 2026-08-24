@@ -1,32 +1,260 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-wave3-1205",
   "name": "瑞穂ビューパーク・スカイホール〔大ホール〕",
   "prefecture": "東京都",
   "city": "瑞穂町",
-  "aliases": [],
+  "aliases": [
+    "スカイホール 大ホール"
+  ],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": 1008,
-    "selectionReason": "2026-08-23に現行瑞穂町施設案内と公式平面図を照合した。図の印字番号1,006席と固定席1,002・無番号車いす6席の表示が矛盾するため代表配置は確定しない。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"瑞穂町","title":"瑞穂ビューパーク・スカイホール 大ホール","url":"https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html","checkedAt":"2026-08-23"},{"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"瑞穂町","title":"瑞穂ビューパーク・スカイホール 大ホール平面図","url":"https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144_d/fil/daiho-ruheimen.pdf","checkedAt":"2026-08-23"}],
-  "registeredScope": "現行公式平面図の全印字番号1,006席を確認したが、同図の固定席1,002席・無番号車いす6席の表示と整合しないためrangeは未登録。",
-  "completenessBasis": "No.1〜27、花道側分節番号群、無番号車いす6区画、No.1〜3の取外し可能席は公式図で明示されるが、番号総数と固定席表示が差4で矛盾する。",
-  "transformation": "No.1〜3列や花道側の印字番号を推測除外せず、車いす区画へIDを作らず、差4のissuer-defined説明が得られるまでrange化しない。",
-  "knownLimitations": ["現行PDFの印字番号1,006と固定席1,002の差4を説明するissuer資料が必要。"],
-  "verification": {
-    "status": "reviewed",
-    "checkedAt": "2026-08-23",
-    "method": "current-official-pdf-printed-seat-set-review-and-independent-conflict-check",
-    "seatStructure": "matched",
-    "seatCount": "mismatched",
-    "unresolvedIssues": ["現行公式平面図の印字番号1,006席と固定席1,002席の差4にissuer-definedな説明がない。"]
-  },
-  "ranges": []
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "瑞穂町",
+      "title": "瑞穂ビューパーク・スカイホール 大ホール",
+      "url": "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html",
+      "checkedAt": "2026-08-24"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "瑞穂町",
+      "title": "瑞穂ビューパーク・スカイホール 大ホール平面図",
+      "url": "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144_d/fil/daiho-ruheimen.pdf",
+      "checkedAt": "2026-08-24"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "current-official-printed-seat-map",
+      "canonicalName": "通常配置・公式平面図の印字番号席1,000席",
+      "selectionBasis": "現行公式大ホール平面図に印字された全番号席1,000席を直接転記した通常配置。No.1〜27列と1〜44番の通し番号というissuer印字のラベルで一意化する。",
+      "issuerDefinedCondition": "瑞穂町が公開する大ホール平面図の固定客席配置を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-24 current official floor plan (scanned drawing)",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1008,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "公式平面図の印字番号席1,000席を抽選します。公式の座席数1,008席は固定席1,002席と車いす席6席の合計として公表されており、番号のない車いす席6席は登録しません。印字番号1,000席と固定席1,002席の差2はissuerが説明しておらず、未解決の差分として保持します。No.1〜No.3列は公式に取外し可能席とされますが、番号が印字されるため通常番号集合へ含めます。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式平面図は8列付近の左右に車いすマークの区画を計6か所描き、見出しに車いす席6席と記すが、座席番号を印字しないためseat IDを作成しない。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-24",
+        "method": "current-official-scanned-floor-plan-visual-transcription-and-independent-cell-detection",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -8,
+        "unresolvedIssues": [
+          "公式座席数1,008席（固定席1,002席・車いす席6席）に対し、平面図の印字番号席は1,000席である。固定席1,002席との差2にissuerの説明がなく、番号の追加も削除も行わない。",
+          "以前の調査記録にある印字1,006席は、拡大転記と画像処理によるセル検出のいずれでも再現しなかった。",
+          "No.1〜No.3列の取外し可能席および花道使用時の運用除外seat IDは公式に公開されていない。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "1",
+          "from": 12,
+          "to": 33,
+          "excluded": []
+        },
+        {
+          "rowLabel": "2",
+          "from": 11,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "rowLabel": "3",
+          "from": 9,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "rowLabel": "4",
+          "from": 8,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "rowLabel": "5",
+          "from": 6,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "rowLabel": "6",
+          "from": 5,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "7",
+          "from": 5,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "8",
+          "from": 8,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "rowLabel": "9",
+          "from": 5,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "10",
+          "from": 5,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "11",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "12",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "13",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "14",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "15",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "16",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "17",
+          "from": 5,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "18",
+          "from": 5,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "19",
+          "from": 5,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "20",
+          "from": 5,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "21",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "22",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "23",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "24",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "25",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "26",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "27",
+          "from": 1,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "rowLabel": "27",
+          "from": 37,
+          "to": 44,
+          "excluded": []
+        }
+      ]
+    }
+  ]
 }
