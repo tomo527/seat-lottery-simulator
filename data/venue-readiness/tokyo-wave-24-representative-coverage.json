@@ -1,0 +1,13 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-24-representative-coverage",
+  "baselineDate": "2026-08-24",
+  "scope": "TOKYO-WAVE-24 bounded integration of the four nominated ordinary candidates.",
+  "expectedVenueCount": 4,
+  "venues": [
+    {"venueId":"tokyo-wave3-1170","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain all 1,027 official printed numbered seats; disclose the five unnumbered wheelchair spaces and fixed/movable breakdown as metadata."},
+    {"venueId":"tokyo-wave3-1114","readiness":"R2","secondPass":"hold","blocker":"The current official chart's 1F printed positions do not reproduce its issuer subtotal of 754 without deciding how visually numbered wheelchair positions should replace or overlap ordinary seats.","nextAction":"HOLD: obtain an issuer-defined 1F seat list or explicit arithmetic that maps the wheelchair positions to the 754-seat total; do not infer or remove seat IDs."},
+    {"venueId":"tokyo-wave3-0645","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain the complete 1F535 + 2F172 + balcony22 printed set; disclose the four parent seats and two wheelchair seats as unnumbered metadata."},
+    {"venueId":"tokyo-wave3-0330","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain all issuer-defined front958 + BL/BR144 printed seats; retain the eight wheelchair-compatible printed seats and disclose rangeDiff +2."}
+  ]
+}

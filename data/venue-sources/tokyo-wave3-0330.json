@@ -1,32 +1,29 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "tokyo-wave3-0330",
   "name": "東京藝術大学奏楽堂",
   "prefecture": "東京都",
   "city": "台東区",
-  "aliases": [],
+  "aliases": ["東京芸術大学 奏楽堂", "奏楽堂"],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"東京藝術大学奏楽堂","title":"東京藝術大学奏楽堂 施設案内","url":"https://www.geidai.ac.jp/department/center/performing_arts_center#sogakudo","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
-  },
-  "ranges": []
+  "representativePattern": {"id":"current-official-all-seat-map","name":"全席配置・公式番号席1,102席","coverage":"complete","expectedSeatCount":1102,"selectionReason":"発行者が「全席配置」として公開する座席表の正面席958席と左右バルコニー席144席を、そのまま代表配置とする。","notIncludedPatterns":["イベント固有の舞台・客席運用"]},
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"東京藝術大学","title":"東京藝術大学 奏楽堂","url":"https://www.geidai.ac.jp/department/center/performing_arts_center","checkedAt":"2026-08-24"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"東京藝術大学","title":"東京藝術大学 奏楽堂座席表（全席配置）","url":"https://www.geidai.ac.jp/wp-content/uploads/2013/07/seat.pdf","checkedAt":"2026-08-24"}
+  ],
+  "registeredScope": "公式「全席配置」座席表の正面席958席と、左右バルコニー席各72席の全印字番号席1,102席。",
+  "completenessBasis": "公式座席表が正面席958席、左右バルコニー席72×2席、計1,102席を明記する。正面席の列別range算術は958、左右バルコニーは各72で、合計1,102を再現する。",
+  "transformation": "発行者が印字する正面席・左右バルコニー席のarea、列、番号を明示rangeへ転記した。8列は公式図に「8列席はなし」と明記されるため登録しない。",
+  "knownLimitations": ["公式図は3列3・4・33・34番および4列3・4・33・34番を車椅子用として使用できると注記するが、いずれも印字番号席なので通常setに保持する。公称1,100席との差+2は発行者の同一図内に併記されたmetadataであり、番号席を削除して合わせない。"],
+  "verification": {"status":"verified","checkedAt":"2026-08-24","method":"current-official-pdf-visual-review-with-issuer-area-subtotals-and-independent-range-arithmetic","seatStructure":"matched","seatCount":"matched","unresolvedIssues":[]},
+  "ranges": [
+    {"areaId":"front","areaLabel":"正面席","rowLabel":"1列","from":4,"to":33,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"2列","from":4,"to":33,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"3列","from":3,"to":34,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"4列","from":3,"to":34,"excluded":[]},
+    {"areaId":"front","areaLabel":"正面席","rowLabel":"5列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"6列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"7列","from":1,"to":36,"excluded":[]},
+    {"areaId":"front","areaLabel":"正面席","rowLabel":"9列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"10列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"11列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"12列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"13列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"14列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"15列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"16列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"17列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"18列","from":1,"to":36,"excluded":[]},
+    {"areaId":"front","areaLabel":"正面席","rowLabel":"19列","from":5,"to":32,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"20列","from":5,"to":32,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"21列","from":5,"to":32,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"22列","from":5,"to":32,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"23列","from":5,"to":32,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"24列","from":5,"to":32,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"25列","from":5,"to":32,"excluded":[]},
+    {"areaId":"front","areaLabel":"正面席","rowLabel":"26列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"27列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"28列","from":1,"to":36,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"29列","from":1,"to":36,"excluded":[]},
+    {"areaId":"front","areaLabel":"正面席","rowLabel":"30列","from":1,"to":7,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"30列","from":13,"to":24,"excluded":[]},{"areaId":"front","areaLabel":"正面席","rowLabel":"30列","from":30,"to":36,"excluded":[]},
+    {"areaId":"balcony-left","areaLabel":"左バルコニー席","rowLabel":"1列","from":1,"to":36,"excluded":[]},{"areaId":"balcony-left","areaLabel":"左バルコニー席","rowLabel":"2列","from":1,"to":36,"excluded":[]},{"areaId":"balcony-right","areaLabel":"右バルコニー席","rowLabel":"1列","from":1,"to":36,"excluded":[]},{"areaId":"balcony-right","areaLabel":"右バルコニー席","rowLabel":"2列","from":1,"to":36,"excluded":[]}
+  ]
 }

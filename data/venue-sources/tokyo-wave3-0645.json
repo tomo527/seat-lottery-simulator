@@ -1,32 +1,32 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "tokyo-wave3-0645",
   "name": "渋谷区文化総合センター大和田〔さくらホール〕",
   "prefecture": "東京都",
   "city": "渋谷区",
-  "aliases": [],
+  "aliases": ["さくらホール", "渋谷さくらホール"],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"渋谷区文化総合センター大和田","title":"渋谷区文化総合センター大和田〔さくらホール〕 施設案内","url":"https://www.shibu-cul.jp/sakurahall","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
-  },
-  "ranges": []
+  "representativePattern": {"id":"current-linked-official-normal-seat-map","name":"通常配置・公式番号席729席","coverage":"complete","expectedSeatCount":729,"selectionReason":"現行施設ページが案内する公式座席図の1階・2階・バルコニーの全印字番号席を代表配置として転記する。","notIncludedPatterns":["親子席4席","車椅子席2席","イベント固有の座席運用"]},
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"渋谷区文化総合センター大和田","title":"さくらホール 貸館案内","url":"https://shibu-cul.jp/sakurahall/kashikan_sakurahall","checkedAt":"2026-08-24"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"渋谷区文化総合センター大和田","title":"さくらホール客席図","url":"https://shibu-cul.jp/cms/wp-content/uploads/2022/07/aaba5e603fdd4287cb9f3d567df4e386.pdf","checkedAt":"2026-08-24"}
+  ],
+  "registeredScope": "公式座席図に印字された1階535席、2階172席、L列・R列バルコニー22席の番号席729席。",
+  "completenessBasis": "公式図のarea subtotal 1階535、2階172、バルコニー22を、印字rangeの算術でそれぞれ再現し、合計729席を確認した。",
+  "transformation": "公式図の階・バルコニー別の列番号と公式な欠番を明示rangeへ転記した。背倒れ席・移動席の印字番号は通常配置の番号席として残した。",
+  "knownLimitations": ["公式図の全体735席は番号席729席に親子席4席と車椅子席2席を加えた値である。これら無番号席のseat IDは作成しない。1階535席は固定席407席（うち背倒れ席20席）と移動席128席を含む。"],
+  "verification": {"status":"verified","checkedAt":"2026-08-24","method":"current-linked-official-pdf-visual-review-with-floor-subtotal-and-independent-range-arithmetic","seatStructure":"matched","seatCount":"matched","unresolvedIssues":[]},
+  "ranges": [
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"1列","from":1,"to":29,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"2列","from":1,"to":22,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"2列","from":24,"to":29,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"3列","from":1,"to":29,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"4列","from":1,"to":22,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"4列","from":24,"to":29,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"5列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"6列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"7列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"8列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"9列","from":1,"to":29,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"10列","from":3,"to":27,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"11列","from":3,"to":27,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"12列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"13列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"14列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"15列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"16列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"17列","from":1,"to":29,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"18列","from":1,"to":29,"excluded":[]},
+    {"areaId":"first-floor","areaLabel":"1階席","rowLabel":"19列","from":1,"to":3,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"19列","from":7,"to":23,"excluded":[]},{"areaId":"first-floor","areaLabel":"1階席","rowLabel":"19列","from":27,"to":29,"excluded":[]},
+    {"areaId":"second-floor","areaLabel":"2階席","rowLabel":"1列","from":1,"to":29,"excluded":[]},{"areaId":"second-floor","areaLabel":"2階席","rowLabel":"2列","from":1,"to":29,"excluded":[]},{"areaId":"second-floor","areaLabel":"2階席","rowLabel":"3列","from":2,"to":28,"excluded":[]},{"areaId":"second-floor","areaLabel":"2階席","rowLabel":"4列","from":2,"to":28,"excluded":[]},{"areaId":"second-floor","areaLabel":"2階席","rowLabel":"5列","from":3,"to":27,"excluded":[]},{"areaId":"second-floor","areaLabel":"2階席","rowLabel":"6列","from":3,"to":27,"excluded":[]},{"areaId":"second-floor","areaLabel":"2階席","rowLabel":"7列","from":3,"to":7,"excluded":[]},{"areaId":"second-floor","areaLabel":"2階席","rowLabel":"7列","from":23,"to":27,"excluded":[]},
+    {"areaId":"balcony-left","areaLabel":"バルコニー L列","rowLabel":"L列","from":1,"to":11,"excluded":[]},{"areaId":"balcony-right","areaLabel":"バルコニー R列","rowLabel":"R列","from":1,"to":11,"excluded":[]}
+  ]
 }

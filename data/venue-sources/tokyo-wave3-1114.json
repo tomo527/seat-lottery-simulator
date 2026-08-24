@@ -5,28 +5,17 @@
   "name": "小平市民文化会館(ルネこだいら)〔大ホール〕",
   "prefecture": "東京都",
   "city": "小平市",
-  "aliases": [],
+  "aliases": ["ルネこだいら 大ホール"],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["有効なHTTPSの公式施設URLを再特定し、全番号付き座席表と総席数資料を取得する。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["有効なHTTPSの公式施設URLを再特定し、全番号付き座席表と総席数資料を取得する。"]
-  },
+  "representativePattern": {"id":"","name":"","coverage":"draft","expectedSeatCount":null,"selectionReason":"現行公式座席表は取得したが、1階の印字位置を安全に754席へ一意化できるまで代表配置を確定しない。","notIncludedPatterns":["オーケストラピット使用時の運用配置","仮設花道等のイベント固有配置"]},
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"ルネこだいら","title":"大ホール","url":"https://www.runekodaira.jp/detail/t00025.html","checkedAt":"2026-08-24"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"ルネこだいら","title":"大ホール座席表","url":"https://www.runekodaira.jp/pdf/daihall_seats.pdf","checkedAt":"2026-08-24"}
+  ],
+  "registeredScope": "HOLD。現在の公式図の1階754席、2階466席、車椅子席9席の表示を再調査対象として記録するが、番号rangeは未登録。",
+  "completenessBasis": "2階は2Aから2Mの印字rangeで466席を再現する。一方、1階は通常の行内番号と車椅子図示番号の包含・重複を任意に決めずに数えると754席と閉じない。",
+  "transformation": "未実施。公式の明示的な1階番号席・車椅子席対応資料、または754席を一意に再現するissuer算術が得られるまで、番号rangeを登録しない。",
+  "knownLimitations": ["公式図の見える通常番号位置は1階754席の発行者subtotalと一致しない。車椅子図示に番号39・40および15〜20があり、これを任意に除外して754へcapacity fittingすることはしない。"],
+  "verification": {"status":"pending","checkedAt":"2026-08-24","method":"current-official-pdf-first-pass-count-reconciliation","seatStructure":"pending","seatCount":"pending","unresolvedIssues":["2階466席は再現するが、1階754席の完全な印字番号集合と車椅子位置の包含関係をissuer根拠だけで一意化できない。"]},
   "ranges": []
 }

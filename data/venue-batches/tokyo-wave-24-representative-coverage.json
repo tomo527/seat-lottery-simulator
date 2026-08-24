@@ -1,0 +1,14 @@
+{
+  "batchId": "tokyo-wave-24-representative-coverage",
+  "createdAt": "2026-08-24",
+  "scope": "TOKYO-WAVE-24: ordinary bounded venue-addition integration for the four preflight candidates only. Promote a complete current/current-linked official printed numbered set without invented IDs, capacity fitting, unsupported deletion, or configuration mixing. tokyo-official-1114 is retained as a source HOLD because the current official 1F count does not reconcile losslessly.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": ["tokyo-official-1170", "tokyo-official-1114", "tokyo-official-0645", "tokyo-official-0330"],
+  "carryOvers": [
+    {"inventoryId":"tokyo-official-1170","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"Historical ID reconciliation established that tokyo-official-1170 and canonical source tokyo-wave3-1170 are the same venue. The old draft had no complete numbered map; the current official map supplies issuer-printed row labels and an exact 1,027-seat numbered set.","recheckNotBefore":"2026-08-24"},
+    {"inventoryId":"tokyo-official-1114","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"The current official map is now available, but its 1F visible numbered positions do not unambiguously reproduce the issuer subtotal of 754 without deciding wheelchair overlap. This Wave retains a source HOLD.","recheckNotBefore":"2026-08-24"},
+    {"inventoryId":"tokyo-official-0645","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"Historical ID reconciliation established that tokyo-official-0645 and canonical source tokyo-wave3-0645 are the same venue. The old draft lacked a complete map; the current-linked official map supplies a lossless 1F/2F/balcony set totaling729.","recheckNotBefore":"2026-08-24"},
+    {"inventoryId":"tokyo-official-0330","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"The current official all-seat chart supplies issuer-defined front and balcony areas totaling the complete printed set of1,102; the published1,100 is retained as a documented range difference.","recheckNotBefore":"2026-08-24"}
+  ]
+}
