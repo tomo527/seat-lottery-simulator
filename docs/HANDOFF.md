@@ -4,7 +4,7 @@ Updated: 2026-08-24 (Asia/Tokyo)
 
 ## Current state
 
-TOKYO-WAVE-24 ordinary bounded integration is complete in authoring data and awaiting the one canonical validation / managed release sequence. The authorized baseline was `main` / `a6f13c7b5489ceed08a088d12bd87542c2213e6f`; no reset or revert was performed.
+TOKYO-WAVE-24 ordinary bounded integration is released. The authorized baseline was `main` / `a6f13c7b5489ceed08a088d12bd87542c2213e6f`; no reset or revert was performed. Data commit `9d2a66cd2bdfc3738bd3e0513288d1d52da6fe68` is pushed to `main` and `origin/main`.
 
 | Item | State |
 | --- | --- |
@@ -12,8 +12,8 @@ TOKYO-WAVE-24 ordinary bounded integration is complete in authoring data and awa
 | Wave24 HOLD | 1 (`tokyo-wave3-1114`) |
 | Authoring production target | 118 venues / 120 selectable configurations / 177,317 configuration-seat records |
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
-| Validation / generated artifacts | pending this session's canonical `npm run verify:venues` |
-| Commit / push / Workers / public UI | pending this session |
+| Validation / generated artifacts | `npm run verify:venues` passed; catalog/runtime/fingerprint synchronized |
+| Commit / push / Workers / public UI | pushed `9d2a66c`; Workers Builds check `completed / success`; public smoke test passed |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -32,6 +32,12 @@ TOKYO-WAVE-24 ordinary bounded integration is complete in authoring data and awa
 - `tokyo-official-1020` 国立音楽大学 講堂小ホール remains DEFERRED because no current numbered map is registered.
 - Future hard-case candidates (`tokyo-theatre-1010`, `tokyo-koganei-miyaji-main`, `tokyo-coverage-ex-theater-ariake`, `aichi-arts-center-main`, `takasaki-city-theatre-main`) are outside this ordinary wave.
 
+## Release verification
+
+- Canonical `npm run verify:venues` passed: venue/inventory/release coverage, generated-artifact sync, fingerprints, lint, typecheck, 212 unit tests, production build, 17 E2E tests, docs verification, and diff check.
+- The GitHub check run **Workers Builds: seat-lottery-simulator** for `9d2a66c` completed successfully.
+- At `https://seat-lottery-simulator.studiotomo.workers.dev/`, the venue selector found the three promoted venues with 1,027 / 729 / 1,102 displayed seats. One draw was started for each; no console errors were observed.
+
 ## Exact next action
 
-Finish the authorized Wave24 canonical validation, inspect generated source/runtime/fingerprint diffs, then commit and push the bounded data integration. Confirm the managed Workers Build and public UI for the three promoted venues. Do not research another venue until this release closes.
+Run `NEXT TERRA PREFLIGHT` only: use inventory metadata to construct an exclusion-aware bounded shortlist from unprocessed Tokyo A/B records. Do not begin web research until that preflight is explicitly started.
