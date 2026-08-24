@@ -6,6 +6,8 @@ Updated: 2026-08-24 (Asia/Tokyo)
 
 TOKYO-WAVE-24 ordinary bounded integration is released. The authorized baseline was `main` / `a6f13c7b5489ceed08a088d12bd87542c2213e6f`; no reset or revert was performed. Data commit `9d2a66cd2bdfc3738bd3e0513288d1d52da6fe68` is pushed to `main` and `origin/main`.
 
+TOKYO-WAVE-25 preflight closed with **0 ADOPT**. Its subsequent inventory-only normalization is limited to repository-backed historical dispositions; no venue source, range, catalog, runtime artifact, fingerprint, or production total changed.
+
 | Item | State |
 | --- | --- |
 | Wave24 promotions | 3 (`tokyo-wave3-1170`, `tokyo-wave3-0645`, `tokyo-wave3-0330`) |
@@ -28,8 +30,11 @@ TOKYO-WAVE-24 ordinary bounded integration is released. The authorized baseline 
 
 ## Unchanged deferrals
 
-- `tokyo-official-1060` FOSTERホール remains DEFERRED for renovation closure through 2026-12-01.
-- `tokyo-official-1020` 国立音楽大学 講堂小ホール remains DEFERRED because no current numbered map is registered.
+- `tokyo-official-0048` 国立劇場 大劇場 and `tokyo-official-0049` 小劇場 are **CLOSED / CURRENTNESS HOLD** from the coverage universe: both have been closed since 2023 and await replacement-facility material.
+- `tokyo-official-1060` FOSTERホール is **RENOVATION HOLD** through 2026-12-01.
+- `tokyo-official-1020` 国立音楽大学 講堂小ホール is **SOURCE HOLD** because no current complete numbered map is registered.
+- `tokyo-official-1071` 京王アリーナTOKYO メインアリーナ is the same facility-space as canonical `musashino-forest-sport-plaza-standard`; retain its **SOURCE/POLICY/SCHEMA HOLD**, rather than rediscovering it under the official-list ID.
+- `tokyo-official-0373`, `tokyo-official-0425`, `tokyo-official-1090`, and the Wave25 recurrence examples `tokyo-official-0726`, `tokyo-official-0426`, `tokyo-official-0708`, `tokyo-official-0709`, and `tokyo-official-1058` remain unchanged: current repository reports/HANDOFF do not persist a formal disposition sufficient to normalize their inventory status. Do not infer one from conversation history; record a bounded repository-backed preflight disposition before excluding them in a future discovery pass.
 - Future hard-case candidates (`tokyo-theatre-1010`, `tokyo-koganei-miyaji-main`, `tokyo-coverage-ex-theater-ariake`, `aichi-arts-center-main`, `takasaki-city-theatre-main`) are outside this ordinary wave.
 
 ## Release verification
@@ -40,4 +45,4 @@ TOKYO-WAVE-24 ordinary bounded integration is released. The authorized baseline 
 
 ## Exact next action
 
-Run `NEXT TERRA PREFLIGHT` only: use inventory metadata to construct an exclusion-aware bounded shortlist from unprocessed Tokyo A/B records. Do not begin web research until that preflight is explicitly started.
+Run `NEXT TERRA PREFLIGHT` only: use inventory metadata to construct an exclusion-aware bounded shortlist from the normalized unprocessed Tokyo A/B records. Before Web research, persist any formal disposition that would exclude a candidate and match by inventory ID, canonical source ID, normalized name, and facility-space identity. Do not begin Web research until that preflight is explicitly authorized.

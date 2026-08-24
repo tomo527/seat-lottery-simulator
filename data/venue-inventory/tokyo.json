@@ -970,13 +970,15 @@
       "capacity": 1610,
       "category": "hall",
       "officialFacilityUrl": "https://www.ntj.jac.go.jp/kokuritsu.html",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "closed",
+      "eligibility": "ineligible",
+      "eligibilityReason": "coverage universeが2023年閉場後の再開・再整備待ちと記録する。現行release universeからはcurrentness除外とする。",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "blockingReason": "CLOSED / CURRENTNESS HOLD: coverage universeは2023年閉場後の再開・再整備待ちと記録する。新施設の現行座席資料が公開されるまでcandidate discoveryへ戻さない。",
+      "recheckNotBefore": null
     },
     {
       "inventoryId": "tokyo-official-0049",
@@ -989,13 +991,15 @@
       "capacity": 590,
       "category": "hall",
       "officialFacilityUrl": "https://www.ntj.jac.go.jp/kokuritsu.html",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "closed",
+      "eligibility": "ineligible",
+      "eligibilityReason": "coverage universeが2023年閉場後の再開・再整備待ちと記録する。現行release universeからはcurrentness除外とする。",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "blockingReason": "CLOSED / CURRENTNESS HOLD: coverage universeは2023年閉場後の再開・再整備待ちと記録する。新施設の現行座席資料が公開されるまでcandidate discoveryへ戻さない。",
+      "recheckNotBefore": null
     },
     {
       "inventoryId": "tokyo-official-0050",
@@ -19978,13 +19982,13 @@
       "officialFacilityUrl": null,
       "operationalStatus": "unknown",
       "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "eligibilityReason": "公式施設情報の所在は記録済みだが、現行の完全番号付き座席表が登録されていない。現行番号図を確認するまで通常candidateへ戻さない。",
       "priority": "B",
       "venueSourceId": "tokyo-wave3-1020",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
       "discoveryUrlRaw": "http://www.kunitachi.ac.jp/introduction/organization/hall.html",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "SOURCE HOLD: 現行の完全番号付き座席表が登録されていない。現行issuer seat mapと番号席集合を確認するまで通常candidate discoveryから除外する。"
     },
     {
       "inventoryId": "tokyo-official-1021",
@@ -20764,15 +20768,16 @@
       "capacity": 1139,
       "category": "hall",
       "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "operationalStatus": "renovation",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "HANDOFFが2026-12-01までの改修休館を記録する。再開後の現行座席図と稼働を確認するまでproduction化しない。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-1060",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
       "discoveryUrlRaw": "http://www.city.akishima.lg.jp",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "RENOVATION HOLD: 2026-12-01までの改修休館。再開後に現行公式座席図、番号席集合、稼働状態を確認するまで通常candidate discoveryから除外する。",
+      "recheckNotBefore": "2026-12-01"
     },
     {
       "inventoryId": "tokyo-official-1061",
@@ -20980,13 +20985,15 @@
       "capacity": 7584,
       "category": "arena",
       "officialFacilityUrl": "https://keio-arena.tokyo",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "canonical sourceの武蔵野の森総合スポーツプラザ メインアリーナと同一facility-space。既存SOURCE/POLICY/SCHEMA HOLDを継承し、通常candidate discoveryから除外する。",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "deduplicationNote": "canonical source musashino-forest-sport-plaza-standard（inventory: tokyo-coverage-musashino-forest-sport-plaza）と同一facility-space。京王アリーナTOKYOは同sourceのalias。",
+      "blockingReason": "SOURCE/POLICY/SCHEMA HOLD: canonical sourceに記録済み。固定・ロールバックチェア・仮設/イベント床・車椅子等を含むissuer-defined representative selectable numbered-seat setと全番号構造がない。通常candidate discoveryへ戻さない。"
     },
     {
       "inventoryId": "tokyo-official-1072",
