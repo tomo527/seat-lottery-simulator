@@ -7374,15 +7374,15 @@
       "capacity": 600,
       "category": "hall",
       "officialFacilityUrl": "https://www.sumidasangyoukaikan.jp/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryで専用ホール等として公称600席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
+      "eligibilityReason": "現行の施設公式資料で稼働とタイプAの可変利用を確認。issuer定義の番号付き代表configurationが確認できるまで通常production候補にはしない。",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
       "discoveryUrlRaw": "http://www.sumidasangyoukaikan.jp/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (NEXT TERRA PREFLIGHT): 現行公式資料からissuer定義の番号付き代表configurationを確認できない。永久REJECTではなく、complete numbered setが公式公開された場合のみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-0374",
@@ -8395,13 +8395,14 @@
       "capacity": 1000,
       "category": "hall",
       "officialFacilityUrl": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行の施設公式資料で稼働と複数レイアウトを確認。issuer定義の番号付き代表configurationが確認できるまで通常production候補にはしない。",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "blockingReason": "DEFERRED (NEXT TERRA PREFLIGHT): 現行公式資料は可変レイアウトを示すが、issuer定義の番号付き代表configurationがない。永久REJECTではなく、authorized representative-layout recheckでのみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-0426",
@@ -12025,13 +12026,14 @@
       "capacity": 3426,
       "category": "arena",
       "officialFacilityUrl": "https://www.tef.or.jp/kopgp/index.html",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行の施設公式資料と座席配置図で稼働と観覧席構成を確認。complete numbered setを再構成できるissuer evidenceが揃うまで通常production候補にはしない。",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "blockingReason": "HARD-CASE DEFER (NEXT TERRA PREFLIGHT): current/current-linked公式座席配置図はあるが、大規模arenaのprinted numbered setとblock/row ownershipをlosslessに再構成できるか未確定。永久REJECTではなく、bounded hard-case ownership auditでのみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-0612",
@@ -13920,13 +13922,14 @@
       "capacity": 1350,
       "category": "hall",
       "officialFacilityUrl": "https://www.bellesalle.co.jp/shisetsu/shibuya/bs_shibuyafirst",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行の運営者公式資料で稼働と複数可変レイアウトを確認。issuer定義の番号付き代表configurationが確認できるまで通常production候補にはしない。",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "blockingReason": "DEFERRED (NEXT TERRA PREFLIGHT): 現行運営者資料は複数可変レイアウトを示すが、issuer番号付きrepresentative setがない。永久REJECTではなく、authorized representative-layout recheckでのみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-0710",
@@ -19924,13 +19927,14 @@
       "capacity": 3152,
       "category": "arena",
       "officialFacilityUrl": "https://www.arenatachikawatachihi.com/",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行の運営者公式資料と施設・座席レイアウト図で稼働と客席構成を確認。complete numbered setを再構成できるissuer evidenceが揃うまで通常production候補にはしない。",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "blockingReason": "HARD-CASE DEFER (NEXT TERRA PREFLIGHT): current/current-linked公式施設・座席レイアウト図はあるが、大規模arenaのprinted numbered setとblock/row ownershipをlosslessに再構成できるか未確定。永久REJECTではなく、bounded hard-case ownership auditでのみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-1018",
@@ -20731,14 +20735,15 @@
       "capacity": 700,
       "category": "hall",
       "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行の施設公式資料で稼働とコンベンションホールの可変利用を確認。issuer定義の番号付き代表configurationが確認できるまで通常production候補にはしない。",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24",
-      "discoveryUrlRaw": "http://www.lumiere-fuchu.jp/"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "discoveryUrlRaw": "http://www.lumiere-fuchu.jp/",
+      "blockingReason": "DEFER (NEXT TERRA PREFLIGHT): 現行公式資料からissuer定義の番号付き代表configurationを確認できない。永久REJECTではなく、complete numbered setが公式公開された場合のみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-1059",

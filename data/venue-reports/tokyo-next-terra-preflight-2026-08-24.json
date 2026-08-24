@@ -1,0 +1,115 @@
+{
+  "wave": "NEXT TERRA PREFLIGHT",
+  "date": "2026-08-24",
+  "phase": "Bounded ordinary-candidate preflight formal closure",
+  "scope": [
+    "tokyo-official-0373",
+    "tokyo-official-0425",
+    "tokyo-official-0709",
+    "tokyo-official-0611",
+    "tokyo-official-1017",
+    "tokyo-official-1058"
+  ],
+  "scopeBasis": "TOKYO-WAVE-25後に正式なdispositionを持たないTokyo priority A/B recordsから、canonical identity exclusionを適用して既に実施した6件だけのcurrent-first-party preflightを保存する。新しいcandidate discovery、Web research、seat transcription、source JSON、range、catalog、runtime artifactは作成しない。",
+  "policyBasis": "現行/current-linked complete numbered map、issuer定義または合理的に選べるrepresentative configuration、losslessなprinted set、block/row ownershipの順に判定する。番号付き代表configurationがない候補はDEFER/DEFERREDとし、現在の資料がhard-case reconstructionを要する候補はHARD-CASE DEFERとする。いずれも永久REJECTではない。",
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0373",
+      "canonicalId": null,
+      "venue": "すみだ産業会館〔タイプA〕",
+      "priority": "B",
+      "disposition": "DEFER",
+      "officialSource": "https://www.sumidasangyoukaikan.jp/",
+      "numberedMapCurrentness": "no current/current-linked issuer-numbered representative set confirmed in the completed preflight",
+      "representativeConfiguration": "not established from issuer evidence",
+      "ownership": "not assessable without a numbered representative set",
+      "printedSet": "not reconstructable from the confirmed issuer material",
+      "publishedCapacity": 600,
+      "reason": "Reopen only when the issuer publishes a complete numbered representative configuration."
+    },
+    {
+      "inventoryId": "tokyo-official-0425",
+      "canonicalId": null,
+      "venue": "TFTビル〔TFTホール1000〕",
+      "priority": "A",
+      "disposition": "DEFERRED",
+      "officialSource": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/",
+      "numberedMapCurrentness": "current facility layout material exists, but no issuer-numbered representative set was confirmed",
+      "representativeConfiguration": "multiple movable layouts; no official numbered standard",
+      "ownership": "not assessable without a numbered representative set",
+      "printedSet": "not reconstructable from the confirmed issuer material",
+      "publishedCapacity": 1000,
+      "reason": "Not REJECT. Reserve for an authorized representative-layout recheck when an issuer-defined numbered configuration becomes available."
+    },
+    {
+      "inventoryId": "tokyo-official-0709",
+      "canonicalId": null,
+      "venue": "ベルサール渋谷ファースト〔B1 HALL〕",
+      "priority": "A",
+      "disposition": "DEFERRED",
+      "officialSource": "https://www.bellesalle.co.jp/shisetsu/shibuya/bs_shibuyafirst",
+      "numberedMapCurrentness": "current operator layout material exists, but no issuer-numbered representative set was confirmed",
+      "representativeConfiguration": "multiple movable layouts; no official numbered standard",
+      "ownership": "not assessable without a numbered representative set",
+      "printedSet": "not reconstructable from the confirmed issuer material",
+      "publishedCapacity": 1350,
+      "reason": "Not REJECT. Reserve for an authorized representative-layout recheck when an issuer-defined numbered configuration becomes available."
+    },
+    {
+      "inventoryId": "tokyo-official-0611",
+      "canonicalId": null,
+      "venue": "駒沢オリンピック公園総合運動場〔体育館〕",
+      "priority": "A",
+      "disposition": "HARD-CASE DEFER",
+      "officialSource": "https://www.tef.or.jp/kopgp/index.html",
+      "numberedMapCurrentness": "current/current-linked official seating and facility diagrams were confirmed",
+      "representativeConfiguration": "requires bounded hard-case review of the fixed, wheelchair, amenity and temporary-seat scope",
+      "ownership": "requires per-block issuer-label and subtotal/arithmetic review",
+      "printedSet": "requires lossless reconstruction review before any production decision",
+      "publishedCapacity": 3426,
+      "reason": "Defer outside ordinary discovery. Reopen only in a bounded hard-case ownership and printed-set audit."
+    },
+    {
+      "inventoryId": "tokyo-official-1017",
+      "canonicalId": null,
+      "venue": "アリーナ立川立飛",
+      "priority": "A",
+      "disposition": "HARD-CASE DEFER",
+      "officialSource": "https://www.arenatachikawatachihi.com/",
+      "numberedMapCurrentness": "current/current-linked official facility and seating-layout diagrams were confirmed",
+      "representativeConfiguration": "requires bounded hard-case review of fixed, movable, court-side, wheelchair, media and camera-seat scope",
+      "ownership": "requires per-block issuer-label and subtotal/arithmetic review",
+      "printedSet": "requires lossless reconstruction review before any production decision",
+      "publishedCapacity": 3152,
+      "reason": "Defer outside ordinary discovery. Reopen only in a bounded hard-case ownership and printed-set audit."
+    },
+    {
+      "inventoryId": "tokyo-official-1058",
+      "canonicalId": null,
+      "venue": "府中市市民会館(ルミエール府中)〔コンベンションホール飛鳥〕",
+      "priority": "B",
+      "disposition": "DEFER",
+      "officialSource": "http://www.lumiere-fuchu.jp/",
+      "numberedMapCurrentness": "no current/current-linked issuer-numbered representative set confirmed in the completed preflight",
+      "representativeConfiguration": "not established from issuer evidence",
+      "ownership": "not assessable without a numbered representative set",
+      "printedSet": "not reconstructable from the confirmed issuer material",
+      "publishedCapacity": 700,
+      "reason": "Reopen only when the issuer publishes a complete numbered representative configuration."
+    }
+  ],
+  "result": {
+    "adoptedCandidates": 0,
+    "deferred": 4,
+    "hardCaseDefers": 2,
+    "rejected": 0,
+    "productionPromotions": 0,
+    "productionAfter": {
+      "venues": 118,
+      "selectableConfigurations": 120,
+      "seatRecords": 177317
+    }
+  },
+  "validation": "Inventory/report-only formalization. No production source, seat range, generated catalog, runtime artifact or production fingerprint changed.",
+  "exactNextAction": "Run only the authorized bounded hard-case ownership and printed-set audit for tokyo-official-0611 and tokyo-official-1017; do not implement or start candidate discovery."
+}

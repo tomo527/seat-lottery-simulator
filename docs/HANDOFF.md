@@ -4,11 +4,13 @@ Updated: 2026-08-24 (Asia/Tokyo)
 
 ## Current state
 
-TOKYO-WAVE-24 ordinary bounded integration is released. Its data commit `9d2a66cd2bdfc3738bd3e0513288d1d52da6fe68` is pushed in main history. The authorized baseline immediately before this Wave25 formalization was `main` / `origin/main` `7dc42ba4c918d9c72e61839d765749103b001329`; no reset or revert was performed.
+TOKYO-WAVE-24 ordinary bounded integration is released. Its data commit `9d2a66cd2bdfc3738bd3e0513288d1d52da6fe68` is pushed in main history. The authorized baseline for the current bounded hard-case audit was clean `main` / `origin/main` `4cfc6004f83c897ee3ccdcf551dd29031373d27f`; no reset or revert was performed.
 
 TOKYO-WAVE-25 preflight is formally closed with **0 ADOPT / 6 DEFERRED**. [`data/venue-reports/tokyo-wave-25-2026-08-24.json`](../data/venue-reports/tokyo-wave-25-2026-08-24.json) preserves the completed current first-party evidence for `0726`, `0993`, `0989`, `0561`, `0426`, and `0708`; their inventory records are `blocked` so they cannot re-enter ordinary candidate discovery. No venue source, range, catalog, runtime artifact, fingerprint, or production total changed.
 
-The authorized `NEXT TERRA PREFLIGHT` then recomputed 10 true-unprocessed Tokyo A/B records and bounded current-first-party review to six: `0373`, `0425`, `0709`, `0611`, `1017`, and `1058`. It found **0 ADOPT**: `0373`, `0425`, `0709`, and `1058` lack an issuer-numbered representative set; `0611` (駒沢体育館) and `1017` (アリーナ立川立飛) have current seating/facility diagrams but require large-arena ownership and printed-set reconstruction, so remain **HARD-CASE DEFER** outside an ordinary Terra batch. This discovery pass does not alter inventory status, production data, or the six formal Wave25 dispositions.
+The authorized `NEXT TERRA PREFLIGHT` is now formally closed with **0 ADOPT / 4 DEFERRED / 2 HARD-CASE DEFER**. [`data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json`](../data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json) preserves the completed first-party evidence for `0373`, `0425`, `0709`, `0611`, `1017`, and `1058`; their inventory records are `blocked` so they cannot re-enter ordinary discovery. None is permanently rejected.
+
+The bounded `JUDGMENT` hard-case audit of `0611` and `1017` is complete and both are **NEED EVIDENCE**. For 駒沢体育館, the issuer map labels the row in each visible block (A-K), but prints no individual seat numbers; its 2,354-seat map also does not reconcile to the current guide's fixed 2,238 + wheelchair 24 + amenity 12 + temporary maximum 1,152 scope without choosing an unsupported generation/scope. For アリーナ立川立飛, the current-linked official layout defines 1F/2F and movable/court-side/wheelchair/media/camera subtotals, but prints no seat IDs or row labels; its movable-bank arithmetic is 108 x 2 + 155 x 2 = 526 against the printed 528 movable subtotal. Geometry or capacity fitting cannot resolve either venue. No source JSON or implementation was created.
 
 | Item | State |
 | --- | --- |
@@ -36,7 +38,8 @@ The authorized `NEXT TERRA PREFLIGHT` then recomputed 10 true-unprocessed Tokyo 
 - `tokyo-official-1060` FOSTERホール is **RENOVATION HOLD** through 2026-12-01.
 - `tokyo-official-1020` 国立音楽大学 講堂小ホール is **SOURCE HOLD** because no current complete numbered map is registered.
 - `tokyo-official-1071` 京王アリーナTOKYO メインアリーナ is the same facility-space as canonical `musashino-forest-sport-plaza-standard`; retain its **SOURCE/POLICY/SCHEMA HOLD**, rather than rediscovering it under the official-list ID.
-- `tokyo-official-0373`, `tokyo-official-0425`, `tokyo-official-1090`, `tokyo-official-0709`, and `tokyo-official-1058` remain without a formal disposition in repository evidence. Do not infer one from conversation history; record a bounded repository-backed preflight disposition before excluding them in a future discovery pass.
+- `tokyo-official-1090` remains without a formal disposition in repository evidence. It is outside the current scope; do not infer or research a disposition from this handoff.
+- `tokyo-official-0373`, `tokyo-official-0425`, `tokyo-official-0709`, and `tokyo-official-1058` are formally deferred, while `tokyo-official-0611` and `tokyo-official-1017` are hard-case deferred with the current audit result **NEED EVIDENCE**. Reopen only under the evidence conditions in the formal report and inventory blockers.
 - Future hard-case candidates (`tokyo-theatre-1010`, `tokyo-koganei-miyaji-main`, `tokyo-coverage-ex-theater-ariake`, `aichi-arts-center-main`, `takasaki-city-theatre-main`) are outside this ordinary wave.
 
 ## Release verification
@@ -47,4 +50,4 @@ The authorized `NEXT TERRA PREFLIGHT` then recomputed 10 true-unprocessed Tokyo 
 
 ## Exact next action
 
-Do not begin implementation, production-data changes, or deployment. Before another candidate-discovery pass, decide whether to authorize a representative-layout recheck lane for `0425`/`0709` or a hard-case ownership lane for `0611`/`1017`; ordinary Terra has no recommended bounded batch after the 0-ADOPT NEXT preflight.
+Do not implement, deploy, or start candidate research. Obtain a current issuer-numbered seat map or complete issuer seat list for `tokyo-official-0611` or `tokyo-official-1017` that defines every seat ID and resolves the declared fixed/movable/accessibility subtotals; then repeat only the bounded hard-case audit for that venue.
