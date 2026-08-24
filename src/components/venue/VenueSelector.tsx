@@ -143,11 +143,7 @@ export function VenueSelector({ venues, selectedVenueId, selectedConfigurationId
               <span><strong>{configuration.canonicalName}</strong>（抽選対象 {configuration.seatCount.toLocaleString('ja-JP')}席）</span>
             </label>
           ))}
-          {selectedConfiguration?.scopeDisclosure && <p className="venue-scope-disclosure">{selectedConfiguration.scopeDisclosure}</p>}
         </fieldset>
-      )}
-      {selectedVenue && isMultiConfigurationVenue(selectedVenue) && selectedVenue.configurations.length === 1 && selectedConfiguration?.scopeDisclosure && (
-        <p className="venue-scope-disclosure">{selectedConfiguration.scopeDisclosure}</p>
       )}
 
       {panelOpen && (

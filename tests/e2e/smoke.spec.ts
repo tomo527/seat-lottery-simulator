@@ -84,9 +84,7 @@ test('フッターから法務ページを往復し、直接URLでも表示で�
   await expect(page.getByRole('link', { name: 'studiotomo99@gmail.com' })).toHaveAttribute('href', 'mailto:studiotomo99@gmail.com')
   await page.getByRole('link', { name: '← TOPへ戻る' }).click()
   await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
-  await expect(page.locator('.support-section')).toBeVisible()
-  await expect(page.getByRole('link', { name: /支援する/ })).toHaveAttribute('href', 'https://buy.stripe.com/cNidRbb7kfvKgiA4mbdnW00')
-  await expect(page.locator('.result-card .support-section')).toHaveCount(0)
+  await expect(page.locator('.support-section')).not.toBeVisible()
 
   await page.goto('/terms')
   await expect(page.getByRole('heading', { name: '利用規約', level: 1 })).toBeVisible()
@@ -94,6 +92,31 @@ test('フッターから法務ページを往復し、直接URLでも表示で�
   await expect(page.getByRole('heading', { name: '特定商取引法に基づく表記', level: 1 })).toBeVisible()
   await page.goto('/unknown-spa-path')
   await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
+})
+
+test('願掛け（開発支援）は抽選結果表示後だけ現れ、再抽選や条件変更で再び消える', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.locator('.support-section')).not.toBeVisible()
+
+  await chooseVenue(page, '一橋大学一橋講堂', '一橋講堂')
+  await expect(page.locator('.support-section')).not.toBeVisible()
+
+  await page.getByRole('button', { name: '座席を抽選する' }).click()
+  await expect(page.getByRole('heading', { name: '抽選中……' })).toBeVisible()
+  await expect(page.locator('.support-section')).not.toBeVisible()
+  await expect(page.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeVisible({ timeout: 8_000 })
+  await expect(page.locator('.support-section')).toBeVisible()
+  await expect(page.getByRole('link', { name: /支援する/ })).toHaveAttribute('href', 'https://buy.stripe.com/cNidRbb7kfvKgiA4mbdnW00')
+  await expect(page.locator('.result-card .support-section')).toHaveCount(0)
+
+  await page.getByRole('button', { name: 'もう一度抽選する' }).click()
+  await expect(page.getByRole('heading', { name: '抽選中……' })).toBeVisible()
+  await expect(page.locator('.support-section')).not.toBeVisible()
+  await expect(page.getByRole('heading', { name: '抽選結果のお知らせ' })).toBeVisible({ timeout: 8_000 })
+  await expect(page.locator('.support-section')).toBeVisible()
+
+  await page.getByRole('button', { name: '条件を変更する' }).click()
+  await expect(page.locator('.support-section')).not.toBeVisible()
 })
 
 test('4要素をANDで絞り込み、通知風結果を再抽選できる', async ({ page }) => {
@@ -163,7 +186,7 @@ test('明治座を1会場として検索し、公式2configurationを選び分�
   expect(consoleErrors).toEqual([])
 })
 
-test('新国立劇場 中劇場の公式AB迫りconfigurationと限定scopeを表示して抽選できる', async ({ page }) => {
+test('新国立劇場 中劇場の公式AB迫りconfigurationを選んで抽選でき、抽選範囲の説明は画面に表示しない', async ({ page }) => {
   const consoleErrors: string[] = []
   page.on('console', (message) => { if (message.type() === 'error') consoleErrors.push(message.text()) })
   await page.goto('/')
@@ -176,11 +199,12 @@ test('新国立劇場 中劇場の公式AB迫りconfigurationと限定scopeを�
   await page.getByRole('button', { name: '新国立劇場 中劇場を選ぶ' }).click()
   await detailResponse
 
-  await expect(page.getByText(/公式定義するプロセニアム形式③（A・B号迫り使用）/)).toBeVisible()
   await expect(page.getByText('抽選対象 906席', { exact: true })).toBeVisible()
-  await expect(page.getByText(/他の4基本パターン、最大8席の無番号車椅子スペース、公演別の最前列販売停止は含みません/)).toBeVisible()
+  await expect(page.getByText(/公式定義するプロセニアム形式③（A・B号迫り使用）/)).not.toBeVisible()
+  await expect(page.getByText(/他の4基本パターン、最大8席の無番号車椅子スペース、公演別の最前列販売停止は含みません/)).not.toBeVisible()
   await drawAndExpectNotification(page, '新国立劇場 中劇場')
   await expect(page.locator('.result-card').getByText('プロセニアム形式③ A・B号迫り使用', { exact: true })).toBeVisible()
+  await expect(page.locator('.result-card').getByText('抽選範囲', { exact: true })).not.toBeVisible()
   expect(consoleErrors).toEqual([])
 })
 

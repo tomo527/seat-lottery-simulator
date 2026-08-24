@@ -41,10 +41,10 @@ describe('VenueSelector', () => {
     render(<VenueSelector venues={[singleVenue]} selectedVenueId="single-v2" onSelect={vi.fn()} />)
     expect(screen.queryByRole('group', { name: '座席配置を選ぶ' })).not.toBeInTheDocument()
     expect(screen.getByText('抽選対象 240席')).toBeInTheDocument()
-    expect(screen.getByText('公式通常配置です。')).toBeInTheDocument()
+    expect(screen.queryByText('公式通常配置です。')).not.toBeInTheDocument()
   })
 
-  it('schema v2の複数configurationを明示選択し、fixed-only disclosureを表示する', async () => {
+  it('schema v2の複数configurationを明示選択でき、fixed-only disclosureは画面に表示しない', async () => {
     const user = userEvent.setup()
     const onSelectConfiguration = vi.fn()
     const multiVenue: VenueCatalogEntry = {
@@ -62,7 +62,7 @@ describe('VenueSelector', () => {
     await user.click(screen.getByRole('radio', { name: /固定席のみ/ }))
     expect(onSelectConfiguration).toHaveBeenCalledWith('fixed-only')
     rerender(<VenueSelector venues={[multiVenue]} selectedVenueId="multi-hall" selectedConfigurationId="fixed-only" onSelect={vi.fn()} onSelectConfiguration={onSelectConfiguration} />)
-    expect(screen.getByText('固定席のみ。アリーナ／floor席を含まず、会場最大収容配置ではありません。')).toBeInTheDocument()
+    expect(screen.queryByText('固定席のみ。アリーナ／floor席を含まず、会場最大収容配置ではありません。')).not.toBeInTheDocument()
   })
 
   it('最初の20件だけを表示し、さらに表示できる', async () => {

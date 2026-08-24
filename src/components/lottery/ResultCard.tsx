@@ -12,7 +12,7 @@ type Props = {
   onShare: () => void
 }
 
-export function ResultCard({ seats, venueName, configurationName, scopeDisclosure, shareStatus, onRetry, onChangeConditions, onShare }: Props) {
+export function ResultCard({ seats, venueName, configurationName, shareStatus, onRetry, onChangeConditions, onShare }: Props) {
   const [seat] = seats
   return (
     <section className="result-card" aria-labelledby="result-heading">
@@ -33,7 +33,6 @@ export function ResultCard({ seats, venueName, configurationName, scopeDisclosur
         <dl className="ticket-details">
           <div><dt>会場</dt><dd>{venueName}</dd></div>
           {configurationName && <div><dt>座席配置</dt><dd>{configurationName}</dd></div>}
-          {scopeDisclosure && <div><dt>抽選範囲</dt><dd>{scopeDisclosure}</dd></div>}
           {seat.sectionLabel && <div><dt>エリア</dt><dd>{seat.sectionLabel}</dd></div>}
           <div className="seat-value"><dt>列</dt><dd>{formatRowLabel(seat.rowLabel)}</dd></div>
           <div className="seat-value"><dt>座席番号</dt><dd>{formatSeatNumbers(seats)}</dd></div>

@@ -314,7 +314,7 @@ function App() {
             />
           )}
         </div>
-        <SupportSection />
+        {phase === 'result' && result && <SupportSection />}
       </main>
 
       <SiteFooter currentPath="/" />
