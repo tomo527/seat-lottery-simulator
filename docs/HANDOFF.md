@@ -36,6 +36,8 @@ Do not open a new wave without explicit authorization. The remaining hard-case i
 
 ## Recent completed work
 
+- 2026-08-23: TOKYO-WAVE-20 (`c1766d2`) and TOKYO-WAVE-21 (`348f4f4`) are both pushed to `main` and live through the managed Workers Builds integration. Public runtime detail endpoints return 1,999 / 2,017 / 757 and 1,808 / 1,424 / 1,802. Production UI search returned exactly one result per venue with the matching seat count, live draws succeeded (東京芸術劇場 2階席F列14番, 歌舞伎座 1階西桟敷10列1番 and 1階席5列12番, 新橋演舞場 2階席4列22番, 文京シビックホール 1階席28列15番), and the browser console showed no application errors.
+
 - 2026-08-23: TOKYO-WAVE-21 promoted 歌舞伎座 (1,808/1,808/rangeDiff 0), 新橋演舞場 (1,424/1,424/rangeDiff 0), and 文京シビックホール 大ホール (1,802/1,802/rangeDiff 0) under the approved display-area policy. All three reconcile exactly with issuer-published subtotals. The 文京シビック first-floor side-cell contradiction was disproved rather than worked around. `docs/VENUE_DATA_GUIDE.md` gained the minimal display-area paragraph; no schema or workflow change was needed.
 
 - 2026-08-23: TOKYO-WAVE-20 promoted 東京芸術劇場 コンサートホール (1,999/1,999/rangeDiff 0), 府中の森芸術劇場 どりーむホール (2,017/2,017/rangeDiff 0), and タワーホール船堀 大ホール (757/750/rangeDiff +7). Scope came from the hard-case resolution audit, not from new discovery. Targeted reviews, the Wave20 batch/readiness/coverage reports, generated catalog/runtime synchronization, fingerprint update, and canonical `verify:venues` all passed in this environment: lint, typecheck, **212 unit tests**, production build, docs/harness checks, and **16 Playwright E2E tests**. Two prior holds were disproved rather than merely reopened — the 東京芸術劇場 Q〜T 10-seat contradiction and the 府中 one-seat first-floor difference were both transcription artefacts.
