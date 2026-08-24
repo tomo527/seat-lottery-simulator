@@ -1,35 +1,297 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-wave3-1019",
   "name": "国立音楽大学〔講堂大ホール〕",
   "prefecture": "東京都",
-  "city": "武蔵村山市",
-  "aliases": [],
-  "venueType": "hall",
-  "representativePattern": {
-    "id": "standard-numbered-seating",
-    "name": "通常番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": 1290,
-    "selectionReason": "2026-08-22に現行公式施設ページから大ホール座席表PDFが現在もリンクされ、通常1,290席と案内されることを確認した。row/area対応を図形から推測しないため範囲化は保留する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [
-    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"国立音楽大学","title":"国立音楽大学〔講堂大ホール〕 施設案内","url":"https://www.kunitachi.ac.jp/introduction/organization/hall.html","checkedAt":"2026-08-22"},
-    {"id":"official-seat-map","official":true,"roles":["seat-structure"],"publisher":"国立音楽大学","title":"国立音楽大学 講堂大ホール座席表","url":"https://www.kunitachi.ac.jp/documents/organization/l_hall_seating.pdf","checkedAt":"2026-08-22"}
+  "city": "立川市",
+  "aliases": [
+    "国立音楽大学 講堂 大ホール",
+    "くにたち講堂 大ホール"
   ],
-  "registeredScope": "現行施設ページがリンクする通常1,290席の公式番号図。範囲は未登録。",
-  "completenessBasis": "現行公式施設ページがPDFを座席表として現在もリンクし、通常1,290席を案内することを確認した。分割番号群とarea/rowの関係をissuer-definedに列挙した表またはラベルはない。",
-  "transformation": "通常番号図とオーケストラピット使用時の運用を混在させず、図形上の近接でarea/rowを割り当てない。",
-  "knownLimitations": ["オーケストラピット使用時に除外されるseat IDは公式の番号リストを得るまで推測しない。", "分割番号群のarea/row対応はissuer-definedな対応表または明示ラベルを要する。"],
-  "verification": {
-    "status": "reviewed",
-    "checkedAt": "2026-08-22",
-    "method": "Current-linked official numbered PDF was confirmed from the issuer facility page; no geometric row/area inference was used.",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["通常番号図の分割番号群に対するissuer-definedなarea/row対応表または明示ラベルがない。", "ピット運用の除外seat IDは通常configurationに混在させない。"]
-  },
-  "ranges": []
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "国立音楽大学",
+      "title": "国立音楽大学 講堂",
+      "url": "https://www.kunitachi.ac.jp/introduction/organization/hall.html",
+      "checkedAt": "2026-08-24"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "国立音楽大学",
+      "title": "国立音楽大学 講堂大ホール座席表",
+      "url": "https://www.kunitachi.ac.jp/documents/organization/l_hall_seating.pdf",
+      "checkedAt": "2026-08-24"
+    },
+    {
+      "id": "official-access-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "国立音楽大学",
+      "title": "交通案内",
+      "url": "https://www.kunitachi.ac.jp/introduction/access/index.html",
+      "checkedAt": "2026-08-24"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "current-official-printed-seat-map",
+      "canonicalName": "通常配置・公式座席表の印字番号席1,290席",
+      "selectionBasis": "現行公式施設ページが座席表としてリンクする公式PDFに印字された全番号席1,290席を直接転記した通常配置。issuerが各ブロックの内側に印字するあ〜ま列の行ラベルと、1〜46番の通し番号で一意化する。",
+      "issuerDefinedCondition": "国立音楽大学が大ホール（メインホール：1290席）として公開する座席表を使用する場合。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-24 current official printed seat map",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map",
+        "official-access-page"
+      ],
+      "differenceBasisSourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1290,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "公式座席表の印字番号席1,290席を抽選します。転記結果は公式施設ページが案内する大ホール1,290席と完全一致します。オーケストラピット使用時の運用配置は通常配置と別であり反映しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式座席表は車椅子スペースを図示せず、車椅子席数も公表していない。番号を印字しない区画がないためseat IDを作成しない。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-24",
+        "method": "current-official-pdf-vector-text-layer-extraction-with-per-block-issuer-row-label-mapping",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "issuerは最外・側方・中央の各ブロックの内側に行ラベルを個別に印字するため、ブロックごとの行帰属は図形位置ではなく印字ラベルで確定した。あ列に最外ブロックがなく、へ列は最外ブロックのみで構成されるのはラベル列の構成と一致する。",
+          "オーケストラピット使用時に除外されるseat IDは公式に公開されていない。",
+          "東京都の施設リストは所在地を武蔵村山市と記載するが、発行者の交通案内は東京都立川市柏町5-5-1と明示するため後者を採用した。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "あ",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "い",
+          "from": 3,
+          "to": 44,
+          "excluded": []
+        },
+        {
+          "rowLabel": "う",
+          "from": 2,
+          "to": 45,
+          "excluded": []
+        },
+        {
+          "rowLabel": "え",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "お",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "か",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "き",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "く",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "け",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "こ",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "さ",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "し",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "す",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "せ",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "そ",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "た",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "ち",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "つ",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "て",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "と",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "な",
+          "from": 6,
+          "to": 41,
+          "excluded": []
+        },
+        {
+          "rowLabel": "に",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "ぬ",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "ね",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "の",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "は",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "ひ",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "ふ",
+          "from": 1,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "へ",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "rowLabel": "へ",
+          "from": 42,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "ほ",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "rowLabel": "ま",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        }
+      ]
+    }
+  ]
 }

@@ -18387,13 +18387,13 @@
       "officialFacilityUrl": "https://www.t1010.jp/html/news/faq.html",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "公式施設資料と座席資料を確認してdraft sourceを作成済み。全range転記と独立照合の完了後に適格性を確定する。",
+      "eligibilityReason": "現行公式座席表の脚注は1階席553席・2階席148席・総席数701席を示す。ただし行ラベルは中央ブロック左側の1列だけに印字され、右側ブロックには行ラベルがない。番号軸は左右で連続するため独立display areaとしても表現できず、行帰属を確定できない。",
       "priority": "B",
       "venueSourceId": "theatre-1010-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-22",
+      "lastCheckedAt": "2026-08-24",
       "discoveryUrlRaw": "http://www.t1010.jp/",
-      "blockingReason": "SOURCE HOLD: independent read-only確認でも分割番号群のissuer-definedなrow/area ownershipがない。可動席・公演別wheelchair operationを通常番号配置に混在させない。"
+      "blockingReason": "SOURCE HOLD (再確認 2026-08-24): 現行公式座席表の行ラベルは中央ブロック左側の1列のみで、右側ブロックには印字がない。番号軸が左右で連続するためWave21のdisplay-area policyも適用できず、図形位置からの行割当ては禁止。1階553席・2階148席の階別小計だけで右側ブロックの行帰属が一意に決まるかは未検証。"
     },
     {
       "inventoryId": "tokyo-official-0940",
@@ -19960,13 +19960,12 @@
       "officialFacilityUrl": "https://www.kunitachi.ac.jp/introduction/organization/hall.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "現行公式施設ページから番号席PDFが現在もリンクされ、通常1,290席を確認済み。ただし分割番号群にissuer-definedなrow/area ownershipがなく、図形推測なしにlosslessなseat IDを作れない。",
+      "eligibilityReason": "現行公式施設ページがリンクする座席表PDFの印字番号席1,290席を転記し、同ページの「大ホール（メインホール：1290席）」と完全一致した。issuerが最外・側方・中央の各ブロック内側に行ラベルを個別に印字するため、行帰属は図形位置ではなく印字ラベルで確定した。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-1019",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-22",
-      "discoveryUrlRaw": "http://www.kunitachi.ac.jp/introduction/organization/hall.html",
-      "blockingReason": "SOURCE HOLD: current-linked公式番号PDFの分割番号群にissuer-definedなrow/area ownershipがない。pit variantは通常configurationへ混在させない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-24",
+      "discoveryUrlRaw": "http://www.kunitachi.ac.jp/introduction/organization/hall.html"
     },
     {
       "inventoryId": "tokyo-official-1020",
@@ -20431,14 +20430,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.musashino.or.jp/bunka/1002094/1002099.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "B_SOURCE_LIMITED。現行公式は固定席1,252（1階912・2階340）と車椅子4席を別掲するが、別現行技術客席図は車椅子・着脱／背もたれ記号のみで番号対応を示さない。独立第2パスで全IDと車椅子／可動席意味を確定できない。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式大ホール座席表の印字番号席1,252席を転記し、図の脚注「固定席1,252席（1階912席 2階340席）」と階別に完全一致した。各ブロックの行帰属はissuer印字の行ラベルで確定し、番号のない車椅子席4席は反映しない。",
       "priority": "A",
       "venueSourceId": "musashino-civic-main-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "discoveryUrlRaw": "http://www.musashino.or.jp/index.html",
-      "blockingReason": "B_SOURCE_LIMITED / SOURCE HOLD: the current numbered map states 1,252 fixed seats, but the separate current technical seating plan omits seat-number mappings for wheelchair/removable/backrest semantics, so an independent full-ID second pass and rangeDiff cannot be established."
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-24",
+      "discoveryUrlRaw": "http://www.musashino.or.jp/index.html"
     },
     {
       "inventoryId": "tokyo-official-1044",
@@ -21583,9 +21581,9 @@
       "priority": "B",
       "venueSourceId": "koganei-miyaji-main-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-22",
+      "lastCheckedAt": "2026-08-24",
       "discoveryUrlRaw": "http://koganei-civic-center.jp/",
-      "blockingReason": "SOURCE HOLD: 通常569席の分割番号群にissuer-definedなrow/area ownershipがない。578席および1階1・2列撤去は別運用として通常configurationに混在させない。"
+      "blockingReason": "SOURCE HOLD / SOURCE UNREACHABLE (再確認 2026-08-24): 登録済み公式座席図PDFと公式施設ページの双方がHTTP 403を返し、本環境から現行資料を取得できなかった。分割番号群のrow/area ownershipという記録済みblockerは未検証のまま。取得可能な環境またはissuerの新URLで再取得してから再評価する。"
     },
     {
       "inventoryId": "tokyo-official-1102",

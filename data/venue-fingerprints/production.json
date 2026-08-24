@@ -487,6 +487,20 @@
         }
       }
     },
+    "musashino-civic-main-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-printed-seat-map": {
+          "count": 1252,
+          "samples": [
+            "first-floor/1/8",
+            "first-floor/17/36",
+            "second-floor/43/30"
+          ],
+          "sha256": "ac95fcca19fc9c7f86e3a9c504812948f0f9b211c94a9b8221821ef233609f45"
+        }
+      }
+    },
     "musashino-civic-small-standard": {
       "count": 425,
       "samples": [
@@ -1119,6 +1133,20 @@
             "main-floor/Q/29"
           ],
           "sha256": "249700b73815afb3d03a8a4f71103c716c3e4f313e924206769112bab3dfa512"
+        }
+      }
+    },
+    "tokyo-wave3-1019": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-printed-seat-map": {
+          "count": 1290,
+          "samples": [
+            "main/あ/6",
+            "main/そ/18",
+            "main/ま/24"
+          ],
+          "sha256": "c1b37a2846c3aa6c79cbfc54a7871c08fc83e7903cac508e81b273c90b3064c1"
         }
       }
     },

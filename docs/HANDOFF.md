@@ -4,6 +4,62 @@ Updated: 2026-08-24 (Asia/Tokyo)
 
 ## Current state
 
+The Opus hard-case phase is closed with TOKYO-WAVE-23. Do not open TOKYO-WAVE-24.
+
+| Item | Value |
+| --- | --- |
+| Final HEAD / `origin/main` | `__HEAD__` |
+| Production venues | **115** |
+| Selectable configurations | **117** |
+| Configuration-seat records | **174,459** |
+| Tokyo coverage | **47/76 (61.8%)** |
+| MUST | **29/44 (65.9%)** |
+| SHOULD | **18/28 (64.3%)** |
+| RELEASE READY | **yes** |
+
+### Hard cases resolved by the Opus phase (Waves 20-23)
+
+Fourteen holds were converted to production across four waves. Nine of them were not resolved by new issuer material but by disproving or re-reading the recorded blocker.
+
+- **Wave20** (3): 東京芸術劇場 コンサートホール 1,999/1,999/0 · 府中の森芸術劇場 どりーむホール 2,017/2,017/0 · タワーホール船堀 大ホール 757/750/+7.
+- **Wave21** (3): 歌舞伎座 1,808/1,808/0 · 新橋演舞場 1,424/1,424/0 · 文京シビックホール 大ホール 1,802/1,802/0. Introduced the display-area policy now in `docs/VENUE_DATA_GUIDE.md`.
+- **Wave22** (5): 西新井文化ホール 902/902/0 · セシオン杉並 497/503/-6 · 瑞穂ビューパーク・スカイホール 大ホール 1,000/1,008/-8 · 人見記念講堂 2,070/2,070/0 · 東京オペラシティ コンサートホール 1,622/1,632/-10.
+- **Wave23** (2): 国立音楽大学 講堂大ホール **1,290/1,290/rangeDiff 0** · 武蔵野市民文化会館 大ホール **1,252/1,256/rangeDiff -4** (1階912 + 2階340 = the chart's own footnote).
+
+The Wave23 discriminator is worth reusing: **check whether the issuer prints a row label beside each block before attempting any rake reconstruction.** Where it does, block ownership is issuer-defined and no geometric inference is needed; that alone resolved both Wave23 promotions. Where it does not, the hold stands.
+
+### Hard-case inventory after Wave23
+
+Mechanically recounted over all 1,266 inventory items; buckets are mutually exclusive and the definitions live in `data/venue-reports/tokyo-wave-22-2026-08-24.json`.
+
+| Bucket | Count |
+| --- | --- |
+| **hard case** (evidence-grade hold on an identified current official source) | **39** (Tokyo **18**) |
+| type-only DEFERRED | 130 |
+| missing-numbered-map | 58 |
+| closed / renovation | 15 |
+| other-blocked (no recorded reason or unclassified) | 22 |
+| blocked total | 264 |
+| REJECT | 4 |
+| independent-review-mismatch | 2 |
+| not-started | 780 |
+| source-located | 80 |
+| draft-created | 21 |
+| production | 115 |
+
+The 39 hard cases split as count-contradiction 7, ownership 4, evidence-hold-other 28. The hard-case count fell 41 → 39 across Wave23; the two Wave23 promotions were both drawn from the ownership bucket, and 小金井宮地楽器ホール and 足立区役所 remain in it untouched.
+
+### Wave23 dispositions
+
+- `tokyo-official-1019` 国立音楽大学〔講堂大ホール〕 — **PRODUCTION**. The chart prints a kana row label on the inner edge of every block (four label columns), so the Wave13 ownership hold does not apply; the transcription totals exactly the published 1,290.
+- `tokyo-musashino-civic-main` 武蔵野市民文化会館〔大ホール〕 — **PRODUCTION**. Every block carries a printed row label and the transcription reproduces the chart's footnote 1階912席 / 2階340席 exactly; the -4 against the published 1,256 is the four unnumbered 車椅子席.
+- `tokyo-theatre-1010` シアター1010〔劇場〕 — **HOLD**, re-confirmed on evidence. Row labels are printed in one column only, left of the centre block; the right-hand blocks carry none, and because the numbering axis continues across the centre into them the display-area policy cannot represent them either.
+- `tokyo-koganei-miyaji-main` 小金井宮地楽器ホール〔大ホール〕 — **NOT ATTEMPTED / NEED EVIDENCE**. Both the registered seat PDF and the facility page returned HTTP 403 to this environment, with and without a browser user agent.
+- `tokyo-official-0942` 足立区役所〔庁舎ホール〕 — **NOT ATTEMPTED**. Priority C, reached after the wave's context stop rule; its registered source set still contains no official numbered seat map despite a blocking reason that refers to one.
+
+### Wave history (unchanged records)
+
+
 - TOKYO-WAVE-22 re-evaluates five residual hard cases against the current production contract instead of their historical holds, and promotes all five. Scope was bounded to these IDs; no new candidate discovery was done. The Wave21 display-area policy was available but none of the five needed it.
   - 西新井文化ホール (`tokyo-wave3-0937/current-official-printed-seat-map`) is **902 mapped / 902 official / rangeDiff 0 / representative**. The Wave17 hold rested on a false premise: it assumed the printed 902 had to be cut to 896 because the chart also names six wheelchair spaces. The chart's own heading table reads 1階客席数480席 (固定席436 + 移動可能席44) and 2階客席数422席, summing to exactly 902, with 車椅子スペース6席 as a separate line outside that arithmetic. The transcription splits 480/422 across the chart's two printed area names, so nothing had to be deleted.
   - セシオン杉並〔ホール〕 (`tokyo-wave3-0804/current-official-printed-seat-map`) is **497 mapped / 503 official / rangeDiff -6 / representative**. The Wave17 hold cited only the six-seat difference against the published room capacity, which is confidence metadata under the current guide. The 497 printed set is complete: rows 1-19 plus the printed 親子席 row 20 seats 1-6. The gap is plausibly the two unnumbered wheelchair marks beside rows 6-7, but the issuer states no count, so it stays unresolved metadata and no number was added.
@@ -33,27 +89,40 @@ Updated: 2026-08-24 (Asia/Tokyo)
 
 ## Unresolved items
 
-- **iino-hall-standard is resolved, not a follow-up.** It is production with 500 mapped / 500 expected, `verification.status: verified`, inventory `researchStatus: production` and no blocking reason. The earlier "separate follow-up" line was stale and is removed.
-- **The Wave17 "corrected issuer material required" guidance is withdrawn.** `tokyo-wave3-0937`, `tokyo-wave3-0804` and `tokyo-wave3-1205` are all production as of Wave22: two of the three recorded contradictions were disproved from the same official documents, and the third is metadata under the current guide. No new issuer publication was needed.
-- Of the four Wave13 source holds, `hitomi-memorial-hall-standard` is now production. `tokyo-wave3-1019`, `koganei-miyaji-main-standard` and `theatre-1010-standard` remain non-production ownership holds; they are not USER REVIEW HOLD and do not block a separately authorized future wave.
-- **Wave18 SOURCE HOLDs are reclassified, not re-researched.** `tokyo-wave3-0032` and `tokyo-wave3-0052` stay non-production, but the recorded requirement for *new* current issuer material is stale in the same way the Wave17 wording was: their blockers (no single fixed complete numbered standard; an unreconciled printed numbered set) are re-openable by re-reading the existing official material under the current guide, without waiting for a new publication. Their evidence was not revisited in this wave. The Wave18 REJECT and carry-over-reject IDs are unchanged.
-- `data/venue-readiness/tokyo-wave-1.json` is a frozen 2026-07-27 baseline and still records source-hold text for venues that are now production (`hitomi-memorial-hall-standard`, `kabukiza-standard`, and others promoted since). Wave21 left the same staleness in place deliberately; it is cosmetic, produces no validation error, and is noted here rather than rewritten.
+- `tokyo-theatre-1010` remains a genuine ownership hold: its chart labels only one column of rows. Recorded, not scheduled.
+- `tokyo-koganei-miyaji-main` is blocked on source retrieval, not on evidence quality — the site 403s this environment. Its recorded ownership blocker is untested.
+- `tokyo-official-0942` 足立区役所〔庁舎ホール〕 has a blocking reason that cites a current-linked official numbered PDF, but no such source is registered in `data/venue-sources/tokyo-wave3-0942.json`. Register one before testing the blocker.
+- The Tokyo metropolitan list records 国立音楽大学 in 武蔵村山市 while the issuer's access page states 東京都立川市柏町5-5-1. The production source uses 立川市; the inventory row is left as the discovery-list record.
+- **Wave18 SOURCE HOLDs are reclassified, not re-researched.** `tokyo-wave3-0032` and `tokyo-wave3-0052` stay non-production, but their recorded requirement for *new* issuer material is stale: both are re-openable by re-reading existing official material under the current guide. Their evidence has not been revisited.
+- Of the four Wave13 source holds, `hitomi-memorial-hall-standard` (Wave22) and `tokyo-wave3-1019` (Wave23) are now production; `koganei-miyaji-main-standard` and `theatre-1010-standard` remain non-production.
+- `data/venue-readiness/tokyo-wave-1.json` is an explicit frozen 2026-07-27 baseline and still records source-hold text for venues that are now production. It is deliberately not rewritten; the same applies to the per-wave readiness and report files, which are historical records.
 
 ## Exact next action
 
-Do not open a new wave without explicit authorization. The remaining hard-case inventory is enumerated and defined in `data/venue-reports/tokyo-wave-22-2026-08-24.json`: 41 blocked items carry an evidence-grade hold against an identified current official source, 20 of them in Tokyo.
+### NEXT TERRA ACTION
 
-If a further Opus-grade wave is authorized, the five highest-value remaining Tokyo candidates are, in order:
+Run a bounded preflight over the **unprocessed priority A/B Tokyo inventory** and pick the highest production-probability candidates for an ordinary venue-addition wave.
 
-1. `tokyo-official-1019` 国立音楽大学〔講堂大ホール〕 (1,290, priority A) — split number groups with no issuer-defined row/area ownership. Same shape as 人見記念講堂: check whether the block row lines map one-to-one onto the printed row labels and whether the reconstruction reproduces an issuer subtotal.
-2. `tokyo-theatre-1010` 足立区文化芸術劇場 シアター1010〔劇場〕 (701, priority B) — same ownership pattern, already independently read once.
-3. `tokyo-koganei-miyaji-main` 小金井宮地楽器ホール〔大ホール〕 (569 normal / 578, priority B) — same ownership pattern plus a separate 578-seat operation to keep out of the normal configuration.
-4. `tokyo-musashino-civic-main` 武蔵野市民文化会館〔大ホール〕 (1,256, priority A) — the numbered map states 1,252 fixed seats while the separate technical plan omits seat numbers; a printed-versus-published difference of the kind the current guide now treats as metadata.
-5. `tokyo-official-0942` 足立区役所〔庁舎ホール〕 (486, priority C) — split number groups with no issuer-defined ownership, on a current-linked official numbered PDF.
+Concretely: from `data/venue-inventory/tokyo.json`, take rows with `researchStatus` of `not-started`, `source-located` or `draft-created` and `priority` A or B; **exclude** every id already carrying a disposition — the 115 production ids, the 39 hard cases, the 130 type-only DEFERRED rows, the 15 closed/renovation rows, the 4 REJECTs and the 2 independent-review-mismatch rows. For each shortlisted candidate check only two things before committing to transcription:
 
-Stop before starting research or implementation on any of them without explicit authorization.
+1. does the issuer publish a current numbered seat map, and
+2. **does that map print a row label beside every block** (the Wave23 discriminator)?
+
+Take forward only candidates that pass both, apply the representative-layout policy in `docs/VENUE_DATA_GUIDE.md`, and keep the batch bounded. This is ordinary `STANDARD`/`DENSE` lane work and does not need Opus.
+
+### Future Opus candidates (record only — do not start)
+
+Kept for a future authorized Opus phase. **Do not begin research or implementation on any of these.**
+
+1. `tokyo-theatre-1010` シアター1010〔劇場〕 (701, B) — test whether the published 1階553席 / 2階148席 subtotals admit exactly one assignment of the unlabelled right-hand block lines to rows.
+2. `tokyo-koganei-miyaji-main` 小金井宮地楽器ホール〔大ホール〕 (569 normal / 578, B) — first retrieve the official PDF from an environment the site does not 403, then apply the Wave23 row-label test.
+3. `tokyo-coverage-ex-theater-ariake` EX THEATER ARIAKE (1,546, A) — a count-contradiction hold over the fixed/movable/wheelchair breakdown of the 1,546 maximum.
+4. `aichi-arts-center-main` 愛知県芸術劇場 大ホール (2,480, A) — the official map labels pit rows 1-5 as 176 seats while the printed IDs total 177; a one-seat contradiction of the kind Wave22 twice disproved.
+5. `takasaki-city-theatre-main` 高崎芸術劇場 大劇場 (A) — two independent passes read 480 printed 2F seats against an official 2F subtotal of 448.
 
 ## Recent completed work
+
+- 2026-08-24: TOKYO-WAVE-23 closed the Opus hard-case phase. Two promotions (国立音楽大学 講堂大ホール 1,290/1,290/0, 武蔵野市民文化会館 大ホール 1,252/1,256/-4), one evidence-confirmed HOLD (シアター1010), two NOT ATTEMPTED (小金井 — source 403; 足立区役所 — priority C under the context stop rule). Targeted reviews, the Wave23 batch report, inventory/readiness/release coverage, generated catalog/runtime synchronization, two fingerprint additions and canonical `verify:venues` all passed: lint, typecheck, **212 unit tests**, production build, docs/harness, and **16 Playwright E2E tests**.
 
 - 2026-08-24: TOKYO-WAVE-22 commit `a450c13` is pushed to `main` and live through the managed Workers Builds integration (`Workers Builds: seat-lottery-simulator` completed success). Public runtime detail endpoints return 902 / 497 / 1,000 / 2,070 / 1,622. Production UI search returned exactly one result per venue with the matching seat count (西新井文化ホール 902席, セシオン杉並 497席, 瑞穂ビューパーク・スカイホール 1,000席, 人見記念講堂 2,070席, 東京オペラシティ 1,622席), live draws succeeded (人見記念講堂 2階ホール K列41番, 東京オペラシティ 1階席 17列12番, 西新井文化ホール 1階席 け列20番), and the browser console produced no output at all.
 - 2026-08-24: TOKYO-WAVE-22 promoted all five re-evaluated hard cases — 西新井文化ホール (902/902/0), セシオン杉並 (497/503/-6), 瑞穂ビューパーク・スカイホール 大ホール (1,000/1,008/-8), 人見記念講堂 (2,070/2,070/0) and 東京オペラシティ コンサートホール (1,622/1,632/-10). Three prior blockers were disproved rather than merely reopened: the 西新井 902-versus-896 contradiction, the 瑞穂 1,006 printed count, and the オペラシティ 1-LB/1-RB 58-seat inclusion question. Targeted reviews, the Wave22 batch report, inventory/readiness/release coverage, generated catalog/runtime synchronization, five production fingerprint additions and canonical `verify:venues` all ran. The stale iino-hall follow-up and the stale Wave17/Wave18 "new issuer material required" guidance were cleared, and the hard-case aggregate was recounted mechanically.

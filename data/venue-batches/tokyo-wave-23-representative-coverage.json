@@ -1,0 +1,45 @@
+{
+  "batchId": "tokyo-wave-23-representative-coverage",
+  "createdAt": "2026-08-24",
+  "scope": "TOKYO-WAVE-23: final Opus hard-case phase. Bounded re-evaluation of at most five ownership-class holds against the current production contract — 国立音楽大学〔講堂大ホール〕, 武蔵野市民文化会館〔大ホール〕, 足立区文化芸術劇場 シアター1010〔劇場〕, 小金井宮地楽器ホール〔大ホール〕, 足立区役所〔庁舎ホール〕. No new candidates. The gate is a complete, losslessly structured printed numbered set with no invented seat IDs, no capacity fitting, no unsupported deletion and no invented block ownership; a printed-versus-published difference, a non-zero rangeDiff and an unresolved wheelchair substitution are confidence metadata only.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-official-1019",
+      "carryOverFrom": "tokyo-wave-13",
+      "previousStatus": "blocked",
+      "recheckReason": "The recorded blocker was that the segmented number groups had no issuer-defined row/area ownership. They do: the chart prints a kana row label on the inner edge of every block, so each block's rows are issuer-named and no geometric inference is needed. The resulting transcription totals exactly 1,290, the figure the facility page publishes.",
+      "recheckNotBefore": "2026-08-24"
+    },
+    {
+      "inventoryId": "tokyo-musashino-civic-main",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "The B_SOURCE_LIMITED hold rested on a printed-versus-published difference and on the separate technical plan omitting seat-number mappings. The seat chart alone is sufficient: every block carries a printed row label, and the transcription reproduces the chart's own footnote subtotals 1階912席 and 2階340席 exactly, leaving only the four unnumbered wheelchair seats as the difference against the published 1,256.",
+      "recheckNotBefore": "2026-08-24"
+    },
+    {
+      "inventoryId": "tokyo-theatre-1010",
+      "carryOverFrom": "tokyo-wave-13",
+      "previousStatus": "blocked",
+      "recheckReason": "Re-examined against the current chart and re-held. Unlike the two promoted venues, this chart prints row labels in only one column, to the left of the centre block; the right-hand blocks carry no row label. Because the numbering axis continues across the centre into the right block, the Wave21 display-area policy cannot apply either, and assigning the right block to an adjacent row from drawing position alone is prohibited.",
+      "recheckNotBefore": "2026-08-24"
+    },
+    {
+      "inventoryId": "tokyo-koganei-miyaji-main",
+      "carryOverFrom": "tokyo-wave-13",
+      "previousStatus": "blocked",
+      "recheckReason": "Not evaluated. Both the registered official seat PDF and the official facility page returned HTTP 403 to this environment, so the current issuer material could not be retrieved and the recorded ownership blocker remains untested.",
+      "recheckNotBefore": "2026-08-24"
+    },
+    {
+      "inventoryId": "tokyo-official-0942",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "blocked",
+      "recheckReason": "Not attempted. Priority C, scheduled last, and the wave stopped adding venues under its context stop rule so that validation, deployment and the Opus-phase handoff closure kept enough headroom. The recorded source set still contains no official numbered seat map.",
+      "recheckNotBefore": "2026-08-24"
+    }
+  ]
+}

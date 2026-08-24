@@ -1,0 +1,95 @@
+{
+  "wave": "TOKYO-WAVE-23",
+  "date": "2026-08-24",
+  "phase": "Final Opus hard-case phase closure",
+  "scope": ["tokyo-official-1019", "tokyo-musashino-civic-main", "tokyo-theatre-1010", "tokyo-koganei-miyaji-main", "tokyo-official-0942"],
+  "scopeBasis": "Bounded re-evaluation of at most five ownership-class holds nominated as NEXT OPUS BATCH in the Wave22 handoff. No new candidate discovery.",
+  "policyBasis": "docs/VENUE_DATA_GUIDE.md as it now stands. The production gate is a complete, losslessly structured printed numbered set for the declared representative scope, with no invented seat IDs, no capacity fitting, no unsupported deletion and no invented block ownership. A printed-versus-published difference, a non-zero rangeDiff, an unresolved wheelchair substitution, non-fixed seating and the existence of multiple configurations are confidence metadata, not blockers. The Wave21 display-area policy was available; neither promoted venue needed it, and it was found inapplicable to the one venue re-held.",
+  "venues": [
+    {
+      "canonicalId": "tokyo-wave3-1019",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-official-1019",
+      "venue": "国立音楽大学〔講堂大ホール〕",
+      "priority": "A",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.kunitachi.ac.jp/documents/organization/l_hall_seating.pdf",
+      "publishedTotal": 1290,
+      "mapped": 1290,
+      "rangeDiff": 0,
+      "confidence": "representative",
+      "priorBlockerResolution": "The Wave13 hold said the segmented number groups had no issuer-defined row/area ownership. The chart in fact prints a kana row label on the inner edge of every block — four label columns at x≈149, 249, 348 and 447 — so the outermost, side and centre blocks are each issuer-named and no geometric inference is required. The label columns also explain the block shapes: the outermost blocks carry rows い〜ち and に〜へ (24 labels each) while the side and centre blocks carry あ〜ふ (28 labels), which is exactly why row あ has no outermost seats and row へ has only outermost seats.",
+      "structureNote": "One numbering axis 1-46 per row across five blocks (1-5 / 6-17 / 18-29 / 30-41 / 42-46), rows あ〜ふ plus the rear block rows ほ and ま numbered 1-24. Block totals 117 + 336 + 336 + 336 + 117 + 48 = 1,290.",
+      "notIncluded": ["オーケストラピット使用時の運用配置"],
+      "dataCorrection": "The Tokyo metropolitan list records the municipality as 武蔵村山市; the issuer's own access page states 東京都立川市柏町5-5-1, so the production source uses 立川市. The inventory row is left as the discovery-list record and the discrepancy is disclosed in the configuration metadata."
+    },
+    {
+      "canonicalId": "musashino-civic-main-standard",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-musashino-civic-main",
+      "venue": "武蔵野市民文化会館〔大ホール〕",
+      "priority": "A",
+      "tier": "SHOULD",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.musashino.or.jp/_res/projects/default_project/_page_/001/002/099/dai_hall.pdf",
+      "publishedTotal": 1256,
+      "publishedBreakdown": { "固定席": 1252, "1階": 912, "2階": 340, "車椅子席": 4 },
+      "mapped": 1252,
+      "rangeDiff": -4,
+      "confidence": "representative",
+      "floorReconciliation": { "1F": 912, "2F": 340, "allMatched": true },
+      "priorBlockerResolution": "The B_SOURCE_LIMITED hold rested on the printed-versus-published difference and on the separate technical seating plan omitting seat-number mappings. The seat chart alone is sufficient. Every block carries a printed row label, and the transcription reproduces the chart's own footnote 固定席1,252席（1階912席 2階340席）exactly: 1F rows 1-25 give 912 and 2F rows 26-43 give 340. The remaining difference against the published 1,256 is precisely the four unnumbered 車椅子席 the same footnote lists separately.",
+      "structureNote": "1階席 rows 1-25 over five blocks (1-5 / 6-15 / 16-26 / 27-36 / 37-41). 2階席 splits into the wall-side rows 26-36 (left seats 1-5, right seats 45-49) and the rear balcony rows 37-43. The floor attribution of rows 26-36 is fixed by the issuer's own arithmetic — 254 rear-balcony seats plus these 86 give exactly the published 340 — not by drawing position.",
+      "notIncluded": ["車椅子席4席（無番号）", "オーケストラピット使用時1,097席", "仮設舞台階段使用時の配置"]
+    },
+    {
+      "canonicalId": "theatre-1010-standard",
+      "inventoryId": "tokyo-theatre-1010",
+      "venue": "足立区文化芸術劇場 シアター1010〔劇場〕",
+      "priority": "B",
+      "disposition": "HOLD",
+      "officialSource": "https://www.t1010.jp/html/guide/pdf/06_theatre_seat.pdf",
+      "publishedTotal": 701,
+      "publishedBreakdown": { "1階席": 553, "2階席": 148, "総席数": 701 },
+      "mapped": null,
+      "rangeDiff": null,
+      "confidence": "source-hold",
+      "remainingBlocker": "The current chart prints its row labels in a single column, immediately to the left of the centre block; the right-hand blocks carry no row label at all. The numbering axis continues across the centre into the right block (for example row 1 runs 5-8, 9-16, 18-21), so those seats are part of the main row rather than an independently numbered side block, which means the Wave21 display-area policy cannot represent them either. Assigning them to an adjacent row from drawing position alone is prohibited.",
+      "nextEvidence": "Either issuer material that labels the right-hand blocks, or a demonstration that the published 1階553席 / 2階148席 subtotals admit exactly one assignment of the unlabelled right-hand block lines to rows. The latter was not attempted in this wave."
+    },
+    {
+      "canonicalId": "koganei-miyaji-main-standard",
+      "inventoryId": "tokyo-koganei-miyaji-main",
+      "venue": "小金井市民交流センター(小金井宮地楽器ホール)〔大ホール〕",
+      "priority": "B",
+      "disposition": "NOT ATTEMPTED",
+      "reason": "SOURCE UNREACHABLE. Both the registered official seat PDF and the official facility page returned HTTP 403 to this environment, with and without a browser user agent and referer. The current issuer material could not be retrieved, so the recorded ownership blocker was neither confirmed nor disproved.",
+      "nextEvidence": "Retrieve https://koganei-civic-center.jp/common2025/pdf/mainhall_03.pdf from an environment the site does not block, or locate the issuer's current seat-chart URL, then apply the same per-block row-label test used for the two promoted venues."
+    },
+    {
+      "canonicalId": "tokyo-wave3-0942",
+      "inventoryId": "tokyo-official-0942",
+      "venue": "足立区役所〔庁舎ホール〕",
+      "priority": "C",
+      "disposition": "NOT ATTEMPTED",
+      "reason": "Scheduled last as priority C and reached after the wave's context stop rule took effect, so that validation, deployment and the Opus-phase handoff closure kept enough headroom. The recorded source set still contains only a facility page and no official numbered seat map, despite a blocking reason that refers to one.",
+      "nextEvidence": "Locate and register an official numbered seat map before any further evaluation; the recorded blocker cannot be tested against the sources currently registered."
+    }
+  ],
+  "result": {
+    "productionPromotions": 2,
+    "holds": 1,
+    "notAttempted": 2,
+    "productionAfter": {
+      "venues": 115,
+      "selectableConfigurations": 117,
+      "configurationSeatRecords": 174459,
+      "tokyo": "47/76",
+      "must": "29/44",
+      "should": "18/28",
+      "releaseReady": true
+    }
+  },
+  "methodNote": "The decisive test in this wave was whether the issuer prints a row label beside each block. Where it does (国立音楽大学, 武蔵野), block ownership is issuer-defined and the transcription reconciles with the issuer's own totals. Where it does not (シアター1010), the hold stands. This is a cheaper and more reliable discriminator than the rake-offset reconstruction used in Wave22 for 人見記念講堂, and should be tried first on any remaining ownership-class hold.",
+  "exactNextAction": "The Opus hard-case phase closes here. Do not open TOKYO-WAVE-24. The next action is the ordinary venue-addition phase described in docs/HANDOFF.md."
+}
