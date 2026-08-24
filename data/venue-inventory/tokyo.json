@@ -1632,14 +1632,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.kabuki-za.co.jp/guide/gaiyo.html",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "SCHEMA HOLD。現行公式図は花道・番号付き桟敷を含む1,808席（1F 897・2F 441・3F 470）を示し、4階一幕見席96席を明示的に除外する。一方、1階の無番号車いすスペース2席と1,808席の包含・置換番号は未公表。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式座席表（2025年7月〜）の印字番号席1,808席を転記し、発行者の階別小計1階897・2階441・3階470および合計1,808と完全一致した。桟敷・側方ボックスの所属階は各階小計との算術一致で確定。無番号の車いすスペースは反映しない。",
       "priority": "A",
       "venueSourceId": "kabukiza-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-10",
-      "discoveryUrlRaw": "http://www.kabuki-za.co.jp/",
-      "blockingReason": "SCHEMA HOLD: 発行者による公式1,808席への無番号車いす2席の包含ルール又は撤去・復帰する個別番号の公開が必要。1,808席からの算術控除、図形位置からの番号推測、販売状態による代表集合の創作は禁止。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-23",
+      "discoveryUrlRaw": "http://www.kabuki-za.co.jp/"
     },
     {
       "inventoryId": "tokyo-oji-hall",
@@ -1717,14 +1716,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.shochiku.co.jp/play/theater/enbujyo/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行松竹公式客席表が1〜3階の番号図を掲載。総数差はproduction blockerではないが、2・3階側方番号群のissuer-defined row/area ownershipが公開されず、lossless range化はSol判断待ち。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式客席図の印字番号席1,424席を転記し、公式客席等級区分図の席種別内訳合計1,424席と一致した。側方ブロックは独立display areaとして扱い、隣接主列への帰属を主張していない。",
       "priority": "A",
       "venueSourceId": "shinbashi-enbujo-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-20",
-      "discoveryUrlRaw": "https://www.shochiku.co.jp/play/theater/enbujyo/seats/",
-      "blockingReason": "SOL HANDOFF / SOURCE-SCHEMA: 現行公式図の2・3階側方番号群はfloorとseat numberのみでrow/area ownershipを一意に示さない。図形位置からarea/rowを創作せず、Sol policy/schema判断又は追加issuer資料まで停止。1424・1426・1428席の資料差はmetadataであり、本停止理由ではない。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-23",
+      "discoveryUrlRaw": "https://www.shochiku.co.jp/play/theater/enbujyo/seats/"
     },
     {
       "inventoryId": "tokyo-official-0086",
@@ -6061,13 +6059,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.b-academy.jp",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-08-20の現行公式資料再確認でも、公式公称は1階1,242・2階560の計1,802だが、列ラベルのない1階側方セルを図どおり接続すると1階1,258となり16席超過する。推測除外せずdraftを維持する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式座席表PDFのベクタ座席セルを抽出し、1階1,242席・2階560席・計1,802席が同図の明記値と完全一致した。過去に記録された1,258席という側方セル接続の読みは再現しない。",
       "priority": "A",
       "venueSourceId": "bunkyo-civic-main-standard",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-20",
-      "blockingReason": "SOL HANDOFF: 現行公式施設ページ・現行利用手引き・現行座席表を再確認しても、1階側方段差席のseat ID area/row ownershipが一意に読めない。公称1,242席との差16席ではなく列帰属の非一意性がblocker。Solは現行図だけでの帰属をpolicy上許容するか、別の公式列対応資料を要求するかを判断する必要がある。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-23"
     },
     {
       "inventoryId": "tokyo-official-0307",

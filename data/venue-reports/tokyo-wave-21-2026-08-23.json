@@ -1,0 +1,78 @@
+{
+  "wave": "TOKYO-WAVE-21",
+  "date": "2026-08-23",
+  "scope": ["kabukiza-standard", "shinbashi-enbujo-standard", "bunkyo-civic-main-standard"],
+  "policyBasis": "User-approved display-area policy, recorded in docs/VENUE_DATA_GUIDE.md: issuer-printed seat numbers are preserved exactly; where the issuer prints no row/area name for an independent side or box block whose boundary the drawing makes explicit, a repository-defined display area name may be used for result presentation only, must not claim ownership by an adjacent main row, must be disclosed in scopeDisclosure as presentation-only, and keeps confidence at representative.",
+  "venues": [
+    {
+      "canonicalId": "kabukiza-standard",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-kabukiza",
+      "venue": "歌舞伎座",
+      "priority": "A",
+      "tier": "MUST",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.shochiku.co.jp/play/theater/kabukiza/seats/",
+      "publishedTotal": 1808,
+      "printedCount": 1808,
+      "rangeDiff": 0,
+      "floorReconciliation": { "1F": 897, "2F": 441, "3F": 470, "allMatched": true },
+      "confidence": "representative",
+      "priorBlockerResolution": "The SCHEMA HOLD rested on the two unnumbered wheelchair spaces and the published 1,808. Under the current guide that difference is confidence metadata. The chart's vector text layer yields exactly 1,808 printed numbers and reconciles with every issuer floor subtotal.",
+      "ownershipResolution": "The sajiki columns and the 2F/3F side blocks carry no printed floor or area name. Their floor is not inferred from drawing position: 2F main 393 + side boxes 48 = the issuer's 441, and 3F main 440 + side strips 30 = the issuer's 470, so the issuer's own arithmetic fixes the floor. Area names (1階西桟敷, 2階西側ボックス席, 3階西側席 and their east counterparts) are repository-defined display names and are disclosed as such.",
+      "independentCheck": "Extracted independently from the 松竹 primary PDF and the KABUKI WEB English PDF; both produced an identical range set.",
+      "notIncluded": ["4階一幕見席96席（公式に1,808席の対象外）"]
+    },
+    {
+      "canonicalId": "shinbashi-enbujo-standard",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-shinbashi-enbujo",
+      "venue": "新橋演舞場",
+      "priority": "A",
+      "tier": "MUST",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.shochiku.co.jp/play/theater/enbujyo/seats/",
+      "publishedTotal": 1424,
+      "printedCount": 1424,
+      "rangeDiff": 0,
+      "floorReconciliation": { "1F": 852, "2F": 340, "3F": 232, "allMatched": true },
+      "confidence": "representative",
+      "priorBlockerResolution": "USER REVIEW HOLD resolved by the approved display-area policy. The 2F and 3F side number strips are their own display areas; no adjacent main row is claimed.",
+      "ownershipResolution": "Side strips modelled as 1階西側席/1階東側席, 2階西側席/2階東側席, 3階西側席/3階東側席 with the issuer's printed numbers unchanged. The official class-breakdown table (1,064 + 136 + 96 + 88 + 40 = 1,424) matches the transcription total, and its 88 and 40 line items match the 2F side strips (44+44) and the 1F side strips (20+20) exactly.",
+      "recordedTotalSpread": "1,424 / 1,426 / 1,428 across materials; kept as metadata, no capacity fitting."
+    },
+    {
+      "canonicalId": "bunkyo-civic-main-standard",
+      "configurationId": "current-official-printed-seat-map",
+      "inventoryId": "tokyo-official-0306",
+      "venue": "文京シビックホール 大ホール",
+      "priority": "A",
+      "tier": "SHOULD",
+      "disposition": "PRODUCTION",
+      "officialSource": "https://www.b-academy.jp/hall/upload/zaseki_hall_mono.pdf",
+      "publishedTotal": 1802,
+      "printedCount": 1802,
+      "rangeDiff": 0,
+      "floorReconciliation": { "1F": 1242, "2F": 560, "allMatched": true },
+      "confidence": "representative",
+      "priorBlockerResolution": "USER REVIEW HOLD resolved on evidence, not by policy. The seat cells were extracted from the PDF's own vector drawing: the first floor holds exactly 1,242 cells across 32 rows and the second floor exactly 560 across 21 rows, both matching the figures printed on the drawing. The recorded reading of 1,258 first-floor cells does not reproduce; it came from ignoring the row rake when connecting the side cells.",
+      "displayAreaDeviation": "The instruction was to model the first-floor side block as an independent display area. It is instead kept inside its row, because the issuer numbers each row continuously 1-44 across all blocks and the connection is now verifiable against the issuer's own 1,242. Splitting it would have required inventing an area name for seats the issuer numbers as one row. Flagged for the user; reversible without new evidence.",
+      "notIncluded": ["車椅子6席（番号なし・別項目）", "親子室", "オーケストラピット設営時162席減"]
+    }
+  ],
+  "result": {
+    "productionPromotions": 3,
+    "holds": 0,
+    "sourceHolds": 0,
+    "productionAfter": {
+      "venues": 108,
+      "selectableConfigurations": 110,
+      "configurationSeatRecords": 165826,
+      "tokyo": "45/76",
+      "must": "28/44",
+      "should": "17/28",
+      "releaseReady": true
+    }
+  },
+  "exactNextAction": "Wave21 closes the audit's USER DECISION cohort. Remaining hard cases are inventoried in the Wave21 closure section of docs/HANDOFF.md; do not open a new wave without explicit authorization."
+}

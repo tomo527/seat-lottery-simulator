@@ -28,6 +28,31 @@
     "dataPath": "/venue-db/venues/asakusa-public-hall-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "bunkyo-civic-main-standard",
+    "venueGroupId": "bunkyo-civic-main-standard",
+    "name": "文京シビックホール 大ホール",
+    "searchAliases": [
+      "響きの森文京公会堂",
+      "文京シビックホール大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "文京区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式番号席1,802席",
+        "seatCount": 1802,
+        "dataPath": "/venue-db/venues/bunkyo-civic-main-standard--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席表の番号席1,802席（1階1,242席・2階560席）を抽選します。公式図が別記する車椅子6席と親子室は番号席ではないため含みません。オーケストラピット設営時の162席減は反映しません。番号席を容量に合わせて削除していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "bunkyo-civic-small-standard",
     "name": "文京シビックホール 小ホール",
     "searchAliases": [
@@ -492,6 +517,31 @@
         "dataPath": "/venue-db/venues/jcom-hall-hachioji-standard--current-fixed-numbered-seat-map.json",
         "scope": "full-venue",
         "scopeDisclosure": "現行公式座席図の固定番号席1,870席を抽選します。公式固定席1,869席との差1席は2階に残ります。親子席8席、立見席144席、車椅子・オーケストラピット・音響反射板・可倒席の運用差は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "kabukiza-standard",
+    "venueGroupId": "kabukiza-standard",
+    "name": "歌舞伎座",
+    "searchAliases": [
+      "GINZA KABUKIZA",
+      "かぶきざ"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式番号席1,808席",
+        "seatCount": 1808,
+        "dataPath": "/venue-db/venues/kabukiza-standard--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席表に印字された番号席1,808席を抽選します。桟敷席・側方ボックス席は公式図の「ボックス番号＋ボックス内席番号」で表し、区画名（1階西桟敷・2階西側ボックス席・3階西側席など）は抽選結果表示のための整理名であり公式座席名称ではありません。4階一幕見席96席は公式に対象外です。番号のない車いすスペース、公演ごとの販売停止席は反映しません。",
         "fixedOnly": false
       }
     ]
@@ -1159,6 +1209,30 @@
     "representativePatternName": "通常776席配置",
     "seatCount": 776,
     "dataPath": "/venue-db/venues/saitama-arts-theatre-main-release-seed.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "shinbashi-enbujo-standard",
+    "venueGroupId": "shinbashi-enbujo-standard",
+    "name": "新橋演舞場",
+    "searchAliases": [
+      "しんばしえんぶじょう"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式番号席1,424席",
+        "seatCount": 1424,
+        "dataPath": "/venue-db/venues/shinbashi-enbujo-standard--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式客席図に印字された番号席1,424席を抽選します。東西の側方ブロック名称（1階西側席・2階東側席など）は抽選結果表示のための整理名であり、公式座席名称ではありません。当該ブロックの番号は公式印字のものをそのまま用い、隣接する正面列への帰属は主張していません。番号のない車いすスペース、公演ごとの座席等級区分や販売停止席は反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "square-ebara-hiratsuka-hall-standard",

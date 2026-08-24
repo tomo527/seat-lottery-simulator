@@ -20,6 +20,20 @@
       ],
       "sha256": "168509a0558a539c16662bac9ce26fff513cf42bff4a049195634409477850fc"
     },
+    "bunkyo-civic-main-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-printed-seat-map": {
+          "count": 1802,
+          "samples": [
+            "first-floor/1/17",
+            "first-floor/25/12",
+            "second-floor/21/40"
+          ],
+          "sha256": "261c6761d48b78cfde1d0a4515afa7164cfb9d48bdf45a7388fa925e6146bfcf"
+        }
+      }
+    },
     "bunkyo-civic-small-standard": {
       "count": 341,
       "samples": [
@@ -305,6 +319,20 @@
             "third-floor-right-side/R1/21"
           ],
           "sha256": "06be9380bc6c0651c57a038389d49ca509ff4001d003a7a1c7e2f5fb4686394e"
+        }
+      }
+    },
+    "kabukiza-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-printed-seat-map": {
+          "count": 1808,
+          "samples": [
+            "first-floor/1/2",
+            "second-floor/1/10",
+            "third-floor-east-side/側方/15"
+          ],
+          "sha256": "9d0e67cc153b013d970de76a97113608be824da7e7b257e272754408082ded7f"
         }
       }
     },
@@ -719,6 +747,20 @@
         "second-floor/W/36"
       ],
       "sha256": "b1c92145340050dfd72125a6c9bb633e2696dba2510b9d3ff100e67838cda8aa"
+    },
+    "shinbashi-enbujo-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-official-printed-seat-map": {
+          "count": 1424,
+          "samples": [
+            "first-floor/1/7",
+            "first-floor/18/23",
+            "third-floor-east-side/側方/27"
+          ],
+          "sha256": "5702bff69d58a0d940d623d233a19f4e43a9d2b9dc9271e38d6a40e81580b05f"
+        }
+      }
     },
     "square-ebara-hiratsuka-hall-standard": {
       "count": 362,

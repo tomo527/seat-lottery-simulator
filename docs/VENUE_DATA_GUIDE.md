@@ -152,6 +152,8 @@ top-level `status: production`は、少なくとも1件の`production`かつ`sel
 
 代表 configuration の可否を、固定席か、arena・gymnasium・event/convention hall 等の venue type かだけで決めない。現行の公式 standard/default/recommended layout、明確に基本とされた複数 configuration、又は issuer 資料・通常利用実績から代表性を合理的に説明できる番号席配置は production 候補にできる。固定でないこと自体は blocker ではない。一方、代表性の根拠がなく恣意的、seat ID 又は row/area ownership の創作が必要、又は印字数の矛盾を capacity fitting なしに説明できない場合は HOLD/reject とする。
 
+seat ID・座席番号・block 所属の創作は禁止のまま維持する一方、公式図が独立した側方・box・分節 block を明確に描き、その番号が公式印字であるなら、抽選結果表示のための repository 由来 area 名称を付与してよい。条件は、block 境界が公式図上で明確であること、隣接する main row への帰属を主張しないこと、geometry から存在しない席を補完しないこと、`scopeDisclosure` と limitation metadata に当該 area 名称が表示用の整理名であり公式座席名称ではない旨を明記すること、`confidence` を原則 `representative` に留めることである。issuer が row/area 名称を明示していないこと自体は blocker ではない。
+
 `expectedSeatCount`は文章上の公式総数として保持でき、番号図から計算したmapped countとの差はwarningとquality metadataに残します。差を消すために番号を削除してはいけません。`verification.status`は`reviewed`または`verified`、`seatStructure: matched`をproductionに要求しますが、`seatCount: mismatched`、非0/`null`の`rangeDiff`、具体的な`unresolvedIssues`はblockerではありません。
 
 車いす転換番号が不明なら通常番号席をそのまま登録し、`wheelchairSemantics.status: not-reflected`と`accessibilityConversionNotReflected: true`を記録します。実公演で使われた仮設番号を採用する場合は`representativeEventLayout: true`、`scope.kind: representative-event`、公式`event-layout` source、共通またはconfiguration disclosureを必須にします。repositoryによるseat ID創作、capacity fitting、根拠のないconfiguration差分は引き続き禁止です。

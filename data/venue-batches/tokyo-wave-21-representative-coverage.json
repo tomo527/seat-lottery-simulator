@@ -1,0 +1,31 @@
+{
+  "batchId": "tokyo-wave-21-representative-coverage",
+  "createdAt": "2026-08-23",
+  "scope": "TOKYO-WAVE-21: promote the three venues the hard-case resolution audit classified as USER DECISION REQUIRED, under the approved repository-defined display-area policy — 歌舞伎座, 新橋演舞場, 文京シビックホール 大ホール. Preserve every issuer-printed seat number; use a repository-defined display area only where the issuer prints no row/area name for an independent side or box block, and never claim ownership by an adjacent main row.",
+  "status": "complete",
+  "priority": "A",
+  "targetVenueIds": [],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-kabukiza",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "The SCHEMA HOLD was raised over the two unnumbered wheelchair spaces, which the current guide treats as confidence metadata. The current chart's vector text layer yields 1,808 printed numbers reconciling exactly with the issuer's 897/441/470 floor subtotals, and those subtotals also resolve the floor ownership of the sajiki and side-box columns.",
+      "recheckNotBefore": "2026-08-23"
+    },
+    {
+      "inventoryId": "tokyo-shinbashi-enbujo",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "USER REVIEW HOLD resolved by the approved display-area policy: side number strips become their own repository-defined display areas without claiming an adjacent main row. The printed set totals 1,424, matching the official class-breakdown table.",
+      "recheckNotBefore": "2026-08-23"
+    },
+    {
+      "inventoryId": "tokyo-official-0306",
+      "carryOverFrom": "tokyo-wave-1",
+      "previousStatus": "blocked",
+      "recheckReason": "USER REVIEW HOLD resolved on evidence: extracting the seat cells from the official PDF's vector drawing gives exactly 1,242 first-floor and 560 second-floor cells, so the recorded 1,258-versus-1,242 side-cell contradiction does not exist.",
+      "recheckNotBefore": "2026-08-23"
+    }
+  ]
+}
