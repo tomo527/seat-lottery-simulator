@@ -8,7 +8,8 @@ The Opus hard-case phase is closed with TOKYO-WAVE-23. Do not open TOKYO-WAVE-24
 
 | Item | Value |
 | --- | --- |
-| Final HEAD / `origin/main` | `__HEAD__` |
+| Wave23 data commit (deployed & verified) | `6414ebc` |
+| Final HEAD / `origin/main` | this docs-only closure commit on top of `6414ebc`; `main == origin/main`, tree clean |
 | Production venues | **115** |
 | Selectable configurations | **117** |
 | Configuration-seat records | **174,459** |
@@ -122,6 +123,7 @@ Kept for a future authorized Opus phase. **Do not begin research or implementati
 
 ## Recent completed work
 
+- 2026-08-24: TOKYO-WAVE-23 commit `6414ebc` is pushed to `main` and live through the managed Workers Builds integration (`Workers Builds: seat-lottery-simulator` completed success). Public runtime detail endpoints return 1,290 and 1,252. Production UI search returned 国立音楽大学〔講堂大ホール〕東京都 立川市 1,290席 as the single match and 武蔵野市民文化会館 大ホール 1,252席 alongside the pre-existing 小ホール; live draws succeeded (国立音楽大学 け列42番, 武蔵野 2階席 42列38番) and a clean browser tab produced zero console output.
 - 2026-08-24: TOKYO-WAVE-23 closed the Opus hard-case phase. Two promotions (国立音楽大学 講堂大ホール 1,290/1,290/0, 武蔵野市民文化会館 大ホール 1,252/1,256/-4), one evidence-confirmed HOLD (シアター1010), two NOT ATTEMPTED (小金井 — source 403; 足立区役所 — priority C under the context stop rule). Targeted reviews, the Wave23 batch report, inventory/readiness/release coverage, generated catalog/runtime synchronization, two fingerprint additions and canonical `verify:venues` all passed: lint, typecheck, **212 unit tests**, production build, docs/harness, and **16 Playwright E2E tests**.
 
 - 2026-08-24: TOKYO-WAVE-22 commit `a450c13` is pushed to `main` and live through the managed Workers Builds integration (`Workers Builds: seat-lottery-simulator` completed success). Public runtime detail endpoints return 902 / 497 / 1,000 / 2,070 / 1,622. Production UI search returned exactly one result per venue with the matching seat count (西新井文化ホール 902席, セシオン杉並 497席, 瑞穂ビューパーク・スカイホール 1,000席, 人見記念講堂 2,070席, 東京オペラシティ 1,622席), live draws succeeded (人見記念講堂 2階ホール K列41番, 東京オペラシティ 1階席 17列12番, 西新井文化ホール 1階席 け列20番), and the browser console produced no output at all.
