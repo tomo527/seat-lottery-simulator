@@ -4,9 +4,11 @@ Updated: 2026-08-24 (Asia/Tokyo)
 
 ## Current state
 
-TOKYO-WAVE-24 ordinary bounded integration is released. The authorized baseline was `main` / `a6f13c7b5489ceed08a088d12bd87542c2213e6f`; no reset or revert was performed. Data commit `9d2a66cd2bdfc3738bd3e0513288d1d52da6fe68` is pushed to `main` and `origin/main`.
+TOKYO-WAVE-24 ordinary bounded integration is released. Its data commit `9d2a66cd2bdfc3738bd3e0513288d1d52da6fe68` is pushed in main history. The authorized baseline immediately before this Wave25 formalization was `main` / `origin/main` `7dc42ba4c918d9c72e61839d765749103b001329`; no reset or revert was performed.
 
-TOKYO-WAVE-25 preflight closed with **0 ADOPT**. Its subsequent inventory-only normalization is limited to repository-backed historical dispositions; no venue source, range, catalog, runtime artifact, fingerprint, or production total changed.
+TOKYO-WAVE-25 preflight is formally closed with **0 ADOPT / 6 DEFERRED**. [`data/venue-reports/tokyo-wave-25-2026-08-24.json`](../data/venue-reports/tokyo-wave-25-2026-08-24.json) preserves the completed current first-party evidence for `0726`, `0993`, `0989`, `0561`, `0426`, and `0708`; their inventory records are `blocked` so they cannot re-enter ordinary candidate discovery. No venue source, range, catalog, runtime artifact, fingerprint, or production total changed.
+
+The authorized `NEXT TERRA PREFLIGHT` then recomputed 10 true-unprocessed Tokyo A/B records and bounded current-first-party review to six: `0373`, `0425`, `0709`, `0611`, `1017`, and `1058`. It found **0 ADOPT**: `0373`, `0425`, `0709`, and `1058` lack an issuer-numbered representative set; `0611` (駒沢体育館) and `1017` (アリーナ立川立飛) have current seating/facility diagrams but require large-arena ownership and printed-set reconstruction, so remain **HARD-CASE DEFER** outside an ordinary Terra batch. This discovery pass does not alter inventory status, production data, or the six formal Wave25 dispositions.
 
 | Item | State |
 | --- | --- |
@@ -34,7 +36,7 @@ TOKYO-WAVE-25 preflight closed with **0 ADOPT**. Its subsequent inventory-only n
 - `tokyo-official-1060` FOSTERホール is **RENOVATION HOLD** through 2026-12-01.
 - `tokyo-official-1020` 国立音楽大学 講堂小ホール is **SOURCE HOLD** because no current complete numbered map is registered.
 - `tokyo-official-1071` 京王アリーナTOKYO メインアリーナ is the same facility-space as canonical `musashino-forest-sport-plaza-standard`; retain its **SOURCE/POLICY/SCHEMA HOLD**, rather than rediscovering it under the official-list ID.
-- `tokyo-official-0373`, `tokyo-official-0425`, `tokyo-official-1090`, and the Wave25 recurrence examples `tokyo-official-0726`, `tokyo-official-0426`, `tokyo-official-0708`, `tokyo-official-0709`, and `tokyo-official-1058` remain unchanged: current repository reports/HANDOFF do not persist a formal disposition sufficient to normalize their inventory status. Do not infer one from conversation history; record a bounded repository-backed preflight disposition before excluding them in a future discovery pass.
+- `tokyo-official-0373`, `tokyo-official-0425`, `tokyo-official-1090`, `tokyo-official-0709`, and `tokyo-official-1058` remain without a formal disposition in repository evidence. Do not infer one from conversation history; record a bounded repository-backed preflight disposition before excluding them in a future discovery pass.
 - Future hard-case candidates (`tokyo-theatre-1010`, `tokyo-koganei-miyaji-main`, `tokyo-coverage-ex-theater-ariake`, `aichi-arts-center-main`, `takasaki-city-theatre-main`) are outside this ordinary wave.
 
 ## Release verification
@@ -45,4 +47,4 @@ TOKYO-WAVE-25 preflight closed with **0 ADOPT**. Its subsequent inventory-only n
 
 ## Exact next action
 
-Run `NEXT TERRA PREFLIGHT` only: use inventory metadata to construct an exclusion-aware bounded shortlist from the normalized unprocessed Tokyo A/B records. Before Web research, persist any formal disposition that would exclude a candidate and match by inventory ID, canonical source ID, normalized name, and facility-space identity. Do not begin Web research until that preflight is explicitly authorized.
+Do not begin implementation, production-data changes, or deployment. Before another candidate-discovery pass, decide whether to authorize a representative-layout recheck lane for `0425`/`0709` or a hard-case ownership lane for `0611`/`1017`; ordinary Terra has no recommended bounded batch after the 0-ADOPT NEXT preflight.

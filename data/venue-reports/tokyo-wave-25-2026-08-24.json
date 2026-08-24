@@ -1,0 +1,139 @@
+{
+  "wave": "TOKYO-WAVE-25",
+  "date": "2026-08-24",
+  "phase": "Bounded Terra preflight closure",
+  "scope": [
+    "tokyo-official-0726",
+    "tokyo-official-0993",
+    "tokyo-official-0989",
+    "tokyo-official-0561",
+    "tokyo-official-0426",
+    "tokyo-official-0708"
+  ],
+  "scopeBasis": "Web preflightで既に確認済みの6 candidateについて、そのcurrent first-party evidenceだけを正式化する。新規の座席転記、source JSON、range、catalog、runtime artifactは作成しない。",
+  "policyBasis": "現行/current-linked complete numbered map、issuer定義のrepresentative configuration、block ownership、losslessなprinted setの順に判定する。closed、construction、classroom、movable/type-onlyを永久REJECTの根拠にはせず、番号付き代表configurationがないものはDEFERまたはDEFERREDとしてinventoryから通常candidate poolを除外する。",
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0726",
+      "canonicalId": null,
+      "venue": "Bunkamura シアターコクーン",
+      "priority": "B",
+      "disposition": "DEFER",
+      "officialSource": "https://www.bunkamura.co.jp/cocoon/about/",
+      "numberedMapCurrentness": "none: official page identifies a long-term closure; no current or current-linked complete numbered map.",
+      "representativeConfiguration": "not assessable while closed; historic seating/stage operation includes movable elements.",
+      "ownership": "not assessed without a current numbered map",
+      "printedSet": "not assessed without a current numbered map",
+      "publishedCapacity": 747,
+      "metadata": {
+        "operationalStatus": "temporarily-closed",
+        "accessibilityMovablePit": "historic seating/stage operation includes movable elements"
+      },
+      "reason": "Reopen after service resumes only when issuer material supplies a current numbered map and representative configuration."
+    },
+    {
+      "inventoryId": "tokyo-official-0993",
+      "canonicalId": "tokyo-wave3-0993",
+      "venue": "首都大学東京 南大沢キャンパス講堂〔大ホール〕",
+      "priority": "A",
+      "disposition": "DEFER",
+      "officialSource": "https://www.tmu.ac.jp/inquiry/contact/facility_use.html",
+      "numberedMapCurrentness": "none: current university notice says the auditorium is under construction and rentals are suspended.",
+      "representativeConfiguration": "not assessable during construction and suspension.",
+      "ownership": "not assessed without a current numbered map",
+      "printedSet": "not assessed without a current numbered map",
+      "publishedCapacity": 1198,
+      "metadata": {
+        "operationalStatus": "temporarily-closed",
+        "accessibilityMovablePit": "not assessed"
+      },
+      "reason": "Reopen only after construction and facility use resume, with a current issuer-numbered map."
+    },
+    {
+      "inventoryId": "tokyo-official-0989",
+      "canonicalId": "tokyo-wave3-0989",
+      "venue": "創価大学 ディスカバリーホール",
+      "priority": "A",
+      "disposition": "DEFER",
+      "officialSource": "http://www.soka.ac.jp/inquiries/",
+      "numberedMapCurrentness": "none located: the existing first-party source is a general facility/contact page, not a current numbered map.",
+      "representativeConfiguration": "not established without issuer-numbered material.",
+      "ownership": "not assessed without a current numbered map",
+      "printedSet": "not assessed without a current numbered map",
+      "publishedCapacity": 1000,
+      "metadata": {
+        "operationalStatus": "unknown",
+        "accessibilityMovablePit": "not assessed"
+      },
+      "reason": "Reopen only when a current first-party complete numbered map is available."
+    },
+    {
+      "inventoryId": "tokyo-official-0561",
+      "canonicalId": "tokyo-wave3-0561",
+      "venue": "昭和女子大学グリーンホール",
+      "priority": "B",
+      "disposition": "DEFER",
+      "officialSource": "https://www.swu.ac.jp/examinee/student/course/room.html",
+      "numberedMapCurrentness": "none: current university material identifies Green Hall as Building 3 classroom GH, with no numbered representative set.",
+      "representativeConfiguration": "not established; classroom treatment is not an issuer-defined numbered venue configuration.",
+      "ownership": "not assessed without a current numbered map",
+      "printedSet": "not assessed without a current numbered map",
+      "publishedCapacity": 638,
+      "metadata": {
+        "operationalStatus": "unknown",
+        "accessibilityMovablePit": "not assessed"
+      },
+      "reason": "Reopen only if the issuer publishes a complete numbered representative configuration."
+    },
+    {
+      "inventoryId": "tokyo-official-0426",
+      "canonicalId": null,
+      "venue": "TFTビル〔TFTホール500〕",
+      "priority": "B",
+      "disposition": "DEFERRED",
+      "officialSource": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/#anc-02",
+      "numberedMapCurrentness": "current facility layout material exists, but it contains no issuer-numbered representative seat map.",
+      "representativeConfiguration": "multiple movable layouts: theater 450 and maximum 500 among the published arrangements; no official numbered standard.",
+      "ownership": "not assessed without an issuer-numbered representative set",
+      "printedSet": "not assessable; current layouts are unnumbered",
+      "publishedCapacity": 500,
+      "metadata": {
+        "operationalStatus": "active",
+        "accessibilityMovablePit": "movable layout; no numbered representative set"
+      },
+      "reason": "Not REJECT. Reserve for an authorized representative-layout recheck when an issuer-defined numbered configuration becomes available."
+    },
+    {
+      "inventoryId": "tokyo-official-0708",
+      "canonicalId": null,
+      "venue": "ベルサール渋谷ファースト〔2F HALL〕",
+      "priority": "A",
+      "disposition": "DEFERRED",
+      "officialSource": "https://www.bellesalle.co.jp/shisetsu/shibuya/bs_shibuyafirst/detail/bs_shibuyafirst_hall_2fall/",
+      "numberedMapCurrentness": "current operator layout material exists, but it contains no issuer-numbered representative seat map.",
+      "representativeConfiguration": "multiple movable layouts: school 576/864, theater 1,230, and island 630; no official numbered standard.",
+      "ownership": "not assessed without an issuer-numbered representative set",
+      "printedSet": "not assessable; current layouts are unnumbered",
+      "publishedCapacity": 1230,
+      "metadata": {
+        "operationalStatus": "active",
+        "accessibilityMovablePit": "movable layout; no numbered representative set"
+      },
+      "reason": "Not REJECT. Reopen only with an issuer-defined numbered configuration."
+    }
+  ],
+  "result": {
+    "adoptedCandidates": 0,
+    "deferred": 6,
+    "hardCaseDefers": 0,
+    "rejected": 0,
+    "productionPromotions": 0,
+    "productionAfter": {
+      "venues": 118,
+      "selectableConfigurations": 120,
+      "seatRecords": 177317
+    }
+  },
+  "validation": "Inventory/report-only formalization. No production source, seat range, generated catalog, runtime artifact, or production fingerprint changed.",
+  "exactNextAction": "Run NEXT TERRA PREFLIGHT from the canonical-identity exclusion-aware Tokyo A/B pool; do not re-research these six records in ordinary discovery."
+}

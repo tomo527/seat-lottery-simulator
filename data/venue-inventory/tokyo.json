@@ -8414,13 +8414,14 @@
       "capacity": 500,
       "category": "hall",
       "officialFacilityUrl": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/#anc-02",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行の施設公式資料で稼働と複数レイアウトを確認。issuer定義の番号付き代表配置が確認できるまで通常production候補にはしない。",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "blockingReason": "DEFERRED (TOKYO-WAVE-25): 現行公式資料はtheater・school等の複数可変レイアウト（theater 450、maximum 500を含む）を示すが、issuer定義の番号付き代表configurationがない。永久REJECTではなく、authorized representative-layout recheckでのみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-0427",
@@ -11061,13 +11062,13 @@
       "officialFacilityUrl": null,
       "operationalStatus": "unknown",
       "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "eligibilityReason": "現行の大学公式資料ではBuilding 3の教室（GH）として確認できる。issuer定義の番号付き代表配置が確認できるまで通常production候補にはしない。",
       "priority": "B",
       "venueSourceId": "tokyo-wave3-0561",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
       "discoveryUrlRaw": "http://www.carillon-net.jp/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "DEFER (TOKYO-WAVE-25): 現行大学公式資料ではグリーンホールはBuilding 3の教室として扱われ、番号付きrepresentative setはない。現行issuerのcomplete numbered mapが確認できるまで通常candidate discoveryから除外する。"
     },
     {
       "inventoryId": "tokyo-hitomi-memorial-hall",
@@ -13899,13 +13900,14 @@
       "capacity": 1230,
       "category": "hall",
       "officialFacilityUrl": "https://www.bellesalle.co.jp/shisetsu/shibuya/bs_shibuyafirst",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "現行の運営者公式資料で稼働と複数レイアウトを確認。issuer定義の番号付き代表配置が確認できるまで通常production候補にはしない。",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
+      "blockingReason": "DEFERRED (TOKYO-WAVE-25): 現行運営者資料はschool 576/864、theater 1,230、island 630等の複数可変レイアウトを示すが、issuer番号付きrepresentative setがない。永久REJECTではなく、issuer定義の番号付きconfigurationが出た場合のみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-0709",
@@ -14246,15 +14248,15 @@
       "capacity": 747,
       "category": "hall",
       "officialFacilityUrl": "https://www.bunkamura.co.jp/cocoon/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "temporarily-closed",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryで専用ホール等として公称747席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
+      "eligibilityReason": "現行の施設公式案内で長期休館を確認。再開後に現行番号図と代表配置を確認するまでproduction候補にはしない。",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
       "discoveryUrlRaw": "http://www.bunkamura.co.jp/cocoon/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO-WAVE-25): 公式案内は長期休館中と示す。現行/current-linked complete numbered mapがなく、客席・舞台の一部可動運用もある。再開後にissuerの現行番号図と代表configurationを確認するまで通常candidate discoveryから除外する。"
     },
     {
       "inventoryId": "tokyo-official-0727",
@@ -19366,13 +19368,13 @@
       "officialFacilityUrl": null,
       "operationalStatus": "unknown",
       "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "eligibilityReason": "既存の公式施設・連絡先資料は確認済みだが、現行の番号付きseat mapは未確認。issuerのcomplete numbered mapが確認できるまで通常production候補にはしない。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0989",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
       "discoveryUrlRaw": "http://www.soka.ac.jp/inquiries/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "DEFER (TOKYO-WAVE-25): boundedな現行first-party確認ではcomplete numbered mapを特定できず、既存Wave3 sourceは一般的な施設・連絡先資料にとどまる。現行issuer番号図が得られるまで通常candidate discoveryから除外する。"
     },
     {
       "inventoryId": "tokyo-official-0990",
@@ -19448,15 +19450,15 @@
       "capacity": 1198,
       "category": "hall",
       "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
+      "operationalStatus": "temporarily-closed",
       "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "eligibilityReason": "現行大学公式資料で講堂の工事と貸出停止を確認。工事・利用再開後に現行番号図を確認するまでproduction候補にはしない。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0993",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-24",
       "discoveryUrlRaw": "http://www.tmu.ac.jp/university/inquiry/contact/facility_use.html",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "DEFER (TOKYO-WAVE-25): 現行大学公式案内は講堂が工事中で貸出停止と示す。現行/current-linked complete numbered mapがないため、工事・利用再開後にissuer番号図を確認するまで通常candidate discoveryから除外する。"
     },
     {
       "inventoryId": "tokyo-official-0994",
