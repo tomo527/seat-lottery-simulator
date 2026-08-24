@@ -5,33 +5,26 @@
 .support-section h2 { margin: 10px 0 0; color: var(--ink-strong); font-family: var(--font-display); font-size: clamp(1.05rem, 3.4vw, 1.3rem); font-weight: 600; letter-spacing: .02em; }
 .support-lead { max-width: 460px; margin: 12px auto 0; color: var(--muted); font-size: .78rem; line-height: 1.9; }
 
-/* 賽銭箱。板を並べた木口と、下辺の濃い縁で厚みを出す。 */
+/* 他のボタン群と同じ紙質の、静かな案内としての一枚。 */
 .support-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
+  min-height: 50px;
   margin-top: 24px;
-  padding: 14px 32px;
-  border: 1px solid var(--wood-edge);
+  padding: 13px 30px;
+  border: 1px solid var(--line);
   border-radius: var(--r-control);
-  background-color: var(--wood);
-  background-image:
-    linear-gradient(180deg, rgba(255, 246, 230, .3) 0, transparent 42%, rgba(70, 44, 18, .22) 100%),
-    repeating-linear-gradient(90deg, var(--wood) 0 10px, var(--wood-dark) 10px 11px, var(--wood) 11px 21px);
-  color: #fffaf0;
-  font-family: var(--font-display);
-  font-size: .95rem;
-  font-weight: 600;
-  letter-spacing: .12em;
+  background: var(--paper);
+  color: var(--ink-strong);
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .03em;
   text-decoration: none;
-  text-shadow: 0 1px 2px rgba(59, 38, 12, .5);
-  box-shadow: 0 3px 0 var(--wood-edge);
-  transition: transform .12s, box-shadow .12s, filter .16s;
+  transition: border-color .16s, background .16s, color .16s;
 }
-.support-button:hover { filter: brightness(1.05); transform: translateY(2px); box-shadow: 0 1px 0 var(--wood-edge); }
-.support-button:focus-visible { outline: 2px solid var(--wood-edge); outline-offset: 3px; }
-.support-button:active { transform: translateY(3px); box-shadow: 0 0 0 var(--wood-edge); }
+.support-button:hover { border-color: var(--seal); background: var(--seal-pale); color: var(--seal-deep); }
+.support-button:active { background: var(--paper-sunk); }
 
 .support-notes { max-width: 430px; margin: 22px auto 0; padding: 0; list-style: none; color: var(--muted); font-size: .69rem; line-height: 1.85; text-align: left; }
 .support-notes li { position: relative; padding-left: 15px; }
