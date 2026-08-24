@@ -3,79 +3,100 @@
   margin: 18px auto 72px;
 }
 
+/* 法務ページも同じ券紙の上に組む。二重罫で「刷られた書面」に揃える。 */
 .legal-document {
+  position: relative;
   padding: clamp(26px, 6vw, 58px);
   border: 1px solid var(--line);
-  border-radius: 24px;
-  background: rgba(255, 255, 255, .94);
+  border-radius: var(--r-sheet);
+  background: var(--paper);
   box-shadow: var(--shadow);
+}
+
+.legal-document::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  border: 1px solid var(--rule);
+  border-radius: 1px;
+  pointer-events: none;
 }
 
 .back-to-top {
   display: inline-block;
-  margin-bottom: 28px;
-  color: var(--violet-dark);
-  font-size: .78rem;
-  font-weight: 800;
-  text-underline-offset: 3px;
+  margin-bottom: 30px;
+  color: var(--ink);
+  font-size: .76rem;
+  font-weight: 700;
+  text-decoration-color: var(--line);
+  text-underline-offset: 4px;
 }
 
+.back-to-top:hover { color: var(--seal); text-decoration-color: var(--seal); }
+
 .legal-kicker {
-  margin: 0 0 8px;
-  color: var(--violet);
-  font-size: .63rem;
-  font-weight: 900;
-  letter-spacing: .15em;
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-family: var(--font-data);
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .2em;
 }
 
 .legal-document h1 {
   margin: 0;
-  color: var(--violet-dark);
-  font-size: clamp(1.85rem, 6vw, 2.7rem);
-  letter-spacing: -.04em;
+  color: var(--ink-strong);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5.6vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: .02em;
 }
 
 .legal-intro {
-  margin: 20px 0 38px;
+  margin: 22px 0 38px;
   padding: 17px 19px;
-  border-left: 4px solid var(--violet);
-  background: #f7f5ff;
-  color: #4f4963;
-  font-size: .87rem;
-  line-height: 1.85;
+  border-left: 3px solid var(--seal);
+  background: var(--paper-sunk);
+  color: var(--ink);
+  font-size: .86rem;
+  line-height: 1.9;
 }
 
-.legal-document section + section { margin-top: 34px; }
+.legal-document section + section { margin-top: 36px; }
 
 .legal-document h2 {
-  margin: 0 0 12px;
+  margin: 0 0 13px;
   padding-bottom: 9px;
-  border-bottom: 1px solid #e8e5ef;
-  color: var(--ink);
-  font-size: 1.08rem;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--ink-strong);
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+  letter-spacing: .03em;
 }
 
 .legal-document section p,
 .legal-document li {
-  color: #4f4963;
-  font-size: .86rem;
-  line-height: 1.95;
+  color: var(--ink);
+  font-size: .85rem;
+  line-height: 2;
 }
 
 .legal-document section p { margin: 0; }
 .legal-document ul { margin: 10px 0 0; padding-left: 1.4rem; }
-.legal-document li + li { margin-top: 5px; }
-.legal-document code { overflow-wrap: anywhere; color: var(--violet-dark); font-size: .82em; }
+.legal-document li + li { margin-top: 6px; }
+.legal-document li::marker { color: var(--muted-soft); }
+.legal-document code { overflow-wrap: anywhere; color: var(--seal-deep); font-family: var(--font-data); font-size: .8em; }
 
 .legal-status {
   margin: 0 0 34px;
   padding: 15px 18px;
-  border: 1px solid #f0c9c6;
-  border-radius: 14px;
-  background: var(--coral-pale);
-  color: #7a3b3f;
+  border: 1px solid #e6c0b8;
+  border-radius: var(--r-sheet);
+  background: var(--seal-pale);
+  color: var(--seal-deep);
   font-size: .8rem;
-  line-height: 1.85;
+  line-height: 1.9;
 }
 
 .legal-disclosure { margin: 0; }
@@ -86,32 +107,33 @@
   grid-template-columns: minmax(148px, .8fr) minmax(0, 2fr);
   gap: 5px 18px;
   align-items: baseline;
-  border-bottom: 1px solid #efecf2;
+  border-bottom: 1px dotted var(--line);
 }
 
 .legal-disclosure > div:last-child { border-bottom: 0; }
-.legal-disclosure dt { color: var(--ink); font-size: .78rem; font-weight: 800; }
+.legal-disclosure dt { color: var(--muted); font-size: .76rem; font-weight: 700; letter-spacing: .04em; }
 
 .legal-disclosure dd {
   margin: 0;
-  color: #4f4963;
-  font-size: .86rem;
-  line-height: 1.95;
+  color: var(--ink);
+  font-size: .85rem;
+  line-height: 2;
   overflow-wrap: anywhere;
 }
 
 .effective-date {
   margin: 42px 0 0;
   padding-top: 20px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-soft);
   color: var(--muted);
-  font-size: .72rem;
+  font-family: var(--font-data);
+  font-size: .68rem;
+  font-variant-numeric: tabular-nums;
   text-align: right;
 }
 
 @media (max-width: 600px) {
   .legal-main { margin-top: 8px; }
-  .legal-document { border-radius: 18px; }
-  .legal-document section + section { margin-top: 29px; }
+  .legal-document::before { inset: 5px; }
   .legal-disclosure > div { grid-template-columns: 1fr; }
 }

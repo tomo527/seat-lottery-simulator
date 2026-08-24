@@ -1,9 +1,13 @@
 .app-shell {
   min-height: 100vh;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 90% 2%, rgba(255, 212, 92, .18), transparent 22rem),
-    linear-gradient(180deg, #f2efff 0, var(--canvas) 28rem);
+  /* 台紙。グラデーションの雲ではなく、紙の繊維に近い細かな地模様で奥行きを出す。 */
+  background-color: var(--canvas);
+  background-image:
+    radial-gradient(rgba(31, 42, 68, .035) 1px, transparent 1px),
+    radial-gradient(rgba(31, 42, 68, .025) 1px, transparent 1px);
+  background-size: 14px 14px, 14px 14px;
+  background-position: 0 0, 7px 7px;
 }
 
 .site-header {
@@ -17,76 +21,116 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
   color: var(--ink);
-  font-size: .72rem;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: .05em;
+  font-family: var(--font-round);
+  font-size: .66rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: .06em;
   text-decoration: none;
 }
 
-.brand strong { font-size: .92rem; }
+.brand strong {
+  font-family: var(--font-round);
+  font-size: .98rem;
+  font-weight: 700;
+  letter-spacing: -.005em;
+}
 
+/* 半券。両脇の切り欠きで「券」と分かるだけのやわらかい紙片にし、
+   星は切り取られた穴のように小さく残す。 */
 .brand-mark {
-  width: 37px;
+  position: relative;
+  width: 38px;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
+  border: 2px solid var(--gold);
   border-radius: 12px;
-  background: var(--violet);
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(81, 64, 199, .28);
+  background: #fdf6e7;
+  color: var(--seal);
+  font-size: 1.02rem;
   transform: rotate(-5deg);
+  transition: transform .2s ease;
 }
+
+/* 台紙の色で両脇を押し押さえ、ミシン目の切り欠きを作る。 */
+.brand-mark::before,
+.brand-mark::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--canvas);
+  transform: translateY(-50%);
+}
+
+.brand-mark::before { left: -3.5px; }
+.brand-mark::after { right: -3.5px; }
+
+.brand:hover .brand-mark { transform: rotate(-2deg); }
 
 .site-footer {
   width: min(920px, calc(100% - 28px));
   margin: 0 auto;
   padding: 32px 0 40px;
-  border-top: 1px solid #dedbea;
+  border-top: 1px solid var(--line);
   color: var(--muted);
   text-align: center;
 }
 
 .site-footer strong {
   color: var(--ink);
-  font-size: .78rem;
+  font-family: var(--font-display);
+  font-size: .88rem;
+  font-weight: 600;
+  letter-spacing: .05em;
 }
 
 .site-footer p {
-  margin: 7px 0;
+  margin: 8px 0;
   font-size: .68rem;
 }
 
 .legal-links {
-  margin: 14px 0 8px;
+  margin: 15px 0 8px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
   font-size: .72rem;
 }
 
 .legal-links a {
-  color: var(--violet-dark);
-  font-weight: 700;
-  text-underline-offset: 3px;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration-color: var(--line);
+  text-underline-offset: 4px;
 }
 
+.legal-links a:hover { text-decoration-color: var(--seal); }
+
 .legal-links a[aria-current="page"] {
-  color: var(--ink);
+  color: var(--seal-deep);
+  text-decoration-color: var(--seal);
   text-decoration-thickness: 2px;
 }
 
-.legal-links span { color: #aaa5b9; }
-.site-footer .site-copyright { margin: 5px 0; }
+.legal-links span { color: var(--muted); }
+.site-footer .site-copyright { margin: 6px 0; font-family: var(--font-data); font-size: .62rem; }
 
 .site-footer .footer-tagline {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-family: var(--font-data);
   font-size: .55rem;
-  font-weight: 900;
-  letter-spacing: .14em;
+  font-weight: 500;
+  letter-spacing: .16em;
 }
 
 @media (max-width: 600px) {

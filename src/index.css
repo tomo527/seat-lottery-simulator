@@ -1,23 +1,50 @@
 @import "tailwindcss";
 
+/*
+ * 券面（ticket face）
+ * 生成りの券紙を台紙に置いた印刷物として組む。藍墨のインク、朱の印、
+ * 数字は等幅で「刷られた」ように見せる。ふわりと浮かぶ影は使わない。
+ */
 :root {
-  --ink: #171332;
-  --muted: #68627e;
-  --paper: #ffffff;
-  --canvas: #f8f7ff;
-  --line: #dedbea;
-  --violet: #5140c7;
-  --violet-dark: #30237f;
-  --violet-pale: #eeebff;
-  --coral: #ff6b72;
-  --coral-pale: #fff0ef;
-  --mint: #35c5a6;
-  --mint-pale: #e8fbf6;
-  --yellow: #ffd45c;
-  --shadow: 0 24px 70px rgba(38, 27, 93, 0.12);
-  font-family: Inter, "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif;
-  color: #171332;
-  background: #f8f7ff;
+  --ink: #1f2a44;
+  --ink-strong: #131b2e;
+  --muted: #4f5769;
+  --muted-soft: #6b7285;
+  --paper: #fcfbf7;
+  --paper-sunk: #f4f1e8;
+  --canvas: #d9dad2;
+  --line: #d5d1c3;
+  --line-soft: #e4e0d4;
+  --rule: rgba(31, 42, 68, .14);
+
+  --seal: #c4402e;
+  --seal-deep: #9e3122;
+  --seal-pale: #fbeeea;
+  --gold: #d9963b;
+  --gold-ink: #8f5a15;
+  --gold-pale: #fbf1de;
+  --sprout: #4e7a55;
+  --sprout-pale: #eef4ec;
+
+  --wood: #8d6236;
+  --wood-dark: #744f2a;
+  --wood-edge: #533718;
+
+  /* 紙は浮かない。ずらした無地の影で「置いてある」ことだけを示す。 */
+  --shadow: 3px 4px 0 rgba(31, 42, 68, .05);
+  --shadow-lifted: 4px 6px 0 rgba(31, 42, 68, .07);
+  --r-sheet: 4px;
+  --r-control: 7px;
+  --r-chip: 3px;
+
+  --font-display: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", "Songti SC", serif;
+  --font-body: "Hiragino Sans", "BIZ UDPGothic", "Yu Gothic UI", "Yu Gothic", Meiryo, system-ui, sans-serif;
+  --font-data: ui-monospace, SFMono-Regular, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  --font-round: "Hiragino Maru Gothic ProN", "Hiragino Maru Gothic Pro", Meiryo, "Yu Gothic UI", "Noto Sans JP", system-ui, sans-serif;
+
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--canvas);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -32,8 +59,8 @@ button { cursor: pointer; }
 button:disabled { cursor: not-allowed; }
 a { color: inherit; }
 button:focus-visible, a:focus-visible, input[type="radio"]:focus-visible + span {
-  outline: 3px solid rgba(255, 107, 114, .55);
-  outline-offset: 3px;
+  outline: 2px solid var(--seal);
+  outline-offset: 2px;
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
