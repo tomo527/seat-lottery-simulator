@@ -7416,15 +7416,15 @@
       "capacity": 350,
       "category": "hall",
       "officialFacilityUrl": "https://www.sumidasangyoukaikan.jp/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryで専用ホール等として公称350席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
+      "eligibilityReason": "現行の同施設A/B/C公式資料で可変利用を確認。issuer定義のType C番号付き代表configurationが確認できるまで通常production候補にはしない。",
       "priority": "C",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.sumidasangyoukaikan.jp/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY C SOURCE-LOCATED PREFLIGHT): 0373/0374で確認済みの現行A/B/C共通資料を再利用したが、Type C固有のissuer-numbered representative setはない。図面の数字は方眼・設備等でseat IDではない。complete numbered Type C configurationが公式公開された場合のみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-0376",
@@ -18610,15 +18610,15 @@
       "capacity": 400,
       "category": "hall",
       "officialFacilityUrl": "https://techno-plaza.jp/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryで専用ホール等として公称400席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
+      "eligibilityReason": "現行施設公式で大ホールの稼働と可変利用を確認。issuer定義の番号付きrepresentative configurationが確認できるまで通常production候補にはしない。",
       "priority": "C",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://techno-plaza.jp/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY C SOURCE-LOCATED PREFLIGHT): 現行公式は400-800人利用、椅子500脚等の可変利用資料だけで、issuer-numbered seat map/list・代表configurationがない。geometry/capacityからseat ID・ownershipを作らない。complete numbered representative configurationが公式公開された場合のみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-0951",
@@ -23259,15 +23259,15 @@
       "capacity": 410,
       "category": "hall",
       "officialFacilityUrl": "https://www.iplaza.inagi.tokyo.jp/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryで専用ホール等として公称410席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
+      "eligibilityReason": "現行市公式ページでホールと運営サイトへのリンクを確認。current/current-linked issuer-numbered setが確認できるまで通常production候補にはしない。",
       "priority": "C",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.iplaza.inagi.tokyo.jp/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY C SOURCE-LOCATED PREFLIGHT): 現行市公式は運営サイトへリンクするが、運営サイトと旧座席PDF URLの現在性を安全に確認できず、current/current-linked issuer-numbered setとして採用しない。third-party transcription、capacity fitting、geometry-only ownershipはしない。current issuer chart/listが公開・到達可能になった場合のみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-1187",
