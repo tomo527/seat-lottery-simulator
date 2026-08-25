@@ -1,0 +1,63 @@
+{
+  "wave": "TOKYO PRIORITY D RANKED NEXT ADOPT IMPLEMENTATION",
+  "date": "2026-08-25",
+  "lane": "STANDARD",
+  "batchId": "tokyo-wave-30-priority-d-ranked-next-adopt-implementation",
+  "scopeBoundary": "Only the separately authorized ADOPT tokyo-official-0859 シアターグリーン BIG TREE THEATER was visually transcribed twice from the current official 客席図面. No research or judgment audit for tokyo-official-0238, tokyo-official-0565, tokyo-official-0115, tokyo-official-0476, tokyo-official-0867, tokyo-official-0278, or tokyo-official-0586 occurred.",
+  "policyBasis": "Pass 1 was a fresh whole-chart direct visual transcription of every printed ID, top-down (A列 through L列), reading each row's blocks left to right. Pass 2 independently rereread the same current chart bottom-up (L列 through H列, then G列 through A列), reading each row's blocks right to left, without using pass 1's range text as an answer key. Published capacity (167席〜) did not create any ID, gap, ownership relation, or configuration difference; geometry did not create ownership. The STAGE DECK stage-configuration sheets were excluded from the audience-seat configuration as out-of-scope stage variation.",
+  "venues": [
+    {
+      "id": "theater-green-big-tree-standard",
+      "inventoryId": "tokyo-official-0859",
+      "venue": "シアターグリーン〔BIG TREE THEATER〕",
+      "officialEvidence": {
+        "site": "https://theater-green.com/",
+        "spacePage": "https://theater-green.com/theater/bigtree/",
+        "seatChart": "https://theater-green.com/wp-content/uploads/2023/06/bigtree_capacity.pdf",
+        "selectedConfiguration": "current official fixed 167-seat 客席図面 (H22.2.22 issuer drawing, headed 座席数167席〜（固定座席167席）)"
+      },
+      "currentness": "The current official BIG TREE THEATER space page was refetched on 2026-08-25 and confirmed the same 座席数167席〜 statement and the same 客席図面 link; the PDF was re-downloaded fresh (independent of the preceding preflight fetch) before either pass.",
+      "firstPass": {
+        "method": "Fresh full-chart visual transcription top-down by row (A列 through L列), reading each row's issuer-drawn blocks left to right.",
+        "ranges": "A-F列: each row prints seats 1,2,3,4 (left block), then 5-14 (centre block), then 15,16,17 (right block), a continuous printed sequence 1-17 with no missing number, only physical aisle gaps in the drawing. G列: left block is entirely absent (no 1-4 printed); centre block 5-14 and a single right seat 15 form a continuous printed sequence 5-15. H列, I列, J列: each a single block printing 3-14. K列: a single block printing 5-14. L列: a single, right-shifted block printing 6-13.",
+        "subtotals": "A-F: 17 x 6 = 102. G: 11. H+I+J: 12 x 3 = 36. K: 10. L: 8. Total 102+11+36+10+8 = 167.",
+        "mapped": 167
+      },
+      "secondPass": {
+        "method": "Independent visual reread bottom-up (L列 through H列, then G列 through A列), reading each row's blocks right to left; no first-pass range text was consulted.",
+        "ranges": "L列 read right-to-left as 13,12,11,10,9,8,7,6 = printed set {6-13}. K列 as 14,13,...,5 = {5-14}. J列, I列, H列 each read 14,13,...,3 = {3-14} (J列's seat 7 box was individually re-examined at 600dpi to rule out an annotation mark; none exists). G列 read right block 15, then centre 14 down to 5, with no left block present, confirming the continuous printed set {5-15}. F列 through A列 each read right block 17,16,15, then centre 14 down to 5, then left block 4,3,2,1, confirming the continuous printed set {1-17} for every one of the six rows.",
+        "subtotals": "L 8; K 10; J+I+H 12 x 3 = 36; G 11; F-A 17 x 6 = 102. Total 8+10+36+11+102 = 167.",
+        "mapped": 167
+      },
+      "comparison": {
+        "completePrintedSet": "MATCH: both passes read 167 total printed positions with the same 12 row sets.",
+        "rowBlockOwnership": "MATCH: both passes place the same three-block structure (left/centre/right) in rows A-F, the left-block-absent two-segment structure in row G, single blocks in rows H, I, J and K, and the single offset block in row L.",
+        "rangesAndGaps": "MATCH: every row transcribed in both passes as one continuous numeric sequence with no internal numeric gap; the printed physical aisle spacing in A-F and G was confirmed in both passes to not skip any seat number.",
+        "issuerSubtotal": "MATCH: both direct sums equal the chart's own 座席数167席〜（固定座席167席）heading.",
+        "selectedConfiguration": "MATCH: only the fixed audience-seat 客席図面 was scoped in both passes; the STAGE DECK stage-configuration sheets were excluded from both.",
+        "twoPassAgreement": "MATCH"
+      },
+      "outcome": {
+        "disposition": "PRODUCTION",
+        "mapped": 167,
+        "published": 167,
+        "rangeDiff": 0,
+        "confidence": "representative",
+        "metadata": "The current official 客席図面 shows no wheelchair, removable-seat, or accessibility legend or marking anywhere on the sheet; none was inferred or added. The open-ended 167席〜 wording and the separate STAGE DECK stage-build sheets are retained only as source metadata and were not mixed into the mapped configuration."
+      }
+    }
+  ],
+  "result": {"production": 1, "hold": 0, "mappedSeatsAdded": 167},
+  "productionBefore": {"venues": 130, "selectableConfigurations": 132, "configurationSeatRecords": 181170},
+  "productionAfter": {"venues": 131, "selectableConfigurations": 133, "configurationSeatRecords": 181337},
+  "validationPlan": "Run the target venue review and the bounded batch report, generate catalog/runtime artifacts only through venues:build, then run exactly one canonical npm run verify:venues before commit and push.",
+  "outOfScopePreserved": {
+    "tokyo-official-0238": "DEFER unchanged",
+    "tokyo-official-0565": "DEFER unchanged",
+    "tokyo-official-0115": "DEFER unchanged",
+    "tokyo-official-0476": "DEFER unchanged",
+    "tokyo-official-0867": "DEFER unchanged",
+    "tokyo-official-0278": "HARD-CASE DEFER unchanged; no issuer-evidence judgment audit started",
+    "tokyo-official-0586": "HARD-CASE DEFER unchanged; no issuer-evidence judgment audit started for the diagonally marked M1/M24/Q8/Q17 positions"
+  }
+}

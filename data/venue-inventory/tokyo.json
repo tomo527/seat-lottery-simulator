@@ -16849,14 +16849,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://theater-green.com/theater/bigtree/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-08-25の現行運営者公式スペースページ（BIG TREE THEATER）と直結の客席図面で、A列-L列の全印字ID・issuer block区分・「座席数167席〜（固定座席167席）」を確認。印字合計167。別承認two-passでのみproduction判定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-25の限定two-passで、現行公式BIG TREE THEATER客席図面のA列-L列全167印字IDを一致確認してproduction化。STAGE DECK舞台構成資料は客席configurationへ混在させていない。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "theater-green-big-tree-standard",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
-      "discoveryUrlRaw": "http://www.theater-green.com/",
-      "blockingReason": "ADOPT (TOKYO PRIORITY D RANKED NEXT PREFLIGHT): the current official 客席図面 defines the fixed 167-seat configuration with a complete printed ID set (A-F 1-4/5-14/15-17, G 5-14 and 15, H-J 3-14, K 5-14, L 6-13) and no wheelchair or removable marking. Next permitted work is a separately authorized independent two-pass transcription of rows A through L including every printed gap; keep the open-ended 167席〜 additions and the STAGE DECK patterns as metadata and infer no accessibility relation."
+      "discoveryUrlRaw": "http://www.theater-green.com/"
     },
     {
       "inventoryId": "tokyo-official-0860",

@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "theater-green-big-tree-standard",
+  "name": "シアターグリーン〔BIG TREE THEATER〕",
+  "prefecture": "東京都",
+  "city": "豊島区",
+  "aliases": ["シアターグリーン BIG TREE THEATER", "BIG TREE THEATER", "シアターグリーン 〔BIG THREE THEATER〕"],
+  "venueType": "theater",
+  "sources": [
+    {"id":"official-site","official":true,"roles":["facility"],"publisher":"シアターグリーン","title":"シアターグリーン 公式サイト","url":"https://theater-green.com/","checkedAt":"2026-08-25"},
+    {"id":"official-space-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"シアターグリーン","title":"BIG TREE THEATER 施設案内","url":"https://theater-green.com/theater/bigtree/","checkedAt":"2026-08-25"},
+    {"id":"official-seating-chart","official":true,"roles":["seat-structure","seat-count"],"publisher":"シアターグリーン","title":"BIG TREE THEATER 客席図面","url":"https://theater-green.com/wp-content/uploads/2023/06/bigtree_capacity.pdf","checkedAt":"2026-08-25"}
+  ],
+  "configurations": [
+    {
+      "id": "standard-167-seat-map",
+      "canonicalName": "固定座席167席・標準配置",
+      "issuerDefinedCondition": "現行公式客席図面が示す固定座席167席の標準配置。",
+      "selectionBasis": "公式客席図面のA列からL列に属する全印字座席番号を直接転記する。舞台面のSTAGE DECK組替資料は舞台構成であり、この客席configurationへ混在させない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-25 current official BIG TREE THEATER space page and its directly linked 客席図面",
+      "sourceIds": ["official-site", "official-space-page", "official-seating-chart"],
+      "differenceBasisSourceIds": ["official-seating-chart"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 167,
+      "scope": {"kind":"official-variant","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式の固定167番号席を抽選します。A列からL列の列境界と各列内の番号は公式図面の印字にそのまま従います。舞台面のSTAGE DECK組替patternなど舞台構成に関する資料はこの客席configurationに含めません。",
+      "wheelchairSemantics": {"status":"not-applicable","description":"現行公式客席図面は車椅子スペース、可動席、置換関係についていかなる注記・凡例も示さない。番号の追加・削除や置換は行わない。","sourceIds":["official-seating-chart"]},
+      "confidence": "representative",
+      "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-official-seating-chart-visual-transcriptions-with-row-and-block-order-reversal","seatStructure":"matched","seatCount":"matched","rangeDiff":0,"unresolvedIssues":[]},
+      "ranges": [
+        {"rowLabel":"A列","from":1,"to":17,"excluded":[]},
+        {"rowLabel":"B列","from":1,"to":17,"excluded":[]},
+        {"rowLabel":"C列","from":1,"to":17,"excluded":[]},
+        {"rowLabel":"D列","from":1,"to":17,"excluded":[]},
+        {"rowLabel":"E列","from":1,"to":17,"excluded":[]},
+        {"rowLabel":"F列","from":1,"to":17,"excluded":[]},
+        {"rowLabel":"G列","from":5,"to":15,"excluded":[]},
+        {"rowLabel":"H列","from":3,"to":14,"excluded":[]},
+        {"rowLabel":"I列","from":3,"to":14,"excluded":[]},
+        {"rowLabel":"J列","from":3,"to":14,"excluded":[]},
+        {"rowLabel":"K列","from":5,"to":14,"excluded":[]},
+        {"rowLabel":"L列","from":6,"to":13,"excluded":[]}
+      ]
+    }
+  ]
+}

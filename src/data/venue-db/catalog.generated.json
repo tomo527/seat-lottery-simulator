@@ -1604,6 +1604,32 @@
   },
   {
     "schemaVersion": 2,
+    "id": "theater-green-big-tree-standard",
+    "venueGroupId": "theater-green-big-tree-standard",
+    "name": "シアターグリーン〔BIG TREE THEATER〕",
+    "searchAliases": [
+      "BIG TREE THEATER",
+      "シアターグリーン 〔BIG THREE THEATER〕",
+      "シアターグリーン BIG TREE THEATER"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "豊島区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard-167-seat-map",
+        "canonicalName": "固定座席167席・標準配置",
+        "seatCount": 167,
+        "dataPath": "/venue-db/venues/theater-green-big-tree-standard--standard-167-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の固定167番号席を抽選します。A列からL列の列境界と各列内の番号は公式図面の印字にそのまま従います。舞台面のSTAGE DECK組替patternなど舞台構成に関する資料はこの客席configurationに含めません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "theater-h-standard",
     "venueGroupId": "theater-h-standard",
     "name": "シアターH",
