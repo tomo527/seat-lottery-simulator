@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "cerulean-tower-noh-standard",
+  "name": "セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": ["セルリアンタワー能楽堂", "セルリアンタワー能楽堂 座席表"],
+  "venueType": "theater",
+  "sources": [
+    {"id":"official-site","official":true,"roles":["facility"],"publisher":"セルリアンタワー能楽堂","title":"セルリアンタワー能楽堂 公式サイト","url":"https://www.ceruleantower-noh.com/","checkedAt":"2026-08-25"},
+    {"id":"official-theatre-guide","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"セルリアンタワー能楽堂","title":"セルリアンタワー能楽堂 劇場案内","url":"https://www.ceruleantower-noh.com/about/","checkedAt":"2026-08-25"},
+    {"id":"official-standard-seat-map","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"セルリアンタワー能楽堂","title":"セルリアンタワー能楽堂 座席表","url":"https://www.ceruleantower-noh.com/about/seating.pdf","checkedAt":"2026-08-25"},
+    {"id":"official-rental-guide","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"セルリアンタワー能楽堂","title":"セルリアンタワー能楽堂 ご利用案内","url":"https://www.ceruleantower-noh.com/rental/","checkedAt":"2026-08-25"}
+  ],
+  "configurations": [
+    {
+      "id": "standard-201-seat-map",
+      "canonicalName": "定席・公式201番号席配置",
+      "issuerDefinedCondition": "現行公式座席表が示す定席201席の標準配置。",
+      "selectionBasis": "公式図の正面・脇正面・中正面に属する全印字IDを直接転記する。座席の取外しを伴う利用形態はこの定席配置へ混在させない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-25 current official theatre guide, rental guide, and linked 201-seat map",
+      "sourceIds": ["official-site", "official-theatre-guide", "official-standard-seat-map", "official-rental-guide"],
+      "differenceBasisSourceIds": ["official-standard-seat-map", "official-rental-guide"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 201,
+      "scope": {"kind":"official-variant","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式の定席201番号席を抽選します。正面・脇正面・中正面の区分と列境界は公式図に従います。公式利用案内が示す座席の取外しを伴う別利用形態は含めません。",
+      "wheelchairSemantics": {"status":"not-applicable","description":"現行公式の定席201席図は、通常番号席との置換関係を定義した車椅子席を示さない。番号の追加・削除や置換は行わない。","sourceIds":["official-standard-seat-map","official-rental-guide"]},
+      "confidence": "representative",
+      "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-official-standard-seat-map-visual-transcriptions-with-three-category-subtotal-review","seatStructure":"matched","seatCount":"matched","rangeDiff":0,"unresolvedIssues":[]},
+      "ranges": [
+        {"areaId":"shomen","areaLabel":"正面","rowLabel":"1列","from":1,"to":15,"excluded":[]},
+        {"areaId":"shomen","areaLabel":"正面","rowLabel":"2列","from":1,"to":16,"excluded":[]},
+        {"areaId":"shomen","areaLabel":"正面","rowLabel":"3列","from":1,"to":15,"excluded":[]},
+        {"areaId":"shomen","areaLabel":"正面","rowLabel":"4列","from":1,"to":14,"excluded":[]},
+        {"areaId":"shomen","areaLabel":"正面","rowLabel":"5列","from":1,"to":14,"excluded":[]},
+        {"areaId":"shomen","areaLabel":"正面","rowLabel":"6列","from":1,"to":13,"excluded":[]},
+        {"areaId":"waki-shomen","areaLabel":"脇正面","rowLabel":"1列","from":1,"to":10,"excluded":[]},
+        {"areaId":"waki-shomen","areaLabel":"脇正面","rowLabel":"2列","from":1,"to":9,"excluded":[]},
+        {"areaId":"waki-shomen","areaLabel":"脇正面","rowLabel":"3列","from":1,"to":10,"excluded":[]},
+        {"areaId":"waki-shomen","areaLabel":"脇正面","rowLabel":"4列","from":1,"to":10,"excluded":[]},
+        {"areaId":"waki-shomen","areaLabel":"脇正面","rowLabel":"5列","from":1,"to":9,"excluded":[]},
+        {"areaId":"waki-shomen","areaLabel":"脇正面","rowLabel":"6列","from":1,"to":10,"excluded":[]},
+        {"areaId":"naka-shomen","areaLabel":"中正面","rowLabel":"1列","from":1,"to":4,"excluded":[]},
+        {"areaId":"naka-shomen","areaLabel":"中正面","rowLabel":"2列","from":1,"to":7,"excluded":[]},
+        {"areaId":"naka-shomen","areaLabel":"中正面","rowLabel":"3列","from":1,"to":10,"excluded":[]},
+        {"areaId":"naka-shomen","areaLabel":"中正面","rowLabel":"4列","from":1,"to":13,"excluded":[]},
+        {"areaId":"naka-shomen","areaLabel":"中正面","rowLabel":"5列","from":1,"to":11,"excluded":[]},
+        {"areaId":"naka-shomen","areaLabel":"中正面","rowLabel":"6列","from":1,"to":7,"excluded":[]},
+        {"areaId":"naka-shomen","areaLabel":"中正面","rowLabel":"7列","from":1,"to":4,"excluded":[]}
+      ]
+    }
+  ]
+}

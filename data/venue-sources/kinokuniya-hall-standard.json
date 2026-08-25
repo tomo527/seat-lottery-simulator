@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "kinokuniya-hall-standard",
+  "name": "紀伊國屋ホール",
+  "prefecture": "東京都",
+  "city": "新宿区",
+  "aliases": ["紀伊國屋ホール 座席表", "紀伊国屋ホール"],
+  "venueType": "theater",
+  "sources": [
+    {"id":"official-hall-details","official":true,"roles":["facility","event-layout"],"publisher":"紀伊國屋書店","title":"紀伊國屋ホール 施設詳細","url":"https://store.kinokuniya.co.jp/store/kinokuniya-hall/?type=details","checkedAt":"2026-08-25"},
+    {"id":"official-hall-guide","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"紀伊國屋書店","title":"紀伊國屋ホール ご利用案内","url":"https://store.kinokuniya.co.jp/theater/guide-hall/","checkedAt":"2026-08-25"},
+    {"id":"official-standard-seat-chart","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"紀伊國屋書店","title":"紀伊國屋ホール座席表（客席数427）","url":"https://store.kinokuniya.co.jp/wp-content/uploads/2021/03/%E6%96%B0%E3%83%9B%E3%83%BC%E3%83%AB%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf","checkedAt":"2026-08-25"}
+  ],
+  "configurations": [
+    {
+      "id": "standard-427-seat-chart",
+      "canonicalName": "標準・公式427番号席配置",
+      "issuerDefinedCondition": "現行公式利用案内から直結する「紀伊國屋ホール座席表（客席数427）」の標準配置。",
+      "selectionBasis": "公式図のA-V列に印字された全IDを直接転記する。図に明確に区切られた左右・中央の客席区画を表示用に整理し、可脱着注記であっても印字IDを削除しない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-25 current official hall guide and linked 427-seat chart",
+      "sourceIds": ["official-hall-details", "official-hall-guide", "official-standard-seat-chart"],
+      "differenceBasisSourceIds": ["official-standard-seat-chart"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 427,
+      "scope": {"kind":"official-variant","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式の427番号席を抽選します。A-V列の左右・中央ブロックは公式図の明示区画を表示用に整理した名称です。I・J列の1・2・19・20は公式注記どおり取り外し可能で車椅子スペースとしても使用可能ですが、図上の印字IDとして保持します。",
+      "wheelchairSemantics": {"status":"not-reflected","description":"公式図はI・J列の1・2・19・20を取り外し可能で車椅子スペースとしても使用可能とするが、通常番号席との置換関係は定義しない。8つの印字IDを保持し、追加・削除・置換は行わない。","sourceIds":["official-standard-seat-chart"],"accessibilityConversionNotReflected":true},
+      "confidence": "representative",
+      "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-linked-official-427-seat-chart-visual-transcriptions-with-removable-wheelchair-conversion-note-review","seatStructure":"matched","seatCount":"matched","rangeDiff":0,"unresolvedIssues":[]},
+      "ranges": [
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"A","from":2,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"A","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"A","from":16,"to":19,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"B","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"B","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"B","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"C","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"C","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"C","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"D","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"D","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"D","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"E","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"E","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"E","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"F","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"F","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"F","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"G","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"G","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"G","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"H","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"H","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"H","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"I","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"I","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"I","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"J","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"J","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"J","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"K","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"K","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"K","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"L","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"L","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"L","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"M","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"M","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"M","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"N","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"N","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"N","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"O","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"O","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"O","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"P","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"P","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"P","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"Q","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"Q","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"Q","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"R","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"R","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"R","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"S","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"S","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"S","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"T","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"T","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"T","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"U","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"U","from":6,"to":15,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"U","from":16,"to":20,"excluded":[]},
+        {"areaId":"left-block","areaLabel":"左側ブロック","rowLabel":"V","from":1,"to":5,"excluded":[]}, {"areaId":"center-block","areaLabel":"中央ブロック","rowLabel":"V","from":6,"to":14,"excluded":[]}, {"areaId":"right-block","areaLabel":"右側ブロック","rowLabel":"V","from":16,"to":20,"excluded":[]}
+      ]
+    }
+  ]
+}

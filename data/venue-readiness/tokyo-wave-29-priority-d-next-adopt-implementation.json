@@ -1,0 +1,11 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-29-priority-d-next-adopt-implementation",
+  "baselineDate": "2026-08-25",
+  "scope": "TOKYO Priority D bounded independent two-pass implementation of exactly two preflight ADOPTs.",
+  "expectedVenueCount": 2,
+  "venues": [
+    {"venueId":"cerulean-tower-noh-standard","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain every printed ID in 正面・脇正面・中正面 for the official standard201-seat map; keep removable-seat use as metadata only."},
+    {"venueId":"kinokuniya-hall-standard","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain every A-V printed ID in the official427-seat chart, including I/J 1-2 and19-20; retain only the issuer's removable/wheelchair-use annotation without inferring replacement."}
+  ]
+}

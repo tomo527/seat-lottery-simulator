@@ -4415,13 +4415,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://store.kinokuniya.co.jp/theater/guide-hall/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-08-25の現行紀伊國屋書店公式利用案内と直結座席表で、427席の全印字番号・A-V列・左右中央block・可脱着車椅子転換注記を確認。別承認two-passでのみproduction判定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-25の現行紀伊國屋書店公式利用案内と直結427席座席表を独立two-passで照合し、A-Vの全印字ID、図上の左右・中央区画、可脱着車椅子転換注記を推測なくproductionへ同期した。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "kinokuniya-hall-standard",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
-      "blockingReason": "ADOPT (TOKYO PRIORITY D NEXT HIGH-YIELD PREFLIGHT): current official guide directly links the complete 427-seat chart. Next permitted work is a separately authorized independent two-pass transcription of all A-V printed IDs and gaps, followed by issuer subtotal comparison; retain I/J列 1-2・19-20 as printed removable positions and record wheelchair conversion only as issuer metadata."
+      "blockingReason": null
     },
     {
       "inventoryId": "tokyo-official-0223",
@@ -12730,13 +12730,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.ceruleantower-noh.com/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-08-25の現行運営者公式劇場案内、定席201席の利用案内、直結の全番号座席表で、正面87・脇正面58・中正面56を確認。別承認two-passでのみproduction判定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-25の現行運営者公式劇場案内、定席201席の利用案内、直結座席表を独立two-passで照合し、正面87・脇正面58・中正面56の全印字IDを推測なくproductionへ同期した。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "cerulean-tower-noh-standard",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
-      "blockingReason": "ADOPT (TOKYO PRIORITY D NEXT HIGH-YIELD PREFLIGHT): current official chart defines the 201-seat standard map with complete printed IDs and issuer subtotals. Next permitted work is separately authorized independent two-pass transcription of 正面・脇正面・中正面, including all printed gaps; record removable-seat layouts only as metadata and do not infer accessibility relations."
+      "blockingReason": null
     },
     {
       "inventoryId": "tokyo-official-0648",

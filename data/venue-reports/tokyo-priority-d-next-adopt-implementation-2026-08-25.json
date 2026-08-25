@@ -1,0 +1,36 @@
+{
+  "wave": "TOKYO PRIORITY D NEXT ADOPT IMPLEMENTATION",
+  "date": "2026-08-25",
+  "lane": "DENSE",
+  "batchId": "tokyo-wave-29-priority-d-next-adopt-implementation",
+  "scopeBoundary": "Only the separately authorized ADOPTs 0647 and 0222 were visually transcribed twice from the named current/current-linked official charts. No research or judgment audit for 0238, 0565, 0278, or any other candidate occurred.",
+  "policyBasis": "For each venue, pass 1 was a fresh whole-chart direct visual transcription of every printed ID. Pass 2 reread the same chart in a different category/row order before any comparison. Published capacity did not create any ID, gap, ownership relation, or configuration difference; geometry did not create ownership.",
+  "venues": [
+    {
+      "id": "cerulean-tower-noh-standard",
+      "inventoryId": "tokyo-official-0647",
+      "venue": "セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕",
+      "officialEvidence": {"site":"https://www.ceruleantower-noh.com/","theatreGuide":"https://www.ceruleantower-noh.com/about/","seatChart":"https://www.ceruleantower-noh.com/about/seating.pdf","rentalGuide":"https://www.ceruleantower-noh.com/rental/","selectedConfiguration":"current official standard fixed 201-seat map"},
+      "currentness":"The active operator site, current theatre guide, and rental guide publish the linked standard map and identify 201 fixed seats.",
+      "firstPass":{"method":"Fresh full-chart visual transcription by issuer category and printed column order.","ranges":"正面: 1列1-15, 2列1-16, 3列1-15, 4列1-14, 5列1-14, 6列1-13; 脇正面: 1列1-10, 2列1-9, 3列1-10, 4列1-10, 5列1-9, 6列1-10; 中正面: 1列1-4, 2列1-7, 3列1-10, 4列1-13, 5列1-11, 6列1-7, 7列1-4.","subtotals":"87 + 58 + 56 = 201.","mapped":201},
+      "secondPass":{"method":"Independent visual reread in a different order: 中正面7列→1列, 脇正面6列→1列, then 正面6列→1列; no first-pass range text was used.","ranges":"中正面 4/7/10/13/11/7/4; 脇正面 10/9/10/10/9/10; 正面 15/16/15/14/14/13, each as continuous printed sequences.","subtotals":"56 + 58 + 87 = 201.","mapped":201},
+      "comparison":{"completePrintedSet":"MATCH","rowBlockOwnership":"MATCH: all three issuer labels and all printed column labels match.","rangesAndGaps":"MATCH: every mapped sequence is continuous; no gap was filled.","issuerSubtotal":"MATCH: 87+58+56=201.","selectedConfiguration":"MATCH: standard fixed-seat map only.","twoPassAgreement":"MATCH"},
+      "outcome":{"disposition":"PRODUCTION","mapped":201,"published":201,"rangeDiff":0,"confidence":"representative","metadata":"The rental guide allows other uses with seats removed; that non-standard use is excluded. No accessibility replacement relation is defined, so none was inferred."}
+    },
+    {
+      "id": "kinokuniya-hall-standard",
+      "inventoryId": "tokyo-official-0222",
+      "venue": "紀伊國屋ホール",
+      "officialEvidence": {"details":"https://store.kinokuniya.co.jp/store/kinokuniya-hall/?type=details","hallGuide":"https://store.kinokuniya.co.jp/theater/guide-hall/","seatChart":"https://store.kinokuniya.co.jp/wp-content/uploads/2021/03/%E6%96%B0%E3%83%9B%E3%83%BC%E3%83%AB%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf","selectedConfiguration":"current-linked official 427-seat standard chart"},
+      "currentness":"The active official hall guide directly links the chart headed 客席数427.",
+      "firstPass":{"method":"Fresh full-chart visual transcription row A through V, splitting only at the three clearly drawn seat blocks.","ranges":"A: 左2-5/中央6-14/右16-19; B,D,F,H,J,K,M,O,Q,S,U: 左1-5/中央6-15/右16-20; C,E,G,I,L,N,P,R,T,V: 左1-5/中央6-14/右16-20.","subtotals":"A17 + B20 + C-H117 + I/J39 + K-V234 = 427.","mapped":427},
+      "secondPass":{"method":"Independent visual reread bottom-up (V through K), then J/I removable positions, then H through A; no first-pass range text was used.","ranges":"V/L/T/R/P/N: middle6-14; U/S/Q/O/M/K: middle6-15; J is 1-20 across the three blocks, I retains printed 1-2 and19-20 while its middle ends14; A is 2-5/6-14/16-19.","subtotals":"Bottom K-V234; I/J39; C-H117; B20; A17 =427.","mapped":427},
+      "comparison":{"completePrintedSet":"MATCH","rowBlockOwnership":"MATCH: A-V labels and the three issuer-drawn seat blocks match.","rangesAndGaps":"MATCH: A lacks1/15/20 and the 19-seat rows omit15; these chart gaps were retained without filling.","issuerSubtotal":"MATCH: chart heading427 and both direct sums427.","selectedConfiguration":"MATCH: official427-seat chart only.","twoPassAgreement":"MATCH"},
+      "outcome":{"disposition":"PRODUCTION","mapped":427,"published":427,"rangeDiff":0,"confidence":"representative","metadata":"The chart marks I/J 1-2 and19-20 as removable and usable as wheelchair spaces. All eight remain printed selectable IDs; no replacement relation or unnumbered ID was inferred."}
+    }
+  ],
+  "result": {"production":2,"hold":0,"mappedSeatsAdded":628},
+  "productionAfter": {"venues":130,"selectableConfigurations":132,"configurationSeatRecords":181170},
+  "validationPlan": "Run target reviews and the bounded batch report, generate catalog/runtime artifacts only through venues:build, then run exactly one canonical npm run verify:venues before commit and push.",
+  "outOfScopePreserved": {"tokyo-official-0238":"DEFER unchanged","tokyo-official-0565":"DEFER unchanged","tokyo-official-0278":"HARD-CASE DEFER unchanged; no issuer-evidence judgment audit started"}
+}

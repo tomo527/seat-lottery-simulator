@@ -14,6 +14,8 @@ The authorized `TOKYO PRIORITY D RANKED FOLLOW-UP PREFLIGHT` is complete with **
 
 `TOKYO PRIORITY D NEXT HIGH-YIELD PREFLIGHT` is complete with **2 ADOPT / 2 DEFER / 1 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-d-next-high-yield-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-next-high-yield-preflight-2026-08-25.json) first checked the mandated carry-overs: `0647` セルリアンタワー能楽堂 is **ADOPT** from its current 201-seat official chart (正面87 / 脇正面58 / 中正面56), while `0238` 音楽の友ホール is **DEFER** because the active operator defines only a variable maximum208 movable-chair capacity and no current complete numbered representative set. Metadata-only reranking then checked `0565` シアタートラム (**DEFER**: its basic225 chart has unnumbered intermediate boxes), `0278` 東京グローブ座 (**HARD-CASE DEFER**: complete 707-seat floor charts but an unreconciled unnumbered-wheelchair/subtotal relation), and `0222` 紀伊國屋ホール (**ADOPT**: current-linked complete 427-seat A-V chart, with printed removable/possible-wheelchair I/J positions retained). Research stopped at the five-candidate ceiling, not at three ADOPTs. Only report/inventory/HANDOFF changed; production remains **128 venues / 130 selectable configurations / 180,542 configuration-seat records**.
 
+`TOKYO-WAVE-29 PRIORITY D NEXT ADOPT IMPLEMENTATION` has completed its independent two-pass decision for the two separately authorized ADOPTs: **2 PRODUCTION / 0 HOLD**. [`data/venue-reports/tokyo-priority-d-next-adopt-implementation-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-next-adopt-implementation-2026-08-25.json) records the direct comparisons. セルリアンタワー能楽堂 is **201 mapped / 201 published / rangeDiff 0**: 正面87, 脇正面58, 中正面56; the operator's removable-seat use remains outside the standard fixed-seat configuration and no accessibility relation was inferred. 紀伊國屋ホール is **427 / 427 / 0**: all A-V printed IDs and official drawn left/center/right seat blocks remain mapped; I/J 1・2・19・20 remain selectable printed positions, with the official removable/possible-wheelchair-use note retained as metadata and no replacement inferred. Source, inventory, Wave29 batch/readiness, reviewed fingerprints, catalog, and lazy runtime now total **130 venues / 132 selectable configurations / 181,170 configuration-seat records**. Canonical verification, commit/push, Workers Build, and public UI smoke remain the next release-closure steps for this in-progress save state.
+
 TOKYO-WAVE-25 preflight is formally closed with **0 ADOPT / 6 DEFERRED**. [`data/venue-reports/tokyo-wave-25-2026-08-24.json`](../data/venue-reports/tokyo-wave-25-2026-08-24.json) preserves the completed current first-party evidence for `0726`, `0993`, `0989`, `0561`, `0426`, and `0708`; their inventory records are `blocked` so they cannot re-enter ordinary candidate discovery. No venue source, range, catalog, runtime artifact, fingerprint, or production total changed.
 
 The authorized `NEXT TERRA PREFLIGHT` is now formally closed with **0 ADOPT / 4 DEFERRED / 2 HARD-CASE DEFER**. [`data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json`](../data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json) preserves the completed first-party evidence for `0373`, `0425`, `0709`, `0611`, `1017`, and `1058`; their inventory records are `blocked` so they cannot re-enter ordinary discovery. None is permanently rejected.
@@ -46,17 +48,17 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | --- | --- |
 | Wave24 promotions | 3 (`tokyo-wave3-1170`, `tokyo-wave3-0645`, `tokyo-wave3-0330`) |
 | Wave24 HOLD | 1 (`tokyo-wave3-1114`) |
-| Authoring production target | 128 venues / 130 selectable configurations / 180,542 configuration-seat records |
+| Authoring production target | 130 venues / 132 selectable configurations / 181,170 configuration-seat records |
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
-| Validation / generated artifacts | `npm run verify:venues` passed for Wave28 (213 unit tests, 17 E2E tests); catalog/runtime/fingerprint synchronized; semantic rangeDiff validation remains an error on mismatch |
-| Commit / push / Workers / public UI | Wave28 `d2dc595` pushed; Workers Build `completed / success`; public 1036/0133/0282 search and displayed 189/176/237 counts, one draw each, console warnings/errors all passed |
+| Validation / generated artifacts | Wave29 source, catalog/runtime, and fingerprint are synchronized; canonical `npm run verify:venues` is the required pending release validation; semantic rangeDiff validation remains an error on mismatch |
+| Commit / push / Workers / public UI | Wave28 `d2dc595` is the last released production commit; Wave29 push, managed Workers Build, and two-venue public UI smoke remain pending |
 | Legacy type-only A/B lane | Closed: 1 production / 8 DEFER / 0 hard-case DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo A/B source-located lane | Closed: `0374` DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo priority C source-located preflight | Closed: `0375` / `0950` / `1186` DEFER; 0 ADOPT |
 | Tokyo priority C true-unprocessed | CLOSED: `0398` / `0407` / `0518` DEFER; true-unprocessed C = 0 |
 | Tokyo priority D high-yield | Preflight: 835 outstanding → 90 URL/capacity screen → 10 dedicated-hall shortlist; `0492` / `0508` DEFER. Wave27: `1007` / `0797` / `0930` are all PRODUCTION, adding 612 mapped seats. |
 | Tokyo priority D ranked follow-up | Wave28 promoted all 3 ADOPTs: `1036` 189, `0133` 176, `0282` 237. Production totals are 128 / 130 / 180,542. |
-| Tokyo priority D next high-yield preflight | `0647` セルリアンタワー能楽堂 and `0222` 紀伊國屋ホール are ADOPT for separately authorized two-pass only; `0238` / `0565` are blocked DEFER; `0278` is blocked HARD-CASE DEFER. No production change. |
+| Tokyo priority D next high-yield | Wave29 promotes `0647` セルリアンタワー能楽堂 201 and `0222` 紀伊國屋ホール 427 after MATCH two-pass review. `0238` / `0565` remain blocked DEFER; `0278` remains blocked HARD-CASE DEFER. |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -99,4 +101,4 @@ This is a candidate-ranking rule only; it does not alter the evidence/adoption p
 
 ## Exact next action
 
-Stop. A separately authorized bounded independent two-pass implementation may target only `tokyo-official-0647` セルリアンタワー能楽堂 and `tokyo-official-0222` 紀伊國屋ホール. Do not implement or reopen `tokyo-official-0238` 音楽の友ホール or `tokyo-official-0565` シアタートラム (DEFER); do not implement `tokyo-official-0278` 東京グローブ座 without a separate issuer-evidence judgment audit resolving its unnumbered wheelchair-space/subtotal relation. Do not start other candidate research without new authorization.
+Stop after Wave29 release closure. Do not start candidate research, a hard-case audit, or implementation of another venue without separate authorization. Keep `tokyo-official-0238` 音楽の友ホール and `tokyo-official-0565` シアタートラム as DEFER; keep `tokyo-official-0278` 東京グローブ座 as HARD-CASE DEFER and outside implementation until a separately authorized issuer-evidence judgment audit resolves its unnumbered wheelchair-space/707-seat-subtotal relation.

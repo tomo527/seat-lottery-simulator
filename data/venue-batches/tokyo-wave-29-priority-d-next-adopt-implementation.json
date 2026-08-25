@@ -1,0 +1,12 @@
+{
+  "batchId": "tokyo-wave-29-priority-d-next-adopt-implementation",
+  "createdAt": "2026-08-25",
+  "scope": "TOKYO Priority D bounded implementation: セルリアンタワー能楽堂 and 紀伊國屋ホール only. Each selected current/current-linked official standard chart was visually transcribed twice independently. No candidate research, deferred/HOLD reopening, or 東京グローブ座 judgment audit is in scope.",
+  "status": "complete",
+  "priority": "D",
+  "targetVenueIds": ["tokyo-official-0647", "tokyo-official-0222"],
+  "carryOvers": [
+    {"inventoryId":"tokyo-official-0647","carryOverFrom":"tokyo-priority-d-ranked-followup-preflight-2026-08-25","previousStatus":"source-located","recheckReason":"The current official standard 201-seat map was independently reread in the three issuer categories. Removable-seat use remains metadata and is not mixed into the standard configuration.","recheckNotBefore":"2026-08-25"},
+    {"inventoryId":"tokyo-official-0222","carryOverFrom":"tokyo-priority-d-ranked-followup-preflight-2026-08-25","previousStatus":"source-located","recheckReason":"The current-linked official 427-seat chart was independently reread for all A-V printed IDs and drawn blocks. I/J 1-2 and 19-20 remain mapped printed positions with the issuer removable/wheelchair-use note.","recheckNotBefore":"2026-08-25"}
+  ]
+}

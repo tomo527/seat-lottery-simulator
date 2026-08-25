@@ -57,6 +57,20 @@
       ],
       "sha256": "c51c8471e496ffc57c6e4562255104c21e843a17faa5da61afd180cec855e624"
     },
+    "cerulean-tower-noh-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard-201-seat-map": {
+          "count": 201,
+          "samples": [
+            "shomen/1列/1",
+            "waki-shomen/2列/4",
+            "naka-shomen/7列/4"
+          ],
+          "sha256": "57e02f99f3a91538f848b08e11e68b9bf2096e48e7a5438c786fae0078a56261"
+        }
+      }
+    },
     "chofu-green-main-standard": {
       "count": 1295,
       "samples": [
@@ -421,6 +435,20 @@
             "main-seating/J/17"
           ],
           "sha256": "83c43c5cb4cb9f9275cb6d1f259abad7b9094eaf1464264f5a15fbba39d89501"
+        }
+      }
+    },
+    "kinokuniya-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard-427-seat-chart": {
+          "count": 427,
+          "samples": [
+            "left-block/A/2",
+            "left-block/L/1",
+            "right-block/V/20"
+          ],
+          "sha256": "95a5b42d66a4183177b25e483c927f044a80af30bd0df8a93399e40087c1f57f"
         }
       }
     },

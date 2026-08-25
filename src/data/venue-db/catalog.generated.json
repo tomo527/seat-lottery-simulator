@@ -92,6 +92,31 @@
     "dataPath": "/venue-db/venues/bunkyo-civic-small-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "cerulean-tower-noh-standard",
+    "venueGroupId": "cerulean-tower-noh-standard",
+    "name": "セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕",
+    "searchAliases": [
+      "セルリアンタワー能楽堂",
+      "セルリアンタワー能楽堂 座席表"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard-201-seat-map",
+        "canonicalName": "定席・公式201番号席配置",
+        "seatCount": 201,
+        "dataPath": "/venue-db/venues/cerulean-tower-noh-standard--standard-201-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の定席201番号席を抽選します。正面・脇正面・中正面の区分と列境界は公式図に従います。公式利用案内が示す座席の取外しを伴う別利用形態は含めません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "chofu-green-main-standard",
     "name": "調布市グリーンホール 大ホール",
     "searchAliases": [
@@ -693,6 +718,31 @@
         "dataPath": "/venue-db/venues/kichijoji-theatre-basic-stage--basic-stage-189-seat-layout.json",
         "scope": "official-variant",
         "scopeDisclosure": "現行公式の基本舞台189番号席を抽選します。イベントごとに舞台形状や座席配置が異なる場合は、この基本配置へ混在させません。側方のBL/BRは公式図の明確な別ブロックを表示用に整理した名称です。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "kinokuniya-hall-standard",
+    "venueGroupId": "kinokuniya-hall-standard",
+    "name": "紀伊國屋ホール",
+    "searchAliases": [
+      "紀伊国屋ホール",
+      "紀伊國屋ホール 座席表"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "新宿区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard-427-seat-chart",
+        "canonicalName": "標準・公式427番号席配置",
+        "seatCount": 427,
+        "dataPath": "/venue-db/venues/kinokuniya-hall-standard--standard-427-seat-chart.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の427番号席を抽選します。A-V列の左右・中央ブロックは公式図の明示区画を表示用に整理した名称です。I・J列の1・2・19・20は公式注記どおり取り外し可能で車椅子スペースとしても使用可能ですが、図上の印字IDとして保持します。",
         "fixedOnly": false
       }
     ]
