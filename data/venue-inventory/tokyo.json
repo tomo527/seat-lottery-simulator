@@ -12498,13 +12498,13 @@
       "officialFacilityUrl": null,
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "2026-08-25の現行運営者公式アクセスページ（http://eurolive.jp/access/）掲載の「ユーロライブ座席表」画像で、A-M列の全印字ID・block区分（左1-4/中5-12/右13-15、L列は中・右のみ、M列は右13-14のみ）・「178席」を確認。印字合計178は公式総数と一致。M-13・14は2023年7月中旬より補助席仕様の disclosure のみで印字IDは維持。別承認two-passでのみproduction判定する。",
+      "eligibilityReason": "2026-08-25の現行運営者座席表画像（http://eurolive.jp/access/img/eurolive_seat.jpg）で独立two-pass MATCH: A-M列の全印字ID・block区分・「178席」を確認、印字合計178は公式総数と一致。ただしeurolive.jpは現在HTTPSエンドポイントを提供せず（TLS handshakeがserver側internal errorで一貫して失敗）、schema validatorはsources[].urlに全statusでHTTPSを要求するため、source JSON作成には至らない。SOURCE/POLICY HOLD。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://eurolive.jp/",
-      "blockingReason": "ADOPT (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the current official 座席表 image (http://eurolive.jp/access/img/eurolive_seat.jpg) defines the fixed 178-seat configuration with a complete printed ID set (rows A-K: left 1-4 / center 5-12 / right 13-15; row L: center 5-12 / right 13-15 only, no left block; row M: right 13-14 only) whose independently summed total matches the issuer's own 178 exactly. M-13 and M-14 are disclosed as auxiliary (補助席) seating since 2023-07 but remain printed IDs, not excluded. No wheelchair marking is present. Next permitted work is a separately authorized independent two-pass transcription of rows A through M including every block boundary and the auxiliary-seat disclosure; infer no accessibility relation and no additional configuration."
+      "blockingReason": "SOURCE/POLICY HOLD (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3 TWO-PASS IMPLEMENTATION ATTEMPT): independent two-pass transcription of the current official 座席表 image MATCHED exactly (178 mapped = 178 published, rangeDiff 0, M-13/M-14 補助席 disclosure retained as metadata), but eurolive.jp (and parent domain eurospace.co.jp) serve no working HTTPS endpoint — repeated TLS handshakes fail with a server-side internal-error alert on two independent client stacks — and scripts/venues/validation.mjs:182 requires an HTTPS sources[].url unconditionally for every source status. No source JSON was authored. Reopen only once a current official HTTPS endpoint exists for this venue; see data/venue-reports/tokyo-priority-d-ranked-next-preflight-3-implementation-attempt-2026-08-25.json for the preserved evidence."
     },
     {
       "inventoryId": "tokyo-official-0636",

@@ -1,0 +1,165 @@
+{
+  "wave": "TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3 TWO-PASS IMPLEMENTATION ATTEMPT",
+  "date": "2026-08-25",
+  "phase": "Bounded independent two-pass implementation, authorized by the exact next action of the TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3 report, gated by a repository transport-policy check performed before any transcription was integrated",
+  "scopeBoundary": "The single ADOPT record from data/venue-reports/tokyo-priority-d-ranked-next-preflight-3-2026-08-25.json, tokyo-official-0635 ユーロライブ, was checked against the repository's source-URL transport policy, then independently transcribed twice from the current official 座席表 image regardless of the policy outcome, so that complete evidence is preserved even though production integration was not authorized. No other venue's research, DEFER reopening, or HARD-CASE judgment audit was started.",
+  "target": {
+    "inventoryId": "tokyo-official-0635",
+    "venue": "ユーロライブ",
+    "venueSourceId": null
+  },
+  "transportPolicyCheck": {
+    "question": "Can current issuer evidence served only over plain HTTP be adopted as a venue source under the existing schema/validator/AGENTS contract, without weakening validation or fabricating an HTTPS URL?",
+    "schemaAndValidatorFindings": [
+      "scripts/venues/validation.mjs:182, inside validateSourceMetadata, unconditionally requires `new URL(source.url).protocol === 'https:'` for every entry in a venue source's top-level `sources[]` array and reports a hard `issues.error(...)` (a build/validate blocker) if it is not met.",
+      "validateSourceMetadata is invoked unconditionally for every source file regardless of status (scripts/venues/validation.mjs:577, called before the schemaVersion-specific branches), so the HTTPS requirement applies identically to draft and production sources, not only to the production gate.",
+      "scripts/venues/inventory.mjs:82-127 enforces the same HTTPS requirement for `discoverySource.url` and for `officialFacilityUrl` once an inventory record's eligibility is `eligible` (the error this preflight's inventory update triggered and had to revert).",
+      "docs/VENUE_DATA_GUIDE.md's source-schema section documents `sources[].id`, `official`, `roles`, and secondary-source rules, but states no exception permitting an HTTP-only URL for any role, including non-official secondary seat-structure sources.",
+      "No test, comment, or constant in scripts/venues/ (checked venue-tools.test.mjs, inventory-batch.test.mjs, validation.mjs, inventory.mjs, constants.mjs) carries an allowance, waiver, or downgrade path for a plain-HTTP issuer URL under any circumstance."
+    ],
+    "existingProductionPrecedent": [
+      "docs/HANDOFF.md and docs/reports/TOKYO_COVERAGE_UNIVERSE_AUDIT_2026-08-11.md record tokyo-official-1071 京王アリーナTOKYO メインアリーナ and tokyo-official-1020 国立音楽大学〔講堂小ホール〕 as SOURCE/POLICY HOLD and SOURCE HOLD respectively, using researchStatus: blocked with a blockingReason describing the unresolved policy/evidence condition, and no source JSON created — this is the established pattern for 'evidence exists but cannot yet be integrated' outcomes, as distinct from DEFER (no evidence at all).",
+      "The same coverage-universe audit originally recorded シアターH (now-produced theater-h-standard) as SOURCE/POLICY HOLD at survey time; it later became a normal current-evidence ADOPT/PRODUCTION once its own official site had a working HTTPS endpoint and a resolvable wheelchair/補助席 relation, confirming that SOURCE/POLICY HOLD is a reopenable state tied to a specific external condition (here: HTTPS availability), not a permanent rejection.",
+      "No existing production venue source in data/venue-sources/*.json cites an http:// source URL; every checked production source's sources[].url is https://, consistent with the validator being enforced in practice, not merely in theory."
+    ],
+    "liveEndpointCheck": {
+      "method": "Independent TLS-layer checks against eurolive.jp:443 using two separate client stacks (curl/schannel and OpenSSL 3.5.5 s_client), across TLS 1.2 and TLS 1.3, repeated 3 times.",
+      "result": "Every attempt completes the TCP connection but the server aborts the TLS handshake with a server-originated 'tlsv1 alert internal error' (TLS alert 80) before any certificate or application data is exchanged. The same failure occurs on the related parent domain www.eurospace.co.jp, which shares the same hosting. This is a server-side fault, not a client compatibility gap: OpenSSL 3.5.5 and Windows schannel independently agree the server itself terminates the handshake.",
+      "conclusion": "No current official HTTPS endpoint exists for the eurolive.jp domain family. The operator's only currently working web transport is plain HTTP; WebFetch's automatic http-to-https upgrade fails for exactly this reason, which is why the seat-chart evidence in the prior preflight and this implementation attempt was fetched via curl over HTTP."
+    },
+    "conclusion": "The HTTPS requirement is a hard, unconditional, source-status-independent gate in the current schema/validator, not a soft production-only check, and no current official HTTPS issuer endpoint exists for this venue. Per the prohibitions on rewriting a URL to https:// without verification, weakening validation, substituting an unofficial mirror as the official source, and lowering the currentness/evidence gate, no venue source JSON may be authored for tokyo-official-0635 under the existing repository contract. This is a repository transport-policy blocker, not an evidence gap: the seat chart itself is current, complete, and issuer-numbered (see twoPass below). Disposition: SOURCE/POLICY HOLD. No source, range, production, generated artifact, or fingerprint change was made."
+  },
+  "officialSources": [
+    {
+      "url": "http://eurolive.jp/access/",
+      "role": "current operator access/venue-info page, re-fetched via curl at implementation time; states 席数178席（うち2席は補助席） and links the seat-chart image",
+      "protocolNote": "http only; https://eurolive.jp/access/ fails at the TLS layer (see transportPolicyCheck.liveEndpointCheck)"
+    },
+    {
+      "url": "http://eurolive.jp/access/img/eurolive_seat.jpg",
+      "role": "current-linked issuer 座席表 (seat chart) image, independently fresh-fetched twice (byte-identical, MD5 44b3ced97231dae49c72968d3ece98a7 both times) and read twice",
+      "protocolNote": "http only, same TLS failure as the access page"
+    },
+    {
+      "url": "http://eurolive.jp/rent/",
+      "role": "current operator facility-rental page, re-fetched via curl; states 席数：178席（うち2席は補助席） and points to the access-page seat chart",
+      "protocolNote": "http only, same TLS failure as the access page"
+    }
+  ],
+  "twoPass": {
+    "method": "The current issuer 座席表 image was independently re-fetched twice (fresh HTTP GET each time, confirmed byte-identical by MD5) and read twice. Pass 1 read top-down (A through M) and left-to-right within each row (left block, then centre block, then right block). Pass 2 used the second fresh fetch and read bottom-up (M through A) and right-to-left within each row (right block, then centre block, then left block), without using Pass 1's transcribed range strings as an answer key. Comparison occurred only after both passes were complete.",
+    "pass1": {
+      "order": "top-down (A to M), left-to-right",
+      "rows": [
+        { "row": "A", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "B", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "C", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "D", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "E", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "F", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "G", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "H", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "I", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "J", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "K", "blocks": "left 1-4, centre 5-12, right 13-15", "rowTotal": 15 },
+        { "row": "L", "blocks": "centre 5-12, right 13-15 (no left block)", "rowTotal": 11 },
+        { "row": "M", "blocks": "right 13-14 only (no left or centre block)", "rowTotal": 2 }
+      ],
+      "passTotal": 178,
+      "disclosureRead": "「2023年7月中旬よりM-13、14は補助席仕様となります。」directly beneath row M; printed total 「178席」 beneath the disclosure."
+    },
+    "pass2": {
+      "order": "bottom-up (M to A), right-to-left",
+      "rows": [
+        { "row": "M", "blocks": "right block 14-13 only (no centre or left block)", "rowTotal": 2 },
+        { "row": "L", "blocks": "right 15-13, centre 12-5 (no left block)", "rowTotal": 11 },
+        { "row": "K", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "J", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "I", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "H", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "G", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "F", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "E", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "D", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "C", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "B", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 },
+        { "row": "A", "blocks": "right 15-13, centre 12-5, left 4-1", "rowTotal": 15 }
+      ],
+      "passTotal": 178,
+      "disclosureRead": "Same disclosure text and printed 178席 total independently reconfirmed while scanning upward past row M."
+    },
+    "comparisonResult": "MATCH",
+    "matchedFields": [
+      "complete printed ID set (every row A-M, every block boundary, every seat number)",
+      "row/block ownership (A-K: left+centre+right, 15 each; L: centre+right only, 11; M: right only, 2)",
+      "ranges/gaps (no printed exclusion within any block; the absent left block on L and absent left/centre blocks on M are structural block boundaries, not printed gaps)",
+      "issuer subtotal (both passes independently sum to 178, matching the printed 「178席」 without any fitting)",
+      "selected configuration (single fixed audience configuration; no alternative audience-seat variant is published)",
+      "M-13/M-14 補助席 disclosure text, read identically in both passes"
+    ]
+  },
+  "selectedConfiguration": {
+    "description": "The issuer's single fixed 178-seat 座席表 configuration for ユーロライブ.",
+    "compressedRanges": [
+      { "rowLabel": "A", "from": 1, "to": 15 },
+      { "rowLabel": "B", "from": 1, "to": 15 },
+      { "rowLabel": "C", "from": 1, "to": 15 },
+      { "rowLabel": "D", "from": 1, "to": 15 },
+      { "rowLabel": "E", "from": 1, "to": 15 },
+      { "rowLabel": "F", "from": 1, "to": 15 },
+      { "rowLabel": "G", "from": 1, "to": 15 },
+      { "rowLabel": "H", "from": 1, "to": 15 },
+      { "rowLabel": "I", "from": 1, "to": 15 },
+      { "rowLabel": "J", "from": 1, "to": 15 },
+      { "rowLabel": "K", "from": 1, "to": 15 },
+      { "rowLabel": "L", "from": 5, "to": 15 },
+      { "rowLabel": "M", "from": 13, "to": 14 }
+    ],
+    "compressionNote": "Rows A-K print three physical blocks per row (left 1-4, centre 5-12, right 13-15) but the seat numbers run continuously 1 through 15 with no restart or gap, so each compresses to a single range. Row L prints only the centre and right blocks, running continuously 5 through 15 (no left block for this row). Row M prints only the right block, 13 through 14, with no left or centre block. This compression is descriptive of what independent transcription would produce; no source JSON encodes it, per the transport-policy conclusion above."
+  },
+  "auxiliarySeatMetadata": {
+    "finding": "The chart itself states 「2023年7月中旬よりM-13、14は補助席仕様となります。」 (from mid-July 2023, M-13 and M-14 become auxiliary/supplementary seats), matching the rental page's 「うち2席は補助席」.",
+    "treatment": "Both printed IDs (M-13, M-14) would remain in the mapped set as ordinary selectable seats under a 補助席 (auxiliary-seat) disclosure, per policy: printed IDs are not deleted for accessibility or seat-type reasons, and no replacement/wheelchair relation is stated for them."
+  },
+  "accessibility": {
+    "finding": "The current 座席表 carries no wheelchair icon, no wheelchair space, and no legend beyond the M-13/M-14 補助席 note.",
+    "treatment": "No accessibility relation, replacement, or removal was inferred or would be applied to any printed ID."
+  },
+  "productionDecision": {
+    "disposition": "SOURCE/POLICY HOLD",
+    "reason": "Both independent passes matched exactly on the complete printed ID set, row/block ownership, ranges/gaps, the issuer's own 178-seat subtotal, the single representative configuration, and the auxiliary-seat disclosure, so the seat evidence itself satisfies the ADOPT evidence gate. Production integration is withheld solely because the repository's source-schema validator (scripts/venues/validation.mjs:182) unconditionally requires an HTTPS source URL for every status, and no current official HTTPS endpoint exists for eurolive.jp or its parent domain (confirmed by repeated, consistent, server-side TLS handshake failures on two independent client stacks). No venue source JSON was authored, so no capacity fitting, invented ID, geometry-derived ownership, configuration mixing, printed-ID deletion, or fabricated HTTPS URL occurred.",
+    "mapped": 178,
+    "published": 178,
+    "rangeDiff": 0,
+    "confidence": "not-applicable (no production source authored; evidence-only two-pass MATCH)",
+    "verificationMethod": "two-independent-current-official-seating-chart-visual-transcriptions-with-row-and-block-order-reversal",
+    "nextEvidenceRequirement": "Reopen only once eurolive.jp (or a verifiable current official successor domain) serves a working HTTPS endpoint that can be independently re-confirmed at that time; re-verify the 座席表 image and the 178-seat/補助席 disclosure are still current before authoring any source JSON, since this report's evidence freeze does not itself expire the HTTPS requirement."
+  },
+  "repositoryChanges": {
+    "sourceCreated": "none",
+    "inventoryUpdated": "data/venue-inventory/tokyo.json: tokyo-official-0635 researchStatus set to blocked, eligibility left at needs-research, blockingReason rewritten to SOURCE/POLICY HOLD describing the HTTPS transport blocker and the complete, MATCHED two-pass seat evidence preserved in this report. venueSourceId remains null.",
+    "batchCreated": "none",
+    "generatedArtifacts": "none changed",
+    "fingerprintUpdated": "none changed"
+  },
+  "productionImpact": {
+    "before": { "venues": 132, "selectableConfigurations": 134, "seatRecords": 181441 },
+    "after": { "venues": 132, "selectableConfigurations": 134, "seatRecords": 181441 },
+    "addedMappedSeats": 0,
+    "changed": false
+  },
+  "validation": {
+    "performed": [
+      "npm run venues:inventory:report",
+      "npm run venues:check",
+      "npm run venues:validate",
+      "npm run venues:report",
+      "npm run verify:docs"
+    ],
+    "notPerformed": [
+      "npm run verify:venues, because no production source, range, generated artifact, fingerprint, or production total changed"
+    ],
+    "result": "All bounded checks passed with 0 inventory/source errors. Production totals confirmed unchanged at 132 venues / 134 selectable configurations / 181,441 configuration-seat records."
+  },
+  "exactNextAction": "Stop after this implementation attempt and its HANDOFF closure. No managed Workers Build, deployment, or public-UI smoke test applies because no production data changed. Do not start further candidate research or any HARD-CASE judgment audit (0278, 0586, 0641) without separate authorization. Do not reopen 0861, 0893, 0818, or 0813 (DEFER, TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3). Reopen tokyo-official-0635 only under the HTTPS-availability condition stated in productionDecision.nextEvidenceRequirement."
+}
