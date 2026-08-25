@@ -1,0 +1,112 @@
+{
+  "wave": "TOKYO PRIORITY D HIGH-YIELD PREFLIGHT",
+  "date": "2026-08-25",
+  "phase": "Bounded metadata ranking and current-first-party evidence preflight",
+  "scopeBoundary": "The 835 Priority-D outstanding records were not processed sequentially. Metadata first reduced them to 90 active candidates with 150-1,000 capacity and an officialFacilityUrl or discoveryUrl, then selected the ten dedicated-hall/theater candidates below after excluding canonical facility-space records with formal dispositions. Current first-party research checked ranks 1-5 only. No seat transcription, source creation, production integration, generated artifact, fingerprint, or deploy was performed.",
+  "policyBasis": "ADOPT requires current/current-linked issuer-numbered material, a supported representative configuration, a complete printed set, and issuer-defined ownership/subtotal. No IDs, gaps, ownership, or totals may be invented from geometry or capacity. A Sol candidate additionally requires current complete numbered material and only an ownership/subtotal/printed-count reconciliation blocker.",
+  "metadataRanking": [
+    {"rank": 1, "inventoryId": "tokyo-official-1007", "venue": "立川市市民会館 たましんRISURUホール〔小ホール〕", "capacity": 246, "reason": "source-located dedicated civic small hall with direct operator URL and a clearly distinct facility-space from the production main hall."},
+    {"rank": 2, "inventoryId": "tokyo-official-0797", "venue": "杉並公会堂〔小ホール〕", "capacity": 194, "reason": "source-located dedicated civic small hall with direct official URL and a distinct small-hall identity from the production main hall."},
+    {"rank": 3, "inventoryId": "tokyo-official-0930", "venue": "練馬区立大泉学園ゆめりあホール〔ゆめりあホール〕", "capacity": 176, "reason": "named dedicated public hall in band with direct operator URL and easy currentness verification."},
+    {"rank": 4, "inventoryId": "tokyo-official-0492", "venue": "めぐろパーシモンホール〔小ホール〕", "capacity": 200, "reason": "named small hall with direct official operator URL; it is distinct from the production main hall."},
+    {"rank": 5, "inventoryId": "tokyo-official-0508", "venue": "大田区民ホール・アプリコ〔小ホール〕", "capacity": 175, "reason": "direct current public-hall URL and a distinct small-hall identity from the production main hall; flat-floor risk requires evidence review."},
+    {"rank": 6, "inventoryId": "tokyo-official-0647", "venue": "セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕", "capacity": 201, "reason": "dedicated noh theater with direct official URL and source-located-like identity/currentness."},
+    {"rank": 7, "inventoryId": "tokyo-official-0133", "venue": "赤坂RED/THEATER", "capacity": 176, "reason": "source-located dedicated theater with direct operator URL."},
+    {"rank": 8, "inventoryId": "tokyo-official-0282", "venue": "矢来能楽堂〔矢来能楽堂〕", "capacity": 237, "reason": "dedicated noh theater in band with a direct official URL."},
+    {"rank": 9, "inventoryId": "tokyo-official-1036", "venue": "吉祥寺シアター〔劇場〕", "capacity": 189, "reason": "source-located named theater with direct public-operator URL."},
+    {"rank": 10, "inventoryId": "tokyo-official-0238", "venue": "音楽の友ホール", "capacity": 208, "reason": "source-located named concert hall with direct official URL."}
+  ],
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-1007",
+      "venue": "立川市市民会館 たましんRISURUホール〔小ホール〕",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://risuru.hall-info.jp/service/smallhall.html", "role": "current small-hall page and direct chart link"},
+        {"url": "https://risuru.hall-info.jp/file/SmallHallSeatingChart.pdf", "role": "current-linked issuer-numbered seating chart"},
+        {"url": "https://risuru.hall-info.jp/download/", "role": "current download index"}
+      ],
+      "representativeConfiguration": "Current full 246-seat arrangement; the operator separately defines 110 removable positions and wheelchair-convertible 9-10 row positions.",
+      "printedSet": "Feasible: the direct chart prints all rows 1-10 and seat numbers, with issuer disclosed gaps.",
+      "ownershipAndSubtotal": "Issuer defines total246, removable 1-4 rows=98 plus selected 9/10-row positions=12, and wheelchair-convertible positions; no geometry inference is required.",
+      "expectedMapped": 246,
+      "publishedCapacity": 246,
+      "rangeDiff": 0,
+      "confidence": "representative",
+      "implementationPath": "Create a non-production source draft, independently transcribe the current chart twice, preserve all printed removable seats in the full representative set, and retain wheelchair conversion as metadata."
+    },
+    {
+      "inventoryId": "tokyo-official-0797",
+      "venue": "杉並公会堂〔小ホール〕",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://www.suginamikoukaidou.com/about/seat/", "role": "current official seat-map index"},
+        {"url": "https://www.suginamikoukaidou.com/wp-content/uploads/2023/05/a091dc474566ee7634e884a581541621.pdf", "role": "current-linked issuer-numbered small-hall chart"}
+      ],
+      "representativeConfiguration": "Current small-hall numbered arrangement, separately disclosed as 190 seats plus four unnumbered wheelchair spaces.",
+      "printedSet": "Feasible: visual inspection confirms fully printed rows A-J and every position; A=3-18, B-I=1-20, J=4-17.",
+      "ownershipAndSubtotal": "Issuer chart names the small hall and carries the 190-seat plus wheelchair4 subtotal; printed row ownership totals190 without using the published capacity to fit ranges.",
+      "expectedMapped": 190,
+      "publishedCapacity": 194,
+      "rangeDiff": -4,
+      "confidence": "representative",
+      "implementationPath": "Create a non-production source draft and perform independent two-pass transcription of A-J; retain the four unnumbered wheelchair spaces as metadata."
+    },
+    {
+      "inventoryId": "tokyo-official-0930",
+      "venue": "練馬区立大泉学園ゆめりあホール〔ゆめりあホール〕",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://www.neribun.or.jp/en/yumeria/hall/", "role": "current operator facility page and capacity"},
+        {"url": "https://www.neribun.or.jp/en/yumeria/hall/file/%E3%82%86%E3%82%81%E3%82%8A%E3%81%82%E6%96%B0%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf", "role": "current-linked issuer-numbered chart"}
+      ],
+      "representativeConfiguration": "Current normal arrangement: 170 fixed seats plus six individually marked wheelchair spaces.",
+      "printedSet": "Feasible: visual inspection confirms all fixed A-M row labels/numbers and separately printed wheelchair identifiers 1-6.",
+      "ownershipAndSubtotal": "Issuer page provides 170 fixed + wheelchair6 =176, and the map defines the corresponding row and wheelchair areas; no capacity fitting is needed.",
+      "expectedMapped": 176,
+      "publishedCapacity": 176,
+      "rangeDiff": 0,
+      "confidence": "representative",
+      "implementationPath": "Create a non-production source draft and independently transcribe all fixed rows and the separately issuer-labelled wheelchair 1-6 positions twice."
+    },
+    {
+      "inventoryId": "tokyo-official-0492",
+      "venue": "めぐろパーシモンホール〔小ホール〕",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://www.persimmon.or.jp/about/hall_s.html", "role": "current small-hall page, 196 movable + wheelchair4 disclosure, and chart link"},
+        {"url": "https://www.persimmon.or.jp/media/hall_s_seat.pdf", "role": "current-linked seating diagram"}
+      ],
+      "representativeConfiguration": "Current movable-seat stage-audience form is identified, but not losslessly numbered.",
+      "printedSet": "Incomplete: the visual-reviewed PDF labels rows 1, 5, 6, and 13, while intervening seat boxes carry no printed individual IDs.",
+      "ownershipAndSubtotal": "196 movable + wheelchair4 is a capacity disclosure, not an issuer-defined assignment for each unprinted row.",
+      "metadata": "Current page says 100 underfloor movable +96 rear-wall movable and four wheelchair spaces.",
+      "reason": "The missing rows cannot be filled by range pattern or geometry. This is not a Sol candidate because no complete issuer-numbered set exists."
+    },
+    {
+      "inventoryId": "tokyo-official-0508",
+      "venue": "大田区民ホール・アプリコ〔小ホール〕",
+      "disposition": "DEFER",
+      "officialSources": [{"url": "https://www.ota-bunka.or.jp/facilities/aprico/halls/second_hall/second_hall01", "role": "current small-hall facility, layouts, and chair-count capacity"}],
+      "representativeConfiguration": "Not established: a fully flat room has chairs-only175 and school108/120 variants.",
+      "printedSet": "No current issuer-numbered audience-seat map/list.",
+      "ownershipAndSubtotal": "Current chair counts and user arrangement do not establish numbered ownership/subtotal.",
+      "metadata": "The operator explicitly says the seats are not fixed.",
+      "reason": "No numbered representative set may be created from user-arranged chairs. This is not a Sol candidate because issuer-numbered material is absent."
+    }
+  ],
+  "result": {
+    "priorityDOutstandingBefore": 835,
+    "mechanicalHighYieldFilter": 90,
+    "highYieldShortlist": 10,
+    "candidatesChecked": 5,
+    "adoptedCandidates": 3,
+    "deferred": 2,
+    "hardCaseDeferred": 0,
+    "solCandidates": 0,
+    "productionPromotions": 0,
+    "recommendedImplementationCandidates": ["tokyo-official-1007", "tokyo-official-0797", "tokyo-official-0930"]
+  },
+  "productionImpact": {"before": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328}, "after": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328}, "changed": false},
+  "exactNextAction": "Stop. A separately authorized bounded implementation may start only with the three ADOPTs, one venue at a time or as a maximum-three batch; do not research the unvisited ranked candidates without authorization."
+}

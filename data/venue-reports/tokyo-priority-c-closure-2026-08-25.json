@@ -1,0 +1,59 @@
+{
+  "wave": "TOKYO PRIORITY C CLOSURE",
+  "date": "2026-08-25",
+  "phase": "Bounded current-first-party closure of the remaining canonical Priority-C pool",
+  "scopeBoundary": "Only tokyo-official-0398, tokyo-official-0407, and tokyo-official-0518 were checked. This is disposition/inventory formalization only; no seat transcription, production source, generated artifact, fingerprint, or deploy was created.",
+  "policyBasis": "ADOPT requires a current/current-linked issuer-numbered map/list, an issuer-supported representative configuration, a complete printed set, and issuer-defined row/block ownership or subtotal. A recreation room, meeting room, or movable seating is not itself a deferral reason; missing evidence must not be repaired by invented IDs, geometry-only ownership, or capacity fitting.",
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0398",
+      "venue": "江東区森下文化センター〔第1レクホール〕",
+      "disposition": "DEFER",
+      "officialSources": [{"url": "https://www.kcf.or.jp/morishita/shisetsu/ichiran/detail/?id=45", "role": "current facility page, capacity, equipment, and layout"}],
+      "representativeConfiguration": "Not established. The current page states a maximum of 350 when chairs only are arranged.",
+      "printedSet": "No issuer-numbered audience-seat map/list; the current layout is not a numbered seat chart.",
+      "ownershipAndSubtotal": "No issuer-defined numbered rows, blocks, or subtotal.",
+      "metadata": "394.7m2 floored room; 350 chairs are stored equipment; stage and broad event uses are disclosed.",
+      "reason": "Do not derive IDs or ownership from the room plan or its maximum chair count."
+    },
+    {
+      "inventoryId": "tokyo-official-0407",
+      "venue": "江東区総合区民センター〔レクホール〕",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://www.kcf.or.jp/sogo/shisetsu/ichiran/", "role": "current facility list"},
+        {"url": "https://www.kcf.or.jp/sogo/shisetsu/ichiran/detail/?id=126", "role": "current recreation-hall detail"},
+        {"url": "https://www.kcf.or.jp/sogo/outline/docs/", "role": "current documents index"}
+      ],
+      "representativeConfiguration": "Not established. Current material states 390 chairs/320m2 and permits connection with the exhibition hall.",
+      "printedSet": "No current issuer-numbered audience-seat map/list.",
+      "ownershipAndSubtotal": "No issuer-defined numbered row/block ownership or subtotal.",
+      "metadata": "Event, meeting, dance, and exhibition-linked use are disclosed; this is not itself the reason for deferral.",
+      "reason": "The current material does not identify any complete numbered representative set."
+    },
+    {
+      "inventoryId": "tokyo-official-0518",
+      "venue": "大田区立池上会館〔集会室〕",
+      "disposition": "DEFER / RENOVATION HOLD",
+      "officialSources": [
+        {"url": "https://www.city.ota.tokyo.jp/shisetsu/ikegamikaikan/", "role": "current facility and closure notice"},
+        {"url": "https://www.city.ota.tokyo.jp/omori/ts_ikegami/oshirase_event/ikegamikaikan_kyu-kan.html", "role": "current official long-closure notice"}
+      ],
+      "representativeConfiguration": "Not established while the main-building meeting room is unavailable.",
+      "printedSet": "No current issuer-numbered audience-seat map/list found.",
+      "ownershipAndSubtotal": "No issuer-defined numbered row/block ownership or subtotal.",
+      "metadata": "Official closure: 2026-01-01 through 2027-03-31 for seismic-ceiling work.",
+      "reason": "Do not adopt inactive facility capacity or infer a set from room use; reopen only after active operation and current issuer evidence return."
+    }
+  ],
+  "result": {
+    "candidatesChecked": 3,
+    "adoptedCandidates": 0,
+    "deferred": 3,
+    "hardCaseDeferred": 0,
+    "priorityCTrueUnprocessedAfter": 0,
+    "priorityCLaneClosed": true
+  },
+  "productionImpact": {"before": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328}, "after": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328}, "changed": false},
+  "exactNextAction": "Do not reopen Priority C without a newly current issuer-numbered representative set and separate authorization."
+}

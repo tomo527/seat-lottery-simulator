@@ -28,6 +28,10 @@ The authorized `TOKYO PRIORITY C RANKED PREFLIGHT` is formally closed with **0 A
 
 The bounded `TOKYO PRIORITY C REMAINING PREFLIGHT` is formally closed with **0 ADOPT / 5 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-c-remaining-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-c-remaining-preflight-2026-08-25.json) records current first-party checks for `0693`, `0042`, `0367`, `0415`, and `0427`; each is now `blocked` and cannot return to ordinary discovery. The direct materials establish capacities or layouts but no candidate supplies a current issuer-numbered representative set with complete ownership/subtotals. No production data changed. Priority C true-unprocessed is now **3**: `0398`, `0407`, and `0518`; no implementation batch is recommended.
 
+`TOKYO PRIORITY C CLOSURE` is complete with **0 ADOPT / 3 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-c-closure-2026-08-25.json`](../data/venue-reports/tokyo-priority-c-closure-2026-08-25.json) formalizes `0398` 森下文化センター第1レクホール (maximum chair count only), `0407` 総合区民センターレクホール (chair count and event space only), and `0518` 池上会館集会室 (official long closure through 2027-03-31). All three are `blocked`; **Priority C true-unprocessed is now 0 and the lane is CLOSED**. No production data changed.
+
+The first bounded `TOKYO PRIORITY D HIGH-YIELD PREFLIGHT` is complete with **3 ADOPT / 2 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-d-high-yield-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-high-yield-preflight-2026-08-25.json) reduces the 835 outstanding D records to a 90-record URL/capacity screen and a ten-record dedicated-hall shortlist, then checks only ranks 1-5. `1007` RISURU小ホール (246), `0797` 杉並公会堂小ホール (190 numbered + wheelchair4), and `0930` ゆめりあホール (170 fixed + six issuer-labelled wheelchair positions) are **ADOPT** for separately authorized two-pass transcription only. `0492` パーシモン小ホール is DEFER because its current chart leaves intervening rows unnumbered; `0508` アプリコ小ホール is DEFER because it publishes user-arranged chair capacities, not issuer IDs. Neither is a Sol candidate; no checked venue has a complete numbered map whose only remaining blocker is reconciliation. No production data changed.
+
 The separately authorized, one-venue follow-through for `tokyo-official-0121` (品川プリンスホテル ステラボール) is **SAFE TO INTEGRATE / PRODUCTION**. [`data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json`](../data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json) records two independent direct visual transcriptions of the current official/current-linked chart. Both produce the same issuer-labelled set: 1F 750 + 2F 126 = 876, mapped 876 / published 876 / rangeDiff 0 / representative confidence. The 1F movable-chair disclosure and the absence of a separately numbered wheelchair/companion set remain metadata; no seat ID or ownership was invented. Source, inventory, batch/readiness/report, fingerprint, catalog and lazy runtime were synchronized in pushed production commit `a277a5a`; `npm run verify:venues`, its managed Workers Build, and the public UI smoke test all passed.
 
 | Item | State |
@@ -41,7 +45,8 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | Legacy type-only A/B lane | Closed: 1 production / 8 DEFER / 0 hard-case DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo A/B source-located lane | Closed: `0374` DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo priority C source-located preflight | Closed: `0375` / `0950` / `1186` DEFER; 0 ADOPT |
-| Tokyo priority C true-unprocessed | `0646` / `1115` / `0101` PRODUCTION; `0135` / `0331` / `0908` / `0559` / `0870` and `0693` / `0042` / `0367` / `0415` / `0427` DEFER; `0008` / `0030` SOURCE HOLD normalized to blocked; true-unprocessed C = 3 (`0398` / `0407` / `0518`); no implementation batch |
+| Tokyo priority C true-unprocessed | CLOSED: `0398` / `0407` / `0518` DEFER; true-unprocessed C = 0 |
+| Tokyo priority D high-yield preflight | 835 outstanding → 90 URL/capacity screen → 10 dedicated-hall shortlist; `1007` / `0797` / `0930` ADOPT, `0492` / `0508` DEFER; no production implementation |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -78,4 +83,4 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 
 ## Exact next action
 
-Stop after the committed Priority-C metadata cleanup and remaining-preflight closure. No ADOPT-derived implementation batch exists; do not research or reopen the remaining `0398` / `0407` / `0518`, nor any deferred/SOURCE HOLD candidate, without current first-party issuer-numbered evidence and new authorization.
+Stop after the committed Priority-C closure and first Priority-D high-yield preflight. If separately authorized, the next bounded implementation batch is `1007` RISURU小ホール, `0797` 杉並公会堂小ホール, and `0930` ゆめりあホール; start with independent two-pass non-production transcription and do not deploy. Do not research unvisited ranked D candidates or reopen a deferred/SOURCE HOLD venue without new authorization.
