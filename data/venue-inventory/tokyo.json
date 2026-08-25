@@ -12496,14 +12496,15 @@
       "capacity": 178,
       "category": "hall",
       "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "eligibilityReason": "2026-08-25の現行運営者公式アクセスページ（http://eurolive.jp/access/）掲載の「ユーロライブ座席表」画像で、A-M列の全印字ID・block区分（左1-4/中5-12/右13-15、L列は中・右のみ、M列は右13-14のみ）・「178席」を確認。印字合計178は公式総数と一致。M-13・14は2023年7月中旬より補助席仕様の disclosure のみで印字IDは維持。別承認two-passでのみproduction判定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24",
-      "discoveryUrlRaw": "http://eurolive.jp/"
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-25",
+      "discoveryUrlRaw": "http://eurolive.jp/",
+      "blockingReason": "ADOPT (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the current official 座席表 image (http://eurolive.jp/access/img/eurolive_seat.jpg) defines the fixed 178-seat configuration with a complete printed ID set (rows A-K: left 1-4 / center 5-12 / right 13-15; row L: center 5-12 / right 13-15 only, no left block; row M: right 13-14 only) whose independently summed total matches the issuer's own 178 exactly. M-13 and M-14 are disclosed as auxiliary (補助席) seating since 2023-07 but remain printed IDs, not excluded. No wheelchair marking is present. Next permitted work is a separately authorized independent two-pass transcription of rows A through M including every block boundary and the auxiliary-seat disclosure; infer no accessibility relation and no additional configuration."
     },
     {
       "inventoryId": "tokyo-official-0636",
@@ -15953,14 +15954,15 @@
       "capacity": 150,
       "category": "hall",
       "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24",
-      "discoveryUrlRaw": "suginaminohgakudou.org"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
+      "discoveryUrlRaw": "suginaminohgakudou.org",
+      "blockingReason": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the current official site (http://suginaminohgakudou.org/) was reviewed across its guidance, access, history, and performances pages; it publishes only a rental fee schedule and past performance-program PDFs (through 2019), with no seat count, seat chart, or row/seat numbering anywhere on the site. Reopen only if the issuer publishes a numbered seat chart or seat-count statement."
     },
     {
       "inventoryId": "tokyo-official-0814",
@@ -16051,15 +16053,15 @@
       "capacity": 20,
       "category": "hall",
       "officialFacilityUrl": "https://nishisugamo-ongakudo.com/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称20席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://nishisugamo-ongakudo.com/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the current official site (https://nishisugamo-ongakudo.com/) publishes no seat chart, row labels, or seat count; its only capacity-adjacent statement is a variable occupancy limit (\"ご利用人数を最大30名様から20名様までに変更\") for a piano salon space, not a numbered audience-seat set. Reopen only if the issuer publishes a numbered seat chart."
     },
     {
       "inventoryId": "tokyo-official-0819",
@@ -16888,15 +16890,15 @@
       "capacity": 70,
       "category": "hall",
       "officialFacilityUrl": "https://www.theater-green.com/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称70席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.theater-green.com/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the current official BASE THEATER facility page (https://www.theater-green.com/theater/base/) states 座席数「70席〜」 and explicitly discloses 「現在、席番表示はありません」 (no seat-number display at present); its linked 客席図面 PDF (basetheater_capacity2.pdf) draws tiered platform rows with step-height labels and an unnumbered 車椅子席 area, but prints no row letters or individual seat numbers. No issuer-numbered chart exists on the current site. Reopen only if the issuer publishes a numbered seat chart."
     },
     {
       "inventoryId": "tokyo-official-0862",
@@ -17508,15 +17510,15 @@
       "capacity": 50,
       "category": "hall",
       "officialFacilityUrl": "https://www.tokyobabylon.org/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称50席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.tokyobabylon.org/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the operator's own domain (tokyobabylon.org) could not be safely fetched (TLS certificate mismatch on shared hosting), and current-linked secondary sources (theater.co.jp portal, dated 2022-01-19) and third-party listings state differing capacity figures (48-50) with no seat chart; the venue is consistently described as a flat free-use space with no permanent/fixed seating. No issuer-numbered chart exists. Reopen only if the issuer publishes a current numbered seat chart from a verifiable current site."
     },
     {
       "inventoryId": "tokyo-sunpearl-arakawa-main",
