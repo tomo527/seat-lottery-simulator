@@ -1,0 +1,204 @@
+{
+  "wave": "TOKYO PRIORITY C TRUE-UNPROCESSED PREFLIGHT",
+  "date": "2026-08-25",
+  "phase": "Bounded metadata ranking and current-first-party evidence preflight",
+  "scopeBoundary": "The true-unprocessed Priority C pool was fixed at 18 records after excluding production, closed/renovation, HARD-CASE, and canonical facility-space records with a formal disposition. Metadata ranked at most eight. Current first-party research began only with ranks 1-3 and stopped when three ADOPT candidates were found. This is preflight only: no source JSON, ranges, generated catalog/runtime artifact, fingerprint, production implementation, or deployment was created.",
+  "policyBasis": "ADOPT requires a current/current-linked issuer-numbered map or seat list, a representative configuration supported by issuer evidence, a lossless complete printed set, and issuer-defined row/block ownership or subtotal evidence. Fixed seating, movability, wheelchair metadata, pit/stage variation, and a published-total difference are not standalone gates. Seat IDs, ownership, and reconciliation must never be invented from geometry or capacity.",
+  "metadataRanking": [
+    {
+      "rank": 1,
+      "inventoryId": "tokyo-official-0646",
+      "venue": "渋谷区文化総合センター大和田〔伝承ホール〕",
+      "capacity": 345,
+      "reason": "Dedicated cultural hall in the 250-1,000-seat band; an existing draft records a direct facility URL, and the same current operator already has a separately production-verified hall in the facility."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "tokyo-official-1115",
+      "venue": "小平市民文化会館(ルネこだいら)〔中ホール〕",
+      "capacity": 401,
+      "reason": "Dedicated civic medium hall in band with an existing draft and direct operator-domain discovery URL; the sibling large-hall record supplies current facility identity and makes currentness easy to test."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "tokyo-official-0101",
+      "venue": "浜離宮朝日ホール〔小ホール〕",
+      "capacity": 398,
+      "reason": "Named small hall in band with an existing direct first-party facility draft; facility-space identity is distinct from the already-production music hall, so it is not excluded as a canonical duplicate."
+    },
+    {
+      "rank": 4,
+      "inventoryId": "tokyo-official-0135",
+      "venue": "赤坂区民センター〔区民ホール〕",
+      "capacity": 396,
+      "reason": "Public hall in band with a direct first-party facility URL and existing draft evidence, but its civic/multipurpose use and removable front rows lower expected yield behind the three dedicated-hall candidates."
+    },
+    {
+      "rank": 5,
+      "inventoryId": "tokyo-official-0331",
+      "venue": "東京国立博物館〔平成館大講堂〕",
+      "capacity": 395,
+      "reason": "Auditorium in band with direct official draft evidence and pre-existing row ranges, but the draft does not record a current issuer-numbered source, so its provenance must be re-established before any use."
+    },
+    {
+      "rank": 6,
+      "inventoryId": "tokyo-official-0908",
+      "venue": "板橋区立高島平区民館〔ホール〕",
+      "capacity": 450,
+      "reason": "Public hall in band with an existing draft and a direct municipal facility URL, but no stored map evidence or fixed-seat indication puts it behind the source-located dedicated halls."
+    },
+    {
+      "rank": 7,
+      "inventoryId": "tokyo-official-0559",
+      "venue": "砧区民会館(成城ホール)〔成城ホール〕",
+      "capacity": 397,
+      "reason": "Named public hall in band and an existing draft, but the draft has no registered source and the inventory URL is unnormalized, making currentness less immediately testable."
+    },
+    {
+      "rank": 8,
+      "inventoryId": "tokyo-official-0870",
+      "venue": "としま区民センター〔多目的ホール〕",
+      "capacity": 484,
+      "reason": "In-band hall with a direct operator URL, but its explicitly multipurpose identity and lack of stored draft/map evidence make numbered representative seating less likely than the records above."
+    }
+  ],
+  "excludedFormalDispositions": [
+    {
+      "inventoryId": "tokyo-official-0008",
+      "venue": "神田明神文化交流館・神田明神ホール",
+      "reason": "Excluded from ranking because its canonical inventory record retains SOURCE HOLD (TOKYO-WAVE-18); its stale draft-created research status does not reopen that formal disposition."
+    },
+    {
+      "inventoryId": "tokyo-official-0030",
+      "venue": "二松学舎大学 中洲記念講堂",
+      "reason": "Excluded from ranking because its canonical inventory record retains SOURCE HOLD (TOKYO-WAVE-18); its stale draft-created research status does not reopen that formal disposition."
+    }
+  ],
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0646",
+      "venue": "渋谷区文化総合センター大和田〔伝承ホール〕",
+      "priority": "C",
+      "lane": "DENSE",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://shibu-cul.jp/denshohall/kashikan_denshohall",
+          "role": "current operator facility page; directly links the seat chart"
+        },
+        {
+          "url": "https://shibu-cul.jp/cms/wp-content/uploads/2022/07/aaba5e603fdd4287cb9f3d567df4e386-1.pdf",
+          "role": "current-linked issuer seat chart"
+        }
+      ],
+      "numberedMapCurrentness": "confirmed: the current facility page directly publishes the seat chart.",
+      "representativeConfiguration": "The issuer's 345-seat hall arrangement is a reasonable representative layout. Fixed and movable seats are explicitly distinguished, rather than inferred.",
+      "printedSet": "feasible for lossless transcription: the chart prints row labels and individual numbers, while its legend separates movable seats, back-reclining seats, wheelchair positions, and parent room.",
+      "ownership": "issuer-defined: fixed 125 (including 10 back-reclining), movable 122, zashiki 92 (including 43 wall-mounted auxiliary), parent room 4, wheelchair 2; total 345.",
+      "movableWheelchairMetadata": "Movable seats remain in scope if individually printed. Parent-room and wheelchair positions must remain metadata unless the chart gives individual IDs; do not create IDs or fit to 345.",
+      "expectedMapped": 339,
+      "publishedCapacity": 345,
+      "confidence": "representative",
+      "implementationPath": "Refresh the existing non-production draft tokyo-wave3-0646 with the two current sources; independently transcribe every printed row/area twice, retain only issuer-labelled ownership, record any unnumbered parent/wheelchair positions as metadata, then run targeted venues:review before a production decision.",
+      "reason": "ADOPT is preflight-only. The provisional 339 target is the issuer subtotal of fixed, movable, and zashiki numbered-seat classes; it must be checked from the actual printed set and must not be adjusted to the 345 published total."
+    },
+    {
+      "inventoryId": "tokyo-official-1115",
+      "venue": "小平市民文化会館(ルネこだいら)〔中ホール〕",
+      "priority": "C",
+      "lane": "DENSE",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://www.runekodaira.jp/detail/t00025.html",
+          "role": "current operator medium-hall page; directly links the seating plan"
+        },
+        {
+          "url": "https://www.runekodaira.jp/pdf/chuhall_seats.pdf",
+          "role": "current-linked issuer medium-hall seating plan"
+        }
+      ],
+      "numberedMapCurrentness": "confirmed: the current page directly links the numbered seating plan.",
+      "representativeConfiguration": "The issuer calls 401 seats including three wheelchair spaces normal use, separately from the maximum 555 stage-conversion condition; the normal configuration is a reasonable representative choice.",
+      "printedSet": "feasible for lossless transcription: the plan prints rows and numbers for 398 seats, separately marks three wheelchair spaces, and shows 28 possible added seats only as dotted positions.",
+      "ownership": "issuer-defined by the current normal-use count and the chart's row/number arrangement; no ownership must be derived from dotted geometry.",
+      "movableWheelchairMetadata": "The variable stage and dotted 28 possible added seats are out of the normal representative scope. Three wheelchair spaces are disclosed separately and must not be turned into invented IDs.",
+      "expectedMapped": 398,
+      "publishedCapacity": 401,
+      "confidence": "representative",
+      "implementationPath": "Refresh the existing non-production draft tokyo-wave3-1115 with the current page and plan; independently transcribe only the normal printed 398-seat set twice, prove row ownership from issuer labels, retain wheelchair/dotted-stage metadata, then run targeted venues:review before a production decision.",
+      "reason": "ADOPT is preflight-only. The three-seat difference is preserved as disclosed wheelchair metadata; it must not be capacity-fitted."
+    },
+    {
+      "inventoryId": "tokyo-official-0101",
+      "venue": "浜離宮朝日ホール〔小ホール〕",
+      "priority": "C",
+      "lane": "DENSE",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://www.asahi-hall.jp/hamarikyu/multipurpose/data.html",
+          "role": "current operator download page; directly links the example seating plan"
+        },
+        {
+          "url": "https://www.asahi-hall.jp/hamarikyu/multipurpose/pdf/zaseki.pdf?202310=",
+          "role": "current-linked issuer small-hall example seating plan"
+        },
+        {
+          "url": "https://www.asahi-hall.jp/hamarikyu/multipurpose/index.html",
+          "role": "current operator small-hall overview and 398-seat maximum disclosure"
+        }
+      ],
+      "numberedMapCurrentness": "confirmed: the current small-hall download page directly publishes the example seating plan.",
+      "representativeConfiguration": "The issuer's concurrent maximum-398-seat example is a reasonable representative configuration, despite the hall allowing other layouts.",
+      "printedSet": "feasible for lossless transcription: the plan prints rows A-U and seat-number sequences, and states maximum 398 seats.",
+      "ownership": "issuer-defined through the chart's printed rows/numbers and its 238 movable-chair plus 160 rollback-chair subtotal.",
+      "movableWheelchairMetadata": "Movability is disclosed by the 238 movable and 160 rollback seats. The checked material does not define numbered wheelchair/companion replacements; none may be invented.",
+      "expectedMapped": 398,
+      "publishedCapacity": 398,
+      "confidence": "representative",
+      "implementationPath": "Refresh the existing non-production draft tokyo-wave3-0101 with the current sources; independently transcribe every printed row and gap twice, verify the 238 + 160 = 398 issuer arithmetic without using geometry, then run targeted venues:review before a production decision.",
+      "reason": "ADOPT is preflight-only. The current chart is explicitly an example and the hall supports other layouts, so this remains representative confidence rather than a claim about every event."
+    }
+  ],
+  "result": {
+    "priorityCTrueUnprocessedBefore": 18,
+    "metadataRanked": 8,
+    "candidatesChecked": 3,
+    "adoptedCandidates": 3,
+    "deferred": 0,
+    "hardCaseDefers": 0,
+    "productionPromotions": 0,
+    "priorityCTrueUnprocessedAfter": 15
+  },
+  "priorityCMechanicalAggregation": {
+    "scope": "Current data/venue-inventory/tokyo.json joined to venue-level formal dispositions in data/venue-reports/*.json",
+    "classificationOrder": [
+      "production: researchStatus=production",
+      "closed_renovation: operationalStatus is closed, renovation, or temporarily-closed",
+      "hard_case: formal disposition or blocker contains HARD-CASE/HARD CASE/NEED EVIDENCE",
+      "formal_defer_hold: formal report disposition or researchStatus is blocked, rejected, or independent-review-mismatch",
+      "unprocessed: every remaining record, including not-started, source-located, and draft-created"
+    ],
+    "after": {
+      "total": 96,
+      "production": 20,
+      "closedRenovation": 2,
+      "hardCase": 0,
+      "formalDeferHold": 59,
+      "trueUnprocessed": 15
+    }
+  },
+  "productionImpact": {
+    "before": {"venues": 119, "selectableConfigurations": 121, "seatRecords": 178193},
+    "after": {"venues": 119, "selectableConfigurations": 121, "seatRecords": 178193},
+    "changed": false
+  },
+  "validation": "Inventory/report-only formalization. No production source, seat range, generated catalog, runtime artifact, fingerprint, or production total changed.",
+  "recommendedNextBoundedBatch": [
+    "tokyo-official-0646 / tokyo-wave3-0646: DENSE two-pass non-production transcription of the current issuer chart.",
+    "tokyo-official-1115 / tokyo-wave3-1115: DENSE two-pass non-production transcription of the normal-use 398 printed seats only.",
+    "tokyo-official-0101 / tokyo-wave3-0101: DENSE two-pass non-production transcription of the current 398-seat example chart."
+  ],
+  "exactNextAction": "Stop after the committed preflight formalization. A separately authorized implementation wave may choose at most these three ADOPT records, starting with non-production two-pass transcription; do not resume ordinary discovery for them."
+}
