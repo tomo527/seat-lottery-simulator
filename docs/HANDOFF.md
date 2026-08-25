@@ -10,6 +10,8 @@ TOKYO-WAVE-24 ordinary bounded integration is released. Its data commit `9d2a66c
 
 The authorized `TOKYO PRIORITY D RANKED FOLLOW-UP PREFLIGHT` is complete with **3 ADOPT / 0 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-d-ranked-followup-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-ranked-followup-preflight-2026-08-25.json) checked only the prescribed research order and stopped after rank 3: `1036` 吉祥寺シアター basic-stage 189, `0133` 赤坂RED/THEATER basic-stage 176, and `0282` 矢来能楽堂 published diagram 237 each have current/current-linked official complete numbered evidence for a separately authorized two-pass candidate. `0647` セルリアンタワー能楽堂 and `0238` 音楽の友ホール were not opened or adjudicated after the stop condition. No source JSON, range, generated artifact, fingerprint, production data, or production total changed.
 
+`TOKYO-WAVE-28 PRIORITY D RANKED ADOPT IMPLEMENTATION` is complete with **3 PRODUCTION / 0 HOLD**. [`data/venue-reports/tokyo-priority-d-ranked-adopt-implementation-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-ranked-adopt-implementation-2026-08-25.json) records direct independent current-chart transcriptions: 吉祥寺シアター〔劇場〕 basic stage is 189 mapped / 189 published / rangeDiff 0 (A-I, BL/BR, J); 赤坂RED/THEATER basic stage is 176 / 176 / 0 (A/B movable-chair notation, unnumbered E-column wheelchair space, and printed F12-14 movable-chair context retained without inferred replacement); 矢来能楽堂 is 237 / 237 / 0 (正面64, 座敷正面32, 脇正面49, 中正面52, 座敷中正面40; tatami annotations retained). Source, inventory, batch/readiness, reviewed fingerprints, catalog, and lazy runtime are synchronized at **128 venues / 130 selectable configurations / 180,542 configuration-seat records** in pushed production commit `d2dc595`. Canonical `npm run verify:venues` passed (213 unit tests, 17 E2E tests). Its managed Workers Build `c8a1eda6-2dc7-41a9-bf1c-ddc5ee1759c2` completed successfully; the public UI searched all three at 189 / 176 / 237 seats, completed one draw each, and had no console warning or error. `0647` セルリアンタワー能楽堂 and `0238` 音楽の友ホール remain unresearched and unchanged.
+
 TOKYO-WAVE-25 preflight is formally closed with **0 ADOPT / 6 DEFERRED**. [`data/venue-reports/tokyo-wave-25-2026-08-24.json`](../data/venue-reports/tokyo-wave-25-2026-08-24.json) preserves the completed current first-party evidence for `0726`, `0993`, `0989`, `0561`, `0426`, and `0708`; their inventory records are `blocked` so they cannot re-enter ordinary candidate discovery. No venue source, range, catalog, runtime artifact, fingerprint, or production total changed.
 
 The authorized `NEXT TERRA PREFLIGHT` is now formally closed with **0 ADOPT / 4 DEFERRED / 2 HARD-CASE DEFER**. [`data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json`](../data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json) preserves the completed first-party evidence for `0373`, `0425`, `0709`, `0611`, `1017`, and `1058`; their inventory records are `blocked` so they cannot re-enter ordinary discovery. None is permanently rejected.
@@ -42,16 +44,16 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | --- | --- |
 | Wave24 promotions | 3 (`tokyo-wave3-1170`, `tokyo-wave3-0645`, `tokyo-wave3-0330`) |
 | Wave24 HOLD | 1 (`tokyo-wave3-1114`) |
-| Authoring production target | 125 venues / 127 selectable configurations / 179,940 configuration-seat records |
+| Authoring production target | 128 venues / 130 selectable configurations / 180,542 configuration-seat records |
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
-| Validation / generated artifacts | `npm run verify:venues` passed for Wave27 (213 unit tests, 17 E2E tests); catalog/runtime/fingerprint synchronized; semantic rangeDiff validation remains an error on mismatch |
-| Commit / push / Workers / public UI | Wave27 `66fc2c6` pushed; Workers Builds `completed / success`; public 1007/0797/0930 search and displayed 246/190/176 counts, one RISURU draw, console warnings/errors all passed |
+| Validation / generated artifacts | `npm run verify:venues` passed for Wave28 (213 unit tests, 17 E2E tests); catalog/runtime/fingerprint synchronized; semantic rangeDiff validation remains an error on mismatch |
+| Commit / push / Workers / public UI | Wave28 `d2dc595` pushed; Workers Build `completed / success`; public 1036/0133/0282 search and displayed 189/176/237 counts, one draw each, console warnings/errors all passed |
 | Legacy type-only A/B lane | Closed: 1 production / 8 DEFER / 0 hard-case DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo A/B source-located lane | Closed: `0374` DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo priority C source-located preflight | Closed: `0375` / `0950` / `1186` DEFER; 0 ADOPT |
 | Tokyo priority C true-unprocessed | CLOSED: `0398` / `0407` / `0518` DEFER; true-unprocessed C = 0 |
 | Tokyo priority D high-yield | Preflight: 835 outstanding → 90 URL/capacity screen → 10 dedicated-hall shortlist; `0492` / `0508` DEFER. Wave27: `1007` / `0797` / `0930` are all PRODUCTION, adding 612 mapped seats. |
-| Tokyo priority D ranked follow-up | Stopped at 3 ADOPT: `1036` / `0133` / `0282` require separately authorized two-pass transcription only. `0647` / `0238` remain unresearched. Production totals unchanged at 125 / 127 / 179,940. |
+| Tokyo priority D ranked follow-up | Wave28 promoted all 3 ADOPTs: `1036` 189, `0133` 176, `0282` 237. `0647` / `0238` remain unresearched. Production totals are 128 / 130 / 180,542. |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -90,7 +92,8 @@ This is a candidate-ranking rule only; it does not alter the evidence/adoption p
 - The GitHub check run **Workers Builds: seat-lottery-simulator** for Stellar Ball production commit `a277a5a` completed successfully. The public runtime searched `ステラボール` to one result, displayed 876 seats, completed one draw (`1F シートフロア D列24番`), and reported no console warning or error.
 - The GitHub check run **Workers Builds: seat-lottery-simulator** for TOKYO-WAVE-26 production commit `672c275` completed successfully. The public runtime found 伝承ホール at 339 seats, ルネこだいら中ホール at 398 seats, and 浜離宮朝日ホール小ホール at 398 seats; one draw completed for each and browser console errors were absent.
 - The GitHub check run **Workers Builds: seat-lottery-simulator** for Wave27 production commit `66fc2c6` completed successfully (build `8028170a-a184-415e-b874-0475e5df7fdf`). The public runtime found RISURU小ホール at 246 seats, 杉並公会堂小ホール at 190 seats, and 大泉学園ゆめりあホール at 176 seats; one RISURU draw completed (`5列 6番`) and the browser console had no warning or error.
+- The GitHub check run **Workers Builds: seat-lottery-simulator** for Wave28 production commit `d2dc595` completed successfully (build `c8a1eda6-2dc7-41a9-bf1c-ddc5ee1759c2`). The public runtime found 吉祥寺シアター at 189 seats, 赤坂RED/THEATER at 176 seats, and 矢来能楽堂 at 237 seats; one draw completed for each (`客席 C列5番`, `客席 B列8番`, `座敷正面席 こ列4番`) and the browser console had no warning or error.
 
 ## Exact next action
 
-Stop. The next action requires separate authorization: perform a bounded independent two-pass implementation only for ADOPT records `tokyo-official-1036`, `tokyo-official-0133`, and `tokyo-official-0282`. Do not research `tokyo-official-0647` or `tokyo-official-0238`, or reopen a deferred/SOURCE HOLD venue, without new authorization.
+Stop. Any further venue work requires separate authorization. In particular, `tokyo-official-0647` セルリアンタワー能楽堂 and `tokyo-official-0238` 音楽の友ホール remain unresearched; do not begin their research or reopen a deferred/SOURCE HOLD venue without new authorization.
