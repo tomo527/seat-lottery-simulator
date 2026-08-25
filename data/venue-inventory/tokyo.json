@@ -2679,15 +2679,15 @@
       "capacity": 176,
       "category": "hall",
       "officialFacilityUrl": "https://www.red-theater.net/",
-      "operationalStatus": "unknown",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryで専用ホール等として公称176席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-25の限定preflightで、現行公式サイトの基本舞台176席座席表と個別印字番号を確認。張出し162/148席とは別configurationとして明示され、基本舞台を後続two-pass候補にできる。",
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.red-theater.net/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "ADOPT preflight完了。別承認のtwo-passで基本舞台176席の全印字ID、A/B可動席、F12-14の車椅子スペース表示と張出し別configurationの非混在を独立確認する。"
     },
     {
       "inventoryId": "tokyo-official-0134",
@@ -5593,13 +5593,14 @@
       "capacity": 237,
       "category": "hall",
       "officialFacilityUrl": "https://yarai-nohgakudo.com/",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-25の限定preflightで、現行公式座席図と2026年の指定席主催公演を確認。公式subtotal 237席と全列・番号が同じissuer evidenceで示され、後続two-pass候補にできる。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-25",
+      "blockingReason": "ADOPT preflight完了。別承認のtwo-passで正面・中正面・脇正面・座敷各区分の全印字ID、公式64/32/49/52/40 subtotal、座敷椅子注記を独立確認する。"
     },
     {
       "inventoryId": "tokyo-official-0283",
@@ -20306,15 +20307,15 @@
       "capacity": 189,
       "category": "hall",
       "officialFacilityUrl": "https://www.musashino.or.jp/k_theatre/index.html",
-      "operationalStatus": "unknown",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryで専用ホール等として公称189席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-25の限定preflightで、現行公式の基本舞台189席ページと基本形式座席表を確認。舞台形状変更時の別配置と区別された、全印字番号の後続two-pass候補にできる。",
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.musashino.or.jp/k_theatre/index.html",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "ADOPT preflight完了。別承認のtwo-passで基本形式のA-I、BL/BR、J全印字IDと189席subtotal、可変舞台時のconfiguration非混在を独立確認する。"
     },
     {
       "inventoryId": "tokyo-official-1037",

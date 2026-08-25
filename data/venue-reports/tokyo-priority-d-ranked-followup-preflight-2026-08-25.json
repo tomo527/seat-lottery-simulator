@@ -1,0 +1,116 @@
+{
+  "wave": "TOKYO PRIORITY D RANKED FOLLOW-UP PREFLIGHT",
+  "date": "2026-08-25",
+  "phase": "Bounded current-first-party evidence preflight",
+  "scopeBoundary": "Only the five post-Wave27 metadata-ranked Priority-D candidates authorized in this order were in scope: 1036, 0133, 0282, 0647, and 0238. Research stopped immediately after the third ADOPT at 0282. No official page or document for 0647 or 0238 was opened, and no other candidate discovery was started. This is preflight only: no source JSON, seat ranges, two-pass transcription, production data, generated artifact, fingerprint, deployment, or production-total change was made.",
+  "policyBasis": "ADOPT requires current/current-linked issuer evidence for one representative configuration, a complete issuer-numbered set, and issuer-supported row/block/floor ownership or subtotal. Capacity, geometry, or accessibility status never supplies a missing ID, ownership assignment, or configuration relation. A HARD-CASE DEFER requires an otherwise complete numbered map with only an issuer-reconciliation question remaining.",
+  "researchOrder": [
+    {"rank": 1, "inventoryId": "tokyo-official-1036", "venue": "吉祥寺シアター〔劇場〕"},
+    {"rank": 2, "inventoryId": "tokyo-official-0133", "venue": "赤坂RED/THEATER"},
+    {"rank": 3, "inventoryId": "tokyo-official-0282", "venue": "矢来能楽堂〔矢来能楽堂〕"},
+    {"rank": 4, "inventoryId": "tokyo-official-0647", "venue": "セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕"},
+    {"rank": 5, "inventoryId": "tokyo-official-0238", "venue": "音楽の友ホール"}
+  ],
+  "facilitySpaceDuplicateCheck": "Checked the inventory's venueSourceId and facility-space identity before research. The three researched records have venueSourceId null and are distinct named spaces; no canonical production/draft source with the same facility-space identity exists. The two unresearched records were not reclassified or reopened.",
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-1036",
+      "venue": "吉祥寺シアター〔劇場〕",
+      "priority": "D",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://www.musashino.or.jp/k_theatre/1002052/1002054.html", "role": "current official theatre page; defines the basic-stage 189-seat configuration and directly links its seat chart"},
+        {"url": "https://www.musashino.or.jp/_res/projects/default_project/_page_/001/002/054/k_theatre-sisetu-gekijou_739.pdf", "role": "current-linked official basic-format 189-seat chart"},
+        {"url": "https://www.musashino.or.jp/k_theatre/index.html", "role": "current official operator site showing active theatre programming"}
+      ],
+      "currentness": "confirmed: the active official operator site publishes current programming, and its theatre page continues to publish the basic-stage chart.",
+      "representativeConfiguration": "Issuer-defined basic stage use, 189 seats. The page expressly distinguishes this basic form from event-specific stage-shape changes that alter seating.",
+      "numberedSeatEvidence": "complete and feasible for later lossless transcription: the chart visibly prints A-I, BL, BR, and J identifiers. The issuer-labelled groups reconcile directly as A-I 162, BL/BR 10, and J 17 = 189; this arithmetic is evidence review, not a range transcription.",
+      "issuerOwnershipAndCapacity": "The official page states 189 seats for basic stage use, and the chart's named rows/side blocks provide the seat ownership. Published capacity is 189 for this selected configuration.",
+      "accessibilityRemovableMultiConfiguration": "The reviewed material does not define a separately numbered wheelchair conversion. Stage-shape changes can alter seating, so no other event configuration may be mixed into the basic form.",
+      "reason": "The current official page and its current-linked chart define one complete numbered basic configuration without capacity fitting or geometry-derived ownership.",
+      "nextTwoPassRequirements": "Independently re-read every printed A-I, BL/BR, and J ID and gap; verify 162 + 10 + 17 = 189 from issuer labels; retain the basic-form boundary and do not infer accessibility replacements."
+    },
+    {
+      "inventoryId": "tokyo-official-0133",
+      "venue": "赤坂RED/THEATER",
+      "priority": "D",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://www.red-theater.net/", "role": "current official theatre site with active schedule and a seat-chart navigation link"},
+        {"url": "https://www.red-theater.net/category/1310114.html", "role": "current official seat-chart page"},
+        {"url": "https://www.red-theater.net/_p/acre/26171/documents/%E5%BA%A7%E5%B8%AD%E8%A1%A8_.pdf", "role": "current-linked official chart defining basic-stage 176, +900 extension 162, and +1800 extension 148 configurations"}
+      ],
+      "currentness": "confirmed: the official site is active and currently publishes its seat-chart and theatre-plan material.",
+      "representativeConfiguration": "Issuer-defined basic stage, 176 seats. The chart separately labels the +900 extension 162-seat and +1800 extension 148-seat variants, so the basic configuration can be selected without mixing variants.",
+      "numberedSeatEvidence": "complete and feasible for later lossless transcription: the basic chart visibly prints row labels A-M and individual numbers. The chart itself states basic stage 176 seats; the visible row arrangement supports an issuer-labelled review of A-D, E, F, G-L, and M without filling any number from capacity.",
+      "issuerOwnershipAndCapacity": "The selected basic configuration's 176-seat total is issuer-published on the same chart. Rows A and B are labelled movable chairs, and the chart labels the F12-14 location as wheelchair space; these printed identifiers must be evaluated from the chart rather than discarded or treated as inferred replacements.",
+      "accessibilityRemovableMultiConfiguration": "A/B movable-chair status and the F12-14 wheelchair-space/movable-chair marking are explicit chart metadata. The two stage-extension totals are separate official configurations and must not be combined with the basic 176-seat set.",
+      "reason": "The official chart gives a distinct basic configuration with complete visible row/seat IDs and issuer-defined alternative configurations; no missing ID or ownership has to be inferred.",
+      "nextTwoPassRequirements": "Independently re-read every A-M printed ID, all basic-chart gaps, the 176-seat issuer total, A/B movable-chair note, F12-14 wheelchair-space marking, and the separation from the 162/148 extension variants."
+    },
+    {
+      "inventoryId": "tokyo-official-0282",
+      "venue": "矢来能楽堂〔矢来能楽堂〕",
+      "priority": "D",
+      "lane": "DENSE",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://yarai-nohgakudo.com/nohgakudo/seating", "role": "current official seating page; links the seat diagram and states that event-specific category/count changes may occur"},
+        {"url": "https://yarai-nohgakudo.com/pdf/seat-original.pdf", "role": "current-linked official seat diagram with individual labels and issuer subtotals"},
+        {"url": "https://yarai-nohgakudo.com/pdf/2026/2026yarai.pdf", "role": "current-linked 2026 official designated-seat programme using the Yarai seating chart"},
+        {"url": "https://yarai-nohgakudo.com/nohgakudo/rules", "role": "current official use guide disclosing 237 seats"}
+      ],
+      "currentness": "confirmed: the official site publishes 2026 designated-seat programming and its current seating page links the same official diagram.",
+      "representativeConfiguration": "The issuer's published basic seating diagram, 237 seats. The seating page warns that event category/count can change, so this is a representative issuer diagram rather than a claim about every event.",
+      "numberedSeatEvidence": "complete and feasible for later lossless transcription: the diagram visibly prints individual IDs across 正面, 座敷正面, 脇正面, 中正面, and 座敷中正面. Its printed issuer subtotals are 64 + 32 + 49 + 52 + 40 = 237; this is evidence review, not a range transcription.",
+      "issuerOwnershipAndCapacity": "The diagram explicitly assigns each printed set to the five named seating categories and prints total 237. The current official use guide also discloses 237 seats, including its seated/tatami-chair description.",
+      "accessibilityRemovableMultiConfiguration": "The chart identifies き・く・け・こ as 座敷 and says 座敷き列 uses sunken kotatsu-style seats. No separately numbered wheelchair or removable-seat conversion is defined in the reviewed official material, so none may be inferred.",
+      "reason": "Current/current-linked official evidence supplies one complete numbered, issuer-subtotalled representative diagram. Variable event categories remain a disclosure, not a reason to merge configurations or create IDs.",
+      "nextTwoPassRequirements": "Independently re-read every printed ID and boundary for all five issuer seating categories; verify 64 + 32 + 49 + 52 + 40 = 237; preserve the 座敷 annotations and do not infer wheelchair/removable relations or event-specific variants."
+    }
+  ],
+  "notResearchedAfterStop": [
+    {
+      "inventoryId": "tokyo-official-0647",
+      "venue": "セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕",
+      "officialFacilityUrl": "https://www.ceruleantower-noh.com/",
+      "researchStarted": false,
+      "disposition": null,
+      "reason": "Not opened or adjudicated: the required stop condition was reached after the third ADOPT. Inventory remains unchanged."
+    },
+    {
+      "inventoryId": "tokyo-official-0238",
+      "venue": "音楽の友ホール",
+      "officialFacilityUrl": "https://www.ongakunotomo.co.jp/company/hall.html",
+      "researchStarted": false,
+      "disposition": null,
+      "reason": "Not opened or adjudicated: the required stop condition was reached after the third ADOPT. Inventory remains unchanged."
+    }
+  ],
+  "result": {
+    "authorizedCandidates": 5,
+    "candidatesResearchStarted": 3,
+    "stoppedAfterResearchOrderRank": 3,
+    "adoptedCandidates": 3,
+    "deferred": 0,
+    "hardCaseDefers": 0,
+    "notResearchedAfterStop": 2,
+    "productionPromotions": 0
+  },
+  "inventorySynchronization": "1036, 0133, and 0282 are updated to active/eligible/source-located with the ADOPT preflight blocker describing their separately authorized two-pass requirement. No DEFER or HARD-CASE DEFER occurred. 0647 and 0238 remain unchanged because research never started.",
+  "productionImpact": {
+    "before": {"venues": 125, "selectableConfigurations": 127, "seatRecords": 179940},
+    "after": {"venues": 125, "selectableConfigurations": 127, "seatRecords": 179940},
+    "changed": false
+  },
+  "validationPlan": "Report/inventory-only closure: run the Tokyo inventory report, inspect the bounded inventory entries and report JSON, run docs verification, then inspect git diff and diff check. Do not run generated-artifact or full production verification because production sources and artifacts are unchanged.",
+  "recommendedNextBoundedBatch": [
+    "tokyo-official-1036: separately authorized two-pass transcription of the official basic-stage 189-seat chart only.",
+    "tokyo-official-0133: separately authorized two-pass transcription of the official basic-stage 176-seat chart only.",
+    "tokyo-official-0282: separately authorized two-pass transcription of the official 237-seat diagram only."
+  ],
+  "exactNextAction": "Stop after this committed preflight closure. A separately authorized bounded two-pass implementation may target only ADOPT records tokyo-official-1036, tokyo-official-0133, and tokyo-official-0282. Do not begin research for tokyo-official-0647 or tokyo-official-0238 without separate authorization."
+}

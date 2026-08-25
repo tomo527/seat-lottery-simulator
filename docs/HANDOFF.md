@@ -8,6 +8,8 @@ TOKYO-WAVE-24 ordinary bounded integration is released. Its data commit `9d2a66c
 
 `TOKYO-WAVE-27 PRIORITY D HIGH-YIELD ADOPT IMPLEMENTATION` is complete with **3 PRODUCTION / 0 HOLD**. [`data/venue-reports/tokyo-priority-d-adopt-implementation-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-adopt-implementation-2026-08-25.json) records the independent current-chart transcriptions: RISURU小ホール is 246 mapped / 246 published / rangeDiff 0 with all 110 removable printed positions retained; 杉並公会堂小ホール is 190 mapped / 194 published / rangeDiff -4 with four unnumbered wheelchair spaces only as metadata; and 大泉学園ゆめりあホール is 176 mapped / 176 published / rangeDiff 0, including the issuer-labelled wheelchair IDs 1-6. The source, inventory, batch/readiness, report, production fingerprint, catalog and lazy runtime artifacts are synchronized at **125 venues / 127 selectable configurations / 179,940 configuration-seat records** in production commit `66fc2c6`. Canonical verification passed (213 unit tests, 17 E2E tests); its managed Workers Build completed successfully, and the public UI searched all three at 246 / 190 / 176 seats, completed one RISURU draw, and had no console warning or error. No new candidate research was started.
 
+The authorized `TOKYO PRIORITY D RANKED FOLLOW-UP PREFLIGHT` is complete with **3 ADOPT / 0 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-d-ranked-followup-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-ranked-followup-preflight-2026-08-25.json) checked only the prescribed research order and stopped after rank 3: `1036` 吉祥寺シアター basic-stage 189, `0133` 赤坂RED/THEATER basic-stage 176, and `0282` 矢来能楽堂 published diagram 237 each have current/current-linked official complete numbered evidence for a separately authorized two-pass candidate. `0647` セルリアンタワー能楽堂 and `0238` 音楽の友ホール were not opened or adjudicated after the stop condition. No source JSON, range, generated artifact, fingerprint, production data, or production total changed.
+
 TOKYO-WAVE-25 preflight is formally closed with **0 ADOPT / 6 DEFERRED**. [`data/venue-reports/tokyo-wave-25-2026-08-24.json`](../data/venue-reports/tokyo-wave-25-2026-08-24.json) preserves the completed current first-party evidence for `0726`, `0993`, `0989`, `0561`, `0426`, and `0708`; their inventory records are `blocked` so they cannot re-enter ordinary candidate discovery. No venue source, range, catalog, runtime artifact, fingerprint, or production total changed.
 
 The authorized `NEXT TERRA PREFLIGHT` is now formally closed with **0 ADOPT / 4 DEFERRED / 2 HARD-CASE DEFER**. [`data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json`](../data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json) preserves the completed first-party evidence for `0373`, `0425`, `0709`, `0611`, `1017`, and `1058`; their inventory records are `blocked` so they cannot re-enter ordinary discovery. None is permanently rejected.
@@ -49,6 +51,7 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | Tokyo priority C source-located preflight | Closed: `0375` / `0950` / `1186` DEFER; 0 ADOPT |
 | Tokyo priority C true-unprocessed | CLOSED: `0398` / `0407` / `0518` DEFER; true-unprocessed C = 0 |
 | Tokyo priority D high-yield | Preflight: 835 outstanding → 90 URL/capacity screen → 10 dedicated-hall shortlist; `0492` / `0508` DEFER. Wave27: `1007` / `0797` / `0930` are all PRODUCTION, adding 612 mapped seats. |
+| Tokyo priority D ranked follow-up | Stopped at 3 ADOPT: `1036` / `0133` / `0282` require separately authorized two-pass transcription only. `0647` / `0238` remain unresearched. Production totals unchanged at 125 / 127 / 179,940. |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -67,7 +70,7 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 
 ## Tokyo Priority D research priority
 
-This is a candidate-ranking rule only; it does not alter the evidence/adoption policy or exclude a venue from production. Rank unresearched Tokyo Priority-D metadata primarily by expected simulator use: (1) dedicated theater, concert hall, live-event hall, or auditorium with continuing stage, theatre, live, or concert use and likely assigned-ticket sales; (2) civic/public halls with explicit performance-use large, medium, or small halls; then (3) recreation, multipurpose, meeting, and conference spaces. The post-Wave27 metadata-only comparison is in [`data/venue-reports/tokyo-priority-d-adopt-implementation-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-adopt-implementation-2026-08-25.json): 吉祥寺シアター, 赤坂RED/THEATER, 矢来能楽堂, セルリアンタワー能楽堂, 音楽の友ホール. It is not a fixed inherited order and starts no web research.
+This is a candidate-ranking rule only; it does not alter the evidence/adoption policy or exclude a venue from production. Rank unresearched Tokyo Priority-D metadata primarily by expected simulator use: (1) dedicated theater, concert hall, live-event hall, or auditorium with continuing stage, theatre, live, or concert use and likely assigned-ticket sales; (2) civic/public halls with explicit performance-use large, medium, or small halls; then (3) recreation, multipurpose, meeting, and conference spaces. The Wave27 metadata comparison did not establish a fixed future order. Its separately authorized follow-up checked 吉祥寺シアター, 赤坂RED/THEATER, and 矢来能楽堂 only, then stopped at three ADOPTs; セルリアンタワー能楽堂 and 音楽の友ホール remain unresearched.
 
 ## Unchanged deferrals
 
@@ -90,4 +93,4 @@ This is a candidate-ranking rule only; it does not alter the evidence/adoption p
 
 ## Exact next action
 
-Stop. The authorized Wave27 implementation, validation, managed Workers Build, and public UI verification are complete. Do not research the metadata-ranked D candidates or reopen a deferred/SOURCE HOLD venue without new authorization.
+Stop. The next action requires separate authorization: perform a bounded independent two-pass implementation only for ADOPT records `tokyo-official-1036`, `tokyo-official-0133`, and `tokyo-official-0282`. Do not research `tokyo-official-0647` or `tokyo-official-0238`, or reopen a deferred/SOURCE HOLD venue, without new authorization.
