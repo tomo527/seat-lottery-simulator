@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "risuru-small-standard",
+  "name": "たましんRISURUホール 小ホール",
+  "prefecture": "東京都",
+  "city": "立川市",
+  "aliases": ["立川市市民会館 小ホール", "RISURUホール 小ホール"],
+  "venueType": "hall",
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"たましんRISURUホール","title":"小ホール 施設概要","url":"https://risuru.hall-info.jp/service/smallhall.html","checkedAt":"2026-08-25"},
+    {"id":"official-seat-chart","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"たましんRISURUホール","title":"小ホール座席表","url":"https://risuru.hall-info.jp/file/SmallHallSeatingChart.pdf","checkedAt":"2026-08-25"}
+  ],
+  "configurations": [
+    {
+      "id": "current-full-246-seat-layout",
+      "canonicalName": "公式全246番号席配置",
+      "issuerDefinedCondition": "現行公式施設ページと直結の座席表が同時に示す小ホール全246席配置。",
+      "selectionBasis": "現行公式の全246席番号図を、可脱着席を含めて完全に直接転記する。可脱着性は番号集合を変える根拠ではない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-25 current official small-hall page and linked numbered seat chart",
+      "sourceIds": ["official-facility-page", "official-seat-chart"],
+      "differenceBasisSourceIds": ["official-facility-page", "official-seat-chart"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 246,
+      "scope": {"kind":"full-venue","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式の全246番号席を抽選します。1〜4列98席と、9〜10列の公式指定12席は可脱着席ですが、全246席配置では印字番号席として保持します。公演ごとの撤去・販売停止は反映しません。",
+      "wheelchairSemantics": {"status":"not-reflected","description":"公式は9〜10列の1〜3番・24〜26番を車椅子にも利用できる可脱着席12席、車椅子配置可能台数を4台程度とするが、車椅子配置時に通常番号席のどれが利用不可になるかは定義しない。全246の通常印字番号を保持する。","sourceIds":["official-facility-page","official-seat-chart"],"accessibilityConversionNotReflected":true},
+      "confidence": "representative",
+      "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-official-seat-chart-visual-transcriptions-with-issued-removable-seat-metadata","seatStructure":"matched","seatCount":"matched","rangeDiff":0,"unresolvedIssues":[]},
+      "ranges": [
+        {"rowLabel":"1","from":3,"to":24,"excluded":[]},
+        {"rowLabel":"2","from":2,"to":25,"excluded":[]},
+        {"rowLabel":"3","from":1,"to":26,"excluded":[]},
+        {"rowLabel":"4","from":1,"to":26,"excluded":[]},
+        {"rowLabel":"5","from":1,"to":26,"excluded":[]},
+        {"rowLabel":"6","from":1,"to":26,"excluded":[]},
+        {"rowLabel":"7","from":1,"to":26,"excluded":[]},
+        {"rowLabel":"8","from":1,"to":26,"excluded":[]},
+        {"rowLabel":"9","from":1,"to":3,"excluded":[]},
+        {"rowLabel":"9","from":5,"to":22,"excluded":[]},
+        {"rowLabel":"9","from":24,"to":26,"excluded":[]},
+        {"rowLabel":"10","from":1,"to":3,"excluded":[]},
+        {"rowLabel":"10","from":6,"to":12,"excluded":[]},
+        {"rowLabel":"10","from":15,"to":21,"excluded":[]},
+        {"rowLabel":"10","from":24,"to":26,"excluded":[]}
+      ]
+    }
+  ]
+}

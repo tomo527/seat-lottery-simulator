@@ -1,0 +1,13 @@
+{
+  "batchId": "tokyo-wave-27-priority-d-adopt-implementation",
+  "createdAt": "2026-08-25",
+  "scope": "TOKYO Priority D high-yield bounded implementation: RISURU小ホール、杉並公会堂小ホール、大泉学園ゆめりあホール only. Existing preflight ADOPTs are transcribed twice from the named current/current-linked issuer charts; no candidate discovery or new venue research is in scope.",
+  "status": "complete",
+  "priority": "D",
+  "targetVenueIds": ["tokyo-official-1007", "tokyo-official-0797", "tokyo-official-0930"],
+  "carryOvers": [
+    {"inventoryId":"tokyo-official-1007","carryOverFrom":"tokyo-wave-4","previousStatus":"source-located","recheckReason":"Priority-D ADOPT preflight already confirmed the current official full 246-seat chart and its removable/wheelchair metadata; implementation independently transcribes every printed number without fitting.","recheckNotBefore":"2026-08-25"},
+    {"inventoryId":"tokyo-official-0797","carryOverFrom":"tokyo-wave-4","previousStatus":"source-located","recheckReason":"Priority-D ADOPT preflight already confirmed the current official A-J chart with 190 printed seats and four unnumbered wheelchair spaces; implementation independently transcribes only the printed set.","recheckNotBefore":"2026-08-25"},
+    {"inventoryId":"tokyo-official-0930","carryOverFrom":"tokyo-wave-4","previousStatus":"source-located","recheckReason":"Priority-D ADOPT preflight already confirmed the current official 170 fixed plus six individually numbered wheelchair-position chart; implementation independently transcribes every issuer-labelled ID.","recheckNotBefore":"2026-08-25"}
+  ]
+}

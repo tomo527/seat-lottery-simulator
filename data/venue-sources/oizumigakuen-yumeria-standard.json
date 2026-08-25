@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "oizumigakuen-yumeria-standard",
+  "name": "大泉学園ゆめりあホール",
+  "prefecture": "東京都",
+  "city": "練馬区",
+  "aliases": ["ゆめりあホール", "練馬区立大泉学園ゆめりあホール"],
+  "venueType": "hall",
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"練馬区文化振興協会","title":"大泉学園ゆめりあホール 施設案内","url":"https://www.neribun.or.jp/en/yumeria/hall/","checkedAt":"2026-08-25"},
+    {"id":"official-seat-chart","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"練馬区文化振興協会","title":"ゆめりあホール 座席表","url":"https://www.neribun.or.jp/en/yumeria/hall/file/%E3%82%86%E3%82%81%E3%82%8A%E3%81%82%E6%96%B0%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf","checkedAt":"2026-08-25"}
+  ],
+  "configurations": [
+    {
+      "id": "current-numbered-176-seat-layout",
+      "canonicalName": "公式176番号席配置",
+      "issuerDefinedCondition": "現行公式施設案内が示す固定170席と車椅子6席の計176席配置。",
+      "selectionBasis": "現行公式図の固定170番号席に加え、個別番号1〜6が付く車椅子スペースを同じ公式176席配置の印字番号集合として直接転記する。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-25 current official facility page and linked numbered seat chart",
+      "sourceIds": ["official-facility-page", "official-seat-chart"],
+      "differenceBasisSourceIds": ["official-facility-page", "official-seat-chart"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 176,
+      "scope": {"kind":"full-venue","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式の固定170席と、図で個別番号1〜6が付く車椅子スペースを合わせた176番号席を抽選します。一般席・車椅子席の表示area名は公式図の明確な区分を抽選結果表示用に整理したものです。",
+      "wheelchairSemantics": {"status":"resolved","description":"公式施設案内は固定170席と車椅子6席を明示し、公式図は車椅子位置に個別番号1〜6を印字する。この6番号を独立したissuer-defined selectable setとして保持する。","sourceIds":["official-facility-page","official-seat-chart"]},
+      "confidence": "representative",
+      "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-official-seat-chart-visual-transcriptions-with-wheelchair-id-review","seatStructure":"matched","seatCount":"matched","rangeDiff":0,"unresolvedIssues":[]},
+      "ranges": [
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"A","from":5,"to":10,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"B","from":2,"to":13,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"C","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"D","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"E","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"F","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"G","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"H","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"I","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"J","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"K","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"L","from":1,"to":14,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"M","from":1,"to":3,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"M","from":5,"to":10,"excluded":[]},
+        {"areaId":"standard-seats","areaLabel":"一般席","rowLabel":"M","from":12,"to":14,"excluded":[]},
+        {"areaId":"wheelchair-spaces","areaLabel":"車椅子席","rowLabel":"車椅子","from":1,"to":6,"excluded":[]}
+      ]
+    }
+  ]
+}

@@ -6,6 +6,8 @@ Updated: 2026-08-25 (Asia/Tokyo)
 
 TOKYO-WAVE-24 ordinary bounded integration is released. Its data commit `9d2a66cd2bdfc3738bd3e0513288d1d52da6fe68` is pushed in main history. The current bounded preflight began from clean `main` / `origin/main` `890ff430b6f5f85ae4047bc34d838c04a28a3a6e`; no reset or revert was performed.
 
+`TOKYO-WAVE-27 PRIORITY D HIGH-YIELD ADOPT IMPLEMENTATION` is complete with **3 PRODUCTION / 0 HOLD**. [`data/venue-reports/tokyo-priority-d-adopt-implementation-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-adopt-implementation-2026-08-25.json) records the independent current-chart transcriptions: RISURU小ホール is 246 mapped / 246 published / rangeDiff 0 with all 110 removable printed positions retained; 杉並公会堂小ホール is 190 mapped / 194 published / rangeDiff -4 with four unnumbered wheelchair spaces only as metadata; and 大泉学園ゆめりあホール is 176 mapped / 176 published / rangeDiff 0, including the issuer-labelled wheelchair IDs 1-6. The source, inventory, batch/readiness, report, production fingerprint, catalog and lazy runtime artifacts are synchronized locally at **125 venues / 127 selectable configurations / 179,940 configuration-seat records**. No new candidate research was started.
+
 TOKYO-WAVE-25 preflight is formally closed with **0 ADOPT / 6 DEFERRED**. [`data/venue-reports/tokyo-wave-25-2026-08-24.json`](../data/venue-reports/tokyo-wave-25-2026-08-24.json) preserves the completed current first-party evidence for `0726`, `0993`, `0989`, `0561`, `0426`, and `0708`; their inventory records are `blocked` so they cannot re-enter ordinary candidate discovery. No venue source, range, catalog, runtime artifact, fingerprint, or production total changed.
 
 The authorized `NEXT TERRA PREFLIGHT` is now formally closed with **0 ADOPT / 4 DEFERRED / 2 HARD-CASE DEFER**. [`data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json`](../data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json) preserves the completed first-party evidence for `0373`, `0425`, `0709`, `0611`, `1017`, and `1058`; their inventory records are `blocked` so they cannot re-enter ordinary discovery. None is permanently rejected.
@@ -38,7 +40,7 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | --- | --- |
 | Wave24 promotions | 3 (`tokyo-wave3-1170`, `tokyo-wave3-0645`, `tokyo-wave3-0330`) |
 | Wave24 HOLD | 1 (`tokyo-wave3-1114`) |
-| Authoring production target | 122 venues / 124 selectable configurations / 179,328 configuration-seat records |
+| Authoring production target | 125 venues / 127 selectable configurations / 179,940 configuration-seat records |
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
 | Validation / generated artifacts | `npm run verify:venues` passed after the TOKYO-WAVE-26 rangeDiff correction; catalog/runtime/fingerprint synchronized; semantic rangeDiff validation added and its equality mismatch is now an error |
 | Commit / push / Workers / public UI | `672c275` pushed; Workers Builds `completed / success`; public 0646/1115/0101 search, displayed counts, one draw, console errors all passed |
@@ -46,7 +48,7 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | Tokyo A/B source-located lane | Closed: `0374` DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo priority C source-located preflight | Closed: `0375` / `0950` / `1186` DEFER; 0 ADOPT |
 | Tokyo priority C true-unprocessed | CLOSED: `0398` / `0407` / `0518` DEFER; true-unprocessed C = 0 |
-| Tokyo priority D high-yield preflight | 835 outstanding → 90 URL/capacity screen → 10 dedicated-hall shortlist; `1007` / `0797` / `0930` ADOPT, `0492` / `0508` DEFER; no production implementation |
+| Tokyo priority D high-yield | Preflight: 835 outstanding → 90 URL/capacity screen → 10 dedicated-hall shortlist; `0492` / `0508` DEFER. Wave27: `1007` / `0797` / `0930` are all PRODUCTION, adding 612 mapped seats. |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -62,6 +64,10 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 ### Historical ID reconciliation
 
 `tokyo-official-1170`/`tokyo-wave3-1170` and `tokyo-official-0645`/`tokyo-wave3-0645` are each the same venue. Both prior Wave3 records were incomplete drafts, not REJECT/HOLD dispositions; each was **reopened under current policy/evidence** and updated in place. Future candidate exclusion must match by canonical `venueSourceId` and facility-space identity, not only by inventory-ID prefix, so a previously investigated venue cannot re-enter through an `official-*` versus `wave3-*` ID difference.
+
+## Tokyo Priority D research priority
+
+This is a candidate-ranking rule only; it does not alter the evidence/adoption policy or exclude a venue from production. Rank unresearched Tokyo Priority-D metadata primarily by expected simulator use: (1) dedicated theater, concert hall, live-event hall, or auditorium with continuing stage, theatre, live, or concert use and likely assigned-ticket sales; (2) civic/public halls with explicit performance-use large, medium, or small halls; then (3) recreation, multipurpose, meeting, and conference spaces. The post-Wave27 metadata-only comparison is in [`data/venue-reports/tokyo-priority-d-adopt-implementation-2026-08-25.json`](../data/venue-reports/tokyo-priority-d-adopt-implementation-2026-08-25.json): 吉祥寺シアター, 赤坂RED/THEATER, 矢来能楽堂, セルリアンタワー能楽堂, 音楽の友ホール. It is not a fixed inherited order and starts no web research.
 
 ## Unchanged deferrals
 
@@ -83,4 +89,4 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 
 ## Exact next action
 
-Stop after the committed Priority-C closure and first Priority-D high-yield preflight. If separately authorized, the next bounded implementation batch is `1007` RISURU小ホール, `0797` 杉並公会堂小ホール, and `0930` ゆめりあホール; start with independent two-pass non-production transcription and do not deploy. Do not research unvisited ranked D candidates or reopen a deferred/SOURCE HOLD venue without new authorization.
+Run the one canonical `npm run verify:venues`, then—if it passes—commit and normally push this already authorized Wave27 production integration. Confirm the managed Workers Build and public UI smoke tests for all three venues, record the resulting commit/build/UI state here in a docs-only closure commit if needed, then stop. Do not research the metadata-ranked D candidates or reopen a deferred/SOURCE HOLD venue without new authorization.

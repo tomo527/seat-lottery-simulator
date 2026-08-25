@@ -1,0 +1,54 @@
+{
+  "wave": "TOKYO PRIORITY D HIGH-YIELD ADOPT IMPLEMENTATION",
+  "date": "2026-08-25",
+  "lane": "DENSE",
+  "batchId": "tokyo-wave-27-priority-d-adopt-implementation",
+  "scopeBoundary": "Only the three ADOPTs from tokyo-priority-d-high-yield-preflight-2026-08-25 were implemented. The two current/current-linked issuer charts named for each venue were visually transcribed twice; no candidate discovery or new venue research was performed.",
+  "policyBasis": "The second pass was a fresh visual reread of the issuer PDF by row/block and number sequence before comparison with the first pass. PASS requires the complete printed set, issuer-defined ownership/subtotals and selected configuration to match. Published capacity was never used to fill a number, gap, ownership relation or configuration difference.",
+  "venues": [
+    {
+      "id": "risuru-small-standard",
+      "inventoryId": "tokyo-official-1007",
+      "venue": "たましんRISURUホール 小ホール",
+      "officialEvidence": {"facilityPage":"https://risuru.hall-info.jp/service/smallhall.html","seatChart":"https://risuru.hall-info.jp/file/SmallHallSeatingChart.pdf","representativeConfiguration":"current issuer full 246-seat layout"},
+      "issuerMetadata": {"published":246,"removable":110,"rows1to4":98,"wheelchairConvertibleRows9to10":12,"wheelchairPlacement":"approximately four wheelchairs, two on each side"},
+      "firstPass": {"method":"Fresh full-page visual transcription by the printed row labels 1-10 and every displayed number sequence.","rows":"1=3-24; 2=2-25; 3-8=1-26; 9=1-3/5-22/24-26; 10=1-3/6-12/15-21/24-26.","mapped":246},
+      "secondPass": {"method":"Independent visual reread by side/centre/side blocks and then row subtotal, without using the first-pass range string as an answer key.","subtotals":"rows1-4=98; rows5-8=104; row9=24; row10=20; total246.","mapped":246},
+      "comparison": {"rowAndAreaOwnership":"MATCH: each range is owned by the issuer-printed row number; no geometry-only area was made.","rangesAndGaps":"MATCH: row9 omits4/23; row10 omits4-5/13-14/22-23.","issuerSubtotals":"MATCH: 98 removable rows1-4 plus the issuer's separately named 12 convertible row9-10 positions is metadata within the full246 set.","twoPassAgreement":"MATCH: both passes produce the same complete 246 printed IDs."},
+      "outcome": {"disposition":"PRODUCTION","mapped":246,"published":246,"rangeDiff":0,"confidence":"representative","accessibilityAndRemovableMetadata":"All 110 removable printed seats remain selectable. The issuer labels row9-10 positions1-3 and24-26 as wheelchair-usable removable seats; it does not define a replacement relation to ordinary IDs, so none was inferred."}
+    },
+    {
+      "id": "suginami-kokaido-small-standard",
+      "inventoryId": "tokyo-official-0797",
+      "venue": "杉並公会堂 小ホール",
+      "officialEvidence": {"seatMapIndex":"https://www.suginamikoukaidou.com/about/seat/","seatChart":"https://www.suginamikoukaidou.com/wp-content/uploads/2023/05/a091dc474566ee7634e884a581541621.pdf","representativeConfiguration":"current issuer A-J numbered small-hall layout"},
+      "issuerMetadata": {"numbered":190,"unnumberedWheelchair":4,"published":194},
+      "firstPass": {"method":"Fresh full-page visual transcription of the printed A-J sequences.","rows":"A=3-18; B-I each1-20; J=4-17.","mapped":190},
+      "secondPass": {"method":"Independent visual reread from the PDF's three printed blocks per row, followed by row-count arithmetic before comparison.","subtotals":"A16 + B-I160 + J14 =190; unnumbered wheelchair icons4 are separate.","mapped":190},
+      "comparison": {"rowAndAreaOwnership":"MATCH: the issuer prints each A-J row label and all owned numbers.","rangesAndGaps":"MATCH: A starts3 and J starts4/ends17; B-I are full1-20.","issuerSubtotals":"MATCH: the PDF explicitly states 190 seats plus wheelchair4; no capacity fitting occurred.","twoPassAgreement":"MATCH: both passes produce the same complete 190 printed IDs."},
+      "outcome": {"disposition":"PRODUCTION","mapped":190,"published":194,"rangeDiff":-4,"confidence":"representative","accessibilityAndRemovableMetadata":"The four wheelchair spaces are unnumbered metadata only. No wheelchair ID was created and no printed A-J seat was removed."}
+    },
+    {
+      "id": "oizumigakuen-yumeria-standard",
+      "inventoryId": "tokyo-official-0930",
+      "venue": "大泉学園ゆめりあホール",
+      "officialEvidence": {"facilityPage":"https://www.neribun.or.jp/en/yumeria/hall/","seatChart":"https://www.neribun.or.jp/en/yumeria/hall/file/%E3%82%86%E3%82%81%E3%82%8A%E3%81%82%E6%96%B0%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf","representativeConfiguration":"current issuer 170 fixed plus six individually numbered wheelchair spaces"},
+      "issuerMetadata": {"fixed":170,"wheelchairNumbered":6,"published":176},
+      "firstPass": {"method":"Fresh full-page visual transcription of rows A-M and the separately printed wheelchair numbers.","rows":"A=5-10; B=2-13; C-L each1-14; M=1-3/5-10/12-14; wheelchair=1-6.","mapped":176},
+      "secondPass": {"method":"Independent reread of the fixed-seat row subtotal first, then the six issuer-labelled wheelchair symbols before comparison.","subtotals":"A6 + B12 + C-L140 + M12 = fixed170; wheelchair1-6=6; total176.","mapped":176},
+      "comparison": {"rowAndAreaOwnership":"MATCH: rows A-M and the grouped wheelchair1-6 positions are issuer-labelled; display areas only preserve those explicit groups.","rangesAndGaps":"MATCH: A/B/M endpoints and M gaps4/11, plus wheelchair1-6.","issuerSubtotals":"MATCH: official fixed170 + wheelchair6 =176.","twoPassAgreement":"MATCH: both passes produce the same complete 176 printed IDs."},
+      "outcome": {"disposition":"PRODUCTION","mapped":176,"published":176,"rangeDiff":0,"confidence":"representative","accessibilityAndRemovableMetadata":"The six wheelchair positions have individual issuer IDs and remain selectable; no accessibility-based exclusion was made."}
+    }
+  ],
+  "result": {"production":3,"hold":0,"mappedSeatsAdded":612},
+  "productionAfter": {"venues":125,"selectableConfigurations":127,"configurationSeatRecords":179940},
+  "validationPlan": "Run one target review per source, the bounded batch/readiness reports, synchronize production fingerprints and generated artifacts, then run exactly one canonical npm run verify:venues.",
+  "nextPriorityDMetadataOnly": [
+    {"rank":1,"inventoryId":"tokyo-official-1036","venue":"吉祥寺シアター〔劇場〕","category":"dedicated theater","reason":"Dedicated named theatre; its primary use aligns directly with ticketed performance-seat selection. Existing metadata only; no web research started."},
+    {"rank":2,"inventoryId":"tokyo-official-0133","venue":"赤坂RED/THEATER","category":"dedicated theater","reason":"Dedicated live-theatre identity and in-band capacity rank ahead of civic/multipurpose metadata candidates. Existing metadata only; no web research started."},
+    {"rank":3,"inventoryId":"tokyo-official-0282","venue":"矢来能楽堂〔矢来能楽堂〕","category":"dedicated noh theater","reason":"Dedicated performance venue; placement is based on metadata, not a fixed inherited shortlist order. No web research started."},
+    {"rank":4,"inventoryId":"tokyo-official-0647","venue":"セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕","category":"dedicated noh theater","reason":"Dedicated performance venue with an official URL in the existing shortlist. No web research started."},
+    {"rank":5,"inventoryId":"tokyo-official-0238","venue":"音楽の友ホール","category":"dedicated concert hall","reason":"Dedicated concert-hall identity places it above civic/recreation/multipurpose spaces, while remaining metadata-only. No web research started."}
+  ],
+  "stopCondition": "Stop after this bounded implementation and metadata-only reranking. Do not begin web research for the ranked candidates without separate authorization."
+}

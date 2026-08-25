@@ -672,6 +672,20 @@
         }
       }
     },
+    "oizumigakuen-yumeria-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-numbered-176-seat-layout": {
+          "count": 176,
+          "samples": [
+            "standard-seats/A/5",
+            "standard-seats/H/1",
+            "wheelchair-spaces/車椅子/6"
+          ],
+          "sha256": "e8629970e08715c8bf826f4e753d1edbe0ccbc876fd33c3ff28a3438e47253b9"
+        }
+      }
+    },
     "oji-hall-standard": {
       "count": 315,
       "samples": [
@@ -758,6 +772,20 @@
       ],
       "sha256": "2044cf94737fe95df84811f6fa933cb27319f6aa4ad1ef9e6f7a155f69303e23"
     },
+    "risuru-small-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-full-246-seat-layout": {
+          "count": 246,
+          "samples": [
+            "main/1/3",
+            "main/5/26",
+            "main/10/26"
+          ],
+          "sha256": "172fe8897625e670f6d4f7b65967cf9c19976ce7f552c1fde8469cec88127031"
+        }
+      }
+    },
     "sagamihara-green-hall-main-release-seed": {
       "count": 1778,
       "samples": [
@@ -821,6 +849,20 @@
         "second-front/C7/32"
       ],
       "sha256": "f157b57576f7d2a2d2d2baf5686f17357e81e4b3fdf9c2bde03510c382caedec"
+    },
+    "suginami-kokaido-small-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "current-numbered-190-seat-layout": {
+          "count": 190,
+          "samples": [
+            "main/A/3",
+            "main/E/20",
+            "main/J/17"
+          ],
+          "sha256": "ed30e19d098c9137a760ae08f025259ecf66d15c7c46510c469524c1a629766e"
+        }
+      }
     },
     "sumida-triphony-main-hall-standard": {
       "schemaVersion": 2,

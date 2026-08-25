@@ -1101,6 +1101,31 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "oizumigakuen-yumeria-standard",
+    "venueGroupId": "oizumigakuen-yumeria-standard",
+    "name": "大泉学園ゆめりあホール",
+    "searchAliases": [
+      "ゆめりあホール",
+      "練馬区立大泉学園ゆめりあホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "練馬区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-numbered-176-seat-layout",
+        "canonicalName": "公式176番号席配置",
+        "seatCount": 176,
+        "dataPath": "/venue-db/venues/oizumigakuen-yumeria-standard--current-numbered-176-seat-layout.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式の固定170席と、図で個別番号1〜6が付く車椅子スペースを合わせた176番号席を抽選します。一般席・車椅子席の表示area名は公式図の明確な区分を抽選結果表示用に整理したものです。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "oji-hall-standard",
     "name": "銀座 王子ホール",
     "searchAliases": [
@@ -1233,6 +1258,31 @@
     "dataPath": "/venue-db/venues/risuru-main-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "risuru-small-standard",
+    "venueGroupId": "risuru-small-standard",
+    "name": "たましんRISURUホール 小ホール",
+    "searchAliases": [
+      "RISURUホール 小ホール",
+      "立川市市民会館 小ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "立川市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-full-246-seat-layout",
+        "canonicalName": "公式全246番号席配置",
+        "seatCount": 246,
+        "dataPath": "/venue-db/venues/risuru-small-standard--current-full-246-seat-layout.json",
+        "scope": "full-venue",
+        "scopeDisclosure": "現行公式の全246番号席を抽選します。1〜4列98席と、9〜10列の公式指定12席は可脱着席ですが、全246席配置では印字番号席として保持します。公演ごとの撤去・販売停止は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "sagamihara-green-hall-main-release-seed",
     "name": "相模女子大学グリーンホール 大ホール",
     "searchAliases": [
@@ -1334,6 +1384,30 @@
     "representativePatternName": "コンサート形式",
     "seatCount": 1186,
     "dataPath": "/venue-db/venues/suginami-kokaido-main-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "suginami-kokaido-small-standard",
+    "venueGroupId": "suginami-kokaido-small-standard",
+    "name": "杉並公会堂 小ホール",
+    "searchAliases": [
+      "杉並公会堂小ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "杉並区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "current-numbered-190-seat-layout",
+        "canonicalName": "公式190番号席配置",
+        "seatCount": 190,
+        "dataPath": "/venue-db/venues/suginami-kokaido-small-standard--current-numbered-190-seat-layout.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式図のA〜J、190番号席を抽選します。公式が別掲する無番号の車椅子4席はseat IDを作らず、抽選対象に含めません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "schemaVersion": 2,

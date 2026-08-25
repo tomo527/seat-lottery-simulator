@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "suginami-kokaido-small-standard",
+  "name": "杉並公会堂 小ホール",
+  "prefecture": "東京都",
+  "city": "杉並区",
+  "aliases": ["杉並公会堂小ホール"],
+  "venueType": "hall",
+  "sources": [
+    {"id":"official-seat-map-index","official":true,"roles":["facility","event-layout"],"publisher":"杉並公会堂","title":"座席表","url":"https://www.suginamikoukaidou.com/about/seat/","checkedAt":"2026-08-25"},
+    {"id":"official-small-hall-seat-chart","official":true,"roles":["seat-structure","seat-count"],"publisher":"杉並公会堂","title":"小ホール 座席表","url":"https://www.suginamikoukaidou.com/wp-content/uploads/2023/05/a091dc474566ee7634e884a581541621.pdf","checkedAt":"2026-08-25"}
+  ],
+  "configurations": [
+    {
+      "id": "current-numbered-190-seat-layout",
+      "canonicalName": "公式190番号席配置",
+      "issuerDefinedCondition": "現行公式小ホール座席表が示す190番号席と、別記の無番号車椅子4席。",
+      "selectionBasis": "現行公式座席表のA〜Jに印字された190の番号席を完全に直接転記する。無番号の車椅子4席にrepository IDは作らない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-25 current official seat-map index and linked small-hall chart",
+      "sourceIds": ["official-seat-map-index", "official-small-hall-seat-chart"],
+      "differenceBasisSourceIds": ["official-small-hall-seat-chart"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 194,
+      "scope": {"kind":"official-variant","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式図のA〜J、190番号席を抽選します。公式が別掲する無番号の車椅子4席はseat IDを作らず、抽選対象に含めません。",
+      "wheelchairSemantics": {"status":"not-applicable","description":"公式は190番号席とは別に無番号の車椅子4席を掲示する。個別IDも通常番号席との置換関係もないため、番号範囲には含めない。","sourceIds":["official-small-hall-seat-chart"]},
+      "confidence": "representative",
+      "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-official-small-hall-chart-visual-transcriptions","seatStructure":"matched","seatCount":"mismatched","rangeDiff":-4,"unresolvedIssues":[]},
+      "ranges": [
+        {"rowLabel":"A","from":3,"to":18,"excluded":[]},
+        {"rowLabel":"B","from":1,"to":20,"excluded":[]},
+        {"rowLabel":"C","from":1,"to":20,"excluded":[]},
+        {"rowLabel":"D","from":1,"to":20,"excluded":[]},
+        {"rowLabel":"E","from":1,"to":20,"excluded":[]},
+        {"rowLabel":"F","from":1,"to":20,"excluded":[]},
+        {"rowLabel":"G","from":1,"to":20,"excluded":[]},
+        {"rowLabel":"H","from":1,"to":20,"excluded":[]},
+        {"rowLabel":"I","from":1,"to":20,"excluded":[]},
+        {"rowLabel":"J","from":4,"to":17,"excluded":[]}
+      ]
+    }
+  ]
+}

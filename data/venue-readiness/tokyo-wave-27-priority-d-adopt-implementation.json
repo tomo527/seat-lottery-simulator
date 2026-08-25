@@ -1,0 +1,12 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-27-priority-d-adopt-implementation",
+  "baselineDate": "2026-08-25",
+  "scope": "TOKYO Priority D high-yield bounded two-pass implementation of exactly three preflight ADOPTs.",
+  "expectedVenueCount": 3,
+  "venues": [
+    {"venueId":"risuru-small-standard","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain every printed number in the current official 246-seat full layout, including all 110 removable positions; retain the issuer's wheelchair-convertible-position disclosure without inferring a replacement set."},
+    {"venueId":"suginami-kokaido-small-standard","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain the complete A-J 190 printed seat IDs; retain the separately disclosed four unnumbered wheelchair spaces as metadata and do not create IDs."},
+    {"venueId":"oizumigakuen-yumeria-standard","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain the full 170 fixed printed set and the issuer-labelled wheelchair IDs 1-6; do not exclude the latter on accessibility grounds."}
+  ]
+}
