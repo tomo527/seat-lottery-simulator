@@ -7,7 +7,7 @@
   "city": "小平市",
   "aliases": ["ルネこだいら 中ホール"],
   "venueType": "hall",
-  "representativePattern": {"id":"current-linked-official-normal-use-plan","name":"通常使用時・公式番号席398席","coverage":"complete","expectedSeatCount":398,"selectionReason":"現行中ホールページが案内する通常使用時401席（車椅子席3席を含む）のうち、公式平面図に通常席として印字された398席を代表配置として転記する。","notIncludedPatterns":["点線で示す増設可能な客席最大28席","無番号の車椅子席3席","舞台転換時の最大555席"]},
+  "representativePattern": {"id":"current-linked-official-normal-use-plan","name":"通常使用時・公式番号席398席","coverage":"complete","expectedSeatCount":401,"selectionReason":"現行中ホールページが案内する通常使用時401席（車椅子席3席を含む）のうち、公式平面図に通常席として印字された398席を代表配置として転記する。","notIncludedPatterns":["点線で示す増設可能な客席最大28席","無番号の車椅子席3席","舞台転換時の最大555席"]},
   "sources": [
     {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"小平市民文化会館 ルネこだいら","title":"中ホール","url":"https://www.runekodaira.jp/detail/t00025.html","checkedAt":"2026-08-25"},
     {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"小平市民文化会館 ルネこだいら","title":"中ホール客席平面図","url":"https://www.runekodaira.jp/pdf/chuhall_seats.pdf","checkedAt":"2026-08-25"}
@@ -16,7 +16,7 @@
   "completenessBasis": "公式図の席数398席を、F16・G18・H20・I22・J24・K26・L26・M〜T各28・U22として印字rangeから再現した。",
   "transformation": "公式図に明示された行ラベルF〜Uと実線番号だけを転記した。F〜Tの前後の点線増設位置と、U列15〜17の車椅子位置は番号付き通常席へ変換していない。",
   "knownLimitations": ["通常使用時401席は398の印字通常席に無番号の車椅子席3席を加えた値であり、車椅子位置のseat IDは作成しない。", "点線は増設可能な客席最大28席であり、通常使用時の代表configurationには含めない。", "舞台の拡張により最大555席となる別運用は混在させない。"],
-  "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-linked-official-pdf-visual-transcriptions-of-normal-use-solid-numbered-set","seatStructure":"matched","seatCount":"matched","unresolvedIssues":[]},
+  "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-linked-official-pdf-visual-transcriptions-of-normal-use-solid-numbered-set","seatStructure":"matched","seatCount":"mismatched","rangeDiff":-3,"unresolvedIssues":[]},
   "ranges": [
     {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"F","from":7,"to":22,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"G","from":6,"to":23,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"H","from":5,"to":24,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"I","from":4,"to":25,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"J","from":3,"to":26,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"K","from":2,"to":27,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"L","from":2,"to":27,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"M","from":1,"to":28,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"N","from":1,"to":28,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"O","from":1,"to":28,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"P","from":1,"to":28,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"Q","from":1,"to":28,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"R","from":1,"to":28,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"S","from":1,"to":28,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"T","from":1,"to":28,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"U","from":1,"to":14,"excluded":[]}, {"areaId":"normal","areaLabel":"通常使用時客席","rowLabel":"U","from":21,"to":28,"excluded":[]}
   ]

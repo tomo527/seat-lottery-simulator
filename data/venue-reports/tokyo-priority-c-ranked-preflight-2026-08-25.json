@@ -1,0 +1,104 @@
+{
+  "wave": "TOKYO PRIORITY C RANKED PREFLIGHT",
+  "date": "2026-08-25",
+  "phase": "Bounded current-first-party evidence preflight",
+  "scopeBoundary": "Only the five metadata-ranked candidates named in the authorization were checked. Current first-party sources only; no seat transcription, production implementation, generated artifacts, fingerprint update, or deploy was performed.",
+  "policyBasis": "ADOPT requires a current or current-linked issuer-numbered map/list, a single representative configuration, a complete printed numbered set, issuer-defined row/block ownership and subtotal evidence. Capacity fitting, invented IDs, geometry-only ownership, and configuration mixing are prohibited.",
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0135",
+      "canonicalId": "tokyo-wave3-0135",
+      "venue": "赤坂区民センター〔区民ホール〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://akasaka-civiccenter.jp/shisetsu/list_1.html", "role": "current facility page and 400-person capacity"},
+        {"url": "https://akasaka-civiccenter.jp/shisetsu/sheets_akasaka.pdf", "role": "current page's linked seat chart URL"}
+      ],
+      "representativeConfiguration": "Not established.",
+      "printedSet": "Not available: the current facility page links the chart, but the linked URL returned PAGE NOT FOUND when checked.",
+      "ownershipAndSubtotal": "Not available.",
+      "movableWheelchairMetadata": "The current page says the first and second rows can be removed; no current numbered chart establishes their relationship to a selectable set.",
+      "reason": "A current official link alone is not a current issuer-numbered set. Defer until the operator restores or replaces the linked numbered seat chart."
+    },
+    {
+      "inventoryId": "tokyo-official-0331",
+      "canonicalId": "tokyo-wave3-0331",
+      "venue": "東京国立博物館〔平成館大講堂〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://www.tnm.jp/modules/r_free_page/index.php?id=184&lang=ja", "role": "current facility page; fixed 393 + wheelchair 2"}
+      ],
+      "representativeConfiguration": "Auditorium is current, but no issuer-defined numbered representative configuration is published.",
+      "printedSet": "No current issuer-numbered map/list found.",
+      "ownershipAndSubtotal": "The published fixed393 and wheelchair2 capacity statement supplies no rows, blocks, individual numbers, or numbered wheelchair ownership.",
+      "movableWheelchairMetadata": "Wheelchair2 is stated as capacity metadata only.",
+      "reason": "Existing draft ranges have no re-established current first-party provenance and were not adopted."
+    },
+    {
+      "inventoryId": "tokyo-official-0908",
+      "canonicalId": "tokyo-wave3-0908",
+      "venue": "板橋区立高島平区民館〔ホール〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://www.city.itabashi.tokyo.jp/bunka/shisetsu/chiiki/1004798.html", "role": "current municipal facility page; 500-person capacity, plans, and operating notice"}
+      ],
+      "representativeConfiguration": "Not established; the page requires advance discussion for event setup.",
+      "printedSet": "No issuer-numbered audience-seat map/list found.",
+      "ownershipAndSubtotal": "Plans and capacity do not define numbered rows, blocks, or subtotals.",
+      "movableWheelchairMetadata": "Flat-floor/event setup characteristics are present. The page also announces rental suspension for LED work from 2027-02-01 through 2027-03-31.",
+      "reason": "Do not infer a numbered representative layout from plans or capacity."
+    },
+    {
+      "inventoryId": "tokyo-official-0559",
+      "canonicalId": "tokyo-wave3-0559",
+      "venue": "砧区民会館(成城ホール)〔成城ホール〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://www.setagaya.co.jp/kuminkaikan/seijohall/facilities/hall.html", "role": "current facility and configuration capacities"},
+        {"url": "https://www.setagaya.co.jp/kuminkaikan/seijohall/download.html", "role": "current official layout index"}
+      ],
+      "representativeConfiguration": "Multiple current layouts: basic stage297, half stage397, semi-flat225, and flat200.",
+      "printedSet": "No complete issuer-numbered audience-seat map/list in the current materials.",
+      "ownershipAndSubtotal": "Layout diagrams and capacities do not establish row/block ownership or numbered subtotals.",
+      "movableWheelchairMetadata": "Flat-floor and movable-use configurations exist; wheelchair3 is capacity metadata without an issuer-numbered relation.",
+      "reason": "No configuration can be selected without mixing or inventing identifiers."
+    },
+    {
+      "inventoryId": "tokyo-official-0870",
+      "canonicalId": null,
+      "venue": "としま区民センター〔多目的ホール〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://toshima-civic-center.jp/", "role": "current operator site"},
+        {"url": "https://toshima-civic-center.jp/download/hall_multipurpose/m09_seatplan.pdf", "role": "current official seating-plan PDF"},
+        {"url": "https://toshima-civic-center.jp/download/hall_multipurpose/m02_1stfloor.pdf", "role": "current official first-floor plan PDF"}
+      ],
+      "representativeConfiguration": "Several current event configurations: maximum484, stage408 (1F324 + 2F84), 1F maximum400, and theater examples.",
+      "printedSet": "Plans show chair quantities and grids, not issuer individual audience-seat IDs.",
+      "ownershipAndSubtotal": "Capacity layouts do not define numbered rows/blocks or a complete printed set.",
+      "movableWheelchairMetadata": "The hall is a multipurpose movable-chair space; no numbered wheelchair or fixed-seat set is issued.",
+      "reason": "No seat IDs or ownership may be derived from layout geometry."
+    }
+  ],
+  "result": {
+    "candidatesChecked": 5,
+    "adoptedCandidates": 0,
+    "deferred": 5,
+    "hardCaseDeferred": 0,
+    "productionPromotions": 0,
+    "priorityCTrueUnprocessedAfter": 10,
+    "recommendedImplementationCandidates": []
+  },
+  "productionImpact": {
+    "before": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328},
+    "after": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328},
+    "changed": false
+  },
+  "validation": "Draft-source and inventory/report formalization only. No production source, seat ranges, generated artifact, or production fingerprint changed by this preflight.",
+  "exactNextAction": "Stop. No ADOPT-derived bounded implementation batch exists. Reopen only if a current first-party issuer-numbered set becomes available."
+}

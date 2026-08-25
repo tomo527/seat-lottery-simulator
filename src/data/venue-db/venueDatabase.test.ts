@@ -36,7 +36,7 @@ type V2ConfigurationSource = {
   sourceIds: string[]
   sourceGeneration: string
   wheelchairSemantics: unknown
-  verification: { status: string; method: string; unresolvedIssues: string[] }
+  verification: { status: string; method: string; rangeDiff?: number | null; unresolvedIssues: string[] }
   ranges: SourceRange[]
 }
 type V2VenueSource = {
@@ -57,7 +57,7 @@ type LegacyVenueSource = {
   venueType: string
   sources: SourceReference[]
   representativePattern: { id: string; name: string; coverage: string; expectedSeatCount: number }
-  verification: { status: string; method: string; unresolvedIssues: string[] }
+  verification: { status: string; method: string; rangeDiff?: number | null; unresolvedIssues: string[] }
   ranges: SourceRange[]
 }
 type VenueSource = V2VenueSource | LegacyVenueSource
@@ -153,7 +153,12 @@ describe('production venue database', () => {
       }
       const legacySource = source
       expect(legacySource.representativePattern.coverage, venue.id).toBe('complete')
-      expect(legacySource.representativePattern.expectedSeatCount, venue.id).toBe('seatCount' in venue ? venue.seatCount : undefined)
+      const calculatedSeatCount = legacySource.ranges.reduce((sum, range) => sum + countRangeSeats(range), 0)
+      expect(calculatedSeatCount, venue.id).toBe('seatCount' in venue ? venue.seatCount : undefined)
+      if (legacySource.verification.rangeDiff !== undefined && legacySource.verification.rangeDiff !== null) {
+        expect(legacySource.verification.rangeDiff, venue.id)
+          .toBe(calculatedSeatCount - legacySource.representativePattern.expectedSeatCount)
+      }
       expect(legacySource.verification.status, venue.id).toBe('verified')
       expect(legacySource.verification.unresolvedIssues, venue.id).toEqual([])
       const legacyFingerprint = fingerprintManifest.venues[venue.id] as Fingerprint
@@ -172,7 +177,7 @@ describe('production venue database', () => {
             name: legacySource.representativePattern.name,
             expectedSeatCount: legacySource.representativePattern.expectedSeatCount,
           },
-          calculatedSeatCount: legacySource.ranges.reduce((sum, range) => sum + countRangeSeats(range), 0),
+          calculatedSeatCount,
           sources: legacySource.sources.map((item) => ({
             id: item.id,
             official: item.official,

@@ -288,13 +288,27 @@ describe('schema v2 configuration validation and output', () => {
       },
       verification: {
         status: 'reviewed', checkedAt: TODAY, method: 'representative-public-source-review',
-        seatStructure: 'matched', seatCount: 'mismatched', rangeDiff: 1,
+        seatStructure: 'matched', seatCount: 'mismatched', rangeDiff: -1,
         unresolvedIssues: ['公式文章上の総数と番号図に1席差がある。'],
       },
     })] })
     const result = resultFor(data)
     expect(result.errors).toEqual([])
     expect(result.warnings.join('\n')).toMatch(/official total 4 differs from mapped seat count 3/)
+  })
+
+  it('warns when rangeDiff is not mapped minus published', () => {
+    const data = sourceV2({ configurations: [configurationV2({
+      expectedSeatCount: 4,
+      verification: {
+        status: 'reviewed', checkedAt: TODAY, method: 'representative-public-source-review',
+        seatStructure: 'matched', seatCount: 'mismatched', rangeDiff: 1,
+        unresolvedIssues: ['公式文章上の総数と番号図に1席差がある。'],
+      },
+    })] })
+    const result = resultFor(data)
+    expect(result.errors).toEqual([])
+    expect(result.warnings.join('\n')).toMatch(/rangeDiff 1 differs from mapped minus published \(-1\)/)
   })
 
   it('accepts a secondary numbered map only when official supporting evidence is also referenced', () => {

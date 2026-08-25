@@ -11,7 +11,7 @@
     "id": "current-linked-official-numbered-seat-map",
     "name": "公式番号席配置339席",
     "coverage": "complete",
-    "expectedSeatCount": 339,
+    "expectedSeatCount": 345,
     "selectionReason": "現行の伝承ホール施設ページが直接掲載する客席図の、固定席・移動席・桟敷席として印字された全番号席を代表配置として転記する。",
     "notIncludedPatterns": ["仮設花道使用時の使用不可36席", "無番号の親子室4席", "無番号の車椅子席2席", "イベント固有の客席運用"]
   },
@@ -23,7 +23,7 @@
   "completenessBasis": "公式の固定125席・移動122席・桟敷92席の番号付き3区分を、中央247席と桟敷4列各23席として印字rangeから再現し、339席を確認した。",
   "transformation": "公式図の中央1列〜19列と、明示ラベルL1・L2・R1・R2の番号をそのままrangeへ転記した。L1/R1の18番欠番、L2/R2の13番欠番は図の印字どおり残した。",
   "knownLimitations": ["公式定員345席は番号付き固定125・移動122・桟敷92の339席に、無番号の親子室4席と車椅子席2席を加えた値である。これらのseat IDは作成しない。", "固定席125席には背倒れ席10席、桟敷92席には壁付補助席43席を含む。L2/R2には壁付補助席があり、L2の7番〜9番にはない。", "仮設花道使用時は公式図で示す客席30席と桟敷席6席が使用不可となる別運用であり、代表配置に混在させない。"],
-  "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-linked-official-pdf-visual-transcriptions-with-issued-subtotal-arithmetic","seatStructure":"matched","seatCount":"matched","unresolvedIssues":[]},
+  "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-linked-official-pdf-visual-transcriptions-with-issued-subtotal-arithmetic","seatStructure":"matched","seatCount":"mismatched","rangeDiff":-6,"unresolvedIssues":[]},
   "ranges": [
     {"areaId":"central","areaLabel":"中央客席","rowLabel":"1列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"2列","from":1,"to":13,"excluded":[]},
     {"areaId":"central","areaLabel":"中央客席","rowLabel":"3列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"4列","from":1,"to":13,"excluded":[]},

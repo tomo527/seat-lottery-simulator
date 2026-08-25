@@ -143,6 +143,17 @@ const validateVerification = (data, label, today, issues) => {
   }
 }
 
+const validateRangeDiffConsistency = (verification, expectedSeatCount, calculatedSeatCount, label, issues) => {
+  const rangeDiff = verification?.rangeDiff
+  if (rangeDiff !== undefined && rangeDiff !== null && !Number.isSafeInteger(rangeDiff)) {
+    issues.error(`${label}.verification.rangeDiff must be null or a safe integer`)
+  }
+  if (Number.isSafeInteger(rangeDiff) && Number.isSafeInteger(expectedSeatCount) && Number.isSafeInteger(calculatedSeatCount) &&
+      rangeDiff !== calculatedSeatCount - expectedSeatCount) {
+    issues.warn(`${label}.verification.rangeDiff ${rangeDiff} differs from mapped minus published (${calculatedSeatCount - expectedSeatCount})`)
+  }
+}
+
 const validateSourceMetadata = (data, label, today, issues) => {
   if (!Array.isArray(data.sources)) {
     issues.error(`${label} sources must be an array`)
@@ -502,10 +513,8 @@ const validateConfigurationV2 = (data, configuration, index, label, today, issue
   if (configuration.representativeEventLayout !== undefined && typeof configuration.representativeEventLayout !== 'boolean') issues.error(`${prefix}.representativeEventLayout must be boolean when present`)
   validateConfidence(configuration.confidence, `${prefix}.confidence`, issues)
   validateVerification(configuration, prefix, today, issues)
-  if (configuration.verification?.rangeDiff !== undefined && configuration.verification.rangeDiff !== null && !Number.isSafeInteger(configuration.verification.rangeDiff)) {
-    issues.error(`${prefix}.verification.rangeDiff must be null or a safe integer`)
-  }
   const calculated = validateRanges(configuration, prefix, issues)
+  validateRangeDiffConsistency(configuration.verification, configuration.expectedSeatCount, calculated, prefix, issues)
   const sourceIds = new Set((data.sources ?? []).map((source) => source?.id))
   for (const sourceId of [...(configuration.sourceIds ?? []), ...(configuration.wheelchairSemantics?.sourceIds ?? [])]) {
     if (!sourceIds.has(sourceId)) issues.error(`${prefix} source reference ${String(sourceId)} does not exist`)
@@ -575,6 +584,7 @@ export const validateSources = (sources, options = {}) => {
       validateVerification(sourceData, label, today, local)
       validateConfidence(sourceData.confidence, `${label} confidence`, local)
       const calculated = validateRanges(sourceData, label, local)
+      validateRangeDiffConsistency(sourceData.verification, sourceData.representativePattern?.expectedSeatCount, calculated, label, local)
       if (sourceData.status === 'production') {
         for (const blocker of productionGateIssues(sourceData, label)) local.error(blocker)
         if (Number.isSafeInteger(sourceData.representativePattern?.expectedSeatCount) &&

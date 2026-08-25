@@ -2724,10 +2724,10 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0135",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.akasaka-civiccenter.jp/shisetsu/list_1.html",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "DEFER (TOKYO PRIORITY C RANKED PREFLIGHT): current official facility page links a seat chart, but the linked PDF currently returns PAGE NOT FOUND. Do not infer the removable first two rows; reopen only with a current complete issuer-numbered map/list."
     },
     {
       "inventoryId": "tokyo-official-0136",
@@ -6552,10 +6552,10 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0331",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.tnm.jp/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "DEFER (TOKYO PRIORITY C RANKED PREFLIGHT): current issuer page states fixed393 plus wheelchair2 but provides no complete numbered map/list, row/block ownership, or numbered wheelchair relation. Existing draft ranges have no current issuer provenance."
     },
     {
       "inventoryId": "tokyo-official-0332",
@@ -11025,10 +11025,10 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0559",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "www.setagaya.co.jp/kuminkaikan/seijohall/",
-      "blockingReason": "source JSONを作成済み。有効な公式HTTPS URLを再特定し、全列・全番号座席表と番号席総数を取得する必要がある。"
+      "blockingReason": "DEFER (TOKYO PRIORITY C RANKED PREFLIGHT): current 297/397/225/200-person layouts and wheelchair3 metadata do not define a complete issuer-numbered audience-seat set."
     },
     {
       "inventoryId": "tokyo-official-0560",
@@ -17059,8 +17059,9 @@
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "C",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
+      "blockingReason": "DEFER (TOKYO PRIORITY C RANKED PREFLIGHT): current plans define variable chair counts and grids, not issuer audience-seat IDs, row/block ownership, or a complete numbered representative set."
     },
     {
       "inventoryId": "tokyo-official-0871",
@@ -17797,10 +17798,10 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0908",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.city.itabashi.tokyo.jp/c_kurashi/048/048790.html",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "DEFER (TOKYO PRIORITY C RANKED PREFLIGHT): current official material has no complete issuer-numbered representative seat map/list; setup is event-dependent and rentals are scheduled to stop 2027-02-01 through 2027-03-31 for LED work."
     },
     {
       "inventoryId": "tokyo-official-0909",

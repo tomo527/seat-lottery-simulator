@@ -15,18 +15,18 @@
     "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
     "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"板橋区立高島平区民館","title":"板橋区立高島平区民館〔ホール〕 施設案内","url":"https://www.city.itabashi.tokyo.jp/c_kurashi/048/048790.html","checkedAt":"2026-07-29"}],
+  "sources": [{"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"板橋区","title":"高島平区民館 ご利用案内・申込み方法","url":"https://www.city.itabashi.tokyo.jp/bunka/shisetsu/chiiki/1004798.html","checkedAt":"2026-08-25"}],
   "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
   "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
   "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
+  "knownLimitations": ["現行区公式は500人定員、平面図・断面図、当日設営の事前打合せを示すが、issuer-numbered representative seat map/listを掲載しない。2027-02-01から2027-03-31のLED化工事による貸出中止予定もある。"],
   "verification": {
     "status": "pending",
     "checkedAt": null,
     "method": "",
     "seatStructure": "pending",
     "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
+    "unresolvedIssues": ["current issuer-numbered representative seat map/listがなく、2027-02-01から2027-03-31の貸出中止予定がある。"]
   },
   "ranges": []
 }
