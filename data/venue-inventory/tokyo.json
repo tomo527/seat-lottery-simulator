@@ -7395,15 +7395,15 @@
       "capacity": 500,
       "category": "hall",
       "officialFacilityUrl": "https://www.sumidasangyoukaikan.jp/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryで専用ホール等として公称500席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
+      "eligibilityReason": "現行施設公式はBホールの椅子のみ500脚・椅子なし最大600人と平面図を示すが、issuer-numbered seat map・seat list・番号付き代表configurationは確認できない。可変配置であること自体は除外理由にしない。",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.sumidasangyoukaikan.jp/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO A/B SOURCE-LOCATED LANE): 0373で確認済みの現行公式materialとBホール専用ページ/ABC図面を再確認したが、B固有のissuer-numbered setはない。図面の数字は方眼・設備番号でseat IDではない。complete numbered representative configurationが公式公開された場合のみ再評価する。"
     },
     {
       "inventoryId": "tokyo-official-0375",
