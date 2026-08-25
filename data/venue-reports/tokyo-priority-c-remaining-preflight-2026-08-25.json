@@ -1,0 +1,109 @@
+{
+  "wave": "TOKYO PRIORITY C REMAINING PREFLIGHT",
+  "date": "2026-08-25",
+  "phase": "Bounded metadata ranking and current-first-party evidence preflight",
+  "scopeBoundary": "The normalized eight-record Priority-C true-unprocessed pool was metadata-ranked to six candidates. Current first-party research checked ranks 1-5 only. No seat transcription, source-range change, production implementation, generated artifact, fingerprint update, or deploy was performed.",
+  "policyBasis": "ADOPT requires a current or current-linked issuer-numbered map/list, one issuer-supported representative configuration, a complete printed numbered set, and issuer-defined row/block ownership or subtotal evidence. Capacity fitting, invented IDs, geometry-only ownership, and configuration mixing are prohibited.",
+  "metadataRanking": [
+    {"rank": 1, "inventoryId": "tokyo-official-0693", "venue": "LUMINE 0〔ホール〕", "capacity": 368, "reason": "Direct current operator URL and existing draft, with a nominal in-band hall capacity; event-space and movable-chair signals lower certainty."},
+    {"rank": 2, "inventoryId": "tokyo-official-0042", "venue": "よみうり大手町ホール〔小ホール〕", "capacity": 384, "reason": "Existing draft and current direct first-party facility/documents pages; the named small hall is in the target capacity band."},
+    {"rank": 3, "inventoryId": "tokyo-official-0367", "venue": "江戸東京博物館〔大ホール〕", "capacity": 369, "reason": "Existing draft, dedicated hall identity, and current museum rental/floor-guide pages make currentness easy to test."},
+    {"rank": 4, "inventoryId": "tokyo-official-0415", "venue": "豊洲文化センター〔レクホール〕", "capacity": 300, "reason": "Current official layout documents and an in-band stated capacity, but recreation-hall and movable-seat characteristics lower expected yield."},
+    {"rank": 5, "inventoryId": "tokyo-official-0427", "venue": "TFTビル〔TFTホール300〕", "capacity": 300, "reason": "Current direct facility page and explicit nominal theatre capacity, but business/event and multi-layout use is a material risk."},
+    {"rank": 6, "inventoryId": "tokyo-official-0398", "venue": "江東区森下文化センター〔第1レクホール〕", "capacity": 350, "reason": "In-band capacity, but recreation-hall identity and no existing numbered-seat evidence place it after the source-located candidates."}
+  ],
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0693",
+      "canonicalId": "tokyo-wave3-0693",
+      "venue": "LUMINE 0〔ホール〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [{"url": "https://www.lumine.ne.jp/luminezero/spec_price.html", "role": "current operator specifications and layouts"}],
+      "representativeConfiguration": "Not established: current material distinguishes 179 movable seats, 400 stacking chairs, and empty-floor rental.",
+      "printedSet": "No current issuer individual audience-seat IDs.",
+      "ownershipAndSubtotal": "No issuer-defined numbered row/block ownership or subtotal.",
+      "movableWheelchairMetadata": "Movable seating and empty-floor use are current operational metadata; no numbered wheelchair relationship is issued.",
+      "reason": "Do not derive a representative numbered set from chair counts or event layouts."
+    },
+    {
+      "inventoryId": "tokyo-official-0042",
+      "canonicalId": "tokyo-wave3-0042",
+      "venue": "よみうり大手町ホール〔小ホール〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://yomi.otemachi-hall.com/hall/index2.html", "role": "current small-hall facility/configuration page"},
+        {"url": "https://yomi.otemachi-hall.com/guide/document.html", "role": "current document index"}
+      ],
+      "representativeConfiguration": "Not established: current flat-floor configurations include school 180/216/294 and theatre 198/286/375, while the facility maximum is 397.",
+      "printedSet": "No current issuer-numbered small-hall set. The document page's seatmap PDF is for the main hall and is dated 2014-01-06.",
+      "ownershipAndSubtotal": "No issuer-defined numbered small-hall rows, blocks, or subtotals.",
+      "movableWheelchairMetadata": "Flat-floor, user-selected layout operation is current metadata; it cannot establish selectable IDs.",
+      "reason": "A legacy main-hall PDF cannot prove current numbered seating for this distinct small hall."
+    },
+    {
+      "inventoryId": "tokyo-official-0367",
+      "canonicalId": "tokyo-wave3-0367",
+      "venue": "江戸東京博物館〔大ホール〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://www.edo-tokyo-museum.or.jp/information/room-rental/", "role": "current museum rental page"},
+        {"url": "https://www.edo-tokyo-museum.or.jp/information/floor-guide/", "role": "current museum floor guide"}
+      ],
+      "representativeConfiguration": "Not established: current pages establish the hall/rental facility but not a numbered representative layout.",
+      "printedSet": "No current issuer-numbered map/list. The legacy overview PDF URL found during review now returns 404.",
+      "ownershipAndSubtotal": "The 369-seat plus wheelchair disclosure does not identify numbered rows, blocks, or subtotals.",
+      "movableWheelchairMetadata": "Wheelchair availability remains capacity metadata only.",
+      "reason": "Do not revive old draft ranges without a current/current-linked issuer-numbered source."
+    },
+    {
+      "inventoryId": "tokyo-official-0415",
+      "canonicalId": null,
+      "venue": "豊洲文化センター〔レクホール〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [
+        {"url": "https://www.kcf.or.jp/toyosu/outline/docs/", "role": "current official documents index"},
+        {"url": "https://www.kcf.or.jp/cms/files/pdf/id24_48807.pdf", "role": "current linked recreation-hall layout"}
+      ],
+      "representativeConfiguration": "Not established: the visual-inspected layout is a school-style plan marked 216 seats + 3 seats, while operator capacity metadata distinguishes 242 fixed and 58 movable seats.",
+      "printedSet": "The current layout has seat-position rectangles but no individual audience-seat IDs.",
+      "ownershipAndSubtotal": "Equipment and placement labels do not define numbered rows, blocks, or a selectable subtotal.",
+      "movableWheelchairMetadata": "Fixed/movable capacity figures are metadata only; no numbered wheelchair or movable-seat relation is issued.",
+      "reason": "A placement plan without issuer seat identifiers cannot be transcribed as a numbered set."
+    },
+    {
+      "inventoryId": "tokyo-official-0427",
+      "canonicalId": null,
+      "venue": "TFTビル〔TFTホール300〕",
+      "priority": "C",
+      "disposition": "DEFER",
+      "officialSources": [{"url": "https://www.bigsight.jp/organizer/buildings/tft/facilities/tfthall/", "role": "current official facility/layout page"}],
+      "representativeConfiguration": "Not established: current theatre 250, fashion 200, school 150, and party 180 examples are distinct event layouts.",
+      "printedSet": "No current issuer-numbered audience-seat map/list.",
+      "ownershipAndSubtotal": "Layout capacities do not define numbered rows, blocks, or subtotals.",
+      "movableWheelchairMetadata": "Business/event/party multi-layout use is current metadata; no fixed numbered wheelchair relation is issued.",
+      "reason": "Do not choose or reconstruct IDs from business-event capacity layouts."
+    }
+  ],
+  "result": {
+    "priorityCTrueUnprocessedBefore": 8,
+    "metadataRanked": 6,
+    "candidatesChecked": 5,
+    "adoptedCandidates": 0,
+    "deferred": 5,
+    "hardCaseDeferred": 0,
+    "productionPromotions": 0,
+    "priorityCTrueUnprocessedAfter": 3,
+    "remainingTrueUnprocessed": ["tokyo-official-0398", "tokyo-official-0407", "tokyo-official-0518"],
+    "recommendedImplementationCandidates": []
+  },
+  "productionImpact": {
+    "before": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328},
+    "after": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328},
+    "changed": false
+  },
+  "exactNextAction": "Stop. No ADOPT-derived implementation batch exists. Do not begin Web research for the three remaining candidates without new authorization."
+}

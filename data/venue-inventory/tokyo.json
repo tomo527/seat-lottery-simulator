@@ -168,8 +168,8 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0008",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://myoujin-hall.jp/",
       "blockingReason": "SOURCE HOLD (TOKYO-WAVE-18): current official capacity is1,192 with two wheelchair spaces, but use-dependent multiple layouts provide no fixed clear standard numbered configuration. The inventory's legacy1,055 value also conflicts. Reopen only with current issuer material defining one complete fixed numbered standard."
     },
@@ -613,8 +613,8 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0030",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.nishogakusha-u.ac.jp/",
       "blockingReason": "SOURCE HOLD (TOKYO-WAVE-18): ownership passes, but the current official map prints1,125 numbered seats (1F525 + 2F600) versus the published1,100. Independent recount also found1,125; removing wheelchair-compatible A10/A11/A24/A25 still gives1,121. The issuer contradiction cannot be capacity-fitted."
     },
@@ -852,10 +852,10 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0042",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://yomi.otemachi-hall.com/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "DEFER (TOKYO PRIORITY C REMAINING PREFLIGHT): current official small hall is flat-floor with multiple school/theater layouts; no current issuer-numbered representative seat set. The linked 2014 seatmap is main-hall material, not current small-hall evidence."
     },
     {
       "inventoryId": "tokyo-official-0043",
@@ -7258,9 +7258,9 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0367",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
-      "blockingReason": "source JSONを作成済み。有効な公式HTTPS URLを再特定し、全列・全番号座席表と番号席総数を取得する必要がある。"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
+      "blockingReason": "DEFER (TOKYO PRIORITY C REMAINING PREFLIGHT): current official rental material confirms the 369-seat large hall and wheelchair space, but has no current complete issuer-numbered map/list; the old overview PDF URL is now 404."
     },
     {
       "inventoryId": "tokyo-official-0368",
@@ -8205,8 +8205,9 @@
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "C",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
+      "blockingReason": "DEFER (TOKYO PRIORITY C REMAINING PREFLIGHT): current official documents describe the Recreation Hall as 242 fixed plus 58 movable seats, but the visual layout is a quantity plan (216 plus 3 in the shown pattern), not individual issuer seat IDs or row/block ownership."
     },
     {
       "inventoryId": "tokyo-official-0416",
@@ -8439,8 +8440,9 @@
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "C",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
+      "blockingReason": "DEFER (TOKYO PRIORITY C REMAINING PREFLIGHT): current official TFT Hall 300 material provides theater/fashion/school/party capacities and reference layouts for a multipurpose event room, not a complete issuer-numbered representative audience-seat set."
     },
     {
       "inventoryId": "tokyo-official-0428",
@@ -13613,10 +13615,10 @@
       "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0693",
-      "researchStatus": "draft-created",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.lumine.ne.jp/luminezero/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "DEFER (TOKYO PRIORITY C REMAINING PREFLIGHT): current official equipment lists 179 movable seats and 400 stacking chairs in an otherwise empty-floor rental; no issuer individual audience-seat IDs, row/block ownership, or representative numbered set exists."
     },
     {
       "inventoryId": "tokyo-official-0694",

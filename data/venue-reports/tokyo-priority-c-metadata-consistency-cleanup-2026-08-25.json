@@ -1,0 +1,58 @@
+{
+  "wave": "TOKYO PRIORITY C METADATA CONSISTENCY CLEANUP",
+  "date": "2026-08-25",
+  "phase": "Formal-disposition inventory synchronization and current canonical rangeDiff semantic cleanup",
+  "scopeBoundary": "This cleanup normalizes repository-evidenced formal dispositions and stored current source metadata only. It does not change any seat range, mapped count, published count, representative configuration, historical report, generated artifact, fingerprint, or production total.",
+  "policyBasis": "The current data contract defines rangeDiff as mapped - published. A nonzero correctly calculated value is configuration metadata; a stored value that differs from that calculation is a semantic error. Formal SOURCE HOLD dispositions exclude the same canonical facility-space from ordinary discovery regardless of a stale draft-created inventory status.",
+  "formalDispositionNormalization": [
+    {
+      "inventoryId": "tokyo-official-0008",
+      "canonicalId": "tokyo-wave3-0008",
+      "venue": "神田明神文化交流館・神田明神ホール",
+      "repositoryEvidence": "tokyo-priority-c-true-unprocessed-preflight-2026-08-25.json excludes this canonical record because it retains SOURCE HOLD (TOKYO-WAVE-18); the inventory blocker records the current 1,192-seat and use-dependent-layout conflict.",
+      "inventoryBefore": "draft-created",
+      "inventoryAfter": "blocked",
+      "disposition": "SOURCE HOLD"
+    },
+    {
+      "inventoryId": "tokyo-official-0030",
+      "canonicalId": "tokyo-wave3-0030",
+      "venue": "二松学舎大学 中洲記念講堂",
+      "repositoryEvidence": "tokyo-priority-c-true-unprocessed-preflight-2026-08-25.json excludes this canonical record because it retains SOURCE HOLD (TOKYO-WAVE-18); the inventory blocker records current official map 1,125 versus published 1,100 without a permitted reconciliation.",
+      "inventoryBefore": "draft-created",
+      "inventoryAfter": "blocked",
+      "disposition": "SOURCE HOLD"
+    }
+  ],
+  "priorityCAggregation": {
+    "method": "Priority-C inventory records are joined by canonical venueSourceId and facility-space identity to formal dispositions. production, blocked, rejected, independent-review-mismatch, closed, renovation, and hard-case records are excluded from true-unprocessed.",
+    "beforeNormalization": 10,
+    "afterNormalization": 8,
+    "unprocessedAfterNormalization": [
+      "tokyo-official-0042",
+      "tokyo-official-0367",
+      "tokyo-official-0398",
+      "tokyo-official-0407",
+      "tokyo-official-0415",
+      "tokyo-official-0427",
+      "tokyo-official-0518",
+      "tokyo-official-0693"
+    ]
+  },
+  "rangeDiffCorrections": [
+    {"configId": "curian-main-standard", "mapped": 1084, "published": 1074, "previousRangeDiff": 0, "rangeDiff": 10},
+    {"configId": "ex-theater-roppongi-standard", "mapped": 906, "published": 920, "previousRangeDiff": 0, "rangeDiff": -14},
+    {"configId": "galaxy-theatre-standard", "mapped": 750, "published": 746, "previousRangeDiff": 0, "rangeDiff": 4},
+    {"configId": "nippon-budokan-fixed-stands", "mapped": 11142, "published": 11075, "previousRangeDiff": 0, "rangeDiff": 67},
+    {"configId": "sumida-triphony-main-hall-standard", "mapped": 1795, "published": 1801, "previousRangeDiff": 0, "rangeDiff": -6},
+    {"configId": "tokyo-gymnasium-standard", "mapped": 5179, "published": 5178, "previousRangeDiff": 0, "rangeDiff": 1},
+    {"configId": "tokyo-takarazuka-standard", "mapped": 2070, "published": 2079, "previousRangeDiff": 0, "rangeDiff": -9}
+  ],
+  "validatorChange": "The existing canonical rangeDiff equality check is promoted from warning to error. All seven values are mechanically determinable from current source configuration metadata; no record has a different published scope, historical-only field, or ambiguous mapped/published meaning.",
+  "productionImpact": {
+    "before": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328},
+    "after": {"venues": 122, "selectableConfigurations": 124, "seatRecords": 179328},
+    "changed": false
+  },
+  "exactNextAction": "Run only a separately authorized bounded preflight from the normalized eight-record pool; do not treat SOURCE HOLD records as ordinary discovery."
+}

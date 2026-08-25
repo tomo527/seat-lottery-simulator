@@ -150,7 +150,7 @@ const validateRangeDiffConsistency = (verification, expectedSeatCount, calculate
   }
   if (Number.isSafeInteger(rangeDiff) && Number.isSafeInteger(expectedSeatCount) && Number.isSafeInteger(calculatedSeatCount) &&
       rangeDiff !== calculatedSeatCount - expectedSeatCount) {
-    issues.warn(`${label}.verification.rangeDiff ${rangeDiff} differs from mapped minus published (${calculatedSeatCount - expectedSeatCount})`)
+    issues.error(`${label}.verification.rangeDiff ${rangeDiff} differs from mapped minus published (${calculatedSeatCount - expectedSeatCount})`)
   }
 }
 

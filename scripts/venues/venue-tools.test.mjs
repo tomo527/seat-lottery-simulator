@@ -297,7 +297,7 @@ describe('schema v2 configuration validation and output', () => {
     expect(result.warnings.join('\n')).toMatch(/official total 4 differs from mapped seat count 3/)
   })
 
-  it('warns when rangeDiff is not mapped minus published', () => {
+  it('errors when rangeDiff is not mapped minus published', () => {
     const data = sourceV2({ configurations: [configurationV2({
       expectedSeatCount: 4,
       verification: {
@@ -307,8 +307,7 @@ describe('schema v2 configuration validation and output', () => {
       },
     })] })
     const result = resultFor(data)
-    expect(result.errors).toEqual([])
-    expect(result.warnings.join('\n')).toMatch(/rangeDiff 1 differs from mapped minus published \(-1\)/)
+    expect(result.errors.join('\n')).toMatch(/rangeDiff 1 differs from mapped minus published \(-1\)/)
   })
 
   it('accepts a secondary numbered map only when official supporting evidence is also referenced', () => {

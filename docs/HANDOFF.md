@@ -24,6 +24,10 @@ The authorized `TOKYO PRIORITY C TRUE-UNPROCESSED` bounded preflight is formally
 
 The authorized `TOKYO PRIORITY C RANKED PREFLIGHT` is formally closed with **0 ADOPT / 5 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-c-ranked-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-c-ranked-preflight-2026-08-25.json) preserves current first-party checks for `0135`, `0331`, `0908`, `0559`, and `0870`; all five inventory records are now `blocked`, so they cannot return to ordinary discovery. `0135`'s current page links a seat-chart URL that returned PAGE NOT FOUND; `0331` publishes 393 fixed plus two wheelchair spaces but no current numbered chart; `0908`, `0559`, and `0870` publish variable-layout capacities/plans, not complete issuer-numbered audience-seat sets. No production data changed. Priority C true-unprocessed is now **10**.
 
+`TOKYO PRIORITY C METADATA CONSISTENCY CLEANUP` is complete. [`data/venue-reports/tokyo-priority-c-metadata-consistency-cleanup-2026-08-25.json`](../data/venue-reports/tokyo-priority-c-metadata-consistency-cleanup-2026-08-25.json) normalizes stale `draft-created` inventory states for `0008` 神田明神文化交流館・神田明神ホール and `0030` 二松学舎大学 中洲記念講堂 to `blocked`, preserving their existing repository-evidenced **SOURCE HOLD** dispositions. The canonical Priority-C true-unprocessed count is therefore 8 before the new preflight. It also corrects seven current source `rangeDiff` fields mechanically to `mapped - published` (`+10`, `-14`, `+4`, `+67`, `-6`, `+1`, `-9`), and the canonical validator now treats a stored semantic mismatch as an error rather than a warning. Seat ranges, mapped/published counts, scopes, generated data, and production totals remain unchanged.
+
+The bounded `TOKYO PRIORITY C REMAINING PREFLIGHT` is formally closed with **0 ADOPT / 5 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-c-remaining-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-c-remaining-preflight-2026-08-25.json) records current first-party checks for `0693`, `0042`, `0367`, `0415`, and `0427`; each is now `blocked` and cannot return to ordinary discovery. The direct materials establish capacities or layouts but no candidate supplies a current issuer-numbered representative set with complete ownership/subtotals. No production data changed. Priority C true-unprocessed is now **3**: `0398`, `0407`, and `0518`; no implementation batch is recommended.
+
 The separately authorized, one-venue follow-through for `tokyo-official-0121` (品川プリンスホテル ステラボール) is **SAFE TO INTEGRATE / PRODUCTION**. [`data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json`](../data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json) records two independent direct visual transcriptions of the current official/current-linked chart. Both produce the same issuer-labelled set: 1F 750 + 2F 126 = 876, mapped 876 / published 876 / rangeDiff 0 / representative confidence. The 1F movable-chair disclosure and the absence of a separately numbered wheelchair/companion set remain metadata; no seat ID or ownership was invented. Source, inventory, batch/readiness/report, fingerprint, catalog and lazy runtime were synchronized in pushed production commit `a277a5a`; `npm run verify:venues`, its managed Workers Build, and the public UI smoke test all passed.
 
 | Item | State |
@@ -32,12 +36,12 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | Wave24 HOLD | 1 (`tokyo-wave3-1114`) |
 | Authoring production target | 122 venues / 124 selectable configurations / 179,328 configuration-seat records |
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
-| Validation / generated artifacts | `npm run verify:venues` passed after the TOKYO-WAVE-26 rangeDiff correction; catalog/runtime/fingerprint synchronized; semantic rangeDiff validation added |
+| Validation / generated artifacts | `npm run verify:venues` passed after the TOKYO-WAVE-26 rangeDiff correction; catalog/runtime/fingerprint synchronized; semantic rangeDiff validation added and its equality mismatch is now an error |
 | Commit / push / Workers / public UI | `672c275` pushed; Workers Builds `completed / success`; public 0646/1115/0101 search, displayed counts, one draw, console errors all passed |
 | Legacy type-only A/B lane | Closed: 1 production / 8 DEFER / 0 hard-case DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo A/B source-located lane | Closed: `0374` DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo priority C source-located preflight | Closed: `0375` / `0950` / `1186` DEFER; 0 ADOPT |
-| Tokyo priority C true-unprocessed | `0646` / `1115` / `0101` PRODUCTION; `0135` / `0331` / `0908` / `0559` / `0870` DEFER; true-unprocessed C = 10; no implementation batch |
+| Tokyo priority C true-unprocessed | `0646` / `1115` / `0101` PRODUCTION; `0135` / `0331` / `0908` / `0559` / `0870` and `0693` / `0042` / `0367` / `0415` / `0427` DEFER; `0008` / `0030` SOURCE HOLD normalized to blocked; true-unprocessed C = 3 (`0398` / `0407` / `0518`); no implementation batch |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -74,4 +78,4 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 
 ## Exact next action
 
-Stop after the committed rangeDiff correction and ranked Priority-C preflight closure. No ADOPT-derived implementation batch exists; do not reopen the five deferred candidates without current first-party issuer-numbered evidence and new authorization.
+Stop after the committed Priority-C metadata cleanup and remaining-preflight closure. No ADOPT-derived implementation batch exists; do not research or reopen the remaining `0398` / `0407` / `0518`, nor any deferred/SOURCE HOLD candidate, without current first-party issuer-numbered evidence and new authorization.
