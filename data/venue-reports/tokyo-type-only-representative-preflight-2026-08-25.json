@@ -1,0 +1,132 @@
+{
+  "wave": "TOKYO TYPE-ONLY REPRESENTATIVE PREFLIGHT",
+  "date": "2026-08-25",
+  "phase": "Bounded re-evaluation of legacy type-only deferred records",
+  "scope": [
+    "tokyo-official-0106",
+    "tokyo-official-0160",
+    "tokyo-official-0121",
+    "tokyo-official-0372",
+    "tokyo-official-0072",
+    "tokyo-official-0435"
+  ],
+  "scopeBasis": "Tokyo inventoryのpriority A/B・researchStatus blockedのうち、旧『固定番号席による単一代表パターンを定義できない』系blockerだけをrepository metadataで抽出した。production、closed/hard-case/previously current-policy reviewed、missing-map、REJECT等を除外し、legacy type-only eligible pool 9件をmetadataだけでrankした上位8件から、上位6件だけcurrent first-party evidenceを確認した。",
+  "policyBasis": "固定席・単一layoutはproduction条件ではない。current/current-linked numbered map、合理的に選べるrepresentative configuration、losslessなcomplete printed set、issuer labels/subtotals/arithmeticによるownershipが揃う時だけADOPTする。published capacity差、movable seat、multiple configurationは単独blockerにしない。",
+  "metadataRanking": [
+    {"rank": 1, "inventoryId": "tokyo-official-0106", "venue": "日本橋三井ホール〔日本橋三井ホール〕", "reason": "A・active・hall。既存blockerはlayout policyだけ。"},
+    {"rank": 2, "inventoryId": "tokyo-official-0160", "venue": "六本木ヒルズ ハリウッドビューティプラザ〔ハリウッドホール〕", "reason": "A・hall・1,200席。既存blockerはtype-only。"},
+    {"rank": 3, "inventoryId": "tokyo-official-0121", "venue": "品川プリンスホテル ステラボール", "reason": "B・hall・876席。既存blockerはtype-only。"},
+    {"rank": 4, "inventoryId": "tokyo-official-0372", "venue": "すみだリバーサイドホール〔イベントホール〕", "reason": "B・hall・700席。既存blockerはtype-only。"},
+    {"rank": 5, "inventoryId": "tokyo-official-0072", "venue": "日比谷公園〔日比谷小音楽堂〕", "reason": "B・小音楽堂・951席。既存blockerはtype-only。"},
+    {"rank": 6, "inventoryId": "tokyo-official-0435", "venue": "夢の島公園 陸上競技場", "reason": "A・3,000席。現役性と観客席資料を優先確認。"},
+    {"rank": 7, "inventoryId": "tokyo-official-0359", "venue": "上野恩賜公園〔野外ステージ〕", "reason": "Aだが屋外stageで、上位6件の証拠枠外。"},
+    {"rank": 8, "inventoryId": "tokyo-official-0070", "venue": "日比谷公園〔にれの木広場〕", "reason": "Aだが広場で、上位6件の証拠枠外。"}
+  ],
+  "rankedOut": {
+    "inventoryId": "tokyo-official-0434",
+    "venue": "木場公園(多目的広場)",
+    "reason": "Aだが多目的広場でrank 9。current first-party evidenceは未確認。"
+  },
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0106",
+      "venue": "日本橋三井ホール〔日本橋三井ホール〕",
+      "priority": "A",
+      "disposition": "DEFER",
+      "officialSource": "https://nihonbashi-hall.jp/docs/download.html",
+      "numberedMapCurrentness": "current download page shows 254–690-seat rollback/stacking layouts; no current/current-linked complete issuer-numbered map was confirmed.",
+      "representativeConfiguration": "a 690-seat layout is published but it does not establish a numbered set.",
+      "ownership": "not assessable without current issuer seat labels and subtotals.",
+      "printedSet": "the older direct 678-seat PDF is not treated as current-linked evidence.",
+      "publishedCapacity": 1000,
+      "reason": "Movability is not the blocker; absence of current issuer-numbered set is. Reopen only with a current linked numbered standard map."
+    },
+    {
+      "inventoryId": "tokyo-official-0160",
+      "venue": "六本木ヒルズ ハリウッドビューティプラザ〔ハリウッドホール〕",
+      "priority": "A",
+      "disposition": "DEFER",
+      "officialSource": "https://hall.hollywood.ac.jp/",
+      "numberedMapCurrentness": "current operator material shows 5F hall layout examples and an unnumbered floor plan only.",
+      "representativeConfiguration": "concert 808 and ceremony 1,200 are published examples, neither an issuer-numbered set.",
+      "ownership": "not assessable without issuer seat labels/subtotals.",
+      "printedSet": "not reconstructable; current plans contain no seat IDs.",
+      "publishedCapacity": 1200,
+      "reason": "Multiple configurations do not block adoption by themselves, but no issuer-numbered set is published."
+    },
+    {
+      "inventoryId": "tokyo-official-0121",
+      "venue": "品川プリンスホテル ステラボール",
+      "priority": "B",
+      "disposition": "ADOPT",
+      "officialSource": "https://www.princehotels.co.jp/shinagawa/stellarball/about.html",
+      "numberedMapCurrentness": "current official page links the two-page numbered seat chart and identifies 1F seat floor 750 and 2F terrace floor 126.",
+      "representativeConfiguration": "the concurrently published seat-style configuration is the reasonable common-use representative layout; 1F remains movable, which is not a blocker.",
+      "ownership": "floor ownership is issuer-labelled; the seat chart supplies row/block labels and printed numbers for the two floor subtotals.",
+      "printedSet": "lossless structural transcription is feasible from the current two-page issuer seat chart, subject to independent extraction.",
+      "expectedMapped": 876,
+      "publishedCapacity": 876,
+      "implementationPath": "Create a non-production draft with venues:new (proposed source ID stellar-ball-standard), transcribe the 1F/2F printed set independently twice, verify the 750 + 126 = 876 ownership arithmetic, then run venues:review before any production decision.",
+      "reason": "ADOPT is preflight-only; no source, range, generated artifact, or production data was created."
+    },
+    {
+      "inventoryId": "tokyo-official-0372",
+      "venue": "すみだリバーサイドホール〔イベントホール〕",
+      "priority": "B",
+      "disposition": "DEFER",
+      "officialSource": "https://www.city.sumida.lg.jp/sisetu_info/tamokuteki/sumidariversidehall/index.html",
+      "numberedMapCurrentness": "current issuer page states renovation closure from 2025-12-01 through 2027-09-30 (scheduled).",
+      "representativeConfiguration": "the prior 700-chair / movable-stage description is not a current numbered configuration.",
+      "ownership": "not assessable while current numbered material is absent.",
+      "printedSet": "none confirmed.",
+      "publishedCapacity": 700,
+      "reason": "Reopen after service resumes with a current issuer-numbered map; no historic layout is carried forward."
+    },
+    {
+      "inventoryId": "tokyo-official-0072",
+      "venue": "日比谷公園〔日比谷小音楽堂〕",
+      "priority": "B",
+      "disposition": "DEFER",
+      "officialSource": "https://www.tokyo-park.or.jp/park/hibiya/facility/index.html",
+      "numberedMapCurrentness": "current park operator material states use has been suspended from 2024-09-01 for park regeneration; no current/current-linked numbered map was confirmed.",
+      "representativeConfiguration": "not assessable during the suspension.",
+      "ownership": "not assessable without a current issuer-numbered set.",
+      "printedSet": "none confirmed.",
+      "publishedCapacity": 951,
+      "reason": "Reopen only after a current numbered representative configuration is published."
+    },
+    {
+      "inventoryId": "tokyo-official-0435",
+      "venue": "夢の島公園 陸上競技場",
+      "priority": "A",
+      "disposition": "DEFER",
+      "officialSource": "https://www.yumenoshima.jp/athletics-stadium",
+      "numberedMapCurrentness": "current park operator page confirms use of the athletics field and links a stadium drawing, but no numbered spectator-seat map.",
+      "representativeConfiguration": "not established from issuer evidence.",
+      "ownership": "not assessable without issuer seat labels/subtotals.",
+      "printedSet": "not reconstructable; geometry cannot create seat ownership.",
+      "publishedCapacity": 3000,
+      "reason": "Do not infer spectator seats from the stadium plan or the legacy capacity. Reopen only with an issuer-numbered spectator layout."
+    }
+  ],
+  "result": {
+    "legacyTypeOnlyEligibleCount": 9,
+    "metadataRanked": 8,
+    "candidatesChecked": 6,
+    "adoptedCandidates": 1,
+    "deferred": 5,
+    "hardCaseDefers": 0,
+    "rejected": 0,
+    "productionPromotions": 0,
+    "productionAfter": {
+      "venues": 118,
+      "selectableConfigurations": 120,
+      "seatRecords": 177317
+    }
+  },
+  "validation": "Inventory/report-only formalization. No production source, seat range, generated catalog, runtime artifact, fingerprint, or production total changed.",
+  "recommendedNextBoundedBatch": [
+    "tokyo-official-0121 only: non-production STANDARD first-pass draft and independent review of the issuer 1F/2F numbered seat chart; do not begin implementation in this preflight."
+  ],
+  "exactNextAction": "If separately authorized, create only the non-production Stellar Ball draft and complete its two-pass issuer-number extraction; do not research the ranked-out candidates or deploy."
+}

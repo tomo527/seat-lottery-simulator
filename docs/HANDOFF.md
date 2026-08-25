@@ -1,6 +1,6 @@
 # Current save state
 
-Updated: 2026-08-24 (Asia/Tokyo)
+Updated: 2026-08-25 (Asia/Tokyo)
 
 ## Current state
 
@@ -11,6 +11,8 @@ TOKYO-WAVE-25 preflight is formally closed with **0 ADOPT / 6 DEFERRED**. [`data
 The authorized `NEXT TERRA PREFLIGHT` is now formally closed with **0 ADOPT / 4 DEFERRED / 2 HARD-CASE DEFER**. [`data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json`](../data/venue-reports/tokyo-next-terra-preflight-2026-08-24.json) preserves the completed first-party evidence for `0373`, `0425`, `0709`, `0611`, `1017`, and `1058`; their inventory records are `blocked` so they cannot re-enter ordinary discovery. None is permanently rejected.
 
 The bounded `JUDGMENT` hard-case audit of `0611` and `1017` is complete and both are **NEED EVIDENCE**. For 駒沢体育館, the issuer map labels the row in each visible block (A-K), but prints no individual seat numbers; its 2,354-seat map also does not reconcile to the current guide's fixed 2,238 + wheelchair 24 + amenity 12 + temporary maximum 1,152 scope without choosing an unsupported generation/scope. For アリーナ立川立飛, the current-linked official layout defines 1F/2F and movable/court-side/wheelchair/media/camera subtotals, but prints no seat IDs or row labels; its movable-bank arithmetic is 108 x 2 + 155 x 2 = 526 against the printed 528 movable subtotal. Geometry or capacity fitting cannot resolve either venue. No source JSON or implementation was created.
+
+The authorized legacy `TYPE-ONLY REPRESENTATIVE PREFLIGHT` is formally closed with **1 ADOPT / 5 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json`](../data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json) records the A/B legacy pool (9 eligible, 8 metadata-ranked, 6 current-first-party checks) and updates every checked inventory record so it cannot re-enter ordinary discovery. Only `tokyo-official-0121` (品川プリンスホテル ステラボール) is a preflight ADOPT: the current issuer page links its numbered 1F 750 + 2F 126 seat chart and reports the same 876-seat configuration. This is not production data; no source, range, catalog, runtime artifact, fingerprint, or production total changed. `0106`, `0160`, and `0435` lack a current issuer-numbered set; `0372` and `0072` are current closure/renovation holds.
 
 | Item | State |
 | --- | --- |
@@ -50,4 +52,4 @@ The bounded `JUDGMENT` hard-case audit of `0611` and `1017` is complete and both
 
 ## Exact next action
 
-Do not implement, deploy, or start candidate research. Obtain a current issuer-numbered seat map or complete issuer seat list for `tokyo-official-0611` or `tokyo-official-1017` that defines every seat ID and resolves the declared fixed/movable/accessibility subtotals; then repeat only the bounded hard-case audit for that venue.
+Do not implement, deploy, or start candidate research without separate authorization. If authorized, create only the non-production `stellar-ball-standard` draft, independently extract the current official 1F/2F numbered seat chart twice, and verify the issuer 750 + 126 = 876 arithmetic before any production decision.
