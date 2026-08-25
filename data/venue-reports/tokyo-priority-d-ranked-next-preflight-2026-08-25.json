@@ -1,0 +1,151 @@
+{
+  "wave": "TOKYO PRIORITY D RANKED NEXT PREFLIGHT",
+  "date": "2026-08-25",
+  "phase": "Bounded metadata reranking and current-first-party evidence preflight only",
+  "scopeBoundary": "The remaining unresearched Tokyo Priority-D inventory was reranked from repository metadata alone under the established performance-oriented rule, and current/current-linked first-party evidence was checked for ranks 1-5 in the recorded order. Research stopped at the five-candidate ceiling. No two-pass transcription, source or range authoring, production integration, generated artifact, fingerprint, or production-total change was made.",
+  "policyBasis": "ADOPT requires current/current-linked first-party issuer evidence that fixes, without inference, one representative configuration with a complete issuer-numbered seat set, issuer-defined row/block/floor/category ownership, a configuration boundary, and the treatment of accessibility, removable, and alternative configurations, so that an independent two-pass transcription can reproduce it losslessly. DEFER covers a missing or incomplete printed ID set or an unsupported configuration definition. HARD-CASE DEFER is reserved for an otherwise complete numbered chart whose issuer subtotal or accessibility relation alone remains unreconciled. Capacity fitting, invented seat IDs, geometry-derived ownership, configuration mixing, assigning IDs to unnumbered wheelchair spaces, and arbitrary deletion of printed IDs for accessibility reasons are prohibited.",
+  "performanceOrientedRankingRule": [
+    "Dedicated theater, concert hall, live-event hall, or auditorium with continuing stage, theatre, live, or concert use and likely assigned-ticket sales.",
+    "Civic/public halls with explicit performance use.",
+    "Recreation, multipurpose, meeting, and conference spaces."
+  ],
+  "metadataReranking": {
+    "performed": true,
+    "inputsUsedForRanking": "data/venue-inventory/tokyo.json only (priority, researchStatus, venueSourceId, eligibility, officialDisplayName, category, capacity, officialFacilityUrl, discoveryUrlRaw). No Web research informed the ranking.",
+    "candidatePool": "969 Tokyo Priority-D inventory records reduce to 822 with researchStatus not-started or source-located and venueSourceId null; 289 of those carry an officialFacilityUrl or discoveryUrlRaw.",
+    "tier1Screen": "39 of the 289 carry a dedicated performance identity in the normalized display name (劇場 / シアター / THEATER / 能楽堂 / 音楽堂 / ライブ / live-house brands). Tier-1 records were ordered by continuing dedicated-theatre identity first, then by metadata strength: source-located plus likely-eligible plus a direct operator URL plus a recorded capacity outranks not-started plus needs-research plus a null capacity.",
+    "tier1NotSelected": "Live-house brand records (Spotify O-EAST / O-WEST / O-nest / O-Crest, CLUB QUE, U.F.O.CLUB, LIVE STAGE GUILTY), sub-100-seat studio theatres, 国立能楽堂〔研修能舞台〕 as a training stage rather than a ticketed performance space, and 浅草フランス座演芸場東洋館 ranked below the five selected records and were not opened.",
+    "tiers2and3NotSelected": "Civic performance halls and recreation/multipurpose/meeting spaces rank below tier 1 and were not opened by this preflight."
+  },
+  "facilitySpaceDuplicateCheck": {
+    "method": "Each selected inventoryId, its venueSourceId, and its facility-space identity were checked against data/venue-sources, the complete Tokyo inventory, and every prior formal venue report before research, by facility and space name as well as by ID prefix.",
+    "result": "All five selected records had venueSourceId null and no prior formal disposition. tokyo-official-0115 自由劇場 is a distinct facility-space from the existing shiki-haru-standard, shiki-aki-standard, shiki-umi-standard, and ariake-shiki-standard records; no seat range, production source, or prior report covers it. tokyo-official-0859 covers only the BIG TREE THEATER space, not sibling records tokyo-official-0860 (BOX in BOX THEATER) or tokyo-official-0861 (BASE THEATER).",
+    "mandatoryExclusionsHonored": "tokyo-official-0238 音楽の友ホール (DEFER), tokyo-official-0565 シアタートラム (DEFER), and tokyo-official-0278 東京グローブ座 (HARD-CASE DEFER) were excluded from the pool and were neither reopened nor re-audited."
+  },
+  "researchOrder": [
+    {"rank": 1, "inventoryId": "tokyo-official-0115", "venue": "JR東日本アートセンター 自由劇場", "selection": "Metadata-only rerank: dedicated company theatre with a direct official operator URL and continuing assigned-ticket identity."},
+    {"rank": 2, "inventoryId": "tokyo-official-0586", "venue": "本多劇場", "selection": "Metadata-only rerank: flagship dedicated continuing theatre with a direct operator discovery URL."},
+    {"rank": 3, "inventoryId": "tokyo-official-0859", "venue": "シアターグリーン 〔BIG THREE THEATER〕", "selection": "Metadata-only rerank: dedicated theatre, source-located, likely-eligible, direct official URL, recorded capacity 167."},
+    {"rank": 4, "inventoryId": "tokyo-official-0476", "venue": "中目黒キンケロ・シアター", "selection": "Metadata-only rerank: dedicated theatre, source-located, likely-eligible, direct official URL, recorded capacity 133."},
+    {"rank": 5, "inventoryId": "tokyo-official-0867", "venue": "萬劇場", "selection": "Metadata-only rerank: dedicated theatre, source-located, likely-eligible, direct official URL, recorded capacity 130."}
+  ],
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0115",
+      "venue": "JR東日本アートセンター 自由劇場",
+      "researchOrder": 1,
+      "officialSources": [
+        {"url": "https://www.shiki.jp/theatres/4008/", "role": "current operator theatre page, capacity statement, wheelchair procedure, and the only seat-chart links"},
+        {"url": "https://www.shiki.jp/theatres/pdf_seat/40080085.pdf", "role": "current-linked production seating chart, ロボット・イン・ザ・ガーデン"},
+        {"url": "https://www.shiki.jp/theatres/pdf_seat/40080055.pdf", "role": "current-linked production seating chart, 夢から醒めた夢, produced by 浅利演出事務所"},
+        {"url": "https://www.shiki.jp/theatres/pdf_seat/40080017.pdf", "role": "current-linked production seating chart, 王様の耳はロバの耳"}
+      ],
+      "currentness": "Current operator theatre page with active productions and ticketing.",
+      "selectedRepresentativeConfiguration": "Not defined by the issuer. The operator states 客席数は約500席 and publishes no standard house seating map; the only charts are per-production charts.",
+      "numberedSeatEvidence": "Each production chart prints a numbered set, but the sets differ between productions. Direct comparison of the current ロボット・イン・ザ・ガーデン and 夢から醒めた夢 charts shows different printed side-block ranges in the same rows: 1F row 1 prints left 4-8 and right 20-24 in one chart but left 6-8 and right 20-22 in the other, and 1F row 2 and the 2F front rows differ likewise.",
+      "issuerOwnershipSubtotalPublishedCapacity": "The issuer publishes only an approximate 約500席 plus per-production price-zone boundaries (S1/A1, S2/A2); it publishes no permanent numbered total or fixed ownership set.",
+      "accessibilityRemovableMultiConfiguration": "The charts show a single unnumbered 車いす box in 1F row 16, and the operator requires prior telephone contact before purchase for wheelchair space. No issuer-defined inclusion or replacement relation to any total exists.",
+      "disposition": "DEFER",
+      "reason": "No issuer-defined single representative configuration exists: the numbered set itself varies by production and the published capacity is approximate. Selecting or merging production charts would be configuration mixing, and no ID may be created from an approximate capacity. This is not a hard case because the representative configuration, not merely a subtotal, is undefined.",
+      "consistencyNote": "This matches the existing repository treatment of the sibling Shiki facility-spaces shiki-haru-standard, shiki-aki-standard and shiki-umi-standard, which are held for the same production-variant publishing model. The disposition was reached from this venue's own current evidence, not inherited from them."
+    },
+    {
+      "inventoryId": "tokyo-official-0586",
+      "venue": "本多劇場",
+      "researchOrder": 2,
+      "officialSources": [
+        {"url": "https://www.honda-geki.com/about/theaterdocs", "role": "current 本多劇場グループ document index, capacity statement, and direct seat-chart link; the page carries 2026-08 document updates and a 2025-01-01 fee revision"},
+        {"url": "https://www.honda-geki.com/05_file/theater/honda/%E6%9C%AC%E5%A4%9A%E5%8A%87%E5%A0%B4%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf", "role": "current-linked issuer-numbered 本多劇場 座席表"},
+        {"url": "https://www.honda-geki.com/honda", "role": "current operator theatre page with active assigned-ticket performances"}
+      ],
+      "currentness": "The document index is currently maintained, showing 2026-08 updates for sibling theatres, and the theatre page lists active productions and ticketing.",
+      "selectedRepresentativeConfiguration": "The issuer's single standard 座席表 for the house; no alternative audience configuration is published.",
+      "numberedSeatEvidence": "Complete. The chart prints every row A-Q and every seat number in three issuer-drawn blocks, left 1-6, centre 7-18, right 19-24. Row A prints 2-23, rows B, C and D print 1-24, row E prints 2-23, rows F through P print 1-24, and row Q prints 8-17. The printed set totals 390 positions. The only Japanese text on the sheet is 本多劇場, 座席表 and ステージ; there is no legend, wheelchair icon, or annotation.",
+      "issuerOwnershipSubtotalPublishedCapacity": "The current document index states 1982年11月3日開場　客席数386席. The printed chart carries no total of its own.",
+      "accessibilityRemovableMultiConfiguration": "Four printed positions, M1, M24, Q8 and Q17, each carry a diagonal strike mark. The chart supplies no legend for that mark and the operator publishes no statement of what the marked positions are. 390 printed positions minus those 4 marked positions equals the published 386, but the issuer never states that relation, nor whether the marked positions are removed, equipment, accessibility, or non-sale positions.",
+      "disposition": "HARD-CASE DEFER",
+      "reason": "The numbered chart is complete and the representative configuration is identifiable, so the only unresolved point is the relation between the four diagonally marked printed positions and the issuer's 386-seat subtotal. Retaining them contradicts the published 386; deleting them to reach 386 would be capacity fitting and arbitrary deletion of printed IDs. Neither is permitted, so lossless scope selection is not yet possible.",
+      "nextJudgmentRequirement": "Obtain issuer evidence stating what the diagonally marked M1, M24, Q8 and Q17 positions are and whether they fall inside or outside the 386-seat count, before any bounded judgment audit or two-pass implementation is authorized. Do not infer the meaning of the mark."
+    },
+    {
+      "inventoryId": "tokyo-official-0859",
+      "venue": "シアターグリーン 〔BIG THREE THEATER〕",
+      "issuerSpaceName": "BIG TREE THEATER",
+      "researchOrder": 3,
+      "officialSources": [
+        {"url": "https://theater-green.com/theater/bigtree/", "role": "current operator space page, capacity statement, and direct 客席図面 link"},
+        {"url": "https://theater-green.com/wp-content/uploads/2023/06/bigtree_capacity.pdf", "role": "current-linked issuer-numbered BIG TREE THEATER 客席図面"},
+        {"url": "https://theater-green.com/wp-content/uploads/2023/06/kumikae1.pdf", "role": "issuer STAGE DECK pattern sheet A and B, a stage configuration document rather than an audience-seating variant"},
+        {"url": "https://theater-green.com/wp-content/uploads/2023/06/kumikae2.pdf", "role": "issuer STAGE DECK pattern sheet C and D, a stage configuration document rather than an audience-seating variant"}
+      ],
+      "currentness": "The operator space page is actively maintained: it carries documents uploaded in 2026-04 and 2026-06 and current terms and usage documents dated 2025-10, and the site publishes current performance listings for its three theatres.",
+      "selectedRepresentativeConfiguration": "The issuer's 客席図面 for BIG TREE THEATER, labelled 座席数　１６７席〜（固定座席１６７席）. The fixed 167-seat set is the issuer's single audience configuration; the STAGE DECK sheets define stage build patterns, not audience-seat variants.",
+      "numberedSeatEvidence": "Complete. The chart prints every row label A列 through L列 on both sides and every individual seat number. Rows A through F each print 1-4, 5-14 and 15-17 in three issuer-drawn blocks; G prints 5-14 plus a separate 15; H, I and J each print 3-14; K prints 5-14; L prints 6-13. The printed positions total 167.",
+      "issuerOwnershipSubtotalPublishedCapacity": "The chart itself states 座席数　１６７席〜（固定座席１６７席） and the current operator page states 167席〜 and 固定座席167席. Printed row ownership totals 167 without using the published capacity to fit any range.",
+      "accessibilityRemovableMultiConfiguration": "The chart prints no wheelchair space, no removable-seat marking, and no legend, and the operator page publishes no accessibility replacement relation; none may be inferred. The open-ended 167席〜 refers to seating the issuer does not number, so it remains outside the fixed printed set as metadata.",
+      "disposition": "ADOPT",
+      "reason": "Current official issuer evidence fixes one representative configuration, a complete printed ID set, issuer row and block ownership, the configuration boundary, and the absence of any accessibility or removable relation, so an independent two-pass transcription can reproduce it losslessly without invented IDs, geometry-derived ownership, or configuration mixing.",
+      "nextTwoPassRequirements": "Independently reread every printed ID, block boundary and gap in rows A through L from the current 客席図面; compare the issuer's 167 total only after both passes; keep the unnumbered open-ended 167席〜 additions and the STAGE DECK patterns as metadata; do not add or infer a wheelchair position."
+    },
+    {
+      "inventoryId": "tokyo-official-0476",
+      "venue": "中目黒キンケロ・シアター",
+      "researchOrder": 4,
+      "officialSources": [
+        {"url": "https://kinkero-theater.com/index.html", "role": "current operator home page and performance schedule"},
+        {"url": "https://kinkero-theater.com/facilities/index.html", "role": "current operator facility page, audience-area photographs only"},
+        {"url": "https://kinkero-theater.com/guide/index.html", "role": "current operator rental guide and complete document index"},
+        {"url": "https://kinkero-theater.com/guide/%E5%9B%B3%E9%9D%A2%E4%B8%80%E5%BC%8F20260702%E7%89%88.pdf", "role": "current issuer drawing set, 図面一式20260702版, 8 pages"}
+      ],
+      "currentness": "Current: the schedule page lists performances into 2027 and the rental documents are dated 2026-03-01 and 2026-07-02 with a price2026 sheet.",
+      "selectedRepresentativeConfiguration": "Not defined by the issuer. No audience-seating configuration with numbered seats is published.",
+      "numberedSeatEvidence": "Absent. The current 8-page drawing set contains a dimensioned floor plan, batten and lighting-circuit diagrams and equipment lists, and prints no seat numbers or row labels; the facility page carries only photographs; the guide page links no 座席表.",
+      "issuerOwnershipSubtotalPublishedCapacity": "The current official site publishes no 客席数 figure at all; the inventory's 133 originates from the Tokyo official list, not from an issuer-numbered set.",
+      "accessibilityRemovableMultiConfiguration": "No issuer statement on wheelchair spaces, removable seats, or alternative audience layouts was located.",
+      "disposition": "DEFER",
+      "reason": "No current issuer-numbered seat set or representative configuration exists. Deriving IDs from drawing-set geometry or from the list capacity is prohibited. This is not a hard case because complete issuer-numbered material is absent."
+    },
+    {
+      "inventoryId": "tokyo-official-0867",
+      "venue": "萬劇場",
+      "researchOrder": 5,
+      "officialSources": [
+        {"url": "https://yorozu-s.com/", "role": "current operator site, the redirect target of the registered yorozu-s.sub.jp host, with capacity statements and booking notices"},
+        {"url": "https://yorozu-s.com/about/%e5%82%99%e5%93%81%e3%83%bb%e5%9b%b3%e9%9d%a2%e3%81%aa%e3%81%a9%e3%81%ae%e8%b3%87%e6%96%99/", "role": "current operator document index linking the 客席図"},
+        {"url": "https://yorozu-s.com/wp-content/uploads/seatmap_max143.pdf", "role": "current-linked issuer 萬劇場 座席表"}
+      ],
+      "currentness": "Current operator site with 2026 availability notices and 2027 booking acceptance.",
+      "selectedRepresentativeConfiguration": "Not determinable. The operator describes 約130席の多目的ホール and 舞台奥行き3間の場合、約120〜最大135席, while the linked chart is published as a maximum layout.",
+      "numberedSeatEvidence": "Incomplete. The 座席表 draws rows A列 through K列, but only rows E through J print individual seat numbers 1-13; rows A, B, C, D and K draw seat boxes with no printed numbers at all, and the right half of D列 is drawn as a dashed, non-fixed block. A 仮設ブース occupies part of the rear area.",
+      "issuerOwnershipSubtotalPublishedCapacity": "Three different figures coexist, 約130席, 約120〜最大135席, and the chart's maximum-layout publication, with no issuer subtotal tied to the printed numbers.",
+      "accessibilityRemovableMultiConfiguration": "Seat count varies explicitly with stage depth and the chart marks a non-fixed dashed block; no accessibility relation is published.",
+      "disposition": "DEFER",
+      "reason": "The printed ID set is incomplete for five of the eleven drawn rows and the issuer defines a variable rather than a single representative configuration. Neither geometry nor any published capacity may supply the missing IDs; this is not a hard case."
+    }
+  ],
+  "result": {
+    "candidatesResearched": 5,
+    "adopted": 1,
+    "deferred": 3,
+    "hardCaseDeferred": 1,
+    "stopCondition": "Five-candidate research ceiling reached before three ADOPTs.",
+    "recommendedImplementationCandidates": ["tokyo-official-0859"]
+  },
+  "inventorySynchronization": {
+    "adopt": ["tokyo-official-0859"],
+    "blockedDefer": ["tokyo-official-0115", "tokyo-official-0476", "tokyo-official-0867"],
+    "blockedHardCaseDefer": ["tokyo-official-0586"],
+    "unresearchedNotSelected": "unchanged",
+    "incidentalTextNormalization": "Rewriting data/venue-inventory/tokyo.json removed a pre-existing duplicate researchStatus key from tokyo-official-0492 and tokyo-official-0508, where the literal text carried both a stale not-started entry and the effective blocked entry. A record-by-record comparison against the previous commit confirms zero parsed differences outside the five in-scope records; the effective value of both records was and remains blocked."
+  },
+  "productionImpact": {
+    "before": {"venues": 130, "selectableConfigurations": 132, "seatRecords": 181170},
+    "after": {"venues": 130, "selectableConfigurations": 132, "seatRecords": 181170},
+    "changed": false
+  },
+  "validation": {
+    "performed": ["npm run venues:inventory:report", "npm run venues:check", "npm run venues:validate", "npm run venues:report", "npm run verify:docs"],
+    "notPerformed": ["npm run verify:venues, because no production source, range, generated artifact, fingerprint, or production total changed"]
+  },
+  "exactNextAction": "Stop. A separately authorized bounded independent two-pass implementation may target only tokyo-official-0859 シアターグリーン BIG TREE THEATER. Do not implement or reopen tokyo-official-0115, tokyo-official-0476 or tokyo-official-0867; tokyo-official-0586 本多劇場 requires issuer evidence explaining the diagonally marked M1, M24, Q8 and Q17 positions and their relation to the 386-seat count before any judgment audit is authorized."
+}
