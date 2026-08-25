@@ -31,7 +31,7 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | Authoring production target | 122 venues / 124 selectable configurations / 179,328 configuration-seat records |
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
 | Validation / generated artifacts | `npm run verify:venues` passed after TOKYO-WAVE-26; catalog/runtime/fingerprint synchronized |
-| Commit / push / Workers / public UI | TOKYO-WAVE-26 commit/push, managed Workers Build, and public UI smoke are the current follow-through |
+| Commit / push / Workers / public UI | `672c275` pushed; Workers Builds `completed / success`; public 0646/1115/0101 search, displayed counts, one draw, console errors all passed |
 | Legacy type-only A/B lane | Closed: 1 production / 8 DEFER / 0 hard-case DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo A/B source-located lane | Closed: `0374` DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo priority C source-located preflight | Closed: `0375` / `0950` / `1186` DEFER; 0 ADOPT |
@@ -68,7 +68,8 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 - The GitHub check run **Workers Builds: seat-lottery-simulator** for `9d2a66c` completed successfully.
 - At `https://seat-lottery-simulator.studiotomo.workers.dev/`, the venue selector found the three promoted venues with 1,027 / 729 / 1,102 displayed seats. One draw was started for each; no console errors were observed.
 - The GitHub check run **Workers Builds: seat-lottery-simulator** for Stellar Ball production commit `a277a5a` completed successfully. The public runtime searched `ステラボール` to one result, displayed 876 seats, completed one draw (`1F シートフロア D列24番`), and reported no console warning or error.
+- The GitHub check run **Workers Builds: seat-lottery-simulator** for TOKYO-WAVE-26 production commit `672c275` completed successfully. The public runtime found 伝承ホール at 339 seats, ルネこだいら中ホール at 398 seats, and 浜離宮朝日ホール小ホール at 398 seats; one draw completed for each and browser console errors were absent.
 
 ## Exact next action
 
-Push the completed TOKYO-WAVE-26 integration, wait for its managed Workers Build, and smoke-test the three public venue entries. Do not begin Web research for the recorded next metadata rank without new authorization.
+Stop after the committed TOKYO-WAVE-26 closure. The report records the next five Priority-C metadata candidates; do not begin their Web research without new authorization.
