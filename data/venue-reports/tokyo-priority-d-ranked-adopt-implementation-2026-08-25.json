@@ -1,0 +1,47 @@
+{
+  "wave": "TOKYO PRIORITY D RANKED ADOPT IMPLEMENTATION",
+  "date": "2026-08-25",
+  "lane": "DENSE",
+  "batchId": "tokyo-wave-28-priority-d-ranked-adopt-implementation",
+  "scopeBoundary": "Only the three separately authorized ADOPTs 1036, 0133, and 0282 were visually transcribed twice from their named current/current-linked official charts. No candidate discovery, no research for 0647 or 0238, and no reopening of a deferred or HOLD venue occurred.",
+  "policyBasis": "For each venue, pass 1 was a fresh direct visual transcription of every printed ID. Pass 2 was a separately ordered direct reread before any range comparison. The published total never supplied a missing ID, gap, ownership assignment, or configuration difference; geometry did not supply ownership.",
+  "venues": [
+    {
+      "id": "kichijoji-theatre-basic-stage",
+      "inventoryId": "tokyo-official-1036",
+      "venue": "吉祥寺シアター〔劇場〕",
+      "officialEvidence": {"theatrePage":"https://www.musashino.or.jp/k_theatre/1002052/1002054.html","seatChart":"https://www.musashino.or.jp/_res/projects/default_project/_page_/001/002/054/k_theatre-sisetu-gekijou_739.pdf","selectedConfiguration":"current official basic stage 189-seat layout"},
+      "currentness":"Current official theatre page directly links the basic-seat chart; the operator site remains active. The chart warns that event-specific stage shapes can differ.",
+      "firstPass":{"method":"Fresh full-chart visual transcription by printed row/block.","ranges":"A-I each1-18; BL1-5; BR1-5; J1-17.","subtotals":"A-I=162; BL/BR=10; J=17; total189.","mapped":189},
+      "secondPass":{"method":"Independent visual reread beginning with lower J, then BL/BR, then the A-I row field; no first-pass range text was used as an answer key.","ranges":"J1-17; BL1-5; BR1-5; A-I each1-18.","subtotals":"J17 + sides10 + A-I162 =189.","mapped":189},
+      "comparison":{"completePrintedSet":"MATCH","rowBlockOwnership":"MATCH","rangesAndGaps":"MATCH: all listed sequences are continuous; no chart gap was filled.","issuerSubtotal":"MATCH: 162+10+17=189.","selectedConfiguration":"MATCH: basic stage only.","twoPassAgreement":"MATCH"},
+      "outcome":{"disposition":"PRODUCTION","mapped":189,"published":189,"rangeDiff":0,"confidence":"representative","metadata":"No issuer-defined wheelchair replacement is shown, so none was inferred. Event-specific layout changes remain outside the basic configuration."}
+    },
+    {
+      "id": "akasaka-red-theater-basic-stage",
+      "inventoryId": "tokyo-official-0133",
+      "venue": "赤坂RED/THEATER",
+      "officialEvidence": {"seatChartPage":"https://www.red-theater.net/category/1310114.html","seatChart":"https://www.red-theater.net/_p/acre/26171/documents/%E5%BA%A7%E5%B8%AD%E8%A1%A8_.pdf","selectedConfiguration":"current official basic stage 176-seat layout"},
+      "currentness":"The active official theatre site publishes the linked chart, which explicitly distinguishes basic176, +900 extension162, and +1800 extension148 configurations.",
+      "firstPass":{"method":"Fresh full-chart visual transcription from A through M within the basic-stage boundary.","ranges":"A-D each1-14; E1-11; F1-14; G-L each1-14; M4-14.","subtotals":"A-D56 + E11 + F14 + G-L84 + M11 =176.","mapped":176},
+      "secondPass":{"method":"Independent visual reread bottom-up from M, then L-G, F, E, and D-A; annotation areas were reread directly before comparison.","ranges":"M4-14; G-L each1-14; F1-14; E1-11; A-D each1-14.","subtotals":"M11 + G-L84 + F14 + E11 + A-D56 =176.","mapped":176},
+      "comparison":{"completePrintedSet":"MATCH","rowBlockOwnership":"MATCH","rangesAndGaps":"MATCH: E ends11 and M begins4; F12-14 remain printed IDs.","issuerSubtotal":"MATCH: basic-stage176.","selectedConfiguration":"MATCH: the 162/148 extension variants are separate and excluded.","twoPassAgreement":"MATCH"},
+      "outcome":{"disposition":"PRODUCTION","mapped":176,"published":176,"rangeDiff":0,"confidence":"representative","metadata":"A/B are official movable chairs. The E-column right-side wheelchair space is unnumbered and receives no ID. F12-14 are printed IDs within the marked wheelchair-space/movable-chair context and remain selectable; no replacement relation was inferred."}
+    },
+    {
+      "id": "yarai-nohgakudo-basic",
+      "inventoryId": "tokyo-official-0282",
+      "venue": "矢来能楽堂〔矢来能楽堂〕",
+      "officialEvidence": {"seatingPage":"https://yarai-nohgakudo.com/nohgakudo/seating","seatChart":"https://yarai-nohgakudo.com/pdf/seat-original.pdf","useGuide":"https://yarai-nohgakudo.com/nohgakudo/rules","selectedConfiguration":"current official basic 237-seat diagram"},
+      "currentness":"The current official seating page links the diagram and warns that event categories/counts can change; the official use guide also states237 seats.",
+      "firstPass":{"method":"Fresh direct visual transcription by the five issuer-labelled categories and all printed row boundaries.","ranges":"正面: あ-え各1-13, か1-12; 座敷正面: き/く/け/こ各1-8; 脇正面: あ-お各1-8, か1-9; 中正面: あ1-4, い1-7, う1-10, え1-11, お1-10, か1-10; 座敷中正面: き/く/け/こ各9-18.","subtotals":"64 + 32 + 49 + 52 + 40 =237.","mapped":237},
+      "secondPass":{"method":"Independent reread in a different category order: 正面, 座敷正面, 脇正面, 中正面, 座敷中正面, then the printed subtotal panel; no first-pass range string was used.","ranges":"正面64; 座敷正面 four rows1-8=32; 脇正面 five rows1-8 plusか1-9=49; 中正面4+7+10+11+10+10=52; 座敷中正面 four rows9-18=40.","subtotals":"64 +32 +49 +52 +40 =237.","mapped":237},
+      "comparison":{"completePrintedSet":"MATCH","rowBlockOwnership":"MATCH: repeated row labels are separated only at the issuer-drawn five-category boundaries.","rangesAndGaps":"MATCH: all listed number sequences are continuous inside their issuer category; no geometry-only ownership was assigned.","issuerSubtotal":"MATCH:64+32+49+52+40=237.","selectedConfiguration":"MATCH: basic diagram only; event-specific changes excluded.","twoPassAgreement":"MATCH"},
+      "outcome":{"disposition":"PRODUCTION","mapped":237,"published":237,"rangeDiff":0,"confidence":"representative","metadata":"き・く・け・こ列 are issuer-labelled tatami; 座敷き列 is the issuer's sunken kotatsu-style chair seating. No numbered wheelchair/removable conversion is defined, and none was inferred."}
+    }
+  ],
+  "result": {"production":3,"hold":0,"mappedSeatsAdded":602},
+  "productionAfter": {"venues":128,"selectableConfigurations":130,"configurationSeatRecords":180542},
+  "validationPlan": "Run one target review per new source and the bounded batch report, generate catalog/runtime artifacts only through venues:build, synchronize the reviewed production fingerprints, then run exactly one canonical npm run verify:venues before commit and push.",
+  "outOfScopePreserved": {"tokyo-official-0647":"unresearched after the prior stop condition; unchanged","tokyo-official-0238":"unresearched after the prior stop condition; unchanged"}
+}

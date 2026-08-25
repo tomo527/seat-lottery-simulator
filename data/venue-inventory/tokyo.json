@@ -2681,13 +2681,12 @@
       "officialFacilityUrl": "https://www.red-theater.net/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-08-25の限定preflightで、現行公式サイトの基本舞台176席座席表と個別印字番号を確認。張出し162/148席とは別configurationとして明示され、基本舞台を後続two-pass候補にできる。",
+      "eligibilityReason": "2026-08-25の限定two-passで、現行公式の基本舞台176席の全印字IDを一致確認してproduction化。張出し162/148席は別configurationとして非混在とし、E列右側の無番号車椅子スペースとA/B・F12-14の可動椅子注記をmetadataに保持した。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "akasaka-red-theater-basic-stage",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
-      "discoveryUrlRaw": "http://www.red-theater.net/",
-      "blockingReason": "ADOPT preflight完了。別承認のtwo-passで基本舞台176席の全印字ID、A/B可動席、F12-14の車椅子スペース表示と張出し別configurationの非混在を独立確認する。"
+      "discoveryUrlRaw": "http://www.red-theater.net/"
     },
     {
       "inventoryId": "tokyo-official-0134",
@@ -5595,12 +5594,11 @@
       "officialFacilityUrl": "https://yarai-nohgakudo.com/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-08-25の限定preflightで、現行公式座席図と2026年の指定席主催公演を確認。公式subtotal 237席と全列・番号が同じissuer evidenceで示され、後続two-pass候補にできる。",
+      "eligibilityReason": "2026-08-25の限定two-passで、現行公式基本座席図の237印字IDを一致確認してproduction化。正面64・座敷正面32・脇正面49・中正面52・座敷中正面40のissuer subtotalと座敷注記を保持した。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-08-25",
-      "blockingReason": "ADOPT preflight完了。別承認のtwo-passで正面・中正面・脇正面・座敷各区分の全印字ID、公式64/32/49/52/40 subtotal、座敷椅子注記を独立確認する。"
+      "venueSourceId": "yarai-nohgakudo-basic",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-25"
     },
     {
       "inventoryId": "tokyo-official-0283",
@@ -20309,13 +20307,12 @@
       "officialFacilityUrl": "https://www.musashino.or.jp/k_theatre/index.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-08-25の限定preflightで、現行公式の基本舞台189席ページと基本形式座席表を確認。舞台形状変更時の別配置と区別された、全印字番号の後続two-pass候補にできる。",
+      "eligibilityReason": "2026-08-25の限定two-passで、現行公式基本舞台189席のA-I・BL/BR・J全印字IDを一致確認してproduction化。イベントごとの舞台形状変更時の別配置は混在させない。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "kichijoji-theatre-basic-stage",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
-      "discoveryUrlRaw": "http://www.musashino.or.jp/k_theatre/index.html",
-      "blockingReason": "ADOPT preflight完了。別承認のtwo-passで基本形式のA-I、BL/BR、J全印字IDと189席subtotal、可変舞台時のconfiguration非混在を独立確認する。"
+      "discoveryUrlRaw": "http://www.musashino.or.jp/k_theatre/index.html"
     },
     {
       "inventoryId": "tokyo-official-1037",

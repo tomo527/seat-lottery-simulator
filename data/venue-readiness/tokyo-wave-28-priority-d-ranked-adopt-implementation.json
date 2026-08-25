@@ -1,0 +1,12 @@
+{
+  "reportVersion": 1,
+  "batchId": "tokyo-wave-28-priority-d-ranked-adopt-implementation",
+  "baselineDate": "2026-08-25",
+  "scope": "TOKYO Priority D ranked bounded independent two-pass implementation of exactly three preflight ADOPTs.",
+  "expectedVenueCount": 3,
+  "venues": [
+    {"venueId":"kichijoji-theatre-basic-stage","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain all basic-stage A-I, BL/BR, and J printed IDs; preserve the 189-seat issuer configuration boundary and do not mix event-specific layouts."},
+    {"venueId":"akasaka-red-theater-basic-stage","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain every basic-stage A-M printed ID, including F12-14; retain A/B movable-chair and the unnumbered wheelchair-space disclosure without creating or replacing IDs."},
+    {"venueId":"yarai-nohgakudo-basic","readiness":"R4","secondPass":"approved","blocker":null,"nextAction":"Production: retain all five issuer-defined category sets and the 64/32/49/52/40 subtotals; preserve tatami and sunken-kotatsu-seat annotations without event-specific mixing."}
+  ]
+}

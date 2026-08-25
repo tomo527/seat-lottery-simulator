@@ -1,5 +1,30 @@
 [
   {
+    "schemaVersion": 2,
+    "id": "akasaka-red-theater-basic-stage",
+    "venueGroupId": "akasaka-red-theater-basic-stage",
+    "name": "赤坂RED/THEATER",
+    "searchAliases": [
+      "Akasaka RED THEATER",
+      "赤坂レッドシアター"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "basic-stage-176-seat-layout",
+        "canonicalName": "基本舞台・公式176番号席配置",
+        "seatCount": 176,
+        "dataPath": "/venue-db/venues/akasaka-red-theater-basic-stage--basic-stage-176-seat-layout.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の基本舞台176番号席を抽選します。A・B列は公式注記どおり可動椅子です。E列右側の車椅子スペースは無番号でIDを作らず、F12〜14は車椅子スペース内でも図に印字された可動椅子IDとして保持します。+900/+1800張出しの別configurationは含めません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "akigawa-kirara-hall-standard",
     "name": "S&D秋川キララホール",
     "searchAliases": [
@@ -646,6 +671,31 @@
     "representativePatternName": "通常客席配置",
     "seatCount": 1318,
     "dataPath": "/venue-db/venues/katsushika-symphony-mozart-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "kichijoji-theatre-basic-stage",
+    "venueGroupId": "kichijoji-theatre-basic-stage",
+    "name": "吉祥寺シアター〔劇場〕",
+    "searchAliases": [
+      "吉祥寺シアター",
+      "吉祥寺シアター 劇場"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "武蔵野市",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "basic-stage-189-seat-layout",
+        "canonicalName": "基本舞台・公式189番号席配置",
+        "seatCount": 189,
+        "dataPath": "/venue-db/venues/kichijoji-theatre-basic-stage--basic-stage-189-seat-layout.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の基本舞台189番号席を抽選します。イベントごとに舞台形状や座席配置が異なる場合は、この基本配置へ混在させません。側方のBL/BRは公式図の明確な別ブロックを表示用に整理した名称です。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "kioi-small-hall-standard",
@@ -2235,6 +2285,31 @@
     "representativePatternName": "Standard fixed numbered seating",
     "seatCount": 2000,
     "dataPath": "/venue-db/venues/utsunomiya-city-culture-hall-release-seed.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "yarai-nohgakudo-basic",
+    "venueGroupId": "yarai-nohgakudo-basic",
+    "name": "矢来能楽堂〔矢来能楽堂〕",
+    "searchAliases": [
+      "矢来能楽堂",
+      "矢来能楽堂 座席表"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "新宿区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "official-basic-237-seat-diagram",
+        "canonicalName": "公式基本座席図・237番号席配置",
+        "seatCount": 237,
+        "dataPath": "/venue-db/venues/yarai-nohgakudo-basic--official-basic-237-seat-diagram.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席図の237番号席を抽選します。正面・座敷正面・脇正面・中正面・座敷中正面の五区分は図の明示境界に従います。き・く・け・こ列は座敷であり、座敷き列は掘りごたつ式座椅子です。公演ごとの席種・席数変更は反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "yokohama-minatomirai-hall-main-release-seed",

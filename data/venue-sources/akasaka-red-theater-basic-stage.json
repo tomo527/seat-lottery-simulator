@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "akasaka-red-theater-basic-stage",
+  "name": "赤坂RED/THEATER",
+  "prefecture": "東京都",
+  "city": "港区",
+  "aliases": ["赤坂レッドシアター", "Akasaka RED THEATER"],
+  "venueType": "theater",
+  "sources": [
+    {"id":"official-theatre-site","official":true,"roles":["facility","event-layout"],"publisher":"赤坂RED/THEATER","title":"赤坂RED/THEATER 公式サイト","url":"https://www.red-theater.net/","checkedAt":"2026-08-25"},
+    {"id":"official-seat-chart-page","official":true,"roles":["facility","event-layout"],"publisher":"赤坂RED/THEATER","title":"赤坂RED/THEATER 座席表","url":"https://www.red-theater.net/category/1310114.html","checkedAt":"2026-08-25"},
+    {"id":"official-seat-chart","official":true,"roles":["seat-structure","seat-count","event-layout"],"publisher":"赤坂RED/THEATER","title":"赤坂RED/THEATER 座席表","url":"https://www.red-theater.net/_p/acre/26171/documents/%E5%BA%A7%E5%B8%AD%E8%A1%A8_.pdf","checkedAt":"2026-08-25"}
+  ],
+  "configurations": [
+    {
+      "id": "basic-stage-176-seat-layout",
+      "canonicalName": "基本舞台・公式176番号席配置",
+      "issuerDefinedCondition": "現行公式座席表が「基本舞台―176席」と明示する配置。+900張出し162席と+1800張出し148席は別configuration。",
+      "selectionBasis": "基本舞台176席の図上の全印字IDだけを直接転記する。+900・+1800張出しラインとその別席数を基本舞台へ混在させない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-25 current official RED THEATER site and linked seat chart",
+      "sourceIds": ["official-theatre-site", "official-seat-chart-page", "official-seat-chart"],
+      "differenceBasisSourceIds": ["official-seat-chart"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 176,
+      "scope": {"kind":"official-variant","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式の基本舞台176番号席を抽選します。A・B列は公式注記どおり可動椅子です。E列右側の車椅子スペースは無番号でIDを作らず、F12〜14は車椅子スペース内でも図に印字された可動椅子IDとして保持します。+900/+1800張出しの別configurationは含めません。",
+      "wheelchairSemantics": {"status":"not-reflected","description":"公式図はE列右側を無番号の車椅子スペース、F12〜14を印字番号付きで車椅子スペース内の可動椅子として示すが、通常番号席との置換関係は定義しない。E12〜14を作らず、F12〜14は印字IDのまま保持する。","sourceIds":["official-seat-chart"],"accessibilityConversionNotReflected":true},
+      "confidence": "representative",
+      "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-official-basic-seat-chart-visual-transcriptions-with-movable-and-wheelchair-space-review","seatStructure":"matched","seatCount":"matched","rangeDiff":0,"unresolvedIssues":[]},
+      "ranges": [
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"A","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"B","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"C","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"D","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"E","from":1,"to":11,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"F","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"G","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"H","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"I","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"J","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"K","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"L","from":1,"to":14,"excluded":[]},
+        {"areaId":"main-seating","areaLabel":"客席","rowLabel":"M","from":4,"to":14,"excluded":[]}
+      ]
+    }
+  ]
+}

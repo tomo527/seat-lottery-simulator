@@ -2,6 +2,20 @@
   "manifestVersion": 1,
   "reviewPolicy": "fingerprint変更時はsnapshot値だけを更新せず、公式資料から独立再確認する。",
   "venues": {
+    "akasaka-red-theater-basic-stage": {
+      "schemaVersion": 2,
+      "configurations": {
+        "basic-stage-176-seat-layout": {
+          "count": 176,
+          "samples": [
+            "main-seating/A/1",
+            "main-seating/G/8",
+            "main-seating/M/14"
+          ],
+          "sha256": "dd2d25a76d3f47f61c3d9c3d074efe578eee7096c1c8b654000df605addf7090"
+        }
+      }
+    },
     "akigawa-kirara-hall-standard": {
       "count": 700,
       "samples": [
@@ -395,6 +409,20 @@
         "right-balcony/2/34"
       ],
       "sha256": "e3e67d6ab6c68632cecc58fefffdaffeeb0621e7383eed35a963c27677b04491"
+    },
+    "kichijoji-theatre-basic-stage": {
+      "schemaVersion": 2,
+      "configurations": {
+        "basic-stage-189-seat-layout": {
+          "count": 189,
+          "samples": [
+            "main-seating/A/1",
+            "main-seating/F/5",
+            "main-seating/J/17"
+          ],
+          "sha256": "83c43c5cb4cb9f9275cb6d1f259abad7b9094eaf1464264f5a15fbba39d89501"
+        }
+      }
     },
     "kioi-small-hall-standard": {
       "count": 250,
@@ -1374,6 +1402,20 @@
         "second-floor/V/18"
       ],
       "sha256": "2d9248d59faf9af56f1b4318d13d9d683e5792c5592575f4cacb3b4a223b6513"
+    },
+    "yarai-nohgakudo-basic": {
+      "schemaVersion": 2,
+      "configurations": {
+        "official-basic-237-seat-diagram": {
+          "count": 237,
+          "samples": [
+            "front-seats/あ/1",
+            "side-seats/う/7",
+            "tatami-middle-seats/こ/18"
+          ],
+          "sha256": "ccf9f6e891d57801cf023284c0ee844f1f522d794a9dcd0a42f32c2c23ede0ee"
+        }
+      }
     },
     "yoyogi-1-standard": {
       "schemaVersion": 2,

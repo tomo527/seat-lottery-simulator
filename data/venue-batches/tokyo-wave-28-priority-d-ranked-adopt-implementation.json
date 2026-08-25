@@ -1,0 +1,13 @@
+{
+  "batchId": "tokyo-wave-28-priority-d-ranked-adopt-implementation",
+  "createdAt": "2026-08-25",
+  "scope": "TOKYO Priority D ranked bounded implementation: 吉祥寺シアター〔劇場〕、赤坂RED/THEATER、矢来能楽堂〔矢来能楽堂〕 only. Each current/current-linked official selected chart was transcribed twice independently; no candidate research, deferred-venue reopening, or work on 0647/0238 is in scope.",
+  "status": "complete",
+  "priority": "D",
+  "targetVenueIds": ["tokyo-official-1036", "tokyo-official-0133", "tokyo-official-0282"],
+  "carryOvers": [
+    {"inventoryId":"tokyo-official-1036","carryOverFrom":"tokyo-wave-4","previousStatus":"source-located","recheckReason":"The ranked preflight rechecked the current official basic-stage 189-seat chart. Implementation independently transcribes every printed A-I, BL/BR, and J ID without mixing event layouts.","recheckNotBefore":"2026-08-25"},
+    {"inventoryId":"tokyo-official-0133","carryOverFrom":"tokyo-wave-4","previousStatus":"source-located","recheckReason":"The ranked preflight rechecked the distinct official basic-stage 176-seat chart. Implementation independently transcribes all printed A-M IDs while retaining movable and wheelchair-space annotations as metadata.","recheckNotBefore":"2026-08-25"},
+    {"inventoryId":"tokyo-official-0282","carryOverFrom":"tokyo-wave-4","previousStatus":"source-located","recheckReason":"The ranked preflight rechecked the current official 237-seat diagram and five issuer subtotal groups. Implementation independently transcribes every printed ID and preserves tatami annotations.","recheckNotBefore":"2026-08-25"}
+  ]
+}
