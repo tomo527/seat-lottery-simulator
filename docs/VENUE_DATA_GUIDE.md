@@ -166,19 +166,53 @@ v2 catalogは会場を`venueGroupId`で1件にまとめ、configurationごとに
 
 `sources[].id`は会場内で安定かつ一意なslugにします。`official`は公式資料かを明示します。`roles`は`seat-structure`、`seat-count`、`facility`、`event-layout`から選びます。productionにはseat-structure sourceと、施設・構造・席数・実公演layoutのいずれかを支える公式sourceが必要です。公式資料だけで番号が不足する場合は、信頼できるsecondaryを`official: false`かつ`seat-structure`として参照し、公式資料との非矛盾確認と採用理由をmetadataに残せます。SNS単独・出所不明画像は不可です。
 
+### source URLのtransport policy
+
+`sources[].url`は「その座席データをどのissuer evidenceから確認したか」を記録するprovenance / audit trailです。build時にもruntimeにもfetchされず、生成catalogとruntime JSONにも含まれません（「runtimeと抽選」参照）。したがってtransport要件は、通常画面のリンク安全性ではなくevidence記録の品質として運用します。
+
+- **HTTPSが存在するofficial sourceではHTTPSが必須**です。既存の全production sourceはこれに該当し、挙動は変わりません。
+- **HTTP fallbackは、current official issuer自身がworking HTTPS endpointを提供していない場合だけ**許可します。この場合は実在の`http://`公式URLをそのまま記録し、**架空のHTTPS URLへ書き換えることを禁止**します。
+- HTTP URLには`httpOnlyOfficial` waiverを必須とします。waiverは`issuerDomain`（URL hostと一致、またはその下位host）、`httpsCheckedAt`（HTTPS不在を最後に確認した有効な非未来日付）、`httpsUnavailableEvidence`（確認方法の記録）を保持します。
+- **unofficial / secondary sourceにwaiverは適用できません。** `official: false`のHTTP sourceは従来どおりerrorです。
+- waiverなしHTTP、不完全waiver、issuer domain不一致、malformed URLも従来どおりerrorです。
+- **HTTPSが復旧したらwaiverを外してHTTPSへ移行します。** HTTPS URLにwaiverが残っているとerrorになるため、waiverは自動的に陳腐化しません。`httpsCheckedAt`が`WARNING_LIMITS.httpsRecheckDays`を超えると再確認warningを出します。
+- 許可されたHTTP sourceはerrorではなくwarningとして常時可視化し、レビュー対象に残します。
+- **HTTPを使うこと自体でseat evidence gateは緩和されません。** 独立two-pass、currentness、issuer ownership、configuration policy、production hard gateはすべて従来どおり適用します。
+
+HTTP-only officialのsource entryは次の形になります。既存のHTTPS sourceへwaiver fieldを追加する必要はありません。
+
+```json
+{
+  "id": "official-seat-map",
+  "official": true,
+  "roles": ["seat-structure", "seat-count"],
+  "publisher": "施設運営者",
+  "title": "座席表",
+  "url": "http://example.com/seat.jpg",
+  "checkedAt": "2026-08-25",
+  "httpOnlyOfficial": {
+    "issuerDomain": "example.com",
+    "httpsCheckedAt": "2026-08-25",
+    "httpsUnavailableEvidence": "2つの独立clientでTLS 1.2/1.3のhandshakeがserver起因のinternal errorで失敗し、working HTTPS endpointが存在しないことを確認。"
+  }
+}
+```
+
+policyの実体は`scripts/venues/source-transport.mjs`にあり、source validator、inventory validator、production database testが同じ判定を共有します。契約を変えるときはこのmoduleだけを変更します。
+
 連続番号は`from`から`to`へ圧縮し、公式な欠番だけを`excluded`へ昇順で記録します。同一列が分断される場合はrangeを分けます。推測による補完はしません。`areaId`を指定するproduction rangeには、結果表示に使える一意の`areaLabel`も必須です。
 
 areaのcanonical keyはruntime、validation、review、生成処理のすべてで`range.areaId ?? "main"`です。単一メインエリアでラベル表示が不要なら`areaId`と`areaLabel`を両方省略します。areaを表示するときだけ両方を明示します。省略形式と明示的な`areaId: "main"`は同じruntime areaへ統合されるため、同一会場内で混在させるとエラーです。
 
 ## 基本検証とproduction gate
 
-全statusで、ファイル名とID、schema version、slug、名称・所在地、都道府県マッピング、venue type、別名正規化、会場間検索語衝突、source ID・role・HTTPS・確認日、range正整数、excluded、区間重複、area対応を検証します。schema v1は`representativePattern`とtop-level verification、schema v2は各configurationのselection basis、scope、source参照、wheelchair metadata、confidence、verificationを検証します。draft/rejected configurationは空rangeと未確定席数`null`を許可し、production/selectable configurationは1席以上の有効mapped setを必須とします。重複確認はcanonical area・NFKC rowごとに行い、全席`Seat[]`へ展開しません。
+全statusで、ファイル名とID、schema version、slug、名称・所在地、都道府県マッピング、venue type、別名正規化、会場間検索語衝突、source ID・role・URL transport（HTTPS必須、HTTP-only officialは`httpOnlyOfficial` waiver必須）・確認日、range正整数、excluded、区間重複、area対応を検証します。schema v1は`representativePattern`とtop-level verification、schema v2は各configurationのselection basis、scope、source参照、wheelchair metadata、confidence、verificationを検証します。draft/rejected configurationは空rangeと未確定席数`null`を許可し、production/selectable configurationは1席以上の有効mapped setを必須とします。重複確認はcanonical area・NFKC rowごとに行い、全席`Seat[]`へ展開しません。
 
 productionのhard gateは、宣言scopeの完全な番号range、登録範囲・根拠・変換方法・制約、seat-structure source、公式supporting source、source参照、reviewed/verifiedかつmatchedなstructure、capacity fitting禁止、repository-invented IDs/differences禁止です。公式総数との一致、独立2 generation、`rangeDiff: 0`、wheelchair/companion完全置換、全variant、空の`unresolvedIssues`はconfidence情報でありhard gateではありません。`TODO`、`TBD`、`未設定`、`placeholder`や`demo`/`sample`/`partial`の不完全productionは引き続き拒否します。
 
 文字列の前後空白は保存時エラーです。`rowLabel`、`areaId`、`areaLabel`はNFKC比較も行い、NFKC後に同じrow/areaになる別表記の重複を拒否します。`venues:new`のCLI引数は暗黙にtrimせず、前後空白を明確なエラーとして拒否します。
 
-エラーは生成やproduction化を止めます。警告は止めませんがレビュー対象です。現在の警告は、確認日から365日超のsourceと、1行が25 range超へ細分化されたデータです。閾値は`scripts/venues/constants.mjs`にあります。catalog 100KB未満、detail 1件300KB未満、DB全体2MB未満の上限も同じファイルへ集約しています。
+エラーは生成やproduction化を止めます。警告は止めませんがレビュー対象です。現在の警告は、確認日から365日超のsource、1行が25 range超へ細分化されたデータ、`httpOnlyOfficial` waiverで許可したHTTP URL、およびHTTPS不在確認から180日超のwaiverです。閾値は`scripts/venues/constants.mjs`にあります。catalog 100KB未満、detail 1件300KB未満、DB全体2MB未満の上限も同じファイルへ集約しています。
 
 東京都10会場は品質条件ではありません。`venues:report`のcoverage目標としてだけ表示し、`venues:validate`の成否へ影響しません。
 
@@ -234,13 +268,15 @@ npm run venues:review -- --all
 
 ## runtimeと抽選
 
-catalogだけをmain bundleへ含め、選択した`dataPath`だけをlazy loadします。runtime JSONへsource、確認日、verification、調査注釈は含めません。抽選はrangeの累積席数からoffsetを1つ選び、二分探索後に該当rangeの1席だけを解決します。数万席でも全席配列を保存・生成しません。ランタイムDBやD1への移行は行いません。
+catalogだけをmain bundleへ含め、選択した`dataPath`だけをlazy loadします。runtime JSONへsource、source URL、確認日、verification、調査注釈は含めません。lazy loadは同一originの`dataPath`だけをfetchし、source URLをbuild時にもruntimeにも取得しません。source URLを通常画面のclickable linkとして表示することもありません。抽選はrangeの累積席数からoffsetを1つ選び、二分探索後に該当rangeの1席だけを解決します。数万席でも全席配列を保存・生成しません。ランタイムDBやD1への移行は行いません。
 
 ## 都道府県inventory
 
 `data/venue-inventory/<jurisdiction>.json`は、production sourceとは別に候補、調査状態、適格性を追跡する台帳です。東京都inventoryの発見元は、東京都生活文化局の最新「都内ホール・劇場等リスト」です。公式Excelは一時取得して正規化とchecksum確認にだけ使い、リポジトリへ保存しません。座席rangeの根拠には、各会場の公式座席表と公式席数資料を別途使用します。
 
-未回答、URL欠落、現役状態未確認の公式リスト行も削除せず、`operationalStatus: "unknown"`、`eligibility: "needs-research"`、`researchStatus: "not-started"`などで残します。これにより未調査候補をcoverageの分母から隠しません。施設内の独立したホールは個別候補とし、旧名称、ネーミングライツ名称、施設名だけの重複はduplicate reportで人間が確認します。
+未回答、URL欠落、現役状態未確認の公式リスト行も削除せず、`operationalStatus: "unknown"`、`eligibility: "needs-research"`、`researchStatus: "not-started"`などで残します。これにより未調査候補をcoverageの分母から隠しません。
+
+`officialFacilityUrl`はsource URLと同じtransport policyに従います。未判定のあいだはHTTP URLをwarning付きで保持できますが、`eligibility: "eligible"`または`researchStatus: "production"`になった時点でHTTPSが必須です。issuerがHTTPSを提供していない場合だけ、source側と同じ形の`httpOnlyOfficial` waiverをinventory recordへ記録して許可します。判定は`scripts/venues/source-transport.mjs`を共有するため、source側とinventory側でpolicyがdriftしません。施設内の独立したホールは個別候補とし、旧名称、ネーミングライツ名称、施設名だけの重複はduplicate reportで人間が確認します。
 
 ```bash
 npm run venues:inventory:report

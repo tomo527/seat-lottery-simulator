@@ -7,6 +7,11 @@ import fingerprintJson from '../../../data/venue-fingerprints/production.json'
 import catalogJson from './catalog.generated.json'
 import { countRangeSeats, prepareVenueSampler, seatAtOffset } from '../../domain/seats/rangeSampler'
 import { isMultiConfigurationVenue, resolveVenueSelection } from './catalog'
+import {
+  HTTP_ONLY_OFFICIAL_WAIVER_KEY,
+  evaluateRecordedUrlTransport,
+  type HttpOnlyOfficialWaiver,
+} from '../../../scripts/venues/source-transport.mjs'
 import type { VenueCatalogEntry, VenueRuntimeSelection, VenueSeatDefinition } from '../../types/venue'
 
 const catalog = catalogJson as VenueCatalogEntry[]
@@ -25,7 +30,16 @@ const legacyVenues = {
   'toppan-hall-standard': { count: 408, samples: ['main/A/1', 'main/H/16', 'main/S/21'] },
 } as const
 type Fingerprint = { count: number; samples: string[]; sha256: string }
-type SourceReference = { id: string; official: boolean; roles: string[]; publisher: string; title: string; url: string; checkedAt: string }
+type SourceReference = {
+  id: string
+  official: boolean
+  roles: string[]
+  publisher: string
+  title: string
+  url: string
+  checkedAt: string
+  httpOnlyOfficial?: HttpOnlyOfficialWaiver
+}
 type SourceRange = { areaId?: string; rowLabel: string; from: number; to: number; excluded?: number[] }
 type V2ConfigurationSource = {
   id: string
@@ -117,7 +131,21 @@ describe('production venue database', () => {
       const source = JSON.parse(await readFile(sourcePath, 'utf8')) as VenueSource
       expect(source.status, venue.id).toBe('production')
       expect(source.sources.length, venue.id).toBeGreaterThan(0)
-      expect(source.sources.every((item) => item.official && item.roles.length > 0 && item.url.startsWith('https://') && Boolean(item.checkedAt)), venue.id).toBe(true)
+      expect(source.sources.every((item) => item.official && item.roles.length > 0 && Boolean(item.checkedAt)), venue.id).toBe(true)
+      // Transport is judged by the shared policy, not a second copy of the rule: HTTPS stays
+      // mandatory, and an http:// provenance URL passes only under a complete official waiver.
+      for (const item of source.sources) {
+        const transport = evaluateRecordedUrlTransport({
+          url: item.url,
+          official: item.official,
+          waiver: item[HTTP_ONLY_OFFICIAL_WAIVER_KEY],
+          prefix: venue.id,
+          field: 'URL',
+          today: new Date(),
+          httpsRequiredMessage: `${venue.id} URL must use HTTPS`,
+        })
+        expect(transport.errors, `${venue.id}/${item.id}`).toEqual([])
+      }
       if (source.schemaVersion === 2) {
         const manifestEntry = fingerprintManifest.venues[venue.id]
         expect(manifestEntry && 'configurations' in manifestEntry ? Object.keys(manifestEntry.configurations).sort() : [], venue.id)

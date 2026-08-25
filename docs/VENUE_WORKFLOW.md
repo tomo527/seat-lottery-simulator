@@ -46,6 +46,7 @@ These are replaceable recommendations, not data semantics. Persist only the lane
 2. When an isolated evidence pass would help, delegate only the bounded research to the venue researcher in `VENUE_SUBAGENT_ROLES.md`. Supply the scope, lane reason, public evidence entry points, exclusions, and questions; do not delegate repository integration.
 3. The main agent verifies the returned citations and resolves the report against repository authorities. The report does not authorize a mapping or production decision.
 4. Follow the data/evidence contract in `VENUE_DATA_GUIDE.md`. Keep the source/configuration non-production during this pass.
+   - Record the issuer's real URL. Prefer an official HTTPS endpoint whenever one works. If the current official issuer serves no working HTTPS endpoint, keep the actual `http://` URL and record the `httpOnlyOfficial` waiver from `VENUE_DATA_GUIDE.md`; never substitute an invented HTTPS URL, and never waive a non-official source. The waiver is a transport record only and relaxes no seat-evidence, currentness, issuer-ownership, or configuration requirement.
 5. The main agent synchronizes only the in-scope source, inventory, and batch/readiness state. Do not hand-edit generated catalog or runtime files.
 6. Run the target review and any bounded batch report required by `VALIDATION.md`. Leave concrete evidence gaps and blockers in repository metadata.
 

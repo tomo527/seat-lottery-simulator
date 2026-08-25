@@ -9,6 +9,7 @@ import {
 } from './constants.mjs'
 import { INVENTORY_DIR } from './lib.mjs'
 import { dateInTokyo, normalizeSearchText } from './validation.mjs'
+import { HTTP_ONLY_OFFICIAL_WAIVER_KEY, evaluateRecordedUrlTransport } from './source-transport.mjs'
 import { sourceConfigurations, sourceHasProductionConfiguration } from './source-schema.mjs'
 
 const datePattern = /^\d{4}-\d{2}-\d{2}$/
@@ -119,17 +120,36 @@ export const validateInventories = (inventories, sources = [], options = {}) => 
       const facilityUrlRequired = venue.eligibility === 'eligible' || venue.researchStatus === 'production'
       if (venue.officialFacilityUrl === null || venue.officialFacilityUrl === undefined) {
         if (facilityUrlRequired) errors.push(`${prefix}.officialFacilityUrl must use HTTPS once eligibility is confirmed`)
+        if (venue[HTTP_ONLY_OFFICIAL_WAIVER_KEY] !== undefined && venue[HTTP_ONLY_OFFICIAL_WAIVER_KEY] !== null) {
+          errors.push(`${prefix}.${HTTP_ONLY_OFFICIAL_WAIVER_KEY} requires an officialFacilityUrl to waive`)
+        }
       } else {
+        let protocol
         try {
-          const protocol = new URL(venue.officialFacilityUrl).protocol
-          if (!['http:', 'https:'].includes(protocol)) throw new Error()
-          if (facilityUrlRequired && protocol !== 'https:') {
-            errors.push(`${prefix}.officialFacilityUrl must use HTTPS once eligibility is confirmed`)
-          } else if (protocol === 'http:') {
-            warnings.push(`${prefix}.officialFacilityUrl still uses HTTP and must be rechecked before eligibility is confirmed`)
-          }
+          protocol = new URL(venue.officialFacilityUrl).protocol
         } catch {
+          // Reported below.
+        }
+        const waiver = venue[HTTP_ONLY_OFFICIAL_WAIVER_KEY]
+        const waiverPresent = waiver !== undefined && waiver !== null
+        if (protocol !== 'http:' && protocol !== 'https:') {
           errors.push(`${prefix}.officialFacilityUrl must be null or an HTTP(S) URL`)
+        } else if (facilityUrlRequired || waiverPresent) {
+          // A confirmed candidate carries the same transport contract as a production source URL,
+          // and an early waiver is held to the same shape so it cannot decay before promotion.
+          const transport = evaluateRecordedUrlTransport({
+            url: venue.officialFacilityUrl,
+            official: true,
+            waiver,
+            prefix,
+            field: '.officialFacilityUrl',
+            today,
+            httpsRequiredMessage: `${prefix}.officialFacilityUrl must use HTTPS once eligibility is confirmed`,
+          })
+          errors.push(...transport.errors)
+          warnings.push(...transport.warnings)
+        } else if (protocol === 'http:') {
+          warnings.push(`${prefix}.officialFacilityUrl still uses HTTP and must be rechecked before eligibility is confirmed`)
         }
       }
       if (!INVENTORY_OPERATIONAL_STATUSES.has(venue.operationalStatus)) errors.push(`${prefix}.operationalStatus has unknown value ${String(venue.operationalStatus)}`)

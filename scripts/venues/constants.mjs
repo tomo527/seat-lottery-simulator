@@ -46,6 +46,7 @@ export const SIZE_PROJECTION_COUNTS = Object.freeze([100, 300, 500])
 export const WARNING_LIMITS = Object.freeze({
   sourceAgeDays: 365,
   rangesPerRow: 25,
+  httpsRecheckDays: 180,
 })
 
 export const INVENTORY_OPERATIONAL_STATUSES = new Set([

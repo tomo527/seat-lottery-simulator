@@ -123,6 +123,50 @@ describe('inventory validation and coverage', () => {
     expect(validateInventories(eligibleHttp, sources(), { today: TODAY }).errors.join('\n')).toMatch(/must use HTTPS/)
   })
 
+  it('applies the HTTP-only official waiver policy to eligible facility URLs', () => {
+    const waiver = (overrides = {}) => ({
+      issuerDomain: 'example.com',
+      httpsCheckedAt: TODAY,
+      httpsUnavailableEvidence: '2つの独立clientでTLS handshakeが失敗し、working HTTPS endpointが存在しないことを確認。',
+      ...overrides,
+    })
+    const record = (overrides) => inventory([inventoryVenue(overrides)])
+
+    // HTTPS stays the unchanged default.
+    expect(validateInventories(record({}), sources(), { today: TODAY }).errors).toEqual([])
+
+    // A verified HTTP-only official URL passes only under a complete waiver, and stays visible.
+    const waived = validateInventories(
+      record({ officialFacilityUrl: 'http://example.com/hall', httpOnlyOfficial: waiver() }),
+      sources(),
+      { today: TODAY },
+    )
+    expect(waived.errors).toEqual([])
+    expect(waived.warnings.join('\n')).toMatch(/records the issuer's http:\/\/ URL under an httpOnlyOfficial waiver/)
+
+    // Domain mismatch, incomplete waiver, and a stale waiver on HTTPS all stay errors.
+    expect(validateInventories(
+      record({ officialFacilityUrl: 'http://other.example.net/hall', httpOnlyOfficial: waiver() }),
+      sources(),
+      { today: TODAY },
+    ).errors.join('\n')).toMatch(/issuerDomain example\.com does not match URL host other\.example\.net/)
+    expect(validateInventories(
+      record({ officialFacilityUrl: 'http://example.com/hall', httpOnlyOfficial: waiver({ httpsCheckedAt: '2026-12-31' }) }),
+      sources(),
+      { today: TODAY },
+    ).errors.join('\n')).toMatch(/httpsCheckedAt is in the future/)
+    expect(validateInventories(
+      record({ httpOnlyOfficial: waiver() }),
+      sources(),
+      { today: TODAY },
+    ).errors.join('\n')).toMatch(/httpOnlyOfficial must be removed because the URL already uses HTTPS/)
+    expect(validateInventories(
+      record({ officialFacilityUrl: null, httpOnlyOfficial: waiver() }),
+      sources(),
+      { today: TODAY },
+    ).errors.join('\n')).toMatch(/httpOnlyOfficial requires an officialFacilityUrl to waive/)
+  })
+
   it('detects source status mismatches, closed production, and missing inventory production', () => {
     const mismatched = inventory([inventoryVenue({ operationalStatus: 'closed' })])
     expect(validateInventories(mismatched, sources('draft'), { today: TODAY }).errors.join('\n')).toMatch(/must be active|is production but source/)

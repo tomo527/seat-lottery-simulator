@@ -15,6 +15,7 @@ import {
 } from './constants.mjs'
 import { canonicalAreaId } from './lib.mjs'
 import { regionForPrefecture } from './regions.mjs'
+import { HTTP_ONLY_OFFICIAL_WAIVER_KEY, evaluateRecordedUrlTransport } from './source-transport.mjs'
 
 export const normalizeSearchText = (value) =>
   typeof value === 'string' ? value.normalize('NFKC').trim().toLocaleLowerCase('ja-JP') : ''
@@ -173,13 +174,17 @@ const validateSourceMetadata = (data, label, today, issues) => {
     if (source.official !== true && source.official !== false) issues.error(`${prefix} official must be a boolean`)
     validateString(source.publisher, `${prefix} publisher`, issues, { nonEmpty: true })
     validateString(source.title, `${prefix} title`, issues, { nonEmpty: true })
-    let url
-    try {
-      url = new URL(source.url)
-    } catch {
-      // Handled below.
-    }
-    if (!url || url.protocol !== 'https:') issues.error(`${prefix} URL must use HTTPS`)
+    const transport = evaluateRecordedUrlTransport({
+      url: source.url,
+      official: source.official,
+      waiver: source[HTTP_ONLY_OFFICIAL_WAIVER_KEY],
+      prefix,
+      field: 'URL',
+      today,
+      httpsRequiredMessage: `${prefix} URL must use HTTPS`,
+    })
+    for (const message of transport.errors) issues.error(message)
+    for (const message of transport.warnings) issues.warn(message)
     const checkedAt = parseDate(source.checkedAt)
     if (!checkedAt) issues.error(`${prefix} checkedAt must be a valid YYYY-MM-DD date`)
     else {

@@ -173,11 +173,110 @@ describe('venue source validation', () => {
       { rowLabel: 'A', from: 3, to: 4, excluded: [5] },
     ]
     const errors = errorsFor(invalid)
+    // HTTP without an explicit official waiver stays rejected.
     expect(errors).toMatch(/URL must use HTTPS/)
     expect(errors).toMatch(/unknown venueType/)
     expect(errors).toMatch(/duplicate exclusion/)
     expect(errors).toMatch(/outside the range/)
     expect(errors).toMatch(/overlaps range/)
+  })
+
+  describe('HTTP-only official source transport policy', () => {
+    const waiver = (overrides = {}) => ({
+      issuerDomain: 'example.com',
+      httpsCheckedAt: TODAY,
+      httpsUnavailableEvidence: '2つの独立clientでTLS handshakeがserver起因のinternal errorで失敗し、working HTTPS endpointが存在しないことを確認。',
+      ...overrides,
+    })
+    const withPrimarySource = (overrides) => {
+      const data = source()
+      data.sources[0] = { ...data.sources[0], ...overrides }
+      return data
+    }
+
+    it('accepts an HTTPS official source without a waiver and adds no transport warning', () => {
+      const result = resultFor(source())
+      expect(result.errors).toEqual([])
+      expect(result.warnings.join('\n')).not.toMatch(/httpOnlyOfficial/)
+    })
+
+    it('accepts an HTTP official source under a complete waiver and warns to migrate', () => {
+      const result = resultFor(withPrimarySource({
+        url: 'http://example.com/seat.jpg',
+        httpOnlyOfficial: waiver(),
+      }))
+      expect(result.errors).toEqual([])
+      expect(result.warnings.join('\n')).toMatch(/records the issuer's http:\/\/ URL under an httpOnlyOfficial waiver/)
+    })
+
+    it('rejects an HTTP official source that carries no waiver', () => {
+      expect(errorsFor(withPrimarySource({ url: 'http://example.com/seat.jpg' }))).toMatch(/URL must use HTTPS/)
+    })
+
+    it('rejects a waiver on a non-official source', () => {
+      const data = source()
+      data.sources.push({
+        id: 'secondary-chart',
+        official: false,
+        roles: ['seat-structure'],
+        publisher: 'ファンサイト',
+        title: '座席メモ',
+        url: 'http://fan.example.com/seat.html',
+        checkedAt: TODAY,
+        httpOnlyOfficial: waiver({ issuerDomain: 'fan.example.com' }),
+      })
+      expect(errorsFor(data)).toMatch(/httpOnlyOfficial is allowed only on an official issuer source/)
+    })
+
+    it('rejects a waiver whose issuer domain does not match the URL host', () => {
+      expect(errorsFor(withPrimarySource({
+        url: 'http://other-operator.example.net/seat.jpg',
+        httpOnlyOfficial: waiver(),
+      }))).toMatch(/issuerDomain example\.com does not match URL host other-operator\.example\.net/)
+    })
+
+    it('accepts a host below the recorded issuer domain', () => {
+      expect(resultFor(withPrimarySource({
+        url: 'http://www.example.com/seat.jpg',
+        httpOnlyOfficial: waiver(),
+      })).errors).toEqual([])
+    })
+
+    it('rejects a waiver left on an HTTPS URL so recovered issuers migrate back', () => {
+      expect(errorsFor(withPrimarySource({ httpOnlyOfficial: waiver() })))
+        .toMatch(/httpOnlyOfficial must be removed because the URL already uses HTTPS/)
+    })
+
+    it('rejects an invalid or future HTTPS check date', () => {
+      expect(errorsFor(withPrimarySource({
+        url: 'http://example.com/seat.jpg',
+        httpOnlyOfficial: waiver({ httpsCheckedAt: '2026-13-40' }),
+      }))).toMatch(/httpsCheckedAt must be a valid YYYY-MM-DD date/)
+      expect(errorsFor(withPrimarySource({
+        url: 'http://example.com/seat.jpg',
+        httpOnlyOfficial: waiver({ httpsCheckedAt: '2026-12-31' }),
+      }))).toMatch(/httpsCheckedAt is in the future/)
+    })
+
+    it('rejects an incomplete waiver that loses the HTTPS-absence evidence', () => {
+      expect(errorsFor(withPrimarySource({
+        url: 'http://example.com/seat.jpg',
+        httpOnlyOfficial: waiver({ httpsUnavailableEvidence: '' }),
+      }))).toMatch(/httpsUnavailableEvidence must be a non-empty canonical string/)
+      expect(errorsFor(withPrimarySource({
+        url: 'http://example.com/seat.jpg',
+        httpOnlyOfficial: true,
+      }))).toMatch(/httpOnlyOfficial must be a plain object/)
+    })
+
+    it('warns when the HTTPS-absence check has aged past the recheck threshold', () => {
+      const result = resultFor(withPrimarySource({
+        url: 'http://example.com/seat.jpg',
+        httpOnlyOfficial: waiver({ httpsCheckedAt: '2025-01-01' }),
+      }))
+      expect(result.errors).toEqual([])
+      expect(result.warnings.join('\n')).toMatch(/httpsCheckedAt was confirmed \d+ days ago/)
+    })
   })
 
   it('accepts an issuer-owned seat number 0 but rejects negative seat IDs', () => {
