@@ -14,7 +14,7 @@ The bounded `JUDGMENT` hard-case audit of `0611` and `1017` is complete and both
 
 The authorized legacy `TYPE-ONLY REPRESENTATIVE PREFLIGHT` is formally closed with **1 ADOPT / 5 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json`](../data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json) records the A/B legacy pool (9 eligible, 8 metadata-ranked, 6 current-first-party checks). `0106`, `0160`, and `0435` lack a current issuer-numbered set; `0372` and `0072` are current closure/renovation holds.
 
-The separately authorized, one-venue follow-through for `tokyo-official-0121` (品川プリンスホテル ステラボール) is **SAFE TO INTEGRATE / PRODUCTION**. [`data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json`](../data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json) records two independent direct visual transcriptions of the current official/current-linked chart. Both produce the same issuer-labelled set: 1F 750 + 2F 126 = 876, mapped 876 / published 876 / rangeDiff 0 / representative confidence. The 1F movable-chair disclosure and the absence of a separately numbered wheelchair/companion set remain metadata; no seat ID or ownership was invented. Source, inventory, batch/readiness/report, fingerprint, catalog and lazy runtime have been synchronized. `npm run verify:venues` passed; commit/push and managed/public runtime checks remain the only in-scope work.
+The separately authorized, one-venue follow-through for `tokyo-official-0121` (品川プリンスホテル ステラボール) is **SAFE TO INTEGRATE / PRODUCTION**. [`data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json`](../data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json) records two independent direct visual transcriptions of the current official/current-linked chart. Both produce the same issuer-labelled set: 1F 750 + 2F 126 = 876, mapped 876 / published 876 / rangeDiff 0 / representative confidence. The 1F movable-chair disclosure and the absence of a separately numbered wheelchair/companion set remain metadata; no seat ID or ownership was invented. Source, inventory, batch/readiness/report, fingerprint, catalog and lazy runtime were synchronized in pushed production commit `a277a5a`; `npm run verify:venues`, its managed Workers Build, and the public UI smoke test all passed.
 
 | Item | State |
 | --- | --- |
@@ -23,7 +23,7 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | Authoring production target | 119 venues / 121 selectable configurations / 178,193 configuration-seat records |
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
 | Validation / generated artifacts | `npm run verify:venues` passed; catalog/runtime/fingerprint synchronized |
-| Commit / push / Workers / public UI | pending for the authorized Stellar Ball production commit |
+| Commit / push / Workers / public UI | `a277a5a` pushed; Workers Builds `completed / success`; public Stellar Ball search, 876-seat display, one draw, console all passed |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -55,7 +55,8 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 - Canonical `npm run verify:venues` passed: venue/inventory/release coverage, generated-artifact sync, fingerprints, lint, typecheck, 212 unit tests, production build, 17 E2E tests, docs verification, and diff check.
 - The GitHub check run **Workers Builds: seat-lottery-simulator** for `9d2a66c` completed successfully.
 - At `https://seat-lottery-simulator.studiotomo.workers.dev/`, the venue selector found the three promoted venues with 1,027 / 729 / 1,102 displayed seats. One draw was started for each; no console errors were observed.
+- The GitHub check run **Workers Builds: seat-lottery-simulator** for Stellar Ball production commit `a277a5a` completed successfully. The public runtime searched `ステラボール` to one result, displayed 876 seats, completed one draw (`1F シートフロア D列24番`), and reported no console warning or error.
 
 ## Exact next action
 
-Commit and push the validated Stellar Ball production integration, then verify the managed Workers Build and public UI (search, 876-seat display, one draw, console) before any unrelated research. The metadata-only NEXT TERRA PREFLIGHT record is `0359`, `0070`, and `0434`; do not open web research for them without separate authorization.
+Do not start web research or implementation for a next candidate without separate authorization. The metadata-only NEXT TERRA PREFLIGHT record is `0359`, `0070`, and `0434`; do not open their current sources as a continuation of this closed Stellar Ball task.
