@@ -1,0 +1,108 @@
+{
+  "wave": "TOKYO-WAVE-31 PRIORITY D RANKED NEXT 2 ADOPT IMPLEMENTATION",
+  "date": "2026-08-25",
+  "phase": "Bounded independent two-pass implementation, authorized by the exact next action of the TOKYO PRIORITY D RANKED NEXT PREFLIGHT 2 report",
+  "scopeBoundary": "The single ADOPT record from data/venue-reports/tokyo-priority-d-ranked-next-preflight-2-2026-08-25.json, tokyo-official-0860 シアターグリーン〔BOX in BOX THEATER〕, was independently transcribed twice from the current official 客席図面 and, on a MATCH, promoted to production. No other venue's research, DEFER/HARD-CASE DEFER reopening, or judgment audit was started.",
+  "target": {
+    "inventoryId": "tokyo-official-0860",
+    "venue": "シアターグリーン〔BOX in BOX THEATER〕",
+    "venueSourceId": "theater-green-box-in-box-standard"
+  },
+  "officialSources": [
+    {"url": "https://theater-green.com/", "role": "current operator site"},
+    {"url": "https://theater-green.com/theater/boxinbox/", "role": "current operator space page, re-confirmed at implementation time to link the same 客席図面 URL and state 固定座席104席 / 104席〜"},
+    {"url": "https://theater-green.com/wp-content/uploads/2023/06/boxinbox_capacity.pdf", "role": "current-linked issuer-numbered BOX in BOX THEATER 客席図面, independently fetched and read twice"}
+  ],
+  "twoPass": {
+    "method": "The current-linked 客席図面 PDF was independently re-fetched and read twice. Pass 1 read top-down (A列 through G列) and left-to-right within each row (left block, then centre block, then right block). Pass 2 was fetched as a fresh binary and read bottom-up (G列 through A列) and right-to-left within each row (right block, then centre block, then left block), without using Pass 1's transcribed range strings as an answer key. Comparison occurred only after both passes were complete.",
+    "pass1": {
+      "order": "top-down, left-to-right",
+      "rows": [
+        {"row": "A列", "blocks": "left 1-4, centre 5-14, right 15-17", "rowTotal": 17},
+        {"row": "B列", "blocks": "left 1-4, centre 5-14, right 15-17", "rowTotal": 17},
+        {"row": "C列", "blocks": "left 1-4, centre 5-14, right 15-17", "rowTotal": 17},
+        {"row": "D列", "blocks": "left 1-4, centre 5-14, right 15-17", "rowTotal": 17},
+        {"row": "E列", "blocks": "left 1-4, centre 5-14 (no right block)", "rowTotal": 14},
+        {"row": "F列", "blocks": "left 1-4, centre 5-14 (no right block)", "rowTotal": 14},
+        {"row": "G列", "blocks": "centre 6-13 only (no left or right block)", "rowTotal": 8}
+      ],
+      "passTotal": 104
+    },
+    "pass2": {
+      "order": "bottom-up, right-to-left",
+      "rows": [
+        {"row": "G列", "blocks": "centre 13-6 only (no left or right block)", "rowTotal": 8},
+        {"row": "F列", "blocks": "right block absent, centre 14-5, left 4-1", "rowTotal": 14},
+        {"row": "E列", "blocks": "right block absent, centre 14-5, left 4-1", "rowTotal": 14},
+        {"row": "D列", "blocks": "right 17-15, centre 14-5, left 4-1", "rowTotal": 17},
+        {"row": "C列", "blocks": "right 17-15, centre 14-5, left 4-1", "rowTotal": 17},
+        {"row": "B列", "blocks": "right 17-15, centre 14-5, left 4-1", "rowTotal": 17},
+        {"row": "A列", "blocks": "right 17-15, centre 14-5, left 4-1", "rowTotal": 17}
+      ],
+      "passTotal": 104
+    },
+    "comparisonResult": "MATCH",
+    "matchedFields": [
+      "complete printed ID set (every row A-G, every block boundary, every seat number)",
+      "row/block ownership (A-D: left+centre+right; E-F: left+centre only; G: centre only)",
+      "ranges/gaps (no printed exclusion within any block; the absence of a right block in E/F/G is a structural block boundary, not a printed gap)",
+      "issuer subtotal (both passes independently sum to 104, matching the printed 「座席数　１０４席〜（固定座席１０４席）」 without any fitting)",
+      "selected configuration (single fixed audience configuration; no alternative audience-seat variant exists on the current space page, which lists only stage/sound/lighting technical drawings alongside the 客席図面)"
+    ]
+  },
+  "selectedConfiguration": {
+    "description": "The issuer's single fixed 104-seat 客席図面 configuration for BOX in BOX THEATER.",
+    "compressedRanges": [
+      {"rowLabel": "A列", "from": 1, "to": 17},
+      {"rowLabel": "B列", "from": 1, "to": 17},
+      {"rowLabel": "C列", "from": 1, "to": 17},
+      {"rowLabel": "D列", "from": 1, "to": 17},
+      {"rowLabel": "E列", "from": 1, "to": 14},
+      {"rowLabel": "F列", "from": 1, "to": 14},
+      {"rowLabel": "G列", "from": 6, "to": 13}
+    ],
+    "compressionNote": "A-D列 print three physical blocks per row (left/centre/right) but the seat numbers run continuously 1 through 17 with no restart or gap, so each compresses to a single range. E-F列 print only the left and centre blocks with numbers running continuously 1 through 14 (no right block exists for these rows). G列 prints only the centre block, 6 through 13, with no left or right block."
+  },
+  "openEndedAndTechnicalMetadata": {
+    "openEnded104": "The issuer's own capacity statement is 「104席〜」, indicating seating beyond the fixed 104 that the issuer does not number. No seat ID was created for this open-ended addition; it remains outside the production configuration as metadata only, consistent with the sibling BIG TREE THEATER treatment.",
+    "technicalDrawings": "The current operator space page also links 舞台図面, 断面図, 音響回路図面, 照明回路図面, and 照明仕込図面 (stage/sound/lighting technical drawings). None of these define an audience-seat variant; they were not mixed into the production configuration."
+  },
+  "accessibility": {
+    "finding": "The current 客席図面 carries no wheelchair icon, no removable-seat marking, and no legend of any kind.",
+    "treatment": "wheelchairSemantics.status is recorded as not-applicable. No accessibility relation, replacement, or removal was inferred or applied to any printed ID."
+  },
+  "productionDecision": {
+    "disposition": "PRODUCTION",
+    "reason": "Both independent passes matched on the complete printed ID set, row/block ownership, ranges/gaps, the issuer's own 104-seat subtotal, and the single representative configuration, satisfying the evidence gate without capacity fitting, invented IDs, geometry-derived ownership, or configuration mixing.",
+    "mapped": 104,
+    "published": 104,
+    "rangeDiff": 0,
+    "confidence": "representative",
+    "verificationMethod": "two-independent-current-official-seating-chart-visual-transcriptions-with-row-and-block-order-reversal"
+  },
+  "repositoryChanges": {
+    "sourceCreated": "data/venue-sources/theater-green-box-in-box-standard.json",
+    "inventoryUpdated": "data/venue-inventory/tokyo.json: tokyo-official-0860 set to venueSourceId theater-green-box-in-box-standard, researchStatus production, eligibility eligible, blockingReason removed.",
+    "batchCreated": "data/venue-batches/tokyo-wave-31-priority-d-ranked-next-2-adopt-implementation.json",
+    "generatedArtifacts": "src/data/venue-db/catalog.generated.json and public/venue-db/venues/theater-green-box-in-box-standard--standard-104-seat-map.json regenerated via npm run venues:build; no other generated file changed.",
+    "fingerprintUpdated": "data/venue-fingerprints/production.json: added theater-green-box-in-box-standard/standard-104-seat-map (count 104, offset samples main/A列/1, main/D列/2, main/G列/13, sha256 dafe38ad85de2a8abc97dd626989a78cebecd1640877666e6b9e7478c6fac98f), independently recomputed from the authored source ranges, not copied from a prior snapshot."
+  },
+  "productionImpact": {
+    "before": {"venues": 131, "selectableConfigurations": 133, "seatRecords": 181337},
+    "after": {"venues": 132, "selectableConfigurations": 134, "seatRecords": 181441},
+    "addedMappedSeats": 104,
+    "changed": true
+  },
+  "validation": {
+    "performed": [
+      "npm run venues:review -- --id theater-green-box-in-box-standard",
+      "npm run venues:build",
+      "npm run venues:check",
+      "npm run venues:report",
+      "npm run venues:validate",
+      "npm run verify:venues (lint, typecheck, 213 unit tests including fingerprint reconciliation, production build, venues:check, venues:validate, verify:docs, 17 Playwright E2E tests)"
+    ],
+    "result": "All checks passed. Production totals validated at 132 venues / 134 selectable configurations / 181,441 configuration-seat records."
+  },
+  "exactNextAction": "Stop after this implementation and its HANDOFF/Workers Build/public-UI smoke closure. Do not start further candidate research or any HARD-CASE judgment audit (0278, 0586, 0641) without separate authorization. Do not reopen 0366, 0266, 0816 (DEFER) or the unresearched sibling 0861 シアターグリーン〔BASE THEATER〕."
+}

@@ -16869,14 +16869,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.theater-green.com/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-08-25の現行運営者公式スペースページ（BOX in BOX THEATER）と直結の客席図面で、A列-G列の全印字ID・issuer block区分・「座席数104席〜（固定座席104席）」を確認。印字合計104。別承認two-passでのみproduction判定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-25の限定two-passで、現行公式BOX in BOX THEATER客席図面のA列-G列全104印字IDを一致確認してproduction化。舞台・音響・照明回路図等の技術資料は客席configurationへ混在させていない。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "theater-green-box-in-box-standard",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
-      "discoveryUrlRaw": "http://www.theater-green.com/",
-      "blockingReason": "ADOPT (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 2): the current official 客席図面 defines the fixed 104-seat configuration with a complete printed ID set (A-D 1-4/5-14/15-17, E-F 1-4/5-14, G 6-13) and no wheelchair or removable marking. Next permitted work is a separately authorized independent two-pass transcription of rows A through G including every printed gap; infer no accessibility relation."
+      "discoveryUrlRaw": "http://www.theater-green.com/"
     },
     {
       "inventoryId": "tokyo-official-0861",
