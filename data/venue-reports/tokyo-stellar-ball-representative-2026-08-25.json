@@ -1,0 +1,50 @@
+{
+  "wave": "TOKYO STELLAR BALL TYPE-ONLY REPRESENTATIVE",
+  "date": "2026-08-25",
+  "lane": "DENSE",
+  "scope": ["tokyo-official-0121"],
+  "scopeBoundary": "品川プリンスホテル ステラボールだけを対象とした。ほかのvenueのcurrent evidenceは取得していない。",
+  "officialEvidence": {
+    "facilityPage": "https://www.princehotels.co.jp/shinagawa/stellarball/about.html",
+    "seatChart": "https://www.princehotels.co.jp/shinagawa/stellarball/pdf/03_zaseki.pdf",
+    "configuration": "現行公式ページが同時掲載するシートスタイル876席",
+    "issuerSubtotals": {"firstFloor":750,"secondFloor":126,"total":876}
+  },
+  "firstPass": {
+    "method": "Draft source creation after direct visual transcription of the current-linked two-page official chart.",
+    "firstFloor": "SA 21-40; SB 16-45; A 11-50; B-J each 1-60; K-M each 1-20 and 41-60 = 750.",
+    "secondFloor": "VIP ROOM-A 1-6; terrace A 1-50; terrace B 1-4/7-16/21-25/26-30/35-44/47-50; terrace C 7-15/22-25/26-29/36-44; VIP ROOM-B 1-6 = 126.",
+    "mapped": 876
+  },
+  "secondPass": {
+    "method": "Independent visual re-read of the official PDF by floor, printed row label and number sequence before comparison with the draft.",
+    "firstFloor": "SA 21-40; SB 16-45; A 11-50; B-J each 1-60; K-M each 1-20 and 41-60 = 750.",
+    "secondFloor": "VIP ROOM-A 1-6; terrace A 1-50; terrace B 1-4/7-16/21-25/26-30/35-44/47-50; terrace C 7-15/22-25/26-29/36-44; VIP ROOM-B 1-6 = 126.",
+    "mapped": 876
+  },
+  "comparison": {
+    "rowAndBlockOwnership": "MATCH: issuer labels 1F シートフロア, 2F テラスフロア and VIP ROOM-A/B anchor every range; no geometry-only ownership was created.",
+    "seatNumberRanges": "MATCH",
+    "gaps": "MATCH: 1F K-M omit 21-40; 2F B omits 5-6/17-20/31-34/45-46; 2F C contains only 7-15/22-25/26-29/36-44.",
+    "representativeRows": "MATCH: first SA 21-40, middle G 1-60, last VIP ROOM-B 1-6.",
+    "subtotals": "MATCH: 750 + 126 = 876.",
+    "rangeDiff": 0
+  },
+  "outcome": {
+    "disposition": "SAFE TO INTEGRATE / PRODUCTION",
+    "sourceId": "stellar-ball-standard",
+    "configurationId": "stellar-ball-standard",
+    "mapped": 876,
+    "published": 876,
+    "confidence": "representative",
+    "movableMetadata": "The official facility page says 1F is not fixed chairs and varies by use; the concurrently published numbered seat-style chart remains the representative configuration.",
+    "accessibilityMetadata": "The current numbered chart does not identify a permanent numbered wheelchair or companion-seat set. No ID was invented and the chart's printed set is retained unchanged."
+  },
+  "productionAfter": {"venues":119,"selectableConfigurations":121,"configurationSeatRecords":178193},
+  "nextTerraPreflightMetadataOnly": [
+    {"inventoryId":"tokyo-official-0359","venue":"上野恩賜公園〔野外ステージ〕","reason":"A priority legacy type-only candidate; rank 7 in the closed preflight and no current evidence was collected in this scope."},
+    {"inventoryId":"tokyo-official-0070","venue":"日比谷公園〔にれの木広場〕","reason":"A priority legacy type-only candidate; rank 8 in the closed preflight and no current evidence was collected in this scope."},
+    {"inventoryId":"tokyo-official-0434","venue":"木場公園(多目的広場)","reason":"A priority legacy type-only candidate; rank 9 in the closed preflight and no current evidence was collected in this scope."}
+  ],
+  "stopCondition": "Do not begin web research for the recorded NEXT TERRA PREFLIGHT candidates without separate authorization."
+}

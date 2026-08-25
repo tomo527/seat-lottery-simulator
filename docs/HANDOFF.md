@@ -12,16 +12,18 @@ The authorized `NEXT TERRA PREFLIGHT` is now formally closed with **0 ADOPT / 4 
 
 The bounded `JUDGMENT` hard-case audit of `0611` and `1017` is complete and both are **NEED EVIDENCE**. For 駒沢体育館, the issuer map labels the row in each visible block (A-K), but prints no individual seat numbers; its 2,354-seat map also does not reconcile to the current guide's fixed 2,238 + wheelchair 24 + amenity 12 + temporary maximum 1,152 scope without choosing an unsupported generation/scope. For アリーナ立川立飛, the current-linked official layout defines 1F/2F and movable/court-side/wheelchair/media/camera subtotals, but prints no seat IDs or row labels; its movable-bank arithmetic is 108 x 2 + 155 x 2 = 526 against the printed 528 movable subtotal. Geometry or capacity fitting cannot resolve either venue. No source JSON or implementation was created.
 
-The authorized legacy `TYPE-ONLY REPRESENTATIVE PREFLIGHT` is formally closed with **1 ADOPT / 5 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json`](../data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json) records the A/B legacy pool (9 eligible, 8 metadata-ranked, 6 current-first-party checks) and updates every checked inventory record so it cannot re-enter ordinary discovery. Only `tokyo-official-0121` (品川プリンスホテル ステラボール) is a preflight ADOPT: the current issuer page links its numbered 1F 750 + 2F 126 seat chart and reports the same 876-seat configuration. This is not production data; no source, range, catalog, runtime artifact, fingerprint, or production total changed. `0106`, `0160`, and `0435` lack a current issuer-numbered set; `0372` and `0072` are current closure/renovation holds.
+The authorized legacy `TYPE-ONLY REPRESENTATIVE PREFLIGHT` is formally closed with **1 ADOPT / 5 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json`](../data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json) records the A/B legacy pool (9 eligible, 8 metadata-ranked, 6 current-first-party checks). `0106`, `0160`, and `0435` lack a current issuer-numbered set; `0372` and `0072` are current closure/renovation holds.
+
+The separately authorized, one-venue follow-through for `tokyo-official-0121` (品川プリンスホテル ステラボール) is **SAFE TO INTEGRATE / PRODUCTION**. [`data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json`](../data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json) records two independent direct visual transcriptions of the current official/current-linked chart. Both produce the same issuer-labelled set: 1F 750 + 2F 126 = 876, mapped 876 / published 876 / rangeDiff 0 / representative confidence. The 1F movable-chair disclosure and the absence of a separately numbered wheelchair/companion set remain metadata; no seat ID or ownership was invented. Source, inventory, batch/readiness/report, fingerprint, catalog and lazy runtime have been synchronized. `npm run verify:venues` passed; commit/push and managed/public runtime checks remain the only in-scope work.
 
 | Item | State |
 | --- | --- |
 | Wave24 promotions | 3 (`tokyo-wave3-1170`, `tokyo-wave3-0645`, `tokyo-wave3-0330`) |
 | Wave24 HOLD | 1 (`tokyo-wave3-1114`) |
-| Authoring production target | 118 venues / 120 selectable configurations / 177,317 configuration-seat records |
+| Authoring production target | 119 venues / 121 selectable configurations / 178,193 configuration-seat records |
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
 | Validation / generated artifacts | `npm run verify:venues` passed; catalog/runtime/fingerprint synchronized |
-| Commit / push / Workers / public UI | pushed `9d2a66c`; Workers Builds check `completed / success`; public smoke test passed |
+| Commit / push / Workers / public UI | pending for the authorized Stellar Ball production commit |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -29,6 +31,10 @@ The authorized legacy `TYPE-ONLY REPRESENTATIVE PREFLIGHT` is formally closed wi
 - **渋谷区文化総合センター大和田〔さくらホール〕** (`tokyo-official-0645` → existing canonical `tokyo-wave3-0645`) — **PRODUCTION**: 1F 535 + 2F 172 + balcony 22 = 729 printed / 735 published / rangeDiff -6 / representative. Fixed 407 (including 20 back-reclining seats) and movable 128 remain in scope; parent seats 4 and wheelchair seats 2 are unnumbered metadata.
 - **東京藝術大学奏楽堂** (`tokyo-official-0330` → `tokyo-wave3-0330`) — **PRODUCTION**: front 958 + BL/BR 144 = 1,102 printed / 1,100 published / rangeDiff +2 / representative. The eight wheelchair-compatible printed seats stay in the normal set.
 - **ルネこだいら 大ホール** (`tokyo-official-1114` → `tokyo-wave3-1114`) — **SOURCE HOLD**: the current map's 2F set independently totals 466, but its visible 1F numbered positions cannot be reduced to issuer subtotal 754 without deciding the relation of wheelchair-labelled positions. No ID was invented or deleted. Next evidence: issuer-defined 1F seat list or arithmetic that resolves the 754-seat total.
+
+## Stellar Ball production decision
+
+- **品川プリンスホテル ステラボール** (`tokyo-official-0121` → `stellar-ball-standard`) — **PRODUCTION**: current official seat-style 1F 750 + 2F 126 = **876** printed and published seats. First and second pass agree on every issuer-labelled row/area, range, and gap. 1F K-M exclude only the printed 21-40 center interval; 2F B/C retain their printed gaps; VIP ROOM-A/B each retain 1-6. The facility's movable 1F seating and unnumbered accessibility operations are disclosures, not range transformations.
 
 ### Historical ID reconciliation
 
@@ -52,4 +58,4 @@ The authorized legacy `TYPE-ONLY REPRESENTATIVE PREFLIGHT` is formally closed wi
 
 ## Exact next action
 
-Do not implement, deploy, or start candidate research without separate authorization. If authorized, create only the non-production `stellar-ball-standard` draft, independently extract the current official 1F/2F numbered seat chart twice, and verify the issuer 750 + 126 = 876 arithmetic before any production decision.
+Commit and push the validated Stellar Ball production integration, then verify the managed Workers Build and public UI (search, 876-seat display, one draw, console) before any unrelated research. The metadata-only NEXT TERRA PREFLIGHT record is `0359`, `0070`, and `0434`; do not open web research for them without separate authorization.

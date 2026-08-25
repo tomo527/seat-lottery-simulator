@@ -1297,6 +1297,31 @@
     "dataPath": "/venue-db/venues/square-ebara-hiratsuka-hall-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "stellar-ball-standard",
+    "venueGroupId": "stellar-ball-standard",
+    "name": "品川プリンスホテル ステラボール",
+    "searchAliases": [
+      "Stellar Ball",
+      "ステラボール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "stellar-ball-standard",
+        "canonicalName": "公式シートスタイル876席",
+        "seatCount": 876,
+        "dataPath": "/venue-db/venues/stellar-ball-standard--stellar-ball-standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式のシートスタイル876席を抽選します。1Fは固定椅子ではなく用途によりlayoutが変わるため、この公式番号図以外の配置、公演ごとの販売停止、番号なしの車椅子・同伴者運用は含めません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "suginami-kokaido-main-standard",
     "name": "杉並公会堂 大ホール",
     "searchAliases": [

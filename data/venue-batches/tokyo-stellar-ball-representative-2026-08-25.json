@@ -1,0 +1,17 @@
+{
+  "batchId": "tokyo-stellar-ball-representative-2026-08-25",
+  "createdAt": "2026-08-25",
+  "scope": "TOKYO type-only representative follow-through: 品川プリンスホテル ステラボール only. Directly transcribe the current official seat-style map's complete 1F 750 + 2F 126 printed numbered set twice; promote only if the two passes and the official 876-seat total agree. 1F movable seating is metadata, not an exclusion reason.",
+  "status": "complete",
+  "priority": "B",
+  "targetVenueIds": ["tokyo-official-0121"],
+  "carryOvers": [
+    {
+      "inventoryId": "tokyo-official-0121",
+      "carryOverFrom": "tokyo-type-only-representative-preflight-2026-08-25",
+      "previousStatus": "blocked",
+      "recheckReason": "The current official page and its current-linked two-page chart define the 876-seat seat-style representative configuration despite the 1F movable-chair disclosure.",
+      "recheckNotBefore": "2026-08-25"
+    }
+  ]
+}

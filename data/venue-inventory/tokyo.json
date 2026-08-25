@@ -2433,14 +2433,14 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.princehotels.co.jp/shinagawa/stellarball/about.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行公式資料は番号付き1Fシートフロア750席と2Fテラスフロア126席を同時に876席として示す。representative-layout policy下でdraft source作成へ進めるpreflight ADOPT。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式ページと同ページ直結の番号座席図を二独立passで照合し、シートスタイルの1F750席・2F126席、全876席をlosslessにproduction化。1F可動椅子と番号なしの車椅子・同伴者運用はmetadataとして保持する。",
       "priority": "B",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
+      "venueSourceId": "stellar-ball-standard",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
       "discoveryUrlRaw": "http://www.princehotels.co.jp/shinagawa/stellarball/",
-      "blockingReason": "ADOPT (TYPE-ONLY REPRESENTATIVE PREFLIGHT): 現行公式座席表が1F 750席・2F 126席のcomplete numbered representative configurationを示し、公式876席と一致する。production化は未実施。次工程ではissuer labels/subtotalsでownershipを独立抽出し、2-pass review後にのみsource/rangeを作成する。"
+      "blockingReason": null
     },
     {
       "inventoryId": "tokyo-official-0122",
