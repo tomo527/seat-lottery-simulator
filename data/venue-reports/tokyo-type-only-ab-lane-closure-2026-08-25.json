@@ -1,0 +1,109 @@
+{
+  "wave": "TOKYO TYPE-ONLY A/B LANE CLOSURE",
+  "date": "2026-08-25",
+  "phase": "Bounded current-policy preflight of the three remaining legacy type-only A/B records",
+  "scope": [
+    "tokyo-official-0359",
+    "tokyo-official-0070",
+    "tokyo-official-0434"
+  ],
+  "scopeBoundary": "Only the three named remaining records were researched. No other venue source, seat draft, production data, generated artifact, or runtime behavior was changed.",
+  "policyBasis": "Fixed seats, outdoor use, movable seating, and multiple layouts are not standalone blockers. ADOPT requires a current/current-linked issuer-numbered map or seat list, a reasonable representative configuration, a lossless complete printed set, and issuer evidence for ownership. Where no issuer-numbered set exists, IDs or ownership must not be inferred from geometry or capacity.",
+  "priorWave": {
+    "report": "data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json",
+    "legacyTypeOnlyEligibleCount": 9,
+    "previouslyChecked": 6,
+    "previouslyAdopted": 1,
+    "thisClosureChecked": 3
+  },
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0359",
+      "venue": "上野恩賜公園〔野外ステージ〕",
+      "priority": "A",
+      "disposition": "DEFER",
+      "officialSources": [
+        {
+          "url": "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/toubuk/ueno/",
+          "role": "current Tokyo Metropolitan Government Ueno Park operator page"
+        },
+        {
+          "url": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/yagaistage-riyoannai-2-",
+          "role": "current linked outdoor-stage use guide, revised 2025-07-01"
+        }
+      ],
+      "currentEvidence": "The current official guide expressly lists 1,200 fixed audience seats. A full visual review of the linked 12-page guide found use guidance, equipment lists, and application forms, but no issuer-numbered seat chart or seat list.",
+      "issuerNumberedSet": "not confirmed",
+      "representativeConfiguration": "A fixed audience-seating configuration is indicated, but its numbered set is not published.",
+      "losslessStructure": "not possible without creating seat IDs or ranges.",
+      "ownership": "not determinable: no issuer labels, subtotals, or numbered-seat arithmetic allocate individual seats to rows or blocks.",
+      "publishedCapacity": 1200,
+      "reason": "The fixed-seat statement removes the obsolete fixed-only policy premise, but absence of the issuer-numbered set remains a decisive blocker. Reopen only if a current official numbered seat map or seat list is published."
+    },
+    {
+      "inventoryId": "tokyo-official-0070",
+      "venue": "日比谷公園〔にれの木広場〕",
+      "priority": "A",
+      "disposition": "DEFER",
+      "officialSources": [
+        {
+          "url": "https://www.tokyo-park.or.jp/park/hibiya/index.html",
+          "role": "current Tokyo Metropolitan Park Association Hibiya Park page"
+        }
+      ],
+      "currentEvidence": "Current official park and event material identifies the plaza as an event-use location. It does not publish an issuer-numbered seat map, seat list, or a standard/default seating configuration.",
+      "issuerNumberedSet": "not confirmed",
+      "representativeConfiguration": "not selectable from current issuer evidence.",
+      "losslessStructure": "not possible; no printed numbered set exists to transcribe.",
+      "ownership": "not determinable without issuer labels or subtotals; park geometry cannot establish it.",
+      "publishedCapacity": 1200,
+      "reason": "Outdoor/event use is not the reason for deferral. The decisive blocker is the absence of an issuer-numbered seat set. Reopen only if a current official numbered representative configuration is published."
+    },
+    {
+      "inventoryId": "tokyo-official-0434",
+      "venue": "木場公園(多目的広場)",
+      "priority": "A",
+      "disposition": "DEFER",
+      "officialSources": [
+        {
+          "url": "https://www.tokyo-park.or.jp/park/kiba/index.html",
+          "role": "current Tokyo Metropolitan Park Association Kiba Park page"
+        }
+      ],
+      "currentEvidence": "Current official park material identifies the multi-purpose plaza as a park/event area. It provides no issuer-numbered seat map, seat list, or standard/default seating configuration.",
+      "issuerNumberedSet": "not confirmed",
+      "representativeConfiguration": "not selectable from current issuer evidence.",
+      "losslessStructure": "not possible; no printed numbered set exists to transcribe.",
+      "ownership": "not determinable without issuer labels or subtotals; geometry-only assignment is prohibited.",
+      "publishedCapacity": 3000,
+      "reason": "Outdoor/event use is not the reason for deferral. The decisive blocker is the absence of an issuer-numbered seat set. Reopen only if a current official numbered representative configuration is published."
+    }
+  ],
+  "result": {
+    "candidatesChecked": 3,
+    "adoptedCandidates": 0,
+    "deferred": 3,
+    "hardCaseDefers": 0,
+    "legacyTypeOnlyABLaneRemaining": 0,
+    "recommendedImplementationCandidates": []
+  },
+  "productionImpact": {
+    "before": {
+      "venues": 119,
+      "selectableConfigurations": 121,
+      "seatRecords": 178193
+    },
+    "after": {
+      "venues": 119,
+      "selectableConfigurations": 121,
+      "seatRecords": 178193
+    },
+    "changed": false
+  },
+  "nextLaneRecommendation": {
+    "lane": "Tokyo priority A/B source-located numbered-seat first-pass",
+    "inventoryBasis": "tokyo-official-0374 (すみだ産業会館〔タイプB〕) is the sole priority A/B source-located record; its inventory blocker already calls for a first-pass check of a complete numbered chart, subtotal, and movable/accessibility inclusion.",
+    "webResearchStarted": false
+  },
+  "exactNextAction": "Do not start any further web research in this task. If separately authorized, process only the recommended source-located lane under the canonical workflow."
+}

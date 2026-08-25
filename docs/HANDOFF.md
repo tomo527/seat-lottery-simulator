@@ -12,7 +12,7 @@ The authorized `NEXT TERRA PREFLIGHT` is now formally closed with **0 ADOPT / 4 
 
 The bounded `JUDGMENT` hard-case audit of `0611` and `1017` is complete and both are **NEED EVIDENCE**. For 駒沢体育館, the issuer map labels the row in each visible block (A-K), but prints no individual seat numbers; its 2,354-seat map also does not reconcile to the current guide's fixed 2,238 + wheelchair 24 + amenity 12 + temporary maximum 1,152 scope without choosing an unsupported generation/scope. For アリーナ立川立飛, the current-linked official layout defines 1F/2F and movable/court-side/wheelchair/media/camera subtotals, but prints no seat IDs or row labels; its movable-bank arithmetic is 108 x 2 + 155 x 2 = 526 against the printed 528 movable subtotal. Geometry or capacity fitting cannot resolve either venue. No source JSON or implementation was created.
 
-The authorized legacy `TYPE-ONLY REPRESENTATIVE PREFLIGHT` is formally closed with **1 ADOPT / 5 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json`](../data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json) records the A/B legacy pool (9 eligible, 8 metadata-ranked, 6 current-first-party checks). `0106`, `0160`, and `0435` lack a current issuer-numbered set; `0372` and `0072` are current closure/renovation holds.
+The legacy `TYPE-ONLY A/B REPRESENTATIVE` lane is now **closed**: 9 original eligible records result in **1 PRODUCTION / 8 DEFER / 0 HARD-CASE DEFER** under the current representative-layout policy. [`data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json`](../data/venue-reports/tokyo-type-only-representative-preflight-2026-08-25.json) records the initial six checks; [`data/venue-reports/tokyo-type-only-ab-lane-closure-2026-08-25.json`](../data/venue-reports/tokyo-type-only-ab-lane-closure-2026-08-25.json) closes the remaining `0359`, `0070`, and `0434`. All eight DEFER records are `blocked`, so they cannot re-enter ordinary discovery. `0359` has a current official fixed-1,200-seat statement but no issuer-numbered chart/list; `0070` and `0434` have no current issuer-numbered set. Outdoor use, movability, and multiple layouts were not treated as rejection reasons.
 
 The separately authorized, one-venue follow-through for `tokyo-official-0121` (品川プリンスホテル ステラボール) is **SAFE TO INTEGRATE / PRODUCTION**. [`data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json`](../data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json) records two independent direct visual transcriptions of the current official/current-linked chart. Both produce the same issuer-labelled set: 1F 750 + 2F 126 = 876, mapped 876 / published 876 / rangeDiff 0 / representative confidence. The 1F movable-chair disclosure and the absence of a separately numbered wheelchair/companion set remain metadata; no seat ID or ownership was invented. Source, inventory, batch/readiness/report, fingerprint, catalog and lazy runtime were synchronized in pushed production commit `a277a5a`; `npm run verify:venues`, its managed Workers Build, and the public UI smoke test all passed.
 
@@ -24,6 +24,7 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
 | Validation / generated artifacts | `npm run verify:venues` passed; catalog/runtime/fingerprint synchronized |
 | Commit / push / Workers / public UI | `a277a5a` pushed; Workers Builds `completed / success`; public Stellar Ball search, 876-seat display, one draw, console all passed |
+| Legacy type-only A/B lane | Closed: 1 production / 8 DEFER / 0 hard-case DEFER; production totals unchanged at 119 / 121 / 178,193 |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -59,4 +60,4 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 
 ## Exact next action
 
-Do not start web research or implementation for a next candidate without separate authorization. The metadata-only NEXT TERRA PREFLIGHT record is `0359`, `0070`, and `0434`; do not open their current sources as a continuation of this closed Stellar Ball task.
+Do not start web research or implementation for a next candidate without separate authorization. The next metadata-only lane is **Tokyo priority A/B source-located numbered-seat first-pass**, beginning with the sole source-located record `tokyo-official-0374` (すみだ産業会館〔タイプB〕); no source was opened for this recommendation.
