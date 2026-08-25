@@ -1,0 +1,138 @@
+{
+  "wave": "TOKYO PRIORITY D NEXT HIGH-YIELD PREFLIGHT",
+  "date": "2026-08-25",
+  "phase": "Bounded current-first-party evidence preflight only",
+  "scopeBoundary": "Research began with the two candidates left unresearched by the previous three-ADOPT stop, in the mandated order 0647 then 0238. With fewer than three ADOPTs, repository metadata only re-ranked the remaining unresearched Priority-D inventory under the established performance-oriented rule. Three additional dedicated-theater candidates were assessed in that order. Research stopped at the five-candidate ceiling; no two-pass transcription, source/range authoring, production integration, generated artifact, fingerprint, or production-total change was made.",
+  "policyBasis": "ADOPT requires current/current-linked first-party evidence that defines one representative configuration with a complete issuer-numbered seat set, issuer-defined ownership/subtotals, and accessibility/removable/alternative-configuration treatment that needs no inference. DEFER covers missing IDs or unsupported configuration definition. HARD-CASE DEFER is reserved for an otherwise complete chart whose issuer subtotal or accessibility relation alone remains unreconciled. Capacity fitting, geometry-derived ownership, invented IDs, and configuration mixing are prohibited.",
+  "performanceOrientedRankingRule": [
+    "Dedicated theater, concert hall, live-event hall, or auditorium with continuing performance use and likely assigned-ticket demand.",
+    "Civic/public large, medium, or small halls with explicit performance use.",
+    "Recreation, multipurpose, meeting, and conference spaces."
+  ],
+  "facilitySpaceDuplicateCheck": {
+    "method": "Checked each selected inventoryId, venueSourceId, and facility-space identity against data/venue-sources, the complete Tokyo inventory, and prior formal venue reports before research.",
+    "result": "No selected facility-space has a production source, prior DEFER/HOLD/blocker, or different inventory-ID alias representing the same facility-space. All five selected records had venueSourceId null at selection time."
+  },
+  "researchOrder": [
+    {"rank": 1, "inventoryId": "tokyo-official-0647", "venue": "セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕", "selection": "Mandatory carry-over from the prior stop condition."},
+    {"rank": 2, "inventoryId": "tokyo-official-0238", "venue": "音楽の友ホール", "selection": "Mandatory carry-over from the prior stop condition."},
+    {"rank": 3, "inventoryId": "tokyo-official-0565", "venue": "世田谷文化生活情報センター〔シアタートラム〕", "selection": "Metadata-only rerank: dedicated public theater with named basic configuration and direct operator URL."},
+    {"rank": 4, "inventoryId": "tokyo-official-0278", "venue": "東京グローブ座", "selection": "Metadata-only rerank: dedicated continuing theater with assigned-seat performance identity."},
+    {"rank": 5, "inventoryId": "tokyo-official-0222", "venue": "紀伊國屋ホール", "selection": "Metadata-only rerank: dedicated continuing theater with assigned-ticket performance identity."}
+  ],
+  "metadataReranking": {
+    "performed": true,
+    "candidatePool": "Remaining Priority-D records with researchStatus not-started after excluding production, blocked, deferred/HOLD, and the two mandated carry-over records.",
+    "selectedAdditionalCandidates": ["tokyo-official-0565", "tokyo-official-0278", "tokyo-official-0222"],
+    "unresearchedCandidatesNotSelected": "Unchanged; this preflight did not open or mutate them."
+  },
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0647",
+      "venue": "セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕",
+      "researchOrder": 1,
+      "officialSources": [
+        {"url": "https://www.ceruleantower-noh.com/about/", "role": "current operator theater page and direct seating-chart link"},
+        {"url": "https://www.ceruleantower-noh.com/about/seating.pdf", "role": "current-linked issuer-numbered seating chart"},
+        {"url": "https://www.ceruleantower-noh.com/rental/", "role": "current operator capacity, subtotals, and removable-layout disclosure"}
+      ],
+      "currentness": "Current official site lists 2026 performances and the operator's 201-seat facility specification.",
+      "selectedRepresentativeConfiguration": "Issuer's standard 定席201席 seating map: 正面87, 脇正面58, 中正面56.",
+      "numberedSeatEvidence": "The current-linked chart visually prints every selected position with its row and seat number; the chart itself states 201 and the three issuer subtotals.",
+      "issuerOwnershipSubtotalPublishedCapacity": "Issuer labels 正面/脇正面/中正面 and states 87 + 58 + 56 = 201; the current rental page also states 定席201席.",
+      "accessibilityRemovableMultiConfiguration": "The current rental page says seats can be removed for other uses. Those arrangements are not mixed into the selected standard map. No official accessibility replacement relation was found, so none is inferred.",
+      "disposition": "ADOPT",
+      "reason": "A lossless independent two-pass transcription is feasible from the current official chart without capacity fitting or geometry-derived ownership.",
+      "nextTwoPassRequirements": "Independently reread every printed ID and gap in 正面, 脇正面, and 中正面; compare ownership and 87/58/56 subtotals only after both passes; retain removable-layout facts as metadata and do not infer accessibility conversion."
+    },
+    {
+      "inventoryId": "tokyo-official-0238",
+      "venue": "音楽の友ホール",
+      "researchOrder": 2,
+      "officialSources": [
+        {"url": "https://www.ontomo-hall.ongakunotomo.co.jp/", "role": "current operator home/calendar"},
+        {"url": "https://www.ontomo-hall.ongakunotomo.co.jp/information/", "role": "current operator facility specification"},
+        {"url": "https://www.ontomo-hall.ongakunotomo.co.jp/event/", "role": "current operator performance listings"}
+      ],
+      "currentness": "Current operator calendar and 2026 event listings establish active concert use.",
+      "selectedRepresentativeConfiguration": "Not defined by issuer: official facility information says maximum208 seats and explicitly says the chairs are movable and the seat count varies.",
+      "numberedSeatEvidence": "No current issuer-numbered audience-seat chart or complete numbered list was located in the official facility, use, or event material.",
+      "issuerOwnershipSubtotalPublishedCapacity": "Issuer publishes maximum208 only; it does not publish row/block ownership or a numbered subtotal.",
+      "accessibilityRemovableMultiConfiguration": "Movable chairs and variable capacity are explicit; no official single numbered representative arrangement or accessibility inclusion relationship is supplied.",
+      "disposition": "DEFER",
+      "reason": "A numbered set or a configuration cannot be created from the maximum capacity or movable-chair geometry. This is not a hard case because complete issuer-numbered material is absent."
+    },
+    {
+      "inventoryId": "tokyo-official-0565",
+      "venue": "世田谷文化生活情報センター〔シアタートラム〕",
+      "researchOrder": 3,
+      "officialSources": [
+        {"url": "https://setagaya-pt.jp/guide/tram/", "role": "current operator basic-layout, capacity, accessibility, and chart-download page"},
+        {"url": "https://setagaya-pt.jp/assets/docs/about/2015/06/2-2-2-1a.pdf", "role": "current-linked basic225-seat chart"}
+      ],
+      "currentness": "Current operator page was updated in 2026 and identifies the basic theater configuration.",
+      "selectedRepresentativeConfiguration": "Issuer identifies a basic225-seat pattern, while separately explaining that stage and audience layouts can be changed; current facilities specification also describes the standard sunken-end configuration and wheelchair-space disclosure.",
+      "numberedSeatEvidence": "Incomplete: the official basic chart has row labels B-L and endpoint numbers, but intermediate seat boxes are unnumbered.",
+      "issuerOwnershipSubtotalPublishedCapacity": "Issuer states basic225 seats and separately 218 seats with wheelchair space information, but neither disclosure fills the unprinted individual IDs.",
+      "accessibilityRemovableMultiConfiguration": "Audience seating is movable and alternative layouts are explicitly allowed; this is metadata, not authority to infer the missing IDs in the basic chart.",
+      "disposition": "DEFER",
+      "reason": "The complete printed ID set is absent. Neither endpoints, capacity, nor geometry may create the intermediate IDs; this is not a hard case."
+    },
+    {
+      "inventoryId": "tokyo-official-0278",
+      "venue": "東京グローブ座",
+      "researchOrder": 4,
+      "officialSources": [
+        {"url": "https://www.tglobe.net/s/tg/group/detail/about?ima=4252", "role": "current operator facility overview with 707 = 1F463 + 2F158 + 3F86"},
+        {"url": "https://www.tglobe.net/s/tg/group/detail/seat?ima=3055", "role": "current official 1F/2F/3F complete numbered seating charts and configuration caveat"},
+        {"url": "https://www.tglobe.net/s/tg/form/inquiry?cd=wheelchair&ima=4252", "role": "current operator wheelchair-application path"}
+      ],
+      "currentness": "Current operator site, 2026 performance material, and active assigned-seat theater operations establish currentness.",
+      "selectedRepresentativeConfiguration": "Current official standard 1F/2F/3F chart, separately caveated that individual productions can change seating or stage shape.",
+      "numberedSeatEvidence": "The three current official floor charts visually print a complete numbered set with floor, row, and seat ownership.",
+      "issuerOwnershipSubtotalPublishedCapacity": "Facility overview gives 707 = 1F463 + 2F158 + 3F86; the chart presents the corresponding floor-owned printed positions.",
+      "accessibilityRemovableMultiConfiguration": "1F chart displays unnumbered wheelchair-space icons and the official site provides a wheelchair-application path, but the issuer does not state whether those icons are included in, replace, or are additional to the 707-seat subtotal. Event-specific layout changes are separately disclosed.",
+      "disposition": "HARD-CASE DEFER",
+      "reason": "The chart is complete and the ordinary representative map is identifiable, but the unresolved accessibility/subtotal relation prevents lossless scope selection. This is a bounded judgment-audit candidate only; no ID or replacement relation may be inferred.",
+      "nextJudgmentRequirement": "Obtain issuer evidence that explicitly reconciles the unnumbered 1F wheelchair spaces with the stated 707/463 subtotal before any two-pass implementation is authorized."
+    },
+    {
+      "inventoryId": "tokyo-official-0222",
+      "venue": "紀伊國屋ホール",
+      "researchOrder": 5,
+      "officialSources": [
+        {"url": "https://store.kinokuniya.co.jp/store/kinokuniya-hall/?type=details", "role": "current issuer theater page and ticket operation"},
+        {"url": "https://store.kinokuniya.co.jp/theater/guide-hall/", "role": "current issuer theater-use guide directly linking the seating chart"},
+        {"url": "https://store.kinokuniya.co.jp/wp-content/uploads/2021/03/%E6%96%B0%E3%83%9B%E3%83%BC%E3%83%AB%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf", "role": "current-linked issuer-numbered 427-seat chart"}
+      ],
+      "currentness": "Current official theater page and current guide retain the direct seating-chart link; the theater page advertises active ticket purchasing and operating hours.",
+      "selectedRepresentativeConfiguration": "Issuer's 427-seat standard chart with A-V rows and left/center/right blocks.",
+      "numberedSeatEvidence": "The current-linked chart visually prints every selected seat ID, row, and left/center/right ownership and labels 客席数427.",
+      "issuerOwnershipSubtotalPublishedCapacity": "The issuer chart itself states 427 and presents the complete A-V numbered set; lossless issuer subtotal comparison is feasible in later independent passes.",
+      "accessibilityRemovableMultiConfiguration": "Issuer marks I/J rows 1-2 and 19-20 as removable and usable as wheelchair space. The selected 427-seat chart still prints those IDs; retain them in the full representative printed set and keep the conversion fact as metadata.",
+      "disposition": "ADOPT",
+      "reason": "Current official evidence supports one representative full printed set for independent two-pass transcription without an invented ID, ownership, or configuration mix.",
+      "nextTwoPassRequirements": "Independently transcribe all A-V printed IDs, block ownership, and gaps from the current chart; compare the 427 issuer total only after both passes; preserve I/J 1-2 and 19-20 as printed removable positions and record wheelchair conversion without altering the set."
+    }
+  ],
+  "result": {
+    "candidatesResearched": 5,
+    "adopted": 2,
+    "deferred": 2,
+    "hardCaseDeferred": 1,
+    "stopCondition": "Five-candidate research ceiling reached before three ADOPTs.",
+    "recommendedImplementationCandidates": ["tokyo-official-0647", "tokyo-official-0222"]
+  },
+  "inventorySynchronization": {
+    "adopt": ["tokyo-official-0647", "tokyo-official-0222"],
+    "blockedDefer": ["tokyo-official-0238", "tokyo-official-0565"],
+    "blockedHardCaseDefer": ["tokyo-official-0278"],
+    "unresearchedNotSelected": "unchanged"
+  },
+  "productionImpact": {
+    "before": {"venues": 128, "selectableConfigurations": 130, "seatRecords": 180542},
+    "after": {"venues": 128, "selectableConfigurations": 130, "seatRecords": 180542},
+    "changed": false
+  },
+  "exactNextAction": "Stop. A separately authorized bounded independent two-pass implementation may target only tokyo-official-0647 セルリアンタワー能楽堂 and tokyo-official-0222 紀伊國屋ホール. Do not implement or reopen tokyo-official-0238, tokyo-official-0565, or tokyo-official-0278; the latter requires a separate issuer-evidence judgment audit first."
+}
