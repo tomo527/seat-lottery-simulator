@@ -1,0 +1,67 @@
+{
+  "wave": "TOKYO PRIORITY C ADOPT IMPLEMENTATION",
+  "date": "2026-08-25",
+  "lane": "DENSE",
+  "batchId": "tokyo-wave-26-priority-c-adopt-implementation",
+  "scopeBoundary": "Only preflight ADOPT records tokyo-wave3-0646, tokyo-wave3-1115, and tokyo-wave3-0101 were refreshed and transcribed. No new candidate evidence or ordinary discovery was performed.",
+  "policyBasis": "Each source was read from the current/current-linked issuer materials in two separate visual passes. The second pass did not use the first-pass ranges as its answer key. A PASS requires a lossless match of printed row/block ownership, number sequences and gaps, issuer subtotals, and representative scope. Published capacity was never used to fit an incomplete set.",
+  "venues": [
+    {
+      "id": "tokyo-wave3-0646",
+      "inventoryId": "tokyo-official-0646",
+      "venue": "渋谷区文化総合センター大和田〔伝承ホール〕",
+      "officialEvidence": {
+        "facilityPage": "https://shibu-cul.jp/denshohall/kashikan_denshohall",
+        "seatChart": "https://shibu-cul.jp/cms/wp-content/uploads/2022/07/aaba5e603fdd4287cb9f3d567df4e386-1.pdf",
+        "representativeConfiguration": "current-linked issuer 345-seat hall map; selectable scope is its complete printed fixed/movable/zashiki set"
+      },
+      "issuerMetadata": {"fixed":125,"movable":122,"zashiki":92,"parentRoom":4,"wheelchair":2,"published":345},
+      "firstPass": {"method":"Fresh full-page visual transcription by issuer row labels and side-row labels.","central":"1/3/5/7/9/10-17 = 1-14 except 2/4/6/8 = 1-13; 18 = 1-10; 19 = 1-3, subtotal247.","zashiki":"L1 and R1 = 1-17,19-24; L2 and R2 = 1-12,14-24, each row23 and subtotal92.","mapped":339},
+      "secondPass": {"method":"Independent visual reread grouped first by the issuer's fixed+movable central subtotal and then by the four explicit L/R zashiki row labels, before comparing to the draft.","central":"Nine front rows total122; rows10-16 total98; rows17-19 total27; subtotal247.","zashiki":"The four issuer-labelled side rows each contain23 printed numbers; L1/R1 omit18 and L2/R2 omit13; subtotal92.","mapped":339},
+      "comparison": {"rowAndAreaOwnership":"MATCH: issuer labels central rows1-19 and zashiki L1/L2/R1/R2; no geometry-only ownership created.","rangesAndGaps":"MATCH: central247; L1/R1 gap18; L2/R2 gap13.","firstMiddleLast":"MATCH: central/1列/1, central/13列/6, zashiki-right/R2列/24.","issuerSubtotals":"MATCH: fixed125 + movable122 = central247; zashiki92; printed339.","rangeDiff":0},
+      "outcome": {"disposition":"PRODUCTION","mapped":339,"published":345,"rangeDiff":0,"confidence":"representative","metadataExclusions":"Unnumbered parent room4 and wheelchair2 remain metadata. Back-reclining10, movable122, and wall-mounted auxiliary43 are disclosed metadata within the current map; temporary flower-way loss of30 central +6 zashiki is an excluded alternate operation."}
+    },
+    {
+      "id": "tokyo-wave3-1115",
+      "inventoryId": "tokyo-official-1115",
+      "venue": "小平市民文化会館(ルネこだいら)〔中ホール〕",
+      "officialEvidence": {
+        "facilityPage": "https://www.runekodaira.jp/detail/t00025.html",
+        "seatChart": "https://www.runekodaira.jp/pdf/chuhall_seats.pdf",
+        "representativeConfiguration": "issuer normal use: 401 including wheelchair3; selectable scope is the solid printed398-seat set"
+      },
+      "issuerMetadata": {"normalPublished":401,"solidPrinted":398,"wheelchair":3,"dottedAdditionalMaximum":28,"stageConversionMaximum":555},
+      "firstPass": {"method":"Fresh visual transcription of solid numbered boxes only, row F through U.","rows":"F7-22; G6-23; H5-24; I4-25; J3-26; K2-27; L2-27; M-T each1-28; U1-14 and21-28.","mapped":398},
+      "secondPass": {"method":"Independent visual reread from outer solid blocks toward the centre and separately counted the U-row non-wheelchair printed blocks before comparison.","subtotals":"F through L =152; M through T =224; U =22; total398.","wheelchairAndDotted":"The plan separately labels wheelchair3 and cyan dotted additions maximum28; neither was added to the solid-seat ranges.","mapped":398},
+      "comparison": {"rowAndAreaOwnership":"MATCH: issuer row labels F-U own every range in the normal plan.","rangesAndGaps":"MATCH: progressive F-L endpoints; M-T full1-28; U gap15-20.","firstMiddleLast":"MATCH: normal/F/7, normal/N/20, normal/U/28.","issuerSubtotals":"MATCH: plan's printed398; published normal401 is explicitly inclusive of wheelchair3.","rangeDiff":0},
+      "outcome": {"disposition":"PRODUCTION","mapped":398,"published":401,"rangeDiff":0,"confidence":"representative","metadataExclusions":"Wheelchair3 and dotted additional seats maximum28 are metadata only; their positions did not produce seat IDs. The stage-conversion maximum555 configuration is not mixed into normal use."}
+    },
+    {
+      "id": "tokyo-wave3-0101",
+      "inventoryId": "tokyo-official-0101",
+      "venue": "浜離宮朝日ホール〔小ホール〕",
+      "officialEvidence": {
+        "materialsPage": "https://www.asahi-hall.jp/hamarikyu/multipurpose/data.html",
+        "overview": "https://www.asahi-hall.jp/hamarikyu/multipurpose/index.html",
+        "seatChart": "https://www.asahi-hall.jp/hamarikyu/multipurpose/pdf/zaseki.pdf?202310=",
+        "representativeConfiguration": "current-linked 398-seat example only"
+      },
+      "issuerMetadata": {"movable":238,"rollback":160,"published":398},
+      "firstPass": {"method":"Fresh visual transcription of the labelled colour/subtotal sections, not of another layout.","movable":"A-K each2-19; L-M each1-20; subtotal238.","rollback":"N-U each1-20; subtotal160.","mapped":398},
+      "secondPass": {"method":"Independent row-count reread from the issuer's movable/rollback partition before comparing range strings.","movable":"11 rows x18 plus2 rows x20 =238.","rollback":"8 rows x20 =160.","mapped":398},
+      "comparison": {"rowAndAreaOwnership":"MATCH: issuer map explicitly distinguishes movable and rollback sections and publishes their subtotals.","rangesAndGaps":"MATCH: A-K start2; L-U start1; all end20 except A-K end19.","firstMiddleLast":"MATCH: movable/A/2, movable/L/2, rollback/U/20.","issuerSubtotals":"MATCH: movable238 + rollback160 =398.","rangeDiff":0},
+      "outcome": {"disposition":"PRODUCTION","mapped":398,"published":398,"rangeDiff":0,"confidence":"representative","metadataExclusions":"The source calls this a 398-seat example; other layouts are excluded. No permanent numbered wheelchair/companion replacement set is issued, so none was created."}
+    }
+  ],
+  "result": {"production":3,"hold":0,"mappedSeatsAdded":1135,"priorityCTrueUnprocessedAfter":15},
+  "productionAfter": {"venues":122,"selectableConfigurations":124,"configurationSeatRecords":179328},
+  "validationPlan": "Run venues:review for each source and the bounded batch, then one canonical verify:venues profile after generated artifacts and production fingerprint are synchronized.",
+  "nextPriorityCMetadataOnly": [
+    {"rank":1,"inventoryId":"tokyo-official-0135","venue":"赤坂区民センター〔区民ホール〕","reason":"In-band public hall with direct first-party draft URL; movable-front-row risk remains."},
+    {"rank":2,"inventoryId":"tokyo-official-0331","venue":"東京国立博物館〔平成館大講堂〕","reason":"In-band auditorium with an existing draft, but current issuer-numbered-source provenance has not been re-established."},
+    {"rank":3,"inventoryId":"tokyo-official-0908","venue":"板橋区立高島平区民館〔ホール〕","reason":"In-band public hall with municipal facility URL and existing draft, but no stored map evidence."},
+    {"rank":4,"inventoryId":"tokyo-official-0559","venue":"砧区民会館(成城ホール)〔成城ホール〕","reason":"Named in-band hall with a draft, but no registered current source and an unnormalized discovery URL."},
+    {"rank":5,"inventoryId":"tokyo-official-0870","venue":"としま区民センター〔多目的ホール〕","reason":"In-band multipurpose hall with an operator URL, ranked below dedicated halls because numbered representative seating is less likely."}
+  ],
+  "stopCondition": "The five metadata-only next candidates are recorded for a separately authorized bounded preflight. Do not start their web research in this wave."
+}

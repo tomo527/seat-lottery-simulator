@@ -1,32 +1,42 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "tokyo-wave3-0646",
   "name": "渋谷区文化総合センター大和田〔伝承ホール〕",
   "prefecture": "東京都",
   "city": "渋谷区",
-  "aliases": [],
+  "aliases": ["伝承ホール"],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
+    "id": "current-linked-official-numbered-seat-map",
+    "name": "公式番号席配置339席",
+    "coverage": "complete",
+    "expectedSeatCount": 339,
+    "selectionReason": "現行の伝承ホール施設ページが直接掲載する客席図の、固定席・移動席・桟敷席として印字された全番号席を代表配置として転記する。",
+    "notIncludedPatterns": ["仮設花道使用時の使用不可36席", "無番号の親子室4席", "無番号の車椅子席2席", "イベント固有の客席運用"]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"渋谷区文化総合センター大和田","title":"渋谷区文化総合センター大和田〔伝承ホール〕 施設案内","url":"https://www.shibu-cul.jp/denshohall","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
-  },
-  "ranges": []
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"渋谷区文化総合センター大和田","title":"伝承ホール 施設利用案内","url":"https://shibu-cul.jp/denshohall/kashikan_denshohall","checkedAt":"2026-08-25"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"渋谷区文化総合センター大和田","title":"伝承ホール客席図","url":"https://shibu-cul.jp/cms/wp-content/uploads/2022/07/aaba5e603fdd4287cb9f3d567df4e386-1.pdf","checkedAt":"2026-08-25"}
+  ],
+  "registeredScope": "公式図に印字された中央客席247席と、L1・L2・R1・R2各23席の桟敷92席、合計339席。",
+  "completenessBasis": "公式の固定125席・移動122席・桟敷92席の番号付き3区分を、中央247席と桟敷4列各23席として印字rangeから再現し、339席を確認した。",
+  "transformation": "公式図の中央1列〜19列と、明示ラベルL1・L2・R1・R2の番号をそのままrangeへ転記した。L1/R1の18番欠番、L2/R2の13番欠番は図の印字どおり残した。",
+  "knownLimitations": ["公式定員345席は番号付き固定125・移動122・桟敷92の339席に、無番号の親子室4席と車椅子席2席を加えた値である。これらのseat IDは作成しない。", "固定席125席には背倒れ席10席、桟敷92席には壁付補助席43席を含む。L2/R2には壁付補助席があり、L2の7番〜9番にはない。", "仮設花道使用時は公式図で示す客席30席と桟敷席6席が使用不可となる別運用であり、代表配置に混在させない。"],
+  "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-linked-official-pdf-visual-transcriptions-with-issued-subtotal-arithmetic","seatStructure":"matched","seatCount":"matched","unresolvedIssues":[]},
+  "ranges": [
+    {"areaId":"central","areaLabel":"中央客席","rowLabel":"1列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"2列","from":1,"to":13,"excluded":[]},
+    {"areaId":"central","areaLabel":"中央客席","rowLabel":"3列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"4列","from":1,"to":13,"excluded":[]},
+    {"areaId":"central","areaLabel":"中央客席","rowLabel":"5列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"6列","from":1,"to":13,"excluded":[]},
+    {"areaId":"central","areaLabel":"中央客席","rowLabel":"7列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"8列","from":1,"to":13,"excluded":[]},
+    {"areaId":"central","areaLabel":"中央客席","rowLabel":"9列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"10列","from":1,"to":14,"excluded":[]},
+    {"areaId":"central","areaLabel":"中央客席","rowLabel":"11列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"12列","from":1,"to":14,"excluded":[]},
+    {"areaId":"central","areaLabel":"中央客席","rowLabel":"13列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"14列","from":1,"to":14,"excluded":[]},
+    {"areaId":"central","areaLabel":"中央客席","rowLabel":"15列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"16列","from":1,"to":14,"excluded":[]},
+    {"areaId":"central","areaLabel":"中央客席","rowLabel":"17列","from":1,"to":14,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"18列","from":1,"to":10,"excluded":[]}, {"areaId":"central","areaLabel":"中央客席","rowLabel":"19列","from":1,"to":3,"excluded":[]},
+    {"areaId":"zashiki-left","areaLabel":"左桟敷席","rowLabel":"L1列","from":1,"to":17,"excluded":[]}, {"areaId":"zashiki-left","areaLabel":"左桟敷席","rowLabel":"L1列","from":19,"to":24,"excluded":[]},
+    {"areaId":"zashiki-left","areaLabel":"左桟敷席","rowLabel":"L2列","from":1,"to":12,"excluded":[]}, {"areaId":"zashiki-left","areaLabel":"左桟敷席","rowLabel":"L2列","from":14,"to":24,"excluded":[]},
+    {"areaId":"zashiki-right","areaLabel":"右桟敷席","rowLabel":"R1列","from":1,"to":17,"excluded":[]}, {"areaId":"zashiki-right","areaLabel":"右桟敷席","rowLabel":"R1列","from":19,"to":24,"excluded":[]},
+    {"areaId":"zashiki-right","areaLabel":"右桟敷席","rowLabel":"R2列","from":1,"to":12,"excluded":[]}, {"areaId":"zashiki-right","areaLabel":"右桟敷席","rowLabel":"R2列","from":14,"to":24,"excluded":[]}
+  ]
 }

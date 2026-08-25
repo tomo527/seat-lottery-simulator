@@ -1,0 +1,13 @@
+{
+  "batchId": "tokyo-wave-26-priority-c-adopt-implementation",
+  "createdAt": "2026-08-25",
+  "scope": "TOKYO Priority C bounded implementation: 伝承ホール、ルネこだいら中ホール、浜離宮朝日ホール小ホール only. Each current-linked issuer chart is transcribed in two independent passes and promoted only when the complete printed numbered set, issuer-defined ownership/subtotals, and selected representative configuration match losslessly. No ordinary discovery or new candidate research is in scope.",
+  "status": "complete",
+  "priority": "C",
+  "targetVenueIds": ["tokyo-official-0646", "tokyo-official-1115", "tokyo-official-0101"],
+  "carryOvers": [
+    {"inventoryId":"tokyo-official-0646","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"Priority C ADOPT preflight found a current-linked official chart and issuer subtotals; the implementation proves the printed set independently rather than fitting the published345 total.","recheckNotBefore":"2026-08-25"},
+    {"inventoryId":"tokyo-official-1115","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"Priority C ADOPT preflight found the current normal-use plan; implementation is restricted to the solid 398-seat set, excluding dotted additions and unnumbered wheelchair spaces.","recheckNotBefore":"2026-08-25"},
+    {"inventoryId":"tokyo-official-0101","carryOverFrom":"tokyo-wave-3","previousStatus":"draft-created","recheckReason":"Priority C ADOPT preflight found the current-linked 398-seat example; implementation preserves its issuer-defined movable238 plus rollback160 configuration without mixing layouts.","recheckNotBefore":"2026-08-25"}
+  ]
+}

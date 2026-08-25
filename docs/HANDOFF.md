@@ -18,7 +18,9 @@ The one-record `TOKYO A/B SOURCE-LOCATED` lane is **closed** with **0 ADOPT / 1 
 
 The bounded `TOKYO PRIORITY C SOURCE-LOCATED INDEPENDENT-HALL` preflight is formally closed with **0 ADOPT / 3 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-c-source-located-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-c-source-located-preflight-2026-08-25.json) first closes sibling `0375` from the already-confirmed 0373/0374 A/B/C material: no Type-C-specific issuer-numbered set exists. `0950` has current official movable-use/chair-count material but no issuer-numbered seat set. `1186` has a current city page linking the operator, but the operator site and legacy PDF URL could not be safely verified as current/current-linked; no legacy or third-party chart was adopted. All three inventory records are `blocked`, none is permanently rejected, and no production data changed.
 
-The authorized `TOKYO PRIORITY C TRUE-UNPROCESSED` bounded preflight is formally closed with **3 ADOPT / 0 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-c-true-unprocessed-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-c-true-unprocessed-preflight-2026-08-25.json) ranks eight of the 18 true-unprocessed records from repository metadata and checks only `0646`, `1115`, and `0101`; research stopped at the three ADOPTs. Each has a current operator page directly linking a numbered representative chart with issuer labels/subtotals. Their inventory records are deliberately `blocked` with an ADOPT implementation blocker so they cannot return to ordinary discovery: 伝承ホール targets the issuer-defined numbered fixed/movable/zashiki set (provisional 339 vs published 345; parent/wheelchair metadata is not invented), ルネこだいら中ホール targets normal-use printed398 vs published401 (three wheelchair spaces and dotted 28 additions remain metadata), and 浜離宮朝日小ホール targets its 398-seat example (movable238 + rollback160). No source JSON, range, generated artifact, fingerprint, production data, or deploy changed. Priority C true-unprocessed is now **15**.
+The authorized `TOKYO PRIORITY C TRUE-UNPROCESSED` bounded preflight is formally closed with **3 ADOPT / 0 DEFER / 0 HARD-CASE DEFER**. [`data/venue-reports/tokyo-priority-c-true-unprocessed-preflight-2026-08-25.json`](../data/venue-reports/tokyo-priority-c-true-unprocessed-preflight-2026-08-25.json) ranks eight of the 18 true-unprocessed records from repository metadata and checks only `0646`, `1115`, and `0101`; research stopped at the three ADOPTs.
+
+`TOKYO-WAVE-26` has completed the separately authorized bounded two-pass implementation for all three ADOPTs. [`data/venue-reports/tokyo-priority-c-adopt-implementation-2026-08-25.json`](../data/venue-reports/tokyo-priority-c-adopt-implementation-2026-08-25.json) records independent range transcriptions, comparison results, current sources, and decisions: `tokyo-wave3-0646` 伝承ホール is **PRODUCTION** at 339 printed / 345 published (fixed 125 + movable 122 + zashiki 92; unnumbered parent 4 and wheelchair 2 remain metadata), `tokyo-wave3-1115` ルネこだいら中ホール is **PRODUCTION** at normal-use 398 printed / 401 published (three wheelchair spaces and dotted additions remain outside the mapped normal scope), and `tokyo-wave3-0101` 浜離宮朝日ホール小ホール is **PRODUCTION** at 398 printed / published (movable 238 + rollback 160). All three have rangeDiff 0; source, inventory, batch/review/report, generated artifacts, and fingerprints are synchronized. Priority C true-unprocessed is now **15**.
 
 The separately authorized, one-venue follow-through for `tokyo-official-0121` (品川プリンスホテル ステラボール) is **SAFE TO INTEGRATE / PRODUCTION**. [`data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json`](../data/venue-reports/tokyo-stellar-ball-representative-2026-08-25.json) records two independent direct visual transcriptions of the current official/current-linked chart. Both produce the same issuer-labelled set: 1F 750 + 2F 126 = 876, mapped 876 / published 876 / rangeDiff 0 / representative confidence. The 1F movable-chair disclosure and the absence of a separately numbered wheelchair/companion set remain metadata; no seat ID or ownership was invented. Source, inventory, batch/readiness/report, fingerprint, catalog and lazy runtime were synchronized in pushed production commit `a277a5a`; `npm run verify:venues`, its managed Workers Build, and the public UI smoke test all passed.
 
@@ -26,14 +28,14 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 | --- | --- |
 | Wave24 promotions | 3 (`tokyo-wave3-1170`, `tokyo-wave3-0645`, `tokyo-wave3-0330`) |
 | Wave24 HOLD | 1 (`tokyo-wave3-1114`) |
-| Authoring production target | 119 venues / 121 selectable configurations / 178,193 configuration-seat records |
+| Authoring production target | 122 venues / 124 selectable configurations / 179,328 configuration-seat records |
 | Expected release coverage | Tokyo 48/76 · MUST 29/44 · SHOULD 19/28 · RELEASE READY yes |
-| Validation / generated artifacts | `npm run verify:venues` passed; catalog/runtime/fingerprint synchronized |
-| Commit / push / Workers / public UI | `a277a5a` pushed; Workers Builds `completed / success`; public Stellar Ball search, 876-seat display, one draw, console all passed |
+| Validation / generated artifacts | `npm run verify:venues` passed after TOKYO-WAVE-26; catalog/runtime/fingerprint synchronized |
+| Commit / push / Workers / public UI | TOKYO-WAVE-26 commit/push, managed Workers Build, and public UI smoke are the current follow-through |
 | Legacy type-only A/B lane | Closed: 1 production / 8 DEFER / 0 hard-case DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo A/B source-located lane | Closed: `0374` DEFER; production totals unchanged at 119 / 121 / 178,193 |
 | Tokyo priority C source-located preflight | Closed: `0375` / `0950` / `1186` DEFER; 0 ADOPT |
-| Tokyo priority C true-unprocessed preflight | Closed: `0646` / `1115` / `0101` ADOPT; true-unprocessed C = 15; all three are blocked pending separately authorized two-pass non-production transcription |
+| Tokyo priority C true-unprocessed | `0646` / `1115` / `0101` PRODUCTION; true-unprocessed C = 15; next metadata-only rank is recorded in the TOKYO-WAVE-26 implementation report (no Web research) |
 
 ## TOKYO-WAVE-24 decisions
 
@@ -69,4 +71,4 @@ The separately authorized, one-venue follow-through for `tokyo-official-0121` (�
 
 ## Exact next action
 
-Stop after the committed preflight formalization. The only eligible follow-through is a separately authorized, bounded non-production two-pass transcription batch of up to `tokyo-wave3-0646`, `tokyo-wave3-1115`, and `tokyo-wave3-0101`; do not restart ordinary discovery or deploy.
+Push the completed TOKYO-WAVE-26 integration, wait for its managed Workers Build, and smoke-test the three public venue entries. Do not begin Web research for the recorded next metadata rank without new authorization.

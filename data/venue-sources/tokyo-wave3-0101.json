@@ -1,32 +1,24 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "tokyo-wave3-0101",
-  "name": "浜離宮朝日ホール 〔小ホール〕",
+  "name": "浜離宮朝日ホール〔小ホール〕",
   "prefecture": "東京都",
   "city": "中央区",
-  "aliases": [],
+  "aliases": ["浜離宮朝日ホール 小ホール"],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"浜離宮朝日ホール","title":"浜離宮朝日ホール 〔小ホール〕 施設案内","url":"https://www.asahi-hall.jp/hamarikyu/","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
-  },
-  "ranges": []
+  "representativePattern": {"id":"current-linked-official-398-seat-example","name":"公式398席座席表の例","coverage":"complete","expectedSeatCount":398,"selectionReason":"現行小ホール資料ページが直接掲載する398席座席表の例を、発行者が示す可動いす238席とロールバックチェア160席の代表配置として転記する。","notIncludedPatterns":["他の設営レイアウト","イベント固有の舞台・客席変更"]},
+  "sources": [
+    {"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"浜離宮朝日ホール","title":"小ホール 各種資料","url":"https://www.asahi-hall.jp/hamarikyu/multipurpose/data.html","checkedAt":"2026-08-25"},
+    {"id":"official-overview","official":true,"roles":["facility","seat-count"],"publisher":"浜離宮朝日ホール","title":"小ホール","url":"https://www.asahi-hall.jp/hamarikyu/multipurpose/index.html","checkedAt":"2026-08-25"},
+    {"id":"official-seat-map","official":true,"roles":["seat-structure","seat-count"],"publisher":"浜離宮朝日ホール","title":"小ホール 座席表","url":"https://www.asahi-hall.jp/hamarikyu/multipurpose/pdf/zaseki.pdf?202310=","checkedAt":"2026-08-25"}
+  ],
+  "registeredScope": "現行資料ページが掲載する398席座席表の例の、可動いす238席とロールバックチェア160席、合計398席。",
+  "completenessBasis": "公式図の可動いす238席をA〜K列各18席とL〜M列各20席、ロールバックチェア160席をN〜U列各20席として、印字rangeから398席に再現した。",
+  "transformation": "公式図の色分けと明示された可動いす238・ロールバックチェア160の区分に従い、A〜K列の2〜19番、L〜U列の1〜20番を転記した。A列のPJ位置10・11番も図に印字された同一代表配置の番号席として保持した。",
+  "knownLimitations": ["この資料は398席の座席表の例であり、他のlayoutを混在させない。", "公式資料は可動いす238席とロールバックチェア160席を区別する。固定席への読み替えや別layoutのseat ID作成はしない。", "確認した現行資料は恒久的な番号付き車椅子・同伴者席の置換集合を定義しないため、該当seat IDは作成しない。"],
+  "verification": {"status":"verified","checkedAt":"2026-08-25","method":"two-independent-current-linked-official-pdf-visual-transcriptions-with-issued-movable-and-rollback-subtotals","seatStructure":"matched","seatCount":"matched","unresolvedIssues":[]},
+  "ranges": [
+    {"areaId":"movable","areaLabel":"可動いす","rowLabel":"A","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"B","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"C","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"D","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"E","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"F","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"G","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"H","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"I","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"J","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"K","from":2,"to":19,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"L","from":1,"to":20,"excluded":[]}, {"areaId":"movable","areaLabel":"可動いす","rowLabel":"M","from":1,"to":20,"excluded":[]}, {"areaId":"rollback","areaLabel":"ロールバックチェア","rowLabel":"N","from":1,"to":20,"excluded":[]}, {"areaId":"rollback","areaLabel":"ロールバックチェア","rowLabel":"O","from":1,"to":20,"excluded":[]}, {"areaId":"rollback","areaLabel":"ロールバックチェア","rowLabel":"P","from":1,"to":20,"excluded":[]}, {"areaId":"rollback","areaLabel":"ロールバックチェア","rowLabel":"Q","from":1,"to":20,"excluded":[]}, {"areaId":"rollback","areaLabel":"ロールバックチェア","rowLabel":"R","from":1,"to":20,"excluded":[]}, {"areaId":"rollback","areaLabel":"ロールバックチェア","rowLabel":"S","from":1,"to":20,"excluded":[]}, {"areaId":"rollback","areaLabel":"ロールバックチェア","rowLabel":"T","from":1,"to":20,"excluded":[]}, {"areaId":"rollback","areaLabel":"ロールバックチェア","rowLabel":"U","from":1,"to":20,"excluded":[]}
+  ]
 }

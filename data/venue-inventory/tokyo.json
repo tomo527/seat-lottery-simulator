@@ -2040,14 +2040,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.asahi-hall.jp/hamarikyu/multipurpose/index.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行公式小ホールページと同ページ直結の座席表（例）を確認。最大398席、可動いす238・ロールバックチェア160の全印字番号は独立2-pass転記へ進めるpreflight ADOPT。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式資料ページ直結の398席座席表の例を2-passで一致確認。可動いす238席とロールバックチェア160席の全印字番号398席をcanonical sourceへ転記した。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0101",
-      "researchStatus": "blocked",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
-      "discoveryUrlRaw": "http://www.asahi-hall.jp/hamarikyu/",
-      "blockingReason": "ADOPT (TOKYO PRIORITY C TRUE-UNPROCESSED PREFLIGHT): 現行公式ページ直結の小ホール座席表（例）が、可動238・ロールバック160、最大398席の完全な番号配置を示す。production化は未実施。既存draftを更新し、全行・全番号を独立2-passで転記してからのみreviewする。"
+      "discoveryUrlRaw": "http://www.asahi-hall.jp/hamarikyu/"
     },
     {
       "inventoryId": "tokyo-official-0102",
@@ -12700,14 +12699,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://shibu-cul.jp/denshohall/kashikan_denshohall",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行公式伝承ホールページと直結の客席図を確認。issuerが固定125・移動122・桟敷92・親子4・車椅子2、計345を定義し、全印字番号配置は独立2-pass転記へ進めるpreflight ADOPT。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式客席図を2-passで一致確認。中央247席とL1・L2・R1・R2各23席の全印字番号339席を転記し、無番号の親子4・車椅子2はmetadataとして分離した。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0646",
-      "researchStatus": "blocked",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
-      "discoveryUrlRaw": "http://www.shibu-cul.jp/denshohall",
-      "blockingReason": "ADOPT (TOKYO PRIORITY C TRUE-UNPROCESSED PREFLIGHT): 現行公式ページ直結の客席図がissuer-defined seat-type subtotalsと行・番号を示す。production化は未実施。既存draftを更新し、無番号の親子・車椅子位置を番号席へ変換せず、印字集合を独立2-passで転記してからのみreviewする。"
+      "discoveryUrlRaw": "http://www.shibu-cul.jp/denshohall"
     },
     {
       "inventoryId": "tokyo-official-0647",
@@ -21876,14 +21874,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.runekodaira.jp/detail/t00025.html",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "現行公式中ホールページと同ページ直結の客席平面図を確認。通常使用時401席（車椅子3席含む）、図の印字398席と点線の増設可能28席を区別でき、通常番号集合の独立2-pass転記へ進めるpreflight ADOPT。",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式通常使用時平面図を2-passで一致確認。実線のF〜U列398印字席を転記し、車椅子3席と点線増設可能最大28席をscope外metadataとして分離した。",
       "priority": "C",
       "venueSourceId": "tokyo-wave3-1115",
-      "researchStatus": "blocked",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-25",
-      "discoveryUrlRaw": "https://www.rune kodaira.jp",
-      "blockingReason": "ADOPT (TOKYO PRIORITY C TRUE-UNPROCESSED PREFLIGHT): 現行公式ページ直結の中ホール客席平面図が398印字席、車椅子3席、点線の増設可能28席を区別する。production化は未実施。既存draftを更新し、通常使用時の印字398席だけを独立2-passで転記し、点線増設・無番号車椅子をcapacity fittingせずmetadata化してからのみreviewする。"
+      "discoveryUrlRaw": "https://www.rune kodaira.jp"
     },
     {
       "inventoryId": "tokyo-official-1116",
