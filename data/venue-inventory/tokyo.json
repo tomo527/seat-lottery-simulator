@@ -22037,13 +22037,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.hino-kaikan.jp/about/hall_small/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2 (2026-08-26)で現行公式資料を確認。現行施設ページ(https://www.hino-kaikan.jp/about/hall_small/)および日野市公式施設案内ページはいずれも小ホール208席（移動席）を記載し、現行リンクの座席表PDF（2019.04.01版、hall-small_zaseki.pdf）は1-11列・左右中央3ブロックの完全な印字座席番号セットを図示する。独立集計（11+19+168+10=208）はいずれの公式資料の208席とも完全一致。車いす座席の案内は現行施設・サービスページで大ホール座席表のみに誘導され、小ホールについてはFAQで個別問い合わせとされており、座席図上に車いすマークや未説明の記号はない（左端の記号は男女トイレ・多目的トイレの設備凡例で、客席ブロックの外側にある）。旧officialFacilityUrl（www.hino-_kaikan.jpの不正なアンダースコア表記）を現行の実URLに修正。元の代表URLはhttps://www.hino-kaikan.jp/。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-26にTOKYO-WAVE-33で現行公式小ホールページと座席表PDFを再取得し、逆順(11列→1列、右→中央→左)で独立two-pass再transcriptionを実施してMATCH: 1列は中央6-16のみ、2列は左2-5・中央6-16・右17-20、3-10列は左1-5・中央6-16・右17-21(各列同一)、11列は左1-5・右17-21のみ(中央ブロックなし)。独立合計208は公式座席表・現行施設ページ・市公式施設案内ページの208と完全一致(rangeDiff 0)。現行FAQ「小ホールにつきましては、適宜お問い合わせください」と現行施設・サービスページ「車椅子席の位置は、大ホール座席表にてご確認いただけます」を実装時点で再確認し、小ホールに固定車椅子番号席は公開されていないが車椅子対応自体が存在しないわけではないことをwheelchairSemantics.status=not-applicableのdescriptionへ記録した。左端の男女トイレ・車椅子トイレ案内アイコンは客席ブロック外の通路部分であることを両passで再確認し、座席として扱っていない。可動式(移動席)である旨は現行公式に明記されるが、公開されている単一の208番号席配置をそのまま採用し、印字番号の削除や別配置の推定は行っていない。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "hino-brick-small-standard",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-26",
-      "blockingReason": "ADOPT (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2, 2026-08-26): current official first-party evidence defines a complete issuer-numbered 208-seat configuration (1-11列, 各列左/中央/右ブロック) whose independently summed total matches the issuer's own published 208 exactly, with no wheelchair marking on the chart and an explicit current disclosure that small-hall wheelchair accommodation is handled by direct inquiry rather than a fixed marked space (distinct from the large hall, whose own chart the facility's accessibility page points to instead). Ready for a separately authorized bounded two-pass implementation; not yet promoted to production. See data/venue-reports/tokyo-priority-d-cross-tier-high-yield-preflight-2-2026-08-26.json."
+      "blockingReason": null
     },
     {
       "inventoryId": "tokyo-official-1123",

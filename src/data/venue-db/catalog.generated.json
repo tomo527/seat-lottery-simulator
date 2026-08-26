@@ -391,6 +391,31 @@
   },
   {
     "schemaVersion": 2,
+    "id": "hino-brick-small-standard",
+    "venueGroupId": "hino-brick-small-standard",
+    "name": "ひの煉瓦ホール 小ホール",
+    "searchAliases": [
+      "日野市民会館 小ホール",
+      "日野市民会館(ひの煉瓦ホール) 小ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "日野市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard-208-seat-map",
+        "canonicalName": "固定座席208席・標準配置",
+        "seatCount": 208,
+        "dataPath": "/venue-db/venues/hino-brick-small-standard--standard-208-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の固定208番号席を抽選します。1列は中央ブロック(6-16)のみで左右ブロックは存在しません。2列は左(2-5)・中央(6-16)・右(17-20)の三ブロックです。3列から10列までは左(1-5)・中央(6-16)・右(17-21)の三ブロックで、各列とも同一構成です。11列は左(1-5)・右(17-21)のみで中央ブロックは存在しません。公式は本ホールを「208席（移動席）」と説明していますが、公式座席表・施設案内ページ・市公式施設案内ページはいずれも同一の208番号席配置を示しており、可動式であることを理由に印字番号の削除や別配置の推定は行いません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "hitomi-memorial-hall-standard",
     "venueGroupId": "hitomi-memorial-hall-standard",
     "name": "昭和女子大学 人見記念講堂",
