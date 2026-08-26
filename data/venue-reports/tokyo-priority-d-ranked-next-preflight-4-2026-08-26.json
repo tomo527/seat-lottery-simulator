@@ -1,0 +1,224 @@
+{
+  "wave": "TOKYO PRIORITY D RANKED NEXT PREFLIGHT 4",
+  "date": "2026-08-26",
+  "phase": "Bounded metadata reranking and current/current-linked first-party evidence preflight only",
+  "scopeBoundary": "The remaining unresearched Tokyo Priority-D inventory was reranked from repository metadata alone under the established performance-oriented rule, and current/current-linked first-party evidence was checked for the top five ranked candidates in order. Research stopped at the five-candidate ceiling before reaching three ADOPTs. No two-pass transcription, source or range authoring, production integration, generated artifact, fingerprint, or production-total change was made.",
+  "policyBasis": "ADOPT requires current/current-linked first-party issuer evidence that fixes, without inference, one representative configuration with a complete issuer-numbered seat set, issuer-defined row/block/floor/category ownership, a configuration boundary, and the treatment of accessibility, removable, and alternative configurations, so that an independent two-pass transcription can reproduce it losslessly. DEFER covers a missing or incomplete printed ID set or an unsupported configuration definition. HARD-CASE DEFER is reserved for an otherwise complete numbered chart whose issuer subtotal or accessibility relation alone remains unreconciled. Capacity fitting, invented seat IDs, geometry-derived ownership, configuration mixing, assigning IDs to unnumbered wheelchair spaces, and arbitrary deletion of printed IDs for accessibility reasons are prohibited. Per the current venue-source transport policy, an HTTP-only current official issuer is not by itself a DEFER/HOLD reason; HTTPS is preferred when it works, HTTP-only is recorded under an httpOnlyOfficial waiver only if the candidate otherwise reaches ADOPT, and unofficial HTTP sources remain non-waivable. The transport waiver relaxes no seat-evidence requirement.",
+  "performanceOrientedRankingRule": [
+    "Dedicated theater, concert hall, live-event hall, or auditorium with continuing stage, theatre, live, or concert use and likely assigned-ticket sales.",
+    "Civic/public halls with explicit performance use.",
+    "Recreation, multipurpose, meeting, and conference spaces."
+  ],
+  "existingDispositionsExcluded": {
+    "defer": [
+      "tokyo-official-0238",
+      "tokyo-official-0565",
+      "tokyo-official-0115",
+      "tokyo-official-0476",
+      "tokyo-official-0867",
+      "tokyo-official-0366",
+      "tokyo-official-0266",
+      "tokyo-official-0816",
+      "tokyo-official-0861",
+      "tokyo-official-0893",
+      "tokyo-official-0818",
+      "tokyo-official-0813"
+    ],
+    "hardCaseDefer": [
+      "tokyo-official-0278",
+      "tokyo-official-0586",
+      "tokyo-official-0641"
+    ],
+    "productionDuplicates": [
+      "tokyo-official-0635 (eurolive-standard, TOKYO-WAVE-32)",
+      "tokyo-official-0460 (duplicate facility-space of already-produced tokyo-coverage-theater-h)"
+    ],
+    "method": "Every inventoryId, its venueSourceId, and its facility-space identity were checked against data/venue-inventory/tokyo.json, data/venue-sources, and every prior formal venue report before ranking; none of the named records, and no other blocked/production record, was reopened or re-audited."
+  },
+  "metadataReranking": {
+    "performed": true,
+    "inputsUsedForRanking": "data/venue-inventory/tokyo.json only (priority, researchStatus, venueSourceId, eligibility, officialDisplayName, facilityName, spaceName, category, capacity, officialFacilityUrl, discoveryUrlRaw). No Web research informed the ranking.",
+    "candidatePool": "969 Tokyo Priority-D inventory records reduce to 807 with researchStatus not-started or source-located and venueSourceId null (5 fewer than the prior preflight's 812, reflecting that preflight's own ADOPT/DEFER closures: 0861/0893/0818/0813 blocked and 0635 promoted to production). 274 of those carry an officialFacilityUrl or discoveryUrlRaw.",
+    "tier1Screen": "21 of the 274 carry a dedicated performance identity in the normalized display name (シアター/THEATER/劇場/能楽堂/舞台/ライブ/LIVE/スタジオ/演芸場/座). One of the 21, tokyo-official-0460 シアター H, was excluded before ranking as the identical facility-space as already-produced tokyo-coverage-theater-h (theater-h-standard), leaving 20 genuine tier-1 candidates. The 20 were ordered by the established tie-break: source-located plus likely-eligible plus a direct operator URL plus a recorded capacity outranks not-started plus needs-research plus a null capacity; within each group, larger recorded capacity was used as a secondary tie-break, then inventoryId order for exact capacity ties.",
+    "selectedFive": "tokyo-official-0704 代々木能舞台 (120, source-located/likely-eligible group), tokyo-official-0087 銀座タクト (80, source-located/likely-eligible group), tokyo-official-1155 グスタフスタジオ〔シアターグスタフ〕 (130, not-started/needs-research group), tokyo-official-0691 LUMINE 0〔スタジオ1〕 (110, not-started/needs-research group), tokyo-official-0692 LUMINE 0〔スタジオ2〕 (110, not-started/needs-research group).",
+    "tier1NotSelected": "Ranked below the selected five: tokyo-official-0688 国立能楽堂〔研修能舞台〕 (100, not-started; a distinct training-stage space from produced sibling national-noh-theatre-standard), tokyo-official-1147 くにたち市民芸術小ホール〔スタジオ〕 (70), tokyo-official-0210 シアターウィング (60), tokyo-official-0800 Live Spot Terra 西荻窪 (60), and the remaining null-capacity tier-1 records (0342, 0535, 0589, 0590, 0718, 0742, 0764, 0765, 0769, 0881, 1002). None of these were opened.",
+    "tiers2and3NotSelected": "Civic performance halls and recreation/multipurpose/meeting spaces rank below tier 1 and were not opened by this preflight."
+  },
+  "facilitySpaceDuplicateCheck": {
+    "method": "Each selected inventoryId, its venueSourceId, and its facility-space identity (facility name, space name, city, officialFacilityUrl/discoveryUrlRaw) were checked against data/venue-sources, the complete Tokyo inventory, and every prior formal venue report before research.",
+    "result": "All five selected records had venueSourceId null and no prior formal disposition, and none shares a facility-space identity with any produced or blocked record. tokyo-official-0691 and tokyo-official-0692 are distinct spaces (スタジオ1 / スタジオ2) within the same LUMINE 0 facility, each judged on its own current evidence; both share the same single facility page because the operator publishes no per-studio seating detail (see researchOrder rank 4 and 5).",
+    "mandatoryExclusionsHonored": "All twelve DEFER and three HARD-CASE DEFER records listed in existingDispositionsExcluded, plus the two production duplicates, were excluded from the pool and were neither reopened nor re-audited."
+  },
+  "researchOrder": [
+    {
+      "rank": 1,
+      "inventoryId": "tokyo-official-0704",
+      "venue": "代々木能舞台",
+      "researchOrder": 1,
+      "selectionReason": "Metadata-only rerank: dedicated noh-stage identity, source-located, likely-eligible, direct operator URL, recorded capacity 120 (highest in the source-located/likely-eligible group).",
+      "officialSources": [
+        {
+          "url": "https://www.yoyoginoubutai.com/",
+          "role": "inventory officialFacilityUrl; HTTPS handshake failed with a certificate hostname mismatch (server presents a *.lekumo.jp certificate, not one covering www.yoyoginoubutai.com), confirmed independently with curl/schannel"
+        },
+        {
+          "url": "http://www.yoyoginoubutai.com/",
+          "role": "inventory discoveryUrlRaw; the plain-HTTP page loaded but contains only event/rental information, no seating diagram"
+        },
+        {
+          "url": "https://ja.wikipedia.org/wiki/代々木能舞台",
+          "role": "secondary reference stating capacity and seating format"
+        }
+      ],
+      "currentness": "The operator site itself could not be read over a validated HTTPS connection because of the certificate mismatch; the plain-HTTP page and the Wikipedia article are both current/current-linked descriptions of the same active facility, but neither publishes a seat chart.",
+      "selectedRepresentativeConfiguration": "Not defined by the issuer. No page publishes a numbered seating layout.",
+      "numberedSeatEvidence": "Absent. Both cited sources describe 座布団敷き (zabuton-cushion tatami floor seating), not individually numbered chairs: the main outdoor stage is approximately 160 seats and an indoor stage approximately 80 seats, with no row labels or seat numbers anywhere.",
+      "issuerOwnershipSubtotalPublishedCapacity": "Only approximate tatami-seating totals are published (約160席 / 約80席), not a numbered ownership set. The inventory's recorded capacity 120 does not match either published figure exactly, and no reconciliation is possible without a numbered chart.",
+      "accessibilityRemovableMultiConfiguration": "No accessibility, removable-seat, or alternative-configuration statement was located.",
+      "disposition": "DEFER",
+      "reason": "No current issuer-numbered seat set exists; the venue uses zabuton/tatami floor seating with only approximate totals, not numbered chairs. This is not a hard case because complete issuer-numbered material is absent. The HTTPS certificate mismatch was noted but is not the disposition reason.",
+      "transportState": "HTTPS present but fails hostname validation (certificate mismatch); HTTP-only policy was not invoked because the disposition does not depend on transport."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "tokyo-official-0087",
+      "venue": "銀座タクト",
+      "researchOrder": 2,
+      "selectionReason": "Metadata-only rerank: dedicated live-hall identity, source-located, likely-eligible, direct operator URL, recorded capacity 80.",
+      "officialSources": [
+        {
+          "url": "https://ginzatact.com/information/",
+          "role": "current operator information page (working HTTPS, confirmed 200 OK), stating capacity and linking a 座席表 image"
+        },
+        {
+          "url": "https://ginzatact.com/information/images/seatinglist.jpg",
+          "role": "current-linked issuer seating layout image, fetched directly (HTTP 200, image/jpeg)"
+        }
+      ],
+      "currentness": "Current: the information page is a live operator page with a working HTTPS certificate, and the linked image loads directly from the same path.",
+      "selectedRepresentativeConfiguration": "The issuer's single seating layout image is the only published arrangement; no alternative configuration is published.",
+      "numberedSeatEvidence": "Table-numbered, not seat-numbered. The image prints 23 numbered tables (1-23, including four raised 背の高いテーブル/イス positions 21-23 plus one at a counter) with an unnumbered cluster of 2-6 generic chair icons drawn around most tables; no individual chair carries its own printed ID.",
+      "issuerOwnershipSubtotalPublishedCapacity": "The page states 客席は最大80席です (maximum 80), a stated ceiling; the drawn chair icons do not sum to a fixed total because their per-table count is illustrative, not a printed enumerated set.",
+      "accessibilityRemovableMultiConfiguration": "No accessibility, wheelchair, or alternative-configuration statement was located.",
+      "disposition": "DEFER",
+      "reason": "No issuer-numbered seat set exists at the individual-seat level; only the tables carry printed IDs, and the chairs around them are unnumbered and not fixed in count, with capacity stated as a maximum rather than an enumerated total. This is not a hard case because a complete individual-seat numbered set is absent, not merely unreconciled.",
+      "transportState": "HTTPS works; no waiver needed or used."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "tokyo-official-1155",
+      "venue": "グスタフスタジオ〔シアターグスタフ〕",
+      "researchOrder": 3,
+      "selectionReason": "Metadata-only rerank: dedicated theatre identity (シアターグスタフ), not-started/needs-research, recorded capacity 130 (highest in the not-started/needs-research tier-1 group).",
+      "officialSources": [
+        {
+          "url": "https://cr-gustaf.com/",
+          "role": "current operator studio-rental home page (working HTTPS, confirmed 200 OK)"
+        }
+      ],
+      "currentness": "Current: live operator page with a working HTTPS certificate and an active contact line.",
+      "selectedRepresentativeConfiguration": "Not defined by the issuer. No page publishes a seating layout.",
+      "numberedSeatEvidence": "Absent. The page states only 最大130名収容可能 (maximum capacity of 130 people); no row label, seat number, or seating diagram is published. A secondary theatre-troupe reference independently found a differing approximate figure (約90席), underscoring that no fixed numbered set exists.",
+      "issuerOwnershipSubtotalPublishedCapacity": "Only a stated maximum headcount (130), inconsistent with a separate secondary approximate figure (90); no numbered ownership set exists to reconcile against either.",
+      "accessibilityRemovableMultiConfiguration": "No accessibility, removable-seat, or alternative-configuration statement was located.",
+      "disposition": "DEFER",
+      "reason": "No current issuer-numbered seat set exists; capacity is published only as a variable maximum headcount, not an enumerated seat set. This is not a hard case because complete issuer-numbered material is absent.",
+      "transportState": "HTTPS works; no waiver needed or used."
+    },
+    {
+      "rank": 4,
+      "inventoryId": "tokyo-official-0691",
+      "venue": "LUMINE 0〔スタジオ1〕",
+      "researchOrder": 4,
+      "selectionReason": "Metadata-only rerank: dedicated studio/theatre-adjacent identity (スタジオ), not-started/needs-research, recorded capacity 110 (tied-highest in the remaining not-started/needs-research tier-1 group).",
+      "officialSources": [
+        {
+          "url": "https://www.lumine.ne.jp/luminezero/",
+          "role": "current operator facility home page, fetched over HTTPS (working, confirmed 200 OK; the inventory's recorded discoveryUrlRaw is plain HTTP, but a working HTTPS endpoint exists at the same host)"
+        },
+        {
+          "url": "https://www.lumine.ne.jp/luminezero/spec_combination.html",
+          "role": "current operator spec page for the combinable studio spaces, identified via search"
+        }
+      ],
+      "currentness": "Current: live operator page on JR East-affiliated Lumine infrastructure with working HTTPS.",
+      "selectedRepresentativeConfiguration": "Not defined by the issuer at the individual-studio level. The facility page describes a flexible ~500㎡ event space combining two studios, used for presentations, exhibitions, fashion shows, and parties; seating is explicitly movable/bleacher-style, and no per-studio seat chart is published.",
+      "numberedSeatEvidence": "Absent. No row label, seat number, or seating diagram is published for Studio 1 specifically or the combined space; the related main-hall page separately documents movable bleacher seating with format-dependent counts (up to 330 theatre-style, up to 150 school-style), which is itself variable, not fixed.",
+      "issuerOwnershipSubtotalPublishedCapacity": "No studio-specific numbered capacity is published; the only figures found are format-dependent maximums for a different, related space (the main hall), not Studio 1.",
+      "accessibilityRemovableMultiConfiguration": "The venue is explicitly movable/multi-format by design; no accessibility statement specific to seating was located.",
+      "disposition": "DEFER",
+      "reason": "No current issuer-numbered seat set exists for this space; it is a flexible multipurpose studio with movable, format-dependent seating and no published per-studio seat chart. This is not a hard case because complete issuer-numbered material is absent.",
+      "transportState": "HTTPS works at the operator domain even though the inventory's recorded discoveryUrlRaw is HTTP; no waiver needed or used because the disposition does not depend on transport."
+    },
+    {
+      "rank": 5,
+      "inventoryId": "tokyo-official-0692",
+      "venue": "LUMINE 0〔スタジオ2〕",
+      "researchOrder": 5,
+      "selectionReason": "Metadata-only rerank: dedicated studio/theatre-adjacent identity (スタジオ), not-started/needs-research, recorded capacity 110 (tied-highest in the remaining not-started/needs-research tier-1 group, same facility as rank 4's Studio 1).",
+      "officialSources": [
+        {
+          "url": "https://www.lumine.ne.jp/luminezero/",
+          "role": "same current operator facility home page reviewed for rank 4 (working HTTPS, confirmed 200 OK); the facility publishes no page distinguishing Studio 2 from Studio 1"
+        }
+      ],
+      "currentness": "Current, same operator page as rank 4.",
+      "selectedRepresentativeConfiguration": "Not defined by the issuer, identical situation to Studio 1: no per-studio seat chart, seating described as movable/format-dependent.",
+      "numberedSeatEvidence": "Absent, for the same reason as rank 4: no row label, seat number, or seating diagram is published for this studio.",
+      "issuerOwnershipSubtotalPublishedCapacity": "No studio-specific numbered capacity is published.",
+      "accessibilityRemovableMultiConfiguration": "Same as rank 4: explicitly movable/multi-format by design; no seating-specific accessibility statement located.",
+      "disposition": "DEFER",
+      "reason": "No current issuer-numbered seat set exists for this space, for the same reason as its sibling Studio 1: flexible multipurpose studio with movable, format-dependent seating and no published per-studio seat chart. This is not a hard case because complete issuer-numbered material is absent.",
+      "transportState": "HTTPS works at the operator domain; no waiver needed or used."
+    }
+  ],
+  "result": {
+    "candidatesResearched": 5,
+    "adopted": 0,
+    "deferred": 5,
+    "hardCaseDeferred": 0,
+    "stopCondition": "Five-candidate research ceiling reached without any ADOPT.",
+    "recommendedImplementationCandidates": []
+  },
+  "httpOnlyOfficialPolicyApplication": "One candidate (tokyo-official-0704) presented a current official HTTPS endpoint that fails hostname certificate validation, which was recorded as a transport observation only; per the current policy, HTTP-only or transport-imperfect status is not itself a DEFER/HOLD reason, and this candidate's DEFER rests solely on the absence of any numbered seat evidence. The other four candidates had working current official HTTPS endpoints. No candidate reached ADOPT, so no httpOnlyOfficial waiver was created or needed in this wave.",
+  "inventorySynchronization": {
+    "adopt": [],
+    "blockedDefer": [
+      "tokyo-official-0704",
+      "tokyo-official-0087",
+      "tokyo-official-1155",
+      "tokyo-official-0691",
+      "tokyo-official-0692"
+    ],
+    "blockedHardCaseDefer": [],
+    "unresearchedNotSelected": "unchanged",
+    "fieldChanges": "For each of the five researched records: researchStatus set to blocked, operationalStatus set to active, lastCheckedAt set to 2026-08-26, and blockingReason rewritten with this wave's disposition and reason. officialFacilityUrl and discoveryUrlRaw were left unchanged in every case (no ADOPT occurred, so no transport/waiver field changes were needed)."
+  },
+  "productionImpact": {
+    "before": {
+      "venues": 133,
+      "selectableConfigurations": 135,
+      "seatRecords": 181619
+    },
+    "after": {
+      "venues": 133,
+      "selectableConfigurations": 135,
+      "seatRecords": 181619
+    },
+    "changed": false
+  },
+  "validation": {
+    "performed": [
+      "npm run venues:inventory:report",
+      "npm run venues:check",
+      "npm run venues:validate",
+      "npm run venues:report",
+      "npm run verify:docs",
+      "git diff --check"
+    ],
+    "notPerformed": [
+      "npm run verify:venues, because no production source, range, generated artifact, fingerprint, or production total changed"
+    ]
+  },
+  "exactNextAction": "Stop. No ADOPT was produced by this wave, so no two-pass implementation is recommended from it. The next action is to select a new bounded venue-wave scope from the remaining Tokyo Priority-D pool under separate authorization, ranked below this wave's five DEFER records (see HANDOFF.md Tokyo Priority D research priority for the current ranked-below list starting with tokyo-official-0688 国立能楽堂〔研修能舞台〕)."
+}

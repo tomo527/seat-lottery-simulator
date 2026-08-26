@@ -1759,15 +1759,15 @@
       "capacity": 80,
       "category": "hall",
       "officialFacilityUrl": "https://ginzatact.com",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称80席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
       "discoveryUrlRaw": "http://ginzatact.com",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "銀座タクトはTOKYO PRIORITY D RANKED NEXT PREFLIGHT 4 (2026-08-26)でDEFER。現行公式ページ(HTTPS到達可)に座席レイアウト画像(images/seatinglist.jpg)があるが、番号付けはテーブル(1-23)のみで、各テーブル周囲のイスは個別番号を持たない未確定数のアイコン表示。客席数は「最大80席」という上限表記のみ。再調査は個別座席番号を伴う公式図が新たに公開された場合のみ。"
     },
     {
       "inventoryId": "tokyo-official-0088",
@@ -13586,14 +13586,15 @@
       "capacity": 110,
       "category": "hall",
       "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24",
-      "discoveryUrlRaw": "http://www.lumine.ne.jp/luminezero/"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "discoveryUrlRaw": "http://www.lumine.ne.jp/luminezero/",
+      "blockingReason": "LUMINE 0〔スタジオ1〕はTOKYO PRIORITY D RANKED NEXT PREFLIGHT 4 (2026-08-26)でDEFER。現行公式ページ(HTTPS到達可、記録済みdiscoveryUrlRawはHTTPだが同ホストでHTTPS到達可)は可動・ブリーチャー式の多目的イベントスペースを説明するのみで、スタジオ単位の座席図・列名・座席番号は皆無。関連するメインホールも用途別可変席数(劇場式最大330/スクール式最大150)のみで固定番号集合ではない。再調査は公式のスタジオ単位番号付き座席図が新たに公開された場合のみ。"
     },
     {
       "inventoryId": "tokyo-official-0692",
@@ -13606,14 +13607,15 @@
       "capacity": 110,
       "category": "hall",
       "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24",
-      "discoveryUrlRaw": "http://www.lumine.ne.jp/luminezero/"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "discoveryUrlRaw": "http://www.lumine.ne.jp/luminezero/",
+      "blockingReason": "LUMINE 0〔スタジオ2〕はTOKYO PRIORITY D RANKED NEXT PREFLIGHT 4 (2026-08-26)でDEFER。スタジオ1(tokyo-official-0691)と同一の現行公式ページ(HTTPS到達可)を参照するが、スタジオ2単位の座席図・列名・座席番号ページは存在せず、可動・ブリーチャー式の多目的イベントスペースとしか記載がない。再調査は公式のスタジオ単位番号付き座席図が新たに公開された場合のみ。"
     },
     {
       "inventoryId": "tokyo-official-0693",
@@ -13839,15 +13841,15 @@
       "capacity": 120,
       "category": "hall",
       "officialFacilityUrl": "https://www.yoyoginoubutai.com/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称120席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
       "discoveryUrlRaw": "http://www.yoyoginoubutai.com/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "代々木能舞台はTOKYO PRIORITY D RANKED NEXT PREFLIGHT 4 (2026-08-26)でDEFER。運営者サイト(HTTPSはホスト名不一致で証明書検証失敗、HTTPは到達可)およびWikipediaは座布団敷き(畳)の概算席数(約160席/約80席)のみを示し、番号付き座席図・列名・座席番号は皆無。再調査は公式の番号付き座席図が新たに公開された場合のみ。"
     },
     {
       "inventoryId": "tokyo-official-0705",
@@ -22665,13 +22667,14 @@
       "capacity": 130,
       "category": "hall",
       "officialFacilityUrl": "https://cr-gustaf.com/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "グスタフスタジオ〔シアターグスタフ〕はTOKYO PRIORITY D RANKED NEXT PREFLIGHT 4 (2026-08-26)でDEFER。現行公式ページ(HTTPS到達可)は「最大130名収容可能」という可変上限のみを示し、座席図・列名・座席番号は皆無。第三者情報では約90席という異なる概数も見られ、番号付き座席集合は存在しない。再調査は公式の番号付き座席図が新たに公開された場合のみ。"
     },
     {
       "inventoryId": "tokyo-official-1156",
