@@ -1175,15 +1175,15 @@
       "capacity": 159,
       "category": "hall",
       "officialFacilityUrl": "https://tokio.cervantes.es/jp/default.shtm",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称159席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
       "discoveryUrlRaw": "http://tokio.cervantes.es/jp/default.shtm",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "HARD-CASE DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3): the current official facility page (https://tokio.cervantes.es/jp/facilities_instituto_cervantes_tokio_spanish.htm) links a current seating-chart image defining a complete 159-seat configuration (rows A-L, independently summed 78+70+11=159) that matches the same page's own printed 159 exactly, but the current official about-us page (https://tokio.cervantes.es/jp/about_us_centre_spanish.htm) states the same building's hall accommodates approximately 200 people, with no issuer-published relation between the two figures. Reopen only if the issuer publishes a current statement reconciling the exact 159/145-seat chart against the approximate ~200-person figure."
     },
     {
       "inventoryId": "tokyo-official-0059",
@@ -5887,15 +5887,15 @@
       "capacity": 75,
       "category": "hall",
       "officialFacilityUrl": "https://www.tokyo-mw-kaikan.jp/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称75席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
       "discoveryUrlRaw": "http://www.tokyo-mw-kaikan.jp/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3): the current official room-rental page states only 最大72名 for 講堂 with hourly rental pricing and rentable equipment (mics, projector, screen, whiteboard, mats), and the current facility-overview page lists 講堂 with no capacity or seating detail at all. No current seating chart, floor plan, or row/seat numbering exists anywhere on the site. Reopen only if the issuer publishes a numbered seat chart."
     },
     {
       "inventoryId": "tokyo-official-0298",
@@ -8764,13 +8764,14 @@
       "capacity": 130,
       "category": "hall",
       "officialFacilityUrl": "https://www.koyamadai.or.jp/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3): the current official facility page states 大ホール capacity 130名 and explicitly states clients set up and remove their own chairs and tables (椅子・机の設置、片付けはお客様でお願いいたします); the current-linked 3rd-floor floor-plan PDF is an architectural drawing with generic unlabeled chair-hatching, no row/seat numbering. Reopen only if the issuer publishes a numbered seat chart for a fixed configuration."
     },
     {
       "inventoryId": "tokyo-official-0444",
@@ -19778,13 +19779,14 @@
       "capacity": 130,
       "category": "hall",
       "officialFacilityUrl": "https://www.city.tachikawa.lg.jp/shogaigakushu/shisetsu/gakushukan/002.html",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3): the current official facility page states 講堂 capacity 130名 with a photo and equipment list but no seating chart, floor plan, or row/seat numbering; two additional indexed pages that might otherwise carry a floor plan (a facility-introduction PDF and a detail sub-page) both currently return HTTP 404. Reopen only if the issuer publishes a current numbered seat chart."
     },
     {
       "inventoryId": "tokyo-official-1009",
@@ -22113,13 +22115,14 @@
       "capacity": 100,
       "category": "hall",
       "officialFacilityUrl": "https://www.city.hino.lg.jp/sisetsu/bunka/chikucenter/1005904.",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3): the current official facility page states 大ホール is a flat vinyl-floor (ビニル床) room furnished with 24 movable tables and 100 movable chairs (capacity 100名, 148.23m²); no seating chart, floor plan, or row/seat numbering is published. Reopen only if the issuer publishes a numbered seat chart for a fixed configuration."
     },
     {
       "inventoryId": "tokyo-official-1127",
