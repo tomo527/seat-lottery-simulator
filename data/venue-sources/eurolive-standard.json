@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "eurolive-standard",
+  "name": "ユーロライブ",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": ["EUROLIVE", "ユーロライブ（ライブホール）"],
+  "venueType": "theater",
+  "sources": [
+    {"id":"official-access-page","official":true,"roles":["facility","seat-count"],"publisher":"ユーロライブ","title":"ACCESS・施設概要","url":"http://eurolive.jp/access/","checkedAt":"2026-08-26","httpOnlyOfficial":{"issuerDomain":"eurolive.jp","httpsCheckedAt":"2026-08-26","httpsUnavailableEvidence":"curl(schannel)とOpenSSL 3.5.5 s_clientの2つの独立clientでTLS 1.2/1.3のhandshakeを試行し、いずれもcertificate交換前にserver起因のtlsv1 alert internal error(alert 80)で一貫して失敗。working HTTPS endpointが存在しないことを確認。"}},
+    {"id":"official-seating-chart","official":true,"roles":["seat-structure","seat-count"],"publisher":"ユーロライブ","title":"ユーロライブ座席表","url":"http://eurolive.jp/access/img/eurolive_seat.jpg","checkedAt":"2026-08-26","httpOnlyOfficial":{"issuerDomain":"eurolive.jp","httpsCheckedAt":"2026-08-26","httpsUnavailableEvidence":"curl(schannel)とOpenSSL 3.5.5 s_clientの2つの独立clientでTLS 1.2/1.3のhandshakeを試行し、いずれもcertificate交換前にserver起因のtlsv1 alert internal error(alert 80)で一貫して失敗。working HTTPS endpointが存在しないことを確認。"}},
+    {"id":"official-rent-page","official":true,"roles":["facility","seat-count"],"publisher":"ユーロライブ","title":"RENT・貸館案内","url":"http://eurolive.jp/rent/","checkedAt":"2026-08-26","httpOnlyOfficial":{"issuerDomain":"eurolive.jp","httpsCheckedAt":"2026-08-26","httpsUnavailableEvidence":"curl(schannel)とOpenSSL 3.5.5 s_clientの2つの独立clientでTLS 1.2/1.3のhandshakeを試行し、いずれもcertificate交換前にserver起因のtlsv1 alert internal error(alert 80)で一貫して失敗。working HTTPS endpointが存在しないことを確認。"}}
+  ],
+  "configurations": [
+    {
+      "id": "standard-178-seat-map",
+      "canonicalName": "固定座席178席・標準配置",
+      "issuerDefinedCondition": "現行公式座席表画像が示す固定座席178席の標準配置。",
+      "selectionBasis": "公式座席表画像のA列からM列に印字された全座席番号を直接転記する。A-K列は左1-4・中央5-12・右13-15の三ブロックが番号断絶なく1から15まで連続し、L列は中央5-12・右13-15のみ(左ブロックなし)で5から15まで連続、M列は右13-14のみ(左・中央ブロックなし)である。M-13・M-14は公式注記により補助席仕様だが印字IDとして保持し、補助席であることを理由に削除しない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-26 current official 座席表 image, independently re-fetched twice (byte-identical, MD5 44b3ced97231dae49c72968d3ece98a7 both times) and current access/rent pages",
+      "sourceIds": ["official-access-page", "official-seating-chart", "official-rent-page"],
+      "differenceBasisSourceIds": ["official-seating-chart"],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 178,
+      "scope": {"kind":"official-variant","issuerDefined":true,"containsEventDependentSeatIds":false},
+      "scopeDisclosure": "現行公式の固定178番号席を抽選します。A-K列の左右・中央ブロックは公式図の明示区画を表示用に整理したものであり、番号は各列とも1から15まで断絶なく連続します。L列は中央・右ブロックのみ(左ブロックは存在せず)5から15まで連続し、M列は右ブロックのみ(左・中央ブロックは存在せず)13から14までです。公式注記「2023年7月中旬よりM-13、14は補助席仕様となります。」により、M-13・M-14は補助席として運用されますが、印字IDとして通常番号席と同様に保持し、削除や置換番号の推定は行いません。",
+      "wheelchairSemantics": {"status":"not-applicable","description":"現行公式座席表画像は車椅子スペースや置換関係についていかなる注記・凡例も示さない。番号の追加・削除や置換は行わない。","sourceIds":["official-seating-chart"]},
+      "confidence": "representative",
+      "verification": {"status":"verified","checkedAt":"2026-08-26","method":"two-independent-current-official-seating-chart-visual-transcriptions-with-row-and-block-order-reversal","seatStructure":"matched","seatCount":"matched","rangeDiff":0,"unresolvedIssues":[]},
+      "ranges": [
+        {"rowLabel":"A","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"B","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"C","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"D","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"E","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"F","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"G","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"H","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"I","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"J","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"K","from":1,"to":15,"excluded":[]},
+        {"rowLabel":"L","from":5,"to":15,"excluded":[]},
+        {"rowLabel":"M","from":13,"to":14,"excluded":[]}
+      ]
+    }
+  ]
+}

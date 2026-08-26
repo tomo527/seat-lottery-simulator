@@ -1,0 +1,112 @@
+{
+  "wave": "TOKYO-WAVE-32 EUROLIVE ADOPT IMPLEMENTATION",
+  "date": "2026-08-26",
+  "phase": "Separately authorized bounded single-venue re-verification and production integration of the SOURCE/POLICY HOLD carried in docs/HANDOFF.md's exact next action, following the venue-source transport policy implementation (commit dca061a).",
+  "scopeBoundary": "tokyo-official-0635 ユーロライブ only. No new candidate research, other venue implementation, or HARD-CASE judgment audit (0278, 0586, 0641) was started.",
+  "target": {
+    "inventoryId": "tokyo-official-0635",
+    "venue": "ユーロライブ",
+    "venueSourceId": "eurolive-standard"
+  },
+  "lane": {
+    "assigned": "STANDARD",
+    "reason": "A single current numbered seat-chart image with ordinary A-M rows and no material configuration dispute; the only open question carried from the prior wave was transport policy, not evidence interpretation."
+  },
+  "transportRecheck": {
+    "question": "Has eurolive.jp gained a working HTTPS endpoint since the 2026-08-25 check?",
+    "method": "Independent TLS-layer checks against eurolive.jp:443 using curl (schannel) and OpenSSL 3.5.5 s_client, across TLS 1.2 and TLS 1.3, performed fresh on 2026-08-26.",
+    "result": "No. Both client stacks completed the TCP connection but the server aborted the TLS handshake before any certificate exchange with a server-originated 'tlsv1 alert internal error' (TLS alert 80), identical to the prior finding. HTTPS remains unavailable.",
+    "disposition": "HTTP-only remains the current transport. Each HTTP official source below carries its own httpOnlyOfficial waiver with issuerDomain eurolive.jp, httpsCheckedAt 2026-08-26, and this session's independent liveEndpointCheck as httpsUnavailableEvidence; no waiver was copied from the 2026-08-25 report."
+  },
+  "officialSources": [
+    {
+      "id": "official-access-page",
+      "url": "http://eurolive.jp/access/",
+      "fetchedAt": "2026-08-26",
+      "role": "current operator ACCESS/施設概要 page; the ユーロライブ（ライブホール）section states 席数 176席（フランス、キネット社製 ACTION,MADRID）＋予備席（パイプ椅子）2席 and embeds the 座席表 image",
+      "waiver": "own httpOnlyOfficial waiver recorded on this source entry"
+    },
+    {
+      "id": "official-seating-chart",
+      "url": "http://eurolive.jp/access/img/eurolive_seat.jpg",
+      "fetchedAt": "2026-08-26 (fetched twice independently for the two-pass transcription)",
+      "role": "current-linked issuer 座席表 image; MD5 44b3ced97231dae49c72968d3ece98a7 on both fresh fetches, byte-identical to the image evidenced on 2026-08-25",
+      "waiver": "own httpOnlyOfficial waiver recorded on this source entry"
+    },
+    {
+      "id": "official-rent-page",
+      "url": "http://eurolive.jp/rent/",
+      "fetchedAt": "2026-08-26",
+      "role": "current operator RENT/貸館案内 page; states 席数：178席（うち2席は補助席）",
+      "waiver": "own httpOnlyOfficial waiver recorded on this source entry"
+    }
+  ],
+  "twoPass": {
+    "method": "The current issuer 座席表 image was independently fetched twice on 2026-08-26 (fresh HTTP GET each time, confirmed byte-identical by MD5, also identical to the 2026-08-25 evidence) and read twice without reusing the preserved 2026-08-25 transcription as an answer key. Pass 1 read top-down (A through M), left-to-right within each row. Pass 2 read bottom-up (M through A), right-to-left within each row, independently, before any comparison.",
+    "pass1": {
+      "order": "top-down (A to M), left-to-right",
+      "rowsAtoK": "left 1-4, centre 5-12, right 13-15 per row (15 seats each, A through K)",
+      "rowL": "centre 5-12, right 13-15 (no left block), 11 seats",
+      "rowM": "right 13-14 only (no left or centre block), 2 seats",
+      "passTotal": 178,
+      "disclosureRead": "「2023年7月中旬よりM-13、14は補助席仕様となります。」directly beneath row M; printed total 「178席」 beneath the disclosure."
+    },
+    "pass2": {
+      "order": "bottom-up (M to A), right-to-left",
+      "rowM": "right block 14-13 only (no centre or left block), 2 seats",
+      "rowL": "right 15-13, centre 12-5 (no left block), 11 seats",
+      "rowsKtoA": "right 15-13, centre 12-5, left 4-1 per row (15 seats each, K through A)",
+      "passTotal": 178,
+      "disclosureRead": "Same disclosure text and printed 178席 total independently reconfirmed while scanning upward past row M."
+    },
+    "comparisonResult": "MATCH",
+    "matchedFields": [
+      "complete printed ID set (every row A-M, every block boundary, every seat number)",
+      "row/block ownership (A-K: left+centre+right, 15 each; L: centre+right only, 11; M: right only, 2)",
+      "ranges/gaps (no printed exclusion within any block; absent blocks on L and M are structural boundaries, not gaps)",
+      "issuer subtotal (both passes independently sum to 178, matching the printed 「178席」)",
+      "selected configuration (single fixed audience configuration; no alternative variant is published)",
+      "M-13/M-14 補助席 disclosure text, read identically in both passes"
+    ]
+  },
+  "seatSemantics": {
+    "auxiliarySeats": "M-13 and M-14 remain printed IDs and are retained as ordinary selectable seats under the issuer's 補助席 (auxiliary-seat) disclosure; they were not deleted or replaced.",
+    "accessibility": "The current 座席表 carries no wheelchair icon, wheelchair space, or accessibility legend of any kind; no replacement or removal relation was inferred. wheelchairSemantics.status is recorded as not-applicable.",
+    "alternativeConfigurations": "None; the issuer defines only the single 178-seat configuration."
+  },
+  "productionDecision": {
+    "disposition": "PRODUCTION",
+    "reason": "Both independent 2026-08-26 passes matched exactly on the complete printed ID set, row/block ownership, ranges/gaps, the issuer's own 178-seat subtotal, the single representative configuration, and the auxiliary-seat disclosure. HTTPS remains unavailable, so all three official HTTP sources carry their own explicit httpOnlyOfficial waiver per the venue-source transport policy (commit dca061a). No capacity fitting, invented ID, geometry-derived ownership, configuration mixing, or printed-ID deletion occurred.",
+    "mapped": 178,
+    "published": 178,
+    "rangeDiff": 0,
+    "confidence": "representative",
+    "verificationMethod": "two-independent-current-official-seating-chart-visual-transcriptions-with-row-and-block-order-reversal"
+  },
+  "repositoryChanges": {
+    "sourceCreated": "data/venue-sources/eurolive-standard.json (schema v2, status production, one selectable configuration standard-178-seat-map)",
+    "inventoryUpdated": "data/venue-inventory/tokyo.json: tokyo-official-0635 eligibility set to eligible, researchStatus set to production, venueSourceId set to eurolive-standard, officialFacilityUrl set to http://eurolive.jp/access/ under its own httpOnlyOfficial waiver, blockingReason cleared to null",
+    "batchCreated": "data/venue-batches/tokyo-wave-32-eurolive-adopt-implementation.json (targetVenueIds: [tokyo-official-0635])",
+    "generatedArtifacts": "src/data/venue-db/catalog.generated.json and public/venue-db/venues/eurolive-standard--standard-178-seat-map.json regenerated via venues:build",
+    "fingerprintUpdated": "data/venue-fingerprints/production.json: added eurolive-standard entry (count 178, samples main/A/1, main/F/15, main/M/14, matching sha256)"
+  },
+  "productionImpact": {
+    "before": { "venues": 132, "selectableConfigurations": 134, "seatRecords": 181441 },
+    "after": { "venues": 133, "selectableConfigurations": 135, "seatRecords": 181619 },
+    "addedMappedSeats": 178,
+    "changed": true
+  },
+  "validation": {
+    "performed": [
+      "npm run venues:review -- --id eurolive-standard",
+      "npm run venues:inventory:report",
+      "npm run venues:build",
+      "npm run venues:check",
+      "npm run venues:validate",
+      "npm run verify:venues (inventory/readiness/release reports, venues:build/check/validate/report, then verify:full: lint, typecheck, 224 unit tests, production build, verify:docs/harness, 17 Playwright E2E tests)"
+    ],
+    "result": "All checks passed (exit 0). The only new warnings are the three expected httpOnlyOfficial transport warnings on eurolive-standard.json sources and the corresponding tokyo.json officialFacilityUrl warning; all other warnings pre-exist this change and are unrelated (historical official-vs-mapped seat-count deltas and catalog/database soft-limit projections). Zero new errors.",
+    "productionTotalsConfirmed": "133 venues / 135 selectable configurations / 181,619 configuration-seat records, matching the reference arithmetic derived independently from the actual transcription, not fitted to it."
+  },
+  "exactNextAction": "Commit and push this wave once authorized, then confirm the managed Workers Build completes and run the public UI smoke test for ユーロライブ. No further candidate research or HARD-CASE judgment audit (0278, 0586, 0641) is in scope."
+}

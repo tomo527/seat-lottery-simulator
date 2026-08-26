@@ -12495,16 +12495,21 @@
       "city": "渋谷区",
       "capacity": 178,
       "category": "hall",
-      "officialFacilityUrl": null,
+      "officialFacilityUrl": "http://eurolive.jp/access/",
+      "httpOnlyOfficial": {
+        "issuerDomain": "eurolive.jp",
+        "httpsCheckedAt": "2026-08-26",
+        "httpsUnavailableEvidence": "curl(schannel)とOpenSSL 3.5.5 s_clientの2つの独立clientでTLS 1.2/1.3のhandshakeを試行し、いずれもcertificate交換前にserver起因のtlsv1 alert internal error(alert 80)で一貫して失敗。working HTTPS endpointが存在しないことを確認。"
+      },
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "2026-08-25の現行運営者座席表画像（http://eurolive.jp/access/img/eurolive_seat.jpg）で独立two-pass MATCH: A-M列の全印字ID・block区分・「178席」を確認、印字合計178は公式総数と一致。ただしeurolive.jpは現在HTTPSエンドポイントを提供せず（TLS handshakeがserver側internal errorで一貫して失敗）、schema validatorはsources[].urlに全statusでHTTPSを要求するため、source JSON作成には至らない。SOURCE/POLICY HOLD。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-26に現行公式access/rentページと座席表画像を再取得し独立two-pass再transcriptionを実施してMATCH: A-M列の全印字ID・block区分・「178席」を確認、印字合計178は公式総数と一致（うち2席M-13/M-14は2023年7月中旬より補助席仕様、印字IDとして保持）。eurolive.jpは引き続きHTTPSエンドポイントを提供しない（2026-08-26再確認、curl/schannelとOpenSSL 3.5.5双方でTLS 1.2/1.3のhandshakeがserver起因のinternal errorで失敗）ため、venue-source transport policyのhttpOnlyOfficial waiverの下でHTTP-only officialとしてPRODUCTION化した。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-25",
+      "venueSourceId": "eurolive-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-26",
       "discoveryUrlRaw": "http://eurolive.jp/",
-      "blockingReason": "SOURCE/POLICY HOLD (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3 TWO-PASS IMPLEMENTATION ATTEMPT): independent two-pass transcription of the current official 座席表 image MATCHED exactly (178 mapped = 178 published, rangeDiff 0, M-13/M-14 補助席 disclosure retained as metadata), but eurolive.jp (and parent domain eurospace.co.jp) serve no working HTTPS endpoint — repeated TLS handshakes fail with a server-side internal-error alert on two independent client stacks — and scripts/venues/validation.mjs:182 requires an HTTPS sources[].url unconditionally for every source status. No source JSON was authored. Reopen only once a current official HTTPS endpoint exists for this venue; see data/venue-reports/tokyo-priority-d-ranked-next-preflight-3-implementation-attempt-2026-08-25.json for the preserved evidence."
+      "blockingReason": null
     },
     {
       "inventoryId": "tokyo-official-0636",

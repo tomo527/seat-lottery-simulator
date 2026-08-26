@@ -182,6 +182,31 @@
   },
   {
     "schemaVersion": 2,
+    "id": "eurolive-standard",
+    "venueGroupId": "eurolive-standard",
+    "name": "ユーロライブ",
+    "searchAliases": [
+      "EUROLIVE",
+      "ユーロライブ（ライブホール）"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard-178-seat-map",
+        "canonicalName": "固定座席178席・標準配置",
+        "seatCount": 178,
+        "dataPath": "/venue-db/venues/eurolive-standard--standard-178-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の固定178番号席を抽選します。A-K列の左右・中央ブロックは公式図の明示区画を表示用に整理したものであり、番号は各列とも1から15まで断絶なく連続します。L列は中央・右ブロックのみ(左ブロックは存在せず)5から15まで連続し、M列は右ブロックのみ(左・中央ブロックは存在せず)13から14までです。公式注記「2023年7月中旬よりM-13、14は補助席仕様となります。」により、M-13・M-14は補助席として運用されますが、印字IDとして通常番号席と同様に保持し、削除や置換番号の推定は行いません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "ex-theater-roppongi-standard",
     "venueGroupId": "ex-theater-roppongi-standard",
     "name": "EX THEATER ROPPONGI",
