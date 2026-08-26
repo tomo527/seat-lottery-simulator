@@ -1,0 +1,144 @@
+{
+  "wave": "TOKYO-OFFICIAL-0249 SCOTT HALL BOUNDED JUDGMENT AUDIT",
+  "date": "2026-08-26",
+  "phase": "Bounded JUDGMENT reconciliation audit of one already-preflighted ADOPT candidate. Fresh re-fetch of the current official facility page and of every current-linked first-party material of the same issuer, direct re-reading of the current-linked seating-chart PDF, and adjudication of the 1F/2F subtotal conflict. No two-pass implementation, no source authoring, no production integration.",
+  "scopeBoundary": "Only tokyo-official-0249 was opened. No other candidate, hard case, or blocked record was researched or re-adjudicated. No venue source JSON, seat range, generated catalog or runtime artifact, production fingerprint, or production total was created or changed.",
+  "policyBasis": "Reconciliation may rest only on current/current-linked first-party issuer evidence. Secondary evidence may assist discovery of issuer material but may not decide a reconciliation. Capacity fitting to a published total, inferring seat IDs from geometry, moving seats between floors, deleting printed IDs, and treating an unexplained issuer figure as a typo without an issuer correction are all prohibited. HARD-CASE DEFER is reserved for an otherwise complete issuer-numbered chart whose issuer subtotal or configuration relation alone remains unresolved.",
+  "startStateVerified": {
+    "head": "e564a6f0c50f82f80a99de74e91e09f57a2d1ee9",
+    "originMain": "e564a6f0c50f82f80a99de74e91e09f57a2d1ee9",
+    "workingTree": "clean",
+    "production": "133 venues / 135 selectable configurations / 181,619 configuration-seat records, confirmed by npm run venues:check and npm run venues:validate before any edit",
+    "candidateState": "tokyo-official-0249 researchStatus source-located, venueSourceId null, preflight-stage ADOPT, not in production"
+  },
+  "freshOfficialEvidence": [
+    {
+      "url": "https://www.hoshien.or.jp/seminar/scotthall.html",
+      "role": "current official facility page, re-fetched 2026-08-26 over working HTTPS (200, 55,231 bytes)",
+      "statedFacts": "定員 200名（1F 140名、2F 60名）; 広さ 160㎡; 形式 イスのみ; 建物 スコットホール1F; 室内無料備品 イス200脚. The same specification-table cell links both a 見取図PDF and a 座席表PDF.",
+      "linkObservation": "The page renders its specification table twice (desktop and mobile blocks) and the two 座席表PDF links point at different asset paths, _src/63662848/scotthallzasekihyou.pdf and _src/63494111/scotthallzasekihyou.pdf. Both were fetched: identical length 436,534 bytes and identical md5 7711c7b328fe1c21887e2f4556840234. They are the same document, so the two links carry no revision conflict."
+    },
+    {
+      "url": "https://www.hoshien.or.jp/seminar/_src/63662848/scotthallzasekihyou.pdf",
+      "role": "current-linked official 座席表 (seating chart), re-fetched and re-read directly 2026-08-26",
+      "documentMetadata": "PDF title スコットホール講堂客席図面; creator Adobe Illustrator 25.1 (Windows); PDF creationDate 2022-02-09; server Last-Modified 2025-07-17; single page; vector only, no raster image; no legend block other than its two printed footnote lines.",
+      "printedFootnotes": "※9.10列に柱による見切れ4席あり / 1階136席・2階64席｜計200席",
+      "structure": "舞台 at the top; 1階席 rows 1-10; a full-width horizontal divider; 2階席 rows 11-15. Every row is split into a left and a right block by a centre aisle, and the two blocks of a row share one continuous number sequence."
+    },
+    {
+      "url": "https://acrobat.adobe.com/id/urn:aaid:sc:AP:64cd96bb-8c56-4b09-b2f1-40e3022157a0",
+      "role": "current-linked official 講堂見取図 / 会場案内, linked from the same facility-page table cell as the 座席表 and again from the current 音楽利用 page as スコットホール1階 講堂見取図; retrieved as 2510_講堂案内図.pdf",
+      "documentMetadata": "PDF title 2510_講堂案内図; creator Adobe Illustrator 29.8 (Windows); creationDate 2025-10-29; face-dated 2025.10 on the drawing itself.",
+      "statedFacts": "【客席】1階140席・160㎡（舞台、控え室含）/ 2階60席・54㎡. Legend: ※[filled mark]は柱のため舞台全体が見えない席となっています。",
+      "drawnStructure": "The 1F audience area is drawn as ten seat rows, each a left block of 7 cells and a right block of 7 cells, i.e. exactly 140 drawn 1F seat cells. Exactly four of those cells carry the legend's filled mark: the 9th and 10th rows counted from the stage, in the 5th cell of the left block and the 3rd cell of the right block, with a 柱 (pillar) block drawn immediately in front of those two columns. The 2F appears only as a labelled 2階席 area; no 2F seat cell, row, or number is drawn anywhere in this document."
+    },
+    {
+      "url": "https://acrobat.adobe.com/id/urn:aaid:sc:ap:41922a3b-5879-4aac-b3f5-7f3b665ee495",
+      "role": "current-linked official スコットホール1階案内図（撮影用）, linked from the current 撮影利用 page; retrieved as 202510_講堂案内図（撮影用）.pdf",
+      "documentMetadata": "creator Adobe Illustrator; creationDate 2025-10-29; face-dated 2025.10.",
+      "statedFacts": "■ 客席：1階140席　2階60席",
+      "drawnStructure": "Independently draws the same ten 1F rows of 7 + 7 cells, i.e. 140 drawn 1F seat cells. It carries no pillar mark and no 2F seat drawing."
+    },
+    {
+      "url": "https://acrobat.adobe.com/id/urn:aaid:sc:AP:db6bfc67-d622-4fe0-86d2-255a6d5d9acd",
+      "role": "current-linked official 講堂電気系統図 (202510), checked for floor capacity statements",
+      "statedFacts": "Labels a 2F席 area only. States no seat count, no row, and no seat identifier."
+    },
+    {
+      "url": "https://www.hoshien.or.jp/seminar/index.html, guide.html, charge.html, term.html, music-guide.html, satsuei.html, sketch.html, event.html, libertyhall.html, https://www.hoshien.or.jp/about/scotthallstory.html, https://hoshien.resv.jp/reserve/calendar.php, https://www.hoshien.or.jp/sitemap.xml",
+      "role": "issuer-domain sweep for any further current statement of the hall's floor capacities, any errata, and any other seating asset",
+      "statedFacts": "No further current issuer statement of the 講堂 floor capacities exists. No issuer correction, errata, revision note, or reconciliation note exists on any current page or in any current-linked document. The sitemap lists no second 座席表 asset; its only other 講堂案内図 entries point at a 2019 file whose URL now returns 404, so no superseded issuer chart is currently retrievable."
+    }
+  ],
+  "directRereadOfTheChart": {
+    "method": "The current-linked PDF was re-read directly: positioned text extraction for every printed number, vector-geometry extraction for every drawn seat box and every drawn line, and rendered-image inspection of the row 8-10 band and of the whole 2F block. Nothing was inferred from geometry; drawn boxes are reported as drawn boxes and printed numbers as printed numbers.",
+    "floor1": {
+      "rows1to8": "Each row prints left block 1-7 and right block 8-14, one continuous 1-14 sequence per row. 8 rows x 14 = 112 printed identifiers.",
+      "row9": "14 seat boxes are drawn (7 left, 7 right). Printed numbers are 1, 2, 3, 4, 6, 7 in the left block and 8, 9, 11, 12, 13, 14 in the right block: 12 printed identifiers.",
+      "row10": "Identical to row 9: 14 drawn boxes, 12 printed identifiers.",
+      "numberedSubtotal": 136,
+      "drawnPositionSubtotal": 140
+    },
+    "floor2": {
+      "row11": "left 1-6 / right 7-12 = 12 printed identifiers in 12 drawn boxes",
+      "row12": "left 1-8 / right 9-16 = 16 printed identifiers in 16 drawn boxes",
+      "row13": "left 1-8 / right 9-16 = 16 printed identifiers in 16 drawn boxes",
+      "row14": "left 1-8 / right 9-14 = 14 printed identifiers in 14 drawn boxes",
+      "row15": "left 1-6 only, no right block = 6 printed identifiers in 6 drawn boxes",
+      "numberedSubtotal": 64,
+      "drawnPositionSubtotal": 64,
+      "marks": "No X, no pillar block, no obstruction mark, no wheelchair space, no removable-seat notation, and no unnumbered box appears anywhere on the 2F."
+    },
+    "recalculatedTotals": {
+      "printedNumberedSeats": "136 + 64 = 200, reproducing the chart's own printed subtotal line 1階136席・2階64席｜計200席 exactly",
+      "drawnSeatPositions": "140 + 64 = 204",
+      "difference": "The 4-position difference between drawn positions and printed identifiers lies entirely in 1F rows 9 and 10."
+    }
+  },
+  "fourXPositions": {
+    "positions": [
+      "1F row 9, position 5 (5th box of the left block)",
+      "1F row 9, position 10 (3rd box of the right block)",
+      "1F row 10, position 5 (5th box of the left block)",
+      "1F row 10, position 10 (3rd box of the right block)"
+    ],
+    "printedIdSemantics": "Each of the four is a drawn seat box of the same size and in the same row grid as its numbered neighbours. No seat number is printed inside any of the four boxes. Each box carries an X formed by two full corner-to-corner diagonal lines drawn inside that single box; the X is drawn over an empty box, not over a number. The surrounding numbering is not renumbered to close the gap: the left block prints 1, 2, 3, 4, then 6, 7, and the right block prints 8, 9, then 11, 12, 13, 14. The per-row 1-14 identifier space is therefore preserved and identifiers 5 and 10 are simply not issued in rows 9 and 10.",
+    "issuerExplanation": "The chart prints a black 柱 (pillar) block immediately in front of those two columns, between row 8 and row 9, and its footnote states ※9.10列に柱による見切れ4席あり. The current 講堂案内図 marks the same four positions with a filled mark and explains that mark as ※[mark]は柱のため舞台全体が見えない席となっています, that is, seats from which the whole stage cannot be seen because of the pillars.",
+    "arithmeticConfirmation": "Confirmed directly, not inferred: 1F rows 1-8 give 8 x 14 = 112 printed identifiers and rows 9-10 give 2 x 12 = 24, so 112 + 24 = 136, exactly the chart's own printed 1階136席. The four X positions are therefore excluded from the chart's own 1F subtotal.",
+    "implementationRuling": "If, and only if, a two-pass implementation of the chart's numbered configuration is separately authorized in the future, `excluded: [5, 10]` on 1F rows 9 and 10 is the correct representation, because those two identifiers exist inside the row's issuer identifier space but carry no printed identifier on the chart. A shortened or renumbered range would be wrong. Mapping the four positions as seats is prohibited in every case: they carry no issuer identifier, and no identifier may be supplied from geometry. This ruling settles the notation only; it does not authorize an implementation, and the disposition below does not authorize one either."
+  },
+  "judgmentQuestion": "Whether the current facility page's floor capacities 1F 140 / 2F 60 / total 200 and the current-linked seating chart's 1階136席・2階64席｜計200席 can be reconciled from issuer evidence alone.",
+  "findings": {
+    "A_currentConfigurationOrGenerationDifference": {
+      "answer": "NO",
+      "evidence": "No issuer statement presents the two documents as different configurations, generations, or layouts. The hall publishes one layout only, and the current 案内図 states its floor figures under the heading 【客席】 in the unit 席, the same concept and unit the seating chart uses for its own 1階136席・2階64席 subtotals. The 案内図 is also newer than the chart (2025.10 against a 2022-02 chart file), yet the issuer links both from the same current specification-table cell, so neither is presented as replacing the other. The difference is therefore not a configuration or generation difference."
+    },
+    "B_capacityVersusNumberedSeatDistinction": {
+      "answer": "PARTLY, AND ONLY ON THE 1F",
+      "evidence": "On the 1F the distinction is issuer-stated and independently verifiable. Both current 案内図 documents draw exactly 140 1F seat cells and print 1階140席; the seating chart draws the same 140 1F positions but issues identifiers to only 136 and states that rows 9 and 10 contain 4 pillar-obstructed 席; the 案内図 marks those same four positions and calls them seats that cannot see the whole stage. The 1F difference is therefore exactly the four pillar-obstructed positions: the 案内図 counts all 140 physical seats, the chart numbers only the 136 for which it issues identifiers. On the 2F no such distinction is stated by anyone. The chart draws 64 boxes and numbers all 64, while the facility page and both 案内図 documents state 2階60席 / 2F 60名 with no 2F seat drawing, no pillar, no obstruction, no exclusion, and no note of any kind. Nothing in the issuer's material distinguishes a 2F occupancy concept from a 2F numbered-seat concept, and the 1F convention cannot be carried over, because on the 1F the numbered count is 4 lower than the stated seat count while on the 2F the numbered count is 4 higher."
+    },
+    "C_staleness": {
+      "answer": "NO",
+      "evidence": "Relative recency is establishable but supersession is not. The 案内図 documents are face-dated 2025.10 and were created 2025-10-29; the chart's PDF file was created 2022-02-09, though the issuer re-uploaded both copies of it to its own server on 2025-07-17 and links them from the live page today. The 案内図 is not a numbered seat chart at all and cannot replace the chart as an identifier source, and the chart is nowhere withdrawn, superseded, or annotated as old. The only other 講堂案内図 asset in the issuer's sitemap is a 2019 file whose URL now returns 404. Being the more detailed or the more recent document is not by itself evidence of currency, and no issuer evidence establishes that either figure supersedes the other."
+    },
+    "D_typoOrEditorialInconsistency": {
+      "answer": "NO",
+      "evidence": "No correction, errata, revision note, or annotation touching either figure exists on the current facility page, in any current-linked document, or anywhere else in the issuer-domain sweep. The 2F figure of 60 is stated identically in three separate current issuer places (the facility page, the 2025.10 講堂案内図, and the 2025.10 撮影用案内図), so it is not an isolated slip on a single surface. No typo determination may be made in the repository."
+    }
+  },
+  "reconciliationResult": {
+    "established": "The 1F relation only. 1F 140 (both current 案内図 documents and the facility page) minus the 4 pillar-obstructed positions that the chart itself declares and does not number equals the chart's 1階136席. Both documents draw the same 140 1F positions and mark the same four of them, so this half rests on issuer evidence and not on inference.",
+    "unresolved": "The 2F relation. The chart draws and numbers 64 2F seats (12 + 16 + 16 + 14 + 6) and states 2階64席; the facility page and both current 案内図 documents state 60. No issuer document explains the 4-seat difference, identifies which 2F positions it concerns, or supplies any 2F seat drawing against which it could be checked. The pillar convention that explains the 1F cannot explain the 2F, both because no obstruction or exclusion is marked or mentioned anywhere on the 2F and because the sign of the difference is inverted.",
+    "totalIsNotEvidence": "Both splits total 200, but they reach it through two offsetting 4-seat differences, one explained and one unexplained. The agreement of the grand total is therefore not evidence that the floor ownership of the 200 identifiers is settled, and it was not treated as such.",
+    "retractedClaim": "The TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT described the facility page's 1F140/2F60 split as 'a coarser, rounder disclosure of the same 200 grand total'. That characterization is retracted. No issuer statement supports it, the 1F difference is a specific issuer-declared obstructed-seat difference rather than a rounding, and the 2F difference is unexplained and runs in the opposite direction, which no rounding account can produce."
+  },
+  "result": {
+    "disposition": "HARD-CASE DEFER",
+    "dispositionCategory": "complete numbered chart exists but issuer subtotal/configuration reconciliation remains unresolved",
+    "dispositionReason": "The current-linked chart supplies a complete, internally exact issuer-numbered set of 200 identifiers with drawn floor, row, and block ownership and its own printed subtotals, and the semantics of the four X positions are now settled. But two current first-party issuer documents assign 4 of those 200 identifiers to different floors, and no issuer evidence resolves which 2F count is the current numbered-seat set. Adopting the chart's 64-seat 2F would contradict three current issuer statements of 2階60席; adopting 60 would require deleting or relocating 4 printed 2F identifiers, which is capacity fitting. The candidate is therefore not adoptable now, and it is not an ordinary DEFER, because the complete numbered chart itself exists and only the issuer subtotal relation is missing.",
+    "specificIssuerEvidenceRequirement": "Reopen only when the issuer publishes one of the following: a current statement that the 講堂 2F numbered seat set is 64 rather than 60, or the converse identifying which 4 printed 2F identifiers fall outside the count; a current 2F seat drawing or numbered 2F chart against which the 60 figure can be checked; or a current correction, revision, or note explaining the relation between 1階136席・2階64席 and 1階140席 / 2階60席. Relative document age, the agreement of the 200 grand total, and the plausibility of a rounding or transcription explanation are explicitly not sufficient.",
+    "prohibitedResolutions": "Deleting 4 printed 2F identifiers, adding 4 identifiers to the 1F, moving 4 seats between floors, mapping the four unnumbered X positions as seats, supplying any identifier from geometry, or adopting either split because the grand total happens to match."
+  },
+  "productionImpact": {
+    "changed": "none",
+    "production": "133 venues / 135 selectable configurations / 181,619 configuration-seat records, unchanged",
+    "artifacts": "No venue source JSON, seat range, generated catalog file, lazy runtime payload, or production fingerprint was created or modified."
+  },
+  "repositorySynchronization": {
+    "inventory": "tokyo-official-0249 researchStatus changes from source-located to blocked so it cannot re-enter ordinary candidate discovery; its eligibilityReason and blockingReason record this audit's findings and the specific issuer evidence requirement. venueSourceId remains null.",
+    "preflightReport": "data/venue-reports/tokyo-priority-d-cross-tier-high-yield-preflight-2026-08-26.json keeps its historical record intact and gains a supersession note at top level and on its rank-1 entry, retracting the 'coarser, rounder disclosure' characterization and pointing at this audit.",
+    "handoff": "docs/HANDOFF.md records this audit as current state, and its stale Wave-32-era current-state figures were corrected in the same change."
+  },
+  "validation": {
+    "run": [
+      "npm run venues:inventory:report",
+      "npm run venues:check",
+      "npm run venues:validate",
+      "npm run venues:report",
+      "npm run verify:docs",
+      "git diff --check"
+    ],
+    "notRun": "npm run verify:venues in full, because no production venue data, generated artifact, or fingerprint changed; this audit changed only report, inventory metadata, and documentation."
+  },
+  "exactNextAction": "No further work on tokyo-official-0249 is authorized. It is blocked HARD-CASE DEFER, must not re-enter ordinary candidate discovery, and may be reopened only under a separately authorized bounded judgment audit once the issuer publishes the 2F numbered-seat evidence named above. The next ordinary venue work is a separately authorized Tokyo Priority-D preflight continuing under the cross-tier ranking rule recorded in the cross-tier high-yield preflight report, excluding every existing DEFER, HARD-CASE DEFER, and production record."
+}
