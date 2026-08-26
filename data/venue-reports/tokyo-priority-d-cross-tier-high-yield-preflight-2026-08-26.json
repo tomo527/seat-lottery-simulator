@@ -1,0 +1,244 @@
+{
+  "wave": "TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT",
+  "date": "2026-08-26",
+  "phase": "Bounded metadata re-ranking (Tier 1 dedicated-performance identities cross-ranked with Tier 2 civic-hall large/medium/small designations) and current/current-linked first-party evidence preflight only",
+  "scopeBoundary": "The remaining unresearched Tokyo Priority-D inventory was re-ranked from repository metadata alone, this time cross-ranking dedicated theater/concert-hall/auditorium identities together with civic/public-hall 大ホール/中ホール/小ホール-designated spaces on equal footing (rather than treating dedicated-performance identity as a fixed higher tier), using evidence-locatability tie-break signals as the primary ordering force. Current/current-linked first-party evidence was checked for the top five ranked candidates in order. Research stopped at the five-candidate ceiling; one ADOPT was reached, short of the three-ADOPT stop condition. No two-pass transcription, source or range authoring, production integration, generated artifact, fingerprint, or production-total change was made.",
+  "policyBasis": "ADOPT requires current/current-linked first-party issuer evidence that fixes, without inference, one representative configuration with a complete issuer-numbered seat set, issuer-defined row/block/floor/category ownership, a configuration boundary, and the treatment of accessibility, removable, and alternative configurations, so that an independent two-pass transcription can reproduce it losslessly. DEFER covers a missing or incomplete printed ID set, an approximate/maximum-only capacity statement, or an explicitly movable/free-seating space. HARD-CASE DEFER is reserved for an otherwise complete numbered chart whose issuer subtotal or accessibility relation alone remains unreconciled. Capacity fitting, invented seat IDs, geometry-derived ownership, configuration mixing, assigning IDs to unnumbered wheelchair spaces, and arbitrary deletion of printed IDs for accessibility reasons are prohibited. Per the current venue-source transport policy, an HTTP-only current official issuer is not by itself a DEFER/HOLD reason; HTTPS is preferred when it works, HTTP-only is recorded under an httpOnlyOfficial waiver only if the candidate otherwise reaches ADOPT, and unofficial HTTP sources remain non-waivable. The transport waiver relaxes no seat-evidence requirement.",
+  "revisedRankingRule": {
+    "instruction": "Cross-rank Tier 1 (dedicated theater / concert hall / auditorium; likely fixed audience seating; assigned-ticket use assumed) together with Tier 2 (civic/public hall 大ホール/中ホール/小ホール spaces with clear stage/theatrical/concert use) as equally high priority, rather than always exhausting Tier 1 first. Break ties by adoption likelihood: source-located status, likely-eligible status, a direct operator URL, a recorded capacity, and an independent named hall/theater space. Demote (but do not exclude) studio, training-stage, rehearsal, live-spot/small live-house, multipurpose-room, movable/free-seating-likely, and sub-100-seat records relative to stronger performance-hall candidates, without moving them to a separate lower tier outright.",
+    "priorApproachDifference": "Prior waves (high-yield preflight through ranked-next preflight 4) ranked only within a single dedicated-performance-identity keyword screen (シアター/劇場/能楽堂/舞台/ライブ/スタジオ/演芸場/座 etc.) and worked strictly down that list (last unopened order: 0688, 1147, 0210, 0800, then null-capacity records). This wave instead unified that screen with a second civic-hall screen (大ホール/中ホール/小ホール/主ホール/メインホール) at the same base priority, then let the existing source-located/likely-eligible/URL/capacity tie-break (already used since the first high-yield preflight) decide order across both groups together. This surfaced 大学・美術館・文化施設の講堂 (academic/museum lecture-auditorium) and civic 小ホール records that the old single-screen order had not reached, ahead of the previously-queued 0688/1147/0210/0800, none of which were opened this wave."
+  },
+  "existingDispositionsExcluded": {
+    "defer": [
+      "tokyo-official-0238",
+      "tokyo-official-0565",
+      "tokyo-official-0115",
+      "tokyo-official-0476",
+      "tokyo-official-0867",
+      "tokyo-official-0366",
+      "tokyo-official-0266",
+      "tokyo-official-0816",
+      "tokyo-official-0861",
+      "tokyo-official-0893",
+      "tokyo-official-0818",
+      "tokyo-official-0813",
+      "tokyo-official-0704",
+      "tokyo-official-0087",
+      "tokyo-official-1155",
+      "tokyo-official-0691",
+      "tokyo-official-0692"
+    ],
+    "hardCaseDefer": [
+      "tokyo-official-0278",
+      "tokyo-official-0586",
+      "tokyo-official-0641"
+    ],
+    "productionDuplicates": [
+      "tokyo-official-0635 (eurolive-standard, TOKYO-WAVE-32)",
+      "tokyo-official-0460 (duplicate facility-space of already-produced tokyo-coverage-theater-h)"
+    ],
+    "futureHardCaseOutOfScope": [
+      "tokyo-koganei-miyaji-main (小金井 宮地楽器ホール 大ホール draft koganei-miyaji-main-standard; distinct facility-space from this wave's candidate tokyo-official-1102 小ホール, not reopened or edited)"
+    ],
+    "method": "Every inventoryId, its venueSourceId, and its facility-space identity were checked against data/venue-inventory/tokyo.json, data/venue-sources, and every prior formal venue report before ranking; none of the named records, and no other blocked/production record, was reopened or re-audited."
+  },
+  "metadataReranking": {
+    "performed": true,
+    "inputsUsedForRanking": "data/venue-inventory/tokyo.json only (priority, researchStatus, venueSourceId, eligibility, officialDisplayName, facilityName, spaceName, category, capacity, officialFacilityUrl). No Web research informed the ranking.",
+    "candidatePool": "969 Tokyo Priority-D inventory records reduce to 801 with priority D, researchStatus in {not-started, source-located}, and venueSourceId null, after excluding tokyo-official-0460 (duplicate facility-space of already-produced theater-h-standard, never given a formal disposition of its own).",
+    "unifiedHighPriorityScreen": "Records were flagged high-priority if their normalized facility/space/display name matched either the Tier-1 dedicated-performance vocabulary (劇場/シアター/theater/theatre/能楽堂/演芸場/寄席/音楽堂/コンサートホール/オペラ/講堂/演奏堂/ライブホール) or the Tier-2 civic-hall-size vocabulary (大ホール/中ホール/小ホール/主ホール/メインホール), with both groups given the same base score. Within that combined high-priority set, records were ordered by: +50 for researchStatus=source-located, +30 for eligibility=likely-eligible, +20 for a non-null officialFacilityUrl, +10 to +30 scaled by recorded capacity. A yield penalty of -400 per matched keyword was subtracted for スタジオ/ｽﾀｼﾞｵ, 研修/リハーサル/けいこ場/稽古場, ライブスポット/ライブハウス/live spot/livehouse, 多目的/集会室/会議室/レクホール/集会所/コミュニティ/研修室/市民活動 wording, and for any recorded capacity under 100.",
+    "topFive": "tokyo-official-0249 早稲田奉仕園〔スコットホール・講堂〕 (cap 200, source-located/likely-eligible/URL, Tier-1 講堂), tokyo-official-0337 独立行政法人国立科学博物館〔日本館講堂〕 (cap 150, source-located/likely-eligible/URL, Tier-1 講堂), tokyo-official-1102 小金井 宮地楽器ホール〔小ホール〕 (cap 150, source-located/likely-eligible/URL, Tier-2 civic 小ホール), tokyo-official-0464 日本近代文学館〔講堂〕 (cap 100, source-located/likely-eligible/URL, Tier-1 講堂), tokyo-official-0338 東京都美術館〔講堂〕 (cap 230, not-started/needs-research but URL present, Tier-1 講堂). All five outrank the previously-queued tokyo-official-0688/1147/0210/0800 (all not-started, null officialFacilityUrl, null or low capacity) under the unified scoring.",
+    "notSelectedNearTop": "Just below the selected five (not opened): tokyo-official-0235 新宿区立新宿文化センター〔小ホール〕 (cap 210, Tier-2), tokyo-official-1122 日野市民会館〔小ホール〕 (cap 208, Tier-2), tokyo-official-0045 千代田区立日比谷図書文化館〔日比谷コンベンションホール(大ホール)〕 (cap 207, Tier-2), tokyo-official-1145 くにたち福祉会館〔大ホール〕 (cap 150, Tier-2), tokyo-official-0395 江東公会堂ティアラこうとう〔小ホール〕 (cap 140, Tier-2), tokyo-official-0443 小山台会館〔大ホール〕 (cap 130, Tier-2), tokyo-official-1008 幸学習館〔講堂〕 (cap 130, Tier-1)."
+  },
+  "facilitySpaceDuplicateCheck": {
+    "method": "Each selected inventoryId, its venueSourceId, and its facility-space identity (facility name, space name, city, officialFacilityUrl) were checked against data/venue-sources, the complete Tokyo inventory, and every prior formal venue report before research.",
+    "result": "All five selected records had venueSourceId null and no prior formal disposition, and none shares a facility-space identity with any produced or blocked record. tokyo-official-1102 小金井 宮地楽器ホール〔小ホール〕 shares its facility (小金井 宮地楽器ホール) with the out-of-scope future hard-case draft koganei-miyaji-main-standard, but that draft covers only the distinct 大ホール (Main Hall) space; the 小ホール (Small Hall) evaluated here is a separate room and was judged independently on its own current evidence without touching the 大ホール draft.",
+    "mandatoryExclusionsHonored": "All seventeen DEFER and three HARD-CASE DEFER records listed in existingDispositionsExcluded, plus the two production duplicates and the out-of-scope future hard-case draft, were excluded from the pool and were neither reopened, re-audited, nor edited."
+  },
+  "researchOrder": [
+    {
+      "rank": 1,
+      "inventoryId": "tokyo-official-0249",
+      "venue": "早稲田奉仕園〔スコットホール・講堂〕",
+      "revisedMetadataRankingPosition": 1,
+      "tierYieldAssessment": "Tier 1 (dedicated 講堂/auditorium identity); no yield-penalty keyword matched; strongest tie-break group (source-located + likely-eligible + direct URL + recorded capacity 200).",
+      "selectionReason": "Unified cross-tier rerank: highest combined score among all Tier-1/Tier-2 high-priority records with no yield penalty.",
+      "officialSources": [
+        {
+          "url": "https://www.hoshien.or.jp/seminar/scotthall.html",
+          "role": "current official facility page (working HTTPS), states capacity 定員200名（1F 140名、2F 60名） and directly links a 座席表PDF and a 見取図PDF"
+        },
+        {
+          "url": "https://www.hoshien.or.jp/seminar/_src/63662848/scotthallzasekihyou.pdf",
+          "role": "current-linked official 座席表 PDF (スコットホール講堂客席図面), fetched directly over HTTPS"
+        }
+      ],
+      "currentness": "Current: the seating-chart PDF is linked directly from the live official facility page with no intermediate secondary source.",
+      "representativeConfiguration": "Single standard configuration (通常座席), 1F rows 1-10 plus 2F rows 11-15, no alternative layout published.",
+      "completeNumberedSeatEvidence": "Complete. 1F rows 1-8: left block 1-7 / right block 8-14 (14 per row, 8 rows = 112). 1F rows 9-10: left block 1-7 excluding printed 5 / right block 8-14 excluding printed 10, each seat marked with an X for a pillar sightline obstruction (12 per row, 2 rows = 24). 2F row 11: left 1-6 / right 7-12 (12). 2F rows 12-13: left 1-8 / right 9-16 (16 per row, 2 rows = 32). 2F row 14: left 1-8 / right 9-14 (14). 2F row 15: left 1-6 only, no right block (6).",
+      "rowBlockFloorOwnership": "Two floors (1F rows 1-10, 2F rows 11-15), each row split into a left and right block by a central aisle under the stage; the printed diagram itself, not geometry, draws the block boundary in every row.",
+      "issuerSubtotalPublishedCapacity": "Independently summed: 1F = 112 + 24 = 136; 2F = 12 + 32 + 14 + 6 = 64; grand total = 200. The PDF's own printed footnote states 1階136席・2階64席｜計200席, matching exactly (rangeDiff 0 against the PDF's own subtotal). The facility page's separate 1F140/2F60 split is a coarser, rounder disclosure of the same 200 grand total and is retained as a known-limitation note, not treated as a conflicting seat count.",
+      "accessibilityRemovableAuxiliaryAlternateLayout": "No wheelchair space is marked anywhere on the chart. The two X-marked positions (row 9 seat 5, row 10 seat 5, row 9 seat 10, row 10 seat 10 — four seats total) are printed pillar-obstruction exclusions already subtracted from the issuer's own 200 total, not removable/auxiliary seating and not accessibility-related. No alternative configuration is published.",
+      "httpsHttpTransportState": "HTTPS works for both the facility page and the PDF; no waiver needed.",
+      "disposition": "ADOPT",
+      "dispositionReason": "Current official first-party evidence defines a complete, issuer-numbered 200-seat configuration whose independently summed total matches the issuer's own printed subtotal exactly, with an explicit and already-integrated treatment of the only excluded positions (pillar obstruction) and no wheelchair or alternative-configuration ambiguity to resolve.",
+      "nextTwoPassRequirements": "A separately authorized independent two-pass transcription must independently derive: all 15 rows' left/right block boundaries and ranges; the two pillar-obstruction exclusions (row 9 and row 10, position 5 and position 10 in each) as `excluded` entries, not as a shortened range; the 1F/2F floor boundary and area labels; and confirmation that no wheelchair or alternative-layout metadata applies. No accessibility relation should be inferred."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "tokyo-official-0337",
+      "venue": "独立行政法人 国立科学博物館〔日本館講堂〕",
+      "revisedMetadataRankingPosition": 2,
+      "tierYieldAssessment": "Tier 1 (dedicated 講堂/auditorium identity); no yield-penalty keyword matched; source-located/likely-eligible/URL group.",
+      "selectionReason": "Unified cross-tier rerank: second-highest combined score, no yield penalty.",
+      "officialSources": [
+        {
+          "url": "https://www.kahaku.go.jp/kahaku/kashidashi/shisetsu.html",
+          "role": "current official facility-rental introduction page (working HTTPS); shows a photo of 日本館2階講堂 with no seating figures or linked seat chart"
+        },
+        {
+          "url": "https://www.kahaku.go.jp/procedure/rent/institution/pdf/inst_lend.pdf",
+          "role": "externally indexed rental-guide PDF URL; fetching it now returns the site's HTML top page (a dead/redirected link), not a document"
+        }
+      ],
+      "currentness": "The facility-rental page is current and live, but it contains no seating information; the one indexed guide document is not currently retrievable as a document.",
+      "representativeConfiguration": "Not defined by the issuer. No page publishes a numbered seating layout.",
+      "completeNumberedSeatEvidence": "Absent. No row label, seat number, or seat chart is published, and no capacity figure at all is stated on the live facility page.",
+      "rowBlockFloorOwnership": "Not applicable; no seating structure is published.",
+      "issuerSubtotalPublishedCapacity": "None found. Independent search for 日本館講堂 定員/座席 returned no first-party capacity figure.",
+      "accessibilityRemovableAuxiliaryAlternateLayout": "Not applicable; no seating material exists to describe.",
+      "httpsHttpTransportState": "HTTPS works throughout kahaku.go.jp; transport is not the blocker.",
+      "disposition": "DEFER",
+      "dispositionReason": "No current issuer-numbered seat set, and not even a current capacity statement, could be located; the only externally indexed rental PDF is currently a dead link. This is an ordinary DEFER, not a hard case, because no seating evidence of any kind exists to reconcile.",
+      "hardCaseSpecificEvidenceRequirement": "Not applicable (ordinary DEFER)."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "tokyo-official-1102",
+      "venue": "小金井 宮地楽器ホール〔小ホール〕",
+      "revisedMetadataRankingPosition": 3,
+      "tierYieldAssessment": "Tier 2 (civic-hall-size 小ホール designation within a named professional concert-hall facility); no yield-penalty keyword matched by name, but the actual current material discloses a movable/free-seating space, illustrating the yield-penalty concern the revised ranking rule anticipated for keyword-only prioritization.",
+      "selectionReason": "Unified cross-tier rerank: tied third-highest combined score (source-located/likely-eligible/URL, capacity 150), included specifically to test whether a civic 小ホール can outrank a lower-signal Tier-1 record, per this wave's explicit cross-tier instruction.",
+      "officialSources": [
+        {
+          "url": "https://koganei-civic-center.jp/facilities/smallhall.html",
+          "role": "current official 小ホール facility page, read via a rendered browser session (direct HTTP client access to this domain returns 403 from an Akamai edge bot-management rule; the page itself is reachable and current when rendered)"
+        }
+      ],
+      "currentness": "Current: the page is the live official facility-introduction page for this specific room.",
+      "representativeConfiguration": "None fixed. The page explicitly states the room is 平土間式 (flat floor) and that the renter assembles a temporary stage and stacking chairs themselves (椅子の設置はご利用者様にて行っていただきます); usage examples show the same room configured for piano recitals without a stage, piano recitals with a temporary stage, lectures, school-style seminars, and a projector setup, each with different chair layouts.",
+      "completeNumberedSeatEvidence": "Absent. No row label, seat number, or fixed seat chart exists for this room in any configuration.",
+      "rowBlockFloorOwnership": "Not applicable; there is no fixed seating structure.",
+      "issuerSubtotalPublishedCapacity": "最大150席（椅子設置時） — a stated maximum when chairs are set up, not an enumerated seat set.",
+      "accessibilityRemovableAuxiliaryAlternateLayout": "Not applicable in the numbered-seat sense; the entire room is user-arranged movable seating with multiple published usage layouts, none of them fixed or numbered.",
+      "httpsHttpTransportState": "HTTPS works when accessed via a rendered browser; the domain returns 403 to non-browser HTTP clients (Akamai bot management), which is a fetch-tooling characteristic, not an issuer transport policy, and is unrelated to this disposition.",
+      "disposition": "DEFER",
+      "dispositionReason": "The current official material explicitly defines this room as a flat-floor space with user-assembled stacking-chair seating and no fixed numbered layout; this is an ordinary DEFER because no numbered seat set exists to adopt, not a hard case. This candidate is a distinct facility-space from the same complex's 大ホール (out-of-scope future hard-case draft koganei-miyaji-main-standard); that draft was not reopened or affected by this finding.",
+      "hardCaseSpecificEvidenceRequirement": "Not applicable (ordinary DEFER)."
+    },
+    {
+      "rank": 4,
+      "inventoryId": "tokyo-official-0464",
+      "venue": "日本近代文学館〔講堂〕",
+      "revisedMetadataRankingPosition": 4,
+      "tierYieldAssessment": "Tier 1 (dedicated 講堂/auditorium identity); no yield-penalty keyword matched; source-located/likely-eligible/URL group, though capacity (100) sits at the sub-100 penalty boundary (not penalized, as recorded capacity equals exactly 100, not under 100).",
+      "selectionReason": "Unified cross-tier rerank: fourth-highest combined score, no yield penalty.",
+      "officialSources": [
+        {
+          "url": "https://www.bungakukan.or.jp/guidance/facilities/",
+          "role": "current official facility-use page (working HTTPS), lists 講堂 under 「7. ホールの利用」"
+        }
+      ],
+      "currentness": "Current: live official facility-use page.",
+      "representativeConfiguration": "Not defined by the issuer. No page publishes a numbered seating layout; the hall is described only as usable for 教室・会議室・講演会・講習会.",
+      "completeNumberedSeatEvidence": "Absent. No row label, seat number, or seat chart is published.",
+      "rowBlockFloorOwnership": "Not applicable; no seating structure is published.",
+      "issuerSubtotalPublishedCapacity": "座席数100前後（要予約） — an explicitly approximate figure (\"around 100\"), not an exact enumerated total.",
+      "accessibilityRemovableAuxiliaryAlternateLayout": "No accessibility, removable-seat, or alternative-configuration statement was located.",
+      "httpsHttpTransportState": "HTTPS works; transport is not the blocker.",
+      "disposition": "DEFER",
+      "dispositionReason": "No current issuer-numbered seat set exists, and the only published capacity figure is explicitly approximate (前後), not an exact total. This is an ordinary DEFER, not a hard case, because no numbered chart exists to reconcile against the approximate figure.",
+      "hardCaseSpecificEvidenceRequirement": "Not applicable (ordinary DEFER)."
+    },
+    {
+      "rank": 5,
+      "inventoryId": "tokyo-official-0338",
+      "venue": "東京都美術館〔講堂〕",
+      "revisedMetadataRankingPosition": 5,
+      "tierYieldAssessment": "Tier 1 (dedicated 講堂/auditorium identity); no yield-penalty keyword matched; not-started/needs-research but a direct officialFacilityUrl and recorded capacity 230 place it just below the source-located group.",
+      "selectionReason": "Unified cross-tier rerank: fifth-highest combined score, no yield penalty, and the last candidate opened before the five-candidate ceiling.",
+      "officialSources": [
+        {
+          "url": "https://www.tobikan.jp/guide/auditorium.html",
+          "role": "current official 講堂・スタジオ facility page (working HTTPS), states 定員230名（車いすスペース5台分含む）"
+        },
+        {
+          "url": "https://www.tobikan.jp/media/pdf/2024/guide_auditorium.pdf",
+          "role": "current-linked official 講堂の利用案内 PDF （2024年3月改訂）, fetched directly over HTTPS and read in full"
+        }
+      ],
+      "currentness": "Current: both the facility page and its linked usage-guide PDF are live and dated 2024年3月, the most recent revision indicated.",
+      "representativeConfiguration": "Not defined by the issuer. The usage-guide PDF documents booking rules, fees, and equipment, but no seating layout.",
+      "completeNumberedSeatEvidence": "Absent. Neither the facility page nor the five-page usage-guide PDF contains a row label, seat number, or seat chart.",
+      "rowBlockFloorOwnership": "Not applicable; no seating structure is published.",
+      "issuerSubtotalPublishedCapacity": "定員230名（車いすスペース5台分含む） — a single capacity figure inclusive of 5 wheelchair spaces, not an enumerated per-seat set.",
+      "accessibilityRemovableAuxiliaryAlternateLayout": "Only the wheelchair count (5, included within the 230 total) is disclosed; no seat-level accessibility, removable, or alternative-configuration detail exists because there is no seat chart at all.",
+      "httpsHttpTransportState": "HTTPS works for both the page and the PDF; transport is not the blocker.",
+      "disposition": "DEFER",
+      "dispositionReason": "No current issuer-numbered seat set exists in either the facility page or its full linked usage-guide document; only an aggregate capacity figure (with an aggregate wheelchair count) is published. This is an ordinary DEFER, not a hard case, because no numbered chart exists to reconcile.",
+      "hardCaseSpecificEvidenceRequirement": "Not applicable (ordinary DEFER)."
+    }
+  ],
+  "result": {
+    "candidatesResearched": 5,
+    "adopted": 1,
+    "deferred": 4,
+    "hardCaseDeferred": 0,
+    "stopCondition": "Five-candidate research ceiling reached with 1 ADOPT, short of the three-ADOPT stop condition.",
+    "recommendedImplementationCandidates": [
+      "tokyo-official-0249 早稲田奉仕園〔スコットホール・講堂〕 (200 seats, current official 座席表 PDF matching issuer subtotal exactly)"
+    ]
+  },
+  "httpOnlyOfficialPolicyApplication": "All five candidates had a current official HTTPS endpoint reachable at least via a rendered browser session (tokyo-official-1102's domain blocks non-browser HTTP clients at the network edge but serves the same content over HTTPS to a browser). No candidate required an httpOnlyOfficial waiver; the one ADOPT's evidence (facility page and seating-chart PDF) was retrieved entirely over working HTTPS.",
+  "inventorySynchronization": {
+    "adopt": [
+      "tokyo-official-0249"
+    ],
+    "blockedDefer": [
+      "tokyo-official-0337",
+      "tokyo-official-1102",
+      "tokyo-official-0464",
+      "tokyo-official-0338"
+    ],
+    "blockedHardCaseDefer": [],
+    "unresearchedNotSelected": "unchanged",
+    "fieldChanges": "tokyo-official-0249: operationalStatus set to active, eligibilityReason rewritten with the confirmed current PDF evidence, researchStatus left as source-located, lastCheckedAt set to 2026-08-26, and blockingReason rewritten to record the ADOPT disposition and next-permitted-work statement (matching the established pattern for a preflight-stage ADOPT that is not yet promoted to production). tokyo-official-0337, 1102, 0464, 0338: operationalStatus set to active, researchStatus set to blocked, lastCheckedAt set to 2026-08-26, and blockingReason rewritten with this wave's disposition and reason. officialFacilityUrl and discoveryUrlRaw were left unchanged in every case; venueSourceId remains null for all five (no production integration performed in this preflight)."
+  },
+  "productionImpact": {
+    "before": {
+      "venues": 133,
+      "selectableConfigurations": 135,
+      "seatRecords": 181619
+    },
+    "after": {
+      "venues": 133,
+      "selectableConfigurations": 135,
+      "seatRecords": 181619
+    },
+    "changed": false
+  },
+  "validation": {
+    "performed": [
+      "npm run venues:inventory:report",
+      "npm run venues:check",
+      "npm run venues:validate",
+      "npm run venues:report",
+      "npm run verify:docs",
+      "git diff --check"
+    ],
+    "notPerformed": [
+      "npm run verify:venues, because no production source, range, generated artifact, fingerprint, or production total changed"
+    ]
+  },
+  "exactNextAction": "This wave's single ADOPT, tokyo-official-0249 早稲田奉仕園〔スコットホール・講堂〕, is ready for a separately authorized bounded two-pass implementation (independent transcription of all 15 rows/both blocks per row, the two pillar-obstruction exclusions, and the 1F/2F boundary against the current 座席表 PDF at https://www.hoshien.or.jp/seminar/_src/63662848/scotthallzasekihyou.pdf) before any production promotion. This preflight did not reach the three-ADOPT stop condition, so a follow-up cross-tier preflight remains available under separate authorization; its highest-ranked unopened candidates are tokyo-official-0235 新宿区立新宿文化センター〔小ホール〕 (210), tokyo-official-1122 日野市民会館〔小ホール〕 (208), tokyo-official-0045 千代田区立日比谷図書文化館〔日比谷コンベンションホール(大ホール)〕 (207), tokyo-official-1145 くにたち福祉会館〔大ホール〕 (150), and tokyo-official-0395 江東公会堂ティアラこうとう〔小ホール〕 (140), none of which were opened by this wave. Do not start further candidate research, a two-pass implementation, or a hard-case audit without separate authorization."
+}

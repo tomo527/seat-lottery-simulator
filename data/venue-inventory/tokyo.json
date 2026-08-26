@@ -4946,15 +4946,15 @@
       "capacity": 200,
       "category": "hall",
       "officialFacilityUrl": "https://www.hoshien.or.jp/seminar/scotthall.html",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "東京都公式inventoryで専用ホール等として公称200席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
+      "eligibilityReason": "2026-08-26の現行運営者公式ページ（https://www.hoshien.or.jp/seminar/scotthall.html）から直接リンクされる現行「座席表PDF」（https://www.hoshien.or.jp/seminar/_src/63662848/scotthallzasekihyou.pdf）で、1階10列（1-8列は左1-7・右8-14の14席、9-10列は柱による見切れで左列5番・右列10番を除く各12席）と2階5列（11列12席、12-13列各16席、14列14席、15列6席）の全印字座席番号を確認。独立集計は1階136席・2階64席の計200席で、PDF記載の公式合計「計200席」と完全一致。車椅子スペースの記載なし。別承認two-passでのみproduction判定する。",
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "lastCheckedAt": "2026-08-26",
       "discoveryUrlRaw": "http://www.hoshien.or.jp/seminar/scotthall.html",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "ADOPT (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official facility page directly links a current 座席表 PDF (https://www.hoshien.or.jp/seminar/_src/63662848/scotthallzasekihyou.pdf) defining the fixed 200-seat configuration with a complete printed ID set (1F rows 1-10: rows 1-8 left 1-7 / right 8-14 = 14 each; rows 9-10 left 1-7 excluding printed 5 / right 8-14 excluding printed 10, each marked X for a pillar obstruction = 12 each; 2F rows 11-15: row 11 left 1-6 / right 7-12 = 12, rows 12-13 left 1-8 / right 9-16 = 16 each, row 14 left 1-8 / right 9-14 = 14, row 15 left 1-6 only = 6) whose independently summed total (1F 136 + 2F 64 = 200) matches the issuer's own printed total exactly. No wheelchair space is marked on the chart. Next permitted work is a separately authorized independent two-pass transcription of all 15 rows including both left/right blocks per row, the two pillar-obstruction exclusions in rows 9-10, and the floor boundary; infer no accessibility relation and no additional configuration."
     },
     {
       "inventoryId": "tokyo-official-0250",
@@ -6670,15 +6670,15 @@
       "capacity": 150,
       "category": "hall",
       "officialFacilityUrl": "https://www.kahaku.go.jp/index.php",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称150席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
       "discoveryUrlRaw": "http://www.kahaku.go.jp/index.php",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official site (kahaku.go.jp) facility-rental page describes 日本館講堂 only with a photo and no capacity figure or seat chart; the only externally indexed rental-guide PDF (inst_lend.pdf) returns the site’s top page (dead/redirected link), not a document. No current issuer-numbered seat set or capacity statement was located. Reopen only if the issuer publishes a current numbered seat chart or a working rental-guide document with seating detail."
     },
     {
       "inventoryId": "tokyo-official-0338",
@@ -6691,13 +6691,14 @@
       "capacity": 230,
       "category": "hall",
       "officialFacilityUrl": "https://www.tobikan.jp/index.html",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official facility page and its linked current usage-guide PDF (2024年3月改訂) both state only a capacity figure, \"定員230名（車いすスペース5台分含む）\", with no seat chart, row label, or numbered seat list of any kind. Reopen only if the issuer publishes a numbered seat chart."
     },
     {
       "inventoryId": "tokyo-official-0339",
@@ -9173,15 +9174,15 @@
       "capacity": 100,
       "category": "hall",
       "officialFacilityUrl": "https://www.bungakukan.or.jp/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称100席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
       "discoveryUrlRaw": "http://www.bungakukan.or.jp/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official facility-use page (https://www.bungakukan.or.jp/guidance/facilities/) states only an approximate capacity \"座席数100前後（要予約）\" for 講堂, with no seat chart, row label, or numbered seat list anywhere on the site. Reopen only if the issuer publishes a numbered seat chart or an exact (non-approximate) seat count."
     },
     {
       "inventoryId": "tokyo-official-0465",
@@ -21626,15 +21627,15 @@
       "capacity": 150,
       "category": "hall",
       "officialFacilityUrl": "https://koganei-civic-center.jp/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "likely-eligible",
       "eligibilityReason": "東京都公式inventoryで専用ホール等として公称150席を確認。固定番号席・代表配置・全番号座席図はWave 4の第1パスで確定する。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-07-29",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
       "discoveryUrlRaw": "http://koganei-civic-center.jp/",
-      "blockingReason": "公式の全番号付き座席表、番号席総数、車椅子・可動席の包含関係を第1パスで確認する。"
+      "blockingReason": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official facility page (https://koganei-civic-center.jp/facilities/smallhall.html) explicitly describes 小ホール as a flat-floor (平土間式) space using an assembled stage and stacking chairs, with a maximum capacity of \"最大150席（椅子設置時）\" and states that the renter sets up the chairs themselves; no seat numbering, row labels, or fixed-seat chart exist for this space (distinct from the same facility’s 大ホール / tokyo-koganei-miyaji-main, which remains an out-of-scope future hard-case candidate). Reopen only if the issuer publishes a fixed numbered seat configuration for this room."
     },
     {
       "inventoryId": "tokyo-official-1103",
