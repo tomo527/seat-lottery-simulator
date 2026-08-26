@@ -910,13 +910,14 @@
       "capacity": 207,
       "category": "hall",
       "officialFacilityUrl": "https://www.library.chiyoda.tokyo.jp/space/hibiyahall/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2): the current official facility page states only capacity 207名 with no seat chart; its linked current 全体平面図PDF draws the fan-shaped auditorium with generic unlabeled chair icons only, no row labels or individual seat numbers. No current issuer-numbered seat set exists. Reopen only if the issuer publishes a numbered seat chart."
     },
     {
       "inventoryId": "tokyo-official-0046",
@@ -4669,13 +4670,14 @@
       "capacity": 210,
       "category": "hall",
       "officialFacilityUrl": "https://www.regasu-shinjuku.or.jp/bunka-center/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2): the current official facility page and its facility-detail subpage both state 210席（移動席／移動式）; the current-linked 舞台平面図（客席あり）PDF (2025.07 rev) draws only generic unlabeled chair-block icons with a footnote \"客席（移動椅子）210席\", no row labels or individual seat numbers. This is an explicitly movable/free-seating space with no fixed numbered chart. Reopen only if the issuer publishes a numbered seat chart for a fixed configuration."
     },
     {
       "inventoryId": "tokyo-official-0236",
@@ -7810,13 +7812,15 @@
       "capacity": 140,
       "category": "hall",
       "officialFacilityUrl": "https://www.kcf.or.jp/tiara/",
-      "operationalStatus": "unknown",
+      "operationalStatus": "renovation",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "SOURCE/POLICY HOLD (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2): the whole ティアラこうとう facility is closed for large-scale renovation (耐震化・外壁内装・舞台音響照明のデジタル化を含む改修工事), currently scheduled through 2027年9月 with use resuming 2027年10月; this mirrors the sibling 大ホール record (tokyo-tiara-koto-main, venueSourceId tiara-koto-main-standard) already blocked for the same closure. Any pre-renovation seating material cannot be treated as current. Reopen only after reopening, once a post-renovation current seat chart is confirmed.",
+      "recheckNotBefore": "2027-10-01"
     },
     {
       "inventoryId": "tokyo-official-0396",
@@ -22031,14 +22035,15 @@
       "city": "日野市",
       "capacity": 208,
       "category": "hall",
-      "officialFacilityUrl": "https://www.hino-_kaikan.jp/",
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "officialFacilityUrl": "https://www.hino-kaikan.jp/about/hall_small/",
+      "operationalStatus": "active",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2 (2026-08-26)で現行公式資料を確認。現行施設ページ(https://www.hino-kaikan.jp/about/hall_small/)および日野市公式施設案内ページはいずれも小ホール208席（移動席）を記載し、現行リンクの座席表PDF（2019.04.01版、hall-small_zaseki.pdf）は1-11列・左右中央3ブロックの完全な印字座席番号セットを図示する。独立集計（11+19+168+10=208）はいずれの公式資料の208席とも完全一致。車いす座席の案内は現行施設・サービスページで大ホール座席表のみに誘導され、小ホールについてはFAQで個別問い合わせとされており、座席図上に車いすマークや未説明の記号はない（左端の記号は男女トイレ・多目的トイレの設備凡例で、客席ブロックの外側にある）。旧officialFacilityUrl（www.hino-_kaikan.jpの不正なアンダースコア表記）を現行の実URLに修正。元の代表URLはhttps://www.hino-kaikan.jp/。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "ADOPT (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2, 2026-08-26): current official first-party evidence defines a complete issuer-numbered 208-seat configuration (1-11列, 各列左/中央/右ブロック) whose independently summed total matches the issuer's own published 208 exactly, with no wheelchair marking on the chart and an explicit current disclosure that small-hall wheelchair accommodation is handled by direct inquiry rather than a fixed marked space (distinct from the large hall, whose own chart the facility's accessibility page points to instead). Ready for a separately authorized bounded two-pass implementation; not yet promoted to production. See data/venue-reports/tokyo-priority-d-cross-tier-high-yield-preflight-2-2026-08-26.json."
     },
     {
       "inventoryId": "tokyo-official-1123",
@@ -22474,13 +22479,14 @@
       "capacity": 150,
       "category": "hall",
       "officialFacilityUrl": "https://www.kunitachi-csw.tokyo/renting_facilities/#kasidasisisetu",
-      "operationalStatus": "unknown",
+      "operationalStatus": "active",
       "eligibility": "needs-research",
       "eligibilityReason": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-07-24"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-26",
+      "blockingReason": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2): the current official facility page states only an approximate maximum capacity \"〜150人程度\" for 大ホール, lists 机・椅子 as furnishing (not fixed theater seating), and publishes no seating chart, floor plan, or row/seat numbering of any kind. Reopen only if the issuer publishes a numbered seat chart or an exact (non-approximate) seat count."
     },
     {
       "inventoryId": "tokyo-official-1146",
