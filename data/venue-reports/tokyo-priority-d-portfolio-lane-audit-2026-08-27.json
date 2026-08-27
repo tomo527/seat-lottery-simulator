@@ -1,0 +1,295 @@
+{
+  "wave": "TOKYO PRIORITY D BOUNDED PORTFOLIO / LANE AUDIT",
+  "date": "2026-08-27",
+  "phase": "Strategy audit only. Repository metadata, existing reports, and docs/HANDOFF.md were machine-aggregated to decide whether ordinary Tokyo Priority-D candidate research has exhausted its high-yield stage. No Web research, no venue source authoring, no two-pass, no hard-case re-audit, no inventory disposition change, no generated artifact or fingerprint change.",
+  "scopeBoundary": "Read-only over data/venue-inventory/*.json, data/venue-sources/*.json, data/venue-reports/*.json, and docs/. The only repository writes are this report and docs/HANDOFF.md. The 100,091-byte catalog soft-limit warning is explicitly out of scope and untouched.",
+  "startStateVerification": {
+    "branch": "main",
+    "head": "ba5318712174ddaa828dd3894313faceb475a9dc",
+    "originMain": "ba5318712174ddaa828dd3894313faceb475a9dc",
+    "workingTreeAtStart": "clean",
+    "venuesCheck": "Venue database is synchronized (134 venues).",
+    "venuesValidate": "Validated 134 production venues, 136 selectable configurations, and 181,827 configuration-seat records (41 warnings).",
+    "latestProductionWave": "TOKYO-WAVE-33 (tokyo-official-1122 -> hino-brick-small-standard, 208 seats)",
+    "latestBoundedResearch": "TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3 (0 ADOPT / 4 DEFER / 1 HARD-CASE DEFER)",
+    "catalogSoftLimitWarning": "catalog is 100091 bytes; soft limit is under 100,000 bytes - known, out of scope, unchanged",
+    "allExpectedStartValuesConfirmed": true
+  },
+  "currentStateReconstruction": {
+    "note": "Recomputed from data/venue-inventory/*.json and data/venue-sources/*.json, not copied from docs/HANDOFF.md. The Tokyo inventory file holds 1,216 records; npm run venues:inventory:report reports 1,266 across all inventories.",
+    "tokyoInventoryRecords": 1216,
+    "researchStatus": { "production": 125, "blocked": 296, "not-started": 740, "source-located": 50, "rejected": 4, "independent-review-mismatch": 1 },
+    "eligibility": { "eligible": 132, "likely-eligible": 134, "ineligible": 128, "needs-research": 822 },
+    "priority": { "A": 90, "B": 61, "C": 96, "D": 969 },
+    "priorityByResearchStatus": {
+      "A": { "production": 46, "blocked": 41, "not-started": 2, "independent-review-mismatch": 1 },
+      "B": { "production": 36, "blocked": 22, "not-started": 1, "rejected": 2 },
+      "C": { "production": 23, "blocked": 71, "rejected": 2 },
+      "D": { "production": 20, "blocked": 162, "not-started": 737, "source-located": 50 }
+    },
+    "priorityDOutstanding": {
+      "definition": "priority D, researchStatus in {not-started, source-located}, venueSourceId null",
+      "count": 787,
+      "confirmedBy": "npm run venues:inventory:report - 'Priority outstanding (not-started/source-located): D: 787'",
+      "notStarted": 737,
+      "sourceLocated": 50,
+      "capacityRecorded": 159,
+      "capacityNull": 628,
+      "directOfficialFacilityUrl": 163,
+      "discoveryUrlRawOnly": 91,
+      "noUrlAtAll": 533
+    },
+    "tokyoBlockedBreakdown": {
+      "total": 296,
+      "structuralNoFixedNumberedRepresentativePattern": 124,
+      "explicitWaveDefer": 64,
+      "sourceLocatedButNoCompleteNumberedChart": 34,
+      "hold_sourcePolicySchemaDateClosure": 30,
+      "other": 21,
+      "hardCaseDefer": 7,
+      "noReachableOfficialUrl": 7,
+      "noBlockingReasonRecorded": 5,
+      "closedOrRenovation": 4
+    },
+    "priorityDBlockedBreakdown": { "total": 162, "structural": 116, "defer": 30, "hold": 7, "hardCaseDefer": 5, "other": 4 },
+    "duplicateOrAlreadyProducedIdentity": [
+      "tokyo-official-1044 / tokyo-official-1045 - same 武蔵野市民文化会館 小ホール space, merged into 1044",
+      "tokyo-official-1071 京王アリーナTOKYO - same facility-space as tokyo-coverage-musashino-forest-sport-plaza",
+      "tokyo-official-0460 シアター H - duplicate facility-space of already-produced theater-h-standard (recorded in TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3)"
+    ],
+    "dateGatedRechecks": ["tokyo-official-0234 (2026-10-01)", "tokyo-official-0395 (2027-10-01)", "tokyo-official-1060 (2026-12-01)"]
+  },
+  "priorityAssignmentFinding": {
+    "finding": "Priority in the Tokyo inventory is a capacity band, and capacity-unknown records fell to D by default. This is the root cause of the audit's central result.",
+    "evidence": {
+      "capacityRangeByPriority": { "A": "746-55,000", "B": "429-1,048", "C": "250-486", "D": "20-3,103 (median 130)" },
+      "nullCapacityByPriority": { "A": 3, "B": 0, "C": 0, "D": 717 },
+      "consequence": "717 of the 969 Tokyo Priority-D records carry no capacity at all. Priority D is therefore not a small-venue tail; it is the capacity-unknown bucket, and it contains major dedicated Tokyo theatres that were never assessed."
+    }
+  },
+  "segmentation": {
+    "pool": 787,
+    "rule": "Repository metadata only (officialDisplayName, facilityName, spaceName, category, capacity, officialFacilityUrl, discoveryUrlRaw, researchStatus, eligibility). Low-yield vocabulary (studio / rehearsal / training / live house / live spot / multipurpose / meeting / community / gallery / exhibition / gym / rental-room wording) is evaluated first; then small-theatre, 能楽堂, 能舞台, 演芸場, 講堂 and academic-auditorium vocabulary as MEDIUM; then dedicated theatre, concert hall, auditorium, proper-noun hall names, and 大/中/小/主/メインホール designations as HIGH; a recorded sub-100 capacity with no performance vocabulary is demoted to LOW. No Web verification.",
+    "highPotential": {
+      "count": 109,
+      "capacityKnown": 7,
+      "capacityUnknown": 102,
+      "sourceLocated": 2,
+      "likelyEligible": 2,
+      "directOfficialUrl": 9,
+      "discoveryUrlRawOnly": 10,
+      "noUrl": 90,
+      "capacityKnownMinMedianMax": [50, 120, 230]
+    },
+    "mediumPotential": {
+      "count": 100,
+      "capacityKnown": 62,
+      "capacityUnknown": 38,
+      "sourceLocated": 24,
+      "likelyEligible": 24,
+      "directOfficialUrl": 64,
+      "discoveryUrlRawOnly": 13,
+      "noUrl": 23,
+      "capacityKnownMinMedianMax": [100, 170, 250]
+    },
+    "lowPotential": {
+      "count": 578,
+      "capacityKnown": 90,
+      "capacityUnknown": 488,
+      "sourceLocated": 24,
+      "likelyEligible": 24,
+      "directOfficialUrl": 90,
+      "discoveryUrlRawOnly": 68,
+      "noUrl": 420,
+      "capacityKnownMinMedianMax": [20, 85, 271]
+    }
+  },
+  "remainingHighPotentialInspection": {
+    "headline": "The HIGH bucket is dominated by dedicated, ticketed Tokyo theatres and named concert halls that no wave has ever opened. A repository-wide grep of docs/, data/venue-reports/, and data/venue-batches/ returns zero matches for パルコ劇場/PARCO, 三越劇場, 博品館, サザンシアター, 宝生, 鈴本, 俳優座, 日本橋劇場, せんがわ, and 兼松. None of them is production under any other inventory ID or canonical venueSourceId.",
+    "topUnresearchedRecords": [
+      { "inventoryId": "tokyo-official-0740", "venue": "PARCO劇場〔パルコ劇場〕", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "commercial producing theatre, dedicated 劇場 identity, continuing assigned-ticket programming, single named performance space", "negativeSignals": "no capacity and no URL in the discovery row", "penaltyReasonUnderCurrentRule": "null-capacity penalty plus the no-direct-URL tie-break, so it ranks below every 75-seat 講堂 that happens to carry a recorded capacity" },
+      { "inventoryId": "tokyo-official-0690", "venue": "紀伊國屋サザンシアターTAKASHIMAYA", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "same operator as already-produced tokyo-official-0222 紀伊國屋ホール (kinokuniya-hall-standard); issuer chart conventions already validated in production", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "identical to 0740" },
+      { "inventoryId": "tokyo-official-0105", "venue": "三越劇場", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "dedicated commercial 劇場, fixed numbered seating, assigned tickets", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "identical to 0740" },
+      { "inventoryId": "tokyo-official-0094", "venue": "博品館劇場", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "dedicated commercial 劇場", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "identical to 0740" },
+      { "inventoryId": "tokyo-official-0098", "venue": "第一生命ホール", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "dedicated concert hall identity, single named performance space, resident-programme use", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "null capacity plus no URL, and its proper-noun hall name never matched the tier-1/tier-2 vocabulary screen at all" },
+      { "inventoryId": "tokyo-official-0103", "venue": "中央区立日本橋公会堂(日本橋劇場)〔ホール(日本橋劇場)〕", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "municipal 公会堂 whose named space is a 劇場; municipal issuers have supplied complete numbered charts in most Tokyo waves", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "null capacity plus no URL" },
+      { "inventoryId": "tokyo-official-0316", "venue": "宝生能楽堂", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "the 能楽堂 lane already produced three venues (国立能楽堂 能舞台, 矢来能楽堂, セルリアンタワー能楽堂); school-owned 能楽堂 publish fixed numbered charts", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "null capacity plus no URL" },
+      { "inventoryId": "tokyo-official-1068", "venue": "調布市せんがわ劇場〔ホール〕", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "municipal dedicated 劇場; same issuer family as already-produced chofu-green-main-standard and chofu-green-small-standard", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "null capacity plus no URL" },
+      { "inventoryId": "tokyo-official-1157 / tokyo-official-1158", "venue": "東大和市民会館(ハミングホール)〔大ホール〕/〔小ホール〕", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "municipal civic hall with explicit 大ホール/小ホール designation - the exact shape that produced most Tokyo Priority-D ADOPTs", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "null capacity plus no URL; both rank below 50-seat rooms that happen to carry a number" },
+      { "inventoryId": "tokyo-official-0890 / 0891 / 0886 / 0887", "venue": "北区赤羽会館〔大ホール〕/〔小ホール〕, 北区滝野川会館〔大ホール(もみじ)〕/〔小ホール〕", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "four municipal 大/小ホール from an issuer already in production (hokutopia-tsutsuji-hall-standard, same 北区)", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "null capacity plus no URL" },
+      { "inventoryId": "tokyo-official-0117 / 0144 / 0139 / 0013 / 0151 / 0247 / 0301", "venue": "品川インターシティホール, ヤクルトホール, 草月会館〔草月ホール〕, 明治安田ホール丸の内, スパイラルホール, ムラマツホール, 後楽園ホール", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "proper-noun single-purpose halls with continuing ticketed programming", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "proper-noun hall names never entered the tier-1/tier-2 vocabulary screen, so they were never even candidates for a tie-break" },
+      { "inventoryId": "tokyo-official-0214 / 0655 / 0463 / 0384 / 0776 / 0848", "venue": "シアターサンモール, DDD AOYAMA CROSS THEATER, こまばアゴラ劇場, シアターX, シアターシャイン, シアターKASSAI", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "none recorded", "positiveSignals": "dedicated producing and rental theatres in the same size class as the already-produced シアターグリーン and ユーロライブ ADOPTs", "negativeSignals": "no capacity, no URL", "penaltyReasonUnderCurrentRule": "null capacity plus no URL" },
+      { "inventoryId": "tokyo-official-0362 / 0821 / 0342", "venue": "鈴本演芸場, 池袋演芸場, 浅草フランス座演芸場東洋館", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "0342 direct, others none", "positiveSignals": "演芸場 with daily ticketed programming and fixed numbered seating", "negativeSignals": "no capacity", "penaltyReasonUnderCurrentRule": "null capacity" },
+      { "inventoryId": "tokyo-official-1142", "venue": "一橋大学 兼松講堂", "category": "hall", "capacity": null, "researchStatus": "not-started", "eligibility": "needs-research", "url": "discoveryUrlRaw only", "positiveSignals": "same institution as already-produced hitotsubashi-hall-standard; concert-programmed 講堂", "negativeSignals": "no capacity, raw URL only", "penaltyReasonUnderCurrentRule": "null capacity plus no direct URL" }
+    ],
+    "handoffReferenceCandidatesReassessed": {
+      "verdict": "0688 / 1127 / 0210 / 0444 / 1147 / 0800 are NOT the most promising remaining candidates and should not be carried as a fixed list.",
+      "detail": [
+        "tokyo-official-0688 国立能楽堂〔研修能舞台〕 (100) - a training stage inside an issuer whose public 能舞台 is already production (national-noh-theatre-standard); training-stage identity is a negative yield signal, not a positive one.",
+        "tokyo-official-1127 平山交流センター〔小ホール〕 (80) - sibling of 1126 平山交流センター〔大ホール〕 (100), which returned DEFER this month for having no numbered chart in current material. Same issuer, same building, smaller room: the prior DEFER is direct negative evidence.",
+        "tokyo-official-0210 シアターウィング (60) - sub-100 rental studio-theatre class, the same class that produced DEFERs at 0266 (80), 0861 (70), 0893 (50) and 0818 (20).",
+        "tokyo-official-0444 小山台会館〔中ホール〕 (50) - sibling of 0443 小山台会館〔大ホール〕 (130), DEFERred this month for the same reason. Same negative-evidence pattern as 1127.",
+        "tokyo-official-1147 くにたち市民芸術小ホール〔スタジオ〕 (70) - an explicit スタジオ, a low-potential record by the repository's own penalty vocabulary.",
+        "tokyo-official-0800 Live Spot Terra 西荻窪 (60) - an explicit live spot, likewise low-potential."
+      ],
+      "conclusion": "Every one of the six ranks highly only because it carries a recorded capacity. Four of the six have a directly adverse sibling or identity signal already recorded in the repository."
+    }
+  },
+  "rankingFunctionAudit": {
+    "currentRule": "researchStatus (source-located first) -> eligibility (likely-eligible first) -> non-null officialFacilityUrl -> recorded capacity descending -> penalty for studio / training / live-house / multipurpose / meeting / movable / free-seating wording or capacity under 100 or unrecorded, applied after a tier-1/tier-2 name-vocabulary screen.",
+    "defectsFound": [
+      {
+        "defect": "Null capacity is treated as a penalty rather than as absent evidence.",
+        "measuredImpact": "84 of the 90 records that even pass the current tier-1/tier-2 name screen have null capacity and are therefore penalised; 79 of the 90 have null capacity AND no direct URL, placing them below every scored candidate. Across all ten Priority-D preflights, 44 of the 45 candidates ever opened had a recorded capacity. Zero capacity-unknown dedicated theatres have ever been opened.",
+        "whyItIsWrong": "Capacity is missing because the 東京都 discovery list left the cell blank, not because the venue is small. 717 of 969 Priority-D records are null-capacity, and the priority band itself was assigned from that same missing capacity, so the penalty double-counts one absent field."
+      },
+      {
+        "defect": "The tier-1/tier-2 vocabulary screen misses proper-noun halls.",
+        "measuredImpact": "The screen matches 90 of the 787 outstanding records. A further 273 outstanding records carry a hall name without matching 劇場/シアター/大・中・小ホール - including 第一生命ホール, 品川インターシティホール, ヤクルトホール, 草月ホール, 明治安田ホール丸の内, 後楽園ホール, ムラマツホール, スパイラルホール, NEW PIER HALL and TOKYO NODE HALL.",
+        "whyItIsWrong": "A single-purpose hall named after its owner is at least as likely to have a fixed numbered chart as a room labelled 〔小ホール〕."
+      },
+      {
+        "defect": "source-located / likely-eligible outranks venue identity.",
+        "measuredImpact": "In PREFLIGHT 3 this promoted a 75-seat 助産師会館〔講堂〕 above a 130-seat civic 大ホール, and both above every dedicated theatre in the pool. Result: 0 ADOPT.",
+        "whyItIsWrong": "source-located records how far an earlier wave got, not whether the issuer publishes a complete numbered chart. It is a convenience signal, and convenience is the cheapest part of the work: locating a URL costs one lookup, whereas a venue with no fixed numbered seating can never be adopted at any cost."
+      },
+      {
+        "defect": "Direct-URL presence is read as a yield signal.",
+        "measuredImpact": "533 of the 787 outstanding records carry no URL at all, including 90 of the 109 high-potential records.",
+        "whyItIsWrong": "Absence of a URL in the discovery row says nothing about the issuer's published material."
+      }
+    ],
+    "combinedEffect": "The four defects compose into a filter that selects for 'small municipal or institutional room whose capacity happened to be printed in the prefectural list' and against 'named performance venue'. That is the exact population the last four waves drilled, and the exact reason their ADOPT rate collapsed. The declining yield measures the ranking rule, not the Tokyo candidate universe.",
+    "recommendedYieldOrientedRule": {
+      "note": "Research ordering only. It changes no evidence, adoption, production-gate, or policy contract, and it does not reclassify any inventory priority.",
+      "step1_fixedNumberedSeatLikelihoodAndPerformanceIdentity": "Primary key, ordered: (1a) dedicated ticketed performance identity - 劇場, シアター, theater, theatre, 演芸場, 能楽堂, 音楽堂, コンサートホール, オーディトリアム, AND proper-noun single-purpose hall names; (1b) municipal or public hall with an explicit 大/中/小/主/メインホール designation; (2) 講堂, academic auditorium, 能舞台, 小劇場; (3) 地区センター〔ホール〕, 公民館ホール, 学習館〔講堂〕, レクリエーションホール, 区民ホール and comparable flat-floor civic rooms; (4) excluded from preflight - studio, rehearsal/training, live house, live spot, multipurpose, meeting/conference, free-seating, movable-chair general rental.",
+      "step2_assignedTicketLikelihood": "Within a tier, prefer a producing or commercially programmed operator over a rental-only room.",
+      "step3_issuerPrecedent": "Within a tier, prefer an issuer already in production with a validated chart convention (紀伊國屋 for 0690, 北区 for 0890/0891/0886/0887, 調布市 for 1068, 一橋大学 for 1142, the 能楽堂 lane for 0316), and demote any record whose sibling space at the same issuer already returned DEFER (1127 after 1126; 0444 after 0443).",
+      "step4_capacity": "Recorded capacity descending, with null treated as NEUTRAL at tier level - never as a penalty. Apply the sub-100 penalty only to a RECORDED capacity under 100.",
+      "step5_urlAndPriorProgress": "Direct/current issuer URL, then source-located/likely-eligible, as the final tie-breaks only.",
+      "whatChanges": "Steps 1-3 replace what is currently step 5. The existing penalty vocabulary is kept but is applied only to explicit low-yield wording and to a recorded sub-100 capacity."
+    }
+  },
+  "yieldHistory": {
+    "note": "Machine-read from data/venue-reports/*.json result blocks. 'initialAdopt' is the preflight-stage disposition; 'eventualProduction' counts only what reached production, so the reversed Scott Hall ADOPT is separated.",
+    "waves": [
+      { "wave": "TOKYO PRIORITY D HIGH-YIELD PREFLIGHT", "date": "2026-08-25", "checked": 5, "initialAdopt": 3, "defer": 2, "hardCase": 0, "hold": 0, "eventualProduction": 3, "mappedSeatsAdded": 612 },
+      { "wave": "TOKYO PRIORITY D RANKED FOLLOW-UP PREFLIGHT", "date": "2026-08-25", "checked": 3, "initialAdopt": 3, "defer": 0, "hardCase": 0, "hold": 0, "eventualProduction": 3, "mappedSeatsAdded": 602 },
+      { "wave": "TOKYO PRIORITY D NEXT HIGH-YIELD PREFLIGHT", "date": "2026-08-25", "checked": 5, "initialAdopt": 2, "defer": 2, "hardCase": 1, "hold": 0, "eventualProduction": 2, "mappedSeatsAdded": 628 },
+      { "wave": "TOKYO PRIORITY D RANKED NEXT PREFLIGHT", "date": "2026-08-25", "checked": 5, "initialAdopt": 1, "defer": 3, "hardCase": 1, "hold": 0, "eventualProduction": 1, "mappedSeatsAdded": 167 },
+      { "wave": "TOKYO PRIORITY D RANKED NEXT PREFLIGHT 2", "date": "2026-08-25", "checked": 5, "initialAdopt": 1, "defer": 3, "hardCase": 1, "hold": 0, "eventualProduction": 1, "mappedSeatsAdded": 104 },
+      { "wave": "TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3", "date": "2026-08-25", "checked": 5, "initialAdopt": 1, "defer": 4, "hardCase": 0, "hold": 0, "eventualProduction": 1, "mappedSeatsAdded": 178, "note": "The first implementation attempt added 0 seats; the ADOPT reached production later as TOKYO-WAVE-32 (ユーロライブ)." },
+      { "wave": "TOKYO PRIORITY D RANKED NEXT PREFLIGHT 4", "date": "2026-08-26", "checked": 5, "initialAdopt": 0, "defer": 5, "hardCase": 0, "hold": 0, "eventualProduction": 0, "mappedSeatsAdded": 0 },
+      { "wave": "TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT", "date": "2026-08-26", "checked": 5, "initialAdopt": 1, "defer": 4, "hardCase": 0, "hold": 0, "eventualProduction": 0, "mappedSeatsAdded": 0, "note": "The single ADOPT (tokyo-official-0249 スコットホール) was reversed to blocked HARD-CASE DEFER by the 2026-08-26 bounded judgment audit." },
+      { "wave": "TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2", "date": "2026-08-26", "checked": 5, "initialAdopt": 1, "defer": 3, "hardCase": 0, "hold": 1, "eventualProduction": 1, "mappedSeatsAdded": 208 },
+      { "wave": "TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3", "date": "2026-08-26", "checked": 5, "initialAdopt": 0, "defer": 4, "hardCase": 1, "hold": 0, "eventualProduction": 0, "mappedSeatsAdded": 0 }
+    ],
+    "totals": { "candidatesChecked": 48, "initialAdopt": 13, "eventualProduction": 12, "mappedSeatsAdded": 2499 },
+    "adoptRateDecline": {
+      "waves1to3_first13Checked": { "initialAdoptRate": "8/13 = 61.5%", "productionRate": "8/13 = 61.5%", "seats": 1842 },
+      "waves4to6_next15Checked": { "initialAdoptRate": "3/15 = 20.0%", "productionRate": "3/15 = 20.0%", "seats": 449 },
+      "waves7to10_last20Checked": { "initialAdoptRate": "2/20 = 10.0%", "productionRate": "1/20 = 5.0%", "seats": 208 },
+      "last2Waves_10Checked": { "initialAdoptRate": "0/10 = 0%", "productionRate": "0/10 = 0%", "seats": 0 }
+    },
+    "candidateProfileOverTheSameRun": "The recorded capacity of the opened candidates fell from a 176-237 band in waves 1-3 to 20-130 in waves 6-7 and 75-159 in wave 10. Every opened candidate but one had a recorded capacity, and none was a dedicated commercial theatre with an unrecorded capacity. The ADOPT-rate decline tracks the ranking rule walking down the capacity-recorded civic-room list, not the exhaustion of Tokyo's performance venues."
+  },
+  "hardCasePortfolio": {
+    "totalTokyoHardCaseOrHold": 34,
+    "completeChartWithBoundedReconciliationGap": [
+      { "inventoryId": "tokyo-official-0278", "venue": "東京グローブ座", "capacity": 707, "mappedOrPrintedSetCompleteness": "Complete 1F/2F/3F printed numbered charts; issuer overview states 707 = 463 + 158 + 86.", "unresolvedIssue": "Unnumbered wheelchair-space icons on 1F have no issuer-defined relation to the 707 subtotal - inside it (numbered set = 707 minus k) or outside it (numbered set = 707).", "repositoryInternalResolvability": "PARTIALLY. 56 production sources already register unnumbered wheelchair spaces as out-of-scope metadata and reconcile the arithmetic explicitly (akigawa-kirara 702 = 700 numbered + 2 unnumbered; chofu-green-main 1,301 = 1,295 + 6). If an independent transcription of the printed IDs sums to exactly 463/158/86, established precedent settles the relation without any new issuer statement. That transcription has not been recorded and would itself be the audit.", "awaitingIssuerUpdate": "No - no new issuer publication is required to attempt it.", "opusJudgmentValue": "HIGH: largest seat count in the actionable set, and the question is a precedent-application call, which is exactly what the JUDGMENT lane is for." },
+      { "inventoryId": "tokyo-official-0058", "venue": "インスティトゥト・セルバンテス東京〔オーディトリアム〕", "capacity": 159, "mappedOrPrintedSetCompleteness": "Complete: rows A-L independently summed 78 + 70 + 11 = 159, matching the dedicated facility page's own printed 159 exactly.", "unresolvedIssue": "A different current page (about-us) states the hall holds approximately 200 people - a person-capacity figure, not a seat count - and the issuer publishes no relation between the two.", "repositoryInternalResolvability": "YES, as a policy call. The chart is internally consistent and agrees with the issuer's own exact figure on the dedicated page. The open question is whether an approximate person-capacity figure on a general overview page constitutes a cross-document contradiction at all. Only one production source references an approximate issuer figure, so there is no settled precedent - which makes this a genuine policy decision rather than an evidence gap.", "awaitingIssuerUpdate": "The current disposition says yes; this audit finds the blocker is at least as much a policy question as an evidence question.", "opusJudgmentValue": "MEDIUM: a clean, well-documented decision that would also set reusable precedent, but only 159 seats." },
+      { "inventoryId": "tokyo-official-0586", "venue": "本多劇場", "capacity": 386, "mappedOrPrintedSetCompleteness": "Complete A-Q printed set totalling 390 positions against a published 386.", "unresolvedIssue": "Four printed positions (M1, M24, Q8, Q17) carry an unexplained diagonal mark with no legend anywhere in the issuer's material.", "repositoryInternalResolvability": "NO. The mark has no legend; retaining the four contradicts 386 and removing them is capacity fitting. Nothing in the repository can supply the missing legend.", "awaitingIssuerUpdate": "YES - needs the issuer to state what the marked positions are.", "opusJudgmentValue": "LOW: re-reading the same chart cannot produce the legend." },
+      { "inventoryId": "tokyo-official-0641", "venue": "シアター代官山", "capacity": 123, "mappedOrPrintedSetCompleteness": "Complete A-I set, 14 per row, 126 positions against a published maximum of 123.", "unresolvedIssue": "No mark, legend, or note distinguishes which 3 of the 126 fall outside the 123.", "repositoryInternalResolvability": "NO. There is no discriminating signal of any kind to reason from.", "awaitingIssuerUpdate": "YES.", "opusJudgmentValue": "LOW." },
+      { "inventoryId": "tokyo-official-0249", "venue": "早稲田奉仕園〔スコットホール・講堂〕", "capacity": 200, "mappedOrPrintedSetCompleteness": "Complete: 200 printed identifiers; the four X positions are already settled as drawn-but-unissued.", "unresolvedIssue": "The chart states 1階136席・2階64席 while the facility page and both 2025.10 講堂案内図 state 1階140席・2階60席. The 1F half is issuer-explained (140 minus 4 pillar-obstructed X positions = 136); the 2F difference of 4 runs the opposite way and is explained nowhere, with no 2F drawing to check.", "repositoryInternalResolvability": "NO - and this is the clearest case of the 'same material, already read' class. A bounded judgment audit was already run on 2026-08-26 against every current issuer document and concluded exactly this.", "awaitingIssuerUpdate": "YES - a current 2F numbered-seat statement, a 2F seat drawing, or an issuer correction.", "opusJudgmentValue": "NONE right now: an Opus-class pass over the identical documents has already been spent and returned HARD-CASE DEFER." }
+    ],
+    "sameMaterialWillNotResolve": ["tokyo-official-0249 (an Opus-class judgment audit already read every current document)", "tokyo-official-0586", "tokyo-official-0641", "tokyo-official-0007", "tokyo-official-0286", "tokyo-official-0017"],
+    "structurallyOutOfReachUntilIssuerOrFacilityChange": ["tokyo-official-0113 / 0114 / 0146 / 0430 (四季劇場 per-production sales maps)", "tokyo-official-0319 東京ドーム", "tokyo-official-0429 東京ガーデンシアター", "tokyo-official-0436 有明アリーナ", "tokyo-official-1071 京王アリーナTOKYO", "tokyo-coverage-sgc-hall-ariake", "tokyo-coverage-ex-theater-ariake", "tokyo-coverage-musashino-forest-sport-plaza"],
+    "dateOrClosureGated": ["tokyo-official-0025 日本製鉄紀尾井ホール (reopening 2027-01)", "tokyo-official-0395 ティアラこうとう 小ホール (recheckNotBefore 2027-10-01)", "tokyo-tokyo-bunka-main-hall 東京文化会館 大ホール (renovation)", "tokyo-kameari-lirio-hall (post-renovation chart)", "tokyo-official-0234 (2026-10-01)", "tokyo-official-1060 (2026-12-01)"],
+    "environmentBlocked": ["tokyo-koganei-miyaji-main - registered official PDF and facility page both return HTTP 403 from this environment; the recorded blocker is unverified rather than confirmed"],
+    "assessment": "Of 34 Tokyo hard-case/hold records, exactly two (0278, 0058) are actionable without a new issuer publication, and only one of those (0278, 707 seats) carries meaningful seat volume. The rest are waiting on the issuer, structurally outside the schema, or date-gated."
+  },
+  "strategicPathComparison": {
+    "pathA_continueOrdinaryTokyoPriorityD": {
+      "remainingPlausibleHighYieldCount": "109 high-potential records (102 of them never scored because capacity is null), plus about 100 medium-potential records. 273 outstanding records carry a hall name the current screen never even examined.",
+      "likelyAdoptRate": "The last four waves ran at 10% initial ADOPT while drilling capacity-recorded civic rooms. Waves 1-3, whose candidates were dedicated performance venues (吉祥寺シアター, 赤坂RED/THEATER, 矢来能楽堂, セルリアンタワー能楽堂, 紀伊國屋ホール), ran at 61.5%. The high-potential bucket is the same population as waves 1-3, so a corrected ranking should recover a materially higher rate; a conservative planning figure is 30-50%.",
+      "expectedAddedVenuesSeats": "Dedicated Tokyo theatres and municipal 大/小ホール are typically 200-800 seats, against the 104-208 seats the last three productions added. A five-candidate preflight at 40% would add roughly 2 venues and 600-1,200 seats.",
+      "researchCost": "Unchanged: a five-candidate bounded preflight, plus one URL lookup for records whose discovery row carried none.",
+      "diminishingReturnRisk": "LOW for the high-potential bucket, which is untouched. HIGH and already realised for the capacity-recorded civic-room stream, which must drop to tier 3."
+    },
+    "pathB_hardCaseJudgment": {
+      "actionableHardCases": "2 of 34 (tokyo-official-0278, tokyo-official-0058).",
+      "awaitingIssuerUpdate": "0586, 0641, 0249, 0007, 0286, 0017 and the whole 四季劇場 / arena / dome group - a new issuer publication is a precondition, and re-reading the same material cannot substitute.",
+      "resolutionProbability": "0278 moderate (precedent application, contingent on an independent transcription matching 463/158/86 exactly); 0058 moderate but as a policy decision rather than an evidence finding.",
+      "expectedAddedSeats": "At most 707 + 159 = 866 seats across 2 venues, realistically one venue.",
+      "opusCostAndJudgmentRisk": "Highest per-venue cost in the repository, and the Scott Hall reversal shows the failure mode: an Opus-class audit can consume a full wave and correctly return HARD-CASE DEFER with zero production gain.",
+      "verdict": "Real but small. Worth doing after Path A, not instead of it."
+    },
+    "pathC_expandOutsideTokyo": {
+      "currentProductionCoverage": { "東京都": 125, "神奈川県": 3, "大阪府": 2, "千葉県": 1, "京都府": 1, "埼玉県": 1, "栃木県": 1, "total": 134 },
+      "obviousGaps": "93% of production is Tokyo. The P0 tier defined in AGENTS.md (Tokyo/Kanagawa/Chiba/Saitama) has 3 / 1 / 1 venues outside Tokyo. P1 (Ibaraki/Tochigi/Gunma) has 1. P2 (Sapporo/Sendai/Nagoya/Kyoto/Osaka/Kobe/Hiroshima/Fukuoka) has 3 across all eight cities. This is the largest structural gap in the repository.",
+      "existingCandidateInventory": "41 non-Tokyo records across 14 release-seed inventories (2-6 each). ALL 41 non-production records are already blocked. There is no normalized discovery universe outside Tokyo - nothing comparable to the 1,208-row 東京都 list that feeds Tokyo waves.",
+      "pendingHighPriorityHalls": "博多座, 御園座, フェスティバルホール, オリックス劇場, 梅田芸術劇場, 神奈川県民ホール 大ホール, ミューザ川崎, よこすか芸術劇場, 埼玉会館, 大宮ソニックシティ, 川口リリア, ウェスタ川越, 高崎芸術劇場, 札幌Kitara, hitaru, 仙台サンプラザ, 東京エレクトロンホール宮城, ロームシアター京都, 愛知県芸術劇場, 神戸文化ホール and others - every one already blocked.",
+      "blockerProfile": "Roughly half are hard evidence contradictions in 2,000-seat-class halls (埼玉会館 1F off by 22; ウェスタ川越 3F 594 vs 576; 高崎芸術劇場 2F 480 vs 448; ロームシアター京都 2,013 vs 2,005; 愛知県芸術劇場 176 vs 177; アクロス福岡 independent-review-mismatch). The other half are source-location failures where the registered URL 404s, 403s, or redirects (習志野文化ホール, 船橋市民文化ホール, 千葉市文化センター アートホール, 東京エレクトロンホール宮城, イズミティ21, 神戸国際会館, 神戸新聞松方ホール, JMSアステールプラザ 大ホール, 栃木県総合文化センター メインホール).",
+      "assessment": "Strategically necessary, but not currently a higher-yield lane than a corrected Tokyo ranking. Every existing non-Tokyo candidate is already blocked, most on DENSE or JUDGMENT-class contradictions, and opening a genuinely new region first requires a discovery-source normalization macro on the scale of the 1,208-row Tokyo import. The URL-unreachable subgroup (about 9 records) is the cheapest non-Tokyo work and is the natural follow-on macro once Tokyo's high-potential theatre bucket is drained."
+    }
+  },
+  "decision": {
+    "chosen": "CONTINUE TOKYO ORDINARY RESEARCH",
+    "singleChoice": true,
+    "rationale": [
+      "Tokyo Priority D has NOT exhausted its high-yield stage. It has exhausted one stratum - capacity-recorded small civic and institutional rooms - because the ranking rule could only see that stratum.",
+      "109 high-potential and about 100 medium-potential records remain outstanding, and 102 of the 109 have never been scored by any wave because their capacity cell is empty. A repository-wide grep confirms PARCO劇場, 三越劇場, 第一生命ホール, 博品館劇場, 紀伊國屋サザンシアター, 宝生能楽堂, 鈴本演芸場, 日本橋劇場, せんがわ劇場 and 兼松講堂 appear in no report, batch, or doc, and none is production under any other identity.",
+      "This is the highest-yield path on criterion 1 (production venue count per unit of research) and the strongest path on criterion 2 (theatre / concert / live-event venues first), because the untouched bucket is almost entirely dedicated performance venues.",
+      "Criterion 3 is unaffected: only research ordering changes. Evidence order, the production gate, and every disposition stay as they are.",
+      "Criterion 4: the cost is the same five-candidate bounded preflight that has been running, with a corrected sort key.",
+      "Criterion 5: regional expansion remains the correct next macro after this bucket is drained, and this audit records the specific non-Tokyo entry point for it."
+    ],
+    "notChosen": {
+      "hardCaseJudgment": "Only 2 of 34 hard cases are actionable without new issuer evidence, worth at most 866 seats; the Scott Hall reversal shows the downside.",
+      "regionalExpansion": "All 41 existing non-Tokyo candidates are already blocked, mostly on DENSE/JUDGMENT contradictions in 2,000-seat halls, and no non-Tokyo discovery universe exists yet. Correct later, not now.",
+      "other": "No better option is supported by repository evidence."
+    }
+  },
+  "nextWaveDesign": {
+    "rankingRule": "Use recommendedYieldOrientedRule above. Recompute live against data/venue-inventory/tokyo.json; do not reuse any fixed candidate list, including this one, without recomputing.",
+    "shortlistFromMetadataOnly": [
+      { "rank": 1, "inventoryId": "tokyo-official-0690", "venue": "紀伊國屋サザンシアターTAKASHIMAYA", "why": "Tier 1a dedicated theatre; issuer 紀伊國屋 already in production as kinokuniya-hall-standard, so its chart convention is validated." },
+      { "rank": 2, "inventoryId": "tokyo-official-0740", "venue": "PARCO劇場〔パルコ劇場〕", "why": "Tier 1a commercial producing theatre with continuing assigned-ticket programming; never assessed by any wave." },
+      { "rank": 3, "inventoryId": "tokyo-official-0105", "venue": "三越劇場", "why": "Tier 1a dedicated commercial theatre; never assessed." },
+      { "rank": 4, "inventoryId": "tokyo-official-1068", "venue": "調布市せんがわ劇場〔ホール〕", "why": "Tier 1a municipal dedicated theatre; the 調布市 issuer is already in production (chofu-green-main/small)." },
+      { "rank": 5, "inventoryId": "tokyo-official-0103", "venue": "中央区立日本橋公会堂(日本橋劇場)〔ホール〕", "why": "Tier 1a municipal theatre space; municipal issuers have the highest chart-publication rate in the Tokyo run." },
+      { "rank": 6, "inventoryId": "tokyo-official-0098", "venue": "第一生命ホール", "why": "Tier 1a proper-noun concert hall - the class the current screen never examined." },
+      { "rank": 7, "inventoryId": "tokyo-official-0094", "venue": "博品館劇場", "why": "Tier 1a dedicated commercial theatre." },
+      { "rank": 8, "inventoryId": "tokyo-official-0316", "venue": "宝生能楽堂", "why": "Tier 1a; the 能楽堂 lane already yielded three production venues." },
+      { "rank": 9, "inventoryId": "tokyo-official-1157 / tokyo-official-1158", "venue": "東大和市民会館(ハミングホール)〔大ホール〕/〔小ホール〕", "why": "Tier 1b municipal 大/小ホール pair - the shape that produced most Priority-D ADOPTs, unscored only because capacity is null." },
+      { "rank": 10, "inventoryId": "tokyo-official-0890 / 0891", "venue": "北区赤羽会館〔大ホール〕/〔小ホール〕", "why": "Tier 1b municipal pair; 北区 is already in production (hokutopia-tsutsuji-hall-standard)." }
+    ],
+    "boundedPreflightSize": 5,
+    "stopCondition": "Three ADOPTs, or a five-candidate research ceiling, whichever comes first - unchanged from the existing preflight contract.",
+    "explicitlyDeprioritised": "tokyo-official-0688, 1127, 0210, 0444, 1147 and 0800 drop out of the lead group: four of the six have an adverse sibling or identity signal already recorded in the repository, and all six rank highly only because a capacity number happens to be present.",
+    "notAuthorised": "No research is started by this audit. The next wave requires separate authorization."
+  },
+  "followOnRegionalMacro": {
+    "note": "Recorded for sequencing only; not authorized and not started.",
+    "recommendedRegion": "神奈川県, then 千葉県 and 埼玉県 (the P0 tier, currently 3 / 1 / 1 production venues against Tokyo's 125)",
+    "cheapestEntryPoint": "The nine non-Tokyo records blocked only because the registered official URL 404s, 403s, or redirects - 習志野文化ホール, 船橋市民文化ホール, 千葉市文化センター アートホール, 東京エレクトロンホール宮城, イズミティ21, 神戸国際会館, 神戸新聞松方ホール, JMSアステールプラザ 大ホール, 栃木県総合文化センター メインホール. These are source-location failures, not evidence contradictions.",
+    "structuralPrerequisite": "A genuinely new prefecture needs a normalized discovery universe first, equivalent to the 1,208-row 東京都 ホール・劇場等リスト import. That is a separate bounded macro."
+  },
+  "productionImpact": {
+    "changed": false,
+    "venues": 134,
+    "selectableConfigurations": 136,
+    "configurationSeatRecords": 181827,
+    "sourcesTouched": [],
+    "generatedArtifactsTouched": [],
+    "fingerprintsTouched": [],
+    "inventoryDispositionsChanged": []
+  },
+  "validation": {
+    "ran": ["npm run venues:check", "npm run venues:validate", "npm run venues:inventory:report", "npm run verify:docs"],
+    "notRun": ["npm run venues:build", "npm run verify:app", "npm run verify:full", "npm run test:e2e"],
+    "notRunReason": "No venue source, generated artifact, application code, or inventory disposition was modified. Only this report and docs/HANDOFF.md changed, so the documentation and venue-database checks are the proportional set under docs/VALIDATION.md.",
+    "knownWarningsUnchanged": "41 validate warnings, including the 100,091-byte catalog soft-limit warning, which is out of scope for this audit."
+  },
+  "exactNextAction": "Obtain authorization for a TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT: recompute the yield-oriented ranking rule live against data/venue-inventory/tokyo.json, open at most five tier-1a/1b candidates in the recomputed order, and stop at three ADOPTs or the five-candidate ceiling. Do not start research, authoring, or any hard-case audit without that authorization."
+}
