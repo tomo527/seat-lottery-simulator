@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "globe-tokyo-standard",
+  "name": "東京グローブ座",
+  "prefecture": "東京都",
+  "city": "新宿区",
+  "aliases": [
+    "グローブ座",
+    "The Globe Tokyo"
+  ],
+  "venueType": "theater",
+  "sources": [
+    {
+      "id": "official-facility-overview",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "東京グローブ座",
+      "title": "施設概要",
+      "url": "https://www.tglobe.net/s/tg/group/detail/about?ima=4252",
+      "checkedAt": "2026-08-27"
+    },
+    {
+      "id": "official-seat-map-page",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "東京グローブ座",
+      "title": "座席表",
+      "url": "https://www.tglobe.net/s/tg/group/detail/seat?ima=3055",
+      "checkedAt": "2026-08-27"
+    },
+    {
+      "id": "official-first-floor-chart",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "東京グローブ座",
+      "title": "座席表 1階席",
+      "url": "https://www.tglobe.net/images/45/d25/66086573958a2a2c38cae633c87a8-01.png",
+      "checkedAt": "2026-08-27"
+    },
+    {
+      "id": "official-second-floor-chart",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "東京グローブ座",
+      "title": "座席表 2階席",
+      "url": "https://www.tglobe.net/images/45/d25/66086573958a2a2c38cae633c87a8-02.jpg",
+      "checkedAt": "2026-08-27"
+    },
+    {
+      "id": "official-third-floor-chart",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "東京グローブ座",
+      "title": "座席表 3階席",
+      "url": "https://www.tglobe.net/images/45/d25/66086573958a2a2c38cae633c87a8-03.jpg",
+      "checkedAt": "2026-08-27"
+    },
+    {
+      "id": "official-wheelchair-application",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "東京グローブ座",
+      "title": "車いす申請",
+      "url": "https://www.tglobe.net/s/tg/form/inquiry?cd=wheelchair&ima=4252",
+      "checkedAt": "2026-08-27"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "current-official-printed-seat-map",
+      "canonicalName": "通常配置・公式1階/2階/3階座席表の印字番号席699席",
+      "issuerDefinedCondition": "東京グローブ座が現行公式「座席表」ページで公開する1階席・2階席・3階席の3図を使用する場合。issuerはこれ以外の番号付き配置図を公開していない。",
+      "selectionBasis": "現行公式の1F/2F/3F座席図に印字された全番号席699席を直接転記した通常配置。issuerが施設概要で公開する客席707席＝【1F】463席（平土間307席／ギャラリー156席）／【2F】158席／【3F】86席の内訳に対し、印字番号は平土間307・ギャラリー148・2階158・3階86で、平土間・2階・3階はissuerの小計と完全一致する。ギャラリーの差8は、1F図がギャラリーO列上に描く2区画の無番号車いす席（各4スロット・計8位置）であり、issuer自身が図上に「車いす席／一般席とした場合14〜17番」「車いす席／一般席とした場合50〜53番」と番号を明記している。148＋8＝156、699＋8＝707でissuerの公称と整合する。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-27 current official 施設概要 and 座席表 page with its three current-linked 1F/2F/3F chart assets (sha256 cbb7bab6…, 3e35951a…, e2a147f7…), independently re-fetched and byte-verified between the two transcription passes",
+      "sourceIds": [
+        "official-facility-overview",
+        "official-seat-map-page",
+        "official-first-floor-chart",
+        "official-second-floor-chart",
+        "official-third-floor-chart",
+        "official-wheelchair-application"
+      ],
+      "differenceBasisSourceIds": [
+        "official-first-floor-chart",
+        "official-second-floor-chart",
+        "official-third-floor-chart"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 707,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式1F/2F/3F座席表の印字番号席699席を抽選します。内訳は1階平土間307席（A〜L列）・1階ギャラリー148席（M・N・O列）・2階158席（A〜C列）・3階86席（A・B列）です。1階ギャラリーM列は後方中央区画を持たないため、21〜40番はissuerが発番しておらず、連番へ振り直しません。1階ギャラリーO列の14〜17番と50〜53番は、現行公式図では車いす席区画として描かれ座席番号が印字されないため、抽選対象の座席としては生成しません（公式の客席707席にはこの8位置が含まれます）。issuerが図上に併記する「一般席とした場合」の代替配置は別配置であり、この代表配置には混在させません。1階・2階・3階はいずれもA列から始まる行ラベルを再利用するため、階ごとに別エリアとして表示します。",
+      "wheelchairSemantics": {
+        "status": "resolved",
+        "description": "現行公式1F図は、1階ギャラリーO列上の左右2区画（2扉側・5扉側）に各4つの破線スロットと車いすピクトグラム2個を描き、それぞれに「車いす席／一般席とした場合14〜17番」「車いす席／一般席とした場合50〜53番」と明記する。したがって計8位置は公称707席の内側にあり、通常配置では8つの番号席を置き換えている。標準配置図ではこの8識別子は印字されないため、seat IDを作成せずメタデータとして保持する。ギャラリーの印字148席＋8位置＝issuer公表のギャラリー156席、699席＋8位置＝公称707席で独立に検算できる。現行「車いす申請」ページは、S席チケットの階・列・座席番号を申請時に申告させ、空きがない場合は自席での観劇を案内しており、番号席に対する転換運用であることと矛盾しない。",
+        "sourceIds": [
+          "official-first-floor-chart",
+          "official-facility-overview",
+          "official-wheelchair-application"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-27",
+        "method": "two-independent-current-official-floor-chart-visual-transcriptions-with-floor-block-and-row-direction-reversal-and-between-pass-asset-rehash",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -8,
+        "unresolvedIssues": [
+          "公称707席と印字番号席699席の差8は、1階ギャラリーO列の無番号車いす席8位置（14〜17番・50〜53番）である。issuerが図上に番号を明記しているが標準配置図では座席番号として印字されないため、seat IDを作成しない。",
+          "1階ギャラリーM列は後方中央区画を持たず、21〜40番が発番されていない。図形位置から補完せず、連番への振り直しも行わない。",
+          "2階C列は左上・右上ブロックに座席を持たないため1〜6番と53番以降が、2階B列は左上ブロック先頭の1番が発番されていない。いずれもissuerの図の区画構成と一致する。",
+          "issuerは各ブロックに名称を印字しない。区画境界は通路と扉番号で明確だが、平土間・ギャラリー以外のブロック名称は登録せず、行内で連続する番号を1レンジに圧縮している。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "A",
+          "from": 2,
+          "to": 33,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 33,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "D",
+          "from": 2,
+          "to": 33,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "E",
+          "from": 3,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "G",
+          "from": 4,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "H",
+          "from": 6,
+          "to": 29,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "I",
+          "from": 8,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "J",
+          "from": 10,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "K",
+          "from": 10,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-hiradoma",
+          "areaLabel": "1階平土間",
+          "rowLabel": "L",
+          "from": 10,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-gallery",
+          "areaLabel": "1階ギャラリー",
+          "rowLabel": "M",
+          "from": 6,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-gallery",
+          "areaLabel": "1階ギャラリー",
+          "rowLabel": "M",
+          "from": 41,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-gallery",
+          "areaLabel": "1階ギャラリー",
+          "rowLabel": "N",
+          "from": 1,
+          "to": 60,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor-gallery",
+          "areaLabel": "1階ギャラリー",
+          "rowLabel": "O",
+          "from": 1,
+          "to": 66,
+          "excluded": [
+            14,
+            15,
+            16,
+            17,
+            50,
+            51,
+            52,
+            53
+          ]
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 56,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "B",
+          "from": 2,
+          "to": 57,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "C",
+          "from": 7,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 42,
+          "excluded": []
+        },
+        {
+          "areaId": "third-floor",
+          "areaLabel": "3階席",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 44,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

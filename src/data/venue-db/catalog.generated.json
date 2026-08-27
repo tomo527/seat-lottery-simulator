@@ -321,6 +321,31 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "globe-tokyo-standard",
+    "venueGroupId": "globe-tokyo-standard",
+    "name": "東京グローブ座",
+    "searchAliases": [
+      "The Globe Tokyo",
+      "グローブ座"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "新宿区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "current-official-printed-seat-map",
+        "canonicalName": "通常配置・公式1階/2階/3階座席表の印字番号席699席",
+        "seatCount": 699,
+        "dataPath": "/venue-db/venues/globe-tokyo-standard--current-official-printed-seat-map.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式1F/2F/3F座席表の印字番号席699席を抽選します。内訳は1階平土間307席（A〜L列）・1階ギャラリー148席（M・N・O列）・2階158席（A〜C列）・3階86席（A・B列）です。1階ギャラリーM列は後方中央区画を持たないため、21〜40番はissuerが発番しておらず、連番へ振り直しません。1階ギャラリーO列の14〜17番と50〜53番は、現行公式図では車いす席区画として描かれ座席番号が印字されないため、抽選対象の座席としては生成しません（公式の客席707席にはこの8位置が含まれます）。issuerが図上に併記する「一般席とした場合」の代替配置は別配置であり、この代表配置には混在させません。1階・2階・3階はいずれもA列から始まる行ラベルを再利用するため、階ごとに別エリアとして表示します。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "hakuju-hall-standard",
     "name": "Hakuju Hall",
     "searchAliases": [

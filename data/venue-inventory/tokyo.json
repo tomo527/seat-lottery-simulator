@@ -5517,13 +5517,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.tglobe.net/s/tg/group/detail/about?ima=4252",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-08-27の現行公式施設概要で707席（1F463＝平土間307／ギャラリー156、2F158、3F86）を確認し、現行公式1F/2F/3F座席図の独立two-passで印字番号699席（1F455＝平土間307＋ギャラリー148、2F158、3F86）を再現。1F図はギャラリーO列の無番号車いす席2区画に「一般席とした場合14〜17番」「同50〜53番」と明記しており、148＋8＝156、699＋8＝707で公称と整合する。別承認two-passでのみproduction判定する。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-27の現行公式施設概要で客席707席（【1F】463席＝平土間307席／ギャラリー156席、【2F】158席、【3F】86席）を再確認し、現行公式1F/2F/3F座席図（byte同一を再取得で確認）を独立two-passで転記した結果、印字番号席699席（1階平土間307＋1階ギャラリー148＝455、2階158、3階86）が両passで完全一致した。1F図はギャラリーO列の無番号車いす席2区画に「車いす席／一般席とした場合14〜17番」「同50〜53番」と明記しており、148＋8＝ギャラリー156、699＋8＝707で公称と整合する。印字番号699席のみをmapし、expectedSeatCountは公称707席、差8はissuer説明済みのwarningとして保持する。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-08-27",
-      "blockingReason": "ADOPT (TOKYO-OFFICIAL-0278 GLOBE TOKYO BOUNDED ISSUER-EVIDENCE JUDGMENT AUDIT, 2026-08-27): the prior HARD-CASE DEFER is resolved. The current official 1F chart itself states the wheelchair relation by number (車いす席 / 一般席とした場合 14〜17番 and 50〜53番, both on gallery row O), and the issuer's own 1F split 平土間307 / ギャラリー156 confirms it: printed IDs are 307 + 148 = 455 on 1F, 158 on 2F and 86 on 3F, grand total 699, and 699 + 8 unnumbered wheelchair positions = the published 707. Next permitted work is a separately authorized independent two-pass transcription of all printed IDs and gaps after a currentness re-check; map the 699 printed IDs only, keep expectedSeatCount 707 with the documented 8-seat difference, record the eight wheelchair positions as issuer-numbered metadata, and never create IDs for them or delete a printed ID."
+      "venueSourceId": "globe-tokyo-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-08-27"
     },
     {
       "inventoryId": "tokyo-official-0279",
