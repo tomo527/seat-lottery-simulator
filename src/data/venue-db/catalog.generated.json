@@ -1403,6 +1403,31 @@
     "dataPath": "/venue-db/venues/parthenon-tama-main-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "pia-arena-mm",
+    "venueGroupId": "pia-arena-mm",
+    "name": "ぴあアリーナMM",
+    "searchAliases": [
+      "PIA ARENA MM",
+      "ぴあアリーナ"
+    ],
+    "region": "関東",
+    "prefecture": "神奈川県",
+    "municipality": "横浜市",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "stand-floors-fixed",
+        "canonicalName": "2F〜4F固定スタンド番号席・代表配置",
+        "seatCount": 5573,
+        "dataPath": "/venue-db/venues/pia-arena-mm--stand-floors-fixed.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "公式座席表に番号が印字された2階〜4階の固定スタンド席のみを対象とする代表配置です。1階アリーナフロアの催事別客席、2階の立見エリア、番号のない車いす席、公式座席表に番号のないVIP席は含みません。公称の最大収容人数12,141人は立見を含む最大値であり、この抽選対象の席数とは一致しません。",
+        "fixedOnly": true
+      }
+    ]
+  },
+  {
     "id": "popuri-hall-tsurukawa-standard",
     "name": "和光大学ポプリホール鶴川",
     "searchAliases": [

@@ -21,10 +21,10 @@
       "茨城県": 5
     },
     "byStatus": {
-      "ADOPT / implementation-ready": 3,
+      "ADOPT / implementation-ready": 2,
       "HOLD / NEED EVIDENCE / formal DEFER": 57,
       "inventory-unresearched": 42,
-      "production": 52
+      "production": 53
     },
     "missingFromInventory": 0
   },
@@ -65,13 +65,12 @@
     }
   },
   "nextMacro": {
-    "selection": "Claudeによるseparately authorized bounded two-pass implementation; do not begin in this metadata consistency cleanup",
+    "selection": "separately authorized bounded two-pass implementation for the two remaining ADOPT candidates, one venue at a time",
     "candidates": [
-      "kanagawa-pia-arena-mm — ぴあアリーナMM",
       "ibaraki-mito-civic-main — 水戸市民会館〔グロービスホール〕",
       "saitama-city-culture-main — さいたま市文化センター〔大ホール〕"
     ],
-    "reason": "2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT reached three ADOPT / implementation-ready dispositions. The current exact next action is the separately authorized bounded two-pass implementation for only these three candidates."
+    "reason": "2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT reached three ADOPT / implementation-ready dispositions. kanagawa-pia-arena-mm was closed to production on 2026-08-27 as pia-arena-mm / stand-floors-fixed with 5,573 mapped seats. The current exact next action is the separately authorized bounded two-pass implementation for ibaraki-mito-civic-main, followed by saitama-city-culture-main."
   },
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
@@ -535,10 +534,10 @@
       "officialCapacityAndMode": "12141 (current inventory/audit capacity; see official URL)",
       "officialUrl": "https://pia-arena-mm.jp/",
       "inventoryId": "kanagawa-pia-arena-mm",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
+      "venueSourceId": "pia-arena-mm",
+      "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Separately authorized bounded two-pass implementation must verify the current four-floor numbered public seat chart and any accessibility/event-use annotations losslessly; do not infer omitted positions."
+      "reopenCondition": "Closed on 2026-08-27 by a separately authorized bounded two-pass implementation. The current official 2F-4F stand seat maps were transcribed losslessly in both directions (2F 2,700 + 3F 1,670 + 4F 1,203 = 5,573 printed seats) and reconciled exactly against the current official facility summary (stand 3,150 + 1,680 + 1,247 = 6,077, which includes 440 standing, 20 unnumbered wheelchair spaces and 44 unnumbered VIP seats). The published 12,141 is the maximum standing capacity including the 6,064 arena-floor standing figure and is not a fixed-seat total. 1F ARENA FLOOR is event-dependent and excluded; reopen only if the issuer publishes numbered arena-floor seating."
     },
     {
       "prefecture": "神奈川県",
