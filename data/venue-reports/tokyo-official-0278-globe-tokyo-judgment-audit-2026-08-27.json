@@ -1,0 +1,260 @@
+{
+ "wave": "TOKYO-OFFICIAL-0278 GLOBE TOKYO BOUNDED ISSUER-EVIDENCE JUDGMENT AUDIT",
+ "date": "2026-08-27",
+ "phase": "Bounded JUDGMENT audit of one blocked HARD-CASE record. Fresh re-fetch of the current issuer facility, seating-chart, facility-use and wheelchair-application surfaces, fresh independent two-pass transcription of the three current official floor charts, and adjudication of the unnumbered-wheelchair-space / 707-seat-subtotal relation. No production source authoring, no production integration, no generated artifact or fingerprint change, no other candidate or hard case opened.",
+ "scopeBoundary": "Only tokyo-official-0278 was opened. tokyo-official-0058 and every other hard case, DEFER, HOLD and unresearched record were untouched. No venue source JSON, seat range, generated catalog, runtime artifact, production fingerprint, or production total was created or changed. The 100,091-byte catalog soft-limit warning is out of scope, its threshold unchanged and its catalog untouched.",
+ "policyBasis": "ADOPT requires current/current-linked first-party issuer evidence defining one representative configuration with a complete issuer-numbered seat set, issuer-defined ownership and subtotals, and an accessibility relation that needs no inference. Capacity fitting, geometry-derived ownership, invented seat IDs, deletion of printed IDs, configuration mixing, and settling an issuer ambiguity from secondary sources are prohibited. HARD-CASE DEFER is reserved for an otherwise complete issuer chart whose issuer subtotal or accessibility relation alone remains unreconciled.",
+ "startStateVerified": {
+  "branch": "main",
+  "head": "0ba694003d6d83b764942f0443dca91989d2e4d8",
+  "originMain": "0ba694003d6d83b764942f0443dca91989d2e4d8",
+  "workingTreeAtStart": "clean",
+  "venuesCheck": "Venue database is synchronized (134 venues).",
+  "venuesValidate": "Validated 134 production venues, 136 selectable configurations, and 181,827 configuration-seat records (41 warnings).",
+  "latestProductionWave": "TOKYO-WAVE-33 (tokyo-official-1122 -> hino-brick-small-standard, 208 seats)",
+  "candidateStateAtStart": "tokyo-official-0278 researchStatus blocked, venueSourceId null, HARD-CASE DEFER from the TOKYO PRIORITY D NEXT HIGH-YIELD PREFLIGHT (2026-08-25), not in production",
+  "catalogSoftLimitWarning": "catalog is 100091 bytes; soft limit is under 100,000 bytes - known, out of scope, unchanged",
+  "allExpectedStartValuesConfirmed": true
+ },
+ "judgmentQuestion": "On current issuer evidence, can the relation between the published totals 1F 463 / 2F 158 / 3F 86 / total 707 and the unnumbered wheelchair-space icons drawn on the current official numbered seating charts be fixed losslessly: are the wheelchair spaces outside the 707 subtotal, inside it and replacing numbered seats, or still undecidable?",
+ "freshOfficialEvidence": [
+  {
+   "url": "https://www.tglobe.net/s/tg/group/detail/about?ima=4252",
+   "role": "current official facility overview (施設概要), re-fetched 2026-08-27",
+   "statedFacts": "客席 707席 / 【1F】463席（平土間307席／ギャラリー156席）/ 【2F】158席 / 【3F】86席. This page carries no wheelchair statement of its own; it links the 車いす申請 form.",
+   "importance": "The issuer publishes a second, finer 1F split (平土間307 / ギャラリー156) that the original HARD-CASE preflight did not use. It supplies two independent arithmetic checks on the 1F instead of one."
+  },
+  {
+   "url": "https://www.tglobe.net/s/tg/group/detail/seat?ima=3055",
+   "role": "current official 座席表 page carrying the 1階席 / 2階席 / 3階席 charts, re-fetched 2026-08-27",
+   "statedFacts": "Footnotes: ※公演によって、座席の配置やステージの形状が異なる場合がございます。 / ※当劇場にはエレベーターの設置はございません。 Footer: Copyright © 2002-2026 The Globe Tokyo.",
+   "chartAssets": [
+    "https://www.tglobe.net/images/45/d25/66086573958a2a2c38cae633c87a8-01.png (1F, 2000x1413, 513,997 bytes, sha256 cbb7bab6d907e3127a7e6a290a99a53574320b17bfa55e535c8cf547d11d90d8)",
+    "https://www.tglobe.net/images/45/d25/66086573958a2a2c38cae633c87a8-02 (2F, 2000x1413, 346,810 bytes, sha256 3e35951a693e7575cb925072d66a4acff415e042ddcb0c94a20fb75466aba989)",
+    "https://www.tglobe.net/images/45/d25/66086573958a2a2c38cae633c87a8-03 (3F, 2000x1413, 294,627 bytes, sha256 e2a147f7a45ce5b14d4a63790e17b2b9e152641e6281fd142bb2500f483322d4)"
+   ],
+   "assetStability": "Each chart was fetched twice, at the start of Pass 1 and again at the start of Pass 2, and the second fetch was byte-identical to the first on all three files. The .png and .jpg extensions of the 2F and 3F assets serve the same bytes."
+  },
+  {
+   "url": "https://www.tglobe.net/s/tg/group/detail/use?ima=2215",
+   "role": "current official 施設利用について (facility-use / usage guide), re-fetched 2026-08-27",
+   "statedFacts": "States no seat count, no seat structure, no wheelchair relation and no configuration statement. It links only 座席表 and 車いす申請, and gives the contact 03-3360-3540（平日11:00〜17:00）. It supplies no evidence bearing on the judgment question."
+  },
+  {
+   "url": "https://www.tglobe.net/s/tg/form/inquiry?cd=wheelchair&ima=4252",
+   "role": "current official 車いす申請 (wheelchair application) page, re-fetched 2026-08-27",
+   "statedFacts": "車いすでご来場のお客様はS席のチケットをお求めの上、必ず事前にお問合せください。 / スペースに限りがございますので、空きがない場合、ご自席でのご観劇をお願いする可能性がございます。 The form asks for the ticket's floor / row / seat number and offers 同行者と隣席希望. It states no wheelchair-space count and no seat-number relation.",
+   "importance": "Two facts follow. The wheelchair space is applied for against an already-held numbered S ticket, i.e. it is a conversion of a held numbered seat rather than a separately sold unnumbered position; and the number of spaces is finite and can be exhausted, at which point the holder watches from the numbered seat printed on the ticket. Neither fact alone settles the subtotal question; both are consistent with the chart annotation below."
+  }
+ ],
+ "decisiveChartAnnotation": {
+  "finding": "The current official 1F chart does not leave the wheelchair spaces unexplained. Beside each of the two wheelchair areas the issuer prints, in vertical type, the label 車いす席 together with an arrow pointing at the dashed positions and the text 一般席とした場合 <numbers> 番.",
+  "left": "車いす席 / 一般席とした場合 14〜17番, printed beside the two wheelchair pictograms in the left gallery next to 2扉, on the outermost gallery row O.",
+  "right": "車いす席 / 一般席とした場合 50〜53番, printed beside the two wheelchair pictograms in the right gallery next to 5扉, on the same outermost gallery row O.",
+  "drawnForm": "Each area is drawn as four dashed seat-sized slots occupied by two wheelchair pictograms. Each set of four dashed slots sits exactly in the row-O grid, in the positions that the row's own continuous numbering leaves unprinted.",
+  "significance": "This is a direct issuer statement of the replacement relation. It identifies, by number, which general-seat identifiers the wheelchair spaces occupy. It was not taken as an answer key from any prior report; it was read from the chart independently in both passes.",
+  "retractedCharacterization": "The TOKYO PRIORITY D NEXT HIGH-YIELD PREFLIGHT recorded only that the 1F chart 'displays unnumbered wheelchair-space icons' and that 'the issuer does not state whether those icons are included in, replace, or are additional to the 707-seat subtotal'. That characterization is retracted: the issuer does state the relation, on the chart itself, and the preflight's metadata-only pass did not read the annotation."
+ },
+ "transcriptionMethod": {
+  "pass1": "1F, then 2F, then 3F, read in the ordinary direction (left to right, stage-outward), block by block, from magnified crops of the three fetched chart images. Recorded per floor: row, block, every printed seat identifier, every gap, every wheelchair pictogram and unnumbered position, any removable or accessibility marking, and the floor printed-seat subtotal.",
+  "pass2": "The three charts were re-fetched from the issuer before Pass 2 and verified byte-identical. The floors were then re-read in the reverse order 3F, 2F, 1F; within each floor the blocks were taken from the opposite side (right gallery before left, rear before front, main rows L to A); and within every row and column the identifiers were read from the high-numbered end backwards. Every Pass-2 crop used a different crop window and a different magnification from its Pass-1 counterpart, so each identifier was re-read from pixels rather than recalled from a range table.",
+  "comparison": "The two passes were compared only after both were complete.",
+  "independenceLimitation": "Both passes were executed by one agent inside one context, so Pass 2 is a reverse-direction re-derivation from re-fetched assets rather than a cold second reading. It is recorded as such. It does not discharge the repository's production two-pass requirement, which remains mandatory before any implementation."
+ },
+ "pass1": {
+  "floor1": {
+   "structure": "Two issuer-named areas. 平土間 (flat floor) rows A-L, each row split by aisles into a left, a centre and a right block that share one continuous number sequence. ギャラリー (gallery) rows M, N, O, wrapping from the left side, across the rear, to the right side; M is the innermost gallery row and O the outermost, and each gallery row carries one continuous number sequence around the horseshoe.",
+   "hiradomaRows": {
+    "A": "left 2-9 | centre 10-25 | right 26-33 = 2-33, 32 printed",
+    "B": "left 1-9 | centre 10-24 | right 25-33 = 1-33, 33 printed",
+    "C": "left 1-9 | centre 10-25 | right 26-34 = 1-34, 34 printed",
+    "D": "left 2-9 | centre 10-25 | right 26-33 = 2-33, 32 printed",
+    "E": "left 3-9 | centre 10-24 | right 25-31 = 3-31, 29 printed",
+    "F": "left 3-9 | centre 10-25 | right 26-32 = 3-32, 30 printed",
+    "G": "left 4-9 | centre 10-24 | right 25-30 = 4-30, 27 printed",
+    "H": "left 6-9 | centre 10-25 | right 26-29 = 6-29, 24 printed",
+    "I": "left 8-9 | centre 10-24 | right 25-26 = 8-26, 19 printed",
+    "J": "centre 10-25 only, no side block = 16 printed",
+    "K": "centre 10-24 only, no side block = 15 printed",
+    "L": "centre 10-25 only, no side block = 16 printed"
+   },
+   "hiradomaPrintedSubtotal": 307,
+   "galleryRows": {
+    "M": "no left upper block; left middle 6-12; left lower 13-20; no rear-centre section; right lower 41-48; right middle 49-55; no right upper block. Printed 6-20 and 41-55 = 30 printed. Identifiers 21-40 are not issued on row M, which has no rear-centre section.",
+    "N": "left upper 1-4; left middle 5-12; left lower 13-21; rear-left 22-30; rear-right 31-39; right lower 40-48; right middle 49-56; right upper 57-60. Continuous 1-60 = 60 printed, no gap.",
+    "O": "left upper 1-4; left middle 5-13; left lower positions 14-17 drawn as the wheelchair area and printed 18-23; rear-left 24-33; rear-right 34-43; right lower printed 44-49 and positions 50-53 drawn as the wheelchair area; right middle 54-62; right upper 63-66. Identifier space 1-66, printed 58, unprinted 14-17 and 50-53."
+   },
+   "galleryPrintedSubtotal": 148,
+   "wheelchairPositions": 8,
+   "floorPrintedSubtotal": 455
+  },
+  "floor2": {
+   "structure": "One horseshoe gallery of three rows A, B, C, numbered continuously from the left proscenium end, around the rear, to the right proscenium end. Seven blocks: left upper (1扉), left middle (2扉), left lower (3扉), rear-left, rear-right (4扉), right middle (5扉), right upper (6扉).",
+   "rows": {
+    "A": "1-6 | 7-15 | 16-24 | 25-28 | 29-32 | 33-41 | 42-50 | 51-56 = continuous 1-56, 56 printed",
+    "B": "2-6 | 7-15 | 16-25 | 26-29 | 30-33 | 34-43 | 44-52 | 53-57 = continuous 2-57, 56 printed",
+    "C": "7-15 | 16-25 | 26-29 | 30-33 | 34-43 | 44-52 = continuous 7-52, 46 printed"
+   },
+   "gaps": "Row B is not issued identifier 1 and row C is not issued identifiers 1-6, because the left upper block seats only rows A and B and row C begins in the left middle block. Row C is not issued identifiers above 52, because the right upper block seats only rows A and B.",
+   "wheelchairPositions": 0,
+   "floorPrintedSubtotal": 158
+  },
+  "floor3": {
+   "structure": "One horseshoe gallery of two rows A and B, numbered continuously from the left end around the rear to the right end. Six blocks: left upper, left middle (2扉 side), rear-left (3扉), rear-right (4扉), right middle, right upper (5扉 side).",
+   "rows": {
+    "A": "1-6 | 7-15 | 16-21 | 22-27 | 28-36 | 37-42 = continuous 1-42, 42 printed",
+    "B": "1-6 | 7-16 | 17-22 | 23-28 | 29-38 | 39-44 = continuous 1-44, 44 printed"
+   },
+   "wheelchairPositions": 0,
+   "floorPrintedSubtotal": 86
+  },
+  "grandPrintedTotal": 699
+ },
+ "pass2": {
+  "method": "3F, then 2F, then 1F; within each floor right-to-left and rear-to-front; within each row and column from the highest printed identifier backwards; new crop windows and magnifications throughout; charts re-fetched and byte-verified first.",
+  "floor3": "A: 42,41,40,39,38,37 | 36..28 | 27..22 | 21..16 | 15..7 | 6..1 = 1-42, 42 printed. B: 44..39 | 38..29 | 28..23 | 22..17 | 16..7 | 6..1 = 1-44, 44 printed. No wheelchair pictogram, no dashed position, no unnumbered box anywhere on 3F. Floor printed subtotal 86.",
+  "floor2": "A: 56..51 | 50..42 | 41..33 | 32..29 | 28..25 | 24..16 | 15..7 | 6..1 = 1-56, 56 printed. B: 57..53 | 52..44 | 43..34 | 33..30 | 29..26 | 25..16 | 15..7 | 6..2 = 2-57, 56 printed. C: 52..44 | 43..34 | 33..30 | 29..26 | 25..16 | 15..7 = 7-52, 46 printed. No wheelchair pictogram, no dashed position, no unnumbered box anywhere on 2F. Floor printed subtotal 158.",
+  "floor1Gallery": "O read backwards: 66..63 | 62..54 | four dashed wheelchair positions annotated 一般席とした場合 50〜53番 | 49..44 | 43..34 | 33..24 | 23..18 | four dashed wheelchair positions annotated 一般席とした場合 14〜17番 | 13..5 | 4..1. N read backwards: 60..57 | 56..49 | 48..40 | 39..31 | 30..22 | 21..13 | 12..5 | 4..1. M read backwards: 55..49 | 48..41 | (no rear section) | 20..13 | 12..6. Gallery printed subtotal 148, wheelchair positions 8.",
+  "floor1Hiradoma": "Rows read L to A, each from its highest identifier backwards: L 25..10; K 24..10; J 25..10; I 26,25 | 24..10 | 9,8; H 29..26 | 25..10 | 9..6; G 30..25 | 24..10 | 9..4; F 32..26 | 25..10 | 9..3; E 31..25 | 24..10 | 9..3; D 33..26 | 25..10 | 9..2; C 34..26 | 25..10 | 9..1; B 33..25 | 24..10 | 9..1; A 33..26 | 25..10 | 9..2. Subtotal 307.",
+  "grandPrintedTotal": 699
+ },
+ "comparison": {
+  "result": "MATCH",
+  "completePrintedIdSet": "identical",
+  "rowOwnership": "identical",
+  "blockOwnership": "identical",
+  "rangesAndGaps": "identical, including the row-M identifier gap 21-40, the 2F row-B missing identifier 1, the 2F row-C identifier space 7-52, and every 平土間 row's left-block start and right-block end",
+  "wheelchairIconLocations": "identical: two areas only, both on 1F gallery row O, one in the left gallery next to 2扉 occupying positions 14-17 and one in the right gallery next to 5扉 occupying positions 50-53; two pictograms in four dashed slots each; none on 2F, none on 3F",
+  "floorPrintedSubtotals": "identical: 1F 455, 2F 158, 3F 86",
+  "discrepancies": "none"
+ },
+ "criticalArithmetic": {
+  "method": "Printed numbered identifiers only were summed, mechanically, per floor. No identifier was added to reach a published figure and none was removed.",
+  "floor1PrintedIds": 455,
+  "floor2PrintedIds": 158,
+  "floor3PrintedIds": 86,
+  "grandPrintedIds": 699,
+  "issuerPublished": {
+   "floor1": 463,
+   "floor2": 158,
+   "floor3": 86,
+   "total": 707
+  },
+  "comparison": {
+   "floor2": "158 = 158. Exact match on printed identifiers alone.",
+   "floor3": "86 = 86. Exact match on printed identifiers alone.",
+   "floor1": "455 < 463. Difference 8.",
+   "total": "699 < 707. Difference 8, arising entirely on the 1F."
+  },
+  "importantBranchDoesNotApply": "The fresh transcription does NOT reproduce 463/158/86 from printed identifiers alone. It reproduces 158 and 86 exactly and falls 8 short on the 1F. The branch in which the printed set alone already equals 707, and in which counting the wheelchair icons inside 707 would therefore overrun the issuer subtotal or force numbered seats to be dropped, does not apply here, and no such argument is made.",
+  "theDifferenceIsIssuerExplained": {
+   "statement": "The 8-seat difference is not filled in by the repository and is not attributed to the wheelchair spaces by assumption. It is explained by the issuer's own two published 1F subtotals and by the issuer's own chart annotation, and each half is independently checkable.",
+   "check1_hiradoma": "The issuer publishes 平土間307席. The independent two-pass sum of the printed identifiers in rows A-L is 307. Exact, with no adjustment. The 平土間 therefore contributes nothing to the difference and carries no wheelchair position.",
+   "check2_gallery": "The issuer publishes ギャラリー156席. The independent two-pass sum of the printed identifiers in rows M, N, O is 148. The chart draws exactly 8 unnumbered wheelchair positions, all in gallery row O, and annotates them with the general-seat numbers they carry: 14-17 and 50-53. 148 + 8 = 156, exactly the issuer's own gallery figure.",
+   "check3_rowO": "Independently of the subtotals, gallery row O's own numbering runs continuously from 1 to 66 and omits from print exactly the eight identifiers 14, 15, 16, 17, 50, 51, 52, 53 - precisely and only the numbers the issuer's annotation names. Rows M and N contain no wheelchair position and no such omission; row N runs 1-60 with no gap at all.",
+   "consequence": "463 = 307 + 156 = 307 + 148 printed + 8 wheelchair positions. 707 = 699 printed + 8 wheelchair positions. The 8 wheelchair positions lie INSIDE the published 1F 463 and inside the published 707, and they occupy - and in the standard configuration replace - eight identifiers of the issuer's own numbering, namely 1F gallery row O numbers 14-17 and 50-53."
+  },
+  "whyThisIsNotCapacityFitting": "Nothing was fitted. The issuer names the eight numbers on the chart; the count of drawn wheelchair positions independently equals eight; the row-O numbering independently omits exactly those eight identifiers and no others; and the 平土間 half of the 1F reconciles exactly at 307 with no wheelchair position involved at all. Three independent observations agree, and the mapped identifier set is left unchanged at 699 regardless of the published figure."
+ },
+ "wheelchairSemanticsRuling": {
+  "answerToTheJudgmentQuestion": "INSIDE the 707 subtotal, replacing numbered seats. The wheelchair spaces are not additional to 707 and the relation is not undecidable.",
+  "positions": "Eight, all on 1F, all in gallery row O: left gallery positions 14, 15, 16, 17 and right gallery positions 50, 51, 52, 53. Each area is four dashed slots carrying two wheelchair pictograms.",
+  "issuerBasis": "The chart's own printed annotation 車いす席 / 一般席とした場合 14〜17番 and 車いす席 / 一般席とした場合 50〜53番, corroborated by the published 1F split 平土間307 / ギャラリー156 and by the row-O identifier space.",
+  "operationalCorroboration": "The current 車いす申請 page requires the applicant to already hold an S-seat ticket and to give its floor, row and seat number, and states that if no space is free the applicant watches from that seat. Wheelchair use is therefore a conversion applied to a held numbered seat, consistent with the spaces sitting inside the numbering rather than beside it. This is corroboration only; the ruling rests on the chart annotation and the arithmetic.",
+  "consequenceForMapping": "In the issuer's current standard configuration those eight identifiers are wheelchair space and are not printed as seats. The correct representative mapped set is therefore the 699 printed identifiers. The eight identifiers must NOT be created as mapped seats from the annotation: doing so would adopt the issuer's alternative 一般席とした場合 arrangement instead of the standard chart, which is a configuration mix. The published 707 is retained as the official total, and the resulting 8-seat difference is documented quality metadata, not an error and not something to be closed by adding or deleting identifiers."
+ },
+ "existingProductionPrecedent": {
+  "verifiedAgainstRepository": true,
+  "method": "All 134 production venue sources in data/venue-sources were read. 125 mention 車いす or 車椅子; 75 of those explicitly record wheelchair spaces as lying outside the mapped numbered set.",
+  "publishedCapacityVersusNumberedSet": [
+   "akigawa-kirara-hall-standard: the issuer's own chart is titled 座席案内図 702席（含車椅子席2席）. The repository registers the 700 printed fixed-numbered seats and states 公式公称702席にはF列位置の車椅子用2席が含まれるが、番号付き固定席ではないため抽選対象外. Published capacity includes the wheelchair spaces; the mapped set does not.",
+   "chofu-green-main-standard: the issuer's chart is titled 客席数1,301、車いす用6席含. The repository registers 1,295 numbered seats and states 公式定員1,301席には非番号の車椅子6区画が含まれるため、番号席1,295席との差6席は抽選対象外の区画による. Same pattern.",
+   "musashino-civic-main-standard: expectedSeatCount 1,256 against a mapped 1,252, with wheelchairSemantics recording 公式座席表は1階7・8列付近の左右に無番号の「車椅子席」区画を描き、脚注で車椅子席4席を固定席1,252席とは別行に記載する。番号を印字しないためseat IDを作成しない, and scopeDisclosure 番号のない車椅子席4席は登録しません. This is the closest structural analogue: an issuer capacity that includes unnumbered wheelchair spaces, a mapped set of printed identifiers only, and an explicit refusal to create IDs."
+  ],
+  "noIdCreationFromUnnumberedSpace": "No production source converts an unnumbered wheelchair space into a mapped seat ID. Where the issuer does print the identifiers of positions convertible to wheelchair space, the identifiers are retained rather than deleted - kinokuniya-hall-standard keeps the printed I/J 1-2 and 19-20 inside the 427-seat set and records the conversion only as metadata with wheelchairSemantics.status not-reflected. Both directions of the rule are already exercised in production: an unprinted position is never given an ID, and a printed ID is never removed for accessibility.",
+  "differenceIsAWarningNotABlocker": "npm run venues:validate currently emits 24 'official total X differs from mapped seat count Y' warnings against production sources, and docs/VENUE_DATA_GUIDE.md states that agreement with the official total is confidence information and not a hard gate, and that identifiers must not be deleted to close the difference.",
+  "applicabilityToThisVenue": "Applicable, and applied only after this venue's own arithmetic was settled. 東京グローブ座 is in fact a stronger case than the precedents: musashino, akigawa and chofu rest on an issuer footnote stating how many wheelchair spaces the published capacity includes, whereas 東京グローブ座's chart additionally names which identifiers they occupy. The precedent was not used to decide the venue; the venue's own three-way arithmetic decided it, and the precedent then fixes how the settled relation is represented."
+ },
+ "decisionRuleEvaluation": {
+  "freshTwoPassMatch": "YES - MATCH on the complete printed ID set, row ownership, block ownership, ranges and gaps, wheelchair icon locations, and all three floor printed subtotals.",
+  "completeIssuerNumberedSetLosslesslyReproducible": "YES - 699 printed identifiers with issuer-drawn floor, row and block ownership, reproducible without inference. Row M's 21-40 identifier gap, 2F row B's absent identifier 1, 2F row C's 7-52 space and 1F row O's 14-17 / 50-53 omissions are all issuer-drawn facts, each confirmed twice.",
+  "floorSubtotalsExplained": "YES - 2F 158 and 3F 86 match printed identifiers exactly. 1F 463 is explained by the issuer's own finer split: 平土間307 matches the printed identifiers exactly, and ギャラリー156 equals the 148 printed identifiers plus the 8 issuer-numbered wheelchair positions the chart itself names.",
+  "wheelchairRelationExplainedByEvidenceAndPolicy": "YES - the chart states the replacement relation by number; the arithmetic confirms it three independent ways; and repository policy plus 75 production sources fix the representation, namely that unnumbered wheelchair space is recorded as out-of-scope metadata and never converted into a mapped seat ID.",
+  "configurationAmbiguity": "NONE material. The issuer publishes exactly one set of standard 1F/2F/3F numbered charts and no alternative numbered chart. The page footnote ※公演によって、座席の配置やステージの形状が異なる場合がございます is a per-production variation notice of the same kind already accepted at adopted venues such as tokyo-official-0647 (removable seating disclosed on the rental page) and tokyo-official-0222 (removable I/J positions printed on the chart); it does not define a second numbered configuration and does not make the standard chart ambiguous. The 一般席とした場合 wording likewise describes an alternative use of eight positions, not a second published chart, and is deliberately not adopted.",
+  "printedIdDeletionRequiredForAccessibility": "NO - the eight wheelchair positions were never printed as identifiers, so no printed identifier is removed. The mapped set is exactly the printed set."
+ },
+ "result": {
+  "disposition": "ADOPT",
+  "dispositionChange": "HARD-CASE DEFER (2026-08-25) -> ADOPT (2026-08-27)",
+  "dispositionReason": "The relation that blocked this record is stated by the issuer on the chart itself and is confirmed by the issuer's own 平土間307 / ギャラリー156 split. The unnumbered wheelchair spaces are inside the published 707 and occupy eight named identifiers of 1F gallery row O. Nothing must be inferred, fitted, invented or deleted to represent the venue: the representative mapped set is the 699 printed identifiers, and the 8-seat difference against the published 707 is issuer-explained metadata.",
+  "returnsTo": "separately authorized implementation candidate",
+  "implementationAuthorizedByThisAudit": false,
+  "confidence": "representative",
+  "lane": "JUDGMENT for this audit; DENSE for any future implementation - three multi-block floors, a wrap-around gallery numbering scheme, and roughly 60 independently checked ranges."
+ },
+ "implementationRequirements": {
+  "notAuthorizedByThisAudit": "This audit does not authorize an implementation. It records what an implementation would have to satisfy if one is separately authorized.",
+  "currentnessRecheck": "Re-confirm at implementation time that the facility overview still publishes 707 / 463 (平土間307 / ギャラリー156) / 158 / 86 and that the three chart assets are still the current-linked ones; re-fetch and re-hash them.",
+  "freshTwoPassRequired": "Yes. The two passes recorded here were performed by one agent in one context for the purposes of this judgment and do not discharge the repository's production two-pass requirement. A fresh independent two-pass transcription must be performed at implementation, with the second pass held independent of the first pass's ranges.",
+  "exactIndependentRanges": {
+   "note": "Recorded so that a future implementation can be checked against this audit, not so that it can copy them. A fresh two-pass must re-derive them.",
+   "floor1_hiradoma_A_to_L": {
+    "A": "2-33",
+    "B": "1-33",
+    "C": "1-34",
+    "D": "2-33",
+    "E": "3-31",
+    "F": "3-32",
+    "G": "4-30",
+    "H": "6-29",
+    "I": "8-26",
+    "J": "10-25",
+    "K": "10-24",
+    "L": "10-25"
+   },
+   "floor1_gallery": {
+    "M": "6-20 and 41-55 (two ranges; identifiers 21-40 are not issued on row M)",
+    "N": "1-60",
+    "O": "1-66 with excluded [14,15,16,17,50,51,52,53]"
+   },
+   "floor2": {
+    "A": "1-56",
+    "B": "2-57",
+    "C": "7-52"
+   },
+   "floor3": {
+    "A": "1-42",
+    "B": "1-44"
+   }
+  },
+  "floorSubtotals": {
+   "floor1Printed": 455,
+   "floor1Hiradoma": 307,
+   "floor1Gallery": 148,
+   "floor2Printed": 158,
+   "floor3Printed": 86,
+   "grandPrinted": 699
+  },
+  "expectedSeatCount": "707, the issuer's published total. The 8-seat difference against the 699 mapped identifiers is expected, is documented, and must be left as a validator warning. Do not close it by adding or deleting identifiers.",
+  "wheelchairSemanticsToRecord": "Record the eight positions as 1F gallery row O identifiers 14-17 and 50-53, drawn as 車いす席 and annotated by the issuer with 一般席とした場合 14〜17番 / 50〜53番, included in the published 707 but not printed as seats in the standard configuration and therefore not mapped. Cite the seat-structure source. Do not create seat IDs for them.",
+  "areaNaming": "The issuer names the floors and the two 1F areas (平土間 / ギャラリー) and prints the row letters; block names are not issuer-published. Any repository-side block naming must follow the display-name rule in docs/VENUE_DATA_GUIDE.md, must be disclosed as a display-only name, and must not claim membership of an adjacent row.",
+  "rowLetterCollision": "1F, 2F and 3F all use row letters starting at A, and 1F reuses M/N/O for the gallery. Floors must be separate areas so that NFKC row-duplicate detection does not collide.",
+  "prohibited": "Creating identifiers for the eight wheelchair positions; deleting any printed identifier; adopting the 一般席とした場合 arrangement as the representative configuration; renumbering row M to close its 21-40 gap; inferring any ownership from geometry; or mixing the per-production variation notice into the standard configuration."
+ },
+ "productionImpact": {
+  "before": {
+   "venues": 134,
+   "selectableConfigurations": 136,
+   "seatRecords": 181827
+  },
+  "after": {
+   "venues": 134,
+   "selectableConfigurations": 136,
+   "seatRecords": 181827
+  },
+  "changed": false,
+  "artifactsTouched": "This report, the tokyo-official-0278 inventory record, and docs/HANDOFF.md only. No venue source, generated catalog, runtime artifact, or production fingerprint was created or changed."
+ },
+ "nextMacro": "A separately authorized bounded production implementation of tokyo-official-0278 東京グローブ座. tokyo-official-0058 インスティトゥト・セルバンテス東京〔オーディトリアム〕 remains the next hard-case judgment-audit candidate and was not opened by this audit.",
+ "exactNextAction": "Stop. The only work this audit enables is a separately authorized bounded production implementation of tokyo-official-0278 東京グローブ座, and it must begin with a currentness re-check and a fresh independent two-pass transcription. Do not start it, do not open tokyo-official-0058, and do not resume ordinary Tokyo Priority-D research without separate authorization."
+}
