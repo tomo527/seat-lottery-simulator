@@ -21,8 +21,9 @@
       "茨城県": 5
     },
     "byStatus": {
+      "ADOPT / implementation-ready": 3,
       "HOLD / NEED EVIDENCE / formal DEFER": 57,
-      "inventory-unresearched": 45,
+      "inventory-unresearched": 42,
       "production": 52
     },
     "missingFromInventory": 0
@@ -121,9 +122,9 @@
       "officialUrl": "https://www.mito-hall.jp/",
       "inventoryId": "ibaraki-mito-civic-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "Separately authorized bounded two-pass implementation must verify the current linked floor-specific numbered charts losslessly; do not infer any wheelchair, event-dependent, or unprinted position."
     },
     {
       "prefecture": "茨城県",
@@ -342,9 +343,9 @@
       "officialUrl": "https://saitama-culture.jp/culturecenter/",
       "inventoryId": "saitama-city-culture-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "Separately authorized bounded two-pass implementation must select and verify an issuer-defined A or B configuration from the current numbered chart; do not infer wheelchair or movable-seat treatment."
     },
     {
       "prefecture": "埼玉県",
@@ -524,9 +525,9 @@
       "officialUrl": "https://pia-arena-mm.jp/",
       "inventoryId": "kanagawa-pia-arena-mm",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "Separately authorized bounded two-pass implementation must verify the current four-floor numbered public seat chart and any accessibility/event-use annotations losslessly; do not infer omitted positions."
     },
     {
       "prefecture": "神奈川県",
@@ -2071,7 +2072,7 @@
       "facilitySpace": "栃木県総合文化センター〔メインホール〕",
       "officialCapacityAndMode": "1604 (current inventory/audit capacity; see official URL)",
       "officialUrl": "https://www.tochigi-kenmin.jp/",
-      "inventoryId": "tochigi-tochigi-culture-main",
+      "inventoryId": "tochigi-ken-sogo-bunka-center-main",
       "venueSourceId": null,
       "currentStatus": "inventory-unresearched",
       "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",

@@ -1,0 +1,235 @@
+{
+  "reportVersion": 1,
+  "title": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT",
+  "asOf": "2026-08-27",
+  "scope": "Only the 45 Kanto >=1,000 ledger records classified inventory-unresearched at the start of this wave. Production, formal HOLD/NEED EVIDENCE/DEFER, and duplicate/alias records were excluded.",
+  "mode": "preflight only: current first-party research and formal triage; no two-pass transcription, source production JSON, ranges, fingerprints, generated catalog/runtime, or production integration.",
+  "evidencePolicy": "Current first-party issuer material is the decision basis. Secondary material was discovery-only. Capacity is not seat evidence. No capacity fitting, invented seat IDs, geometry completion, or third-party seat-map gap filling is permitted.",
+  "policyCorrection": {
+    "supersedesHandoffNextMacro": "bounded JUDGMENT / HARD-CASE evidence triage for tokyo-official-1017, saitama-kaikan-main, and omiya-sonic-city-large",
+    "newMacro": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT",
+    "reason": "Formal triage of unresearched release-critical facilities and discovery of implementation-ready candidates is higher value than rereading known blockers without material new issuer evidence.",
+    "knownBlockersNotReopened": [
+      {
+        "inventoryId": "tokyo-official-1017",
+        "name": "アリーナ立川立飛",
+        "reason": "Already bounded-JUDGMENT reviewed. The current material still lacks row labels/seat IDs and leaves 526 versus 528 movable-bank arithmetic unresolved.",
+        "reopenCondition": "Issuer publishes new numbered-seat material with row/seat identifiers and resolves the movable-seat arithmetic."
+      },
+      {
+        "inventoryId": "saitama-kaikan-main",
+        "name": "埼玉会館 大ホール",
+        "reason": "Existing formal blocker retained; this wave did not find material current issuer evidence that changes it."
+      },
+      {
+        "inventoryId": "omiya-sonic-city-large",
+        "name": "大宮ソニックシティ 大ホール",
+        "reason": "Existing formal blocker retained; this wave did not find material current issuer evidence that changes it."
+      }
+    ]
+  },
+  "startSnapshot": {
+    "universeTotal": 154,
+    "byStatus": {
+      "production": 52,
+      "HOLD / NEED EVIDENCE / formal DEFER": 57,
+      "inventory-unresearched": 45
+    },
+    "missingFromInventory": 0,
+    "productionTotals": {
+      "venues": 135,
+      "configurations": 137,
+      "seatRecords": 182526
+    }
+  },
+  "identityReconciliation": [
+    {
+      "ledgerInventoryIdBefore": "tochigi-tochigi-culture-main",
+      "canonicalInventoryId": "tochigi-ken-sogo-bunka-center-main",
+      "facilitySpace": "栃木県総合文化センター〔メインホール〕",
+      "result": "Corrected the ledger reference to the existing canonical inventory ID; no new inventory record was created and missingFromInventory remains zero."
+    }
+  ],
+  "liveReranking": {
+    "method": [
+      "Prioritized live/concert/theater search demand and metropolitan relevance.",
+      "Favored current issuer-owned numbered seating material and purpose-built fixed-seat halls over capacity alone.",
+      "Applied a yield penalty to stadiums, exhibition halls, and event-dependent arenas where a complete representative numbered set was less likely."
+    ],
+    "explicitlyEvaluated": [
+      {
+        "rank": 1,
+        "inventoryId": "kanagawa-pia-arena-mm",
+        "name": "ぴあアリーナMM",
+        "researchDecision": "researched",
+        "rationale": "High-demand music arena; the current official public 1F–4F maps visibly identify numbered audience-seat blocks."
+      },
+      {
+        "rank": 2,
+        "inventoryId": "ibaraki-mito-civic-main",
+        "name": "水戸市民会館〔グロービスホール〕",
+        "researchDecision": "researched",
+        "rationale": "Purpose-built 2,000-seat hall with current official floor-specific and wheelchair chart downloads."
+      },
+      {
+        "rank": 3,
+        "inventoryId": "saitama-city-culture-main",
+        "name": "さいたま市文化センター〔大ホール〕",
+        "researchDecision": "researched",
+        "rationale": "Major fixed-seat hall with issuer-defined A/B modes and a current official seating diagram."
+      },
+      {
+        "rank": 4,
+        "inventoryId": "saitama-raiboc-main",
+        "name": "RaiBoC Hall〔大ホール〕",
+        "researchDecision": "not researched after stop condition",
+        "rationale": "Current official 1,400-seat hall page advertises a seating chart; held for the next unresearched batch after three ADOPTs."
+      },
+      {
+        "rank": 5,
+        "inventoryId": "kanagawa-k-arena-yokohama",
+        "name": "Kアリーナ横浜",
+        "researchDecision": "not researched after stop condition",
+        "rationale": "Very high live-search relevance and an official floor/seat-map entry, but its multi-level large-arena representation receives a yield penalty until a complete numbered representative set is verified."
+      },
+      {
+        "rank": 6,
+        "inventoryId": "chiba-lala-arena-tokyo-bay",
+        "name": "LaLa arena TOKYO-BAY",
+        "researchDecision": "not researched after stop condition",
+        "rationale": "Official seating information exists, but fixed/movable positions and event-dependent layouts lower immediate reproducibility yield."
+      },
+      {
+        "rank": 7,
+        "inventoryId": "kanagawa-kaat-hall",
+        "name": "KAAT神奈川芸術劇場〔ホール〕",
+        "researchDecision": "not researched after stop condition",
+        "rationale": "Official standard/steep seating-chart materials are promising, but multiple movable theater modes make representative-configuration judgment more likely."
+      },
+      {
+        "rank": 8,
+        "inventoryId": "kanagawa-pacifico-national-hall",
+        "name": "パシフィコ横浜〔国立大ホール〕",
+        "researchDecision": "not researched after stop condition",
+        "rationale": "Official public seat chart is promising, but the issuer announced a 2027-05-17 through 2028-03-31 closure; this currentness risk reduces immediate release yield."
+      },
+      {
+        "rank": 9,
+        "inventoryId": "kanagawa-yokohama-arena-main",
+        "name": "横浜アリーナ〔メインアリーナ〕",
+        "researchDecision": "not researched after stop condition",
+        "rationale": "Very high demand, but the large event-dependent arena configuration has lower expected fixed representative-set yield than the preceding halls."
+      },
+      {
+        "rank": 10,
+        "inventoryId": "chiba-pref-culture-main",
+        "name": "千葉県文化会館〔大ホール〕",
+        "researchDecision": "not researched after stop condition",
+        "rationale": "A fixed-seat hall is potentially high yield, but it ranks behind current official chart-confirmed candidates pending operational/current-evidence screening."
+      }
+    ]
+  },
+  "researched": [
+    {
+      "rank": 1,
+      "inventoryId": "kanagawa-pia-arena-mm",
+      "prefecture": "神奈川県",
+      "name": "ぴあアリーナMM",
+      "facilitySpace": "ぴあアリーナMM",
+      "officialCapacityAndMode": "12,141-seat music venue; public official maps are organized by 1F through 4F.",
+      "officialEvidence": [
+        {
+          "title": "ぴあアリーナMM 座席表",
+          "url": "https://pia-arena-mm.jp/seatmap/",
+          "finding": "Current official 1F–4F public seat maps show issuer-numbered audience-seat blocks and ranges."
+        },
+        {
+          "title": "ぴあアリーナMM 公式サイト",
+          "url": "https://pia-arena-mm.jp/",
+          "finding": "Current official schedule establishes ongoing music-event operation."
+        }
+      ],
+      "disposition": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "Separately authorized bounded two-pass implementation must verify every current printed position, floor ownership, omissions, and accessibility/event-use annotation losslessly."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "ibaraki-mito-civic-main",
+      "prefecture": "茨城県",
+      "name": "水戸市民会館〔グロービスホール〕",
+      "facilitySpace": "グロービスホール",
+      "officialCapacityAndMode": "2,000 seats across 1F/2F/3F; official material treats wheelchair seating separately and says its position can vary by event.",
+      "officialEvidence": [
+        {
+          "title": "水戸市民会館 グロービスホール概要",
+          "url": "https://www.mito-hall.jp/outline/hall-l.html",
+          "finding": "Current issuer page states the 2,000-seat, three-tier hall and links floor-specific seating materials."
+        },
+        {
+          "title": "水戸市民会館 主催者向けダウンロード",
+          "url": "https://www.mito-hall.jp/organizer/download.html",
+          "finding": "Current official downloads enumerate separate 1F, 2F, 3F, and wheelchair seating charts."
+        }
+      ],
+      "disposition": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "Separately authorized bounded two-pass implementation must verify the complete printed numbered set and preserve the issuer's event-dependent wheelchair treatment without inference."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "saitama-city-culture-main",
+      "prefecture": "埼玉県",
+      "name": "さいたま市文化センター〔大ホール〕",
+      "facilitySpace": "大ホール",
+      "officialCapacityAndMode": "Issuer-defined A configuration 2,006 seats and B configuration 1,658 seats (including 8 wheelchair positions); current official large-hall diagram is linked.",
+      "officialEvidence": [
+        {
+          "title": "さいたま市文化センター 大ホール",
+          "url": "https://saitama-culture.jp/culturecenter/hall/",
+          "finding": "Current issuer page defines A/B capacities and links the official 大ホール seating chart."
+        },
+        {
+          "title": "さいたま市文化センター 大ホール全図面",
+          "url": "https://saitama-culture.jp/sculwp/wp-content/uploads/culturecenter_allzumen01-1.pdf",
+          "finding": "Issuer PDF identifies fixed, movable, and wheelchair subtotals in the official large-hall material."
+        }
+      ],
+      "disposition": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "Separately authorized bounded two-pass implementation must select only an issuer-defined A or B representative configuration and verify every printed position/subtotal without capacity fitting."
+    }
+  ],
+  "stopRule": {
+    "maxResearchRecords": 5,
+    "adoptStopThreshold": 3,
+    "researchedCount": 3,
+    "adoptCount": 3,
+    "result": "Stopped immediately when the third ADOPT was reached; ranks 4 onward remain inventory-unresearched and received no formal disposition."
+  },
+  "countsAfter": {
+    "universeTotal": 154,
+    "byPrefecture": {
+      "東京都": 91,
+      "神奈川県": 18,
+      "千葉県": 13,
+      "埼玉県": 12,
+      "群馬県": 10,
+      "茨城県": 5,
+      "栃木県": 5
+    },
+    "byStatus": {
+      "production": 52,
+      "ADOPT / implementation-ready": 3,
+      "HOLD / NEED EVIDENCE / formal DEFER": 57,
+      "inventory-unresearched": 42
+    },
+    "missingFromInventory": 0,
+    "productionTotalsUnchanged": {
+      "venues": 135,
+      "configurations": 137,
+      "seatRecords": 182526
+    }
+  },
+  "exactNextAction": "Claudeによるseparately authorized bounded two-pass implementation: kanagawa-pia-arena-mm, ibaraki-mito-civic-main, saitama-city-culture-main."
+}
