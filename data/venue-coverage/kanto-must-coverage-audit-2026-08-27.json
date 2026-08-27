@@ -65,13 +65,24 @@
     }
   },
   "nextMacro": {
+    "selection": "Claudeによるseparately authorized bounded two-pass implementation; do not begin in this metadata consistency cleanup",
+    "candidates": [
+      "kanagawa-pia-arena-mm — ぴあアリーナMM",
+      "ibaraki-mito-civic-main — 水戸市民会館〔グロービスホール〕",
+      "saitama-city-culture-main — さいたま市文化センター〔大ホール〕"
+    ],
+    "reason": "2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT reached three ADOPT / implementation-ready dispositions. The current exact next action is the separately authorized bounded two-pass implementation for only these three candidates."
+  },
+  "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
     "candidates": [
       "tokyo-official-1017 — アリーナ立川立飛",
       "saitama-kaikan-main — 埼玉会館 大ホール",
       "omiya-sonic-city-large — 大宮ソニックシティ 大ホール"
     ],
-    "reason": "Already inventoried >=1,000 facilities with specific official conflict/scope questions."
+    "reason": "Already inventoried >=1,000 facilities with specific official conflict/scope questions.",
+    "supersededBy": "2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT",
+    "supersededReason": "The later preflight prioritized unresearched release-critical >=1,000 venue triage, reached three ADOPTs, and established the current Claude two-pass implementation action. The underlying hard-case facts remain preserved and are not reopened."
   },
   "records": [
     {
