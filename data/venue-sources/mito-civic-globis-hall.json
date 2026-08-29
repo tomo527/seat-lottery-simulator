@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "mito-civic-globis-hall",
+  "name": "水戸市民会館〔グロービスホール〕",
+  "prefecture": "茨城県",
+  "city": "水戸市",
+  "aliases": [
+    "水戸市民会館",
+    "グロービスホール",
+    "Mito Civic Hall"
+  ],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-outline",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "水戸市民会館",
+      "title": "水戸市民会館 グロービスホール概要（客席数2,000・1F/2F/3F内訳・車いす席案内）",
+      "url": "https://www.mito-hall.jp/outline/hall-l.html",
+      "checkedAt": "2026-08-29"
+    },
+    {
+      "id": "official-organizer-download",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "水戸市民会館",
+      "title": "水戸市民会館 主催者向けダウンロード（1F/2F/3F座席表・車いす席配置図リンク集）",
+      "url": "https://www.mito-hall.jp/organizer/download.html",
+      "checkedAt": "2026-08-29"
+    },
+    {
+      "id": "official-1f-chart",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "水戸市民会館",
+      "title": "グロービスホール(大ホール)客席図：1階席（rev.20230616）",
+      "url": "https://www.mito-hall.jp/outline/img/floormap_sheet_1f.pdf",
+      "checkedAt": "2026-08-29"
+    },
+    {
+      "id": "official-2f-chart",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "水戸市民会館",
+      "title": "グロービスホール(大ホール)客席図：2階席（rev.20230616）",
+      "url": "https://www.mito-hall.jp/outline/img/floormap_sheet_2f.pdf",
+      "checkedAt": "2026-08-29"
+    },
+    {
+      "id": "official-3f-chart",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "水戸市民会館",
+      "title": "グロービスホール(大ホール)客席図：3階席（rev.20230616）",
+      "url": "https://www.mito-hall.jp/outline/img/floormap_sheet_3f.pdf",
+      "checkedAt": "2026-08-29"
+    },
+    {
+      "id": "official-wheelchair-chart",
+      "official": true,
+      "roles": [
+        "event-layout"
+      ],
+      "publisher": "水戸市民会館",
+      "title": "グロービスホール(大ホール)車イス席の配置（1F22席・2F4席の代替配置例、rev.20230616）",
+      "url": "https://www.mito-hall.jp/outline/img/floormap_wheelchair.pdf",
+      "checkedAt": "2026-08-29"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常座席（1F/2F/3F固定番号席・標準構成）",
+      "selectionBasis": "現行公式概要ページは客席数を2,000席（1F 1,293・2F 333・3F 374）と明記する。現行公式の1F/2F/3F座席表PDF（いずれもrev.20230616）に印字された番号席を独立2回・別手法（ヘッダー基準の最近傍列判定と、ヘッダーに依存しないx座標ギャップクラスタリングを順方向・逆方向の双方で実行）で機械集計したところ、1F 1,293（本体番号列1,277＋親子室A4＋親子室B4＋R区画4＋L区画4）・2F 333（本体295＋R列19＋L列19）・3F 374（本体336＋R列19＋L列19）で完全一致し、合計は公式の2,000と一致した。したがって現行公式座席表が定義する通常番号構成を代表配置として採用する。車いす席は公式概要ページ自身が『催事内容によって図面と異なる位置に設置される場合があるため、主催者への事前確認が必要です』と明記する催事依存の配置であり、車いす席専用PDFも個別の通常番号IDとの対応（どの番号を車いす席へ転換するか）を印字せず、列単位の削減席数のみを示す代替配置例にとどまるため、別configurationとして採用しない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-08-29時点で現行公式ページからfloormap_sheet_1f.pdf／floormap_sheet_2f.pdf／floormap_sheet_3f.pdf／floormap_wheelchair.pdfを取得し、SHA-256で再取得後のバイト一致を確認した。1F/2F/3Fの各PDFはいずれもembedded textとして座席番号が印字されており、座標付きテキスト抽出により（a）ヘッダー数字（列番号）の位置を基準に最近傍列へ割り当てる方式と、（b）ヘッダーを一切参照せずx座標のギャップでクラスタリングし逆方向（3F→2F→1F、各列は下から上）に集計する方式の独立2方式で全席番号集合を突合し、完全一致を確認した。",
+      "sourceIds": [
+        "official-outline",
+        "official-organizer-download",
+        "official-1f-chart",
+        "official-2f-chart",
+        "official-3f-chart",
+        "official-wheelchair-chart"
+      ],
+      "differenceBasisSourceIds": [
+        "official-outline",
+        "official-1f-chart",
+        "official-2f-chart",
+        "official-3f-chart"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 2000,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "公式1F/2F/3F座席表PDFに印字された通常番号席の全席（1F 1,293・2F 333・3F 374、計2,000）を登録した標準構成です。1F前方の親子室A（A-5〜A-8）・親子室B（B-1〜B-4）、及びR/L可動椅子区画（各1〜4）の印字番号を含みます。車いす席は催事ごとに配置が変わると公式に明記されており、この通常番号構成には反映していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式車いす席配置図（floormap_wheelchair.pdf）は1F22席（H〜K列相当4列で7席、B〜E列相当4列で7席、U/V区画2席、S/T区画2席、Q/R区画2席、O/P区画2席）・2F4席（Z/Y区画2席・X/W区画2席）の代替配置例を示し、それぞれ一般席（可動式）を1〜2列撤去して一般席が計1F -64席（車いす追加後の純減-42席）・2F -12席（純減-8席）減少する旨を記載する。しかし公式概要ページ自身が『車いす席は催事内容によって図面と異なる位置に設置される場合があるため、主催者への事前確認が必要です』と明記しており、車いす席専用図はどの通常番号席が個別に車いす席へ転換されるかを番号単位で示さず、列単位の削減席数のみを示す一事例にとどまる。したがって通常番号席をそのまま登録し、車いす席への転換・置換関係のseat ID作成や近接席の削除は行っていない。",
+        "sourceIds": [
+          "official-wheelchair-chart",
+          "official-outline"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-08-29",
+        "method": "fresh-independent-two-pass-official-seat-map-transcription-with-official-capacity-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "1F座席表に印字されるN〜A（本体列）・R/Q（親子室A側）・O/P（親子室B側）の英字ラベルは、行間隔が座席番号の行間隔と一致しない（英字は座席2〜3行おきに出現）ことから意匠上・構造上の参照線であり、座席の列名として使用していない。登録した列(rowLabel)は公式チャート上でセル毎に印字された列番号「1」〜「31」（1F）・「1」〜「7」（2F本体）・「1」〜「8」（3F本体）を採用した。",
+          "2F座席表7列内のZ/Y/X/W区画（26〜31番・15〜20番相当）は網掛け表示だが番号は通常どおり印字されているため、area分割はせず2f-main内の通常番号席としてそのまま登録した。",
+          "1F31列の欠番（11・12・33・34）は隣接する親子室A/Bの位置と符合するが、公式チャートはこれらを空欄（無地）として描くのみで代替番号や置換関係を印字しないため、番号を補完せず欠番のまま登録した。",
+          "2F7列・3F7/8列の一部欠番（例：2F 10・11・14・21・22・25・32・33・36・37）は公式チャート上に斜線のみが印字された無番号セルであり、印字された番号のみを登録して欠番を補完していない。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "1",
+          "from": 5,
+          "to": 40
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "2",
+          "from": 5,
+          "to": 40,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "3",
+          "from": 5,
+          "to": 40
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "4",
+          "from": 5,
+          "to": 40,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "5",
+          "from": 5,
+          "to": 40
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "6",
+          "from": 5,
+          "to": 40,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "7",
+          "from": 5,
+          "to": 40
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "8",
+          "from": 5,
+          "to": 40,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "20",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "21",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "22",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "23",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "24",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "25",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "26",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "27",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "28",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "29",
+          "from": 1,
+          "to": 44
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "30",
+          "from": 1,
+          "to": 44,
+          "excluded": [
+            32
+          ]
+        },
+        {
+          "areaId": "1f-main",
+          "areaLabel": "1階",
+          "rowLabel": "31",
+          "from": 3,
+          "to": 42,
+          "excluded": [
+            11,
+            12,
+            33,
+            34
+          ]
+        },
+        {
+          "areaId": "1f-family-a",
+          "areaLabel": "親子室A",
+          "rowLabel": "A",
+          "from": 5,
+          "to": 8
+        },
+        {
+          "areaId": "1f-family-b",
+          "areaLabel": "親子室B",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "1f-side-r",
+          "areaLabel": "R区画",
+          "rowLabel": "R",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "1f-side-l",
+          "areaLabel": "L区画",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "2f-main",
+          "areaLabel": "2階",
+          "rowLabel": "1",
+          "from": 3,
+          "to": 44
+        },
+        {
+          "areaId": "2f-main",
+          "areaLabel": "2階",
+          "rowLabel": "2",
+          "from": 2,
+          "to": 45,
+          "excluded": [
+            33
+          ]
+        },
+        {
+          "areaId": "2f-main",
+          "areaLabel": "2階",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 46
+        },
+        {
+          "areaId": "2f-main",
+          "areaLabel": "2階",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 46,
+          "excluded": [
+            33
+          ]
+        },
+        {
+          "areaId": "2f-main",
+          "areaLabel": "2階",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 46
+        },
+        {
+          "areaId": "2f-main",
+          "areaLabel": "2階",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 46,
+          "excluded": [
+            33
+          ]
+        },
+        {
+          "areaId": "2f-main",
+          "areaLabel": "2階",
+          "rowLabel": "7",
+          "from": 5,
+          "to": 42,
+          "excluded": [
+            10,
+            11,
+            14,
+            21,
+            22,
+            25,
+            32,
+            33,
+            36,
+            37
+          ]
+        },
+        {
+          "areaId": "2f-main",
+          "areaLabel": "2階",
+          "rowLabel": "R",
+          "from": 1,
+          "to": 19
+        },
+        {
+          "areaId": "2f-main",
+          "areaLabel": "2階",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 19
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "1",
+          "from": 3,
+          "to": 44
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "2",
+          "from": 2,
+          "to": 45,
+          "excluded": [
+            33
+          ]
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 46
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 46,
+          "excluded": [
+            33
+          ]
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 46
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 46,
+          "excluded": [
+            33
+          ]
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "7",
+          "from": 6,
+          "to": 41,
+          "excluded": [
+            32,
+            33
+          ]
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "8",
+          "from": 6,
+          "to": 41,
+          "excluded": [
+            33
+          ]
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "R",
+          "from": 1,
+          "to": 19
+        },
+        {
+          "areaId": "3f-main",
+          "areaLabel": "3階",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 19
+        }
+      ]
+    }
+  ]
+}

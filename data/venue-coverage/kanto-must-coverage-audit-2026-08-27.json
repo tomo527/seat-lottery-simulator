@@ -21,10 +21,10 @@
       "茨城県": 5
     },
     "byStatus": {
-      "ADOPT / implementation-ready": 2,
+      "ADOPT / implementation-ready": 1,
       "HOLD / NEED EVIDENCE / formal DEFER": 57,
       "inventory-unresearched": 42,
-      "production": 53
+      "production": 54
     },
     "missingFromInventory": 0
   },
@@ -65,12 +65,11 @@
     }
   },
   "nextMacro": {
-    "selection": "separately authorized bounded two-pass implementation for the two remaining ADOPT candidates, one venue at a time",
+    "selection": "separately authorized bounded two-pass implementation for the one remaining ADOPT candidate",
     "candidates": [
-      "ibaraki-mito-civic-main — 水戸市民会館〔グロービスホール〕",
       "saitama-city-culture-main — さいたま市文化センター〔大ホール〕"
     ],
-    "reason": "2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT reached three ADOPT / implementation-ready dispositions. kanagawa-pia-arena-mm was closed to production on 2026-08-27 as pia-arena-mm / stand-floors-fixed with 5,573 mapped seats. The current exact next action is the separately authorized bounded two-pass implementation for ibaraki-mito-civic-main, followed by saitama-city-culture-main."
+    "reason": "2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT reached three ADOPT / implementation-ready dispositions. kanagawa-pia-arena-mm was closed to production on 2026-08-27 as pia-arena-mm / stand-floors-fixed with 5,573 mapped seats. ibaraki-mito-civic-main was closed to production on 2026-08-29 as mito-civic-globis-hall / standard with 2,000 mapped seats. The current exact next action is the separately authorized bounded two-pass implementation for saitama-city-culture-main."
   },
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
@@ -131,10 +130,10 @@
       "officialCapacityAndMode": "2000 (current inventory/audit capacity; see official URL)",
       "officialUrl": "https://www.mito-hall.jp/",
       "inventoryId": "ibaraki-mito-civic-main",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
+      "venueSourceId": "mito-civic-globis-hall",
+      "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Separately authorized bounded two-pass implementation must verify the current linked floor-specific numbered charts losslessly; do not infer any wheelchair, event-dependent, or unprinted position."
+      "reopenCondition": "n/a — production. Reopen only if the issuer publishes revised floor-specific numbered charts superseding rev.20230616."
     },
     {
       "prefecture": "茨城県",
