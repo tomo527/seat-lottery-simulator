@@ -1,0 +1,157 @@
+{
+  "reportVersion": 1,
+  "title": "SAITAMA-CITY-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION",
+  "asOf": "2026-08-29",
+  "scope": "One venue only: saitama-city-culture-main さいたま市文化センター〔大ホール〕. No other venue was researched, re-audited, or reopened.",
+  "mode": "Separately authorized bounded production implementation. The authorization required a currentness re-confirmation and an issuer-evidenced representative-configuration decision before any two-pass transcription or production authoring.",
+  "evidencePolicy": "Current first-party issuer material is the decision basis. Capacity is not seat evidence. No capacity fitting, invented seat IDs, geometry completion, unsupported gap filling, configuration mixing, or A/B seat-set mixing is permitted.",
+  "startState": {
+    "branch": "main",
+    "head": "9ebcd00d1612eb24d51a5958a0b2dbe53ce99e16",
+    "originMain": "9ebcd00d1612eb24d51a5958a0b2dbe53ce99e16",
+    "workingTree": "clean",
+    "productionTotals": {
+      "venues": 137,
+      "configurations": 139,
+      "seatRecords": 190099
+    },
+    "ledgerBefore": {
+      "production": 54,
+      "adoptImplementationReady": 1,
+      "formalBlocked": 57,
+      "inventoryUnresearched": 42,
+      "universeTotal": 154
+    },
+    "priorDisposition": "ADOPT / implementation-ready (2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT, rank 3)"
+  },
+  "disposition": "HOLD — RENOVATION / CURRENTNESS HOLD. Not promoted to production.",
+  "dispositionSummary": "The bounded implementation stopped at the first gate. The operator's own current facility page, corroborated by the City of Saitama's official facility page, announces a facility-wide 休館 beginning 令和9年6月1日 (2027-06-01) for a 中規模修繕工事 expected to last approximately two years. That is 9 months after this review date, inside the 12-month operational threshold in docs/VENUE_DATA_GUIDE.md, which directs that a venue with an officially announced cessation of operation within 12 months is blocked in principle and that exception judgments must not be made by inference. No fresh visual two-pass transcription, source JSON, range, fingerprint, generated artifact, or production integration was created.",
+  "currentnessCheck": {
+    "result": "FAILED — officially announced facility-wide closure within the 12-month threshold",
+    "issuerNoticeVerbatim": "中規模修繕工事実施に伴う休館のお知らせ／さいたま市文化センターは、令和9年度から中規模修繕工事を実施する予定です。本工事に伴い令和9年6月1日から休館となります。休館中は利用受付及び施設利用並びに敷地内への立入りはできません。皆様にご不便とご迷惑をおかけしますが、ご理解とご協力をお願いします。※工事期間については、2年間程度を予定しておりますが、今後設計や工事の状況等により変更となる場合があります。",
+    "closureStart": "2027-06-01",
+    "closureExpectedDuration": "approximately 2 years (issuer states the period may change with design and construction progress)",
+    "expectedReopening": "approximately 2029-06 (derived from the issuer's stated ~2-year duration; the issuer publishes no reopening date)",
+    "monthsFromReviewDate": 9,
+    "facilityWide": true,
+    "facilityWideEvidence": "休館中は利用受付及び施設利用並びに敷地内への立入りはできません — the notice suspends booking, use, and site entry for the whole さいたま市文化センター, not a single space.",
+    "independentConfirmation": [
+      {
+        "publisher": "公益財団法人さいたま市文化振興事業団（施設運営者）",
+        "url": "https://saitama-culture.jp/culturecenter/",
+        "finding": "Current official facility page carries the closure notice. Two independent fetches returned byte-identical HTML (sha256 577a1df621fe746a319bad13e27e52b414ee26b84b21d1dcc0debabcf35b082a).",
+        "checkedAt": "2026-08-29"
+      },
+      {
+        "publisher": "さいたま市",
+        "url": "https://www.city.saitama.lg.jp/008/003/001/bunkasenta.html",
+        "finding": "The city's own official facility page independently states 令和9年度から中規模修繕工事を実施する予定です。本工事に伴い令和9年6月1日から休館となります and an approximately 2-year construction period. It also states 大ホール 2,006席 including 8 wheelchair spaces.",
+        "checkedAt": "2026-08-29"
+      }
+    ],
+    "policyBasis": "docs/VENUE_DATA_GUIDE.md: 改修中、長期休館中、閉館済み、または座席構成を変える改修・運用終了が公式発表済みの会場は新規production化しません。「近い将来」は独立レビュー日から12か月以内を運用上の目安とし、予定日、公式確認日、blocking reason、再確認条件をinventoryへ記録します。現在activeでも12か月以内の終了予定がある場合は原則blockedとし、例外判断を推測で行いません。",
+    "whyNoExceptionWasTaken": "The issuer does not state whether the 中規模修繕工事 changes the seating configuration. Under the same policy sentence, that unknown must not be resolved by inference in either direction, so the announced closure alone is dispositive and no exception was constructed.",
+    "preflightGap": "The 2026-08-27 preflight did not record this notice. The notice is not new: a local news item dated 2026-01-27 already reported the 2027-06 closure, so the notice predates that preflight rather than post-dating it. The same preflight did apply a currentness yield penalty to kanagawa-pacifico-national-hall for a comparable 2027-05-17 closure, so this is a missed check in that wave, not a policy change here. The ADOPT disposition is therefore corrected on current evidence rather than overridden."
+  },
+  "configurationAssessment": {
+    "note": "Completed before the currentness gate was applied, and recorded so that a future reopening does not have to rediscover it. It is an evidence record, not an authorization to implement.",
+    "issuerDefinedModes": {
+      "sourceUrl": "https://saitama-culture.jp/culturecenter/hall/",
+      "verbatim": "客席数：A仕様2,006席／B仕様1,658席（車いす8席）／客席広さ：A仕様 幅35ｍ×奥行39ｍ／B仕様 幅35ｍ×奥行30ｍ／舞台間口：間口20ｍ×奥行18.5ｍ",
+      "aConfiguration": {
+        "publishedTotal": 2006,
+        "issuerDefinedDifference": "客席広さ 幅35m×奥行39m",
+        "publishedNumberedSet": "YES — the single linked 座席表（大ホール） PDF is headed 固定席 1,842席／移動席 156席／車椅子席 8席　計2,006席 and prints per-floor subtotals 1階客席(1328席) / 2階客席(330席) / 3階客席(348席), which sum to exactly 2,006.",
+        "fixedSeats": 1842,
+        "movableSeats": 156,
+        "wheelchairPositions": 8
+      },
+      "bConfiguration": {
+        "publishedTotal": 1658,
+        "issuerDefinedDifference": "客席広さ 幅35m×奥行30m (客席奥行 reduced by 9m relative to A)",
+        "publishedNumberedSet": "NO — the issuer publishes a subtotal for B but no B seat chart, no B fixed/movable subtotals, and no statement of which numbered positions B removes.",
+        "fixedSeats": null,
+        "movableSeats": null,
+        "wheelchairPositions": 8
+      }
+    },
+    "representativeDecision": "A仕様 would be the representative configuration if this venue were implementable.",
+    "representativeRationale": "The decision rests on issuer evidence, not on A being larger. A仕様 is the only configuration for which the issuer publishes a complete printed numbered set: the one linked 座席表（大ホール）'s own printed grand total (計2,006席) and its printed per-floor subtotals (1,328 / 330 / 348) equal the A仕様 published capacity exactly, identifying that chart as the A仕様 chart. For B仕様 the issuer publishes only the aggregate 1,658 and a 客席奥行 dimension; it publishes no B chart, no B fixed/movable split, and no statement of which printed positions B removes. Implementing B would therefore require inventing the configuration difference and deleting numbered positions to reach 1,658 — capacity fitting and repository-invented differences, both prohibited. A is selected as the only issuer-evidenced representative set, and B is not implementable on current material.",
+    "explicitlyRejectedInference": "2,006 − 1,658 = 348 equals the printed 3階客席(348席) subtotal exactly, which would suggest B closes the third floor. This arithmetic identity is NOT adopted as evidence. The issuer describes B as a reduced 客席奥行, never as a floor closure, and an unstated mechanism must not be reconstructed from arithmetic. It is recorded only as an open question for any future reopening.",
+    "scopeDiscipline": "Only one representative configuration was assessed for implementation. No A+B dual-configuration implementation was designed or authored, and no seat set was mixed between modes."
+  },
+  "seatChartEvidence": {
+    "url": "https://saitama-culture.jp/sculwp/wp-content/uploads/culturecenter_zaseki01.pdf",
+    "linkedFrom": "https://saitama-culture.jp/culturecenter/hall/ (座席表（大ホール）)",
+    "sha256": "c6cc4c1d1b44de0a82da357d921f4c7b34cffcb5470b38c41661bcb16f26c4e7",
+    "bytes": 1529180,
+    "pages": 1,
+    "textLayer": "none — the chart is a scanned image, so any future transcription must be visual",
+    "printedHeader": "■文化センター（大ホール）　固定席 1,842席 ／ 移動席 156席 ／ 車椅子席 8席　計2,006席",
+    "printedFloorSubtotals": {
+      "1階客席": 1328,
+      "2階客席": 330,
+      "3階客席": 348,
+      "sum": 2006
+    },
+    "preflightUrlCorrection": "The 2026-08-27 preflight cited https://saitama-culture.jp/sculwp/wp-content/uploads/culturecenter_allzumen01-1.pdf as the seat-chart evidence. That file is the 大ホール舞台資料 (38-page stage/technical drawing set), and the current hall page does not link it as the seat chart. The current linked 座席表（大ホール）is culturecenter_zaseki01.pdf. Both were fetched and inspected in this wave.",
+    "corroboratingIssuerDocument": {
+      "url": "https://saitama-culture.jp/sculwp/wp-content/uploads/culturecenter_allzumen01-1.pdf",
+      "sha256": "aea6518480e3e724620d1e9aa95ef3924fd0516c7dff46303d6921996cfa5496",
+      "finding": "The 大ホール断面図 (2020.12.28 作成) and 大ホール客席図 (1:250) pages both carry the printed legend 固定客席 1842席：車椅子席 8席／収容定員 2006席：移動席(オケピ)156席, which independently confirms the chart header's fixed/movable/wheelchair split and identifies the 156 movable seats as the orchestra-pit area seats."
+    }
+  },
+  "capacityAndSemanticsReconciliation": {
+    "note": "Established from printed issuer material only, at the level needed to record the blocker accurately. It is not a substitute for the two-pass transcription, which was not performed.",
+    "publishedTotalRelation": "The A仕様 published capacity 2,006 equals the seat chart's own printed grand total 計2,006席 and equals the sum of its printed floor subtotals 1,328 + 330 + 348. The chart and the capacity statement agree with no residual.",
+    "fixedMovableDefinition": "Within the single A configuration the issuer splits 2,006 into 固定席 1,842 and 移動席 156, and the 断面図/客席図 legend identifies the 156 as 移動席(オケピ) — movable seats in the orchestra-pit area, present when the pit is not used as a pit. Both subsets are inside the same A configuration and the same published total; they are not two configurations.",
+    "wheelchairInsideOrOutsidePublishedTotal": "INSIDE. 1,842 + 156 + 8 = 2,006, so the 8 wheelchair positions are counted within the published A total, and within the printed 1階客席(1328席) subtotal. The City of Saitama page's 2,006席（車いす8席を含む） states the same relation independently.",
+    "wheelchairIndividualSeatIds": "NONE OBSERVED. The chart draws 車椅子席（4席） twice — once at the 1F left and once at the 1F right — as unnumbered blocks. No per-position identifier is printed. Any future implementation must not invent IDs for these 8 positions.",
+    "wheelchairReplacementRelation": "NOT STATED. The issuer publishes no replacement relation between the 8 wheelchair positions and adjacent numbered seats. No numbered seat may be presumptively deleted for them.",
+    "expectedMappedRelation": "If the A configuration were ever implemented, the mapped numbered set would be the printed identifiers only, and the 8 unnumbered wheelchair positions would remain outside it as metadata, giving an expected rangeDiff of about −8 against the published 2,006. This is an expectation to be tested by a real two-pass, not a target to fit to.",
+    "crossConfigurationIdCollision": "Not assessable, and not needed: only the A configuration has a published numbered set, so no ID is shared between two published numbered sets."
+  },
+  "visualTwoPass": {
+    "performed": false,
+    "pass1": "not performed",
+    "pass2": "not performed",
+    "matchResult": "not applicable",
+    "mappedSubtotal": null,
+    "reason": "The authorization sequences currentness confirmation before the fresh visual two-pass and production authoring. The currentness gate failed on an officially announced facility-wide closure inside the 12-month threshold, and the authorization directs returning the venue to a formal status rather than forcing an implementation. Transcribing roughly 2,000 positions into a source that policy forbids promoting, and that would be superseded by a two-year renovation, was therefore not performed. No partial or provisional transcription was recorded, and no pass result is claimed."
+  },
+  "reopenCondition": {
+    "recheckNotBefore": "2029-06-01",
+    "recheckNotBeforeBasis": "Derived from the issuer's announced closure start 2027-06-01 plus its stated approximately-2-year construction period. The issuer publishes no reopening date and states the period may change, so this is a discovery gate, not a claimed reopening date.",
+    "required": [
+      "The issuer confirms the facility has reopened after the 中規模修繕工事 and is accepting bookings and events again.",
+      "The issuer publishes a post-renovation current 座席表（大ホール）. Pre-renovation culturecenter_zaseki01.pdf must not be treated as current after the closure begins.",
+      "The post-renovation material restates the representative configuration, including whether the A仕様/B仕様 distinction and the 固定席/移動席(オケピ)/車椅子席 split survive the renovation."
+    ],
+    "alsoResolvableButNotSufficientAlone": [
+      "An issuer statement of which printed positions B仕様 removes, which would make B independently implementable rather than inference-only.",
+      "An issuer statement of whether the 8 wheelchair positions carry individual identifiers or replace specific numbered seats."
+    ],
+    "notSufficient": "The current pre-renovation chart, the matching 2,006 arithmetic, the facility being open for the next 9 months, and the 348 = 3F arithmetic coincidence are explicitly NOT sufficient to reopen this record for production."
+  },
+  "ledgerAfter": {
+    "production": 54,
+    "adoptImplementationReady": 0,
+    "formalBlocked": 58,
+    "inventoryUnresearched": 42,
+    "universeTotal": 154,
+    "note": "The pre-authorization consistency expectation was 55 / 0 / 57 / 42 conditional on this venue reaching production. It did not, so it moves from ADOPT to formal blocked instead. The counts were recomputed from the ledger records, not fitted to the expectation."
+  },
+  "productionImpact": {
+    "venues": 137,
+    "configurations": 139,
+    "seatRecords": 190099,
+    "changed": false,
+    "note": "No venue source, range, fingerprint, catalog, or runtime artifact was created or modified. Production totals are unchanged."
+  },
+  "outOfScopeUntouched": [
+    "mito-civic-globis-hall source and ranges were not touched; its known free-text metadata imprecision remains out of scope.",
+    "No other Kanto >=1,000 unresearched candidate was researched.",
+    "No known hard case was reopened or re-audited.",
+    "No Tokyo Priority D research was started."
+  ]
+}

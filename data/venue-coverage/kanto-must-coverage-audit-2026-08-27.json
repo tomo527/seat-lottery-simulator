@@ -21,8 +21,7 @@
       "茨城県": 5
     },
     "byStatus": {
-      "ADOPT / implementation-ready": 1,
-      "HOLD / NEED EVIDENCE / formal DEFER": 57,
+      "HOLD / NEED EVIDENCE / formal DEFER": 58,
       "inventory-unresearched": 42,
       "production": 54
     },
@@ -65,11 +64,11 @@
     }
   },
   "nextMacro": {
-    "selection": "separately authorized bounded two-pass implementation for the one remaining ADOPT candidate",
+    "selection": "separately authorized bounded preflight over the remaining Kanto >=1,000 inventory-unresearched records",
     "candidates": [
-      "saitama-city-culture-main — さいたま市文化センター〔大ホール〕"
+      "CODEX: KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 2"
     ],
-    "reason": "2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT reached three ADOPT / implementation-ready dispositions. kanagawa-pia-arena-mm was closed to production on 2026-08-27 as pia-arena-mm / stand-floors-fixed with 5,573 mapped seats. ibaraki-mito-civic-main was closed to production on 2026-08-29 as mito-civic-globis-hall / standard with 2,000 mapped seats. The current exact next action is the separately authorized bounded two-pass implementation for saitama-city-culture-main."
+    "reason": "The 2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT reached three ADOPT / implementation-ready dispositions. kanagawa-pia-arena-mm was closed to production on 2026-08-27 as pia-arena-mm / stand-floors-fixed with 5,573 mapped seats, and ibaraki-mito-civic-main was closed to production on 2026-08-29 as mito-civic-globis-hall / standard with 2,000 mapped seats. The third, saitama-city-culture-main, was taken to a separately authorized bounded implementation on 2026-08-29 and did not reach production: it is now a formal RENOVATION / CURRENTNESS HOLD on an officially announced 2027-06-01 facility-wide closure. No ADOPT / implementation-ready candidate remains in this ledger. 42 inventory-unresearched release-critical records remain, so formal triage of those outranks any Tokyo Priority D work under the release coverage priority."
   },
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
@@ -348,13 +347,13 @@
       "currentName": "さいたま市文化センター〔大ホール〕",
       "aliases": [],
       "facilitySpace": "さいたま市文化センター〔大ホール〕",
-      "officialCapacityAndMode": "2006 (current inventory/audit capacity; see official URL)",
+      "officialCapacityAndMode": "A仕様2,006席（固定席1,842／移動席(オケピ)156／車椅子席8。1階1,328・2階330・3階348）／B仕様1,658席。現行公式の番号付き座席表はA仕様のみ。",
       "officialUrl": "https://saitama-culture.jp/culturecenter/",
       "inventoryId": "saitama-city-culture-main",
       "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
-      "blocker": null,
-      "reopenCondition": "Separately authorized bounded two-pass implementation must select and verify an issuer-defined A or B configuration from the current numbered chart; do not infer wheelchair or movable-seat treatment."
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "RENOVATION / CURRENTNESS HOLD: the operator's current official facility page, corroborated independently by the City of Saitama's official facility page, announces a facility-wide 休館 from 令和9年6月1日 (2027-06-01) for a 中規模修繕工事 expected to run approximately 2 years, suspending booking, use, and site entry. That start date is 9 months after the 2026-08-29 review date and inside the 12-month threshold in docs/VENUE_DATA_GUIDE.md, which blocks such a venue in principle and forbids resolving the unstated question of whether the work changes the seating by inference. This is a currentness blocker, not a seat-evidence blocker: the current 座席表（大ホール）does publish a complete printed A仕様 numbered set whose printed grand total and floor subtotals equal the published 2,006 exactly. B仕様1,658 publishes only an aggregate and no numbered set, so B is separately not implementable.",
+      "reopenCondition": "Reopen only after the facility reopens from the 中規模修繕工事 and the issuer publishes a post-renovation current 座席表（大ホール）restating the representative configuration and the 固定席/移動席(オケピ)/車椅子席 split. recheckNotBefore 2029-06-01. The pre-renovation culturecenter_zaseki01.pdf, the matching 2,006 arithmetic, and the fact that the hall is open for the next 9 months are explicitly not sufficient."
     },
     {
       "prefecture": "埼玉県",

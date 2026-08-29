@@ -501,13 +501,14 @@
       "officialFacilityUrl": "https://saitama-culture.jp/culturecenter/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-08-27 high-impact preflight: current official large-hall material defines A/B capacities and links an issuer seat chart; a separately authorized two-pass must choose an issuer-defined representative configuration and verify it losslessly.",
+      "eligibilityReason": "2026-08-29 bounded implementation: 現行公式の座席表（大ホール）は A仕様2,006席の完全な印字番号集合（固定席1,842／移動席(オケピ)156／車椅子席8、1階1,328・2階330・3階348）を公開しており、座席根拠そのものは代表configuration化に足りる。B仕様1,658席は総数のみで番号集合・除外席が非公開のため実装不可。現時点のblockerは座席根拠ではなく施設の休館予定である。",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-08-29",
       "aliases": [],
-      "blockingReason": null
+      "blockingReason": "RENOVATION / CURRENTNESS HOLD (SAITAMA-CITY-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION 2026-08-29): 運営者の現行公式施設ページが「中規模修繕工事実施に伴う休館のお知らせ／令和9年6月1日から休館となります／休館中は利用受付及び施設利用並びに敷地内への立入りはできません／工事期間は2年間程度を予定」と公表し、さいたま市の公式施設ページも同内容を独立に記載する。休館開始2027-06-01はレビュー日2026-08-29から9か月後で、docs/VENUE_DATA_GUIDE.mdの12か月しきい値の内側にあたるため原則blocked。issuerは本工事が座席構成を変更するか否かを明示しておらず、同ガイドにより推測で例外判断はしない。座席根拠は十分であり、これはcurrentness blockerであってevidence blockerではない。再開条件は改修後の再開確認と改修後の現行座席表の公表。改修前のculturecenter_zaseki01.pdfは休館開始後にcurrentとして扱わない。",
+      "recheckNotBefore": "2029-06-01"
     },
     {
       "inventoryId": "saitama-belluna-dome",
