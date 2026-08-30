@@ -1,0 +1,169 @@
+{
+  "reportVersion": 1,
+  "title": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 2",
+  "asOf": "2026-08-30",
+  "scope": "Only the 42 Kanto >=1,000 records still classified inventory-unresearched at start. Existing production, HOLD/NEED EVIDENCE/DEFER/HARD-CASE, aliases, and duplicates were excluded and not reread.",
+  "mode": "preflight only: current first-party issuer research and formal triage; no two-pass transcription, source JSON, ranges, fingerprints, generated artifacts, or production integration.",
+  "startSnapshot": {
+    "repository": {
+      "head": "70fb941f98b653b10faa9622db71fce4e56fda62",
+      "originMain": "70fb941f98b653b10faa9622db71fce4e56fda62",
+      "workingTree": "clean"
+    },
+    "universeTotal": 154,
+    "byStatus": {
+      "production": 54,
+      "ADOPT / implementation-ready": 0,
+      "HOLD / NEED EVIDENCE / formal DEFER": 58,
+      "inventory-unresearched": 42
+    },
+    "missingFromInventory": 0,
+    "productionTotals": {
+      "venues": 137,
+      "configurations": 139,
+      "seatRecords": 190099
+    }
+  },
+  "evidencePolicy": "Current first-party issuer material is the decision basis. Capacity is not seat evidence. Before checking a seat chart, each researched candidate was screened for operating status, closure, renovation, reconstruction, cessation, reopening, and whether a notice was space-specific or facility-wide. Under docs/VENUE_DATA_GUIDE.md, an officially announced closure or cessation within 12 months is a HOLD in principle; no exception is inferred. No capacity fitting, invented seat IDs, geometry completion, or third-party gap filling is permitted.",
+  "lane": {
+    "name": "JUDGMENT",
+    "reason": "The work selects issuer-defined representative configurations and applies a mandatory currentness screen before any prospective transcription; it makes no seat-map production decision."
+  },
+  "liveReranking": {
+    "method": [
+      "Ranked only the remaining 42 inventory-unresearched records, using live/concert/theater search relevance, metropolitan impact, purpose-built hall/theater fit, and live official discovery signals for a current chart.",
+      "Favored a plausible complete issuer-numbered standard or fixed representative configuration over capacity alone.",
+      "Applied a yield penalty to stadiums, exhibition halls, standing-first rooms, and event-dependent arenas; none was excluded solely for venue type.",
+      "The ranking is a selection aid, not a formal disposition for any record not opened below."
+    ],
+    "rankedAll42": [
+      { "rank": 1, "inventoryId": "kanagawa-k-arena-yokohama", "reason": "Very high music-event relevance; current issuer seat map exposes detailed permanent upper-level seat geometry, while 1F is explicitly event-dependent." },
+      { "rank": 2, "inventoryId": "saitama-raiboc-main", "reason": "Omiya purpose-built 1,400-seat large hall with a current issuer-linked seating chart and active booking/programming." },
+      { "rank": 3, "inventoryId": "chiba-pref-culture-main", "reason": "Metropolitan fixed-seat 1,728-seat large hall, reopened after renovation, with current issuer seat-plan download." },
+      { "rank": 4, "inventoryId": "kanagawa-kaat-hall", "reason": "High theater relevance and issuer standard/steep-chart downloads; multiple movable patterns reduce immediate yield." },
+      { "rank": 5, "inventoryId": "chiba-lala-arena-tokyo-bay", "reason": "High live demand and a dedicated arena identity, but expected fixed/movable and event-layout ambiguity." },
+      { "rank": 6, "inventoryId": "kanagawa-pacifico-national-hall", "reason": "Major purpose-built hall with promising chart material, but previously discovered 2027 closure risk requires a strict first gate before any seat review." },
+      { "rank": 7, "inventoryId": "kanagawa-yokohama-arena-main", "reason": "Very high search demand but variable arena-floor and event-layout yield penalty." },
+      { "rank": 8, "inventoryId": "saitama-koshigaya-suncity-hall", "reason": "Dedicated 1,675-seat large hall is more likely to have a stable numbered standard chart than arenas below it." },
+      { "rank": 9, "inventoryId": "chiba-ichihara-culture-main", "reason": "Dedicated 1,527-seat civic hall with likely fixed standard configuration." },
+      { "rank": 10, "inventoryId": "tochigi-light-cube-large", "reason": "Modern 2,000-capacity hall has metropolitan relevance but conference/multipurpose mode risk." },
+      { "rank": 11, "inventoryId": "ibaraki-hitachinaka-culture-main", "reason": "1,600-seat civic large hall with better fixed-chart expectancy than regional arenas." },
+      { "rank": 12, "inventoryId": "chiba-narita-culture-main", "reason": "Dedicated 1,188-seat international-culture hall, likely stable but lower metropolitan impact." },
+      { "rank": 13, "inventoryId": "gunma-ota-culture-main", "reason": "Modern 1,500-seat civic concert hall; stable numbered-set expectation." },
+      { "rank": 14, "inventoryId": "gunma-isesaki-culture-main", "reason": "1,500-seat civic hall; fixed-seat yield preferred to regional arena layouts." },
+      { "rank": 15, "inventoryId": "gunma-kiryu-culture-main", "reason": "1,517-seat silk hall; purpose-built concert/theater relevance." },
+      { "rank": 16, "inventoryId": "tochigi-sano-culture-main", "reason": "1,312-seat civic hall with a plausible stable main-hall chart." },
+      { "rank": 17, "inventoryId": "tochigi-oyama-culture-main", "reason": "1,300-seat civic hall with a plausible stable main-hall chart." },
+      { "rank": 18, "inventoryId": "gunma-maebashi-culture-main", "reason": "1,200-seat civic hall with lower regional/search impact." },
+      { "rank": 19, "inventoryId": "ibaraki-ryugasaki-culture-main", "reason": "1,200-seat civic hall with lower metropolitan/search impact." },
+      { "rank": 20, "inventoryId": "kanagawa-yokohama-buntai-main", "reason": "New major arena with live relevance, but arena floor and setup variability reduce fixed-set yield." },
+      { "rank": 21, "inventoryId": "chiba-port-arena-main", "reason": "Large arena; fixed stand potential is outweighed by event-dependent floor uncertainty." },
+      { "rank": 22, "inventoryId": "kanagawa-todoroki-arena-main", "reason": "Large arena with sports/event layout variability." },
+      { "rank": 23, "inventoryId": "gunma-takasaki-arena-main", "reason": "Large arena with sports/event layout variability." },
+      { "rank": 24, "inventoryId": "kanagawa-yokohama-budokan-arena", "reason": "Arena use and temporary seating patterns lower representative-set confidence." },
+      { "rank": 25, "inventoryId": "ibaraki-adastria-mito-arena", "reason": "Arena use and temporary seating patterns lower representative-set confidence." },
+      { "rank": 26, "inventoryId": "kanagawa-odawara-arena-main", "reason": "Arena use and temporary seating patterns lower representative-set confidence." },
+      { "rank": 27, "inventoryId": "gunma-green-dome-maebashi", "reason": "Large multi-use dome/arena; event and sport modes reduce yield." },
+      { "rank": 28, "inventoryId": "gunma-alsok-arena", "reason": "Large multi-use arena; event and sport modes reduce yield." },
+      { "rank": 29, "inventoryId": "kanagawa-pacifico-north-multipurpose", "reason": "Multipurpose convention hall; capacity is highly layout-dependent." },
+      { "rank": 30, "inventoryId": "chiba-makuhari-event-hall", "reason": "Event hall has high impact but representative seating is event-dependent." },
+      { "rank": 31, "inventoryId": "gunma-gmesse-exhibition", "reason": "Exhibition hall capacity is not evidence of a stable numbered audience configuration." },
+      { "rank": 32, "inventoryId": "chiba-makuhari-exhibition-halls", "reason": "Exhibition-space capacity and combinations are layout-dependent." },
+      { "rank": 33, "inventoryId": "saitama-super-arena-main", "reason": "Major arena but default capacity and 1F layout are event-dependent." },
+      { "rank": 34, "inventoryId": "saitama-super-arena-stadium", "reason": "Stadium mode is inherently event-dependent and lower-yield than fixed halls." },
+      { "rank": 35, "inventoryId": "saitama-super-arena-community", "reason": "Community-arena mode is capacity/layout dependent." },
+      { "rank": 36, "inventoryId": "saitama-belluna-dome", "reason": "Baseball/concert dome configurations are event-dependent despite high capacity." },
+      { "rank": 37, "inventoryId": "chiba-zozo-marine-stadium", "reason": "Stadium seating may be fixed for baseball but concert representation is event-dependent and not a first-pass yield leader." },
+      { "rank": 38, "inventoryId": "kanagawa-kt-zepp-yokohama", "reason": "Standing-first live-house operation makes a stable numbered representative set unlikely." },
+      { "rank": 39, "inventoryId": "kanagawa-yokohama-coast-room1", "reason": "Standing-first live-house operation makes a stable numbered representative set unlikely." },
+      { "rank": 40, "inventoryId": "tokyo-official-1090", "reason": "University lecture-building record has no current official URL in the Kanto ledger and lower concert/live relevance." },
+      { "rank": 41, "inventoryId": "tokyo-official-1072", "reason": "Large stadium is event-dependent; a fixed concert representative configuration is not a high-yield first pass." },
+      { "rank": 42, "inventoryId": "tochigi-ken-sogo-bunka-center-main", "reason": "Ledger-only canonical ID retained after the prior alias correction; it was not reopened in this wave because its identity reconciliation is already complete and no new source screen was authorized." }
+    ],
+    "selection": "Research ranks 1 through 3 only. The third ADOPT triggered the stop rule; ranks 4 through 42 remain inventory-unresearched, including all existing production/HOLD/NEED EVIDENCE/DEFER/HARD-CASE exclusions."
+  },
+  "researched": [
+    {
+      "rank": 1,
+      "inventoryId": "kanagawa-k-arena-yokohama",
+      "name": "Kアリーナ横浜",
+      "currentOperation": "ACTIVE. The official site lists performances on 2026-08-26, 2026-08-29/30, and multiple September 2026 dates. No issuer-announced closure, renovation, reconstruction, cessation, or reopening notice was found in the current official operation and news entry points reviewed.",
+      "officialCapacity": "20,033-seat maximum music-arena capacity in inventory; the preflight does not treat it as a fixed-seat mapping target.",
+      "venueConfigurationType": "Purpose-built music arena. 1F arena-seat shape is explicitly performance-dependent; upper 3F/5F/7F audience seating is shown separately in the issuer's current map.",
+      "currentOfficialChart": "YES. Current issuer SEAT MAP links one PDF with detailed printed seat blocks/ranges across the permanent upper levels, plus an event-dependent 1F map.",
+      "fixedMovableStandingEventDependent": "1F is event-dependent; a prospective representative configuration may include only the current fixed upper-level numbered set if visual two-pass proves it complete. No fixed/movable or standing inference is made here.",
+      "wheelchairAccessibility": "The issuer says all floors are elevator-accessible and directs detailed accessibility questions to each event organizer; no wheelchair-seat ID/replacement relation is asserted.",
+      "officialEvidence": [
+        { "url": "https://k-arena.com/", "finding": "Current official program proves ongoing operation." },
+        { "url": "https://k-arena.com/seat/", "finding": "Current official map declares 1F performance variation and publishes the level maps/PDF." },
+        { "url": "https://k-arena.com/wp-content/themes/k-arena_260401/assets/pdf/seat-map.pdf", "finding": "Issuer PDF visibly contains the detailed numbered upper-level seating material to be independently transcribed only in a later authorized implementation." }
+      ],
+      "disposition": "ADOPT / implementation-ready",
+      "exactBlocker": null,
+      "reopenCondition": "Separately authorized bounded visual two-pass must prove the complete printed upper-level set, row/area ownership, omissions, and configuration scope; exclude 1F unless the issuer defines a reproducible numbered layout. Do not capacity-fit to 20,033."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "saitama-raiboc-main",
+      "name": "RaiBoC Hall〔大ホール〕",
+      "currentOperation": "ACTIVE. The official facility page shows normal opening/regular closure only, current August 2026 booking activity reaching 2027 hall dates, and a January 2027 large-hall concert. No announced long closure, renovation, reconstruction, cessation, or reopening condition was found; notices apply to ordinary calendar closures, not a facility-wide shutdown.",
+      "officialCapacity": "1,400 seats, stated by the official large-hall page.",
+      "venueConfigurationType": "Purpose-built large hall for orchestra, ballet, theatre, traditional performing arts, ceremonies, and concerts.",
+      "currentOfficialChart": "YES. The official large-hall page directly links the current 大ホール客席図面 PDF.",
+      "fixedMovableStandingEventDependent": "The issuer identifies reflector-board setup but does not state that the large-hall audience set changes with it. No fixed/movable/standing classification beyond that issuer statement is inferred; later transcription must establish the map's declared scope.",
+      "wheelchairAccessibility": "Official event material routes wheelchair-seat requests through the organizer; the preflight does not create or infer wheelchair IDs or replacements.",
+      "officialEvidence": [
+        { "url": "https://saitama-culture.jp/raibochall/", "finding": "Current official operating page and closure calendar." },
+        { "url": "https://saitama-culture.jp/raibochall/hall/", "finding": "Official 1,400-seat large-hall description and direct current seat-chart link." },
+        { "url": "https://saitama-culture.jp/sculwp/wp-content/uploads/omiya-civichall_zaseki01.pdf", "finding": "Issuer-linked large-hall seating chart; no transcription was performed." }
+      ],
+      "disposition": "ADOPT / implementation-ready",
+      "exactBlocker": null,
+      "reopenCondition": "Separately authorized bounded visual two-pass must read every printed position and any unnumbered accessibility/technical marking directly, establish the issuer-defined representative scope, and reconcile only after transcription without capacity fitting."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "chiba-pref-culture-main",
+      "name": "千葉県文化会館〔大ホール〕",
+      "currentOperation": "ACTIVE after its prior renovation. The issuer announced reopening on 2025-07-13, and its current August-November 2026 schedule includes continuing large-hall rehearsals and performances. No new closure, renovation, reconstruction, cessation, or reopening notice within 12 months was found; the prior 2023-2025 full-facility closure is historical, not current.",
+      "officialCapacity": "1,728 seats including four wheelchair positions, stated on the current issuer large-hall page; this corrects the older 1,787 inventory discovery value without using capacity as seat evidence.",
+      "venueConfigurationType": "Purpose-built metropolitan large hall. The current page states one 1,728-seat hall configuration and the current download page links its seating plan.",
+      "currentOfficialChart": "YES. The issuer's current downloads page links 大ホール客席平面図; the current PDF identifies 1F/2F/3F audience blocks and wheelchair markings.",
+      "fixedMovableStandingEventDependent": "Current issuer material presents a fixed-seat large-hall chart. No alternate movable/standing/event configuration is adopted; any chart exceptions must be read directly in a later two-pass.",
+      "wheelchairAccessibility": "The current large-hall page includes four wheelchair positions in 1,728; the issuer also provides accessible facilities. The preflight makes no seat-ID or replacement assertion.",
+      "officialEvidence": [
+        { "url": "https://www.cbs.or.jp/chiba/", "finding": "Current official schedule demonstrates post-renovation ongoing large-hall operation." },
+        { "url": "https://www.cbs.or.jp/chiba/archives/4002", "finding": "Issuer's 2025-07-13 reopening notice identifies the prior closure as historical." },
+        { "url": "https://www.cbs.or.jp/chiba/hallguide-2/large_hall", "finding": "Current 1,728-seat (including four wheelchair positions) large-hall definition." },
+        { "url": "https://www.cbs.or.jp/chiba/downloads", "finding": "Current official download page links the large-hall seating plan." },
+        { "url": "https://www.cbs.or.jp/chiba/wp/wp-content/uploads/2025/07/chiba-b-seats.pdf", "finding": "Issuer-linked current seating-plan PDF; no transcription was performed." }
+      ],
+      "disposition": "ADOPT / implementation-ready",
+      "exactBlocker": null,
+      "reopenCondition": "Separately authorized bounded visual two-pass must independently transcribe the complete current printed set and each floor/area, preserve the issuer's wheelchair semantics without inferred replacements, and use 1,728 only for after-the-fact reconciliation."
+    }
+  ],
+  "stopRule": {
+    "maxResearchRecords": 5,
+    "adoptStopThreshold": 3,
+    "researchedCount": 3,
+    "adoptCount": 3,
+    "result": "Stopped immediately after rank 3. No rank 4-42 candidate received a formal evidence disposition or inventory update."
+  },
+  "countsAfter": {
+    "universeTotal": 154,
+    "byStatus": {
+      "production": 54,
+      "ADOPT / implementation-ready": 3,
+      "HOLD / NEED EVIDENCE / formal DEFER": 58,
+      "inventory-unresearched": 39
+    },
+    "missingFromInventory": 0,
+    "productionTotalsUnchanged": {
+      "venues": 137,
+      "configurations": 139,
+      "seatRecords": 190099
+    }
+  },
+  "exactNextAction": "Claudeによる separately authorized bounded visual two-pass implementation of at most these three ADOPTs: kanagawa-k-arena-yokohama, saitama-raiboc-main, chiba-pref-culture-main. If that authorization is not granted, continue the next high-impact inventory-unresearched Kanto batch; do not return to known HARD-CASE work or Tokyo Priority D while any Kanto inventory-unresearched record remains."
+}

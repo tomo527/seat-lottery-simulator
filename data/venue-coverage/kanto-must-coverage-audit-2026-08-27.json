@@ -22,8 +22,9 @@
     },
     "byStatus": {
       "HOLD / NEED EVIDENCE / formal DEFER": 58,
-      "inventory-unresearched": 42,
-      "production": 54
+      "inventory-unresearched": 39,
+      "production": 54,
+      "ADOPT / implementation-ready": 3
     },
     "missingFromInventory": 0
   },
@@ -64,11 +65,13 @@
     }
   },
   "nextMacro": {
-    "selection": "separately authorized bounded preflight over the remaining Kanto >=1,000 inventory-unresearched records",
+    "selection": "separately authorized bounded visual two-pass implementation of the current Kanto >=1,000 ADOPTs only",
     "candidates": [
-      "CODEX: KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 2"
+      "kanagawa-k-arena-yokohama — Kアリーナ横浜",
+      "saitama-raiboc-main — RaiBoC Hall〔大ホール〕",
+      "chiba-pref-culture-main — 千葉県文化会館〔大ホール〕"
     ],
-    "reason": "The 2026-08-27 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT reached three ADOPT / implementation-ready dispositions. kanagawa-pia-arena-mm was closed to production on 2026-08-27 as pia-arena-mm / stand-floors-fixed with 5,573 mapped seats, and ibaraki-mito-civic-main was closed to production on 2026-08-29 as mito-civic-globis-hall / standard with 2,000 mapped seats. The third, saitama-city-culture-main, was taken to a separately authorized bounded implementation on 2026-08-29 and did not reach production: it is now a formal RENOVATION / CURRENTNESS HOLD on an officially announced 2027-06-01 facility-wide closure. No ADOPT / implementation-ready candidate remains in this ledger. 42 inventory-unresearched release-critical records remain, so formal triage of those outranks any Tokyo Priority D work under the release coverage priority."
+    "reason": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 2 (2026-08-30) screened current issuer operation before seat evidence and reached its three-ADOPT stop threshold: Kアリーナ横浜 (upper fixed levels only; 1F is event-dependent), RaiBoC Hall〔大ホール〕, and 千葉県文化会館〔大ホール〕. The latter is currently active after its 2025 reopening; its former renovation closure is historical. No source JSON, ranges, fingerprints, generated artifact, or production integration was created. 39 inventory-unresearched records remain, so another Kanto unresearched preflight remains ahead of Tokyo Priority D if these ADOPTs are not separately authorized for implementation."
   },
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
@@ -325,9 +328,9 @@
       "officialUrl": "https://saitama-culture.jp/raibochall/",
       "inventoryId": "saitama-raiboc-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "2026-08-30 preflight: current issuer operation, 1,400-seat purpose-built large-hall page, and the issuer-linked 大ホール客席図面 are sufficient to enter separately authorized bounded visual two-pass. That pass must establish the complete printed representative set and any accessibility/technical annotations directly; no capacity fitting or inference."
     },
     {
       "prefecture": "埼玉県",
@@ -468,9 +471,9 @@
       "officialUrl": "https://k-arena.com/",
       "inventoryId": "kanagawa-k-arena-yokohama",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "2026-08-30 preflight: current operation and issuer SEAT MAP support a separately authorized bounded visual two-pass of the permanent upper-level numbered set only. The issuer explicitly makes 1F arena-seat shape performance-dependent; do not map it without a reproducible issuer-defined layout, and do not fit the result to the 20,033 maximum."
     },
     {
       "prefecture": "神奈川県",
@@ -789,13 +792,13 @@
       "currentName": "千葉県文化会館〔大ホール〕",
       "aliases": [],
       "facilitySpace": "千葉県文化会館〔大ホール〕",
-      "officialCapacityAndMode": "1787 (current inventory/audit capacity; see official URL)",
-      "officialUrl": "https://www.cbs.or.jp/chibaken/",
+      "officialCapacityAndMode": "1,728 seats including four wheelchair positions (2026-08-30 current issuer large-hall page; former 1,787 discovery value superseded)",
+      "officialUrl": "https://www.cbs.or.jp/chiba/",
       "inventoryId": "chiba-pref-culture-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "2026-08-30 preflight: the issuer's current schedule proves post-2025-reopening operation and its current downloads page links the large-hall plan. A separately authorized bounded visual two-pass must establish every current printed floor/area position and wheelchair semantics directly; use 1,728 only for after-the-fact reconciliation."
     },
     {
       "prefecture": "千葉県",
