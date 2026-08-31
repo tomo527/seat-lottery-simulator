@@ -1,0 +1,128 @@
+{
+  "title": "RAIBOC + CHIBA PRODUCTION DISPOSITION RECONCILIATION AUDIT",
+  "date": "2026-08-31",
+  "scope": "saitama-raiboc-main (raiboc-hall-large-standard) and chiba-pref-culture-main (chiba-pref-culture-large-hall) only. No new Kanto candidate research, no Codex preflight, no unrelated venue change, no re-audit of known HARD-CASE records.",
+  "startState": {
+    "branch": "main",
+    "head": "b16ea52e39a1ad94822466d23e3cc44892dd2b5a",
+    "originMain": "b16ea52e39a1ad94822466d23e3cc44892dd2b5a",
+    "workingTree": "clean",
+    "production": "140 venues / 142 selectable configurations / 209,139 configuration-seat records",
+    "kantoLedger": "57 production / 0 ADOPT / 58 formal blocked / 39 inventory-unresearched"
+  },
+  "policyBasis": [
+    "docs/VENUE_DATA_GUIDE.md production gate: a production configuration must transcribe the declared representative scope real printed identifier set completely from public evidence.",
+    "tokyo-official-0249 Scott Hall precedent (re-checked, unchanged): a complete numbered chart whose grand total matches the issuer is NOT sufficient when a per-floor issuer subtotal is unexplained; that record stays HARD-CASE DEFER on its 2階60席-versus-charted-64 relation, with the 1F relation issuer-explained by four unnumbered pillar-obstructed positions.",
+    "tokyo-official-0058 セルバンテス東京 precedent: an unexplained cross-document capacity gap blocks ADOPT rather than being dismissed as rounding.",
+    "Validator warnings were not used as evidence of production fitness in either direction."
+  ],
+  "headlineFinding": "The premise that only cross-document subtotal reconciliation was open is not supported by the repository or the issuer evidence. Both current official charts reconcile losslessly with their own issuers once every drawn seat cell is counted. The unexplained floor-level differences were repository transcription defects, not unexplained issuer relations.",
+  "method": {
+    "step1": "Machine-expanded both production source range sets and confirmed they reproduce the per-floor totals recorded in the implementation report / HANDOFF exactly (RaiBoC 1F 942 + 2F 414 + balcony 28 = 1,384; Chiba 1F 1,342 + 2F 210 + 3F 175 = 1,727). No source/report drift.",
+    "step2": "Re-fetched every current first-party document of both issuers and compared byte identity against the recorded provenance.",
+    "step3": "Counted every drawn seat cell on each current chart by two independent machine paths (rasterised connected-component analysis of the enclosed white seat cells, and PDF vector rectangle/quad extraction), then re-read only the differing rows visually at 11x-20x zoom from the current official chart."
+  },
+  "venues": [
+    {
+      "id": "chiba-pref-culture-main",
+      "sourceId": "chiba-pref-culture-large-hall",
+      "configurationId": "standard",
+      "existingTranscriptionConsistency": "Source ranges expand exactly to the report/HANDOFF figures (1F 1,342 / 2F 210 / 3F 175 = 1,727). No implementation report JSON was ever written for that wave; the record lived only in the source, the inventory and HANDOFF. This audit report supplies it.",
+      "freshFirstPartyEvidence": [
+        "https://www.cbs.or.jp/chiba/hallguide-2/large_hall — 1,728席（車いす用4席含む）, unchanged.",
+        "https://www.cbs.or.jp/chiba/downloads — re-derived the seat-plan link; https://www.cbs.or.jp/chiba/wp/wp-content/uploads/2025/07/chiba-b-seats.pdf re-fetched, SHA-256 71ddce2aef072763eb3444866ddb168ede8ab7b651fa6ba77565172c933b14c9 (gzip-decoded 1,953,992 bytes, Last-Modified 2025-12-08) — byte-identical to the recorded provenance, so no chart revision.",
+        "https://www.cbs.or.jp/chiba/seating — current 座席表 page; serves a view-from-seat overlay of the same chart (chiba_seat.png, 2025/08) with no additional subtotal statement.",
+        "https://www.cbs.or.jp/chiba/wp/wp-content/uploads/2025/09/chiba-bfmap.pdf — current barrier-free map: parking, step-count and level information only, no seating subtotal and no wheelchair-seat numbering.",
+        "chiba-floor.pdf (building floor plan) and chiba-b-stage.pdf (stage plan) carry no audience seat counts.",
+        "No secondary source was used. The former 1,787 figure played no part."
+      ],
+      "officialFloorSubtotals": "Printed on the current chart header and rendered at 12x to defeat a text-layer artefact: 大ホール収容人員 1,728名 / 大ホール固定席 1,724席 / 車いす席 4席 / 1階固定席 1,332席 + 車いす席 4席 / 2階固定席 217席 / 3階固定席 175席. Internally exact: 1,332+217+175 = 1,724; 1,724+4 = 1,728.",
+      "mappedFloorSubtotalsBefore": {
+        "floor1": 1342,
+        "floor2": 210,
+        "floor3": 175,
+        "total": 1727
+      },
+      "exactDiscrepancyBefore": "1F +10, 2F -7, 3F 0 versus the issuer fixed-seat subtotals.",
+      "rootCause": [
+        "1F row 19 was registered as 3-46 (44). The chart prints side number blocks only on rows 9-18; rows 19 and 20 carry no side seats and the four wheelchair pictograms occupy the row-19 side positions. Row 19 is 8-41 (34). Machine evidence: exactly 10 side blocks per side, sizes 4,5,6,7,7,7,6,6,5,5, whose y-extents align with the inner blocks of rows 9-18 within 1-3 units. Visual evidence: a label-anchored crop showing rows 18/19/20 with the 3-7 and 42-46 side blocks at row 18 and the wheelchair pictograms at row 19. (-10)",
+        "2F row 15 was registered as 6-37; the chart prints 6-38 (right block 27-38, twelve cells). (+1)",
+        "2F row 16 right block was registered as 28-31; the chart prints 28-37 (ten cells). (+6)"
+      ],
+      "issuerExplanationFound": true,
+      "issuerExplanation": "After correction the mapped set is 1F 1,332 / 2F 217 / 3F 175 = 1,724, equal to every printed issuer floor subtotal and to the issuer own 固定席 total. The remaining -4 against 1,728 is exactly the four unnumbered wheelchair spaces the issuer itemises separately as 車いす席 4席 on 1F. Three independent issuer-published per-floor checksums now agree, a stronger external control than the original two-pass had.",
+      "markedSeatAndAreaSemantics": "No legend, hatch or X-mark exists anywhere on this chart. Floor ownership is issuer-labelled by the bracketed 1階席 / 2階席 / 3階席 side labels; the 2F and 3F side wings share one seat-number space with their centre curves (wings 1-5 and 39-43 versus centre 6-38 on 2F), so no ownership reassignment was needed or made. Wheelchair positions carry no printed identifier and stay wheelchairSemantics.status: not-reflected.",
+      "finalDisposition": "PRODUCTION (retained, data corrected)",
+      "productionDataChanged": true,
+      "changes": [
+        "floor1 row 19: 3-46 -> 8-41",
+        "floor2 row 15: 6-37 -> 6-38",
+        "floor2 row 16 third range: 28-31 -> 28-37",
+        "verification.method / checkedAt / rangeDiff (-1 -> -4) / unresolvedIssues, sourceGeneration, scopeDisclosure, wheelchairSemantics.description",
+        "generated catalog and runtime detail, production fingerprint (count 1727 -> 1724, samples floor1/23/9 -> floor1/23/18, sha256 recomputed)"
+      ],
+      "reopenCondition": null
+    },
+    {
+      "id": "saitama-raiboc-main",
+      "sourceId": "raiboc-hall-large-standard",
+      "configurationId": "standard",
+      "existingTranscriptionConsistency": "Source ranges expand exactly to data/venue-reports/saitama-raiboc-main-bounded-implementation-2026-08-31.json (1F 942 / 2F 414 / balcony 28 = 1,384). No source/report drift; the defect is in the transcription itself.",
+      "freshFirstPartyEvidence": [
+        "https://saitama-culture.jp/raibochall/hall/ — 客席数：1,400席, unchanged; its own 座席表（大ホール） link re-followed.",
+        "https://saitama-culture.jp/sculwp/wp-content/uploads/omiya-civichall_zaseki01.pdf — re-fetched, SHA-256 a0bd5467ad87d6cc1ce26cf6b56d0cfc8c37f3dc5bdb60e39334003aedebac81, 1,427,749 bytes, byte-identical to the recorded provenance.",
+        "The same page 舞台図面 set (1/100, 1/125, 断面図) carries no audience seat counts.",
+        "https://saitama-culture.jp/sculwp/wp-content/uploads/raibochall_hall_notes-1.pdf — current usage notes; records 客席の撤去・復帰 as a restoration duty and states 大ホール1・2階席の最後列後方に通路はございません, but publishes no seat-number breakdown and no legend for the chart marks.",
+        "No dedicated accessibility page exists on the site."
+      ],
+      "officialFloorSubtotals": "Chart header: 1階席 938席 ／ 多目的鑑賞室 3席 ／（※車いすスペース 4〜13席）／ 2階席 431席 ／ バルコニー 28席　計1400席.",
+      "mappedFloorSubtotalsBefore": {
+        "floor1": 942,
+        "floor2": 414,
+        "balcony": 28,
+        "total": 1384
+      },
+      "exactDiscrepancyBefore": "1F +4, 2F -17, balcony 0 versus the issuer per-area subtotals.",
+      "machineRecountOfCurrentChart": {
+        "floor1": 938,
+        "floor2": 431,
+        "balcony": 28,
+        "printedNumberedTotal": 1397,
+        "plusUnnumbered": "多目的鑑賞室 3 unnumbered cells -> 1,400",
+        "note": "1F 938 and balcony 28 are closed by both machine paths and by row-level visual confirmation. 2F 431 is closed by the raster path (443 candidate cells minus 12 handrail glyph false positives, each visually verified) and equals the issuer figure exactly, but its row-by-row breakdown is not yet established."
+      },
+      "rootCause": [
+        "2F row 2A is printed on the chart (row label 2A, left 3-9, right 39-45) and is entirely absent from the registered ranges.",
+        "A further side-only 2F row between 2A and 2B (left 2-9, right 39-47, no centre block) is also absent.",
+        "The 2G-2K side areas are printed as split outer/inner blocks (left 1-6 or 2-6 plus 7-13 or 7-14; right 43-48 or 43-47 plus 36-42 or 35-42) whose row ownership does not match the registered ranges.",
+        "1F rows B, D, F and H are registered as contiguous ranges (7-40, 6-41, 4-43, 3-44) but the chart prints their centre blocks ending at 30, not 31; rows A/C/E/G/I end at 31. Four seats numbered 31 are registered that are not printed."
+      ],
+      "issuerExplanationFound": true,
+      "issuerExplanation": "The issuer per-area subtotals are complete and are reproduced exactly by the current chart (938 / 431 / 28, plus the 3 unnumbered 多目的鑑賞室 positions = 1,400). There is therefore no unexplained issuer relation. What fails is the repository transcription, which both omits printed rows and registers non-printed identifiers.",
+      "markedSeatAndAreaSemantics": "Balcony LA(3)+LB(11)+RA(3)+RB(11)=28 matches the separately printed バルコニー 28席 exactly, so the balcony area assignment is confirmed and is not double-counted inside 1階席 938. The 多目的鑑賞室 (3 unnumbered cells) stays excluded. The X-cross marks on 1F row I (over printed 10-13, 17-20, 23-24, 27-30, 34-37) and the diagonal hatch on 1F row R (16-31) still have no issuer legend; their relation to the header 車いすスペース 4〜13席 range is inference only and must not be treated as issuer-explained.",
+      "finalDisposition": "PRODUCTION SUPERSEDED -> blocked (draft source, non-selectable configuration). Not a HARD-CASE evidence defer: the issuer evidence is sufficient; the repository data is not.",
+      "productionDataChanged": true,
+      "changes": [
+        "source status production -> draft; configuration status draft and selectable false; verification.status verified -> pending, seatStructure matched -> mismatched, unresolvedIssues rewritten with the four confirmed defects and the reopen condition",
+        "inventory record researchStatus production -> blocked, venueSourceId -> null, blockingReason set",
+        "Kanto coverage ledger record -> HOLD / NEED EVIDENCE / formal DEFER",
+        "generated catalog entry and public/venue-db/venues/raiboc-hall-large-standard--standard.json removed; production fingerprint entry removed"
+      ],
+      "historicalReportDisposition": "data/venue-reports/saitama-raiboc-main-bounded-implementation-2026-08-31.json is retained unchanged as the historical record. Its currentness gate, configuration assessment and evidence derivation stand; its fresh two-pass seat set is not valid, and the production disposition it recorded is superseded by this audit under the cross-document reconciliation policy.",
+      "reopenCondition": "A separately authorized bounded re-implementation that re-transcribes the whole 2F (row 2A included) from the current official 座席表 PDF with two independent passes, settles the 2G-2K outer/inner side-block row ownership from the chart structure alone, removes the non-printed seat 31 from 1F rows B/D/F/H, and closes with per-area mapped totals of 1F 938 / 2F 431 / balcony 28. No capacity fitting, no invented identifiers, no seat moved between areas to fit a subtotal."
+    }
+  ],
+  "scottHallRecheck": "tokyo-official-0249 早稲田奉仕園〔スコットホール・講堂〕 was re-checked in the handoff record and is unchanged: it remains blocked HARD-CASE DEFER because the issuer own current documents split the same 200 printed identifiers as 1階136席・2階64席 (chart) versus 1階140席・2階60席 (facility page and both 2025.10 講堂案内図), and only the 1F half of that relation is issuer-explained. Its precedent was applied to both venues here; neither turned out to be that pattern, because in both cases the issuer subtotals are reproduced exactly by the printed chart once counted correctly.",
+  "productionTotalsAfter": "139 venues / 141 selectable configurations / 207,752 configuration-seat records",
+  "kantoLedgerAfter": "56 production / 0 ADOPT / 59 formal blocked / 39 inventory-unresearched",
+  "prohibitionsObserved": [
+    "no new Kanto candidate research",
+    "no Codex PREFLIGHT 3",
+    "no unrelated venue change",
+    "no re-audit of known HARD-CASE records",
+    "no capacity fitting",
+    "no invented seat IDs",
+    "no printed identifier deleted without direct chart evidence that it is not printed",
+    "no seat count moved between floors to make a subtotal agree"
+  ]
+}
