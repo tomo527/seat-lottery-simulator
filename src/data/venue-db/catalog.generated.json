@@ -1494,6 +1494,32 @@
     "dataPath": "/venue-db/venues/popuri-hall-tsurukawa-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "raiboc-hall-large-standard",
+    "venueGroupId": "raiboc-hall-large-standard",
+    "name": "RaiBoC Hall",
+    "searchAliases": [
+      "さいたま市民会館おおみや",
+      "レイボックホール",
+      "大宮市民会館"
+    ],
+    "region": "関東",
+    "prefecture": "埼玉県",
+    "municipality": "さいたま市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常座席（1階席・2階席・バルコニー固定番号席・標準構成）",
+        "seatCount": 1384,
+        "dataPath": "/venue-db/venues/raiboc-hall-large-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式座席表に印字された1階席A〜W列・2階席2B〜2K列・バルコニーLA/LB/RA/RB区画の全番号席（合計1,384席）を登録した標準構成です。1階H列は3〜44番まで印字番号に欠番・特記なしの通常列です。1階I列は4〜7番・40〜43番の位置が印字番号を持たない車いすスペース（合計4区画）に置き換えられており、10〜13番・17〜20番・23〜24番・27〜30番・34〜37番、及び1階R列16〜31番には公式座席表上に×印または斜線の記号が重ねて印字されていますが、座席番号自体は通常どおり印字されており、記号の意味を示す凡例は座席表・大ホールページのいずれにも見当たりません。したがって記号付きの番号を削除せず通常番号席としてそのまま登録しています（水戸市民会館グロービスホールの2階網掛けセルと同様の取り扱い）。多目的鑑賞室（3席、無地グリッドで番号印字なし）は含みません。音響反響板の設営による客席増減は公式に番号単位で示されていないため反映していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "risuru-main-standard",
     "name": "たましんRISURUホール 大ホール",
     "searchAliases": [

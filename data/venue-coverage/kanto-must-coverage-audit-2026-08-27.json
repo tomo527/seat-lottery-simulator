@@ -21,8 +21,8 @@
       "茨城県": 5
     },
     "byStatus": {
-      "production": 55,
-      "ADOPT / implementation-ready": 2,
+      "production": 56,
+      "ADOPT / implementation-ready": 1,
       "HOLD / NEED EVIDENCE / formal DEFER": 58,
       "inventory-unresearched": 39
     },
@@ -73,12 +73,11 @@
     }
   },
   "nextMacro": {
-    "selection": "separately authorized bounded visual two-pass implementation of the remaining Kanto >=1,000 ADOPTs only",
+    "selection": "separately authorized bounded visual two-pass implementation of the remaining Kanto >=1,000 ADOPT only",
     "candidates": [
-      "saitama-raiboc-main — RaiBoC Hall〔大ホール〕",
       "chiba-pref-culture-main — 千葉県文化会館〔大ホール〕"
     ],
-    "reason": "KANAGAWA-K-ARENA-YOKOHAMA DENSE-VECTOR PRODUCTION IMPLEMENTATION (2026-08-31) reopened the venue on an explicit user decision that Kアリーナ横浜 is release-critical, and closed it as PRODUCTION. The prior 2026-08-31 HARD-CASE / JUDGMENT record is retained as historical fact: its blocker was human-only transcription scalability over roughly 1,100 printed row-ranges, not missing issuer evidence. docs/VENUE_DATA_GUIDE.md now carries a narrow DENSE-VECTOR verification exception for current first-party vector charts that print every identifier, and the venue was transcribed under it with two independent extraction paths matching on the complete set with zero unresolved mismatch plus a rendered-chart visual audit. RaiBoC Hall〔大ホール〕 is the exact next action, then 千葉県文化会館〔大ホール〕. 39 inventory-unresearched Kanto records remain, so another Kanto high-impact preflight follows those two ADOPTs and precedes Tokyo Priority D."
+    "reason": "RAIBOC HALL BOUNDED VISUAL TWO-PASS PRODUCTION IMPLEMENTATION (2026-08-31) closed saitama-raiboc-main as PRODUCTION (canonical raiboc-hall-large-standard). Currentness gate PASS (active operation, booking through New Year Concert 2027, no closure/renovation notice); the current issuer 大ホール座席表 was freshly re-derived from the current hall page (not merely trusted from the prior preflight) and read twice independently, resolving one row-attribution mismatch (H/I wheelchair and unexplained X/hatch marks) against the current chart before promotion. 千葉県文化会館〔大ホール〕 is the exact next action. 39 inventory-unresearched Kanto records remain, so another Kanto high-impact preflight follows that ADOPT and precedes Tokyo Priority D."
   },
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
@@ -334,10 +333,10 @@
       "officialCapacityAndMode": "1400 (current inventory/audit capacity; see official URL)",
       "officialUrl": "https://saitama-culture.jp/raibochall/",
       "inventoryId": "saitama-raiboc-main",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
+      "venueSourceId": "raiboc-hall-large-standard",
+      "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-08-30 preflight: current issuer operation, 1,400-seat purpose-built large-hall page, and the issuer-linked 大ホール客席図面 are sufficient to enter separately authorized bounded visual two-pass. That pass must establish the complete printed representative set and any accessibility/technical annotations directly; no capacity fitting or inference."
+      "reopenCondition": null
     },
     {
       "prefecture": "埼玉県",

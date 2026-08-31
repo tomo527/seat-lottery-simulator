@@ -1,0 +1,100 @@
+{
+  "title": "SAITAMA-RAIBOC-MAIN BOUNDED VISUAL TWO-PASS PRODUCTION IMPLEMENTATION",
+  "date": "2026-08-31",
+  "startState": {
+    "branch": "main",
+    "head": "bb3d081d271e9de204c6fe610ef81dba71f898a9",
+    "originMain": "bb3d081d271e9de204c6fe610ef81dba71f898a9",
+    "workingTree": "clean",
+    "production": "138 venues / 140 selectable configurations / 206,028 configuration-seat records",
+    "kantoLedger": "55 production / 2 ADOPT / 58 formal blocked / 39 inventory-unresearched",
+    "priorDisposition": "saitama-raiboc-main was ADOPT / implementation-ready per the 2026-08-30 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 2 (data/venue-reports/kanto-ge1000-high-impact-unresearched-preflight-2-2026-08-30.json)."
+  },
+  "scope": "saitama-raiboc-main / RaiBoC Hall〔大ホール〕 only. chiba-pref-culture-main, remaining Kanto inventory-unresearched research, known HARD-CASE records, and Tokyo Priority D were explicitly out of scope and not touched.",
+  "currentnessGate": {
+    "result": "PASS",
+    "evidence": [
+      "https://saitama-culture.jp/raibochall/ (fetched 2026-08-31): active operation, regular closure only on the 2nd/4th Wednesday; upcoming programme includes 'RaiBoC Hall New Year Concert 2027' announced 2026-08-29 and 'THE CLASSICAL LEGEND!! Concert Session 2' announced 2026-08-29; no closure/renovation/cessation notice found on the top page.",
+      "https://saitama-culture.jp/raibochall/hall/ (fetched 2026-08-31): current 大ホール capacity stated as 客席数：1,400席; no closure/renovation notice; states 音響反響板 setup/teardown takes about 2.5-3 hours and restricts stage/audience-area access during that work, but does not state any seat-number change.",
+      "No dedicated accessibility page exists on the site; no barrier-free/車いす page found in the top-page navigation listing."
+    ],
+    "conclusion": "No formal closure/renovation/cessation within 12 months of the review date was found; booking/event activity is confirmed into 2027. Currentness gate PASS, proceeded to two-pass transcription."
+  },
+  "currentSeatChartEvidence": {
+    "derivationPath": "Fetched https://saitama-culture.jp/raibochall/hall/ fresh on 2026-08-31 and followed its own '座席表（大ホール）' link, rather than trusting the URL recorded by the prior preflight as still current-linked without re-derivation.",
+    "url": "https://saitama-culture.jp/sculwp/wp-content/uploads/omiya-civichall_zaseki01.pdf",
+    "matchesPriorPreflightRecordedUrl": true,
+    "sha256": "a0bd5467ad87d6cc1ce26cf6b56d0cfc8c37f3dc5bdb60e39334003aedebac81",
+    "bytes": 1427749,
+    "pages": 1,
+    "secondIndependentFetch": "byte-identical to the first fetch",
+    "assetType": "Single-page vector PDF; seat numbers, row labels, headers, and gate labels are drawn as vector curve paths, not embedded selectable text (pdftotext / pymupdf get_text extracted only the 7 GATE labels; individual seat numbers are not machine-extractable)."
+  },
+  "configurationAssessment": {
+    "officialCapacity": "現行 https://saitama-culture.jp/raibochall/hall/ states 客席数：1,400席 with no floor/area breakdown on that page.",
+    "chartHeaderBreakdown": "The seat chart itself prints: 1階席 938席／多目的鑑賞室 3席（※車いすスペース 4〜13席）／2階席 431席／バルコニー 28席　計1400席。",
+    "fixedVsMovable": "大ホール page states fixed seating for 大ホール (no movable-chair note, unlike 小ホール which explicitly has movable rear chairs).",
+    "reflectorBoardEffect": "The hall page describes 音響反響板 setup/teardown time and access restriction only; it does not state that reflector-board setup changes the seat-number set. No second configuration is issuer-defined.",
+    "wheelchairPositions": "Four wheelchair pictograms are printed on the chart (two in 1F row I in place of the unprinted 4-7 position, two in place of the unprinted 40-43 position), consistent with the header's stated minimum of 4 in the '車いすスペース 4〜13席' range. No seat ID is printed at any wheelchair pictogram position.",
+    "issuerDefinedAreas": "1階 (rows A-W), 2階 (rows 2B-2K), and four side balcony boxes labelled LA/LB/RA/RB on the chart itself (their combined 28 mapped seats exactly equal the chart's own printed バルコニー 28席 figure, corroborating the area assignment). A 多目的鑑賞室 (3 seats) is drawn as an unnumbered grid and excluded from the numbered scope.",
+    "decision": "A single coherent numbered configuration is definable directly from the current issuer chart; proceeded to transcription under scope.kind: official-variant (not fixed-only, since the whole issuer-drawn seating area is registered, not a fixed-stand subset)."
+  },
+  "verificationMethodDecision": {
+    "method": "standard-human-visual-two-pass",
+    "denseVectorConsidered": true,
+    "denseVectorRejectedBecause": "The chart is a single ordinary theater/hall seat map (~1,384-1,400 seats across ~30 rows), not a super-high-density diagram; the DENSE-VECTOR exception in docs/VENUE_DATA_GUIDE.md requires that human visual two-pass be unreasonable, which does not hold here. Standard direct human visual two-pass was used throughout."
+  },
+  "visualPass1": {
+    "renderMethod": "PyMuPDF render of the first fetch at 6x zoom (3572x5052 px) from a locally rendered PNG, cropped and read in sections.",
+    "readingOrder": "Header, then 1F front rows A-I left-to-right, then 1F rear rows J-W left-to-right, then balcony boxes LA/LB/RA/RB, then 多目的鑑賞室, then 2F rows 2B-2K left-to-right.",
+    "recorded": "Floor/area, row, printed seat IDs, range start/end, split ranges, unprinted wheelchair-icon positions, X-cross marks over printed numbers (row I), diagonal-hatch marks over printed numbers (row R), and per-row subtotals."
+  },
+  "visualPass2": {
+    "renderMethod": "PyMuPDF render of a second, independently re-fetched copy of the PDF at 7x zoom (4168x5894 px), a different zoom factor and a fresh crop/segmentation strategy from Pass 1.",
+    "readingOrder": "Row order and left/right reading direction were reversed relative to Pass 1 (2K before 2B; W before A; each row's opposite end read first) rather than reusing Pass 1's range table as an answer key.",
+    "mismatchFound": "Pass 2's first re-read of 1F rows H and I, cross-checked against Pass 1's notes only after both were drafted, disagreed on which row carried the wheelchair pictograms and the X-cross marks.",
+    "resolution": "Returned to the current official chart (not to either pass's notes) and re-cropped a single wide image spanning rows B through I with every row label visible simultaneously and directly touching its own row of numbers. This resolved the disagreement unambiguously: row H is fully plain (3-44, no marks of any kind); row I carries both wheelchair pictograms (replacing the unprinted 4-7 and 40-43 positions) and all X-cross marks (over printed 10-13, 17-20, 23-24, 27-30, 34-37). Pass 1's original H/I attribution was corrected to match this re-confirmed reading before comparison closed. All other rows (R's diagonal-hatch on 16-31, W's isolation to 16-31, row J starting at 2, the 2B-2F right-side continuity, row 2K's four-segment structure, and the LA/LB/RA/RB seat counts) were independently re-confirmed in Pass 2 and matched Pass 1 without further correction."
+  },
+  "matchResult": {
+    "status": "MATCH after one resolved mismatch",
+    "unresolvedMismatchCount": 0,
+    "resolutionMethod": "current-chart-re-examination-not-inference",
+    "notes": "The single H/I mismatch was resolved by returning to the current official chart with a wider, label-anchored crop, not by guesswork, majority vote, or capacity fitting. No other field (complete printed ID set, floor/area ownership, row ownership, every range, every gap, accessibility markings, per-area subtotal) had an unresolved disagreement."
+  },
+  "perAreaMappedCounts": {
+    "floor1": 942,
+    "balcony-la": 3,
+    "balcony-lb": 11,
+    "balcony-ra": 3,
+    "balcony-rb": 11,
+    "floor2": 414,
+    "grandMappedTotal": 1384
+  },
+  "reconciliation": {
+    "mappedPrintedIdTotal": 1384,
+    "officialTotal": 1400,
+    "relationToOfficial1400": "The chart's own header arithmetic is 938 (1F) + 3 (多目的鑑賞室) + 431 (2F) + 28 (バルコニー) = 1400. The registered numbered scope (1F + 2F + バルコニー, excluding the unnumbered 多目的鑑賞室) is 942 + 414 + 28 = 1384 against the chart's own numbered-scope subtotal of 938 + 431 + 28 = 1397, a difference of 13, and against the full 1,400 a difference of 16.",
+    "wheelchairPositionsIncludedIn1400": "Not determinable from issuer text; the wheelchair pictograms occupy positions where no seat number is printed at all (not counted as numbered seats in this registration either way).",
+    "wheelchairPositionsHaveSeatIds": false,
+    "replacementRelationToOrdinarySeats": "Not issuer-defined; no numbered seat is stated to be replaced by a specific wheelchair position, so no seat ID was deleted or invented.",
+    "movableRemovableSeats": "None found; the 大ホール hall page describes 大ホール seating as fixed (unlike 小ホール).",
+    "orchestraStageEffectOnSeatCount": "Not issuer-defined for numbered seats; reflector-board setup affects stage access time only per current evidence.",
+    "unnumberedTechnicalOrAccessibilityPositions": "The four wheelchair pictogram positions (1F row I) and the 多目的鑑賞室 (3 unnumbered positions) are excluded from the numbered scope as unnumbered.",
+    "unexplainedMarks": "1F row I carries X-cross marks over 18 printed numbers (10-13, 17-20, 23-24, 27-30, 34-37) and 1F row R carries a diagonal single-line hatch over all 16 printed numbers 16-31. No legend for either mark was found anywhere on the one-page chart (all four corners and both margins were checked and are blank). Because the seat numbers under both marks are printed exactly like unmarked seats, and docs/VENUE_DATA_GUIDE.md's precedent for a directly comparable case (mito-civic-globis-hall's 2F shaded/network cells, which retain their printed numbers as ordinary numbered seats without a legend) supports registering printed-but-marked numbers rather than deleting them on an unsupported assumption, both marks were kept in the mapped/orderable range rather than excluded. This is recorded as an open verification note in the source's unresolvedIssues, not resolved by inference.",
+    "noCapacityFitting": true,
+    "noInventedSeatIds": true,
+    "noConfigurationMixing": true
+  },
+  "disposition": "PRODUCTION",
+  "sourceId": "raiboc-hall-large-standard",
+  "configurationId": "standard",
+  "productionTotalsAfter": "139 venues / 141 selectable configurations / 207,412 configuration-seat records",
+  "kantoLedgerAfter": "56 production / 1 ADOPT / 58 formal blocked / 39 inventory-unresearched",
+  "validation": {
+    "venuesReview": "no production blockers, no validation errors; one expected warning (official total 1400 differs from mapped seat count 1384)",
+    "venuesBuild": "built catalog for 139 production venues after the inventory venueSourceId/researchStatus were synchronized",
+    "venuesCheck": "Venue database is synchronized (139 venues)",
+    "venuesValidate": "Validated 139 production venues, 141 selectable configurations, and 207,412 configuration-seat records (45 warnings; 44 pre-existing + 1 new expected mismatch warning for this venue; no new catalog/database size warning beyond the pre-existing soft-limit warnings)"
+  },
+  "nextAction": "separately authorized bounded visual two-pass implementation of chiba-pref-culture-main 千葉県文化会館〔大ホール〕"
+}
