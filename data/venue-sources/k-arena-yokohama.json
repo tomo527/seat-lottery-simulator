@@ -1,0 +1,7361 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "k-arena-yokohama",
+  "name": "Kアリーナ横浜",
+  "prefecture": "神奈川県",
+  "city": "横浜市",
+  "aliases": [
+    "K-Arena Yokohama",
+    "Kアリーナ"
+  ],
+  "venueType": "arena",
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "K Arena Management, Ltd.",
+      "title": "Kアリーナ横浜 シートマップ（LEVEL1/3/5/7 詳細座席図PDF・240808_seatmap）",
+      "url": "https://k-arena.com/wp-content/themes/k-arena_260401/assets/pdf/seat-map.pdf",
+      "checkedAt": "2026-08-31"
+    },
+    {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "facility"
+      ],
+      "publisher": "K Arena Management, Ltd.",
+      "title": "Kアリーナ横浜 シートマップページ（LEVEL別座席図・アリーナ席形状の公演依存表示）",
+      "url": "https://k-arena.com/seat/",
+      "checkedAt": "2026-08-31"
+    },
+    {
+      "id": "official-floor-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "K Arena Management, Ltd.",
+      "title": "Kアリーナ横浜 フロアガイド（座席数20,033席・LEVEL3ロアースタンド／LEVEL5ミドルスタンド／LEVEL7アッパースタンド・VIPフロア）",
+      "url": "https://k-arena.com/floor/",
+      "checkedAt": "2026-08-31"
+    },
+    {
+      "id": "official-faq",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "K Arena Management, Ltd.",
+      "title": "Kアリーナ横浜 よくあるご質問（車イス席・鑑賞エリアレイアウトの公演依存）",
+      "url": "https://k-arena.com/faq/",
+      "checkedAt": "2026-08-31"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "upper-stands-fixed",
+      "canonicalName": "LEVEL3・LEVEL5・LEVEL7固定スタンド席・代表配置",
+      "selectionBasis": "現行公式フロアガイドはLEVEL3ロアースタンド・LEVEL5ミドルスタンド・LEVEL7アッパースタンドを常設スタンドとして定義し、現行公式シートマップPDFはこの3層の全ブロックについて列ごとの開始・終了座席番号を印字する。一方で公式シートマップページは「※公演ごとにアリーナ席の形状やトイレの男女別配置が変更になることがございます。」と明記し、LEVEL1アリーナは公演依存である。VIPフロアはフロアガイドが「ご契約者専用フロアです。一般の方のご入場・ご利用はできません。」とする。したがって公式図が完全な番号集合を公開する上層3層の固定スタンド席だけを代表配置として採用する。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "2026-08-31時点の現行公式シートマップPDF（SHA-256 24a838884437b225bf19f6dbe4f40bf95e80204278f48b0528da4c7b603967ee、130,688バイト、Adobe Illustrator 28.6生成の1ページvector図 240808_seatmap、1F/3F/5F/7Fごとのシート・番号・列・扉レイヤーと車椅子・VIPレイヤーを持つ）。同一資産を独立に2回取得してバイト一致（同一SHA-256）を確認したうえで転記した。",
+      "sourceIds": [
+        "official-seat-map",
+        "official-seat-page",
+        "official-floor-guide",
+        "official-faq"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-seat-page",
+        "official-floor-guide"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": null,
+      "scope": {
+        "kind": "fixed-only",
+        "issuerDefined": false,
+        "containsEventDependentSeatIds": false,
+        "excludesDynamicAreas": true,
+        "maximumCapacity": false,
+        "excludedAreas": [
+          "LEVEL1 アリーナ（公式シートマップページが公演ごとに席の形状が変わると明記する公演依存エリア。公式LEVEL1図は列番号だけで座席番号を印字しない）",
+          "VIPフロア（公式フロアガイドが「ご契約者専用フロアです。一般の方のご入場・ご利用はできません。」とする非一般席。公式PDFのVIPレイヤーにも座席番号の印字がない）",
+          "3階の車イス席・ACCESSIBLE SEATING区画（公式PDFの車椅子レイヤーに描かれるが座席番号の印字がない）",
+          "LEVEL4（公式フロアガイドが階として挙げるが、公式シートマップに番号席を持たない）"
+        ],
+        "exactSubtotal": 15929
+      },
+      "scopeDisclosure": "公式シートマップに座席番号が印字されたLEVEL3ロアースタンド・LEVEL5ミドルスタンド（バルコニー席を含む）・LEVEL7アッパースタンドの固定スタンド席のみを対象とする代表配置です。公演ごとに形状が変わる1階アリーナ席、ご契約者専用のVIPフロア、番号のない車イス席区画は含みません。公称の座席数20,033席は1階アリーナを含む会場全体の数値であり、この抽選対象の席数とは一致しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式シートマップPDFは3階中央下段に「車イス席／ACCESSIBLE SEATING」の区画を独立レイヤーとして描き、この区画には列・番号を印字しない。区画に接する3階26〜29列のブロックは公式図上で短く截ち切られており、その截ち切りは印字どおりに登録している。公式FAQは「鑑賞エリアのレイアウトは公演により異なります。」として車イス席の案内を各公演の主催者へ振り分け、個別の座席番号も通常席との置換関係も公開しない。したがって番号のない位置をseat IDとして作成せず、印字された通常番号席だけを登録する。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-faq"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "reviewed",
+        "checkedAt": "2026-08-31",
+        "method": "dense-vector-two-independent-extraction-paths-with-rendered-official-chart-visual-audit",
+        "seatStructure": "matched",
+        "seatCount": "pending",
+        "rangeDiff": null,
+        "unresolvedIssues": [
+          "DENSE-VECTOR verification（docs/VENUE_DATA_GUIDE.md）で検証した。Pass Aは現行公式PDFのcontent streamを独自に解釈し、発行者定義の光学コンテンツグループ（3F番号/5F番号/7F番号と3F列/5F列/7F列）でレイヤー帰属を確定し、各グリフのdevice座標と字送り幅からbaselineと印字range（開始・リーダー・終了）を再構成した。Pass Bは資産を独立に再取得し、pdfminer系の別実装でテキスト幾何を取得したうえで、レンダリングしたラスタから座席バーと背景パネルを検出し、GATE番号（101-104/301-304/501-512/701-712）で階を同定し、レンダリングされた行バンドの両端で番号を対応付け、列番号は公式の列マーカー間のバンド数え上げで決めた。階の処理順（7F→5F→3F）、ブロック走査順、対応付けロジックはPass Aと分けている。両passは1,033区間、83の(階,列)キー、全開始・終了、分割区間、欠番、截ち切り列、階別および総計の展開seat-ID集合まで完全一致し、unresolved mismatchは0である。",
+          "機械一致のあと、公式PDFを高解像度でレンダリングし直して視認監査を行った。分割rangeのある列、GATE・階段開口に接する列、車イス席区画に接する3階26〜29列、各階の最初・最後の列、異常に短い区間（7階の2席区間69-70・91-92・193-194・215-216、5階17列の87-90・151-154）、階と翼の境界、および各ブロックの通常列の標本を確認し、すべて印字と一致した。",
+          "発行者は3階・5階・7階の階別席数小計を公開していない。公式フロアガイドの20,033席は1階アリーナを含む会場全体の値であり、上層固定席のscopeの目標値ではないため、expectedSeatCountは設定せず、存在しない公称小計を作成していない。印字から計算した階別mapped countは3階4,978席、5階4,372席（うちバルコニー席235席）、7階6,579席、総計15,929席である。",
+          "座席番号と列番号は3階・5階・7階で重複して使われるため、階ごとに独立したareaIdを与えている。発行者は個々のブロックに名称を与えていないため、ブロック名は作成せず、公式が印字する階・列・座席番号だけをUIの識別子に用いる。エリア名称は公式のLEVEL別スタンド名称（ロアースタンド／ミドルスタンド／アッパースタンド）と公式が図中に印字する「バルコニー席／BALCONY SEATING」に基づく表示用の整理名であり、公式の座席名称そのものではない。",
+          "5階中央は公式図でバルコニー席が1〜3列、主スタンドが6〜17列であり、中央には4列・5列が存在しない。5階の翼は1〜26列が連続する。この不連続は公式図の印字どおりであり、補完していない。",
+          "7階中央は1〜28列、7階の翼は3〜28列で、翼には1列・2列が存在しない。3階は下段が1〜11列、上段が12〜29列で、下段には1-8・49-63・64-78・139-153・154-168・209-216の各ブロックがなく、117・118番も存在しない。いずれも公式図の印字どおりである。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "1",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "1",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "1",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "1",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "1",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "1",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "1",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "1",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "2",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "2",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "2",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "2",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "2",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "2",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "2",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "2",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "3",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "3",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "3",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "3",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "3",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "3",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "3",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "3",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "4",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "4",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "4",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "4",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "4",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "4",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "4",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "4",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "5",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "5",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "5",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "5",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "5",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "5",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "5",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "5",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "6",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "6",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "6",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "6",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "6",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "6",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "6",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "6",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "7",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "7",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "7",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "7",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "7",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "7",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "7",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "7",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "8",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "8",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "8",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "8",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "8",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "8",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "8",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "8",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "9",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "9",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "9",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "9",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "9",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "9",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "9",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "9",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "10",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "10",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "10",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "10",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "10",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "10",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "10",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "10",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "11",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "11",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "11",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "11",
+          "from": 99,
+          "to": 107
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "11",
+          "from": 108,
+          "to": 116
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "11",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "11",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "11",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 49,
+          "to": 56
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 71,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 139,
+          "to": 146
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 161,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "12",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 49,
+          "to": 56
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 71,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 139,
+          "to": 146
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 161,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "13",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 49,
+          "to": 57
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 70,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 139,
+          "to": 147
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 160,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "14",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 49,
+          "to": 57
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 70,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 139,
+          "to": 147
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 160,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "15",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 49,
+          "to": 58
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 69,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 139,
+          "to": 148
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 159,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "16",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 49,
+          "to": 58
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 69,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 139,
+          "to": 148
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 159,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "17",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 49,
+          "to": 59
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 68,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 139,
+          "to": 149
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 158,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "18",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 49,
+          "to": 59
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 68,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 139,
+          "to": 149
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 158,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "19",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 49,
+          "to": 60
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 67,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 139,
+          "to": 150
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 157,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "20",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 49,
+          "to": 60
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 67,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 139,
+          "to": 150
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 157,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "21",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 49,
+          "to": 61
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 66,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 139,
+          "to": 151
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 156,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "22",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 49,
+          "to": 61
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 66,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 139,
+          "to": 151
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 156,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "23",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 49,
+          "to": 62
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 65,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 139,
+          "to": 152
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 155,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "24",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 49,
+          "to": 62
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 65,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 79,
+          "to": 98
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 99,
+          "to": 118
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 119,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 139,
+          "to": 152
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 155,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "25",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 49,
+          "to": 63
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 64,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 79,
+          "to": 89
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 128,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 139,
+          "to": 153
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 154,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "26",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 49,
+          "to": 63
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 64,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 79,
+          "to": 89
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 128,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 139,
+          "to": 153
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 154,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "27",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 49,
+          "to": 63
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 64,
+          "to": 78
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 79,
+          "to": 88
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 129,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 139,
+          "to": 153
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 154,
+          "to": 168
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 169,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 189,
+          "to": 208
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "28",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 14,
+          "to": 24
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 29,
+          "to": 36
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 41,
+          "to": 48
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 53,
+          "to": 62
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 65,
+          "to": 74
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 79,
+          "to": 87
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 130,
+          "to": 138
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 143,
+          "to": 152
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 155,
+          "to": 164
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 169,
+          "to": 176
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 181,
+          "to": 188
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 193,
+          "to": 203
+        },
+        {
+          "areaId": "3f-lower-stand",
+          "areaLabel": "3階ロアースタンド",
+          "rowLabel": "29",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "1",
+          "from": 72,
+          "to": 82
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "1",
+          "from": 91,
+          "to": 108
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "1",
+          "from": 111,
+          "to": 129
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "1",
+          "from": 131,
+          "to": 148
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "1",
+          "from": 155,
+          "to": 165
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "2",
+          "from": 71,
+          "to": 82
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "2",
+          "from": 91,
+          "to": 108
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "2",
+          "from": 111,
+          "to": 129
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "2",
+          "from": 131,
+          "to": 148
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "2",
+          "from": 155,
+          "to": 166
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "3",
+          "from": 71,
+          "to": 82
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "3",
+          "from": 91,
+          "to": 108
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "3",
+          "from": 111,
+          "to": 129
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "3",
+          "from": 131,
+          "to": 148
+        },
+        {
+          "areaId": "5f-balcony",
+          "areaLabel": "5階バルコニー席",
+          "rowLabel": "3",
+          "from": 155,
+          "to": 166
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "1",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "1",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "1",
+          "from": 49,
+          "to": 60
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "1",
+          "from": 181,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "1",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "1",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "1",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "2",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "2",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "2",
+          "from": 49,
+          "to": 61
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "2",
+          "from": 180,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "2",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "2",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "2",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "3",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "3",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "3",
+          "from": 49,
+          "to": 61
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "3",
+          "from": 180,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "3",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "3",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "3",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "4",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "4",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "4",
+          "from": 49,
+          "to": 62
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "4",
+          "from": 179,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "4",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "4",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "4",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "5",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "5",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "5",
+          "from": 49,
+          "to": 62
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "5",
+          "from": 179,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "5",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "5",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "5",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 49,
+          "to": 63
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 72,
+          "to": 86
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 91,
+          "to": 110
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 111,
+          "to": 130
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 131,
+          "to": 150
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 155,
+          "to": 169
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 178,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "6",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 49,
+          "to": 63
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 72,
+          "to": 86
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 91,
+          "to": 110
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 111,
+          "to": 130
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 131,
+          "to": 150
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 155,
+          "to": 169
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 178,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "7",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 49,
+          "to": 64
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 71,
+          "to": 86
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 91,
+          "to": 110
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 111,
+          "to": 130
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 131,
+          "to": 150
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 155,
+          "to": 170
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 177,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "8",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 49,
+          "to": 64
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 71,
+          "to": 86
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 91,
+          "to": 110
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 111,
+          "to": 130
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 131,
+          "to": 150
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 155,
+          "to": 170
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 177,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "9",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 49,
+          "to": 65
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 70,
+          "to": 86
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 91,
+          "to": 110
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 111,
+          "to": 130
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 131,
+          "to": 150
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 155,
+          "to": 171
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 176,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "10",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 12,
+          "to": 25
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 32,
+          "to": 45
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 52,
+          "to": 62
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 73,
+          "to": 83
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 94,
+          "to": 107
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 114,
+          "to": 127
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 134,
+          "to": 147
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 158,
+          "to": 168
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 179,
+          "to": 189
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 196,
+          "to": 209
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 216,
+          "to": 229
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "11",
+          "from": 236,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 11,
+          "to": 25
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 31,
+          "to": 45
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 52,
+          "to": 64
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 71,
+          "to": 83
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 93,
+          "to": 107
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 114,
+          "to": 128
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 134,
+          "to": 148
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 158,
+          "to": 170
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 177,
+          "to": 189
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 196,
+          "to": 210
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 216,
+          "to": 230
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "12",
+          "from": 236,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 12,
+          "to": 26
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 32,
+          "to": 46
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 51,
+          "to": 64
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 71,
+          "to": 84
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 94,
+          "to": 108
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 113,
+          "to": 127
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 133,
+          "to": 147
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 157,
+          "to": 170
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 177,
+          "to": 190
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 195,
+          "to": 209
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 215,
+          "to": 229
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "13",
+          "from": 235,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 11,
+          "to": 25
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 31,
+          "to": 45
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 52,
+          "to": 65
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 70,
+          "to": 83
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 93,
+          "to": 107
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 114,
+          "to": 128
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 134,
+          "to": 148
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 158,
+          "to": 171
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 176,
+          "to": 189
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 196,
+          "to": 210
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 216,
+          "to": 230
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "14",
+          "from": 236,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 12,
+          "to": 26
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 32,
+          "to": 46
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 51,
+          "to": 65
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 70,
+          "to": 84
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 94,
+          "to": 108
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 113,
+          "to": 127
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 133,
+          "to": 147
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 157,
+          "to": 171
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 176,
+          "to": 190
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 195,
+          "to": 209
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 215,
+          "to": 229
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "15",
+          "from": 235,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 11,
+          "to": 25
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 31,
+          "to": 45
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 52,
+          "to": 66
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 69,
+          "to": 83
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 93,
+          "to": 107
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 114,
+          "to": 128
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 134,
+          "to": 148
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 158,
+          "to": 172
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 175,
+          "to": 189
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 196,
+          "to": 210
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 216,
+          "to": 230
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "16",
+          "from": 236,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 12,
+          "to": 26
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 32,
+          "to": 46
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 51,
+          "to": 66
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 69,
+          "to": 84
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 87,
+          "to": 90
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 94,
+          "to": 108
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 113,
+          "to": 128
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 133,
+          "to": 147
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 151,
+          "to": 154
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 157,
+          "to": 172
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 175,
+          "to": 190
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 195,
+          "to": 209
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 215,
+          "to": 229
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "17",
+          "from": 235,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "18",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "18",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "18",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "18",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "18",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "18",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "18",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "19",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "19",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "19",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "19",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "19",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "19",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "19",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "20",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "20",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "20",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "20",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "20",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "20",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "20",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "20",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "21",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "21",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "21",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "21",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "21",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "21",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "21",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "21",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "22",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "22",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "22",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "22",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "22",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "22",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "22",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "22",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "23",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "23",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "23",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "23",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "23",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "23",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "23",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "23",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "24",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "24",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "24",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "24",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "24",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "24",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "24",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "24",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "25",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "25",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "25",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "25",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "25",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "25",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "25",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "25",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "26",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "26",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "26",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "26",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "26",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "26",
+          "from": 193,
+          "to": 212
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "26",
+          "from": 213,
+          "to": 232
+        },
+        {
+          "areaId": "5f-middle-stand",
+          "areaLabel": "5階ミドルスタンド",
+          "rowLabel": "26",
+          "from": 233,
+          "to": 240
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "1",
+          "from": 91,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "1",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "1",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "1",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "1",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "1",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "1",
+          "from": 193,
+          "to": 194
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "2",
+          "from": 91,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "2",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "2",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "2",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "2",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "2",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "2",
+          "from": 193,
+          "to": 194
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 69,
+          "to": 70
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 91,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 193,
+          "to": 194
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 215,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "3",
+          "from": 277,
+          "to": 284
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 69,
+          "to": 70
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 91,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 193,
+          "to": 194
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 215,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "4",
+          "from": 277,
+          "to": 284
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "5",
+          "from": 277,
+          "to": 284
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 12,
+          "to": 25
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 32,
+          "to": 45
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 52,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 93,
+          "to": 109
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 116,
+          "to": 129
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 136,
+          "to": 149
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 156,
+          "to": 169
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 176,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 217,
+          "to": 233
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 240,
+          "to": 253
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 260,
+          "to": 273
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "6",
+          "from": 280,
+          "to": 284
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 11,
+          "to": 25
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 31,
+          "to": 45
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 51,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 93,
+          "to": 110
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 116,
+          "to": 130
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 136,
+          "to": 150
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 155,
+          "to": 169
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 175,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 217,
+          "to": 234
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 240,
+          "to": 254
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 260,
+          "to": 274
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "7",
+          "from": 280,
+          "to": 284
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 12,
+          "to": 26
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 32,
+          "to": 46
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 52,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 93,
+          "to": 109
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 115,
+          "to": 129
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 135,
+          "to": 149
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 156,
+          "to": 170
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 176,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 217,
+          "to": 233
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 239,
+          "to": 253
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 259,
+          "to": 273
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "8",
+          "from": 279,
+          "to": 284
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 11,
+          "to": 25
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 31,
+          "to": 45
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 51,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 93,
+          "to": 110
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 116,
+          "to": 130
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 136,
+          "to": 150
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 155,
+          "to": 169
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 175,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 217,
+          "to": 234
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 240,
+          "to": 254
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 260,
+          "to": 274
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "9",
+          "from": 280,
+          "to": 284
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 11,
+          "to": 26
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 32,
+          "to": 46
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 52,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 93,
+          "to": 109
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 115,
+          "to": 129
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 135,
+          "to": 150
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 156,
+          "to": 170
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 176,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 217,
+          "to": 233
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 239,
+          "to": 253
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 259,
+          "to": 274
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "10",
+          "from": 279,
+          "to": 284
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "11",
+          "from": 277,
+          "to": 284
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 3,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 69,
+          "to": 72
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 89,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 193,
+          "to": 196
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 213,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "12",
+          "from": 277,
+          "to": 282
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 2,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 69,
+          "to": 72
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 89,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 193,
+          "to": 196
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 213,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "13",
+          "from": 277,
+          "to": 283
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 3,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 69,
+          "to": 73
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 88,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 193,
+          "to": 197
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 212,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "14",
+          "from": 277,
+          "to": 282
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 2,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 69,
+          "to": 73
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 88,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 193,
+          "to": 197
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 212,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "15",
+          "from": 277,
+          "to": 283
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 3,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 69,
+          "to": 74
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 87,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 193,
+          "to": 198
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 211,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "16",
+          "from": 277,
+          "to": 282
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 2,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 69,
+          "to": 74
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 87,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 193,
+          "to": 198
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 211,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "17",
+          "from": 277,
+          "to": 283
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 3,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 69,
+          "to": 75
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 86,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 193,
+          "to": 199
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 210,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "18",
+          "from": 277,
+          "to": 282
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 2,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 69,
+          "to": 75
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 86,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 193,
+          "to": 199
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 210,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "19",
+          "from": 277,
+          "to": 283
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 3,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 69,
+          "to": 76
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 85,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 193,
+          "to": 200
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "20",
+          "from": 277,
+          "to": 282
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 2,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 69,
+          "to": 76
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 85,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 193,
+          "to": 200
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 209,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "21",
+          "from": 277,
+          "to": 283
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 3,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 69,
+          "to": 77
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 84,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 193,
+          "to": 201
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 208,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "22",
+          "from": 277,
+          "to": 282
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 2,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 69,
+          "to": 77
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 84,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 193,
+          "to": 201
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 208,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "23",
+          "from": 277,
+          "to": 283
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 3,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 69,
+          "to": 78
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 83,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 193,
+          "to": 202
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 207,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "24",
+          "from": 277,
+          "to": 282
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 2,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 69,
+          "to": 78
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 83,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 193,
+          "to": 202
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 207,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "25",
+          "from": 277,
+          "to": 283
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 3,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 69,
+          "to": 79
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 82,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 193,
+          "to": 203
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 206,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "26",
+          "from": 277,
+          "to": 282
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 2,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 69,
+          "to": 79
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 82,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 193,
+          "to": 203
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 206,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "27",
+          "from": 277,
+          "to": 283
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 3,
+          "to": 8
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 9,
+          "to": 28
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 29,
+          "to": 48
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 49,
+          "to": 68
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 69,
+          "to": 80
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 81,
+          "to": 92
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 93,
+          "to": 112
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 113,
+          "to": 132
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 133,
+          "to": 152
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 153,
+          "to": 172
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 173,
+          "to": 192
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 193,
+          "to": 204
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 205,
+          "to": 216
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 217,
+          "to": 236
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 237,
+          "to": 256
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 257,
+          "to": 276
+        },
+        {
+          "areaId": "7f-upper-stand",
+          "areaLabel": "7階アッパースタンド",
+          "rowLabel": "28",
+          "from": 277,
+          "to": 282
+        }
+      ]
+    }
+  ]
+}

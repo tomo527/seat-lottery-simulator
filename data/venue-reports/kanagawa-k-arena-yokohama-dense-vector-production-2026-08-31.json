@@ -1,0 +1,193 @@
+{
+  "reportVersion": 1,
+  "title": "KANAGAWA-K-ARENA-YOKOHAMA DENSE-VECTOR PRODUCTION IMPLEMENTATION",
+  "asOf": "2026-08-31",
+  "scope": "One venue only: kanagawa-k-arena-yokohama Kアリーナ横浜. saitama-raiboc-main and chiba-pref-culture-main were not touched, researched, or reopened.",
+  "mode": "User-authorized reopen of the 2026-08-31 HARD-CASE / JUDGMENT record. The user's decision is that Kアリーナ横浜 is release-critical and must reach production, that evidence policy is not relaxed, and that transcription volume alone may not be used as a formal blocker.",
+  "disposition": "PRODUCTION. schema v2 source k-arena-yokohama / configuration upper-stands-fixed (scope.kind: fixed-only), 15,929 mapped seats.",
+  "startSnapshot": {
+    "head": "5c37747e3574f66e55f4a6aa48bb3e8c73f32471",
+    "originMain": "5c37747e3574f66e55f4a6aa48bb3e8c73f32471",
+    "workingTree": "clean",
+    "productionTotals": { "venues": 137, "configurations": 139, "seatRecords": 190099 },
+    "kantoGe1000Ledger": { "universeTotal": 154, "production": 54, "adopt": 2, "formalBlocked": 59, "inventoryUnresearched": 39 },
+    "priorDisposition": "HARD-CASE / JUDGMENT (data/venue-reports/kanagawa-k-arena-yokohama-bounded-implementation-2026-08-31.json)"
+  },
+  "historicalFactPreserved": "The 2026-08-31 bounded visual two-pass implementation record is retained unchanged as historical fact. Its blocker was human-only transcription scalability over roughly 1,100 printed row-ranges drawn in a rotated fan projection — not missing, stale, or ambiguous issuer evidence. Its currentness and configuration gates had already passed.",
+  "policyChange": {
+    "file": "docs/VENUE_DATA_GUIDE.md",
+    "section": "### DENSE-VECTOR verification（超高密度図の狭い例外）",
+    "placement": "Added inside the schema v2 representative-configuration chapter, immediately after '### fixed-only configuration'. No existing rule was edited, weakened, or removed.",
+    "default": "The production default remains two independent direct human visual passes over the current official chart. That default is unchanged for ordinary venues.",
+    "exceptionConditions": [
+      "current first-party issuer vector PDF (raster images, third-party material and assets of unknown generation are excluded)",
+      "scope and configuration already settled from issuer evidence; DENSE-VECTOR never substitutes for a configuration judgement",
+      "every seat/range identifier in the declared scope is explicitly printed on the PDF",
+      "two independent implementation/acquisition paths reconstruct the complete set, with different source access, extraction logic, floor order, block traversal and start/end pairing, no shared generation code, and neither pass used as the other's answer key",
+      "machine comparison over floor, row, every start/end, split segments, gaps, truncated rows, and the per-floor and grand expanded seat-ID sets with zero unresolved mismatch; no majority vote and no guesswork",
+      "visual audit on the rendered official chart after the machine match, covering 100% of split ranges, gate/vomitory-adjacent rows, wheelchair-adjacent rows, truncated first/last rows, any row where the passes ever disagreed, unusually short/long ranges and floor/wing boundaries, plus sampled ordinary rows; a systematic pairing error requires fixing the extraction logic and regenerating both passes",
+      "capacity is never a target of extraction or completion"
+    ],
+    "unchanged": "OCR or machine extraction accepted alone, or without mutual comparison and visual audit, remains prohibited. Seat-ID invention, capacity fitting, geometry completion and configuration mixing remain prohibited. Currentness, issuer ownership and the production hard gate are unchanged."
+  },
+  "currentnessGate": {
+    "result": "PASS",
+    "checkedAt": "2026-08-31",
+    "findings": [
+      "https://k-arena.com/ publishes an ongoing programme (2026.08.26 iLiFE!, 2026.08.29-30 じゅじゅフェス 2026, 2026.09.02-03 桑田佳祐 夏祭りツアー 2026, 2026.09.05-06 ByeonWooSeok Asia Fanmeeting Tour, 2026.09.08-09 HOSHIMACHI SUISEI ARENA TOUR 2026) and news dated 2026.07.13, 2026.07.31 and 2026.08.06.",
+      "No 休館 / 閉館 / 改修 / 建替 / 営業終了 notice appears on the current top, seat, floor or FAQ pages.",
+      "No closure, renovation, reconstruction, cessation or reopening condition is announced within 12 months, so the currentness policy does not block this venue."
+    ]
+  },
+  "assetGate": {
+    "result": "UNCHANGED — previous configuration judgement reusable",
+    "seatMapPdf": {
+      "url": "https://k-arena.com/wp-content/themes/k-arena_260401/assets/pdf/seat-map.pdf",
+      "sha256": "24a838884437b225bf19f6dbe4f40bf95e80204278f48b0528da4c7b603967ee",
+      "bytes": 130688,
+      "previousSha256": "24a838884437b225bf19f6dbe4f40bf95e80204278f48b0528da4c7b603967ee",
+      "identical": true,
+      "secondIndependentFetch": "reproduced the same SHA-256 byte for byte",
+      "pdfMetadata": {
+        "title": "240808_seatmap",
+        "creator": "Adobe Illustrator 28.6 (Windows)",
+        "producer": "Adobe PDF library 17.00",
+        "created": "2024-08-08",
+        "pages": 1,
+        "mediaBox": "1417.32 x 1190.55 pt"
+      },
+      "opticalContentGroups": ["ベース", "1Fシート", "1F番号", "1F列", "1F扉", "3F白線", "3Fシート", "3F番号", "3F列", "3F扉", "5F白線", "バルコニーシート", "5Fシート", "5F番号", "5F列", "5F扉", "7F白線", "7Fシート", "7F番号", "7F列", "7F扉", "車椅子", "VIP"]
+    },
+    "pageHashes": {
+      "https://k-arena.com/": "0f7e1800cef51e4a5d7cb78adc7dc548aacc0c306df2c7e56aca4aaf61c413e5",
+      "https://k-arena.com/seat/": "2130ee1a23b75e3d5c735dfcf5dba49096a7eb88bf45142d6e6ad28b8667cfc4",
+      "https://k-arena.com/floor/": "5278da68601ad04ea1dcb7102826e26e5fdde44822b03a4f815ceb9dfe7e7032",
+      "https://k-arena.com/faq/": "3990ce90eea2e2e4a83adbf90806725ccf4226cc0685481a807e50c78ae1ca8b"
+    },
+    "note": "The top, seat and floor page digests are byte-identical to the 2026-08-31 record, and the seat-map PDF digest matches the recorded value, so the previously settled configuration judgement was reused rather than re-litigated. It was nevertheless re-read against the fresh fetch."
+  },
+  "configuration": {
+    "id": "upper-stands-fixed",
+    "scopeKind": "fixed-only",
+    "included": ["LEVEL3 ロアースタンド (3F)", "LEVEL5 ミドルスタンド (5F), including the issuer-printed バルコニー席 / BALCONY SEATING band", "LEVEL7 アッパースタンド (7F)"],
+    "excluded": [
+      "LEVEL1 アリーナ — the issuer states 「※公演ごとにアリーナ席の形状やトイレの男女別配置が変更になることがございます。」 on the same page that publishes the map, and the LEVEL1 chart prints row numbers only",
+      "VIP floor — 「ご契約者専用フロアです。一般の方のご入場・ご利用はできません。」; the PDF's VIP layer carries no printed seat numbers",
+      "3F 車イス席 / ACCESSIBLE SEATING platform — drawn on its own layer with no printed row or seat number",
+      "LEVEL4 — listed as a floor but carries no numbered seating on the official chart"
+    ],
+    "capacityRule": "20,033 is the whole-venue figure including LEVEL1 and was never used as a target for the 3F/5F/7F mapped count."
+  },
+  "passA": {
+    "name": "Content-stream / optical-content-group reconstruction",
+    "acquisition": "the freshly fetched seat-map.pdf",
+    "method": [
+      "A hand-written PDF content-stream interpreter tokenises the page stream and tracks the graphics and text state (q/Q/cm, BT/ET, Tm/Td/TD/T*, Tf, Tc/Tw/Tz, Tj/TJ).",
+      "The 23 /OC /MCn BDC ... EMC marked-content blocks map one-to-one onto the issuer's own optical content groups, so every glyph is attributed to an issuer-defined layer exactly. Floor identity comes from the layer name (3F番号 / 5F番号 / 7F番号), not from geometry.",
+      "Glyph advances are computed from the PDF's own /Widths arrays (TT0/TT1) and /DW (C0_0/C0_1), giving each glyph an exact device-space origin and extent.",
+      "Glyphs are projected onto their own text direction, clustered onto baselines, split into digit runs and dot-leader runs by the residual gap after each glyph's advance, and grouped into printed segments at along-baseline gaps. The gap distribution is cleanly bimodal: at most 1.7 pt inside a printed label, at least 7.4 pt between segments.",
+      "Row numbers come from the issuer's own 3F列 / 5F列 / 7F列 marker labels, mapped onto baselines by piecewise-linear interpolation between markers."
+    ],
+    "result": {
+      "segments": 1033,
+      "byFloor": { "3F": 320, "5F": 285, "7F": 428 },
+      "rowSpans": { "3F": "1-29", "5F": "1-26", "7F": "1-28" },
+      "anomalies": 0
+    },
+    "reproducibility": "Re-run from scratch after Pass B was corrected; the output file is byte-identical (SHA-256 d4b28c23a2ab7721474132f90963346766078f8c984a66c9097a3a528664266e)."
+  },
+  "passB": {
+    "name": "Rendered row-band reconstruction",
+    "acquisition": "an independent second fetch of the same URL, verified to the same SHA-256",
+    "method": [
+      "Text geometry comes from pdfplumber / pdfminer.six — a different library and a different parser from Pass A's hand-written interpreter. No optical content group is consulted.",
+      "The page is rendered to a raster; the printed seat bars are recovered as connected components of the bar colours after filling the white glyph holes, yielding 1,253 bars (748 purple, 490 blue, 15 pink) of the chart's 5.1 pt stroke width.",
+      "Floors are identified from the chart's own tinted background panels, each panel NAMED by the GATE numbers printed inside it (101-104 / 301-304 / 501-512 / 701-712). This gave 220 bars on 1F, 320 on 3F, 285 on 5F and 428 on 7F.",
+      "Pairing is by rendered row band, not by gap threshold: one bar carries one printed range, and its two numbers are read off the bar's two ends in the glyphs' own text direction. A bar with no dot leaders is split at its widest internal glyph gap.",
+      "Row numbers are obtained by COUNTING rendered bands between the issuer's printed row markers, and the count between each marker pair must equal the markers' own numeric difference.",
+      "Traversal is deliberately reversed: floors 7F -> 5F -> 3F, blocks right to left."
+    ],
+    "result": {
+      "records": 1033,
+      "byFloor": { "3F": 320, "5F": 285, "7F": 428 },
+      "rowSpans": { "3F": "1-29", "5F": "1-26", "7F": "1-28" },
+      "problems": 0,
+      "declaredDiscontinuities": [
+        { "floor": "5F", "section": "centre", "betweenRows": [3, 6], "meaning": "the 5F centre has no rows 4-5; the balcony band ends at row 3 and the main centre stand starts at row 6" }
+      ]
+    },
+    "correctedDuringWork": "The first Pass B run derived each bar's axis from a principal-component fit whose sign is arbitrary, so some numbers were read right-to-left (28 as 82, 169-188 as 802-981). The machine comparison caught it immediately. The pairing logic was corrected to read along the glyphs' own text direction and Pass B was regenerated; Pass A was untouched and re-verified byte-identical. No value from either pass was ever reconciled by hand."
+  },
+  "comparison": {
+    "result": "MATCH — zero unresolved mismatch",
+    "segments": { "passA": 1033, "passB": 1033, "onlyInA": 0, "onlyInB": 0 },
+    "rowKeys": { "compared": 83, "differing": 0 },
+    "perFloorExpandedSeatIdSets": {
+      "3F": { "a": 4978, "b": 4978, "symmetricDifference": 0 },
+      "5F": { "a": 4372, "b": 4372, "symmetricDifference": 0 },
+      "7F": { "a": 6579, "b": 6579, "symmetricDifference": 0 }
+    },
+    "grandExpandedSeatIdSet": { "a": 15929, "b": 15929, "symmetricDifference": 0 },
+    "structuralFeatures": "Split segments, internal gaps, truncated rows and the two-seat printed pairs are identical in both passes; the 80 rows carrying internal gaps have identical gap structure.",
+    "wheelchairUnnumberedAreas": "Both passes independently return no numbered identifier anywhere inside the 3F ACCESSIBLE SEATING platform, and both return the same truncated block ends beside it.",
+    "vipAndFirstFloor": "Neither pass produced any 1F or VIP identifier inside the registered scope; Pass A excludes them by layer, Pass B by background panel and GATE numbering."
+  },
+  "visualAudit": {
+    "method": "The PDF was re-rendered from the vector source at high scale; for each printed row every section was clipped, deskewed to its own text direction and cropped to a legible strip, then read directly against the matched table.",
+    "coverage": "100% of the printed rows — all 83 (floor, row) keys: 3F rows 1-29, 5F rows 1-26, 7F rows 1-28. Every section of every row was read, so every split range, every internal gap, every truncated row and every block's ordinary rows were covered rather than sampled.",
+    "specificallyConfirmed": [
+      "3F rows 26-29 truncated by the 車イス席 / ACCESSIBLE SEATING platform (79-89 / 128-138, 79-89 / 128-138, 79-88 / 129-138, 79-87 / 130-138), with the platform graphic visible in the crop",
+      "3F row 29, the most truncated row: 1-8, 14-24, 29-36, 41-48, 53-62, 65-74, 79-87, 130-138, 143-152, 155-164, 169-176, 181-188, 193-203, 209-216. This settles the previous session's unresolved reading: block 9-28 prints 14-24 on row 29, and block 29-48 is split into 29-36 and 41-48 beside GATE 301.",
+      "3F rows 1-11 lack blocks 1-8, 49-63, 64-78, 139-153, 154-168 and 209-216, and seats 117-118 do not exist there",
+      "5F balcony rows 1-3 printed in the distinct balcony colour with ①/③ markers, and the 5F main centre starting at row 6 with ⑥ markers; 5F rows 4-5 exist in the wings only",
+      "5F rows 11-17 and 7F rows 6-10 truncated by the printed GATE boxes and stair openings, in the wings and the centre alike",
+      "the twelve two-seat printed pairs (7F 69-70, 91-92, 193-194, 215-216 on rows 1-4) read as two separate printed numbers on a short bar",
+      "the rare four-seat segments 5F row 17 87-90 and 151-154",
+      "the first and last row of every floor and every wing/centre boundary"
+    ],
+    "discrepanciesFound": 0
+  },
+  "reconciliation": {
+    "perFloorMapped": { "3F": 4978, "5F": 4372, "7F": 6579 },
+    "fiveFSplit": { "balcony": 235, "mainStand": 4137 },
+    "grandMapped": 15929,
+    "relationTo20033": "The issuer publishes 座席数：20,033席 on /floor/ as the whole-venue figure; it includes LEVEL1 アリーナ, which is issuer-declared performance-dependent and excluded here, and it is not a 3F/5F/7F subtotal. The difference was NOT closed, explained away, or used to add or remove any seat.",
+    "expectedSeatCount": null,
+    "expectedSeatCountRationale": "The issuer publishes no 3F, 5F or 7F subtotal anywhere in the current material, so no nominal upper-level subtotal exists to record. expectedSeatCount is left null rather than inventing one; scope.exactSubtotal carries the mapped count 15,929 as the fixed-only contract requires.",
+    "capacityFitting": false
+  },
+  "accessibilityVipSemantics": {
+    "wheelchair": "wheelchairSemantics.status = not-reflected with accessibilityConversionNotReflected = true. The PDF's 車椅子 layer draws the 3F ACCESSIBLE SEATING platform with no printed row or seat number, and the issuer's FAQ routes wheelchair seating to each event organiser with 「鑑賞エリアのレイアウトは公演により異なります。」. No seat ID, position or replacement relation was created.",
+    "vip": "Excluded as a non-public area on the issuer's own statement 「ご契約者専用フロアです。一般の方のご入場・ご利用はできません。」; the VIP layer carries no printed seat numbers.",
+    "firstFloor": "Excluded as an issuer-declared performance-dependent area. No 1F identifier appears anywhere in the registered set."
+  },
+  "runtimeIdentity": {
+    "areas": ["3f-lower-stand / 3階ロアースタンド", "5f-balcony / 5階バルコニー席", "5f-middle-stand / 5階ミドルスタンド", "7f-upper-stand / 7階アッパースタンド"],
+    "reason": "Seat numbers and row numbers repeat across 3F, 5F and 7F, so each floor has its own areaId and the runtime key (area, row, seat) cannot collide. The balcony is separated because the issuer draws it on its own layer, in its own colour, under its own printed caption 「バルコニー席 / BALCONY SEATING」.",
+    "noInventedBlockNames": "The issuer names no individual seating block, so no block name was created. Only the issuer's printed floor, row and seat numbers identify a seat; the area labels reuse the issuer's own level-stand names and are disclosed as display-only organising names."
+  },
+  "productionArtifacts": {
+    "sourceJson": "data/venue-sources/k-arena-yokohama.json",
+    "configurationId": "upper-stands-fixed",
+    "ranges": 1033,
+    "mappedSeats": 15929,
+    "inventoryRecord": "kanagawa-k-arena-yokohama — eligibility eligible, researchStatus production, venueSourceId k-arena-yokohama, blockingReason cleared",
+    "ledger": "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json — record moved to production; counts recomputed",
+    "fingerprint": "data/venue-fingerprints/production.json — new entry k-arena-yokohama (schemaVersion 2, upper-stands-fixed, count 15929, sha256 70058ae21251c99c654a9fadddc92b4bd6ff0563c4fd4abe8c48f599cb945dc2)",
+    "generated": "src/data/venue-db/catalog.generated.json and public/venue-db/venues/k-arena-yokohama--upper-stands-fixed.json, produced only by npm run venues:build"
+  },
+  "kantoGe1000LedgerAfter": { "universeTotal": 154, "production": 55, "adopt": 2, "formalBlocked": 58, "inventoryUnresearched": 39 },
+  "otherAdopts": "saitama-raiboc-main and chiba-pref-culture-main remain ADOPT / implementation-ready and were not touched.",
+  "prohibitionsObserved": [
+    "No seat ID was invented.",
+    "No missing number was completed.",
+    "No range was inferred from geometry, symmetry or seat pitch.",
+    "No printed seat was deleted to match a capacity.",
+    "20,033 was never used as an extraction or completion target.",
+    "No event-specific 1F configuration was mixed in.",
+    "No block name the issuer does not define was created.",
+    "No catalog soft-limit threshold was changed and no compaction was performed.",
+    "No unrelated refactor or manual edit to generated artifacts."
+  ],
+  "exactNextAction": "separately authorized bounded visual two-pass implementation of saitama-raiboc-main RaiBoC Hall〔大ホール〕"
+}

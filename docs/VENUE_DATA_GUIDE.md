@@ -162,6 +162,20 @@ seat ID・座席番号・block 所属の創作は禁止のまま維持する一�
 
 `scope.kind: fixed-only`は、公開された固定stand番号図を宣言scopeの全番号として転記できる場合に許可します。`canonicalName`は「固定スタンド席・代表配置」等の限定を明示し、`scope`には`excludesDynamicAreas: true`、`maximumCapacity: false`、非空の`excludedAreas`、mapped countと同じ`exactSubtotal`を記録します。`scopeDisclosure`には固定席のみでarena/floor等を含まないことを明示します。公称固定席subtotalとの差はmetadataに残し、番号を削って合わせません。
 
+### DENSE-VECTOR verification（超高密度図の狭い例外）
+
+production転記の既定は、現行公式座席図を人が2回直接視認する独立two-passです。**この既定は通常の会場では変更しません。** 次のすべてを満たす超高密度図に限り、同等以上の再現性を持つ検証方法として`DENSE-VECTOR verification`を代替に使えます。
+
+- 対象が**current first-party issuerのvector PDF**であること。ラスタ画像、第三者資料、世代の不明な資産では使えません。
+- **scopeとconfigurationがissuer evidenceで先に確定**していること。DENSE-VECTORはconfiguration判断の代替にはなりません。
+- 宣言scopeの**全seat / range identifierがPDF上に明示印字**されていること。1件でも印字がなければ使えません。
+- **2つの独立した実装・取得経路**でcomplete setを再構成すること。取得元、抽出ロジック、floor順、block走査順、start/endの対応付けロジックを分け、同じ生成コードを再利用せず、一方の出力を他方のanswer keyにしないこと。
+- 両者を機械比較し、floor、row、全start/end、split segments、欠番、truncated row、per-floorおよびgrandの展開seat-ID集合まで**zero unresolved mismatch**であること。多数決や推測での解消は不可です。
+- 機械MATCH後に、**rendered official chartでvisual auditを行う**こと。split range、gate/vomitory隣接row、車いす区画隣接row、truncated first/last row、両passで一度でも不一致が出たrow、異常に短い/長いrange、floor/wing境界は100%確認し、通常rowも各blockから複数samplingします。systematic pairing errorが見つかった場合は抽出ロジックを修正し、両passを再生成します。
+- **capacityを抽出・補完のtargetにしない**こと。公称総数との差は従来どおりmetadataに残し、番号を削らず、足しません。
+
+OCRや機械抽出の結果を単独で、あるいは相互比較・visual auditなしに採用することは引き続き不可です。DENSE-VECTORはseat ID創作、capacity fitting、geometry補完、configuration mixingの禁止をいっさい緩和せず、currentness、issuer ownership、production hard gateも従来どおり適用します。採用した場合は`verification.method`にDENSE-VECTORであることと2経路の内容を記録します。
+
 v2 catalogは会場を`venueGroupId`で1件にまとめ、configurationごとに`(venueId, configurationId)`と個別`dataPath`を持ちます。configurationが1件なら従来同様に直接利用し、複数なら会場選択後に明示選択します。fixed-only disclosureはconfiguration選択時と抽選結果の両方に表示します。
 
 `sources[].id`は会場内で安定かつ一意なslugにします。`official`は公式資料かを明示します。`roles`は`seat-structure`、`seat-count`、`facility`、`event-layout`から選びます。productionにはseat-structure sourceと、施設・構造・席数・実公演layoutのいずれかを支える公式sourceが必要です。公式資料だけで番号が不足する場合は、信頼できるsecondaryを`official: false`かつ`seat-structure`として参照し、公式資料との非矛盾確認と採用理由をmetadataに残せます。SNS単独・出所不明画像は不可です。

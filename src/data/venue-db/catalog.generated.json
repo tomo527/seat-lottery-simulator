@@ -672,6 +672,31 @@
   },
   {
     "schemaVersion": 2,
+    "id": "k-arena-yokohama",
+    "venueGroupId": "k-arena-yokohama",
+    "name": "Kアリーナ横浜",
+    "searchAliases": [
+      "K-Arena Yokohama",
+      "Kアリーナ"
+    ],
+    "region": "関東",
+    "prefecture": "神奈川県",
+    "municipality": "横浜市",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "upper-stands-fixed",
+        "canonicalName": "LEVEL3・LEVEL5・LEVEL7固定スタンド席・代表配置",
+        "seatCount": 15929,
+        "dataPath": "/venue-db/venues/k-arena-yokohama--upper-stands-fixed.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "公式シートマップに座席番号が印字されたLEVEL3ロアースタンド・LEVEL5ミドルスタンド（バルコニー席を含む）・LEVEL7アッパースタンドの固定スタンド席のみを対象とする代表配置です。公演ごとに形状が変わる1階アリーナ席、ご契約者専用のVIPフロア、番号のない車イス席区画は含みません。公称の座席数20,033席は1階アリーナを含む会場全体の数値であり、この抽選対象の席数とは一致しません。",
+        "fixedOnly": true
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "kabukiza-standard",
     "venueGroupId": "kabukiza-standard",
     "name": "歌舞伎座",

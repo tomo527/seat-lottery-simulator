@@ -20,14 +20,14 @@
       "category": "arena",
       "officialFacilityUrl": "https://k-arena.com/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-08-31 bounded visual two-pass implementation: 現行issuerのseat-map PDFは3F/5F/7Fの各blockについて行ごとの開始・終了座席番号を印字しており、上層固定席のみのfixed-only代表configurationを定義するevidenceとしては十分である。1Fアリーナはissuerが公演ごとに形状が変わると明記しているため対象外、VIPフロアは契約者専用のため対象外。現時点のblockerはevidenceではなく、約1,100件の行別rangeを2回独立にvisual転記する規模である。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-08-31 DENSE-VECTOR production implementation: 現行公式シートマップPDFがLEVEL3/5/7の全ブロックについて列ごとの開始・終了座席番号を明示印字しており、2つの独立した抽出経路（PDF content stream/光学コンテンツグループとレンダリング済みラスタの行バンド）で完全集合を再構成してunresolved mismatch 0で一致し、レンダリングした公式図の視認監査も一致した。上層固定席のみのfixed-only代表configurationとしてproduction化した。",
       "priority": "A",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
+      "venueSourceId": "k-arena-yokohama",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-08-31",
       "aliases": [],
-      "blockingReason": "HARD-CASE / JUDGMENT (KANAGAWA-K-ARENA-YOKOHAMA BOUNDED VISUAL TWO-PASS IMPLEMENTATION 2026-08-31): currentness gateとconfiguration gateはPASS。現行公式ページは通常興行を継続掲載し、休館・改修・建替・営業終了の告知はない。issuerは/floor/でLEVEL3ロアースタンド・LEVEL5ミドルスタンド・LEVEL7アッパースタンドを常設スタンドとして定義し、現行seat-map PDFは3F/5F/7Fの各blockについて行ごとの開始・終了座席番号を印字しているため、上層固定席のみのcoherentな代表configuration（schema v2 scope.kind: fixed-only）は定義可能である。1Fアリーナはissuerが「公演ごとにアリーナ席の形状が変更になることがございます」と明記しているため除外、VIPフロアは契約者専用のため除外する。blockerはevidenceではなく転記規模と作図形式にある。当該PDFは1ページに1,357件の行別range表記を持ち、うち約1,100件が3F/5F/7Fに属する。各blockはfan projection上で個別角度に描かれており、blockごとにdeskewしないと行の開始番号と終了番号を誤って対応させる。この約1,100 rangeを2回独立にvisual転記して全rangeでMATCHさせる作業を、今回のbounded windowでは完走できなかった。docs/VENUE_DATA_GUIDE.mdのproduction gate（宣言scopeの完全な番号range、lossless転記）未達のため、部分転記・推測補完・capacity fittingを禁じる恒久ルールに従いproduction化しない。20,033は全館値でありLEVEL1を含むため、上層scopeのseat-count targetにしてはならない。"
+      "blockingReason": null
     },
     {
       "inventoryId": "kanagawa-yokohama-arena-main",
