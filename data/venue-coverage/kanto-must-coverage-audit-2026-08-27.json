@@ -21,10 +21,10 @@
       "茨城県": 5
     },
     "byStatus": {
-      "HOLD / NEED EVIDENCE / formal DEFER": 58,
-      "inventory-unresearched": 39,
       "production": 54,
-      "ADOPT / implementation-ready": 3
+      "ADOPT / implementation-ready": 2,
+      "HOLD / NEED EVIDENCE / formal DEFER": 59,
+      "inventory-unresearched": 39
     },
     "missingFromInventory": 0
   },
@@ -62,16 +62,23 @@
       "status": "known HARD-CASE / JUDGMENT — NEED EVIDENCE",
       "blocker": "Current-linked layout gives subtotals but no printed seat IDs or row labels; movable-bank arithmetic is 526 versus printed 528.",
       "reopenCondition": "Issuer publishes complete row/seat identifiers and resolves the movable-seat arithmetic."
+    },
+    "kArenaYokohama": {
+      "inventoryId": "kanagawa-k-arena-yokohama",
+      "venueSourceId": null,
+      "status": "HOLD / NEED EVIDENCE / formal DEFER",
+      "character": "HARD-CASE / JUDGMENT",
+      "blocker": "HARD-CASE / JUDGMENT (KANAGAWA-K-ARENA-YOKOHAMA BOUNDED VISUAL TWO-PASS IMPLEMENTATION 2026-08-31): currentness gateとconfiguration gateはPASS。現行公式ページは通常興行を継続掲載し、休館・改修・建替・営業終了の告知はない。issuerは/floor/でLEVEL3ロアースタンド・LEVEL5ミドルスタンド・LEVEL7アッパースタンドを常設スタンドとして定義し、現行seat-map PDFは3F/5F/7Fの各blockについて行ごとの開始・終了座席番号を印字しているため、上層固定席のみのcoherentな代表configuration（schema v2 scope.kind: fixed-only）は定義可能である。1Fアリーナはissuerが「公演ごとにアリーナ席の形状が変更になることがございます」と明記しているため除外、VIPフロアは契約者専用のため除外する。blockerはevidenceではなく転記規模と作図形式にある。当該PDFは1ページに1,357件の行別range表記を持ち、うち約1,100件が3F/5F/7Fに属する。各blockはfan projection上で個別角度に描かれており、blockごとにdeskewしないと行の開始番号と終了番号を誤って対応させる。この約1,100 rangeを2回独立にvisual転記して全rangeでMATCHさせる作業を、今回のbounded windowでは完走できなかった。docs/VENUE_DATA_GUIDE.mdのproduction gate（宣言scopeの完全な番号range、lossless転記）未達のため、部分転記・推測補完・capacity fittingを禁じる恒久ルールに従いproduction化しない。20,033は全館値でありLEVEL1を含むため、上層scopeのseat-count targetにしてはならない。",
+      "reopenCondition": "3F/5F/7Fの固定番号席のみを対象に、現行 https://k-arena.com/wp-content/themes/k-arena_260401/assets/pdf/seat-map.pdf を再取得し（sha256 24a838884437b225bf19f6dbe4f40bf95e80204278f48b0528da4c7b603967ee と照合、変化していれば全gateを再実施）、fresh visual two-passを完走すること。手順は data/venue-reports/kanagawa-k-arena-yokohama-bounded-implementation-2026-08-31.json の validatedMethodForReopen に記録済み（wing単位のdeskew、1行=1バンドのband composite、issuer印字の行マーカーでの照合、Pass 2は再取得資産・異なるcrop/zoom/orientation・7F→5F→3Fの逆順）。両passがMATCHし印字IDをlosslessに再現できた場合のみ schema v2 scope.kind: fixed-only でproduction化する。1F・VIPは除外を維持し、20,033へのcapacity fittingは禁止。"
     }
   },
   "nextMacro": {
-    "selection": "separately authorized bounded visual two-pass implementation of the current Kanto >=1,000 ADOPTs only",
+    "selection": "separately authorized bounded visual two-pass implementation of the remaining Kanto >=1,000 ADOPTs only",
     "candidates": [
-      "kanagawa-k-arena-yokohama — Kアリーナ横浜",
       "saitama-raiboc-main — RaiBoC Hall〔大ホール〕",
       "chiba-pref-culture-main — 千葉県文化会館〔大ホール〕"
     ],
-    "reason": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 2 (2026-08-30) screened current issuer operation before seat evidence and reached its three-ADOPT stop threshold: Kアリーナ横浜 (upper fixed levels only; 1F is event-dependent), RaiBoC Hall〔大ホール〕, and 千葉県文化会館〔大ホール〕. The latter is currently active after its 2025 reopening; its former renovation closure is historical. No source JSON, ranges, fingerprints, generated artifact, or production integration was created. 39 inventory-unresearched records remain, so another Kanto unresearched preflight remains ahead of Tokyo Priority D if these ADOPTs are not separately authorized for implementation."
+    "reason": "KANAGAWA-K-ARENA-YOKOHAMA BOUNDED VISUAL TWO-PASS IMPLEMENTATION (2026-08-31) passed the currentness and configuration gates but could not complete the mandated fresh visual two-pass over the roughly 1,100 printed row-ranges of the 3F/5F/7F fixed upper levels, so Kアリーナ横浜 returns to the formal blocked bucket as a HARD-CASE / JUDGMENT record with a concrete reopen condition and a validated reading method. Production is unchanged at 137 venues / 139 configurations / 190,099 seat records. RaiBoC Hall〔大ホール〕 is the exact next action, then 千葉県文化会館〔大ホール〕. 39 inventory-unresearched Kanto records remain, so another Kanto high-impact preflight follows those two ADOPTs and precedes Tokyo Priority D."
   },
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
@@ -471,9 +478,9 @@
       "officialUrl": "https://k-arena.com/",
       "inventoryId": "kanagawa-k-arena-yokohama",
       "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
-      "blocker": null,
-      "reopenCondition": "2026-08-30 preflight: current operation and issuer SEAT MAP support a separately authorized bounded visual two-pass of the permanent upper-level numbered set only. The issuer explicitly makes 1F arena-seat shape performance-dependent; do not map it without a reproducible issuer-defined layout, and do not fit the result to the 20,033 maximum."
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HARD-CASE / JUDGMENT (KANAGAWA-K-ARENA-YOKOHAMA BOUNDED VISUAL TWO-PASS IMPLEMENTATION 2026-08-31): currentness gateとconfiguration gateはPASS。現行公式ページは通常興行を継続掲載し、休館・改修・建替・営業終了の告知はない。issuerは/floor/でLEVEL3ロアースタンド・LEVEL5ミドルスタンド・LEVEL7アッパースタンドを常設スタンドとして定義し、現行seat-map PDFは3F/5F/7Fの各blockについて行ごとの開始・終了座席番号を印字しているため、上層固定席のみのcoherentな代表configuration（schema v2 scope.kind: fixed-only）は定義可能である。1Fアリーナはissuerが「公演ごとにアリーナ席の形状が変更になることがございます」と明記しているため除外、VIPフロアは契約者専用のため除外する。blockerはevidenceではなく転記規模と作図形式にある。当該PDFは1ページに1,357件の行別range表記を持ち、うち約1,100件が3F/5F/7Fに属する。各blockはfan projection上で個別角度に描かれており、blockごとにdeskewしないと行の開始番号と終了番号を誤って対応させる。この約1,100 rangeを2回独立にvisual転記して全rangeでMATCHさせる作業を、今回のbounded windowでは完走できなかった。docs/VENUE_DATA_GUIDE.mdのproduction gate（宣言scopeの完全な番号range、lossless転記）未達のため、部分転記・推測補完・capacity fittingを禁じる恒久ルールに従いproduction化しない。20,033は全館値でありLEVEL1を含むため、上層scopeのseat-count targetにしてはならない。",
+      "reopenCondition": "3F/5F/7Fの固定番号席のみを対象に、現行 https://k-arena.com/wp-content/themes/k-arena_260401/assets/pdf/seat-map.pdf を再取得し（sha256 24a838884437b225bf19f6dbe4f40bf95e80204278f48b0528da4c7b603967ee と照合、変化していれば全gateを再実施）、fresh visual two-passを完走すること。手順は data/venue-reports/kanagawa-k-arena-yokohama-bounded-implementation-2026-08-31.json の validatedMethodForReopen に記録済み（wing単位のdeskew、1行=1バンドのband composite、issuer印字の行マーカーでの照合、Pass 2は再取得資産・異なるcrop/zoom/orientation・7F→5F→3Fの逆順）。両passがMATCHし印字IDをlosslessに再現できた場合のみ schema v2 scope.kind: fixed-only でproduction化する。1F・VIPは除外を維持し、20,033へのcapacity fittingは禁止。"
     },
     {
       "prefecture": "神奈川県",

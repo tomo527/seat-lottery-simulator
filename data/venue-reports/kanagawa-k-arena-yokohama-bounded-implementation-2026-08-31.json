@@ -1,0 +1,232 @@
+{
+  "reportVersion": 1,
+  "title": "KANAGAWA-K-ARENA-YOKOHAMA BOUNDED VISUAL TWO-PASS IMPLEMENTATION",
+  "asOf": "2026-08-31",
+  "scope": "One venue only: kanagawa-k-arena-yokohama Kアリーナ横浜. saitama-raiboc-main and chiba-pref-culture-main were not touched, researched, or reopened.",
+  "mode": "Separately authorized bounded visual two-pass production implementation. The authorization required, in order: a baseline generated-artifact integrity diagnosis, a currentness gate, a configuration gate, a fresh visual Pass 1 and an independent visual Pass 2, a MATCH comparison, and only then capacity reconciliation and production integration.",
+  "disposition": "NOT PRODUCTION. Returned to the formal blocked bucket as a HARD-CASE / JUDGMENT record. The currentness and configuration gates PASSED; the mandated fresh visual two-pass was not completed, so the production gate in docs/VENUE_DATA_GUIDE.md was not reached and no seat data was written.",
+  "startSnapshot": {
+    "head": "73375a258003697fd7fedcf9e34a12ce0f1fcd4e",
+    "originMain": "73375a258003697fd7fedcf9e34a12ce0f1fcd4e",
+    "workingTree": "clean",
+    "productionTotals": { "venues": 137, "configurations": 139, "seatRecords": 190099 },
+    "kantoGe1000Ledger": { "universeTotal": 154, "production": 54, "adopt": 3, "formalBlocked": 58, "inventoryUnresearched": 39 }
+  },
+  "baselineIntegrityCheck": {
+    "question": "A previous Codex preflight reported npm run venues:check stale for the generated production payload although it changed no production source. Determine whether that is a deterministic generated refresh or an inconsistency with the current production source.",
+    "observedAtThisHead": "npm run venues:check reports 'Venue database is synchronized (137 venues).' and npm run venues:validate reports 137 production venues / 139 selectable configurations / 190,099 configuration-seat records with 43 warnings. No stale artifact exists in this working tree.",
+    "cause": "Line-ending normalization, not seat data. This clone has core.autocrlf=true and the repository has no .gitattributes. Any fresh checkout (clone, branch switch, or the detached-HEAD materialization the preflight session started from) rewrites the generated JSON with CRLF, while scripts/venues/build-database.mjs writes LF. scripts/venues/check-database.mjs compares the generated files byte-for-byte against freshly built text, so every generated payload is reported stale, while git status stays clean because git applies the same normalization when comparing the working tree to the index.",
+    "proof": "A fresh checkout of the same commit materialized src/data/venue-db/catalog.generated.json at 106,749 bytes; the file in this working tree is 104,068 bytes. The difference is exactly 2,681 bytes, equal to the file's 2,681 lines, i.e. one added CR per line. Content is otherwise identical.",
+    "conclusion": "Deterministic generated refresh from the current repository. It does not change any existing venue's seat set, range set, mapped count, or production fingerprint, and there is no inconsistency between the production sources and the generated artifacts. Rebuilding in such a session only rewrites LF and leaves a zero diff.",
+    "actionTaken": "None. No refactor, threshold change, or manual edit was made to silence a warning, and no rebuild was required at this HEAD because the check already passes.",
+    "existingGeneratedDataImpact": "None. No generated catalog or runtime file was written in this wave."
+  },
+  "lane": {
+    "name": "JUDGMENT",
+    "reason": "The work had to decide, from current issuer evidence alone, whether a coherent representative configuration exists over the permanent upper levels while the issuer declares the 1F arena performance-dependent, and then had to judge whether a lossless transcription of the printed identifier set was achievable. Both are interpretation decisions, not routine range entry."
+  },
+  "currentnessGate": {
+    "result": "PASS",
+    "checkedAt": "2026-08-31",
+    "findings": [
+      "The current official top page publishes an ongoing performance programme (2026-08-26 iLiFE!, 2026-08-29/30 じゅじゅフェス 2026, 2026-09-02/03 桑田佳祐 夏祭りツアー 2026, 2026-09-05/06 ByeonWooSeok Asia Fanmeeting Tour, 2026-09-08/09 HOSHIMACHI SUISEI ARENA TOUR 2026) and current news items dated 2026-07-13, 2026-07-31 and 2026-08-06.",
+      "No issuer-published 休館 / 閉館 / 改修 / 建替 / 営業終了 notice, and no closure, renovation, reconstruction, cessation or reopening condition, was found on the current top page, seat page, floor guide, or FAQ.",
+      "Because no formal closure or seating-changing works are announced within 12 months, the currentness policy in docs/VENUE_DATA_GUIDE.md does not block this venue."
+    ]
+  },
+  "currentFirstPartyEvidence": [
+    {
+      "url": "https://k-arena.com/",
+      "role": "operation/currentness",
+      "checkedAt": "2026-08-31",
+      "sha256": "0f7e1800cef51e4a5d7cb78adc7dc548aacc0c306df2c7e56aca4aaf61c413e5",
+      "finding": "Current programme and news prove ongoing operation; no closure notice."
+    },
+    {
+      "url": "https://k-arena.com/seat/",
+      "role": "seat-structure entry point",
+      "checkedAt": "2026-08-31",
+      "sha256": "2130ee1a23b75e3d5c735dfcf5dba49096a7eb88bf45142d6e6ad28b8667cfc4",
+      "finding": "Publishes LEVEL1/3/5/7 level maps, per-level zoom images, the seat-map PDF, and the note 「※公演ごとにアリーナ席の形状やトイレの男女別配置が変更になることがございます。」"
+    },
+    {
+      "url": "https://k-arena.com/floor/",
+      "role": "facility",
+      "checkedAt": "2026-08-31",
+      "sha256": "5278da68601ad04ea1dcb7102826e26e5fdde44822b03a4f815ceb9dfe7e7032",
+      "finding": "座席数：20,033席／階数：地上9階／高さ：約45m. Names LEVEL1 アリーナ, LEVEL3 ロアースタンド, LEVEL4, LEVEL5 ミドルスタンド, LEVEL7 アッパースタンド, and states the VIP floor is 「契約者専用フロアです。一般の方のご入場・ご利用はできません。」"
+    },
+    {
+      "url": "https://k-arena.com/faq",
+      "role": "accessibility",
+      "checkedAt": "2026-08-31",
+      "finding": "Wheelchair seating is routed to each event organiser and the issuer states 「鑑賞エリアのレイアウトは公演により異なります。」; South Gate has a lift and ramp. No wheelchair seat IDs or replacement relation are published."
+    },
+    {
+      "url": "https://k-arena.com/wp-content/themes/k-arena_260401/assets/pdf/seat-map.pdf",
+      "role": "seat-structure",
+      "checkedAt": "2026-08-31",
+      "sha256": "24a838884437b225bf19f6dbe4f40bf95e80204278f48b0528da4c7b603967ee",
+      "bytes": 130688,
+      "pdfMetadata": {
+        "title": "240808_seatmap",
+        "creator": "Adobe Illustrator 28.6 (Windows)",
+        "created": "2024-08-08",
+        "pages": 1,
+        "mediaBox": "1417.32 x 1190.55 pt"
+      },
+      "opticalContentGroups": [
+        "ベース", "1Fシート", "1F番号", "1F列", "1F扉",
+        "3F外周", "3Fシート", "3F番号", "3F列", "3F扉",
+        "5F外周", "バルコニーシート", "5Fシート", "5F番号", "5F列", "5F扉",
+        "7F外周", "7Fシート", "7F番号", "7F列", "7F扉",
+        "車椅子", "VIP"
+      ],
+      "finding": "This asset, and not the web level images, is the issuer's detailed chart: it prints an explicit start and end seat number for every individual row of every block on 1F/3F/5F/7F, with dedicated per-floor 番号 (number) and 列 (row) layers plus separate 車椅子 and VIP layers."
+    },
+    {
+      "url": "https://k-arena.com/wp-content/themes/k-arena_260401/assets/images/seat/img_seat-map_level1.png",
+      "role": "seat-structure (coarse)",
+      "sha256": "2b1b69319bcf13fafda6cdf972d54b70503b21d0d44b240d1ff97513bb4f5188",
+      "finding": "LEVEL1 shows row numbers 1-34 only, with no printed seat numbers."
+    },
+    {
+      "url": "https://k-arena.com/wp-content/themes/k-arena_260401/assets/images/seat/img_seat-map_level3.png",
+      "role": "seat-structure (coarse)",
+      "sha256": "34aee348314417290863a3e87249c5737269de35f7511d844897e3d2d14cc248"
+    },
+    {
+      "url": "https://k-arena.com/wp-content/themes/k-arena_260401/assets/images/seat/img_seat-map_level5.png",
+      "role": "seat-structure (coarse)",
+      "sha256": "5dec2b338dafe409288eb73e9d9875012f345f53113f76739f1367cc73b06bdf"
+    },
+    {
+      "url": "https://k-arena.com/wp-content/themes/k-arena_260401/assets/images/seat/img_seat-map_level7.png",
+      "role": "seat-structure (coarse)",
+      "sha256": "2337cd8e91157e2a6134cbbbd59e8d207f8cf7b24a26017be7486bfddbdfe574"
+    },
+    {
+      "url": "https://k-arena.com/wp-content/themes/k-arena_260401/assets/images/seat/img_seat_level_all.png",
+      "role": "seat-structure (coarse)",
+      "sha256": "a9d1fc88de96ac88a81d4a4055061d4439a39690f9701c33be5c558b961f032e"
+    },
+    {
+      "note": "The twelve per-level zoom images (img_seat-map_level{1,3,5,7}_zoom{1,2,3}.png) were also fetched and read. They publish block-level ranges plus the first and last row of each block only, so they cannot by themselves establish the per-row printed set; they were used to cross-check block membership and row counts."
+    }
+  ],
+  "configurationGate": {
+    "result": "PASS",
+    "question": "Can a single coherent representative configuration be defined from current issuer evidence using the fixed numbered seating of 3F/5F/7F alone, without using 20,033 as a seat-count target and without importing any event-specific 1F layout?",
+    "answer": "Yes. The issuer itself separates the levels and names them as distinct permanent stands, and its current seat-map PDF prints a complete per-row numbered set for each of them.",
+    "issuerDefinedBasis": [
+      "The current /floor/ guide names LEVEL3 ロアースタンド, LEVEL5 ミドルスタンド and LEVEL7 アッパースタンド as permanent stands, and LEVEL1 as アリーナ.",
+      "The current /seat/ page states 「※公演ごとにアリーナ席の形状やトイレの男女別配置が変更になることがございます。」, making the 1F arena seat shape performance-dependent by the issuer's own statement.",
+      "The current seat-map PDF prints, for 3F/5F/7F, the row numbers of each block and an explicit start and end seat number for every individual row.",
+      "This matches scope.kind: fixed-only in docs/VENUE_DATA_GUIDE.md: a published fixed-stand numbered chart whose declared scope can be transcribed in full, with the dynamic areas excluded and recorded in excludedAreas."
+    ],
+    "oneFExclusionRationale": [
+      "The issuer declares the 1F arena seat shape performance-dependent on the same page that publishes the map, so no 1F layout published there is a reproducible current representative configuration.",
+      "The issuer's own LEVEL1 web map prints row numbers only and no seat numbers, so the web material alone cannot produce a numbered 1F set.",
+      "Completing 1F from third-party or event-specific material is forbidden by the authorization and by docs/VENUE_DATA_GUIDE.md.",
+      "1F is therefore excluded as an issuer-defined dynamic area, not as a repository judgement about seat counts."
+    ],
+    "notDecidedFromPreflight": "The 2026-08-30 preflight conclusion was treated as a prospect only. This gate was re-decided from the current issuer material fetched on 2026-08-31."
+  },
+  "freshVisualTwoPass": {
+    "result": "NOT COMPLETED",
+    "method": "Both passes were required to be direct visual readings of the issuer chart. PDF text extraction, OCR and programmatic parsing were reserved for an auxiliary cross-check after the two passes and were not used to produce any transcription in this wave. Reading was performed on high-resolution renders of the issuer PDF, with each wing deskewed so its rows are horizontal, then split into one-row band composites so that each printed row's start and end label are read together.",
+    "pass1Completed": {
+      "3F centre (axis-aligned in the chart, read directly)": {
+        "block 64-78": "rows 12-29: 71-78, 71-78, 70-78, 70-78, 69-78, 69-78, 68-78, 68-78, 67-78, 67-78, 66-78, 66-78, 65-78, 65-78, 64-78, 64-78, 64-78, 65-74",
+        "block 79-98": "rows 1-11: 79-98 each. rows 12-25: 79-98 each. row 26: 79-89, row 27: 79-89, row 28: 79-88, row 29: 79-87",
+        "block 99-107": "rows 1-11: 99-107 each",
+        "block 108-116": "rows 1-11: 108-116 each",
+        "block 99-118": "rows 12-25: 99-118 each; rows 26-29 do not exist in this block (accessible-seating platform)",
+        "block 119-138": "rows 1-11: 119-138 each. rows 12-25: 119-138 each. row 26: 128-138, row 27: 128-138, row 28: 129-138, row 29: 130-138",
+        "block 139-153": "rows 12-29: 139-146, 139-146, 139-147, 139-147, 139-148, 139-148, 139-149, 139-149, 139-150, 139-150, 139-151, 139-151, 139-152, 139-152, 139-153, 139-153, 139-153, 143-152"
+      },
+      "3F left wing (deskewed 44 degrees; blocks 1-8, 9-28, 29-48, 49-63 become horizontal together)": {
+        "block 1-8": "rows 12-29: 1-8 each (18 rows)",
+        "block 9-28": "rows 1-11: 9-28 each. rows 12 onward: 9-28, with a shortened row reading 9-24 and a final row split into two printed segments beginning 9 and 14. The last two rows were NOT resolved.",
+        "block 29-48": "rows 1-11: 29-48 each. Most of rows 12-29: 29-48, with a shortened row reading 29-36 and a separate segment reading 41-48 near GATE 301. The last rows were NOT resolved.",
+        "block 49-63": "rows 12 onward: 49-56, 49-56, 49-57, 49-57, 49-58, 49-58, 49-59, 49-59, 49-60, 49-60, 49-61, 49-61, 49-62, 49-62, 49-63, 49-63, then a row reading 49-63 and a final short row beginning 53. The last two rows were NOT resolved."
+      }
+    },
+    "pass1NotStarted": [
+      "3F right wing (blocks 154-168, 169-188, 189-208, 209-216)",
+      "5F balcony rows, 5F main stand, and both 5F wings",
+      "7F centre and both 7F wings"
+    ],
+    "pass2": "NOT STARTED",
+    "comparison": "Not performed. There is no second independent transcription to compare against, so no MATCH or mismatch can be asserted, and no per-floor or grand mapped subtotal is claimed.",
+    "whyNotCompleted": "The issuer's chart prints 1,357 individual row-range labels on the single PDF page, of which roughly 1,100 belong to 3F/5F/7F. Every one of them is a separate printed identifier pair that the authorization requires to be read twice, independently, and then matched. Each seating block is drawn at its own rotation inside a fan projection, so each block must be deskewed before its start and end labels can be paired safely; reading them without that step produced demonstrably wrong pairings, which is exactly the failure mode the two-pass exists to catch. Completing roughly 2,200 independent readings at the required fidelity needs far more image-by-image review than this single authorization window could carry, and a partial or hurried transcription would risk exactly the invented or mis-assigned identifiers that the repository's permanent rules forbid.",
+    "whatWasNotDone": "No seat range was inferred, completed from geometry, or fitted to any capacity; no unresolved row was guessed; no partial floor was promoted."
+  },
+  "capacityReconciliation": {
+    "status": "NOT PERFORMED",
+    "reason": "The authorization allows reconciliation only after a completed fresh transcription. Because the transcription was not completed, no per-floor printed total, no grand mapped subtotal, and no relation to 20,033 is asserted.",
+    "establishedFacts": [
+      "The issuer publishes 座席数：20,033席 as the whole-venue figure on /floor/. It covers LEVEL1 アリーナ as well as the upper stands and is not a 3F/5F/7F subtotal.",
+      "The issuer publishes no 3F, 5F or 7F subtotal anywhere in the current material reviewed.",
+      "20,033 must never be used as a seat-count target for the upper-level scope."
+    ]
+  },
+  "accessibilityVipTechnicalSemantics": {
+    "wheelchair": "The PDF carries a dedicated 車椅子 layer and the 3F centre chart shows an accessible-seating platform that truncates blocks 79-98, 99-118 and 119-138 at their lowest rows. The platform positions carry no printed seat numbers. The issuer publishes no wheelchair seat IDs and no replacement relation, and routes wheelchair requests to each event organiser, so a future production record must use wheelchairSemantics.status: not-reflected with accessibilityConversionNotReflected: true unless the issuer publishes more.",
+    "vip": "The PDF carries a dedicated VIP layer and the /floor/ guide states the VIP floor is 「契約者専用フロアです。一般の方のご入場・ご利用はできません。」. VIP positions are therefore not public seating and must be excluded from any representative configuration.",
+    "technical": "No technical or production positions were separately identified in the reviewed material; this remains an open item for the completed transcription.",
+    "eventDependent": "1F arena seating is issuer-declared performance-dependent and must never be mixed into the upper-level configuration.",
+    "unnumberedInsideOrOutsidePublishedSubtotal": "Undetermined. The issuer publishes no per-floor subtotal, so whether unnumbered accessible or technical positions sit inside or outside a published figure cannot be answered from current issuer evidence."
+  },
+  "runtimeIdentityNote": "Seat numbers repeat across 3F, 5F and 7F, and row numbers repeat as well. A future production record must give each floor its own areaId/areaLabel so that runtime keys cannot collide, and must not invent block names the issuer does not define; only issuer-printed level names (ロアースタンド / ミドルスタンド / アッパースタンド) and the issuer's own row and seat numbers may be used, with any repository-side area label disclosed as a display-only organising name under docs/VENUE_DATA_GUIDE.md.",
+  "productionArtifacts": {
+    "sourceJson": "none created",
+    "configurationIds": "none created",
+    "inventoryVenueSourceId": null,
+    "generatedArtifacts": "none written",
+    "fingerprints": "unchanged",
+    "productionTotalsAfter": { "venues": 137, "configurations": 139, "seatRecords": 190099 }
+  },
+  "formalStatus": {
+    "bucket": "HOLD / NEED EVIDENCE / formal DEFER",
+    "character": "HARD-CASE / JUDGMENT",
+    "blocker": "現行issuer証拠は十分かつcurrentである。blockerはevidenceでもcurrentnessでもなく、転記規模と作図形式にある。現行公式seat-map PDFは1ページに1,357件の行別range表記を印字し、うち約1,100件が3F/5F/7Fに属する。各blockはfan projection上で個別の角度で描かれるため、blockごとにdeskewしないと行の開始番号と終了番号を正しく対にできず、実際に誤対応が発生した。認可された1回のbounded windowでは、この約1,100 rangeを2回独立にvisual転記し全rangeでMATCHさせることを完了できなかったため、docs/VENUE_DATA_GUIDE.mdのproduction gate（宣言scopeの完全な番号range、lossless転記）に到達していない。部分転記や推測補完はrepositoryの恒久ルールで禁止されているため、productionへは進めない。",
+    "reopenCondition": "3F/5F/7Fの固定番号席のみを対象に、現行 https://k-arena.com/wp-content/themes/k-arena_260401/assets/pdf/seat-map.pdf を再取得（sha256 24a838884437b225bf19f6dbe4f40bf95e80204278f48b0528da4c7b603967ee と照合し、変わっていれば全gateを再実施）したうえで、fresh visual two-passを完走すること。1Fアリーナはissuerが公演ごとに形状が変わると明記しているため除外を維持し、VIPフロアは契約者専用のため除外する。20,033をseat-count targetにしない。両passがMATCHし、印字IDをlosslessに再現できた場合のみschema v2 scope.kind: fixed-onlyでproduction化する。"
+  },
+  "validatedMethodForReopen": {
+    "purpose": "Recorded so the next session does not have to rediscover the viewing method. This is a viewing/navigation recipe only; it produces no seat data by itself.",
+    "steps": [
+      "Render the single PDF page from the vector source with PyMuPDF at a high scale (page rect 1417.32 x 1190.55 pt; scale 8-14 on a per-wing clip gives fully legible labels).",
+      "The 3F/5F/7F centre sections are already axis-aligned: read them directly as tall per-block crops.",
+      "Each wing must be deskewed. One angle levels every block in that wing simultaneously; for the 3F left wing the correct angle is 44 degrees counter-clockwise. Verify by checking that a block's start label and end label sit at the same height.",
+      "After deskewing, cut the block into one-row horizontal bands (band height about 1.1-1.3 row pitches) and stack them into a labelled composite. Each band then shows exactly one printed row, so a start and end label cannot be mis-paired and rows cannot be miscounted.",
+      "Anchor each band series on the issuer's printed row markers (the circled first and last row number of each band) and confirm the band count equals the marker span.",
+      "Do Pass 2 from a freshly fetched asset with different crops, zoom and orientation, in reverse floor order (7F to 5F to 3F) and reverse row order, without consulting the Pass 1 table, then compare only afterwards.",
+      "Only after both passes match may PDF text extraction be used as an auxiliary cross-check."
+    ],
+    "knownChartFeaturesToExpect": [
+      "Row ranges vary per row along trapezoidal block edges; the web zoom images print only the first and last row of a block and are therefore not sufficient.",
+      "Single rows are sometimes printed as two segments separated by a vomitory (for example a 3F left wing row printed as a segment beginning 9 and a segment beginning 14).",
+      "Blocks are truncated near gates and near the 3F accessible-seating platform, so the lowest rows are shorter or absent.",
+      "5F has a separate balcony band (rows 1-3) above the main 5F rows, and the 5F main rows observed start at row 6."
+    ]
+  },
+  "prohibitionsObserved": [
+    "No seat ID was invented.",
+    "No missing number was completed.",
+    "No range was inferred from geometry.",
+    "No printed seat was deleted to match a capacity.",
+    "No event-specific 1F configuration was mixed in.",
+    "No block ownership was asserted beyond the issuer's own printed blocks.",
+    "No configuration mixing.",
+    "No unrelated refactor or manual edit was made to silence the baseline stale warning or the known catalog soft-limit warning."
+  ],
+  "otherAdopts": "saitama-raiboc-main and chiba-pref-culture-main remain ADOPT / implementation-ready and were not touched.",
+  "kantoGe1000LedgerAfter": { "universeTotal": 154, "production": 54, "adopt": 2, "formalBlocked": 59, "inventoryUnresearched": 39 },
+  "validation": {
+    "run": ["npm run venues:check", "npm run venues:validate", "npm run verify:venues"],
+    "productionTotalsUnchanged": true,
+    "note": "No production source, generated artifact, or fingerprint was created or modified in this wave, so existing venues' seat sets and fingerprints are unchanged by construction."
+  },
+  "exactNextAction": "separately authorized bounded visual two-pass implementation of saitama-raiboc-main RaiBoC Hall〔大ホール〕"
+}
