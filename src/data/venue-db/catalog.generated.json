@@ -117,6 +117,31 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "chiba-pref-culture-large-hall",
+    "venueGroupId": "chiba-pref-culture-large-hall",
+    "name": "千葉県文化会館",
+    "searchAliases": [
+      "県文化",
+      "千葉県文化会館大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "千葉県",
+    "municipality": "千葉市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常座席（1階・2階・3階固定番号席・標準構成）",
+        "seatCount": 1727,
+        "dataPath": "/venue-db/venues/chiba-pref-culture-large-hall--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "公式座席平面図に印字された1階(1列〜36列)・2階(側方wing 1列〜12列、中央curve 13列〜16列)・3階(側方wing 1列〜8列、中央curve 9列〜12列)の全番号席（合計1,727席）を登録した標準構成です。各列の番号は台紙上の通路・階段による物理的な区画にかかわらず連続して印字されており、2階16列（7〜16番／19〜25番／28〜31番）と3階9列・10列・12列のみ、区画境界に対応する印字番号の欠番があります。1階19列・20列の間の側方（客席番号列とは別区画）に車いすスペースが2箇所×2（計4箇所）描かれていますが、対応する座席番号は印字されておらず、通常番号席の削除や車いす席番号の創作は行っていません。オーケストラピット使用時や可動席による別配置を示す記載は座席図・大ホール案内ページのいずれにも見当たらないため、登録していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "chofu-green-main-standard",
     "name": "調布市グリーンホール 大ホール",
     "searchAliases": [

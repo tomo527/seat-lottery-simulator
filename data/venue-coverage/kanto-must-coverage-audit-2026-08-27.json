@@ -21,8 +21,8 @@
       "茨城県": 5
     },
     "byStatus": {
-      "production": 56,
-      "ADOPT / implementation-ready": 1,
+      "production": 57,
+      "ADOPT / implementation-ready": 0,
       "HOLD / NEED EVIDENCE / formal DEFER": 58,
       "inventory-unresearched": 39
     },
@@ -73,11 +73,9 @@
     }
   },
   "nextMacro": {
-    "selection": "separately authorized bounded visual two-pass implementation of the remaining Kanto >=1,000 ADOPT only",
-    "candidates": [
-      "chiba-pref-culture-main — 千葉県文化会館〔大ホール〕"
-    ],
-    "reason": "RAIBOC HALL BOUNDED VISUAL TWO-PASS PRODUCTION IMPLEMENTATION (2026-08-31) closed saitama-raiboc-main as PRODUCTION (canonical raiboc-hall-large-standard). Currentness gate PASS (active operation, booking through New Year Concert 2027, no closure/renovation notice); the current issuer 大ホール座席表 was freshly re-derived from the current hall page (not merely trusted from the prior preflight) and read twice independently, resolving one row-attribution mismatch (H/I wheelchair and unexplained X/hatch marks) against the current chart before promotion. 千葉県文化会館〔大ホール〕 is the exact next action. 39 inventory-unresearched Kanto records remain, so another Kanto high-impact preflight follows that ADOPT and precedes Tokyo Priority D."
+    "selection": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3 (Codex): rerank the remaining 39 inventory-unresearched Kanto >=1,000 records, current operational status first, at most 5 research / 3 ADOPT",
+    "candidates": [],
+    "reason": "CHIBA-PREF-CULTURE-MAIN BOUNDED VISUAL TWO-PASS PRODUCTION IMPLEMENTATION (2026-08-31) closed chiba-pref-culture-main as PRODUCTION (canonical chiba-pref-culture-large-hall), the last of the three ADOPTs opened by the 2026-08-30 preflight. Currentness gate PASS (active operation, 2025-07-13 reopening confirmed as a completed historical closure, no new closure/renovation notice within 12 months, current issuer capacity 1,728 seats including 4 wheelchair positions); the current official 大ホール客席平面図 was freshly re-derived from the downloads page (not the raw PDF URL alone) and read twice independently with zero unresolved mismatch. This closes the current ADOPT implementation queue at 0 ADOPT remaining. 39 inventory-unresearched Kanto records remain, so the next action is another Kanto high-impact unresearched preflight, reranked by current operational status first; Tokyo Priority D remains lower priority while Kanto inventory-unresearched records remain."
   },
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
@@ -801,10 +799,10 @@
       "officialCapacityAndMode": "1,728 seats including four wheelchair positions (2026-08-30 current issuer large-hall page; former 1,787 discovery value superseded)",
       "officialUrl": "https://www.cbs.or.jp/chiba/",
       "inventoryId": "chiba-pref-culture-main",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
+      "venueSourceId": "chiba-pref-culture-large-hall",
+      "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-08-30 preflight: the issuer's current schedule proves post-2025-reopening operation and its current downloads page links the large-hall plan. A separately authorized bounded visual two-pass must establish every current printed floor/area position and wheelchair semantics directly; use 1,728 only for after-the-fact reconciliation."
+      "reopenCondition": null
     },
     {
       "prefecture": "千葉県",
