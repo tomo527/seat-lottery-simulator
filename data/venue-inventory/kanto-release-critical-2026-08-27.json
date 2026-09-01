@@ -240,14 +240,14 @@
       "category": "theater",
       "officialFacilityUrl": "https://www.kaat.jp/about/facility",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 1,216席; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-01 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3: current issuer theatre page and current-linked 基準勾配 seat-map PDF establish one coherent 1,187-seat standard-gradient configuration. The PDF prints all individual numbered cells and issuer floor subtotals 1F 778 / 2F 189 / 3F 220 = 1,187; wheelchair, seated-standing and standing positions are separately excluded by the issuer and require direct verification in a later implementation.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-01",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": null
     },
     {
       "inventoryId": "chiba-lala-arena-tokyo-bay",
@@ -261,13 +261,13 @@
       "officialFacilityUrl": "https://lalaarenatokyo-bay.com/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 11,000人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-01 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3: current issuer material proves active ticketed-event operation and publishes floor/section diagrams, but explicitly says seat placement and wheelchair-accessible positions vary by event; it does not define one complete representative numbered configuration from the fixed/movable/event-specific material.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-01",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "DEFER / NEED EVIDENCE (KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3): the current official FAQ says seat placement and wheelchair-seat availability/location depend on each event, while the official seat page distinguishes fixed and movable seating but supplies no issuer-defined complete representative configuration. Do not merge floor diagrams, infer a fixed-only condition, or use the 11,000 discovery capacity as a target. Reopen only if the issuer publishes a complete issuer-defined numbered configuration (or a fixed-only condition with its complete IDs) and its accessible-seat semantics."
     },
     {
       "inventoryId": "chiba-makuhari-event-hall",
@@ -380,14 +380,14 @@
       "category": "hall",
       "officialFacilityUrl": "https://ichiharahall.or.jp/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 1,527席; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-01 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3: current issuer operation, the current 1,527-seat (including four wheelchair positions) theatre-hall page, and its current-linked complete numbered seat-map PDF establish an implementation-ready standard configuration prospect. A later implementation must verify every printed ID and the wheelchair relationship directly; capacity is not a mapping target.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-01",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": null
     },
     {
       "inventoryId": "chiba-narita-culture-main",
@@ -837,18 +837,18 @@
       "officialDisplayName": "美喜仁桐生文化会館〔シルクホール〕",
       "prefecture": "群馬県",
       "city": "桐生市",
-      "capacity": 1517,
+      "capacity": 1527,
       "category": "hall",
       "officialFacilityUrl": "https://www.kiryu-piif.jp/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 1,517席; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-01 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3: the issuer's current event page links a complete numbered シルクホール seat-map PDF and current programs show ongoing operation. The issuer PDF states 1,527 seats including ten wheelchair positions; this supersedes the stale 1,517 inventory discovery figure. Later implementation must establish every printed ID, floor/area ownership, and wheelchair relation without fitting to either total.",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-01",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": null
     }
   ]
 }
