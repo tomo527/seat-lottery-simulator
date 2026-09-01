@@ -176,6 +176,21 @@ production転記の既定は、現行公式座席図を人が2回直接視認す
 
 OCRや機械抽出の結果を単独で、あるいは相互比較・visual auditなしに採用することは引き続き不可です。DENSE-VECTORはseat ID創作、capacity fitting、geometry補完、configuration mixingの禁止をいっさい緩和せず、currentness、issuer ownership、production hard gateも従来どおり適用します。採用した場合は`verification.method`にDENSE-VECTORであることと2経路の内容を記録します。
 
+### 転記のcross-check必須要件（production共通）
+
+human visual two-passがMATCHしても、同一のsystematic transcription errorを両passが再現し得ることが実例で確認されています（`RAIBOC + CHIBA PRODUCTION DISPOSITION RECONCILIATION AUDIT` 2026-08-31）。したがってhuman-human MATCHはproductionの必要条件であって十分条件ではありません。以下を共通のproduction verification ruleとします。既存のevidence order、production hard gate、DENSE-VECTOR verificationのいずれも緩和しません。
+
+1. 通常の会場では、現行公式座席図をfresh independentに人が2回直接視認する**human visual two-passを引き続き必須**とします。DENSE-VECTOR verificationを適用する超高密度図だけがこの既定の代替を持ちます。
+2. issuerがfloor別・area別のsubtotalを公開している場合、**対応するmapped subtotalが一致するか、差をcurrent issuer evidenceで完全に説明できる**ことを必須とします。説明できない差はproduction blockerです。
+3. 現行公式座席図がdiscrete seat cell／glyph等の**独立にmachine countできる構造**を持つ場合、human transcriptionとは独立した**structural checksumも必須**とします。machine pathはhuman range tableをcount sourceにしてはいけません。
+4. 図の構造上machine structural countが実用的でない場合は、**その理由をverification metadataへ記録**し、可能な別のindependent checksum（issuer subtotal、area別公表値、印字済み小計等）を用います。
+5. machine countは**cross-checkであり、seat IDを生成・補完する根拠ではありません**。machine結果とvisual評価が食い違う場合は座席図へ戻って分類し、閾値をtargetへ合わせるための恣意的調整はしません。
+6. **capacityやsubtotalをtargetにしてrangeを修正することは禁止**です。番号を削る、足す、範囲を伸縮するいずれも不可です。
+7. human pass同士がMATCHしていても、**issuer checksumまたはindependent structural checksumとmaterial mismatch**があればproductionへ進めません。座席図へ戻り、losslessに解決できない限りproduction停止とし、blockerとreopen conditionを残します。
+
+実施した比較の内容（issuer subtotalとの照合、machine structural checksumの方法と結果、または実用的でない理由）は`verification.method`と`unresolvedIssues`へ記録します。
+
+
 v2 catalogは会場を`venueGroupId`で1件にまとめ、configurationごとに`(venueId, configurationId)`と個別`dataPath`を持ちます。configurationが1件なら従来同様に直接利用し、複数なら会場選択後に明示選択します。fixed-only disclosureはconfiguration選択時と抽選結果の両方に表示します。
 
 `sources[].id`は会場内で安定かつ一意なslugにします。`official`は公式資料かを明示します。`roles`は`seat-structure`、`seat-count`、`facility`、`event-layout`から選びます。productionにはseat-structure sourceと、施設・構造・席数・実公演layoutのいずれかを支える公式sourceが必要です。公式資料だけで番号が不足する場合は、信頼できるsecondaryを`official: false`かつ`seat-structure`として参照し、公式資料との非矛盾確認と採用理由をmetadataに残せます。SNS単独・出所不明画像は不可です。

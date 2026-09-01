@@ -1,0 +1,338 @@
+{
+  "reportVersion": 1,
+  "title": "KAAT-KANAGAWA-ARTS-THEATRE-HALL BOUNDED PRODUCTION IMPLEMENTATION",
+  "asOf": "2026-09-01",
+  "scope": "One venue only: kanagawa-kaat-hall / KAAT神奈川芸術劇場〔ホール〕, issuer-defined 基準勾配（標準的なパターン）configuration only. Separately authorized. chiba-ichihara-culture-main, gunma-kiryu-culture-main, saitama-raiboc-main, the remaining Kanto research and Tokyo Priority D are explicitly out of scope and were not opened.",
+  "mode": "Fresh independent human visual two-pass plus independent machine structural checksum plus issuer per-floor subtotal reconciliation, under the new cross-check rule added to docs/VENUE_DATA_GUIDE.md in this wave.",
+  "disposition": "PRODUCTION",
+  "startSnapshot": {
+    "branch": "main",
+    "head": "d2b4e3ccdc58b85a83eadd1659505f2929a8006b",
+    "originMain": "d2b4e3ccdc58b85a83eadd1659505f2929a8006b",
+    "workingTree": "clean",
+    "production": {
+      "venues": 139,
+      "configurations": 141,
+      "seatRecords": 207752
+    },
+    "kantoLedger": {
+      "universeTotal": 154,
+      "production": 56,
+      "adopt": 3,
+      "formalBlocked": 60,
+      "inventoryUnresearched": 35,
+      "missingFromInventory": 0
+    },
+    "note": "The ledger byStatus block read 60 formal blocked / 35 inventory-unresearched at start; the bounded metadata cleanup below re-derived it from the records themselves."
+  },
+  "boundedMetadataCleanup": {
+    "kArenaYokohamaStaleExplicitFinding": {
+      "problem": "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json explicitFindings.kArenaYokohama still carried the 2026-08-31 HARD-CASE / JUDGMENT HOLD wording (status HOLD / NEED EVIDENCE / formal DEFER, venueSourceId null) even though the same file's records[] entry, the canonical inventory record and HANDOFF.md all record the venue as PRODUCTION. explicitFindings is a current-finding field, so it was stale.",
+      "action": "Updated the current finding to PRODUCTION (venueSourceId k-arena-yokohama, configuration upper-stands-fixed, scope.kind fixed-only, 15,929 mapped seats) and moved the previous HARD-CASE blocker and reopen condition verbatim into a new supersededHistory[] entry with an explicit supersededBy pointer to data/venue-reports/kanagawa-k-arena-yokohama-dense-vector-production-2026-08-31.json.",
+      "notChanged": "No production source, seat range, generated artifact or fingerprint for k-arena-yokohama was touched. The historical HARD-CASE record itself is preserved, not deleted."
+    },
+    "tochigiStaleLedgerBucket": {
+      "problem": "The ledger record for tochigi-ken-sogo-bunka-center-main carried currentStatus inventory-unresearched, while the canonical inventory record in data/venue-inventory/release-seed-tochigi.json already carried researchStatus blocked with a concrete SOURCE HOLD blockingReason (researchLastCheckedAt 2026-08-03) and a matching draft source data/venue-sources/tochigi-ken-sogo-bunka-center-main-release-seed.json. PREFLIGHT 3 had therefore already excluded it from the live pool.",
+      "action": "Synchronized the ledger bucket to the existing formal blocked disposition, carrying the inventory's own blocker text and linking the canonical inventory record and venueSourceId. No new research, no web evidence, no inventory change.",
+      "evidenceUsed": "Existing repository evidence only."
+    },
+    "countsAfterCleanupBeforeKaat": {
+      "production": 56,
+      "adopt": 3,
+      "formalBlocked": 61,
+      "inventoryUnresearched": 34,
+      "universeTotal": 154,
+      "method": "Recomputed from records[], not fitted to an expected number."
+    }
+  },
+  "policyFormalization": {
+    "file": "docs/VENUE_DATA_GUIDE.md",
+    "section": "転記のcross-check必須要件（production共通）",
+    "content": [
+      "human visual two-pass stays mandatory for ordinary venues; only DENSE-VECTOR verification substitutes for it on ultra-dense charts.",
+      "where the issuer publishes floor/area subtotals, the mapped subtotal must match or the difference must be fully explained by current issuer evidence.",
+      "where the current official chart has an independently machine-countable structure (discrete seat cells/glyphs), an independent structural checksum is also mandatory and must not use the human range table as its count source.",
+      "where a machine structural count is not practical, the reason must be recorded and another available independent checksum used.",
+      "a machine count is a cross-check, never a basis for generating or completing seat IDs.",
+      "adjusting ranges to hit a capacity or subtotal target is prohibited.",
+      "a human-human MATCH does not authorize production if it materially mismatches the issuer checksum or the independent structural checksum."
+    ],
+    "notWeakened": "Existing evidence order, production hard gate, transport policy and the DENSE-VECTOR verification exception are unchanged; the section only adds cross-check obligations."
+  },
+  "currentnessGate": {
+    "result": "PASS",
+    "evidence": [
+      "https://www.kaat.jp/ — current programme listed continuously from 2026-08 to 2027-01 (アトリウム映像プロジェクト 2026/8/13–11/13, 『アニオー姫』展 2026/9/3–9/27, ミュージカル『アニオー姫』2026/9/12–9/27, 『ジャングル』2026/10/10–11/1, 『蛙昇天』2026/10/24–11/8, 庭劇団ペニノ『埋火』2026/11/12–11/15, 『Close Up』2026/11/20–11/22, 『ジャズ大名』2026/11/28–11/29, 『スカイライト』2026/12/19–12/29, 『もうちょっとしたら、このあたりで』(仮) 2027/1/20–1/31). No closure, renovation, reconstruction or cessation notice.",
+      "https://www.kaat.jp/news_list — 412 news items; the current 施設情報 entries are 2026-04-01 利用料金改定 and 2026-04-08 子ども一時預かりサービス開始. No 休館・改修・工事・閉館・建替・営業終了・再開 notice at all.",
+      "https://www.kaat.jp/about/facility_hall — current hall page presents the hall as an operating 最大約1,200席（基準勾配）variable-seating theatre and links the current 図面・座席表.",
+      "https://www.kaat.jp/guide/download — current issuer download index lists the same chart with its current file size."
+    ],
+    "conclusion": "ACTIVE. No formal long closure, renovation, reconstruction or cessation announced within twelve months, so the VENUE_DATA_GUIDE currentness rule does not trigger a HOLD. The preflight's ACTIVE judgment was not reused; every page above was fetched fresh on 2026-09-01."
+  },
+  "assetGate": {
+    "url": "https://www.kaat.jp/assets/pdf/facilities_hall_01.pdf",
+    "reachedFrom": [
+      "https://www.kaat.jp/about/facility_hall",
+      "https://www.kaat.jp/guide/download"
+    ],
+    "linkLabel": "ホール基準勾配（標準的なパターン）座席表",
+    "sha256": "e78ee58074c843d96b2852c9696e1ab7a0d4fdfa13b28241c861c7aeb2242af8",
+    "byteSize": 2339464,
+    "pageCount": 1,
+    "pageSize": "841.89 x 1190.55 pt (A3 portrait)",
+    "lastModified": "Mon, 28 Apr 2025 04:20:12 GMT",
+    "pdfTitle": "ホール基準勾配（標準的なパターン）座席表",
+    "producer": "Adobe Illustrator CS5 / Adobe PDF library 9.90",
+    "chartRevisionStamp": "2018.06.26更新",
+    "independentFetches": 4,
+    "fetchAgreement": "All four fetches returned identical SHA-256 and byte size (three before Pass 1, one fresh re-fetch before Pass 2).",
+    "textLayer": "277 characters only. Seat numbers are vector outlines, not extractable text, so no machine extraction can establish the identifiers; the printed labels that are text are the floor titles, the floor subtotals, the exclusion note, the door numbers and the revision stamp."
+  },
+  "configurationGate": {
+    "candidate": "基準勾配（標準的なパターン）only",
+    "issuerStatement": "The current hall page lists the variable seating shapes as 基準勾配（標準的なパターン）, 急勾配（ダンス公演等に適したパターン）, 平土間（椅子を取り外し、舞台とつながる床面となるパターン）and 鳥屋口（伝統芸能の上演のための本花道の設置に対応できるパターン）, and separately notes that an orchestra pit and a thrust stage can be formed.",
+    "issuerPublishedCharts": "Only two seat charts exist: facilities_hall_01.pdf (基準勾配) and facilities_hall_06.pdf (急勾配). 平土間, 鳥屋口, orchestra pit and thrust stage have no published numbered seat chart.",
+    "decision": "基準勾配 is the only shape the issuer itself labels 標準的なパターン, and it still holds that status on the current facility and download pages. It is adopted as the single representative configuration. 急勾配 and every other shape were not opened, not transcribed and not mixed in.",
+    "sectionAndPlanDrawings": "facilities_hall_02..05.pdf are 断面図/平面図 at 1/100 and 1/200 for the same 基準勾配 shape and carry no seat identifiers; they were not used as seat evidence."
+  },
+  "issuerChecksumContract": {
+    "confirmedFreshFromChart": {
+      "headline": "基準勾配 1187席",
+      "exclusionNote": "※イス付立見席、立見席、車椅子席を除く",
+      "consultationNote": "※PA席・見切れ席(サイドバルコニー)については事前にご相談下さい。",
+      "floorLabels": [
+        "1階席（778席）",
+        "2階席（189席）",
+        "3階席（220席）"
+      ],
+      "summaryTable": {
+        "columns": [
+          "本席",
+          "イス付立見席",
+          "立見席",
+          "車椅子"
+        ],
+        "1F": [
+          778,
+          null,
+          10,
+          2
+        ],
+        "2F": [
+          189,
+          30,
+          null,
+          null
+        ],
+        "3F": [
+          220,
+          28,
+          8,
+          null
+        ],
+        "total": [
+          1187,
+          58,
+          18,
+          "2（組）"
+        ]
+      },
+      "relation": "778 + 189 + 220 = 1,187, and the summary table states the same three subtotals independently of the floor captions.",
+      "legend": [
+        "黄 ・・・ イス付立見席",
+        "水色 ・・・ 立見席（イス無）"
+      ]
+    },
+    "useOfChecksum": "The printed identifier set was established first and independently; 1,187 / 778 / 189 / 220 were used only afterwards as a checksum. They were never used as a transcription target."
+  },
+  "passA": {
+    "label": "Human Visual Pass 1",
+    "order": "1F to 2F to 3F; within each floor left block, centre block, right block, then side rows; rows stage-first; every range read low-number end first.",
+    "rendering": "PyMuPDF pixmap renders of the current official chart at dpi 160/200/500/620/700/900/1300, with per-block de-skew rotations of -18.9, +18.9, ±12, ±75 and ±80 degrees so that each curved fan row reads as one straight line.",
+    "recorded": "floor, issuer-defined block, row label, printed seat IDs, ranges, split ranges, explicit gaps, marked positions, wheelchair / standing / seated-standing / PA / restricted-view annotations, and per-floor mapped subtotals.",
+    "mappedSubtotals": {
+      "1F": 778,
+      "2F": 189,
+      "3F": 220,
+      "grand": 1187
+    },
+    "frozenBeforePass2": true
+  },
+  "passB": {
+    "label": "Human Visual Pass 2",
+    "assetReacquired": "The PDF was fetched again from the same issuer URL before Pass 2; identical SHA-256 and byte size.",
+    "order": "3F to 2F to 1F; within each floor right block, centre block, left block, then side rows; rows back-to-front; every range read high-number end first.",
+    "rendering": "Independent renders at dpi 620/700/720/780/800/820/1000 with deliberately different crop boundaries and a 180 degree rotation, so the whole chart was read upside down.",
+    "answerKeyUsed": false,
+    "mappedSubtotals": {
+      "1F": 778,
+      "2F": 189,
+      "3F": 220,
+      "grand": 1187
+    }
+  },
+  "humanComparison": {
+    "method": "Both passes were frozen to separate JSON tables and compared by machine on the fully expanded seat-ID set.",
+    "expandedPass1": 1187,
+    "expandedPass2": 1187,
+    "onlyInPass1": 0,
+    "onlyInPass2": 0,
+    "rangeTablesIdentical": true,
+    "matchedOn": [
+      "complete printed ID set",
+      "floor ownership",
+      "block ownership",
+      "row ownership",
+      "every range",
+      "every gap",
+      "every marked / unprinted position"
+    ],
+    "unresolvedMismatch": 0,
+    "note": "Per the new cross-check rule, this MATCH alone did not authorize production."
+  },
+  "machineStructuralChecksum": {
+    "independence": "Neither machine path read the human range tables; both derive counts from the PDF alone.",
+    "pathA": {
+      "name": "PDF vector cell geometry",
+      "method": "All drawing paths were de-duplicated by (item signature, rect). Seat cells are rounded-rect paths in two signatures - lclclclcl for axis-aligned cells and ccclccclccclcccl for rotated cells - each drawn as a seat back plus a seat base. A cell was counted only when it contained the centre of at least one dark filled digit-glyph path, which distinguishes a numbered seat back from its unnumbered base.",
+      "result": "1,245 numbered rounded-rect cells (1F 778, 2F 219, 3F 248). Two right-side-strip cells whose digit group had an unusually large rotated bounding box were initially missed and were classified by returning to the chart at high zoom, where they read 20 and 21.",
+      "blindSpot": "Circled standing-seat numbers are PDF text glyphs, not rounded-rect paths, so this path cannot see them."
+    },
+    "pathB": {
+      "name": "Rendered raster contour hierarchy",
+      "method": "600 dpi render; ink mask at gray < 248 excluding the yellow and blue capsule fills; cv2.findContours with RETR_TREE; a numbered seat cell is an inner contour of seat size that contains at least one dark island (the printed number). Overlapping detections were de-duplicated by centre proximity. Cell class was then read from the render's own background colour inside each detected cell.",
+      "result": "1,251 cells inside the seat-chart area, including the 18 circled standing numbers that path A cannot see.",
+      "falsePositivesResolved": "Detections at x > 690 pt were the legend colour swatches and the bottom-right summary table, not seats; they were identified by returning to the rendered chart and excluded as chart furniture. No threshold was tuned toward 778 / 189 / 220."
+    },
+    "union": {
+      "printedNumberedPositions": 1263,
+      "byClass": {
+        "white 本席": 1187,
+        "yellow イス付立見席": 58,
+        "blue 立見席（イス無）": 18
+      },
+      "byFloor": {
+        "1F": {
+          "white": 778,
+          "blue": 10
+        },
+        "2F": {
+          "white": 189,
+          "yellow": 30
+        },
+        "3F": {
+          "white": 220,
+          "yellow": 28,
+          "blue": 8
+        }
+      },
+      "agreementWithIssuerSummaryTable": "Exact in every cell of the issuer's own 本席 / イス付立見席 / 立見席 table."
+    },
+    "blockLevelChecksum": {
+      "method": "Machine-detected white cells were clustered by seat pitch (8.2 pt link distance) into printed blocks, independently of the human table.",
+      "clusters": {
+        "1F": 81,
+        "2F": 17,
+        "3F": 22
+      },
+      "sums": {
+        "1F": 778,
+        "2F": 189,
+        "3F": 220
+      },
+      "comparisonWithHuman": "The human transcription produced exactly 81 / 17 / 22 blocks per floor and the per-block seat-count multiset is identical to the machine clustering on all three floors."
+    }
+  },
+  "fourWayReconciliation": {
+    "table": {
+      "1F": {
+        "pass1": 778,
+        "pass2": 778,
+        "machine": 778,
+        "issuer": 778
+      },
+      "2F": {
+        "pass1": 189,
+        "pass2": 189,
+        "machine": 189,
+        "issuer": 189
+      },
+      "3F": {
+        "pass1": 220,
+        "pass2": 220,
+        "machine": 220,
+        "issuer": 220
+      },
+      "grand": {
+        "pass1": 1187,
+        "pass2": 1187,
+        "machine": 1187,
+        "issuer": 1187
+      }
+    },
+    "difference": 0,
+    "capacityFitting": false,
+    "conclusion": "All four sources agree exactly at grand, per-floor and per-block level. No difference required an issuer explanation and none was manufactured."
+  },
+  "semantics": {
+    "wheelchair": "Two 車椅子席（1組）areas are drawn on 1F beside row 8列 (left of seat 5 and right of seat 31). They carry no printed number, the issuer counts them separately as 2（組）and the chart headline excludes them from 1,187. No issuer-defined seat-ID replacement relation exists, so no ID was created or deleted; wheelchairSemantics.status is not-reflected with accessibilityConversionNotReflected true.",
+    "standing": "立見席（イス無）is a legend-defined blue class: 1F L2列 and R2列 circled 5-9 (10) and 3F BL2列 and BR2列 circled 6-9 (8) = 18, matching the issuer's 立見席 column. Excluded from the registered configuration because the issuer excludes it from 本席.",
+    "seatedStanding": "イス付立見席 is a legend-defined yellow class: 2F AL2列 and AR2列 10-21 plus 22-24 (15 each = 30) and 3F BL2列 and BR2列 10-20 plus 21-23 (14 each = 28) = 58, matching the issuer's イス付立見席 column. Excluded for the same reason.",
+    "paAndRestrictedView": "The chart carries only the note ※PA席・見切れ席(サイドバルコニー)については事前にご相談下さい。 It defines no legend and identifies no specific printed number as a PA or restricted-view seat, so no printed seat was excluded by inference.",
+    "dashedBoxes": "1F 25列 centre 11・12 and 24・25 are enclosed in dashed rectangles with no legend entry. They are drawn as ordinary numbered seat cells and are required for the issuer's own 778 subtotal, so they were registered as normal seats rather than treated as an undocumented exclusion.",
+    "sideBalcony": "The 1F L1列/L2列/R1列/R2列, 2F AL1列/AR1列 and 3F BL1列/BR1列 side rows are printed numbered rows and are inside the issuer's 本席 subtotals; only their yellow/blue counterparts are excluded.",
+    "unnumberedCells": "No unnumbered ordinary seat cell exists in the 基準勾配 scope. The only unnumbered positions are the two wheelchair areas.",
+    "floorOwnership": "1F rows 1列-25列 with no 9列 (the cross aisle carrying doors 1F-1 and 1F-4) plus L1/L2/R1/R2; 2F rows A1列-A5列 plus AL1/AR1; 3F rows B1列-B6列 plus BL1/BR1. Row labels are unique within and across floors."
+  },
+  "productionArtifacts": {
+    "sourceId": "kaat-kanagawa-arts-theatre-hall",
+    "configurationId": "standard-gradient",
+    "schemaVersion": 2,
+    "scopeKind": "official-variant",
+    "areaIds": [
+      "floor1 (1階)",
+      "floor2 (2階)",
+      "floor3 (3階)"
+    ],
+    "ranges": 120,
+    "mapped": {
+      "1階": 778,
+      "2階": 189,
+      "3階": 220,
+      "grand": 1187
+    },
+    "expectedSeatCount": 1187,
+    "rangeDiff": 0,
+    "confidence": "verified",
+    "inventory": "data/venue-inventory/kanto-release-critical-2026-08-27.json — kanagawa-kaat-hall now eligible / researchStatus production / venueSourceId kaat-kanagawa-arts-theatre-hall.",
+    "ledger": "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json — record promoted to production.",
+    "fingerprint": "data/venue-fingerprints/production.json — new entry only; no existing entry changed.",
+    "generated": [
+      "src/data/venue-db/catalog.generated.json",
+      "public/venue-db/venues/kaat-kanagawa-arts-theatre-hall--standard-gradient.json"
+    ]
+  },
+  "kantoGe1000LedgerAfter": {
+    "universeTotal": 154,
+    "production": 57,
+    "adopt": 2,
+    "formalBlocked": 61,
+    "inventoryUnresearched": 34,
+    "missingFromInventory": 0,
+    "method": "Recomputed from records[]; not fitted to an expected number."
+  },
+  "otherAdopts": "chiba-ichihara-culture-main and gunma-kiryu-culture-main remain ADOPT / implementation-ready and were not opened. saitama-raiboc-main remains blocked in its separate transcription-remediation queue and was not touched.",
+  "prohibitionsObserved": [
+    "no invented seat IDs",
+    "no capacity fitting to 最大約1,200席 or to any subtotal",
+    "no geometry completion",
+    "no configuration mixing with 急勾配・平土間・鳥屋口・オーケストラピット・張り出し舞台",
+    "no third-party seat map",
+    "no inferred PA / restricted-view exclusion",
+    "no machine-generated seat IDs — machine counts were cross-checks only",
+    "no threshold tuning toward the issuer subtotals",
+    "no reset or revert",
+    "no catalog or database size threshold change"
+  ],
+  "exactNextAction": "separately authorized bounded production implementation of chiba-ichihara-culture-main 市原市市民会館〔大ホール〕"
+}
