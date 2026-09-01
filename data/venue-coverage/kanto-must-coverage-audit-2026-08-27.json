@@ -21,8 +21,8 @@
       "茨城県": 5
     },
     "byStatus": {
-      "production": 57,
-      "ADOPT / implementation-ready": 2,
+      "production": 58,
+      "ADOPT / implementation-ready": 1,
       "HOLD / NEED EVIDENCE / formal DEFER": 61,
       "inventory-unresearched": 34
     },
@@ -84,9 +84,11 @@
     }
   },
   "nextMacro": {
-    "selection": "Claude: separately authorized bounded implementation of at most kanagawa-kaat-hall, chiba-ichihara-culture-main, and gunma-kiryu-culture-main, in that production-yield / importance order. Each implementation must apply its 2026-09-01 preflight implementationVerificationPlan as mandatory gates. RaiBoC re-implementation remains a separate queue and must not be combined with these new ADOPTs.",
-    "candidates": ["kanagawa-kaat-hall", "chiba-ichihara-culture-main", "gunma-kiryu-culture-main"],
-    "reason": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3 (2026-09-01) reranked the 39 ledger inventory-unresearched records, excluded the one already-blocked inventory duplicate from live research, and opened four current first-party candidates. It reached the third ADOPT at research rank 4: KAAT standard gradient, 市原市民会館 大ホール, and 美喜仁桐生文化会館 シルクホール are implementation-ready prospects; LaLa arena TOKYO-BAY is formal DEFER because the issuer explicitly makes seating and wheelchair positions event-specific. The ledger is now 56 production / 3 ADOPT / 60 formal blocked / 35 inventory-unresearched. The RaiBoC record already states issuer evidence is sufficient and the blocker is transcription remediation, so no metadata normalization was needed. Human visual two-pass agreement alone is not production-grade correctness: every new implementation must also use issuer subtotal reconciliation and a feasible independent machine structural checksum, stopping production on a mismatch. Tokyo Priority D remains lower priority while Kanto inventory-unresearched remains."
+    "selection": "Claude: separately authorized bounded production implementation of gunma-kiryu-culture-main 美喜仁桐生文化会館〔シルクホール〕. Apply its 2026-09-01 preflight implementationVerificationPlan as mandatory gates, plus the 転記のcross-check必須要件 in VENUE_DATA_GUIDE.md. RaiBoC re-implementation remains a separate queue and must not be combined with it.",
+    "candidates": [
+      "gunma-kiryu-culture-main"
+    ],
+    "reason": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3 (2026-09-01) produced three ADOPTs. kanagawa-kaat-hall reached production on 2026-09-01 and chiba-ichihara-culture-main reached production on 2026-09-02, leaving gunma-kiryu-culture-main as the only open ADOPT. After it closes, return to the Codex KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT over the remaining inventory-unresearched pool."
   },
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
@@ -729,13 +731,13 @@
       "currentName": "市原市市民会館〔大ホール〕",
       "aliases": [],
       "facilitySpace": "市原市市民会館〔大ホール〕",
-      "officialCapacityAndMode": "1527 (current inventory/audit capacity; see official URL)",
+      "officialCapacityAndMode": "1,527 fixed seats (rows 1-32, single floor) plus 4 unnumbered wheelchair spaces, listed as separate line items (固定席 1,527席 / 車いす席 4席) by the current 2026-07 official hall guide; the seat chart and both hall pages print the same 1527席（車イス4席）",
       "officialUrl": "https://ichiharahall.or.jp/",
       "inventoryId": "chiba-ichihara-culture-main",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
+      "venueSourceId": "ichihara-civic-large-hall",
+      "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-09-01 preflight: a separately authorized bounded implementation must fresh-fetch the current issuer-linked PDF, independently read every printed identifier and row/area assignment, preserve the four wheelchair positions without inferred replacements, and use the implementationVerificationPlan's issuer checksum and independent machine structural checksum gates. Do not fit to 1,527."
+      "reopenCondition": "n/a — production (CHIBA-ICHIHARA-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION 2026-09-02: schema v2 source ichihara-civic-large-hall / configuration standard, scope.kind official-variant; 1列〜32列の印字番号席1,527席をmapped。fresh independent human visual two-pass、PDFベクターセル幾何・band別識別子再構成・600 dpiラスター輪郭階層の3経路によるindependent machine structural checksum、および現行公式ホール利用案内（2026.7改訂版）の固定席subtotal 1,527席の四者が完全一致した)。Reopen only if the issuer publishes a seat chart superseding SHA-256 9d159a6cce7509ace27cbfa89afcf9f3b21cdf014ca8e052751078ad46d32755, defines a seat-ID replacement relation for the four 17列 wheelchair spaces, or publishes an additional issuer-defined configuration (movable/standing/pit). Never fit to 1,527 by adding or deleting printed identifiers."
     },
     {
       "prefecture": "千葉県",

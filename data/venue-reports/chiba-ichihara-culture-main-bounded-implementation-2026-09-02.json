@@ -1,0 +1,272 @@
+{
+  "reportVersion": 1,
+  "title": "CHIBA-ICHIHARA-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION",
+  "asOf": "2026-09-02",
+  "scope": "市原市市民会館〔大ホール〕 (inventory chiba-ichihara-culture-main) only. 美喜仁桐生文化会館, RaiBoC Hall, the remaining Kanto research pool and Tokyo Priority D were explicitly out of scope and were not opened.",
+  "mode": "separately authorized bounded single-venue production implementation",
+  "disposition": "PRODUCTION",
+  "startSnapshot": {
+    "branch": "main",
+    "head": "f145e12145985de8ec06cad37dddd6329f3a0eff",
+    "originMain": "f145e12145985de8ec06cad37dddd6329f3a0eff",
+    "workingTree": "clean",
+    "production": {
+      "venues": 140,
+      "configurations": 142,
+      "seatRecords": 208939
+    },
+    "kantoLedger": {
+      "universeTotal": 154,
+      "production": 57,
+      "adopt": 2,
+      "formalBlocked": 61,
+      "inventoryUnresearched": 34,
+      "missingFromInventory": 0
+    },
+    "note": "Verified against the repository itself, not against notes. chiba-ichihara-culture-main and gunma-kiryu-culture-main were the two open ADOPTs; kanagawa-kaat-hall was already PRODUCTION; saitama-raiboc-main remained blocked in its separate transcription-remediation queue and was not touched."
+  },
+  "policyConsistencyCleanup": {
+    "file": "docs/VENUE_DATA_GUIDE.md",
+    "problem": "The 2026-09-01 section 転記のcross-check必須要件（production共通） made a fresh independent human visual two-pass, issuer subtotal reconciliation and an independent machine structural checksum mandatory, but two older passages still said the opposite: the production hard-gate paragraph listed 独立2 generation among the items that are 'confidence information, not a hard gate', and the workflow section stated flatly that 独立generation不足 is not a production blocker. The status list carried the same 独立2 generation wording.",
+    "changes": [
+      "転記のcross-check必須要件（production共通） now opens by declaring itself the current authoring/review contract and states that it applies as a mandatory requirement to new production implementations and to re-implementations of blocked venues from 2026-09-01 onward, and that it does not retroactively invalidate historical production.",
+      "The production hard-gate paragraph no longer lists 独立2 generation as mere confidence information. It now states that transcription verification is excluded from that list and that, for configurations promoted to production from 2026-09-01 onward and for re-implementations out of blocked, each item of the cross-check section applies as a hard gate (human visual two-pass for ordinary venues, the defined DENSE-VECTOR verification for DENSE-VECTOR eligible charts, issuer subtotal reconciliation, an independent structural checksum where a machine structural count is practical, and production stop on material mismatch).",
+      "The status list entry for `production` drops 独立2 generation and points at the cross-check section as the current rule for 2026-09-01 onward.",
+      "The workflow sentence 独立generation不足はproduction blockerではありません is retained only as an explicitly labelled legacy / backward-compatibility statement about pre-2026-09-01 historical production, with its purpose stated: it exists so historical production is not demoted or re-audited en masse merely because it lacks today's machine-readable report or two-pass metadata. It is explicitly marked as not the current implementation rule, and a following paragraph states that new implementations and blocked-venue re-implementations use the cross-check section instead."
+    ],
+    "notDone": [
+      "No schema change.",
+      "No production source migration.",
+      "No validator change.",
+      "No re-verification or demotion of any of the 140 pre-existing production venues.",
+      "No threshold change and no unrelated refactor."
+    ],
+    "validation": "npm run verify:docs passed (local Markdown links across 24 files, shared agent instruction and venue-wave adapter contracts, verify:harness including the SessionStart, hook, permission and subagent-role checks, and git diff --check)."
+  },
+  "currentnessGate": {
+    "result": "PASS",
+    "method": "Fresh first-party fetches on 2026-09-01/02 (JST). The PREFLIGHT 3 conclusion was not used as an answer key; every point below was re-established from the live issuer site.",
+    "evidence": [
+      "https://ichiharahall.or.jp/ — the event calendar carries current 大ホール ticketed events: 2026-09-06 MYSTERY NIGHT TOUR 2026 稲川淳二の怪談ナイト (大ホール, 全席指定), 2026-10-04 市原フィルハーモニー管弦楽団第47回定期演奏会 (大ホール), 2026-10-09 よしもとお笑いライブin市原2026 (大ホール, 全席指定), plus 2026-09-13/09-20 文化芸術ワークショップ using 大ホール・小ホール. Programming continues past the audit date.",
+      "https://ichiharahall.or.jp/ 新着ニュース — the complete current list is eight items (2026-08-13, 2026-06-12, 2026-03-12, 2026-03-04, 2026-01-26, 2024-12-24, 2024-09-14, 2023-04-10). None announces 長期休館, 改修, 建替, 閉館, 移転 or 営業終了.",
+      "https://ichiharahall.or.jp/reserve/big_hall/ — 客席数：1527席（車椅子席 4席）, 劇場型多目的ホール, プロセニアム方式; live and current.",
+      "https://ichiharahall.or.jp/seat/big_hall/ — 大ホール座席案内, 客席数：1527席（車椅子席 4席）, links the current chart.",
+      "https://ichiharahall.or.jp/reserve/dl/ — current 各種資料ダウンロード index, live.",
+      "ホール利用案内（2026.7改訂版）PDF, created 2026-07-06, still the current published hall guide."
+    ],
+    "disclosedButNotBlocking": {
+      "notice": "2026-01-26 【重要なお知らせ】市民会館施設の維持管理に伴う施設貸出休止のお知らせ",
+      "content": "For 令和9年（2027年）2月 only, ホール棟（大ホール・小ホール） rental is suspended on 2/15–2/19, 2/22 and 2/24–2/26; 会議室棟 is suspended on February weekdays. 土・日・祝日は通常どおりご利用いただけます。",
+      "assessment": "This is a scattered weekday rental suspension for routine facility maintenance, with weekends and holidays unaffected. It is not 改修中, not 長期休館, not 閉館, not 運用終了, and it announces no change to the seating configuration. It therefore does not trigger the twelve-month currentness rule in VENUE_DATA_GUIDE.md, and it is recorded in the source metadata rather than being silently dropped."
+    },
+    "conclusion": "ACTIVE with continuing large-hall ticketed programming and no long-term closure, renovation, reconstruction, relocation or cessation notice within twelve months. Transcription was allowed to proceed."
+  },
+  "assetGate": {
+    "url": "https://ichiharahall.or.jp/assets/images/bighall/bighallmap.pdf",
+    "reachedFrom": [
+      "https://ichiharahall.or.jp/seat/big_hall/ — 大ホール客席 thumbnail, 「↑クリックで大きな画像をご覧いただけます。」",
+      "https://ichiharahall.or.jp/reserve/big_hall/ — 大ホール客席 thumbnail on the hall usage page"
+    ],
+    "notUrlGuessed": "The link was re-derived from the current hall and seat pages on this date rather than reused from the preflight; both pages wrap the same thumbnail (wp-content/uploads/2019/02/bighallmap.jpg) in an anchor to the same PDF.",
+    "finalUrl": "https://ichiharahall.or.jp/assets/images/bighall/bighallmap.pdf",
+    "sha256": "9d159a6cce7509ace27cbfa89afcf9f3b21cdf014ca8e052751078ad46d32755",
+    "byteSize": 1759043,
+    "pageCount": 1,
+    "pageSize": "841.89 x 1190.55 pt (A3 portrait)",
+    "httpLastModified": "Thu, 21 Feb 2019 06:24:00 GMT",
+    "etag": "\"1ad743-5826185190000\"",
+    "pdfMetadata": {
+      "format": "PDF 1.4",
+      "creator": "Adobe Illustrator CS2",
+      "producer": "Adobe PDF library 7.77",
+      "creationDate": "2007-07-13",
+      "modDate": "2019-02-21",
+      "title": "(empty)"
+    },
+    "independentFetches": 4,
+    "fetchAgreement": "All four fetches returned byte-identical content with the same SHA-256 and the same 1,759,043-byte length.",
+    "assetUnchangedFromPreflight": "The asset is the same one PREFLIGHT 3 saw. It was nevertheless re-reached from the current pages and re-hashed rather than treated as current by URL alone.",
+    "currencyCorroboration": "The current ホール利用案内（2026.7改訂版）PDF (SHA-256 e98ecae5bc1d1f91cff29f975202d20d6857a912006952cce6469f8d816bb07f, 4,234,713 bytes, 20 pages, created 2026-07-06, confirmed by two independent fetches) embeds the identical 市原市市民会館大ホール客席図 with the same legend box, so the 2019 drawing is still the issuer's current chart as of 2026-07.",
+    "textLayer": "Seat numbers are extractable vector text, not outlines. That was used only as one of the independent machine cross-check paths; the transcription itself was read visually."
+  },
+  "configurationGate": {
+    "hallForm": "劇場型多目的ホール / プロセニアム方式 (stage 間口18.2m × 奥行13.0m × 高さ8.0m), stated on the current 大ホール利用案内 page.",
+    "floorStructure": "Single audience level. There is no balcony or upper tier: the chart shows rows 1–32 on one floor, split by a cross-aisle between rows 17 and 18 and a second aisle between rows 28 and 29.",
+    "rowLabels": "Red arabic numerals 1–32, defined on the chart itself by 「赤い数字は、客席の列番号です。」 Each row's seat numbers run continuously left to right across the aisles within that row, so a row number plus a seat number is unique house-wide.",
+    "issuerPublishedCharts": "Exactly one numbered audience chart for 大ホール (bighallmap.pdf), reachable from both the seat page and the hall page and reproduced in the 2026-07 hall guide. The downloads index publishes only technical drawings (舞台平面図, 照明基本仕込み図, DMX回路表, SUS/PBL回路配列図, 照明機材表, 音響舞台客席図面, 音響機材リスト, 楽屋図, 駐車場配置図) and no second numbered audience configuration.",
+    "movableOrRemovableSeats": "None disclosed. Neither hall page nor the hall guide mentions 可動席, 移動席 or 席の取り外し.",
+    "orchestraPitOrStageRelatedSeatChange": "None disclosed. The stage equipment list is 大迫り・小迫り・音響反射板・緞帳（第1・第2）・バトン9本・松羽目; no orchestra pit and no stage extension that removes rows is published.",
+    "standingUse": "None disclosed.",
+    "eventDependentDifferences": "None disclosed. Current ticketed events are sold as 全席指定 or 全席自由 against this one chart.",
+    "technicalOrRestrictedViewMarkings": "None. The chart carries only two annotations in total — 「赤い数字は、客席の列番号です。」 and 「大ホール　１５２７席（車イス４席）」 — and no legend, hatching, cross-marks, dashed boxes or PA/見切れ notes anywhere.",
+    "decision": "One issuer-defined standard configuration. No alternative configuration was found in current issuer material, so nothing was mixed in and nothing was excluded by inference."
+  },
+  "targetDiscipline": {
+    "rule": "1,527 was not used as a mapped target and 1,523 (= 1,527 − 4) was never adopted as an expected value.",
+    "practice": "The printed identifier set was established first, independently, from the chart alone by two human passes and three machine paths. Only afterwards was it compared with the issuer's published figures. No range was created, extended, shortened or deleted to reach any total."
+  },
+  "passA": {
+    "label": "Human visual Pass 1",
+    "asset": "map1.pdf (first fetch)",
+    "orientation": "normal",
+    "order": "row-major, rows 1 → 32; within each row left block → right block; within each range low number first.",
+    "rendering": "Rendered from the PDF at dpi 150 (overview) and dpi 340/400/500/700/800/900 for per-region reads. The right-hand wing prints its seat numbers rotated a uniform +18.55°, so it was re-rendered de-skewed by −18.55° to bring the digits upright before reading.",
+    "recorded": "floor/area, row, every printed seat ID, contiguous ranges, split ranges, explicit gaps, side/wing areas, wheelchair pictograms, unnumbered positions, special markings, removable/technical annotations.",
+    "frozenBeforePass2": true,
+    "expandedTotal": 1527
+  },
+  "passB": {
+    "label": "Human visual Pass 2",
+    "assetReacquired": "The PDF was re-fetched independently (map3.pdf) before Pass 2; same SHA-256.",
+    "order": "column-major instead of row-major — a different acquisition path, not a re-walk of the Pass 1 table. Blocks were read one whole column-block at a time; rows bottom-to-top (32 → 18, then 17 → 1); blocks right-to-left; ranges high number first.",
+    "rendering": "Different crop boundaries and different resolutions from Pass 1: dpi 260/380/400/430/460/560/620, with the right wing and rear wing de-skewed from different clip rectangles.",
+    "answerKeyUsed": false,
+    "frozenBeforeComparison": true,
+    "expandedTotal": 1527
+  },
+  "humanComparison": {
+    "method": "Both passes were frozen to JSON, then expanded to (row, seat) key sets and compared programmatically.",
+    "expandedPass1": 1527,
+    "expandedPass2": 1527,
+    "onlyInPass1": 0,
+    "onlyInPass2": 0,
+    "rangeTablesIdentical": true,
+    "matchedOn": [
+      "complete expanded ID set (1,527 keys)",
+      "area ownership (single floor, one area)",
+      "row ownership for all 32 rows",
+      "every range and every split",
+      "every gap",
+      "wheelchair / unprinted positions",
+      "marked positions (none exist)"
+    ],
+    "unresolvedMismatch": 0,
+    "note": "Human-human MATCH was treated as necessary but not sufficient; the machine checksums below were taken before the production decision."
+  },
+  "machineStructuralChecksum": {
+    "feasibility": "PREFLIGHT 3 recorded machineStructuralCountFeasibility: possible. Confirmed: the chart draws every seat as a discrete stroked quad and prints its number as vector text inside it.",
+    "independence": "None of the three paths reads the human range tables. Each derives its own segmentation from the drawing.",
+    "pathA": {
+      "name": "PDF vector seat-cell geometry",
+      "method": "Every stroked quad in the page content stream was measured (side lengths, centre, rotation) and filtered to seat-cell dimensions. No text was read.",
+      "result": "1,531 seat-cell-sized quads: 1,527 numbered cells (8.17–8.18 × 8.15–8.16 pt, plus 50 marginally taller 8.59/8.67 pt cells inside the rotated wings) and 4 wheelchair pictogram squares (7.94 × 7.94 pt). Separately, 4 double-width wheelchair cell outlines (8.18 × 16.4 pt) were found at the same four positions. Numbered seat cells = 1,527.",
+      "orientationSplit": "1,046 axis-aligned cells and 485 cells rotated +18.55°; two orientations only, no per-row fan variation."
+    },
+    "pathB": {
+      "name": "Band-clustered identifier reconstruction",
+      "method": "The same vector cells were clustered geometrically into bands (axis-aligned group and +18.55° rotated group, each projected onto its own perpendicular axis). Each band was then assigned a row number from the red row-label text spans by proximity, and each cell's printed identifier was reconstructed by assigning digit glyphs to cells by containment and ordering them along the cell's own text direction.",
+      "result": "32 axis-aligned bands and 27 rotated bands; 1,527 cells, every one containing at least one digit glyph and no digit glyph left unassigned. The reconstructed (row, seat) identifier set has 1,527 members and is set-equal to the human two-pass set with zero difference in either direction.",
+      "perBandAgreement": "Per-band cell counts match the human transcription for all 59 bands: axis bands 22,23,24,24,26,27,28,29,30,31×7,27,37,38,38,38,39,39,40×5,38,38,33,29 (sum 1,044) and wing bands 3,6,8,11,12,14,16,18,20,20,21,22,23,23,24,20,22,22,23,21,20,20,18,18,19,20,19 (sum 483)."
+    },
+    "pathC": {
+      "name": "600 dpi raster contour hierarchy",
+      "method": "The page was rasterised at 600 dpi from the independently re-fetched asset, thresholded to an ink mask, and analysed with a contour tree. Enclosed regions at seat-cell dimensions were counted, split by whether they contain an inner ink island (a printed glyph). This path never touches the PDF object model.",
+      "result": "1,527 seat-cell-sized enclosed regions containing a printed glyph.",
+      "falsePositivesResolved": "12 further seat-cell-sized empty regions were returned and were classified back against the chart: two are the white gaps inside the row-17 left wheelchair cells beside the pictogram squares, six are stair-tread and wall-corner gaps on the right-hand side, and four are wall/hatching artefacts near the stage and the entrances. None is a seat, and none carries a printed number.",
+      "limitation": "The raster path cannot separate the wheelchair pictogram squares from the cell strokes they touch, so the wheelchair count is taken from path A and from both human passes, not from the raster."
+    },
+    "redRowLabelChecksum": {
+      "method": "The count and multiplicity of red row-number text spans was tallied independently of the human passes.",
+      "result": "108 red row labels: rows 1–3 twice each, row 4 once, rows 5–17 three times each, rows 18–23 five times each, rows 24–28 four times each, rows 29–32 three times each.",
+      "significance": "The multiplicity is exactly the number of aisle gaps each row has, so it independently reproduces the block topology, and the single occurrence of '4' independently confirms that row 4 has no right-wing block and no right-wing row label."
+    }
+  },
+  "issuerChecksumEvidence": {
+    "chartHeader": "大ホール　１５２７席（車イス４席）",
+    "hallPage": "客席数：1527席（車椅子席 4席）",
+    "seatPage": "客席数：1527席（車椅子席 4席）",
+    "newSubtotalFoundInFreshMaterial": {
+      "document": "ホール利用案内（2026.7改訂版） PDF, created 2026-07-06, 20 pages, SHA-256 e98ecae5bc1d1f91cff29f975202d20d6857a912006952cce6469f8d816bb07f",
+      "location": "施設概要 table",
+      "content": "大ホール: 固定席 1,527席 / 車いす席 4席 — listed as two separate line items. (小ホール is given the same way: 固定席 491席 / 車いす席 2席.)",
+      "significance": "This is a decomposition PREFLIGHT 3 did not have. It resolves the 1527席（車イス4席） ambiguity from the issuer's own current material: 1,527 is the 固定席 subtotal and the 4 wheelchair spaces are a separate line, not an inclusive breakdown."
+    },
+    "noFloorOrAreaSubtotal": "The issuer publishes no per-floor or per-area subtotal. The hall is a single floor and the only published subtotals are 固定席 1,527 and 車いす席 4."
+  },
+  "reconciliation": {
+    "table": {
+      "humanPass1": 1527,
+      "humanPass2": 1527,
+      "machinePathA_vectorCells": 1527,
+      "machinePathB_identifierSet": 1527,
+      "machinePathC_raster": 1527,
+      "issuerFixedSeatSubtotal": 1527
+    },
+    "mappedNumberedSeatTotal": 1527,
+    "differenceAgainstOfficial1527": 0,
+    "isWheelchair4IncludedIn1527": "No. The current 2026-07 official hall guide lists 固定席 1,527席 and 車いす席 4席 as separate line items, and the mapped printed numbered set is exactly 1,527, so the four wheelchair spaces sit outside the 1,527 rather than inside it. This is read off issuer evidence plus the drawing, not assumed.",
+    "areTheWheelchairPositionsNumbered": "No. All four are drawn as double-width cells (8.18 × 16.4 pt) containing a wheelchair pictogram and carrying no printed number.",
+    "issuerDefinedReplacementRelation": "None published. The issuer nowhere states which seat numbers the four spaces replace. Row 17 simply prints 5–51, so numbers 1–4 and 52–55 are absent from that row on the drawing; no adjacent number was deleted by inference and no wheelchair seat ID was invented.",
+    "machineSeatCellAgreement": "Exact at grand total, at per-band level for all 59 bands, and at full identifier-set level.",
+    "otherUnnumberedPositions": "None. Every one of the 1,527 seat cells contains a printed number, and the only unnumbered drawn positions in the audience area are the four wheelchair cells.",
+    "completeAsStandardConfiguration": "Yes. Rows 1–32 are fully transcribed with no unresolved ownership and no configuration mixing."
+  },
+  "productionDecision": {
+    "result": "PRODUCTION",
+    "gatesSatisfied": [
+      "human Pass 1 == Pass 2 with zero unresolved mismatch",
+      "complete printed numbered set established independently of any capacity figure",
+      "no material contradiction with any machine structural checksum (three independent paths, all exact)",
+      "difference against the official total is 0 and is further explained by the issuer's own 固定席 / 車いす席 decomposition",
+      "wheelchair semantics consistent with issuer evidence and recorded as not-reflected",
+      "configuration coherent: one issuer-defined standard configuration, nothing mixed"
+    ],
+    "capacityFitting": false,
+    "inventedIdentifiers": false
+  },
+  "semantics": {
+    "wheelchair": "Four unnumbered double-width pictogram cells in row 17 — two at the left end (where 1–4 would be) and two at the right end (where 52–55 would be). Outside the issuer's 固定席 1,527. Not registered, not drawable.",
+    "rowFourRightWing": "Row 4 has no right-wing block on the drawing and no right-wing red row label; the wing's label sequence is 1, 2, 3, 5, 6 … 17. Registered as printed (8–31 only); nothing was interpolated.",
+    "standing": "No standing area is drawn or published.",
+    "restrictedViewOrPa": "No such marking exists on this chart.",
+    "unnumberedCells": "Only the four wheelchair cells.",
+    "areaOwnership": "Single floor, single area. Seat numbers run continuously across aisles within each row, so no repository-invented block names were needed and none were created."
+  },
+  "productionArtifacts": {
+    "sourceId": "ichihara-civic-large-hall",
+    "configurationId": "standard",
+    "schemaVersion": 2,
+    "scopeKind": "official-variant",
+    "areaIds": [
+      "(single area; areaId/areaLabel omitted per the guide's single-main-area convention)"
+    ],
+    "rowLabels": "1 – 32",
+    "ranges": 56,
+    "mapped": 1527,
+    "expectedSeatCount": 1527,
+    "rangeDiff": 0,
+    "confidence": "verified",
+    "inventory": "data/venue-inventory/kanto-release-critical-2026-08-27.json — chiba-ichihara-culture-main is now eligibility eligible / researchStatus production / venueSourceId ichihara-civic-large-hall / lastCheckedAt 2026-09-02.",
+    "ledger": "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json — the record moves to currentStatus production with a reopen condition tied to the chart SHA-256; counts recomputed from records[].",
+    "fingerprint": "data/venue-fingerprints/production.json — ichihara-civic-large-hall / standard, count 1527, samples main/1/10, main/18/26, main/32/29, sha256 24db0d0905743f26df7ec42dd9f97200add04f6f3338051704a33c43f8b580bf.",
+    "generated": [
+      "src/data/venue-db/catalog.generated.json",
+      "public/venue-db/venues/ichihara-civic-large-hall--standard.json"
+    ]
+  },
+  "productionTotalsAfter": {
+    "venues": 141,
+    "configurations": 143,
+    "seatRecords": 210466
+  },
+  "kantoGe1000LedgerAfter": {
+    "universeTotal": 154,
+    "production": 58,
+    "adopt": 1,
+    "formalBlocked": 61,
+    "inventoryUnresearched": 34,
+    "missingFromInventory": 0,
+    "method": "Recomputed from records[] by currentStatus, not fitted. 美喜仁桐生文化会館 remains the single ADOPT, RaiBoC remains blocked, KAAT remains production."
+  },
+  "otherAdopts": "gunma-kiryu-culture-main 美喜仁桐生文化会館〔シルクホール〕 stays ADOPT / implementation-ready and was not opened. saitama-raiboc-main stays blocked in its separate transcription-remediation queue and was not touched. kanagawa-kaat-hall stays production and was not touched.",
+  "prohibitionsObserved": [
+    "No reset and no revert.",
+    "No capacity fitting; 1,527 and 1,523 were never used as transcription targets.",
+    "No invented seat IDs and no geometry-based completion.",
+    "No configuration mixing.",
+    "No inferred wheelchair replacement relation.",
+    "No retroactive invalidation of historical production, no schema change, no source migration, no validator change, no threshold change, no compaction, no unrelated refactor.",
+    "No work on 美喜仁桐生文化会館, RaiBoC, the remaining Kanto research pool, or Tokyo Priority D."
+  ],
+  "exactNextAction": "separately authorized bounded production implementation of gunma-kiryu-culture-main 美喜仁桐生文化会館〔シルクホール〕"
+}

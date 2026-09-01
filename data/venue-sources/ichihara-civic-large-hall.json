@@ -1,0 +1,483 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "ichihara-civic-large-hall",
+  "name": "市原市市民会館",
+  "prefecture": "千葉県",
+  "city": "市原市",
+  "aliases": [
+    "市原市市民会館大ホール",
+    "市原市民会館"
+  ],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-top",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "市原市市民会館（公益財団法人市原市文化振興財団）",
+      "title": "市原市市民会館 公式トップページ（新着ニュース一覧とイベントカレンダー。現行の大ホール公演と休館告知の有無を確認）",
+      "url": "https://ichiharahall.or.jp/",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "id": "official-news-maintenance",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "市原市市民会館（公益財団法人市原市文化振興財団）",
+      "title": "【重要なお知らせ】市民会館施設の維持管理に伴う施設貸出休止のお知らせ（2026-01-26。令和9年2月の平日一部日程のみ貸出休止、土日祝は通常利用）",
+      "url": "https://ichiharahall.or.jp/news/%e3%80%90%e9%87%8d%e8%a6%81%e3%81%aa%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%91%e5%b8%82%e6%b0%91%e4%bc%9a%e9%a4%a8%e6%96%bd%e8%a8%ad%e3%81%ae%e7%b6%ad%e6%8c%81%e7%ae%a1%e7%90%86%e3%81%ab%e4%bc%b4/",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "市原市市民会館（公益財団法人市原市文化振興財団）",
+      "title": "大ホール 利用案内（客席数：1527席（車椅子席 4席）、劇場型多目的ホール・プロセニアム方式。現行座席図PDFのリンク元）",
+      "url": "https://ichiharahall.or.jp/reserve/big_hall/",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "市原市市民会館（公益財団法人市原市文化振興財団）",
+      "title": "大ホール座席案内（現行の大ホール客席図PDFへのもう一方のリンク元。客席数：1527席（車椅子席 4席））",
+      "url": "https://ichiharahall.or.jp/seat/big_hall/",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "市原市市民会館（公益財団法人市原市文化振興財団）",
+      "title": "市原市市民会館大ホール客席図（1列〜32列の全印字座席番号と車イスピクトグラム4区画、図中に「大ホール　１５２７席（車イス４席）」を記載した公式PDF bighallmap.pdf）",
+      "url": "https://ichiharahall.or.jp/assets/images/bighall/bighallmap.pdf",
+      "checkedAt": "2026-09-02"
+    },
+    {
+      "id": "official-hall-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "市原市市民会館（公益財団法人市原市文化振興財団）",
+      "title": "ホール利用案内（2026.7改訂版）（施設概要に大ホール「固定席1,527席」「車いす席4席」を別項目として記載し、同一の大ホール客席図を収録した現行公式PDF）",
+      "url": "https://ichiharahall.or.jp/wp-content/uploads/%E3%83%9B%E3%83%BC%E3%83%AB%E5%88%A9%E7%94%A8%E6%A1%88%E5%86%85%EF%BC%882026.7%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.pdf",
+      "checkedAt": "2026-09-02"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常座席（固定席・標準構成）",
+      "issuerDefinedCondition": "施設運営者が大ホールの唯一の客席図として公開している固定席の標準構成を使用する場合。",
+      "selectionBasis": "現行公式トップページ（https://ichiharahall.or.jp/）は2026年9月・10月の大ホール有料公演（2026年9月6日 稲川淳二の怪談ナイト、2026年10月4日 市原フィルハーモニー管弦楽団第47回定期演奏会、2026年10月9日 よしもとお笑いライブin市原2026 ほか）を継続掲載し、新着ニュース一覧にも休館・改修・建替・閉館・移転の告知はない。唯一の関連告知である2026-01-26付「市民会館施設の維持管理に伴う施設貸出休止のお知らせ」は、令和9年（2027年）2月の平日のうちホール棟が2月15日〜19日・22日・24日〜26日に限って貸出を休止するという内容で、土日祝は通常利用でき、長期休館・改修・閉館・座席構成の変更のいずれにも当たらない。現行大ホール利用案内ページ（https://ichiharahall.or.jp/reserve/big_hall/）と大ホール座席案内ページ（https://ichiharahall.or.jp/seat/big_hall/）はいずれも当ホールを「劇場型多目的ホール／プロセニアム方式」「客席数：1527席（車椅子席 4席）」と記載し、可動席・立見・オーケストラピット・イベント別配置などの別configurationには一切触れていない。現行の各種資料ダウンロードページ（https://ichiharahall.or.jp/reserve/dl/）が公開する資料も舞台平面図・照明仕込み図・回路表・機材表等の技術資料であり、別の番号付き客席図は存在しない。現行公式PDF「ホール利用案内（2026.7改訂版）」（2026-07-06作成）は施設概要の表で大ホールを「固定席 1,527席」「車いす席 4席」と別項目に分けて記載し、同一の大ホール客席図をそのまま収録している。したがってissuerが公開する代表配置は大ホール客席図が定義する固定席の標準構成1件だけであり、これをそのまま採用する。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-02に大ホール座席案内ページと大ホール利用案内ページの双方からリンクを辿り直して現行公式座席図PDFを取得した（最終URL https://ichiharahall.or.jp/assets/images/bighall/bighallmap.pdf、SHA-256: 9d159a6cce7509ace27cbfa89afcf9f3b21cdf014ca8e052751078ad46d32755、1,759,043バイト、1ページ、A3縦 841.89×1190.55pt、Last-Modified: 2019-02-21、creator: Adobe Illustrator CS2、producer: Adobe PDF library 7.77、PDF modDate: 2019-02-21）。4回の独立フェッチはすべて同一SHA-256・同一バイト数だった。現行の「ホール利用案内（2026.7改訂版）」PDF（SHA-256: e98ecae5bc1d1f91cff29f975202d20d6857a912006952cce6469f8d816bb07f、4,234,713バイト、20ページ、作成日2026-07-06）が同一の大ホール客席図を収録しているため、この図面が2026年7月時点でもissuerの現行客席図であることを確認した。座席番号は抽出可能なテキストとしても埋め込まれているが、機械抽出は単独では採用せず、公式図を高解像度でレンダリングして直接視認するfresh independent human visual two-passで全印字番号を転記した。Pass 1は通常方向で1列→32列の行順に、各列は左ブロックから右ブロックへ、range内は小さい番号から読み取った（右側ウイングは座席番号が一律+18.55°回転しているため、-18.55°のデスキュー描画で番号を正立させたうえで読み取り、dpi 340〜900の複数倍率を使用した）。Pass 2はPDFを独立に再取得したうえで、行単位ではなくブロック単位（column-major）へ取得経路を変え、後方32列→18列、続いて前方17列→1列の逆順で、各行はブロックを右から左へ、番号の大きい側から読み取った。crop境界をPass 1と変え、dpi 260/380/400/430/460/560/620の別倍率で再描画している。両passをfreezeしてから機械比較したところ、展開座席ID集合1,527件・row所属・全range・全欠番・車イス位置・特殊マーキングでunresolved mismatchは0だった。さらにhuman transcriptionとは独立に3経路のmachine structural checksumを取得した。経路(1)はPDFのベクター幾何で、座席セルの矩形quadを一意化して数え、辺長8.05〜9.5ptのセル1,527件と、それとは別に車イス区画の倍幅セル4件（8.18×16.4pt）およびその内側の車イスピクトグラム矩形4件（7.94×7.94pt）を検出した。経路(2)は同じベクターセルを軸平行群（32 band）と+18.55°回転群（27 band）へ幾何クラスタリングし、band別セル数を求めたうえで、赤色の列番号テキストからband別のrow番号を割り当て、各セル内の数字グリフを幾何的に帰属させて印字IDを再構成した。これはhuman range tableをcount sourceにしていない。経路(3)は600 dpiでレンダリングしたラスター画像の輪郭階層解析で、インク内側の閉領域のうち座席セル寸法に合致し内部に印字グリフの島を含むものを数えた。経路(1)と経路(3)はいずれも1,527、経路(2)は1,527件の(row, seat)識別子集合を返し、human two-passの集合と完全一致した（差分0）。band別セル数も32軸平行band・27回転bandのすべてでhuman転記と一致した。加えて赤色列番号テキストの出現数は108件で、その内訳（1〜3列が各2件、4列が1件、5〜17列が各3件、18〜23列が各5件、24〜28列が各4件、29〜32列が各3件）は、4列だけ右側ウイングに番号ブロックを持たないという図面構造をhuman転記とは独立に裏付けている。",
+      "sourceIds": [
+        "official-top",
+        "official-news-maintenance",
+        "official-hall-page",
+        "official-seat-page",
+        "official-seat-map",
+        "official-hall-guide"
+      ],
+      "differenceBasisSourceIds": [
+        "official-hall-page",
+        "official-seat-map",
+        "official-hall-guide"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1527,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式「市原市市民会館大ホール客席図」に印字された1列〜32列の全番号席1,527席を登録した標準構成です。当ホールは単一フロアで、各列の座席番号は通路をまたいでも連続して印字されます。前方の1列〜17列は最大55番まで、後方の18列〜32列は最大67番までで、列ごとに始まりと終わりが異なります。1列は10〜31番と44〜46番、2列は9〜31番と42〜47番、3列は8〜31番と41〜48番、4列は8〜31番のみで、4列には右側ウイングの番号席が図面上に存在せず、右側の赤い列番号も印字されていません。5列から16列にかけて左端は6番から1番へ、右側ウイングは40番から32番へ広がり、16列は1〜55番が連続します。17列は5〜51番で、左端（1〜4番相当の位置）と右端（52〜55番相当の位置）にそれぞれ車イス区画が2箇所ずつ描かれ、番号は印字されていません。18列〜28列は1番から始まり、37〜40番までの後に通路を挟んで41〜67番の側方ブロックが続くため列により欠番区間があり、28列のみ1〜59番が連続します。29列・30列は1〜38番、31列は1〜33番、32列は1〜29番です。図面に描かれた車イス区画4箇所（17列の左右）は番号が印字されていないため登録していません。可動席・立見・オーケストラピット・イベント別配置を示す記載は現行のissuer資料に存在しないため、別configurationは登録していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式客席図は17列の左端と右端にそれぞれ2区画ずつ、計4区画の車イスピクトグラムを描画します。各区画は通常座席セルの倍幅（8.18×16.4pt）で描かれ、座席番号は印字されていません。そのため17列では左端の1〜4番相当と右端の52〜55番相当の位置に印字番号が存在せず、17列の印字番号は5〜51番です。現行公式PDF「ホール利用案内（2026.7改訂版）」の施設概要は大ホールを「固定席 1,527席」「車いす席 4席」と別項目に分けて記載しており、転記した印字番号席の総数1,527席はissuerの固定席subtotalと完全に一致します。したがって車イス4区画は固定席1,527席の外側に置かれた別枠であり、mapped countとissuer総数の差は0です。ただしissuerは4区画と特定の座席番号との個別の置換関係を公開していないため、置換関係を推定して番号を削除・創作することはしておらず、車イス区画は無番号のまま登録していません。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-hall-guide",
+          "official-hall-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-02",
+        "method": "fresh-independent-human-visual-two-pass-on-current-official-seat-chart-with-reversed-row-block-and-range-direction-plus-three-independent-machine-structural-checksums-from-pdf-vector-cell-geometry-and-band-clustered-identifier-reconstruction-and-600dpi-raster-contour-hierarchy-and-issuer-fixed-seat-subtotal-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "現行公式「ホール利用案内（2026.7改訂版）」施設概要は大ホールを「固定席 1,527席」「車いす席 4席」と別項目に記載します。転記した印字番号席は1,527席で、この固定席subtotalと完全に一致します（rangeDiff 0）。大ホール利用案内ページ・大ホール座席案内ページ・客席図が併記する「1527席（車椅子席4席）」も同じ数値です。",
+          "客席図の17列には左右に計4区画の車イススペースが倍幅セルで描かれ、番号は印字されていません。固定席1,527席とは別枠のため登録していません。個別の座席番号との置換関係はissuerが公開していないため推定していません。",
+          "4列には右側ウイング（32〜55番側）の番号ブロックが図面上に存在せず、右側ウイングの赤い列番号も1・2・3・5・6…17と印字され4は印字されていません。図面の記載どおり4列は8〜31番のみを登録しており、補完は行っていません。",
+          "座席図の注記は「赤い数字は、客席の列番号です。」と「大ホール　１５２７席（車イス４席）」の2件だけで、PA席・見切れ席・技術席・取り外し可能席などの特別マーキングや凡例は存在しません。",
+          "issuerは階別・エリア別のsubtotalを公開していません。当ホールは単一フロアで、公開されているsubtotalは固定席1,527席と車いす席4席の2項目のみです。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "1",
+          "from": 10,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "1",
+          "from": 44,
+          "to": 46,
+          "excluded": []
+        },
+        {
+          "rowLabel": "2",
+          "from": 9,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "2",
+          "from": 42,
+          "to": 47,
+          "excluded": []
+        },
+        {
+          "rowLabel": "3",
+          "from": 8,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "3",
+          "from": 41,
+          "to": 48,
+          "excluded": []
+        },
+        {
+          "rowLabel": "4",
+          "from": 8,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "5",
+          "from": 6,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "5",
+          "from": 40,
+          "to": 50,
+          "excluded": []
+        },
+        {
+          "rowLabel": "6",
+          "from": 5,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "6",
+          "from": 40,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "rowLabel": "7",
+          "from": 4,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "7",
+          "from": 39,
+          "to": 52,
+          "excluded": []
+        },
+        {
+          "rowLabel": "8",
+          "from": 3,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "8",
+          "from": 38,
+          "to": 53,
+          "excluded": []
+        },
+        {
+          "rowLabel": "9",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "9",
+          "from": 37,
+          "to": 54,
+          "excluded": []
+        },
+        {
+          "rowLabel": "10",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "10",
+          "from": 36,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "rowLabel": "11",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "11",
+          "from": 36,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "rowLabel": "12",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "12",
+          "from": 35,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "rowLabel": "13",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "13",
+          "from": 34,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "rowLabel": "14",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "14",
+          "from": 33,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "rowLabel": "15",
+          "from": 1,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "15",
+          "from": 33,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "rowLabel": "16",
+          "from": 1,
+          "to": 55,
+          "excluded": []
+        },
+        {
+          "rowLabel": "17",
+          "from": 5,
+          "to": 51,
+          "excluded": []
+        },
+        {
+          "rowLabel": "18",
+          "from": 1,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "rowLabel": "18",
+          "from": 46,
+          "to": 67,
+          "excluded": []
+        },
+        {
+          "rowLabel": "19",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "19",
+          "from": 46,
+          "to": 67,
+          "excluded": []
+        },
+        {
+          "rowLabel": "20",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "20",
+          "from": 45,
+          "to": 67,
+          "excluded": []
+        },
+        {
+          "rowLabel": "21",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "21",
+          "from": 45,
+          "to": 65,
+          "excluded": []
+        },
+        {
+          "rowLabel": "22",
+          "from": 1,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "rowLabel": "22",
+          "from": 45,
+          "to": 64,
+          "excluded": []
+        },
+        {
+          "rowLabel": "23",
+          "from": 1,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "rowLabel": "23",
+          "from": 44,
+          "to": 63,
+          "excluded": []
+        },
+        {
+          "rowLabel": "24",
+          "from": 1,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "24",
+          "from": 44,
+          "to": 61,
+          "excluded": []
+        },
+        {
+          "rowLabel": "25",
+          "from": 1,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "25",
+          "from": 44,
+          "to": 61,
+          "excluded": []
+        },
+        {
+          "rowLabel": "26",
+          "from": 1,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "26",
+          "from": 43,
+          "to": 61,
+          "excluded": []
+        },
+        {
+          "rowLabel": "27",
+          "from": 1,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "27",
+          "from": 42,
+          "to": 61,
+          "excluded": []
+        },
+        {
+          "rowLabel": "28",
+          "from": 1,
+          "to": 59,
+          "excluded": []
+        },
+        {
+          "rowLabel": "29",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "30",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "31",
+          "from": 1,
+          "to": 33,
+          "excluded": []
+        },
+        {
+          "rowLabel": "32",
+          "from": 1,
+          "to": 29,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

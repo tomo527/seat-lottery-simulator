@@ -25,7 +25,7 @@ scripts/venues/                           authoring / build / check / validate /
 `status`は必須で、次の3値だけを許可します。未知値や未指定はエラーです。
 
 - `draft`: 調査、range入力、検証中。runtime生成対象外だが、ID、所在地、source、rangeなどの基本検証対象。未入力時は`expectedSeatCount: null`、`ranges: []`で表現する。
-- `production`: 宣言した代表scopeの実在番号集合を公開根拠から完全転記し、捏造防止・source・range・runtime gateを通過したデータ。全variant、独立2 generation、厳密総数一致、wheelchair完全解決は必須ではない。
+- `production`: 宣言した代表scopeの実在番号集合を公開根拠から完全転記し、捏造防止・source・range・runtime gateを通過したデータ。全variant、厳密総数一致、wheelchair完全解決は必須ではない。転記の独立検証については[転記のcross-check必須要件（production共通）](#転記のcross-check必須要件production共通)が現行ruleであり、2026-09-01以降の新規production化とblocked venueのre-implementationではそこで定めるcross-checkが必須。
 - `rejected`: 閉館、対象外、または信頼できる公開情報から実在番号集合を作れないため見送ったデータ。`rejectionReason`を必須とし、0席・`ranges: []`を許可してruntime生成対象外とする。
 
 schema v1では`draft`や`rejected`をproductionと同じファイルに混在させず、1ファイルを1会場・1代表パターンとして扱います。schema v2ではtop-level `status`を会場調査状態、`configurations[].status/selectable`をconfigurationごとの公開可否として分離します。完全なconfigurationと不完全な公式variantは同居できますが、不完全variantは`draft`かつ`selectable: false`でなければなりません。
@@ -178,6 +178,8 @@ OCRや機械抽出の結果を単独で、あるいは相互比較・visual audi
 
 ### 転記のcross-check必須要件（production共通）
 
+この節は現行のauthoring / review contractです。**2026-09-01以降の新規production implementation、およびblocked venueのre-implementationでは、以下を必須requirementとして適用します。** 本節導入前に昇格したhistorical productionを遡って無効化するものではありません。
+
 human visual two-passがMATCHしても、同一のsystematic transcription errorを両passが再現し得ることが実例で確認されています（`RAIBOC + CHIBA PRODUCTION DISPOSITION RECONCILIATION AUDIT` 2026-08-31）。したがってhuman-human MATCHはproductionの必要条件であって十分条件ではありません。以下を共通のproduction verification ruleとします。既存のevidence order、production hard gate、DENSE-VECTOR verificationのいずれも緩和しません。
 
 1. 通常の会場では、現行公式座席図をfresh independentに人が2回直接視認する**human visual two-passを引き続き必須**とします。DENSE-VECTOR verificationを適用する超高密度図だけがこの既定の代替を持ちます。
@@ -237,7 +239,7 @@ areaのcanonical keyはruntime、validation、review、生成処理のすべて�
 
 全statusで、ファイル名とID、schema version、slug、名称・所在地、都道府県マッピング、venue type、別名正規化、会場間検索語衝突、source ID・role・URL transport（HTTPS必須、HTTP-only officialは`httpOnlyOfficial` waiver必須）・確認日、range正整数、excluded、区間重複、area対応を検証します。schema v1は`representativePattern`とtop-level verification、schema v2は各configurationのselection basis、scope、source参照、wheelchair metadata、confidence、verificationを検証します。draft/rejected configurationは空rangeと未確定席数`null`を許可し、production/selectable configurationは1席以上の有効mapped setを必須とします。重複確認はcanonical area・NFKC rowごとに行い、全席`Seat[]`へ展開しません。
 
-productionのhard gateは、宣言scopeの完全な番号range、登録範囲・根拠・変換方法・制約、seat-structure source、公式supporting source、source参照、reviewed/verifiedかつmatchedなstructure、capacity fitting禁止、repository-invented IDs/differences禁止です。公式総数との一致、独立2 generation、`rangeDiff: 0`、wheelchair/companion完全置換、全variant、空の`unresolvedIssues`はconfidence情報でありhard gateではありません。`TODO`、`TBD`、`未設定`、`placeholder`や`demo`/`sample`/`partial`の不完全productionは引き続き拒否します。
+productionのhard gateは、宣言scopeの完全な番号range、登録範囲・根拠・変換方法・制約、seat-structure source、公式supporting source、source参照、reviewed/verifiedかつmatchedなstructure、capacity fitting禁止、repository-invented IDs/differences禁止です。公式総数との一致、`rangeDiff: 0`、wheelchair/companion完全置換、全variant、空の`unresolvedIssues`はconfidence情報でありhard gateではありません。転記の独立検証はこの限りではありません。**2026-09-01以降に新規productionへ昇格するconfigurationと、blockedからre-implementationするconfigurationでは、[転記のcross-check必須要件（production共通）](#転記のcross-check必須要件production共通)の各項をhard gateとして適用します**（通常の会場はfresh independent human visual two-pass、DENSE-VECTOR適格図は定義済みDENSE-VECTOR verification、issuer subtotal reconciliation、machine structural countが実用的な場合はindependent structural checksum、material mismatch時のproduction停止）。`TODO`、`TBD`、`未設定`、`placeholder`や`demo`/`sample`/`partial`の不完全productionは引き続き拒否します。
 
 文字列の前後空白は保存時エラーです。`rowLabel`、`areaId`、`areaLabel`はNFKC比較も行い、NFKC後に同じrow/areaになる別表記の重複を拒否します。`venues:new`のCLI引数は暗黙にtrimせず、前後空白を明確なエラーとして拒否します。
 
@@ -289,7 +291,9 @@ npm run venues:review -- --all
 - [第1パス: 会場追加draft作成](prompts/VENUE_ADD_DRAFT.md)
 - [第2パス: 独立レビュー](prompts/VENUE_INDEPENDENT_REVIEW.md)
 
-独立generation不足はconfidenceを`representative`へ下げる理由であり、宣言scopeの実在番号集合が確認できていればproduction blockerではありません。
+（legacy / backward compatibility）2026-09-01より前に昇格したhistorical productionでは、独立generation不足はconfidenceを`representative`へ下げる理由であり、宣言scopeの実在番号集合が確認できていればproduction blockerではありませんでした。この記述は、新rule導入前のproductionを、現在のmachine-readable reportやtwo-pass metadataが存在しないことだけを理由に一括demotion・一括再監査しないためにだけ残します。current implementation ruleではありません。
+
+2026-09-01以降の新規production化およびblocked venueのre-implementationには上の旧一般則を適用せず、[転記のcross-check必須要件（production共通）](#転記のcross-check必須要件production共通)を必須requirementとして適用します。
 
 `checkedAt`とverification日付は日本の調査暦日として扱い、通常検証のtodayはOS・CI timezoneに依存しない`Asia/Tokyo`基準です。テストでは`options.today`を注入できます。
 
