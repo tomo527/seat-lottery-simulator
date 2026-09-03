@@ -268,5 +268,85 @@
     "No retroactive invalidation of historical production, no schema change, no source migration, no validator change, no threshold change, no compaction, no unrelated refactor.",
     "No work on 美喜仁桐生文化会館, RaiBoC, the remaining Kanto research pool, or Tokyo Priority D."
   ],
-  "exactNextAction": "separately authorized bounded production implementation of gunma-kiryu-culture-main 美喜仁桐生文化会館〔シルクホール〕"
+  "exactNextAction": "separately authorized bounded production implementation of gunma-kiryu-culture-main 美喜仁桐生文化会館〔シルクホール〕",
+  "releaseVerification": {
+    "asOf": "2026-09-04",
+    "result": "RELEASE VERIFIED / CLOSED",
+    "productionCommit": "f0ee1a293e196216bc170d63012eda676e875fb5",
+    "initialBuild": {
+      "id": "9c5f93bf-e299-4396-807f-8f6e192376e8",
+      "status": "FAILED",
+      "githubCheckRun": "Workers Builds: seat-lottery-simulator, completed/failure, 2026-09-01T15:31:42Z",
+      "failureStage": "build-environment initialization",
+      "failureReason": "The Cloudflare log shows only `Initializing build environment...` followed about five minutes later by `Build failed to initialize and was timed out`. The Cloning, Installing, Building and Deploying stages were never reached.",
+      "notACodeOrBuildCommandFailure": "Independently corroborated before the retry: a throwaway clean clone of this exact commit, checked out with core.autocrlf=false so the working tree byte-matches a Linux runner, ran `npm ci` (284 packages, exit 0) and then Cloudflare's own build command `npm run build` (exit 0; venues:check byte-identical, venues:validate 141 / 143 / 210,466 with the known 45 warnings). The produced dist differed from the last successfully deployed commit f145e12 by exactly one added asset (dist/venue-db/venues/ichihara-civic-large-hall--standard.json), 152 -> 153 files and 2,870,821 -> 2,877,628 bytes, far under the Workers Static Assets limits.",
+      "outcome": "Nothing was deployed; the public site continued to serve the previous version.",
+      "supersededBy": "5ae7fb87"
+    },
+    "retry": {
+      "trigger": "The user manually retried the same production commit from the Cloudflare Dashboard. No new commit, no code change, no dependency change and no empty/no-op commit was pushed.",
+      "buildIdShort": "5ae7fb87",
+      "branch": "main",
+      "commit": "f0ee1a2",
+      "status": "SUCCESS / Manually deployed",
+      "stages": {
+        "Initializing": "SUCCESS",
+        "Cloning": "SUCCESS",
+        "Installing": "SUCCESS",
+        "Building": "SUCCESS",
+        "Deploying": "SUCCESS"
+      },
+      "conclusion": "The identical commit deployed cleanly with no change of any kind, which confirms the initial failure was a transient Cloudflare build-environment initialization timeout and not a defect in this repository.",
+      "githubCheckRunNote": "The dashboard retry did not publish a second check run to GitHub; the commit still shows only the original failed check run. The deployment was therefore verified directly against the live site rather than from the GitHub check status.",
+      "noRemediationRequired": "The npm audit vulnerability count and the allow-scripts warning visible in the Cloudflare log did not block the build or the deploy and are explicitly out of scope for this wave. No `npm audit fix`, dependency upgrade or package change was made."
+    },
+    "publicUiSmoke": {
+      "url": "https://seat-lottery-simulator.studiotomo.workers.dev/",
+      "runtimeJson": "GET /venue-db/venues/ichihara-civic-large-hall--standard.json returned HTTP 200 with Content-Type: application/json and 4,627 bytes -- a real runtime payload, not the SPA fallback that the same path returned while the failed build stood. Its SHA-256 3615391cada256b87e15268d2225aa3126fb8c40c98954d3633ef2b9b1732d91 is byte-identical to the committed artifact. The venue detail was also observed being lazy-loaded by the app with status 200.",
+      "livePayloadChecks": {
+        "totalSeatCount": 1527,
+        "rangeSum": 1527,
+        "ranges": 56,
+        "rows": 32,
+        "expandedKeys": 1527,
+        "uniqueKeys": 1527,
+        "duplicateRuntimeKeys": 0,
+        "metadataLeak": false
+      },
+      "search": "「市原市市民会館」 returns exactly one result: 市原市市民会館 / 千葉県 市原市 / 抽選対象 1,527席.",
+      "identity": "After selection the app shows 市原市市民会館 / 千葉県 市原市 / 抽選対象 1,527席 and 「1,527席から今日の1席を抽選します」; the draw card names the configuration 通常座席（固定席・標準構成）.",
+      "displayedSeatCount": 1527,
+      "draws": [
+        "8列 27番",
+        "11列 12番",
+        "12列 13番",
+        "14列 27番",
+        "24列 24番",
+        "15列 17番",
+        "3列 10番"
+      ],
+      "drawValidation": "Seven consecutive draws completed normally over seven distinct rows; every drawn (row, seat) was checked against the live runtime payload's registered ranges and all seven are valid, with zero invalid results. Row and seat labels rendered correctly on every draw.",
+      "wheelchairPositionsNotDrawable": "Confirmed structurally from the live payload: none of 17列 1・2・3・4番 nor 17列 52・53・54・55番 is present in the deployed drawable set, so the four unnumbered wheelchair positions cannot be drawn.",
+      "rowFourRightWingNotDrawable": "Confirmed: 4列 32・40・44・49・55番 are all absent from the deployed drawable set, so the right-wing block that the chart does not print for 4列 remains non-existent in production.",
+      "knownGapsNotDrawable": "Confirmed: 1列9番, 2列8番, 3列40番, 5列39番, 10列35番, 18列38番, 18列45番, 23列40番, 27列41番, 31列34番 and 32列30番 are all absent from the deployed drawable set.",
+      "printedSeatsDrawable": "Confirmed present: 1列10番, 1列44番, 4列31番, 16列55番, 17列5番, 17列51番, 28列59番, 32列29番.",
+      "consoleErrorsOrWarnings": "None. The browser console produced no log, warning or error entry across venue selection, seven Ichihara draws, the venue switch and the KAAT draw.",
+      "nonRegression": "KAAT神奈川芸術劇場 was checked as the non-regression venue: it is still searchable by the alias KAAT, still displays 抽選対象 1,187席 and the configuration 基準勾配（標準的なパターン）, its runtime JSON lazy-loaded with status 200, and one draw returned the floor-qualified 1階 4列 25番, which is a valid registered seat."
+    },
+    "productionTotalsUnchanged": {
+      "venues": 141,
+      "configurations": 143,
+      "seatRecords": 210466
+    },
+    "kantoLedgerUnchanged": {
+      "universeTotal": 154,
+      "production": 58,
+      "adopt": 1,
+      "formalBlocked": 61,
+      "inventoryUnresearched": 34,
+      "missingFromInventory": 0
+    },
+    "artifactsNotTouched": "This release-verification pass changed only docs/HANDOFF.md and this report. The production source, ranges, fingerprint, generated catalog and runtime, inventory record and Kanto ledger were not modified.",
+    "disposition": "PRODUCTION + RELEASE VERIFIED / CLOSED"
+  }
 }
