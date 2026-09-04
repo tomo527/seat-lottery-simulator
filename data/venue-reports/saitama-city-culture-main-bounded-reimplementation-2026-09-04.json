@@ -1,0 +1,392 @@
+{
+  "reportVersion": 1,
+  "title": "SAITAMA-CITY-CULTURE-MAIN REVISED-TEMPORARY-CLOSURE-POLICY BOUNDED PRODUCTION REIMPLEMENTATION",
+  "asOf": "2026-09-04",
+  "scope": "One venue only: saitama-city-culture-main さいたま市文化センター〔大ホール〕. No other venue was researched, re-audited, or reopened. Pacifico Yokohama, the three PREFLIGHT 4 ADOPTs, RaiBoC, the remaining Kanto research pool and Tokyo Priority D were not opened.",
+  "mode": "Separately authorized bounded production re-implementation under the 2026-09-04 user-authorized revised temporary-closure policy. The authorization required a fresh currentness re-assessment, a fresh issuer-evidenced configuration decision, fresh asset retrieval, and a fresh from-zero visual two-pass, because the 2026-08-29 wave stopped at the currentness gate and never performed a transcription.",
+  "evidencePolicy": "Current first-party issuer material is the decision basis. Capacity is not seat evidence. No capacity fitting, invented seat IDs, geometry completion, unsupported gap filling, configuration mixing, A/B seat-set mixing, third-party chart infill, or machine-generated seat identifiers.",
+  "difficultyLane": {
+    "lane": "JUDGMENT",
+    "reason": "The blocking question was not transcription volume but three consequential interpretations that had to be resolved from issuer evidence before any range was written: whether a temporary-closure venue is a production candidate under the revised policy, which of the issuer's A/B specs is an implementable representative configuration, and how the printed 固定席/移動席/車椅子席 capacity components relate to the numbered seat set. The chart itself is an ordinary ~2,000-seat hall chart."
+  },
+  "startSnapshot": {
+    "branch": "main",
+    "head": "e8848c0df628f45a9b600eb04de2e410b3a2ca31",
+    "originMain": "e8848c0df628f45a9b600eb04de2e410b3a2ca31",
+    "workingTree": "clean",
+    "productionTotals": {
+      "venues": 143,
+      "configurations": 145,
+      "seatRecords": 216985
+    },
+    "kantoGe1000Ledger": {
+      "production": 60,
+      "adoptImplementationReady": 3,
+      "formalBlocked": 61,
+      "inventoryUnresearched": 30,
+      "universeTotal": 154,
+      "missingFromInventory": 0
+    },
+    "priorDisposition": "HOLD — RENOVATION / CURRENTNESS HOLD (SAITAMA-CITY-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION 2026-08-29)"
+  },
+  "historicalHoldSupersession": {
+    "historicalReport": "data/venue-reports/saitama-city-culture-main-bounded-implementation-2026-08-29.json",
+    "preserved": true,
+    "status": "SUPERSEDED, not deleted or amended",
+    "why": "The 2026-08-29 HOLD applied the currentness policy in force at that time, under which any formally announced long closure within 12 months of review was a production blocker. That decision was correct on the policy then in force and is retained verbatim as a historical record. The 2026-09-04 user-authorized policy revision recorded in docs/VENUE_DATA_GUIDE.md as `currentness / closure policy（2026-09-04 user-authorized revision）` provides that a temporary closure or temporary renovation is not by itself a production blocker, which re-opens this record for a current-disposition re-evaluation.",
+    "carriedForwardFacts": "The 2026-08-29 report's configuration assessment (A仕様 is the only spec with a published numbered set; B仕様 is aggregate-only; the 2,006−1,658=348 arithmetic must not be used as evidence) was re-derived independently from fresh issuer material in this wave rather than adopted from that record. Its seat-chart figures were treated as historical comparison information, never as a transcription target or answer key.",
+    "freshTwoPassRequired": "The 2026-08-29 wave recorded visualTwoPass.performed=false. This wave therefore transcribed the seat set from zero."
+  },
+  "freshCurrentness": {
+    "result": "ACTIVE at review, with a formally announced future temporary closure. Not a blocker under the revised policy.",
+    "operatingNow": "The operator's current facility page lists current programme announcements up to 2026.09.04（上野耕平・阪田知樹デュオコンサート）, plus 2026.08.21 熊川哲也 K-BALLET TOKYO「くるみ割り人形」 and さいたま市文化センター催し物案内（令和8年9月分）, and publishes current 開館時間 9:00〜21:30, 休館日, 駐車場, and current 料金表 PDFs. The hall page publishes the current 大ホール specification and links the current 座席表（大ホール）.",
+    "closureNoticeVerbatimOperator": "中規模修繕工事実施に伴う休館のお知らせ／さいたま市文化センターは、令和9年度から中規模修繕工事を実施する予定です。本工事に伴い令和9年6月1日から休館となります。休館中は利用受付及び施設利用並びに敷地内への立入りはできません。皆様にご不便とご迷惑をおかけしますが、ご理解とご協力をお願いします。※工事期間については、2年間程度を予定しておりますが、今後設計や工事の状況等により変更となる場合があります。",
+    "closureNoticeVerbatimCity": "施設休館のお知らせ／さいたま市文化センターは、令和9年度から中規模修繕工事を実施する予定です。本工事に伴い令和9年6月1日から休館となります。休館中は、皆様にご不便とご迷惑をおかけしますが、ご理解とご協力をお願いします。※工事期間については、2年間程度を予定しておりますが、今後設計や工事の状況等により変更となる場合があります。",
+    "closureStart": "2027-06-01（令和9年6月1日）",
+    "closureDuration": "2年間程度（issuer states the period may change with design and construction progress）",
+    "reopeningDate": "NOT PUBLISHED. The issuer publishes no reopening date, and none was inferred.",
+    "worksScope": "The issuer names the work only as 中規模修繕工事. Neither the operator nor the City publishes a list of work areas.",
+    "seatingWorkStatement": "NONE. Unlike the Pacifico precedent, no issuer document states that 客席 is within the work scope.",
+    "seatCountChangeStated": "NOT STATED",
+    "rowStructureChangeStated": "NOT STATED",
+    "numberingChangeStated": "NOT STATED",
+    "wheelchairAccessibilityChangeStated": "NOT STATED",
+    "facilitySpaceIdentityMaintained": "YES. The notice is a 中規模修繕（medium-scale repair）of the existing さいたま市文化センター. There is no 閉館, 解体, 建替え, replacement facility, or renaming, and both the operator and the City continue to present the building as the same facility.",
+    "inferenceDiscipline": "The absence of a seating-change statement is explicitly NOT treated as proof that nothing changes. It is recorded as an absence, the registered data is scoped to the pre-renovation current official chart, and a post-reopening revalidation is made mandatory. Equally, the temporary closure alone was not used to stop chart research or implementation.",
+    "independentConfirmation": [
+      {
+        "publisher": "公益財団法人さいたま市文化振興事業団（施設運営者）",
+        "url": "https://saitama-culture.jp/culturecenter/",
+        "checkedAt": "2026-09-04",
+        "finding": "Current facility page carries the closure notice above the current programme list."
+      },
+      {
+        "publisher": "公益財団法人さいたま市文化振興事業団（施設運営者）",
+        "url": "https://saitama-culture.jp/%e6%96%bd%e8%a8%ad%e4%bc%91%e9%a4%a8%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/",
+        "checkedAt": "2026-09-04",
+        "finding": "Standalone 施設休館のお知らせ notice, 2025.11.28 updated, same wording, no work-scope detail."
+      },
+      {
+        "publisher": "さいたま市（施設所有者）",
+        "url": "https://www.city.saitama.lg.jp/008/003/001/bunkasenta.html",
+        "checkedAt": "2026-09-04",
+        "finding": "City facility page, ページ番号C032738, 更新日付2025年11月28日, states the same closure independently and states 大ホール（2,006席／車いす席8を含む）."
+      }
+    ],
+    "comparisonToPriorRecord": "The 2026-08-29 record's closure facts (start 2027-06-01, approximately 2 years) were re-confirmed from fresh issuer evidence rather than assumed. No new exact reopening date has appeared, and the notice has not changed since its 2025-11-28 update."
+  },
+  "assetGate": {
+    "currentLinkProvenance": "施設ページ https://saitama-culture.jp/culturecenter/ → ホールページ https://saitama-culture.jp/culturecenter/hall/ → 大ホール section → 座席表（大ホール）. The link was re-walked on 2026-09-04; no URL was typed directly and treated as current.",
+    "seatChart": {
+      "url": "https://saitama-culture.jp/sculwp/wp-content/uploads/culturecenter_zaseki01.pdf",
+      "sha256": "c6cc4c1d1b44de0a82da357d921f4c7b34cffcb5470b38c41661bcb16f26c4e7",
+      "bytes": 1529180,
+      "pages": 1,
+      "pageSize": "596×840pt, rotation 0",
+      "pdfVersion": "PDF 1.3",
+      "producer": "Adobe PDF Library 2.0",
+      "revisionDate": "not published in the document metadata",
+      "independentRefetchIdentity": "Re-fetched independently immediately before Pass 2; byte-identical (same SHA-256, same byte count, cmp equal).",
+      "encoding": "Vector-only. 0 embedded images, 8,772 vector drawing operations, 0 characters of extractable text: the seat numbers are drawn as vector outlines, not text.",
+      "correctionToPriorRecord": "The 2026-08-29 record described this asset as 'a scanned image, so any future transcription must be visual'. That is factually wrong about the encoding — the PDF contains no raster image at all — although the operational conclusion (visual transcription required) is the same, because the numbers are outlines rather than text. The asset bytes are unchanged since 2026-08-29 (identical SHA-256)."
+    },
+    "supportingDrawing": {
+      "url": "https://saitama-culture.jp/sculwp/wp-content/uploads/material_stage_sakurasou_202405.pdf",
+      "linkedFrom": "https://saitama-culture.jp/culturecenter/hall/ (大ホール舞台資料（図面・備品等）)",
+      "sha256": "f18f676bcb67abe0be2253b12d56ef3f8067c62d661a1ab755e4ee9644f4c44e",
+      "bytes": 9184275,
+      "pages": 41,
+      "keyPage": "Page 11 大ホール　客席図 (1:250), title block Capacity 固定客席 1842席：車椅子席 8席／収容定員 2006席：移動席(オケピ)156席. It overlays colour-coded block outlines with printed sub-totals on the same seating layout as the seat chart.",
+      "note": "The 2026-08-27 preflight and the 2026-08-29 record cited culturecenter_allzumen01-1.pdf as the technical drawing set. The current hall page does not link that file; the current link is material_stage_sakurasou_202405.pdf, which was retrieved and used here."
+    },
+    "denseVectorEligibility": "NOT ELIGIBLE and NOT USED. DENSE-VECTOR verification requires every seat/range identifier to be printed as extractable text on a current first-party vector PDF. Here the identifiers are vector outlines with zero extractable text, so the two-independent-implementation identifier reconstruction that DENSE-VECTOR requires is not available. Venue size (~2,000 seats) was explicitly not treated as a reason to apply it. The default fresh independent human visual two-pass was used."
+  },
+  "configurationAssessment": {
+    "issuerVerbatim": "客席数：A仕様2,006席／B仕様1,658席（車いす8席）／客席広さ：A仕様 幅35ｍ×奥行39ｍ／B仕様 幅35ｍ×奥行30ｍ／舞台間口：間口20ｍ×奥行18.5ｍ",
+    "aConfiguration": {
+      "publishedTotal": 2006,
+      "issuerDefinedDifference": "客席広さ 幅35m×奥行39m",
+      "publishedNumberedSet": "YES. The single linked 座席表（大ホール）prints 固定席 1,842席 ／ 移動席 156席 ／ 車椅子席 8席　計2,006席 and per-floor subtotals 1階客席(1328席) / 2階客席(330席) / 3階客席(348席), which sum to exactly 2,006 and identify this chart as the A仕様 chart.",
+      "fixedSeats": 1842,
+      "movableSeats": 156,
+      "wheelchairPositions": 8
+    },
+    "bConfiguration": {
+      "publishedTotal": 1658,
+      "issuerDefinedDifference": "客席広さ 幅35m×奥行30m (客席奥行 reduced by 9m relative to A)",
+      "publishedNumberedSet": "NO. Freshly re-checked on 2026-09-04: the issuer still publishes only the aggregate 1,658 and a 客席広さ dimension. There is no B chart, no B fixed/movable split, and no statement of which printed positions B removes.",
+      "fixedSeats": null,
+      "movableSeats": null,
+      "wheelchairPositions": 8
+    },
+    "decision": "A仕様 only, registered as configuration `a-spec` with scope.kind official-variant, definitionAuthority issuer.",
+    "rationale": "A仕様 is the only configuration for which the issuer publishes a complete printed numbered set. Implementing B would require inventing the configuration difference and deleting numbered positions to reach 1,658, which is capacity fitting plus repository-invented differences. Scope was not widened to two configurations.",
+    "explicitlyRejectedInference": "2,006 − 1,658 = 348 equals the printed 3階客席(348席) subtotal exactly. This arithmetic identity is NOT adopted as evidence, exactly as in the 2026-08-29 record: the issuer describes B as a reduced 客席奥行, never as a floor closure, and an unstated mechanism must not be reconstructed from arithmetic."
+  },
+  "capacitySemantics": {
+    "fixedNumberedSeats": 1842,
+    "movableNumberedSeats": 156,
+    "wheelchairPositions": 8,
+    "grandCapacity": 2006,
+    "perFloorCapacity": {
+      "1階客席": 1328,
+      "2階客席": 330,
+      "3階客席": 348
+    },
+    "mappedNumberedSet": 1998,
+    "mappedPerFloor": {
+      "floor1": 1320,
+      "floor2": 330,
+      "floor3": 348
+    },
+    "relation": "The mapped numbered set is exactly 固定席1,842 + 移動席156 = 1,998. The remaining 8 of the published 2,006 are the unnumbered wheelchair positions, all of which sit inside the 1階客席 subtotal: mapped floor1 1,320 + 8 = 1,328 as printed. floor2 330 and floor3 348 match the printed subtotals exactly.",
+    "targetDiscipline": "2,006 was NOT used as a mapped-seat target, and the difference was NOT pre-assumed to be 2,006 − 8 = 1,998. The printed identifiers were established independently first (human two-pass plus three machine structural paths), and only afterwards reconciled against the issuer totals. The agreement with 1,998 is a result, not an input.",
+    "orchestraPitRelation": "The 156 movable seats are 移動席(オケピ) — movable seats over the orchestra pit — printed with ordinary seat numbers on the A chart and shaded. The issuer's 客席図 outlines them as 120 (1階客席1列〜4列) + 36 (5列) = 156. Which numbers are removed when the pit is used is not published, so no pit configuration was created.",
+    "alternateConfigurationRelation": "B仕様 1,658 is aggregate-only; no relation to specific numbers is published.",
+    "accessibilityConversionRelation": "Not published. No replacement relation between the 8 wheelchair positions and any numbered seat exists in issuer material."
+  },
+  "wheelchairSemantics": {
+    "count": 8,
+    "drawnAs": "Two groups of four unnumbered dashed rectangles, one at the 1階客席 left and one at the right, each labelled 車椅子席（4席）, positioned behind the front block's 14列 side extensions.",
+    "numbered": false,
+    "insideOrOutsidePublishedTotal": "INSIDE. 1,842 + 156 + 8 = 2,006, and the City page independently states 大ホール（2,006席／車いす席8を含む）. They also sit inside the printed 1階客席(1328席).",
+    "replacementRelation": "NOT STATED",
+    "machineSeparation": "Machine cell extraction distinguishes them structurally: the 1,998 numbered seat cells are 8.14×5.48pt, while the wheelchair rectangles are a different shape (8.3×9.86pt) and appear as 4+4.",
+    "treatment": "Not registered, no identifiers invented, no adjacent numbered seat deleted. wheelchairSemantics.status not-reflected with accessibilityConversionNotReflected true. This is the entire source of the −8 rangeDiff."
+  },
+  "passA": {
+    "order": "1階客席 front rows 1→15, then rear rows 16→30, then 2階客席 (main rows 1→6, then side boxes L1→L13, then R1→R13), then 3階客席 rows 1→8.",
+    "sideOrder": "Low-number side first within every row.",
+    "rendering": "PyMuPDF clip renders of the original fetch at 320–1200 dpi, upright, vertical panel crops; the steeply raked 1階客席 side extensions were additionally re-rendered deskewed at the measured 24.8° rake angle.",
+    "result": "212 ranges, 1,998 expanded seats, floor1 1,320 / floor2 330 / floor3 348.",
+    "correctionDuringConstruction": "While building Pass 1 a phantom 15列 extension block was read on both sides of the 1階客席 front section (7 seats each, 14 total), because the raked side blocks are drawn as diagonal staircases whose bands are easy to mis-group. It was detected before freezing by the disagreement with the issuer 客席図 block subtotal 586 and with the machine run-length multiset, then resolved by returning to the chart with a deskewed re-render, which shows the front-left/right extensions ending at 14列 followed directly by the 車椅子席（4席）blocks. Pass 1 was frozen after that correction. Pass 2 reproduced the corrected structure independently.",
+    "frozen": true
+  },
+  "passB": {
+    "assetRefetch": "The PDF was fetched again from the same current link immediately before Pass 2; SHA-256 c6cc4c1d1b44de0a82da357d921f4c7b34cffcb5470b38c41661bcb16f26c4e7, 1,529,180 bytes, byte-identical to the Pass 1 asset (cmp equal).",
+    "order": "3階客席 rows 8→1, then 2階客席 main rows 6→1, then side boxes R1→R13 before L1→L13, then 1階客席 rear rows 30→16, then front rows 15→1.",
+    "sideOrder": "High-number side first: every crop was horizontally mirrored, so the reading direction is the reverse of Pass 1.",
+    "rendering": "Different crop windows, different DPI (430–1200), horizontal mirroring for all floors, and rotation-deskewed renders at the measured 24.8° rake for the side extension blocks instead of Pass 1's upright panels.",
+    "isolation": "The Pass 1 table was not consulted while reading. Pass 1 was already frozen to disk.",
+    "result": "212 ranges, 1,998 expanded seats, floor1 1,320 / floor2 330 / floor3 348.",
+    "frozen": true
+  },
+  "humanComparison": {
+    "rangeSetOnlyInPass1": 0,
+    "rangeSetOnlyInPass2": 0,
+    "expandedSeatSetSymmetricDifference": 0,
+    "unresolvedMismatches": 0,
+    "result": "MATCH"
+  },
+  "machineStructuralChecksums": {
+    "path1_pdfVectorGeometry": {
+      "method": "Parse only the PDF drawing operators; read no text and no human table. Seat cells are the 8.14×5.48pt quads.",
+      "cells": 1998,
+      "runs": 212,
+      "runLengthMultiset": {
+        "2": 2,
+        "3": 14,
+        "4": 8,
+        "5": 6,
+        "6": 30,
+        "7": 8,
+        "8": 12,
+        "9": 4,
+        "10": 6,
+        "11": 2,
+        "12": 120
+      },
+      "agreesWithHumanTable": true
+    },
+    "path2_rasterConnectedComponents": {
+      "method": "Rasterise the PDF at 500 dpi and detect seat cells as closed interior (hole) contours of the binarised line art. Independent of the vector parser and of the human table.",
+      "cells": 1998,
+      "runs": 212,
+      "runLengthMultiset": "identical to path 1 and to the human table",
+      "excluded": "31 non-seat rectangles were excluded by size: 28 boxed row-number labels of 1階客席16列〜29列, 2 stepped rectangles in the side-box area, and the ■ glyph in the title. Each exclusion was confirmed by its drawing position.",
+      "floorBands": {
+        "floor1 band (1階客席 1,320 + 2階サイド席 122)": 1442,
+        "2階客席 centre band": 208,
+        "3階客席 band": 348
+      }
+    },
+    "path3_fillClassification": {
+      "method": "Measure the median interior luminance of every detected cell at a position that avoids the digits.",
+      "result": "Perfectly bimodal: 1,842 cells at 250–255 (white) and 156 cells at 220–229 (grey), with zero intermediate values.",
+      "movableCells": 156,
+      "location": "All 156 shaded cells lie at PDF y 144.7–191.6, i.e. 1階客席 1列〜5列 only.",
+      "agreesWithIssuer": "156 移動席 and 1,842 固定席 exactly, and with the 客席図 colour split 120 + 36."
+    },
+    "mirrorSymmetryInvariant": {
+      "maps": "1階客席 n ↔ 57−n; 2階客席 main n ↔ 37−n; 3階客席 n ↔ 49−n; side boxes L ↔ R under n ↔ 13−n.",
+      "asymmetricSeats": 0,
+      "value": "Left and right halves were read from separate crops, so this invariant detects a one-sided reading error."
+    },
+    "machineNotUsedForIdentifiers": "No machine path generated, completed, or corrected a seat identifier. The machine paths produced counts, run structure, fill classification and geometry only; every seat number in the registered data was read visually from the chart in both human passes."
+  },
+  "issuerChecksumReconciliation": {
+    "chartHeader": {
+      "固定席": 1842,
+      "移動席": 156,
+      "車椅子席": 8,
+      "計": 2006
+    },
+    "chartFloorSubtotals": {
+      "1階客席": 1328,
+      "2階客席": 330,
+      "3階客席": 348
+    },
+    "kyakusekiZuBlockSubtotals": {
+      "1階客席前方(1列〜15列)": 586,
+      "1階客席後方(16列〜30列)": 734,
+      "2階客席中央": 206,
+      "2階客席左サイド": 62,
+      "2階客席右サイド": 62,
+      "3階客席前方(1列〜5列)": 240,
+      "3階客席後方(6列〜8列)": 108,
+      "移動席(1列〜4列)": 120,
+      "移動席(5列)": 36
+    },
+    "mapped": {
+      "floor1_front": 586,
+      "floor1_rear": 734,
+      "floor1": 1320,
+      "floor2_main": 208,
+      "floor2_side_left": 61,
+      "floor2_side_right": 61,
+      "floor2": 330,
+      "floor3_rows1_5": 240,
+      "floor3_rows6_8": 108,
+      "floor3": 348,
+      "movable_rows1_4": 120,
+      "movable_row5": 36,
+      "movable": 156,
+      "fixed": 1842,
+      "total": 1998
+    },
+    "exactMatches": [
+      "1階客席前方 586",
+      "1階客席後方 734",
+      "1階客席 1,320 + 車椅子席 8 = 1,328",
+      "2階客席 330",
+      "3階客席前方 240",
+      "3階客席後方 108",
+      "3階客席 348",
+      "移動席 120",
+      "移動席 36",
+      "移動席 156",
+      "固定席 1,842",
+      "grand total 1,998 + 車椅子席 8 = 2,006"
+    ],
+    "residualIssuerAnnotationDifference": {
+      "what": "Within 2階客席 the 客席図 labels its three sub-blocks 206 / 62 / 62. The seats actually drawn, counted identically by both human passes and all three machine paths, are 208 / 61 / 61.",
+      "netEffect": "Zero. Both splits total 330, which equals the seat chart's printed 2階客席(330席) and keeps the grand total at 2,006.",
+      "handling": "Recorded as an issuer-side sub-block annotation difference in verification.unresolvedIssues. No range was stretched, deleted, added, or moved between floors to match the annotation. Because the floor subtotal and the grand total reconcile exactly, this is not a material mismatch and did not stop production.",
+      "policyCompliance": "Ranges were not fitted to capacity; the discrepancy is left visible in metadata as required."
+    },
+    "sideBoxFloorAttribution": {
+      "question": "The L1〜L13 / R1〜R13 side boxes are drawn at the 1階 plan level on the seat chart, outside the auditorium walls.",
+      "issuerEvidence": "The 客席図 encloses 2階客席中央206 and the two side blocks 62/62 in the same colour as one group, and only that grouping reproduces the seat chart's printed 2階客席(330席). The 1階客席 group (cyan 586 + green 734) excludes them and reproduces 1階客席(1328席) once the 8 wheelchair positions are added.",
+      "conclusion": "Registered under areaId floor2 / areaLabel 2階客席, using the printed row labels L1〜L13 and R1〜R13. No repository-invented area name was introduced."
+    }
+  },
+  "productionDecision": {
+    "disposition": "PRODUCTION",
+    "gatesSatisfied": [
+      "temporary renovation only; no permanent closure, demolition, rebuild, or facility-space replacement",
+      "facility-space identity maintained",
+      "current issuer chart valid as the pre-renovation current layout",
+      "one coherent issuer-defined representative configuration (A仕様)",
+      "complete printed identifier set (1,998 identifiers, 0 unprinted positions registered)",
+      "human two-pass MATCH with zero unresolved mismatch",
+      "three independent machine structural checksums agree with the human table",
+      "issuer floor and block subtotal reconciliation closed, with the one residual difference explained and immaterial",
+      "no invented identifiers, no capacity fitting, no configuration mixing, no geometry completion"
+    ],
+    "registered": {
+      "sourceId": "saitama-city-culture-main",
+      "schemaVersion": 2,
+      "configurationId": "a-spec",
+      "canonicalName": "A仕様（2,006席）",
+      "scopeKind": "official-variant",
+      "confidence": "representative",
+      "mappedSeats": 1998,
+      "ranges": 212,
+      "expectedSeatCount": 2006,
+      "rangeDiff": -8,
+      "confidenceRationale": "The repository convention is that a production configuration whose mapped count differs from the published official total carries representative or approximate confidence, never verified; no existing production configuration pairs verified confidence with a seatCount mismatch. The −8 here is fully explained by the issuer's own unnumbered 車椅子席8席 and is not an evidence gap, but the convention was followed rather than bent. The strength of the transcription is recorded in verification.method and unresolvedIssues."
+    }
+  },
+  "closureMetadata": {
+    "operationalStatusAtReview": "ACTIVE as of 2026-09-04",
+    "closureStart": "2027-06-01",
+    "approximateDuration": "2年間程度 (issuer states it may change)",
+    "temporaryRenovation": true,
+    "knownSeatingWorkStatement": "NONE — the issuer names the work only as 中規模修繕工事 and never states that 客席 is within scope",
+    "seatStructureChangeExplicitlyStated": false,
+    "currentDataRepresents": "pre-renovation layout",
+    "postReopeningRevalidationMandatory": true,
+    "recheckNotBefore": "2029-06-01",
+    "recheckNotBeforeBasis": "Conservative recheck threshold derived from the issuer's announced closure start 2027-06-01 plus its stated 2年間程度 construction period. The issuer publishes no reopening date and states the period may change, so 2029-06-01 is a discovery gate, NOT a claimed reopening date. If the issuer later publishes an exact reopening date, that date takes precedence."
+  },
+  "artifactChanges": {
+    "created": [
+      "data/venue-sources/saitama-city-culture-main.json",
+      "public/venue-db/venues/saitama-city-culture-main--a-spec.json (generated)",
+      "data/venue-reports/saitama-city-culture-main-bounded-reimplementation-2026-09-04.json"
+    ],
+    "modified": [
+      "data/venue-inventory/kanto-release-critical-2026-08-27.json (saitama-city-culture-main: eligibility likely-eligible→eligible, venueSourceId null→saitama-city-culture-main, researchStatus blocked→production, blockingReason→null, lastCheckedAt→2026-09-04, recheckNotBefore kept at 2029-06-01 with a restated basis)",
+      "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json (record currentStatus HOLD→production, blocker→null, counts machine-recomputed from records[], nextMacro advanced)",
+      "data/venue-fingerprints/production.json (one new entry)",
+      "src/data/venue-db/catalog.generated.json (generated)"
+    ],
+    "preserved": [
+      "data/venue-reports/saitama-city-culture-main-bounded-implementation-2026-08-29.json is unchanged"
+    ],
+    "notTouched": "No other venue source, range, fingerprint, or generated artifact changed. No threshold, compaction, or unrelated refactor was made in response to the pre-existing soft-limit warnings."
+  },
+  "venueSpecificMachineAssertions": {
+    "expandedMappedTotal": 1998,
+    "uniqueRuntimeKeys": 1998,
+    "duplicateRuntimeKeys": 0,
+    "sourceSetEqualsRuntimeSet": "symmetric difference 0",
+    "runtimeTotalSeatCount": 1998,
+    "perFloorCounts": {
+      "floor1": 1320,
+      "floor2": 330,
+      "floor3": 348
+    },
+    "issuerAbsentNumbersDrawable": 0,
+    "wheelchairPositionsDrawable": 0,
+    "seatsOutsidePrintedRowOrNumberRanges": 0,
+    "excludedAlternateLayoutPositionsPresent": "none — the source contains exactly one configuration (a-spec), and no B仕様 or pit-layout position exists in the registered set"
+  },
+  "validation": {
+    "venuesReview": "npm run venues:review -- --id saitama-city-culture-main → no production blockers, no validation errors, one expected warning (official total 2006 differs from mapped seat count 1998)",
+    "verifyVenues": "npm run verify:venues → PASS",
+    "productionTotalsAfter": {
+      "venues": 144,
+      "configurations": 146,
+      "seatRecords": 218983
+    },
+    "seatRecordDelta": "+1,998, computed from the fresh mapped set only; 1,998 and 2,006 were never used as pre-set targets"
+  },
+  "kantoGe1000LedgerAfter": {
+    "production": 61,
+    "adoptImplementationReady": 3,
+    "formalBlocked": 60,
+    "inventoryUnresearched": 30,
+    "universeTotal": 154,
+    "missingFromInventory": 0,
+    "note": "Machine-recomputed from records[]. This matches the pre-stated check values (61/3/60/30 over 154) without any target fitting; the three PREFLIGHT 4 ADOPT records were not touched."
+  },
+  "outOfScopeUntouched": [
+    "pacifico-yokohama-national-hall was not reopened; it stays PRODUCTION + RELEASE VERIFIED / CLOSED",
+    "the three PREFLIGHT 4 ADOPT records (saitama-koshigaya-suncity-hall, gunma-ota-culture-main, ibaraki-hitachinaka-culture-main) were not implemented",
+    "RaiBoC re-transcription was not started",
+    "no remaining Kanto inventory-unresearched candidate was researched",
+    "no Tokyo Priority D research was started"
+  ],
+  "exactNextAction": "separately authorized bounded production implementation of saitama-koshigaya-suncity-hall サンシティホール〔大ホール〕"
+}
