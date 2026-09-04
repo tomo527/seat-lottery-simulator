@@ -4,7 +4,7 @@
   "asOf": "2026-09-04",
   "scope": "美喜仁桐生文化会館〔シルクホール〕 (inventory gunma-kiryu-culture-main) only. RaiBoC Hall, the remaining Kanto research pool and Tokyo Priority D were explicitly out of scope and were not opened.",
   "mode": "separately authorized bounded single-venue production implementation",
-  "disposition": "PRODUCTION",
+  "disposition": "PRODUCTION + RELEASE VERIFIED / CLOSED",
   "difficultyLane": {
     "lane": "JUDGMENT",
     "reason": "The issuer publishes three stage forms with three different capacities and only one numbered chart, and the relation between the chart headline 1,527 and the facility page 1,517 had to be resolved from issuer evidence before any transcription could be trusted. Configuration selection and capacity semantics were the consequential decisions, not transcription volume."
@@ -276,5 +276,73 @@
     "No schema change, no validator change, no threshold change, no compaction, no unrelated refactor, no re-verification or demotion of any existing production venue.",
     "No work on RaiBoC, the remaining Kanto research pool, or Tokyo Priority D."
   ],
-  "exactNextAction": "CODEX: KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4"
+  "exactNextAction": "CODEX: KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4",
+  "releaseVerification": {
+    "asOf": "2026-09-04",
+    "result": "RELEASE VERIFIED / CLOSED",
+    "productionCommit": "a8a1529258a01cf7a36463f95f6657f1c17bc1c4",
+    "build": {
+      "githubCheckRun": "Workers Builds: seat-lottery-simulator",
+      "status": "completed / success",
+      "attempts": 1,
+      "note": "The build succeeded on the first attempt for the production commit. No retry, no empty commit and no local production deploy were needed."
+    },
+    "publicUiSmoke": {
+      "url": "https://seat-lottery-simulator.studiotomo.workers.dev/",
+      "runtimeJson": "GET /venue-db/venues/kiryu-culture-silk-hall--proscenium.json returned HTTP 200 with Content-Type application/json and 5,314 bytes. Its SHA-256 51350541294261ff780cbbcb29f032f5bd35dc14d922cef3090859d853966770 is byte-identical to the committed artifact, and the app was observed lazy-loading the same path with status 200 during venue selection.",
+      "livePayloadChecks": {
+        "totalSeatCount": 1517,
+        "ranges": 57,
+        "expandedKeys": 1517,
+        "uniqueKeys": 1517,
+        "duplicateRuntimeKeys": 0,
+        "perArea": {
+          "floor1": 1139,
+          "floor2": 378
+        },
+        "areas": {
+          "floor1": "1階",
+          "floor2": "2階"
+        },
+        "metadataLeak": false
+      },
+      "search": {
+        "byFacilityName": "「美喜仁桐生文化会館」 returns exactly one result: 美喜仁桐生文化会館 シルクホール / 群馬県 桐生市 / 抽選対象 1,517席.",
+        "byHallAlias": "「シルクホール」 returns exactly one result, the same venue."
+      },
+      "identity": "After selection the app shows 美喜仁桐生文化会館 シルクホール / 群馬県 桐生市 / 抽選対象 1,517席 and 「1,517席から今日の1席を抽選します」; the result card names the configuration プロセニアムステージ and prints エリア / 列 / 座席番号 separately.",
+      "displayedSeatCount": 1517,
+      "draws": [
+        "2階 35列 5番",
+        "1階 27列 11番",
+        "1階 8列 41番",
+        "1階 23列 17番",
+        "1階 7列 25番",
+        "2階 43列 23番",
+        "1階 8列 26番",
+        "2階 40列 34番"
+      ],
+      "drawValidation": "Eight consecutive draws completed normally over seven distinct rows and BOTH registered areas (1階 five draws, 2階 three draws). Every drawn (area, row, seat) was checked against the live runtime payload and all eight are registered, with zero invalid results. Area, row and seat labels rendered correctly on every draw.",
+      "wheelchairPositionsNotDrawable": "Confirmed structurally from the live payload: none of 1階16列 1・2・3・4・5番, 16・17・18番, 31・32・33番 or 44番 is present in the deployed drawable set, so the four unnumbered wheelchair areas cannot be drawn.",
+      "knownGapsNotDrawable": "Confirmed: 1階1列18番・31番, 1階29列17・18・30・32・46番, 2階30列3番・50番, 2階42列1番・52番 and 2階44列2番・51番 are all absent from the deployed drawable set.",
+      "printedSeatsDrawable": "Confirmed present: 1階1列19番・30番, 1階16列6番・15番・34番・43番, 1階23列32番・33番 (the two cells the raster path could not classify), 1階29列4番・45番, 2階30列1番・52番, 2階39列1番・52番, 2階44列3番・50番.",
+      "consoleErrorsOrWarnings": "None. The browser console produced no log, warning or error entry across venue search, selection, eight Kiryu draws, the venue switch and the non-regression draw.",
+      "nonRegression": "市原市市民会館 was checked as the non-regression venue: it is still searchable, still displays 抽選対象 1,527席, its runtime JSON lazy-loaded with status 200, and one draw returned 7列 8番, a valid registered seat with no area prefix (single-area venue)."
+    },
+    "productionTotalsUnchanged": {
+      "venues": 142,
+      "configurations": 144,
+      "seatRecords": 211983
+    },
+    "kantoLedgerUnchanged": {
+      "universeTotal": 154,
+      "production": 59,
+      "adopt": 0,
+      "formalBlocked": 61,
+      "inventoryUnresearched": 34,
+      "missingFromInventory": 0
+    },
+    "artifactsNotTouched": "This release-verification pass changed only docs/HANDOFF.md and this report. The production source, ranges, fingerprint, generated catalog and runtime, inventory record and Kanto ledger were not modified.",
+    "disposition": "PRODUCTION + RELEASE VERIFIED / CLOSED"
+  }
 }
