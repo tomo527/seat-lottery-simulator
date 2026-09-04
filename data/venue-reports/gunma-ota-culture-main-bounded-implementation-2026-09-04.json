@@ -1,0 +1,220 @@
+{
+  "reportVersion": 1,
+  "title": "GUNMA-OTA-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION",
+  "asOf": "2026-09-04",
+  "scope": "Single-venue bounded production implementation of 太田市民会館〔ホール〕 (inventory gunma-ota-culture-main), the rank-3 ADOPT of KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4. Venue 2 of 3 in the PREFLIGHT-4 ADOPT batch.",
+  "mode": "fresh currentness -> chart re-fetch -> configuration -> human two-pass -> machine structural checksum -> issuer reconciliation",
+  "disposition": "PRODUCTION",
+  "startSnapshot": {
+    "branch": "main",
+    "head": "adc2f4920f42b533de1677248362555583f43073",
+    "originMain": "adc2f4920f42b533de1677248362555583f43073",
+    "workingTree": "clean",
+    "production": {
+      "venues": 144,
+      "configurations": 146,
+      "seatRecords": 218983
+    },
+    "kantoLedger": {
+      "universeTotal": 154,
+      "production": 61,
+      "adopt": 3,
+      "formalBlocked": 60,
+      "inventoryUnresearched": 30,
+      "missingFromInventory": 0
+    },
+    "batch": "KANTO PREFLIGHT-4 ADOPT BATCH: 3-venue bounded production implementation run as three independent mini-waves in one thread, in the order saitama-koshigaya-suncity-hall, gunma-ota-culture-main, ibaraki-hitachinaka-culture-main."
+  },
+  "currentnessGate": {
+    "result": "PASS",
+    "method": "First-party pages fetched fresh on 2026-09-04 before any seat conclusion: top page with EVENT CALENDAR and news list, 施設案内 ホール, 舞台関係資料, チケット情報.",
+    "officialUrlCorrection": "The Kanto ledger and inventory recorded https://www.ota-arts.jp/, which does not resolve in DNS. The current official domain is https://www.otacivichall.net/ and both records were corrected.",
+    "evidence": [
+      "施設案内 ホール: 座席数 計1501席 with per-floor breakdown and the orchestra-lift note.",
+      "Top page: ticketed hall performances 2026-09 through 2027-02 (2026-09-19 N響団友オーケストラ, 09-27 イルカ55周年コンサート, 11-22 劇団四季『コーラスライン』, 2027-01-11 梅沢富美男劇団, 2027-01-24 群馬交響楽団ニューイヤーコンサート2027, 2027-02-20 ミュージカル「ALICE」).",
+      "News 2026-08-27: 施設予約の抽選方法が変わります / 2027年3月、2027年9月の予約受付（抽選）.",
+      "Footer: 休館日　・毎週月曜日（祝日の場合は翌平日）　・年末年始（12月29日～1月3日）.",
+      "チケット情報: 2026-10-04 英国国王陛下の近衛軍楽隊 sells S/A/B and 立見席3,500円."
+    ],
+    "closureAssessment": "No permanent closure, demolition, rebuild, long closure or renovation notice exists. The 2026-08-22 notice 太田市民会館周辺の工事に伴う通行止めについて concerns roadworks around the hall, not a hall closure or a seating change. Facility booking lotteries are open through 2027-09."
+  },
+  "assetGate": {
+    "reachedFrom": [
+      "https://www.otacivichall.net/facility/hall/ (太田市民会館　座席表)",
+      "https://www.otacivichall.net/facility/shiryo-2/ (座席表)"
+    ],
+    "notUrlGuessed": "Both link relations were re-walked on 2026-09-04.",
+    "finalUrls": [
+      "https://www.otacivichall.net/wp-content/uploads/2019/04/zasekihyou.pdf",
+      "https://www.otacivichall.net/wp-content/uploads/2017/06/13och_aud.pdf"
+    ],
+    "sha256": "611bd3e45ef38a5416a0f333cf26595c89a3ac176f6fe949f69385a8b6157c7e",
+    "byteSize": 746974,
+    "byteIdentical": "Both link targets returned the same SHA-256 and byte size.",
+    "pageCount": 1,
+    "pageSize": "A3 portrait 842 x 1191 pt",
+    "pdfMetadata": {
+      "creator": "太田市民会館座席表（空間創造Vr）.jww",
+      "producer": "doPDF Ver 7.1"
+    },
+    "textLayer": "Seat numbers are printed as PDF text (1,302 spans / 1,612 numeric tokens), which enables a text-based machine structural checksum fully independent of the human reading.",
+    "denseVectorEligibility": "NOT APPLIED. DENSE-VECTOR is a narrow exception for ultra-high-density charts; a 1,491-identifier civic-hall chart is an ordinary venue, so the default fresh independent human visual two-pass was used and the text layer was reserved for the independent machine checksum."
+  },
+  "configurationGate": {
+    "hallForm": "Proscenium multipurpose hall over 1・2階席 / 3階席 / 4階席 with side balcony banks labelled L1, L2, R1, R2 on each floor.",
+    "issuerPublishedConfigurations": "One numbered chart. Stage-side variants (プロセニアムウィング開閉, 音響反射板 大編成/中編成) do not change the seat set.",
+    "orchestraLift": "利用例：前舞台 ・ オーケストラピット makes 客席１～５列（149席）unavailable. No numbered chart for that state is published, so no second configuration was derived by subtracting 149.",
+    "standingSeats": "The chart colours 101 numbered positions green and labels them 立見席. They carry printed individual numbers, the issuer counts them in the per-floor totals, and current ticketing sells 立見席. They are registered as printed and enumerated in scopeDisclosure.",
+    "decision": "One representative configuration `standard`, scope.kind full-venue, three areas floor12 / floor3 / floor4 using only issuer-printed labels."
+  },
+  "targetDiscipline": {
+    "rule": "The issuer subtotals were treated as post-transcription reconciliation targets only.",
+    "practice": "Pass 1 was frozen before comparison. When it disagreed with the machine checksum, the resolution was a return to the chart, not an adjustment toward the issuer figure."
+  },
+  "passA": {
+    "label": "human visual Pass 1",
+    "order": "1・2階席 main blocks left -> centre -> right, rows ascending; then the 1・2階 side balconies; then 3階席; then 4階席.",
+    "frozenBeforeMachineComparison": true,
+    "expandedTotal": 1497,
+    "perArea": {
+      "floor12": 939,
+      "floor3": 276,
+      "floor4": 282
+    },
+    "systematicError": "The 1・2階席 main block was mis-assigned by one row from 11列 onward: both 10列 and 11列 are 4〜13番 in the left block, but Pass 1 read only 10列 as 4〜13 and shifted every later row up by one, also mis-reading 21列 as 2〜13. The chart's rows rise steeply to the right, so a row's left end sits alongside the previous row's label."
+  },
+  "machineDetectionOfPass1Error": {
+    "trigger": "The independent machine structural checksum returned 1,491 against Pass 1's 1,497.",
+    "policyFollowed": "転記のcross-check必須要件 item 5 and 7: returned to the chart and reclassified rather than adjusting thresholds or ranges toward a target.",
+    "resolution": "Narrow leading-edge crops of the left block (the 4 / 5 / 6 starting columns) and trailing-edge crops of the right block (the 36 / 37 / 38 / 40 / 41 ending columns) were re-read independently. Two consecutive rows start at 4, confirming 10列 and 11列 are both 4〜38番, 12列〜18列 are 5〜37番, 19列〜21列 are 6〜36番 and 22列 is 2〜40番."
+  },
+  "passB": {
+    "label": "human visual Pass 2",
+    "order": "Read from the opposite side of the chart and in the opposite row order: right-block trailing edges bottom-to-top (rows 26->19, 21->12, 13->1), independently re-cut crops at different dpi.",
+    "answerKeyUsed": false,
+    "expandedTotal": 1491,
+    "note": "Pass 2 independently reproduces the corrected structure: rows 3〜9 end at 37, rows 10 and 11 end at 38, rows 12〜18 end at 37, rows 19〜21 end at 36, row 22 ends at 40, rows 23〜24 end at 41, row 25 is 31〜41 and row 26 is 32〜41."
+  },
+  "humanComparison": {
+    "method": "Corrected Pass 1 and Pass 2 compared in both directions on expanded (area, row, seat-number) keys.",
+    "expandedPass1Corrected": 1491,
+    "expandedPass2": 1491,
+    "onlyInPass1": 0,
+    "onlyInPass2": 0,
+    "unresolvedMismatch": 0,
+    "honestyNote": "The uncorrected Pass 1 did not match. The mismatch, its cause and its resolution are recorded here and in the source verification metadata rather than being hidden by the final agreement."
+  },
+  "machineExpandedSourceVerification": {
+    "sourceRanges": 53,
+    "expandedFromSource": 1491,
+    "equalToPass1Corrected": true,
+    "equalToPass2": true,
+    "duplicateRuntimeKeys": 0,
+    "sourceSetEqualsRuntimeSet": true,
+    "perAreaFromSource": {
+      "floor12": 933,
+      "floor3": 276,
+      "floor4": 282
+    }
+  },
+  "machineStructuralChecksum": {
+    "feasibility": "Practical. Seat numbers are PDF text with glyph-level coordinates.",
+    "independence": "Extracted from an independently re-fetched copy of the PDF; the human range table was never a count source.",
+    "method": "Numeric tokens were split at character level, filtered to the seat-number font size (8.2 pt cap height, distinct from the 7.2 pt row/door labels and the 13.0/16.3 pt door and floor captions), then chained into rows using only printed value adjacency (v -> v+1) plus geometric proximity, with conflicting predecessors resolved by distance.",
+    "seatNumberTokens": 1490,
+    "additionalCell": "1・2階席10列16番 is drawn at 7.2 pt instead of 8.2 pt (a later CAD edit; the adjacent 17番 cell has a thickened bottom edge). Confirmed at 2,400 dpi as a normal printed numbered cell. 1,490 + 1 = 1,491.",
+    "regionalReconstruction": {
+      "floor12MainLeft": 239,
+      "floor12Centre": 375,
+      "floor12MainRight": 239,
+      "floor12SideBalconies": 80,
+      "floor3Main": 214,
+      "floor3SideBalconies": 62,
+      "floor4Main": 236,
+      "floor4SideBalconies": 46
+    },
+    "result": "1,491, equal to the human two-pass in both directions."
+  },
+  "issuerChecksumReconciliation": {
+    "facilityPage": {
+      "計": 1501,
+      "1・2階席": {
+        "total": 943,
+        "固定席": 891,
+        "立見席": 42,
+        "車いす席": 2,
+        "親子席": 8
+      },
+      "3階席": {
+        "total": 276,
+        "固定席": 241,
+        "立見席": 35
+      },
+      "4階席": {
+        "total": 282,
+        "固定席": 258,
+        "立見席": 24
+      }
+    },
+    "mapped": {
+      "floor12": 933,
+      "floor3": 276,
+      "floor4": 282,
+      "total": 1491,
+      "fixed": 1390,
+      "standing": 101
+    },
+    "differences": "1・2階席 933 = 891 + 42 (difference 0). 3階席 276 = 241 + 35 (0). 4階席 282 = 258 + 24 (0). Fixed 1,390 and standing 101 match. 1,491 + 車いす席2 + 親子席8 = 1,501, equal to the issuer total.",
+    "materialMismatch": false
+  },
+  "wheelchairSemantics": {
+    "whereDrawn": "Unnumbered 車いす用席 areas (pink) at the outer ends of 1・2階席 25列/26列, left and right, with unnumbered 親子席 areas (orange) inboard of them.",
+    "individuallyNumbered": "No.",
+    "replacesOrdinaryPrintedIds": "No. 933 printed + 2 + 8 = 943, so they are additional positions outside the numbered set.",
+    "conversionNote": "The facility page footnote ※一部固定席を車いす席に対応可 does not identify which numbered seats convert, so no conversion relation is reflected.",
+    "registration": "Not registered."
+  },
+  "productionDecision": {
+    "result": "PRODUCTION",
+    "gatesSatisfied": [
+      "currentness",
+      "issuer ownership",
+      "complete numbered set for the declared scope",
+      "fresh independent human visual two-pass MATCH after a machine-detected correction",
+      "independent machine structural checksum agreement",
+      "full issuer per-floor and fixed/standing reconciliation",
+      "no capacity fitting",
+      "no invented identifiers",
+      "no configuration mixing"
+    ],
+    "capacityFitting": false,
+    "inventedIdentifiers": false
+  },
+  "productionArtifacts": {
+    "sourceId": "ota-civic-hall",
+    "configurationId": "standard",
+    "schemaVersion": 2,
+    "scopeKind": "full-venue",
+    "areaIds": [
+      "floor12",
+      "floor3",
+      "floor4"
+    ],
+    "rowLabels": "floor12 1列〜26列 + L1/L2/R1/R2, floor3 1列〜6列 + L1/L2/R1/R2, floor4 1列〜6列 + L1/R1",
+    "ranges": 53,
+    "mapped": 1491,
+    "expectedSeatCount": 1501,
+    "rangeDiff": -10,
+    "confidence": "verified"
+  },
+  "prohibitionsObserved": [
+    "capacity fitting: not used. Every mapped identifier was read from the current official chart before any issuer total was compared.",
+    "invented seat IDs: none. No identifier, row, block or area was created that the chart does not print.",
+    "configuration mixing: none. Only one issuer-published numbered chart per venue was transcribed.",
+    "unsupported geometry completion: none. Missing positions were left unmapped rather than interpolated.",
+    "third-party infill: none. Only current first-party issuer material was used.",
+    "DENSE-VECTOR: not applied. Eligibility was assessed per venue and failed or was unnecessary; the default fresh independent human visual two-pass was used throughout.",
+    "no soft-limit threshold change, no compaction, and no unrelated refactor was made."
+  ],
+  "batchPosition": "Venue 2 of 3."
+}

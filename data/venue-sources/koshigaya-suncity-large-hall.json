@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "koshigaya-suncity-large-hall",
+  "name": "サンシティホール 大ホール",
+  "prefecture": "埼玉県",
+  "city": "越谷市",
+  "aliases": [
+    "サンシティホール",
+    "サンシティ越谷市民ホール",
+    "サンシティ越谷市民ホール 大ホール",
+    "越谷サンシティ",
+    "越谷コミュニティセンター"
+  ],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-top",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "サンシティホール（越谷コミュニティセンター。公益財団法人越谷市施設管理公社）",
+      "title": "サンシティホール 公式トップページ（Event Pickup と Information。2026年9月〜2027年2月の大ホール有料公演を継続掲載し、フッターに「休館日 : 年末年始（12/29〜1/3）のみ」と明記する）",
+      "url": "https://suncityhall.jp/",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "サンシティホール（越谷コミュニティセンター。公益財団法人越谷市施設管理公社）",
+      "title": "施設案内 大ホール（施設概要に「客席数 1,675席（内、車椅子席８席）」「舞台 間口18ｍ、奥行17ｍ、高さ９ｍ」を記載し、「ホール座席表」として現行公式座席図PDFへ直接リンクする）",
+      "url": "https://suncityhall.jp/hall1",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-structure"
+      ],
+      "publisher": "サンシティホール（越谷コミュニティセンター。公益財団法人越谷市施設管理公社）",
+      "title": "施設案内 座席案内（「大ホール座席表」として同一内容の現行公式座席図PDFへリンクする）",
+      "url": "https://suncityhall.jp/seatinfo",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "サンシティホール（越谷コミュニティセンター。公益財団法人越谷市施設管理公社）",
+      "title": "サンシティ越谷市民ホール座席表（大ホール）（1階1列〜31列・2階1列〜7列の全印字座席番号、凡例に「固定席 1,545席」「移動席 122席」「車椅子席 8席」「計 1,675席」、「舞台」「オーケストラピット」「1階」「2階」「A扉」〜「H扉」「車椅子席」の記載を持つ公式PDF hall1_seat.pdf）",
+      "url": "https://suncityhall.jp/wp-content/uploads/2024/04/hall1_seat.pdf",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-event-list",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "サンシティホール（越谷コミュニティセンター。公益財団法人越谷市施設管理公社）",
+      "title": "イベント情報（月別のイベントを2026年9月から2027年6月まで掲載。大ホールの有料公演として2026-09-05 西川悟平、09-07 特撰落語会 桂文珍・春風亭一之輔、09-12 ORANGE RANGE LIVE TOUR 026-027、09-25 舟木一夫コンサート2026、11-01 キーウ・クラシック・バレエ、11-24 劇団四季『コーラスライン』、2027-01-24 サンシティ・ニューイヤーコンサート等を継続告知する）",
+      "url": "https://suncityhall.jp/event-list1",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-redevelopment-notice",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "サンシティホール（越谷コミュニティセンター。公益財団法人越谷市施設管理公社）／越谷市",
+      "title": "越谷サンシティ整備事業に伴う既存施設の運営期間延長について（2025-11-28投稿。「今後、決定される方針が『大規模改修』または『建替え』のいずれであっても、令和9年度は、解体工事の着工には至らない」ため運営期間を延長し、「令和9年度の1年間については、引き続き既存施設（市民ホール及び商業棟）の運営を引き続き継続します。※令和9年度末（1年間延長）まで」「令和10年度以降の運営につきましては、方針が決定したのち、改めて検討します」と告知する）",
+      "url": "https://suncityhall.jp/32605",
+      "checkedAt": "2026-09-04"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "大ホール 標準配置",
+      "issuerDefinedCondition": "施設運営者が大ホールの唯一の公式座席表として公開している「サンシティ越谷市民ホール座席表（大ホール）」の配置を使用する場合。",
+      "selectionBasis": "2026-09-04時点で施設はACTIVEである。公式トップページと月別イベント情報は2026年9月から2027年6月までの催事を掲載し、大ホールの有料公演として2026-09-05 西川悟平トーク＆ピアノコンサート（全席指定6,000円）、09-07 特撰落語会 桂文珍・春風亭一之輔 二人会（S席4,400円／A席3,500円）、09-12 ORANGE RANGE LIVE TOUR 026-027（全席指定7,300円・完売）、09-23 ミューズバレエ記念公演、09-25 舟木一夫コンサート2026（全席指定8,800円）、10-03 東京フィルハーモニー交響楽団 越谷特別演奏会、10-18 イルカ55周年コンサート、11-01 キーウ・クラシック・バレエ 白鳥の湖、11-15 東京シティ・フィルPresents すぎやまこういち／交響組曲「ドラゴンクエストIII」、11-24 劇団四季 ミュージカル『コーラスライン』、2027-01-24 サンシティ・ニューイヤーコンサート 東京交響楽団、2027-02-23 おかあさんといっしょ 等を継続告知している。公式サイトの「休館日」は「年末年始（12/29〜1/3）のみ」であり、定例の長期休館は存在しない。施設は大ホールについてステージ形態別・ピット使用時・平土間等の別番号図をいっさい公開していない。番号付き座席図は「ホール座席表」（施設案内 大ホール）と「大ホール座席表」（座席案内）の2経路からリンクされる1点だけであり、両リンク先はバイト単位で同一である。したがって代表configurationはこの標準配置1件とし、図面上部に描かれた「オーケストラピット」使用時の別配置は番号集合が公開されていないため登録も混在もしていない。",
+      "sourceGeneration": "2026-09-04に施設案内 大ホール（https://suncityhall.jp/hall1 の「ホール座席表」リンク）と座席案内（https://suncityhall.jp/seatinfo の「座席表のダウンロード」リンク）の双方から現行公式座席図を辿り直して取得した。URL直打ちでcurrent扱いはせず、両ページのlink relationを当日に再確認している。hall1ページのリンク先は https://suncityhall.jp/wp-content/uploads/2024/04/hall1_seat.pdf 、seatinfoページのリンク先は同ディレクトリの「大ホール座席図.pdf」（percent-encoded）で、両者は SHA-256: 20aab1417a1161da6af4152035bc6925d000c5b08af2136c85403baf359979a3 、5,455,670バイトでバイト単位に同一だった（Last-Modified はそれぞれ 2024-04-08 と 2024-04-15 で、同一ファイルの2回のアップロードである）。PDFは1ページ、A4縦595.276×841.890pt、PDF 1.5／creator Adobe Illustrator CS3で、内部は2,479×3,504px（300 dpi相当）のDeviceRGBラスター画像1点で構成され、抽出可能テキストは「公益財団法人　越谷市施設管理公社」の17文字だけである。座席番号は1件もテキストとして印字されていないため DENSE-VECTOR verification の適格要件（宣言scopeの全identifierがPDF上にテキストとして明示印字されていること）を満たさず、既定のfresh independent human visual two-passを適用した。転記前とPass 2の直前に独立フェッチを行い、いずれも同一SHA-256・同一バイト数だった。",
+      "definitionAuthority": "issuer",
+      "sourceIds": [
+        "official-top",
+        "official-hall-page",
+        "official-seat-page",
+        "official-seat-map",
+        "official-event-list",
+        "official-redevelopment-notice"
+      ],
+      "differenceBasisSourceIds": [
+        "official-hall-page",
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1675,
+      "scope": {
+        "kind": "full-venue",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "施設運営者が公開する大ホールの公式座席表に印字された全番号席1,667席（1階1,359席・2階308席）を登録した構成です。1階は1列〜31列、2階は1列〜7列で、列番号は階ごとに1から振り直されています。座席番号は各列とも左端から右端まで通し番号で、1階・2階とも最大1〜52番です。座席のない位置は図面どおり登録していません。1階1列は21〜32番のみ、2列は16〜37番、3列は14〜39番、4列は13〜40番、5列は10〜43番、6列〜9列は9〜44番、10列は7〜46番、11列は6〜47番、12列は5〜48番、13列は4〜49番、14列は3〜50番、15列は2〜51番、16列は9〜51番、17列〜31列は1〜52番です。1階16列の左端（1〜8番相当の位置）と右端の外側には「車椅子席」と記された無番号の区画が描かれています。2階1列・2列は2〜51番、3列は1〜52番、4列〜6列は4〜49番、7列は4〜12番と41〜49番の2区間で、7列の中央（21〜32番相当）には座席がありません。図面凡例が「移動席 122席」とする1階1列〜5列（点線枠で描かれた席）も、実在する印字番号席としてそのまま登録しています。凡例が「車椅子席 8席」とする無番号区画は登録していません。エリア名「1階」「2階」は公式座席図が図中に印字している区分をそのまま用いており、repository由来のブロック名は付与していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式座席図は1階16列の左右に「車椅子席」と記した無番号の区画を2つ描いています。左側の区画は破線で5コマ、右側の区画は破線で3コマに区切られており、合計8コマは凡例の「車椅子席 8席」と一致します。いずれのコマにも座席番号は印字されていません。凡例は「固定席 1,545席」「移動席 122席」「車椅子席 8席」「計 1,675席」と記載し、施設案内ページも「客席数 1,675席（内、車椅子席８席）」とします。印字番号席は固定席1,545席＋移動席122席＝1,667席であり、1,667＋8＝1,675としてissuer資料自身と完全に整合します。すなわち車椅子席8席は番号席を置き換えるものではなく、番号席1,667席の外側に存在する別枠の位置です。issuerは個々の車椅子位置に番号を与えておらず、通常番号席との置換関係も公開していないため、座席番号を創作せず、隣接する番号席の削除も行わず、無番号のまま未登録としています。なお現行のイベント告知（2026-09-12 ORANGE RANGE公演）は「【車椅子席】をご希望の方は、通常席をご購入後、公演当日の振替となります」と案内していますが、これは運用上の振替であって図面上の番号置換関係の公表ではありません。同伴者席についてもissuerは公開していません。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-hall-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-04",
+        "method": "fresh-independent-human-visual-two-pass-on-current-official-large-hall-seat-chart-with-reversed-floor-section-bank-and-row-direction-and-independently-recut-crops-plus-machine-structural-checksum-from-native-300dpi-embedded-raster-contour-hierarchy-hole-detection-over-multiple-threshold-and-closing-scales-and-supporting-500dpi-digit-glyph-inventory-and-issuer-legend-subtotal-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -8,
+        "unresolvedIssues": [
+          "凡例の「計 1,675席」および施設案内ページの「客席数 1,675席（内、車椅子席８席）」を expectedSeatCount としています。転記した印字番号席は1,667席で、差 -8 は無番号の車椅子席8席とちょうど一致し、凡例の「固定席 1,545席」＋「移動席 122席」＝1,667席とも完全に一致します。差を消すために番号を削除・追加していません。",
+          "issuer凡例との照合はすべて一致しました。転記した1,667席のうち、実線枠（固定席）は1,545席、点線枠（移動席）は1階1列〜5列の122席で、凡例の 1,545／122 と差0で一致します。1階1,359席・2階308席の階別内訳はissuerが公表しておらず、issuer側の照合対象はありません。",
+          "human two-passとは独立に、PDF内蔵の300 dpiラスター（2,479×3,504px）に対する輪郭階層解析によるmachine structural checksumを取得しました。human range tableはcount sourceにしていません。閾値170/185/200と2×2・3×3のクロージングを組み合わせた検出結果を重心で重複排除したところ、番号入りセル1,666件（1階前方578件、1階後方780件、2階308件）を検出しました。実線枠だけに限った検出は1,545件で、凡例の固定席1,545席と完全に一致します。無番号の「車椅子席」区画3コマと図面外の1件は、内部インクと位置により座席セルから分離して除外しています。",
+          "machine検出とhuman転記の差1件は、1階4列 右ブロック36番のセルです。このセルは点線枠であり、破線が閉じないためラスター輪郭解析ではどの閾値でも閉領域として分類されませんでした。同列の検出済みセル重心は x=1485.5, 1515.0, 1543.5, 1599.5, 1628.5, 1657.5, 1686.0（native px）で、間隔は 29.5 / 28.5 / 56.0 / 29.0 / 29.0 / 28.5 px です。56.0 px はセルピッチ28.5 pxのちょうど2倍であり、この位置にセルが1つ存在することを幾何的に示します。2,200 dpiでの拡大目視でも「34 35 36 37 38 39」の点線枠セルと印字番号を確認しました。したがってmachine structural checksumは 1,666＋1＝1,667 で human two-pass と一致します。",
+          "補助的なcross-checkとして、同一PDFを独立に再取得し500 dpiで再ラスタライズしたうえで、インクの連結成分から数字グリフを検出しました。座席領域の数字グリフ様成分は3,105件で、転記した1,667席の印字数字数3,112件に対する差は、隣接する2桁が接触して1成分になったケースの数と一致する範囲です。この経路は補助であり、決定的なstructural checksumは上のラスター輪郭階層解析です。",
+          "図面には座席のほかに「舞台」「オーケストラピット」「1階」「2階」「A扉」〜「H扉」「車椅子席」の記載と凡例だけがあり、PA席・見切れ席・技術席・親子室・立見などの特別マーキングや凡例は存在しません。オーケストラピットは1階1列の前方に描かれた区画で、ピット使用時の別番号図はissuerが公開していないため、移動席122席の減算等によって別configurationを作成していません。",
+          "currentness: 施設運営者は2025-11-28付で「越谷サンシティ整備事業に伴う既存施設の運営期間延長について」を告知しています。同告知は、今後決定される方針が「大規模改修」または「建替え」のいずれであっても令和9年度は解体工事の着工に至らないとしたうえで、既存施設（市民ホール及び商業棟）の運営を令和9年度末まで1年間延長し、令和10年度以降は方針決定後に改めて検討するとしています。2026-09-04時点で、恒久閉館・解体・建替えによる別施設化はいずれも決定・告知されておらず、休館日程も公表されていません。座席数・列構成・座席番号体系の変更をissuerが明示した記述も存在しません。2026-09-04のrevised currentness / closure policy に従い、これ単独ではproduction blockerとせず、方針決定時期に合わせて inventory の recheckNotBefore を 2027-04-01 に設定しています。「座席変更の記載がない」ことを「変更されない証明」としては扱っていません。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "1列",
+          "from": 21,
+          "to": 32
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "2列",
+          "from": 16,
+          "to": 37
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "3列",
+          "from": 14,
+          "to": 39
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "4列",
+          "from": 13,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "5列",
+          "from": 10,
+          "to": 43
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "6列",
+          "from": 9,
+          "to": 44
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "7列",
+          "from": 9,
+          "to": 44
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "8列",
+          "from": 9,
+          "to": 44
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "9列",
+          "from": 9,
+          "to": 44
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "10列",
+          "from": 7,
+          "to": 46
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "11列",
+          "from": 6,
+          "to": 47
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "12列",
+          "from": 5,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "13列",
+          "from": 4,
+          "to": 49
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "14列",
+          "from": 3,
+          "to": 50
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "15列",
+          "from": 2,
+          "to": 51
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "16列",
+          "from": 9,
+          "to": 51
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "18列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "23列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "24列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "25列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "26列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "27列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "28列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "29列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "30列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "31列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "1列",
+          "from": 2,
+          "to": 51
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "2列",
+          "from": 2,
+          "to": 51
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "4列",
+          "from": 4,
+          "to": 49
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "5列",
+          "from": 4,
+          "to": 49
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "6列",
+          "from": 4,
+          "to": 49
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "7列",
+          "from": 4,
+          "to": 12
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "7列",
+          "from": 41,
+          "to": 49
+        }
+      ]
+    }
+  ]
+}

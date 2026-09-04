@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "ota-civic-hall",
+  "name": "太田市民会館 ホール",
+  "prefecture": "群馬県",
+  "city": "太田市",
+  "aliases": [
+    "太田市民会館"
+  ],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-top",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "太田市民会館（太田市）",
+      "title": "太田市民会館 公式トップページ（EVENT CALENDARと公演一覧。2026年9月〜2027年2月のホール公演を継続掲載し、フッターに「休館日　・毎週月曜日（祝日の場合は翌平日）　・年末年始（12月29日～1月3日）」と明記する。お知らせ最新は2026-08-27「施設予約の抽選方法が変わります」「2027年3月、2027年9月の予約受付（抽選）」で、長期休館・改修・建替・閉館の告知は無い）",
+      "url": "https://www.otacivichall.net/",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "太田市民会館（太田市）",
+      "title": "施設案内 ホール（座席数「計1501席　※一部固定席を車いす席に対応可」、内訳「１・２階席 943席（固定席891席、立見席42席、車いす席２席、親子席８席）」「３階席 276席（固定席241席、立見席35席）」「４階席 282席（固定席258席、立見席24席）」、舞台仕様「プロセニアム形式」、オーケストラ迫りの「利用例：前舞台 ・ オーケストラピット」で「客席１～５列（149席）が使用不可」と記載し、「太田市民会館　座席表」として現行公式座席図PDFへ直接リンクする）",
+      "url": "https://www.otacivichall.net/facility/hall/",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-technical-index",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-structure"
+      ],
+      "publisher": "太田市民会館（太田市）",
+      "title": "太田市民会館 舞台関係資料（現行の技術資料ダウンロード索引。「座席表」として同一内容の公式座席図PDFへリンクし、ホール平面図・舞台平面図・舞台断面図・反響板図・音響／照明資料を併載する）",
+      "url": "https://www.otacivichall.net/facility/shiryo-2/",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "太田市民会館（太田市）",
+      "title": "太田市民会館　座席表（1・2階席1列〜26列・3階席1列〜6列・4階席1列〜6列の全印字座席番号、側面バルコニーのL1／L2／R1／R2、緑で塗り分けた「立見席」、「車いす用席」「親子席」の引き出し注記、「舞台」「01扉」〜「20扉」「※3列から段差あり」を記載した公式PDF zasekihyou.pdf）",
+      "url": "https://www.otacivichall.net/wp-content/uploads/2019/04/zasekihyou.pdf",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-ticket",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "太田市民会館（太田市）",
+      "title": "チケット情報（現行の主催事業・預かりチケット一覧。2026-09-16 N響団友オーケストラ（S席4,000円／A席3,000円）、09-21 新喜劇出前ツアー2026、09-23 王子とマエストロの第九ラボ、09-27 イルカ55周年コンサート（全席指定7,500円）、10-04 英国国王陛下の近衛軍楽隊（S席6,500円／A席5,500円／B席4,500円／立見席3,500円）等、太田市民会館ホールの有料公演を継続告知する）",
+      "url": "https://www.otacivichall.net/ticket/",
+      "checkedAt": "2026-09-04"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "ホール 標準配置",
+      "issuerDefinedCondition": "施設運営者が「太田市民会館　座席表」として公開している唯一の公式座席図の配置（プロセニアム形式）を使用する場合。",
+      "definitionAuthority": "issuer",
+      "selectionBasis": "2026-09-04時点で施設はACTIVEである。公式トップページのEVENT CALENDARとチケット情報は2026年9月から2027年2月までのホール公演を継続掲載し、2026-09-16 N響団友オーケストラ 珠玉のファミリー・コンサート、09-19 同公演、09-21 寛平GMプロデュース公演 新喜劇出前ツアー2026、09-23 王子とマエストロの第九ラボ、09-27 イルカ55周年コンサート（全席指定7,500円）、10-04 英国国王陛下の近衛軍楽隊（S席・A席・B席・立見席）、11-03 One Coin Concert vol.3、11-22 劇団四季『コーラスライン』、12-19 One Coin Concert vol.4、2027-01-11 梅沢富美男劇団特別公演、2027-01-24 群馬交響楽団ニューイヤーコンサート2027、2027-02-20 ミュージカル「ALICE」群馬公演などの有料公演を告知している。2026-08-27付のお知らせは2027年3月分・2027年9月分の施設予約抽選を案内しており、長期の予約受付が継続していることを示す。公式に告知された休館は「毎週月曜日（祝日の場合は翌平日）」と「年末年始（12月29日～1月3日）」の定例休館だけで、長期休館・改修・建替・閉館・移転の告知は存在しない（2026-08-22付「太田市民会館周辺の工事に伴う通行止めについて」は会館周辺道路の工事に関する案内であり、ホールの休館告知ではない）。施設案内ページはホールの舞台仕様を「プロセニアム形式」1種類として公開し、番号付き座席図も1点だけである。オーケストラ迫りの「利用例：前舞台 ・ オーケストラピット」では「客席１～５列（149席）が使用不可」となるが、issuerはその状態の番号付き座席図を公開していないため、149席を減算して別configurationを作成していない。",
+      "sourceGeneration": "2026-09-04に施設案内 ホール（https://www.otacivichall.net/facility/hall/ の「太田市民会館　座席表」リンク）と舞台関係資料（https://www.otacivichall.net/facility/shiryo-2/ の「座席表」リンク）の双方から現行公式座席図を辿り直して取得した。URL直打ちでcurrent扱いはせず、両ページのlink relationを当日に再確認している。施設案内ページのリンク先は https://www.otacivichall.net/wp-content/uploads/2019/04/zasekihyou.pdf 、舞台関係資料ページのリンク先は https://www.otacivichall.net/wp-content/uploads/2017/06/13och_aud.pdf で、両者は SHA-256: 611bd3e45ef38a5416a0f333cf26595c89a3ac176f6fe949f69385a8b6157c7e 、746,974バイトでバイト単位に同一だった（同一図面の2回のアップロード）。PDFは1ページ、A3縦842×1191pt、creator「太田市民会館座席表（空間創造Vr）.jww」／producer doPDF 7.1で、座席番号は抽出可能テキストとして印字されている。転記は現行公式図を人が直接視認するfresh independent human visual two-passで行い、機械抽出結果と公称席数はいずれもtranscription targetにしていない。",
+      "sourceIds": [
+        "official-top",
+        "official-hall-page",
+        "official-technical-index",
+        "official-seat-map",
+        "official-ticket"
+      ],
+      "differenceBasisSourceIds": [
+        "official-hall-page",
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1501,
+      "scope": {
+        "kind": "full-venue",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "施設運営者が公開する公式座席図に印字された全番号席1,491席（1・2階席933席・3階席276席・4階席282席）を登録した構成です。エリア名「1・2階席」「3階席」「4階席」と、側面バルコニーの区画名「L1」「L2」「R1」「R2」、および列番号はいずれも公式座席図が図中に印字している表記をそのまま用いており、repository由来の名称は付与していません。1・2階席の主客席は1列〜26列で、1列は11〜31番、2列は7〜35番、3列〜9列は5〜37番、10列・11列は4〜38番、12列〜18列は5〜37番、19列〜21列は6〜36番、22列は2〜40番、23列・24列は1〜41番、25列は1〜11番・14〜28番・31〜41番、26列は1〜10番・32〜41番です。25列の12・13番と29・30番、26列の11〜13番と29〜31番の位置には図中に「車いす用席」が描かれており、番号は印字されていません。26列に中央ブロック（14〜28番相当）はありません。3階席は1列が3〜39番、2列が2〜40番、3列〜5列が1〜41番、6列が14〜28番です。4階席は1列が3〜39番、2列が2〜40番、3列〜5列が1〜41番、6列が1〜12番・15〜27番・29〜40番です。公式座席図が緑色で塗り分け「立見席」と注記している番号席は、1・2階席のL2 1〜21番とR2 1〜21番（計42席）、3階席のL2 10〜19番・R2 10〜19番と6列14〜28番（計35席）、4階席の6列1〜12番と29〜40番（計24席）で、合計101席です。これらは着席用の固定席ではなく立見位置ですが、公式座席図に個別の番号が印字され、issuerも席数に算入して有料販売しているため、印字どおり登録しています（4階席6列の15〜27番は固定席です）。issuerが「車いす席２席」「親子席８席」として別掲する位置は番号が印字されていないため登録していません。オーケストラ迫りを前舞台またはオーケストラピットとして使用する場合、issuerは「客席１～５列（149席）が使用不可」としますが、その状態の番号付き座席図は公開されていないため、減算による別配置は作成していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式座席図は1・2階席の最後方、25列・26列の左右外側に「車いす用席」と引き出し線で注記した無番号の区画（桃色）を左右1か所ずつ描き、その内側に「親子席」と注記した無番号の区画（橙色）を左右1か所ずつ描いています。いずれの区画にも座席番号は印字されていません。現行の施設案内ページは座席数を「計1501席」とし、「１・２階席 943席（固定席891席、立見席42席、車いす席２席、親子席８席）」と内訳を公開します。転記した印字番号席は1・2階席933席（固定席891席＋立見席42席）で、933＋2＋8＝943としてissuer資料自身と完全に整合します。すなわち車椅子席2席と親子席8席は番号席を置き換えるものではなく、番号席の外側に存在する別枠の位置です。issuerは個々の位置に番号を与えておらず、通常番号席との置換関係も公開していないため、座席番号を創作せず、隣接する番号席の削除も行わず、無番号のまま未登録としています。なお施設案内ページは座席数の脚注として「※一部固定席を車いす席に対応可」と記載しますが、どの番号席が転換対象になるかは公開されていないため、転換関係も反映していません。同伴者席についてもissuerは公開していません。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-hall-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-04",
+        "method": "fresh-independent-human-visual-two-pass-on-current-official-seat-chart-with-leading-edge-and-trailing-edge-traversals-in-opposite-row-order-plus-independent-machine-structural-checksum-from-pdf-text-token-extraction-and-printed-value-adjacency-chaining-and-full-issuer-per-floor-and-fixed-standing-subtotal-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -10,
+        "unresolvedIssues": [
+          "施設案内ページの「座席数　計1501席」を expectedSeatCount としています。転記した印字番号席は1,491席で、差 -10 は無番号の車いす席2席と親子席8席の合計とちょうど一致します。差を消すために番号を削除・追加していません。",
+          "issuer subtotal reconciliationは全項目が一致しました。1・2階席は転記933席＝固定席891席＋立見席42席、3階席は276席＝固定席241席＋立見席35席、4階席は282席＝固定席258席＋立見席24席で、いずれもissuerの階別内訳と差0です。全体では固定席1,390席＋立見席101席＝1,491席、これに車いす席2席と親子席8席を加えて1,501席となり、issuerの「計1501席」と完全に一致します。",
+          "human two-passとは独立に、machine structural checksumをPDFのテキストトークン抽出から取得しました。human range tableはcount sourceにしていません。座席番号フォント（字高8.2pt）のトークンは1,490件で、これに1・2階席10列16番のトークン1件（同じ位置に字高7.2ptで作図されている、後年の図面修正とみられる正規の印字番号セル。2,400 dpiの拡大目視で「15｜16｜17｜18」の連続した番号セルであることを確認）を加えて1,491件となり、human two-passの1,491席と一致します。さらに、印字値の連続性（v→v+1）と幾何近接だけを条件にトークンを行方向へ連結する経路で、1・2階席の主客席239／375／239席、3階席214席、4階席236席、各階の側面バルコニー（1・2階席L1 1〜19・L2 1〜21・R1 1〜19・R2 1〜21、3階席L1 1〜21・L2 10〜19・R1 1〜21・R2 10〜19、4階席L1 1〜23・R1 1〜23）を再構成し、human tableと双方向で一致しました。",
+          "この機械照合は、human Pass 1の1・2階席主客席に系統的な行ずれ（10列と11列がいずれも4〜13番であるところを、10列のみ4〜13番と読み、11列以降を1行ずつ繰り上げていた）を検出しました。転記のcross-check必須要件のとおり座席図へ戻り、左ブロック先頭列（4番・5番・6番の位置）と右ブロック末尾列（36番〜41番の位置）をそれぞれ独立した狭幅クロップで再読して、10列・11列がともに4〜38番であること、12列〜18列が5〜37番、19列〜21列が6〜36番、22列が2〜40番であることを確認し、修正しました。修正後のhuman two-pass、machine structural checksum、issuer階別subtotalの三者は完全に一致します。human-human MATCHだけでは検出できなかった誤りであり、修正はissuer公表値に合わせるための調整ではなく、座席図の再読によるものです。",
+          "1・2階席10列16番のセルは、同じ図面内で他の座席番号（字高8.2pt）と異なる字高7.2ptで作図されており、隣の17番セルは下辺が太く描かれています。いずれも番号が印字された正規の座席セルであり、特別な席種を示す凡例は図面上にありません。",
+          "公式座席図が緑色で塗り分け「立見席」と注記する番号席101席（1・2階席L2・R2各21席、3階席L2・R2各10席と6列15席、4階席6列の1〜12番・29〜40番各12席）は、着席用の固定席ではなく立見位置です。issuerはこれらを階別席数に算入し（943／276／282）、現行のチケット情報でも「立見席3,500円」（2026-10-04 英国国王陛下の近衛軍楽隊）として有料販売しているため、印字された番号どおり登録し、scopeDisclosureで範囲を明示しています。",
+          "オーケストラ迫りを前舞台またはオーケストラピットとして使用する場合、施設案内ページは「客席１～５列（149席）が使用不可」と記載します。issuerはその状態の番号付き座席図を公開していないため、1,491席から149席を減算した別configurationは作成していません。同様に、音響反射板の大編成／中編成、プロセニアムウィングの開閉も舞台側の仕様であり、客席の番号集合を変えるものとしては公開されていません。",
+          "currentness: 2026-09-04時点で、恒久閉館・解体・建替え・長期休館・改修による休館の告知はいずれも存在しません。公式に告知された休館は毎週月曜日（祝日の場合は翌平日）と年末年始（12月29日〜1月3日）の定例休館だけです。2026-08-22付「太田市民会館周辺の工事に伴う通行止めについて」は会館周辺道路の工事案内であり、ホールの休館・座席変更の告知ではありません。2026-08-27付で2027年3月分・2027年9月分の施設予約抽選が案内されており、長期の受付が継続しています。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "1列",
+          "from": 11,
+          "to": 31
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "2列",
+          "from": 7,
+          "to": 35
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "3列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "4列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "5列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "6列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "7列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "8列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "9列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "10列",
+          "from": 4,
+          "to": 38
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "11列",
+          "from": 4,
+          "to": 38
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "12列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "13列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "14列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "15列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "16列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "17列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "18列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "19列",
+          "from": 6,
+          "to": 36
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "20列",
+          "from": 6,
+          "to": 36
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "21列",
+          "from": 6,
+          "to": 36
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "22列",
+          "from": 2,
+          "to": 40
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "23列",
+          "from": 1,
+          "to": 41
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "24列",
+          "from": 1,
+          "to": 41
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "25列",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "25列",
+          "from": 14,
+          "to": 28
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "25列",
+          "from": 31,
+          "to": 41
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "26列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "26列",
+          "from": 32,
+          "to": 41
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "L1",
+          "from": 1,
+          "to": 19
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "L2",
+          "from": 1,
+          "to": 21
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "R1",
+          "from": 1,
+          "to": 19
+        },
+        {
+          "areaId": "floor12",
+          "areaLabel": "1・2階席",
+          "rowLabel": "R2",
+          "from": 1,
+          "to": 21
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "1列",
+          "from": 3,
+          "to": 39
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "2列",
+          "from": 2,
+          "to": 40
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 41
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 41
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 41
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "6列",
+          "from": 14,
+          "to": 28
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "L1",
+          "from": 1,
+          "to": 21
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "L2",
+          "from": 10,
+          "to": 19
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "R1",
+          "from": 1,
+          "to": 21
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階席",
+          "rowLabel": "R2",
+          "from": 10,
+          "to": 19
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "1列",
+          "from": 3,
+          "to": 39
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "2列",
+          "from": 2,
+          "to": 40
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 41
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 41
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 41
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "6列",
+          "from": 15,
+          "to": 27
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "6列",
+          "from": 29,
+          "to": 40
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "L1",
+          "from": 1,
+          "to": 23
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階席",
+          "rowLabel": "R1",
+          "from": 1,
+          "to": 23
+        }
+      ]
+    }
+  ]
+}

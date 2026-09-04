@@ -12,17 +12,17 @@
   "counts": {
     "universeTotal": 154,
     "byPrefecture": {
-      "茨城県": 5,
-      "群馬県": 10,
-      "埼玉県": 12,
-      "神奈川県": 18,
       "千葉県": 13,
+      "埼玉県": 12,
       "東京都": 91,
-      "栃木県": 5
+      "栃木県": 5,
+      "神奈川県": 18,
+      "群馬県": 10,
+      "茨城県": 5
     },
     "byStatus": {
-      "production": 61,
-      "ADOPT / implementation-ready": 3,
+      "production": 64,
+      "ADOPT / implementation-ready": 0,
       "HOLD / NEED EVIDENCE / formal DEFER": 60,
       "inventory-unresearched": 30
     },
@@ -135,13 +135,13 @@
       "currentName": "ひたちなか市文化会館〔大ホール〕",
       "aliases": [],
       "facilitySpace": "ひたちなか市文化会館〔大ホール〕",
-      "officialCapacityAndMode": "1,368 total current issuer capacity: 1,150 fixed + 200 movable + 10 wheelchair + 8 parent/child; current linked numbered chart headline is 1,350 (fixed + movable) and states the orchestra-pit alternative removes row 6 / 196 seats",
-      "officialUrl": "https://hitachinaka-culture.jp/",
+      "officialCapacityAndMode": "1,368 current issuer total: 固定1,150 + 移動200 + 身障者席10 + 母子席8; the chart headline is 総座席数 1,350 (= 固定1,150 + 移動200) and the 身障者席10 / 母子席8 positions are unnumbered",
+      "officialUrl": "https://hitachinaka-culturehall.jp/",
       "inventoryId": "ibaraki-hitachinaka-culture-main",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
+      "venueSourceId": "hitachinaka-culture-large-hall",
+      "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-09-04 preflight: a separately authorized bounded implementation may select only the current issuer-linked standard 1,350-numbered-seat chart. Fresh-fetch it, run independent human visual Pass 1 and Pass 2, two-way equality against the machine-expanded set, reconcile 1,150 fixed + 200 movable = 1,350 and the issuer's separate wheelchair 10 / parent-child 8 positions, and use an independent vector/raster structural checksum. Do not derive the orchestra-pit 196-seat removal as a second configuration; stop production on any material mismatch."
+      "reopenCondition": "2026-09-04 implementation: PRODUCTION as hitachinaka-culture-large-hall / standard with 1,350 mapped printed identifiers (rows 1-30), rangeDiff 0. Reopen only if the issuer publishes a numbered chart for the orchestra-pit form (row 6 removed / 196 seats) or numbering for the 車イス補助席 / 母子席 positions."
     },
     {
       "prefecture": "茨城県",
@@ -265,13 +265,13 @@
       "currentName": "太田市民会館〔ホール〕",
       "aliases": [],
       "facilitySpace": "太田市民会館〔ホール〕",
-      "officialCapacityAndMode": "1,501 total current issuer capacity: 1F/2F 943 (891 fixed + 42 standing + 2 wheelchair + 8 parent/child), 3F 276 (241 fixed + 35 standing), 4F 282 (258 fixed + 24 standing); the current use guide separately calls the 1,491 numbered-seat/standing total and 1,501 occupancy including parent/child room",
-      "officialUrl": "https://www.ota-arts.jp/",
+      "officialCapacityAndMode": "1,501 current issuer total: 1・2階席943 (固定891 + 立見42 + 車いす2 + 親子8), 3階席276 (固定241 + 立見35), 4階席282 (固定258 + 立見24); the printed numbered set is 1,491 = 固定1,390 + 立見101, and the wheelchair 2 / parent-child 8 positions are unnumbered",
+      "officialUrl": "https://www.otacivichall.net/",
       "inventoryId": "gunma-ota-culture-main",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
+      "venueSourceId": "ota-civic-hall",
+      "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-09-04 preflight: a separately authorized bounded implementation may select only the current issuer-linked standard chart. Fresh-fetch it, run independent human visual Pass 1 and Pass 2, two-way equality against the machine-expanded set, reconcile the issuer's 1,491 numbered-seat/standing subtotal and 1F/2F 943 + 3F 276 + 4F 282 = 1,501 semantics, and use independent vector/raster structural checksums. Preserve the published wheelchair-convertible and parent/child-room semantics; do not create the orchestra-lift rows-1-to-5-unavailable form by subtraction. Stop production on any material mismatch."
+      "reopenCondition": "2026-09-04 implementation: PRODUCTION as ota-civic-hall / standard with 1,491 mapped printed identifiers across 1・2階席933 / 3階席276 / 4階席282. Reopen only if the issuer publishes a numbered chart for the orchestra-lift (rows 1-5 unavailable) form, or numbering for the 車いす用席 / 親子席 positions."
     },
     {
       "prefecture": "群馬県",
@@ -382,13 +382,13 @@
       "currentName": "サンシティホール〔大ホール〕",
       "aliases": [],
       "facilitySpace": "サンシティホール〔大ホール〕",
-      "officialCapacityAndMode": "1,675 current issuer total: 1,545 fixed + 122 movable + 8 wheelchair; current issuer-linked large-hall chart visibly prints the numbered seat cells across its shown floor/row/block structure",
-      "officialUrl": "https://www.sun-cityhall.jp/",
+      "officialCapacityAndMode": "1,675 current issuer total printed on the chart legend and the facility page: 固定席1,545 + 移動席122 + 車椅子席8 = 1,675; the printed numbered-seat set is 1,545 + 122 = 1,667 (1階1,359 / 2階308) and the 8 wheelchair positions are unnumbered",
+      "officialUrl": "https://suncityhall.jp/",
       "inventoryId": "saitama-koshigaya-suncity-hall",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
+      "venueSourceId": "koshigaya-suncity-large-hall",
+      "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-09-04 preflight: a separately authorized bounded implementation may select only the current issuer-linked large-hall chart. Fresh-fetch it, run independent human visual Pass 1 and Pass 2, two-way equality against the machine-expanded set, reconcile 1,545 fixed + 122 movable + 8 wheelchair = 1,675 without inventing a wheelchair replacement relation, and use independent vector/raster structural checksums. Stop production on any material mismatch."
+      "reopenCondition": "2026-09-04 implementation: PRODUCTION as koshigaya-suncity-large-hall / standard with 1,667 mapped printed identifiers. Issuer 整備事業 notice (2025-11-28) extends existing-facility operation to the end of 令和9年度 and leaves 大規模改修 vs 建替え undecided with no demolition scheduled; recheck from 2027-04-01. Do not re-research or reopen before then."
     },
     {
       "prefecture": "埼玉県",

@@ -1705,6 +1705,48 @@
           "sha256": "3c5a39c84441ee5d50abf5f39940f1851b1b5dabf9d7713ca8701c3dd71d9a9e"
         }
       }
+    },
+    "koshigaya-suncity-large-hall": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1667,
+          "samples": [
+            "floor1/1列/21",
+            "floor1/21列/47",
+            "floor2/7列/49"
+          ],
+          "sha256": "f91d6d04e402332ba18d9ab43d69dde1dbff30b5ebaf82d3f9b31ccd3227942a"
+        }
+      }
+    },
+    "ota-civic-hall": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1491,
+          "samples": [
+            "floor12/1列/11",
+            "floor12/23列/32",
+            "floor4/R1/23"
+          ],
+          "sha256": "955a9942e4a0a2bc0dacc25700f85ee6dedeb6e0104ac51a115b72d28775f176"
+        }
+      }
+    },
+    "hitachinaka-culture-large-hall": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1350,
+          "samples": [
+            "main/1/16",
+            "main/17/10",
+            "main/30/56"
+          ],
+          "sha256": "612d73719705d3c11c27d807cad9653caf415796cc6519d6dad5e195398995af"
+        }
+      }
     }
   }
 }

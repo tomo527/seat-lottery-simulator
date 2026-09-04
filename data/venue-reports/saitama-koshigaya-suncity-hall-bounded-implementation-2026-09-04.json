@@ -1,0 +1,202 @@
+{
+  "reportVersion": 1,
+  "title": "SAITAMA-KOSHIGAYA-SUNCITY-HALL BOUNDED PRODUCTION IMPLEMENTATION",
+  "asOf": "2026-09-04",
+  "scope": "Single-venue bounded production implementation of サンシティホール〔大ホール〕 (inventory saitama-koshigaya-suncity-hall), the rank-2 ADOPT of KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4. Venue 1 of 3 in the PREFLIGHT-4 ADOPT batch.",
+  "mode": "fresh currentness -> chart re-fetch -> configuration -> human two-pass -> machine structural checksum -> issuer reconciliation",
+  "disposition": "PRODUCTION",
+  "startSnapshot": {
+    "branch": "main",
+    "head": "adc2f4920f42b533de1677248362555583f43073",
+    "originMain": "adc2f4920f42b533de1677248362555583f43073",
+    "workingTree": "clean",
+    "production": {
+      "venues": 144,
+      "configurations": 146,
+      "seatRecords": 218983
+    },
+    "kantoLedger": {
+      "universeTotal": 154,
+      "production": 61,
+      "adopt": 3,
+      "formalBlocked": 60,
+      "inventoryUnresearched": 30,
+      "missingFromInventory": 0
+    },
+    "batch": "KANTO PREFLIGHT-4 ADOPT BATCH: 3-venue bounded production implementation run as three independent mini-waves in one thread, in the order saitama-koshigaya-suncity-hall, gunma-ota-culture-main, ibaraki-hitachinaka-culture-main."
+  },
+  "currentnessGate": {
+    "result": "PASS",
+    "method": "First-party pages fetched fresh on 2026-09-04 before any seat conclusion: top page, 施設案内 大ホール, 座席案内, イベント情報, and the operator's own 整備事業 notice.",
+    "officialUrlCorrection": "The Kanto ledger and inventory recorded https://www.sun-cityhall.jp/, which does not resolve in DNS. The current official domain is https://suncityhall.jp/ and both records were corrected.",
+    "evidence": [
+      "施設案内 大ホール: 客席数 1,675席（内、車椅子席８席）; links ホール座席表.",
+      "座席案内: links 大ホール座席表 (byte-identical PDF).",
+      "イベント情報: monthly listings 2026-09 through 2027-06 with ticketed 大ホール performances (2026-09-05 西川悟平 6,000円, 09-07 桂文珍・春風亭一之輔 S4,400/A3,500, 09-12 ORANGE RANGE 7,300円 sold out, 09-25 舟木一夫 8,800円, 11-24 劇団四季『コーラスライン』, 2027-01-24 サンシティ・ニューイヤーコンサート).",
+      "Site footer: 休館日 : 年末年始（12/29〜1/3）のみ.",
+      "2025-11-28 notice 越谷サンシティ整備事業に伴う既存施設の運営期間延長について."
+    ],
+    "closureAssessment": "The operator states that whichever policy is decided, 大規模改修 or 建替え, demolition will not start in 令和9年度, and extends operation of the existing 市民ホール and 商業棟 to the end of 令和9年度 (2028-03-31), with 令和10年度 onward to be decided later. As of 2026-09-04 no permanent closure, demolition, rebuild, replacement facility or closure schedule is decided or announced, and no seating change is stated. Under the 2026-09-04 revised currentness/closure policy this is not by itself a production blocker; 'no seating-change statement' was NOT treated as proof that seating will not change. recheckNotBefore 2027-04-01."
+  },
+  "assetGate": {
+    "reachedFrom": [
+      "https://suncityhall.jp/hall1 (ホール座席表)",
+      "https://suncityhall.jp/seatinfo (座席表のダウンロード)"
+    ],
+    "notUrlGuessed": "Both link relations were re-walked on 2026-09-04; the PDF URL was never typed directly.",
+    "finalUrls": [
+      "https://suncityhall.jp/wp-content/uploads/2024/04/hall1_seat.pdf",
+      "https://suncityhall.jp/wp-content/uploads/2024/04/大ホール座席図.pdf"
+    ],
+    "sha256": "20aab1417a1161da6af4152035bc6925d000c5b08af2136c85403baf359979a3",
+    "byteSize": 5455670,
+    "byteIdentical": "Both link targets returned the same SHA-256 and byte size; Last-Modified differs (2024-04-08 vs 2024-04-15) because the same file was uploaded twice.",
+    "pageCount": 1,
+    "pageSize": "A4 portrait 595.276 x 841.890 pt",
+    "pdfMetadata": {
+      "format": "PDF 1.5",
+      "creator": "Adobe Illustrator CS3",
+      "producer": "Google"
+    },
+    "independentFetches": 3,
+    "textLayer": "The page is a single 2,479 x 3,504 px (300 dpi) DeviceRGB raster; total extractable text is the 17-character publisher line 公益財団法人　越谷市施設管理公社. No seat identifier is text.",
+    "denseVectorEligibility": "REJECTED on the evidence: DENSE-VECTOR requires every declared identifier to be printed as extractable text. Zero identifiers are text here, so the two independent identifier-reconstruction paths it demands do not exist. Default human visual two-pass applied."
+  },
+  "configurationGate": {
+    "hallForm": "Single dedicated large hall, 1階 + 2階, orchestra pit drawn in front of 1階1列.",
+    "issuerPublishedConfigurations": "One. The issuer publishes no stage-form variants, no pit-in-use chart, and no flat-floor chart for the 大ホール.",
+    "legend": "固定席 1,545席 / 移動席 122席 / 車椅子席 8席 / 計 1,675席.",
+    "decision": "One representative configuration `standard`, scope.kind full-venue. The orchestra pit is drawn but no alternative numbered chart exists, so no second configuration was derived by subtracting the 122 movable seats."
+  },
+  "targetDiscipline": {
+    "rule": "The PREFLIGHT 4 figures and the issuer legend were treated as hypotheses to reconcile after transcription, never as a transcription target or answer key.",
+    "practice": "Pass 1 and Pass 2 were frozen before any comparison with 1,545 / 122 / 8 / 1,675."
+  },
+  "passA": {
+    "label": "human visual Pass 1",
+    "order": "1階 front section rows 1列->16列 (bank order left side, left, centre, right, right side), then 1階 rear rows 17列->31列, then 2階 rows 1列->7列.",
+    "rendering": "600-1,400 dpi axis-aligned crops of the current chart.",
+    "frozenBeforePass2": true,
+    "expandedTotal": 1667,
+    "perArea": {
+      "floor1": 1359,
+      "floor2": 308
+    },
+    "movableRowsIdentified": "1階1列〜5列, 122 seats"
+  },
+  "passB": {
+    "label": "human visual Pass 2",
+    "assetReacquired": "PDF independently re-fetched before Pass 2; identical SHA-256.",
+    "order": "Reversed: 2階 first (rows 1列->7列 read right side to left side), then 1階 rear rows 31列->17列, then 1階 front rows 16列->1列, with crop boundaries re-cut at different pt offsets and different dpi (700-900 vs 600-1,400).",
+    "answerKeyUsed": false,
+    "frozenBeforeComparison": true,
+    "expandedTotal": 1667
+  },
+  "humanComparison": {
+    "method": "Frozen range tables compared in both directions on expanded (floor, row, seat-number) keys.",
+    "expandedPass1": 1667,
+    "expandedPass2": 1667,
+    "onlyInPass1": 0,
+    "onlyInPass2": 0,
+    "unresolvedMismatch": 0
+  },
+  "machineExpandedSourceVerification": {
+    "sourceRanges": 39,
+    "expandedFromSource": 1667,
+    "equalToPass1": true,
+    "equalToPass2": true,
+    "duplicateRuntimeKeys": 0,
+    "sourceSetEqualsRuntimeSet": true,
+    "perAreaFromSource": {
+      "floor1": 1359,
+      "floor2": 308
+    }
+  },
+  "machineStructuralChecksum": {
+    "feasibility": "Practical. The embedded 300 dpi raster draws every seat as a discrete closed cell, so closed-region (hole) detection counts cells without reading any identifier.",
+    "independence": "Run on the PDF-embedded raster with no input from the human range tables.",
+    "pathA": {
+      "method": "Contour-hierarchy hole detection on the native 2,479 x 3,504 embedded raster, over binarisation thresholds 170/185/200 and 2x2 and 3x3 closings, deduplicated by centroid; each candidate additionally required interior digit ink.",
+      "numberedCellsDetected": 1666,
+      "sectionBreakdown": {
+        "floor1Front": 578,
+        "floor1Rear": 780,
+        "floor2": 308
+      },
+      "solidBorderedOnly": 1545,
+      "nonSeatExcluded": "3 compartments of the right 車椅子席 box (kanji ink, no digits) and 1 footer glyph, separated by position and content.",
+      "singleUnclosedCell": "1階4列 right block seat 36. Its border is dotted (移動席) and does not close at any threshold. The detected centroids in that row are x = 1485.5, 1515.0, 1543.5, 1599.5, 1628.5, 1657.5, 1686.0 with gaps 29.5 / 28.5 / 56.0 / 29.0 / 29.0 / 28.5 px; 56.0 is exactly twice the 28.5 px cell pitch, proving one cell at that position. Confirmed at 2,200 dpi as a printed dotted cell reading 36.",
+      "result": "1,666 + 1 = 1,667, equal to the human two-pass."
+    },
+    "pathBSupporting": {
+      "method": "Independent 500 dpi re-rasterisation of an independently re-fetched copy; ink connected components filtered to the seat-number glyph height band.",
+      "seatAreaDigitLikeComponents": 3105,
+      "expectedPrintedDigits": 3112,
+      "interpretation": "Supporting only. The residual is consistent with touching digit pairs merging into single components; the decisive structural checksum is path A."
+    },
+    "wheelchairCompartmentCheck": "The two 車椅子席 boxes are subdivided by dashed lines into 5 compartments (left, 1階16列) and 3 compartments (right, below 16列): 5 + 3 = 8, matching the legend's 車椅子席 8席."
+  },
+  "issuerChecksumReconciliation": {
+    "legend": {
+      "固定席": 1545,
+      "移動席": 122,
+      "車椅子席": 8,
+      "計": 1675
+    },
+    "facilityPage": "客席数 1,675席（内、車椅子席８席）",
+    "mappedNumberedTotal": 1667,
+    "mappedFixed": 1545,
+    "mappedMovable": 122,
+    "differences": "1,545 and 122 match with difference 0. 1,545 + 122 = 1,667 mapped. 1,667 + 8 unnumbered wheelchair positions = 1,675, equal to the issuer total. No per-floor subtotal is published by the issuer, so 1階1,359 / 2階308 has no issuer counterpart.",
+    "materialMismatch": false
+  },
+  "wheelchairSemantics": {
+    "whereDrawn": "Two unnumbered boxes labelled 車椅子席 at 1階16列, one at the left end (in place of seats 1-8) and one outboard of the right end.",
+    "individuallyNumbered": "No. No digit is printed in any compartment.",
+    "replacesOrdinaryPrintedIds": "No. 1,667 printed + 8 wheelchair = 1,675, so the 8 are additional positions outside the numbered set, not replacements.",
+    "operationalNote": "The current ORANGE RANGE listing states 車椅子席 are obtained by buying an ordinary seat and exchanging on the day; that is an operational practice, not a published identifier replacement.",
+    "registration": "Not registered. No identifier invented, no adjacent numbered seat deleted."
+  },
+  "productionDecision": {
+    "result": "PRODUCTION",
+    "gatesSatisfied": [
+      "currentness",
+      "issuer ownership",
+      "complete numbered set for the declared scope",
+      "fresh independent human visual two-pass MATCH",
+      "independent machine structural checksum agreement",
+      "issuer subtotal reconciliation",
+      "no capacity fitting",
+      "no invented identifiers",
+      "no configuration mixing"
+    ],
+    "capacityFitting": false,
+    "inventedIdentifiers": false
+  },
+  "productionArtifacts": {
+    "sourceId": "koshigaya-suncity-large-hall",
+    "configurationId": "standard",
+    "schemaVersion": 2,
+    "scopeKind": "full-venue",
+    "areaIds": [
+      "floor1",
+      "floor2"
+    ],
+    "rowLabels": "floor1 1列〜31列, floor2 1列〜7列",
+    "ranges": 39,
+    "mapped": 1667,
+    "expectedSeatCount": 1675,
+    "rangeDiff": -8,
+    "confidence": "verified"
+  },
+  "prohibitionsObserved": [
+    "capacity fitting: not used. Every mapped identifier was read from the current official chart before any issuer total was compared.",
+    "invented seat IDs: none. No identifier, row, block or area was created that the chart does not print.",
+    "configuration mixing: none. Only one issuer-published numbered chart per venue was transcribed.",
+    "unsupported geometry completion: none. Missing positions were left unmapped rather than interpolated.",
+    "third-party infill: none. Only current first-party issuer material was used.",
+    "DENSE-VECTOR: not applied. Eligibility was assessed per venue and failed or was unnecessary; the default fresh independent human visual two-pass was used throughout.",
+    "no soft-limit threshold change, no compaction, and no unrelated refactor was made."
+  ],
+  "batchPosition": "Venue 1 of 3. Production totals and ledger counts after the whole batch are recorded in the batch summary of docs/HANDOFF.md and in the other two venue reports."
+}

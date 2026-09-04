@@ -1,0 +1,203 @@
+{
+  "reportVersion": 1,
+  "title": "IBARAKI-HITACHINAKA-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION",
+  "asOf": "2026-09-04",
+  "scope": "Single-venue bounded production implementation of ひたちなか市文化会館〔大ホール〕 (inventory ibaraki-hitachinaka-culture-main), the rank-4 ADOPT of KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4. Venue 3 of 3 in the PREFLIGHT-4 ADOPT batch.",
+  "mode": "fresh currentness -> chart re-fetch -> configuration -> human two-pass -> machine structural checksum -> issuer reconciliation",
+  "disposition": "PRODUCTION",
+  "startSnapshot": {
+    "branch": "main",
+    "head": "adc2f4920f42b533de1677248362555583f43073",
+    "originMain": "adc2f4920f42b533de1677248362555583f43073",
+    "workingTree": "clean",
+    "production": {
+      "venues": 144,
+      "configurations": 146,
+      "seatRecords": 218983
+    },
+    "kantoLedger": {
+      "universeTotal": 154,
+      "production": 61,
+      "adopt": 3,
+      "formalBlocked": 60,
+      "inventoryUnresearched": 30,
+      "missingFromInventory": 0
+    },
+    "batch": "KANTO PREFLIGHT-4 ADOPT BATCH: 3-venue bounded production implementation run as three independent mini-waves in one thread, in the order saitama-koshigaya-suncity-hall, gunma-ota-culture-main, ibaraki-hitachinaka-culture-main."
+  },
+  "currentnessGate": {
+    "result": "PASS",
+    "method": "First-party pages fetched fresh on 2026-09-04 before any seat conclusion: top page with the NEWS list, 施設案内 大ホール, 今月催事スケジュール.",
+    "officialUrlCorrection": "The Kanto ledger and inventory recorded https://hitachinaka-culture.jp/, which does not resolve in DNS. The current official domain is https://hitachinaka-culturehall.jp/ and both records were corrected.",
+    "evidence": [
+      "施設案内 大ホール: 総客席数：1,368 席（固定：1,150席／移動席：200席／身障者席：10席／母子席：8席）, ワンスロープタイプ, オーケストラピット有り.",
+      "NEWS updated to 2026.09.03 (施設利用抽選会のお知らせ, 大人向け文化教室「オカリナ」参加者募集！).",
+      "今月催事スケジュール 令和8年9月: ticketed 大ホール events including 9/5 しまじろうコンサート 3,500円 and 9/6 半﨑美子コンサートツアー2026.",
+      "チケット販売: 音楽見本市 Vol.53 (2026-09-27), Vol.54 (2026-10-17), Vol.55 (2026-11-23)."
+    ],
+    "closureAssessment": "No permanent closure, demolition, rebuild, long closure or renovation notice exists anywhere on the current site."
+  },
+  "assetGate": {
+    "reachedFrom": [
+      "https://hitachinaka-culturehall.jp/archives/facility/大ホール (大ホール座席表PDF / 座席表PDF)"
+    ],
+    "notUrlGuessed": "The link relation on the current facility page was re-walked on 2026-09-04.",
+    "finalUrl": "https://hitachinaka-culturehall.jp/wp-content/uploads/2024/02/大ホール_座席表.pdf",
+    "sha256": "4918b72339f98bcc87287b41f9ae4406559e01b152e15bfe559417ce105ee70b",
+    "byteSize": 607760,
+    "pageCount": 1,
+    "pageSize": "A4 landscape 841.889 x 595.276 pt",
+    "httpLastModified": "Mon, 04 Mar 2024 05:11:57 GMT",
+    "pdfMetadata": {
+      "format": "PDF 1.4",
+      "title": "文化会館座席_大OL.ai",
+      "author": "弘美印刷株式会社",
+      "creator": "Adobe Illustrator(R) 11",
+      "producer": "Acrobat Distiller 6.0.0 for Macintosh"
+    },
+    "textLayer": "Zero extractable text. As the filename's OL indicates, all type is outlined. Seat cells are vector stroke paths.",
+    "denseVectorEligibility": "REJECTED on the evidence: no identifier is printed as extractable text, so DENSE-VECTOR's identifier-reconstruction requirement cannot be met. Default human visual two-pass applied, with an independent vector-geometry structural checksum."
+  },
+  "configurationGate": {
+    "hallForm": "One-slope (ワンスロープ) multipurpose hall, rows 1-30, five unnamed blocks with continuous numbering 1-56 across the row.",
+    "issuerPublishedConfigurations": "One numbered chart.",
+    "orchestraPit": "The chart marks 1列〜6列 with 〔　〕 as オーケストラピット席 and notes that pit use removes them as a passage (196席). 196 equals 26+30+32+36+36+36, the printed subtotals of rows 1-6. No numbered chart for the pit state is published, so no second configuration was derived by subtraction.",
+    "unnumberedPositions": "車イス補助席 (5 compartments each side, at 9列/10列) and 母子席 (4 x 2 at the bottom centre): 10 + 8 = 18, matching the facility page's 身障者席10席 / 母子席8席.",
+    "decision": "One representative configuration `standard`, scope.kind full-venue, single unnamed area with the chart's own row numbers 1-30."
+  },
+  "targetDiscipline": {
+    "rule": "総座席数 1,350, 総客席数 1,368 and the printed per-row subtotals were used only as post-transcription reconciliation.",
+    "practice": "The transcription was resolved against the chart geometry and the row-number columns; where the machine clustering and the printed subtotals disagreed, the chart was re-read rather than a figure chosen."
+  },
+  "passA": {
+    "label": "human visual Pass 1",
+    "order": "Front section rows 1->18 by block (far-left, left, centre, right, far-right), then rear rows 19->30.",
+    "frozenBeforeMachineComparison": true,
+    "expandedTotal": 1350
+  },
+  "passB": {
+    "label": "human visual Pass 2",
+    "order": "Read from the opposite side and anchored differently: the far-right blocks with the adjacent row-number column, and the far-left blocks with their own adjacent row-number column, at 1,000-2,000 dpi with independently re-cut crops.",
+    "answerKeyUsed": false,
+    "expandedTotal": 1350,
+    "resolvedAmbiguities": "Confirmed directly that the 3-seat and 4-seat outer blocks belong to 7列 and 8列, that 16列 and 17列 carry the full 1〜10 / 47〜56 outer blocks, and that 18列 has no outer block at all."
+  },
+  "humanComparison": {
+    "method": "Frozen tables compared in both directions on expanded (row, seat-number) keys.",
+    "expandedPass1": 1350,
+    "expandedPass2": 1350,
+    "onlyInPass1": 0,
+    "onlyInPass2": 0,
+    "unresolvedMismatch": 0
+  },
+  "machineExpandedSourceVerification": {
+    "sourceRanges": 30,
+    "expandedFromSource": 1350,
+    "equalToPass1": true,
+    "equalToPass2": true,
+    "duplicateRuntimeKeys": 0,
+    "sourceSetEqualsRuntimeSet": true
+  },
+  "machineStructuralChecksum": {
+    "feasibility": "Practical. Every seat cell is an individual vector stroke rectangle.",
+    "independence": "Derived from PDF vector stroke geometry alone. No text exists to read, and the human range table was never a count source.",
+    "method": "All stroke drawings were enumerated and filtered to seat-cell dimensions (width 6.0-14.0 pt, height 8.0-14.0 pt), then chained into rows by nearest-neighbour adjacency; cell width classes were tabulated separately as a second, independent structural signal.",
+    "strokeDrawingsTotal": 1368,
+    "seatSizedStrokes": 1354,
+    "nonSeatStrokes": "14 (figure outline, block frames, the single-path 車イス補助席 5-compartment box at 37.6 x 16.0 pt, and its dashed caption box).",
+    "circledDoorMarkers": "5 of the 1,354 are 9.0 x 9.0 pt four-bezier circles Ⓐ Ⓑ Ⓒ Ⓓ Ⓕ, not seats.",
+    "mergedCell": "The 19列 far-left seat 9 cell is drawn inside a 200.4 x 195.7 pt nine-item composite path (the section outline) and is therefore not an independent rectangle.",
+    "result": "1,354 - 5 + 1 = 1,350, equal to the human two-pass.",
+    "widthClassCrossCheck": {
+      "centre_7.4pt": "360 = 12 x 30 rows",
+      "frontLeftAndRight_8.2pt": "412 = (7 + 9 + 10 + 12 x 15) x 2",
+      "rearLeftAndRight_7.8pt": "288 = 12 x 12 rows x 2",
+      "outerBlocks_11.1pt": "14 = (3 + 4) x 2, rows 7 and 8",
+      "outerBlocks_9.3pt": "116 = (6 + 7 + 8 + 8 + 9 + 10 + 10) x 2, rows 11-17",
+      "rearOuterBlocks_8.5pt": "159 = (2 x 5 + 10 x 7) x 2 - 1 merged cell, rows 19-30"
+    }
+  },
+  "issuerChecksumReconciliation": {
+    "chartHeader": "総座席数　1,350",
+    "printedPerRowSubtotals": {
+      "1": 26,
+      "2": 30,
+      "3": 32,
+      "4-6": 36,
+      "7": 42,
+      "8": 44,
+      "9-10": 36,
+      "11": 48,
+      "12": 50,
+      "13-14": 52,
+      "15": 54,
+      "16-17": 56,
+      "19-23": 40,
+      "24-30": 56
+    },
+    "printedSectionSubtotals": {
+      "rows1-18": 758,
+      "rows19-30": 592
+    },
+    "row18": "No subtotal is printed for 18列. 758 minus the 722 of rows 1-17 gives 36, equal to the transcribed 18列.",
+    "facilityPage": {
+      "総客席数": 1368,
+      "固定": 1150,
+      "移動席": 200,
+      "身障者席": 10,
+      "母子席": 8
+    },
+    "mapped": {
+      "total": 1350,
+      "rows1-18": 758,
+      "rows19-30": 592
+    },
+    "differences": "Every printed per-row subtotal, both section subtotals, the chart header 1,350, the 固定1,150 + 移動200 = 1,350 breakdown, and 1,350 + 10 + 8 = 1,368 all reconcile with difference 0.",
+    "materialMismatch": false
+  },
+  "wheelchairSemantics": {
+    "whereDrawn": "車イス補助席: one unnumbered box of 5 compartments at each side of 9列/10列. 母子席: an unnumbered 4 x 2 block at the bottom centre.",
+    "individuallyNumbered": "No.",
+    "replacesOrdinaryPrintedIds": "No. 1,350 printed + 10 + 8 = 1,368, and the drawn compartment counts (10 and 8) equal the published figures.",
+    "registration": "Not registered."
+  },
+  "productionDecision": {
+    "result": "PRODUCTION",
+    "gatesSatisfied": [
+      "currentness",
+      "issuer ownership",
+      "complete numbered set for the declared scope",
+      "fresh independent human visual two-pass MATCH",
+      "independent machine structural checksum agreement",
+      "exact per-row, per-section and capacity-breakdown issuer reconciliation",
+      "no capacity fitting",
+      "no invented identifiers",
+      "no configuration mixing"
+    ],
+    "capacityFitting": false,
+    "inventedIdentifiers": false
+  },
+  "productionArtifacts": {
+    "sourceId": "hitachinaka-culture-large-hall",
+    "configurationId": "standard",
+    "schemaVersion": 2,
+    "scopeKind": "full-venue",
+    "areaIds": [],
+    "rowLabels": "1〜30 (the chart's own row numbers; the app renders them as n列)",
+    "ranges": 30,
+    "mapped": 1350,
+    "expectedSeatCount": 1350,
+    "rangeDiff": 0,
+    "confidence": "verified"
+  },
+  "prohibitionsObserved": [
+    "capacity fitting: not used. Every mapped identifier was read from the current official chart before any issuer total was compared.",
+    "invented seat IDs: none. No identifier, row, block or area was created that the chart does not print.",
+    "configuration mixing: none. Only one issuer-published numbered chart per venue was transcribed.",
+    "unsupported geometry completion: none. Missing positions were left unmapped rather than interpolated.",
+    "third-party infill: none. Only current first-party issuer material was used.",
+    "DENSE-VECTOR: not applied. Eligibility was assessed per venue and failed or was unnecessary; the default fresh independent human visual two-pass was used throughout.",
+    "no soft-limit threshold change, no compaction, and no unrelated refactor was made."
+  ],
+  "batchPosition": "Venue 3 of 3."
+}
