@@ -198,5 +198,45 @@
     "DENSE-VECTOR: not applied. Eligibility was assessed per venue and failed or was unnecessary; the default fresh independent human visual two-pass was used throughout.",
     "no soft-limit threshold change, no compaction, and no unrelated refactor was made."
   ],
-  "batchPosition": "Venue 1 of 3. Production totals and ledger counts after the whole batch are recorded in the batch summary of docs/HANDOFF.md and in the other two venue reports."
+  "batchPosition": "Venue 1 of 3. Production totals and ledger counts after the whole batch are recorded in the batch summary of docs/HANDOFF.md and in the other two venue reports.",
+  "releaseVerification": {
+    "asOf": "2026-09-05",
+    "result": "RELEASE VERIFIED / CLOSED",
+    "productionCommit": "4d6525842dbf7cffeeabd3c29c5243f6fd3ec702",
+    "build": {
+      "checkRun": "Workers Builds: seat-lottery-simulator",
+      "buildId": "4b2ee716-10c7-40d2-a5b1-41790cbfe726",
+      "conclusion": "success",
+      "attempts": 1,
+      "note": "Succeeded on the first attempt. No retry, no empty commit and no local production deploy; the managed GitHub-connected Cloudflare Workers Build was the only deploy path."
+    },
+    "publicUiSmoke": {
+      "site": "https://seat-lottery-simulator.studiotomo.workers.dev/",
+      "venueSearch": "「サンシティホール」で検索して 絞り込み結果 1件、サンシティホール 大ホール（埼玉県 越谷市）のみが表示される。",
+      "displayedMappedCount": "抽選対象 1,667席",
+      "runtimeJson": "/venue-db/venues/koshigaya-suncity-large-hall--standard.json → HTTP 200, totalSeatCount 1667, ranges 39, areas 1階/2階, source・checkedAt・verification・URLの漏えいなし。",
+      "draws": [
+        "2階 2列 29番",
+        "2階 3列 42番"
+      ],
+      "gapAndUnnumberedExclusion": "Exhaustive check against the deployed runtime assets: every drawable offset (1,667 + 1,491 + 1,350 = 4,508) resolves to a distinct seat inside the mapped set. No known gap, no unnumbered accessibility or parent-child position, and no excluded variant identifier can be drawn.",
+      "consoleErrorsOrWarnings": "none",
+      "networkErrors": "none; every lazy-loaded venue detail returned HTTP 200."
+    },
+    "productionTotals": {
+      "venues": 147,
+      "configurations": 149,
+      "seatRecords": 223491
+    },
+    "kantoGe1000LedgerAfter": {
+      "universeTotal": 154,
+      "production": 64,
+      "adopt": 0,
+      "formalBlocked": 60,
+      "inventoryUnresearched": 30,
+      "missingFromInventory": 0,
+      "method": "machine-recomputed from records[] in data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json"
+    },
+    "disposition": "PRODUCTION + RELEASE VERIFIED / CLOSED"
+  }
 }

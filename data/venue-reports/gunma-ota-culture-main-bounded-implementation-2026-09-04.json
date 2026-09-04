@@ -216,5 +216,44 @@
     "DENSE-VECTOR: not applied. Eligibility was assessed per venue and failed or was unnecessary; the default fresh independent human visual two-pass was used throughout.",
     "no soft-limit threshold change, no compaction, and no unrelated refactor was made."
   ],
-  "batchPosition": "Venue 2 of 3."
+  "batchPosition": "Venue 2 of 3.",
+  "releaseVerification": {
+    "asOf": "2026-09-05",
+    "result": "RELEASE VERIFIED / CLOSED",
+    "productionCommit": "4d6525842dbf7cffeeabd3c29c5243f6fd3ec702",
+    "build": {
+      "checkRun": "Workers Builds: seat-lottery-simulator",
+      "buildId": "4b2ee716-10c7-40d2-a5b1-41790cbfe726",
+      "conclusion": "success",
+      "attempts": 1,
+      "note": "Succeeded on the first attempt. No retry, no empty commit and no local production deploy; the managed GitHub-connected Cloudflare Workers Build was the only deploy path."
+    },
+    "publicUiSmoke": {
+      "site": "https://seat-lottery-simulator.studiotomo.workers.dev/",
+      "venueSearch": "「太田市民会館」で検索して 絞り込み結果 1件、太田市民会館 ホール（群馬県 太田市）のみが表示される。",
+      "displayedMappedCount": "抽選対象 1,491席",
+      "runtimeJson": "/venue-db/venues/ota-civic-hall--standard.json → HTTP 200, totalSeatCount 1491, ranges 53, areas 1・2階席/3階席/4階席, 漏えいなし。",
+      "draws": [
+        "1・2階席 20列 14番"
+      ],
+      "gapAndUnnumberedExclusion": "Exhaustive check against the deployed runtime assets: every drawable offset (1,667 + 1,491 + 1,350 = 4,508) resolves to a distinct seat inside the mapped set. No known gap, no unnumbered accessibility or parent-child position, and no excluded variant identifier can be drawn.",
+      "consoleErrorsOrWarnings": "none",
+      "networkErrors": "none; every lazy-loaded venue detail returned HTTP 200."
+    },
+    "productionTotals": {
+      "venues": 147,
+      "configurations": 149,
+      "seatRecords": 223491
+    },
+    "kantoGe1000LedgerAfter": {
+      "universeTotal": 154,
+      "production": 64,
+      "adopt": 0,
+      "formalBlocked": 60,
+      "inventoryUnresearched": 30,
+      "missingFromInventory": 0,
+      "method": "machine-recomputed from records[] in data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json"
+    },
+    "disposition": "PRODUCTION + RELEASE VERIFIED / CLOSED"
+  }
 }
