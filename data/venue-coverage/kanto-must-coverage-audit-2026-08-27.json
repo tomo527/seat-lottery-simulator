@@ -22,9 +22,9 @@
     },
     "byStatus": {
       "production": 59,
-      "ADOPT / implementation-ready": 0,
-      "HOLD / NEED EVIDENCE / formal DEFER": 61,
-      "inventory-unresearched": 34
+      "ADOPT / implementation-ready": 3,
+      "HOLD / NEED EVIDENCE / formal DEFER": 62,
+      "inventory-unresearched": 30
     },
     "missingFromInventory": 0
   },
@@ -133,13 +133,13 @@
       "currentName": "ひたちなか市文化会館〔大ホール〕",
       "aliases": [],
       "facilitySpace": "ひたちなか市文化会館〔大ホール〕",
-      "officialCapacityAndMode": "1600 (current inventory/audit capacity; see official URL)",
+      "officialCapacityAndMode": "1,368 total current issuer capacity: 1,150 fixed + 200 movable + 10 wheelchair + 8 parent/child; current linked numbered chart headline is 1,350 (fixed + movable) and states the orchestra-pit alternative removes row 6 / 196 seats",
       "officialUrl": "https://hitachinaka-culture.jp/",
       "inventoryId": "ibaraki-hitachinaka-culture-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "2026-09-04 preflight: a separately authorized bounded implementation may select only the current issuer-linked standard 1,350-numbered-seat chart. Fresh-fetch it, run independent human visual Pass 1 and Pass 2, two-way equality against the machine-expanded set, reconcile 1,150 fixed + 200 movable = 1,350 and the issuer's separate wheelchair 10 / parent-child 8 positions, and use an independent vector/raster structural checksum. Do not derive the orchestra-pit 196-seat removal as a second configuration; stop production on any material mismatch."
     },
     {
       "prefecture": "茨城県",
@@ -263,13 +263,13 @@
       "currentName": "太田市民会館〔ホール〕",
       "aliases": [],
       "facilitySpace": "太田市民会館〔ホール〕",
-      "officialCapacityAndMode": "1500 (current inventory/audit capacity; see official URL)",
+      "officialCapacityAndMode": "1,501 total current issuer capacity: 1F/2F 943 (891 fixed + 42 standing + 2 wheelchair + 8 parent/child), 3F 276 (241 fixed + 35 standing), 4F 282 (258 fixed + 24 standing); the current use guide separately calls the 1,491 numbered-seat/standing total and 1,501 occupancy including parent/child room",
       "officialUrl": "https://www.ota-arts.jp/",
       "inventoryId": "gunma-ota-culture-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "2026-09-04 preflight: a separately authorized bounded implementation may select only the current issuer-linked standard chart. Fresh-fetch it, run independent human visual Pass 1 and Pass 2, two-way equality against the machine-expanded set, reconcile the issuer's 1,491 numbered-seat/standing subtotal and 1F/2F 943 + 3F 276 + 4F 282 = 1,501 semantics, and use independent vector/raster structural checksums. Preserve the published wheelchair-convertible and parent/child-room semantics; do not create the orchestra-lift rows-1-to-5-unavailable form by subtraction. Stop production on any material mismatch."
     },
     {
       "prefecture": "群馬県",
@@ -380,13 +380,13 @@
       "currentName": "サンシティホール〔大ホール〕",
       "aliases": [],
       "facilitySpace": "サンシティホール〔大ホール〕",
-      "officialCapacityAndMode": "1675 (current inventory/audit capacity; see official URL)",
+      "officialCapacityAndMode": "1,675 current issuer total: 1,545 fixed + 122 movable + 8 wheelchair; current issuer-linked large-hall chart visibly prints the numbered seat cells across its shown floor/row/block structure",
       "officialUrl": "https://www.sun-cityhall.jp/",
       "inventoryId": "saitama-koshigaya-suncity-hall",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": null,
+      "reopenCondition": "2026-09-04 preflight: a separately authorized bounded implementation may select only the current issuer-linked large-hall chart. Fresh-fetch it, run independent human visual Pass 1 and Pass 2, two-way equality against the machine-expanded set, reconcile 1,545 fixed + 122 movable + 8 wheelchair = 1,675 without inventing a wheelchair replacement relation, and use independent vector/raster structural checksums. Stop production on any material mismatch."
     },
     {
       "prefecture": "埼玉県",
@@ -523,13 +523,13 @@
       "currentName": "パシフィコ横浜〔国立大ホール〕",
       "aliases": [],
       "facilitySpace": "パシフィコ横浜〔国立大ホール〕",
-      "officialCapacityAndMode": "5002 (current inventory/audit capacity; see official URL)",
+      "officialCapacityAndMode": "maximum 5,002 current issuer capacity; seat chart and adjustable-stage/seat-layout materials exist, but no configuration judgement was advanced after Gate 1 HOLD",
       "officialUrl": "https://www.pacifico.co.jp/visitor/floorguide/national-convention-hall/",
       "inventoryId": "kanagawa-pacifico-national-hall",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / CURRENTNESS (KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4, 2026-09-04): the issuer's formal 2026-06-04 release announces 国立大ホール closure for its first large-scale refurbishment from 2027-05-17 through 2028-03-31, reopening 2028-04-01. This is a hall-specific announced long closure inside the 12-month policy horizon, not routine maintenance. Do not advance a current chart or adjustable layout to implementation during the closure lead-up.",
+      "reopenCondition": "After the announced refurbishment has completed and the issuer has confirmed reopened operation, re-check the then-current issuer facility, event/booking, seating, technical, accessibility, and capacity material. Adopt only an issuer-defined complete numbered configuration; do not assume the pre-refurbishment chart survives."
     },
     {
       "prefecture": "神奈川県",

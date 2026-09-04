@@ -1,0 +1,240 @@
+{
+  "reportVersion": 1,
+  "title": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4",
+  "asOf": "2026-09-04",
+  "scope": "Preflight only. Live-reranked only the current 34 Kanto >=1,000 ledger records carrying inventory-unresearched. Existing production, ADOPT, HOLD/DEFER/HARD-CASE/JUDGMENT, duplicates, sibling facility-spaces already formally accounted for, and RaiBoC were excluded. No seat transcription, source JSON, ranges, fingerprints, generated catalog/runtime, or production implementation was performed.",
+  "startSnapshot": {
+    "branch": "main",
+    "head": "71a48362d0776848cb676a721baa7b444d16a817",
+    "originMain": "71a48362d0776848cb676a721baa7b444d16a817",
+    "workingTree": "clean",
+    "production": {
+      "venues": 142,
+      "configurations": 144,
+      "seatRecords": 211983
+    },
+    "kantoLedger": {
+      "universeTotal": 154,
+      "production": 59,
+      "adopt": 0,
+      "formalBlocked": 61,
+      "inventoryUnresearched": 34,
+      "missingFromInventory": 0
+    },
+    "preflight3AdoptQueue": "empty",
+    "raiboc": "saitama-raiboc-main remains blocked in its separate transcription-remediation queue and was excluded."
+  },
+  "policy": {
+    "lane": "JUDGMENT",
+    "reason": "This bounded wave decides currentness, issuer-defined configuration scope, capacity semantics, and whether a later implementation has independent error-detection paths. It does not transcribe seats.",
+    "currentness": "For every formally opened candidate, current first-party operation and closure/renovation/reconstruction/cessation/reopening notices were checked before a seat-chart conclusion. An issuer-announced long hall closure within twelve months is HOLD in principle. Routine short regular closure days are not treated as long closure.",
+    "seatPolicy": "Capacity is never identifier evidence. No capacity fitting, inferred seat IDs, inferred alternate configurations, geometry completion, configuration mixing, or third-party chart supplementation is allowed.",
+    "crossCheckCarryForward": "A human Pass 1/Pass 2 match alone is necessary but insufficient. Future production must also reconcile issuer subtotals and use an independent structural checksum where practical; any material mismatch stops production and returns to the chart."
+  },
+  "candidatePool": {
+    "ledgerInventoryUnresearched": 34,
+    "inventoryRecordsFound": 32,
+    "nonInventoryLedgerRecords": [
+      "tokyo-official-1072 味の素スタジアム",
+      "tokyo-official-1090 法政大学多摩キャンパス大教室A棟"
+    ],
+    "eligibleForLiveRerank": 34,
+    "identityChecks": "All four opened records have venueSourceId null. Their inventory IDs, facility-space names, aliases, and produced-source names/aliases were compared. No opened record is a duplicate or a sibling representation of a produced venue. RaiBoC is a distinct blocked record and was excluded before ranking.",
+    "exclusions": "No production, prior ADOPT, formal blocked/HOLD/DEFER/HARD-CASE/JUDGMENT, duplicate/same facility-space, or RaiBoC record entered the candidate pool."
+  },
+  "liveReranking": {
+    "method": [
+      "Ranked dedicated concert/theatre/ticketed-event halls and ongoing public performance use above capacity alone.",
+      "Favoured a current issuer-numbered chart, coherent representative configuration, explicit capacity semantics, and independent checksum prospects.",
+      "Penalised arenas, stadia, exhibitions, standing-first venues, movable/event-dependent layouts, and announced long closures even where nominal capacity is large."
+    ],
+    "rankedTop12": [
+      { "rank": 1, "inventoryId": "kanagawa-pacifico-national-hall", "reason": "Very high-impact concert/convention hall with issuer chart surface, but its imminent issuer-announced hall-specific long refurbishment was unknown until Gate 1 and is a decisive yield penalty." },
+      { "rank": 2, "inventoryId": "saitama-koshigaya-suncity-hall", "reason": "Dedicated metropolitan public large hall with dense current ticketed programme, a current linked numbered chart, and explicit fixed/movable/wheelchair semantics." },
+      { "rank": 3, "inventoryId": "gunma-ota-culture-main", "reason": "Purpose-built ticketed civic hall with current programme through 2027, complete issuer-linked chart, floor capacity semantics, and explicit standing/accessibility treatment." },
+      { "rank": 4, "inventoryId": "ibaraki-hitachinaka-culture-main", "reason": "Dedicated concert/theatre hall with current ticketed programme, current linked complete chart, a standard numbered subtotal, and separately disclosed pit/movable/accessibility variants." },
+      { "rank": 5, "inventoryId": "gunma-maebashi-culture-main", "reason": "Civic large-hall prospect; below opened candidates on current chart and checksum evidence visible from repository metadata." },
+      { "rank": 6, "inventoryId": "gunma-isesaki-culture-main", "reason": "Regional dedicated large hall with plausible fixed seating, but lower metropolitan impact and no preflight opening after stop." },
+      { "rank": 7, "inventoryId": "chiba-narita-culture-main", "reason": "Dedicated 1,188-seat civic hall; lower impact and unexamined current chart prospect." },
+      { "rank": 8, "inventoryId": "ibaraki-ryugasaki-culture-main", "reason": "Public 1,200-seat hall prospect; below current programme/chart evidence of the opened candidates." },
+      { "rank": 9, "inventoryId": "tochigi-oyama-culture-main", "reason": "Civic 1,300-seat hall prospect; not opened after the ADOPT stop." },
+      { "rank": 10, "inventoryId": "tochigi-light-cube-large", "reason": "Modern major hall, penalised because conference/multipurpose layout makes a representative numbered set less certain." },
+      { "rank": 11, "inventoryId": "kanagawa-yokohama-arena-main", "reason": "High live-event impact but strongly penalised for arena-floor/event-dependent layout risk." },
+      { "rank": 12, "inventoryId": "kanagawa-kt-zepp-yokohama", "reason": "Active live venue but standing-first/movable-use semantics lower expected lossless numbered-configuration yield." }
+    ]
+  },
+  "researched": [
+    {
+      "rank": 1,
+      "inventoryId": "kanagawa-pacifico-national-hall",
+      "identity": "パシフィコ横浜〔国立大ホール〕 / 神奈川県横浜市 / hall",
+      "currentOperationalStatus": "ACTIVE at review: the issuer currently presents it as a 5,000-seat-plus hall for concerts, ceremonies, events and conferences, and published a September 2026 National Convention Hall opening notice. Gate 1 nevertheless fails for immediate production yield because the issuer formally announced a hall-specific large-scale refurbishment closure from 2027-05-17 through 2028-03-31, reopening 2028-04-01.",
+      "closureRenovationResult": "HOLD. This is a formal long closure within 12 months of review, not routine maintenance; other Pacifico spaces remain open but that does not negate the National Convention Hall-specific closure.",
+      "officialCapacitiesAndSemantics": {
+        "maximumCapacity": "5,002 (current official facility information)",
+        "numberedSeatSubtotal": "not assessed after Gate 1 HOLD",
+        "perFloorSubtotal": [],
+        "wheelchairSubtotal": "not assessed after Gate 1 HOLD",
+        "movableRemovableStanding": "issuer current material describes an adjustable stage and separately charges for seating-layout setup; configuration assessment was intentionally not advanced after HOLD",
+        "other": "not assessed after Gate 1 HOLD"
+      },
+      "configurationVariants": "Current facility material signals adjustable stage/layout. No representative configuration was selected because currentness HOLD ends the preflight path before seat evidence may be advanced.",
+      "currentOfficialNumberedChart": "Current issuer facility page exposes a seat-chart link, but complete identifier/floor/configuration assessment was not performed after Gate 1 HOLD.",
+      "currentLinkProvenance": [
+        "https://plan.pacifico.co.jp/national-convention-hall — current issuer planner page, current operation, adjustable-stage and seat-chart surface",
+        "https://www.pacifico.co.jp/news/DUVZG5eM — current 2026-08-28 National Convention Hall notice",
+        "https://lp.pacifico.co.jp/hubfs/pressrelease/pressrelease_National%20Convention%20Hall%20closed_2026.06.04.pdf — issuer formal closure release (2027-05-17 to 2028-03-31; reopening 2028-04-01)"
+      ],
+      "fixedMovableStandingEventDependent": "adjustable-stage/layout material exists; no configuration classification is adopted during HOLD",
+      "wheelchairAccessibility": "not assessed beyond the closure gate",
+      "issuerChecksumStructure": { "grandCapacity": "5,002 maximum", "numberedSeatSubtotal": null, "perFloor": [], "perArea": [], "wheelchair": null, "movableRemovable": null, "standing": null, "otherIssuerDefinedChecksums": [] },
+      "machineStructuralCountFeasibility": "not assessed — currentness HOLD deliberately prevents implementation-oriented chart analysis",
+      "disposition": "HOLD",
+      "exactBlocker": "Issuer-announced long refurbishment closure within the 12-month currentness horizon.",
+      "reopenCondition": "After refurbishment completion and confirmed reopening, fresh-check current operation, capacity/configuration semantics, accessibility, technical material, and the then-current issuer chart. Do not assume that the pre-refurbishment chart remains valid."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "saitama-koshigaya-suncity-hall",
+      "identity": "サンシティホール〔大ホール〕 / 埼玉県越谷市 / hall",
+      "currentOperationalStatus": "ACTIVE. The issuer calls only year-end/new-year dates regular closures and publishes ticketed 大ホール concerts, ballet, musical theatre, comedy and classical events through February 2027. No issuer closure, renovation, reconstruction, cessation or reopening notice affecting the hall within 12 months was found.",
+      "closureRenovationResult": "PASS. The published 12/29–1/3 closure is routine, short and recurring; it is not a long closure or seating-change notice.",
+      "officialCapacitiesAndSemantics": {
+        "maximumCapacity": "1,675",
+        "numberedSeatSubtotal": "to be determined only by later transcription from the current chart; capacity is not a target",
+        "perFloorSubtotal": [],
+        "wheelchairSubtotal": "8, issuer itemised",
+        "movableRemovableStanding": "122 movable seats, issuer itemised; no standing subtotal published on the opened material",
+        "parentChild": "not published on opened material",
+        "vipTechnical": "not published on opened material",
+        "relation": "1,545 fixed + 122 movable + 8 wheelchair = 1,675"
+      },
+      "configurationVariants": "The opened current facility, seat, usage and event material establishes one current large-hall chart. It separately itemises movable and wheelchair seats but does not publish a second issuer-defined numbered chart, pit, thrust, flat-floor, standing or technical-seat configuration. No alternate is inferred from arithmetic.",
+      "currentOfficialNumberedChart": "YES. The current 座席案内 page links the one-page issuer PDF; fresh visual review confirmed individually printed numbered seat cells across the chart's shown floor/row/block structure.",
+      "currentLinkProvenance": [
+        "https://suncityhall.jp/hall1 — current official large-hall page: 1,675 / wheelchair 8, venue identity and seat-chart link",
+        "https://suncityhall.jp/seatinfo — current official seat page linking the large-hall PDF",
+        "https://suncityhall.jp/wp-content/uploads/2024/04/%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%E5%BA%A7%E5%B8%AD%E5%9B%B3.pdf — current-linked complete numbered chart",
+        "https://suncityhall.jp/event-list1 — current issuer ticketed programme through 2027"
+      ],
+      "fixedMovableStandingEventDependent": "Fixed 1,545; movable 122; no issuer standing or event-dependent seating statement found for the selected chart.",
+      "wheelchairAccessibility": "8 is issuer itemised. Future transcription must read the chart's printed/unprinted relationship directly and must not invent a replacement relation.",
+      "issuerChecksumStructure": { "grandCapacity": "1,675", "numberedSeatSubtotal": "later chart transcription only", "perFloor": [], "perArea": [], "wheelchair": "8", "movableRemovable": "122 movable", "standing": null, "otherIssuerDefinedChecksums": ["1,545 fixed", "1,545 + 122 + 8 = 1,675"] },
+      "machineStructuralCountFeasibility": "possible — the one-page current-linked PDF has repeated discrete seat cells, printed number glyphs, and clear row/bar structure. A later independent vector geometry/text-glyph path and a rendered raster connected-component/cell path can be compared without using human ranges as their count source.",
+      "disposition": "ADOPT / implementation-ready",
+      "adoptRationale": "A current dedicated public large hall is demonstrably active for ticketed events, has a coherent current chart with complete printed identifiers, and has explicit fixed/movable/wheelchair semantics. One charted representative configuration can be implemented without inventing an alternate.",
+      "implementationVerificationPlan": {
+        "requiredHumanPasses": ["fresh independent human visual Pass 1", "fresh independent human visual Pass 2 with a different traversal/crop order"],
+        "rangeEquality": "Compare the machine-expanded source set with both frozen human sets in both directions, including floor/row/area ownership and duplicate-key checks.",
+        "issuerChecksumStructure": ["grand capacity 1,675", "fixed 1,545", "movable 122", "wheelchair 8", "any later visible floor/area subtotal"],
+        "structuralChecksum": "Independently count vector seat-cell geometry/text-glyph identifiers and, where stable, rendered raster discrete cells/row bars. Neither path may consume the human range table.",
+        "mismatchRule": "Any material human, source-set, issuer-subtotal or structural mismatch stops production and returns to the current issuer chart."
+      }
+    },
+    {
+      "rank": 3,
+      "inventoryId": "gunma-ota-culture-main",
+      "identity": "太田市民会館〔ホール〕 / 群馬県太田市 / hall",
+      "currentOperationalStatus": "ACTIVE. The issuer's current ticket surface lists ticketed hall events in September and October 2026 and programme through February 2027. The only regular closures are weekly Monday (or next weekday) and year-end/new-year; no hall closure, renovation, rebuilding, cessation or reopening notice within 12 months was found.",
+      "closureRenovationResult": "PASS. Routine weekly/holiday closures are not long closure evidence.",
+      "officialCapacitiesAndSemantics": {
+        "maximumCapacity": "1,501",
+        "numberedSeatSubtotal": "1,491 current use-guide seat/standing subtotal; later transcription must verify the printed set rather than fit to it",
+        "perFloorSubtotal": ["1F/2F 943 = fixed 891 + standing 42 + wheelchair 2 + parent/child 8", "3F 276 = fixed 241 + standing 35", "4F 282 = fixed 258 + standing 24"],
+        "wheelchairSubtotal": "2; issuer says some fixed seats can be converted to wheelchair use",
+        "standingSubtotal": "101 = 42 + 35 + 24",
+        "parentChildSubtotal": "8",
+        "movableRemovable": "no movable-seat subtotal published; orchestra lift creates a separately described unavailable-seat condition",
+        "other": "1,491 = fixed 1,390 + standing 101; 1,501 capacity adds wheelchair 2 and parent/child 8"
+      },
+      "configurationVariants": "Current issuer material covers proscenium-wing opening, large/small acoustic-reflector forms and an orchestra lift. The lift may be used as front stage or orchestra pit and makes rows 1–5 / 149 seats unavailable. Those are variants/usage conditions, not a basis to derive a second numbered configuration. The candidate scope is only the complete current standard chart.",
+      "currentOfficialNumberedChart": "YES. The current facility page links the complete issuer seat PDF, and current technical/download material continues to list the seat chart. Fresh visual review confirms printed individual cells, floor labels, standing-seat labels and accessibility/parent-room markings.",
+      "currentLinkProvenance": [
+        "https://www.otacivichall.net/facility/hall/ — current official facility/capacity/configuration page and current seat-chart link",
+        "https://www.otacivichall.net/facility/shiryo-2/ — current official technical download index, seat chart and 2025.4/2025.10 supporting material",
+        "https://www.otacivichall.net/wp-content/uploads/2019/04/zasekihyou.pdf — current-linked complete numbered chart",
+        "https://www.otacivichall.net/ticket/ — current issuer ticketed programme"
+      ],
+      "fixedMovableStandingEventDependent": "Fixed 1,390; standing 101; no event-dependent floor layout is selected. The formally described lift/pit form is excluded from the representative scope unless a later implementation directly validates an issuer-defined complete chart for it.",
+      "wheelchairAccessibility": "Wheelchair 2 and parent/child 8 are issuer itemised; current issuer language permits conversion of some fixed seats. Future work must preserve this distinction and derive no replacement relationship from totals alone.",
+      "issuerChecksumStructure": { "grandCapacity": "1,501", "numberedSeatSubtotal": "1,491 current use-guide seat/standing subtotal", "perFloor": ["1F/2F 943", "3F 276", "4F 282"], "perArea": [], "wheelchair": "2", "movableRemovable": "orchestra lift: rows 1–5 / 149 unavailable when used", "standing": "101", "otherIssuerDefinedChecksums": ["fixed 1,390", "parent/child 8", "943 + 276 + 282 = 1,501"] },
+      "machineStructuralCountFeasibility": "possible — the current-linked vector PDF exposes repeated drawn seat cells, individual number glyphs, floor partitions and labelled standing banks. Use vector geometry/glyph grouping plus a rendered raster cell/component count as independent checks, with manual classification of non-seat symbols.",
+      "disposition": "ADOPT / implementation-ready",
+      "adoptRationale": "A current active ticketed civic hall supplies a complete chart and unusually useful independent issuer semantics. The standard chart can be bounded without pretending that lift/pit use or wheelchair conversion is a separate inferred seat set.",
+      "implementationVerificationPlan": {
+        "requiredHumanPasses": ["fresh independent human visual Pass 1", "fresh independent human visual Pass 2 with a different traversal/crop order"],
+        "rangeEquality": "Compare machine-expanded source seats with both human sets bidirectionally; retain floor/area/row ownership and check duplicate runtime keys.",
+        "issuerChecksumStructure": ["grand capacity 1,501", "numbered-seat/standing subtotal 1,491", "1F/2F 943", "3F 276", "4F 282", "fixed 1,390", "standing 101", "wheelchair 2", "parent/child 8", "orchestra-lift rows 1–5 / 149 unavailable condition"],
+        "structuralChecksum": "Independently count vector seat-cell geometry/glyphs and raster connected components/row bars; classify standing, wheelchair and parent-room marks from issuer labels rather than the range table.",
+        "mismatchRule": "Any material mismatch stops production. Do not subtract 149 to manufacture a pit configuration and do not alter ranges to fit 1,491 or 1,501."
+      }
+    },
+    {
+      "rank": 4,
+      "inventoryId": "ibaraki-hitachinaka-culture-main",
+      "identity": "ひたちなか市文化会館〔大ホール〕 / 茨城県ひたちなか市 / hall",
+      "currentOperationalStatus": "ACTIVE. The issuer's current monthly schedule lists September 2026 大ホール events, including a ticketed しまじろう concert, and a 2026 programme announcement remains current. Only regular Monday/holiday-following closures are published; no hall closure, renovation, rebuilding, cessation or reopening notice within 12 months was found.",
+      "closureRenovationResult": "PASS. The recurring weekly closing dates are routine and not long closure evidence.",
+      "officialCapacitiesAndSemantics": {
+        "maximumCapacity": "1,368",
+        "numberedSeatSubtotal": "1,350 printed-chart headline; this equals the issuer's fixed 1,150 + movable 200, and is not a transcription target",
+        "perFloorSubtotal": [],
+        "wheelchairSubtotal": "10, issuer itemised separately",
+        "movableRemovable": "200 movable seats, issuer itemised",
+        "standingSubtotal": "none published",
+        "parentChildSubtotal": "8, issuer itemised separately",
+        "other": "The current chart says orchestra-pit use removes row 6 / 196 seats. It is an alternate condition, not an inferred configuration."
+      },
+      "configurationVariants": "A one-slope multipurpose hall with standard chart, movable seating, wheelchair and parent/child positions, and an orchestra pit. The chart specifically records row-6 removal (196 seats) for pit use. No other stage, thrust, flat-floor, standing, technical or event-dependent numbered configuration was adopted; arithmetic must not reconstruct the pit form.",
+      "currentOfficialNumberedChart": "YES. The current facility page directly links the one-page official PDF. Fresh visual review confirmed the headline, printed individual numbered cells, area letters, row structure, wheelchair/parent-room markings and the pit-use annotation.",
+      "currentLinkProvenance": [
+        "https://hitachinaka-culturehall.jp/archives/facility/%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB — current official facility page with 1,368 semantic breakdown and seat-map link",
+        "https://hitachinaka-culturehall.jp/wp-content/uploads/2024/02/%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB_%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf — current-linked complete numbered chart",
+        "https://hitachinaka-culturehall.jp/%E4%BB%8A%E6%9C%88%E5%82%AC%E4%BA%8B%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB — current issuer schedule",
+        "https://hitachinaka-culturehall.jp/archives/ticket/%E3%81%97%E3%81%BE%E3%81%98%E3%82%8D%E3%81%86%E3%82%B3%E3%83%B3%E3%82%B5%E3%83%BC%E3%83%88 — current ticketed 大ホール event"
+      ],
+      "fixedMovableStandingEventDependent": "Fixed 1,150; movable 200; no standing subtotal. The pit condition is issuer-described but excluded from the adopted standard configuration until directly evidenced.",
+      "wheelchairAccessibility": "10 wheelchair and 8 parent/child positions are issuer itemised separately from the chart's 1,350 fixed/movable subtotal. Future work must read any printed identifiers/replacement relation from the chart; none may be derived from the 18-seat difference.",
+      "issuerChecksumStructure": { "grandCapacity": "1,368", "numberedSeatSubtotal": "1,350 chart headline", "perFloor": [], "perArea": [], "wheelchair": "10", "movableRemovable": "200 movable; orchestra-pit row 6 / 196 removed condition", "standing": null, "otherIssuerDefinedChecksums": ["fixed 1,150", "parent/child 8", "1,150 + 200 + 10 + 8 = 1,368"] },
+      "machineStructuralCountFeasibility": "possible — the current-linked PDF visibly consists of repeated discrete seat cells, printed identifier glyphs, area/row bars and unnumbered marked accessibility/parent-room positions. Independent vector cell/glyph and raster component/band counts are feasible, with non-seat symbols classified against issuer labels.",
+      "disposition": "ADOPT / implementation-ready",
+      "adoptRationale": "The issuer supplies current active use, a coherent standard numbered chart and a capacity model that explains the chart subtotal without capacity fitting. The pit alternate is explicitly separated and can remain out of scope; one numbered representative configuration is enough.",
+      "implementationVerificationPlan": {
+        "requiredHumanPasses": ["fresh independent human visual Pass 1", "fresh independent human visual Pass 2 with a different traversal/crop order"],
+        "rangeEquality": "Compare machine-expanded source seats bidirectionally with both frozen human sets, retaining issuer-labelled area and row ownership and checking duplicates.",
+        "issuerChecksumStructure": ["grand capacity 1,368", "chart numbered subtotal 1,350", "fixed 1,150", "movable 200", "wheelchair 10", "parent/child 8", "pit condition: row 6 / 196 seats removed"],
+        "structuralChecksum": "Independently count vector cells/glyphs and rendered raster cells/row-bar structure. Use issuer labels to distinguish numbered cells from accessibility/parent-room symbols; do not feed human ranges into either count.",
+        "mismatchRule": "Any material mismatch stops production. The 196 pit figure is never a subtraction instruction and the 1,350/1,368 totals are never range-fitting targets."
+      }
+    }
+  ],
+  "stopRule": {
+    "maxResearchRecords": 5,
+    "adoptStopThreshold": 3,
+    "researchedCount": 4,
+    "adoptCount": 3,
+    "result": "Stopped immediately when rank 4 became the third ADOPT. Rank 5 and below were not opened or formally dispositioned."
+  },
+  "countsAfter": {
+    "universeTotal": 154,
+    "byStatus": {
+      "production": 59,
+      "ADOPT / implementation-ready": 3,
+      "HOLD / NEED EVIDENCE / formal DEFER": 62,
+      "inventory-unresearched": 30
+    },
+    "missingFromInventory": 0,
+    "remainingInventoryUnresearched": 30,
+    "productionTotalsUnchanged": { "venues": 142, "configurations": 144, "seatRecords": 211983 }
+  },
+  "prohibitionsObserved": [
+    "no production implementation",
+    "no seat transcription or range authoring",
+    "no source JSON, fingerprint, generated catalog/runtime or production-data change",
+    "no RaiBoC re-implementation",
+    "no known blocked/HARD-CASE re-audit",
+    "no Tokyo Priority D work",
+    "no sixth candidate opened"
+  ],
+  "exactNextAction": "Claudeによる separately authorized bounded implementation of at most saitama-koshigaya-suncity-hall, gunma-ota-culture-main, and ibaraki-hitachinaka-culture-main, in importance/production-yield order. Work one venue at a time in a separate authorized thread and treat this report's implementationVerificationPlan as mandatory gates. Keep RaiBoC re-implementation separate. Continue Kanto >=1000 preflights ahead of Tokyo Priority D while inventory-unresearched records remain."
+}
