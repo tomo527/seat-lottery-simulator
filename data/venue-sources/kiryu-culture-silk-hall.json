@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "kiryu-culture-silk-hall",
+  "name": "美喜仁桐生文化会館 シルクホール",
+  "prefecture": "群馬県",
+  "city": "桐生市",
+  "aliases": [
+    "美喜仁桐生文化会館",
+    "桐生市市民文化会館",
+    "シルクホール",
+    "桐生市市民文化会館 シルクホール"
+  ],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-top",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "美喜仁桐生文化会館（桐生市市民文化会館。公益財団法人桐生市スポーツ文化事業団）",
+      "title": "美喜仁桐生文化会館 公式トップページ（トピックスとお知らせ一覧。現行公演と休館・改修告知の有無を確認）",
+      "url": "https://www.kiryu-piif.jp/",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-information",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "美喜仁桐生文化会館（桐生市市民文化会館。公益財団法人桐生市スポーツ文化事業団）",
+      "title": "お知らせ（2026-09-01更新。「シルクホール・小ホール・スカイホール・展示室及びこれと同時使用の施設は令和9年9月30日まで施設受付可能」。長期休館・改修・建替・閉館・移転の告知は無い）",
+      "url": "https://www.kiryu-piif.jp/information/index.html",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-event-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-structure"
+      ],
+      "publisher": "美喜仁桐生文化会館（桐生市市民文化会館。公益財団法人桐生市スポーツ文化事業団）",
+      "title": "イベント情報（現行のシルクホール有料公演一覧。ページ内で「シルクホール客席図」として現行公式客席図PDFへ直接リンクする）",
+      "url": "https://www.kiryu-piif.jp/event/index.html",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "美喜仁桐生文化会館（桐生市市民文化会館。公益財団法人桐生市スポーツ文化事業団）",
+      "title": "施設案内 シルクホール（ステージ形態別の席数「プロセニアムステージ 1,517席（1F 1,139席、2F 378席）」「オーケストラピット使用時（フロントステージ使用時）1,401席」「スラストステージ 1,353席」と、「※この外に、10席の車椅子席が有ります。」「※この外に、立見90人の収容が可能です。」「※この外に、親子室（3組分、6席）が有ります。」を記載。同じ客席図PDFを「ホール座席表」としてリンクする）",
+      "url": "https://www.kiryu-piif.jp/gaiyou/silk/index.html",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "美喜仁桐生文化会館（桐生市市民文化会館。公益財団法人桐生市スポーツ文化事業団）",
+      "title": "シルクホール客席図（1列〜44列の全印字座席番号、1階／2階の区分、車椅子ピクトグラム4区画、図中に「プロセニアムステージ」「１５２７席」「（車椅子席１０席を含む）」を記載した公式PDF seat_silk.pdf）",
+      "url": "https://www.kiryu-piif.jp/pdf/seat_silk.pdf",
+      "checkedAt": "2026-09-04"
+    },
+    {
+      "id": "official-booking-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "美喜仁桐生文化会館（桐生市市民文化会館。公益財団法人桐生市スポーツ文化事業団）",
+      "title": "使用申込み（シルクホールの受付開始日は「使用日の属する月の12ヵ月前の月の1日」、受付終了日は「使用日の30日前まで」。臨時休館は設備保守点検等に限られる）",
+      "url": "https://www.kiryu-piif.jp/mousikomi/index.html",
+      "checkedAt": "2026-09-04"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "proscenium",
+      "canonicalName": "プロセニアムステージ",
+      "issuerDefinedCondition": "施設運営者がシルクホールの「ステージ形態」として最初に掲げ、唯一の番号付き客席図を公開しているプロセニアムステージを使用する場合。",
+      "selectionBasis": "現行公式サイトは2026-09-04時点でACTIVEであり、シルクホールの有料公演を継続して掲載している（2026年9月4日 ワンコインコンサート Los Toposフラメンコ・ショー、9月12日 県民芸術祭50周年記念事業アートライブ、9月20日 森高千里 2026-27 今夜もWe feel fine♪（全席指定11,000円）、9月23日 群馬交響楽団クラシック・スペシャル（全席指定）、10月3日 林部智史 CONCERT TOUR 2026・秋、10月11日 るうふ倶楽部名画鑑賞会、10月24日 徳永ゆうき（S席・A席）、10月25日 Juice=Juice Room Tour 2026「5ROOMS」（全席指定）ほか）。会場全体では「美喜仁桐生文化会館30周年記念事業 夢ステージ」や2026-2027年度のワンコインコンサート・シリーズも進行中である。お知らせページは2026-09-01付で「シルクホール・小ホール・スカイホール・展示室及びこれと同時使用の施設は令和9年9月30日までその他の施設は令和9年3月31日まで施設受付可能です。（令和8年9月1日現在）」と告知し、使用申込みページもシルクホールの受付を「使用日の属する月の12ヵ月前の月の1日」から受け付けると定める。トップページ・お知らせ・イベント情報・施設案内・使用申込み・使用料金・各種サービス・文化会館紹介・サイトマップのいずれにも、長期休館・改修・建替・閉館・移転・運用終了の告知は存在しない。サイト内の「休館」の記載は毎週火曜日の定例休館日と「設備保守点検等のため、臨時休館することがあります」の一般的注記だけである。現行の施設案内ページ（シルクホール）は当ホールを「クラシックなどの音楽を主体としながら、バレエ・演劇・講演会・式典、さらにはファッションショーにも対応可能な大型多目的ホール」とし、ステージ形態を「プロセニアムステージ 1,517席（1F 1,139席、2F 378席）」「オーケストラピット使用時（フロントステージ使用時）1,401席（1F 1,023席、2F 378席）」「スラストステージ 1,353席（1F 975席、2F 378席）」の3種類として公開する。番号付き客席図が公開されているのはこのうちプロセニアムステージだけであり、客席図PDF自体も図中に「プロセニアムステージ」と明記している。したがって代表configurationはプロセニアムステージ1件とし、オーケストラピット使用時とスラストステージは番号集合が公開されていないため登録しない（混在もさせない）。施設案内ページは併せて「※この外に、10席の車椅子席が有ります。」「※この外に、立見90人の収容が可能です。」「※この外に、親子室（3組分、6席）が有ります。」と記載する。車椅子席・立見・親子室はいずれも客席図に番号が印字されておらず、issuerも1,517席とは別枠として扱っているため登録していない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-04に現行イベント情報ページ（https://www.kiryu-piif.jp/event/index.html の「シルクホール客席図」リンク）から相対リンク ../pdf/seat_silk.pdf を辿り直して現行公式客席図を取得した。同一PDFは施設案内ページ（https://www.kiryu-piif.jp/gaiyou/silk/index.html の「ホール座席表」リンク）からも辿れる。URL直打ちでcurrent扱いはせず、両ページのlink relationを当日に再確認している。最終URL https://www.kiryu-piif.jp/pdf/seat_silk.pdf、SHA-256: 8d8c70a83160534e075700fecf2f7d61209d3884d386d1484ce458e0e0d853d2、2,035,010バイト、1ページ、A4縦595.28×841.89pt、Last-Modified: 2026-08-17、ETag \"1f0d42-65936e79b5b5e\"、PDF 1.4／creator Illustrator／producer Adobe PDF library 6.66／title 3.ai。転記前に3回、Pass 2の直前にさらに1回、計4回の独立フェッチを行い、いずれもバイト単位で同一（同一SHA-256・同一バイト数）だった。Last-Modifiedが2026年8月であることは、この図面がissuerの現行資産であることを裏づける。転記は現行公式図を人が直接視認するfresh independent human visual two-passで行い、機械抽出結果と公称総数はいずれもanswer keyにしていない。Pass 1は通常方向のaxis-alignedなcropで、1階→2階、バンクは左から右（左サイド・左ブロック・中央・右ブロック・右サイド）、各バンク内は列番号の昇順、range内は座席番号の小さい側から読み取った（dpi 600〜2600）。Pass 2はPDFを独立に再取得したうえで、各バンクをその実測レーキ角（1階左サイド+16.3°／左+15.8°／中央0°／右−16.6°／右サイド−16.6°、2階左ウイング+31.0°／右ウイング−30.4°／後方各列+14.2°〜−16.1°）でデスキュー描画し、列が水平に読める状態にしてから、2階→1階、バンクは右から左、各バンク内は列番号の降順、range内は座席番号の大きい側から読み取った（dpi 780〜1500、crop境界もPass 1と別に取り直している）。両passをfreezeしてから機械比較したところ、展開座席ID集合1,517件・floor所属・列所属・全range・全欠番・車椅子区画・特殊マーキングでunresolved mismatchは0だった。human two-passとは独立に3経路のmachine structural checksumを取得した。経路Aはテキストを一切読まないPDFベクター幾何で、座席ブロックの外形quad 429件と、その内部に収まる仕切り線を数えて座席セル数を求め、1,517セル（1階1,139／2階378）を得た。経路Bは各セル内部に含まれる数字グリフを幾何的に帰属させて印字IDを再構成し、続いてブロック同士を「番号がちょうど連続し、かつ座席軸方向に隣接し、かつ同一列内で番号が重複しない」という制約だけで連結して列を復元し、印字された列番号テキストで列名を与えた。human range tableはcount sourceにしていない。結果は44列・1,517件の(階, 列, 座席番号)集合で、human two-passの集合と双方向で完全一致した（差分0）。経路CはPDFオブジェクトモデルを使わず600 dpiでラスタライズした画像の輪郭階層解析で、インクに囲まれた白領域のうち座席セル寸法に合致するものを数え、1,515件を直接分類したうえで、避難経路の点線ダッシュが内部を分断している1階23列32番・33番の2セルを加えて1,517となることを確認した（この2セルはいずれも番号が印字された正規の座席セルである）。加えて車椅子ピクトグラムの外枠は12.0〜12.1pt角の閉領域として4件だけ検出され、数字グリフを1つも含まない。",
+      "sourceIds": [
+        "official-top",
+        "official-information",
+        "official-event-page",
+        "official-hall-page",
+        "official-seat-map",
+        "official-booking-page"
+      ],
+      "differenceBasisSourceIds": [
+        "official-hall-page",
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1517,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "issuerがシルクホールの「ステージ形態」として掲げるプロセニアムステージの公式客席図に印字された全番号席1,517席（1階1,139席・2階378席）を登録した構成です。1階は1列〜29列、2階は30列〜44列で、列番号は館内で通し番号になっています。各列の座席番号も左サイドブロックから右サイドブロックまで通しで振られており、1階は最大1〜48番、2階は最大1〜52番です。1階16列は左サイド6・7番、左ブロック8〜15番、中央19〜30番、右ブロック34〜41番、右サイド42・43番だけが印字され、1〜5番・16〜18番・31〜33番・44番以降は印字がありません。図面ではこの4か所に車椅子ピクトグラムが描かれています。1階29列は4〜16番・19〜29番・33〜45番だけが印字され、17・18番・30〜32番・46番以降は印字がありません。1階1列は中央19〜30番のみ、2階30列〜38列は左右のウイングだけで中央は吹き抜けです。いずれも印字どおりに登録し、欠番の補完も削除も行っていません。issuerが「※この外に」と明記する車椅子席10席・立見90人・親子室（3組分、6席）は、いずれも客席図に番号が印字されておらず1,517席とは別枠のため登録していません。オーケストラピット使用時（フロントステージ使用時）1,401席とスラストステージ1,353席は別のステージ形態であり、番号付き客席図が公開されていないため登録も混在もしていません。エリア名「1階」「2階」は公式客席図が図中に印字している区分をそのまま用いています。repository由来のブロック名は付与していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "公式客席図は1階16列に沿って車椅子ピクトグラムを4区画描いています。位置は左サイドブロック6番の外側（1〜5番相当の位置）、左ブロック15番の内側（16〜18番相当の位置）、右ブロック34番の内側（31〜33番相当の位置）、右サイドブロック43番の外側（44番以降相当の位置）です。4区画のいずれにも座席番号は印字されておらず（機械的なグリフ帰属でも、この4つの12pt角領域は数字グリフを1つも含みません）、issuerは通常番号席との個別の置換関係を公開していません。issuerの現行施設案内ページはプロセニアムステージを「1,517席（1F 1,139席、2F 378席）」とし、車椅子席10席を「※この外に」と別枠で記載します。一方、客席図の見出しは「１５２７席」「（車椅子席１０席を含む）」と記載します。両者は 1,517 + 10 = 1,527 として整合し、車椅子席10席は印字番号席1,517席の外側に存在する別枠であることがissuer資料自身から確定できます。図面上の車椅子ピクトグラムは4件で、車椅子席の公称席数10席とは一致しません。ピクトグラムは区画の位置を示す表示であって1件=1席を意味しないため、10か所の個別位置は図面から確定できません。したがって車椅子席には座席番号を創作せず、隣接する番号席の削除も行わず、無番号のまま未登録としています。同伴者席（companion seat）についてもissuerは公開していません。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-hall-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-04",
+        "method": "fresh-independent-human-visual-two-pass-on-current-official-proscenium-seat-chart-with-reversed-floor-bank-row-and-range-direction-and-per-bank-deskewed-rendering-plus-three-independent-machine-structural-checksums-from-pdf-vector-cell-geometry-and-glyph-containment-identifier-reconstruction-and-600dpi-raster-contour-hierarchy-and-issuer-per-floor-subtotal-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "現行施設案内ページ（シルクホール）はプロセニアムステージを「1,517席（1F 1,139席、2F 378席）」と階別subtotalつきで公開しています。転記した印字番号席は1,517席、内訳は1階1,139席・2階378席で、issuerの階別subtotalと完全に一致します（rangeDiff 0）。",
+          "公式客席図の見出しは「１５２７席」「（車椅子席１０席を含む）」です。印字番号席1,517席に車椅子席10席を加えると1,527席となり、施設案内ページの「1,517席」＋「※この外に、10席の車椅子席が有ります。」という記載と完全に整合します。1,527・1,517・1,527−10のいずれもtranscription targetとしては使用しておらず、印字番号集合を先に独立確定したうえで事後にreconcileしています。",
+          "車椅子席10席は無番号で、図面上のピクトグラムは1階16列沿いの4区画です。ピクトグラム数4と公称10席は一致せず、10か所の個別位置および通常番号席との置換関係はissuerが公開していないため登録していません。同伴者席の公開情報もありません。",
+          "旧inventoryのdiscovery値1,517はstaleではなく、現行issuerがプロセニアムステージの番号席数として公開している値そのものでした。2026-09-01のPREFLIGHT 3は「1,527席（車椅子10席を含む）が公称で、1,517はsuperseded」と記録し、車椅子10席が1,527の内数であると整理していましたが、fresh evidenceでは1,517が番号席、1,527が車椅子込みの総席数であり、両者は矛盾せず併存します。この点はPREFLIGHT 3の整理を現行issuer資料で更新したものです。",
+          "PREFLIGHT 3は「alternate movable/standing configurationなし」としていましたが、現行施設案内ページはステージ形態を3種類（プロセニアムステージ1,517席／オーケストラピット使用時1,401席／スラストステージ1,353席）公開し、立見90人と親子室6席にも言及しています。番号付き客席図が公開されているのはプロセニアムステージのみのため、本構成のみを登録し、他形態は混在させていません。",
+          "客席図の注記は「シルクホール客席図」「プロセニアムステージ」「１５２７席」「（車椅子席１０席を含む）」「ステージ」「１階」「２階」と、避難・出入口を示すA・Bの記号だけで、PA席・見切れ席・技術席・取り外し可能席などの特別マーキングや凡例は存在しません。",
+          "1階23列32番・33番の2セルは、図面に重ねて描かれた避難経路の点線ダッシュがセル内部を横切るため、600 dpiラスターの輪郭階層解析では1つの閉領域として分類されませんでした。いずれもベクター幾何・グリフ帰属・目視のすべてで番号が印字された正規の座席セルであることを確認しており、ラスター経路の1,515件との差2件はこれで完全に説明されます。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "1列",
+          "from": 19,
+          "to": 30
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "2列",
+          "from": 16,
+          "to": 33
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "3列",
+          "from": 13,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "4列",
+          "from": 10,
+          "to": 39
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "5列",
+          "from": 9,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "6列",
+          "from": 8,
+          "to": 41
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "7列",
+          "from": 8,
+          "to": 41
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "8列",
+          "from": 8,
+          "to": 41
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "9列",
+          "from": 6,
+          "to": 43
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "10列",
+          "from": 5,
+          "to": 44
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "11列",
+          "from": 5,
+          "to": 44
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "12列",
+          "from": 4,
+          "to": 45
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "13列",
+          "from": 4,
+          "to": 45
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "14列",
+          "from": 4,
+          "to": 45
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "15列",
+          "from": 3,
+          "to": 46
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "16列",
+          "from": 6,
+          "to": 15
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "16列",
+          "from": 19,
+          "to": 30
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "16列",
+          "from": 34,
+          "to": 43
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "17列",
+          "from": 2,
+          "to": 47
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "18列",
+          "from": 2,
+          "to": 47
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "19列",
+          "from": 2,
+          "to": 47
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "23列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "24列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "25列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "26列",
+          "from": 2,
+          "to": 47
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "27列",
+          "from": 2,
+          "to": 47
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "28列",
+          "from": 2,
+          "to": 47
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "29列",
+          "from": 4,
+          "to": 16
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "29列",
+          "from": 19,
+          "to": 29
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "29列",
+          "from": 33,
+          "to": 45
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "30列",
+          "from": 1,
+          "to": 2
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "30列",
+          "from": 51,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "31列",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "31列",
+          "from": 50,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "32列",
+          "from": 1,
+          "to": 2
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "32列",
+          "from": 51,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "33列",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "33列",
+          "from": 50,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "34列",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "34列",
+          "from": 49,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "35列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "35列",
+          "from": 48,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "36列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "36列",
+          "from": 48,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "37列",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "37列",
+          "from": 47,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "38列",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "38列",
+          "from": 46,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "39列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "40列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "41列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "42列",
+          "from": 2,
+          "to": 51
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "43列",
+          "from": 2,
+          "to": 51
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "44列",
+          "from": 3,
+          "to": 50
+        }
+      ]
+    }
+  ]
+}

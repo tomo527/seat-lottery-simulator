@@ -21,8 +21,8 @@
       "茨城県": 5
     },
     "byStatus": {
-      "production": 58,
-      "ADOPT / implementation-ready": 1,
+      "production": 59,
+      "ADOPT / implementation-ready": 0,
       "HOLD / NEED EVIDENCE / formal DEFER": 61,
       "inventory-unresearched": 34
     },
@@ -289,13 +289,13 @@
       "currentName": "美喜仁桐生文化会館〔シルクホール〕",
       "aliases": [],
       "facilitySpace": "美喜仁桐生文化会館〔シルクホール〕",
-      "officialCapacityAndMode": "1,527 seats including ten wheelchair positions (2026-09-01 current issuer-linked シルクホール客席図; former 1,517 inventory discovery value superseded)",
+      "officialCapacityAndMode": "1,517 printed numbered seats in the プロセニアムステージ configuration (1F 1,139 / 2F 378, rows 1列-44列) plus 10 unnumbered wheelchair spaces recorded by the issuer as 「※この外に」; the current chart headline states 1527席（車椅子席10席を含む）, i.e. 1,517 + 10. The issuer also publishes オーケストラピット使用時（フロントステージ使用時）1,401席 and スラストステージ 1,353席 as separate stage forms with no numbered chart, plus 立見90人 and 親子室（3組分、6席）.",
       "officialUrl": "https://www.kiryu-piif.jp/",
       "inventoryId": "gunma-kiryu-culture-main",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
+      "venueSourceId": "kiryu-culture-silk-hall",
+      "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-09-01 preflight: a separately authorized bounded implementation must fresh-fetch the current issuer-linked シルクホール客席図, independently read every printed identifier and wheelchair semantics, and apply the implementationVerificationPlan's issuer checksum and independent machine structural checksum gates. Do not fit to 1,527."
+      "reopenCondition": "n/a — production (GUNMA-KIRYU-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION 2026-09-04: schema v2 source kiryu-culture-silk-hall / configuration proscenium, scope.kind official-variant; 1階1列〜29列・2階30列〜44列の印字番号席1,517席を57 rangesでmapped。fresh independent human visual two-pass（Pass 2はバンク別デスキュー描画で2階→1階・右バンクから左・列降順・番号降順）、PDFベクターセル幾何／グリフ帰属による識別子再構成／600 dpiラスター輪郭階層の3経路によるindependent machine structural checksum、および現行公式施設案内ページの階別subtotal「1,517席（1F 1,139席、2F 378席）」の四者が完全一致した). Reopen only if the issuer publishes a seat chart superseding SHA-256 8d8c70a83160534e075700fecf2f7d61209d3884d386d1484ce458e0e0d853d2, defines a seat-ID replacement relation or per-position numbering for the ten wheelchair spaces, or publishes a numbered chart for the オーケストラピット使用時 or スラストステージ stage forms. Never fit to 1,527 or 1,517 by adding or deleting printed identifiers."
     },
     {
       "prefecture": "埼玉県",

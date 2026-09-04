@@ -841,12 +841,12 @@
       "category": "hall",
       "officialFacilityUrl": "https://www.kiryu-piif.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-01 KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3: the issuer's current event page links a complete numbered シルクホール seat-map PDF and current programs show ongoing operation. The issuer PDF states 1,527 seats including ten wheelchair positions; this supersedes the stale 1,517 inventory discovery figure. Later implementation must establish every printed ID, floor/area ownership, and wheelchair relation without fitting to either total.",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-09-04 GUNMA-KIRYU-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION: 現行イベント情報ページ（https://www.kiryu-piif.jp/event/index.html の「シルクホール客席図」）と施設案内ページ（https://www.kiryu-piif.jp/gaiyou/silk/index.html の「ホール座席表」）の双方からリンクを辿り直して現行公式客席図PDF（SHA-256 8d8c70a83160534e075700fecf2f7d61209d3884d386d1484ce458e0e0d853d2、2,035,010バイト、1ページ、Last-Modified 2026-08-17）を4回取得し、fresh independent human visual two-passで1列〜44列の全印字番号を転記した。両passは展開1,517席（1階1,139席・2階378席）で完全一致し、PDFベクターセル幾何・グリフ帰属による識別子再構成・600 dpiラスター輪郭階層の3経路によるindependent machine structural checksumとも一致した。現行施設案内ページはプロセニアムステージを「1,517席（1F 1,139席、2F 378席）」と階別subtotalつきで公開しており、mapped 1,517席は階別・総数ともに差0で一致する。客席図見出しの「１５２７席（車椅子席１０席を含む）」は 1,517 + 10 = 1,527 として整合する。旧inventory値1,517はstaleではなく現行の番号席数そのものであった。車椅子席10席は無番号（図面上のピクトグラムは1階16列沿いの4区画）で置換関係の公開もないため登録していない。",
       "priority": "B",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-01",
+      "venueSourceId": "kiryu-culture-silk-hall",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-04",
       "aliases": [],
       "blockingReason": null
     }

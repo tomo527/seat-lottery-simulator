@@ -1,0 +1,280 @@
+{
+  "reportVersion": 1,
+  "title": "GUNMA-KIRYU-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION",
+  "asOf": "2026-09-04",
+  "scope": "美喜仁桐生文化会館〔シルクホール〕 (inventory gunma-kiryu-culture-main) only. RaiBoC Hall, the remaining Kanto research pool and Tokyo Priority D were explicitly out of scope and were not opened.",
+  "mode": "separately authorized bounded single-venue production implementation",
+  "disposition": "PRODUCTION",
+  "difficultyLane": {
+    "lane": "JUDGMENT",
+    "reason": "The issuer publishes three stage forms with three different capacities and only one numbered chart, and the relation between the chart headline 1,527 and the facility page 1,517 had to be resolved from issuer evidence before any transcription could be trusted. Configuration selection and capacity semantics were the consequential decisions, not transcription volume."
+  },
+  "startSnapshot": {
+    "branch": "main",
+    "head": "120879fb684c151f14d52d206cc1eaed3163e10b",
+    "originMain": "120879fb684c151f14d52d206cc1eaed3163e10b",
+    "workingTree": "clean",
+    "production": {
+      "venues": 141,
+      "configurations": 143,
+      "seatRecords": 210466
+    },
+    "kantoLedger": {
+      "universeTotal": 154,
+      "production": 58,
+      "adopt": 1,
+      "formalBlocked": 61,
+      "inventoryUnresearched": 34,
+      "missingFromInventory": 0
+    },
+    "note": "Verified against the repository itself, not against notes: npm run venues:validate reported 141 / 143 / 210,466 and the Kanto ledger counts were recomputed from records[] by currentStatus. gunma-kiryu-culture-main was the single remaining ADOPT; saitama-raiboc-main remained blocked in its separate transcription-remediation queue and was not touched."
+  },
+  "currentnessGate": {
+    "result": "PASS",
+    "method": "Fresh first-party fetches on 2026-09-04 (JST). PREFLIGHT 3 was not used as an answer key; every point below was re-established from the live issuer site.",
+    "evidence": [
+      "https://www.kiryu-piif.jp/ — current topics list carries 2026-09-03 るうふ倶楽部名画鑑賞会 (シルクホール, 2026-10-11) and 小ホール events for 2026-12.",
+      "https://www.kiryu-piif.jp/event/index.html — current シルクホール ticketed programme: 2026-09-04 ワンコインコンサート Los Toposフラメンコ・ショー, 2026-09-12 県民芸術祭50周年記念事業アートライブ, 2026-09-20 森高千里 2026-27 今夜もWe feel fine♪ (全席指定 11,000円), 2026-09-23 群馬交響楽団クラシック・スペシャル (全席指定), 2026-10-03 林部智史 CONCERT TOUR 2026・秋, 2026-10-11 るうふ倶楽部名画鑑賞会, 2026-10-24 徳永ゆうき (S席/A席), 2026-10-25 Juice=Juice Room Tour 2026「5ROOMS」(全席指定), plus the ワンコインコンサート2026-2027 シルクホール series and 美喜仁桐生文化会館30周年記念事業 夢ステージ.",
+      "https://www.kiryu-piif.jp/information/index.html — the complete current notice list is two items (2026-09-01 イベントカレンダー（2026年10月分）を更新しました, 2026-09-01 施設使用受付について). The latter states シルクホール・小ホール・スカイホール・展示室及びこれと同時使用の施設は令和9年9月30日まで、その他の施設は令和9年3月31日まで施設受付可能です。（令和8年9月1日現在）. That is later than the \"through August 2027\" horizon PREFLIGHT 3 recorded, i.e. the booking window has been extended, not curtailed.",
+      "https://www.kiryu-piif.jp/mousikomi/index.html — シルクホール bookings open 使用日の属する月の12ヵ月前の月の1日 and close 使用日の30日前まで; the only closure language is the weekly 毎週火曜日 closing day and 「※なお、設備保守点検等のため、臨時休館することがあります。」",
+      "https://www.kiryu-piif.jp/gaiyou/silk/index.html — current シルクホール facility page, live.",
+      "Keyword sweep over the fetched top, event, information, gaiyou (index + silk + annai), ryokin, mousikomi, service, info, introduction and sitemap pages for 休館・改修・建替・建て替・閉館・移転・工事・リニューアル・終了・中止・大規模・耐震 returned only the weekly Tuesday closing day, the routine 設備保守点検 note, an unrelated 市内最大規模 description of スカイホール, the rental-permit revocation clauses in the booking terms, and a closed アトリウムコンサート出演団体募集."
+    ],
+    "conclusion": "ACTIVE with continuing シルクホール ticketed programming into 2027 and a booking horizon extending to 2027-09-30. No long-term closure, renovation, reconstruction, relocation or cessation notice within twelve months. Transcription was allowed to proceed."
+  },
+  "assetGate": {
+    "url": "https://www.kiryu-piif.jp/pdf/seat_silk.pdf",
+    "reachedFrom": [
+      "https://www.kiryu-piif.jp/event/index.html — anchor labelled シルクホール客席図, href ../pdf/seat_silk.pdf",
+      "https://www.kiryu-piif.jp/gaiyou/silk/index.html — anchor labelled ホール座席表, href ../../pdf/seat_silk.pdf"
+    ],
+    "notUrlGuessed": "The preflight URL was not treated as current. Both current pages were re-fetched on 2026-09-04 and the link relation was re-derived from their HTML before the asset was downloaded.",
+    "finalUrl": "https://www.kiryu-piif.jp/pdf/seat_silk.pdf",
+    "sha256": "8d8c70a83160534e075700fecf2f7d61209d3884d386d1484ce458e0e0d853d2",
+    "byteSize": 2035010,
+    "pageCount": 1,
+    "pageSize": "595.28 x 841.89 pt (A4 portrait)",
+    "httpLastModified": "Mon, 17 Aug 2026 04:50:09 GMT",
+    "etag": "\"1f0d42-65936e79b5b5e\"",
+    "pdfMetadata": {
+      "format": "PDF 1.4",
+      "title": "3.ai",
+      "creator": "Illustrator",
+      "producer": "Adobe PDF library 6.66",
+      "creationDate": "2004-09-19",
+      "modDate": "2005-02-11"
+    },
+    "independentFetches": 4,
+    "fetchAgreement": "All four fetches (three before Pass 1, one immediately before Pass 2) returned byte-identical content with the same SHA-256 and the same 2,035,010-byte length.",
+    "revisionNote": "The PDF internal modDate is 2005 while the HTTP Last-Modified is 2026-08-17, so the drawing is old but the published asset is current. Currency is established by the current link relation and the current Last-Modified, not by the internal date.",
+    "textLayer": "Seat numbers are extractable vector text, not outlines. The text layer emits them in a scrambled span order (a duplicated/ambiguous-extraction signal), so it was never used as a transcription answer key; it entered only as one machine cross-check path with per-cell geometric containment."
+  },
+  "configurationGate": {
+    "hallForm": "大型多目的ホール, described by the current facility page as 「クラシックなどの音楽を主体としながら、バレエ・演劇・講演会・式典、さらにはファッションショーにも対応可能な大型多目的ホール」.",
+    "floorStructure": "Two audience levels. 1階 rows 1列-29列, 2階 rows 30列-44列; the chart prints 「１階」 and 「２階」 itself. Row numbers run continuously across both floors, and seat numbers run continuously left to right across every aisle within a row (1階 up to 1-48, 2階 up to 1-52).",
+    "issuerPublishedStageForms": [
+      "プロセニアムステージ 1,517席（1F 1,139席、2F 378席） — the only form with a published numbered chart",
+      "オーケストラピット使用時（フロントステージ使用時）1,401席（1F 1,023席、2F 378席） — capacity only, no numbered chart",
+      "スラストステージ 1,353席（1F 975席、2F 378席） — capacity only, no numbered chart"
+    ],
+    "preflightCorrection": "PREFLIGHT 3 recorded \"no alternate movable/standing configuration\". Fresh evidence contradicts that: the current facility page publishes three stage forms plus 立見90人 and 親子室（3組分、6席）. Only プロセニアムステージ has a published numbered seat set, so only that configuration was registered; nothing was mixed and nothing was inferred for the other two.",
+    "standingUse": "立見90人 is published as a separate capacity 「※この外に」. It is not drawn or numbered on the chart and is not registered.",
+    "parentAndChildRoom": "親子室（3組分、6席）is published 「※この外に」. It is not drawn or numbered on the chart and is not registered.",
+    "technicalOrRestrictedViewMarkings": "None. The chart carries only シルクホール客席図 / プロセニアムステージ / １５２７席 / （車椅子席１０席を含む） / ステージ / １階 / ２階 and the two A・B route markers per floor. There is no legend, hatching, dashed frame, PA note or 見切れ note anywhere.",
+    "unnumberedPositions": "Only the four wheelchair pictogram squares. Every other drawn seat cell carries a printed number.",
+    "decision": "One issuer-defined standard configuration (プロセニアムステージ), registered as scope.kind official-variant."
+  },
+  "targetDiscipline": {
+    "rule": "1,527, 1,517 and 1,527 - 10 were all forbidden as transcription targets, and the inference \"the old inventory said 1,517 so the printed set is probably 1,517\" was not used.",
+    "practice": "The printed identifier set was established first and independently from the chart alone by two human passes and three machine paths. Only afterwards was it compared with the issuer figures. No range was created, extended, shortened or deleted to reach any total."
+  },
+  "passA": {
+    "label": "Human visual Pass 1",
+    "asset": "first fetch",
+    "orientation": "normal, axis-aligned crops",
+    "order": "floor 1階 then 2階; within floor bank-major left to right (far-left / left / centre / right / far-right); within bank rows ascending; within row seat numbers ascending.",
+    "rendering": "dpi 300 for overviews and dpi 600-2600 for per-bank and per-row reads.",
+    "rowLabelAlignmentMethod": "The chart prints two row-label series (a 5.31 pt pair flanking the centre block and a 6.00/7.00 pt pair flanking the whole seating). Rows curve upward at their outer ends, so eyeballed vertical proximity is unreliable across an aisle. The label-to-bank association was therefore settled by exact measurement of the printed label positions against the adjacent cells and then confirmed visually at 1500-2600 dpi: for every row the far-side block sits about 2.5-4 pt above its label and the main block about 1.4-3.1 pt below it, and the row arc slope is continuous across the aisle (row 2: left cells at x 231.53/237.09/242.65 rising y 200.31 to 203.47, centre 261.53-327.96 at 207.79-208.04, right 348.96/354.50/360.04 falling 203.94 to 200.64). Identifiers themselves were read visually throughout.",
+    "recorded": "floor, bank, row, every printed seat ID, contiguous ranges, split ranges, explicit gaps, wheelchair pictograms, unnumbered positions, special markings.",
+    "frozenBeforePass2": true,
+    "expandedTotal": 1517,
+    "perFloor": {
+      "1F": 1139,
+      "2F": 378
+    }
+  },
+  "passB": {
+    "label": "Human visual Pass 2",
+    "assetReacquired": "The PDF was re-fetched independently before Pass 2; same SHA-256, same byte length.",
+    "order": "floor 2階 then 1階; within floor bank-major RIGHT to LEFT (far-right / right / centre / left / far-left); within bank rows DESCENDING; within row seat numbers descending.",
+    "rendering": "Each bank was rendered DE-SKEWED by its own measured rake angle so its rows read horizontally — 1階 far-left +16.27 deg, left +15.84, centre 0, right -16.61, far-right -16.61; 2階 left wing +30.99, right wing -30.37, rear columns +18.57 / +14.20 / 0 / -14.41 / -17.90 — at dpi 780-1500 with crop boundaries chosen independently of Pass 1.",
+    "answerKeyUsed": false,
+    "frozenBeforeComparison": true,
+    "expandedTotal": 1517,
+    "note": "The de-skewed rendering resolved a real reading hazard: on the skewed 2階 rear, un-deskewed crops made adjacent rows visually interleave, and an early un-deskewed read of the right outer column gave 10/10/9/9/8/8. The de-skewed read gave 10/10/10/9/9/8, which is what both the block geometry and the printed row labels support. That correction was made before Pass 2 was frozen."
+  },
+  "humanComparison": {
+    "method": "Both passes were frozen to JSON, then expanded to (floor, row, seat) key sets and compared programmatically.",
+    "expandedPass1": 1517,
+    "expandedPass2": 1517,
+    "onlyInPass1": 0,
+    "onlyInPass2": 0,
+    "rangeTablesIdentical": true,
+    "matchedOn": [
+      "complete expanded ID set (1,517 keys)",
+      "floor ownership (1階 1,139 / 2階 378)",
+      "row ownership for all 44 rows",
+      "every range and every split",
+      "every gap",
+      "wheelchair / unprinted positions",
+      "special markings (none exist)"
+    ],
+    "unresolvedMismatch": 0,
+    "note": "Human-human MATCH was treated as necessary but not sufficient; the machine checksums below were taken before the production decision."
+  },
+  "machineExpandedSourceVerification": {
+    "method": "The candidate source ranges were machine-expanded from the authored range table and compared for two-way set equality against both frozen human sets.",
+    "sourceRanges": 57,
+    "expandedFromSource": 1517,
+    "equalToPass1": true,
+    "equalToPass2": true,
+    "duplicateRuntimeKeys": 0,
+    "perAreaFromSource": {
+      "floor1": 1139,
+      "floor2": 378
+    }
+  },
+  "machineStructuralChecksum": {
+    "feasibility": "PREFLIGHT 3 recorded machineStructuralCountFeasibility: possible. Confirmed: the chart draws every seat block as a stroked quad subdivided by stroked divider lines, and prints each number as vector text inside its own cell.",
+    "independence": "None of the three paths reads the human range tables. Each derives its own segmentation from the drawing.",
+    "pathA": {
+      "name": "PDF vector seat-cell geometry (no text read at all)",
+      "method": "Every quad in the page content stream was measured and filtered to seat-block dimensions (short side 6.5-8.6 pt). Each block was then subdivided by counting the stroked divider lines whose midpoint falls inside it; cells = dividers + 1.",
+      "result": "429 seat blocks, 1,517 seat cells. Split by floor: 1階 1,139, 2階 378."
+    },
+    "pathB": {
+      "name": "Glyph-containment identifier reconstruction plus constrained block chaining",
+      "method": "Each digit glyph was assigned to its nearest cell centre (all 3,075 seat digits fell within 3.0 pt of a cell; every one of the 1,517 cells received at least one glyph and none received more than three) and ordered along the glyph line direction to rebuild the printed number. Blocks were then chained into rows using only three machine rules — the runs must be exactly consecutive, the endpoints must be geometric neighbours along the seat axis, and a row may never contain the same printed number twice — and each resulting row was named from the printed row-label text. The human range table was never a count source.",
+      "result": "44 rows, 1,517 (floor, row, seat) identifiers. The reconstructed set is set-equal to both frozen human sets with zero difference in either direction, and per-floor totals are 1階 1,139 / 2階 378.",
+      "note": "Five candidate block links were rejected by the uniqueness rule alone; these were exactly the cross-row leaks at single-cell block boundaries, and rejecting them produced the 44 rows without any reference to the human table."
+    },
+    "pathC": {
+      "name": "600 dpi raster contour hierarchy (never touches the PDF object model)",
+      "method": "The page was rasterised at 600 dpi, thresholded to an ink mask, and analysed with a contour tree. Enclosed white regions were measured and classified as single cells (short 4.5-6.8 pt, long 6.3-8.7 pt) or as merged runs of k cells (short 6.3-8.7 pt, long within 0.18 pitch of k x 5.78 pt).",
+      "result": "1,191 single-cell regions and 162 two-cell regions = 1,515 seat cells classified directly.",
+      "explainedDifference": "The remaining 2 cells are 1階23列32番 and 1階23列33番, whose white interiors are bisected by the black dashes of the printed evacuation-route line drawn over the seating. Both are ordinary numbered seat cells confirmed by path A, path B and direct visual inspection at 2400 dpi, so the raster path resolves to 1,517 with a lossless, located explanation. No threshold was tuned toward any total.",
+      "wheelchairPictogramCheck": "The same pass detected exactly four 12.0-12.1 pt square enclosed regions at (140.7, 337.4), (237.7, 363.4), (354.7, 363.4) and (449.0, 337.4) pt — the four wheelchair pictogram boxes, all beside 1階16列 — and none of them contains a digit glyph."
+    },
+    "perFloorChecksum": {
+      "1F": 1139,
+      "2F": 378,
+      "grand": 1517
+    },
+    "perRowChecksum": "Path B produced a per-row identifier list for all 44 rows that is identical to the human table row by row."
+  },
+  "issuerChecksumEvidence": {
+    "chartHeader": "シルクホール客席図 / プロセニアムステージ / １５２７席 / （車椅子席１０席を含む）",
+    "facilityPage": "ステージ形態 プロセニアムステージ 1,517席（1F 1,139席、2F 378席）; ※この外に、10席の車椅子席が有ります。; ※この外に、立見90人の収容が可能です。; ※この外に、親子室（3組分、6席）が有ります。",
+    "perFloorSubtotalFoundInFreshMaterial": {
+      "document": "https://www.kiryu-piif.jp/gaiyou/silk/index.html (current シルクホール facility page)",
+      "content": "プロセニアムステージ 1,517席（1F 1,139席、2F 378席）",
+      "significance": "This is a per-floor decomposition PREFLIGHT 3 explicitly recorded as absent (\"no issuer per-floor subtotal was found during preflight\"). It supplies a second, independent issuer checksum at floor level, and the mapped subtotals match it exactly."
+    }
+  },
+  "reconciliation": {
+    "table": {
+      "humanPass1": 1517,
+      "humanPass2": 1517,
+      "machinePathA_vectorCells": 1517,
+      "machinePathB_identifierSet": 1517,
+      "machinePathC_raster": 1517,
+      "sourceExpanded": 1517,
+      "issuerNumberedSeatSubtotal": 1517
+    },
+    "perFloor": {
+      "mapped1F": 1139,
+      "issuer1F": 1139,
+      "mapped2F": 378,
+      "issuer2F": 378
+    },
+    "mappedNumberedSeatTotal": 1517,
+    "differenceAgainstIssuerNumberedSubtotal": 0,
+    "relationToOfficial1527": "1,517 printed numbered seats + 10 wheelchair spaces = 1,527. The chart headline states 「１５２７席（車椅子席１０席を含む）」 and the facility page states 「1,517席」 with 「※この外に、10席の車椅子席が有ります。」 The two issuer statements are the same arithmetic viewed from the two sides, and both are satisfied without adding or deleting a single printed identifier.",
+    "supersededInventoryValueReassessed": "PREFLIGHT 3 and the ledger recorded 1,517 as a stale inventory discovery value superseded by 1,527. Fresh issuer evidence shows 1,517 is not stale: it is the current issuer figure for the numbered seats of the プロセニアムステージ configuration, published with a per-floor decomposition. 1,517 and 1,527 co-exist and do not conflict.",
+    "completeAsStandardConfiguration": "Yes. 1階1列-29列 and 2階30列-44列 are fully transcribed with no unresolved floor or row ownership and no configuration mixing."
+  },
+  "wheelchairSemantics": {
+    "whereDrawn": "Four pictograms, all along 1階16列: outside 左サイド6番 (where 1-5番 would be), inside 左ブロック15番 (where 16-18番 would be), inside 右ブロック34番 (where 31-33番 would be), and outside 右サイド43番 (where 44番 onward would be).",
+    "individuallyNumbered": "No. None of the four 12 pt pictogram boxes contains a digit glyph, and no printed identifier is attached to any of them.",
+    "replacesOrdinaryPrintedIds": "Not established. 1階16列 simply prints 6-15, 19-30 and 34-43; 1-5, 16-18, 31-33 and 44 onward are absent from that row on the drawing. The issuer nowhere states which numbered seats, if any, the wheelchair spaces replace.",
+    "issuerDefinedReplacementIds": "None published.",
+    "relationToPrintedTotal": "printed numbered 1,517 + wheelchair 10 = 1,527, consistent with both issuer statements.",
+    "evidenceThatTenAreInside1527": "The chart headline itself: 「１５２７席」「（車椅子席１０席を含む）」.",
+    "pictogramCountVersusTen": "The chart draws four pictograms but the issuer publishes ten wheelchair spaces. The pictogram is an area marker, not one symbol per space, so the ten individual positions cannot be located from the chart. No position was invented and no adjacent numbered seat was deleted.",
+    "companionPositions": "None published by the issuer.",
+    "registration": "wheelchairSemantics.status not-reflected, accessibilityConversionNotReflected true. The ten spaces are not registered and are not drawable."
+  },
+  "productionDecision": {
+    "result": "PRODUCTION",
+    "gatesSatisfied": [
+      "currentness PASS on fresh first-party evidence",
+      "coherent current standard configuration (プロセニアムステージ), the only stage form with a published numbered chart",
+      "human Pass 1 == Pass 2 with zero unresolved mismatch",
+      "machine-expanded source range set == both human sets, two-way, with 0 duplicate runtime keys",
+      "no material contradiction with any independent machine structural checksum (three paths; path C differs by 2 with a located, lossless explanation)",
+      "the official 1,527 is explained by issuer evidence as 1,517 numbered + 10 wheelchair, and the mapped per-floor subtotals match the issuer per-floor subtotals exactly",
+      "wheelchair 10 semantics explained and recorded as not-reflected",
+      "no unresolved floor or row ownership",
+      "no capacity fitting, no invented seat IDs"
+    ],
+    "capacityFitting": false,
+    "inventedIdentifiers": false
+  },
+  "productionArtifacts": {
+    "sourceId": "kiryu-culture-silk-hall",
+    "configurationId": "proscenium",
+    "schemaVersion": 2,
+    "scopeKind": "official-variant",
+    "areaIds": [
+      "floor1 (1階)",
+      "floor2 (2階)"
+    ],
+    "rowLabels": "1列 - 44列 (1階 1列-29列, 2階 30列-44列)",
+    "ranges": 57,
+    "mapped": 1517,
+    "expectedSeatCount": 1517,
+    "rangeDiff": 0,
+    "confidence": "verified",
+    "inventory": "data/venue-inventory/kanto-release-critical-2026-08-27.json — gunma-kiryu-culture-main is now eligibility eligible / researchStatus production / venueSourceId kiryu-culture-silk-hall / lastCheckedAt 2026-09-04.",
+    "ledger": "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json — the record moves to currentStatus production with a reopen condition tied to the chart SHA-256; counts recomputed from records[].",
+    "fingerprint": "data/venue-fingerprints/production.json — kiryu-culture-silk-hall / proscenium, count 1517, samples floor1/1列/19, floor1/21列/35, floor2/44列/50, sha256 b8fb199d787c53bcfaa552105928e9092f081d9514a420faa4f563e1942fae27.",
+    "generated": [
+      "src/data/venue-db/catalog.generated.json",
+      "public/venue-db/venues/kiryu-culture-silk-hall--proscenium.json"
+    ]
+  },
+  "productionTotalsAfter": {
+    "venues": 142,
+    "configurations": 144,
+    "seatRecords": 211983
+  },
+  "kantoGe1000LedgerAfter": {
+    "universeTotal": 154,
+    "production": 59,
+    "adopt": 0,
+    "formalBlocked": 61,
+    "inventoryUnresearched": 34,
+    "missingFromInventory": 0,
+    "method": "Recomputed from records[] by currentStatus, not fitted. The PREFLIGHT 3 ADOPT queue is now empty; RaiBoC remains blocked in its separate transcription-remediation queue."
+  },
+  "prohibitionsObserved": [
+    "No reset and no revert.",
+    "No capacity fitting; 1,527, 1,517 and 1,527 - 10 were never used as transcription targets, and the stale-inventory inference was not used.",
+    "No invented seat IDs, no wheelchair seat IDs, no geometry-based completion, no deletion of adjacent numbered seats.",
+    "No configuration mixing; the two stage forms without a numbered chart were not approximated.",
+    "No repository-invented area or block names; 1階 / 2階 are printed on the issuer chart.",
+    "No schema change, no validator change, no threshold change, no compaction, no unrelated refactor, no re-verification or demotion of any existing production venue.",
+    "No work on RaiBoC, the remaining Kanto research pool, or Tokyo Priority D."
+  ],
+  "exactNextAction": "CODEX: KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4"
+}
