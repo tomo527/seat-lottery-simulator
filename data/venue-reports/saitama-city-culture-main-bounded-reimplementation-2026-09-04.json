@@ -388,5 +388,79 @@
     "no remaining Kanto inventory-unresearched candidate was researched",
     "no Tokyo Priority D research was started"
   ],
-  "exactNextAction": "separately authorized bounded production implementation of saitama-koshigaya-suncity-hall サンシティホール〔大ホール〕"
+  "exactNextAction": "separately authorized bounded production implementation of saitama-koshigaya-suncity-hall サンシティホール〔大ホール〕",
+  "releaseVerification": {
+    "status": "PRODUCTION + RELEASE VERIFIED / CLOSED",
+    "verifiedAt": "2026-09-04",
+    "productionCommit": "297da454cb80906c2343fcee5c2e064a5853a715",
+    "workersBuild": {
+      "checkRun": "Workers Builds: seat-lottery-simulator",
+      "conclusion": "success",
+      "attempt": "first",
+      "buildId": "aa16b8bf-3f4d-46fc-81a2-16175f091a65",
+      "retries": 0,
+      "emptyCommits": 0,
+      "localProductionDeploy": false
+    },
+    "publicUrl": "https://seat-lottery-simulator.studiotomo.workers.dev/",
+    "search": {
+      "さいたま市文化センター": "絞り込み結果 1件 — さいたま市文化センター 大ホール（埼玉県 さいたま市, 抽選対象 1,998席）",
+      "さいたま市文化センター 大ホール": "1件",
+      "大ホール": "many venues, as expected: 大ホール is a generic substring of many venue names and is not an alias of this venue; the facility name and the facility+space combination each resolve to exactly one venue"
+    },
+    "displayedSeatCount": "抽選対象 1,998席 and 「1,998席から今日の1席を抽選します」 — equals the mapped count",
+    "configurationLabel": "座席配置 A仕様（2,006席）",
+    "runtimeJson": {
+      "path": "/venue-db/venues/saitama-city-culture-main--a-spec.json",
+      "status": 200,
+      "contentType": "application/json",
+      "bytes": 14471,
+      "totalSeatCount": 1998,
+      "ranges": 212,
+      "areas": {
+        "1階客席": 1320,
+        "2階客席": 330,
+        "3階客席": 348
+      },
+      "leakCheck": "no source, URL, checkedAt or verification field present"
+    },
+    "draws": {
+      "count": 22,
+      "areasSeen": [
+        "1階客席",
+        "2階客席",
+        "3階客席"
+      ],
+      "sideBoxRowSeen": "2階客席 L4列 4番",
+      "samples": [
+        "1階客席 8列37番",
+        "1階客席 5列37番",
+        "1階客席 7列44番",
+        "1階客席 1列23番",
+        "1階客席 1列30番",
+        "1階客席 2列16番",
+        "1階客席 11列44番",
+        "1階客席 17列19番",
+        "1階客席 18列10番",
+        "1階客席 23列16番",
+        "1階客席 23列45番",
+        "1階客席 23列52番",
+        "1階客席 23列53番",
+        "1階客席 24列24番",
+        "1階客席 24列47番",
+        "1階客席 28列17番",
+        "2階客席 2列32番",
+        "2階客席 L4列4番",
+        "3階客席 1列18番",
+        "3階客席 1列44番",
+        "3階客席 3列12番",
+        "3階客席 3列42番"
+      ],
+      "invalidResults": 0,
+      "issuerAbsentNumbersReturned": 0,
+      "wheelchairPositionsReturned": 0,
+      "alternateLayoutPositionsReturned": 0
+    },
+    "consoleWarningsOrErrors": 0
+  }
 }
