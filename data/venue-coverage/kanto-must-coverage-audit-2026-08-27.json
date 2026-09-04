@@ -12,18 +12,18 @@
   "counts": {
     "universeTotal": 154,
     "byPrefecture": {
-      "千葉県": 13,
-      "埼玉県": 12,
-      "東京都": 91,
-      "栃木県": 5,
-      "神奈川県": 18,
+      "茨城県": 5,
       "群馬県": 10,
-      "茨城県": 5
+      "埼玉県": 12,
+      "神奈川県": 18,
+      "千葉県": 13,
+      "東京都": 91,
+      "栃木県": 5
     },
     "byStatus": {
-      "production": 59,
+      "production": 60,
       "ADOPT / implementation-ready": 3,
-      "HOLD / NEED EVIDENCE / formal DEFER": 62,
+      "HOLD / NEED EVIDENCE / formal DEFER": 61,
       "inventory-unresearched": 30
     },
     "missingFromInventory": 0
@@ -523,13 +523,13 @@
       "currentName": "パシフィコ横浜〔国立大ホール〕",
       "aliases": [],
       "facilitySpace": "パシフィコ横浜〔国立大ホール〕",
-      "officialCapacityAndMode": "maximum 5,002 current issuer capacity; seat chart and adjustable-stage/seat-layout materials exist, but no configuration judgement was advanced after Gate 1 HOLD",
-      "officialUrl": "https://www.pacifico.co.jp/visitor/floorguide/national-convention-hall/",
+      "officialCapacityAndMode": "issuerは4つの利用パターンを公開し、パターン1 基本舞台が最大5,002席（1階席3,260席・2階席994席・3階席748席、内可動席770席）。番号付き公式座席図が公開されているのはこのパターン1のみで、その全番号席5,002席をproduction化した。",
+      "officialUrl": "https://plan.pacifico.co.jp/national-convention-hall",
       "inventoryId": "kanagawa-pacifico-national-hall",
-      "venueSourceId": null,
-      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
-      "blocker": "HOLD / CURRENTNESS (KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4, 2026-09-04): the issuer's formal 2026-06-04 release announces 国立大ホール closure for its first large-scale refurbishment from 2027-05-17 through 2028-03-31, reopening 2028-04-01. This is a hall-specific announced long closure inside the 12-month policy horizon, not routine maintenance. Do not advance a current chart or adjustable layout to implementation during the closure lead-up.",
-      "reopenCondition": "After the announced refurbishment has completed and the issuer has confirmed reopened operation, re-check the then-current issuer facility, event/booking, seating, technical, accessibility, and capacity material. Adopt only an issuer-defined complete numbered configuration; do not assume the pre-refurbishment chart survives."
+      "venueSourceId": "pacifico-yokohama-national-hall",
+      "currentStatus": "production",
+      "blocker": null,
+      "reopenCondition": "issuerは大規模改修工事にともなう国立大ホールの休館を2027-05-17〜2028-03-31（営業再開日2028-04-01）と正式発表している。一時休館それ自体はblockerではないが、改修の主な工事箇所（予定）に「客席」が含まれ「客席・カーペットの更新やバリアフリー環境の整備」と記載されるため、2028-04-01の営業再開後にfresh currentness・現行座席図の再取得・fresh two-pass・structural checksumで再確認する（inventory recheckNotBefore 2028-04-01）。"
     },
     {
       "prefecture": "神奈川県",

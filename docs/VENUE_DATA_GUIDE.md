@@ -358,7 +358,30 @@ npm run venues:readiness:report
 
 同じinventory候補を複数waveへ通常候補として登録するとvalidation errorです。再調査として持ち越す場合だけ、後続batchの`carryOvers`へ`carryOverFrom`、`previousStatus`、`recheckReason`、`recheckNotBefore`を明記します。名称が似ていても別ホールである場合はinventory IDを分け、施設名だけで同一候補と判断しません。
 
-改修中、長期休館中、閉館済み、または座席構成を変える改修・運用終了が公式発表済みの会場は新規production化しません。「近い将来」は独立レビュー日から12か月以内を運用上の目安とし、予定日、公式確認日、blocking reason、再確認条件をinventoryへ記録します。現在activeでも12か月以内の終了予定がある場合は原則blockedとし、例外判断を推測で行いません。
+### currentness / closure policy（2026-09-04 user-authorized revision）
+
+**この節は2026-09-04のuser-authorized policy revision以降に適用するcurrent authoring ruleです。** revision前の判定は当時のpolicyに従って正しく、遡って無効化しません（historical recordはそのまま保持します）。旧ruleは「独立レビュー日から12か月以内に正式な長期休館・改修予定がある会場は原則production blocker」でしたが、重要会場を過度に排除するため次のとおり改めます。
+
+**一時休館・一時改修、または将来予定された一時休館は、それ単独ではproduction blockerにしません。** 次をすべて満たす会場は、現在休館中または将来休館予定であってもproduction候補にできます。
+
+- facility-space identityが維持されること（改修後も同一ホールとして継続する）。
+- 閉館・解体・建替えによる別施設化ではないこと。
+- currentまたはissuer-maintainedな公式座席図が存在すること。
+- complete numbered representative configurationを再現できること。
+- **改修によって座席構造が変更されるとissuerが明示していないこと。**
+- 通常のseat-evidence / configuration / cross-check policyをすべて満たすこと。
+
+休館・改修の期間（開始日・終了日・営業再開予定日）、公式確認日、seating-change evidenceの有無、再確認条件はinventoryとimplementation reportへ明示します。再確認期日は既存の`recheckNotBefore`へ記録し、このためだけにschemaを増やしません。
+
+次のいずれかに該当する場合は引き続きHOLDです。
+
+- 恒久閉館、解体、建替えによるfacility-space replacement。
+- **issuerが座席の変更（席数・列構成・番号体系の変更）を明示している場合。**
+- 現行座席図が改修後には無効になると判断できる一次証拠がある場合。
+
+**「座席変更の記載がない」ことを「変更されない証明」として推論してはいけません。** 逆に、一時休館という事実だけを理由に座席図の調査やproduction implementationを止めることも禁止です。issuerが改修工事の対象範囲として客席に言及していても、席数・列構成・番号体系の変更を明示していない場合は、その事実をmetadataへ記録したうえで、休館終了後の再確認を`recheckNotBefore`に設定して現行構成をproduction化できます。
+
+このrevisionはseat evidence policyをいっさい緩和しません。capacity fitting禁止、invented ID禁止、geometry補完禁止、configuration mixing禁止、third-party chartによる穴埋め禁止、current/current-linked first-party evidence優先、human/machine verification要件はすべて従来どおりです。
 
 ## 大量生成の原子性と容量
 

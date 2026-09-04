@@ -1677,6 +1677,20 @@
           "sha256": "6455d732a52c11762497bc59bf2deecb918679679a4e207f9d4342b4a05f5daf"
         }
       }
+    },
+    "pacifico-yokohama-national-hall": {
+      "schemaVersion": 2,
+      "configurations": {
+        "basic-stage": {
+          "count": 5002,
+          "samples": [
+            "floor1/1列/16",
+            "floor1/35列/64",
+            "floor3/17列/66"
+          ],
+          "sha256": "3c5a39c84441ee5d50abf5f39940f1851b1b5dabf9d7713ca8701c3dd71d9a9e"
+        }
+      }
     }
   }
 }

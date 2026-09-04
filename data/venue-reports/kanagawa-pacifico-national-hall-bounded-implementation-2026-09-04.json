@@ -1,0 +1,353 @@
+{
+  "reportVersion": 1,
+  "title": "KANAGAWA-PACIFICO-NATIONAL-HALL BOUNDED PRODUCTION IMPLEMENTATION (USER-AUTHORIZED CURRENTNESS-POLICY OVERRIDE)",
+  "asOf": "2026-09-04",
+  "scope": "パシフィコ横浜〔国立大ホール〕 (inventory kanagawa-pacifico-national-hall) only. The three PREFLIGHT 4 ADOPT records (saitama-koshigaya-suncity-hall, gunma-ota-culture-main, ibaraki-hitachinaka-culture-main) were left untouched at ADOPT, and RaiBoC, Tokyo Priority D and the remaining Kanto research pool were explicitly out of scope and were not opened.",
+  "mode": "separately authorized bounded single-venue production implementation under a user-authorized currentness-policy revision",
+  "disposition": "PRODUCTION",
+  "difficultyLane": {
+    "lane": "JUDGMENT + HIGH-VOLUME",
+    "reason": "Two consequential judgments preceded any transcription: whether an issuer-announced temporary refurbishment closure blocks production under the revised policy, and which of four issuer usage patterns is the one coherent numbered representative configuration. The chart itself then carries 5,002 printed numbered seats across three floors on a single A3 sheet set, with one floor whose numbers are PDF text and two floors whose numbers are vector outlines."
+  },
+  "userAuthorizedPolicyRevision": {
+    "decidedBy": "user",
+    "decidedOn": "2026-09-04",
+    "supersededRule": "改修中・長期休館中・閉館済み、または座席構成を変える改修・運用終了が公式発表済みの会場は新規production化しない。「近い将来」は独立レビュー日から12か月以内を目安とし、現在activeでも12か月以内の終了予定があれば原則blocked。",
+    "newRule": "一時休館・一時改修、または将来予定された一時休館は、それ単独ではproduction blockerにしない。facility-space identityが維持され、閉館・解体・建替えによる別施設化ではなく、current/issuer-maintainedな公式座席図があり、complete numbered representative configurationを再現でき、改修による座席構造変更をissuerが明示しておらず、通常のseat-evidence / configuration / cross-check policyをすべて満たす重要会場は、休館中・休館予定であってもproduction候補にできる。恒久閉館・解体・建替えによるfacility-space replacement、issuerが座席変更を明示している場合、現行座席図が改修後に無効になると判断できる一次証拠がある場合は引き続きHOLD。",
+    "documentedIn": "docs/VENUE_DATA_GUIDE.md の「currentness / closure policy（2026-09-04 user-authorized revision）」節",
+    "historicalRecordPreserved": true,
+    "seatEvidencePolicyRelaxed": false,
+    "schemaChanged": false,
+    "metadataContractUsed": "既存のinventory `recheckNotBefore` を使用し、このためだけのschema追加は行っていない。"
+  },
+  "startSnapshot": {
+    "branch": "main",
+    "head": "ffe8f455b84a2dd32e8c68ab834b282490759b87",
+    "originMain": "ffe8f455b84a2dd32e8c68ab834b282490759b87",
+    "workingTree": "clean",
+    "production": {
+      "venues": 142,
+      "configurations": 144,
+      "seatRecords": 211983
+    },
+    "kantoGe1000Ledger": {
+      "production": 59,
+      "adopt": 3,
+      "formalBlocked": 62,
+      "inventoryUnresearched": 30,
+      "universe": 154,
+      "missingFromInventory": 0
+    }
+  },
+  "currentnessGate": {
+    "result": "PASS (ACTIVE, temporary closure only)",
+    "freshFirstPartyEvidence": [
+      "https://plan.pacifico.co.jp/national-convention-hall — 現行のfor Planners施設紹介ページ。「5,000席超の座席数に加え、舞台はフレキシブルな可動式」。同ページから現行の「座席図」PDFと「施設概要」PDFへ直接リンクする。",
+      "https://www.pacifico.co.jp/news/DUVZG5eM — 2026-08-28付お知らせ「国立大ホール ステンドグラス一般開放について（開催日：2026年9月26日）」。国立大ホール2Fエントランスの一般開放を告知しており、レビュー時点の通常運用を示す。",
+      "https://lp.pacifico.co.jp/hubfs/Price_list_Natinal_convention.pdf — 「2026年8月〜」の現行 国立大ホール 利用料金表。",
+      "https://plan.pacifico.co.jp/planning-resources — 資料ダウンロード。国立大ホール資料集として現行の座席表・施設概要とフロア図・収容人数・利用パターン・客席数（座席表）を配布する。",
+      "https://lp.pacifico.co.jp/hubfs/pressrelease/pressrelease_National%20Convention%20Hall%20closed_2026.06.04.pdf — 2026-06-04付プレスリリース（休館2027-05-17〜2028-03-31、営業再開日2028-04-01）。"
+    ],
+    "operationalStatusAtReview": "ACTIVE as of 2026-09",
+    "closure": {
+      "type": "temporary refurbishment closure",
+      "start": "2027-05-17",
+      "end": "2028-03-31",
+      "reopening": "2028-04-01",
+      "facilitySpaceIdentityMaintained": true,
+      "permanentClosureOrDemolitionOrRebuild": false,
+      "otherSpacesUnaffected": "会議センター、展示ホール、アネックスホール、ノースは通常どおり営業とissuerが明記。"
+    },
+    "refurbishmentInterpretation": {
+      "issuerStatedPurpose": "施設の長寿命化と安全性の確保、経年による老朽化への対応。内外装・設備を含めた総合的な改修。",
+      "issuerStatedWorkAreas": "主な工事箇所（予定）: 特定天井、客席、カーペット、トイレ、昇降機設備、外装 等",
+      "issuerStatedSeatingText": "「特に、特定天井（高さ6ｍ超かつ面積200 ㎡超の吊り天井）や昇降機設備の改修など安全面の強化に加え、客席・カーペットの更新やバリアフリー環境の整備等により、快適で利用しやすい施設環境の向上を図ります。」",
+      "seatingChangeEvidence": "FOUND — issuerは客席を改修の主な工事箇所（予定）として明示し、客席の更新とバリアフリー環境の整備を行うと述べている。",
+      "seatStructureChangeExplicitlyStated": false,
+      "detail": "issuerは席数・列構成・座席番号体系が変更されるとはいっさい明示しておらず、改修後の座席図も公開していない。本実装は『変更の記載がないこと』を『変更されない証明』として推論していない。改訂後policyのHOLD要件は「issuerが座席の変更（席数・列構成・番号体系の変更）を明示している場合」であり、客席が工事対象であるという記載だけではこれを満たさないと判断した。現行データは改修前の現行公式座席図に対してのみ有効なものとして登録し、recheckNotBefore 2028-04-01 を設定している。",
+      "userVisibleFlag": "この解釈はユーザー判断の対象として報告済み。issuerの客席更新をもってHOLDとみなす場合は、本会場をblockedへ戻す判断がありうる。"
+    },
+    "seatChartCurrentLinkRelation": "for Planners施設紹介ページの「座席図」リンクと資料ダウンロードページの国立大ホール資料集「座席表」リンクの双方を2026-09-04当日にたどり直し、いずれも同一の現行公式PDFに到達することを確認した。URL直打ちによるcurrent扱いはしていない。",
+    "chartRevisionAndHash": {
+      "url": "https://lp.pacifico.co.jp/hubfs/conv/guide/kokuritu_1f-3f.pdf",
+      "sha256": "5b92836a8bb4c101b17db1c750af08fce8149a6db6435453b08222f7bcda9824",
+      "bytes": 1082096,
+      "pages": 2,
+      "pageGeometry": [
+        "p1 841.89x1190.55pt (A3 portrait)",
+        "p2 595x842pt rotation 90"
+      ],
+      "pdfVersion": "1.5",
+      "producer": "iLovePDF",
+      "title": "【国立大ホール】1階・2階・3階　座席表",
+      "creationDate": "2023-07-05",
+      "lastModified": "2025-08-23",
+      "etag": "bf39d0a4f01bbd6e9dbfe1709f1afa8f",
+      "independentRefetch": "Pass 2直前に別クライアント・別User-Agent・cache-bypassで再取得し、バイト単位で同一であることを確認。"
+    },
+    "supersededPreflight4Hold": "2026-09-04のPREFLIGHT 4は旧policy（12か月以内の正式な長期休館・改修予定は原則blocker）に従い本会場をHOLDと判定した。その判定は当時のpolicyに照らして正しく、historical recordとして削除せず保持する。今回のuser-authorized policy revisionによってそのHOLDはsupersededされた。"
+  },
+  "assetGate": {
+    "result": "PASS",
+    "denseVectorEvaluation": "会場規模（5,002席）だけを理由にDENSE-VECTORを自動適用していない。1階席（p1）は座席番号がPDFテキストとして埋め込まれ、宣言scopeの全番号が明示印字され、2つの独立した機械経路でcomplete setを再構成できるためDENSE-VECTOR verificationの条件を満たすと判断して適用した。2階席・3階席（p2）は座席番号がベクターのアウトラインでテキストではなく、機械経路だけでlosslessなidentifier再構成に到達できなかったため、DENSE-VECTORは適用せず既定のhuman visual two-passを実施した。",
+    "additionalIssuerMaterial": [
+      "【国立大ホール】施設概要パンフレット（断面図・フロアマップに階別席数と『用途に応じて舞台の大きさを変更することができます』『1階席は、一部を除き奇数列の背もたれを倒し、1,670席に変更可能です』を記載）",
+      "国立大ホール 収容人数（公式スプレッドシート。2F=1階席3,260席(内可動席710席)、4F=2階席994席(内可動席60席)、6F=3階席748席(全席固定)）",
+      "国立大ホール 利用パターン（4パターン、舞台寸法と階別・合計席数）",
+      "国立大ホール 客席数（座席表）（階別の注記と全体5,002席（内可動席770席））",
+      "館内サービス バリアフリー情報（車椅子席の存在のみ記載、席数・位置・置換関係は非公開）"
+    ]
+  },
+  "configurationGate": {
+    "result": "ONE COHERENT ISSUER-DEFINED REPRESENTATIVE CONFIGURATION",
+    "issuerUsagePatterns": [
+      {
+        "pattern": "パターン1 基本舞台",
+        "stage": "W32m/23m D6.5m",
+        "floor1": 3260,
+        "total": 5002,
+        "uses": "会議、講演会、大会",
+        "numberedChartPublished": true
+      },
+      {
+        "pattern": "パターン2 基本舞台+置舞台",
+        "stage": "W32m/23m D8.5m",
+        "floor1": 3096,
+        "total": 4838,
+        "uses": "会議、講演会、大会",
+        "numberedChartPublished": false
+      },
+      {
+        "pattern": "パターン3 基本舞台+置舞台2列",
+        "stage": "W25m/23m D10.5m",
+        "floor1": 2976,
+        "total": 4718,
+        "uses": "会議、講演会、大会",
+        "numberedChartPublished": false
+      },
+      {
+        "pattern": "パターン4 基本舞台+迫舞台+置舞台",
+        "stage": "W32m/23m D15m",
+        "floor1": 2796,
+        "total": 4538,
+        "uses": "コンサート、イベント",
+        "numberedChartPublished": false
+      }
+    ],
+    "selected": "パターン1 基本舞台（最大5,002席）",
+    "rationale": "4パターンの差はすべて1階席で生じ、2階席994席・3階席748席は不変。番号付き公式座席図が公開されているのはパターン1の最大構成だけで、座席図自体が1階席3,260席・2階席994席・3階席748席を全席番号入りで描く。したがってパターン1のみを登録し、他パターンは混在させていない。",
+    "floorStructure": {
+      "floor1": "1階席 1列〜47列 / 座席番号1〜80 / 3,260席（区分記号 AA=1〜8列, A=9〜28列, B=29〜47列）",
+      "floor2": "2階席 1列〜18列 / 座席番号1〜82 / 994席（区分記号 C）",
+      "floor3": "3階席 1列〜17列 / 座席番号1〜84 / 748席（区分記号 D）"
+    },
+    "fixedSeats": 4232,
+    "movableSeats": {
+      "total": 770,
+      "floor1": 710,
+      "floor2": 60,
+      "floor3": 0,
+      "issuerNotes": [
+        "可動席は1席のみを単独で外すことはできません",
+        "撤去した可動席数を超えて仮設椅子席を設けることはできません",
+        "2階席の■部分60席は、一括でロールバックして収納されます"
+      ]
+    },
+    "adjustableStage": "issuerは舞台を可動式とし、4パターンで舞台寸法と1階席の席数が変わる。",
+    "stageLift": "1階席の座席図には迫舞台の範囲が破線とXハッチで重ねて描かれるが、その範囲内の座席にも番号が印字されており、パターン1では客席として存在する。パターン4使用時の1階席2,796席の番号集合は公開されていない。",
+    "orchestraPitOrStageExtension": "issuerはオーケストラピットを公表していない。置舞台（stage extension）はパターン2・3・4として公表され、いずれも番号集合は非公開。",
+    "standing": "立見の公表なし。",
+    "wheelchair": "存在のみ公表、席数・位置・置換関係は非公開。座席図に印字なし。",
+    "vipOrTechnical": "座席図にVIP席・技術席の特別マーキングや凡例はない。2階席18列の中央は調整室等の設備で座席が印字されていない。",
+    "eventDependentSections": "可動席770席は舞台の作り方に応じて撤去されうるが、パターン1では設置された番号席であり、issuerの階別・全体席数の内数として公表されている。撤去時にどの番号が外れるかは非公開のため、他パターンは登録していない。",
+    "alternateLayout": "1階席の奇数列背もたれを倒す1,670席仕様は集計値のみで番号図なし。登録していない。",
+    "notTargeted": "5,002をseat-ID targetにしていない。番号集合を先に独立確定し、事後に公称値とreconcileした。結果として印字番号席の総数が公称最大5,002席と一致した。"
+  },
+  "targetDiscipline": {
+    "capacityFitting": false,
+    "inventedIds": false,
+    "geometryCompletion": false,
+    "configurationMixing": false,
+    "thirdPartyChartInfill": false,
+    "note": "公称値（5,002／3,260／994／748／770／ブロック小計）はいずれもtranscription targetにせず、番号集合の独立確定後にreconcileした。範囲の伸縮・削除・追加は一切行っていない。"
+  },
+  "passA": {
+    "label": "Pass 1",
+    "floor1": "DENSE-VECTOR machine path A: PDFテキストを読まないベクター幾何のみで座席セルquad（9.5×7.3pt）を抽出し、重複込み9,965件を位置で一意化して3,260件を得た。",
+    "floor2and3": "Human visual Pass 1: 2階席→3階席の順に、左パネル→中央パネル→右パネルの縦分割で、列は上から下、range内は小さい番号から読み取り（dpi 900〜1600）。結果は2階席109 range/994席、3階席83 range/748席。",
+    "frozenBeforeComparison": true
+  },
+  "passB": {
+    "label": "Pass 2",
+    "assetRefetched": "別クライアント・別User-Agent・cache-bypassで独立に再取得し、SHA-256とバイト数が同一であることを確認（byte-identical）。",
+    "floor1": "DENSE-VECTOR machine path B: サイズ4.99ptの純数字テキストspan 3,260件と数字グリフ6,286件を、path Aのセルへ幾何的に帰属させて1セル=1番号を確定。未帰属グリフ0件、番号のないセル0件、非数字を含むセル0件。セルの物理隣接（列方向ピッチ7.3pt）で310本のrunを構成し、すべて厳密な連続昇順。列番号は7.61ptテキスト（1〜47）を幾何的に帰属。加えてレンダリング図のvisual auditを1階席の左右両半・AA/A/B各区分・可動席境界・truncated行（1列・2列・44〜47列）・区分境界（8/9列、28/29列）で実施した。",
+    "floor2and3": "Human visual Pass 2: 再取得したPDFから、3階席→2階席の順に、右→左、下の列から上の列へ、crop境界を縦分割から横方向のrow-band strip分割へ変更し、各bandを実測レーキ角でデスキュー描画して読み取り（dpi 720〜1150）。Pass 1のtableはanswer keyにしていない。",
+    "frozenBeforeComparison": true
+  },
+  "humanComparison": {
+    "floor2and3": "両passをfreezeしてから機械比較。展開座席ID集合（2階席994件・3階席748件）、階所属、列所属、全range、全欠番、可動席区画でunresolved mismatch 0。",
+    "floor1VisualAudit": "機械2経路の結果とレンダリング図の視認結果に不一致なし。",
+    "result": "MATCH"
+  },
+  "machineExpandedSourceVerification": {
+    "sourceExpandedTotal": 5002,
+    "verifiedSetTotal": 5002,
+    "bidirectionalSetEquality": true,
+    "symmetricDifference": 0,
+    "duplicateRuntimeKeys": 0,
+    "rangeOverlapsWithinAreaRow": 0,
+    "runtimeJsonSetEquality": true,
+    "runtimeRangeCount": 502
+  },
+  "machineStructuralChecksum": {
+    "floor1CellQuads": {
+      "rawDuplicated": 9965,
+      "uniquePositions": 3260
+    },
+    "floor1PrintedNumberSpans": 3260,
+    "floor1DigitGlyphs": 6286,
+    "floor1UnattachedGlyphs": 0,
+    "floor1CellsWithoutNumber": 0,
+    "floor1GeometricRuns": 310,
+    "floor1NonAscendingRuns": 0,
+    "floor2and3Cells": {
+      "total": 1742,
+      "floor2": 994,
+      "floor3": 748,
+      "separation": "座席群のあいだの明確な空隙で分割"
+    },
+    "floor2and3GeometricRuns": {
+      "total": 192,
+      "floor2": 109,
+      "floor3": 83
+    },
+    "humanRangeStructureVsMachineRuns": "2階席109/109、3階席83/83でrun数とrun長多重集合が完全一致",
+    "movableDetection": {
+      "floor1": 710,
+      "floor2": 60,
+      "floor3": 0,
+      "total": 770,
+      "method": "塗り（1階席0.30グレー、2階席黒）のポリゴンをセルへ帰属"
+    },
+    "mirrorSymmetryInvariant": {
+      "floor1": "n <-> 81-n",
+      "floor2": "n <-> 83-n",
+      "floor3": "n <-> 85-n",
+      "asymmetricSeats": 0
+    },
+    "notAdoptedMachinePaths": "2階席・3階席の番号を機械で読み取る第2経路として (a) セル画像の正規化クラスタリングと (b) 数字グリフのベクターパス署名照合を試作したが、(a) は2桁数字を24×24へ正規化すると隣接番号を識別できず、(b) はレーキ角の推定誤差により同一字形が同一署名にならなかった。いずれもlosslessなidentificationに達しなかったため採用せず、機械経路はstructural checksumとしてのみ用いた。機械結果をseat IDの生成・補完に用いた箇所はない。"
+  },
+  "issuerChecksumEvidence": {
+    "grandCapacity": "5,002（最大5,002席／全体5,002席（内可動席770席））— mapped 5,002 一致",
+    "perFloorSubtotal": {
+      "floor1": "3,260 — mapped 3,260 一致",
+      "floor2": "994 — mapped 994 一致",
+      "floor3": "748 — mapped 748 一致"
+    },
+    "movableSubtotal": {
+      "floor1": "710 — 一致",
+      "floor2": "60 — 一致",
+      "floor3": "0（全席固定）— 一致",
+      "total": "770 — 一致"
+    },
+    "perBlockSubtotals": {
+      "floor1": "座席図の縮小ブロック図が印字する34ブロック（可動席側 88・96・96・96・88／18・5・12・12・12・12・12・5・18／15・48・15／21・20・21、固定席側 118・228・228・180・228・228・118／113・192・204・204・204・192・113）の多重集合が、機械再構成したブロック分解（番号帯×AA/A/B区分×可動席網掛けの有無）と完全一致。合計3,260。",
+      "floor2": "18・37・32・87・104・153（左右対称）＋可動席60＋固定72 = 994 一致",
+      "floor3": "59・46・30・36・77・72（左右対称）＋最後方3ブロック60・60・60 = 748 一致"
+    },
+    "wheelchairSubtotal": "非公開（issuerは存在のみ記載）",
+    "standingSubtotal": "公表なし",
+    "technicalOrVipSubtotal": "公表なし",
+    "alternateStageReductions": "パターン2 1階席3,096／合計4,838、パターン3 1階席2,976／合計4,718、パターン4 1階席2,796／合計4,538。いずれも番号集合非公開のため未登録。1階席背もたれ収納時1,670席も集計値のみ。",
+    "materialMismatch": "なし（rangeDiff 0）"
+  },
+  "reconciliation": {
+    "mappedTotal": 5002,
+    "officialTotal": 5002,
+    "difference": 0,
+    "perArea": {
+      "floor1": 3260,
+      "floor2": 994,
+      "floor3": 748
+    },
+    "rangeCount": 502,
+    "rangesPerArea": {
+      "floor1": 310,
+      "floor2": 109,
+      "floor3": 83
+    }
+  },
+  "wheelchairSemantics": {
+    "status": "not-reflected",
+    "accessibilityConversionNotReflected": true,
+    "reason": "issuerは国立大ホールに車いす席があることのみ公表し、席数・位置・通常番号席との置換関係を公開していない。現行公式座席図にも車椅子ピクトグラム・専用番号の印字はなく、機械抽出でも無番号セルは0件だった。番号の創作も隣接席の削除も行わず未登録とした。"
+  },
+  "productionDecision": {
+    "result": "PRODUCTION",
+    "sourceId": "pacifico-yokohama-national-hall",
+    "configurationId": "basic-stage",
+    "canonicalName": "パターン1 基本舞台（最大5,002席）",
+    "scopeKind": "official-variant",
+    "confidence": "verified",
+    "mappedSeats": 5002,
+    "productionGateBlockers": "(none)",
+    "reviewErrors": "(none)",
+    "reviewWarnings": "(none)"
+  },
+  "closureMetadata": {
+    "activeAsOf": "2026-09",
+    "refurbishmentClosureStart": "2027-05-17",
+    "refurbishmentClosureEnd": "2028-03-31",
+    "reopeningPlanned": "2028-04-01",
+    "closureType": "temporary",
+    "seatingChangeEvidence": "FOUND — 客席は改修の主な工事箇所（予定）に含まれ、客席・カーペットの更新とバリアフリー環境の整備が明記されている。ただし席数・列構成・座席番号体系の変更はissuerが明示していない。",
+    "recheckAfterRefurbishment": "2028-04-01の営業再開後に、fresh currentness、現行座席図の再取得、fresh human two-pass、structural checksumを必須として再確認する。旧rangeをanswer keyにしない。",
+    "recheckNotBefore": "2028-04-01",
+    "recordedIn": [
+      "data/venue-sources/pacifico-yokohama-national-hall.json (knownLimitations, selectionBasis, verification.unresolvedIssues)",
+      "data/venue-inventory/kanto-release-critical-2026-08-27.json (recheckNotBefore, eligibilityReason)",
+      "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json (reopenCondition)",
+      "docs/HANDOFF.md"
+    ]
+  },
+  "productionArtifacts": [
+    "data/venue-sources/pacifico-yokohama-national-hall.json (new, schema v2, 502 ranges, 5,002 seats)",
+    "data/venue-inventory/kanto-release-critical-2026-08-27.json (kanagawa-pacifico-national-hall -> active / eligible / production / venueSourceId / recheckNotBefore 2028-04-01, officialFacilityUrl migrated from a 404 path to the current planner page)",
+    "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json (record -> production, counts machine-recomputed)",
+    "docs/VENUE_DATA_GUIDE.md (currentness / closure policy revision)",
+    "src/data/venue-db/catalog.generated.json (regenerated)",
+    "public/venue-db/venues/pacifico-yokohama-national-hall--basic-stage.json (generated runtime)",
+    "data/venue-reports/kanagawa-pacifico-national-hall-bounded-implementation-2026-09-04.json (this report)",
+    "docs/HANDOFF.md"
+  ],
+  "productionTotalsAfter": {
+    "venues": 143,
+    "configurations": 145,
+    "seatRecords": 216985
+  },
+  "kantoGe1000LedgerAfter": {
+    "production": 60,
+    "adopt": 3,
+    "formalBlocked": 61,
+    "inventoryUnresearched": 30,
+    "universe": 154,
+    "missingFromInventory": 0,
+    "method": "records[] から機械再計算。期待値との一致はcheckであってtarget fittingではない。"
+  },
+  "prohibitionsObserved": [
+    "capacity fitting は行っていない",
+    "seat ID の創作は行っていない",
+    "geometry からの補完は行っていない",
+    "configuration mixing は行っていない",
+    "third-party chart による穴埋めは行っていない",
+    "soft-limit warning を消すための threshold 変更・compaction・refactor は行っていない",
+    "reset / revert は行っていない",
+    "PREFLIGHT 4 の3 ADOPT record は変更していない",
+    "RaiBoC、Tokyo Priority D、残りの Kanto research は開いていない",
+    "historical record（PREFLIGHT 4 の HOLD 判定）は削除していない"
+  ],
+  "exactNextAction": "separately authorized bounded production implementation of saitama-city-culture-main さいたま市文化センター〔大ホール〕 under the revised temporary-closure policy",
+  "releaseVerification": {
+    "status": "pending"
+  }
+}
