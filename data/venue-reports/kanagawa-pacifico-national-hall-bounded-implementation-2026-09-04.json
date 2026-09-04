@@ -4,7 +4,7 @@
   "asOf": "2026-09-04",
   "scope": "パシフィコ横浜〔国立大ホール〕 (inventory kanagawa-pacifico-national-hall) only. The three PREFLIGHT 4 ADOPT records (saitama-koshigaya-suncity-hall, gunma-ota-culture-main, ibaraki-hitachinaka-culture-main) were left untouched at ADOPT, and RaiBoC, Tokyo Priority D and the remaining Kanto research pool were explicitly out of scope and were not opened.",
   "mode": "separately authorized bounded single-venue production implementation under a user-authorized currentness-policy revision",
-  "disposition": "PRODUCTION",
+  "disposition": "PRODUCTION + RELEASE VERIFIED / CLOSED",
   "difficultyLane": {
     "lane": "JUDGMENT + HIGH-VOLUME",
     "reason": "Two consequential judgments preceded any transcription: whether an issuer-announced temporary refurbishment closure blocks production under the revised policy, and which of four issuer usage patterns is the one coherent numbered representative configuration. The chart itself then carries 5,002 printed numbered seats across three floors on a single A3 sheet set, with one floor whose numbers are PDF text and two floors whose numbers are vector outlines."
@@ -348,6 +348,28 @@
   ],
   "exactNextAction": "separately authorized bounded production implementation of saitama-city-culture-main さいたま市文化センター〔大ホール〕 under the revised temporary-closure policy",
   "releaseVerification": {
-    "status": "pending"
+    "status": "RELEASE VERIFIED / CLOSED",
+    "verifiedOn": "2026-09-04",
+    "productionCommit": "6bed0971eab9c8c2f20c7b8dd1d5370497d84fbf",
+    "managedBuild": {
+      "checkRun": "Workers Builds: seat-lottery-simulator",
+      "conclusion": "success",
+      "attempt": "first",
+      "retriesOrEmptyCommits": "none",
+      "localProductionDeploy": "none",
+      "buildId": "039e2613-04e6-4864-b670-ac36ffacd8b3"
+    },
+    "publicUrl": "https://seat-lottery-simulator.studiotomo.workers.dev/",
+    "smoke": {
+      "searchPacificoYokohama": "「パシフィコ横浜」で検索し、パシフィコ横浜 国立大ホール（神奈川県 横浜市／抽選対象 5,002席）が1件だけ返る",
+      "searchNationalHall": "「国立大ホール」で検索しても同じ1件だけが返る",
+      "identity": "会場名 パシフィコ横浜 国立大ホール、都道府県 神奈川県、市区町村 横浜市",
+      "displayedSeatCount": "抽選対象 5,002席／「5,002席から今日の1席を抽選します」= mapped 5,002 と一致",
+      "runtimeJson": "GET /venue-db/venues/pacifico-yokohama-national-hall--basic-stage.json → HTTP 200, application/json, 32,090 bytes, totalSeatCount 5002, ranges 502, areas 1階席/2階席/3階席, 階別 3,260/994/748",
+      "perAreaDraw": "複数回の抽選で 1階席・2階席・3階席のすべてから当選が出た（例: 1階席 29列 68番、2階席 12列 28番、3階席 17列 22番、1階席 3列 28番、1階席 41列 39番、1階席 26列 11番、1階席 19列 45番）。いずれも登録rangeに存在する番号。",
+      "resultLabels": "結果カードに 会場「パシフィコ横浜 国立大ホール」、座席配置「パターン1 基本舞台（最大5,002席）」、エリア「1階席／2階席／3階席」、列「N列」、座席番号「N番」が正しく表示される",
+      "gapsUndrawable": "公開中のruntime JSONに対して全5,002 offsetを網羅的にsweepし、生成された座席集合が検証済み集合と完全一致（distinct 5,002、重複0、未検証座席0）であることを確認した。したがってissuerが印字していない欠番・除外configuration位置はいずれもdrawされない。",
+      "consoleWarningsOrErrors": "なし（初期表示・会場検索・会場選択・抽選の各段階でconsole出力0件）"
+    }
   }
 }
