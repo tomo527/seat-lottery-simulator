@@ -787,10 +787,10 @@
       "eligibilityReason": "KANTO >=1000 audit first-party discovery: 1,200席; seat implementation evidence is not yet assessed.",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-05",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "SOURCE HOLD (2026-09-05 PREFLIGHT 5): recorded issuer hostname https://www.maebashi-culture.jp/ returned ERR_NAME_NOT_RESOLVED. Locate a working current issuer page and complete numbered representative chart before re-evaluation; no old/third-party chart, inferred IDs, rows, or capacity fitting."
     },
     {
       "inventoryId": "gunma-ota-culture-main",
@@ -819,18 +819,18 @@
       "officialDisplayName": "メガネのイタガキ文化ホール伊勢崎〔大ホール〕",
       "prefecture": "群馬県",
       "city": "伊勢崎市",
-      "capacity": 1500,
+      "capacity": 1530,
       "category": "hall",
-      "officialFacilityUrl": "https://www.city.isesaki.lg.jp/",
+      "officialFacilityUrl": "https://isesaki-bunka.com/shisetsu/lhall/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 1,500席; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-05 PREFLIGHT 5: current issuer page and PDF publish a one-slope 1,530-seat prospect with fixed 1,440 / wheelchair 6 / parent-child 8 / standing 76 semantics, current ticketed large-hall use, and a separately described pit condition. ADOPT is not production and authorises no inferred IDs or pit subtraction.",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-05",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT 5): separately authorized bounded implementation must perform fresh independent human visual two-pass, expanded-source equality, issuer checksum reconciliation, and independent practical structural checksum. Any material mismatch stops production."
     },
     {
       "inventoryId": "gunma-kiryu-culture-main",

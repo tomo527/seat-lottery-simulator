@@ -1,0 +1,198 @@
+{
+  "reportVersion": 1,
+  "title": "KANTO >=1000 TEMPORARY-CLOSURE REOPEN AUDIT / PREFLIGHT 5",
+  "asOf": "2026-09-05",
+  "scope": "Preflight/audit only. It combines the live Kanto >=1,000 inventory-unresearched pool with existing formal HOLDs whose recorded primary blocker was a temporary closure or temporary renovation only. No production venue, RaiBoC, hard case, source JSON, range, fingerprint, generated catalog/runtime, production total, or Tokyo Priority D record was reopened.",
+  "startSnapshot": {
+    "branch": "main",
+    "head": "65e0f192251c617b8941439931cca16013342d23",
+    "originMain": "65e0f192251c617b8941439931cca16013342d23",
+    "workingTree": "clean",
+    "production": {
+      "venues": 147,
+      "configurations": 149,
+      "seatRecords": 223491
+    },
+    "kantoLedger": {
+      "production": 64,
+      "ADOPT / implementation-ready": 0,
+      "HOLD / NEED EVIDENCE / formal DEFER": 60,
+      "inventory-unresearched": 30,
+      "universeTotal": 154,
+      "missingFromInventory": 0
+    },
+    "preflight4AdoptQueue": "closed: all three records reached production",
+    "raiboc": "separate re-implementation queue; excluded"
+  },
+  "policy": {
+    "lane": "JUDGMENT",
+    "reason": "The revised currentness policy must be applied without relaxing the independent numbered-seat, configuration, accessibility, and checksum gates.",
+    "temporaryClosureRule": "Temporary closure alone is not a blocker. Identity continuity, a current or issuer-maintained numbered chart, a coherent representative configuration, and no issuer-explicit seat-count/row/numbering change remain mandatory. Lack of a seating-change statement is recorded as an absence, never treated as proof.",
+    "productionGate": "ADOPT means only that a bounded implementation is likely feasible. It never authorizes transcription or promotion. Every ADOPT requires fresh independent human visual two-pass work, machine-expanded source equality, issuer subtotal reconciliation, an independent practical structural checksum, and a production stop on material mismatch. The 太田市民会館 correction is the standing mismatch rule: preserve the failed historical attempt and reread the chart; never alter ranges to fit a target."
+  },
+  "candidatePool": {
+    "A_inventoryUnresearched": {
+      "ledgerCount": 30,
+      "liveRanked": [
+        "gunma-maebashi-culture-main",
+        "gunma-isesaki-culture-main",
+        "chiba-narita-culture-main",
+        "ibaraki-ryugasaki-culture-main",
+        "tochigi-oyama-culture-main"
+      ]
+    },
+    "B_temporaryClosureOnlyFormalHolds": {
+      "eligibleAfterMetadataScreen": [
+        "tokyo-tokyo-bunka-main-hall",
+        "tokyo-official-0234",
+        "tokyo-meguro-persimmon-main",
+        "tokyo-official-1060"
+      ],
+      "excluded": [
+        "tokyo-ota-aprico-main: the current 1,467 versus post-work 1,477 issuer-capacity conflict is an independent structure/currentness blocker, not temporary closure only.",
+        "kawaguchi-lilia-main: post-renovation complete numbered-chart evidence is independently missing.",
+        "tokyo-tiara-koto-main and every permanent-closure/replacement, SOURCE HOLD, NEED EVIDENCE, HARD-CASE, or RaiBoC record: not reopenable under a temporary-closure label."
+      ]
+    },
+    "productionExclusion": "All 64 production ledger records, including the PREFLIGHT 4 implementations, were excluded before ranking."
+  },
+  "liveReranking": {
+    "method": [
+      "Prioritised performance and ticket-lottery relevance, major urban use, current first-party numbered-chart quality, representative-configuration coherence, issuer subtotals, and practical independent verification; capacity alone did not rank a candidate.",
+      "Applied a yield penalty to event-dependent arena floors, generic movable-chair layouts, standing-first rooms, missing issuer domains, and any explicit seating-structure change.",
+      "Read historical reports only for the selected candidates immediately before fresh first-party checks; their old closure decisions remain historical facts rather than evidence of current layout."
+    ],
+    "rankedResearchOrder": [
+      { "rank": 1, "inventoryId": "tokyo-tokyo-bunka-main-hall", "pool": "B", "reason": "Nationally significant opera/orchestra hall; issuer maintains a five-floor chart, floor subtotals, wheelchair count, and a temporary-closure notice." },
+      { "rank": 2, "inventoryId": "tokyo-official-0234", "pool": "B", "reason": "High-use Shinjuku performance hall; issuer now explicitly publishes the post-renovation 1,601-seat configuration, current seat-chart surface, pit condition, and accessibility semantics." },
+      { "rank": 3, "inventoryId": "tokyo-meguro-persimmon-main", "pool": "B", "reason": "Active metropolitan concert/theatre hall with a detailed issuer seat PDF and unusually explicit fixed, floor, pit, wheelchair, and companion-seat semantics." },
+      { "rank": 4, "inventoryId": "tokyo-official-1060", "pool": "B", "reason": "Temporary HVAC closure only; the city maintains a current normal-layout numbered PDF and complete fixed/movable/wheelchair checksum." },
+      { "rank": 5, "inventoryId": "gunma-maebashi-culture-main", "pool": "A", "reason": "The highest remaining fixed-hall prospect from PREFLIGHT 4, but its recorded issuer hostname failed fresh DNS resolution and cannot supply current first-party seat evidence." },
+      { "rank": 6, "inventoryId": "gunma-isesaki-culture-main", "pool": "A", "reason": "Active ticketed one-slope hall with issuer PDF, explicit fixed/standing/accessibility subtotals, a bounded pit condition, and a practical checksum path." }
+    ]
+  },
+  "researched": [
+    {
+      "rank": 1,
+      "inventoryId": "tokyo-tokyo-bunka-main-hall",
+      "identity": "東京文化会館〔大ホール〕 / 東京都台東区 / hall",
+      "firstPartyEvidence": [
+        "https://www.t-bunka.jp/info/32755/ — issuer notice: temporary all-facility renovation closure from 2026-05-07 through FY2028 (planned), with no permanent closure, demolition, replacement, or seating-change statement.",
+        "https://www.t-bunka.jp/hall/large.html — issuer-maintained complete seating surface: 1F 1,282, 2F 238, 3F 355, 4F 268, 5F 160, total 2,303, plus 14 wheelchair spaces; printable chart link remains published while closed."
+      ],
+      "currentnessAndClosure": "TEMPORARY-RENOVATION PASS under the revised rule. The building is closed, but facility-space identity remains; no published seating, row, or numbering change was found. This absence is not proof of no later change, so implementation must re-fetch immediately before transcription and recheck after reopening.",
+      "configuration": "The issuer page describes a permanent five-floor numbered hall. No event-dependent floor, standing, or alternate numbered configuration was selected.",
+      "accessibilityAndChecksum": "Issuer gives 2,303 numbered seats plus 14 wheelchair spaces = 2,317, matching the inventory total. The chart must determine whether the wheelchair positions carry draw IDs; no relationship is inferred.",
+      "chartAndFeasibility": "Current issuer-maintained chart surface and printable chart are sufficient for a DENSE/JUDGMENT implementation prospect. Fresh visual inspection must establish every printed identifier and five-floor boundary; independent PDF/text-or-geometry and raster structural paths are practical but must not consume the human ranges.",
+      "disposition": "ADOPT / implementation-ready",
+      "recheckNotBefore": "2028-04-01",
+      "implementationVerificationPlan": "Immediately before transcription, freshly re-fetch and record the issuer-maintained pre-renovation chart as the current implementation layout. If that re-fetch introduces no issuer-explicit seat-count, row-structure, or numbering change, complete fresh two-pass human extraction in different floor/traversal order; expand and compare both frozen sets against source bidirectionally; reconcile all five issuer floor subtotals and 2,303+14=2,317; and independently count practical chart structure. If all normal gates pass, production promotion may proceed before reopening; lack of a seating-change statement remains an absence, not proof. Any mismatch stops production and returns to the chart. Revalidate the chart and currentness after reopening."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "tokyo-official-0234",
+      "identity": "新宿区立新宿文化センター〔大ホール〕 / 東京都新宿区 / hall",
+      "firstPartyEvidence": [
+        "https://www.regasu-shinjuku.or.jp/bunka-center/facilities/ — issuer states the 2023–2025 renovation widened seats and changed the hall from the historical 1,802 to a current 1,601 fixed seats.",
+        "https://www.regasu-shinjuku.or.jp/bunka-center/facilities/main-hall/ — current hall page has a seat-chart surface and states 1F 1,029 + 2F 572 = 1,601, pit use 1,479 (122 unavailable), and approximately 30 wheelchair spaces; it lists current booking and December 2026 performance use."
+      ],
+      "currentnessAndClosure": "PASS: the previous recheck gate is overtaken by the issuer's current post-renovation page. The old 1,802 inventory value is historical only and is not a transcription target.",
+      "configuration": "Select only the normal 1,601 fixed-seat chart prospect. The orchestra-pit condition is a separately described unavailable-seat mode and must not be manufactured by subtraction.",
+      "accessibilityAndChecksum": "Issuer floor checksum is 1,029+572=1,601. Wheelchair capacity is approximate (30), so the chart/issuer must establish whether positions are numbered, converted, or unnumbered before any source authoring.",
+      "chartAndFeasibility": "The live issuer-linked seat chart must be transcribed anew; its paired floor subtotal makes independent machine/human reconciliation practical.",
+      "disposition": "ADOPT / implementation-ready",
+      "recheckNotBefore": null,
+      "implementationVerificationPlan": "Freeze two independent visual passes of the post-renovation chart; compare expanded source equality in both directions; reconcile 1F/2F totals and pit exclusion without arithmetic construction; independently validate chart cell/identifier structure; stop on every material mismatch."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "tokyo-meguro-persimmon-main",
+      "identity": "めぐろパーシモンホール〔大ホール〕 / 東京都目黒区 / hall",
+      "firstPartyEvidence": [
+        "https://www.persimmon.or.jp/about/hall_l.html and https://www.persimmon.or.jp/media/hall_l_seat.pdf — current issuer seat map and hall page: 1,200 capacity / 1,186 fixed, 1F 658 (512 with pit), 2F 429, balcony 92, 14 wheelchair spaces, 7 companion seats, and the exact companion seat numbers in 1F row 13.",
+        "https://www.persimmon.or.jp/lot.html — issuer closure notice: main hall unavailable 2027-01-12 through 2028-01-07 for ceiling non-structural-member fall-prevention work; unlike the small hall notice, it does not announce chair-back, count, row, or numbering work."
+      ],
+      "currentnessAndClosure": "TEMPORARY-RENOVATION PASS. The hall is actively programmed before the closure. The named work does not state a seating change; that is an absence, not a preservation guarantee, and creates a recheck obligation after the announced reopening.",
+      "configuration": "Fixed representative configuration only. Pit use is issuer-described separately; no alternate set is inferred.",
+      "accessibilityAndChecksum": "1,186 fixed = 658 first floor + 429 second floor + 92 balcony + 7 numbered companion seats. Fourteen wheelchair spaces and the precise row-13 relation must be visually classified, never inferred from the total.",
+      "chartAndFeasibility": "One-page current issuer PDF with named floor/row blocks and explicit semantics is a high-yield ordinary two-pass candidate; independent PDF/raster structural checks are practical.",
+      "disposition": "ADOPT / implementation-ready",
+      "recheckNotBefore": "2028-01-08",
+      "implementationVerificationPlan": "Two fresh independent human passes, source-to-pass set equality, issuer-floor/fixed/companion reconciliation, and an independent machine structural checksum. Before production, re-fetch the chart; after the announced closure, revalidate it against the reopened issuer material. Any change or mismatch stops promotion."
+    },
+    {
+      "rank": 4,
+      "inventoryId": "tokyo-official-1060",
+      "identity": "FOSTERホール（昭島市民会館）〔大ホール〕 / 東京都昭島市 / hall",
+      "firstPartyEvidence": [
+        "https://www.city.akishima.lg.jp/shisei/shisetsu/1008430/1007674.html — city facility page: temporary closure through 2026-12-01 for renovation; 1,139-seat cultural-performance hall.",
+        "https://www.city.akishima.lg.jp/bunka/shogaigakushu/1007496/1002968/1007722/1007723.html and https://www.city.akishima.lg.jp/_res/projects/default_project/_page_/001/007/723/hall_zaseki_nomal.pdf — current city normal-layout chart: 1,031 fixed + 102 movable + 6 wheelchair = 1,139, with individually printed row/seat identifiers and a labelled wheelchair space."
+      ],
+      "currentnessAndClosure": "TEMPORARY-RENOVATION PASS. The city names HVAC/equipment renovation and a reopening date, not permanent closure, replacement, or an explicit seat-structure change. The missing change statement is not affirmative proof, so the reopening is a mandatory recheck event.",
+      "configuration": "One issuer-labelled normal layout; fixed and movable seats are separately itemised. No alternate configuration is inferred.",
+      "accessibilityAndChecksum": "Exact issuer checksum 1,031+102+6=1,139. The chart visibly labels wheelchair space and an explicit missing-number note; implementation must preserve both chart facts rather than filling gaps.",
+      "chartAndFeasibility": "The current official one-page PDF exposes individual labels and stable legend categories; ordinary independent visual two-pass plus PDF-text/raster-cell structure verification is practical.",
+      "disposition": "ADOPT / implementation-ready",
+      "recheckNotBefore": "2026-12-01",
+      "implementationVerificationPlan": "Immediately before transcription, freshly re-fetch and record the issuer-maintained normal-layout chart. If that re-fetch introduces no issuer-explicit seat-count, row-structure, or numbering change, complete independent two-pass transcription, machine-expanded set equality, 1,031/102/6 issuer reconciliation, and an independent structural checksum. If all normal gates pass, production promotion may proceed before the 2026-12-01 reopening; lack of a seating-change statement remains an absence, not proof. Any changed asset, changed count/row/numbering, or mismatch stops production. Revalidate the chart and currentness at or after reopening."
+    },
+    {
+      "rank": 5,
+      "inventoryId": "gunma-maebashi-culture-main",
+      "identity": "昌賢学園まえばしホール〔大ホール〕 / 群馬県前橋市 / hall",
+      "firstPartyEvidence": [
+        "https://www.maebashi-culture.jp/ — recorded official issuer hostname was fresh-tested in the browser and returned ERR_NAME_NOT_RESOLVED. No substitute issuer URL, chart, capacity, current operation, or closure claim was adopted."
+      ],
+      "disposition": "HOLD / NEED EVIDENCE / formal DEFER",
+      "exactBlocker": "SOURCE HOLD: current issuer-owned material is unreachable at the recorded official hostname, so there is no current first-party basis for facility identity, operation, numbered chart, configuration, accessibility, or checksum.",
+      "reopenCondition": "Locate a working current official issuer page and obtain an issuer-maintained complete numbered representative chart plus current capacity/configuration and accessibility semantics. Do not use capacity, an old chart, or a third-party map to bridge the gap."
+    },
+    {
+      "rank": 6,
+      "inventoryId": "gunma-isesaki-culture-main",
+      "identity": "メガネのイタガキ文化ホール伊勢崎〔大ホール〕 / 群馬県伊勢崎市 / hall",
+      "firstPartyEvidence": [
+        "https://isesaki-bunka.com/shisetsu/lhall/ and https://isesaki-bunka.com/wp/wp-content/uploads/2024/12/06.l_hall_zaseki-1.pdf — issuer hall page and current linked seat PDF: one-slope 1,530 capacity, fixed 1,440, wheelchair 6, parent-child 8, standing 76, and a pit condition that makes rows 1–3 / 102 seats unavailable.",
+        "https://isesaki-bunka.com/event/ibun/ and https://isesaki-bunka.com/info/%E5%85%AB%E7%A5%9E%E7%B4%94%E5%AD%90/ — current issuer programme shows September and November 2026 ticketed/performance use in the large hall. The city page lists only routine second/fourth Tuesday and year-end closures."
+      ],
+      "currentnessAndClosure": "ACTIVE / PASS. No temporary or permanent closure, renovation, rebuild, or seating-change notice was found in the current issuer surfaces.",
+      "configuration": "One-slope standard chart prospect only. The issuer-described pit condition is excluded; its 102 value is not a subtraction instruction.",
+      "accessibilityAndChecksum": "1,440 fixed + 6 wheelchair + 8 parent-child + 76 standing = 1,530. The chart must independently determine which positions are printed/drawable and no wheelchair or parent-child ID may be generated.",
+      "chartAndFeasibility": "The current issuer PDF and labelled one-slope structure support a bounded ordinary visual two-pass and independent PDF/raster structural verification.",
+      "disposition": "ADOPT / implementation-ready",
+      "recheckNotBefore": null,
+      "implementationVerificationPlan": "Fresh independent human passes in opposite row/block order; bidirectional expansion equality; reconcile fixed/wheelchair/parent-child/standing ledger and pit exclusion solely from issuer material; independently derive a structural checksum; stop production on material mismatch."
+    }
+  ],
+  "stopRule": {
+    "maxResearchRecords": 10,
+    "adoptStopThreshold": 5,
+    "researchedCount": 6,
+    "adoptCount": 5,
+    "result": "Stopped at rank 6 when the fifth ADOPT was reached. No rank 7+ candidate was opened."
+  },
+  "countsAfter": {
+    "universeTotal": 154,
+    "byStatus": {
+      "production": 64,
+      "ADOPT / implementation-ready": 5,
+      "HOLD / NEED EVIDENCE / formal DEFER": 57,
+      "inventory-unresearched": 28
+    },
+    "missingFromInventory": 0,
+    "productionTotalsUnchanged": {
+      "venues": 147,
+      "configurations": 149,
+      "seatRecords": 223491
+    }
+  },
+  "prohibitionsObserved": [
+    "no production implementation or seat transcription",
+    "no venue source JSON, ranges, fingerprints, generated catalog/runtime, or production total change",
+    "no production venue reopen",
+    "no RaiBoC remediation",
+    "no Tokyo Priority D research",
+    "no temporary-closure reopening of HARD-CASE, SOURCE HOLD, evidence-insufficient, permanent-closure, demolition, or replacement records"
+  ],
+  "exactNextAction": "Claude: KANTO PREFLIGHT-5 ADOPT BATCH BOUNDED PRODUCTION IMPLEMENTATION — work only tokyo-tokyo-bunka-main-hall, tokyo-official-0234, tokyo-meguro-persimmon-main, tokyo-official-1060, and gunma-isesaki-culture-main in that importance/production-yield order, one venue at a time, with the implementationVerificationPlan gates in this report. RaiBoC remains a separate queue."
+}
