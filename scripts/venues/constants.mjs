@@ -57,6 +57,15 @@ export const INVENTORY_OPERATIONAL_STATUSES = new Set([
   'closed',
   'unknown',
 ])
+// 2026-09-04 user-authorized currentness/closure policy revision: a temporary closure or
+// temporary renovation is not by itself a production blocker when facility-space identity is
+// preserved. Production inventory records may therefore carry these operational statuses, but
+// only while they also record the reopening recheck obligation (recheckNotBefore + blockingReason).
+export const INVENTORY_PRODUCTION_OPERATIONAL_STATUSES = new Set([
+  'active',
+  'temporarily-closed',
+  'renovation',
+])
 export const INVENTORY_ELIGIBILITIES = new Set(['eligible', 'likely-eligible', 'ineligible', 'needs-research'])
 export const INVENTORY_RESEARCH_STATUSES = new Set([
   'not-started',

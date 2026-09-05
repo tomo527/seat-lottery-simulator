@@ -823,14 +823,13 @@
       "category": "hall",
       "officialFacilityUrl": "https://isesaki-bunka.com/shisetsu/lhall/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-05 PREFLIGHT 5: current issuer page and PDF publish a one-slope 1,530-seat prospect with fixed 1,440 / wheelchair 6 / parent-child 8 / standing 76 semantics, current ticketed large-hall use, and a separately described pit condition. ADOPT is not production and authorises no inferred IDs or pit subtraction.",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-09-05 PREFLIGHT-5 ADOPT実装で production 化。現行公式座席表（ラスタPDF）に対しfresh independent human visual two-passと独立machine structural checksum（ラスタ連結成分による座席枠検出）を実施し、issuerの内訳 固定席1,440／車椅子スペース6／親子席8／立見76／収容定員1,530 を完全一致で reconcile。ピット「1〜3列102席使用不可」も1〜3列の実測102席と一致（減算configuration化はせず）。車椅子・親子席・立見は番号席として描かれていないため未登録。",
       "priority": "B",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "isesaki-culture-hall-large",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-09-05",
-      "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT 5): separately authorized bounded implementation must perform fresh independent human visual two-pass, expanded-source equality, issuer checksum reconciliation, and independent practical structural checksum. Any material mismatch stops production."
+      "aliases": []
     },
     {
       "inventoryId": "gunma-kiryu-culture-main",

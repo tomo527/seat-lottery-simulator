@@ -1,32 +1,284 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-wave3-1060",
-  "name": "FOSTERホール(昭島市民会館)〔大ホール〕",
+  "name": "FOSTERホール(昭島市民会館) 大ホール",
   "prefecture": "東京都",
   "city": "昭島市",
-  "aliases": [],
+  "aliases": [
+    "FOSTERホール",
+    "昭島市民会館",
+    "FOSTERホール昭島市民会館",
+    "昭島市民会館大ホール"
+  ],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
-  },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"FOSTERホール(昭島市民会館)","title":"FOSTERホール(昭島市民会館)〔大ホール〕 施設案内","url":"https://www.city.akishima.lg.jp","checkedAt":"2026-07-29"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
-  "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
-  },
-  "ranges": []
+  "knownLimitations": [
+    "施設は2026-09-05時点で一時休館中です。昭島市は施設ページに「注意：改修工事のため、令和8年12月1日まで休館しています。」と明示しています。これは同一施設の一時休館・一時改修であり、閉館・解体・建替えによる別施設化ではありません。2026-09-04のuser-authorized currentness policy revisionにより、一時休館・一時改修はそれ単独ではproduction blockerとしません。",
+    "改修にともなうseating-change evidenceは2026-09-05時点でいっさい公表されていません。昭島市は工事名を「改修工事」とのみ記載し、客席が工事対象であるか、席数・列構成・座席番号体系が変更されるかを明示していません。本実装は「変更の記載がないこと」を「変更されない証明」として推論していません。登録データは市が休館中も維持公開している現行の「大ホール座席表（通常）」に対してのみ有効であり、2026-12-01の再開時またはそれ以降のfresh revalidation（currentness再確認、座席図再取得、fresh two-pass、structural checksum）は必須です。inventoryのrecheckNotBeforeは公表された再開日にあわせて2026-12-01としています。",
+    "座席表は右上の凡例に「固定席：1031席／移動席：102席／車椅子スペース：6席／合計席数：1139席」を印字します。登録したのは番号の印字された座席1,133席（＝固定席1,031＋移動席102）で、車椅子スペース6は登録していません。公称合計1,139席との差−6はこの車椅子スペース6にそのまま対応します。",
+    "移動席102席は座席表が点線で囲んで示す1列〜4列で、確定したmapped subtotalは23+24+27+28＝102席となり凡例の移動席102席と完全一致します。移動席にも通常どおり座席番号が印字され公称合計の内数であるため、登録に含めています。移動席を外した配置の座席図はissuerが公開していないため、alternate configurationは作成していません。",
+    "座席表は「※2列22番、4列22番 は欠番」と明記しており、両passと機械経路のいずれでも当該2席が図上に存在しないことを確認しています。欠番はrangeを分割して表現し、番号の補完も削除も行っていません。"
+  ],
+  "sources": [
+    {
+      "id": "official-hall-seat-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "昭島市（施設所有者・公式ホームページ）",
+      "title": "FOSTERホール（昭島市民会館） 大ホールの座席（座席数として「固定席：1,031席」「移動席：102席」「車椅子スペース：6席」「難聴者用磁気ループシステム対応席：約227席」「合計席数：1,139席」を記載し、同ページから現行の「大ホール座席表（通常）」PDFへリンクする。各座席から舞台を見た写真も座席番号つきで掲載する）",
+      "url": "https://www.city.akishima.lg.jp/bunka/shogaigakushu/1007496/1002968/1007722/1007723.html",
+      "checkedAt": "2026-09-05"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "昭島市（施設所有者・公式ホームページ）",
+      "title": "大ホール座席表（通常）（hall_zaseki_nomal.pdf、1ページ。1列〜31列の全席に列番号と座席番号を個別に印字する。右上の凡例に「固定席：1031席／移動席：102席／車椅子スペース：6席／合計席数：1139席」と「※2列22番、4列22番 は欠番」を印字し、1列〜4列を点線で囲んで移動席として示し、7列左方に車椅子ピクトグラム付きの黒い区画6個（1〜6）を描く）",
+      "url": "https://www.city.akishima.lg.jp/_res/projects/default_project/_page_/001/007/723/hall_zaseki_nomal.pdf",
+      "checkedAt": "2026-09-05"
+    },
+    {
+      "id": "official-closure-notice",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "昭島市（施設所有者・公式ホームページ）",
+      "title": "市民会館・公民館 施設ページ（2026年3月23日更新。「市民会館には客席数1,139の大ホールがあり、文化・芸術活動などの発表・鑑賞の場となっています。」と記載したうえで「注意：改修工事のため、令和8年12月1日まで休館しています。」を掲示する。閉館・解体・建替え・座席構造変更の記載はない）",
+      "url": "https://www.city.akishima.lg.jp/shisei/shisetsu/1008430/1007674.html",
+      "checkedAt": "2026-09-05"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置（1,139席）",
+      "issuerDefinedCondition": "issuerが「大ホール座席表（通常）」として公開する通常配置。座席表の凡例が固定席1,031席・移動席102席・車椅子スペース6席・合計1,139席を印字する。",
+      "selectionBasis": "issuerが公開する番号付き座席図は「大ホール座席表（通常）」1点のみで、この図自体が通常配置であることを表題で明示している。移動席を外した配置や他のevent-dependent配置の座席図は公開されていないため、代表configurationはこの通常配置1つとした。休館については、昭島市が施設ページに「改修工事のため、令和8年12月1日まで休館しています。」と明示している。これは同一施設の一時休館・一時改修であり、閉館・解体・建替えによる別施設化ではない。2026-09-04のuser-authorized currentness policy revisionにより、一時休館・一時改修はそれ単独ではproduction blockerとしない。市は休館中も座席ページと座席表PDFを現行資料として維持公開しており、席数・列構成・座席番号体系の変更はいっさい明示していない。本実装はその不記載を「変更されない証明」として推論せず、現行データを改修前の現行公式座席図に対してのみ有効なものとして登録し、再開後の再確認条件をinventoryのrecheckNotBefore（2026-12-01）へ記録している。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-05に現行issuerの「大ホールの座席」ページ（https://www.city.akishima.lg.jp/bunka/shogaigakushu/1007496/1002968/1007722/1007723.html ）がリンクする「大ホール座席表（通常）」として取得した。URL直打ちでcurrent扱いはしていない。最終URL https://www.city.akishima.lg.jp/_res/projects/default_project/_page_/001/007/723/hall_zaseki_nomal.pdf 、SHA-256: 3f3dd0291f5cf4a4e7c7ca35f64b43f20ce188b9538cb48132e5e9cb4fdc003c、55,405バイト、1ページ、595×842pt（rotation 0）、PDF 1.7。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256・同一バイト数）であることを確認している。このPDFはラスタ画像を含まず（image 0件）、座席番号を実テキストとして保持している（テキスト抽出3,647文字、ベクター描画4,652件）。機械経路はテキストの座標から座席番号語を抽出して構成した。",
+      "sourceIds": [
+        "official-hall-seat-page",
+        "official-seat-map",
+        "official-closure-notice"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-hall-seat-page"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1139,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "issuerが「大ホール座席表（通常）」として公開する現行通常配置に印字された全番号席1,133席を登録した構成です。客席は1列〜31列の1つの連続した区画で、座席番号は列ごとの通し番号です。repository由来のブロック名は付与していません。座席表が点線で囲んで移動席として示す1列〜4列の102席も、通常どおり座席番号が印字され公称合計1,139席の内数であるため登録に含めています（固定席1,031席は5列〜31列にあたります）。番号が飛ぶ箇所はすべて座席表に座席が印字されていない位置で、補完も削除も行っていません。座席表が明記する欠番は2列22番と4列22番の2席で、当該列のrangeを分割して表現しています。そのほか、1列（11〜33番）から11列（2〜42番）にかけての前方端、7列・8列（17〜38番のみ）、23列〜27列（6〜38番のみ）でも番号が飛びますが、いずれも座席表どおりです。7列左方の車椅子スペース6席は座席表が車椅子ピクトグラム付きの黒い区画として1〜6の番号を付して描くもので、issuerが固定席・移動席とは別枠で「車椅子スペース：6席」と集計しているため登録していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerは座席ページと座席表の凡例の双方で「車椅子スペース：6席」を固定席1,031席・移動席102席とは別枠に集計し、合計1,139席の内数としています。現行座席表では7列の左方に、車椅子ピクトグラムを白抜きした黒い区画が6個並び、それぞれの上部に1〜6の番号が印字されます。これらは通常の座席枠とは明確に異なる描画で、両passとも6個であることを個別に視認し、機械経路でもテキストとして1〜6の6語が同じ位置に抽出されました。issuerはこの6区画が通常の番号席と置き換わる関係にあるのか、どの番号席と対応するのかをいっさい公開していません。したがって車椅子スペースには通常席としての座席番号を与えず、隣接する番号席の削除も行わず、未登録としています。この結果、登録したmapped set 1,133席と公称1,139席の差−6は、この車椅子スペース6席にそのまま対応します。改修工事の対象範囲は公開されていないため、再開後には車椅子スペースの扱いを含めて現行性を再確認する必要があります。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-hall-seat-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-05",
+        "method": "fresh-independent-human-visual-two-pass-on-current-official-seat-chart-with-reversed-row-order-and-re-rendered-crops-at-a-different-resolution-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-from-pdf-text-geometry-not-fed-by-the-human-range-tables; issuer-printed-legend-subtotal-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -6,
+        "unresolvedIssues": [
+          "issuer checksum reconciliation（凡例小計・総数）: 座席表の凡例は「固定席：1031席／移動席：102席／車椅子スペース：6席／合計席数：1139席」を印字し、座席ページも同じ内訳を記載します。転記したmapped setは1,133席で、点線で囲まれた移動席1列〜4列が23+24+27+28＝102席となり凡例の移動席102席と完全一致し、残る5列〜31列が1,031席となり凡例の固定席1,031席と完全一致しました。公称合計1,139席との差−6は無番号扱いとした車椅子スペース6席にそのまま対応します。いずれの値もtranscription targetにしておらず、番号集合を先に独立確定したうえで事後にreconcileしています。",
+          "independent structural checksum（機械経路: PDFテキスト幾何）: PDFのテキスト層から座席番号語を座標つきで抽出し、human range tableを参照せずに、y座標で31本の行帯へ分割したうえで、各行に4か所ある列ラベル用のx列（x≈122／236／348／462）に位置し値が行番号と一致する語だけを列ラベルとして除去しました。右上の凡例ボックス（x>420かつy<140）も除外しています。この経路が独立に得た座席番号語の総数は1,139件で、issuerの合計席数1,139と完全一致しました。うち7列左方の1〜6の6語が車椅子スペースにあたり、これを除いた1,133件がhuman two-passの確定集合と完全一致します。行ごとのrange列も、2列が10〜21と23〜34、4列が8〜21と23〜36に分割される点を含めて、両human passと完全一致しました。",
+          "human visual two-pass: Pass 1は700dpiで再描画した座席図を用い、1列→31列の順に、各行で小さい番号の側から、左端ブロック→中央左→中央→中央右→右端ブロックの順に読み取りました。Pass 2は同一URLからPDFを独立に再取得し（バイト単位で同一）、Pass 1のtableを参照せずに、480dpiという異なる解像度で再描画し、後方（23列〜31列）→前方（1列〜9列）の逆順で読み取りました。両passをfreezeしてから比較し、31列・35本のrange・展開座席ID集合1,133件・列所属・全range境界でunresolved mismatchは0件でした。欠番（2列22番・4列22番）と車椅子スペース6区画については、両passとも該当位置を個別に拡大して視認しています。",
+          "source equality: 登録したsource rangeを機械展開した集合（1,133件）と、human two-passの集合、および機械structural checksumの座席番号語集合から車椅子スペース6件を除いた集合を双方向のset equalityで比較し、差分0でした。runtime key（列, 座席番号）の重複は0件、同一列内のrange重複も0件です。",
+          "printed missing-number semantics: 座席表は「※2列22番、4列22番 は欠番」と明記します。両passと機械経路のいずれでも、2列は10〜21と23〜34、4列は8〜21と23〜36として印字され、22番が存在しないことを確認しました。欠番はrangeを分割して保持し、番号の補完も削除も行っていません。",
+          "movable-seat semantics: 座席表は1列〜4列を点線で囲み、凡例で移動席102席としています。確定した1列〜4列のmapped subtotalは102席で凡例と完全一致します。移動席にも通常どおり座席番号が印字され公称合計1,139席の内数であるため登録に含め、移動席を外した配置の座席図は公開されていないためalternate configurationは作成していません。",
+          "currentness / closure: 2026-09-05時点で一時休館中です。昭島市は施設ページに「注意：改修工事のため、令和8年12月1日まで休館しています。」と明示しています。閉館・解体・建替えによる別施設化ではありません。seating-change evidenceは2026-09-05時点で皆無で、客席が工事対象かどうかも、席数・列構成・座席番号体系の変更も、市はいっさい明示していません。現行データは改修前の現行公式座席図に対してのみ有効であり、inventoryのrecheckNotBeforeに公表された再開日2026-12-01を設定し、再開時またはそれ以降にfresh currentness・座席図再取得・fresh two-pass・structural checksumを必須として再確認します。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "1列",
+          "from": 11,
+          "to": 33
+        },
+        {
+          "rowLabel": "2列",
+          "from": 10,
+          "to": 21
+        },
+        {
+          "rowLabel": "2列",
+          "from": 23,
+          "to": 34
+        },
+        {
+          "rowLabel": "3列",
+          "from": 9,
+          "to": 35
+        },
+        {
+          "rowLabel": "4列",
+          "from": 8,
+          "to": 21
+        },
+        {
+          "rowLabel": "4列",
+          "from": 23,
+          "to": 36
+        },
+        {
+          "rowLabel": "5列",
+          "from": 7,
+          "to": 37
+        },
+        {
+          "rowLabel": "6列",
+          "from": 6,
+          "to": 38
+        },
+        {
+          "rowLabel": "7列",
+          "from": 17,
+          "to": 38
+        },
+        {
+          "rowLabel": "8列",
+          "from": 17,
+          "to": 38
+        },
+        {
+          "rowLabel": "9列",
+          "from": 6,
+          "to": 38
+        },
+        {
+          "rowLabel": "10列",
+          "from": 3,
+          "to": 41
+        },
+        {
+          "rowLabel": "11列",
+          "from": 2,
+          "to": 42
+        },
+        {
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "18列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "23列",
+          "from": 6,
+          "to": 38
+        },
+        {
+          "rowLabel": "24列",
+          "from": 6,
+          "to": 38
+        },
+        {
+          "rowLabel": "25列",
+          "from": 6,
+          "to": 38
+        },
+        {
+          "rowLabel": "26列",
+          "from": 6,
+          "to": 38
+        },
+        {
+          "rowLabel": "27列",
+          "from": 6,
+          "to": 38
+        },
+        {
+          "rowLabel": "28列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "29列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "30列",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "rowLabel": "31列",
+          "from": 1,
+          "to": 43
+        }
+      ]
+    }
+  ]
 }

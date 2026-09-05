@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "isesaki-culture-hall-large",
+  "name": "メガネのイタガキ文化ホール伊勢崎 大ホール",
+  "prefecture": "群馬県",
+  "city": "伊勢崎市",
+  "aliases": [
+    "メガネのイタガキ文化ホール伊勢崎",
+    "伊勢崎市文化会館",
+    "伊勢崎市文化会館大ホール"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "issuerは大ホールの収容定員を1,530人（ワン・スロープ式）とし、内訳として固定席1,440席／車椅子スペース6席／親子席8席／立見席76人を公開しています。座席表の下部にも同じ内訳が印字されます。登録したのは番号の印字された固定席1,440席のみで、収容定員1,530人との差−90は車椅子スペース6・親子席8・立見76の合計に対応します。",
+    "車椅子スペース6席は、座席表では客席の左右（9列付近の通路脇）に車椅子ピクトグラムが1個ずつ描かれるだけで、座席枠も座席番号もいっさい印字されていません。issuerは6席という総数のみを公開し、どの番号席と置き換わるのかも、6席がどこに何席ずつ配置されるのかも公開していません。したがって座席番号を創作せず、隣接する番号席の削除も行わず、未登録としています。",
+    "親子席8席は、座席表では客席後方に「親子席」と記した無番号の区画として描かれるだけで、個別の座席番号が印字されていません。したがって未登録としています。立見席76人も座席表に番号席として描かれていないため未登録です。",
+    "オーケストラピット迫りの使用時は「客席1〜3列／102席使用不可」とissuerが記載しています。確定した1列〜3列のmapped subtotalは34×3＝102席でこの記載と完全一致しますが、ピット使用時の独立した番号付き座席図はissuerが公開していないため、1,440−102という減算でalternate configurationを作ることはせず、通常配置1つだけを登録しています。この一致はreconciliationの記録であり、configuration化の根拠ではありません。"
+  ],
+  "sources": [
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人伊勢崎市文化振興事業団（施設運営者）",
+      "title": "メガネのイタガキ文化ホール伊勢崎 大ホール 施設ページ（「収容定員1,530人（ワン・スロープ式）」「固定席1,440席／車椅子スペース6席／親子席8席／立見席76人」を記載し、舞台設備として「オーケストラピット迫り（客席１〜３列／102席使用不可）」を記載する。同ページから現行の大ホール座席表PDFへリンクする）",
+      "url": "https://isesaki-bunka.com/shisetsu/lhall/",
+      "checkedAt": "2026-09-05"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人伊勢崎市文化振興事業団（施設運営者）",
+      "title": "メガネのイタガキ文化ホール伊勢崎 大ホール座席表（06.l_hall_zaseki-1.pdf、1ページ。ワン・スロープ式の客席1列〜30列の全席に列番号と座席番号を個別に印字する。図の下部に「収容定員 1,530人　固定席 1,440席　車椅子スペース 6席　親子席 8席　立見 76人」を印字し、客席左右に車椅子ピクトグラムを、客席後方に「親子席」と記した無番号区画を描く）",
+      "url": "https://isesaki-bunka.com/wp/wp-content/uploads/2024/12/06.l_hall_zaseki-1.pdf",
+      "checkedAt": "2026-09-05"
+    },
+    {
+      "id": "official-notices",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "公益財団法人伊勢崎市文化振興事業団（施設運営者）",
+      "title": "メガネのイタガキ文化ホール伊勢崎 トップページ（新着情報・イベント情報・休館日を掲載する。2026-09-05時点で2026年9月5日付の新着情報と複数のチケット販売中公演を掲げ、休館日は9月8日・24日、10月13日・27日という通常の休館日のみで、休館・改修・建替え・座席変更の告知はない）",
+      "url": "https://isesaki-bunka.com/",
+      "checkedAt": "2026-09-05"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "現行通常配置（固定席1,440席）",
+      "issuerDefinedCondition": "issuerが大ホールの固定席1,440席として案内するワン・スロープ式の通常配置。オーケストラピット迫りを使用しない、現行座席表そのままの配置。",
+      "selectionBasis": "issuerが公開する番号付き座席図は現行の大ホール座席表1点のみで、この図がワン・スロープ式の通常配置を示す。オーケストラピット迫り使用時は「客席1〜3列／102席使用不可」と記載されるのみで、ピット使用時の独立した番号付き座席図は公開されていないため、減算によるalternate configurationは作成していない。施設は2026-09-05時点でACTIVEである。issuerのトップページの新着情報は2026年9月5日付で「催し物ご案内１０月・１１月号発行！」と「【明日公演】石若駿トリオホールツアー２０２６＋２７」を掲載し、DRUM TAO「THE HUMAN」、高中正義 SUPER TAKANAKA LIVE 2026-2027、八神純子 キミの街へ２０２６、山内惠介コンサート２０２６などのチケット販売中公演を掲げている。休館日は「９月の休館日 ８日(火) ２４日(木)／10月の休館日 13日(火) 27日(火)」という通常の休館日のみで、休館・改修・建替え・座席変更の告知はいっさいない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-05に現行issuerの大ホールページ（https://isesaki-bunka.com/shisetsu/lhall/ ）がリンクする座席表として取得した。URL直打ちでcurrent扱いはしていない。最終URL https://isesaki-bunka.com/wp/wp-content/uploads/2024/12/06.l_hall_zaseki-1.pdf 、SHA-256: 5b5a76abe2d676db3b97a6609191b8b2f90ffbdb2e893b7ff2de8b490256942f、9,220,529バイト、1ページ、842.2×1190.6pt（rotation 0）、PDF 1.4、producer \"Adobe Photoshop for Windows -- Image Conversion Plug-in\"、PDF内部のcreationDateは2024-12-24。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256・同一バイト数）であることを確認している。このPDFはベクター描画をいっさい含まず（drawings 0件）、3,509×4,961pxのラスタ画像2枚だけで構成され、テキスト層も持たない（テキスト抽出は0文字）。したがってDENSE-VECTOR verificationの前提（current first-party issuerのvector PDF、全seat identifierのテキスト印字）をいずれも満たさないため適用していない。既定どおりfresh independent human visual two-passを実施し、機械経路はhuman range tableを入力に用いないラスタのstructural checksumとしてのみ用いた。",
+      "sourceIds": [
+        "official-hall-page",
+        "official-seat-map",
+        "official-notices"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-hall-page"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1440,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "issuerが大ホールの固定席1,440席として案内する現行通常配置の公式座席表に印字された全番号席1,440席を登録した構成です。客席はワン・スロープ式の1つの連続した区画で、列は座席表の印字どおり1列〜30列、座席番号は列ごとの通し番号です。repository由来のブロック名は付与していません。座席表は各列を左サイド・中央左（12〜23）・中央（24〜35）・中央右（36〜47）・右サイドに分けて描きますが、番号は列内で連続しているため列単位のrangeへ圧縮しています。番号が飛ぶ箇所はなく、各列の開始・終了番号が列ごとに異なるだけです（1〜3列は13〜46番、4〜5列は12〜47番、6列以降はサイド席が加わって10〜49番から段階的に広がり、21列と26〜30列で1〜58番となります。22〜25列は左右の階段室のため8〜51番です）。車椅子スペース6席は座席表に車椅子ピクトグラムが描かれるだけで座席枠も番号もなく、親子席8席は「親子席」と記した無番号区画、立見席76人は座席として描かれていないため、いずれも登録していません。オーケストラピット迫り使用時（1〜3列の102席が使用不可）の番号付き座席図は公開されていないため登録していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerは大ホールの内訳に「車椅子スペース6席」を固定席1,440席とは別枠で掲げ、座席表下部にも同じ内訳を印字します。現行座席表では、客席左右の9列付近の通路脇に車椅子ピクトグラムが1個ずつ描かれるだけで、座席枠も座席番号もいっさい印字されていません。両passともこの2か所を拡大して視認し、番号付きの座席枠が存在しないことを確認しました。ラスタの機械経路でも、座席枠として検出された1,440件はすべて番号付きの矩形で、ピクトグラム位置には座席枠が検出されませんでした。issuerは6席という総数のみを公開し、6席がどこに何席ずつ配置されるのか、どの番号席と置き換わるのかをいっさい公開していません。したがって車椅子スペースには座席番号を創作せず、隣接する番号席の削除も行わず、未登録としています。登録したmapped set 1,440席はissuerの固定席1,440と完全一致し、収容定員1,530人との差−90は車椅子スペース6・親子席8・立見76の合計に対応します。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-hall-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-05",
+        "method": "fresh-independent-human-visual-two-pass-on-current-official-seat-chart-with-reversed-row-and-side-order-and-re-rendered-crops-at-a-different-resolution-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-by-raster-connected-component-seat-cell-detection-not-fed-by-the-human-range-tables; issuer-printed-legend-subtotal-and-pit-row-reconciliation; left-right-mirror-symmetry-invariant",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "issuer checksum reconciliation（内訳・総数）: 施設ページと座席表下部はいずれも「収容定員 1,530人／固定席 1,440席／車椅子スペース 6席／親子席 8席／立見 76人」を掲げます。転記したmapped setは1,440席で、issuerの固定席1,440と完全一致しました。収容定員1,530人との差−90は、番号席として描かれていない車椅子スペース6・親子席8・立見76の合計90に対応します（1,440+6+8+76＝1,530）。いずれの値もtranscription targetにしておらず、番号集合を先に独立確定したうえで事後にreconcileしています。",
+          "independent structural checksum（機械経路: ラスタ連結成分による座席枠検出）: 現行PDFはベクター描画を持たないラスタ画像のみで構成されるため、300dpiでラスタ化した画像を二値化し、human range tableを参照せずに、白領域の輪郭からminAreaRectを求めて回転にも対応する座席枠（長辺50〜75px・短辺33〜52px・充填率0.75以上）を検出しました。客席帯（y=1,000〜3,800px）で検出された座席枠はちょうど1,440件で、issuerの固定席1,440と完全一致しました。この範囲外で検出された2件は、舞台上部の枠と後方の「親子席」区画の枠で、いずれも座席ではないことを描画位置から確認しています。行帯ごとの件数も、1〜3列が各34、22〜25列が各44、26〜30列が各58となり、両human passの読み取りと一致しました。機械経路はhuman range tableを入力にしておらず、座席表の画像だけを入力としています。",
+          "human visual two-pass: 座席表はラスタ画像でテキスト層を持たないため、既定どおり人が現行公式図を直接視認する独立two-passを実施しました。Pass 1は300dpiおよび500dpiで再描画した図を用い、中央ブロック1列→9列、左サイド上段（6〜9列）、右サイド上段（6〜9列）、左サイド中段（10〜21列）、右サイド中段（10〜21列）、中央ブロック10列→21列、22〜30列の順に、各列で小さい番号の側から読み取りました。Pass 2は同一URLからPDFを独立に再取得し（バイト単位で同一）、Pass 1のtableを参照せずに、420dpiという異なる解像度で再描画し、後方（26〜30列）→前方（1〜9列）→右サイド→左サイドの逆順で読み取りました。傾斜したサイド席は個別に拡大描画して読み取りました。両passをfreezeしてから比較し、30列・30本のrange・展開座席ID集合1,440件・列所属・全range境界でunresolved mismatchは0件でした。",
+          "source equality: 登録したsource rangeを機械展開した集合（1,440件）と、human two-passの集合、および機械structural checksumの検出枠数を双方向・件数の両面で比較し、差分0でした。runtime key（列, 座席番号）の重複は0件、同一列内のrange重複も0件です。",
+          "left-right mirror symmetry invariant: 座席表は中心軸について左右対称に描かれ、左サイド席の開始番号の系列（6列以降で10,9,8,7,7,6,5,5,4,4,4,3,3,2,2,1）と右サイド席の終了番号の系列（49,50,51,52,52,53,54,54,55,55,55,56,56,57,57,58）は、n ↔ 59−n の対応で完全に一致します。左サイド中段（10〜21列）と右サイド中段の席数はいずれも98席で一致しました。左右を別々のcropから読み取っているため、この不変量は片側の読み取り誤りを検出します。",
+          "orchestra pit semantics: issuerは舞台設備として「オーケストラピット迫り（客席１〜３列／102席使用不可）」と記載します。確定した1列〜3列のmapped subtotalは34×3＝102席でこの記載と完全一致しますが、ピット使用時の独立した番号付き座席図は公開されていないため、1,440−102の減算によるalternate configurationは作成していません。",
+          "non-seat categories: 車椅子スペース6席は座席表に車椅子ピクトグラムが左右1個ずつ描かれるだけで座席枠も番号もなく、親子席8席は客席後方の「親子席」と記した無番号区画、立見席76人は座席として描かれていません。いずれも番号席ではないため未登録とし、収容定員1,530人との差−90として明示しています。",
+          "currentness: 施設は2026-09-05時点でACTIVEである。issuerのトップページの新着情報は2026年9月5日付で「催し物ご案内１０月・１１月号発行！」と「【明日公演】石若駿トリオホールツアー２０２６＋２７」を掲載し、DRUM TAO「THE HUMAN」、高中正義 SUPER TAKANAKA LIVE 2026-2027、八神純子 キミの街へ２０２６、山内惠介コンサート２０２６などのチケット販売中公演を掲げている。休館日は「９月の休館日 ８日(火) ２４日(木)／10月の休館日 13日(火) 27日(火)」という通常の休館日のみで、休館・改修・建替え・座席変更の告知はいっさいない。 座席表PDFの内部生成日は2024-12-24で、現行の大ホールページからリンクされる唯一の座席表である。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "1列",
+          "from": 13,
+          "to": 46
+        },
+        {
+          "rowLabel": "2列",
+          "from": 13,
+          "to": 46
+        },
+        {
+          "rowLabel": "3列",
+          "from": 13,
+          "to": 46
+        },
+        {
+          "rowLabel": "4列",
+          "from": 12,
+          "to": 47
+        },
+        {
+          "rowLabel": "5列",
+          "from": 12,
+          "to": 47
+        },
+        {
+          "rowLabel": "6列",
+          "from": 10,
+          "to": 49
+        },
+        {
+          "rowLabel": "7列",
+          "from": 9,
+          "to": 50
+        },
+        {
+          "rowLabel": "8列",
+          "from": 8,
+          "to": 51
+        },
+        {
+          "rowLabel": "9列",
+          "from": 7,
+          "to": 52
+        },
+        {
+          "rowLabel": "10列",
+          "from": 7,
+          "to": 52
+        },
+        {
+          "rowLabel": "11列",
+          "from": 6,
+          "to": 53
+        },
+        {
+          "rowLabel": "12列",
+          "from": 5,
+          "to": 54
+        },
+        {
+          "rowLabel": "13列",
+          "from": 5,
+          "to": 54
+        },
+        {
+          "rowLabel": "14列",
+          "from": 4,
+          "to": 55
+        },
+        {
+          "rowLabel": "15列",
+          "from": 4,
+          "to": 55
+        },
+        {
+          "rowLabel": "16列",
+          "from": 4,
+          "to": 55
+        },
+        {
+          "rowLabel": "17列",
+          "from": 3,
+          "to": 56
+        },
+        {
+          "rowLabel": "18列",
+          "from": 3,
+          "to": 56
+        },
+        {
+          "rowLabel": "19列",
+          "from": 2,
+          "to": 57
+        },
+        {
+          "rowLabel": "20列",
+          "from": 2,
+          "to": 57
+        },
+        {
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 58
+        },
+        {
+          "rowLabel": "22列",
+          "from": 8,
+          "to": 51
+        },
+        {
+          "rowLabel": "23列",
+          "from": 8,
+          "to": 51
+        },
+        {
+          "rowLabel": "24列",
+          "from": 8,
+          "to": 51
+        },
+        {
+          "rowLabel": "25列",
+          "from": 8,
+          "to": 51
+        },
+        {
+          "rowLabel": "26列",
+          "from": 1,
+          "to": 58
+        },
+        {
+          "rowLabel": "27列",
+          "from": 1,
+          "to": 58
+        },
+        {
+          "rowLabel": "28列",
+          "from": 1,
+          "to": 58
+        },
+        {
+          "rowLabel": "29列",
+          "from": 1,
+          "to": 58
+        },
+        {
+          "rowLabel": "30列",
+          "from": 1,
+          "to": 58
+        }
+      ]
+    }
+  ]
+}

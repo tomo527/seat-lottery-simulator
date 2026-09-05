@@ -683,6 +683,32 @@
     "dataPath": "/venue-db/venues/iris-hall-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "isesaki-culture-hall-large",
+    "venueGroupId": "isesaki-culture-hall-large",
+    "name": "メガネのイタガキ文化ホール伊勢崎 大ホール",
+    "searchAliases": [
+      "メガネのイタガキ文化ホール伊勢崎",
+      "伊勢崎市文化会館",
+      "伊勢崎市文化会館大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "群馬県",
+    "municipality": "伊勢崎市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "現行通常配置（固定席1,440席）",
+        "seatCount": 1440,
+        "dataPath": "/venue-db/venues/isesaki-culture-hall-large--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerが大ホールの固定席1,440席として案内する現行通常配置の公式座席表に印字された全番号席1,440席を登録した構成です。客席はワン・スロープ式の1つの連続した区画で、列は座席表の印字どおり1列〜30列、座席番号は列ごとの通し番号です。repository由来のブロック名は付与していません。座席表は各列を左サイド・中央左（12〜23）・中央（24〜35）・中央右（36〜47）・右サイドに分けて描きますが、番号は列内で連続しているため列単位のrangeへ圧縮しています。番号が飛ぶ箇所はなく、各列の開始・終了番号が列ごとに異なるだけです（1〜3列は13〜46番、4〜5列は12〜47番、6列以降はサイド席が加わって10〜49番から段階的に広がり、21列と26〜30列で1〜58番となります。22〜25列は左右の階段室のため8〜51番です）。車椅子スペース6席は座席表に車椅子ピクトグラムが描かれるだけで座席枠も番号もなく、親子席8席は「親子席」と記した無番号区画、立見席76人は座席として描かれていないため、いずれも登録していません。オーケストラピット迫り使用時（1〜3列の102席が使用不可）の番号付き座席図は公開されていないため登録していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "itabashi-culture-main-standard",
     "name": "板橋区立文化会館 大ホール",
     "searchAliases": [
@@ -1069,6 +1095,32 @@
     "representativePatternName": "通常1,952番号席配置",
     "seatCount": 1952,
     "dataPath": "/venue-db/venues/line-cube-shibuya-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "meguro-persimmon-main-standard",
+    "venueGroupId": "meguro-persimmon-main-standard",
+    "name": "めぐろパーシモンホール 大ホール",
+    "searchAliases": [
+      "パーシモンホール",
+      "めぐろパーシモンホール",
+      "めぐろパーシモンホール大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "目黒区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "現行通常配置（固定席1,186席）",
+        "seatCount": 1186,
+        "dataPath": "/venue-db/venues/meguro-persimmon-main-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerが大ホールの固定席1,186席として案内する現行通常配置の公式客席図面に印字され、かつ図の凡例で「座席がある」と定義された全番号席1,186席を登録した構成です。エリアは客席図面が印字する区分をそのまま用い、「1階席」665席、「LB席」46席、「RB席」46席、「2階席」429席の4つとしています。列も図の印字どおりで、1階席は1列〜22列、LB席・RB席は各1列・2列、2階席は1列〜11列です。座席番号は列ごとの通し番号で、repository由来のブロック名は付与していません。番号が飛ぶ箇所はすべて図に座席が印字されていない位置で、補完も削除も行っていません。主なものは、1階席1列（5〜28番）・2列（3〜30番）・3列（2〜31番）の前方端、LB席・RB席の2列（3〜24番で1・2番がない）、および1階13列です。1階13列は図の凡例が「枠のある座席番号には座席があり、枠のない座席番号は車椅子スペースです」と定義する行で、枠のある12・13・15・17・19・21・22番の7席（issuerの言う介助者席7席）だけを登録し、枠のない14個の番号（7〜11・14・16・18・20・23〜27番）は座席ではないため登録していません。issuerの階別内訳では1階席658席と介助者席7席が別掲されるため、本データの「1階席」665席はその合計にあたります。オーケストラピット使用時の1階席512席は番号付き座席図が公開されていないため登録していません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "schemaVersion": 2,
@@ -1817,6 +1869,32 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "shinjuku-bunka-center-main-hall",
+    "venueGroupId": "shinjuku-bunka-center-main-hall",
+    "name": "新宿区立新宿文化センター 大ホール",
+    "searchAliases": [
+      "新宿区立新宿文化センター",
+      "新宿文化センター",
+      "新宿文化センター大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "新宿区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "現行通常配置（1,601席）",
+        "seatCount": 1601,
+        "dataPath": "/venue-db/venues/shinjuku-bunka-center-main-hall--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerが大ホールの客席として掲げる現行通常配置（1,601席）の公式座席表に印字された全番号席1,601席を登録した構成です。エリアは座席表の階区分どおり「1階」1,029席、「2階」572席の2つで、列も座席表の印字どおり1階1列〜23列、2階1列〜12列です。座席番号は列ごとの通し番号で、repository由来のブロック名は付与していません。座席表は各列を左端ブロック・11〜21・22〜32・33〜43・右端ブロックに分けて描きますが、番号は列内で連続しているため列単位のrangeへ圧縮しています。番号が飛ぶのは2階12列（13〜19、24〜30、35〜41の3区画）だけで、これは座席表に座席が印字されていない位置です。オーケストラピット使用時（1列〜4列の122席を外した1,479席）はissuerが独立した番号付き座席図を公開していないため登録していません。車椅子席「30席程度」は概数で、置換関係が公開されていないため、移動可能と注記された水色網かけの番号席47席もそのまま通常席として登録しています。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "square-ebara-hiratsuka-hall-standard",
     "name": "スクエア荏原 ひらつかホール",
     "searchAliases": [
@@ -2087,6 +2165,31 @@
     "representativePatternName": "通常舞台配置",
     "seatCount": 609,
     "dataPath": "/venue-db/venues/theatre-crea-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-bunka-main-hall-standard",
+    "venueGroupId": "tokyo-bunka-main-hall-standard",
+    "name": "東京文化会館 大ホール",
+    "searchAliases": [
+      "東京文化会館",
+      "東京文化会館大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "現行通常配置（2,303席）",
+        "seatCount": 2303,
+        "dataPath": "/venue-db/venues/tokyo-bunka-main-hall-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerが大ホールの客席数として案内する現行通常配置（2,303席）の公式座席表に印字された全番号席2,303席を登録した構成です。エリアは座席表が印字する階区分をそのまま用い、「1階」1,282席、「2階」238席、「3階」355席、「4階」268席、「5階」160席の5つとしています。列は座席表の印字どおりで、各階の中央ブロックは1列からの数字列、左右のサイド席は座席表がL1〜L12／R1〜R12（1階）、L1〜L4／R1〜R4（2階・3階）、L1〜L3／R1〜R3（4階）、L1〜L2／R1〜R2（5階）として印字する列名をそのまま用いています。座席番号は列ごとの通し番号で、repository由来のブロック名は付与していません。番号が飛ぶ箇所はすべて座席表に座席が印字されていない位置で、補完も削除も行っていません。主なものは、1階1列の前方端（2〜35番のみ）、1階30列・31列（車椅子席区画をはさんで5〜8番と33〜36番、6〜8番と33〜35番のみ）、2階4列（1〜5番・9〜18番・22〜26番）、3階3列・4列、4階3列、および各階サイド席の最内列（2階L4/R4、3階L4/R4、4階L3/R3、5階L2/R2）で、いずれも扉・通路位置に対応します。車椅子席14席は座席表に番号のないピクトグラム区画として描かれるだけで座席番号の印字がなく、通常番号席との置換関係も公開されていないため登録していません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "tokyo-fm-hall-a-stage",
@@ -2602,6 +2705,33 @@
         "dataPath": "/venue-db/venues/tokyo-wave3-1054--standard.json",
         "scope": "official-variant",
         "scopeDisclosure": "現行公式座席表の印字番号付き一般席518席を抽選します。公式総数524席との差6は、番号の付かない車椅子6スペースとしてメタデータに保持します。花道使用時は全列の7〜10番計64席を格納する別配置であり、通常518席から削除しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-1060",
+    "venueGroupId": "tokyo-wave3-1060",
+    "name": "FOSTERホール(昭島市民会館) 大ホール",
+    "searchAliases": [
+      "FOSTERホール",
+      "FOSTERホール昭島市民会館",
+      "昭島市民会館",
+      "昭島市民会館大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "昭島市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置（1,139席）",
+        "seatCount": 1133,
+        "dataPath": "/venue-db/venues/tokyo-wave3-1060--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerが「大ホール座席表（通常）」として公開する現行通常配置に印字された全番号席1,133席を登録した構成です。客席は1列〜31列の1つの連続した区画で、座席番号は列ごとの通し番号です。repository由来のブロック名は付与していません。座席表が点線で囲んで移動席として示す1列〜4列の102席も、通常どおり座席番号が印字され公称合計1,139席の内数であるため登録に含めています（固定席1,031席は5列〜31列にあたります）。番号が飛ぶ箇所はすべて座席表に座席が印字されていない位置で、補完も削除も行っていません。座席表が明記する欠番は2列22番と4列22番の2席で、当該列のrangeを分割して表現しています。そのほか、1列（11〜33番）から11列（2〜42番）にかけての前方端、7列・8列（17〜38番のみ）、23列〜27列（6〜38番のみ）でも番号が飛びますが、いずれも座席表どおりです。7列左方の車椅子スペース6席は座席表が車椅子ピクトグラム付きの黒い区画として1〜6の番号を付して描くもので、issuerが固定席・移動席とは別枠で「車椅子スペース：6席」と集計しているため登録していません。",
         "fixedOnly": false
       }
     ]

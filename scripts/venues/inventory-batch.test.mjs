@@ -175,6 +175,36 @@ describe('inventory validation and coverage', () => {
     expect(validateInventories(otherInventory, sources(), { today: TODAY }).errors.join('\n')).toMatch(/production source is missing/)
   })
 
+  it('allows production while temporarily closed only with a recorded reopening recheck', () => {
+    const closureOverrides = {
+      operationalStatus: 'renovation',
+      recheckNotBefore: '2028-04-01',
+      blockingReason: '一時休館中。再開後のfresh revalidationが必須。',
+    }
+    const allowed = inventory([inventoryVenue(closureOverrides)])
+    expect(validateInventories(allowed, sources(), { today: TODAY }).errors).toEqual([])
+    expect(validateInventories(
+      inventory([inventoryVenue({ ...closureOverrides, operationalStatus: 'temporarily-closed' })]),
+      sources(),
+      { today: TODAY },
+    ).errors).toEqual([])
+    expect(validateInventories(
+      inventory([inventoryVenue({ ...closureOverrides, recheckNotBefore: undefined })]),
+      sources(),
+      { today: TODAY },
+    ).errors.join('\n')).toMatch(/recheckNotBefore is required for production while renovation/)
+    expect(validateInventories(
+      inventory([inventoryVenue({ ...closureOverrides, blockingReason: undefined })]),
+      sources(),
+      { today: TODAY },
+    ).errors.join('\n')).toMatch(/blockingReason is required for production while renovation/)
+    expect(validateInventories(
+      inventory([inventoryVenue({ ...closureOverrides, operationalStatus: 'closed' })]),
+      sources(),
+      { today: TODAY },
+    ).errors.join('\n')).toMatch(/must be active, temporarily-closed, or renovation/)
+  })
+
   it('calculates eligible and assessment coverage and deterministic groupings', () => {
     const validation = validateInventories(inventory([
       inventoryVenue(),

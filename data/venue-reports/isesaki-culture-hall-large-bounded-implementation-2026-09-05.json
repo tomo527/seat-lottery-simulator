@@ -1,0 +1,53 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-05",
+  "mode": "KANTO PREFLIGHT-5 ADOPT BATCH / bounded production implementation (one of five independent mini-waves in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をfreshに再取得し、fresh independent human visual two-pass、human range tableを入力にしないindependent machine structural checksum、issuer subtotal reconciliation、material mismatch時のproduction停止をすべて適用した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。2026-09-04 user-authorized currentness policy revisionにより、一時休館・一時改修はそれ単独ではproduction blockerとしない。",
+  "outOfScopeUntouched": [
+    "RaiBoC remediation（別queue）",
+    "Tokyo Priority D research",
+    "PREFLIGHT 6 / remaining Kanto >=1000 unresearched pool",
+    "既存production会場のsource・range・fingerprint・production semantics"
+  ],
+  "title": "ISESAKI-CULTURE-HALL-LARGE BOUNDED PRODUCTION IMPLEMENTATION",
+  "scope": "Bounded production implementation of gunma-isesaki-culture-main only. 他venue、既存production、RaiBoC、Tokyo Priority D、PREFLIGHT 6 poolはいっさい変更していない。",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "f843a7801e6d0e6f9c1f01b1b5a3f4b7d2b02fbd",
+    "productionAtStart": {
+      "venues": 147,
+      "configurations": 149,
+      "seatRecords": 223491
+    },
+    "note": "HEADはPREFLIGHT-5 commit f843a78。開始時のlocal HEADは65e0f19でorigin/mainに1件behindだったため、fast-forwardしてf843a78に揃えてから着手した。"
+  },
+  "lane": "DENSE",
+  "laneReason": "ワン・スロープ式1,440席で、傾斜した左右サイド席が段階的に伸びる構造。座席図がラスタ画像のみでテキスト層もベクターも持たないため、ラスタ経路のstructural checksumを設計する必要がある。",
+  "identity": "メガネのイタガキ文化ホール伊勢崎〔大ホール〕 / 群馬県伊勢崎市 / hall",
+  "disposition": "PRODUCTION",
+  "currentnessCheck": "ACTIVE。issuerトップページの新着情報は2026年9月5日付で「催し物ご案内１０月・１１月号発行！」と「【明日公演】石若駿トリオホールツアー２０２６＋２７」を掲載し、DRUM TAO「THE HUMAN」、高中正義 SUPER TAKANAKA LIVE 2026-2027、八神純子 キミの街へ２０２６、山内惠介コンサート２０２６などのチケット販売中公演を掲げている。休館日は「９月の休館日 ８日(火) ２４日(木)／10月の休館日 13日(火) 27日(火)」という通常の休館日のみで、休館・改修・建替え・座席変更の告知はいっさいない。",
+  "seatChartEvidence": "https://isesaki-bunka.com/wp/wp-content/uploads/2024/12/06.l_hall_zaseki-1.pdf / SHA-256 5b5a76abe2d676db3b97a6609191b8b2f90ffbdb2e893b7ff2de8b490256942f / 9,220,529 bytes / 1 page / 842.2x1190.6pt / PDF 1.4 / Adobe Photoshop for Windows -- Image Conversion Plug-in / internal creationDate 2024-12-24。Pass 2直前に独立再取得しバイト単位で同一。drawings 0件・3,509x4,961pxのラスタ画像2枚のみ・テキスト抽出0文字。DENSE-VECTOR verificationの前提（vector PDF、全identifierのテキスト印字）をいずれも満たさないため適用していない。",
+  "configurationAssessment": "ワン・スロープ式の通常配置1つのみ。オーケストラピット迫り使用時は「客席1〜3列／102席使用不可」と記載されるのみで、ピット使用時の独立した番号付き座席図は公開されていないため、1,440−102の減算によるalternate configurationは作成していない。",
+  "visualTwoPass": "Pass 1は300dpiおよび500dpi再描画で、中央ブロック1列→9列、左サイド上段（6〜9列）、右サイド上段（6〜9列）、左サイド中段（10〜21列）、右サイド中段（10〜21列）、中央ブロック10列→21列、22〜30列の順に小さい番号側から読み取り。Pass 2は独立再取得したバイト同一資産を420dpiで再描画し、後方（26〜30列）→前方（1〜9列）→右サイド→左サイドの逆順で読み取り。傾斜したサイド席は個別に拡大描画して読み取った。両passをfreeze後に比較しunresolved mismatch 0件。",
+  "independentMachineStructuralChecksum": "ラスタ連結成分による座席枠検出の独立経路。300dpiラスタ化画像を二値化し、白領域の輪郭からminAreaRectを求めて回転にも対応する座席枠（長辺50〜75px・短辺33〜52px・充填率0.75以上）を検出したところ、客席帯（y=1,000〜3,800px）でちょうど1,440件を得て、issuerの固定席1,440と完全一致した。行帯ごとの件数も1〜3列が各34、22〜25列が各44、26〜30列が各58となり両human passと一致した。",
+  "machineDetectedDiscrepanciesReturnedToChart": "客席帯の外で2件が検出されたが、舞台上部の枠と後方の「親子席」区画の枠であり座席ではないことを描画位置から確認して除外した。それ以外にmaterial mismatchは発生しなかった。",
+  "issuerSubtotalReconciliation": "施設ページと座席表下部はいずれも「収容定員 1,530人／固定席 1,440席／車椅子スペース 6席／親子席 8席／立見 76人」を掲げる。mapped setは1,440席でissuerの固定席1,440と完全一致。収容定員1,530との差−90は、番号席として描かれていない車椅子スペース6・親子席8・立見76の合計90に対応する（1,440+6+8+76＝1,530）。1列〜3列の実測合計は34×3＝102席で、issuerの「オーケストラピット迫り（客席1〜3列／102席使用不可）」とも一致する（configuration化の根拠には用いていない）。",
+  "accessibilitySemantics": "車椅子スペース6席は座席表の客席左右（9列付近の通路脇）に車椅子ピクトグラムが1個ずつ描かれるだけで、座席枠も座席番号もいっさい印字されていない。両passとも該当2か所を拡大して視認し、番号付きの座席枠が存在しないことを確認した。ラスタ機械経路でもピクトグラム位置には座席枠が検出されなかった。issuerは6席という総数のみ公開し配置も置換関係も非公開のため未登録（wheelchairSemantics: not-reflected）。親子席8席は客席後方の「親子席」と記した無番号区画、立見席76人は座席として描かれていないため、いずれも未登録。",
+  "mappedSeatCount": 1440,
+  "issuerStatedSeatCount": 1440,
+  "rangeDiff": 0,
+  "rangeCount": 30,
+  "venueSourceId": "isesaki-culture-hall-large",
+  "inventoryId": "gunma-isesaki-culture-main",
+  "recheckNotBefore": null,
+  "reopenCondition": "通常のcurrentness監視のみ。ピット使用時の番号付き座席図が公開された場合はそのときに独立実装を検討する。",
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "issuer subtotalをtranscription targetにしていない",
+    "human-human MATCHだけをproduction十分条件にしていない"
+  ]
+}

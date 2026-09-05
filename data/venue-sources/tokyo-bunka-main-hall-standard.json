@@ -1,26 +1,34 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "tokyo-bunka-main-hall-standard",
   "name": "東京文化会館 大ホール",
   "prefecture": "東京都",
   "city": "台東区",
   "aliases": [
-    "東京文化会館大ホール"
+    "東京文化会館大ホール",
+    "東京文化会館"
   ],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "standard-current-numbered-seats",
-    "name": "現行通常番号席配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式座席表と施設案内で大ホールの公称2,303席を確認したが、公式ページが休館中を示すため現行再開後の代表配置は確定しない。",
-    "notIncludedPatterns": [
-      "2026年5月7日からの大規模改修休館中",
-      "車椅子席14席を含む公式席数の番号席対応は再開後に再確認"
-    ]
-  },
+  "knownLimitations": [
+    "施設は2026-09-05時点で一時休館中です。issuerは2026-07-01更新の「大規模改修工事に伴う休館について」で「東京文化会館は、大規模改修工事を行うため、令和８年５月７日から休館いたしました」「【休館期間】令和8年5月7日～令和10年度中（予定）」「大ホール、会議室等 令和8年5月7日～」と公表しています。事務所は仮事務所（江東区青海）へ一時移転し、主催事業は都内各地で継続開催されています。これは同一施設（東京都台東区上野公園5-45）の一時休館・一時改修であり、閉館・解体・建替えによる別施設化ではありません。2026-09-04のuser-authorized currentness policy revisionにより、一時休館・一時改修はそれ単独ではproduction blockerとしません。",
+    "改修にともなうseating-change evidenceは2026-09-05時点でいっさい公表されていません。issuerは工事名を「大規模改修工事」とのみ記載し、客席が工事対象であるか、席数・列構成・座席番号体系が変更されるかを明示していません。本実装は「変更の記載がないこと」を「変更されない証明」として推論していません。登録データはissuerが休館中も維持公開している現行の大ホール座席表に対してのみ有効であり、再開後のfresh revalidation（currentness再確認、座席図再取得、fresh two-pass、structural checksum）は必須です。inventoryのrecheckNotBeforeは2028-04-01（休館期間「令和10年度中（予定）」に基づく保守的なrecheck thresholdであり、issuerが公表した営業再開日ではありません）です。",
+    "車椅子席14席は、issuerが大ホールページで「計 2,303」「車椅子席 14」として番号席とは別掲する区画で、現行座席表では1階30列の中央部に、番号のない車椅子ピクトグラム付きの塗りつぶしボックスとして左右7区画ずつ計14区画描かれています。座席番号がいっさい印字されておらず、通常番号席との置換関係もissuerが公開していないため、番号を創作せず、隣接する番号席の削除も行わず、未登録としています。登録したmapped set 2,303席はissuerの番号席総数2,303と完全一致し、inventory capacityの2,317は2,303＋車椅子14に対応します。",
+    "issuerは大ホールを5階建ての1つのホールとして案内しており、代表配置は現行座席表が描く通常番号席配置1つだけです。event-dependentな別配置、可動席、ピット使用時配置などのalternate configurationはissuerが公開しておらず、作成していません。"
+  ],
   "sources": [
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "東京文化会館（公益財団法人東京都歴史文化財団）",
+      "title": "大ホール 施設案内（「5階建て、客席数は2303席です」と記載し、座席表の直下に階別内訳「1階席 1,282／2階席 238／3階席 355／4階席 268／5階席 160／計 2,303／車椅子席 14」と1階・2階〜5階の段差情報を印字する。同ページから現行の大ホール座席表PDFへリンクする。フッターは休館中を表示する）",
+      "url": "https://www.t-bunka.jp/hall/large.html",
+      "checkedAt": "2026-09-05"
+    },
     {
       "id": "official-seat-map",
       "official": true,
@@ -28,52 +36,956 @@
         "seat-structure",
         "seat-count"
       ],
-      "publisher": "東京文化会館",
-      "title": "大ホール座席表",
+      "publisher": "東京文化会館（公益財団法人東京都歴史文化財団）",
+      "title": "大ホール座席表（bhall_zaseki_a4.pdf。1ページ、A4縦。舞台を上に、一階〜五階の5フロアを順に描き、各フロアの中央ブロックと左右のサイド席（L列・R列）に列番号と座席番号を個別に印字する。図左下に「1階席 1,282／2階席 238／3階席 355／4階席 268／5階席 160／計 2,303／車椅子席 14」を印字する）",
       "url": "https://www.t-bunka.jp/hall/pdf/bhall_zaseki_a4.pdf",
-      "checkedAt": "2026-08-09"
+      "checkedAt": "2026-09-05"
     },
     {
-      "id": "official-facility-guide",
-      "official": true,
-      "roles": [
-        "facility",
-        "seat-count"
-      ],
-      "publisher": "東京文化会館",
-      "title": "東京文化会館 大ホール施設案内",
-      "url": "https://www.t-bunka.jp/host/hall/info07.html",
-      "checkedAt": "2026-08-09"
-    },
-    {
-      "id": "official-current-hall-page",
+      "id": "official-closure-notice",
       "official": true,
       "roles": [
         "facility"
       ],
-      "publisher": "東京文化会館",
-      "title": "大ホール座席表・施設案内（休館中表示）",
-      "url": "https://www.t-bunka.jp/hall/large.html/common/pdf/hall/sp_large/point_1f_14.html",
-      "checkedAt": "2026-08-09"
+      "publisher": "東京文化会館（公益財団法人東京都歴史文化財団）",
+      "title": "大規模改修工事に伴う休館について（7月1日更新）（2026年07月01日付。「東京文化会館は、大規模改修工事を行うため、令和８年５月７日から休館いたしました」「【休館期間】令和8年5月7日～令和10年度中（予定）」「大ホール、会議室等 令和8年5月7日～」「小ホール 令和8年5月14日～」と記載し、仮事務所への一時移転と都内各地での主催事業継続を告知する。閉館・解体・建替え・座席構造変更の記載はない）",
+      "url": "https://www.t-bunka.jp/info/32755/",
+      "checkedAt": "2026-09-05"
     }
   ],
-  "registeredScope": "改修後に公式が示す現行通常配置の番号席を対象とする予定。現時点ではrangeを登録しない。",
-  "completenessBasis": "公式座席表と公式施設案内で公称2,303席（1階1,282・2階238・3階355・4階268・5階160、車椅子14）を確認したが、現行公式ページは大ホールを休館中と表示する。",
-  "transformation": "休館中のため改修後仕様を推測せず、番号range転記を保留。",
-  "knownLimitations": [
-    "大規模改修後の再開時点で公式座席表・階別内訳・番号席集合を再確認する。",
-    "改修前の図を改修後の現行配置としてproductionへ流用しない。"
-  ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": "2026-08-09",
-    "method": "",
-    "seatStructure": "matched",
-    "seatCount": "matched",
-    "unresolvedIssues": [
-      "POLICY/SOURCE HOLD: 公式ページが現在も大ホール休館中を示し、改修後の現行座席仕様が未確定。",
-      "再開後の現行公式座席図と席数内訳を確認するまで第1・第2パスとproduction gateを完了しない。"
-    ]
-  },
-  "ranges": []
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "現行通常配置（2,303席）",
+      "issuerDefinedCondition": "issuerが大ホールの客席数として案内する「5階建て、客席数は2303席」の通常配置。現行の大ホール座席表PDFがこの配置の唯一の公式番号図であり、図中に階別内訳と総数を印字する。",
+      "selectionBasis": "issuerが大ホールについて公開する番号付き座席図は現行の大ホール座席表PDF 1点のみで、event-dependentな別配置やピット使用時配置は公開されていない。したがって代表configurationはこの通常配置1つとした。休館については、issuerが2026-07-01更新の告知で「大規模改修工事を行うため、令和８年５月７日から休館いたしました」「【休館期間】令和8年5月7日～令和10年度中（予定）」と公表している。これは同一施設（台東区上野公園5-45）の一時休館・一時改修であり、閉館・解体・建替えによる別施設化ではない。2026-09-04のuser-authorized currentness policy revisionにより、一時休館・一時改修はそれ単独ではproduction blockerとしない。issuerは休館中も大ホールページと座席表PDFを現行資料として維持公開しており、席数・列構成・座席番号体系の変更はいっさい明示していない。本実装はその不記載を「変更されない証明」として推論せず、現行データを改修前の現行公式座席図に対してのみ有効なものとして登録し、再開後の再確認条件をinventoryのrecheckNotBefore（2028-04-01）へ記録している。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-05に現行issuerの大ホールページ（https://www.t-bunka.jp/hall/large.html ）からリンクされる座席表として取得した。URL直打ちでcurrent扱いはしていない。最終URL https://www.t-bunka.jp/hall/pdf/bhall_zaseki_a4.pdf 、SHA-256: 32be7f0fa6c5651de78782ae91c7ffd13e816398f3919c46b569d05d843ca3e6、2,059,705バイト、1ページ、595×842pt（rotation 0）、PDF 1.2、producer Acrobat Distiller 5.0.5 (Windows)。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256・同一バイト数）であることを確認している。このPDFはラスタ画像を含まず（image 0件）、6,359件のベクター描画のみで構成され、座席番号はテキストではなくベクターのアウトラインとして描かれている（テキスト抽出は0文字）。したがってDENSE-VECTOR verificationの前提である全seat identifierのPDF上のテキスト印字を満たさず、2,303席・5フロアという規模だけを理由にDENSE-VECTORを適用することもしていない。既定どおりfresh independent human visual two-passを実施し、機械経路はhuman range tableを入力に用いないstructural checksumとしてのみ用いた。",
+      "sourceIds": [
+        "official-hall-page",
+        "official-seat-map",
+        "official-closure-notice"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-hall-page"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 2303,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "issuerが大ホールの客席数として案内する現行通常配置（2,303席）の公式座席表に印字された全番号席2,303席を登録した構成です。エリアは座席表が印字する階区分をそのまま用い、「1階」1,282席、「2階」238席、「3階」355席、「4階」268席、「5階」160席の5つとしています。列は座席表の印字どおりで、各階の中央ブロックは1列からの数字列、左右のサイド席は座席表がL1〜L12／R1〜R12（1階）、L1〜L4／R1〜R4（2階・3階）、L1〜L3／R1〜R3（4階）、L1〜L2／R1〜R2（5階）として印字する列名をそのまま用いています。座席番号は列ごとの通し番号で、repository由来のブロック名は付与していません。番号が飛ぶ箇所はすべて座席表に座席が印字されていない位置で、補完も削除も行っていません。主なものは、1階1列の前方端（2〜35番のみ）、1階30列・31列（車椅子席区画をはさんで5〜8番と33〜36番、6〜8番と33〜35番のみ）、2階4列（1〜5番・9〜18番・22〜26番）、3階3列・4列、4階3列、および各階サイド席の最内列（2階L4/R4、3階L4/R4、4階L3/R3、5階L2/R2）で、いずれも扉・通路位置に対応します。車椅子席14席は座席表に番号のないピクトグラム区画として描かれるだけで座席番号の印字がなく、通常番号席との置換関係も公開されていないため登録していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerは大ホールページで階別内訳「計 2,303」と並べて「車椅子席 14」を別掲します。現行座席表では、1階30列の中央部、9番から32番にあたる位置に、番号のない車椅子ピクトグラム付きの塗りつぶしボックスが左右7区画ずつ計14区画描かれています。これらの区画には座席番号がいっさい印字されておらず、機械的なセル抽出でも、番号入りの座席セル2,303件に対して車椅子区画は数字グリフを含まない別形状として現れ、番号入りセルとは明確に区別されました。issuerはこの14席がどの番号席と置き換わるのか、同伴者席をどう扱うのかを公開していません。したがって車椅子席には座席番号を創作せず、隣接する番号席の削除も行わず、無番号のまま未登録としています。登録したmapped set 2,303席はissuerの番号席総数2,303と完全一致し、inventory capacityの2,317は2,303＋車椅子14に対応します。大規模改修工事の対象範囲は公開されていないため、再開後には車椅子席の扱いを含めて現行性を再確認する必要があります。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-hall-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-05",
+        "method": "fresh-independent-human-visual-two-pass-on-current-official-seat-chart-with-reversed-floor-and-side-order-and-independently-re-rendered-de-rotated-row-strips-at-a-different-resolution-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-not-fed-by-the-human-range-tables: pdf-vector-divider-and-cell-geometry-with-rotation-invariant-glyph-shape-clustering; issuer-per-floor-subtotal-reconciliation; left-right-mirror-symmetry-invariant",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "issuer checksum reconciliation（階別・総数）: 現行公式座席表と大ホールページはいずれも「1階席 1,282／2階席 238／3階席 355／4階席 268／5階席 160／計 2,303／車椅子席 14」を印字します。転記したmapped setは1階1,282席・2階238席・3階355席・4階268席・5階160席・合計2,303席で、5つの階別小計とgrand totalのすべてがissuerの公表値と完全一致しました。いずれの値もtranscription targetにしておらず、番号集合を先に独立確定したうえで事後にreconcileしています。",
+          "independent structural checksum（機械経路: PDFベクター幾何＋グリフ形状分類）: 現行PDFの描画命令だけを解析し、テキストもhuman range tableも参照せずに、座席セルの仕切り線（長さ4.3〜7.6ptのstroke segment）を平行性と間隔で連結して行を構成し、行ごとにセル数＝仕切り線数＋1として座席セルを数えました。座席番号は、各グリフのパス点列から重心距離プロファイルによる回転不変記述子を作って35クラスへ分類し、上位10クラスをレンダリングして0〜9に同定したうえで、Kabsch法で各グリフの回転角を求めて読み取り方向を証拠から決定し、セルへ割り当てて復号しました。仕切り線を持たない1席のみの区画（1階L1列・1階R1列・2階L1列の最終席・2階R1列）は別途、仕切り線を含まない座席サイズのquadとして4件検出しました。この経路が独立に得た総数は2,303件で、階別内訳も1,282／238／355／268／160と完全一致し、左右のサイド席は1階107＋107、2階72＋72、3階128＋128、4階95＋95、5階66＋66と完全に左右対称でした。",
+          "machine-detected discrepancies returned to the chart（太田市民会館ルールの適用）: 機械経路は当初、(a) 3か所のセルで数字が復号されない、(b) 3階右サイドR2列の1区画でセル数が1多い、(c) 4階左サイドL1列の先頭セルが空、という3種類の不一致を報告しました。数字を機械側の閾値に合わせて調整することはせず、いずれも座席図へ戻って該当行をデスキュー描画し直して視認しました。その結果、(a)は3つの「8」が別のグリフ形状クラスに分かれていたもので、いずれも図上には「8」が印字されていることを確認、(b)はR2列の当該区画が3〜7番の5席であり機械側のセル境界が1つ余分であったこと、(c)は当該セルが5番であることを確認しました。失敗した機械側の初期出力は記録として残し、修正は座席図の再視認に基づいて行っています。",
+          "human visual two-pass: 座席番号はテキストではなくベクターのアウトラインで描かれているため、既定どおり人が現行公式図を直接視認する独立two-passを実施しました。Pass 1は600dpiで再描画した図を用い、1階（前方1列→19列、後方20列→31列）→1階左サイド→1階右サイド→2階→3階→4階→5階の順に、各行で小さい番号の側から読み取りました。Pass 2は同一URLからPDFを独立に再取得し（バイト単位で同一）、Pass 1のtableを参照せずに、520dpiという異なる解像度で再描画し、5階→4階→3階→2階→1階の逆順、かつ各階で右サイド→左サイド→中央の順に、各行を大きい番号の側から読み取りました。勾配の急なサイド席は行軸に沿ってデスキュー描画した水平ストリップとして読み取りました。両passをfreezeしてから比較し、125本のrange、展開座席ID集合2,303件、エリア所属、列所属、全range境界でunresolved mismatchは0件でした。",
+          "source equality: 登録したsource rangeを機械展開した集合（2,303件）と、human two-passの集合、および機械structural checksumの集合を双方向のset equalityで比較し、差分0でした。runtime key（area, 列, 座席番号）の重複は0件、同一(area, 列)内のrange重複も0件です。",
+          "left-right mirror symmetry invariant: 座席表は中心軸について左右対称に描かれ、各階のサイド席はL側とR側が対応します。確定した集合のサイド席席数は1階L108／R108、2階L73／R73、3階L128／R128、4階L95／R95、5階L66／R66で、左右が完全に一致しました。左半分と右半分を別々のcropから読み取っているため、この不変量は片側の読み取り誤りを検出します。",
+          "currentness / closure: 2026-09-05時点で一時休館中（2026-05-07から、休館期間は令和10年度中まで予定）。issuerは2026-07-01更新の告知で大規模改修工事に伴う休館であることを明示し、仮事務所への一時移転と都内各地での主催事業継続を告知しています。閉館・解体・建替えによる別施設化ではなく、施設所在地も台東区上野公園5-45のままです。seating-change evidenceは2026-09-05時点で皆無で、客席が工事対象かどうかも、席数・列構成・座席番号体系の変更も、issuerはいっさい明示していません。営業再開日も未公表です（「令和10年度中（予定）」のみ）。現行データは改修前の現行公式座席図に対してのみ有効であり、inventoryのrecheckNotBeforeに2028-04-01を設定し、再開後にfresh currentness・座席図再取得・fresh two-pass・structural checksumを必須として再確認します。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "1列",
+          "from": 2,
+          "to": 35
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "10列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "18列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "20列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "21列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "22列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "23列",
+          "from": 2,
+          "to": 39
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "24列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "25列",
+          "from": 2,
+          "to": 39
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "26列",
+          "from": 2,
+          "to": 39
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "27列",
+          "from": 2,
+          "to": 39
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "28列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "29列",
+          "from": 4,
+          "to": 37
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "30列",
+          "from": 5,
+          "to": 8
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "30列",
+          "from": 33,
+          "to": 36
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "31列",
+          "from": 6,
+          "to": 8
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "31列",
+          "from": 33,
+          "to": 35
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L1列",
+          "from": 1,
+          "to": 1
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L2列",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L3列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L4列",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L5列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L6列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L7列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L8列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L9列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L10列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L11列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "L12列",
+          "from": 3,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R1列",
+          "from": 1,
+          "to": 1
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R2列",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R3列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R4列",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R5列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R6列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R7列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R8列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R9列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R10列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R11列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "R12列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "1列",
+          "from": 3,
+          "to": 24
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "2列",
+          "from": 2,
+          "to": 25
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 26
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "4列",
+          "from": 9,
+          "to": 18
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "4列",
+          "from": 22,
+          "to": 26
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "L1列",
+          "from": 1,
+          "to": 19
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "L2列",
+          "from": 2,
+          "to": 20
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "L3列",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "L4列",
+          "from": 5,
+          "to": 6
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "L4列",
+          "from": 8,
+          "to": 17
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "L4列",
+          "from": 19,
+          "to": 22
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "R1列",
+          "from": 4,
+          "to": 22
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "R2列",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "R3列",
+          "from": 2,
+          "to": 20
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "R4列",
+          "from": 1,
+          "to": 4
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "R4列",
+          "from": 6,
+          "to": 15
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "R4列",
+          "from": 17,
+          "to": 18
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "1列",
+          "from": 3,
+          "to": 26
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "2列",
+          "from": 2,
+          "to": 27
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "3列",
+          "from": 9,
+          "to": 20
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "3列",
+          "from": 22,
+          "to": 28
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "4列",
+          "from": 9,
+          "to": 19
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "4列",
+          "from": 23,
+          "to": 28
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "L1列",
+          "from": 1,
+          "to": 33
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "L2列",
+          "from": 2,
+          "to": 35
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "L3列",
+          "from": 3,
+          "to": 36
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "L4列",
+          "from": 5,
+          "to": 6
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "L4列",
+          "from": 9,
+          "to": 17
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "L4列",
+          "from": 20,
+          "to": 29
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "L4列",
+          "from": 32,
+          "to": 37
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "R1列",
+          "from": 5,
+          "to": 37
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "R2列",
+          "from": 3,
+          "to": 36
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "R3列",
+          "from": 2,
+          "to": 35
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "R4列",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "R4列",
+          "from": 9,
+          "to": 18
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "R4列",
+          "from": 21,
+          "to": 29
+        },
+        {
+          "areaId": "floor3",
+          "areaLabel": "3階",
+          "rowLabel": "R4列",
+          "from": 32,
+          "to": 33
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "1列",
+          "from": 3,
+          "to": 28
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "2列",
+          "from": 2,
+          "to": 29
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "3列",
+          "from": 11,
+          "to": 20
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "3列",
+          "from": 24,
+          "to": 30
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "L1列",
+          "from": 1,
+          "to": 34
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "L2列",
+          "from": 2,
+          "to": 35
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "L3列",
+          "from": 4,
+          "to": 5
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "L3列",
+          "from": 8,
+          "to": 16
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "L3列",
+          "from": 19,
+          "to": 28
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "L3列",
+          "from": 31,
+          "to": 36
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "R1列",
+          "from": 3,
+          "to": 36
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "R2列",
+          "from": 2,
+          "to": 35
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "R3列",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "R3列",
+          "from": 9,
+          "to": 18
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "R3列",
+          "from": 21,
+          "to": 29
+        },
+        {
+          "areaId": "floor4",
+          "areaLabel": "4階",
+          "rowLabel": "R3列",
+          "from": 32,
+          "to": 33
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "2列",
+          "from": 3,
+          "to": 14
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "L1列",
+          "from": 1,
+          "to": 34
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "L2列",
+          "from": 2,
+          "to": 4
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "L2列",
+          "from": 6,
+          "to": 15
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "L2列",
+          "from": 17,
+          "to": 27
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "L2列",
+          "from": 29,
+          "to": 36
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "R1列",
+          "from": 3,
+          "to": 36
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "R2列",
+          "from": 1,
+          "to": 19
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "R2列",
+          "from": 22,
+          "to": 31
+        },
+        {
+          "areaId": "floor5",
+          "areaLabel": "5階",
+          "rowLabel": "R2列",
+          "from": 33,
+          "to": 35
+        }
+      ]
+    }
+  ]
 }

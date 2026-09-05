@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "shinjuku-bunka-center-main-hall",
+  "name": "新宿区立新宿文化センター 大ホール",
+  "prefecture": "東京都",
+  "city": "新宿区",
+  "aliases": [
+    "新宿文化センター",
+    "新宿文化センター大ホール",
+    "新宿区立新宿文化センター"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "issuerは2023年度〜2025年度の大規模改修で座席を幅の広いものへ更新し、大ホールの客席数を改修前の1,802席から現行1,601席へ変更したことを施設ページで明示しています。本実装が登録したのは改修後の現行1,601席構成のみです。歴史的な1,802席はtranscription targetにしておらず、現行座席表にも現れません。",
+    "オーケストラピット使用時1,479席（122席減）はissuerが客席仕様として文章で併記し、現行座席表でも1列〜4列の122席を黄色で示していますが、ピット使用時の独立した番号付き座席図はissuerが公開していません。1,601−122という減算でalternate configurationを作ることはせず、通常配置1つだけを登録しています。1列〜4列の実測合計（27+29+33+33＝122席）がissuerの「オーケストラピット（122席、4列）」と一致することはmetadataとして記録しますが、configuration化の根拠には用いていません。",
+    "車椅子席は「30席程度」とのみ公表される概数です。現行座席表は水色の網かけで移動可能な番号席（6列7〜10・44〜45＝6席、7列6〜10・44〜46＝8席、23列11〜43＝33席、計47席）を明示し、「水色の網かけの部分の席を移動させ車椅子用スペースを作ることができます」と注記しますが、車椅子1台が何席と置き換わるのかは公開していません。したがって網かけ席も通常の番号席として登録し、車椅子への置換関係は反映していません。approximateな「30席程度」から席数を推測することはしていません。",
+    "大ホールは1階・2階の2層構成で、現行座席表が示す代表配置は通常配置1つだけです。"
+  ],
+  "sources": [
+    {
+      "id": "official-main-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人新宿未来創造財団（指定管理者・施設運営者）",
+      "title": "新宿文化センター 大ホール 施設ページ（客席として「1,601席（1階1,029席／2階572席）」「オーケストラピット使用時：1,479席（122席減）」「車椅子席：30席程度」を記載し、同ページから現行の大ホール座席表PDF・フロア全体図・舞台平面図へリンクする）",
+      "url": "https://www.regasu-shinjuku.or.jp/bunka-center/facilities/main-hall/",
+      "checkedAt": "2026-09-05"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人新宿未来創造財団（指定管理者・施設運営者）",
+      "title": "新宿文化センター大ホール座席表（1ページ。1階・2階の座席図に全席の座席番号と列番号を印字し、図の右側に issuer 自身の列別内訳表（1階1列〜23列、2階1列〜12列の各列の座席番号範囲と席数）、移動席表（オーケストラピット1〜4列122席、車椅子席（30台程度収容可）6列・7列・23列）を印字する。1階下部に「1F 客席1,029席」、2階下部に「2F 客席572席」を印字する）",
+      "url": "https://www.regasu-shinjuku.or.jp/bunka-center/wp-content/uploads/2015/10/dd76dd416351cca3f4ba5658f9d3f81c.pdf",
+      "checkedAt": "2026-09-05"
+    },
+    {
+      "id": "official-facilities-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "公益財団法人新宿未来創造財団（指定管理者・施設運営者）",
+      "title": "新宿文化センター 施設のご案内（大規模改修により座席を幅の広いものへ更新し、大ホールの客席数が1,802席から1,601席へ変更されたことを記載する）",
+      "url": "https://www.regasu-shinjuku.or.jp/bunka-center/facilities/",
+      "checkedAt": "2026-09-05"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "現行通常配置（1,601席）",
+      "issuerDefinedCondition": "issuerが大ホールの客席として掲げる「1,601席（1階1,029席／2階572席）」の通常配置。オーケストラピットを使用しない、現行座席表そのままの配置。",
+      "selectionBasis": "issuerが公開する番号付き座席図は改修後の現行「新宿文化センター大ホール座席表」1点のみで、この図が通常配置1,601席を示す。オーケストラピット使用時1,479席は施設ページと座席表の移動席表に文章・小計として併記されるが、ピット使用時の独立した番号付き座席図は公開されていない。減算でconfigurationを作ることは禁止されているため、代表configurationは通常配置1つとした。改修前の1,802席は施設ページが明示的に「改修前」の値として記述する歴史的値であり、現行座席表には現れないため一切参照していない。施設は現行運用中で、休館・改修・座席変更の告知はない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-05に現行issuerの大ホールページ（https://www.regasu-shinjuku.or.jp/bunka-center/facilities/main-hall/ ）がリンクする「座席表」として取得した。URL直打ちでcurrent扱いはしていない。最終URL https://www.regasu-shinjuku.or.jp/bunka-center/wp-content/uploads/2015/10/dd76dd416351cca3f4ba5658f9d3f81c.pdf 、SHA-256: f65ce29c73611590815fc038751f1e014743aa97f11fb9b59b981d33c65f89c1、210,488バイト、1ページ、522.0×670.7pt、PDF 1.6、producer Adobe PDF library 17.00、PDF内部のcreationDate/modDateはいずれも 2025-04-09。アップロード先ディレクトリ名は 2015/10 だが、これはWordPressの既存メディアを差し替えたことによるもので、資産自体のPDF生成日は改修完了後の2025-04-09であり、内容も改修後の1,601席構成（1階1,029／2階572）である。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256・同一バイト数）であることを確認している。このPDFは座席番号を実テキストとして保持しており（テキスト抽出5,879文字、ラスタ画像0件）、機械経路はテキストの座標から座席番号語を抽出して構成した。",
+      "sourceIds": [
+        "official-main-hall-page",
+        "official-seat-map",
+        "official-facilities-page"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-main-hall-page"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1601,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "issuerが大ホールの客席として掲げる現行通常配置（1,601席）の公式座席表に印字された全番号席1,601席を登録した構成です。エリアは座席表の階区分どおり「1階」1,029席、「2階」572席の2つで、列も座席表の印字どおり1階1列〜23列、2階1列〜12列です。座席番号は列ごとの通し番号で、repository由来のブロック名は付与していません。座席表は各列を左端ブロック・11〜21・22〜32・33〜43・右端ブロックに分けて描きますが、番号は列内で連続しているため列単位のrangeへ圧縮しています。番号が飛ぶのは2階12列（13〜19、24〜30、35〜41の3区画）だけで、これは座席表に座席が印字されていない位置です。オーケストラピット使用時（1列〜4列の122席を外した1,479席）はissuerが独立した番号付き座席図を公開していないため登録していません。車椅子席「30席程度」は概数で、置換関係が公開されていないため、移動可能と注記された水色網かけの番号席47席もそのまま通常席として登録しています。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerは大ホールの客席仕様に「車椅子席：30席程度」とだけ記載し、現行座席表の移動席表にも「車椅子席（30台程度収容可）」として、6列 7〜10・44〜45（6席）、7列 6〜10・44〜46（8席）、23列 11〜21・22〜32・33〜43（33席）の計47席を水色の網かけで示します。図の注記は「水色の網かけの部分の席を移動させ車椅子用スペースを作ることができます。ただし、6列・7列への経路には一部段差があります」であり、車椅子1台がどの番号席と何席分置き換わるのかは公開されていません。したがって網かけの47席はいずれも座席番号が印字された通常の番号席として登録し、車椅子への置換関係は反映していません。approximateな「30席程度」「30台程度」から席数や座席番号を推測することはしていません。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-main-hall-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-05",
+        "method": "fresh-independent-human-visual-two-pass-on-current-official-seat-chart-with-reversed-floor-and-row-order-and-re-rendered-crops-at-a-different-resolution-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-from-pdf-text-geometry-not-fed-by-the-human-range-tables; issuer-printed-per-row-table-and-per-floor-subtotal-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "issuer checksum reconciliation（列別・階別・総数）: 現行座席表は図の右側に issuer 自身の列別内訳表を印字します（1階1列14〜40=27席、2列13〜41=29席、3〜5列11〜43=33席、6列7〜45=39席、7列6〜46=41席、8〜9列7〜47=41席、10列6〜48=43席、11列5〜49=45席、12列4〜50=47席、13列3〜51=49席、14列2〜52=51席、15〜23列1〜53=53席／2階1〜5列1〜53=53席、6〜8列6〜48=43席、9〜10列1〜53=53席、11列2〜52=51席、12列13〜19・24〜30・35〜41=21席）。転記したmapped setは全35列でこの列別内訳表と完全一致し、階別小計も1階1,029席・2階572席、合計1,601席で図の印字（1F 客席1,029席／2F 客席572席）および施設ページの「1,601席（1階1,029席／2階572席）」と完全一致しました。列別内訳表はtranscription targetにしておらず、座席図の番号集合を先に確定したうえで事後にreconcileしています。",
+          "independent structural checksum（機械経路: PDFテキスト幾何）: 座席図領域（x<372pt、issuer列別内訳表の領域x>380ptは完全に除外）から座席番号語だけを座標付きで抽出し、human range tableを参照せずに、数値が連続しかつ空間的に隣接する語どうしを連結して163本のrunを構成しました。出口表示（1-1〜1-6、2-1〜2-2、3-1〜3-4）はハイフン語に隣接する数字として除外しています。この経路が独立に得た座席番号語の総数は1,601件、1階1,029件・2階572件で、issuerの階別小計と完全一致し、163本のrunはすべて連続（非連続0件）でした。機械経路は列別内訳表を読んでおらず、座席図だけを入力としています。",
+          "machine-detected discrepancy returned to the chart（太田市民会館ルールの適用）: 機械経路のrun→列割り当ては、最近傍の列ラベルを用いたため1階6列・7列の右端サイドブロック（44〜45と44〜46）を1列ずれて割り当て、6列=7〜46・7列=6〜43と報告しました。数字をissuerの表へ合わせて調整することはせず、座席図の当該領域を700dpiで拡大描画して視認し、「44 45」の2席区画が6列の線上に、「44 45 46」の3席区画が7列の線上に描かれていることを確認しました。したがって6列=7〜45（39席）、7列=6〜46（41席）が座席図の実体であり、これはissuerの列別内訳表とも一致します。ずれは列ラベル最近傍法の限界であって座席集合の差ではなく、確定した番号集合に変更はありません。失敗した機械側の初期出力は記録として残しています。",
+          "human visual two-pass: Pass 1は700dpiで再描画した座席図を用い、1階1列→23列、2階1列→12列の順に、各列で小さい番号の側から読み取りました。Pass 2は同一URLからPDFを独立に再取得し（バイト単位で同一）、Pass 1のtableを参照せずに、460dpiという異なる解像度で再描画し、2階→1階の逆順、かつ各階で大きい列番号の側から読み取りました。両passをfreezeしてから比較し、35列・37本のrange・展開座席ID集合1,601件・エリア所属・列所属・全range境界でunresolved mismatchは0件でした。曲線状に描かれた列では列ラベルが列の弧の中間高さに置かれるため、左右端ブロックの帰属は各列の左端開始値の系列（1階8列以降で7,7,6,5,4,3,2,1…）と右端終了値の系列（47,47,48,49,50,51,52,53…）が単調に対応することを両passで確認し、issuerの列別内訳表とも突き合わせています。",
+          "source equality: 登録したsource rangeを機械展開した集合（1,601件）と、human two-passの集合、および機械structural checksumの集合を双方向のset equalityで比較し、差分0でした。runtime key（area, 列, 座席番号）の重複は0件、同一(area, 列)内のrange重複も0件です。",
+          "orchestra pit semantics: issuerは「オーケストラピット使用時：1,479席（122席減）」と記載し、座席表は1列〜4列を黄色で示して「オーケストラピット（122席、4列）」と注記します。確定した1階1列〜4列のmapped subtotalは27+29+33+33＝122席でissuerの122席と一致しますが、ピット使用時の独立した番号付き座席図は公開されていないため、1,601−122の減算によるalternate configurationは作成していません。この一致はreconciliationの記録であり、configuration化の根拠ではありません。",
+          "currentness: 2026-09-05時点でACTIVE。休館・改修・座席変更の告知はありません。改修前の1,802席は施設ページが「改修前」として記述する歴史的値で、現行座席表には現れず、transcription targetにもしていません。座席表PDFのアップロード先ディレクトリ名は2015/10ですが、PDF内部のcreationDate/modDateは2025-04-09で改修完了後であり、内容も改修後の1,601席構成（1階1,029／2階572）です。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "1列",
+          "from": 14,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "2列",
+          "from": 13,
+          "to": 41
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "3列",
+          "from": 11,
+          "to": 43
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "4列",
+          "from": 11,
+          "to": 43
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "5列",
+          "from": 11,
+          "to": 43
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "6列",
+          "from": 7,
+          "to": 45
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "7列",
+          "from": 6,
+          "to": 46
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "8列",
+          "from": 7,
+          "to": 47
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "9列",
+          "from": 7,
+          "to": 47
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "10列",
+          "from": 6,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "11列",
+          "from": 5,
+          "to": 49
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "12列",
+          "from": 4,
+          "to": 50
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "13列",
+          "from": 3,
+          "to": 51
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "14列",
+          "from": 2,
+          "to": 52
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "18列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "23列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "6列",
+          "from": 6,
+          "to": 48
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "7列",
+          "from": 6,
+          "to": 48
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "8列",
+          "from": 6,
+          "to": 48
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "10列",
+          "from": 1,
+          "to": 53
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "11列",
+          "from": 2,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "12列",
+          "from": 13,
+          "to": 19
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "12列",
+          "from": 24,
+          "to": 30
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "12列",
+          "from": 35,
+          "to": 41
+        }
+      ]
+    }
+  ]
+}

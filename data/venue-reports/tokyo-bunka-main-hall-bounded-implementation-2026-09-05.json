@@ -1,0 +1,53 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-05",
+  "mode": "KANTO PREFLIGHT-5 ADOPT BATCH / bounded production implementation (one of five independent mini-waves in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をfreshに再取得し、fresh independent human visual two-pass、human range tableを入力にしないindependent machine structural checksum、issuer subtotal reconciliation、material mismatch時のproduction停止をすべて適用した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。2026-09-04 user-authorized currentness policy revisionにより、一時休館・一時改修はそれ単独ではproduction blockerとしない。",
+  "outOfScopeUntouched": [
+    "RaiBoC remediation（別queue）",
+    "Tokyo Priority D research",
+    "PREFLIGHT 6 / remaining Kanto >=1000 unresearched pool",
+    "既存production会場のsource・range・fingerprint・production semantics"
+  ],
+  "title": "TOKYO-BUNKA-MAIN-HALL BOUNDED PRODUCTION IMPLEMENTATION",
+  "scope": "Bounded production implementation of tokyo-tokyo-bunka-main-hall only. 他venue、既存production、RaiBoC、Tokyo Priority D、PREFLIGHT 6 poolはいっさい変更していない。",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "f843a7801e6d0e6f9c1f01b1b5a3f4b7d2b02fbd",
+    "productionAtStart": {
+      "venues": 147,
+      "configurations": 149,
+      "seatRecords": 223491
+    },
+    "note": "HEADはPREFLIGHT-5 commit f843a78。開始時のlocal HEADは65e0f19でorigin/mainに1件behindだったため、fast-forwardしてf843a78に揃えてから着手した。"
+  },
+  "lane": "JUDGMENT + DENSE",
+  "laneReason": "5フロア2,303席・左右のサイド席が急勾配で回転描画され、座席番号がテキストではなくベクターアウトラインで描かれるため、configuration判断とtranscriptionの双方が高難度。",
+  "identity": "東京文化会館〔大ホール〕 / 東京都台東区 / hall",
+  "disposition": "PRODUCTION",
+  "currentnessCheck": "一時休館中（2026-05-07〜令和10年度中予定の大規模改修）。issuerの2026-07-01更新告知「大規模改修工事に伴う休館について」で休館期間と対象を確認。閉館・解体・建替えによる別施設化ではなく、所在地も台東区上野公園5-45のまま。席数・列構成・番号体系の変更はいっさい明示されていない（不記載を変更されない証明としては扱っていない）。issuerは休館中も大ホールページと座席表PDFを現行資料として維持公開している。",
+  "seatChartEvidence": "https://www.t-bunka.jp/hall/pdf/bhall_zaseki_a4.pdf / SHA-256 32be7f0fa6c5651de78782ae91c7ffd13e816398f3919c46b569d05d843ca3e6 / 2,059,705 bytes / 1 page / 595x842pt / PDF 1.2 / Acrobat Distiller 5.0.5。Pass 2直前に独立再取得しバイト単位で同一。image 0件・drawings 6,359件・テキスト抽出0文字（座席番号はベクターアウトライン）。",
+  "configurationAssessment": "現行通常配置1つのみ。issuerはevent-dependent配置・可動席・ピット使用時配置の番号付き座席図を公開していないため、alternate configurationは作成していない。",
+  "visualTwoPass": "Pass 1は600dpi再描画で1階前方1列→19列→1階後方20列→31列→1階左サイド→1階右サイド→2階→3階→4階→5階の順に小さい番号側から読み取り。Pass 2は独立再取得したバイト同一資産を520dpiで再描画し、5階→4階→3階→2階→1階の逆順、各階で右サイド→左サイド→中央の順に大きい番号側から読み取り。急勾配のサイド席は行軸に沿ってデスキュー描画した水平ストリップとして読み取った。両passをfreeze後に比較しunresolved mismatch 0件。",
+  "independentMachineStructuralChecksum": "PDFベクター幾何＋回転不変グリフ形状分類による独立経路。仕切り線（長さ4.3〜7.6ptのstroke segment）を平行性と間隔で連結して行を構成し、セル数＝仕切り線数＋1として計数。グリフは重心距離プロファイルの回転不変記述子で35クラスへ分類し、上位10クラスをレンダリングして0〜9に同定、Kabsch法で各グリフの回転角を求めて読み取り方向を証拠から決定した。仕切り線を持たない1席区画4件（1階L1列・1階R1列・2階L1列末席・2階R1列）は座席サイズのquadとして別途検出。独立に得た総数2,303件、階別1,282／238／355／268／160、左右サイドは1階107+107・2階72+72・3階128+128・4階95+95・5階66+66で完全対称。",
+  "machineDetectedDiscrepanciesReturnedToChart": "機械経路は初期に3種の不一致を報告した（(a) 3セルで数字が復号されない、(b) 3階右サイドR2列の1区画でセル数が1多い、(c) 4階左サイドL1列の先頭セルが空）。数字を閾値に合わせて調整せず、いずれも座席図へ戻って該当行をデスキュー描画し直して視認した。(a)は3つの「8」が別のグリフ形状クラスに分かれていたもので図上には「8」が印字されていること、(b)は当該区画が3〜7番の5席で機械側のセル境界が1つ余分であったこと、(c)は当該セルが5番であることを確認した。失敗した初期出力は記録として残している。",
+  "issuerSubtotalReconciliation": "issuerの大ホールページと座席表がいずれも印字する「1階席 1,282／2階席 238／3階席 355／4階席 268／5階席 160／計 2,303／車椅子席 14」に対し、mapped setは1階1,282・2階238・3階355・4階268・5階160・合計2,303で、5つの階別小計とgrand totalのすべてが完全一致。",
+  "accessibilitySemantics": "車椅子席14はissuerが番号席2,303とは別掲する区画で、座席表では1階30列の中央部（9〜32番にあたる位置）に番号のない車椅子ピクトグラム付き塗りつぶしボックスが左右7区画ずつ計14個描かれる。座席番号がいっさい印字されず、置換関係も公開されていないため未登録（wheelchairSemantics: not-reflected）。inventory capacity 2,317 = 2,303 + 14。",
+  "mappedSeatCount": 2303,
+  "issuerStatedSeatCount": 2303,
+  "rangeDiff": 0,
+  "rangeCount": 125,
+  "venueSourceId": "tokyo-bunka-main-hall-standard",
+  "inventoryId": "tokyo-tokyo-bunka-main-hall",
+  "recheckNotBefore": "2028-04-01",
+  "reopenCondition": "再開後に、現行性の再確認、座席図の再取得、fresh human visual two-pass、independent machine structural checksum、issuer階別小計の再reconcileを必須とする。recheckNotBeforeは休館期間「令和10年度中（予定）」に基づく保守的な閾値であり、issuerが公表した営業再開日ではない。",
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "issuer subtotalをtranscription targetにしていない",
+    "human-human MATCHだけをproduction十分条件にしていない"
+  ]
+}

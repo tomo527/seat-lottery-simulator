@@ -1,0 +1,53 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-05",
+  "mode": "KANTO PREFLIGHT-5 ADOPT BATCH / bounded production implementation (one of five independent mini-waves in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をfreshに再取得し、fresh independent human visual two-pass、human range tableを入力にしないindependent machine structural checksum、issuer subtotal reconciliation、material mismatch時のproduction停止をすべて適用した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。2026-09-04 user-authorized currentness policy revisionにより、一時休館・一時改修はそれ単独ではproduction blockerとしない。",
+  "outOfScopeUntouched": [
+    "RaiBoC remediation（別queue）",
+    "Tokyo Priority D research",
+    "PREFLIGHT 6 / remaining Kanto >=1000 unresearched pool",
+    "既存production会場のsource・range・fingerprint・production semantics"
+  ],
+  "title": "MEGURO-PERSIMMON-MAIN BOUNDED PRODUCTION IMPLEMENTATION",
+  "scope": "Bounded production implementation of tokyo-meguro-persimmon-main only. 他venue、既存production、RaiBoC、Tokyo Priority D、PREFLIGHT 6 poolはいっさい変更していない。",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "f843a7801e6d0e6f9c1f01b1b5a3f4b7d2b02fbd",
+    "productionAtStart": {
+      "venues": 147,
+      "configurations": 149,
+      "seatRecords": 223491
+    },
+    "note": "HEADはPREFLIGHT-5 commit f843a78。開始時のlocal HEADは65e0f19でorigin/mainに1件behindだったため、fast-forwardしてf843a78に揃えてから着手した。"
+  },
+  "lane": "JUDGMENT",
+  "laneReason": "固定席・1階席・2階席・バルコニー席・介助者席・車椅子スペース・ピットという7つの区分をissuerが別々に集計しており、どれをmapped setに含めるかの判断が先行する。",
+  "identity": "めぐろパーシモンホール〔大ホール〕 / 東京都目黒区 / hall",
+  "disposition": "PRODUCTION",
+  "currentnessCheck": "ACTIVE（2026-09-05時点で通常運用中）。issuerは2027-01-12〜2028-01-07に天井非構造部材落下防止対策工事のため大ホールを利用休止とすることを公表している（lot.htmlで文言を直接確認）。同一施設の一時休館であり別施設化ではなく、工事対象は天井の非構造部材と明記され、席数・列構成・番号体系の変更にはいっさい言及がない。",
+  "seatChartEvidence": "https://www.persimmon.or.jp/media/hall_l_seat.pdf / SHA-256 4aaa99e9fa88cd4901755db4568bd07fdc285eed2396c678f2e2cc3b3f9e61fc / 497,761 bytes / 1 page / 612.3x858.9pt / PDF 1.5 / Adobe PDF library 10.01。Pass 2直前に独立再取得しバイト単位で同一。image 0件・drawings 4,696件・テキスト抽出0文字（座席番号はベクターアウトライン）。",
+  "configurationAssessment": "現行通常配置1つのみ。オーケストラピット使用時の1階席512席は数値のみ公開され、どの番号席が外れるかを示す座席図が存在しないため、658−512＝146の減算によるalternate configurationは作成していない。",
+  "visualTwoPass": "Pass 1は700dpi再描画で1階席1列→22列、LB席、RB席、2階席1列→11列の順に小さい番号側から読み取り。Pass 2は独立再取得したバイト同一資産を520dpiで再描画し、2階席→1階13列→1階前方→バルコニーの逆順で読み取り。1階13列は両passとも21個の番号それぞれについて枠の有無を個別に視認した。両passをfreeze後に比較しunresolved mismatch 0件。",
+  "independentMachineStructuralChecksum": "PDFベクター座席枠幾何による独立経路。6.0〜9.5pt四方の矩形（re）および回転矩形（qu）を座席枠として抽出したところ、2階席429個（issuer 2階席429と完全一致）、LB席46個・RB席46個（合計92個でissuerのバルコニー席92と完全一致）、1階13列の帯7個（issuerの介助者席7と完全一致）、1階14〜22列288個（9列×32席と一致）を得た。",
+  "machineDetectedDiscrepanciesReturnedToChart": "1階1〜12列は曲線状に配置され座席枠が4本の独立した線分として個別に描かれているため、矩形パスとしては完全には抽出できなかった（370席中224個）。この帯についてはmachine box countが実用的でないことをverification metadataへ記録し、issuerの区分別公表値1階席658をindependent checksumとして用いた（658−288＝370が1〜12列の合計にあたり、両human passの読み取り合計と一致）。数値を合わせるためのrange調整はいっさい行っていない。",
+  "issuerSubtotalReconciliation": "issuerは定員1,200（固定席1,186）、1階席658、2階席429、バルコニー席92、車椅子スペース14、介助者席7を公開。mapped setは1階席665席（＝1階席658＋介助者席7）、LB席46、RB席46、2階席429、総計1,186で、issuerの固定席1,186と完全一致。1階席の内訳も1列24席（5〜28）、2列28席（3〜30）、3列30席（2〜31）、4〜12列と14〜22列が各32席で、24+28+30+32×18＝658となりissuerの1階席658と完全一致。定員1,200との差−14は無番号の車椅子スペース14に対応。",
+  "accessibilitySemantics": "RESOLVED。issuerは「1階席中央13列目に、14台分の車椅子スペースと7席の介助者席を設置しています。席番号：1階 13列 7〜27番、うち介助者席：12、13、15、17、19、21、22番」と番号レベルで公開し、座席図も凡例に「※13列目は車椅子席です。枠のある座席番号には座席があり、枠のない座席番号は車椅子スペースです。」と印字する。両passで13列の枠の有無を1個ずつ視認した結果、枠あり7個（12・13・15・17・19・21・22）がissuerの介助者席7番号と完全一致し、枠なし14個（7〜11・14・16・18・20・23〜27）が車椅子スペース14台と完全一致した。機械経路でも13列の帯にちょうど7個の座席枠が検出された。介助者席7席は座席として登録し、車椅子スペース14は座席ではないため未登録。推測はいっさい行っていない。",
+  "mappedSeatCount": 1186,
+  "issuerStatedSeatCount": 1186,
+  "rangeDiff": 0,
+  "rangeCount": 41,
+  "venueSourceId": "meguro-persimmon-main-standard",
+  "inventoryId": "tokyo-meguro-persimmon-main",
+  "recheckNotBefore": "2028-01-08",
+  "reopenCondition": "公表された再開日2028-01-08以降に、現行性の再確認、座席図の再取得、fresh human visual two-pass、independent machine structural checksum、issuer区分別小計の再reconcileを必須とする。",
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "issuer subtotalをtranscription targetにしていない",
+    "human-human MATCHだけをproduction十分条件にしていない"
+  ]
+}

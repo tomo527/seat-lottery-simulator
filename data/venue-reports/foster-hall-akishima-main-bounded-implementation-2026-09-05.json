@@ -1,0 +1,53 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-05",
+  "mode": "KANTO PREFLIGHT-5 ADOPT BATCH / bounded production implementation (one of five independent mini-waves in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をfreshに再取得し、fresh independent human visual two-pass、human range tableを入力にしないindependent machine structural checksum、issuer subtotal reconciliation、material mismatch時のproduction停止をすべて適用した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。2026-09-04 user-authorized currentness policy revisionにより、一時休館・一時改修はそれ単独ではproduction blockerとしない。",
+  "outOfScopeUntouched": [
+    "RaiBoC remediation（別queue）",
+    "Tokyo Priority D research",
+    "PREFLIGHT 6 / remaining Kanto >=1000 unresearched pool",
+    "既存production会場のsource・range・fingerprint・production semantics"
+  ],
+  "title": "FOSTER-HALL-AKISHIMA-MAIN BOUNDED PRODUCTION IMPLEMENTATION",
+  "scope": "Bounded production implementation of tokyo-official-1060 only. 他venue、既存production、RaiBoC、Tokyo Priority D、PREFLIGHT 6 poolはいっさい変更していない。",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "f843a7801e6d0e6f9c1f01b1b5a3f4b7d2b02fbd",
+    "productionAtStart": {
+      "venues": 147,
+      "configurations": 149,
+      "seatRecords": 223491
+    },
+    "note": "HEADはPREFLIGHT-5 commit f843a78。開始時のlocal HEADは65e0f19でorigin/mainに1件behindだったため、fast-forwardしてf843a78に揃えてから着手した。"
+  },
+  "lane": "STANDARD",
+  "laneReason": "1列〜31列の単一区画で、座席番号が実テキストとして保持され、凡例に固定席・移動席・車椅子スペース・合計と欠番注記が印字されているため、通常のtwo-passとテキスト幾何checksumで完結する。",
+  "identity": "FOSTERホール（昭島市民会館）〔大ホール〕 / 東京都昭島市 / hall",
+  "disposition": "PRODUCTION",
+  "currentnessCheck": "一時休館中。昭島市は施設ページに「注意：改修工事のため、令和8年12月1日まで休館しています。」と明示（2026年3月23日更新）。閉館・解体・建替えによる別施設化ではなく、市は休館中も座席ページと座席表PDFを現行資料として維持公開している。席数・列構成・番号体系の変更はいっさい明示されていない。",
+  "seatChartEvidence": "https://www.city.akishima.lg.jp/_res/projects/default_project/_page_/001/007/723/hall_zaseki_nomal.pdf / SHA-256 3f3dd0291f5cf4a4e7c7ca35f64b43f20ce188b9538cb48132e5e9cb4fdc003c / 55,405 bytes / 1 page / 595x842pt / PDF 1.7。Pass 2直前に独立再取得しバイト単位で同一。image 0件・drawings 4,652件・テキスト抽出3,647文字（座席番号は実テキスト）。",
+  "configurationAssessment": "「大ホール座席表（通常）」が示す通常配置1つのみ。移動席を外した配置やその他のevent-dependent配置の座席図は公開されていないため、alternate configurationは作成していない。",
+  "visualTwoPass": "Pass 1は700dpi再描画で1列→31列の順に、各行で小さい番号側から左端ブロック→中央左→中央→中央右→右端ブロックの順に読み取り。Pass 2は独立再取得したバイト同一資産を480dpiで再描画し、後方（23列〜31列）→前方（1列〜9列）の逆順で読み取り。欠番（2列22番・4列22番）と車椅子スペース6区画は両passとも該当位置を個別に拡大して視認した。両passをfreeze後に比較しunresolved mismatch 0件。",
+  "independentMachineStructuralChecksum": "PDFテキスト幾何による独立経路。テキスト層から座席番号語を座標つきで抽出し、y座標で31本の行帯へ分割したうえで、各行に4か所ある列ラベル用のx列（x≈122／236／348／462）に位置し値が行番号と一致する語だけを列ラベルとして除去し、右上の凡例ボックス（x>420かつy<140）も除外した。独立に得た座席番号語の総数は1,139件で、issuerの合計席数1,139と完全一致。うち7列左方の1〜6の6語が車椅子スペースにあたり、これを除いた1,133件がhuman two-passの確定集合と完全一致。行ごとのrange列も、2列が10〜21と23〜34、4列が8〜21と23〜36に分割される点を含めて両human passと完全一致した。",
+  "machineDetectedDiscrepanciesReturnedToChart": "機械経路とhuman two-passの間にmaterial mismatchは発生しなかった。",
+  "issuerSubtotalReconciliation": "座席表の凡例は「固定席：1031席／移動席：102席／車椅子スペース：6席／合計席数：1139席」を印字し、座席ページも同じ内訳を記載する。mapped setは1,133席で、点線で囲まれた移動席1列〜4列が23+24+27+28＝102席となり凡例の移動席102と完全一致し、残る5列〜31列が1,031席となり凡例の固定席1,031と完全一致した。公称合計1,139との差−6は未登録の車椅子スペース6に対応する。",
+  "accessibilitySemantics": "車椅子スペース6席は、座席表が7列左方に車椅子ピクトグラムを白抜きした黒い区画6個として1〜6の番号を付して描くもので、issuerは固定席1,031・移動席102とは別枠で集計している。通常の座席枠とは明確に異なる描画で、両passとも6個であることを個別に視認し、機械経路でもテキストとして1〜6の6語が同じ位置に抽出された。置換関係は非公開のため未登録（wheelchairSemantics: not-reflected）。mapped 1,133 = 1,139 − 6。",
+  "mappedSeatCount": 1133,
+  "issuerStatedSeatCount": 1139,
+  "rangeDiff": -6,
+  "rangeCount": 33,
+  "venueSourceId": "tokyo-wave3-1060",
+  "inventoryId": "tokyo-official-1060",
+  "recheckNotBefore": "2026-12-01",
+  "reopenCondition": "公表された再開日2026-12-01またはそれ以降に、現行性の再確認、座席図の再取得、fresh human visual two-pass、independent machine structural checksum、凡例小計の再reconcileを必須とする。",
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "issuer subtotalをtranscription targetにしていない",
+    "human-human MATCHだけをproduction十分条件にしていない"
+  ]
+}

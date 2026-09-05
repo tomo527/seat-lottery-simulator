@@ -4,6 +4,7 @@ import {
   INVENTORY_ELIGIBILITIES,
   INVENTORY_CATEGORIES,
   INVENTORY_OPERATIONAL_STATUSES,
+  INVENTORY_PRODUCTION_OPERATIONAL_STATUSES,
   INVENTORY_PRIORITIES,
   INVENTORY_RESEARCH_STATUSES,
 } from './constants.mjs'
@@ -185,7 +186,16 @@ export const validateInventories = (inventories, sources = [], options = {}) => 
         errors.push(`${prefix}.blockingReason is required for independent-review-mismatch`)
       }
       if (venue.researchStatus === 'production') {
-        if (venue.operationalStatus !== 'active') errors.push(`${prefix} production inventory venue must be active`)
+        if (!INVENTORY_PRODUCTION_OPERATIONAL_STATUSES.has(venue.operationalStatus)) {
+          errors.push(`${prefix} production inventory venue must be active, temporarily-closed, or renovation`)
+        } else if (venue.operationalStatus !== 'active') {
+          if (!isDate(venue.recheckNotBefore)) {
+            errors.push(`${prefix}.recheckNotBefore is required for production while ${venue.operationalStatus}`)
+          }
+          if (!canonicalString(venue.blockingReason)) {
+            errors.push(`${prefix}.blockingReason is required for production while ${venue.operationalStatus}`)
+          }
+        }
         if (venue.eligibility !== 'eligible') errors.push(`${prefix} production inventory venue must be eligible`)
       }
       if (venue.operationalStatus === 'active' && venue.eligibility === 'eligible' && venue.researchStatus === 'not-started' && isDate(venue.lastCheckedAt)) {
