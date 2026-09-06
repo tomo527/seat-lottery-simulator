@@ -7,6 +7,7 @@ This file is the canonical sequence for a bounded venue-addition wave. It define
 | Concern | Canonical source |
 | --- | --- |
 | Permanent repository rules and session startup | [`../AGENTS.md`](../AGENTS.md) |
+| Continuing or stopping a bounded batch (GREEN / YELLOW / LOCAL RED / GLOBAL RED) | [`../AGENTS.md`](../AGENTS.md) |
 | Current state, unresolved work, and next action | [`HANDOFF.md`](HANDOFF.md) |
 | Venue schema, evidence order, production gate, range rules, inventory, and generated artifacts | [`VENUE_DATA_GUIDE.md`](VENUE_DATA_GUIDE.md) |
 | Proportional validation and target review | [`VALIDATION.md`](VALIDATION.md) |
