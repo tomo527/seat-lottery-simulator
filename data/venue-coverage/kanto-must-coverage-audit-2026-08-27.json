@@ -12,19 +12,19 @@
   "counts": {
     "universeTotal": 154,
     "byPrefecture": {
-      "千葉県": 13,
-      "埼玉県": 12,
-      "東京都": 91,
-      "栃木県": 5,
-      "神奈川県": 18,
+      "茨城県": 5,
       "群馬県": 10,
-      "茨城県": 5
+      "埼玉県": 12,
+      "神奈川県": 18,
+      "千葉県": 13,
+      "東京都": 91,
+      "栃木県": 5
     },
     "byStatus": {
-      "production": 74,
-      "ADOPT / implementation-ready": 0,
-      "HOLD / NEED EVIDENCE / formal DEFER": 58,
-      "inventory-unresearched": 22
+      "production": 76,
+      "ADOPT / implementation-ready": 3,
+      "HOLD / NEED EVIDENCE / formal DEFER": 75,
+      "inventory-unresearched": 0
     },
     "missingFromInventory": 0
   },
@@ -40,6 +40,14 @@
     {
       "inventoryId": "tokyo-official-1017",
       "result": "アリーナ立川立飛 remains a distinct NEED EVIDENCE hard case."
+    },
+    {
+      "inventoryId": "saitama-super-arena-stadium",
+      "result": "GMOアリーナさいたま〔スタジアム〕は〔メインアリーナ〕と同一facility-space（bowl）の相互排他的な可動モードであり、別production venueではない。1 venue source上の2 configurationとして表現し、venueSourceIdはsaitama-super-arena-mainが保持する。"
+    },
+    {
+      "inventoryId": "saitama-super-arena-community",
+      "result": "GMOアリーナさいたま〔コミュニティアリーナ〕はissuerがメインアリーナとの同時稼働を明記する別facility-spaceであり、独立記録のまま維持する。番号付き座席図が存在しないためformal HOLD。"
     }
   ],
   "explicitFindings": {
@@ -83,7 +91,7 @@
       ]
     }
   },
-  "nextMacro": "CODEX: KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 7",
+  "nextMacro": "CLAUDE: KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION (kanagawa-yokohama-arena-main, then GMOアリーナさいたま as one venue source with stadium + main-arena configurations)",
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
     "candidates": [
@@ -105,8 +113,8 @@
       "officialUrl": "https://mito-arena.jp/",
       "inventoryId": "ibaraki-adastria-mito-arena",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current facility/operator numbered chart with an issuer-defined representative configuration required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -133,7 +141,7 @@
       "venueSourceId": "hitachinaka-culture-large-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-09-04 implementation: PRODUCTION as hitachinaka-culture-large-hall / standard with 1,350 mapped printed identifiers (rows 1-30), rangeDiff 0. Reopen only if the issuer publishes a numbered chart for the orchestra-pit form (row 6 removed / 196 seats) or numbering for the 車イス補助席 / 母子席 positions."
+      "reopenCondition": null
     },
     {
       "prefecture": "茨城県",
@@ -146,7 +154,7 @@
       "venueSourceId": "mito-civic-globis-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "n/a — production. Reopen only if the issuer publishes revised floor-specific numbered charts superseding rev.20230616."
+      "reopenCondition": null
     },
     {
       "prefecture": "茨城県",
@@ -159,7 +167,7 @@
       "venueSourceId": "ryugasaki-culture-hall-large",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION (2026-09-07 PREFLIGHT-6 ADOPT BATCH). Reopen only if current issuer evidence supersedes the implemented chart."
+      "reopenCondition": null
     },
     {
       "prefecture": "群馬県",
@@ -170,8 +178,8 @@
       "officialUrl": "https://www.gunma-sports.or.jp/",
       "inventoryId": "gunma-alsok-arena",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer chart with every selected identifier and explicit movable/accessibility relationship required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -183,8 +191,8 @@
       "officialUrl": "https://www.g-messe-gunma.jp/",
       "inventoryId": "gunma-gmesse-exhibition",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer complete numbered configuration required, including temporary/floor/standing semantics if selected.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -198,7 +206,7 @@
       "venueSourceId": "isesaki-culture-hall-large",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Reopen only if current issuer evidence supersedes the implemented chart."
+      "reopenCondition": null
     },
     {
       "prefecture": "群馬県",
@@ -221,10 +229,10 @@
       "officialCapacityAndMode": "6000 (current inventory/audit capacity; see official URL)",
       "officialUrl": "https://takasaki-foundation.or.jp/arena/",
       "inventoryId": "gunma-takasaki-arena-main",
-      "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "venueSourceId": "takasaki-arena-main",
+      "currentStatus": "production",
+      "blocker": null,
+      "reopenCondition": null
     },
     {
       "prefecture": "群馬県",
@@ -249,7 +257,7 @@
       "inventoryId": "gunma-maebashi-culture-main",
       "venueSourceId": null,
       "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
-      "blocker": "SOURCE HOLD (2026-09-05 PREFLIGHT 5): the recorded current issuer hostname https://www.maebashi-culture.jp/ returned ERR_NAME_NOT_RESOLVED. No substitute issuer evidence, chart, capacity, or operation claim was adopted.",
+      "blocker": "SOURCE HOLD (2026-09-05 PREFLIGHT 5): recorded issuer hostname https://www.maebashi-culture.jp/ returned ERR_NAME_NOT_RESOLVED. Locate a working current issuer page and complete numbered representative chart before re-evaluation; no old/third-party chart, inferred IDs, rows, or capacity fitting.",
       "reopenCondition": "A working current issuer page with complete numbered representative chart, capacity/configuration semantics, and accessibility evidence; no old chart, third-party map, inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -263,7 +271,7 @@
       "venueSourceId": "ota-civic-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-09-04 implementation: PRODUCTION as ota-civic-hall / standard with 1,491 mapped printed identifiers across 1・2階席933 / 3階席276 / 4階席282. Reopen only if the issuer publishes a numbered chart for the orchestra-lift (rows 1-5 unavailable) form, or numbering for the 車いす用席 / 親子席 positions."
+      "reopenCondition": null
     },
     {
       "prefecture": "群馬県",
@@ -274,8 +282,8 @@
       "officialUrl": "https://greendome.jp/",
       "inventoryId": "gunma-green-dome-maebashi",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer numbered stand chart and declared representative scope required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -289,7 +297,7 @@
       "venueSourceId": "kiryu-culture-silk-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "n/a — production (GUNMA-KIRYU-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION 2026-09-04: schema v2 source kiryu-culture-silk-hall / configuration proscenium, scope.kind official-variant; 1階1列〜29列・2階30列〜44列の印字番号席1,517席を57 rangesでmapped。fresh independent human visual two-pass（Pass 2はバンク別デスキュー描画で2階→1階・右バンクから左・列降順・番号降順）、PDFベクターセル幾何／グリフ帰属による識別子再構成／600 dpiラスター輪郭階層の3経路によるindependent machine structural checksum、および現行公式施設案内ページの階別subtotal「1,517席（1F 1,139席、2F 378席）」の四者が完全一致した). Reopen only if the issuer publishes a seat chart superseding SHA-256 8d8c70a83160534e075700fecf2f7d61209d3884d386d1484ce458e0e0d853d2, defines a seat-ID replacement relation or per-position numbering for the ten wheelchair spaces, or publishes a numbered chart for the オーケストラピット使用時 or スラストステージ stage forms. Never fit to 1,527 or 1,517 by adding or deleting printed identifiers."
+      "reopenCondition": null
     },
     {
       "prefecture": "埼玉県",
@@ -300,8 +308,8 @@
       "officialUrl": "https://www.saitama-arena.co.jp/",
       "inventoryId": "saitama-super-arena-community",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE: issuerがコミュニティアリーナの番号付き座席図・代表配置・確定席数のいずれも公開していない（収納式ロールバック席1,000〜3,000席、レイアウトは催事別）。reopen条件は、issuerがコミュニティアリーナについて列・座席番号を印字した完全な座席図と、issuer-definedな代表configurationを公開すること。容量レンジ（1,000〜3,000席）や約3,000席の仮設席からseat IDを推測することは行わない。なおコミュニティアリーナは、issuerが「メインアリーナ、コミュニティアリーナでそれぞれ同時に別のイベントを開催するということも可能です」と明記するとおりメインアリーナと同時稼働できる別facility-spaceであり、スタジアム／メインアリーナの可動モードとは別に扱う。",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -313,8 +321,8 @@
       "officialUrl": "https://www.saitama-arena.co.jp/",
       "inventoryId": "saitama-super-arena-stadium",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": "ADOPT / implementation-ready (PREFLIGHT-7 re-verified 2026-09-07): 実装未完了。stadium modeはGMOアリーナさいたまの単一venue source上のconfigurationとして実装する。残作業は、seat_viewのラスタ座席図（img-map_stadium_*.png、3スタジアムモード4ステージ位置でseat layerは同一）から番号席集合を完全転記し、fresh independent human two-pass、独立structural checksum、issuer小計（上段6,880／下段17,441／300レベル644／500レベル1,546）とのreconciliationを通すこと。issuerのseat_list.js（座席番号検索データ）はblock highlight用の粗いモデルで、展開すると孤立番号や不整合区間が出るためseat-structure evidenceには使えない（cross-check補助のみ）。",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -326,8 +334,8 @@
       "officialUrl": "https://www.saitama-arena.co.jp/",
       "inventoryId": "saitama-super-arena-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": "ADOPT / implementation-ready (PREFLIGHT-7 re-verified 2026-09-07): 実装未完了。GMOアリーナさいたまを1 venue source（この記録が保持）とし、main arena modeとstadium modeを2つのselectable production configurationとして実装する。残作業は、seat_viewのラスタ座席図（img-map_arena_*.png、4ステージ位置でseat layerは同一）から番号席集合を完全転記し、fresh independent human two-pass、独立structural checksum、issuer小計（上段5,880／下段11,404／300レベル644／500レベル752／ラムダ2,272／TOTAL 21,197）とのreconciliationを通すこと。アリーナ床席は「固定席の一部を収納してアリーナ席を設置する場合もございます。設置される席・ブロック数・列・席番号などにつきましては、イベント主催者にお問合せください。」とissuerが明記するevent-dependent領域でありscope外。",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -340,7 +348,7 @@
       "inventoryId": "saitama-raiboc-main",
       "venueSourceId": null,
       "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
-      "blocker": "PRODUCTION DISPOSITION SUPERSEDED / TRANSCRIPTION DEFECT (RAIBOC + CHIBA PRODUCTION DISPOSITION RECONCILIATION AUDIT 2026-08-31): the promoted configuration raiboc-hall-large-standard/standard does not reproduce the current official 座席表 printed ID set, so the 2026-08-31 production promotion is superseded and the record returns to blocked. Machine cell recount of the unchanged current chart (SHA-256 a0bd5467ad87d6cc1ce26cf6b56d0cfc8c37f3dc5bdb60e39334003aedebac81) gives 1F 938 / 2F 431 / balcony 28 = 1,397 printed numbered seats, which matches the chart header (1階席938席・2階席431席・バルコニー28席) exactly and, with the 3 unnumbered 多目的鑑賞室 positions, its own 計1400席; so this is a repository transcription defect, not an unexplained issuer relation. Confirmed defects: (a) 2F row 2A (left 3-9, right 39-45) is printed on the chart and entirely absent from the registered ranges; (b) a further side-only 2F row between 2A and 2B (left 2-9, right 39-47) is also absent; (c) the 2G-2K side blocks are printed as split outer/inner blocks whose row ownership does not match the registered ranges; (d) 1F rows B/D/F/H are registered as contiguous ranges that include a seat 31 which is not printed (those rows end at 30 while A/C/E/G/I end at 31), adding 4 phantom seats. The historical implementation report is retained: its currentness, configuration and evidence work stands, but its seat set is not valid.",
+      "blocker": "PRODUCTION DISPOSITION SUPERSEDED / TRANSCRIPTION DEFECT (RAIBOC + CHIBA PRODUCTION DISPOSITION RECONCILIATION AUDIT 2026-08-31): the promoted configuration raiboc-hall-large-standard/standard does not reproduce the current official 座席表 printed ID set, so the 2026-08-31 production promotion is superseded and the record returns to blocked. Machine cell recount of the unchanged current chart (SHA-256 a0bd5467ad87d6cc1ce26cf6b56d0cfc8c37f3dc5bdb60e39334003aedebac81) gives 1F 938 / 2F 431 / balcony 28 = 1,397 printed numbered seats, which matches the chart header (1階席938席・2階席431席・バルコニー28席) exactly and, with the 3 unnumbered 多目的鑑賞室 positions, its own 計1400席; so this is a repository transcription defect, not an unexplained issuer relation. Confirmed defects: (a) 2F row 2A (left 3-9, right 39-45) is printed on the chart and entirely absent from the registered ranges; (b) a further side-only 2F row between 2A and 2B (left 2-9, right 39-47) is also absent; (c) the 2G-2K side blocks are printed as split outer/inner blocks whose row ownership does not match the registered ranges; (d) 1F rows B/D/F/H are registered as contiguous ranges that include a seat 31 which is not printed (those rows end at 30 while A/C/E/G/I end at 31), adding 4 phantom seats. The historical implementation report is retained: its currentness, configuration and evidence work stands, but its seat set is not valid. REOPEN CONDITION: a separately authorized bounded re-implementation that re-transcribes the 2F in full (row 2A included) from the current official 座席表 PDF with two independent passes, resolves the 2G-2K outer/inner side-block row ownership from the chart structure, removes the non-printed seat 31 from 1F rows B/D/F/H, and closes with per-area mapped totals of 1F 938 / 2F 431 / balcony 28 against the issuer subtotals. The 多目的鑑賞室 (3 unnumbered positions) stays excluded, and the unresolved X-cross (1F row I) and diagonal-hatch (1F row R) mark semantics remain an open issuer question that must not be resolved by inference.",
       "reopenCondition": "REOPEN CONDITION: a separately authorized bounded re-implementation that re-transcribes the 2F in full (row 2A included) from the current official 座席表 PDF with two independent passes, resolves the 2G-2K outer/inner side-block row ownership from the chart structure, removes the non-printed seat 31 from 1F rows B/D/F/H, and closes with per-area mapped totals of 1F 938 / 2F 431 / balcony 28 against the issuer subtotals. The 多目的鑑賞室 (3 unnumbered positions) stays excluded, and the unresolved X-cross (1F row I) and diagonal-hatch (1F row R) mark semantics remain an open issuer question that must not be resolved by inference."
     },
     {
@@ -367,7 +375,7 @@
       "venueSourceId": "saitama-city-culture-main",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "issuerとさいたま市は「令和9年度から中規模修繕工事を実施する予定」「本工事に伴い令和9年6月1日から休館」「工事期間は2年間程度を予定」と公表している（2025-11-28更新）。一時休館それ自体はblockerではなく、issuerは客席が工事対象かどうかも席数・列構成・座席番号体系の変更もいっさい明示していない。営業再開日は未公表のため、inventory recheckNotBeforeは休館開始2027-06-01＋「2年間程度」からおいた保守的なthresholdとして2029-06-01を設定した（issuerが公表した営業再開日ではない）。休館明けにfresh currentness・現行座席図の再取得・fresh two-pass・structural checksumで再確認する。"
+      "reopenCondition": null
     },
     {
       "prefecture": "埼玉県",
@@ -380,7 +388,7 @@
       "venueSourceId": "koshigaya-suncity-large-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "2026-09-04 implementation: PRODUCTION as koshigaya-suncity-large-hall / standard with 1,667 mapped printed identifiers. Issuer 整備事業 notice (2025-11-28) extends existing-facility operation to the end of 令和9年度 and leaves 大規模改修 vs 建替え undecided with no demolition scheduled; recheck from 2027-04-01. Do not re-research or reopen before then."
+      "reopenCondition": null
     },
     {
       "prefecture": "埼玉県",
@@ -391,8 +399,8 @@
       "officialUrl": "https://www.seibulions.jp/stadium/",
       "inventoryId": "saitama-belluna-dome",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): issuer-owned complete current numbered stand chart with group/accessibility/event semantics required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -458,7 +466,7 @@
       "venueSourceId": "kaat-kanagawa-arts-theatre-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "n/a — production (KAAT-KANAGAWA-ARTS-THEATRE-HALL BOUNDED PRODUCTION IMPLEMENTATION 2026-09-01: schema v2 source kaat-kanagawa-arts-theatre-hall / configuration standard-gradient, scope.kind official-variant; 1階778席・2階189席・3階220席、計1,187席をmapped。fresh independent human visual two-pass、PDFベクター幾何とラスター輪郭階層の2経路によるindependent machine structural checksum、issuerの階別subtotal照合の四者が完全一致した)。Reopen only if the issuer publishes a 基準勾配 seat map superseding SHA-256 e78ee58074c843d96b2852c9696e1ab7a0d4fdfa13b28241c861c7aeb2242af8, defines a seat-ID replacement relation for the 車椅子席, or brings 急勾配・平土間・鳥屋口 into scope as an additional issuer-defined configuration — each of which extends scope rather than changes the 1,187 printed identifiers already mapped. Never fit to 最大約1,200席."
+      "reopenCondition": null
     },
     {
       "prefecture": "神奈川県",
@@ -469,8 +477,8 @@
       "officialUrl": "https://www.zepp.co.jp/hall/yokohama/",
       "inventoryId": "kanagawa-kt-zepp-yokohama",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): issuer must publish a complete current numbered configuration covering every selected 1F and 2F seat with fixed/movable/standing semantics.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -484,7 +492,7 @@
       "venueSourceId": "k-arena-yokohama",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "n/a — production (KANAGAWA-K-ARENA-YOKOHAMA DENSE-VECTOR PRODUCTION IMPLEMENTATION 2026-08-31: schema v2 source k-arena-yokohama / configuration upper-stands-fixed, scope.kind fixed-only; 3階4,978席・5階4,372席（うちバルコニー席235席）・7階6,579席、計15,929席をmapped。1Fアリーナはissuerが公演ごとの形状変更を明記するため除外、VIPフロアは契約者専用のため除外、番号のない車イス席区画は除外。公称20,033席は1階を含む全館値でありscopeのtargetにしていない）。Reopen only if the issuer publishes a seat map superseding SHA-256 24a838884437b225bf19f6dbe4f40bf95e80204278f48b0528da4c7b603967ee."
+      "reopenCondition": null
     },
     {
       "prefecture": "神奈川県",
@@ -495,8 +503,8 @@
       "officialUrl": "https://yokohama-coast.com/",
       "inventoryId": "kanagawa-yokohama-coast-room1",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer-owned complete numbered chart and representative seated configuration required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -510,7 +518,7 @@
       "venueSourceId": "culttz-kawasaki-hall-release-seed",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "神奈川県",
@@ -523,7 +531,7 @@
       "venueSourceId": "pacifico-yokohama-national-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "issuerは大規模改修工事にともなう国立大ホールの休館を2027-05-17〜2028-03-31（営業再開日2028-04-01）と正式発表している。一時休館それ自体はblockerではないが、改修の主な工事箇所（予定）に「客席」が含まれ「客席・カーペットの更新やバリアフリー環境の整備」と記載されるため、2028-04-01の営業再開後にfresh currentness・現行座席図の再取得・fresh two-pass・structural checksumで再確認する（inventory recheckNotBefore 2028-04-01）。"
+      "reopenCondition": null
     },
     {
       "prefecture": "神奈川県",
@@ -534,8 +542,8 @@
       "officialUrl": "https://www.pacifico.co.jp/visitor/floorguide/north/",
       "inventoryId": "kanagawa-pacifico-north-multipurpose",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): obtain a current issuer-maintained complete numbered chart for one named configuration; capacity layouts are not seat-ID evidence.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -549,7 +557,7 @@
       "venueSourceId": "pia-arena-mm",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Closed on 2026-08-27 by a separately authorized bounded two-pass implementation. The current official 2F-4F stand seat maps were transcribed losslessly in both directions (2F 2,700 + 3F 1,670 + 4F 1,203 = 5,573 printed seats) and reconciled exactly against the current official facility summary (stand 3,150 + 1,680 + 1,247 = 6,077, which includes 440 standing, 20 unnumbered wheelchair spaces and 44 unnumbered VIP seats). The published 12,141 is the maximum standing capacity including the 6,064 arena-floor standing figure and is not a fixed-seat total. 1F ARENA FLOOR is event-dependent and excluded; reopen only if the issuer publishes numbered arena-floor seating."
+      "reopenCondition": null
     },
     {
       "prefecture": "神奈川県",
@@ -586,8 +594,8 @@
       "officialUrl": "https://yokohama-buntai.jp/",
       "inventoryId": "kanagawa-yokohama-buntai-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer complete numbered chart required for one configuration, including movable, temporary, wheelchair, suite and box semantics.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -599,8 +607,8 @@
       "officialUrl": "https://www.yokohama-arena.co.jp/",
       "inventoryId": "kanagawa-yokohama-arena-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": "ADOPT / implementation-ready (PREFLIGHT-7 re-verified 2026-09-07): 実装未完了。Aパターン固定番号scopeのみを対象とし、B／中央パターンとは混ぜない（Aパターンはステージが東側にありE・Fブロックと東スタンドが切り詰められる一方Dブロックが全席あり、Bパターンは逆にDブロックが消えるため、両者は別のissuer-defined configuration）。残作業は、img_seatzoom_01.pngから2階A〜Fブロック・3階4スタンド・スイート・ボックスの印字番号集合を完全転記し、fresh independent human two-pass、独立structural checksum、issuer区分別小計（アリーナ席5,498／スタンド席3,271／スイート・ボックス140）とのreconciliationを通すこと。既知の構造的注意点: (1) 各アリーナ列の両端に番号が印字されていない幅広・低背の非座席矩形が1〜2個ずつ描かれており座席として数えない、(2) ブロックAでは11列と12列の間の通路が12列の位置を占め、実際に描かれた列は21本である一方、列ラベルはA1〜A22まで振られているため、列ラベルと描画バンドの対応をブロックごとに確定する必要がある、(3) 3階スタンドは円弧状で水平scanlineによるcell抽出が成立しないため、極座標展開など曲率に対応した機械経路が必要。",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -614,7 +622,7 @@
       "venueSourceId": "yokohama-minatomirai-hall-main-release-seed",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "神奈川県",
@@ -624,10 +632,10 @@
       "officialCapacityAndMode": "3000 (current inventory/audit capacity; see official URL)",
       "officialUrl": "https://yokohama-budokan.com/",
       "inventoryId": "kanagawa-yokohama-budokan-arena",
-      "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "venueSourceId": "yokohama-budokan-arena",
+      "currentStatus": "production",
+      "blocker": null,
+      "reopenCondition": null
     },
     {
       "prefecture": "神奈川県",
@@ -638,8 +646,8 @@
       "officialUrl": "https://www.odawara-zaidan.or.jp/arena/",
       "inventoryId": "kanagawa-odawara-arena-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current official numbered chart and fixed/movable/temporary seating semantics required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -664,8 +672,8 @@
       "officialUrl": "https://kawasaki-todoroki-arena.co.jp/",
       "inventoryId": "kanagawa-todoroki-arena-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer numbered chart plus selected fixed/movable/accessibility scope required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -679,7 +687,7 @@
       "venueSourceId": "sagamihara-green-hall-main-release-seed",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "千葉県",
@@ -691,7 +699,7 @@
       "inventoryId": "chiba-lala-arena-tokyo-bay",
       "venueSourceId": null,
       "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
-      "blocker": "DEFER / NEED EVIDENCE (KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3, 2026-09-01): current issuer FAQ states seat placement and wheelchair-seat availability/location vary by event. The current seat page distinguishes fixed and movable positions but provides no issuer-defined complete numbered representative configuration; no fixed-only condition or full fixed-seat subtotal is declared. Do not mix floor diagrams, infer a configuration, or fit to 11,000.",
+      "blocker": "DEFER / NEED EVIDENCE (KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 3): the current official FAQ says seat placement and wheelchair-seat availability/location depend on each event, while the official seat page distinguishes fixed and movable seating but supplies no issuer-defined complete representative configuration. Do not merge floor diagrams, infer a fixed-only condition, or use the 11,000 discovery capacity as a target. Reopen only if the issuer publishes a complete issuer-defined numbered configuration (or a fixed-only condition with its complete IDs) and its accessible-seat semantics.",
       "reopenCondition": "Issuer publishes a current complete numbered representative event configuration, or an explicit fixed-only condition with its full identifier set, plus wheelchair/accessibility semantics."
     },
     {
@@ -703,8 +711,8 @@
       "officialUrl": "https://www.marines.co.jp/stadium/",
       "inventoryId": "chiba-zozo-marine-stadium",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): complete current issuer fixed-stand identifier evidence with event/blocked/accessible-seat treatment required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -731,7 +739,7 @@
       "venueSourceId": "ichihara-civic-large-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "n/a — production (CHIBA-ICHIHARA-CULTURE-MAIN BOUNDED PRODUCTION IMPLEMENTATION 2026-09-02: schema v2 source ichihara-civic-large-hall / configuration standard, scope.kind official-variant; 1列〜32列の印字番号席1,527席をmapped。fresh independent human visual two-pass、PDFベクターセル幾何・band別識別子再構成・600 dpiラスター輪郭階層の3経路によるindependent machine structural checksum、および現行公式ホール利用案内（2026.7改訂版）の固定席subtotal 1,527席の四者が完全一致した)。Reopen only if the issuer publishes a seat chart superseding SHA-256 9d159a6cce7509ace27cbfa89afcf9f3b21cdf014ca8e052751078ad46d32755, defines a seat-ID replacement relation for the four 17列 wheelchair spaces, or publishes an additional issuer-defined configuration (movable/standing/pit). Never fit to 1,527 by adding or deleting printed identifiers."
+      "reopenCondition": null
     },
     {
       "prefecture": "千葉県",
@@ -744,7 +752,7 @@
       "venueSourceId": "ichikawa-culture-hall-main-release-seed",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "千葉県",
@@ -783,7 +791,7 @@
       "venueSourceId": "narita-culture-hall-large",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION (2026-09-07 PREFLIGHT-6 ADOPT BATCH). Reopen only if current issuer evidence supersedes the implemented chart."
+      "reopenCondition": null
     },
     {
       "prefecture": "千葉県",
@@ -795,7 +803,7 @@
       "inventoryId": "chiba-port-arena-main",
       "venueSourceId": null,
       "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
-      "blocker": "LOCAL RED / PRODUCTION BLOCKER (row identity not printed, 2026-09-07 PREFLIGHT-6 implementation attempt): 現行issuerの客席平面図はスタンド別小計（Ｅ1,000／Ｎ1,125＋308／Ｓ1,160＋308／Ｗ1,095）と総計4,996を印字し、PDFテキスト層の座席番号も4,996件ちょうどで完全一致する。しかし列(列)ラダーはセクションごとに独立して印字され（E上辺1〜13列・W下辺1〜13列・N/S直線各1〜12列・4コーナー各1〜11列・NR/SR各1〜7列）、座席番号はこれらを跨いで連続する。コーナー移行部の4ブロック計180席（値1〜6および133〜138）は、幾何的にはE/Wの列ラダーと同一水平線上にありながら座席番号体系ではN/Sスタンドに属するため、どのラダーを適用しても同一areaに互換性のない2つの列番号体系が同居するか、印字されていない列所属を推定することになる。現行contractは block 所属の創作を禁止しているため production を停止した。",
+      "blocker": "HOLD / USER DECISION option (c), 2026-09-07: preserve the formal blocked ledger bucket. The issuer fixes 4,996 printed IDs and stand subtotals, but not the issuer-defined row identity of the 180-seat transition blocks. Do not invent area/row semantics by section splitting or depth ordering. Reopen only if first-party evidence publishes a stand/row breakdown, a row ladder including the transition blocks, or another lossless ticket/seat identity.",
       "reopenCondition": "(1) issuerがスタンド別・列別の座席内訳、または移行ブロックを含む列ラダー付きの座席表を公開した場合、あるいは (2) 印字セクションをそのままareaとして分割する／深さ順で移行ブロックの列を決める、といったrepresentation policyがuser-authorized revisionとして確定した場合に再開する。いずれの場合も fresh currentness recheck・fresh independent human visual two-pass（またはDENSE-VECTOR適格性の再判定）・独立machine structural checksum・issuer subtotal reconciliation を最初からやり直す。"
     },
     {
@@ -833,8 +841,8 @@
       "officialUrl": "https://www.m-messe.co.jp/facility/exhibition/",
       "inventoryId": "chiba-makuhari-exhibition-halls",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): an issuer-defined complete numbered seating configuration is required; event temporary seating cannot be inferred.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -848,7 +856,7 @@
       "venueSourceId": "makuhari-event-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION (2026-09-07 PREFLIGHT-6 ADOPT BATCH). Reopen only if current issuer evidence supersedes the implemented chart."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -887,7 +895,7 @@
       "venueSourceId": "tokyo-wave3-1060",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Temporary renovation recheck remains due from 2026-12-01; reopen only on issuer evidence superseding the implemented chart."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -900,7 +908,7 @@
       "venueSourceId": "kanadevia-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -913,7 +921,7 @@
       "venueSourceId": "mon-takanawa-box1000-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -926,7 +934,7 @@
       "venueSourceId": "nhk-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -965,7 +973,7 @@
       "venueSourceId": "tokyo-wave3-0136",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -991,7 +999,7 @@
       "venueSourceId": "zepp-haneda-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1019,7 +1027,7 @@
       "venueSourceId": "tokyo-wave3-0130",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1032,7 +1040,7 @@
       "venueSourceId": "sumida-triphony-main-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1058,7 +1066,7 @@
       "venueSourceId": "nissho-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1097,7 +1105,7 @@
       "venueSourceId": "meguro-persimmon-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Temporary renovation recheck remains due from 2028-01-08; reopen only on issuer evidence superseding the implemented chart."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1110,7 +1118,7 @@
       "venueSourceId": "kabukiza-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1123,7 +1131,7 @@
       "venueSourceId": "katsushika-symphony-mozart-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1149,7 +1157,7 @@
       "venueSourceId": "bunkyo-civic-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1214,7 +1222,7 @@
       "venueSourceId": "tokyo-wave3-1019",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1240,7 +1248,7 @@
       "venueSourceId": "yoyogi-1-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1253,7 +1261,7 @@
       "venueSourceId": "yoyogi-2-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1279,7 +1287,7 @@
       "venueSourceId": "line-cube-shibuya-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1305,7 +1313,7 @@
       "venueSourceId": "hitomi-memorial-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1331,7 +1339,7 @@
       "venueSourceId": "shinbashi-enbujo-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1344,7 +1352,7 @@
       "venueSourceId": "nntt-opera-palace-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1357,7 +1365,7 @@
       "venueSourceId": "nntt-playhouse-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1370,7 +1378,7 @@
       "venueSourceId": "shinjuku-bunka-center-main-hall",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Reopen only if current issuer evidence supersedes the implemented post-renovation chart."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1383,7 +1391,7 @@
       "venueSourceId": "tokyo-wave3-1205",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1396,7 +1404,7 @@
       "venueSourceId": "suginami-kokaido-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1435,7 +1443,7 @@
       "venueSourceId": "parthenon-tama-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1448,7 +1456,7 @@
       "venueSourceId": "asakusa-public-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1500,7 +1508,7 @@
       "venueSourceId": "nakano-zero-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1513,7 +1521,7 @@
       "venueSourceId": "chofu-green-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1539,7 +1547,7 @@
       "venueSourceId": "tokyu-theatre-orb-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1552,7 +1560,7 @@
       "venueSourceId": "tokyo-wave3-0241",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1591,7 +1599,7 @@
       "venueSourceId": "tokyo-geigeki-concert-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1604,7 +1612,7 @@
       "venueSourceId": "tokyo-international-forum-hall-a-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1630,7 +1638,7 @@
       "venueSourceId": "tokyo-international-forum-hall-c-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1643,7 +1651,7 @@
       "venueSourceId": "tokyo-gymnasium-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1656,7 +1664,7 @@
       "venueSourceId": "tokyo-bunka-main-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Temporary renovation recheck remains due from 2028-04-01; reopen only on issuer evidence superseding the implemented chart."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1669,7 +1677,7 @@
       "venueSourceId": "tokyo-takarazuka-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1682,7 +1690,7 @@
       "venueSourceId": "tokyo-wave3-0330",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1695,7 +1703,7 @@
       "venueSourceId": "nissay-theatre-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1734,7 +1742,7 @@
       "venueSourceId": "nihon-seinenkan-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1747,7 +1755,7 @@
       "venueSourceId": "nippon-budokan-fixed-stands",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1773,7 +1781,7 @@
       "venueSourceId": "jcom-hall-hachioji-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1786,7 +1794,7 @@
       "venueSourceId": "itabashi-culture-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1799,7 +1807,7 @@
       "venueSourceId": "curian-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1812,7 +1820,7 @@
       "venueSourceId": "fuchu-dream-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1825,7 +1833,7 @@
       "venueSourceId": "tokyo-wave3-1170",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1838,7 +1846,7 @@
       "venueSourceId": "musashino-civic-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1851,7 +1859,7 @@
       "venueSourceId": "fussa-civic-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1862,8 +1870,8 @@
       "officialUrl": null,
       "inventoryId": "tokyo-official-1090",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: first-party numbered-seat preflight not yet performed.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): university-published complete numbered hall chart and current assigned-seat configuration required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -1877,7 +1885,7 @@
       "venueSourceId": "tokyo-tatemono-brillia-hall-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1888,8 +1896,8 @@
       "officialUrl": null,
       "inventoryId": "tokyo-official-1072",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: first-party numbered-seat preflight not yet performed.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): obtain issuer repair-completion/current-usability evidence and complete current fixed-stand identifier/accessibility semantics; do not infer availability from an underlying seat lookup.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -1916,7 +1924,7 @@
       "venueSourceId": "meijiza-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -1994,7 +2002,7 @@
       "venueSourceId": "risuru-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -2020,7 +2028,7 @@
       "venueSourceId": "nerima-culture-main-standard",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "東京都",
@@ -2044,8 +2052,8 @@
       "officialUrl": "https://light-cube.jp/",
       "inventoryId": "tochigi-light-cube-large",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
+      "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
+      "blocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): issuer-defined complete numbered seating configuration, not a capacity layout diagram, required.",
       "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     },
     {
@@ -2059,7 +2067,7 @@
       "venueSourceId": "utsunomiya-city-culture-hall-release-seed",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "Not applicable."
+      "reopenCondition": null
     },
     {
       "prefecture": "栃木県",
@@ -2072,7 +2080,7 @@
       "venueSourceId": "sano-culture-hall-large",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION (2026-09-07 PREFLIGHT-6 ADOPT BATCH). 再開後（2027-04-01以降）のfresh currentness recheckと全verification gateの再実施を必須とする。"
+      "reopenCondition": null
     },
     {
       "prefecture": "栃木県",
@@ -2085,7 +2093,7 @@
       "venueSourceId": "oyama-culture-center-large",
       "currentStatus": "production",
       "blocker": null,
-      "reopenCondition": "PRODUCTION (2026-09-07 PREFLIGHT-6 ADOPT BATCH). Reopen only if current issuer evidence supersedes the implemented chart."
+      "reopenCondition": null
     },
     {
       "prefecture": "栃木県",
@@ -2097,7 +2105,7 @@
       "inventoryId": "tochigi-ken-sogo-bunka-center-main",
       "venueSourceId": "tochigi-ken-sogo-bunka-center-main-release-seed",
       "currentStatus": "HOLD / NEED EVIDENCE / formal DEFER",
-      "blocker": "SOURCE HOLD (Closure Pass; canonical inventory data/venue-inventory/release-seed-tochigi.json researchStatus \"blocked\", researchLastCheckedAt 2026-08-03): 登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。2026-09-01 bookkeeping normalization: the ledger bucket was still inventory-unresearched while the canonical inventory record already carried this formal blocked disposition, so the ledger is synchronized to the existing repository evidence. No new research or web evidence was gathered.",
+      "blocker": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。",
       "reopenCondition": "Current issuer-owned complete numbered-seat set reachable from the current official facility URL, plus an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
     }
   ]

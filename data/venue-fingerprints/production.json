@@ -1887,6 +1887,34 @@
           "sha256": "ed8836b551565f41e4b1dd01c1c3615d5ddf9c785e45dcaa49e5d6770b093401"
         }
       }
+    },
+    "yokohama-budokan-arena": {
+      "schemaVersion": 2,
+      "configurations": {
+        "permanent-seats": {
+          "count": 2398,
+          "samples": [
+            "2f-d/D-1/1",
+            "2f-j/J-1/16",
+            "3f-c/C-6/90"
+          ],
+          "sha256": "1161aaca0a62113dfff38ab1b7d4805de384f970825b8db0a5b3b06d2ab44a3e"
+        }
+      }
+    },
+    "takasaki-arena-main": {
+      "schemaVersion": 2,
+      "configurations": {
+        "fixed-numbered-seats": {
+          "count": 3000,
+          "samples": [
+            "block-c/1/1",
+            "block-e/4/35",
+            "block-h/2/88"
+          ],
+          "sha256": "ae0d18b472b39186995a57d54c489b5c8bfe5b104dd74a49914a28b75a0ab534"
+        }
+      }
     }
   }
 }

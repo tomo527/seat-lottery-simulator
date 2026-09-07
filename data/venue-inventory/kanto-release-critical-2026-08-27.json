@@ -41,13 +41,13 @@
       "officialFacilityUrl": "https://www.yokohama-arena.co.jp/",
       "operationalStatus": "active",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer A-pattern materials define a lossless fixed numbered-seat implementation prospect; variable centre-floor and standing use remain excluded.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7 ADOPT re-verification: currentness再確認済み（ACTIVE、休館・改修・座席変更の告知なし）。issuerの座席案内ページはA／B／中央の3パターンを公開し、Aパターンの詳細図はimg_seatzoom_01.png（5000×3758、Last-Modified 2016-07-01、issuer現行ページからリンクされるissuer-maintained material）。主催者向けページがAステージの区分別公表席数を掲載する: センター席3,114席／アリーナ席5,498席／スタンド席3,271席／スイート・ボックス140席／立見スペース1,420席／合計13,443席。fixed numbered scopeは2階アリーナ席（A〜Fの6ブロック・22列）＋3階スタンド席（南西東北の4ブロック・10列）＋スイート・ボックスで、1階センター席と立見スペースはevent-variableのためscope外。実装は未完了。",
       "priority": "A",
       "venueSourceId": null,
       "researchStatus": "source-located",
       "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): fresh issuer retrieval, independent human two-pass, authored-set equality, issuer reconciliation and independent structural checksum remain mandatory; material mismatch stops production."
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7 re-verified 2026-09-07): 実装未完了。Aパターン固定番号scopeのみを対象とし、B／中央パターンとは混ぜない（Aパターンはステージが東側にありE・Fブロックと東スタンドが切り詰められる一方Dブロックが全席あり、Bパターンは逆にDブロックが消えるため、両者は別のissuer-defined configuration）。残作業は、img_seatzoom_01.pngから2階A〜Fブロック・3階4スタンド・スイート・ボックスの印字番号集合を完全転記し、fresh independent human two-pass、独立structural checksum、issuer区分別小計（アリーナ席5,498／スタンド席3,271／スイート・ボックス140）とのreconciliationを通すこと。既知の構造的注意点: (1) 各アリーナ列の両端に番号が印字されていない幅広・低背の非座席矩形が1〜2個ずつ描かれており座席として数えない、(2) ブロックAでは11列と12列の間の通路が12列の位置を占め、実際に描かれた列は21本である一方、列ラベルはA1〜A22まで振られているため、列ラベルと描画バンドの対応をブロックごとに確定する必要がある、(3) 3階スタンドは円弧状で水平scanlineによるcell抽出が成立しないため、極座標展開など曲率に対応した機械経路が必要。"
     },
     {
       "inventoryId": "kanagawa-pia-arena-mm",
@@ -141,14 +141,14 @@
       "category": "arena",
       "officialFacilityUrl": "https://yokohama-budokan.com/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer fixed/rollback seat maps and permanent-seat subtotals support one bounded normal-chart prospect without stacking-chair inference.",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7 ADOPT bounded production implementation: issuerの現行座席図ページ（２F／２F（センターコート）／３F）が常設観覧席の全番号席を1席1セルで公開し、fresh independent human visual two-pass（水平反転・逆走査・異尺度異補間）とセル幾何によるindependent structural checksumがunresolved mismatch 0で一致した。mapped 2,398席は施設概要の常設2,436席＝2階1,312席（完全一致）／3階1,100席−番号なし車いす14席＝1,086席（完全一致）／4階VIP24席（座席図に不掲載・scope外）と完全にreconcileする。アリーナ床の主催者設営席とスタッキング椅子はscope外。",
       "priority": "A",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "yokohama-budokan-arena",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): fresh issuer retrieval, independent human two-pass, authored-set equality, issuer reconciliation and independent structural checksum remain mandatory; material mismatch stops production."
+      "blockingReason": null
     },
     {
       "inventoryId": "kanagawa-kt-zepp-yokohama",
@@ -422,13 +422,13 @@
       "officialFacilityUrl": "https://www.saitama-arena.co.jp/",
       "operationalStatus": "renovation",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer-maintained stadium-mode seat-view is a bounded implementation prospect despite temporary renovation; mandatory reopening recheck retained.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7 ADOPT re-verification: currentness再確認済み（seat_view座席図のPNG資産はLast-Modified 2026-03-24でGMO改称後のissuer-maintained current material、座席数・列構成・番号体系の変更告知なし）。identity gate確定: スタジアムとメインアリーナはissuerの空間拡張システムで相互排他的に切り替わる同一facility-space（bowl）の2モードであり、座席番号名前空間（200/300/400/500レベル）と扉番号（207〜522）を共有する。したがって別production venueではなく1 venue source上の2 configurationとして表現する（既存precedent: otemachi-mitsui-hall-standard／meijiza-standard）。issuer固定席小計は上段6,880席・下段17,441席・300レベル644席・500レベル1,546席（仮設約10,400席は除く）。実装は未完了。",
       "priority": "A",
       "venueSourceId": null,
       "researchStatus": "source-located",
       "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): stadium mode only. Fresh pre-transcription and post-reopening issuer retrieval, two-pass, authored-set equality, reconciliation and structural checksum are mandatory; material mismatch stops production.",
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7 re-verified 2026-09-07): 実装未完了。stadium modeはGMOアリーナさいたまの単一venue source上のconfigurationとして実装する。残作業は、seat_viewのラスタ座席図（img-map_stadium_*.png、3スタジアムモード4ステージ位置でseat layerは同一）から番号席集合を完全転記し、fresh independent human two-pass、独立structural checksum、issuer小計（上段6,880／下段17,441／300レベル644／500レベル1,546）とのreconciliationを通すこと。issuerのseat_list.js（座席番号検索データ）はblock highlight用の粗いモデルで、展開すると孤立番号や不整合区間が出るためseat-structure evidenceには使えない（cross-check補助のみ）。",
       "recheckNotBefore": "2027-04-01"
     },
     {
@@ -443,13 +443,13 @@
       "officialFacilityUrl": "https://www.saitama-arena.co.jp/",
       "operationalStatus": "renovation",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer-maintained main-arena seat-view is a bounded implementation prospect despite temporary renovation; mandatory reopening recheck retained.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7 ADOPT re-verification: currentness再確認済み（seat_view座席図のPNG資産はLast-Modified 2026-03-24でGMO改称後のissuer-maintained current material、座席数・列構成・番号体系の変更告知なし）。identity gate確定: メインアリーナとスタジアムは同一facility-spaceの相互排他的な可動モードであり、コミュニティアリーナだけがissuerが同時稼働可能と明記する別facility-space。したがってGMOアリーナさいたまは1 venue source＋2 configuration（stadium / main arena）で表現し、この記録がその venue source を保持する。issuer固定席小計は上段5,880席・下段11,404席・300レベル644席・500レベル752席・ラムダ2,272席・TOTAL 21,197席（仮設約1,300席は除く）。実装は未完了。",
       "priority": "A",
       "venueSourceId": null,
       "researchStatus": "source-located",
       "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): main-arena mode only. Fresh pre-transcription and post-reopening issuer retrieval, two-pass, authored-set equality, reconciliation and structural checksum are mandatory; material mismatch stops production.",
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7 re-verified 2026-09-07): 実装未完了。GMOアリーナさいたまを1 venue source（この記録が保持）とし、main arena modeとstadium modeを2つのselectable production configurationとして実装する。残作業は、seat_viewのラスタ座席図（img-map_arena_*.png、4ステージ位置でseat layerは同一）から番号席集合を完全転記し、fresh independent human two-pass、独立structural checksum、issuer小計（上段5,880／下段11,404／300レベル644／500レベル752／ラムダ2,272／TOTAL 21,197）とのreconciliationを通すこと。アリーナ床席は「固定席の一部を収納してアリーナ席を設置する場合もございます。設置される席・ブロック数・列・席番号などにつきましては、イベント主催者にお問合せください。」とissuerが明記するevent-dependent領域でありscope外。",
       "recheckNotBefore": "2027-04-01"
     },
     {
@@ -463,15 +463,14 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.saitama-arena.co.jp/",
       "operationalStatus": "renovation",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer-maintained community-arena seat-view is a bounded implementation prospect despite temporary renovation; mandatory reopening recheck retained.",
+      "eligibility": "ineligible",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7 ADOPT re-verification: issuerはコミュニティアリーナについて番号付き座席図をいっさい公開しておらず、客席確認・案内は「収納式の客席が約3,000席あります。イベントによって、レイアウトは様々です。」とだけ記載し、seat_view（座席表）ページ自体が存在しない。施設概要も「ロールバック席を引き出し観客スタンドとして利用（1,000席〜3,000席）」「3方向のロールバック席（1,000席×3）」「中央リング周囲に約3,000席の仮設席」と催事別レイアウトのみを示し、代表配置も確定席数も公開していない。実在番号集合を作れないためADOPTを取り消しHOLDへ戻す。",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "source-located",
+      "researchStatus": "blocked",
       "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): community-arena mode only. Fresh pre-transcription and post-reopening issuer retrieval, two-pass, authored-set equality, reconciliation and structural checksum are mandatory; material mismatch stops production.",
-      "recheckNotBefore": "2027-04-01"
+      "blockingReason": "HOLD / NEED EVIDENCE: issuerがコミュニティアリーナの番号付き座席図・代表配置・確定席数のいずれも公開していない（収納式ロールバック席1,000〜3,000席、レイアウトは催事別）。reopen条件は、issuerがコミュニティアリーナについて列・座席番号を印字した完全な座席図と、issuer-definedな代表configurationを公開すること。容量レンジ（1,000〜3,000席）や約3,000席の仮設席からseat IDを推測することは行わない。なおコミュニティアリーナは、issuerが「メインアリーナ、コミュニティアリーナでそれぞれ同時に別のイベントを開催するということも可能です」と明記するとおりメインアリーナと同時稼働できる別facility-spaceであり、スタジアム／メインアリーナの可動モードとは別に扱う。"
     },
     {
       "inventoryId": "saitama-raiboc-main",
@@ -707,14 +706,14 @@
       "category": "arena",
       "officialFacilityUrl": "https://takasaki-foundation.or.jp/arena/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer numbered fixed-seat drawing and fixed/movable/temporary subtotals support a fixed-only implementation prospect.",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7 ADOPT bounded production implementation: issuerの現行「固定席の図面（座席番号）」PDFが固定式観覧席3,000席を1席1セルで描きブロック名・列番号・座席番号を印字する。fresh independent human visual two-pass（180度回転・逆走査・異DPI）とベクタ座席セル幾何＋161列格子占有によるindependent structural checksumがunresolved mismatch 0で一致し、図面の方向別小計（西1350・東1298・南176・北176）4件すべてと完全一致した。mapped 3,000席は公称固定席3,021席から番号なし車いす席21席を除いた値と一致し、図面の凡例seat ID（C-3-01／D-1-53／H-2-34／F-10-65）4件もすべて有効に再現された。移動式観覧席1,022席と大会運営者手配の仮設スタンド1,972席はscope外。",
       "priority": "B",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "takasaki-arena-main",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): fixed-seat drawing only. Fresh issuer retrieval, independent human two-pass, authored-set equality, issuer reconciliation and independent structural checksum are mandatory; material mismatch stops production."
+      "blockingReason": null
     },
     {
       "inventoryId": "gunma-gmesse-exhibition",

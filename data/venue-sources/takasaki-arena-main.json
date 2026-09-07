@@ -1,0 +1,1134 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "takasaki-arena-main",
+  "name": "高崎アリーナ",
+  "prefecture": "群馬県",
+  "city": "高崎市",
+  "aliases": [
+    "TAKASAKI ARENA",
+    "高崎アリーナ メインアリーナ"
+  ],
+  "venueType": "arena",
+  "knownLimitations": [
+    "issuerの現行「固定席の図面（座席番号）」は、メインアリーナの固定式観覧席だけを1席1セルで描き、ブロック名（A〜H）・列番号・座席番号を印字します。本実装が登録したのは、そこに印字された3,000席だけです。",
+    "issuerは観客席を「固定席 3,021席（車椅子席21席含む）、移動式観覧席 1,022席、仮設スタンド 1,972席設置可（大会運営者手配）合計 6,015席」と公表します。移動式観覧席と仮設スタンドは番号付きで公開されておらず、後者は大会運営者が手配する催事依存の設備であるためscope外です。容量算術でこれらを加算していません。",
+    "図面は西（固定式観覧席：1350）、東（固定式観覧席：1298）、南（固定式観覧席：176）、北（固定式観覧席：176）の4方向小計と、北側の「車いす席 16席」、東側中央の「車いす席 5席」を印字します。車いす席21席は図面上で番号が印字されていない区画のため登録しておらず、どの番号席と置き換わるのかも推測していません。1350+1298+176+176＝3,000で、公称固定席3,021席から車いす席21席を除いた値と完全に一致します。",
+    "座席番号はブロック内の列ごとの通し番号で、同じ番号が別ブロックにも存在します。図面自身が「C-3-01」「D-1-53」「H-2-34」「F-10-65」という凡例を印字し、ブロック名・列番号・座席番号の3要素で一意になることを示しています。ブロック名と列番号はいずれも図面に印字された公式表記です。"
+  ],
+  "sources": [
+    {
+      "id": "official-fixed-seat-number-drawing",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人高崎財団（高崎アリーナ 指定管理者）",
+      "title": "高崎アリーナ 固定席図面（座席番号入り）（A3横1ページ・S=1/150。固定式観覧席の全席を1セルとして描き、ブロック名A〜H、列番号1〜11（南北ブロックは1〜2）、座席番号を印字する。西1350・東1298・南176・北176の方向別小計と、北の車いす席16席・東中央の車いす席5席も印字する）",
+      "url": "https://www.takasaki-foundation.or.jp/arena/download/takasaki-arena-seats2.pdf",
+      "checkedAt": "2026-09-07"
+    },
+    {
+      "id": "official-main-arena-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人高崎財団（高崎アリーナ 指定管理者）",
+      "title": "施設案内 メインアリーナ（有効スペース42m×85m、観客席「固定席 3,021席（車椅子席21席含む）、移動式観覧席 1,022席、仮設スタンド 1,972席設置可（大会運営者手配）合計 6,015席」を記載し、固定席の図面ページへ導く）",
+      "url": "https://www.takasaki-foundation.or.jp/arena/floormap_detail.php?id=1",
+      "checkedAt": "2026-09-07"
+    },
+    {
+      "id": "official-seating-drawings-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "公益財団法人高崎財団（高崎アリーナ 指定管理者）",
+      "title": "施設案内 観覧席（同じ客席内訳を再掲し、「固定席の図面（PDF）」と「固定席の図面（座席番号）（PDF）」の2点を配布するissuer自身の現行図面ページ）",
+      "url": "https://www.takasaki-foundation.or.jp/arena/floormap_detail.php?id=9",
+      "checkedAt": "2026-09-07"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "fixed-numbered-seats",
+      "canonicalName": "固定式観覧席（番号入り図面）代表配置",
+      "issuerDefinedCondition": "issuerの現行「固定席の図面（座席番号）」が描くメインアリーナの固定式観覧席のみの状態。移動式観覧席と大会運営者手配の仮設スタンドは設置しない。",
+      "selectionBasis": "issuerが公開する番号付き座席図は「固定席の図面（座席番号）」1点のみで、固定式観覧席の全席を1セルで描きブロック名・列番号・座席番号を印字する。移動式観覧席1,022席と仮設スタンド1,972席は番号付きで公開されず、後者はissuer自身が「大会運営者手配」と明記する催事依存の設備であるため、固定式観覧席だけを唯一の代表configurationとした。方向別小計・容量差分・geometryから別configurationを合成することはしていない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-07に現行issuerサイトの施設案内メインアリーナページ（floormap_detail.php?id=1）がリンクする観覧席ページ（floormap_detail.php?id=9）の「固定席の図面（座席番号）（PDF）」から取得した。URL直打ちでcurrent扱いはしていない。SHA-256: cf3c696c86aa612858039c66aaf0161f49dd83b0a4a090bfc0edd7a068ad3ebd、1,518,961バイト、1ページ、1191.0×842.0pt（A3横）、PDF 1.5、creator Adobe Illustrator CC 23.0 (Windows)、内部タイトルは「固定席図面（座席番号入り）」、PDF内部のcreationDate/modDateは2024-01-19、配信サーバのLast-Modifiedは2024-03-26。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256）であることを確認している。座席番号はテキストではなくアウトライン化されたベクタパスで、ページ全体のテキスト抽出は0文字であるため、機械経路はテキスト層ではなくベクタ座席セルの描画幾何を用いた。",
+      "sourceIds": [
+        "official-fixed-seat-number-drawing",
+        "official-main-arena-page",
+        "official-seating-drawings-page"
+      ],
+      "differenceBasisSourceIds": [
+        "official-fixed-seat-number-drawing",
+        "official-main-arena-page"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 3000,
+      "scope": {
+        "kind": "fixed-only",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false,
+        "excludesDynamicAreas": true,
+        "maximumCapacity": false,
+        "excludedAreas": [
+          "移動式観覧席1,022席",
+          "仮設スタンド1,972席（大会運営者手配）",
+          "番号なし車いす席21席（北16席・東中央5席）",
+          "アリーナ床の催事別レイアウト"
+        ],
+        "exactSubtotal": 3000
+      },
+      "scopeDisclosure": "issuerの現行「固定席の図面（座席番号）」に印字された固定式観覧席3,000席の全番号席を登録した構成です。エリアは図面に印字された公式ブロック名どおり、西側がCブロック329席・Bブロック692席・Aブロック329席、東側がEブロック329席・Fブロック640席・Gブロック329席、南側がDブロック176席、北側がHブロック176席です。列番号も図面の印字どおりで、東西の各ブロックが1〜11列、南北のD・Hブロックが1〜2列です。移動式観覧席1,022席、大会運営者が手配する仮設スタンド1,972席、および図面に番号が印字されていない車いす席21席は含みません。最大収容6,015席の配置ではありません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerの客席内訳は固定席3,021席の内数として車椅子席21席を明記し、図面も北側に「車いす席 16席」、東側中央に「車いす席 5席」と注記します。ただし当該区画には座席番号が一切印字されておらず、東側Fブロックの5・6列では31〜45番の位置が破線の車いす区画として描かれ番号が存在しません。図面の方向別小計（西1350・東1298・南176・北176＝3,000）は印字済み番号席だけを数えた値で、3,021−21＝3,000と完全に一致します。車いす席がどの番号席と置き換わるのかはissuerが公開していないため、スペース自体を登録せず、置換関係も推測していません。",
+        "sourceIds": [
+          "official-fixed-seat-number-drawing",
+          "official-main-arena-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-07",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-issuer-vector-drawing-with-180-degree-rotated-rendering-reversed-strip-order-and-a-different-render-dpi-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-from-vector-seat-cell-drawing-geometry-and-column-lattice-occupancy-not-fed-by-the-human-range-table; bidirectional-machine-expanded-set-equality; issuer-per-direction-subtotal-reconciliation; issuer-printed-example-seat-id-cross-check",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "issuer subtotal reconciliation（方向別・総数）: 図面は西（固定式観覧席：1350）、東（固定式観覧席：1298）、南（固定式観覧席：176）、北（固定式観覧席：176）を印字します。転記したmapped setは西がC 329＋B 692＋A 329＝1,350席、東がE 329＋F 640＋G 329＝1,298席、南Dが176席、北Hが176席で、4方向すべてが印字小計と完全一致しました。総計3,000席は、施設案内が掲げる固定席3,021席から図面上で番号が印字されていない車いす席21席（北16・東中央5）を除いた値と完全に一致します。方向別小計はtranscription targetにしておらず、座席図の番号集合を先に確定したうえで事後にreconcileしています。",
+          "independent structural checksum（機械経路: ベクタ座席セル幾何と列格子占有）: human range tableをいっさい入力にせず、PDFの描画グループのうちbounding boxが3.3〜4.7pt四方のものを座席セルとして抽出し、最近傍距離6pt超の孤立要素（通り芯記号・凡例・扉記号など35件）を除外しました。東西スタンドはいずれも4.2pt間隔の161列格子を成し、列間隔が12.3pt前後に開く位置がちょうど10か所あって13/15/15/15/15/15/15/15/15/15/13の区画構成と一致しました。各行の占有列を格子番号へ写像した結果、西は135+161×5+117+107+93+69+24＝1,350、東は135+161×3+146×2+106+96+93+69+24＝1,298、南北のDブロック・Hブロックは各列が11席×8区画＝88席で2列合計176席となり、視認転記した3,000席と独立に一致しました。抽出の副産物として西1件・東2件の重複セル（引出線の枠と車いす区画の破線枠）が現れましたが、いずれも列格子上の重複として機械的に除去され、位置を座席図で確認して非座席であることを確定しています。",
+          "bidirectional machine-expanded set equality: 登録した144本のsource rangeを座席単位へ展開したruntime key（ブロック, 列, 番号）は3,000件で重複0件、同一（ブロック, 列）内のrange重複も0件です。機械経路が独立に得た行別・ブロック別の占有番号集合と、登録rangeを展開した集合を双方向に比較し、いずれの向きにも差分0件でした。",
+          "human visual two-pass: Pass 1は西スタンド・東スタンドをそれぞれ幅200ptの4ストリップへ分割して760 DPIで描画し、西をC→B→A、東をE→F→Gの順に左から右へ読み取り、南北のD・Hブロックは1200 DPIで上端・下端を読み取りました。Pass 2は同一URLからPDFを独立に再取得し（バイト単位で同一、SHA-256一致）、Pass 1の表を参照せずに880 DPIという異なる解像度で描画したうえで各ストリップを180度回転させ、走査方向とストリップ順を逆転させて読み直しました。8ブロック・144本のrange・展開座席ID集合3,000件・ブロック所属・列所属・全range境界でunresolved mismatchは0件でした。",
+          "issuer printed example seat IDs: 図面は凡例として「C-3-01」「D-1-53」「H-2-34」「F-10-65」の4例をブロック名・列番号・座席番号の組で印字します。登録した集合ではCブロック3列に01番、Dブロック1列に53番、Hブロック2列に34番、Fブロック10列に65番がいずれも存在し、4例すべてが有効なseat IDとして再現されました。",
+          "row and block structure: 東西スタンドは1列（アリーナ側）から11列（最上段）まであり、Cブロック・Aブロック・Eブロック・Gブロックが最大43番、Bブロック・Fブロックが最大75番です。1〜6列は原則として1番から最大番までが連続しますが、外側ブロックの1列は外縁側が短く、C・G 1列は1〜30番、A・E 1列は14〜43番です。7〜11列は階段と柱の位置で番号が抜け、例えばC 7列は3〜13・18〜28・33〜41番、B 10列は3〜7・9〜13・18〜28・33〜43・48〜58・63〜67・69〜73番、B 11列は11〜13・18〜20・26〜28・33〜35・41〜43・48〜50・56〜58・63〜65番です。東側Fブロックの5・6列は中央の車いす区画のため31〜45番が存在せず1〜30・46〜75番、7・8列は中央階段のため33〜43番が存在しません。これらの欠番はいずれも図面上でセルが描かれていない範囲で、幾何やcapacityからの補完はしていません。南のDブロックと北のHブロックはいずれも1列・2列の2列構成で、各列が1〜88番の連続番号（11席×8区画）です。",
+          "excluded dynamic areas: 移動式観覧席1,022席と仮設スタンド1,972席はissuerが客席内訳で別掲しますが、番号付き図面には描かれていません。仮設スタンドはissuer自身が「大会運営者手配」と明記する催事依存の設備です。公称合計6,015席や1,022・1,972といった数値をrange targetにせず、容量算術やgeometryからの補完も行っていません。",
+          "currentness: 2026-09-07時点でACTIVE。休館・改修・座席変更の告知はありません。座席番号図PDFはissuerの現行観覧席ページから配布されており、PDF内部日付2024-01-19、配信サーバのLast-Modified 2024-03-26で、同ページが併載する番号なしの「固定席の図面」（2017年生成）より新しい世代です。施設案内が掲げる固定席3,021席（車椅子席21席含む）と図面の印字集合は上記のとおり整合します。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "7",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "7",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "7",
+          "from": 33,
+          "to": 41
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "8",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "8",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "8",
+          "from": 33,
+          "to": 36
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "9",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "9",
+          "from": 18,
+          "to": 21
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "9",
+          "from": 25,
+          "to": 28
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "10",
+          "from": 3,
+          "to": 6
+        },
+        {
+          "areaId": "block-c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "10",
+          "from": 10,
+          "to": 13
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "7",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "7",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "7",
+          "from": 33,
+          "to": 43
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "7",
+          "from": 48,
+          "to": 58
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "7",
+          "from": 63,
+          "to": 73
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "8",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "8",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "8",
+          "from": 33,
+          "to": 43
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "8",
+          "from": 48,
+          "to": 58
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "8",
+          "from": 63,
+          "to": 73
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "9",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "9",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "9",
+          "from": 33,
+          "to": 43
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "9",
+          "from": 48,
+          "to": 58
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "9",
+          "from": 63,
+          "to": 73
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "10",
+          "from": 3,
+          "to": 7
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "10",
+          "from": 9,
+          "to": 13
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "10",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "10",
+          "from": 33,
+          "to": 43
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "10",
+          "from": 48,
+          "to": 58
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "10",
+          "from": 63,
+          "to": 67
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "10",
+          "from": 69,
+          "to": 73
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11",
+          "from": 11,
+          "to": 13
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11",
+          "from": 18,
+          "to": 20
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11",
+          "from": 26,
+          "to": 28
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11",
+          "from": 33,
+          "to": 35
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11",
+          "from": 41,
+          "to": 43
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11",
+          "from": 48,
+          "to": 50
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11",
+          "from": 56,
+          "to": 58
+        },
+        {
+          "areaId": "block-b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11",
+          "from": 63,
+          "to": 65
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "1",
+          "from": 14,
+          "to": 43
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7",
+          "from": 3,
+          "to": 11
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7",
+          "from": 16,
+          "to": 26
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7",
+          "from": 31,
+          "to": 41
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8",
+          "from": 8,
+          "to": 11
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8",
+          "from": 16,
+          "to": 26
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8",
+          "from": 31,
+          "to": 41
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "9",
+          "from": 16,
+          "to": 19
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "9",
+          "from": 23,
+          "to": 26
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "9",
+          "from": 31,
+          "to": 41
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "10",
+          "from": 31,
+          "to": 34
+        },
+        {
+          "areaId": "block-a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "10",
+          "from": 38,
+          "to": 41
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "1",
+          "from": 14,
+          "to": 43
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "7",
+          "from": 3,
+          "to": 11
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "7",
+          "from": 16,
+          "to": 26
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "7",
+          "from": 31,
+          "to": 41
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "8",
+          "from": 8,
+          "to": 11
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "8",
+          "from": 16,
+          "to": 26
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "8",
+          "from": 31,
+          "to": 41
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "9",
+          "from": 16,
+          "to": 19
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "9",
+          "from": 23,
+          "to": 26
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "9",
+          "from": 31,
+          "to": 41
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "10",
+          "from": 31,
+          "to": 34
+        },
+        {
+          "areaId": "block-e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "10",
+          "from": 38,
+          "to": 41
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 75
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5",
+          "from": 46,
+          "to": 75
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6",
+          "from": 46,
+          "to": 75
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7",
+          "from": 48,
+          "to": 58
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7",
+          "from": 63,
+          "to": 73
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8",
+          "from": 48,
+          "to": 58
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8",
+          "from": 63,
+          "to": 73
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "9",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "9",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "9",
+          "from": 33,
+          "to": 43
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "9",
+          "from": 48,
+          "to": 58
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "9",
+          "from": 63,
+          "to": 73
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "10",
+          "from": 3,
+          "to": 7
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "10",
+          "from": 9,
+          "to": 13
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "10",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "10",
+          "from": 33,
+          "to": 43
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "10",
+          "from": 48,
+          "to": 58
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "10",
+          "from": 63,
+          "to": 67
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "10",
+          "from": 69,
+          "to": 73
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "11",
+          "from": 11,
+          "to": 13
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "11",
+          "from": 18,
+          "to": 20
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "11",
+          "from": 26,
+          "to": 28
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "11",
+          "from": 33,
+          "to": 35
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "11",
+          "from": 41,
+          "to": 43
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "11",
+          "from": 48,
+          "to": 50
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "11",
+          "from": 56,
+          "to": 58
+        },
+        {
+          "areaId": "block-f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "11",
+          "from": 63,
+          "to": 65
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 43
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "7",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "7",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "7",
+          "from": 33,
+          "to": 41
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "8",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "8",
+          "from": 18,
+          "to": 28
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "8",
+          "from": 33,
+          "to": 36
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "9",
+          "from": 3,
+          "to": 13
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "9",
+          "from": 18,
+          "to": 21
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "9",
+          "from": 25,
+          "to": 28
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "10",
+          "from": 3,
+          "to": 6
+        },
+        {
+          "areaId": "block-g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "10",
+          "from": 10,
+          "to": 13
+        },
+        {
+          "areaId": "block-d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 88
+        },
+        {
+          "areaId": "block-d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 88
+        },
+        {
+          "areaId": "block-h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 88
+        },
+        {
+          "areaId": "block-h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 88
+        }
+      ]
+    }
+  ]
+}

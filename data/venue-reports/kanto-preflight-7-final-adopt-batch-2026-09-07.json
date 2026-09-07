@@ -1,0 +1,155 @@
+{
+  "reportVersion": 1,
+  "title": "KANTO PREFLIGHT-7 FINAL ADOPT BATCH — BOUNDED PRODUCTION IMPLEMENTATION",
+  "asOf": "2026-09-07",
+  "scope": "Bounded production implementation of the six PREFLIGHT-7 ADOPT candidates, processed as independent mini-waves. Two candidates reached production, one reached a formal HOLD on issuer evidence, and three remain ADOPT with the implementation not completed in this batch.",
+  "start": {
+    "head": "a77121bf890c0ba54a0af79a6d772a3807dc2cbe",
+    "originMain": "a77121bf890c0ba54a0af79a6d772a3807dc2cbe",
+    "workingTree": "clean",
+    "productionTotals": {
+      "venues": 157,
+      "selectableConfigurations": 159,
+      "seatRecords": 240625
+    },
+    "kantoLedgerFromLiveInventory": {
+      "universe": 154,
+      "production": 74,
+      "adopt": 6,
+      "blocked": 73,
+      "independentReviewMismatch": 1,
+      "missingFromInventory": 0
+    },
+    "note": "The user-stated expected start of \"blocked 74\" corresponds to 73 formal blocked plus the one independent-review-mismatch record (tokyo-official-1121 日野市民会館, source hino-brick-main-standard), which belongs to the separate remediation queue and was not touched."
+  },
+  "processingOrder": [
+    "Evidence retrieval for all six candidates was run first so that effort could be allocated from real issuer material rather than from the preflight hypotheses.",
+    "Implementation then proceeded in ascending evidence-complexity order: kanagawa-yokohama-budokan-arena, gunma-takasaki-arena-main, then the larger arena charts."
+  ],
+  "results": [
+    {
+      "inventoryId": "kanagawa-yokohama-budokan-arena",
+      "venue": "横浜武道館〔アリーナ〕",
+      "disposition": "PRODUCTION",
+      "venueSourceId": "yokohama-budokan-arena",
+      "configurations": [
+        "permanent-seats — 常設観覧席（2階・3階）固定番号配置"
+      ],
+      "currentness": "2026-09-07 ACTIVE。2020年7月開館の現行施設で休館・改修・座席変更の告知なし。",
+      "chartProvenance": "issuer現行「座席図」ページ（https://www.yokohama-budokan.com/seats/ ）の27点の拡大画像。転記対象17点はPass 2直前の独立再取得でバイト単位同一（SHA-256一致）。",
+      "configurationIdentity": "２Fと２F（センターコート）の2タブはロールバックスタンドの物理配置が異なるだけで印字番号集合は完全に同一（D・E各1〜50番×8列、F・G・H・J各1〜16番×8列）。したがって2階の番号集合は1件で、3階と合わせて常設観覧席全体を唯一の代表configurationとした。",
+      "verificationMethod": "fresh independent human visual two-pass（Pass 2は水平反転・逆ブロック順・2.0倍NEAREST vs Pass 1の3.0倍LANCZOS）＋角丸セル連結成分幾何によるindependent structural checksum＋双方向set equality＋issuer階別小計reconciliation",
+      "structuralChecksum": "暗セル連結成分2,398件（2階1,312／3階1,086）。行別区画長もA-1 [8,8]、A-7 [5,5,5,5,5]/[7,5,5,5]、B-2 [10,8,8]、B-7 [2,4,6,4,6]、C-1 [5,10,5]/[5,10,10,5]/[5,10,5] まで視認読み取りと完全一致。",
+      "issuerReconciliation": "issuer施設概要の常設2,436席＝2階1,312席（mapped 1,312と完全一致）／3階1,100席（うち車いす席14席、mapped 1,086＝1,100−14と完全一致）／4階VIP席24席（座席図に不掲載・scope外）。総計2,398＝2,436−14−24。",
+      "mappedSeats": 2398,
+      "ranges": 78,
+      "accessibilityAndExclusions": "3階の番号なし車いす席14席、4階VIP席24席、アリーナ床の主催者設営席、スタッキング椅子を除外。wheelchairSemantics: not-reflected。",
+      "unresolvedMismatches": 0
+    },
+    {
+      "inventoryId": "gunma-takasaki-arena-main",
+      "venue": "高崎アリーナ〔メインアリーナ〕",
+      "disposition": "PRODUCTION",
+      "venueSourceId": "takasaki-arena-main",
+      "configurations": [
+        "fixed-numbered-seats — 固定式観覧席（番号入り図面）代表配置"
+      ],
+      "currentness": "2026-09-07 ACTIVE。休館・改修・座席変更の告知なし。",
+      "chartProvenance": "issuer現行「固定席の図面（座席番号）（PDF）」（floormap_detail.php?id=9 経由）。SHA-256 cf3c696c86aa612858039c66aaf0161f49dd83b0a4a090bfc0edd7a068ad3ebd、1,518,961バイト、A3横1ページ、PDF内部日付2024-01-19、Last-Modified 2024-03-26。Pass 2直前の独立再取得でバイト単位同一。",
+      "configurationIdentity": "issuerが公開する番号付き座席図は1点のみ。移動式観覧席1,022席と「大会運営者手配」の仮設スタンド1,972席は番号付きで非公開のためscope外。",
+      "verificationMethod": "fresh independent human visual two-pass（Pass 2は180度回転・逆ストリップ順・880 DPI vs Pass 1の760 DPI）＋ベクタ座席セル幾何と161列格子占有によるindependent structural checksum＋双方向set equality＋issuer方向別小計reconciliation＋issuer印字凡例seat IDのcross-check",
+      "structuralChecksum": "描画グループのbounding boxが3.3〜4.7pt四方のものを座席セルとして抽出し孤立要素35件を除外。東西スタンドは4.2pt間隔の161列格子で、12.3pt前後の列間隔が10か所あり13/15×9/13の区画構成と一致。西1,350／東1,298／南176／北176。",
+      "issuerReconciliation": "図面印字の方向別小計 西1350・東1298・南176・北176 の4件すべてとmapped subtotalが完全一致。総計3,000＝公称固定席3,021席−番号なし車いす席21席（北16・東中央5）。図面凡例のseat ID「C-3-01」「D-1-53」「H-2-34」「F-10-65」4件すべてが登録集合内に存在。",
+      "mappedSeats": 3000,
+      "ranges": 144,
+      "accessibilityAndExclusions": "番号なし車いす席21席、移動式観覧席1,022席、仮設スタンド1,972席を除外。wheelchairSemantics: not-reflected。",
+      "unresolvedMismatches": 0
+    },
+    {
+      "inventoryId": "saitama-super-arena-community",
+      "venue": "GMOアリーナさいたま〔コミュニティアリーナ〕",
+      "disposition": "HOLD / NEED EVIDENCE (formal blocker)",
+      "venueSourceId": null,
+      "reason": "issuerはコミュニティアリーナについて番号付き座席図・代表配置・確定席数のいずれも公開していない。客席確認・案内は「収納式の客席が約3,000席あります。イベントによって、レイアウトは様々です。」とだけ記載し、他モードと違いseat_view（座席表）ページ自体が存在しない。施設概要も「ロールバック席を引き出し観客スタンドとして利用（1,000席〜3,000席）」「3方向のロールバック席（1,000席×3）」「中央リング周囲に約3,000席の仮設席を設置可能」と催事別レイアウトのみを示す。実在番号集合を作れないためADOPTを取り消しHOLDへ戻した。",
+      "reopenCondition": "issuerがコミュニティアリーナについて列・座席番号を印字した完全な座席図と、issuer-definedな代表configurationを公開すること。容量レンジ（1,000〜3,000席）や約3,000席の仮設席からseat IDを推測することは行わない。"
+    },
+    {
+      "inventoryId": "kanagawa-yokohama-arena-main",
+      "venue": "横浜アリーナ〔メインアリーナ〕",
+      "disposition": "ADOPT retained — implementation not completed in this batch",
+      "venueSourceId": null,
+      "currentness": "2026-09-07 ACTIVE。休館・改修・座席変更の告知なし。",
+      "evidencePinned": "Aパターン詳細図 img_seatzoom_01.png（5000×3758、SHA-256 960e9794c696c253e86944cbc48f15317b3561f7ac0e826bd4782bf903a3475c、Last-Modified 2016-07-01、issuer現行座席案内ページからリンク）。主催者向けページがAステージ区分別席数を公表: センター席3,114／アリーナ席5,498／スタンド席3,271／スイート・ボックス140／立見スペース1,420／合計13,443席。",
+      "configurationBoundary": "AパターンとBパターンは別のissuer-defined configuration。Aパターンはステージが東側にありE・Fブロックと東スタンドが切り詰められる一方Dブロックが全席あり、Bパターンは逆にDブロックが消える。両者を混ぜない。",
+      "openWork": "2階A〜Fブロック・3階4スタンド・スイート・ボックスの印字番号集合の完全転記、two-pass、structural checksum、issuer区分別小計とのreconciliation。",
+      "knownStructuralIssues": [
+        "各アリーナ列の両端に番号のない幅広・低背の非座席矩形が1〜2個ずつ描かれており座席として数えない。",
+        "ブロックAは11列と12列の間の通路が12列の位置を占め、実際に描かれた列バンドは21本である一方、列ラベルはA1〜A22まで振られている。列ラベルと描画バンドの対応をブロックごとに確定する必要がある。",
+        "3階スタンドは円弧状で水平scanlineによるcell抽出が成立せず、極座標展開など曲率に対応した機械経路が必要。"
+      ]
+    },
+    {
+      "inventoryId": "saitama-super-arena-stadium",
+      "venue": "GMOアリーナさいたま〔スタジアム〕",
+      "disposition": "ADOPT retained — implementation not completed in this batch",
+      "venueSourceId": null,
+      "currentness": "2026-09-07。temporary renovation中だが2026-09-04 revised closure policyにより単独ではblockerとしない。seat_view座席図のPNG資産はLast-Modified 2026-03-24でGMO改称後のissuer-maintained current material。座席数・列構成・番号体系の変更をissuerは明示していない。reopening後のfull revalidation義務は保持（recheckNotBefore 2027-04-01）。",
+      "evidencePinned": "seat_view SVG（gate overlay）＋埋め込みラスタ img-map_stadium_end01.png（5176×3823、SHA-256 313979154c6a5d702e2b566021ddef51838d51a9a797fd30007d8433b6b37db1、Last-Modified 2026-03-24）。4ステージ位置のSVGは背景ラスタのファイル名だけが異なり、seat/gate layerはバイト単位で同一。issuer固定席小計: 上段6,880／下段17,441／300レベル644／500レベル1,546（仮設約10,400は除く）。",
+      "openWork": "ラスタ座席図からの完全転記、two-pass、structural checksum、issuer小計reconciliation。"
+    },
+    {
+      "inventoryId": "saitama-super-arena-main",
+      "venue": "GMOアリーナさいたま〔メインアリーナ〕",
+      "disposition": "ADOPT retained — implementation not completed in this batch",
+      "venueSourceId": null,
+      "currentness": "同上。recheckNotBefore 2027-04-01を保持。",
+      "evidencePinned": "seat_view SVG＋埋め込みラスタ img-map_arena_end01.png（3967×3864、SHA-256 6d9cc55018b11f9901cab697cc6427f7350c3bbc9c4414efc47f83ef8e1aaf31、Last-Modified 2026-03-24）。4ステージ位置のSVGは背景ラスタのファイル名だけが異なり、seat/gate layerはバイト単位で同一。issuer固定席小計: 上段5,880／下段11,404／300レベル644／500レベル752／ラムダ2,272／TOTAL 21,197（仮設約1,300は除く）。",
+      "openWork": "ラスタ座席図からの完全転記、two-pass、structural checksum、issuer小計reconciliation。この記録がGMOアリーナさいたまのvenue sourceを保持する。"
+    }
+  ],
+  "gmoIdentityDecision": {
+    "question": "3つのGMOアリーナさいたまinventory recordを3 venueSourceとして持つか、1 physical venue / 1 venueSourceに複数official configurationとして持つか。",
+    "decision": "B（1 physical venue / 1 venueSource）。ただしコミュニティアリーナだけは別facility-spaceとして独立記録のまま維持する。",
+    "derivedFrom": [
+      "issuer evidence: 施設概要が「空間や座席数をいくつものパターンに設定できる可動システム」と述べ、スタジアムとメインアリーナは空間拡張システムで相互排他的に切り替わる同一bowlの2モードである。両モードは座席番号名前空間（200/300/400/500レベル）と扉番号（207〜522）を共有し、issuerのseat_view UIも seatList = { stadium, arena } という1つの座席検索データの2モードとして実装している。",
+      "issuer evidence: 一方コミュニティアリーナについてissuerは「メインアリーナ、コミュニティアリーナでそれぞれ同時に別のイベントを開催するということも可能です」と明記しており、同時稼働できる別facility-spaceである。",
+      "repository schema: schema v2は「1会場に複数の明確な代表配置がある場合」のためのもので、catalogはvenueGroupIdで会場を1件にまとめ、configurationごとに(venueId, configurationId)と個別dataPathを持つ。",
+      "repository precedent: otemachi-mitsui-hall-standard（rollback-560 / flat-572）とmeijiza-standard（with-hanamichi / without-hanamichi）はいずれも同一ホールのissuer-defined 2 layoutを1 venue source・2 selectable configuration・1 inventory recordとして表現している。一方パシフィコ横浜の国立大ホールとノースは別ホールとして別venue source・別inventory recordである。",
+      "repository constraint: scripts/venues/inventory.mjs はvenueSourceIdのinventory record間での一意性を強制する（\"duplicates venueSourceId used by ...\"）。したがって1 venue sourceを複数inventory recordへ割り当てることはできず、GMOのbowlを表すsourceは1 recordだけが保持する。"
+    ],
+    "canonicalRepresentation": "venue source 1件（GMOアリーナさいたま）に stadium mode と main arena mode の2つのselectable production configurationを持たせ、inventory record saitama-super-arena-main がそのvenueSourceIdを保持する。saitama-super-arena-stadium は同一facility-spaceのモードであることを記録したうえで、production configurationとして提供されることを blockingReason に明記する（venueSourceIdはnullのまま）。saitama-super-arena-community は別facility-spaceとして独立記録のまま formal HOLD。",
+    "consequence": "production venue/configuration totalsは+6/+6ではない。GMOが実装された場合の増分は venue +1 / selectable configuration +2 である。",
+    "newPolicyInvented": false
+  },
+  "countsAfter": {
+    "productionTotals": {
+      "venues": 159,
+      "selectableConfigurations": 161,
+      "seatRecords": 246023
+    },
+    "delta": {
+      "venues": 2,
+      "selectableConfigurations": 2,
+      "seatRecords": 5398
+    },
+    "kantoLedgerFromLiveInventory": {
+      "universe": 154,
+      "production": 76,
+      "adopt": 3,
+      "blocked": 74,
+      "independentReviewMismatch": 1,
+      "missingFromInventory": 0
+    },
+    "ledgerInvariant": "P (production) = 2, B (formal blocked) = 1, retained ADOPT = 3. P + B + retainedAdopt = 6. The batch did NOT reach P + B = 6."
+  },
+  "prohibitionsObserved": [
+    "capacity fitting なし。公称席数はいずれもtranscription targetにせず、番号集合を先に確定したうえで事後にreconcileした。",
+    "invented seat / row / block ID なし。印字のない区画（横浜武道館の車いす席14席・4階VIP席24席、高崎アリーナの車いす席21席、横浜アリーナの列端の非座席矩形）は登録していない。",
+    "unsupported geometry completion なし。欠番はいずれも座席図上でセルが描かれていない範囲のみ。",
+    "configuration mixing なし。横浜武道館の２F/２F（センターコート）は番号集合が同一であることを機械比較で確認したうえで1 configurationとし、横浜アリーナのA/B/中央パターンは混ぜていない。",
+    "capacity subtractionによるvariant生成なし。",
+    "third-party infill なし。すべてissuer first-party material のみ。",
+    "issuerのseat_list.js（GMO座席番号検索データ）はblock highlight用の粗いモデルで、展開すると孤立番号や不整合区間が出るため seat-structure evidence としては採用していない。"
+  ],
+  "exactNextAction": "Claude: KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION — kanagawa-yokohama-arena-main, then saitama-super-arena-main + saitama-super-arena-stadium as one GMOアリーナさいたま venue source with two configurations. RaiBoC / hino-brick-main-standard remain a separate queue."
+}

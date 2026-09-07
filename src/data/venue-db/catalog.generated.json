@@ -2180,6 +2180,31 @@
     "dataPath": "/venue-db/venues/taito-millennium-hall-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "takasaki-arena-main",
+    "venueGroupId": "takasaki-arena-main",
+    "name": "高崎アリーナ",
+    "searchAliases": [
+      "TAKASAKI ARENA",
+      "高崎アリーナ メインアリーナ"
+    ],
+    "region": "関東",
+    "prefecture": "群馬県",
+    "municipality": "高崎市",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "fixed-numbered-seats",
+        "canonicalName": "固定式観覧席（番号入り図面）代表配置",
+        "seatCount": 3000,
+        "dataPath": "/venue-db/venues/takasaki-arena-main--fixed-numbered-seats.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "issuerの現行「固定席の図面（座席番号）」に印字された固定式観覧席3,000席の全番号席を登録した構成です。エリアは図面に印字された公式ブロック名どおり、西側がCブロック329席・Bブロック692席・Aブロック329席、東側がEブロック329席・Fブロック640席・Gブロック329席、南側がDブロック176席、北側がHブロック176席です。列番号も図面の印字どおりで、東西の各ブロックが1〜11列、南北のD・Hブロックが1〜2列です。移動式観覧席1,022席、大会運営者が手配する仮設スタンド1,972席、および図面に番号が印字されていない車いす席21席は含みません。最大収容6,015席の配置ではありません。",
+        "fixedOnly": true
+      }
+    ]
+  },
+  {
     "id": "theater-g-rosso-standard",
     "name": "シアターGロッソ 通常番号席配置",
     "searchAliases": [
@@ -3054,6 +3079,30 @@
         "scope": "official-variant",
         "scopeDisclosure": "現行公式座席図の237番号席を抽選します。正面・座敷正面・脇正面・中正面・座敷中正面の五区分は図の明示境界に従います。き・く・け・こ列は座敷であり、座敷き列は掘りごたつ式座椅子です。公演ごとの席種・席数変更は反映しません。",
         "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "yokohama-budokan-arena",
+    "venueGroupId": "yokohama-budokan-arena",
+    "name": "横浜武道館",
+    "searchAliases": [
+      "YOKOHAMA BUDOKAN"
+    ],
+    "region": "関東",
+    "prefecture": "神奈川県",
+    "municipality": "横浜市",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "permanent-seats",
+        "canonicalName": "常設観覧席（2階・3階）固定番号配置",
+        "seatCount": 2398,
+        "dataPath": "/venue-db/venues/yokohama-budokan-arena--permanent-seats.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "issuerの現行座席図に印字された常設観覧席2,398席（2階1,312席・3階1,086席）の全番号席を登録した構成です。エリアは座席図に印字された公式ブロック名どおり、2階がDブロック400席・Eブロック400席・Fブロック128席・Gブロック128席・Hブロック128席・Jブロック128席、3階がAブロック382席・Bブロック184席・Cブロック520席です。列番号もD-1〜D-8、A-1〜A-7のように座席図の印字どおりです。アリーナ床へ催事ごとに設営される席、スタッキング椅子、4階VIP席24席、および座席図に番号が印字されていない3階の車いす席14席は含みません。最大収容人数の配置ではありません。",
+        "fixedOnly": true
       }
     ]
   },

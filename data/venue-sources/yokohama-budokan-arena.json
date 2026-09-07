@@ -1,0 +1,670 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "yokohama-budokan-arena",
+  "name": "横浜武道館",
+  "prefecture": "神奈川県",
+  "city": "横浜市",
+  "aliases": [
+    "YOKOHAMA BUDOKAN"
+  ],
+  "venueType": "arena",
+  "knownLimitations": [
+    "issuerの現行「座席図」ページは２F・２F（センターコート）・３Fの3タブで常設観覧席の全番号席を公開します。本実装が登録したのは、そこに印字された2階1,312席と3階1,086席の合計2,398席だけです。",
+    "issuerの施設概要は常設席数を2,436席（2階1,312席／3階1,100席〈うち車いす席14席〉／4階24席〈VIP席〉）と公表します。3階の車いす席14席は座席図上に番号が印字されていないため登録しておらず、どの番号席と置き換わるのかも推測していません。4階VIP席24席は座席図のいずれのタブにも描かれていないためscope外です。",
+    "アリーナ床（アリーナ）は座席図上で番号のない空間として描かれ、催事ごとに主催者がレイアウトするためscope外です。施設概要が併記する「別途、スタッキング椅子設置可」の仮設椅子も番号付きで公開されていないため含みません。",
+    "2階観覧席は施設概要のとおり全数がロールバック席タイプ（全20ブロック、うち8ブロックは移動可能）で、アリーナ東西の壁面へ収納されます。issuerは２Fと２F（センターコート）の2通りの配置を座席図として公開しますが、両者の印字された番号集合はブロックD・E各1〜50番×8列、ブロックF・G・H・J各1〜16番×8列で完全に同一で、異なるのはスタンドの物理配置だけです。したがって減算や合成による別configurationは作成していません。",
+    "座席番号はブロック内の列ごとの通し番号で、同じ番号が別ブロックにも存在します。抽選結果はブロック名（2階D・E・F・G・H・J／3階A・B・C）と印字された列番号（例: D-1、A-7）および番号の組で一意になります。ブロック名と列番号はいずれも座席図に印字された公式表記です。"
+  ],
+  "sources": [
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "株式会社YOKOHAMA文体（横浜武道館 施設運営者）",
+      "title": "横浜武道館 座席図（２F／２F（センターコート）／３Fの3タブに、ブロックごとの拡大図を掲載。各座席を1つの角丸セルとして描き、セル内へ座席番号を、区画の境目へ列番号（D-1〜D-8、A-1〜A-7等）を印字する）",
+      "url": "https://www.yokohama-budokan.com/seats/",
+      "checkedAt": "2026-09-07"
+    },
+    {
+      "id": "official-organizer-facility-overview",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "株式会社YOKOHAMA文体（横浜武道館 施設運営者）",
+      "title": "大会・イベント主催者の方へ 施設概要（アリーナの最大収容人数3,032人、席数（常設）2,436席＝2階1,312席・3階1,100席〈うち車いす席14席〉・4階24席〈VIP席〉、別途スタッキング椅子設置可、ロールバック席の内訳を掲載）",
+      "url": "https://www.yokohama-budokan.com/hosts/",
+      "checkedAt": "2026-09-07"
+    },
+    {
+      "id": "official-facility-guide",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "株式会社YOKOHAMA文体（横浜武道館 施設運営者）",
+      "title": "施設案内（2020年7月開館。アリーナは2階に位置し最大約3,000人を収容、多彩なレイアウトに対応すると記載し、座席図ページへ導く）",
+      "url": "https://www.yokohama-budokan.com/about/",
+      "checkedAt": "2026-09-07"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "permanent-seats",
+      "canonicalName": "常設観覧席（2階・3階）固定番号配置",
+      "issuerDefinedCondition": "issuerが現行「座席図」ページで公開する常設観覧席の番号配置。アリーナ床へ主催者が設営する席とスタッキング椅子は設置しない状態。",
+      "selectionBasis": "issuerが公開する番号付き座席図は「座席図」ページ1点のみで、２F・２F（センターコート）・３Fの3タブから成る。２Fと２F（センターコート）はロールバックスタンドの物理配置が異なるだけで、印字された番号集合はブロックD・E各1〜50番×8列、F・G・H・J各1〜16番×8列と完全に同一である。したがって2階の番号集合は1件であり、これに3階A・B・Cブロックの番号集合を合わせた常設観覧席全体を唯一の代表configurationとした。アリーナ床の主催者設営席とスタッキング椅子は番号付きで公開されないためscope外とし、容量差分や合成による別configurationは作成していない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-07に現行issuerサイトの座席図ページ（https://www.yokohama-budokan.com/seats/ ）が参照する27点の拡大画像（assets/images/pages/seats/*.webp）から取得した。Pass 2の直前に全27点を独立に再取得し、17点の転記対象すべてがバイト単位で同一（SHA-256一致）であることを確認している。座席番号と列番号はラスタ画像上に描画されており、機械経路は数値のOCRではなく角丸セル図形の連結成分幾何（暗セルの外接矩形・行クラスタリング・列方向ピッチによる区画分割）を用いた。",
+      "sourceIds": [
+        "official-seat-map",
+        "official-organizer-facility-overview",
+        "official-facility-guide"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-organizer-facility-overview"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 2398,
+      "scope": {
+        "kind": "fixed-only",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false,
+        "excludesDynamicAreas": true,
+        "maximumCapacity": false,
+        "excludedAreas": [
+          "アリーナ床に主催者が設営する席",
+          "スタッキング椅子（別途設置）",
+          "4階VIP席24席（座席図に不掲載）",
+          "3階の番号なし車いす席14席"
+        ],
+        "exactSubtotal": 2398
+      },
+      "scopeDisclosure": "issuerの現行座席図に印字された常設観覧席2,398席（2階1,312席・3階1,086席）の全番号席を登録した構成です。エリアは座席図に印字された公式ブロック名どおり、2階がDブロック400席・Eブロック400席・Fブロック128席・Gブロック128席・Hブロック128席・Jブロック128席、3階がAブロック382席・Bブロック184席・Cブロック520席です。列番号もD-1〜D-8、A-1〜A-7のように座席図の印字どおりです。アリーナ床へ催事ごとに設営される席、スタッキング椅子、4階VIP席24席、および座席図に番号が印字されていない3階の車いす席14席は含みません。最大収容人数の配置ではありません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerの施設概要は3階1,100席の内訳として「うち車いす席14席」を明記しますが、座席図の3階タブには当該14席が番号付きで描かれていません。3階のブロックA・B・Cで印字された番号席の合計は1,086席で、1,100−14＝1,086と完全に一致します。車いす席がどの番号席と置き換わるのかはissuerが公開していないため、スペース自体を登録せず、置換関係も推測していません。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-organizer-facility-overview"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-07",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-mirrored-traversal-direction-reversed-block-order-and-a-different-render-scale-and-resampling-filter-from-an-independently-re-fetched-byte-identical-asset-set; independent-machine-structural-checksum-from-rounded-seat-cell-connected-component-geometry-not-fed-by-the-human-range-table; bidirectional-segment-length-multiset-equality; issuer-per-floor-subtotal-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "issuer subtotal reconciliation（階別・総数）: issuerの施設概要は常設2,436席＝2階1,312席／3階1,100席（うち車いす席14席）／4階24席（VIP席）を印字します。転記したmapped setは2階がD 400＋E 400＋F 128＋G 128＋H 128＋J 128＝1,312席でissuerの2階小計と完全一致し、3階がA 382＋B 184＋C 520＝1,086席でissuerの3階1,100席から番号なし車いす席14席を除いた値と完全一致しました。4階VIP席24席は座席図のいずれのタブにも描かれていないためscope外です。総計は2,398＝2,436−14−24で、issuer公称値をtranscription targetにはせず、座席図の番号集合を先に確定したうえで事後にreconcileしています。",
+          "independent structural checksum（機械経路: 角丸セルの連結成分幾何）: human range tableをいっさい入力にせず、17点の拡大画像から輝度70未満の暗画素の連結成分を抽出し、面積200px²以上・幅8〜60px・高さ15〜60pxの成分を座席セルとして数えました。中心y座標で行クラスタを作り、行内の中央値ピッチの1.6倍を超える間隔を区画境界としました。2階はD 128+144+128、E 128+144+128、F 128、G 128、H 64+64、J 128で合計1,312件、3階はA 206+176、B 184、C 170+180+170で合計1,086件、総計2,398件となり、視認転記した2,398席と独立に一致しました。行あたりの区画長も、A-1 [8,8]/[8,8]、A-7 [5,5,5,5,5]/[7,5,5,5]、B-2 [10,8,8]、B-7 [2,4,6,4,6]、C-1 [5,10,5]/[5,10,10,5]/[5,10,5] のように視認で読み取った番号区間の長さと完全に一致しました。",
+          "bidirectional machine-expanded set equality: 登録した78本のsource rangeを座席単位へ展開したruntime key（ブロック, 列, 番号）は2,398件で重複0件、同一（ブロック, 列）内のrange重複も0件です。機械経路が独立に得た行別セル数の多重集合と、登録rangeを行別に合計した多重集合を双方向に比較し、いずれの向きにも差分0件でした。",
+          "human visual two-pass: Pass 1は各画像を3.0倍のLANCZOS再標本化で描画し、2階をD→E→F→G→H→J、3階をA→B→Cの順に、各画像で左から右へ読み取りました。Pass 2は同一URLから全画像を独立に再取得し（バイト単位で同一、SHA-256一致）、Pass 1の表を参照せずに水平反転したうえで2.0倍のNEAREST再標本化という異なる尺度・異なる補間で描画し、走査方向を逆転させて3階をC→B→Aの順に読み直しました。9ブロック・78本のrange・展開座席ID集合2,398件・ブロック所属・列所属・全range境界でunresolved mismatchは0件でした。",
+          "row and block structure: 2階はブロックD・Eが各1〜50番×8列（D-1〜D-8、E-1〜E-8）、ブロックF・G・H・Jが各1〜16番×8列で、欠番はありません。3階は不等辺で、Aブロック（A-1〜A-7、最大62番）はA-1が6〜13・20〜27・34〜41・48〜55番、A-2が1〜55番、A-3〜A-6が1〜62番、A-7が1〜10・15〜24・29〜38・43〜52・56〜62番です。Bブロック（B-1〜B-7、最大32番）はB-1が15〜22番、B-2が1〜8・15〜32番、B-3〜B-6が1〜32番、B-7が3〜12・17〜26・31〜32番です。Cブロック（C-1〜C-6、最大90番）はC-1が11〜80番、C-2〜C-6が1〜90番です。これらの欠番はいずれも座席図上でセルが描かれていない範囲で、幾何やcapacityからの補完はしていません。",
+          "configuration scope: 座席図ページの２Fタブと２F（センターコート）タブは、ロールバックスタンドの物理配置が異なる2通りのissuer公開配置です。両タブの印字番号集合を機械経路で比較したところ、ブロック別・列別のセル数はD 8列×50、E 8列×50、F・G・H・J 各8列×16で完全に一致し、Hブロックが通常配置では8席ずつ2スタンド、センターコート配置では16席1スタンドとして描かれる違いだけでした。番号集合が同一のため別configurationは作成していません。",
+          "currentness: 2026-09-07時点でACTIVE。2020年7月開館の現行施設で、休館・改修・座席変更の告知はありません。座席図ページ・施設概要ページとも現行issuerサイト配下で公開されており、施設概要の常設席数2,436席と座席図の印字集合は上記のとおり整合します。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "2f-d",
+          "areaLabel": "2階 Dブロック",
+          "rowLabel": "D-1",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-d",
+          "areaLabel": "2階 Dブロック",
+          "rowLabel": "D-2",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-d",
+          "areaLabel": "2階 Dブロック",
+          "rowLabel": "D-3",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-d",
+          "areaLabel": "2階 Dブロック",
+          "rowLabel": "D-4",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-d",
+          "areaLabel": "2階 Dブロック",
+          "rowLabel": "D-5",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-d",
+          "areaLabel": "2階 Dブロック",
+          "rowLabel": "D-6",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-d",
+          "areaLabel": "2階 Dブロック",
+          "rowLabel": "D-7",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-d",
+          "areaLabel": "2階 Dブロック",
+          "rowLabel": "D-8",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-e",
+          "areaLabel": "2階 Eブロック",
+          "rowLabel": "E-1",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-e",
+          "areaLabel": "2階 Eブロック",
+          "rowLabel": "E-2",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-e",
+          "areaLabel": "2階 Eブロック",
+          "rowLabel": "E-3",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-e",
+          "areaLabel": "2階 Eブロック",
+          "rowLabel": "E-4",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-e",
+          "areaLabel": "2階 Eブロック",
+          "rowLabel": "E-5",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-e",
+          "areaLabel": "2階 Eブロック",
+          "rowLabel": "E-6",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-e",
+          "areaLabel": "2階 Eブロック",
+          "rowLabel": "E-7",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-e",
+          "areaLabel": "2階 Eブロック",
+          "rowLabel": "E-8",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "2f-f",
+          "areaLabel": "2階 Fブロック",
+          "rowLabel": "F-1",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-f",
+          "areaLabel": "2階 Fブロック",
+          "rowLabel": "F-2",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-f",
+          "areaLabel": "2階 Fブロック",
+          "rowLabel": "F-3",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-f",
+          "areaLabel": "2階 Fブロック",
+          "rowLabel": "F-4",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-f",
+          "areaLabel": "2階 Fブロック",
+          "rowLabel": "F-5",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-f",
+          "areaLabel": "2階 Fブロック",
+          "rowLabel": "F-6",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-f",
+          "areaLabel": "2階 Fブロック",
+          "rowLabel": "F-7",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-f",
+          "areaLabel": "2階 Fブロック",
+          "rowLabel": "F-8",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-g",
+          "areaLabel": "2階 Gブロック",
+          "rowLabel": "G-1",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-g",
+          "areaLabel": "2階 Gブロック",
+          "rowLabel": "G-2",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-g",
+          "areaLabel": "2階 Gブロック",
+          "rowLabel": "G-3",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-g",
+          "areaLabel": "2階 Gブロック",
+          "rowLabel": "G-4",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-g",
+          "areaLabel": "2階 Gブロック",
+          "rowLabel": "G-5",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-g",
+          "areaLabel": "2階 Gブロック",
+          "rowLabel": "G-6",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-g",
+          "areaLabel": "2階 Gブロック",
+          "rowLabel": "G-7",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-g",
+          "areaLabel": "2階 Gブロック",
+          "rowLabel": "G-8",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-h",
+          "areaLabel": "2階 Hブロック",
+          "rowLabel": "H-1",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-h",
+          "areaLabel": "2階 Hブロック",
+          "rowLabel": "H-2",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-h",
+          "areaLabel": "2階 Hブロック",
+          "rowLabel": "H-3",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-h",
+          "areaLabel": "2階 Hブロック",
+          "rowLabel": "H-4",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-h",
+          "areaLabel": "2階 Hブロック",
+          "rowLabel": "H-5",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-h",
+          "areaLabel": "2階 Hブロック",
+          "rowLabel": "H-6",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-h",
+          "areaLabel": "2階 Hブロック",
+          "rowLabel": "H-7",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-h",
+          "areaLabel": "2階 Hブロック",
+          "rowLabel": "H-8",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-j",
+          "areaLabel": "2階 Jブロック",
+          "rowLabel": "J-1",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-j",
+          "areaLabel": "2階 Jブロック",
+          "rowLabel": "J-2",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-j",
+          "areaLabel": "2階 Jブロック",
+          "rowLabel": "J-3",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-j",
+          "areaLabel": "2階 Jブロック",
+          "rowLabel": "J-4",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-j",
+          "areaLabel": "2階 Jブロック",
+          "rowLabel": "J-5",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-j",
+          "areaLabel": "2階 Jブロック",
+          "rowLabel": "J-6",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-j",
+          "areaLabel": "2階 Jブロック",
+          "rowLabel": "J-7",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "2f-j",
+          "areaLabel": "2階 Jブロック",
+          "rowLabel": "J-8",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-1",
+          "from": 6,
+          "to": 13
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-1",
+          "from": 20,
+          "to": 27
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-1",
+          "from": 34,
+          "to": 41
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-1",
+          "from": 48,
+          "to": 55
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-2",
+          "from": 1,
+          "to": 55
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-3",
+          "from": 1,
+          "to": 62
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-4",
+          "from": 1,
+          "to": 62
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-5",
+          "from": 1,
+          "to": 62
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-6",
+          "from": 1,
+          "to": 62
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-7",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-7",
+          "from": 15,
+          "to": 24
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-7",
+          "from": 29,
+          "to": 38
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-7",
+          "from": 43,
+          "to": 52
+        },
+        {
+          "areaId": "3f-a",
+          "areaLabel": "3階 Aブロック",
+          "rowLabel": "A-7",
+          "from": 56,
+          "to": 62
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-1",
+          "from": 15,
+          "to": 22
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-2",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-2",
+          "from": 15,
+          "to": 32
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-3",
+          "from": 1,
+          "to": 32
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-4",
+          "from": 1,
+          "to": 32
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-5",
+          "from": 1,
+          "to": 32
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-6",
+          "from": 1,
+          "to": 32
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-7",
+          "from": 3,
+          "to": 12
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-7",
+          "from": 17,
+          "to": 26
+        },
+        {
+          "areaId": "3f-b",
+          "areaLabel": "3階 Bブロック",
+          "rowLabel": "B-7",
+          "from": 31,
+          "to": 32
+        },
+        {
+          "areaId": "3f-c",
+          "areaLabel": "3階 Cブロック",
+          "rowLabel": "C-1",
+          "from": 11,
+          "to": 80
+        },
+        {
+          "areaId": "3f-c",
+          "areaLabel": "3階 Cブロック",
+          "rowLabel": "C-2",
+          "from": 1,
+          "to": 90
+        },
+        {
+          "areaId": "3f-c",
+          "areaLabel": "3階 Cブロック",
+          "rowLabel": "C-3",
+          "from": 1,
+          "to": 90
+        },
+        {
+          "areaId": "3f-c",
+          "areaLabel": "3階 Cブロック",
+          "rowLabel": "C-4",
+          "from": 1,
+          "to": 90
+        },
+        {
+          "areaId": "3f-c",
+          "areaLabel": "3階 Cブロック",
+          "rowLabel": "C-5",
+          "from": 1,
+          "to": 90
+        },
+        {
+          "areaId": "3f-c",
+          "areaLabel": "3階 Cブロック",
+          "rowLabel": "C-6",
+          "from": 1,
+          "to": 90
+        }
+      ]
+    }
+  ]
+}
