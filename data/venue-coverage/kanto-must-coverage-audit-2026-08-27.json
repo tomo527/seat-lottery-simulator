@@ -1,7 +1,7 @@
 {
   "auditVersion": 1,
   "title": "KANTO RELEASE-CRITICAL >=1000 MUST-COVERAGE AUDIT",
-  "asOf": "2026-09-05",
+  "asOf": "2026-09-06",
   "scope": "Kanto live/theater/concert/large ticketed-event facility-spaces: an official normal or event configuration at >=1,000. Capacity is discovery-only, never numbered-seat evidence.",
   "evidencePolicy": "Current first-party issuer information establishes identity, operation, capacity and event-use discovery. Secondary data is discovery-only and never establishes seat evidence or a production decision. No capacity fitting, inferred IDs, third-party seat maps, source JSON/ranges, fingerprints, catalog or runtime changes were made.",
   "discoveryMethod": [
@@ -21,10 +21,10 @@
       "茨城県": 5
     },
     "byStatus": {
-      "production": 64,
-      "ADOPT / implementation-ready": 5,
+      "production": 69,
+      "ADOPT / implementation-ready": 6,
       "HOLD / NEED EVIDENCE / formal DEFER": 57,
-      "inventory-unresearched": 28
+      "inventory-unresearched": 22
     },
     "missingFromInventory": 0
   },
@@ -84,13 +84,16 @@
     }
   },
   "nextMacro": {
-    "selection": "Claude: separately authorized bounded production implementation of saitama-koshigaya-suncity-hall サンシティホール〔大ホール〕. Apply the 転記のcross-check必須要件 in VENUE_DATA_GUIDE.md and the revised temporary-closure policy. RaiBoC re-transcription remains a separate queue and must not be combined with it.",
+    "selection": "Claude: KANTO PREFLIGHT-6 ADOPT BATCH BOUNDED PRODUCTION IMPLEMENTATION",
     "candidates": [
-      "saitama-koshigaya-suncity-hall",
-      "gunma-ota-culture-main",
-      "ibaraki-hitachinaka-culture-main"
+      "chiba-makuhari-event-hall",
+      "chiba-port-arena-main",
+      "chiba-narita-culture-main",
+      "ibaraki-ryugasaki-culture-main",
+      "tochigi-oyama-culture-main",
+      "tochigi-sano-culture-main"
     ],
-    "reason": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4 (2026-09-04) produced three ADOPTs (saitama-koshigaya-suncity-hall, gunma-ota-culture-main, ibaraki-hitachinaka-culture-main). kanagawa-pacifico-national-hall reached production on 2026-09-04 under the revised temporary-closure policy, and saitama-city-culture-main was re-implemented from blocked to production on 2026-09-04 under the same revision. Work the three ADOPTs in ranked order; after they close, return to the Codex KANTO >=1000 TEMPORARY-CLOSURE REOPEN AUDIT / PREFLIGHT 5 over the remaining 30 inventory-unresearched records plus the temporary-closure-only / renovation-only existing HOLDs, re-evaluated under the revised policy. Tokyo Priority D stays after the Kanto formal accounting."
+    "reason": "KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 6 (2026-09-06) live-reranked only the 28 unresearched ledger records, then stopped when six current first-party complete-numbered-chart prospects reached ADOPT. Work exactly these six independent mini-waves in the listed importance/production-yield order. RaiBoC remains a separate remediation queue; Tokyo Priority D remains after Kanto formal accounting."
   },
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
@@ -162,12 +165,12 @@
       "aliases": [],
       "facilitySpace": "大昭ホール龍ケ崎〔大ホール〕",
       "officialCapacityAndMode": "1200 (current inventory/audit capacity; see official URL)",
-      "officialUrl": "https://www.city.ryugasaki.ibaraki.jp/",
+      "officialUrl": "https://www.ryubun.org/",
       "inventoryId": "ibaraki-ryugasaki-culture-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": "2026-09-06 PREFLIGHT 6 ADOPT: current official operator page and linked PDF give a complete two-floor numbered chart prospect with 839 + 356 general seats and five separately identified wheelchair positions in the 1,200 capacity.",
+      "reopenCondition": "Separately authorized bounded implementation must fresh-re-fetch the PDF, complete independent human visual two-pass and bidirectional machine-expanded equality, reconcile 839 + 356 + 5 = 1,200, and use a practical structural checksum. Derive wheelchair relations only from the chart; any material mismatch stops production."
     },
     {
       "prefecture": "群馬県",
@@ -203,10 +206,10 @@
       "officialCapacityAndMode": "1530 (current issuer one-slope capacity: fixed 1440 + wheelchair 6 + parent-child 8 + standing 76)",
       "officialUrl": "https://isesaki-bunka.com/shisetsu/lhall/",
       "inventoryId": "gunma-isesaki-culture-main",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
-      "blocker": "2026-09-05 PREFLIGHT 5 ADOPT: current issuer-linked numbered standard-chart prospect with active ticketed use and explicit fixed/wheelchair/parent-child/standing semantics. No transcription or production implementation has occurred.",
-      "reopenCondition": "Separately authorized bounded implementation with fresh independent human visual two-pass, machine-expanded set equality, issuer checksum reconciliation, and an independent practical structural checksum; no inferred IDs, pit subtraction, or capacity fitting."
+      "venueSourceId": "isesaki-culture-hall-large",
+      "currentStatus": "production",
+      "blocker": null,
+      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Reopen only if current issuer evidence supersedes the implemented chart."
     },
     {
       "prefecture": "群馬県",
@@ -786,25 +789,25 @@
       "aliases": [],
       "facilitySpace": "成田国際文化会館〔大ホール〕",
       "officialCapacityAndMode": "1188 (current inventory/audit capacity; see official URL)",
-      "officialUrl": "https://www.narita-bunkazai.or.jp/",
+      "officialUrl": "https://www.narita-bunka.jp/",
       "inventoryId": "chiba-narita-culture-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": "2026-09-06 PREFLIGHT 6 ADOPT: current issuer large-hall page and linked complete one-page chart publish an active 1F 930 + 2F 258 = 1,188 fixed-seat configuration.",
+      "reopenCondition": "Separately authorized bounded implementation must fresh-re-fetch the issuer PDF, complete independent human visual two-pass and bidirectional machine-expanded equality, reconcile 930 + 258 = 1,188, and use a practical independent structural checksum. Any material mismatch stops production."
     },
     {
       "prefecture": "千葉県",
       "currentName": "千葉ポートアリーナ〔メインアリーナ〕",
       "aliases": [],
       "facilitySpace": "千葉ポートアリーナ〔メインアリーナ〕",
-      "officialCapacityAndMode": "7512 (current inventory/audit capacity; see official URL)",
+      "officialCapacityAndMode": "current issuer capacity components total 7,504: fixed 4,380 + rollback 616 + temporary 2,500 + wheelchair 8. The current numbered viewing-plan scope is fixed plus rollback = 4,996.",
       "officialUrl": "https://chibacity.spo-sin.or.jp/port-arena/",
       "inventoryId": "chiba-port-arena-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": "2026-09-06 PREFLIGHT 6 ADOPT: current issuer page links a complete printed viewing plan and separately defines fixed, rollback, temporary and wheelchair capacity semantics. Only the 4,996 fixed-plus-rollback chart is a prospective representative configuration; no temporary or wheelchair identifier is inferred.",
+      "reopenCondition": "Separately authorized bounded DENSE implementation: fresh independent human visual two-pass; bidirectional machine-expanded authored-set equality; 4,380 + 616 and full 7,504 semantic reconciliation; independent structural checksum; direct accessibility classification. Any material mismatch stops production."
     },
     {
       "prefecture": "千葉県",
@@ -850,13 +853,13 @@
       "currentName": "幕張メッセ〔幕張イベントホール〕",
       "aliases": [],
       "facilitySpace": "幕張メッセ〔幕張イベントホール〕",
-      "officialCapacityAndMode": "9000 (current inventory/audit capacity; see official URL)",
+      "officialCapacityAndMode": "maximum about 9,000; issuer-defined representative chart is fixed 3,948 + movable 912 = 4,860. About 3,000 temporary arena seats are not part of the adopted chart.",
       "officialUrl": "https://www.m-messe.co.jp/facility/eventhall/",
       "inventoryId": "chiba-makuhari-event-hall",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": "2026-09-06 PREFLIGHT 6 ADOPT: current issuer layout index and linked seat PDF provide a complete printed fixed-plus-movable configuration with 2F/3F/block subtotals. C/J wheelchair spaces and temporary arena seats remain chart-classification/scope questions, never arithmetic inputs.",
+      "reopenCondition": "Separately authorized bounded DENSE implementation: fresh independent human visual two-pass; bidirectional machine-expanded authored-set equality; fixed/movable/block/floor issuer reconciliation; independent structural checksum; and direct wheelchair classification. Any material mismatch stops production and returns to the chart."
     },
     {
       "prefecture": "東京都",
@@ -893,9 +896,9 @@
       "officialUrl": "https://www.city.akishima.lg.jp/bunka/shogaigakushu/1007496/1002968/1007722/1007723.html",
       "inventoryId": "tokyo-official-1060",
       "venueSourceId": "tokyo-wave3-1060",
-      "currentStatus": "ADOPT / implementation-ready",
-      "blocker": "2026-09-05 PREFLIGHT 5 ADOPT under revised temporary-closure policy: city maintains current normal-layout numbered PDF and exact 1031 fixed + 102 movable + 6 wheelchair = 1139 semantics. HVAC/equipment closure through 2026-12-01 is temporary and not an evidence waiver.",
-      "reopenCondition": "Immediately before transcription, freshly re-fetch and record the issuer-maintained normal-layout chart. If it introduces no issuer-explicit seat-count, row-structure, or numbering change and all normal independent human visual two-pass, machine-expanded equality, issuer checksum, and structural checksum gates pass, production may proceed before reopening. Lack of a seating-change statement is not proof; revalidate chart/currentness at or after the announced reopening. Any changed chart/count/row/numbering or material mismatch stops production."
+      "currentStatus": "production",
+      "blocker": null,
+      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Temporary renovation recheck remains due from 2026-12-01; reopen only on issuer evidence superseding the implemented chart."
     },
     {
       "prefecture": "東京都",
@@ -1103,9 +1106,9 @@
       "officialUrl": "https://www.persimmon.or.jp",
       "inventoryId": "tokyo-meguro-persimmon-main",
       "venueSourceId": "meguro-persimmon-main-standard",
-      "currentStatus": "ADOPT / implementation-ready",
-      "blocker": "2026-09-05 PREFLIGHT 5 ADOPT under revised temporary-closure policy: current issuer PDF and 1200/fixed/floor/pit/wheelchair/companion semantics are maintained. The announced 2027-01-12 to 2028-01-07 ceiling-safety closure names no seating change; absence is recorded, not treated as proof.",
-      "reopenCondition": "Bounded implementation requires fresh human two-pass, source equality, issuer checksum, structural checksum and a post-reopening chart/currentness recheck. Never infer the pit or wheelchair/companion relation."
+      "currentStatus": "production",
+      "blocker": null,
+      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Temporary renovation recheck remains due from 2028-01-08; reopen only on issuer evidence superseding the implemented chart."
     },
     {
       "prefecture": "東京都",
@@ -1375,10 +1378,10 @@
       "officialCapacityAndMode": "1601 current post-renovation fixed-seat configuration (1F 1029 + 2F 572); historical 1802 is not a target",
       "officialUrl": "https://www.regasu-shinjuku.or.jp/bunka-center/",
       "inventoryId": "tokyo-official-0234",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
-      "blocker": "2026-09-05 PREFLIGHT 5 ADOPT: issuer now publishes the post-2023–2025-renovation 1601 fixed-seat configuration, current seat-chart surface, pit condition and approximate wheelchair semantics. Historical 1802 cannot be reused.",
-      "reopenCondition": "Fresh independent post-renovation chart transcription, bidirectional source equality, 1029+572 checksum, wheelchair classification and independent structural checksum. Do not subtract 122 to manufacture pit ranges."
+      "venueSourceId": "shinjuku-bunka-center-main-hall",
+      "currentStatus": "production",
+      "blocker": null,
+      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Reopen only if current issuer evidence supersedes the implemented post-renovation chart."
     },
     {
       "prefecture": "東京都",
@@ -1662,9 +1665,9 @@
       "officialUrl": "https://www.t-bunka.jp/",
       "inventoryId": "tokyo-tokyo-bunka-main-hall",
       "venueSourceId": "tokyo-bunka-main-hall-standard",
-      "currentStatus": "ADOPT / implementation-ready",
-      "blocker": "2026-09-05 PREFLIGHT 5 ADOPT under revised temporary-closure policy: issuer maintains complete five-floor seating surface/printable chart and 2303 numbered + 14 wheelchair = 2317 checksum while temporary renovation runs through FY2028 (planned). No permanent closure/replacement or explicit seat-structure change was found; absence is not treated as proof.",
-      "reopenCondition": "Immediately before transcription, freshly re-fetch and record the issuer-maintained pre-renovation chart. If it introduces no issuer-explicit seat-count, row-structure, or numbering change and all normal bounded DENSE/JUDGMENT gates pass — fresh two-pass, expanded-set equality, every floor subtotal and wheelchair reconciliation, and independent structure checksum — production may proceed before reopening. Lack of a seating-change statement is not proof; revalidate chart/currentness after reopening."
+      "currentStatus": "production",
+      "blocker": null,
+      "reopenCondition": "PRODUCTION / RELEASE VERIFIED (2026-09-05). Temporary renovation recheck remains due from 2028-04-01; reopen only on issuer evidence superseding the implemented chart."
     },
     {
       "prefecture": "東京都",
@@ -2078,9 +2081,9 @@
       "officialUrl": "https://www.sano-culture.jp/",
       "inventoryId": "tochigi-sano-culture-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": "2026-09-06 PREFLIGHT 6 ADOPT under revised temporary-closure policy: issuer keeps the large-hall page and complete numbered chart while a temporary same-facility renovation is under way. Current semantics are fixed 1,216 (1F 1,012 + 2F 204), standing 68 and wheelchair 8 = 1,292. No explicit seat-structure change was found; absence is not proof.",
+      "reopenCondition": "Before separately authorized implementation, fresh-re-fetch the issuer chart and recheck currentness. If no issuer-explicit seat-structure change appears, conduct independent human visual two-pass, bidirectional machine-expanded equality, fixed and full-capacity issuer reconciliation, and an independent structural checksum. Do not map standing/wheelchair positions without printed IDs; revalidate at or after reopening from 2027-04-01. Any change or material mismatch stops production."
     },
     {
       "prefecture": "栃木県",
@@ -2091,9 +2094,9 @@
       "officialUrl": "https://www.oyama-bunkacenter.jp/",
       "inventoryId": "tochigi-oyama-culture-main",
       "venueSourceId": null,
-      "currentStatus": "inventory-unresearched",
-      "blocker": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting.",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "currentStatus": "ADOPT / implementation-ready",
+      "blocker": "2026-09-06 PREFLIGHT 6 ADOPT: current issuer facility/ticket pages and linked complete PDF establish the 1,012 fixed-seat standard (1F 778 + 2F 234); pit and temporary-hanamichi reductions are explicit alternate conditions.",
+      "reopenCondition": "Separately authorized bounded implementation must fresh-re-fetch the issuer PDF, complete independent human visual two-pass and bidirectional machine-expanded equality, reconcile 778 + 234 = 1,012, and use a practical structural checksum. Do not subtract pit/hanaichi reductions to make alternate ranges; any material mismatch stops production."
     },
     {
       "prefecture": "栃木県",

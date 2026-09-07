@@ -2,6 +2,14 @@
 
 Updated: 2026-09-06 (Asia/Tokyo)
 
+## Active save state — KANTO PREFLIGHT 6
+
+`KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 6` is complete as preflight only. Start was clean `main` / `origin/main` `7c11f6dd7215db77c4f47b9371cd48c3f99a4d64`; production remains **152 venues / 154 selectable configurations / 231,154 seat records**. The new record is [`data/venue-reports/kanto-ge1000-high-impact-unresearched-preflight-6-2026-09-06.json`](../data/venue-reports/kanto-ge1000-high-impact-unresearched-preflight-6-2026-09-06.json).
+
+The live Kanto >=1,000 ledger, recomputed from `records[]`, is **69 production / 6 ADOPT / 57 formal blocked / 22 inventory-unresearched / 154 universe / 0 missing**. The six ADOPTs, ordered by importance and production yield, are `chiba-makuhari-event-hall`, `chiba-port-arena-main`, `chiba-narita-culture-main`, `ibaraki-ryugasaki-culture-main`, `tochigi-oyama-culture-main`, and `tochigi-sano-culture-main`. Sano is a temporary same-facility renovation case and requires fresh issuer/currentness recheck at or after 2027-04-01; no closure statement was treated as proof of unchanged seating. No source/range/fingerprint/generated artifact/application code changed. PREFLIGHT-5 is release-verified/closed; RaiBoC remains a separate remediation queue; Tokyo Priority D remains after Kanto accounting.
+
+Exact next action: `Claude: KANTO PREFLIGHT-6 ADOPT BATCH BOUNDED PRODUCTION IMPLEMENTATION`
+
 ## Current state
 
 The most recent change is an **operational-policy addition only** (2026-09-06): `AGENTS.md` now carries a permanent **GREEN / YELLOW / LOCAL RED / GLOBAL RED autonomous continuation policy**, and `docs/VENUE_WORKFLOW.md` gained one authority-map row pointing to it. It defines only when a bounded batch continues and when it stops, mapped onto the existing dispositions (`ADOPT`/production, `HOLD`, `NEED EVIDENCE`, formal `DEFER`, `CONTRADICTION`, `rejected`) and the existing metadata (`researchStatus: "blocked"` with `blockingReason`/`recheckNotBefore`, `verification.unresolvedIssues`, batch `carryOvers`, `data/venue-reports/`, and this file's unresolved items). No new status or queue was created. No venue data, production record, inventory, source, fingerprint, generated artifact, validator, application code, test expectation, or Priority D disposition changed, and no evidence, production-admission, validation, or push rule was relaxed. Verified with `npm run verify:docs`.
