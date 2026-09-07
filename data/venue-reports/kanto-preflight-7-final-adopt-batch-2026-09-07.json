@@ -151,5 +151,81 @@
     "third-party infill なし。すべてissuer first-party material のみ。",
     "issuerのseat_list.js（GMO座席番号検索データ）はblock highlight用の粗いモデルで、展開すると孤立番号や不整合区間が出るため seat-structure evidence としては採用していない。"
   ],
-  "exactNextAction": "Claude: KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION — kanagawa-yokohama-arena-main, then saitama-super-arena-main + saitama-super-arena-stadium as one GMOアリーナさいたま venue source with two configurations. RaiBoC / hino-brick-main-standard remain a separate queue."
+  "exactNextAction": "Claude: KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION — kanagawa-yokohama-arena-main, then saitama-super-arena-main + saitama-super-arena-stadium as one GMOアリーナさいたま venue source with two configurations. RaiBoC / hino-brick-main-standard remain a separate queue.",
+  "releaseVerification": {
+    "status": "RELEASE VERIFIED / CLOSED",
+    "verifiedAt": "2026-09-07",
+    "commit": "a9384e5d6fc7eb4fbbf8fb8fca0564f6ea5334a4",
+    "workersBuild": {
+      "name": "Workers Builds: seat-lottery-simulator",
+      "id": "535f8ab3-8617-47b7-845f-f55d4a0a9b76",
+      "conclusion": "success",
+      "attempt": "first",
+      "retried": false
+    },
+    "deployedPayloads": [
+      {
+        "path": "/venue-db/venues/yokohama-budokan-arena--permanent-seats.json",
+        "http": 200,
+        "contentType": "application/json",
+        "bytes": 5371,
+        "sha256": "32a0b546aa151c23437d80838a9a5c6f5a9c046f49c5611864e8b9eddabd41d8",
+        "byteIdenticalToCommitted": true,
+        "expandedKeys": 2398,
+        "uniqueKeys": 2398,
+        "duplicateKeys": 0,
+        "deployedOnly": 0,
+        "committedOnly": 0
+      },
+      {
+        "path": "/venue-db/venues/takasaki-arena-main--fixed-numbered-seats.json",
+        "http": 200,
+        "contentType": "application/json",
+        "bytes": 9040,
+        "sha256": "93c457c914236c59d8c58ba66ec3c3165e76db92788e90eadba40d36b1090522",
+        "byteIdenticalToCommitted": true,
+        "expandedKeys": 3000,
+        "uniqueKeys": 3000,
+        "duplicateKeys": 0,
+        "deployedOnly": 0,
+        "committedOnly": 0
+      }
+    ],
+    "machineAssertions": {
+      "total": 119,
+      "failures": 0,
+      "absenceProbes": 69,
+      "presenceProbes": 19,
+      "metadataLeak": false
+    },
+    "publicUiSmoke": {
+      "searchIdentity": [
+        "横浜武道館 → 1件",
+        "YOKOHAMA BUDOKAN → 1件",
+        "高崎アリーナ → 1件",
+        "TAKASAKI ARENA → 1件",
+        "武道館 → 日本武道館 と 横浜武道館 の2件（shadowingなし）"
+      ],
+      "displayedCounts": {
+        "yokohama-budokan-arena": "2,398席",
+        "takasaki-arena-main": "3,000席"
+      },
+      "draws": [
+        "3階 Cブロック C-6列 63番",
+        "3階 Cブロック C-3列 67番",
+        "2階 Eブロック E-3列 40番",
+        "2階 Jブロック J-5列 16番",
+        "2階 Dブロック D-3列 18番",
+        "3階 Cブロック C-1列 19番",
+        "Bブロック 8列 64番",
+        "Dブロック 2列 87番",
+        "Fブロック 5列 59番",
+        "Fブロック 6列 52番",
+        "Fブロック 1列 75番"
+      ],
+      "allDrawsRegistered": true,
+      "nonRegression": "幕張メッセ 幕張イベントホール 抽選対象 4,860席、Hブロック 4列 11番",
+      "consoleOutput": "none at any level"
+    }
+  }
 }
