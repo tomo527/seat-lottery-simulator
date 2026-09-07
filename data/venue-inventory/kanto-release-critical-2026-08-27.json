@@ -40,14 +40,14 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.yokohama-arena.co.jp/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 最大17,000人（イベント）; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer A-pattern materials define a lossless fixed numbered-seat implementation prospect; variable centre-floor and standing use remain excluded.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): fresh issuer retrieval, independent human two-pass, authored-set equality, issuer reconciliation and independent structural checksum remain mandatory; material mismatch stops production."
     },
     {
       "inventoryId": "kanagawa-pia-arena-mm",
@@ -102,13 +102,13 @@
       "officialFacilityUrl": "https://www.pacifico.co.jp/visitor/floorguide/north/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 最大5,948席; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer material establishes an active divisible multipurpose hall, but only temporary layout capacities, not a numbered representative seat set.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): obtain a current issuer-maintained complete numbered chart for one named configuration; capacity layouts are not seat-ID evidence."
     },
     {
       "inventoryId": "kanagawa-yokohama-buntai-main",
@@ -122,13 +122,13 @@
       "officialFacilityUrl": "https://yokohama-buntai.jp/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 最大5,000人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active issuer facility has variable movable/temporary/fixed seat categories but no complete numbered configuration chart.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer complete numbered chart required for one configuration, including movable, temporary, wheelchair, suite and box semantics."
     },
     {
       "inventoryId": "kanagawa-yokohama-budokan-arena",
@@ -141,14 +141,14 @@
       "category": "arena",
       "officialFacilityUrl": "https://yokohama-budokan.com/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 3,000席; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer fixed/rollback seat maps and permanent-seat subtotals support one bounded normal-chart prospect without stacking-chair inference.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): fresh issuer retrieval, independent human two-pass, authored-set equality, issuer reconciliation and independent structural checksum remain mandatory; material mismatch stops production."
     },
     {
       "inventoryId": "kanagawa-kt-zepp-yokohama",
@@ -162,13 +162,13 @@
       "officialFacilityUrl": "https://www.zepp.co.jp/hall/yokohama/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 2,146人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active live venue publishes only a partial detailed 2F map and variable 1F basic-pattern capacities.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): issuer must publish a complete current numbered configuration covering every selected 1F and 2F seat with fixed/movable/standing semantics."
     },
     {
       "inventoryId": "kanagawa-yokohama-coast-room1",
@@ -182,13 +182,13 @@
       "officialFacilityUrl": "https://yokohama-coast.com/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 2,035人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active flexible room has only standing/seated capacities and no numbered configuration.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer-owned complete numbered chart and representative seated configuration required."
     },
     {
       "inventoryId": "kanagawa-todoroki-arena-main",
@@ -202,13 +202,13 @@
       "officialFacilityUrl": "https://kawasaki-todoroki-arena.co.jp/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 6,500席; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active facility distinguishes moving/fixed-seat counts but publishes no complete numbered chart.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer numbered chart plus selected fixed/movable/accessibility scope required."
     },
     {
       "inventoryId": "kanagawa-odawara-arena-main",
@@ -222,13 +222,13 @@
       "officialFacilityUrl": "https://www.odawara-zaidan.or.jp/arena/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 6,000人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active municipal/operator surfaces establish identity but no official complete numbered chart.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current official numbered chart and fixed/movable/temporary seating semantics required."
     },
     {
       "inventoryId": "kanagawa-kaat-hall",
@@ -302,13 +302,13 @@
       "officialFacilityUrl": "https://www.m-messe.co.jp/facility/exhibition/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 大規模ticketed eventの最大15,000人級レイアウト; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active exhibition floors have no issuer-defined fixed/current numbered ticket-seat configuration.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): an issuer-defined complete numbered seating configuration is required; event temporary seating cannot be inferred."
     },
     {
       "inventoryId": "chiba-zozo-marine-stadium",
@@ -322,13 +322,13 @@
       "officialFacilityUrl": "https://www.marines.co.jp/stadium/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 29,500人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active stadium issuer states seat charts and sale seat types can change by game.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): complete current issuer fixed-stand identifier evidence with event/blocked/accessible-seat treatment required."
     },
     {
       "inventoryId": "chiba-port-arena-main",
@@ -342,13 +342,13 @@
       "officialFacilityUrl": "https://chibacity.spo-sin.or.jp/shisetu/arena-top/arena-main/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "2026-09-07 PREFLIGHT-6実装試行: 現行issuerページ（旧登録URLは404のため更新）は固定席4,380・ロールバックチェア616・仮設席2,500・車椅子専用スペース8＝7,504を明記し、現行客席平面図は総計4,996席の全座席番号を個別に印字する。座席集合はスタンド単位で確定できるが、コーナー移行部180席の列所属が印字されておらず、losslessな(area, 列, 番)キー集合を推定なしに構成できないためHOLD。",
+      "eligibilityReason": "2026-09-07 user decision / representation option (c): current issuer evidence fixes all 4,996 printed IDs and stand subtotals, but does not fix issuer-defined row identity for the 180-seat transition blocks. HOLD continues; no repository area split or depth-ordering is created.",
       "priority": "A",
       "venueSourceId": null,
       "researchStatus": "blocked",
       "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "LOCAL RED / PRODUCTION BLOCKER (row identity not printed, 2026-09-07 PREFLIGHT-6 implementation attempt): 現行issuerの客席平面図はスタンド別小計（Ｅ1,000／Ｎ1,125＋308／Ｓ1,160＋308／Ｗ1,095）と総計4,996を印字し、PDFテキスト層の座席番号も4,996件ちょうどで完全一致する。しかし列(列)ラダーはセクションごとに独立して印字され（E上辺1〜13列・W下辺1〜13列・N/S直線各1〜12列・4コーナー各1〜11列・NR/SR各1〜7列）、座席番号はこれらを跨いで連続する。コーナー移行部の4ブロック計180席（値1〜6および133〜138）は、幾何的にはE/Wの列ラダーと同一水平線上にありながら座席番号体系ではN/Sスタンドに属するため、どのラダーを適用しても同一areaに互換性のない2つの列番号体系が同居するか、印字されていない列所属を推定することになる。現行contractは block 所属の創作を禁止しているため production を停止した。"
+      "blockingReason": "HOLD / USER DECISION option (c), 2026-09-07: preserve the formal blocked ledger bucket. The issuer fixes 4,996 printed IDs and stand subtotals, but not the issuer-defined row identity of the 180-seat transition blocks. Do not invent area/row semantics by section splitting or depth ordering. Reopen only if first-party evidence publishes a stand/row breakdown, a row ladder including the transition blocks, or another lossless ticket/seat identity."
     },
     {
       "inventoryId": "chiba-pref-culture-main",
@@ -421,14 +421,15 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.saitama-arena.co.jp/",
       "operationalStatus": "renovation",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 最大37,000席（コンサート）; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer-maintained stadium-mode seat-view is a bounded implementation prospect despite temporary renovation; mandatory reopening recheck retained.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): stadium mode only. Fresh pre-transcription and post-reopening issuer retrieval, two-pass, authored-set equality, reconciliation and structural checksum are mandatory; material mismatch stops production.",
+      "recheckNotBefore": "2027-04-01"
     },
     {
       "inventoryId": "saitama-super-arena-main",
@@ -441,14 +442,15 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.saitama-arena.co.jp/",
       "operationalStatus": "renovation",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 最大22,500席（コンサート）; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer-maintained main-arena seat-view is a bounded implementation prospect despite temporary renovation; mandatory reopening recheck retained.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): main-arena mode only. Fresh pre-transcription and post-reopening issuer retrieval, two-pass, authored-set equality, reconciliation and structural checksum are mandatory; material mismatch stops production.",
+      "recheckNotBefore": "2027-04-01"
     },
     {
       "inventoryId": "saitama-super-arena-community",
@@ -461,14 +463,15 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.saitama-arena.co.jp/",
       "operationalStatus": "renovation",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 4,000席; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer-maintained community-arena seat-view is a bounded implementation prospect despite temporary renovation; mandatory reopening recheck retained.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): community-arena mode only. Fresh pre-transcription and post-reopening issuer retrieval, two-pass, authored-set equality, reconciliation and structural checksum are mandatory; material mismatch stops production.",
+      "recheckNotBefore": "2027-04-01"
     },
     {
       "inventoryId": "saitama-raiboc-main",
@@ -523,13 +526,13 @@
       "officialFacilityUrl": "https://www.seibulions.jp/stadium/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 31,552人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active stadium issuer publishes seat categories/products but no complete public numbered fixed-seat configuration.",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): issuer-owned complete current numbered stand chart with group/accessibility/event semantics required."
     },
     {
       "inventoryId": "saitama-koshigaya-suncity-hall",
@@ -584,13 +587,13 @@
       "officialFacilityUrl": "https://mito-arena.jp/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 5,000人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active municipal material establishes facility identity but no issuer-owned complete numbered seating chart.",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current facility/operator numbered chart with an issuer-defined representative configuration required."
     },
     {
       "inventoryId": "ibaraki-hitachinaka-culture-main",
@@ -644,13 +647,13 @@
       "officialFacilityUrl": "https://light-cube.jp/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 最大2,000人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active issuer rents the 2,000-person hall as a flat-floor space and publishes temporary layouts only.",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): issuer-defined complete numbered seating configuration, not a capacity layout diagram, required."
     },
     {
       "inventoryId": "tochigi-sano-culture-main",
@@ -704,14 +707,14 @@
       "category": "arena",
       "officialFacilityUrl": "https://takasaki-foundation.or.jp/arena/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 6,000人; seat implementation evidence is not yet assessed.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: current issuer numbered fixed-seat drawing and fixed/movable/temporary subtotals support a fixed-only implementation prospect.",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "source-located",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "ADOPT / implementation-ready (PREFLIGHT-7): fixed-seat drawing only. Fresh issuer retrieval, independent human two-pass, authored-set equality, issuer reconciliation and independent structural checksum are mandatory; material mismatch stops production."
     },
     {
       "inventoryId": "gunma-gmesse-exhibition",
@@ -725,13 +728,13 @@
       "officialFacilityUrl": "https://www.g-messe-gunma.jp/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 最大10,000人; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active issuer exhibition layouts are temporary standing/chair capacity plans, not numbered fixed seats.",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer complete numbered configuration required, including temporary/floor/standing semantics if selected."
     },
     {
       "inventoryId": "gunma-alsok-arena",
@@ -745,13 +748,13 @@
       "officialFacilityUrl": "https://www.gunma-sports.or.jp/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 最大約9,000席; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active issuer declares fixed and moving subtotals but no complete numbered-seat chart.",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer chart with every selected identifier and explicit movable/accessibility relationship required."
     },
     {
       "inventoryId": "gunma-green-dome-maebashi",
@@ -765,13 +768,13 @@
       "officialFacilityUrl": "https://greendome.jp/",
       "operationalStatus": "active",
       "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 7,594席; seat implementation evidence is not yet assessed.",
+      "eligibilityReason": "2026-09-07 PREFLIGHT-7: active issuer declares fixed stand count and building plans but no numbered stand chart.",
       "priority": "B",
       "venueSourceId": null,
-      "researchStatus": "not-started",
-      "lastCheckedAt": "2026-08-27",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-07",
       "aliases": [],
-      "blockingReason": "UNRESEARCHED / NEED EVIDENCE: confirm current issuer-owned complete numbered-seat set and issuer-defined representative configuration before any ADOPT; no inferred IDs, rows, or capacity fitting."
+      "blockingReason": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer numbered stand chart and declared representative scope required."
     },
     {
       "inventoryId": "gunma-maebashi-culture-main",
