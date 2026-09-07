@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "sano-culture-hall-large",
+  "name": "佐野市文化会館 大ホール",
+  "prefecture": "栃木県",
+  "city": "佐野市",
+  "aliases": [
+    "佐野市文化会館",
+    "佐野市文化会館大ホール"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "佐野市文化会館は施設の老朽化に伴う大規模改修工事のため令和6年4月1日から令和9年3月31日まで全館休館中で、令和9年4月にリニューアルオープン予定です。同一施設・同一ホールとしての継続であり、閉館・解体・建替えによる別施設化ではありません。issuerは休館中も大ホールのページ・座席表PDF・収容人数の記載を維持しており、改修に伴う席数・列構成・座席番号体系の変更を明示していません。ただし「記載がないこと」を「変更されない証明」とは扱わず、再開後（2027-04-01以降）にcurrentness・座席表・two-pass・structural checksum・issuer reconciliationをやり直すことを必須の再確認条件として記録しています。",
+    "issuerは大ホールの収容人数を「固定席1,216人、立見68人[1階35人・2階33人]、車イス席8人」とし、座席表は「総座席数 1,216（1階1,012 2階204）」を印字します。本実装が登録したのは固定席1,216席だけです。立見68人は座席表に位置も番号も描かれておらず、車イス席は座席表の1階し列両端に車椅子ピクトグラムとして描かれるものの座席番号が印字されていないため、いずれも登録していません。1,292や「1,292−68−8」といった減算はtranscription targetにしていません。",
+    "座席表は各列を最左・左・中央・右・最右のブロックに分けて描き、両端のブロックは客席の弧に沿って傾いています。座席番号は列内で連続するため列単位のrangeへ圧縮していますが、2階へ・ほ・ま・み列だけは中央3ブロックが存在せず3〜6番と35〜38番の2区画に分かれるため、印字どおり2本のrangeとして登録しています。",
+    "列名は座席表の印字どおり平仮名（1階あ〜ふ、2階へ〜ゆ）です。"
+  ],
+  "sources": [
+    {
+      "id": "official-large-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "佐野市文化会館（指定管理者: トールツリー佐野）",
+      "title": "大ホール（収容人数として「固定席1,216人、立見68人[1階35人・2階33人]、車イス席8人」を記載し、同ページから大ホール座席表PDFへリンクする）",
+      "url": "https://www.sano-culture.jp/culturehall/hall_big/",
+      "checkedAt": "2026-09-07"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "佐野市文化会館（指定管理者: トールツリー佐野）",
+      "title": "佐野市文化会館 大ホール座席表（1ページ。1階あ列〜ふ列、2階へ列〜ゆ列の全席に座席番号を個別に印字し、図の中央に「総座席数 1,216（1階1,012 2階204）」を印字する。1階し列の両端には座席番号のない車椅子ピクトグラムを描く）",
+      "url": "https://www.sano-culture.jp/src/pdf/culturehall/hall.pdf",
+      "checkedAt": "2026-09-07"
+    },
+    {
+      "id": "official-renovation-notice",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "佐野市文化会館（指定管理者: トールツリー佐野）",
+      "title": "【重要なお知らせ】大規模改修工事に伴う佐野市文化会館休館のお知らせ（2023-04-06付。施設の老朽化に伴い令和6年4月1日〜令和9年3月31日の3年間を全館休館とし、令和9年4月にリニューアルオープンする旨を告知する。席数・列構成・座席番号体系の変更には言及していない）",
+      "url": "https://www.sano-culture.jp/news/all/post6277/",
+      "checkedAt": "2026-09-07"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置 固定席（1,216席）",
+      "issuerDefinedCondition": "issuerが大ホールの収容人数として掲げる固定席1,216席（1階1,012席／2階204席）の通常配置。現行座席表そのままの固定席配置で、立見席・車椅子席は含まない。",
+      "selectionBasis": "issuerが公開する番号付き座席図は現行の「大ホール座席表」1点のみで、その図が固定席1,216席を示す。オーケストラピットは舞台機構として備わるが、ピット使用時の独立した番号付き座席図はissuerが公開していないため、減算によるalternate configurationは作成していない。代表configurationは通常配置1つとした。休館は一時的な同一施設の大規模改修であり、2026-09-04のuser-authorized currentness policy revisionにより、それ単独ではproduction blockerとしない。issuerは休館中も座席表と収容人数の記載を維持し、座席構造の変更を明示していない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-07に現行issuerの大ホールページ（https://www.sano-culture.jp/culturehall/hall_big/ ）がリンクする「大ホール座席表 PDF」から取得した。URL直打ちでcurrent扱いはしていない。SHA-256: 174df4a9904f883cecf7802d0d0023a761e06fe1d92b016f4113a6a92ceb9ab3、977,929バイト、1ページ、841.89×1190.55pt（A3縦）、PDF 1.4、Illustrator / Adobe PDF library 6.66、PDF内部のcreationDate/modDateはいずれも2010-11-25、HTTP Last-Modifiedは2015-09-18。ラスタ画像0件の純ベクタPDFだが、座席番号はアウトライン化されたベクタパスでテキスト層を持たない（テキスト抽出0文字）ため、機械経路はテキスト層ではなく描画幾何を用いた。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256）であることを確認している。",
+      "sourceIds": [
+        "official-large-hall-page",
+        "official-seat-map",
+        "official-renovation-notice"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-large-hall-page"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1216,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "issuerの現行座席表が示す固定席1,216席の、印字された全番号席を登録した構成です。エリアは座席表の階区分どおり「1階席」1,012席（あ列〜ふ列の28列）と「2階席」204席（へ列〜ゆ列の9列）の2つで、列名は座席表の印字どおり平仮名です。座席番号は列ごとの通し番号で、2階へ・ほ・ま・み列だけが3〜6番と35〜38番の2区画に分かれます。issuerが別に公表する立見席68人（1階35・2階33）は座席表に位置も番号も描かれていないため含みません。車イス席8人分は座席表の1階し列両端に車椅子記号として描かれますが座席番号が印字されていないため含まず、番号席との置換関係も反映していません。なお当館は2024年4月から2027年3月まで大規模改修のため休館中で、再開後の再確認を必須としています。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerは収容人数に「車イス席8人」を別掲し、座席表では1階し列の左右両端に座席番号のない車椅子ピクトグラムを描きます。そのスペースに座席番号は一切印字されておらず、どの番号席と置き換わるのかもissuerは公開していません。したがって車椅子席は登録せず、置換関係も推測していません。issuerの「総座席数1,216（1階1,012／2階204）」は印字済み番号席のみの合計と完全一致し、車椅子席・立見席を含んでいません。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-large-hall-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-07",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-reversed-floor-order-and-a-different-render-resolution-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-from-raster-cell-detection-not-fed-by-the-human-range-table; issuer-per-floor-and-grand-total-reconciliation; temporary-closure-currentness-assessment-under-the-2026-09-04-policy-revision",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "issuer checksum reconciliation（階別・総数）: 座席表は図の中央に issuer 自身の内訳「総座席数 1,216（1階 1,012　2階 204）」を印字し、大ホールページも「固定席1,216人」と記載します。転記したmapped setは1階1,012席・2階204席・合計1,216席で、いずれとも完全一致しました。内訳はtranscription targetにしておらず、座席図の番号集合を先に確定したうえで事後にreconcileしています。",
+          "independent structural checksum（機械経路: ラスタ座席枠検出）: human range tableを入力にせず、PDFを400dpiでグレースケール描画し、閉じた白領域の連結成分から座席枠サイズ（12.0〜19.0pt四方）の区画を検出しました。検出は1,216件ちょうどで、issuerの印字総数1,216と独立に完全一致しました（内訳は主要ブロックの14×15pt枠が1,032件、客席の弧に沿って傾いた両端ブロックの17×17〜17×18pt枠が184件）。y座標で37本の行帯に分け、各行帯をx方向のブロックへ分割した結果、1階が28行・1,012件、2階が9行・204件となり、印字された階別小計と一致しました。車椅子ピクトグラムは座席枠として検出されず（=1,216に含まれない）ことも確認しています。",
+          "human visual two-pass: Pass 1は420〜1,000dpiで再描画した座席図を用い、1階あ列→し列、1階す列→ふ列、2階へ列→ゆ列の順に、各列で小さい番号の側から読み取りました。Pass 2は同一URLからPDFを独立に再取得し（バイト単位で同一）、Pass 1のtableを参照せずに300〜340dpiという異なる解像度で再描画し、2階→1階下部→1階上部の逆順で読み取りました。両passをfreezeしてから比較し、37列・41本のrange・展開座席ID集合1,216件・エリア所属・列所属・全range境界でunresolved mismatchは0件でした。",
+          "machine-detected discrepancy returned to the chart（傾いた両端ブロックの帰属）: 両端の5席ブロックは客席の弧に沿って傾いており、目視では直上の列に属するようにも見えます。数字を合計へ合わせて調整することはせず、1,000dpiで1階し列〜そ列の左端を拡大再描画して視認し、あわせて座席枠の中心座標を直接列挙しました。その結果、両端ブロックは自身の主ブロックより約13.6pt上に描かれる規則であることが確認され、し列は両端が車椅子記号（番号なし）、す列は両端ブロックを持たず6〜35番の30席、せ列以降ひ列までが1〜40番の40席、ふ列は両端ブロックを持たず6〜35番の30席であることが確定しました。この帰属でのみ1階小計が印字の1,012と一致します（別の帰属では1,022となり不一致）。失敗した初回の目視は記録として残しています。",
+          "row structure: 1階はあ列〜ふ列の28列で、あ9〜32、い8〜33、う7〜34、え6〜35、お6〜35、か4〜37、き3〜38、く3〜38、け2〜39、こ1〜40、さ1〜40、し6〜35、す6〜35、せ〜ひ（14列）1〜40、ふ6〜35です。2階はへ列〜ゆ列の9列で、へ・ほ・ま・みが3〜6番と35〜38番の2区画（各8席）、む・め・も・やが3〜38番（各36席）、ゆが7〜34番（28席）です。いずれの区画にも欠番はありません。",
+          "temporary closure / currentness: 2026-09-07時点で施設は大規模改修工事のため休館中（令和6年4月1日〜令和9年3月31日、令和9年4月リニューアルオープン予定）。2026-09-04のuser-authorized currentness/closure policy revisionにより、一時休館・一時改修はそれ単独ではproduction blockerとしません。本件は同一ホールとしての継続でfacility-space identityが維持され、閉館・解体・建替えによる別施設化ではなく、issuerは休館中も大ホールページ・座席表PDF・収容人数記載を維持しており、改修告知にも席数・列構成・座席番号体系の変更は明示されていません。ただし「記載がないこと」を「変更されない証明」としては扱っていません。再開後（2027-04-01以降）にfresh currentness recheck、現行座席表の再取得、human visual two-pass、independent structural checksum、issuer reconciliationをやり直すことを必須の再確認条件とし、recheckNotBefore に2027-04-01を記録しています。",
+          "standing and wheelchair positions: issuerは立見68人（1階35・2階33）と車イス席8人を収容人数として別掲しますが、立見は座席表に位置も番号も描かれておらず、車椅子席は1階し列両端に番号のない記号として描かれるだけです。いずれも印字されたIDを持たないため固定番号席へ混ぜていません。1,292人（1,216+68+8）や1,292からの減算をtranscription targetにもしていません。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "あ列",
+          "from": 9,
+          "to": 32
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "い列",
+          "from": 8,
+          "to": 33
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "う列",
+          "from": 7,
+          "to": 34
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "え列",
+          "from": 6,
+          "to": 35
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "お列",
+          "from": 6,
+          "to": 35
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "か列",
+          "from": 4,
+          "to": 37
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "き列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "く列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "け列",
+          "from": 2,
+          "to": 39
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "こ列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "さ列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "し列",
+          "from": 6,
+          "to": 35
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "す列",
+          "from": 6,
+          "to": 35
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "せ列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "そ列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "た列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "ち列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "つ列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "て列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "と列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "な列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "に列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "ぬ列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "ね列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "の列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "は列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "ひ列",
+          "from": 1,
+          "to": 40
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "ふ列",
+          "from": 6,
+          "to": 35
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "へ列",
+          "from": 3,
+          "to": 6
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "へ列",
+          "from": 35,
+          "to": 38
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "ほ列",
+          "from": 3,
+          "to": 6
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "ほ列",
+          "from": 35,
+          "to": 38
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "ま列",
+          "from": 3,
+          "to": 6
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "ま列",
+          "from": 35,
+          "to": 38
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "み列",
+          "from": 3,
+          "to": 6
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "み列",
+          "from": 35,
+          "to": 38
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "む列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "め列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "も列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "や列",
+          "from": 3,
+          "to": 38
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "ゆ列",
+          "from": 7,
+          "to": 34
+        }
+      ]
+    }
+  ]
+}

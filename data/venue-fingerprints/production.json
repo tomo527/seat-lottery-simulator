@@ -581,6 +581,20 @@
       ],
       "sha256": "8c2e957ee43f491d9f152734b1a3d9993c76e1078ce4da97703aabbd0efb890a"
     },
+    "makuhari-event-hall": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 4860,
+          "samples": [
+            "a/1列/11",
+            "e/11列/25",
+            "box/5列/12"
+          ],
+          "sha256": "292221635ca8569d36e9f2835875baa62a8813607de9895c54291a7c850d9b8a"
+        }
+      }
+    },
     "meijiza-standard": {
       "schemaVersion": 2,
       "configurations": {
@@ -675,6 +689,20 @@
             "second-floor/7/50"
           ],
           "sha256": "a729910c30a4aa90000a6be60fa23d73b1e5b31fec337d639135ef09bbdc4886"
+        }
+      }
+    },
+    "narita-culture-hall-large": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1188,
+          "samples": [
+            "floor1/1列/10",
+            "floor1/17列/33",
+            "floor2/右列/14"
+          ],
+          "sha256": "60a83f76497a79e3b35a52e095edcc6f8327739b0d62812b3cab1606de0b1c58"
         }
       }
     },
@@ -899,6 +927,20 @@
       ],
       "sha256": "c18b7356d35ac5fc61d5e781d7d65023767c32ec3e0bde46262c1b00eb002055"
     },
+    "oyama-culture-center-large": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1012,
+          "samples": [
+            "floor1/1列/1",
+            "floor1/15列/5",
+            "floor2/27列/34"
+          ],
+          "sha256": "0ef79029ea939e6cf869b240a3e867fced8732ee3add4b688c2d83e8aa0b7154"
+        }
+      }
+    },
     "parthenon-tama-main-standard": {
       "count": 1129,
       "samples": [
@@ -954,6 +996,20 @@
         }
       }
     },
+    "ryugasaki-culture-hall-large": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1195,
+          "samples": [
+            "floor1/1列/1",
+            "floor1/17列/44",
+            "floor2/7列/52"
+          ],
+          "sha256": "773a20161904747dcfaa38ed9dfd743b9988febb62a5f443b70ba05aad63dbb1"
+        }
+      }
+    },
     "sagamihara-green-hall-main-release-seed": {
       "count": 1778,
       "samples": [
@@ -983,6 +1039,20 @@
             "floor3/8列/42"
           ],
           "sha256": "19f4d4d0b925df191663d739f0cb148d1569c42fb7fefdae44bf2fc6fab5af24"
+        }
+      }
+    },
+    "sano-culture-hall-large": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1216,
+          "samples": [
+            "floor1/あ列/9",
+            "floor1/つ列/27",
+            "floor2/ゆ列/34"
+          ],
+          "sha256": "c682982636c3394f0fed684432c40e84cfb2e89af9541ff953dff391afdf1747"
         }
       }
     },

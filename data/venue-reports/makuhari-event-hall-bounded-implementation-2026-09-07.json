@@ -1,0 +1,69 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-07",
+  "mode": "KANTO PREFLIGHT-6 ADOPT BATCH / bounded production implementation (mini-wave 1 of 6 in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をissuer pageからfreshに再導出・再取得し、fresh independent human visual two-pass、human range tableを入力にしないindependent machine structural checksum、双方向のmachine-expanded set equality、issuer subtotal reconciliation、material mismatch時のproduction停止をすべて適用した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。",
+  "outOfScopeUntouched": [
+    "RaiBoC remediation（別queue）",
+    "Tokyo Priority D research",
+    "PREFLIGHT 6の他5候補以外のKanto pool",
+    "既存production会場のsource・range・fingerprint・production semantics"
+  ],
+  "title": "MAKUHARI-EVENT-HALL BOUNDED PRODUCTION IMPLEMENTATION",
+  "scope": "Bounded production implementation of chiba-makuhari-event-hall only.",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "8d0553a5204639850033eb5369bc5a7fb556fe14",
+    "productionAtStart": {
+      "venues": 152,
+      "selectableConfigurations": 154,
+      "seatRecords": 231154
+    }
+  },
+  "lane": "JUDGMENT",
+  "laneReason": "現行の公式座席表が同一ホールの3状態（3,948／4,404／4,860席）を3ページで描き分けており、代表configurationの選定と、約3,000の仮設席・C/Jブロック車椅子スペースをscopeから外す判断が転記に先行する。図自体も1/400のCAD平面図で超高密度。",
+  "identity": "幕張メッセ〔幕張イベントホール〕 / 千葉県千葉市美浜区 / hall",
+  "disposition": "PRODUCTION",
+  "currentnessCheck": "ACTIVE。休館・改修・座席変更の告知なし。issuerの現行施設紹介ページ（organizers/guide/eventhall/guide_eventhall）は客席内訳を固定客席3,948席・可動客席912席・仮設席約3,000席と記載。inventoryに登録されていた officialFacilityUrl https://www.m-messe.co.jp/facility/eventhall/ は現在404であり、現行URLへ更新した。",
+  "chartRederivation": "PREFLIGHT 6が参照した https://www.m-messe.co.jp/docs/layout/eventhallseat.pdf は現行のissuer施設ページからも図面インデックスからもリンクされておらず（両ページのHTML内に0件）、PDF内部日付も2014-07の旧世代資産だった。現行issuerの図面インデックス https://www.m-messe.co.jp/organizers/support/layout/ が「幕張イベントホール 座席表（一式）」として公開する3ページPDFを唯一のseat-structure sourceとして再導出した。",
+  "seatChartEvidence": "https://www.m-messe.co.jp/saved/files/document/pdf/1088/1/幕張イベントホール座席表(一式）.pdf / SHA-256 f94fd224aa5989c2b88be9d3030059e6a45824b5405209f865fca260955b681c / 523,019 bytes / 3 pages / 842.0x1191.0pt with /Rotate 90 / PDF 1.6 / Acrobat Distiller 15.0 / internal creation+mod 2022-11-25 / internal title 06_イベントホール全体平面図 座席表入り (2013改修後）_v2019.vwx / HTTP Last-Modified 2022-11-25。Pass 2直前に独立再取得しバイト単位で同一。座席番号は実テキストではなく1bit image XObject（121種・1,374配置）。",
+  "configurationAssessment": "3ページはそれぞれ可動席0（3,948席）、Aブロック可動456（4,404席）、A・Fブロック可動912（4,860席）。ページ0とページ2のベクタ差分は面積10〜13pt²の四辺形912件（A456・F456）と付随線分のみで、固定席側の描画は不変。4,860席構成が他2状態を完全に包含するため、これを唯一の代表configurationとした。減算・合成によるalternate configurationは作成していない。仮設席 約3,000席は概数のみで番号図がなく、scope外。",
+  "visualTwoPass": "Pass 1は850〜1,500dpiで北側3階B→C→D→E、北側2階、A・Fブロック、南側3階K→J→H→G、南側2階の順、各ブロック小さい列番号側から。Pass 2は独立再取得したバイト同一資産を620〜2,600dpiで再描画し、南側G→H→J→K→ボックス、北側E→D→C→B、A・Fの逆順、各ブロック大きい列番号側から。両passをfreeze後に比較しunresolved mismatch 0件。",
+  "independentMachineStructuralChecksum": "human range tableを入力にしない独立経路。ベクタ描画から座席セルのみを抽出（固定ブロックの矩形3,548件＋A・Fの回転四辺形1,312件＝4,860件、重複除去後）。座席番号ラベルは1bit image XObjectで121種のみのため各種を1度だけ描画して値を確定し、配置座標をセルへ最近傍割り当て。列方向ピッチ3.18ptでセルを連結して得た印字区画581本すべてで「終端番号−始端番号+1 = 実描画セル数」が成立し、mismatch 0件。",
+  "bidirectionalSetEquality": "機械経路の581区画(始端,終端)多重集合と、登録rangeを印字規則で展開した581区画の多重集合を双方向比較し差分0件。区画長ヒストグラムも完全一致（2:4, 3:18, 4:8, 5:64, 6:45, 7:48, 8:48, 9:4, 10:342）。展開runtime key 4,860件、重複0件。",
+  "issuerSubtotalReconciliation": "座席表の「ブロック別客席数」表と11ブロックすべてで完全一致（A656, B442, C500, D420, E442, F656, G442, H390, ボックス60, J410, K442）。階別も固定2F 2,060・固定3F 1,888・固定計3,948・可動912・総計4,860で完全一致。",
+  "machineDetectedDiscrepanciesReturnedToChart": "なし。581区画すべてが初回照合で一致した。",
+  "accessibilitySemantics": "座席表は「*C，Jブロックに車椅子用のスペース（兼・ＴＶ中継用スペース）各５席分があります。」と注記し、Cブロック2階9列・Jブロック2階9列の端部に車椅子ピクトグラムを描く。当該区画には座席番号が一切印字されない（C9列は11〜30番のみ、J9列は1〜20番のみ）。番号がないためスペース自体を登録せず、置換関係も推測していない（wheelchairSemantics: not-reflected）。issuerのブロック別客席数C500・J410は印字済み番号席のみの合計と一致し、車椅子スペースを含まない。",
+  "excludedAlternateAndTemporary": "仮設席 約3,000席（アリーナ床、event-dependent、番号図なし）を除外。座席表1ページ目の3,948席状態と2ページ目の4,404席状態は登録集合の部分集合として除外（別configurationにしていない）。",
+  "mappedSeatCount": 4860,
+  "issuerStatedSeatCount": 4860,
+  "rangeDiff": 0,
+  "rangeCount": 333,
+  "areaSubtotals": {
+    "a": 656,
+    "b": 442,
+    "c": 500,
+    "d": 420,
+    "e": 442,
+    "f": 656,
+    "g": 442,
+    "h": 390,
+    "j": 410,
+    "k": 442,
+    "box": 60
+  },
+  "venueSourceId": "makuhari-event-hall",
+  "inventoryId": "chiba-makuhari-event-hall",
+  "recheckNotBefore": null,
+  "reopenCondition": "通常のcurrentness監視のみ。issuerが座席表（一式）を更新した場合、または仮設席・車椅子スペースに番号付き座席図を公開した場合は、そのときに独立実装を検討する。",
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "issuer subtotalをtranscription targetにしていない",
+    "human-human MATCHだけをproduction十分条件にしていない",
+    "仮設席をcapacity arithmeticやgeometryから生成していない"
+  ]
+}

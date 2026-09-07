@@ -1,0 +1,47 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-07",
+  "mode": "KANTO PREFLIGHT-6 ADOPT BATCH / bounded production implementation (mini-wave 6 of 6 in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をissuer pageからfreshに再導出・再取得し、fresh independent human visual two-pass、human range tableを入力にしないindependent machine structural checksum、issuer subtotal reconciliation、2026-09-04 currentness/closure policy revisionに基づく一時休館の評価をすべて適用した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。",
+  "title": "SANO-CULTURE-HALL-LARGE BOUNDED PRODUCTION IMPLEMENTATION",
+  "scope": "Bounded production implementation of tochigi-sano-culture-main only.",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "8d0553a5204639850033eb5369bc5a7fb556fe14"
+  },
+  "lane": "JUDGMENT",
+  "laneReason": "一時休館（大規模改修）中の会場であり、2026-09-04 revised currentness/closure policyの各条件を満たすかの判断が転記に先行する。座席図自体は完全番号付きで争点はない。",
+  "identity": "佐野市文化会館〔大ホール〕 / 栃木県佐野市 / hall",
+  "disposition": "PRODUCTION",
+  "currentnessCheck": "TEMPORARILY CLOSED FOR RENOVATION（令和6年4月1日〜令和9年3月31日、令和9年4月リニューアルオープン予定）。同一施設・同一ホールの継続でfacility-space identityは維持され、閉館・解体・建替えによる別施設化ではない。issuerは休館中も大ホールページ・座席表PDF・収容人数記載（固定席1,216人、立見68人、車イス席8人）を維持しており、改修告知にも席数・列構成・座席番号体系の変更は明示されていない。『記載がないこと』を『変更されない証明』としては扱わず、recheckNotBefore 2027-04-01 を設定した。",
+  "seatChartEvidence": "https://www.sano-culture.jp/src/pdf/culturehall/hall.pdf / SHA-256 174df4a9904f883cecf7802d0d0023a761e06fe1d92b016f4113a6a92ceb9ab3 / 977,929 bytes / 1 page / 841.89x1190.55pt / PDF 1.4 / Illustrator / internal creation+mod 2010-11-25 / HTTP Last-Modified 2015-09-18 / raster images 0 / 座席番号はアウトライン化ベクタ（テキスト抽出0文字）。Pass 2直前に独立再取得しバイト同一。",
+  "configurationAssessment": "issuerが公開する番号付き座席図は現行の大ホール座席表1点のみ。ピット使用時等の別番号図はなく、減算によるalternate configurationは作成していない。scopeはissuerの固定席1,216席とし、立見68人・車イス席8人は印字IDがないため含めていない。",
+  "visualTwoPass": "Pass 1は420〜1,000dpiで1階あ→し列、1階す→ふ列、2階へ→ゆ列の順、各列小さい番号側から。Pass 2は独立再取得したバイト同一資産を300〜340dpiで再描画し、2階→1階下部→1階上部の逆順。両passfreeze後の比較でunresolved mismatch 0件。",
+  "independentMachineStructuralChecksum": "human range tableを入力にしない独立経路。PDFを400dpiでグレースケール描画し、閉じた白領域の連結成分から座席枠（12.0〜19.0pt四方）を検出。検出1,216件ちょうどでissuerの印字総数と独立に一致（主要ブロック14×15pt枠1,032件＋傾いた両端ブロック17×17〜17×18pt枠184件）。37本の行帯へ分割した結果、1階28行・1,012件、2階9行・204件で階別小計と一致。車椅子ピクトグラムは座席枠として検出されない。",
+  "issuerSubtotalReconciliation": "座席表中央の「総座席数 1,216（1階 1,012　2階 204）」および大ホールページの「固定席1,216人」と、mapped 1階1,012・2階204・合計1,216が完全一致。",
+  "machineDetectedDiscrepanciesReturnedToChart": "両端5席ブロックが客席の弧に沿って傾いており、初回目視では直上の列に属するように見えた。数字を合計へ合わせて調整せず、1,000dpi拡大再描画と座席枠中心座標の列挙により、両端ブロックは自身の主ブロックより約13.6pt上に描かれる規則であることを確認。し列は両端が車椅子記号（番号なし）、す列とふ列は両端ブロックなしで6〜35番の30席、せ〜ひ列は1〜40番であることが確定した。この帰属でのみ1階小計が印字の1,012と一致する（別帰属では1,022で不一致）。失敗した初回目視は記録として保持。",
+  "accessibilitySemantics": "issuerは車イス席8人を収容人数に別掲し、座席表は1階し列両端に座席番号のない車椅子ピクトグラムを描く。座席番号が印字されておらず置換関係も非公開のため登録せず、推測もしていない（wheelchairSemantics: not-reflected）。立見68人（1階35・2階33）も座席表に位置・番号がなく登録していない。issuerの階別小計・総数は印字済み番号席のみの合計と一致。",
+  "mappedSeatCount": 1216,
+  "issuerStatedSeatCount": 1216,
+  "rangeDiff": 0,
+  "rangeCount": 41,
+  "areaSubtotals": {
+    "floor1": 1012,
+    "floor2": 204
+  },
+  "venueSourceId": "sano-culture-hall-large",
+  "inventoryId": "tochigi-sano-culture-main",
+  "recheckNotBefore": "2027-04-01",
+  "reopenCondition": "2027-04-01以降のリニューアルオープン後に、fresh currentness recheck、現行座席表の再取得、fresh independent human visual two-pass、independent structural checksum、issuer subtotal reconciliationをやり直すこと。改修により席数・列構成・座席番号体系が変わっていた場合は、現行データを更新するまでproductionから外す。",
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "1,292や1,292からの減算をtranscription targetにしていない",
+    "立見・車椅子スペースを固定番号席へ混ぜていない",
+    "座席変更の記載がないことを変更されない証明として扱っていない",
+    "human-human MATCHだけをproduction十分条件にしていない"
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "ryugasaki-culture-hall-large",
+  "name": "大昭ホール龍ケ崎 大ホール",
+  "prefecture": "茨城県",
+  "city": "龍ケ崎市",
+  "aliases": [
+    "大昭ホール龍ケ崎",
+    "龍ケ崎市文化会館",
+    "龍ケ崎市文化会館大ホール",
+    "大昭ホール龍ケ崎大ホール"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "issuerは大ホールの客席を「一般席（席数1,195）・車椅子席（席数5）・計1,200席」と区分し、座席表もこの区分をそのまま印字します。本実装が登録したのはissuer区分の一般席1,195席（1階839席・2階356席）だけです。車椅子席5席は1階9列右端に丸囲み数字①〜⑤として印字される別区分の席で、issuerが席数も配置も一般席と分けて公表しているため登録していません。1,200席や「1,200−5」といった減算をtranscription targetにはしていません。",
+    "座席表は各列を左・中央・右（10列以降は最左・左・中央・右・最右）のブロックに分けて描きますが、座席番号は列内で連続しているため列単位のrangeへ圧縮しています。番号の欠番は1件もありません。",
+    "座席表は各列の右端に、その列までの累計席数（1階は42〜839の21点、2階は889〜1,195の7点）をissuer自身が印字します。本実装のmapped setはこの28点すべてと完全一致します。"
+  ],
+  "sources": [
+    {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人龍ケ崎市まちづくり・文化財団（施設運営者）",
+      "title": "施設案内 大ホール座席表（「１階座席 一般席（席数８３９）・車椅子席（席数５）」「２階座席 一般席（席数３５６）」を記載し、同ページから大ホール客席図PDFへリンクする）",
+      "url": "https://www.ryubun.org/%E6%96%BD%E8%A8%AD%E6%A1%88%E5%86%85-https-www-ryubun-org-%E6%96%BD%E8%A8%AD%E6%A1%88%E5%86%85-%E6%96%BD%E8%A8%AD%E6%A6%82%E8%A6%81/%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%E5%BA%A7%E5%B8%AD%E8%A1%A8/",
+      "checkedAt": "2026-09-07"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人龍ケ崎市まちづくり・文化財団（施設運営者）",
+      "title": "大昭ホール龍ケ崎 大ホール客席図（1ページ。図の冒頭に「一般席（席数１１９５）・車椅子席（席数５）／計１２００席」を印字し、1階1列〜22列・2階1列〜7列の全席に座席番号を個別に印字する。各列右端に累計席数を印字し、1階下部に「１階座席 一般席（席数８３９）・車椅子席（席数５）」、2階下部に「２階座席 一般席（席数３５６）」を印字する）",
+      "url": "https://www.ryubun.org/app/download/14061336789/%E5%A4%A7%E3%83%9B%E3%83%BC%E3%83%AB%E5%AE%A2%E5%B8%AD%E5%9B%B3.pdf?t=1643954962",
+      "checkedAt": "2026-09-07"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置 一般席（1,195席）",
+      "issuerDefinedCondition": "issuerが大ホールの客席として掲げる一般席1,195席（1階839席／2階356席）の通常配置。現行客席図そのままの固定席配置で、別区分の車椅子席5席は含まない。",
+      "selectionBasis": "issuerが公開する番号付き座席図は現行の「大ホール客席図」1点のみで、その図が通常配置を示す。ピット使用時等の別配置についてissuerは独立した番号付き座席図を公開していないため、代表configurationは通常配置1つとした。scopeはissuer自身の区分に合わせて一般席1,195席とし、丸囲み数字で別に印字される車椅子席5席は含めていない（減算ではなくissuer区分の採用である）。施設は現行運用中で、休館・改修・座席変更の告知はない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-07に現行issuerの「大ホール座席表」ページがリンクする「大ホール客席図.pdf」から取得した。URL直打ちでcurrent扱いはしていない。SHA-256: bb18104391f432a01f9803c67028d9efc58753acac5f80750e0013154bd1a73f、671,600バイト、1ページ、612.29×858.90pt、PDF 1.5、Adobe Illustrator CS6 / Adobe PDF library 10.01、PDF内部のcreationDate/modDateはいずれも2022-01-27、HTTP Last-Modifiedは2022-02-04。ラスタ画像0件の純ベクタPDFだが、座席番号は実テキストではなくアウトライン化されたベクタパスであり（テキスト抽出は表題16文字のみ）、機械経路はテキスト層ではなく描画幾何を用いた。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256）であることを確認している。",
+      "sourceIds": [
+        "official-seat-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-seat-page"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1195,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "issuerが大ホールの客席として区分する一般席1,195席の、印字された全番号席を登録した構成です。エリアは客席図の階区分どおり「1階席」839席（1列〜22列）と「2階席」356席（1列〜7列）の2つで、座席番号は列ごとの通し番号1番から各列の最終番号までが欠番なく連続します。issuerが同じ図に別区分として印字する車椅子席5席（1階9列右端の丸囲み数字①〜⑤）は、席数も配置もissuerが一般席と分けて公表しているため含みません。したがって本構成は施設の計1,200席のうち一般席のみを対象とします。",
+      "wheelchairSemantics": {
+        "status": "resolved",
+        "description": "issuerは大ホールの客席を「一般席（席数1,195）・車椅子席（席数5）・計1,200席」と明確に区分し、客席図でも車椅子席を1階9列右端に丸囲み数字①〜⑤として一般席とは異なる記号で印字します。1階の内訳も「一般席（席数839）・車椅子席（席数5）」と別掲されます。したがって車椅子席は一般席と置き換わるものではなく独立した5席であり、登録scopeを一般席1,195席としたうえで車椅子席は登録していません。置換関係を推測する必要はなく、推測もしていません。",
+        "sourceIds": [
+          "official-seat-map",
+          "official-seat-page"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-07",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-reversed-floor-and-row-order-and-a-different-render-resolution-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-from-raster-cell-detection-not-fed-by-the-human-range-table; issuer-printed-per-row-cumulative-total-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "issuer checksum reconciliation（列別累計・階別・総数）: 客席図は各列の右端に、その列までの累計席数をissuer自身が印字します（1階: 42, 67, 94, 123, 154, 186, 220, 248, 290, 332, 374, 419, 464, 509, 554, 599, 647, 695, 743, 791, 839 の21点／2階: 889, 939, 989, 1039, 1091, 1143, 1195 の7点）。転記したmapped setから計算した累計は28点すべてと完全一致しました。階別小計も1階839席・2階356席で図面下部の印字と一致し、総数1,195席は図の冒頭の「一般席（席数１１９５）」および施設ページの「1階839＋2階356」と一致します。累計はtranscription targetにしておらず、座席図の番号集合を先に確定したうえで事後にreconcileしています。",
+          "independent structural checksum（機械経路: ラスタ座席枠検出）: human range tableを入力にせず、PDFを500dpiでグレースケール描画し、閉じた白領域の連結成分から座席枠サイズ（幅6.0〜13.0pt・高さ9.0〜15.0pt・充填率0.25超）の区画を検出しました。検出は1,196件で、うち1件は図の表題領域（y=57）にある非座席の誤検出であり、残り1,195件が座席枠です。y<560ptの1階領域が839件、y>=560ptの2階領域が356件で、issuerの階別内訳839／356と独立に完全一致しました。車椅子席①〜⑤は丸で描かれており座席枠としては検出されません（=一般席1,195に含まれない）ことも確認しています。さらに近接連結（水平方向11pt以内・垂直方向4pt未満）で座席枠を127本のブロックへ分割し、各列のブロック構成（1階1〜9列は3ブロック、10〜22列は5ブロック、2階は5ブロック）と各ブロックの枠数が視認したrangeの区間長と一致することを確認しました。",
+          "human visual two-pass: Pass 1は620〜640dpiで再描画した客席図を用い、1階1列→9列、1階10列→22列、2階1列→7列の順に、各列で小さい番号の側から読み取りました。Pass 2は同一URLからPDFを独立に再取得し（バイト単位で同一）、Pass 1のtableを参照せずに430dpiという異なる解像度で再描画し、1階22列→16列、1階16列→10列、1階9列→1列の逆順で読み取りました。両passをfreezeしてから比較し、29列・29本のrange・展開座席ID集合1,195件・エリア所属・列所属・全range境界でunresolved mismatchは0件でした。1階7〜9列の右端は車椅子席と隣接するため1,100dpiで拡大再描画して100%確認し、7列右端22〜32番・8列右端23〜34番・9列右端23〜28番＋丸囲み①〜⑤であることを視認しました。",
+          "row structure: 1階は1列〜22列で、各列は1番から連続し、最終番号は1列20・2列22・3列25・4列27・5列29・6列31・7列32・8列34・9列28・10〜12列42・13〜17列45・18〜22列48です。9列だけ右端が28番で終わるのは、その先に車椅子席①〜⑤が置かれているためで、一般席側の番号は削っていません。2階は1列〜7列で、1〜4列が1〜50番、5〜7列が1〜52番です。いずれの列にも欠番はありません。",
+          "currentness: 2026-09-07時点でACTIVE。休館・改修・座席変更の告知はありません。客席図PDFの内部日付は2022-01-27、配信サーバのLast-Modifiedは2022-02-04で、施設ページの現行記載（1階一般席839・車椅子席5／2階一般席356）と完全に整合します。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 22
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 25
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 27
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 29
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 31
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 32
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 34
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 28
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "10列",
+          "from": 1,
+          "to": 42
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 42
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 42
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "18列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階席",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 48
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 50
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 52
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階席",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 52
+        }
+      ]
+    }
+  ]
+}

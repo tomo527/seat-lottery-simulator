@@ -1,0 +1,2448 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "makuhari-event-hall",
+  "name": "幕張メッセ 幕張イベントホール",
+  "prefecture": "千葉県",
+  "city": "千葉市",
+  "aliases": [
+    "幕張イベントホール",
+    "幕張メッセ イベントホール",
+    "マクハリイベントホール"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "issuerの現行「幕張イベントホール 座席表（一式）」は3ページからなり、同一ホールの3つの状態（固定席のみ3,948席／固定席＋Aブロック可動席4,404席／固定席＋A・Fブロック可動席4,860席）を同じ図面フォーマットで描き分けています。本実装が登録したのは、番号席が最も多く他の2状態を完全に包含する3ページ目の4,860席構成だけです。3,948席・4,404席の各状態は登録した番号集合の部分集合であり、減算や合成で別configurationを作ることはしていません。",
+    "施設ページはホールの客席内訳として「固定客席（ボックス席を含む）3,948席／可動客席912席／仮設席 約3,000席」を掲げます。仮設席 約3,000席はアリーナ床に催事ごとに設置されるevent-dependentな席で、現行座席表のいずれのページにも番号付きで描かれていません。概数「約3,000」から席数・座席番号を推測することはせず、登録scopeから除外しています。",
+    "座席表はC・Jブロックに「車椅子用のスペース（兼・TV中継用スペース）各5席分があります」と注記し、図面上はC ブロック2階9列と J ブロック2階9列の当該位置に車椅子ピクトグラムを描いて番号席を印字していません。番号が印字されていないため車椅子スペース自体は登録しておらず、どの番号席と何席分置き換わるのかという関係も推測していません。issuerのブロック別客席数（C 500席・J 410席）も印字済み番号席だけを数えた値と完全一致します。",
+    "座席番号はブロック内の列ごとの通し番号で、同じ番号が別ブロックにも存在します。したがって抽選結果はブロック名（A〜K・ボックス席）と列・番号の組で一意になります。ブロック名は座席表に印字された公式のブロック記号をそのまま用いており、repository由来の名称ではありません。"
+  ],
+  "sources": [
+    {
+      "id": "official-event-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "株式会社幕張メッセ（施設所有・運営者）",
+      "title": "幕張イベントホール 施設紹介（施設概要に「客席 固定客席（ボックス席を含む）/ 3,948席」「可動客席 / 912席」「仮設席 / 約3,000席」「アリーナ面積 3,098㎡」を記載し、図面欄から「図面（各種資料）」ページへ導く）",
+      "url": "https://www.m-messe.co.jp/organizers/guide/eventhall/guide_eventhall",
+      "checkedAt": "2026-09-07"
+    },
+    {
+      "id": "official-layout-index",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "株式会社幕張メッセ（施設所有・運営者）",
+      "title": "図面（各種資料・施設写真）。幕張イベントホールの節に「フロアマップ」「平面図1階／2階／3階」と現行の「座席表（一式）」PDFを掲載する、issuer自身の現行図面配布インデックス",
+      "url": "https://www.m-messe.co.jp/organizers/support/layout/",
+      "checkedAt": "2026-09-07"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "株式会社幕張メッセ（施設所有・運営者）",
+      "title": "幕張イベントホール 座席表（一式）（A3・1/400・全3ページ。各ページに「ブロック別客席数」表（A〜K・ボックスの固定2F/3F・可動・計と合計）と、A〜K各ブロックの列番号（赤）および各区画の始端・終端座席番号を印字した全体平面図を描く。1ページ目=可動席0・合計3,948席、2ページ目=Aブロック可動456席・合計4,404席、3ページ目=A・Fブロック可動912席・合計4,860席）",
+      "url": "https://www.m-messe.co.jp/saved/files/document/pdf/1088/1/%E5%B9%95%E5%BC%B5%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%83%9B%E3%83%BC%E3%83%AB%E5%BA%A7%E5%B8%AD%E8%A1%A8%28%E4%B8%80%E5%BC%8F%EF%BC%89.pdf",
+      "checkedAt": "2026-09-07"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "固定席＋可動席 全席配置（4,860席）",
+      "issuerDefinedCondition": "issuerの現行「幕張イベントホール 座席表（一式）」3ページ目が描く、固定客席3,948席（2F 2,060席・3F 1,888席）にA・Fブロックの可動客席912席を展開した状態。アリーナ床の仮設席は設置しない。",
+      "selectionBasis": "issuerが公開する番号付き座席図は「座席表（一式）」1点のみで、その3ページが同一ホールの3状態（3,948／4,404／4,860席）を描く。3ページ目の4,860席は他の2状態の番号集合を完全に包含する最大の番号付き配置であり、固定客席・可動客席はいずれも施設概要が常設の客席として掲げる設備である。したがって代表configurationはこの1件とした。ページ間の差はissuer自身が別ページとして描き分けたものだけで、減算・合成による差分は作っていない。仮設席 約3,000席は概数でしか公表されず、いずれのページにも番号付きで描かれていないためscope外とした。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-07に現行issuerの幕張イベントホール施設紹介ページ（https://www.m-messe.co.jp/organizers/guide/eventhall/guide_eventhall ）がリンクする図面インデックス（https://www.m-messe.co.jp/organizers/support/layout/ ）の「幕張イベントホール 座席表（一式）」から取得した。URL直打ちでcurrent扱いはしていない。SHA-256: f94fd224aa5989c2b88be9d3030059e6a45824b5405209f865fca260955b681c、523,019バイト、3ページ、各ページ842.0×1191.0pt（/Rotate 90でA3横）、PDF 1.6、producer Acrobat Distiller 15.0、PDF内部のcreationDate/modDateはいずれも2022-11-25、内部タイトルは「06_イベントホール全体平面図 座席表入り (2013改修後）_v2019.vwx」で2013年改修後の図面世代であることを示す。HTTP応答のLast-Modifiedも2022-11-25。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256・同一バイト数）であることを確認している。座席番号と列番号は実テキストではなく1bitのimage XObject（64×62px等）として配置され、ページあたりのテキスト抽出は図面枠の注記のみ326文字であるため、機械経路はテキスト層ではなくベクタの座席セル幾何と画像XObjectの配置を用いた。",
+      "sourceIds": [
+        "official-event-hall-page",
+        "official-layout-index",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map",
+        "official-event-hall-page"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 4860,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "issuerの現行座席表（一式）3ページ目が描く「固定席＋可動席」全席配置4,860席の、印字された全番号席を登録した構成です。エリアは座席表に印字された公式ブロック記号どおりAブロック656席、Bブロック442席、Cブロック500席、Dブロック420席、Eブロック442席、Fブロック656席、Gブロック442席、Hブロック390席、Jブロック410席、Kブロック442席、ボックス席60席の11区分で、座席番号はブロック内の列ごとの通し番号です。A・Fブロックの1列〜8列は可動客席（各456席）、9列〜10列（各100席）と他ブロックは固定客席です。アリーナ床に催事ごとに設置される仮設席 約3,000席は番号付きで公開されていないため含みません。C・Jブロックの車椅子スペース（兼・TV中継用スペース）は番号が印字されていないため登録しておらず、番号席との置換関係も反映していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "座席表は「*C，Jブロックに車椅子用のスペース（兼・ＴＶ中継用スペース）各５席分があります。」と注記し、ブロック別客席数表でもC・Jに「*」を付します。図面上はCブロック2階9列およびJブロック2階9列の端部に車椅子ピクトグラムが描かれ、その区画には座席番号が一切印字されていません（Cブロック9列は11〜30番のみ、Jブロック9列は1〜20番のみが印字）。車椅子スペースが何番の座席と置き換わるのかはissuerが公開していないため、スペース自体を登録せず、置換関係も推測していません。issuerのブロック別客席数（C 500席、J 410席）は印字済み番号席のみの合計と完全一致しており、車椅子スペースはこの合計に含まれていません。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-07",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-reversed-block-and-floor-traversal-and-a-different-render-resolution-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-from-vector-seat-cell-geometry-and-image-xobject-label-placement-not-fed-by-the-human-range-table; bidirectional-printed-segment-multiset-equality; issuer-per-block-and-per-floor-subtotal-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "issuer checksum reconciliation（ブロック別・階別・総数）: 座席表の各ページは図の左下に issuer 自身の「ブロック別客席数」表を印字します（固定2F/3F・可動・計の別に A 200+可動456=656、B 210+232=442、C* 260+240=500、D 180+240=420、E 210+232=442、F 200+可動456=656、G 210+232=442、H 150+240=390、ボックス 60、J* 170+240=410、K 210+232=442、合計 固定2F 2,060・固定3F 1,888・固定計3,948・可動912・総計4,860）。転記したmapped setは11ブロックすべてでこの表と完全一致し、階別小計も2F 2,060席・3F 1,888席・可動912席、総計4,860席で完全一致しました。ブロック別客席数表はtranscription targetにしておらず、座席図の番号集合を先に確定したうえで事後にreconcileしています。",
+          "independent structural checksum（機械経路: ベクタ座席セル幾何＋画像XObject配置）: human range tableをいっさい入力にせず、3ページ目のベクタ描画から座席セルだけを抽出しました。固定ブロックの座席は面積9.5〜16.5pt²の矩形（re）として3,548件、A・Fブロックの固定9〜10列と可動1〜8列は回転した四辺形（qu、面積10.0〜13.0pt²）として1,312件で、重複除去後の合計は4,860件です。これはissuerの印字総数4,860と独立に一致しました。次に、座席番号ラベル（1bit image XObject、ページ内で121種・1,374配置）を種類ごとに1度だけ描画して値を確定し、配置座標をセルへ最近傍割り当てしました。セルを列方向のピッチ3.18ptで連結して得た印字区画は581本で、581本すべてについて「印字された終端番号−始端番号+1」が実際に描かれたセル数と完全に一致し、mismatchは0件でした。",
+          "bidirectional machine-expanded set equality: 機械経路が独立に得た581本の印字区画の(始端,終端)多重集合と、登録したsource rangeを印字規則（10の倍数境界での区切り、ボックス席のみ1〜3・4〜9・10〜12）で展開した581本の多重集合を双方向に比較し、いずれの向きにも差分0件でした（区画長ヒストグラムも 2:4, 3:18, 4:8, 5:64, 6:45, 7:48, 8:48, 9:4, 10:342 で完全一致）。登録rangeを座席単位へ展開したruntime key（ブロック, 列, 番号）は4,860件で重複0件、同一(ブロック,列)内のrange重複も0件です。",
+          "human visual two-pass: Pass 1は850〜1,500dpiで再描画した3ページ目を用い、北側3階B→C→D→E、北側2階B→C→D→E、A・Fブロック、南側3階K→J→H→G、南側2階K→J→ボックス→H→G の順に、各ブロックで小さい列番号の側から読み取りました。Pass 2は同一URLからPDFを独立に再取得し（バイト単位で同一、SHA-256一致）、Pass 1の表を参照せずに620〜2,600dpiという異なる解像度で再描画し、南側G→H→J→K→ボックス、北側E→D→C→B、A・Fブロックという逆順、かつ各ブロックで大きい列番号の側から読み取りました。両passをfreezeしてから比較し、11ブロック・333本のrange・展開座席ID集合4,860件・ブロック所属・列所属・全range境界でunresolved mismatchは0件でした。",
+          "configuration scope: 座席表（一式）は3ページで同一ホールの3状態を描きます。1ページ目は可動席欄が空欄で合計3,948席、2ページ目はAブロックに可動456席が入り合計4,404席、3ページ目はA・Fブロックに可動912席が入り合計4,860席です。ページ0とページ2のベクタ描画差分を機械比較したところ、増分は面積10〜13pt²の四辺形912件（A 456・F 456）とその付随線分のみで、固定席側の描画は1件も変化しませんでした。3ページ目の番号集合は他の2ページを完全に包含するため、これを唯一の代表configurationとし、減算や合成による別configurationは作成していません。",
+          "temporary arena seats: 施設ページは「仮設席 / 約3,000席」を掲げますが、座席表（一式）のいずれのページにもアリーナ床の仮設席は番号付きで描かれていません。概数「約3,000」から席数や座席番号を生成することはせず、容量算術やgeometryからの補完も行っていません。最大収容約9,000という公表値も同様にrange targetにしていません。",
+          "row and block structure: 列番号は赤で各ブロック境界（通路）に印字され、隣接する2ブロックで共有されます。固定ブロックは北側がB・C・D・E、南側がK・J・H・Gで、2階が1列〜9列、3階が10列〜24列です。B・E・G・Kは10列〜22列（23列以上なし）、C・D・H・Jは11列〜24列（10列なし）で、この非対称は座席図どおりです。18列はいずれのブロックでも片側10席のみで、C 11〜20番・D 1〜10番・B 11〜20番・E 11〜20番・K 11〜20番・G 11〜20番・J 1〜10番・H 11〜20番と印字されています。11列・12列はB・E・G・Kが2区画（例: B 1〜15番と26〜30番）、C・D・H・Jが2区画（例: C 1〜5番と16〜20番）で、中間の番号は座席が描かれていません。A・Fブロックは1列〜10列で、9列・10列が固定客席（各1〜100番、10席ずつ10区画で番号は連続）、1列〜8列が可動客席です。可動列は11番から始まり10番までの座席が存在せず、1・2列が各10区画のうち11〜16・21〜26…81〜86の48席、3〜5列が11〜17…81〜87の56席、6〜8列が11〜18…81〜88の64席です。",
+          "currentness: 2026-09-07時点でACTIVE。施設は通常営業中で、休館・改修・座席変更の告知はありません。座席表PDFの内部タイトルは「06_イベントホール全体平面図 座席表入り (2013改修後）_v2019.vwx」で2013年改修後の図面世代、PDF生成日と配信サーバのLast-Modifiedはいずれも2022-11-25です。なお2026-09-06のPREFLIGHT 6が参照していた https://www.m-messe.co.jp/docs/layout/eventhallseat.pdf は現行のissuerページからも図面インデックスからもリンクされていない旧資産（PDF内部日付2014-07）であり、今回はissuerの現行図面インデックスから再導出した座席表（一式）のみを採用しています。旧資産のブロック別客席数表も4,860席で矛盾しませんが、seat evidenceには使用していません。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "1列",
+          "from": 11,
+          "to": 16
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "1列",
+          "from": 21,
+          "to": 26
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "1列",
+          "from": 31,
+          "to": 36
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "1列",
+          "from": 41,
+          "to": 46
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "1列",
+          "from": 51,
+          "to": 56
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "1列",
+          "from": 61,
+          "to": 66
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "1列",
+          "from": 71,
+          "to": 76
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "1列",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "2列",
+          "from": 11,
+          "to": 16
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "2列",
+          "from": 21,
+          "to": 26
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "2列",
+          "from": 31,
+          "to": 36
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "2列",
+          "from": 41,
+          "to": 46
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "2列",
+          "from": 51,
+          "to": 56
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "2列",
+          "from": 61,
+          "to": 66
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "2列",
+          "from": 71,
+          "to": 76
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "2列",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "3列",
+          "from": 11,
+          "to": 17
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "3列",
+          "from": 21,
+          "to": 27
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "3列",
+          "from": 31,
+          "to": 37
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "3列",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "3列",
+          "from": 51,
+          "to": 57
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "3列",
+          "from": 61,
+          "to": 67
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "3列",
+          "from": 71,
+          "to": 77
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "3列",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "4列",
+          "from": 11,
+          "to": 17
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "4列",
+          "from": 21,
+          "to": 27
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "4列",
+          "from": 31,
+          "to": 37
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "4列",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "4列",
+          "from": 51,
+          "to": 57
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "4列",
+          "from": 61,
+          "to": 67
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "4列",
+          "from": 71,
+          "to": 77
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "4列",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "5列",
+          "from": 11,
+          "to": 17
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "5列",
+          "from": 21,
+          "to": 27
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "5列",
+          "from": 31,
+          "to": 37
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "5列",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "5列",
+          "from": 51,
+          "to": 57
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "5列",
+          "from": 61,
+          "to": 67
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "5列",
+          "from": 71,
+          "to": 77
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "5列",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "6列",
+          "from": 11,
+          "to": 18
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "6列",
+          "from": 21,
+          "to": 28
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "6列",
+          "from": 31,
+          "to": 38
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "6列",
+          "from": 41,
+          "to": 48
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "6列",
+          "from": 51,
+          "to": 58
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "6列",
+          "from": 61,
+          "to": 68
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "6列",
+          "from": 71,
+          "to": 78
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "6列",
+          "from": 81,
+          "to": 88
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7列",
+          "from": 11,
+          "to": 18
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7列",
+          "from": 21,
+          "to": 28
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7列",
+          "from": 31,
+          "to": 38
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7列",
+          "from": 41,
+          "to": 48
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7列",
+          "from": 51,
+          "to": 58
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7列",
+          "from": 61,
+          "to": 68
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7列",
+          "from": 71,
+          "to": 78
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "7列",
+          "from": 81,
+          "to": 88
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8列",
+          "from": 11,
+          "to": 18
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8列",
+          "from": 21,
+          "to": 28
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8列",
+          "from": 31,
+          "to": 38
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8列",
+          "from": 41,
+          "to": 48
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8列",
+          "from": 51,
+          "to": 58
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8列",
+          "from": 61,
+          "to": 68
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8列",
+          "from": 71,
+          "to": 78
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "8列",
+          "from": 81,
+          "to": 88
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 100
+        },
+        {
+          "areaId": "a",
+          "areaLabel": "Aブロック",
+          "rowLabel": "10列",
+          "from": 1,
+          "to": 100
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "1列",
+          "from": 11,
+          "to": 16
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "1列",
+          "from": 21,
+          "to": 26
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "1列",
+          "from": 31,
+          "to": 36
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "1列",
+          "from": 41,
+          "to": 46
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "1列",
+          "from": 51,
+          "to": 56
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "1列",
+          "from": 61,
+          "to": 66
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "1列",
+          "from": 71,
+          "to": 76
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "1列",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "2列",
+          "from": 11,
+          "to": 16
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "2列",
+          "from": 21,
+          "to": 26
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "2列",
+          "from": 31,
+          "to": 36
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "2列",
+          "from": 41,
+          "to": 46
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "2列",
+          "from": 51,
+          "to": 56
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "2列",
+          "from": 61,
+          "to": 66
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "2列",
+          "from": 71,
+          "to": 76
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "2列",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "3列",
+          "from": 11,
+          "to": 17
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "3列",
+          "from": 21,
+          "to": 27
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "3列",
+          "from": 31,
+          "to": 37
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "3列",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "3列",
+          "from": 51,
+          "to": 57
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "3列",
+          "from": 61,
+          "to": 67
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "3列",
+          "from": 71,
+          "to": 77
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "3列",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "4列",
+          "from": 11,
+          "to": 17
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "4列",
+          "from": 21,
+          "to": 27
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "4列",
+          "from": 31,
+          "to": 37
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "4列",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "4列",
+          "from": 51,
+          "to": 57
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "4列",
+          "from": 61,
+          "to": 67
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "4列",
+          "from": 71,
+          "to": 77
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "4列",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5列",
+          "from": 11,
+          "to": 17
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5列",
+          "from": 21,
+          "to": 27
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5列",
+          "from": 31,
+          "to": 37
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5列",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5列",
+          "from": 51,
+          "to": 57
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5列",
+          "from": 61,
+          "to": 67
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5列",
+          "from": 71,
+          "to": 77
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "5列",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6列",
+          "from": 11,
+          "to": 18
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6列",
+          "from": 21,
+          "to": 28
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6列",
+          "from": 31,
+          "to": 38
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6列",
+          "from": 41,
+          "to": 48
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6列",
+          "from": 51,
+          "to": 58
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6列",
+          "from": 61,
+          "to": 68
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6列",
+          "from": 71,
+          "to": 78
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "6列",
+          "from": 81,
+          "to": 88
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7列",
+          "from": 11,
+          "to": 18
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7列",
+          "from": 21,
+          "to": 28
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7列",
+          "from": 31,
+          "to": 38
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7列",
+          "from": 41,
+          "to": 48
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7列",
+          "from": 51,
+          "to": 58
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7列",
+          "from": 61,
+          "to": 68
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7列",
+          "from": 71,
+          "to": 78
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "7列",
+          "from": 81,
+          "to": 88
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8列",
+          "from": 11,
+          "to": 18
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8列",
+          "from": 21,
+          "to": 28
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8列",
+          "from": 31,
+          "to": 38
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8列",
+          "from": 41,
+          "to": 48
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8列",
+          "from": 51,
+          "to": 58
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8列",
+          "from": 61,
+          "to": 68
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8列",
+          "from": 71,
+          "to": 78
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "8列",
+          "from": 81,
+          "to": 88
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 100
+        },
+        {
+          "areaId": "f",
+          "areaLabel": "Fブロック",
+          "rowLabel": "10列",
+          "from": 1,
+          "to": 100
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 22
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 23
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 25
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 25
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 25
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 26
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 24
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "10列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "11列",
+          "from": 26,
+          "to": 30
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "12列",
+          "from": 26,
+          "to": 30
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 29
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 26
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 24
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "18列",
+          "from": 11,
+          "to": 20
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 13
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "b",
+          "areaLabel": "Bブロック",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 22
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 23
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 25
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 25
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 25
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 26
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 24
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "10列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "11列",
+          "from": 26,
+          "to": 30
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "12列",
+          "from": 26,
+          "to": 30
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 29
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 26
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 24
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "18列",
+          "from": 11,
+          "to": 20
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 13
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "g",
+          "areaLabel": "Gブロック",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "1列",
+          "from": 11,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "2列",
+          "from": 9,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "3列",
+          "from": 8,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "4列",
+          "from": 6,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "5列",
+          "from": 6,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "6列",
+          "from": 6,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "7列",
+          "from": 5,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "8列",
+          "from": 7,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "9列",
+          "from": 11,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "10列",
+          "from": 21,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "11列",
+          "from": 16,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "12列",
+          "from": 16,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "14列",
+          "from": 2,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "15列",
+          "from": 5,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "16列",
+          "from": 7,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "17列",
+          "from": 11,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "18列",
+          "from": 11,
+          "to": 20
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "19列",
+          "from": 16,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "20列",
+          "from": 18,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "21列",
+          "from": 21,
+          "to": 30
+        },
+        {
+          "areaId": "e",
+          "areaLabel": "Eブロック",
+          "rowLabel": "22列",
+          "from": 26,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "1列",
+          "from": 11,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "2列",
+          "from": 9,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "3列",
+          "from": 8,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "4列",
+          "from": 6,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "5列",
+          "from": 6,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "6列",
+          "from": 6,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "7列",
+          "from": 5,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "8列",
+          "from": 7,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "9列",
+          "from": 11,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "10列",
+          "from": 21,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "11列",
+          "from": 16,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "12列",
+          "from": 16,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "14列",
+          "from": 2,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "15列",
+          "from": 5,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "16列",
+          "from": 7,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "17列",
+          "from": 11,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "18列",
+          "from": 11,
+          "to": 20
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "19列",
+          "from": 16,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "20列",
+          "from": 18,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "21列",
+          "from": 21,
+          "to": 30
+        },
+        {
+          "areaId": "k",
+          "areaLabel": "Kブロック",
+          "rowLabel": "22列",
+          "from": 26,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "9列",
+          "from": 11,
+          "to": 30
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "11列",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "12列",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "18列",
+          "from": 11,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "23列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "c",
+          "areaLabel": "Cブロック",
+          "rowLabel": "24列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "11列",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "12列",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "18列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "23列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "d",
+          "areaLabel": "Dブロック",
+          "rowLabel": "24列",
+          "from": 11,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "1列",
+          "from": 6,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "2列",
+          "from": 6,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "3列",
+          "from": 6,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "4列",
+          "from": 6,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "5列",
+          "from": 6,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "6列",
+          "from": 6,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "11列",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "12列",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "18列",
+          "from": 11,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "23列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "h",
+          "areaLabel": "Hブロック",
+          "rowLabel": "24列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 30
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "11列",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 5
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "12列",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "18列",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "22列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "23列",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "j",
+          "areaLabel": "Jブロック",
+          "rowLabel": "24列",
+          "from": 11,
+          "to": 20
+        },
+        {
+          "areaId": "box",
+          "areaLabel": "ボックス席",
+          "rowLabel": "1列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "box",
+          "areaLabel": "ボックス席",
+          "rowLabel": "2列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "box",
+          "areaLabel": "ボックス席",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "box",
+          "areaLabel": "ボックス席",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "box",
+          "areaLabel": "ボックス席",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 12
+        }
+      ]
+    }
+  ]
+}

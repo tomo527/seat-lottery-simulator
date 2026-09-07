@@ -1,0 +1,47 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-07",
+  "mode": "KANTO PREFLIGHT-6 ADOPT BATCH / bounded production implementation attempt (mini-wave 2 of 6 in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をissuer pageからfreshに再導出・再取得し、machine-readable evidenceを完全に取得したうえで、production contractの『seat ID・座席番号・block所属の創作禁止』に照らして判定した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。",
+  "title": "CHIBA-PORT-ARENA-MAIN BOUNDED PRODUCTION IMPLEMENTATION ATTEMPT",
+  "scope": "Bounded production implementation attempt for chiba-port-arena-main only.",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "8d0553a5204639850033eb5369bc5a7fb556fe14"
+  },
+  "lane": "JUDGMENT",
+  "laneReason": "八角形アリーナで、印字された列(列)ラダーがセクションごとに独立して存在し、座席番号は複数セクションを跨いで連続する。代表configurationの確定ではなく、(area,列,番)キーを創作なしに構成できるかという表現可能性の判断が先行する。",
+  "identity": "千葉ポートアリーナ〔メインアリーナ〕 / 千葉県千葉市中央区 / arena",
+  "disposition": "LOCAL RED / HOLD (production stopped; not promoted)",
+  "currentnessCheck": "ACTIVE。現行issuerページ https://chibacity.spo-sin.or.jp/shisetu/arena-top/arena-main/ は観客収容人数を「固定席4,380席／ロールバックチェア616席／仮設席（スタッキングチェア）2,500席／車椅子専用スペース8席」と明記（合計7,504）。休館・改修・座席変更の告知なし。inventoryに登録されていた officialFacilityUrl https://chibacity.spo-sin.or.jp/port-arena/ は現在404であり、現行URLへ更新すべきである。",
+  "seatChartEvidence": "https://chibacity.spo-sin.or.jp/wp-content/uploads/2020/08/gallery-seats.pdf（現行メインアリーナページの「客席平面図」リンク） / SHA-256 8b658881eaf05ab030b4585345462cc032792db40b70258b8ced9ca16aa93367 / 435,087 bytes / 1 page / 1190.4x841.89pt / PDF 1.5 / Microsoft Excel 2013 / creation+mod 2020-08-11 / HTTP Last-Modified 2020-08-18。ラスタ画像0件の純ベクタPDFで、座席番号はすべて実テキスト。",
+  "whatWasEstablished": {
+    "printedGrandTotal": "図面中央に「合計 4,996席」を印字。",
+    "printedBlockSubtotals": "Ｅ 1,000席 / Ｎ 1,125席＋308席 / Ｓ 1,160席＋308席 / Ｗ 1,095席、ロールバックチェア北側308席・南側308席。固定4,380＝1,000+1,125+1,160+1,095、ロールバック616＝308+308で、issuer施設ページの内訳と完全一致。",
+    "machineCount": "PDFテキスト層の黒色数値spanは 4,996件ちょうどで、印字合計と完全一致（赤色の列ラベル111件・その他文字は分離して計数）。ラスタ側の独立検証でも数字グリフ連結成分は10,203件で、テキスト層の桁数合計10,181件＋赤字136件と整合。",
+    "standTotalsReconciled": "幾何クラスタリングと値連続チェーン（|Δ値|=1かつ距離7.0pt以内、874チェーン・全チェーン値連続・最大次数2）により、NR=308・SR=308を完全一致で再現。E/N/S/Wについても、E・Wのコーナー隣接staircase 4ブロック（各45席、値1〜6および133〜138）をN・Sへ帰属させると、E=1,000・N=1,125・S=1,160・W=1,095が4つとも完全一致する。",
+    "rowContinuityAcrossCorners": "コーナーの列ラダー（各1〜11列）と直線部の列ラダー（1〜12列）は、座席番号が連続して接合する（例: 列11はコーナー7〜34、直線35〜60・66〜73・79〜104、下コーナー105〜132）。したがってコーナーと直線部は同一の列である。"
+  },
+  "blocker": "PRODUCTION BLOCKER (row identity not printed): 図面は座席番号をすべて印字する一方、列(列)ラダーはセクションごとに独立して印字される（E上辺1〜13列・W下辺1〜13列・N直線1〜12列・S直線1〜12列・4コーナー各1〜11列・NR/SR各1〜7列）。座席番号はこれらのセクションを跨いで連続するため、スタンド単位の座席集合は確定できるが、コーナー移行部の4ブロック計180席（上辺の値1〜6と133〜138、下辺の値133〜138と1〜6）については、それが属するN/Sスタンドの列番号がどのラダーにも印字されていない。これらの席は幾何的にはE/Wの列ラダーと同一の水平線上にあるが、座席番号体系ではN/Sスタンドに属する。どちらのラダーを適用しても、同一areaに互換性のない2つの列番号体系が同居するか、印字されていない列所属を推定することになる。現行contractは『seat ID・座席番号・block所属の創作』を禁止しており、推定なしにlosslessな(area, 列, 番)キー集合を構成できないため、production化を停止した。",
+  "humanDecisionRequired": "次のいずれを採るかはrepresentation policyの人間判断である: (a) 印字セクションをそのままareaとして分割し（Eスタンド／Wスタンド／Nスタンド直線／Sスタンド直線／4コーナー／4移行ブロック／NR／SR）、各areaに印字済み列ラダーをそのまま用いる（座席番号の連続性が示す『コーナーと直線は同一列』という事実を表示上分断する）。(b) 深さ順（アリーナに近い側を1列）で移行ブロックの列を決定する規則を明文化して適用する（印字されていない帰属の推定を許容することになる）。(c) 現状どおりHOLDとし、issuerに列別内訳の公開を待つ。",
+  "reopenCondition": "(1) issuerがスタンド別・列別の座席内訳、または移行ブロックを含む列ラダー付きの座席表を公開した場合、(2) または上記(a)/(b)いずれかのrepresentation policyがuser-authorized revisionとして確定した場合。いずれの場合も、fresh currentness recheck、fresh independent human visual two-pass（またはDENSE-VECTOR適格性の再判定）、独立machine structural checksum、issuer subtotal reconciliationを最初からやり直す。",
+  "notDone": [
+    "source JSON未作成（productionにしていない）",
+    "range未登録",
+    "generated artifact・fingerprint未変更",
+    "仮設席2,500席・車椅子専用スペース8席は番号図がないため一切扱っていない"
+  ],
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "invented row/block membership なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "facility total 7,504をrange targetにしていない",
+    "印字済み席を削って合計を合わせる操作をしていない"
+  ],
+  "venueSourceId": null,
+  "inventoryId": "chiba-port-arena-main",
+  "recheckNotBefore": null
+}

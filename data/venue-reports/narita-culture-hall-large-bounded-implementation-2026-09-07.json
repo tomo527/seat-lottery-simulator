@@ -1,0 +1,46 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-07",
+  "mode": "KANTO PREFLIGHT-6 ADOPT BATCH / bounded production implementation (mini-wave 3 of 6 in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をissuer pageからfreshに再導出・再取得し、fresh independent human visual two-pass、human range tableを入力にしないindependent machine structural checksum、双方向のset equality、issuer subtotal reconciliationをすべて適用した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。",
+  "title": "NARITA-CULTURE-HALL-LARGE BOUNDED PRODUCTION IMPLEMENTATION",
+  "scope": "Bounded production implementation of chiba-narita-culture-main only.",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "8d0553a5204639850033eb5369bc5a7fb556fe14"
+  },
+  "lane": "STANDARD",
+  "laneReason": "現行の完全番号付き1ページ座席図があり、階別小計と総数がissuerから公開され、configuration上の争点がない。",
+  "identity": "成田国際文化会館〔大ホール〕 / 千葉県成田市 / hall",
+  "disposition": "PRODUCTION",
+  "currentnessCheck": "ACTIVE。休館・改修・座席変更の告知なし。休館日は毎週月曜（休日の場合翌日）、休日の翌日、12/29〜1/3の通常定期休館のみ。施設ページは客席を「1,188席 (1階席 930席／2階席 258席)」と明記。",
+  "seatChartEvidence": "https://www.narita-bunka.jp/src/pdf/hall_seat.pdf / SHA-256 7e4e8b268767e76cdf4e885ecfe69a4c5e3fb6e33e15c09ad8a9af9478c3cf75 / 169,765 bytes / 1 page / 595.28x841.89pt / PDF 1.6 / Adobe Illustrator CS2 / internal creation 2012-11-12, mod 2023-09-05 / HTTP Last-Modified 2023-09-04 / raster images 0 / 座席番号はすべて実テキスト。Pass 2直前に独立再取得しバイト同一。",
+  "configurationAssessment": "issuerが公開する番号付き座席図は現行の大ホール座席表1点のみ。ピット使用時等の別番号図は公開されておらず、減算によるalternate configurationは作成していない。代表configurationは通常配置1,188席の1件。",
+  "visualTwoPass": "Pass 1は620dpiで1階1列→17列、1階18列→26列、2階左右列→27列→31列の順、各列小さい番号側から。Pass 2は独立再取得したバイト同一資産を380〜450dpiで再描画し、2階→1階下部→1階上部の逆順。両passfreeze後の比較でunresolved mismatch 0件。",
+  "independentMachineStructuralChecksum": "human range tableを入力にしない独立経路。ベクタ描画（線1,124本・四辺形159件）のみを14px/ptで再描画し、閉領域の連結成分から座席セル（1辺約8.2pt）を検出。検出1,189件のうち1,188件が座席番号テキストをちょうど1つ含み、テキストなしは1件（4.3×10.5ptの図面境界断片で座席セルではない）、複数テキストを含むセル0件、どのセルにも属さない座席テキスト0件。",
+  "bidirectionalSetEquality": "テキスト層の座席番号語1,188件（扉表示の分割断片1件を除外）と、登録range 34本の展開集合を双方向比較して差分0件。行構成は|Δ番号|=1・距離9.5pt以内の連続性グラフ（159連鎖・全連鎖値連続・最大次数2）から独立に再構成し、列ラベル62件と突き合わせ。runtime key 1,188件・重複0件。",
+  "issuerSubtotalReconciliation": "座席表印字の「一階固定席930席／二階固定席258席／計1,188席」および施設ページの「1,188席（1階930／2階258）」と、mapped 1階930・2階258・合計1,188が完全一致。2階の内訳も27〜31列各46席＝230席＋左列14＋右列14＝258席で整合。",
+  "machineDetectedDiscrepanciesReturnedToChart": "なし。",
+  "accessibilitySemantics": "1階席後方左右に車椅子ピクトグラム2箇所。座席番号は一切印字されず、台数も置換関係もissuerは公開していない。したがって登録せず、置換関係も推測していない（wheelchairSemantics: not-reflected）。issuerの階別小計は印字済み番号席のみの合計と一致し、車椅子スペースを含まない。",
+  "mappedSeatCount": 1188,
+  "issuerStatedSeatCount": 1188,
+  "rangeDiff": 0,
+  "rangeCount": 34,
+  "areaSubtotals": {
+    "floor1": 930,
+    "floor2": 258
+  },
+  "venueSourceId": "narita-culture-hall-large",
+  "inventoryId": "chiba-narita-culture-main",
+  "recheckNotBefore": null,
+  "reopenCondition": "通常のcurrentness監視のみ。ピット使用時等の別configurationの番号付き座席図がissuerから公開された場合は、そのときに独立実装を検討する。",
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "issuer subtotalをtranscription targetにしていない",
+    "human-human MATCHだけをproduction十分条件にしていない"
+  ]
+}

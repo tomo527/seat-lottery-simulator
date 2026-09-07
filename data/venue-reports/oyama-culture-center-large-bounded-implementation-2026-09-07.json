@@ -1,0 +1,46 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-07",
+  "mode": "KANTO PREFLIGHT-6 ADOPT BATCH / bounded production implementation (mini-wave 5 of 6 in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をissuer pageからfreshに再導出・再取得し、fresh independent human visual two-pass、human range tableを入力にしないindependent machine structural checksum、双方向のset equality、issuer subtotal reconciliationをすべて適用した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。",
+  "title": "OYAMA-CULTURE-CENTER-LARGE BOUNDED PRODUCTION IMPLEMENTATION",
+  "scope": "Bounded production implementation of tochigi-oyama-culture-main only.",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "8d0553a5204639850033eb5369bc5a7fb556fe14"
+  },
+  "lane": "STANDARD",
+  "laneReason": "現行の完全番号付き1ページ座席図があり、階別小計・総数がissuerから公開されている。ピット・花道の減算をconfiguration化しない判断だけが先行するが、これはrule上明確。",
+  "identity": "小山市立文化センター〔大ホール〕 / 栃木県小山市 / hall",
+  "disposition": "PRODUCTION",
+  "currentnessCheck": "ACTIVE。休館・改修・座席変更の告知なし。施設概要ページは「固定席 1012席（1階778席、2階234席）」「立見席はありません。」と明記。座席表PDFの配信Last-Modifiedは2026-08-31。",
+  "seatChartEvidence": "https://www.oyama-bunkacenter.jp/vender/pdf/zaseki.pdf / SHA-256 3194103c585d51a626b12d882bb4b78a0e20a730a6eb84659eabc8b32c0bc621 / 50,223 bytes / 1 page / 595.0x842.0pt / PDF 1.4 / AR_CAD ver.1.4.1a / internal creation 2009-01-22, mod 2014-12-09 / HTTP Last-Modified 2026-08-31 / raster images 0 / 座席番号は実テキスト。Pass 2直前に独立再取得しバイト同一。",
+  "configurationAssessment": "issuerが公開する番号付き座席図は現行の大ホール座席表1点のみ。オーケストラピット設営時（1階116席減）・仮設花道設営時（1階18席減）は席数だけが併記され独立した番号図がないため、減算によるalternate configurationは作成していない。併記の662席・760席は1階778席からの減算値であることを確認（reconciliation記録のみ）。",
+  "visualTwoPass": "Pass 1は700〜1,500dpiで1階1→9列、1階10→21列、2階22→27列の順、各列小さい番号側から。Pass 2は独立再取得したバイト同一資産を560〜800dpiで再描画し、各行の右端（最終番号）側から1階上部→1階下部→2階の順。両passfreeze後の比較でunresolved mismatch 0件。",
+  "independentMachineStructuralChecksum": "human range tableを入力にしない独立経路。ベクタ描画（線1,787本）だけを12px/ptで再描画し、閉領域の連結成分から座席枠（9.0〜12.5pt四方）を検出。1,018件中1,012件が座席番号テキストをちょうど1つ含み、残り6件は非常口枠等の非座席区画。印字番号1,012件と座席区画1,012件が1対1対応し、issuer総数と独立に一致。",
+  "bidirectionalSetEquality": "座席枠内の番号を|Δ番号|=1・同一高さ帯で連結して127本の印字ブロック（全ブロック値連続・最大次数2）を構成し、値連続性と左→右のx進行で27行へ結合。27行はすべて1番から連続し、27個の印字列ラベルと各行の最下端ブロックy座標が1対1一致。登録range 27本の展開集合と双方向比較して差分0件、runtime key重複0件。",
+  "issuerSubtotalReconciliation": "座席表下部の「定員1,012人／座席1,012席／1階778席／2階234席」および施設概要ページの記載と、mapped 1階778・2階234・合計1,012が完全一致。",
+  "machineDetectedDiscrepanciesReturnedToChart": "初回目視で、客席の弧に沿って1セルあたり約1.9pt上がる右側ブロックの傾きにより2列右端を「20〜30」と読み違えた。数字を合計へ合わせて調整せず、2,000dpi拡大再描画と座席枠中心座標の直線当てはめで、右側ブロックが20〜28／20〜29／21〜30／20〜29の4本であり2列右端は20〜29、3列右端は21〜30であることを確定した。座席集合に差はない。失敗した初回読み取りは記録として保持。",
+  "accessibilitySemantics": "issuerは車椅子席の席数も配置も公表しておらず、現行座席表にも車椅子記号・区画・注記はない。番号のない位置は一切登録していない（wheelchairSemantics: not-reflected）。issuerの階別小計・総数は印字済み番号席のみの合計と一致。",
+  "mappedSeatCount": 1012,
+  "issuerStatedSeatCount": 1012,
+  "rangeDiff": 0,
+  "rangeCount": 27,
+  "areaSubtotals": {
+    "floor1": 778,
+    "floor2": 234
+  },
+  "venueSourceId": "oyama-culture-center-large",
+  "inventoryId": "tochigi-oyama-culture-main",
+  "recheckNotBefore": null,
+  "reopenCondition": "通常のcurrentness監視のみ。オーケストラピット使用時・仮設花道使用時の独立した番号付き座席図がissuerから公開された場合は、そのときに独立実装を検討する。",
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "ピット116席減・花道18席減の減算でalternate configurationを作っていない",
+    "human-human MATCHだけをproduction十分条件にしていない"
+  ]
+}

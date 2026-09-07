@@ -1,0 +1,46 @@
+{
+  "reportVersion": 1,
+  "asOf": "2026-09-07",
+  "mode": "KANTO PREFLIGHT-6 ADOPT BATCH / bounded production implementation (mini-wave 4 of 6 in a single thread).",
+  "evidencePolicy": "ADOPTはimplementationの許可ではない。現行公式座席図をissuer pageからfreshに再導出・再取得し、fresh independent human visual two-pass、human range tableを入力にしないindependent machine structural checksum、issuer印字の列別累計との照合をすべて適用した。capacity fitting、invented seat ID、geometry補完、configuration mixing、third-party infillはいっさい行っていない。",
+  "title": "RYUGASAKI-CULTURE-HALL-LARGE BOUNDED PRODUCTION IMPLEMENTATION",
+  "scope": "Bounded production implementation of ibaraki-ryugasaki-culture-main only.",
+  "startState": {
+    "branch": "main",
+    "headAtStart": "8d0553a5204639850033eb5369bc5a7fb556fe14"
+  },
+  "lane": "STANDARD",
+  "laneReason": "現行の完全番号付き1ページ客席図があり、issuerが列別累計・階別小計・一般席／車椅子席の区分をすべて印字しているため、configuration上の争点がない。",
+  "identity": "大昭ホール龍ケ崎〔大ホール〕（龍ケ崎市文化会館） / 茨城県龍ケ崎市 / hall",
+  "disposition": "PRODUCTION",
+  "currentnessCheck": "ACTIVE。休館・改修・座席変更の告知なし。現行issuerの「大ホール座席表」ページは「１階座席 一般席（席数８３９）・車椅子席（席数５）」「２階座席 一般席（席数３５６）」と明記。",
+  "seatChartEvidence": "https://www.ryubun.org/app/download/14061336789/大ホール客席図.pdf?t=1643954962 / SHA-256 bb18104391f432a01f9803c67028d9efc58753acac5f80750e0013154bd1a73f / 671,600 bytes / 1 page / 612.29x858.90pt / PDF 1.5 / Adobe Illustrator CS6 / internal creation+mod 2022-01-27 / HTTP Last-Modified 2022-02-04 / raster images 0 / 座席番号はアウトライン化ベクタ（テキスト抽出は表題16文字のみ）。Pass 2直前に独立再取得しバイト同一。",
+  "configurationAssessment": "issuerが公開する番号付き座席図は現行の大ホール客席図1点のみ。ピット使用時等の別番号図はなく、減算によるalternate configurationは作成していない。scopeはissuer自身の区分に合わせて一般席1,195席とし、別区分の車椅子席5席（丸囲み①〜⑤）は含めていない。1,200席や「1,200−5」をtranscription targetにしていない。",
+  "visualTwoPass": "Pass 1は620〜640dpiで1階1→9列、1階10→22列、2階1→7列の順、各列小さい番号側から。Pass 2は独立再取得したバイト同一資産を430dpiで再描画し、1階22→16列、16→10列、9→1列の逆順。両passfreeze後の比較でunresolved mismatch 0件。1階7〜9列右端（車椅子席隣接）は1,100dpiで拡大再描画し100%確認。",
+  "independentMachineStructuralChecksum": "human range tableを入力にしない独立経路。PDFを500dpiでグレースケール描画し、閉じた白領域の連結成分から座席枠（幅6.0〜13.0pt・高さ9.0〜15.0pt）を検出。1,196件中1件は表題領域の誤検出で、残り1,195件が座席枠。1階領域839件・2階領域356件でissuerの階別内訳と独立に完全一致。車椅子席①〜⑤は丸で描かれ座席枠としては検出されないことも確認。近接連結で127ブロックへ分割し、各列のブロック構成と区間長が視認結果と一致。",
+  "issuerSubtotalReconciliation": "客席図が各列右端に印字する列別累計28点（1階42〜839の21点、2階889〜1,195の7点）すべてとmapped setの累計が完全一致。階別小計839／356、総数1,195も一致。",
+  "machineDetectedDiscrepanciesReturnedToChart": "なし。",
+  "accessibilitySemantics": "issuerは客席を一般席1,195・車椅子席5・計1,200と明確に区分し、客席図でも車椅子席を1階9列右端に丸囲み数字①〜⑤として別記号で印字する。車椅子席は一般席と置き換わるものではない独立した5席であり、scopeを一般席1,195席としたうえで登録していない。置換関係の推測は不要かつ不実施（wheelchairSemantics: resolved / accessibilityConversionNotReflected: true）。",
+  "mappedSeatCount": 1195,
+  "issuerStatedSeatCount": 1195,
+  "rangeDiff": 0,
+  "rangeCount": 29,
+  "areaSubtotals": {
+    "floor1": 839,
+    "floor2": 356
+  },
+  "venueSourceId": "ryugasaki-culture-hall-large",
+  "inventoryId": "ibaraki-ryugasaki-culture-main",
+  "recheckNotBefore": null,
+  "reopenCondition": "通常のcurrentness監視のみ。車椅子席を含む別configurationや、ピット使用時等の番号付き座席図がissuerから公開された場合は、そのときに独立実装を検討する。",
+  "prohibitionsObserved": [
+    "capacity fitting なし",
+    "invented seat ID なし",
+    "geometry補完 なし",
+    "configuration mixing なし",
+    "third-party chartによる穴埋め なし",
+    "1,200席や1,200−5をtranscription targetにしていない",
+    "車椅子席との置換関係を推測していない",
+    "human-human MATCHだけをproduction十分条件にしていない"
+  ]
+}

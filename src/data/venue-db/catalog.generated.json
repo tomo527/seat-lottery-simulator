@@ -1098,6 +1098,32 @@
   },
   {
     "schemaVersion": 2,
+    "id": "makuhari-event-hall",
+    "venueGroupId": "makuhari-event-hall",
+    "name": "幕張メッセ 幕張イベントホール",
+    "searchAliases": [
+      "マクハリイベントホール",
+      "幕張イベントホール",
+      "幕張メッセ イベントホール"
+    ],
+    "region": "関東",
+    "prefecture": "千葉県",
+    "municipality": "千葉市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "固定席＋可動席 全席配置（4,860席）",
+        "seatCount": 4860,
+        "dataPath": "/venue-db/venues/makuhari-event-hall--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerの現行座席表（一式）3ページ目が描く「固定席＋可動席」全席配置4,860席の、印字された全番号席を登録した構成です。エリアは座席表に印字された公式ブロック記号どおりAブロック656席、Bブロック442席、Cブロック500席、Dブロック420席、Eブロック442席、Fブロック656席、Gブロック442席、Hブロック390席、Jブロック410席、Kブロック442席、ボックス席60席の11区分で、座席番号はブロック内の列ごとの通し番号です。A・Fブロックの1列〜8列は可動客席（各456席）、9列〜10列（各100席）と他ブロックは固定客席です。アリーナ床に催事ごとに設置される仮設席 約3,000席は番号付きで公開されていないため含みません。C・Jブロックの車椅子スペース（兼・TV中継用スペース）は番号が印字されていないため登録しておらず、番号席との置換関係も反映していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "meguro-persimmon-main-standard",
     "venueGroupId": "meguro-persimmon-main-standard",
     "name": "めぐろパーシモンホール 大ホール",
@@ -1277,6 +1303,32 @@
         "dataPath": "/venue-db/venues/nakano-zero-main-standard--standard.json",
         "scope": "full-venue",
         "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "narita-culture-hall-large",
+    "venueGroupId": "narita-culture-hall-large",
+    "name": "成田国際文化会館 大ホール",
+    "searchAliases": [
+      "成田国際文化会館",
+      "成田国際文化会館大ホール",
+      "成田文化会館"
+    ],
+    "region": "関東",
+    "prefecture": "千葉県",
+    "municipality": "成田市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置（1,188席）",
+        "seatCount": 1188,
+        "dataPath": "/venue-db/venues/narita-culture-hall-large--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerの現行座席表が示す通常配置1,188席の、印字された全番号席を登録した構成です。エリアは座席表の階区分どおり「1階席」930席（1列〜26列）と「2階席」258席（27列〜31列および座席表が列名として印字する「左列」「右列」）の2つです。座席番号は列ごとの通し番号で、座席表は各列を左ブロック・中央ブロック・右ブロックに分けて描きますが、番号は列内で連続しているため列単位のrangeへ圧縮しています。番号が分断されるのは1階26列（1〜6番と35〜40番の2区画）だけで、その中央は映写室と車椅子スペースが占め座席が印字されていません。車椅子スペース2箇所は番号が印字されていないため登録しておらず、置換関係も反映していません。",
         "fixedOnly": false
       }
     ]
@@ -1672,6 +1724,32 @@
   },
   {
     "schemaVersion": 2,
+    "id": "oyama-culture-center-large",
+    "venueGroupId": "oyama-culture-center-large",
+    "name": "小山市立文化センター 大ホール",
+    "searchAliases": [
+      "小山市立文化センター",
+      "小山市立文化センター大ホール",
+      "小山文化センター"
+    ],
+    "region": "関東",
+    "prefecture": "栃木県",
+    "municipality": "小山市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置 固定席（1,012席）",
+        "seatCount": 1012,
+        "dataPath": "/venue-db/venues/oyama-culture-center-large--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerの現行座席表が示す通常配置（固定席1,012席）の、印字された全番号席を登録した構成です。エリアは座席表の階区分どおり「1階席」778席（1列〜21列）と「2階席」234席（22列〜27列）の2つで、列番号は1階から2階へ通しで1列〜27列です。座席番号は列ごとに1番から各列の最終番号まで欠番なく連続します。オーケストラピット設営時（1階116席減）と仮設花道設営時（1階18席減）はissuerが席数だけを併記する別条件で、独立した番号付き座席図が公開されていないため登録していません。立見席はissuerが「ありません」と明記しています。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "pacifico-yokohama-national-hall",
     "venueGroupId": "pacifico-yokohama-national-hall",
     "name": "パシフィコ横浜 国立大ホール",
@@ -1793,6 +1871,33 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "ryugasaki-culture-hall-large",
+    "venueGroupId": "ryugasaki-culture-hall-large",
+    "name": "大昭ホール龍ケ崎 大ホール",
+    "searchAliases": [
+      "大昭ホール龍ケ崎",
+      "大昭ホール龍ケ崎大ホール",
+      "龍ケ崎市文化会館",
+      "龍ケ崎市文化会館大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "茨城県",
+    "municipality": "龍ケ崎市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置 一般席（1,195席）",
+        "seatCount": 1195,
+        "dataPath": "/venue-db/venues/ryugasaki-culture-hall-large--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerが大ホールの客席として区分する一般席1,195席の、印字された全番号席を登録した構成です。エリアは客席図の階区分どおり「1階席」839席（1列〜22列）と「2階席」356席（1列〜7列）の2つで、座席番号は列ごとの通し番号1番から各列の最終番号までが欠番なく連続します。issuerが同じ図に別区分として印字する車椅子席5席（1階9列右端の丸囲み数字①〜⑤）は、席数も配置もissuerが一般席と分けて公表しているため含みません。したがって本構成は施設の計1,200席のうち一般席のみを対象とします。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "sagamihara-green-hall-main-release-seed",
     "name": "相模女子大学グリーンホール 大ホール",
     "searchAliases": [
@@ -1840,6 +1945,31 @@
         "dataPath": "/venue-db/venues/saitama-city-culture-main--a-spec.json",
         "scope": "official-variant",
         "scopeDisclosure": "issuerが大ホールの客席数として掲げるA仕様（2,006席）の現行公式座席図に印字された全番号席1,998席を登録した構成です。エリアは座席図が図中に印字する区分をそのまま用い、「1階客席」1,320席、「2階客席」330席、「3階客席」348席の3つとしています。列は座席図の印字どおりで、1階客席は1列〜30列、2階客席は1列〜6列と左右サイドのL1列〜L13列・R1列〜R13列、3階客席は1列〜8列です。2階客席の左右サイド席（L1〜L13／R1〜R13）は座席図では1階平面の左右に描かれますが、issuerの「大ホール　客席図」が中央206席・左サイド62席・右サイド62席を同じ色で1つのまとまりとして囲み、その合計が座席図の印字する2階客席(330席)と一致することから、2階客席として登録しています。1階客席1列〜5列の156席は座席図が網掛けで示す移動席（オーケストラピット上の移動席）で、A仕様の座席図に番号が印字され公称2,006席の内数であるため登録に含めています。座席番号は階ごとの通し番号で、repository由来のブロック名は付与していません。番号が飛ぶ箇所はすべて座席図に座席が印字されていない位置で、補完も削除も行っていません。主なものは、1階客席1列〜4列の前方端（1列は16〜22番と23〜34番と35〜41番のみ）、1階客席6列〜7列・15列の左右端（11〜22番と23〜34番と35〜46番のみ）、1階客席30列（8〜10番・13〜20番・23〜34番・37〜44番・47〜49番）、2階客席6列（3〜10番・13〜24番・27〜34番）、3階客席6列〜8列（7〜18番・19〜30番・31〜42番のみで1〜6番と43〜48番がない）です。B仕様1,658席は集計値のみで番号付き座席図が公開されていないため登録していません。車椅子席8席は座席図に「車椅子席（4席）」の無番号の破線区画として左右に描かれるだけで座席番号の印字がなく、通常番号席との置換関係も公開されていないため登録していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "sano-culture-hall-large",
+    "venueGroupId": "sano-culture-hall-large",
+    "name": "佐野市文化会館 大ホール",
+    "searchAliases": [
+      "佐野市文化会館",
+      "佐野市文化会館大ホール"
+    ],
+    "region": "関東",
+    "prefecture": "栃木県",
+    "municipality": "佐野市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置 固定席（1,216席）",
+        "seatCount": 1216,
+        "dataPath": "/venue-db/venues/sano-culture-hall-large--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "issuerの現行座席表が示す固定席1,216席の、印字された全番号席を登録した構成です。エリアは座席表の階区分どおり「1階席」1,012席（あ列〜ふ列の28列）と「2階席」204席（へ列〜ゆ列の9列）の2つで、列名は座席表の印字どおり平仮名です。座席番号は列ごとの通し番号で、2階へ・ほ・ま・み列だけが3〜6番と35〜38番の2区画に分かれます。issuerが別に公表する立見席68人（1階35・2階33）は座席表に位置も番号も描かれていないため含みません。車イス席8人分は座席表の1階し列両端に車椅子記号として描かれますが座席番号が印字されていないため含まず、番号席との置換関係も反映していません。なお当館は2024年4月から2027年3月まで大規模改修のため休館中で、再開後の再確認を必須としています。",
         "fixedOnly": false
       }
     ]
