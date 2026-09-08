@@ -1,0 +1,215 @@
+{
+  "reportVersion": 1,
+  "title": "KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION — FINAL KANTO >=1000 IMPLEMENTATION WAVE",
+  "asOf": "2026-09-08",
+  "scope": "Bounded implementation attempt for the three retained Kanto >=1,000 ADOPT candidates: kanagawa-yokohama-arena-main, saitama-super-arena-main, saitama-super-arena-stadium. No other candidate was touched.",
+  "outcome": "NO PRODUCTION PROMOTION. All three candidates remain ADOPT / implementation-ready. The blocker is transcription work volume, not issuer evidence: currentness, asset provenance, configuration scope and identity were re-verified fresh for all three, and partial Pass 1 transcription was completed for Yokohama Arena. The production verification contract (complete numbered set for the declared scope, fresh independent human visual two-pass, independent structural checksum, issuer subtotal reconciliation) was not satisfied for any configuration, so nothing was promoted.",
+  "start": {
+    "head": "38aeaa372ba1045faf6513a76d5d72da88fbcaa5",
+    "originMain": "38aeaa372ba1045faf6513a76d5d72da88fbcaa5",
+    "workingTree": "clean",
+    "productionTotals": {
+      "venues": 159,
+      "selectableConfigurations": 161,
+      "seatRecords": 246023
+    },
+    "kantoLedgerFromLiveInventory": {
+      "universe": 154,
+      "production": 76,
+      "adopt": 3,
+      "blocked": 75,
+      "independentReviewMismatch": 1,
+      "missingFromInventory": 0
+    }
+  },
+  "targets": [
+    {
+      "inventoryId": "kanagawa-yokohama-arena-main",
+      "venue": "横浜アリーナ〔メインアリーナ〕",
+      "disposition": "ADOPT retained — Pass 1 partially complete, production not reached",
+      "venueSourceId": null,
+      "currentness": "2026-09-08 ACTIVE。2026年秋までの公演告知が継続し、休館・改修・座席変更の告知なし。",
+      "assetProvenance": "issuer現行ページ https://www.yokohama-arena.co.jp/seatguide/astage.html からリンクされる https://www.yokohama-arena.co.jp/common/img/seatguide/img_seatzoom_01.png を独立再取得。SHA-256 960e9794c696c253e86944cbc48f15317b3561f7ac0e826bd4782bf903a3475c、1,526,059バイト、5000×3758、Last-Modified 2016-07-01。pinned値とバイト単位で一致。",
+      "configurationScope": {
+        "issuerText": "issuer現行「座席の種類」表: アリーナ席は2階でA・B・C・D・E・Fの6ブロック、1階から2階にかけて22列、11列目と12列目の間に通路。スタンド席は3階から4階にかけて東・西・南・北の4ブロック・10列、5列目と6列目の間に通路。番は各ブロックの左端より時計回り。",
+        "included": [
+          "2階アリーナ席 A〜Fブロック（Aパターン）",
+          "3階スタンド席 東・西・南・北"
+        ],
+        "excluded": [
+          "1階センター席 3,114席（event-variable、オールスタンディング時は座席なし）",
+          "立見スペース 1,420席（座席なし）",
+          "スイート・ボックス 140席（座席図に列・番号がいっさい印字されず、3階の個室とバルコニー状座席が灰色の無番号輪郭としてのみ描かれる。席数から番号を創作しないためscope外に確定）",
+          "Bパターン／中央パターン（別のissuer-defined configuration）"
+        ]
+      },
+      "issuerSubtotals": {
+        "source": "https://www.yokohama-arena.co.jp/organizer/plans/ を2026-09-08に再取得",
+        "aStage": {
+          "センター席": 3114,
+          "アリーナ席": 5498,
+          "スタンド席": 3271,
+          "スイート・ボックス": 140,
+          "立見スペース": 1420,
+          "合計": 13443
+        },
+        "note": "これらはverification hypothesisであり transcription target ではない。番号集合を先に確定したうえで事後にreconcileする。"
+      },
+      "pass1Completed": {
+        "method": "fresh human visual reading of the current issuer chart at high magnification, cross-checked by an independent single-scanline cell segmentation of the row bands that does not use the human range table as its count source",
+        "A": {
+          "mappedSeats": 1205,
+          "rows": "A1・A2 8–58／A3–A5 7–59／A6–A8 6–60／A9–A11 5–61／A13–A18 4–62／A19–A21 2–64／A22 1–65。A12は座席バンドなし。",
+          "machineAgreement": "A1–A8、A14–A19、A22 は機械セル数と完全一致。A9–A11、A13 は図面中央の大型白抜き「A」がセル境界を覆うため機械側が2席前後少なくなる（描画上の遮蔽であり欠番ではない）。A20・A21 は台形斜辺のスリバー1件を機械側が誤検出するため、それを除外して一致。"
+        },
+        "D": {
+          "mappedSeats": 1205,
+          "rows": "D1・D2 8–58／D3–D5 7–59／D6–D8 6–60／D9–D11 5–61／D13–D18 4–62／D19–D21 2–64／D22 1–65。D12は座席バンドなし。",
+          "machineAgreement": "AブロックとDブロックは完全な鏡像で、機械側のセグメント構成 [12,7,5,11,5,7,12] 等も一致。中央の白抜き「D」による遮蔽行のみ機械側が少ない。"
+        },
+        "E": {
+          "mappedSeats": 306,
+          "rows": "E22 1–21／E21・E20 1–14と16–21／E19 1–13と16–21／E18・E17 1–12と16–21／E16 1–11と16–21／E15・E14 1–10と16–21／E13 1–9と16–21／E12 1–8と16–21／E5–E10 1–6と16–21／E1–E4 2–6と16–20。E11は座席バンドなし。",
+          "machineAgreement": "回転リサンプリングが1px境界線を劣化させるため機械セル数は参考値にとどまり、本ブロックのstructural checksumは未確定（second passで確定させる）。"
+        },
+        "F": {
+          "mappedSeats": null,
+          "rows": "86→66の鏡像構造。F22 66–86／F21・F20 66–79と81–86／F19 66–78と81–86／F18・F17 66–77と81–86／F16 66–76と81–86／F15・F14 66–75と81–86／F13 66–74と81–86／F12 66–73と81–86／F9・F10 66–71と81–86。F11は座席バンドなし。",
+          "open": "F6・F7・F8はステージ側の斜め切り取りで末尾セル数が未確定（F7は81–86の6席、F6は84–86の3席と読めるが確定していない）。F1–F5はAパターンでは描画されない。"
+        }
+      },
+      "openWork": [
+        "Bブロック・Cブロックの完全転記。各22列の90度コーナー弧で、1列あたり約86番・9前後のセグメントに分割される。",
+        "FブロックF6–F10のステージ側斜め切り取り端の確定。",
+        "3階 東・西・南・北スタンドの完全転記。円弧状のため水平scanlineでは機械抽出が成立せず、極座標展開など曲率正規化した機械経路が必要。",
+        "全ブロックのfresh independent second visual pass（Pass 1のrange tableをanswer keyにしない）。",
+        "issuer区分別小計（アリーナ席5,498／スタンド席3,271）とのreconciliation。"
+      ],
+      "structuralFindings": [
+        "各列の両端と通路位置に描かれる幅広・低背の無番号矩形は座席ではない。Aブロックでは高さ11px対座席18pxで機械分離できる。",
+        "各ブロックの描画座席バンドは21本であるのに対し列ラベルは1〜22まで振られており、通路バンドに当たるラベル番号はブロックによって異なる（A・Dは12、E・Fは11）。ラベル中心とバンド中心はピクセル単位で一致するため、ブロックごとに印字ラベルをそのまま採用し、欠落する列番号を推測しない。",
+        "E・Fブロックでは内側の列ほど通路幅が広がり、席番が位置基準で欠番になる（例 E13は1–9と16–21、E5–E10は1–6と16–21）。欠番を補完しない。",
+        "A・Dブロックの各行は印字されたセグメント境界番号がすべて連番で接続しており、行内は連続番号である（例 A1: 58|51, 50|39, 38|28, 27|16, 15|8 で計51席）。"
+      ]
+    },
+    {
+      "inventoryId": "saitama-super-arena-main",
+      "venue": "GMOアリーナさいたま〔メインアリーナ〕",
+      "disposition": "ADOPT retained — transcription not started in this wave",
+      "venueSourceId": null,
+      "currentness": "2026-09-08。客席確認・案内ページは現行のGMO表記でメインアリーナモード／スタジアムモード／コミュニティアリーナを掲示。座席数・列構成・番号体系の変更告知はない（記載がないことを変更されない証明としては扱わない）。イベントスケジュールはけやきひろばのみ稼働で一時改修中の状態が継続しており、2026-09-04 revised closure policyにより一時休館単独ではblockerとしない。recheckNotBefore 2027-04-01 と再開後のfull revalidation義務を保持。",
+      "assetProvenance": "https://www.saitama-arena.co.jp/seat_view/img/img-map_arena_end01.png を独立再取得。SHA-256 6d9cc55018b11f9901cab697cc6427f7350c3bbc9c4414efc47f83ef8e1aaf31、540,763バイト、3967×3864、Last-Modified 2026-03-24。pinned値とバイト単位で一致。",
+      "issuerSubtotals": {
+        "source": "https://www.saitama-arena.co.jp/business/layout_sizes/layout_sizes_main_arena/ を2026-09-08に再取得",
+        "上段": 5880,
+        "下段": 11404,
+        "300レベル": 644,
+        "500レベル": 752,
+        "ラムダ": 2272,
+        "TOTAL": 21197,
+        "仮設": "〜約1,300席（scope外）"
+      },
+      "chartNotation": "マゼンタ＝列ラベル（下段はA〜L等の英字、他レベルは数字）、teal＝席番で各ランの始点・終点セルにのみ印字される。",
+      "machineCountability": {
+        "probe": "RGBA合成後、白セル内部とteal端点セルの4連結成分抽出",
+        "cellLikeComponents": 19514,
+        "issuerFixedTotal": 21197,
+        "ratio": "約92%",
+        "cellSizeFamilies": [
+          "約7〜8px（上段・下段）",
+          "約11〜12px（300／500／ラムダ）"
+        ],
+        "conclusion": "human transcriptionと独立したstructural checksum経路は成立見込み。machine structural countが実用的でないという扱いはしない。"
+      },
+      "openWork": [
+        "上段／下段／300レベル／500レベル／ラムダの全ブロックについて印字席番ランを完全転記する。",
+        "fresh independent human visual two-pass。",
+        "human range tableに依存しない独立structural checksum。",
+        "issuer小計（上段5,880／下段11,404／300レベル644／500レベル752／ラムダ2,272／TOTAL 21,197）とのreconciliation。",
+        "GMOアリーナさいたまを1 venue source＋2 selectable configuration（main-arena／stadium）として実装する。この記録がvenue sourceを保持する。"
+      ],
+      "prohibitionsRestated": [
+        "アリーナ床席はissuerがevent-dependentと明記しておりscope外。",
+        "seat_list.js は block highlight用の粗いモデルであり seat-structure evidence として展開しない（cross-check補助のみ）。",
+        "仮設席からseat IDを生成しない。"
+      ]
+    },
+    {
+      "inventoryId": "saitama-super-arena-stadium",
+      "venue": "GMOアリーナさいたま〔スタジアム〕",
+      "disposition": "ADOPT retained — transcription not started in this wave",
+      "venueSourceId": null,
+      "currentness": "同上。recheckNotBefore 2027-04-01 を保持。",
+      "assetProvenance": "https://www.saitama-arena.co.jp/seat_view/img/img-map_stadium_end01.png を独立再取得。SHA-256 313979154c6a5d702e2b566021ddef51838d51a9a797fd30007d8433b6b37db1、536,255バイト、5176×3823、Last-Modified 2026-03-24。pinned値とバイト単位で一致。",
+      "issuerSubtotals": {
+        "source": "https://www.saitama-arena.co.jp/business/layout_sizes/layout_sizes_stadium/ を2026-09-08に再取得",
+        "上段": 6880,
+        "下段": 17441,
+        "300レベル": 644,
+        "500レベル": 1546,
+        "固定計": 26511,
+        "仮設": "〜約10,400席（scope外）"
+      },
+      "machineCountability": {
+        "cellLikeComponents": 24096,
+        "issuerFixedTotal": 26511,
+        "ratio": "約91%",
+        "cellSizeFamilies": [
+          "約6〜7px",
+          "約9〜11px"
+        ],
+        "conclusion": "structural checksum経路は成立見込み。"
+      },
+      "openWork": [
+        "上段／下段／300レベル／500レベルの全ブロックについて印字席番ランを完全転記する。",
+        "fresh independent human visual two-pass。",
+        "独立structural checksum。",
+        "issuer小計（上段6,880／下段17,441／300レベル644／500レベル1,546）とのreconciliation。",
+        "stadium mode を saitama-super-arena-main が保持する単一venue source上のselectable configurationとして実装する。"
+      ]
+    }
+  ],
+  "gmoIdentityDecisionUnchanged": {
+    "decision": "1 physical venue / 1 venue source / 2 selectable configurations（main-arena, stadium）。コミュニティアリーナは別facility-spaceで formal HOLD のまま。",
+    "consequence": "GMOが実装された場合のproduction増分は venue +1 / selectable configuration +2 であり、Kanto ledgerのproduction incrementとproduction DBのvenue/config incrementは一致しない。",
+    "reopened": false
+  },
+  "countsAfter": {
+    "productionTotals": {
+      "venues": 159,
+      "selectableConfigurations": 161,
+      "seatRecords": 246023
+    },
+    "delta": {
+      "venues": 0,
+      "selectableConfigurations": 0,
+      "seatRecords": 0
+    },
+    "kantoLedgerFromLiveInventory": {
+      "universe": 154,
+      "production": 76,
+      "adopt": 3,
+      "blocked": 75,
+      "independentReviewMismatch": 1,
+      "missingFromInventory": 0
+    },
+    "ledgerInvariant": "P (production) = 0, B (new formal blocked) = 0, retained ADOPT = 3. Kanto >=1,000 の ADOPT は 0 になっていない。"
+  },
+  "kantoClosureStatement": "Kanto >=1,000 の formal accounting は依然 complete ではない。inventory-unresearched は 0 だが ADOPT は 3 のままであり、これは evidence blocker ではなく転記作業の未完によるものである。したがって本waveでは Kanto >=1,000 を complete / closed とは宣言しない。",
+  "prohibitionsObserved": [
+    "capacity fitting なし。issuer小計はいずれもtranscription targetにしていない。",
+    "invented seat / row / block ID なし。スイート・ボックスは印字番号がないため登録対象から外し、席数140から番号を作らなかった。",
+    "unsupported geometry completion なし。E・Fブロックの位置基準の欠番を補完していない。",
+    "A / B / 中央 pattern mixing なし。",
+    "aggregate subtractionからのconfiguration生成なし。",
+    "third-party infill なし。すべてissuer first-party materialのみ。",
+    "machine outputをseat-ID生成元として採用していない。machine結果はhuman readingのcross-checkとしてのみ使用した。",
+    "verification contractを満たさない configuration を Kanto を閉じる目的で production へ昇格させていない。"
+  ],
+  "validation": {
+    "command": "npm run verify:venues",
+    "productionDataChanged": false,
+    "note": "本waveの変更は inventory / coverage ledger / report / HANDOFF のみで、venue source、生成catalog、runtime detail、fingerprint はいずれも変更していない。"
+  },
+  "exactNextAction": "KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION (continued) — 横浜アリーナ Aパターンの Bブロック・Cブロック・Fブロック末端・3階4スタンドを完全転記して second independent pass と issuer小計 reconciliation まで通し、続いて GMOアリーナさいたまを1 venue source＋2 configuration として実装する。RaiBoC / hino-brick-main-standard / Tokyo Priority D は引き続き別キュー。"
+}
