@@ -1,0 +1,330 @@
+{
+  "reportVersion": 1,
+  "title": "YOKOHAMA ARENA A-PATTERN SINGLE-VENUE BOUNDED COMPLETION ATTEMPT - STRUCTURAL MODEL RESOLVED, TRANSCRIPTION NOT COMPLETED",
+  "asOf": "2026-09-08",
+  "scope": "Single venue only: kanagawa-yokohama-arena-main 横浜アリーナ〔メインアリーナ〕 Aパターン固定番号scope。GMOアリーナさいたま（main/stadium）、RaiBoC、日野市民会館、Tokyo Priority D、その他venueには一切触れていない。",
+  "outcome": "NO PRODUCTION PROMOTION AND NO NEW FORMAL BLOCKER。disposition は ADOPT のまま据え置き。production に達しなかった理由は転記作業量であり、issuer evidence の欠落や矛盾ではない。本waveは前waveのpartial Pass 1をcontinuationとして扱える条件（asset同一性）を満たしたうえで、A-pattern全体のstructural modelを確定し、human transcriptionとは独立したmachine structural checksumを全10領域について完成させ、前waveのPass 1記録に含まれていた実体的誤りを2件訂正した。complete numbered set の転記と fresh independent Pass 2 は未完のため production gate は未充足。",
+  "start": {
+    "head": "478df7282f6423d28c32d82e25f785eff5d1700b",
+    "originMain": "478df7282f6423d28c32d82e25f785eff5d1700b",
+    "workingTree": "clean",
+    "productionTotals": {
+      "venues": 159,
+      "selectableConfigurations": 161,
+      "seatRecords": 246023
+    }
+  },
+  "currentnessAndAsset": {
+    "checkedAt": "2026-09-08",
+    "issuerPatternPage": "https://www.yokohama-arena.co.jp/seatguide/astage.html (HTTP 200) — Aパターン座席案内。img_seatzoom_01.png への現行linkageを再確認。",
+    "chartAsset": "https://www.yokohama-arena.co.jp/common/img/seatguide/img_seatzoom_01.png",
+    "sha256": "960e9794c696c253e86944cbc48f15317b3561f7ac0e826bd4782bf903a3475c",
+    "bytes": 1526059,
+    "dimensions": "5000x3758",
+    "lastModified": "2016-07-01",
+    "identicalToPinned": true,
+    "consequence": "assetが前waveとバイト単位で同一であることを確認したため、前waveに保存されたpartial Pass 1をそのPass 1のcontinuationとして利用可能と判定した。破棄・全面再転記は不要。ただしPass 2でPass 1 tableをanswer keyとして使用することは禁止のまま。",
+    "seatTypePage": "https://www.yokohama-arena.co.jp/seatguide/ を再取得。アリーナ席=2階A〜Fの6ブロック・22列・11列目と12列目の間に通路。スタンド席=3階から4階の東西南北4ブロック・10列・5列目と6列目の間に通路。列は数字が小さいほどステージに近い。番は各ブロックの左端より時計回り。",
+    "capacityPage": "https://www.yokohama-arena.co.jp/organizer/plans/ を再取得。Aステージ: センター席3,114／アリーナ席5,498／スタンド席3,271／スイート・ボックス140／立見スペース1,420／合計13,443。Bステージは別値（アリーナ4,933／スタンド3,086）でありAパターンとは混ぜない。"
+  },
+  "scopeSettled": {
+    "included": [
+      "2階アリーナ席 A〜Fブロック（Aパターン）",
+      "3階スタンド席 東・西・南・北"
+    ],
+    "excluded": [
+      "1階センター席 3,114席（Aパターン図では床面が白地で座席セルが一切描かれない。event-variable）",
+      "立見スペース 1,420席（座席なし）",
+      "スイート・ボックス 140席（列・番号の印字が一切なく、灰色の無番号輪郭のみ。席数から番号を創作しない）",
+      "Bパターン／中央パターン（別のissuer-defined configuration）"
+    ],
+    "issuerSubtotalsArePostChecksums": "アリーナ席5,498／スタンド席3,271はtranscription targetではなくpost-transcription checksum。"
+  },
+  "structuralModelResolved": {
+    "arenaRowBands": "全6ブロックとも印字行ラベルは22本、描画される座席バンドは21本。1本のラベルはセルも席番も一切ない未分割の通路バンド上に載る。印字ラベルから直接確認した通路ラベル: A=A12、D=D12、B=B11、C=C11、E=E11、F=F11。印字ラベルをそのまま採用し、欠落する列番号を推測しない。",
+    "issuerProseVsChart": "issuer本文は「22列」と述べるが、図面は21本の座席バンドしか描かない。この21バンド読みは issuer 自身のAステージ アリーナ席小計5,498と整合する（machineStructuralChecksum参照）ため、22列目を創作する必要はなく、印字ラベル読みが issuer の公表席数によって裏付けられる。",
+    "bcGeometry": "BブロックとCブロックの行は、フィットした中心 (cx,cy)=(1881.1,1880.8) を持つ同心円弧。行ピッチ約34.35px。polar unwrapにより各ブロックちょうど21本の明瞭な半径バンドに分離し、内側から10本目と11本目の間に通路ギャップ（C: 半径985→1046、B: 984→1037）が現れる。これは印字ラベルのC11／B11と一致する。unwrap slice上に印字された行ラベル（C22…C12, C10…C1）がmachine band順序と完全一致することを画像で確認した。",
+    "bcNumbering": "各行はradial境界で1（最内側の行は2または3）から始まり、反対側のradial境界で86（最内側4行は85）で終わる。外周行ほど弧長が長く席数が多い。内側の短い行はセグメント末尾で番号がskipされる（printed evidence: 同一radial spoke上に C22=17, C21=17, C20=16, C19=15, C18=14, C17=13, C16=12, C15=12, C14=11, C13=10, C12=9 が並ぶ）。これはE・Fで既に記録されていたposition-based gapと同じ挙動。欠番は補完しない。",
+    "standStructure": "各スタンドブロックは10列。列ラベルは西側の白帯に「10 9 8 7 6 | 5 4 3 2 1」と印字され、5列目と6列目の間の通路がissuer本文と一致する。各ブロックは独立した番号体系を持つ（例: 西ブロックは白帯側が125/124で南へ向かって減少、南ブロックは西端が125付近で東へ向かって89まで減少）。",
+    "nonSeatMarks": "各行の両端と通路位置に描かれる幅広・低背（約34x11px）の無番号矩形は座席ではない。回転して描かれるブロック（B・C・スタンド）では軸平行のbounding boxフィルタを通過してしまうため、PCAによる回転不変寸法で分類する必要がある。"
+  },
+  "machineStructuralChecksum": {
+    "method": "human range tableを一切入力に使わない独立経路。(1) 塗り色による座席セルのconnected component抽出（アリーナ=RGB(51,134,196)、スタンド=RGB(0,104,181)）、(2) PCAによる回転不変の長辺／短辺での座席セル判定と無番号矩形の除外、(3) 曲率対応の行分解: A・Dはセル隣接グラフによるsegment連結、B・Cは中心(1881.1,1880.8)まわりのpolar unwrapと半径バンド分割、E・Fはsegment連結。machine結果にhuman rangeを入力して補正していない。machine pathからseat IDは生成していない。",
+    "perBlockSeatCells": {
+      "A": 1193,
+      "B": 1200,
+      "C": 1191,
+      "D": 1183,
+      "E": 299,
+      "F": 290,
+      "NORTH": 1255,
+      "EAST": 654,
+      "SOUTH": 269,
+      "WEST": 974
+    },
+    "arenaMachineTotal": 5356,
+    "arenaIssuerSubtotal": 5498,
+    "arenaDelta": -142,
+    "standMachineTotal": 3152,
+    "standIssuerSubtotal": 3271,
+    "standDelta": -119,
+    "grandMachineTotal": 8508,
+    "grandIssuerSubtotal": 8769,
+    "grandDelta": -261,
+    "deltaExplanation": "差はすべて同一方向の過少計上であり、白抜き印字席番がセル境界を覆ってセルを結合させる描画上の遮蔽に起因する。calibration: Aブロックはhuman Pass 1で1,205席、machineでは1,193席で -12。machine側が欠落する行はA9–A11・A13（図面中央の大型白抜き「A」が境界を覆う行）と一致し、前waveの記録と同じ。Eはhuman 306に対しmachine 299。したがってmachine総計はissuer小計に対する下限であり、矛盾ではない。",
+    "perRowCellCounts": {
+      "A": [
+        65,
+        63,
+        63,
+        63,
+        59,
+        59,
+        59,
+        59,
+        59,
+        58,
+        56,
+        55,
+        55,
+        55,
+        54,
+        54,
+        53,
+        53,
+        53,
+        51,
+        51
+      ],
+      "D": [
+        65,
+        63,
+        63,
+        63,
+        59,
+        59,
+        59,
+        57,
+        57,
+        55,
+        55,
+        55,
+        54,
+        54,
+        53,
+        53,
+        53,
+        53,
+        52,
+        51,
+        51
+      ],
+      "C_inner_to_outer": {
+        "C1..C10": [
+          37,
+          37,
+          40,
+          40,
+          48,
+          48,
+          56,
+          48,
+          47,
+          47
+        ],
+        "C11": "aisle band (no seats)",
+        "C12..C22": [
+          54,
+          61,
+          63,
+          65,
+          67,
+          72,
+          72,
+          77,
+          79,
+          82,
+          84
+        ]
+      },
+      "B_inner_to_outer": {
+        "B1..B10": [
+          38,
+          38,
+          40,
+          40,
+          47,
+          47,
+          56,
+          50,
+          45,
+          42
+        ],
+        "B11": "aisle band (no seats)",
+        "B12..B22": [
+          54,
+          61,
+          64,
+          67,
+          69,
+          72,
+          73,
+          77,
+          81,
+          82,
+          84
+        ]
+      },
+      "E": [
+        21,
+        20,
+        18,
+        18,
+        18,
+        18,
+        17,
+        16,
+        16,
+        15,
+        14,
+        14,
+        12,
+        12,
+        12,
+        12,
+        12,
+        11,
+        10,
+        10,
+        9
+      ],
+      "F": [
+        21,
+        20,
+        20,
+        18,
+        17,
+        17,
+        16,
+        16,
+        15,
+        15,
+        14,
+        14,
+        12,
+        12,
+        12,
+        12,
+        12,
+        10,
+        10,
+        10,
+        9
+      ],
+      "note": "A・D・E・Fはセル隣接グラフ由来のため行順は席数降順。B・Cはpolar band由来のため内側→外側の実行順。いずれも遮蔽により実席数の下限。"
+    },
+    "openMachineAnomaly": "B7とC7がいずれも56セルで、両隣の行より明らかに多い。band割当のartifactか実構造かを次threadで目視確認すること。"
+  },
+  "correctionsToPriorWaveRecord": [
+    {
+      "item": "Fブロックの描画範囲",
+      "priorRecord": "「F1–F5はAパターンでは描画されない」「F6・F7・F8はステージ側の斜め切り取りで末尾セル数が未確定」「86→66の鏡像構造でF9–F22を読み取り済み」",
+      "corrected": "誤り。ブロックFはF1からF22まで全ての行ラベルに座席バンドが描かれており（F11のみ通路バンド）、E同様に21本の座席バンドを持つ。machine per-row profileはF=302セル/21行でE=305セル/21行とほぼ鏡像。issuer図面上でF1〜F5の各ラベル横に座席セルと席番（F1〜F4は85、F5は86）が印字されていることを直接確認した。前waveのFのrange記録は無効とし、Fは全面的に再転記が必要。",
+      "impact": "前wave記録をそのまま信頼していれば、Fブロックの約1/4の席が欠落したproduction dataになっていた。"
+    },
+    {
+      "item": "スタンド席のmachine計数",
+      "priorRecord": "「3階スタンドは円弧状で水平scanlineによるcell抽出が成立しない」",
+      "corrected": "抽出自体は成立する。ただし軸平行bounding boxによる座席判定を使うと、回転して描かれた無番号の幅広矩形（約34x11px）が座席として誤検出され、スタンド計が3,447となってissuer小計3,271を+176上回る見かけの矛盾が生じる。PCAによる回転不変寸法で分類すると3,152となり、アリーナ側と同方向の遮蔽由来の過少計上に収まる。したがってスタンドにissuer evidenceの矛盾は存在しない。",
+      "impact": "見かけ上のissuer矛盾（potential evidence blocker候補）が計測artifactとして解消された。"
+    }
+  ],
+  "passStatus": {
+    "pass1": "未完。前waveから継承した A（1,205席）・D（1,205席）・E（306席）は machine structural checksum と整合することを本waveで独立に確認した。Fの前wave部分記録は上記のとおり無効化。B・C・F・東西南北スタンドのPass 1は未実施。",
+    "pass2": "未実施。Pass 1がfreezeされていないため着手条件を満たさない。",
+    "symmetricDifference": "算出不能（Pass 2未実施）。",
+    "reasonNotCompleted": "宣言scopeは8,769席・166行規模で、各行がposition-based gapを持つため1行あたり8〜10個の印字境界番号を高倍率で確定する必要がある。これに加えて全域のfresh independent Pass 2が必要であり、本thread内でproduction gateが要求する精度（Pass1/Pass2 symmetric difference 0）を満たす形では完了できなかった。evidence上の障害ではない。"
+  },
+  "productionGate": {
+    "completeDeclaredNumberedSet": false,
+    "freshCompletedPass1": false,
+    "freshIndependentPass2": false,
+    "passSymmetricDifferenceZero": false,
+    "independentStructuralChecksum": true,
+    "machineExpandedAuthoredSourceEquality": "N/A (venue source未作成)",
+    "issuerReconciliation": "部分的。machine structural checksumはarena 5,356/5,498、stand 3,152/3,271で、いずれも遮蔽由来の下限として整合。human transcription由来のexact reconciliationは未達。",
+    "noInventedIds": true,
+    "noConfigurationMixing": true,
+    "excludedScopeUndrawable": true,
+    "verdict": "NOT SATISFIED - production化しない。"
+  },
+  "toolingParametersForNextThread": {
+    "purpose": "次threadが構造解析を再導出せずに転記へ直行できるようにするための再現パラメータ。",
+    "arenaFillRGB": [
+      51,
+      134,
+      196
+    ],
+    "standFillRGB": [
+      0,
+      104,
+      181
+    ],
+    "seatCellApprox": "軸平行ブロックで19x16px、面積中央値約300px。行ピッチ約34.3px、行内セルピッチ約17.4px。",
+    "nonSeatRectApprox": "回転不変で長辺>25px かつ 短辺<14px。",
+    "bcPolarCentre": [
+      1881.1,
+      1880.8
+    ],
+    "bcRowPitch": 34.35,
+    "bcThetaSpanDegrees": {
+      "C": [
+        100.1,
+        176.6
+      ],
+      "B": [
+        -176.8,
+        -100.1
+      ]
+    },
+    "readingTechnique": "polar unwrapで各行を水平ストリップに正規化し、角度スライスごとに (中心角 - 270) 度だけ回転すると印字席番が正立して読める。1枚のスライス画像で21行分の境界番号を同時に読めるため、ブロックあたり4スライス程度で全域を被覆できる。unwrap時はhandednessを保つためthetaを増加方向にサンプリングすること（減少方向にすると鏡像になる）。",
+    "standRowExtraction": "アリーナブロック集合からの距離変換は東・南では10行に綺麗に分離する（5行目と6行目の間に通路ギャップ）。北・西は直線区間と曲線区間をまたぐため単一の距離場では分離せず、角度セクタごとの局所処理が必要。"
+  },
+  "prohibitionsObserved": [
+    "capacity fittingなし。issuer小計をtranscription targetにしていない。",
+    "invented seat / row / block IDなし。スイート・ボックス140席から番号を作っていない。",
+    "machine結果へhuman rangeを入力して補正していない。machine pathからseat IDを生成していない。",
+    "AパターンとBパターン／中央パターンを混ぜていない。",
+    "転記作業量のみを理由にHOLD／NEED EVIDENCEへ格下げしていない。",
+    "venue source、生成catalog、runtime detail、production fingerprintを一切変更していない。",
+    "対象外venue（GMOアリーナさいたま、RaiBoC、日野市民会館、Tokyo Priority D等）に触れていない。"
+  ],
+  "countsAfter": {
+    "productionTotals": {
+      "venues": 159,
+      "selectableConfigurations": 161,
+      "seatRecords": 246023
+    },
+    "delta": {
+      "venues": 0,
+      "selectableConfigurations": 0,
+      "seatRecords": 0
+    },
+    "kantoLedgerFromRecords": {
+      "universe": 154,
+      "production": 76,
+      "adopt": 3,
+      "blockedFormal": 74,
+      "independentReviewMismatch": 1,
+      "inventoryUnresearched": 0,
+      "missingFromInventory": 0
+    },
+    "ledgerInvariant": "P (production) = 0, B (new formal blocked) = 0, retained ADOPT = 3。横浜アリーナはADOPTのまま。GMO main/stadiumの2 ADOPTも未着手のまま残る。Kanto >=1,000 は complete / closed ではない。"
+  },
+  "validation": {
+    "command": "npm run verify:venues",
+    "productionDataChanged": false,
+    "note": "本waveの変更は venue-report / coverage ledger / inventory / HANDOFF のみ。venue source、生成catalog、runtime detail、fingerprintはいずれも未変更。"
+  },
+  "exactNextAction": "YOKOHAMA ARENA A-PATTERN TRANSCRIPTION (continued) - 本reportのtoolingParametersForNextThreadに従い、B・C・F・東西南北スタンドのPass 1をpolar unwrap sliceで完了させ、Fは前wave記録を破棄して全面再転記し、続いて全宣言scopeのfresh independent Pass 2、Pass1/Pass2 symmetric difference 0、issuer小計 5,498／3,271 reconciliation まで通す。"
+}
