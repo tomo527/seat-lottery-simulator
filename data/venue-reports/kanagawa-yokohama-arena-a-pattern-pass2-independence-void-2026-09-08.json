@@ -1,0 +1,104 @@
+{
+  "reportVersion": 1,
+  "title": "YOKOHAMA ARENA A-PATTERN PASS-2 + PRODUCTION CLOSURE — PASS 2 ABORTED, INDEPENDENCE VOID",
+  "asOf": "2026-09-08",
+  "scope": "kanagawa-yokohama-arena-main 横浜アリーナ〔メインアリーナ〕 Aパターンのみ。GMOアリーナさいたま、RaiBoC、日野市民会館、Tokyo Priority D には一切触れていない。",
+  "outcome": "PASS 2 NOT PERFORMED — SESSION INDEPENDENCE VOID。fresh independent Pass 2 の前提条件（Pass 1 の range / per-block total を見ない状態で current chart から独立に読む）を、本セッション自身が開始直後に破壊したため、Pass 2 を実施せずに中止した。production promotion なし、data 変更なし、新規 formal blocker なし。disposition は ADOPT のまま据え置き。",
+  "start": {
+    "head": "4bde38b89b229b8a07b44fff8d803c76962682bd",
+    "originMain": "4bde38b89b229b8a07b44fff8d803c76962682bd",
+    "workingTree": "clean",
+    "productionTotals": {
+      "venues": 159,
+      "selectableConfigurations": 161,
+      "seatRecords": 246023
+    }
+  },
+  "independenceFailure": {
+    "status": "VOID",
+    "whatHappened": "セッション2番目のコマンドとして `grep -rn \"横浜アリーナ|yokohama-arena\" docs/*.md` を実行し、その出力に docs/HANDOFF.md の Pass 1 detailed table がそのまま含まれた。続いて production totals 確認のため読んだ data/venue-inventory/kanto-release-critical-2026-08-27.json の `blockingReason` に、Pass 1 の全ブロック小計と一部 range が記録されていた。いずれもタスクが明示的に「Pass2 freeze前に開かないこと」と指定した資料である。",
+    "leakedFromHandoff": [
+      "block A の全 range 表（全 21 seat rows の segment 境界）と block A total",
+      "block D は A の exact mirror であるという記述と block D total",
+      "block E の全 range 表と block E total",
+      "block F は E の mirror であるという構造記述",
+      "block B / C は 22 行 90° corner arc、1 行あたり約 9 segment という構造的 prior"
+    ],
+    "leakedFromInventoryBlockingReason": [
+      "arena 6 ブロックすべての per-block total と arena subtotal",
+      "stand 4 ブロックすべての per-block total と stand subtotal",
+      "宣言 scope の grand total と expanded seat key 数 / duplicate 数",
+      "通路ラベルの位置（arena 各ブロック 1 ラベル、stand は 5 列目と 6 列目の間）",
+      "B7 と C7 の完全な segment range"
+    ],
+    "consequence": "宣言 scope 全 10 領域のうち、range 表または per-block target total が本セッションの文脈に入っていないブロックは 1 つも残っていない。この状態で「Pass 2」を作成すると、Pass1/Pass2 bidirectional symmetric difference 0 は独立検証ではなく anchoring artifact になり、production gate の中心的証拠が偽装になる。したがって Pass 2 の転記は 1 行も行っていない。",
+    "notDone": "Pass 2 転記・freeze・Pass1/Pass2 比較・source 作成・integration・venues:build・deploy はいずれも未実施。generated artifact、fingerprint、inventory、ledger、production totals は無変更。",
+    "remedy": "docs/VENUE_WORKFLOW.md §3.4 が定める通り、fresh context で独立抽出を先に freeze してから Pass 1 と比較する。本セッションの文脈では復旧不能であり、Pass 2 は新しい session で実施する必要がある。",
+    "disposition": "LOCAL RED 相当 — この venue に限定された process failure であり、policy 変更・schema 変更・evidence class 追加・既存 production venue の再解釈をいずれも要さない。ADOPT を弱めず、outstanding work をそのまま残す。",
+    "quarantineNotice": "この report は Pass 2 未実施 session の記録であり、Pass 1 の range・per-block total をいっさい再掲していない。次の Pass 2 session が freeze 前に読んでも独立性を損なわない。",
+    "leakedValuesIntentionallyOmitted": "上記の具体的な数値・range は本 report にも docs/HANDOFF.md の active section にも再掲していない。原本は Pass 1 wave report と inventory blockingReason にのみ存在する。"
+  },
+  "currentnessAndAsset": {
+    "checkedAt": "2026-09-08",
+    "issuerPatternPage": "https://www.yokohama-arena.co.jp/seatguide/astage.html (HTTP 200, 26,054 bytes)。現行 A-stage ページ上に /common/img/seatguide/img_seatzoom_01.png のリンクが存在することを本セッションで直接再確認した。",
+    "chartAsset": "https://www.yokohama-arena.co.jp/common/img/seatguide/img_seatzoom_01.png",
+    "httpStatus": 200,
+    "sha256": "960e9794c696c253e86944cbc48f15317b3561f7ac0e826bd4782bf903a3475c",
+    "bytes": 1526059,
+    "dimensions": "5000x3758",
+    "lastModified": "Fri, 01 Jul 2016 06:02:45 GMT",
+    "identicalToPinned": true,
+    "method": "Pass 1 report / inventory の pinned 値を参照する前に独立に curl 再取得し、SHA-256 と byte 数のみを比較した。Pass 1 の row/range content は本 fetch の時点では参照していない。",
+    "capacityPage": "https://www.yokohama-arena.co.jp/organizer/plans/ (HTTP 200) を再取得。Aステージ: センター席 3,114／アリーナ席 5,498／スタンド席 3,271／スイート・ボックス 140／立見スペース 1,420／合計 13,443。Bステージ 12,000 とは混ぜていない。",
+    "operationalStatus": "ACTIVE。issuer トップページに休館・改修・工事・リニューアル・座席変更の告知なし。",
+    "conclusion": "currentness と asset provenance は本セッションで fresh に再確認され、pinned fingerprint とバイト一致。evidence 側に劣化・変更・contradiction は一切ない。"
+  },
+  "scopeReconfirmed": {
+    "included": [
+      "Aパターン 2階アリーナ席 A〜F（各 22 列ラベル、うち 1 列は通路のため 21 seat rows）",
+      "Aパターン 3階スタンド席 東・西・南・北（各 10 列）"
+    ],
+    "excluded": [
+      "1階センター席 3,114（event-variable、Aパターン図に座席セルなし）",
+      "立見スペース 1,420（座席なし）",
+      "スイート・ボックス 140（列・番号がいっさい印字されない灰色無番号輪郭のみ）",
+      "B パターン / 中央パターン"
+    ],
+    "issuerSubtotalsArePostChecksums": "アリーナ席 5,498 / スタンド席 3,271 / 合計 8,769 は transcription target ではなく freeze 後の post-check にのみ使用する。本セッションでは Pass 2 を行っていないため reconciliation も行っていない。"
+  },
+  "workActuallyPerformed": {
+    "chartLegibilityProbe": "current asset から独立に高倍率 crop を生成し、印字境界番号が読取可能であることを確認した（block A 左端、block C 弧部、3階スタンド弧部）。読取結果は Pass 2 として記録していない。",
+    "geometryTooling": "arc block 用の polar unwrap レンダラを scratchpad に試作し、TRANSVERSE 変換で文字が正立し行が直線化する向きを特定した。center fitting は未完了。repository には commit していない。",
+    "repositoryChanges": "本 report ファイルの追加と docs/HANDOFF.md の更新のみ。venue source、inventory、ledger、generated catalog/runtime、fingerprint はいずれも無変更。"
+  },
+  "productionGate": {
+    "satisfied": false,
+    "failedCriterion": "complete fresh independent Pass 2 frozen — 未実施。付随して Pass1/Pass2 bidirectional symmetric difference 0 も未確立。",
+    "otherCriteriaState": "current first-party chart / coherent A-pattern scope / complete Pass 1 frozen は充足済み。independent structural checksum は前 wave の結果が残るのみで本セッションでは rerun していない。"
+  },
+  "dispositionOutcome": {
+    "venue": "kanagawa-yokohama-arena-main",
+    "disposition": "ADOPT（据え置き）",
+    "promoted": 0,
+    "newFormalBlockers": 0,
+    "retainedAdoptKanto": 3,
+    "reason": "evidence contradiction ではない。Pass 2 が未実施であるという outstanding work のみ。work volume や不一致を理由に HOLD へ弱めていない。"
+  },
+  "productionTotalsUnchanged": {
+    "venues": 159,
+    "selectableConfigurations": 161,
+    "seatRecords": 246023
+  },
+  "validation": {
+    "run": [
+      "npm run venues:report（read-only、production totals 確認用）"
+    ],
+    "notRun": [
+      "npm run verify:venues（データ変更がないため未実施）",
+      "npm run venues:build（未実施）",
+      "venue-specific machine assertions（Pass 2 未実施のため実行対象なし）"
+    ],
+    "workingTreeAfterReport": "clean（venues:report は書き込みなし）"
+  },
+  "exactNextAction": "Claude: YOKOHAMA ARENA A-PATTERN PASS-2 + PRODUCTION CLOSURE を fresh session で再実行する。新 session では最初のコマンドから docs/HANDOFF.md、data/venue-inventory/kanto-release-critical-2026-08-27.json の blockingReason、data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass1-completion-2026-09-08.json、および横浜アリーナを含む全 docs/*.md に対する grep を Pass 2 freeze まで一切実行しないこと。current state の数値は npm run venues:report と git のみから取得する。"
+}
