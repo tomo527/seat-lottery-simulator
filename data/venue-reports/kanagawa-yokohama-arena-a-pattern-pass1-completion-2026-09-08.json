@@ -1,0 +1,2100 @@
+{
+ "reportVersion": 1,
+ "title": "YOKOHAMA ARENA A-PATTERN PASS-1 COMPLETION / FREEZE",
+ "asOf": "2026-09-08",
+ "scope": "Single venue only: kanagawa-yokohama-arena-main 横浜アリーナ〔メインアリーナ〕 Aパターン宣言scope（2階アリーナ席A〜F＋3階スタンド席 東・西・南・北）。GMOアリーナさいたま、RaiBoC、日野市民会館、Tokyo Priority D、その他venueには一切触れていない。Pass 2、production source作成、runtime integrationは本waveのscope外。",
+ "outcome": "HUMAN PASS 1 COMPLETE AND FROZEN。宣言scope全10領域（arena 6ブロック×21 seat rows＋stand 4ブロック×10 rows＝166 rows）の印字境界番号をcurrent assetから全面転記し、freeze criteriaを全項目充足した。disposition は ADOPT のまま据え置き（production promotionなし、新規formal blockerなし）。Pass1 mapped subtotalはarena 5,498／stand 3,271／総計8,769で、post-checksumであるissuer公表小計と完全一致した。一致を理由にrangeを変更した箇所はない。",
+ "start": {
+  "head": "44067915df2b7720c44e47b01c78b2131dffa063",
+  "originMain": "478df7282f6423d28c32d82e25f785eff5d1700b（本wave冒頭でfast-forward pushし44067915df2bへ同期）",
+  "workingTree": "clean",
+  "productionTotals": {
+   "venues": 159,
+   "selectableConfigurations": 161,
+   "seatRecords": 246023
+  }
+ },
+ "currentnessAndAsset": {
+  "checkedAt": "2026-09-08",
+  "issuerPatternPage": "https://www.yokohama-arena.co.jp/seatguide/astage.html (HTTP 200)。現行linkage /common/img/seatguide/img_seatzoom_01.png をA-stageページ上で直接再確認した。",
+  "chartAsset": "https://www.yokohama-arena.co.jp/common/img/seatguide/img_seatzoom_01.png",
+  "sha256": "960e9794c696c253e86944cbc48f15317b3561f7ac0e826bd4782bf903a3475c",
+  "bytes": 1526059,
+  "dimensions": "5000x3758",
+  "identicalToPinned": true,
+  "consequence": "assetが前waveとバイト単位で同一のため、前waveのpartial Pass 1（A・D・E）はPass 1 continuationとして利用可能。ただし本waveではA・D・Eもcurrent assetから独立に全面再転記し、前wave記録をanswer keyとして使用していない。再転記結果は前waveがinventory blockingReasonに記録していたA 1,205／D 1,205／E 306およびその全range表記と完全一致し、継承値をretro-validateした。前waveで無効化されたF tableは一切使用していない。",
+  "capacityPage": "https://www.yokohama-arena.co.jp/organizer/plans/ を再取得。Aステージ: センター席3,114／アリーナ席5,498／スタンド席3,271／スイート・ボックス140／立見スペース1,420／合計13,443。Bステージ（アリーナ4,933／スタンド3,086）とは混ぜていない。"
+ },
+ "scopeSettled": {
+  "included": [
+   "2階アリーナ席 A・B・C・D・E・Fブロック（Aパターン）",
+   "3階スタンド席 東・西・南・北"
+  ],
+  "excluded": [
+   "1階センター席 3,114席（Aパターン図で床面が白地・座席セル皆無、event-variable）",
+   "立見スペース 1,420席（座席なし）",
+   "スイート・ボックス 140席（列・番号の印字が一切なく灰色の無番号輪郭のみ）",
+   "Bパターン／中央パターン"
+  ],
+  "issuerSubtotalsArePostChecksums": "アリーナ席5,498／スタンド席3,271はtranscription targetではなくPass1 freeze後のpost-checksum。"
+ },
+ "readingMethod": {
+  "arenaAxisAligned": "A・Dは行が水平。印字行ラベルと各セグメントの印字境界番号を高倍率crop（2.2x LANCZOS）から直接読み取った。",
+  "arenaRotated": "E・Fは行方向をPCAで測定（E +18.855度、F -18.946度）し、その角度だけ逆回転したderotated viewで転記。回転後の帯分解で両ブロックとも21 seat rows＋通路1本を確認。",
+  "arenaPolar": "B・Cは中心(1881.08,1880.98)まわりのpolar解析。centreはCのseat cellから独立に再フィットして得られ、前report記録の(1881.1,1880.8)を再現した。行ピッチ34.3683px。印字席番はscreen-uprightで描かれるため回転は行わず、(a) 全radiiを覆うwedge crop、(b) 各行の印字番号glyphをその場のbbox cropのままrow順・θ順に並べたmontage の二系統で読み取った。montageはlayout変換のみで、番号は常にchartの印字glyphそのものを読んでいる。",
+  "standCurvature": "スタンド環はstadium形状。spineを水平線分(1881,1878)-(3125,1878)としたdistance fieldで全3,081 seat cellが10本のrow band（半径1501.2/1529.7/1557.5/1586.0/1615.1/1691.7/1719.0/1748.1/1777.1/1805.5、最大残差4.72px）へ分離し、5列目と6列目の間の通路がissuer本文と一致した。ring上のarc-length parameterでblock境界とrow内順序を確定し、arena同様のglyph montageで転記した。",
+  "rowLabelEvidence": "row ownershipは印字ラベルから直接確定。arenaはA1..A22等のブロック内ラベル、standは白帯の「10 9 8 7 6 | 5 4 3 2 1」およびブロック端の行番号タブ。standのblock境界も印字で確定した（北/西境界は北側が1で始まり西側が124/125で終わる白帯、北/東境界は北側が144で終わり東側が1で始まる白帯）。",
+  "prohibition": "machine-derived cell positionやissuer subtotalから欠番・境界番号を生成していない。machine pathはrow locationとcross-checkのみに使用した。"
+ },
+ "structuralFindings": {
+  "arenaRowBands": "全6ブロックとも印字行ラベル22本に対し描画座席バンドは21本。通路ラベルはA12・D12・B11・C11・E11・F11で、いずれもセルも席番もない未分割バンド上に載ることを図面上で直接確認した。",
+  "positionBasedGaps": "欠番は補完していない。各行はprinted segmentの列として記録し、segment間でskipされる番号はその行に存在しない番号として扱う（例: 北スタンド1〜5列は8・16・24…が、E1〜E4は7〜15が、C1は7〜17が存在しない）。",
+  "nonSeatMarks": "各行両端と通路位置の幅広・低背（約34x11px）無番号矩形は座席ではない。回転ブロックでは軸平行bounding boxを通過するためPCAによる回転不変寸法で分類した。",
+  "b7c7Anomaly": {
+   "priorReading": "前report openMachineAnomaly: B7とC7がいずれも56セルで両隣の行より明らかに多い。band割当のartifactか実構造かを次threadで目視確認すること。",
+   "resolution": "BAND-ASSIGNMENT ARTIFACT。実構造ではない。",
+   "evidence": "polar centreをseat cellから再フィットしbandを丸めindexで割り当てた本waveのmachine pathでは B7=48セル・C7=47セルとなり、両隣（B5/B6/B8/B9/B10、C5/C6/C8/C9/C10）と同水準に収まる。56という値は再現しない。human Pass 1では B7 の印字境界番号が 1-6+16-27+37-48+58-69+81-86、C7 が 1-6+18-29+39-50+60-71+81-86 で、いずれも48席。これは B5・B6・B8・B9・B10 および C5・C6・C8・C9・C10 と完全に同一構造である。ブロックB・Cに56席の行は存在しない。",
+   "closed": true
+  }
+ },
+ "pass1": {
+  "status": "COMPLETE AND FROZEN",
+  "rowsTranscribed": 166,
+  "arena": {
+   "A": {
+    "rows": {
+     "A1": {
+      "printedRowLabel": "A1",
+      "segments": "51-58+39-50+28-38+16-27+8-15",
+      "expandedCount": 51
+     },
+     "A2": {
+      "printedRowLabel": "A2",
+      "segments": "51-58+39-50+28-38+16-27+8-15",
+      "expandedCount": 51
+     },
+     "A3": {
+      "printedRowLabel": "A3",
+      "segments": "51-59+39-50+28-38+16-27+7-15",
+      "expandedCount": 53
+     },
+     "A4": {
+      "printedRowLabel": "A4",
+      "segments": "51-59+39-50+28-38+16-27+7-15",
+      "expandedCount": 53
+     },
+     "A5": {
+      "printedRowLabel": "A5",
+      "segments": "51-59+39-50+28-38+16-27+7-15",
+      "expandedCount": 53
+     },
+     "A6": {
+      "printedRowLabel": "A6",
+      "segments": "51-60+39-50+28-38+16-27+6-15",
+      "expandedCount": 55
+     },
+     "A7": {
+      "printedRowLabel": "A7",
+      "segments": "51-60+39-50+28-38+16-27+6-15",
+      "expandedCount": 55
+     },
+     "A8": {
+      "printedRowLabel": "A8",
+      "segments": "51-60+39-50+28-38+16-27+6-15",
+      "expandedCount": 55
+     },
+     "A9": {
+      "printedRowLabel": "A9",
+      "segments": "51-61+39-50+28-38+16-27+5-15",
+      "expandedCount": 57
+     },
+     "A10": {
+      "printedRowLabel": "A10",
+      "segments": "51-61+39-50+28-38+16-27+5-15",
+      "expandedCount": 57
+     },
+     "A11": {
+      "printedRowLabel": "A11",
+      "segments": "51-61+39-50+28-38+16-27+5-15",
+      "expandedCount": 57
+     },
+     "A13": {
+      "printedRowLabel": "A13",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "A14": {
+      "printedRowLabel": "A14",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "A15": {
+      "printedRowLabel": "A15",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "A16": {
+      "printedRowLabel": "A16",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "A17": {
+      "printedRowLabel": "A17",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "A18": {
+      "printedRowLabel": "A18",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "A19": {
+      "printedRowLabel": "A19",
+      "segments": "63-64+51-62+39-50+28-38+16-27+4-15+2-3",
+      "expandedCount": 63
+     },
+     "A20": {
+      "printedRowLabel": "A20",
+      "segments": "63-64+51-62+39-50+28-38+16-27+4-15+2-3",
+      "expandedCount": 63
+     },
+     "A21": {
+      "printedRowLabel": "A21",
+      "segments": "63-64+51-62+39-50+28-38+16-27+4-15+2-3",
+      "expandedCount": 63
+     },
+     "A22": {
+      "printedRowLabel": "A22",
+      "segments": "63-65+51-62+39-50+28-38+16-27+4-15+1-3",
+      "expandedCount": 65
+     }
+    },
+    "aisleRowLabel": "A12",
+    "blockTotal": 1205
+   },
+   "B": {
+    "rows": {
+     "B1": {
+      "printedRowLabel": "B1",
+      "segments": "2-6+16-25+37-46+58-66+81-84",
+      "expandedCount": 38
+     },
+     "B2": {
+      "printedRowLabel": "B2",
+      "segments": "2-6+16-25+37-46+58-66+81-84",
+      "expandedCount": 38
+     },
+     "B3": {
+      "printedRowLabel": "B3",
+      "segments": "2-6+16-25+37-46+58-67+81-85",
+      "expandedCount": 40
+     },
+     "B4": {
+      "printedRowLabel": "B4",
+      "segments": "2-6+16-25+37-46+58-67+81-85",
+      "expandedCount": 40
+     },
+     "B5": {
+      "printedRowLabel": "B5",
+      "segments": "1-6+16-27+37-48+58-69+81-86",
+      "expandedCount": 48
+     },
+     "B6": {
+      "printedRowLabel": "B6",
+      "segments": "1-6+16-27+37-48+58-69+81-86",
+      "expandedCount": 48
+     },
+     "B7": {
+      "printedRowLabel": "B7",
+      "segments": "1-6+16-27+37-48+58-69+81-86",
+      "expandedCount": 48
+     },
+     "B8": {
+      "printedRowLabel": "B8",
+      "segments": "1-6+16-27+37-48+58-69+81-86",
+      "expandedCount": 48
+     },
+     "B9": {
+      "printedRowLabel": "B9",
+      "segments": "1-6+16-27+37-48+58-69+81-86",
+      "expandedCount": 48
+     },
+     "B10": {
+      "printedRowLabel": "B10",
+      "segments": "1-6+16-27+37-48+58-69+81-86",
+      "expandedCount": 48
+     },
+     "B12": {
+      "printedRowLabel": "B12",
+      "segments": "1-6+7-8+16-27+28-29+37-48+49-50+58-69+70-72+81-86",
+      "expandedCount": 57
+     },
+     "B13": {
+      "printedRowLabel": "B13",
+      "segments": "1-6+7-9+16-27+28-30+37-48+49-51+58-69+70-73+81-86",
+      "expandedCount": 61
+     },
+     "B14": {
+      "printedRowLabel": "B14",
+      "segments": "1-6+7-10+16-27+28-31+37-48+49-52+58-69+70-74+81-86",
+      "expandedCount": 65
+     },
+     "B15": {
+      "printedRowLabel": "B15",
+      "segments": "1-6+7-10+16-27+28-31+37-48+49-52+58-69+70-75+81-86",
+      "expandedCount": 66
+     },
+     "B16": {
+      "printedRowLabel": "B16",
+      "segments": "1-6+7-11+16-27+28-32+37-48+49-53+58-69+70-75+81-86",
+      "expandedCount": 69
+     },
+     "B17": {
+      "printedRowLabel": "B17",
+      "segments": "1-6+7-12+16-27+28-33+37-48+49-54+58-69+70-76+81-86",
+      "expandedCount": 73
+     },
+     "B18": {
+      "printedRowLabel": "B18",
+      "segments": "1-6+7-12+16-27+28-33+37-48+49-54+58-69+70-77+81-86",
+      "expandedCount": 74
+     },
+     "B19": {
+      "printedRowLabel": "B19",
+      "segments": "1-6+7-13+16-27+28-34+37-48+49-55+58-69+70-78+81-86",
+      "expandedCount": 78
+     },
+     "B20": {
+      "printedRowLabel": "B20",
+      "segments": "1-6+7-14+16-27+28-35+37-48+49-56+58-69+70-79+81-86",
+      "expandedCount": 82
+     },
+     "B21": {
+      "printedRowLabel": "B21",
+      "segments": "1-6+7-14+16-27+28-35+37-48+49-56+58-69+70-80+81-86",
+      "expandedCount": 83
+     },
+     "B22": {
+      "printedRowLabel": "B22",
+      "segments": "1-6+7-15+16-27+28-36+37-48+49-57+58-69+70-80+81-86",
+      "expandedCount": 86
+     }
+    },
+    "aisleRowLabel": "B11",
+    "blockTotal": 1238
+   },
+   "C": {
+    "rows": {
+     "C1": {
+      "printedRowLabel": "C1",
+      "segments": "3-6+18-26+39-48+60-69+81-85",
+      "expandedCount": 38
+     },
+     "C2": {
+      "printedRowLabel": "C2",
+      "segments": "3-6+18-26+39-48+60-69+81-85",
+      "expandedCount": 38
+     },
+     "C3": {
+      "printedRowLabel": "C3",
+      "segments": "2-6+18-27+39-48+60-69+81-85",
+      "expandedCount": 40
+     },
+     "C4": {
+      "printedRowLabel": "C4",
+      "segments": "2-6+18-27+39-48+60-69+81-85",
+      "expandedCount": 40
+     },
+     "C5": {
+      "printedRowLabel": "C5",
+      "segments": "1-6+18-29+39-50+60-71+81-86",
+      "expandedCount": 48
+     },
+     "C6": {
+      "printedRowLabel": "C6",
+      "segments": "1-6+18-29+39-50+60-71+81-86",
+      "expandedCount": 48
+     },
+     "C7": {
+      "printedRowLabel": "C7",
+      "segments": "1-6+18-29+39-50+60-71+81-86",
+      "expandedCount": 48
+     },
+     "C8": {
+      "printedRowLabel": "C8",
+      "segments": "1-6+18-29+39-50+60-71+81-86",
+      "expandedCount": 48
+     },
+     "C9": {
+      "printedRowLabel": "C9",
+      "segments": "1-6+18-29+39-50+60-71+81-86",
+      "expandedCount": 48
+     },
+     "C10": {
+      "printedRowLabel": "C10",
+      "segments": "1-6+18-29+39-50+60-71+81-86",
+      "expandedCount": 48
+     },
+     "C12": {
+      "printedRowLabel": "C12",
+      "segments": "1-6+7-9+18-29+30-31+39-50+51-52+60-71+72-73+81-86",
+      "expandedCount": 57
+     },
+     "C13": {
+      "printedRowLabel": "C13",
+      "segments": "1-6+7-10+18-29+30-32+39-50+51-53+60-71+72-74+81-86",
+      "expandedCount": 61
+     },
+     "C14": {
+      "printedRowLabel": "C14",
+      "segments": "1-6+7-11+18-29+30-33+39-50+51-54+60-71+72-75+81-86",
+      "expandedCount": 65
+     },
+     "C15": {
+      "printedRowLabel": "C15",
+      "segments": "1-6+7-12+18-29+30-33+39-50+51-54+60-71+72-75+81-86",
+      "expandedCount": 66
+     },
+     "C16": {
+      "printedRowLabel": "C16",
+      "segments": "1-6+7-12+18-29+30-34+39-50+51-55+60-71+72-76+81-86",
+      "expandedCount": 69
+     },
+     "C17": {
+      "printedRowLabel": "C17",
+      "segments": "1-6+7-13+18-29+30-35+39-50+51-56+60-71+72-77+81-86",
+      "expandedCount": 73
+     },
+     "C18": {
+      "printedRowLabel": "C18",
+      "segments": "1-6+7-14+18-29+30-35+39-50+51-56+60-71+72-77+81-86",
+      "expandedCount": 74
+     },
+     "C19": {
+      "printedRowLabel": "C19",
+      "segments": "1-6+7-15+18-29+30-36+39-50+51-57+60-71+72-78+81-86",
+      "expandedCount": 78
+     },
+     "C20": {
+      "printedRowLabel": "C20",
+      "segments": "1-6+7-16+18-29+30-37+39-50+51-58+60-71+72-79+81-86",
+      "expandedCount": 82
+     },
+     "C21": {
+      "printedRowLabel": "C21",
+      "segments": "1-6+7-17+18-29+30-37+39-50+51-58+60-71+72-79+81-86",
+      "expandedCount": 83
+     },
+     "C22": {
+      "printedRowLabel": "C22",
+      "segments": "1-6+7-17+18-29+30-38+39-50+51-59+60-71+72-80+81-86",
+      "expandedCount": 86
+     }
+    },
+    "aisleRowLabel": "C11",
+    "blockTotal": 1238
+   },
+   "D": {
+    "rows": {
+     "D1": {
+      "printedRowLabel": "D1",
+      "segments": "51-58+39-50+28-38+16-27+8-15",
+      "expandedCount": 51
+     },
+     "D2": {
+      "printedRowLabel": "D2",
+      "segments": "51-58+39-50+28-38+16-27+8-15",
+      "expandedCount": 51
+     },
+     "D3": {
+      "printedRowLabel": "D3",
+      "segments": "51-59+39-50+28-38+16-27+7-15",
+      "expandedCount": 53
+     },
+     "D4": {
+      "printedRowLabel": "D4",
+      "segments": "51-59+39-50+28-38+16-27+7-15",
+      "expandedCount": 53
+     },
+     "D5": {
+      "printedRowLabel": "D5",
+      "segments": "51-59+39-50+28-38+16-27+7-15",
+      "expandedCount": 53
+     },
+     "D6": {
+      "printedRowLabel": "D6",
+      "segments": "51-60+39-50+28-38+16-27+6-15",
+      "expandedCount": 55
+     },
+     "D7": {
+      "printedRowLabel": "D7",
+      "segments": "51-60+39-50+28-38+16-27+6-15",
+      "expandedCount": 55
+     },
+     "D8": {
+      "printedRowLabel": "D8",
+      "segments": "51-60+39-50+28-38+16-27+6-15",
+      "expandedCount": 55
+     },
+     "D9": {
+      "printedRowLabel": "D9",
+      "segments": "51-61+39-50+28-38+16-27+5-15",
+      "expandedCount": 57
+     },
+     "D10": {
+      "printedRowLabel": "D10",
+      "segments": "51-61+39-50+28-38+16-27+5-15",
+      "expandedCount": 57
+     },
+     "D11": {
+      "printedRowLabel": "D11",
+      "segments": "51-61+39-50+28-38+16-27+5-15",
+      "expandedCount": 57
+     },
+     "D13": {
+      "printedRowLabel": "D13",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "D14": {
+      "printedRowLabel": "D14",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "D15": {
+      "printedRowLabel": "D15",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "D16": {
+      "printedRowLabel": "D16",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "D17": {
+      "printedRowLabel": "D17",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "D18": {
+      "printedRowLabel": "D18",
+      "segments": "51-62+39-50+28-38+16-27+4-15",
+      "expandedCount": 59
+     },
+     "D19": {
+      "printedRowLabel": "D19",
+      "segments": "63-64+51-62+39-50+28-38+16-27+4-15+2-3",
+      "expandedCount": 63
+     },
+     "D20": {
+      "printedRowLabel": "D20",
+      "segments": "63-64+51-62+39-50+28-38+16-27+4-15+2-3",
+      "expandedCount": 63
+     },
+     "D21": {
+      "printedRowLabel": "D21",
+      "segments": "63-64+51-62+39-50+28-38+16-27+4-15+2-3",
+      "expandedCount": 63
+     },
+     "D22": {
+      "printedRowLabel": "D22",
+      "segments": "63-65+51-62+39-50+28-38+16-27+4-15+1-3",
+      "expandedCount": 65
+     }
+    },
+    "aisleRowLabel": "D12",
+    "blockTotal": 1205
+   },
+   "E": {
+    "rows": {
+     "E1": {
+      "printedRowLabel": "E1",
+      "segments": "2-6+16-20",
+      "expandedCount": 10
+     },
+     "E2": {
+      "printedRowLabel": "E2",
+      "segments": "2-6+16-20",
+      "expandedCount": 10
+     },
+     "E3": {
+      "printedRowLabel": "E3",
+      "segments": "2-6+16-20",
+      "expandedCount": 10
+     },
+     "E4": {
+      "printedRowLabel": "E4",
+      "segments": "2-6+16-20",
+      "expandedCount": 10
+     },
+     "E5": {
+      "printedRowLabel": "E5",
+      "segments": "1-6+16-21",
+      "expandedCount": 12
+     },
+     "E6": {
+      "printedRowLabel": "E6",
+      "segments": "1-6+16-21",
+      "expandedCount": 12
+     },
+     "E7": {
+      "printedRowLabel": "E7",
+      "segments": "1-6+16-21",
+      "expandedCount": 12
+     },
+     "E8": {
+      "printedRowLabel": "E8",
+      "segments": "1-6+16-21",
+      "expandedCount": 12
+     },
+     "E9": {
+      "printedRowLabel": "E9",
+      "segments": "1-6+16-21",
+      "expandedCount": 12
+     },
+     "E10": {
+      "printedRowLabel": "E10",
+      "segments": "1-6+16-21",
+      "expandedCount": 12
+     },
+     "E12": {
+      "printedRowLabel": "E12",
+      "segments": "1-6+7-8+16-21",
+      "expandedCount": 14
+     },
+     "E13": {
+      "printedRowLabel": "E13",
+      "segments": "1-6+7-9+16-21",
+      "expandedCount": 15
+     },
+     "E14": {
+      "printedRowLabel": "E14",
+      "segments": "1-6+7-10+16-21",
+      "expandedCount": 16
+     },
+     "E15": {
+      "printedRowLabel": "E15",
+      "segments": "1-6+7-10+16-21",
+      "expandedCount": 16
+     },
+     "E16": {
+      "printedRowLabel": "E16",
+      "segments": "1-6+7-11+16-21",
+      "expandedCount": 17
+     },
+     "E17": {
+      "printedRowLabel": "E17",
+      "segments": "1-6+7-12+16-21",
+      "expandedCount": 18
+     },
+     "E18": {
+      "printedRowLabel": "E18",
+      "segments": "1-6+7-12+16-21",
+      "expandedCount": 18
+     },
+     "E19": {
+      "printedRowLabel": "E19",
+      "segments": "1-6+7-13+16-21",
+      "expandedCount": 19
+     },
+     "E20": {
+      "printedRowLabel": "E20",
+      "segments": "1-6+7-14+16-21",
+      "expandedCount": 20
+     },
+     "E21": {
+      "printedRowLabel": "E21",
+      "segments": "1-6+7-14+16-21",
+      "expandedCount": 20
+     },
+     "E22": {
+      "printedRowLabel": "E22",
+      "segments": "1-6+7-15+16-21",
+      "expandedCount": 21
+     }
+    },
+    "aisleRowLabel": "E11",
+    "blockTotal": 306
+   },
+   "F": {
+    "rows": {
+     "F1": {
+      "printedRowLabel": "F1",
+      "segments": "81-85+65-69",
+      "expandedCount": 10
+     },
+     "F2": {
+      "printedRowLabel": "F2",
+      "segments": "81-85+65-69",
+      "expandedCount": 10
+     },
+     "F3": {
+      "printedRowLabel": "F3",
+      "segments": "81-85+65-69",
+      "expandedCount": 10
+     },
+     "F4": {
+      "printedRowLabel": "F4",
+      "segments": "81-85+65-69",
+      "expandedCount": 10
+     },
+     "F5": {
+      "printedRowLabel": "F5",
+      "segments": "81-86+66-71",
+      "expandedCount": 12
+     },
+     "F6": {
+      "printedRowLabel": "F6",
+      "segments": "81-86+66-71",
+      "expandedCount": 12
+     },
+     "F7": {
+      "printedRowLabel": "F7",
+      "segments": "81-86+66-71",
+      "expandedCount": 12
+     },
+     "F8": {
+      "printedRowLabel": "F8",
+      "segments": "81-86+66-71",
+      "expandedCount": 12
+     },
+     "F9": {
+      "printedRowLabel": "F9",
+      "segments": "81-86+66-71",
+      "expandedCount": 12
+     },
+     "F10": {
+      "printedRowLabel": "F10",
+      "segments": "81-86+66-71",
+      "expandedCount": 12
+     },
+     "F12": {
+      "printedRowLabel": "F12",
+      "segments": "81-86+72-73+66-71",
+      "expandedCount": 14
+     },
+     "F13": {
+      "printedRowLabel": "F13",
+      "segments": "81-86+72-74+66-71",
+      "expandedCount": 15
+     },
+     "F14": {
+      "printedRowLabel": "F14",
+      "segments": "81-86+72-75+66-71",
+      "expandedCount": 16
+     },
+     "F15": {
+      "printedRowLabel": "F15",
+      "segments": "81-86+72-75+66-71",
+      "expandedCount": 16
+     },
+     "F16": {
+      "printedRowLabel": "F16",
+      "segments": "81-86+72-76+66-71",
+      "expandedCount": 17
+     },
+     "F17": {
+      "printedRowLabel": "F17",
+      "segments": "81-86+72-77+66-71",
+      "expandedCount": 18
+     },
+     "F18": {
+      "printedRowLabel": "F18",
+      "segments": "81-86+72-77+66-71",
+      "expandedCount": 18
+     },
+     "F19": {
+      "printedRowLabel": "F19",
+      "segments": "81-86+72-78+66-71",
+      "expandedCount": 19
+     },
+     "F20": {
+      "printedRowLabel": "F20",
+      "segments": "81-86+72-79+66-71",
+      "expandedCount": 20
+     },
+     "F21": {
+      "printedRowLabel": "F21",
+      "segments": "81-86+72-79+66-71",
+      "expandedCount": 20
+     },
+     "F22": {
+      "printedRowLabel": "F22",
+      "segments": "81-86+72-80+66-71",
+      "expandedCount": 21
+     }
+    },
+    "aisleRowLabel": "F11",
+    "blockTotal": 306
+   }
+  },
+  "stand": {
+   "N": {
+    "blockName": "北 NORTH",
+    "rows": {
+     "N-1": {
+      "printedRowLabel": "1",
+      "segments": "1-7+9-15+17-23+25-31+33-39+41-47+49-55+57-63+65-71+73-79+81-87+89-95+97-103+105-111+113-119+121-128+129-136+137-144",
+      "expandedCount": 129
+     },
+     "N-2": {
+      "printedRowLabel": "2",
+      "segments": "1-7+9-15+17-23+25-31+33-39+41-47+49-55+57-63+65-71+73-79+81-87+89-95+97-103+105-111+113-119+121-128+129-136+137-144",
+      "expandedCount": 129
+     },
+     "N-3": {
+      "printedRowLabel": "3",
+      "segments": "1-7+9-15+17-23+25-31+33-39+41-47+49-55+57-63+65-71+73-79+81-87+89-95+97-103+105-111+113-119+121-128+129-136+137-144",
+      "expandedCount": 129
+     },
+     "N-4": {
+      "printedRowLabel": "4",
+      "segments": "1-7+9-15+17-23+25-31+33-39+41-47+49-55+57-63+65-71+73-79+81-87+89-95+97-103+105-111+113-119+121-128+129-136+137-144",
+      "expandedCount": 129
+     },
+     "N-5": {
+      "printedRowLabel": "5",
+      "segments": "1-7+9-15+17-23+25-31+33-39+41-47+49-55+57-63+65-71+73-79+81-87+89-95+97-103+105-111+113-119+121-128+129-136+137-144",
+      "expandedCount": 129
+     },
+     "N-6": {
+      "printedRowLabel": "6",
+      "segments": "1-8+9-16+17-24+33-40+41-48+57-64+65-72+81-88+89-96+97-104+113-120+121-128+137-144",
+      "expandedCount": 104
+     },
+     "N-7": {
+      "printedRowLabel": "7",
+      "segments": "1-8+9-16+17-24+33-40+41-48+57-64+65-72+81-88+89-96+97-104+113-120+121-128+137-144",
+      "expandedCount": 104
+     },
+     "N-8": {
+      "printedRowLabel": "8",
+      "segments": "1-8+9-16+17-24+25-32+33-40+41-48+49-56+57-64+65-72+73-80+81-88+89-96+97-104+105-112+113-120+121-128+129-136+137-144",
+      "expandedCount": 144
+     },
+     "N-9": {
+      "printedRowLabel": "9",
+      "segments": "1-8+9-16+17-24+25-32+33-40+41-48+49-56+57-64+65-72+73-80+81-88+89-96+97-104+105-112+113-120+121-128+129-136+137-144",
+      "expandedCount": 144
+     },
+     "N-10": {
+      "printedRowLabel": "10",
+      "segments": "1-8+9-16+17-24+25-32+33-40+41-48+49-56+57-64+65-72+73-80+81-88+89-96+97-104+105-112+113-120+121-128+129-136+137-144",
+      "expandedCount": 144
+     }
+    },
+    "aisleBetweenRows": "5 / 6",
+    "blockTotal": 1285
+   },
+   "E": {
+    "blockName": "東 EAST",
+    "rows": {
+     "E-1": {
+      "printedRowLabel": "1",
+      "segments": "1-8+9-16+17-24+25-32+33-39+41-47+49-55+57-63+65-71",
+      "expandedCount": 67
+     },
+     "E-2": {
+      "printedRowLabel": "2",
+      "segments": "1-8+9-16+17-24+25-32+33-39+41-47+49-55+57-63+65-71",
+      "expandedCount": 67
+     },
+     "E-3": {
+      "printedRowLabel": "3",
+      "segments": "1-8+9-16+17-24+25-32+33-39+41-47+49-55+57-63+65-71",
+      "expandedCount": 67
+     },
+     "E-4": {
+      "printedRowLabel": "4",
+      "segments": "1-8+9-16+17-24+25-32+33-39+41-47+49-55+57-63+65-71",
+      "expandedCount": 67
+     },
+     "E-5": {
+      "printedRowLabel": "5",
+      "segments": "1-8+9-16+17-24+25-32+33-39+41-47+49-55+57-63+65-71",
+      "expandedCount": 67
+     },
+     "E-6": {
+      "printedRowLabel": "6",
+      "segments": "1-8+9-16+25-32+33-40+49-56+57-64+65-72",
+      "expandedCount": 56
+     },
+     "E-7": {
+      "printedRowLabel": "7",
+      "segments": "1-8+9-16+25-32+33-40+49-56+57-64+65-72",
+      "expandedCount": 56
+     },
+     "E-8": {
+      "printedRowLabel": "8",
+      "segments": "1-8+9-16+17-24+25-32+33-40+41-48+49-56+57-64+65-72",
+      "expandedCount": 72
+     },
+     "E-9": {
+      "printedRowLabel": "9",
+      "segments": "1-8+9-16+17-24+25-32+33-40+41-48+49-56+57-64+65-72",
+      "expandedCount": 72
+     },
+     "E-10": {
+      "printedRowLabel": "10",
+      "segments": "1-8+9-16+17-24+25-32+33-40+41-48+49-56+57-64+65-72",
+      "expandedCount": 72
+     }
+    },
+    "aisleBetweenRows": "5 / 6",
+    "blockTotal": 663
+   },
+   "S": {
+    "blockName": "南 SOUTH",
+    "rows": {
+     "S-1": {
+      "printedRowLabel": "1",
+      "segments": "89-95+97-103+105-109",
+      "expandedCount": 19
+     },
+     "S-2": {
+      "printedRowLabel": "2",
+      "segments": "89-95+97-103+105-109",
+      "expandedCount": 19
+     },
+     "S-3": {
+      "printedRowLabel": "3",
+      "segments": "89-95+97-103+105-111",
+      "expandedCount": 21
+     },
+     "S-4": {
+      "printedRowLabel": "4",
+      "segments": "89-95+97-103+105-111",
+      "expandedCount": 21
+     },
+     "S-5": {
+      "printedRowLabel": "5",
+      "segments": "89-95+97-103+105-111",
+      "expandedCount": 21
+     },
+     "S-6": {
+      "printedRowLabel": "6",
+      "segments": "89-96+97-104+105-112",
+      "expandedCount": 24
+     },
+     "S-7": {
+      "printedRowLabel": "7",
+      "segments": "89-96+97-104+105-112+113-120+121-125",
+      "expandedCount": 37
+     },
+     "S-8": {
+      "printedRowLabel": "8",
+      "segments": "89-96+97-104+105-112+113-120+121-125",
+      "expandedCount": 37
+     },
+     "S-9": {
+      "printedRowLabel": "9",
+      "segments": "89-96+97-104+105-112+113-120+121-125",
+      "expandedCount": 37
+     },
+     "S-10": {
+      "printedRowLabel": "10",
+      "segments": "89-96+97-104+105-112+113-120+121-125",
+      "expandedCount": 37
+     }
+    },
+    "aisleBetweenRows": "5 / 6",
+    "blockTotal": 273
+   },
+   "W": {
+    "blockName": "西 WEST",
+    "rows": {
+     "W-1": {
+      "printedRowLabel": "1",
+      "segments": "16-20+22-28+30-36+38-44+46-52+54-60+62-68+70-76+78-84+86-92+94-100+102-108+110-116+118-124",
+      "expandedCount": 96
+     },
+     "W-2": {
+      "printedRowLabel": "2",
+      "segments": "16-20+22-28+30-36+38-44+46-52+54-60+62-68+70-76+78-84+86-92+94-100+102-108+110-116+118-124",
+      "expandedCount": 96
+     },
+     "W-3": {
+      "printedRowLabel": "3",
+      "segments": "14-20+22-28+30-36+38-44+46-52+54-60+62-68+70-76+78-84+86-92+94-100+102-108+110-116+118-124",
+      "expandedCount": 98
+     },
+     "W-4": {
+      "printedRowLabel": "4",
+      "segments": "14-20+22-28+30-36+38-44+46-52+54-60+62-68+70-76+78-84+86-92+94-100+102-108+110-116+118-124",
+      "expandedCount": 98
+     },
+     "W-5": {
+      "printedRowLabel": "5",
+      "segments": "14-20+22-28+30-36+38-44+46-52+54-60+62-68+70-76+78-84+86-92+94-100+102-108+110-116+118-124",
+      "expandedCount": 98
+     },
+     "W-6": {
+      "printedRowLabel": "6",
+      "segments": "14-21+22-29+30-37+46-53+54-61+70-77+78-85+94-101+102-109+110-117+118-125",
+      "expandedCount": 88
+     },
+     "W-7": {
+      "printedRowLabel": "7",
+      "segments": "1-5+6-13+14-21+22-29+30-37+46-53+54-61+70-77+78-85+94-101+102-109+110-117+118-125",
+      "expandedCount": 101
+     },
+     "W-8": {
+      "printedRowLabel": "8",
+      "segments": "1-5+6-13+14-21+22-29+30-37+38-45+46-53+54-61+62-69+70-77+78-85+86-93+94-101+102-109+110-117+118-125",
+      "expandedCount": 125
+     },
+     "W-9": {
+      "printedRowLabel": "9",
+      "segments": "1-5+6-13+14-21+22-29+30-37+38-45+46-53+54-61+62-69+70-77+78-85+86-93+94-101+102-109+110-117+118-125",
+      "expandedCount": 125
+     },
+     "W-10": {
+      "printedRowLabel": "10",
+      "segments": "1-5+6-13+14-21+22-29+30-37+38-45+46-53+54-61+62-69+70-77+78-85+86-93+94-101+102-109+110-117+118-125",
+      "expandedCount": 125
+     }
+    },
+    "aisleBetweenRows": "5 / 6",
+    "blockTotal": 1050
+   }
+  },
+  "arenaPass1MappedSubtotal": 5498,
+  "standPass1MappedSubtotal": 3271,
+  "grandPass1MappedSubtotal": 8769
+ },
+ "freezeCriteria": {
+  "allBlocksAndStandsTranscribed": true,
+  "rowOwnershipUnresolved": 0,
+  "printedSegmentBoundaryUnresolved": 0,
+  "b7c7AnomalyResolved": true,
+  "genuineGapsExplicit": true,
+  "noInventedIds": true,
+  "noPatternMixing": true,
+  "expandedDuplicateKeys": 0,
+  "expandedKeyTotal": 8769,
+  "machinePerRowComparisonRecorded": true,
+  "verdict": "ALL FREEZE CRITERIA MET - PASS 1 FROZEN"
+ },
+ "issuerPostCheck": {
+  "arenaPass1": 5498,
+  "arenaIssuer": 5498,
+  "arenaDelta": 0,
+  "standPass1": 3271,
+  "standIssuer": 3271,
+  "standDelta": 0,
+  "grandPass1": 8769,
+  "grandIssuer": 8769,
+  "grandDelta": 0,
+  "note": "比較はPass1 freeze後にのみ実施した。完全一致したが、それを理由にrangeを変更した箇所はない。一致はcapacity fittingの結果ではなく、印字境界番号のみから独立に構成したPass 1 tableの帰結である。"
+ },
+ "machinePerRowAudit": {
+  "method": "human range tableを一切入力に使わない独立経路。塗り色による座席セルのconnected component抽出（arena RGB(51,134,196)／stand RGB(0,104,181)）、PCAによる回転不変の長辺/短辺での座席判定と無番号矩形の除外、A/Dはy分解・E/Fはderotated Y分解・B/Cはpolar半径バンド・standはstadium distance fieldによる行分解。machine結果にhuman rangeを入力して補正していない。",
+  "machineTotal": 8382,
+  "humanTotal": 8769,
+  "totalDelta": 387,
+  "maxNegativeDelta": 0,
+  "direction": "全166行でdelta>=0。machineはいずれの行でもhumanを上回らず、厳密な下限として振る舞う。",
+  "rows": [
+   {
+    "row": "A1",
+    "human": 51,
+    "machine": 51,
+    "delta": 0
+   },
+   {
+    "row": "A2",
+    "human": 51,
+    "machine": 51,
+    "delta": 0
+   },
+   {
+    "row": "A3",
+    "human": 53,
+    "machine": 53,
+    "delta": 0
+   },
+   {
+    "row": "A4",
+    "human": 53,
+    "machine": 53,
+    "delta": 0
+   },
+   {
+    "row": "A5",
+    "human": 53,
+    "machine": 53,
+    "delta": 0
+   },
+   {
+    "row": "A6",
+    "human": 55,
+    "machine": 55,
+    "delta": 0
+   },
+   {
+    "row": "A7",
+    "human": 55,
+    "machine": 55,
+    "delta": 0
+   },
+   {
+    "row": "A8",
+    "human": 55,
+    "machine": 55,
+    "delta": 0
+   },
+   {
+    "row": "A9",
+    "human": 57,
+    "machine": 54,
+    "delta": 3
+   },
+   {
+    "row": "A10",
+    "human": 57,
+    "machine": 54,
+    "delta": 3
+   },
+   {
+    "row": "A11",
+    "human": 57,
+    "machine": 53,
+    "delta": 4
+   },
+   {
+    "row": "A13",
+    "human": 59,
+    "machine": 55,
+    "delta": 4
+   },
+   {
+    "row": "A14",
+    "human": 59,
+    "machine": 59,
+    "delta": 0
+   },
+   {
+    "row": "A15",
+    "human": 59,
+    "machine": 59,
+    "delta": 0
+   },
+   {
+    "row": "A16",
+    "human": 59,
+    "machine": 59,
+    "delta": 0
+   },
+   {
+    "row": "A17",
+    "human": 59,
+    "machine": 59,
+    "delta": 0
+   },
+   {
+    "row": "A18",
+    "human": 59,
+    "machine": 59,
+    "delta": 0
+   },
+   {
+    "row": "A19",
+    "human": 63,
+    "machine": 63,
+    "delta": 0
+   },
+   {
+    "row": "A20",
+    "human": 63,
+    "machine": 63,
+    "delta": 0
+   },
+   {
+    "row": "A21",
+    "human": 63,
+    "machine": 63,
+    "delta": 0
+   },
+   {
+    "row": "A22",
+    "human": 65,
+    "machine": 65,
+    "delta": 0
+   },
+   {
+    "row": "B1",
+    "human": 38,
+    "machine": 38,
+    "delta": 0
+   },
+   {
+    "row": "B2",
+    "human": 38,
+    "machine": 37,
+    "delta": 1
+   },
+   {
+    "row": "B3",
+    "human": 40,
+    "machine": 39,
+    "delta": 1
+   },
+   {
+    "row": "B4",
+    "human": 40,
+    "machine": 39,
+    "delta": 1
+   },
+   {
+    "row": "B5",
+    "human": 48,
+    "machine": 45,
+    "delta": 3
+   },
+   {
+    "row": "B6",
+    "human": 48,
+    "machine": 47,
+    "delta": 1
+   },
+   {
+    "row": "B7",
+    "human": 48,
+    "machine": 48,
+    "delta": 0
+   },
+   {
+    "row": "B8",
+    "human": 48,
+    "machine": 47,
+    "delta": 1
+   },
+   {
+    "row": "B9",
+    "human": 48,
+    "machine": 43,
+    "delta": 5
+   },
+   {
+    "row": "B10",
+    "human": 48,
+    "machine": 43,
+    "delta": 5
+   },
+   {
+    "row": "B12",
+    "human": 57,
+    "machine": 51,
+    "delta": 6
+   },
+   {
+    "row": "B13",
+    "human": 61,
+    "machine": 54,
+    "delta": 7
+   },
+   {
+    "row": "B14",
+    "human": 65,
+    "machine": 61,
+    "delta": 4
+   },
+   {
+    "row": "B15",
+    "human": 66,
+    "machine": 62,
+    "delta": 4
+   },
+   {
+    "row": "B16",
+    "human": 69,
+    "machine": 64,
+    "delta": 5
+   },
+   {
+    "row": "B17",
+    "human": 73,
+    "machine": 70,
+    "delta": 3
+   },
+   {
+    "row": "B18",
+    "human": 74,
+    "machine": 71,
+    "delta": 3
+   },
+   {
+    "row": "B19",
+    "human": 78,
+    "machine": 75,
+    "delta": 3
+   },
+   {
+    "row": "B20",
+    "human": 82,
+    "machine": 79,
+    "delta": 3
+   },
+   {
+    "row": "B21",
+    "human": 83,
+    "machine": 79,
+    "delta": 4
+   },
+   {
+    "row": "B22",
+    "human": 86,
+    "machine": 83,
+    "delta": 3
+   },
+   {
+    "row": "C1",
+    "human": 38,
+    "machine": 33,
+    "delta": 5
+   },
+   {
+    "row": "C2",
+    "human": 38,
+    "machine": 35,
+    "delta": 3
+   },
+   {
+    "row": "C3",
+    "human": 40,
+    "machine": 37,
+    "delta": 3
+   },
+   {
+    "row": "C4",
+    "human": 40,
+    "machine": 39,
+    "delta": 1
+   },
+   {
+    "row": "C5",
+    "human": 48,
+    "machine": 46,
+    "delta": 2
+   },
+   {
+    "row": "C6",
+    "human": 48,
+    "machine": 47,
+    "delta": 1
+   },
+   {
+    "row": "C7",
+    "human": 48,
+    "machine": 47,
+    "delta": 1
+   },
+   {
+    "row": "C8",
+    "human": 48,
+    "machine": 44,
+    "delta": 4
+   },
+   {
+    "row": "C9",
+    "human": 48,
+    "machine": 45,
+    "delta": 3
+   },
+   {
+    "row": "C10",
+    "human": 48,
+    "machine": 42,
+    "delta": 6
+   },
+   {
+    "row": "C12",
+    "human": 57,
+    "machine": 51,
+    "delta": 6
+   },
+   {
+    "row": "C13",
+    "human": 61,
+    "machine": 61,
+    "delta": 0
+   },
+   {
+    "row": "C14",
+    "human": 65,
+    "machine": 61,
+    "delta": 4
+   },
+   {
+    "row": "C15",
+    "human": 66,
+    "machine": 62,
+    "delta": 4
+   },
+   {
+    "row": "C16",
+    "human": 69,
+    "machine": 65,
+    "delta": 4
+   },
+   {
+    "row": "C17",
+    "human": 73,
+    "machine": 69,
+    "delta": 4
+   },
+   {
+    "row": "C18",
+    "human": 74,
+    "machine": 70,
+    "delta": 4
+   },
+   {
+    "row": "C19",
+    "human": 78,
+    "machine": 75,
+    "delta": 3
+   },
+   {
+    "row": "C20",
+    "human": 82,
+    "machine": 78,
+    "delta": 4
+   },
+   {
+    "row": "C21",
+    "human": 83,
+    "machine": 80,
+    "delta": 3
+   },
+   {
+    "row": "C22",
+    "human": 86,
+    "machine": 82,
+    "delta": 4
+   },
+   {
+    "row": "D1",
+    "human": 51,
+    "machine": 51,
+    "delta": 0
+   },
+   {
+    "row": "D2",
+    "human": 51,
+    "machine": 51,
+    "delta": 0
+   },
+   {
+    "row": "D3",
+    "human": 53,
+    "machine": 53,
+    "delta": 0
+   },
+   {
+    "row": "D4",
+    "human": 53,
+    "machine": 53,
+    "delta": 0
+   },
+   {
+    "row": "D5",
+    "human": 53,
+    "machine": 53,
+    "delta": 0
+   },
+   {
+    "row": "D6",
+    "human": 55,
+    "machine": 55,
+    "delta": 0
+   },
+   {
+    "row": "D7",
+    "human": 55,
+    "machine": 55,
+    "delta": 0
+   },
+   {
+    "row": "D8",
+    "human": 55,
+    "machine": 55,
+    "delta": 0
+   },
+   {
+    "row": "D9",
+    "human": 57,
+    "machine": 57,
+    "delta": 0
+   },
+   {
+    "row": "D10",
+    "human": 57,
+    "machine": 57,
+    "delta": 0
+   },
+   {
+    "row": "D11",
+    "human": 57,
+    "machine": 51,
+    "delta": 6
+   },
+   {
+    "row": "D13",
+    "human": 59,
+    "machine": 55,
+    "delta": 4
+   },
+   {
+    "row": "D14",
+    "human": 59,
+    "machine": 55,
+    "delta": 4
+   },
+   {
+    "row": "D15",
+    "human": 59,
+    "machine": 53,
+    "delta": 6
+   },
+   {
+    "row": "D16",
+    "human": 59,
+    "machine": 59,
+    "delta": 0
+   },
+   {
+    "row": "D17",
+    "human": 59,
+    "machine": 59,
+    "delta": 0
+   },
+   {
+    "row": "D18",
+    "human": 59,
+    "machine": 59,
+    "delta": 0
+   },
+   {
+    "row": "D19",
+    "human": 63,
+    "machine": 63,
+    "delta": 0
+   },
+   {
+    "row": "D20",
+    "human": 63,
+    "machine": 63,
+    "delta": 0
+   },
+   {
+    "row": "D21",
+    "human": 63,
+    "machine": 63,
+    "delta": 0
+   },
+   {
+    "row": "D22",
+    "human": 65,
+    "machine": 65,
+    "delta": 0
+   },
+   {
+    "row": "E1",
+    "human": 10,
+    "machine": 9,
+    "delta": 1
+   },
+   {
+    "row": "E2",
+    "human": 10,
+    "machine": 9,
+    "delta": 1
+   },
+   {
+    "row": "E3",
+    "human": 10,
+    "machine": 10,
+    "delta": 0
+   },
+   {
+    "row": "E4",
+    "human": 10,
+    "machine": 10,
+    "delta": 0
+   },
+   {
+    "row": "E5",
+    "human": 12,
+    "machine": 11,
+    "delta": 1
+   },
+   {
+    "row": "E6",
+    "human": 12,
+    "machine": 12,
+    "delta": 0
+   },
+   {
+    "row": "E7",
+    "human": 12,
+    "machine": 12,
+    "delta": 0
+   },
+   {
+    "row": "E8",
+    "human": 12,
+    "machine": 12,
+    "delta": 0
+   },
+   {
+    "row": "E9",
+    "human": 12,
+    "machine": 12,
+    "delta": 0
+   },
+   {
+    "row": "E10",
+    "human": 12,
+    "machine": 12,
+    "delta": 0
+   },
+   {
+    "row": "E12",
+    "human": 14,
+    "machine": 14,
+    "delta": 0
+   },
+   {
+    "row": "E13",
+    "human": 15,
+    "machine": 15,
+    "delta": 0
+   },
+   {
+    "row": "E14",
+    "human": 16,
+    "machine": 16,
+    "delta": 0
+   },
+   {
+    "row": "E15",
+    "human": 16,
+    "machine": 16,
+    "delta": 0
+   },
+   {
+    "row": "E16",
+    "human": 17,
+    "machine": 17,
+    "delta": 0
+   },
+   {
+    "row": "E17",
+    "human": 18,
+    "machine": 18,
+    "delta": 0
+   },
+   {
+    "row": "E18",
+    "human": 18,
+    "machine": 15,
+    "delta": 3
+   },
+   {
+    "row": "E19",
+    "human": 19,
+    "machine": 18,
+    "delta": 1
+   },
+   {
+    "row": "E20",
+    "human": 20,
+    "machine": 18,
+    "delta": 2
+   },
+   {
+    "row": "E21",
+    "human": 20,
+    "machine": 17,
+    "delta": 3
+   },
+   {
+    "row": "E22",
+    "human": 21,
+    "machine": 21,
+    "delta": 0
+   },
+   {
+    "row": "F1",
+    "human": 10,
+    "machine": 9,
+    "delta": 1
+   },
+   {
+    "row": "F2",
+    "human": 10,
+    "machine": 10,
+    "delta": 0
+   },
+   {
+    "row": "F3",
+    "human": 10,
+    "machine": 10,
+    "delta": 0
+   },
+   {
+    "row": "F4",
+    "human": 10,
+    "machine": 10,
+    "delta": 0
+   },
+   {
+    "row": "F5",
+    "human": 12,
+    "machine": 12,
+    "delta": 0
+   },
+   {
+    "row": "F6",
+    "human": 12,
+    "machine": 12,
+    "delta": 0
+   },
+   {
+    "row": "F7",
+    "human": 12,
+    "machine": 12,
+    "delta": 0
+   },
+   {
+    "row": "F8",
+    "human": 12,
+    "machine": 11,
+    "delta": 1
+   },
+   {
+    "row": "F9",
+    "human": 12,
+    "machine": 11,
+    "delta": 1
+   },
+   {
+    "row": "F10",
+    "human": 12,
+    "machine": 12,
+    "delta": 0
+   },
+   {
+    "row": "F12",
+    "human": 14,
+    "machine": 13,
+    "delta": 1
+   },
+   {
+    "row": "F13",
+    "human": 15,
+    "machine": 14,
+    "delta": 1
+   },
+   {
+    "row": "F14",
+    "human": 16,
+    "machine": 15,
+    "delta": 1
+   },
+   {
+    "row": "F15",
+    "human": 16,
+    "machine": 15,
+    "delta": 1
+   },
+   {
+    "row": "F16",
+    "human": 17,
+    "machine": 16,
+    "delta": 1
+   },
+   {
+    "row": "F17",
+    "human": 18,
+    "machine": 18,
+    "delta": 0
+   },
+   {
+    "row": "F18",
+    "human": 18,
+    "machine": 17,
+    "delta": 1
+   },
+   {
+    "row": "F19",
+    "human": 19,
+    "machine": 14,
+    "delta": 5
+   },
+   {
+    "row": "F20",
+    "human": 20,
+    "machine": 17,
+    "delta": 3
+   },
+   {
+    "row": "F21",
+    "human": 20,
+    "machine": 18,
+    "delta": 2
+   },
+   {
+    "row": "F22",
+    "human": 21,
+    "machine": 21,
+    "delta": 0
+   },
+   {
+    "row": "北-1",
+    "human": 129,
+    "machine": 119,
+    "delta": 10
+   },
+   {
+    "row": "北-2",
+    "human": 129,
+    "machine": 122,
+    "delta": 7
+   },
+   {
+    "row": "北-3",
+    "human": 129,
+    "machine": 124,
+    "delta": 5
+   },
+   {
+    "row": "北-4",
+    "human": 129,
+    "machine": 124,
+    "delta": 5
+   },
+   {
+    "row": "北-5",
+    "human": 129,
+    "machine": 124,
+    "delta": 5
+   },
+   {
+    "row": "北-6",
+    "human": 104,
+    "machine": 97,
+    "delta": 7
+   },
+   {
+    "row": "北-7",
+    "human": 104,
+    "machine": 98,
+    "delta": 6
+   },
+   {
+    "row": "北-8",
+    "human": 144,
+    "machine": 136,
+    "delta": 8
+   },
+   {
+    "row": "北-9",
+    "human": 144,
+    "machine": 141,
+    "delta": 3
+   },
+   {
+    "row": "北-10",
+    "human": 144,
+    "machine": 140,
+    "delta": 4
+   },
+   {
+    "row": "東-1",
+    "human": 67,
+    "machine": 65,
+    "delta": 2
+   },
+   {
+    "row": "東-2",
+    "human": 67,
+    "machine": 65,
+    "delta": 2
+   },
+   {
+    "row": "東-3",
+    "human": 67,
+    "machine": 66,
+    "delta": 1
+   },
+   {
+    "row": "東-4",
+    "human": 67,
+    "machine": 66,
+    "delta": 1
+   },
+   {
+    "row": "東-5",
+    "human": 67,
+    "machine": 65,
+    "delta": 2
+   },
+   {
+    "row": "東-6",
+    "human": 56,
+    "machine": 55,
+    "delta": 1
+   },
+   {
+    "row": "東-7",
+    "human": 56,
+    "machine": 54,
+    "delta": 2
+   },
+   {
+    "row": "東-8",
+    "human": 72,
+    "machine": 69,
+    "delta": 3
+   },
+   {
+    "row": "東-9",
+    "human": 72,
+    "machine": 70,
+    "delta": 2
+   },
+   {
+    "row": "東-10",
+    "human": 72,
+    "machine": 71,
+    "delta": 1
+   },
+   {
+    "row": "南-1",
+    "human": 19,
+    "machine": 18,
+    "delta": 1
+   },
+   {
+    "row": "南-2",
+    "human": 19,
+    "machine": 18,
+    "delta": 1
+   },
+   {
+    "row": "南-3",
+    "human": 21,
+    "machine": 21,
+    "delta": 0
+   },
+   {
+    "row": "南-4",
+    "human": 21,
+    "machine": 20,
+    "delta": 1
+   },
+   {
+    "row": "南-5",
+    "human": 21,
+    "machine": 17,
+    "delta": 4
+   },
+   {
+    "row": "南-6",
+    "human": 24,
+    "machine": 22,
+    "delta": 2
+   },
+   {
+    "row": "南-7",
+    "human": 37,
+    "machine": 35,
+    "delta": 2
+   },
+   {
+    "row": "南-8",
+    "human": 37,
+    "machine": 37,
+    "delta": 0
+   },
+   {
+    "row": "南-9",
+    "human": 37,
+    "machine": 37,
+    "delta": 0
+   },
+   {
+    "row": "南-10",
+    "human": 37,
+    "machine": 35,
+    "delta": 2
+   },
+   {
+    "row": "西-1",
+    "human": 96,
+    "machine": 79,
+    "delta": 17
+   },
+   {
+    "row": "西-2",
+    "human": 96,
+    "machine": 83,
+    "delta": 13
+   },
+   {
+    "row": "西-3",
+    "human": 98,
+    "machine": 87,
+    "delta": 11
+   },
+   {
+    "row": "西-4",
+    "human": 98,
+    "machine": 84,
+    "delta": 14
+   },
+   {
+    "row": "西-5",
+    "human": 98,
+    "machine": 87,
+    "delta": 11
+   },
+   {
+    "row": "西-6",
+    "human": 88,
+    "machine": 81,
+    "delta": 7
+   },
+   {
+    "row": "西-7",
+    "human": 101,
+    "machine": 95,
+    "delta": 6
+   },
+   {
+    "row": "西-8",
+    "human": 125,
+    "machine": 118,
+    "delta": 7
+   },
+   {
+    "row": "西-9",
+    "human": 125,
+    "machine": 119,
+    "delta": 6
+   },
+   {
+    "row": "西-10",
+    "human": 125,
+    "machine": 117,
+    "delta": 8
+   }
+  ],
+  "chartLocalReasons": [
+   {
+    "blocks": "A",
+    "delta": 14,
+    "reason": "deltaはA9・A10・A11・A13の4行のみに発生し、白抜き大文字「A」のbbox x[2449,2557] y[2794,2967] が跨ぐ行と厳密に一致する。他の17行はdelta 0。"
+   },
+   {
+    "blocks": "D",
+    "delta": 20,
+    "reason": "deltaはD11・D13・D14・D15の4行のみ。白抜き大文字「D」のbbox x[2453,2554] y[716,890] が跨ぐ行と厳密に一致する。他の17行はdelta 0。"
+   },
+   {
+    "blocks": "E",
+    "delta": 12,
+    "reason": "E18〜E21のdelta 9は白抜き大文字「E」のbbox x[3513,3563] y[591,702] が跨ぐ行と一致。残るE1・E2・E5の各delta 1はブロック端セルの白抜き席番glyphによるcell merge。"
+   },
+   {
+    "blocks": "F",
+    "delta": 19,
+    "reason": "F19〜F21のdelta 10は白抜き大文字「F」のbbox x[3523,3573] y[3078,3190] と一致。残りは境界番号が2桁（66〜86）で白抜きglyphが広く、cell境界を覆って隣接セルを結合させることによる1セル単位の欠落。"
+   },
+   {
+    "blocks": "B / C",
+    "delta": "B 63 / C 69",
+    "reason": "白抜き大文字「B」bbox x[1098,1188] y[2465,2639]・「C」bbox x[1111,1206] y[1118,1303] が跨ぐ行に加え、曲線ブロック特有の狭いセル（角度ピッチ換算15.9〜17.5px）へ白抜き席番が重なることによる分散的な1セル欠落。printed segment単位でmachineとhumanを整列させると、外周行ではB 49 segmentが完全一致・32 segmentがちょうど1セル不足・2セル以上不足は0、C 59 segmentが完全一致・28 segmentが1セル不足・3 segmentが2セル不足。各segmentは両端に必ず2個の印字番号を持つため、この分布はglyph遮蔽と整合し、欠落行や欠落segmentの存在を示さない。"
+   },
+   {
+    "blocks": "北 / 東 / 南 / 西",
+    "delta": "北 60 / 東 17 / 南 13 / 西 100",
+    "reason": "スタンドは環状で1セルが最も細く、席番が2〜3桁（西は最大125、北は最大144）で白抜きglyphの占有幅が大きい。西のdeltaが最大なのはこの条件が最も強く重なるため。前waveで見かけ上生じたスタンド超過は、回転した無番号矩形を軸平行フィルタが座席と誤検出した計測artifactで、PCA分類により解消済み。"
+   }
+  ],
+  "interpretation": "machine pathはPass 2の代替ではない。本waveではhuman Pass 1の行帰属と構造の独立cross-checkとして機能し、全行でhumanを上回らないこと、および欠落がすべて実在の描画特徴（白抜き大文字overlay・白抜き席番によるcell merge）に対応することを確認した。machineの差を埋めるためにhuman rangeを変更しておらず、machine countをissuer subtotalへfitしてもいない。"
+ },
+ "correctionsToPriorWaveRecord": [
+  {
+   "item": "B7／C7 machine anomaly",
+   "priorRecord": "openMachineAnomaly: B7・C7がいずれも56セルで両隣より多い（未解決）。",
+   "corrected": "band-assignment artifactとして解消。B7・C7はいずれも48席で、同一ブロックのB5/B6/B8/B9/B10・C5/C6/C8/C9/C10と同一構造。56席の行は存在しない。",
+   "impact": "未解決のopen anomalyが1件closeされ、Pass 2へ持ち越す構造的疑義が残らない。"
+  },
+  {
+   "item": "Fブロックの描画範囲（superseded記録の最終否定）",
+   "priorRecord": "（superseded）F1–F5はAパターンでは描画されない／FはF9–F22のみ。",
+   "corrected": "誤り。F1からF22まで全ラベルに座席バンドが描かれ（F11のみ通路）、derotated viewでF1〜F4の85、F5の86を含む印字席番を直接確認した。本waveでFを全面再転記し、F=306席でE=306席と対称であることを確定した。",
+   "impact": "superseded記録が実測で最終的に否定され、Fのrange記録が確定した。"
+  },
+  {
+   "item": "継承Pass 1（A・D・E）の位置づけ",
+   "priorRecord": "A 1,205／D 1,205／E 306をcontinuationとして保持。",
+   "corrected": "本waveではこれらもcurrent assetから独立に再転記した。結果は前waveがinventory blockingReasonに記録していた全range（A1・A2 8–58／A3–A5 7–59／A6–A8 6–60／A9–A11 5–61／A13–A18 4–62／A19–A21 2–64／A22 1–65、およびE各行のrange）と完全一致した。",
+   "impact": "継承値がanswer keyとしてではなく独立再現によって裏付けられた。"
+  }
+ ],
+ "prohibitionsObserved": [
+  "capacity fittingなし。issuer小計はPass1 freeze後のpost-checkとしてのみ使用した。",
+  "invented seat / row / block IDなし。スイート・ボックス140席から番号を作っていない。",
+  "machine結果へhuman rangeを入力して補正していない。machine pathからseat IDを生成していない。",
+  "machineとの差を埋めるためにhuman rangeを変更していない。machine countをissuer subtotalへfitしていない。",
+  "AパターンとBパターン／中央パターンを混ぜていない。",
+  "作業量のみを理由にHOLD／NEED EVIDENCEへ格下げしていない。disposition は ADOPT のまま。",
+  "venue source、生成catalog、runtime detail、production fingerprintを一切変更していない。",
+  "対象外venue（GMOアリーナさいたま、RaiBoC、日野市民会館、Tokyo Priority D等）に触れていない。",
+  "Pass 2、production source作成、runtime integrationには進んでいない。"
+ ],
+ "productionGate": {
+  "completeDeclaredNumberedSet": true,
+  "freshCompletedPass1": true,
+  "freshIndependentPass2": false,
+  "passSymmetricDifferenceZero": false,
+  "independentStructuralChecksum": true,
+  "issuerReconciliation": "Pass 1 mapped subtotal がarena 5,498／stand 3,271／総計8,769でissuer公表小計と完全一致。",
+  "noInventedIds": true,
+  "noConfigurationMixing": true,
+  "excludedScopeUndrawable": true,
+  "verdict": "NOT EVALUATED IN THIS WAVE - 本waveはPass 1 completion/freezeのみを目的とし、production gateを判定しない。Pass 2未実施のためproduction化しない。"
+ },
+ "countsAfter": {
+  "productionTotals": {
+   "venues": 159,
+   "selectableConfigurations": 161,
+   "seatRecords": 246023
+  },
+  "delta": {
+   "venues": 0,
+   "selectableConfigurations": 0,
+   "seatRecords": 0
+  },
+  "kantoLedgerFromRecords": {
+   "universe": 154,
+   "production": 76,
+   "adopt": 3,
+   "blockedFormal": 74,
+   "independentReviewMismatch": 1,
+   "inventoryUnresearched": 0,
+   "missingFromInventory": 0
+  },
+  "ledgerInvariant": "P (production) = 0, B (new formal blocked) = 0, retained ADOPT = 3。横浜アリーナはADOPTのまま。Kanto >=1,000 は complete / closed ではない。"
+ },
+ "validation": {
+  "command": "npm run verify:venues",
+  "productionDataChanged": false,
+  "note": "本waveの変更は venue-report / inventory / coverage ledger / HANDOFF のみ。venue source、生成catalog、runtime detail、fingerprintはいずれも未変更。"
+ },
+ "exactNextAction": "Claude: YOKOHAMA ARENA A-PATTERN PASS-2 + PRODUCTION CLOSURE - 本reportのPass 1 tableをanswer keyとして使わないfresh independent Pass 2、Pass1/Pass2 bidirectional symmetric difference 0、independent structural checksum closure、issuer 5,498／3,271 reconciliation、続いてvenue source作成・integration・deployまで通す。"
+}
