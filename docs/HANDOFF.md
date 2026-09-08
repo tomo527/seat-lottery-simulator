@@ -28,7 +28,11 @@ Unresolved items:
 - RaiBoC and `tokyo-official-1121` 日野市民会館 remain a separate remediation queue and were not touched.
 - Tokyo Priority D was not started, as instructed.
 
-`npm run verify:venues` passes end to end. This wave changed only the inventory, the Kanto coverage ledger, the wave report and this file; there is no production data change, so no new runtime payload or public smoke check applies.
+`npm run verify:venues` passes end to end (159 production venues / 161 selectable configurations / 246,023 configuration-seat records, 49 warnings of pre-existing kinds, 17 Playwright e2e). This wave changed only the inventory, the Kanto coverage ledger, the wave report and this file; no venue source, generated catalog, runtime detail, fingerprint or production total changed.
+
+**RECORDS-ONLY RELEASE VERIFIED / CLOSED (2026-09-08).** The wave is committed as `cde204bff1ae` on `main` and pushed to `origin/main`; the GitHub check run **Workers Builds: seat-lottery-simulator** for that commit completed **successfully on the first attempt** (check run `101963997707`) — no retry, no empty commit, no local production deploy. `HEAD` equals `origin/main` and the working tree is clean. Because there is no production data change there is no new runtime payload to expand, so the public check was a non-regression smoke: the site returns HTTP 200, and `/venue-db/venues/yokohama-budokan-arena--permanent-seats.json` is still served with HTTP 200 `application/json`, 5,371 bytes, SHA-256 `32a0b546aa151c23437d80838a9a5c6f5a9c046f49c5611864e8b9eddabd41d8`, byte-identical to the committed artifact.
+
+The Kanto ledger was **recomputed from `records[]`** rather than fitted: 154 universe, **76 production / 3 ADOPT (`source-located`) / 74 formal `blocked` + 1 `independent-review-mismatch` / 0 `inventory-unresearched` / 0 missing**. `inventory-unresearched` is 0; **ADOPT is not 0**.
 
 Exact next action: `KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION (continued)` — finish 横浜アリーナ's A-pattern (blocks B and C, the F6–F10 truncation, the four 3階 stands), run the fresh independent second pass and the issuer subtotal reconciliation, then implement GMOアリーナさいたま as one venue source with the `main-arena` and `stadium` configurations. `CODEX: TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT` stays queued behind Kanto closure, and RaiBoC / 日野市民会館 remain their own queue.
 

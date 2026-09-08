@@ -211,5 +211,37 @@
     "productionDataChanged": false,
     "note": "本waveの変更は inventory / coverage ledger / report / HANDOFF のみで、venue source、生成catalog、runtime detail、fingerprint はいずれも変更していない。"
   },
-  "exactNextAction": "KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION (continued) — 横浜アリーナ Aパターンの Bブロック・Cブロック・Fブロック末端・3階4スタンドを完全転記して second independent pass と issuer小計 reconciliation まで通し、続いて GMOアリーナさいたまを1 venue source＋2 configuration として実装する。RaiBoC / hino-brick-main-standard / Tokyo Priority D は引き続き別キュー。"
+  "exactNextAction": "KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION (continued) — 横浜アリーナ Aパターンの Bブロック・Cブロック・Fブロック末端・3階4スタンドを完全転記して second independent pass と issuer小計 reconciliation まで通し、続いて GMOアリーナさいたまを1 venue source＋2 configuration として実装する。RaiBoC / hino-brick-main-standard / Tokyo Priority D は引き続き別キュー。",
+  "ledgerRecomputedFromRecords": {
+    "source": "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json records[] と live inventory の突合",
+    "universe": 154,
+    "production": 76,
+    "adopt": 3,
+    "blockedFormal": 74,
+    "independentReviewMismatch": 1,
+    "inventoryUnresearched": 0,
+    "missingFromInventory": 0,
+    "note": "ADOPT は 0 になっていない。inventory-unresearched のみ 0。"
+  },
+  "releaseVerification": {
+    "status": "RECORDS-ONLY RELEASE VERIFIED / CLOSED",
+    "verifiedAt": "2026-09-08",
+    "commit": "cde204bff1aee479ccd963afd6eb5d0e832cecb0",
+    "productionDataChanged": false,
+    "validation": "npm run verify:venues がend to endで成功（159 production venues / 161 selectable configurations / 246,023 configuration-seat records、警告49件はいずれも既存種別、Playwright e2e 17件成功）。生成catalog・runtime detail・fingerprintに差分なし。",
+    "workersBuild": {
+      "name": "Workers Builds: seat-lottery-simulator",
+      "id": 101963997707,
+      "conclusion": "success",
+      "attempt": "first",
+      "retried": false
+    },
+    "publicSmoke": {
+      "site": "https://seat-lottery-simulator.studiotomo.workers.dev/ HTTP 200 text/html",
+      "nonRegressionPayload": "/venue-db/venues/yokohama-budokan-arena--permanent-seats.json HTTP 200 application/json 5,371バイト、SHA-256 32a0b546aa151c23437d80838a9a5c6f5a9c046f49c5611864e8b9eddabd41d8 がcommit済み成果物とバイト一致",
+      "newConfigurations": "なし（本waveはproduction変更を含まないため、新規configurationのdraw smokeは適用外）"
+    },
+    "headEqualsOriginMain": true,
+    "workingTree": "clean"
+  }
 }
