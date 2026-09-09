@@ -1,0 +1,1848 @@
+{
+  "artifactType": "machine-structural-checksum-frozen",
+  "venue": "GMOアリーナさいたま（さいたまスーパーアリーナ）",
+  "inventoryId": "saitama-super-arena-main",
+  "configuration": "main-arena",
+  "configurationJa": "メインアリーナモード",
+  "builtAt": "2026-09-09",
+  "builtBefore": "any human visual transcription pass. No human Pass 1 or Pass 2 exists for this venue anywhere in the repository as of this date, so this extractor provably cannot have been derived from one.",
+  "independence": {
+    "seatIdSource": false,
+    "humanRangesUsedAsInput": false,
+    "capacityOrSubtotalUsedAsTarget": false,
+    "historicalStructuralReportParametersUsed": false,
+    "seatListJsUsed": false,
+    "note": "The extractor reads only the chart raster. seat_list.js was never opened by the extractor and is not usable as seat-structure evidence. Issuer subtotals appear in this document only as a comparison column and were not used to tune any threshold."
+  },
+  "quarantineNotice": "A future fresh independent human visual Pass 1 or Pass 2 session must NOT open this file before it has frozen its own transcription. The per-region machine cell counts here would otherwise anchor that pass. Open it only at the cross-check step.",
+  "chartAsset": {
+    "seatViewPage": "https://www.saitama-arena.co.jp/seat_view/arena_end01/",
+    "svgWrapper": "https://www.saitama-arena.co.jp/seat_view/img/img-map_arena_end01.svg",
+    "rasterUrl": "https://www.saitama-arena.co.jp/seat_view/img/img-map_arena_end01.png",
+    "sha256": "6d9cc55018b11f9901cab697cc6427f7350c3bbc9c4414efc47f83ef8e1aaf31",
+    "bytes": 540763,
+    "pixelSize": "3967x3864",
+    "lastModified": "Tue, 24 Mar 2026 09:06:36 GMT",
+    "refetchedAt": "2026-09-09",
+    "identicalToPreviouslyPinnedValue": true,
+    "note": "The seat chart itself is the raster. The SVG wrapper carries only a background image reference to this PNG, a vector gate-number layer and zero-opacity highlight polygons. No seat number, row label or seat polygon exists in vector form, so DENSE-VECTOR verification is not available for this venue and the ordinary fresh independent human visual two-pass remains mandatory."
+  },
+  "stagePositionVariants": {
+    "variantsChecked": [
+      "center",
+      "end01",
+      "end02",
+      "not_fixed"
+    ],
+    "rasterSha256": {
+      "center": "ae1fd2f3322e49e576c7f52c9b693fe52e9ad73e0bfdc9703f5c6e4db28fe858",
+      "end01": "6d9cc55018b11f9901cab697cc6427f7350c3bbc9c4414efc47f83ef8e1aaf31",
+      "end02": "93438d8ac83415333af37e13b4411fb9e9a24173c9628405b9da0b52a8fe72e6",
+      "not_fixed": "1375f6481a4f428392c8b66cac553a6bf94bd85fe934fe713ea56ea6d6311c67"
+    },
+    "method": "All four current rasters were fetched fresh and compared pixelwise on the composited-on-white RGB with a per-pixel magnitude threshold of 150 summed over channels, which rejects the palette/antialiasing noise present at magnitude <= 6, then dilated 2px before classifying detected cells.",
+    "strongChangePixels": 137260,
+    "strongChangeBoundingBox": {
+      "x0": 1650,
+      "y0": 928,
+      "x1": 2660,
+      "y1": 2229
+    },
+    "cellsTouchingAChange": 733,
+    "tealEndpointCellsTouchingAChange": 32,
+    "finding": "Every stage-position difference is confined to the arena floor and stage area inside the bounding box above. All seat cells, teal seat-number glyph cells and magenta row-label glyphs outside that area are identical across all four stage positions. The fixed numbered seating of this mode is therefore stage-position invariant, and only the floor area is event-dependent.",
+    "excludedFromScope": "Cells touching a stage-position change are excluded from the structural checksum as issuer-declared event-dependent arena-floor seating. Issuer statement on the current 客席確認・案内 page: 固定席の一部を収納してアリーナ席を設置する場合もございます。設置される席・ブロック数・列・席番号などにつきましては、イベント主催者にお問合せください。"
+  },
+  "method": [
+    "The raster is composited onto white; the PNG carries an alpha channel and the page renders it on white.",
+    "Seat cells are drawn as closed rectangles with a light-grey outline (RGB 182,182,182 with darker 110,110,110 segments) on a white interior, separated by white gaps. Run-endpoint cells are filled solid teal (RGB 39,158,182); row labels are magenta (RGB 255,31,176).",
+    "Outline-enclosed cells are recovered as 4-connected components of near-white (mean channel >= 236) that do not touch the image border, with area 25..400 px, bounding box 4..30 px on each side and fill ratio >= 0.45.",
+    "Teal endpoint cells are recovered separately as 4-connected components of the teal fill within the same size and fill-ratio envelope, because those cells have no white interior.",
+    "Cells are classified as stage-invariant or stage-variant by the four-variant comparison described above.",
+    "Seating regions are the connected components of the stage-invariant cell centroid set under a 13px binary dilation, which bridges the gap between adjacent seats inside one printed block but not the aisles between blocks.",
+    "Row-band topology is reported only for regions whose cells are at least 75% within +/-1 px of the region-dominant cell width and height, i.e. axis-aligned regions. The rotated arc regions are reported at region level only."
+  ],
+  "results": {
+    "seatingRegionsFound": 102,
+    "machineCellTotalStageInvariant": 19349,
+    "tealEndpointCellsStageInvariant": 1347,
+    "impliedPrintedRunEndpointPairs": 674,
+    "cellSizeFamiliesPx": {
+      "7x8": 6336,
+      "11x12": 4138,
+      "8x8": 2504,
+      "8x7": 1906,
+      "9x10": 646,
+      "12x11": 567,
+      "9x9": 550,
+      "14x13": 428
+    },
+    "axisAlignedRegions": 88,
+    "regions": [
+      {
+        "region": 1,
+        "machineCellCount": 8,
+        "tealEndpointCells": 2,
+        "bbox": {
+          "x0": 1573,
+          "y0": 70,
+          "x1": 1688,
+          "y1": 70
+        },
+        "cellSizePx": null,
+        "axisAlignedFraction": null,
+        "machineRowBands": null,
+        "nearestGate": 510,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 135.9
+      },
+      {
+        "region": 2,
+        "machineCellCount": 9,
+        "tealEndpointCells": 3,
+        "bbox": {
+          "x0": 2271,
+          "y0": 43,
+          "x1": 2385,
+          "y1": 70
+        },
+        "cellSizePx": null,
+        "axisAlignedFraction": null,
+        "machineRowBands": null,
+        "nearestGate": 514,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 132.5
+      },
+      {
+        "region": 3,
+        "machineCellCount": 52,
+        "tealEndpointCells": 6,
+        "bbox": {
+          "x0": 1090,
+          "y0": 79,
+          "x1": 1425,
+          "y1": 208
+        },
+        "cellSizePx": "16x15",
+        "axisAlignedFraction": 0.865,
+        "machineRowBands": 37,
+        "nearestGate": 509,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 207.6
+      },
+      {
+        "region": 4,
+        "machineCellCount": 15,
+        "tealEndpointCells": 2,
+        "bbox": {
+          "x0": 1516,
+          "y0": 99,
+          "x1": 1745,
+          "y1": 99
+        },
+        "cellSizePx": "13x13",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": null,
+        "nearestGate": 510,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 145.9
+      },
+      {
+        "region": 5,
+        "machineCellCount": 18,
+        "tealEndpointCells": 2,
+        "bbox": {
+          "x0": 1486,
+          "y0": 129,
+          "x1": 1776,
+          "y1": 129
+        },
+        "cellSizePx": "14x13",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": null,
+        "nearestGate": 417,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 159.4
+      },
+      {
+        "region": 6,
+        "machineCellCount": 15,
+        "tealEndpointCells": 2,
+        "bbox": {
+          "x0": 2213,
+          "y0": 99,
+          "x1": 2443,
+          "y1": 99
+        },
+        "cellSizePx": "14x13",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": null,
+        "nearestGate": 514,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 145.4
+      },
+      {
+        "region": 7,
+        "machineCellCount": 18,
+        "tealEndpointCells": 2,
+        "bbox": {
+          "x0": 2184,
+          "y0": 129,
+          "x1": 2473,
+          "y1": 129
+        },
+        "cellSizePx": "14x12",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": null,
+        "nearestGate": 514,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 161.2
+      },
+      {
+        "region": 8,
+        "machineCellCount": 53,
+        "tealEndpointCells": 8,
+        "bbox": {
+          "x0": 2534,
+          "y0": 79,
+          "x1": 2863,
+          "y1": 208
+        },
+        "cellSizePx": "16x15",
+        "axisAlignedFraction": 0.849,
+        "machineRowBands": 33,
+        "nearestGate": 515,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 189.5
+      },
+      {
+        "region": 9,
+        "machineCellCount": 50,
+        "tealEndpointCells": 5,
+        "bbox": {
+          "x0": 736,
+          "y0": 210,
+          "x1": 1038,
+          "y1": 382
+        },
+        "cellSizePx": "17x16",
+        "axisAlignedFraction": 0.98,
+        "machineRowBands": 35,
+        "nearestGate": 508,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 213.6
+      },
+      {
+        "region": 10,
+        "machineCellCount": 53,
+        "tealEndpointCells": 8,
+        "bbox": {
+          "x0": 2920,
+          "y0": 210,
+          "x1": 3223,
+          "y1": 402
+        },
+        "cellSizePx": "17x16",
+        "axisAlignedFraction": 0.943,
+        "machineRowBands": 40,
+        "nearestGate": 516,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 190.3
+      },
+      {
+        "region": 11,
+        "machineCellCount": 88,
+        "tealEndpointCells": 13,
+        "bbox": {
+          "x0": 1223,
+          "y0": 324,
+          "x1": 1494,
+          "y1": 513
+        },
+        "cellSizePx": "14x13",
+        "axisAlignedFraction": 0.92,
+        "machineRowBands": 51,
+        "nearestGate": 326,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 180.0
+      },
+      {
+        "region": 12,
+        "machineCellCount": 78,
+        "tealEndpointCells": 16,
+        "bbox": {
+          "x0": 1548,
+          "y0": 302,
+          "x1": 1801,
+          "y1": 454
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.962,
+        "machineRowBands": 7,
+        "nearestGate": 417,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 150.7
+      },
+      {
+        "region": 13,
+        "machineCellCount": 34,
+        "tealEndpointCells": 14,
+        "bbox": {
+          "x0": 1852,
+          "y0": 304,
+          "x1": 1953,
+          "y1": 454
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.824,
+        "machineRowBands": 7,
+        "nearestGate": 418,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 109.2
+      },
+      {
+        "region": 14,
+        "machineCellCount": 33,
+        "tealEndpointCells": 12,
+        "bbox": {
+          "x0": 2009,
+          "y0": 300,
+          "x1": 2123,
+          "y1": 454
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.848,
+        "machineRowBands": 7,
+        "nearestGate": 421,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 150.8
+      },
+      {
+        "region": 15,
+        "machineCellCount": 79,
+        "tealEndpointCells": 18,
+        "bbox": {
+          "x0": 2158,
+          "y0": 300,
+          "x1": 2430,
+          "y1": 454
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.949,
+        "machineRowBands": 7,
+        "nearestGate": 421,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 156.3
+      },
+      {
+        "region": 16,
+        "machineCellCount": 90,
+        "tealEndpointCells": 12,
+        "bbox": {
+          "x0": 2464,
+          "y0": 300,
+          "x1": 2736,
+          "y1": 492
+        },
+        "cellSizePx": "14x13",
+        "axisAlignedFraction": 0.889,
+        "machineRowBands": 55,
+        "nearestGate": 331,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 156.1
+      },
+      {
+        "region": 17,
+        "machineCellCount": 91,
+        "tealEndpointCells": 15,
+        "bbox": {
+          "x0": 907,
+          "y0": 425,
+          "x1": 1183,
+          "y1": 646
+        },
+        "cellSizePx": "14x14",
+        "axisAlignedFraction": 0.967,
+        "machineRowBands": 59,
+        "nearestGate": 415,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 199.1
+      },
+      {
+        "region": 18,
+        "machineCellCount": 39,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 1287,
+          "y0": 616,
+          "x1": 1445,
+          "y1": 712
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": 28,
+        "nearestGate": 325,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 97.2
+      },
+      {
+        "region": 19,
+        "machineCellCount": 40,
+        "tealEndpointCells": 13,
+        "bbox": {
+          "x0": 1476,
+          "y0": 562,
+          "x1": 1631,
+          "y1": 664
+        },
+        "cellSizePx": "11x9",
+        "axisAlignedFraction": 0.683,
+        "machineRowBands": null,
+        "nearestGate": 326,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 97.7
+      },
+      {
+        "region": 20,
+        "machineCellCount": 33,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 1676,
+          "y0": 586,
+          "x1": 1799,
+          "y1": 635
+        },
+        "cellSizePx": "10x8",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": null,
+        "nearestGate": 327,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 84.6
+      },
+      {
+        "region": 21,
+        "machineCellCount": 31,
+        "tealEndpointCells": 5,
+        "bbox": {
+          "x0": 1843,
+          "y0": 562,
+          "x1": 1955,
+          "y1": 635
+        },
+        "cellSizePx": "10x8",
+        "axisAlignedFraction": 0.968,
+        "machineRowBands": null,
+        "nearestGate": 328,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 69.1
+      },
+      {
+        "region": 22,
+        "machineCellCount": 35,
+        "tealEndpointCells": 9,
+        "bbox": {
+          "x0": 2001,
+          "y0": 562,
+          "x1": 2116,
+          "y1": 663
+        },
+        "cellSizePx": "10x9",
+        "axisAlignedFraction": 0.857,
+        "machineRowBands": null,
+        "nearestGate": 329,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 146.5
+      },
+      {
+        "region": 23,
+        "machineCellCount": 35,
+        "tealEndpointCells": 6,
+        "bbox": {
+          "x0": 2157,
+          "y0": 562,
+          "x1": 2283,
+          "y1": 636
+        },
+        "cellSizePx": "10x9",
+        "axisAlignedFraction": 0.943,
+        "machineRowBands": null,
+        "nearestGate": 329,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 73.8
+      },
+      {
+        "region": 24,
+        "machineCellCount": 43,
+        "tealEndpointCells": 16,
+        "bbox": {
+          "x0": 2323,
+          "y0": 561,
+          "x1": 2483,
+          "y1": 663
+        },
+        "cellSizePx": "11x9",
+        "axisAlignedFraction": 0.651,
+        "machineRowBands": null,
+        "nearestGate": 330,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 93.7
+      },
+      {
+        "region": 25,
+        "machineCellCount": 40,
+        "tealEndpointCells": 6,
+        "bbox": {
+          "x0": 2502,
+          "y0": 616,
+          "x1": 2671,
+          "y1": 712
+        },
+        "cellSizePx": "11x11",
+        "axisAlignedFraction": 0.975,
+        "machineRowBands": 28,
+        "nearestGate": 331,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 113.8
+      },
+      {
+        "region": 26,
+        "machineCellCount": 89,
+        "tealEndpointCells": 13,
+        "bbox": {
+          "x0": 2763,
+          "y0": 424,
+          "x1": 3052,
+          "y1": 637
+        },
+        "cellSizePx": "14x14",
+        "axisAlignedFraction": 0.978,
+        "machineRowBands": 57,
+        "nearestGate": 332,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 159.8
+      },
+      {
+        "region": 27,
+        "machineCellCount": 54,
+        "tealEndpointCells": 3,
+        "bbox": {
+          "x0": 3275,
+          "y0": 415,
+          "x1": 3570,
+          "y1": 646
+        },
+        "cellSizePx": "18x17",
+        "axisAlignedFraction": 0.981,
+        "machineRowBands": 42,
+        "nearestGate": 425,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 156.5
+      },
+      {
+        "region": 28,
+        "machineCellCount": 48,
+        "tealEndpointCells": 5,
+        "bbox": {
+          "x0": 705,
+          "y0": 594,
+          "x1": 888,
+          "y1": 771
+        },
+        "cellSizePx": "15x14",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": 32,
+        "nearestGate": 415,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 163.5
+      },
+      {
+        "region": 29,
+        "machineCellCount": 21,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 1174,
+          "y0": 683,
+          "x1": 1261,
+          "y1": 757
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": 18,
+        "nearestGate": 325,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 119.8
+      },
+      {
+        "region": 30,
+        "machineCellCount": 21,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 2698,
+          "y0": 683,
+          "x1": 2785,
+          "y1": 757
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": 18,
+        "nearestGate": 332,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 106.8
+      },
+      {
+        "region": 31,
+        "machineCellCount": 52,
+        "tealEndpointCells": 9,
+        "bbox": {
+          "x0": 3053,
+          "y0": 602,
+          "x1": 3265,
+          "y1": 779
+        },
+        "cellSizePx": "15x14",
+        "axisAlignedFraction": 0.962,
+        "machineRowBands": 32,
+        "nearestGate": 424,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 173.8
+      },
+      {
+        "region": 32,
+        "machineCellCount": 108,
+        "tealEndpointCells": 26,
+        "bbox": {
+          "x0": 398,
+          "y0": 775,
+          "x1": 686,
+          "y1": 967
+        },
+        "cellSizePx": "12x13",
+        "axisAlignedFraction": 0.731,
+        "machineRowBands": null,
+        "nearestGate": 413,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 136.2
+      },
+      {
+        "region": 33,
+        "machineCellCount": 244,
+        "tealEndpointCells": 14,
+        "bbox": {
+          "x0": 1160,
+          "y0": 824,
+          "x1": 1483,
+          "y1": 1123
+        },
+        "cellSizePx": "9x10",
+        "axisAlignedFraction": 0.97,
+        "machineRowBands": null,
+        "nearestGate": 219,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 136.9
+      },
+      {
+        "region": 34,
+        "machineCellCount": 168,
+        "tealEndpointCells": 17,
+        "bbox": {
+          "x0": 1422,
+          "y0": 762,
+          "x1": 1615,
+          "y1": 1021
+        },
+        "cellSizePx": "9x9",
+        "axisAlignedFraction": 0.802,
+        "machineRowBands": 80,
+        "nearestGate": 220,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 145.3
+      },
+      {
+        "region": 35,
+        "machineCellCount": 160,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 1657,
+          "y0": 762,
+          "x1": 1813,
+          "y1": 917
+        },
+        "cellSizePx": "8x7",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": 10,
+        "nearestGate": 221,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 141.9
+      },
+      {
+        "region": 36,
+        "machineCellCount": 225,
+        "tealEndpointCells": 11,
+        "bbox": {
+          "x0": 1855,
+          "y0": 741,
+          "x1": 2104,
+          "y1": 935
+        },
+        "cellSizePx": "8x7",
+        "axisAlignedFraction": 0.982,
+        "machineRowBands": 12,
+        "nearestGate": 222,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 164.2
+      },
+      {
+        "region": 37,
+        "machineCellCount": 168,
+        "tealEndpointCells": 10,
+        "bbox": {
+          "x0": 2146,
+          "y0": 741,
+          "x1": 2303,
+          "y1": 935
+        },
+        "cellSizePx": "8x7",
+        "axisAlignedFraction": 0.976,
+        "machineRowBands": 12,
+        "nearestGate": 223,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 140.5
+      },
+      {
+        "region": 38,
+        "machineCellCount": 138,
+        "tealEndpointCells": 12,
+        "bbox": {
+          "x0": 2344,
+          "y0": 741,
+          "x1": 2530,
+          "y1": 1021
+        },
+        "cellSizePx": "9x9",
+        "axisAlignedFraction": 0.717,
+        "machineRowBands": null,
+        "nearestGate": 224,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 185.2
+      },
+      {
+        "region": 39,
+        "machineCellCount": 244,
+        "tealEndpointCells": 11,
+        "bbox": {
+          "x0": 2477,
+          "y0": 824,
+          "x1": 2799,
+          "y1": 1122
+        },
+        "cellSizePx": "9x9",
+        "axisAlignedFraction": 0.967,
+        "machineRowBands": null,
+        "nearestGate": 231,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 181.6
+      },
+      {
+        "region": 40,
+        "machineCellCount": 102,
+        "tealEndpointCells": 20,
+        "bbox": {
+          "x0": 3273,
+          "y0": 775,
+          "x1": 3561,
+          "y1": 966
+        },
+        "cellSizePx": "13x13",
+        "axisAlignedFraction": 0.804,
+        "machineRowBands": 42,
+        "nearestGate": 426,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 163.6
+      },
+      {
+        "region": 41,
+        "machineCellCount": 8,
+        "tealEndpointCells": 0,
+        "bbox": {
+          "x0": 2146,
+          "y0": 1004,
+          "x1": 2177,
+          "y1": 1021
+        },
+        "cellSizePx": null,
+        "axisAlignedFraction": null,
+        "machineRowBands": null,
+        "nearestGate": 223,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 304.3
+      },
+      {
+        "region": 42,
+        "machineCellCount": 321,
+        "tealEndpointCells": 20,
+        "bbox": {
+          "x0": 219,
+          "y0": 1027,
+          "x1": 662,
+          "y1": 1327
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 0.984,
+        "machineRowBands": 23,
+        "nearestGate": 413,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 201.7
+      },
+      {
+        "region": 43,
+        "machineCellCount": 1036,
+        "tealEndpointCells": 38,
+        "bbox": {
+          "x0": 914,
+          "y0": 1017,
+          "x1": 1482,
+          "y1": 1493
+        },
+        "cellSizePx": "8x8",
+        "axisAlignedFraction": 0.743,
+        "machineRowBands": null,
+        "nearestGate": 218,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 90.6
+      },
+      {
+        "region": 44,
+        "machineCellCount": 315,
+        "tealEndpointCells": 17,
+        "bbox": {
+          "x0": 3297,
+          "y0": 1026,
+          "x1": 3737,
+          "y1": 1327
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 0.991,
+        "machineRowBands": 25,
+        "nearestGate": 426,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 169.1
+      },
+      {
+        "region": 45,
+        "machineCellCount": 224,
+        "tealEndpointCells": 22,
+        "bbox": {
+          "x0": 1752,
+          "y0": 1256,
+          "x1": 2238,
+          "y1": 1392
+        },
+        "cellSizePx": "8x7",
+        "axisAlignedFraction": 0.964,
+        "machineRowBands": 12,
+        "nearestGate": 222,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 626.7
+      },
+      {
+        "region": 46,
+        "machineCellCount": 461,
+        "tealEndpointCells": 17,
+        "bbox": {
+          "x0": 100,
+          "y0": 1386,
+          "x1": 660,
+          "y1": 1687
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 0.998,
+        "machineRowBands": 24,
+        "nearestGate": 412,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 235.1
+      },
+      {
+        "region": 47,
+        "machineCellCount": 151,
+        "tealEndpointCells": 17,
+        "bbox": {
+          "x0": 2279,
+          "y0": 1268,
+          "x1": 2436,
+          "y1": 1750
+        },
+        "cellSizePx": "7x8",
+        "axisAlignedFraction": 0.98,
+        "machineRowBands": 40,
+        "nearestGate": 234,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 587.6
+      },
+      {
+        "region": 48,
+        "machineCellCount": 464,
+        "tealEndpointCells": 19,
+        "bbox": {
+          "x0": 3280,
+          "y0": 1386,
+          "x1": 3859,
+          "y1": 1687
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 0.981,
+        "machineRowBands": 23,
+        "nearestGate": 427,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 180.0
+      },
+      {
+        "region": 49,
+        "machineCellCount": 511,
+        "tealEndpointCells": 14,
+        "bbox": {
+          "x0": 988,
+          "y0": 1493,
+          "x1": 1450,
+          "y1": 1750
+        },
+        "cellSizePx": "7x8",
+        "axisAlignedFraction": 0.985,
+        "machineRowBands": 30,
+        "nearestGate": 217,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 129.1
+      },
+      {
+        "region": 50,
+        "machineCellCount": 509,
+        "tealEndpointCells": 16,
+        "bbox": {
+          "x0": 100,
+          "y0": 1746,
+          "x1": 660,
+          "y1": 2071
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 0.994,
+        "machineRowBands": 29,
+        "nearestGate": 411,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 245.5
+      },
+      {
+        "region": 51,
+        "machineCellCount": 700,
+        "tealEndpointCells": 41,
+        "bbox": {
+          "x0": 1522,
+          "y0": 1285,
+          "x1": 1702,
+          "y1": 2532
+        },
+        "cellSizePx": "7x8",
+        "axisAlignedFraction": 0.986,
+        "machineRowBands": 107,
+        "nearestGate": 216,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 514.6
+      },
+      {
+        "region": 52,
+        "machineCellCount": 44,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 2279,
+          "y0": 1793,
+          "x1": 2301,
+          "y1": 2024
+        },
+        "cellSizePx": "7x8",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": 22,
+        "nearestGate": 235,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 666.6
+      },
+      {
+        "region": 53,
+        "machineCellCount": 3626,
+        "tealEndpointCells": 128,
+        "bbox": {
+          "x0": 2460,
+          "y0": 1017,
+          "x1": 3070,
+          "y1": 2799
+        },
+        "cellSizePx": "7x8",
+        "axisAlignedFraction": 0.803,
+        "machineRowBands": 198,
+        "nearestGate": 235,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 219.2
+      },
+      {
+        "region": 54,
+        "machineCellCount": 510,
+        "tealEndpointCells": 18,
+        "bbox": {
+          "x0": 3279,
+          "y0": 1745,
+          "x1": 3859,
+          "y1": 2071
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 0.986,
+        "machineRowBands": 29,
+        "nearestGate": 428,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 192.1
+      },
+      {
+        "region": 55,
+        "machineCellCount": 1128,
+        "tealEndpointCells": 28,
+        "bbox": {
+          "x0": 988,
+          "y0": 1792,
+          "x1": 1450,
+          "y1": 2322
+        },
+        "cellSizePx": "7x8",
+        "axisAlignedFraction": 0.985,
+        "machineRowBands": 66,
+        "nearestGate": 215,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 106.7
+      },
+      {
+        "region": 56,
+        "machineCellCount": 464,
+        "tealEndpointCells": 21,
+        "bbox": {
+          "x0": 84,
+          "y0": 2129,
+          "x1": 660,
+          "y1": 2431
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 0.983,
+        "machineRowBands": 25,
+        "nearestGate": 410,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 240.2
+      },
+      {
+        "region": 57,
+        "machineCellCount": 176,
+        "tealEndpointCells": 23,
+        "bbox": {
+          "x0": 2254,
+          "y0": 2067,
+          "x1": 2436,
+          "y1": 2551
+        },
+        "cellSizePx": "7x8",
+        "axisAlignedFraction": 0.955,
+        "machineRowBands": 44,
+        "nearestGate": 237,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 599.5
+      },
+      {
+        "region": 58,
+        "machineCellCount": 457,
+        "tealEndpointCells": 17,
+        "bbox": {
+          "x0": 3299,
+          "y0": 2130,
+          "x1": 3859,
+          "y1": 2430
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": 25,
+        "nearestGate": 429,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 186.0
+      },
+      {
+        "region": 59,
+        "machineCellCount": 1030,
+        "tealEndpointCells": 41,
+        "bbox": {
+          "x0": 914,
+          "y0": 2323,
+          "x1": 1482,
+          "y1": 2798
+        },
+        "cellSizePx": "8x8",
+        "axisAlignedFraction": 0.728,
+        "machineRowBands": null,
+        "nearestGate": 213,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 90.6
+      },
+      {
+        "region": 60,
+        "machineCellCount": 465,
+        "tealEndpointCells": 54,
+        "bbox": {
+          "x0": 1660,
+          "y0": 2402,
+          "x1": 2275,
+          "y1": 2691
+        },
+        "cellSizePx": "8x7",
+        "axisAlignedFraction": 0.951,
+        "machineRowBands": 17,
+        "nearestGate": 209,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 560.4
+      },
+      {
+        "region": 61,
+        "machineCellCount": 321,
+        "tealEndpointCells": 22,
+        "bbox": {
+          "x0": 221,
+          "y0": 2487,
+          "x1": 662,
+          "y1": 2791
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 0.969,
+        "machineRowBands": 24,
+        "nearestGate": 409,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 198.2
+      },
+      {
+        "region": 62,
+        "machineCellCount": 316,
+        "tealEndpointCells": 17,
+        "bbox": {
+          "x0": 3298,
+          "y0": 2489,
+          "x1": 3737,
+          "y1": 2790
+        },
+        "cellSizePx": "11x12",
+        "axisAlignedFraction": 0.987,
+        "machineRowBands": 24,
+        "nearestGate": 430,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 169.3
+      },
+      {
+        "region": 63,
+        "machineCellCount": 200,
+        "tealEndpointCells": 15,
+        "bbox": {
+          "x0": 1164,
+          "y0": 2688,
+          "x1": 1482,
+          "y1": 2992
+        },
+        "cellSizePx": "9x10",
+        "axisAlignedFraction": 0.942,
+        "machineRowBands": 115,
+        "nearestGate": 212,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 129.5
+      },
+      {
+        "region": 64,
+        "machineCellCount": 98,
+        "tealEndpointCells": 13,
+        "bbox": {
+          "x0": 1422,
+          "y0": 2795,
+          "x1": 1615,
+          "y1": 3053
+        },
+        "cellSizePx": "9x8",
+        "axisAlignedFraction": 0.857,
+        "machineRowBands": 35,
+        "nearestGate": 211,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 157.8
+      },
+      {
+        "region": 65,
+        "machineCellCount": 306,
+        "tealEndpointCells": 9,
+        "bbox": {
+          "x0": 1652,
+          "y0": 2723,
+          "x1": 1814,
+          "y1": 3054
+        },
+        "cellSizePx": "8x7",
+        "axisAlignedFraction": 0.98,
+        "machineRowBands": 20,
+        "nearestGate": 210,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 218.0
+      },
+      {
+        "region": 66,
+        "machineCellCount": 438,
+        "tealEndpointCells": 13,
+        "bbox": {
+          "x0": 1854,
+          "y0": 2744,
+          "x1": 2104,
+          "y1": 3054
+        },
+        "cellSizePx": "8x8",
+        "axisAlignedFraction": 0.984,
+        "machineRowBands": 19,
+        "nearestGate": 209,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 223.6
+      },
+      {
+        "region": 67,
+        "machineCellCount": 303,
+        "tealEndpointCells": 15,
+        "bbox": {
+          "x0": 2135,
+          "y0": 2722,
+          "x1": 2303,
+          "y1": 3072
+        },
+        "cellSizePx": "8x7",
+        "axisAlignedFraction": 0.983,
+        "machineRowBands": 21,
+        "nearestGate": 208,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 209.5
+      },
+      {
+        "region": 68,
+        "machineCellCount": 55,
+        "tealEndpointCells": 10,
+        "bbox": {
+          "x0": 2342,
+          "y0": 2777,
+          "x1": 2398,
+          "y1": 3054
+        },
+        "cellSizePx": "8x7",
+        "axisAlignedFraction": 0.891,
+        "machineRowBands": 17,
+        "nearestGate": 207,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 184.9
+      },
+      {
+        "region": 69,
+        "machineCellCount": 202,
+        "tealEndpointCells": 17,
+        "bbox": {
+          "x0": 2477,
+          "y0": 2687,
+          "x1": 2799,
+          "y1": 2998
+        },
+        "cellSizePx": "9x10",
+        "axisAlignedFraction": 0.927,
+        "machineRowBands": null,
+        "nearestGate": 240,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 203.8
+      },
+      {
+        "region": 70,
+        "machineCellCount": 109,
+        "tealEndpointCells": 27,
+        "bbox": {
+          "x0": 372,
+          "y0": 2850,
+          "x1": 686,
+          "y1": 3041
+        },
+        "cellSizePx": "12x13",
+        "axisAlignedFraction": 0.734,
+        "machineRowBands": null,
+        "nearestGate": 408,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 117.5
+      },
+      {
+        "region": 71,
+        "machineCellCount": 105,
+        "tealEndpointCells": 22,
+        "bbox": {
+          "x0": 3259,
+          "y0": 2849,
+          "x1": 3561,
+          "y1": 3042
+        },
+        "cellSizePx": "13x13",
+        "axisAlignedFraction": 0.705,
+        "machineRowBands": null,
+        "nearestGate": 431,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 145.5
+      },
+      {
+        "region": 72,
+        "machineCellCount": 51,
+        "tealEndpointCells": 7,
+        "bbox": {
+          "x0": 693,
+          "y0": 3016,
+          "x1": 888,
+          "y1": 3246
+        },
+        "cellSizePx": "15x14",
+        "axisAlignedFraction": 0.941,
+        "machineRowBands": 35,
+        "nearestGate": 407,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 166.3
+      },
+      {
+        "region": 73,
+        "machineCellCount": 22,
+        "tealEndpointCells": 5,
+        "bbox": {
+          "x0": 1174,
+          "y0": 3059,
+          "x1": 1261,
+          "y1": 3157
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.955,
+        "machineRowBands": 18,
+        "nearestGate": 324,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 123.2
+      },
+      {
+        "region": 74,
+        "machineCellCount": 39,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 1287,
+          "y0": 3104,
+          "x1": 1445,
+          "y1": 3200
+        },
+        "cellSizePx": "11x11",
+        "axisAlignedFraction": 0.923,
+        "machineRowBands": 29,
+        "nearestGate": 324,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 111.2
+      },
+      {
+        "region": 75,
+        "machineCellCount": 39,
+        "tealEndpointCells": 11,
+        "bbox": {
+          "x0": 1476,
+          "y0": 3147,
+          "x1": 1632,
+          "y1": 3230
+        },
+        "cellSizePx": "11x9",
+        "axisAlignedFraction": 0.795,
+        "machineRowBands": 19,
+        "nearestGate": 323,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 122.2
+      },
+      {
+        "region": 76,
+        "machineCellCount": 34,
+        "tealEndpointCells": 5,
+        "bbox": {
+          "x0": 1676,
+          "y0": 3180,
+          "x1": 1799,
+          "y1": 3253
+        },
+        "cellSizePx": "10x8",
+        "axisAlignedFraction": 0.971,
+        "machineRowBands": null,
+        "nearestGate": 322,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 93.2
+      },
+      {
+        "region": 77,
+        "machineCellCount": 30,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 1843,
+          "y0": 3180,
+          "x1": 1956,
+          "y1": 3230
+        },
+        "cellSizePx": "10x8",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": null,
+        "nearestGate": 321,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 100.2
+      },
+      {
+        "region": 78,
+        "machineCellCount": 30,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 2004,
+          "y0": 3181,
+          "x1": 2116,
+          "y1": 3231
+        },
+        "cellSizePx": "10x8",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": null,
+        "nearestGate": 208,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 151.5
+      },
+      {
+        "region": 79,
+        "machineCellCount": 34,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 2160,
+          "y0": 3181,
+          "x1": 2284,
+          "y1": 3254
+        },
+        "cellSizePx": "10x8",
+        "axisAlignedFraction": 0.971,
+        "machineRowBands": null,
+        "nearestGate": 336,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 91.6
+      },
+      {
+        "region": 80,
+        "machineCellCount": 43,
+        "tealEndpointCells": 15,
+        "bbox": {
+          "x0": 2328,
+          "y0": 3145,
+          "x1": 2484,
+          "y1": 3253
+        },
+        "cellSizePx": "10x10",
+        "axisAlignedFraction": 0.233,
+        "machineRowBands": null,
+        "nearestGate": 207,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 107.5
+      },
+      {
+        "region": 81,
+        "machineCellCount": 42,
+        "tealEndpointCells": 7,
+        "bbox": {
+          "x0": 2514,
+          "y0": 3078,
+          "x1": 2671,
+          "y1": 3226
+        },
+        "cellSizePx": "11x11",
+        "axisAlignedFraction": 0.905,
+        "machineRowBands": 30,
+        "nearestGate": 240,
+        "nearestGateLevel": 2,
+        "nearestGateDistancePx": 109.5
+      },
+      {
+        "region": 82,
+        "machineCellCount": 22,
+        "tealEndpointCells": 5,
+        "bbox": {
+          "x0": 2698,
+          "y0": 3060,
+          "x1": 2785,
+          "y1": 3134
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.955,
+        "machineRowBands": 17,
+        "nearestGate": 333,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 125.1
+      },
+      {
+        "region": 83,
+        "machineCellCount": 52,
+        "tealEndpointCells": 10,
+        "bbox": {
+          "x0": 3074,
+          "y0": 3035,
+          "x1": 3255,
+          "y1": 3222
+        },
+        "cellSizePx": "15x15",
+        "axisAlignedFraction": 0.942,
+        "machineRowBands": 35,
+        "nearestGate": 433,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 191.9
+      },
+      {
+        "region": 84,
+        "machineCellCount": 57,
+        "tealEndpointCells": 5,
+        "bbox": {
+          "x0": 350,
+          "y0": 3171,
+          "x1": 694,
+          "y1": 3401
+        },
+        "cellSizePx": "18x17",
+        "axisAlignedFraction": 0.93,
+        "machineRowBands": 44,
+        "nearestGate": 407,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 171.2
+      },
+      {
+        "region": 85,
+        "machineCellCount": 90,
+        "tealEndpointCells": 14,
+        "bbox": {
+          "x0": 882,
+          "y0": 3178,
+          "x1": 1183,
+          "y1": 3405
+        },
+        "cellSizePx": "14x14",
+        "axisAlignedFraction": 0.925,
+        "machineRowBands": 56,
+        "nearestGate": 406,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 180.3
+      },
+      {
+        "region": 86,
+        "machineCellCount": 92,
+        "tealEndpointCells": 16,
+        "bbox": {
+          "x0": 2775,
+          "y0": 3162,
+          "x1": 3066,
+          "y1": 3392
+        },
+        "cellSizePx": "14x14",
+        "axisAlignedFraction": 0.957,
+        "machineRowBands": 59,
+        "nearestGate": 333,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 158.7
+      },
+      {
+        "region": 87,
+        "machineCellCount": 90,
+        "tealEndpointCells": 15,
+        "bbox": {
+          "x0": 1213,
+          "y0": 3323,
+          "x1": 1494,
+          "y1": 3491
+        },
+        "cellSizePx": "14x13",
+        "axisAlignedFraction": 0.889,
+        "machineRowBands": 51,
+        "nearestGate": 323,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 174.4
+      },
+      {
+        "region": 88,
+        "machineCellCount": 81,
+        "tealEndpointCells": 20,
+        "bbox": {
+          "x0": 1548,
+          "y0": 3364,
+          "x1": 1807,
+          "y1": 3515
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.926,
+        "machineRowBands": 7,
+        "nearestGate": 322,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 140.7
+      },
+      {
+        "region": 89,
+        "machineCellCount": 29,
+        "tealEndpointCells": 9,
+        "bbox": {
+          "x0": 1837,
+          "y0": 3364,
+          "x1": 1950,
+          "y1": 3491
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.966,
+        "machineRowBands": null,
+        "nearestGate": 321,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 130.0
+      },
+      {
+        "region": 90,
+        "machineCellCount": 30,
+        "tealEndpointCells": 9,
+        "bbox": {
+          "x0": 2009,
+          "y0": 3365,
+          "x1": 2104,
+          "y1": 3515
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.933,
+        "machineRowBands": 7,
+        "nearestGate": 436,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 172.5
+      },
+      {
+        "region": 91,
+        "machineCellCount": 78,
+        "tealEndpointCells": 15,
+        "bbox": {
+          "x0": 2158,
+          "y0": 3364,
+          "x1": 2411,
+          "y1": 3515
+        },
+        "cellSizePx": "12x11",
+        "axisAlignedFraction": 0.962,
+        "machineRowBands": 7,
+        "nearestGate": 335,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 154.4
+      },
+      {
+        "region": 92,
+        "machineCellCount": 90,
+        "tealEndpointCells": 15,
+        "bbox": {
+          "x0": 2464,
+          "y0": 3300,
+          "x1": 2759,
+          "y1": 3498
+        },
+        "cellSizePx": "14x13",
+        "axisAlignedFraction": 0.9,
+        "machineRowBands": 51,
+        "nearestGate": 334,
+        "nearestGateLevel": 3,
+        "nearestGateDistancePx": 116.9
+      },
+      {
+        "region": 93,
+        "machineCellCount": 51,
+        "tealEndpointCells": 6,
+        "bbox": {
+          "x0": 2920,
+          "y0": 3434,
+          "x1": 3224,
+          "y1": 3606
+        },
+        "cellSizePx": "17x17",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": 35,
+        "nearestGate": 520,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 198.6
+      },
+      {
+        "region": 94,
+        "machineCellCount": 53,
+        "tealEndpointCells": 8,
+        "bbox": {
+          "x0": 735,
+          "y0": 3434,
+          "x1": 1064,
+          "y1": 3626
+        },
+        "cellSizePx": "17x16",
+        "axisAlignedFraction": 0.962,
+        "machineRowBands": 35,
+        "nearestGate": 406,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 216.1
+      },
+      {
+        "region": 95,
+        "machineCellCount": 54,
+        "tealEndpointCells": 9,
+        "bbox": {
+          "x0": 1096,
+          "y0": 3586,
+          "x1": 1425,
+          "y1": 3737
+        },
+        "cellSizePx": "16x15",
+        "axisAlignedFraction": 0.815,
+        "machineRowBands": 37,
+        "nearestGate": 405,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 194.3
+      },
+      {
+        "region": 96,
+        "machineCellCount": 19,
+        "tealEndpointCells": 3,
+        "bbox": {
+          "x0": 2184,
+          "y0": 3662,
+          "x1": 2475,
+          "y1": 3687
+        },
+        "cellSizePx": "14x13",
+        "axisAlignedFraction": 0.947,
+        "machineRowBands": null,
+        "nearestGate": 522,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 184.0
+      },
+      {
+        "region": 97,
+        "machineCellCount": 51,
+        "tealEndpointCells": 6,
+        "bbox": {
+          "x0": 2534,
+          "y0": 3608,
+          "x1": 2863,
+          "y1": 3737
+        },
+        "cellSizePx": "16x15",
+        "axisAlignedFraction": 0.843,
+        "machineRowBands": 36,
+        "nearestGate": 521,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 199.0
+      },
+      {
+        "region": 98,
+        "machineCellCount": 18,
+        "tealEndpointCells": 2,
+        "bbox": {
+          "x0": 1486,
+          "y0": 3687,
+          "x1": 1776,
+          "y1": 3687
+        },
+        "cellSizePx": "14x13",
+        "axisAlignedFraction": 1.0,
+        "machineRowBands": null,
+        "nearestGate": 404,
+        "nearestGateLevel": 4,
+        "nearestGateDistancePx": 140.6
+      },
+      {
+        "region": 99,
+        "machineCellCount": 10,
+        "tealEndpointCells": 4,
+        "bbox": {
+          "x0": 1573,
+          "y0": 3747,
+          "x1": 1694,
+          "y1": 3771
+        },
+        "cellSizePx": null,
+        "axisAlignedFraction": null,
+        "machineRowBands": null,
+        "nearestGate": 504,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 139.0
+      },
+      {
+        "region": 100,
+        "machineCellCount": 17,
+        "tealEndpointCells": 3,
+        "bbox": {
+          "x0": 1516,
+          "y0": 3717,
+          "x1": 1781,
+          "y1": 3717
+        },
+        "cellSizePx": "13x12",
+        "axisAlignedFraction": 0.882,
+        "machineRowBands": null,
+        "nearestGate": 504,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 170.0
+      },
+      {
+        "region": 101,
+        "machineCellCount": 9,
+        "tealEndpointCells": 3,
+        "bbox": {
+          "x0": 2255,
+          "y0": 3746,
+          "x1": 2385,
+          "y1": 3747
+        },
+        "cellSizePx": null,
+        "axisAlignedFraction": null,
+        "machineRowBands": null,
+        "nearestGate": 522,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 135.1
+      },
+      {
+        "region": 102,
+        "machineCellCount": 17,
+        "tealEndpointCells": 3,
+        "bbox": {
+          "x0": 2213,
+          "y0": 3717,
+          "x1": 2481,
+          "y1": 3718
+        },
+        "cellSizePx": "13x12",
+        "axisAlignedFraction": 0.882,
+        "machineRowBands": null,
+        "nearestGate": 522,
+        "nearestGateLevel": 5,
+        "nearestGateDistancePx": 172.3
+      }
+    ]
+  },
+  "issuerComparison": {
+    "note": "Post-check comparison column only. No range, threshold or count in this document was tuned to these figures.",
+    "issuerLevelSubtotals": {
+      "上段": 5880,
+      "下段": 11404,
+      "300レベル": 644,
+      "500レベル": 752,
+      "ラムダ": 2272
+    },
+    "issuerLevelSubtotalSum": 20952,
+    "issuerPrintedTotal": 21197,
+    "machineMinusIssuerLevelSum": -1603,
+    "machineRecallAgainstIssuerLevelSum": 0.9235
+  },
+  "limitations": [
+    "Under-segmentation: where a cell outline is broken, or two adjacent outlines merge through antialiasing, two cells label as one component and the machine count falls short. This failure mode can only lower the machine count, never raise it.",
+    "Partially drawn cells at a block edge, and cells whose outline is overdrawn by a printed teal or magenta glyph, can fall below the area floor and be dropped.",
+    "The machine path counts drawn polygons. It cannot read a seat number or a row label and therefore cannot confirm, supply or complete any seat identifier. It is a cross-check only.",
+    "Level ownership per region is reported as a nearest-gate distance only and is explicitly NOT an area assignment: gate proximity mis-assigns outer-ring regions, and area ownership must be read directly from the chart during the human pass.",
+    "Row-band counts are geometric band counts, not issuer 列 labels, and the two need not agree where a block has a staircase edge or a cross-aisle."
+  ],
+  "verdict": {
+    "humanComparisonPerformed": false,
+    "reason": "No human visual transcription pass exists for this configuration yet. This artifact establishes the machine side of the cross-check required by docs/VENUE_DATA_GUIDE.md so that a later human two-pass can be reconciled against it. It is not by itself a production gate result.",
+    "machineStructuralCountPractical": true,
+    "machineStructuralCountPracticalEvidence": "19349 discrete seat cells were recovered from the raster alone, 92.3% of the issuer level-subtotal sum 20952, in 102 separated regions with two clean cell-size families. The \"machine structural count is impractical\" waiver in docs/VENUE_DATA_GUIDE.md must not be used for this venue."
+  },
+  "freezeTimestamp": "2026-09-09T00:00:00+09:00",
+  "_note": "SHA-256 computed over the canonical serialization of this document with _note and machineChecksumSha256 absent.",
+  "machineChecksumSha256": "e1b581a0cd578fffee4ee175fc24ba23aa8829f317f301e2e10c65cb3fa84990"
+}
