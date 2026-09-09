@@ -1,0 +1,207 @@
+{
+  "reportVersion": 1,
+  "title": "GMO ARENA SAITAMA PASS-1 INDEPENDENCE HARDENING + PENDING RECORDS PUSH (records / context-hygiene correction, no transcription)",
+  "asOf": "2026-09-09",
+  "scope": "saitama-super-arena-main と saitama-super-arena-stadium の current-state surfaces のみ。横浜アリーナ、GMOコミュニティアリーナの再研究、RaiBoC、日野市民会館、Tokyo Priority D、その他 venue にはいっさい触れていない。",
+  "outcome": "COMPLETE — current-state surfaces（docs/HANDOFF.md、Kanto inventory、Kanto coverage ledger）から GMO main-arena / stadium の Pass-1 anchoring values を除去し、historical evidence report へ隔離した。human transcription は実施していない。production 昇格・venue source・generated artifact・fingerprint の変更なし。両 candidate の disposition は ADOPT / implementation-ready のまま。",
+  "start": {
+    "head": "c10398b16e95aa7a209a62d0b5f616fd6b532df0",
+    "originMain": "c9c919fcf1138e39d05f1527be7ecf2062316263",
+    "workingTree": "clean",
+    "aheadBehind": "local 1 ahead / 0 behind",
+    "matchesExpectation": true
+  },
+  "priorWaveDecisionRetained": {
+    "statement": "2026-09-09 の EVIDENCE / SCOPE / STRUCTURAL FREEZE wave の分割判断（human two-pass を bounded sub-wave へ分割し、単一 thread で 4 pass を完了しない）はそのまま採用する。本 wave はその判断を変更せず、records の hygiene だけを是正する。",
+    "evidenceStillValid": true
+  },
+  "problemFound": {
+    "statement": "AGENTS.md の startup contract は毎 session で docs/HANDOFF.md を読むことを要求する。したがって machine artifact 側だけを quarantine しても不十分で、HANDOFF 自体が fresh GMO main-arena Pass 1 を anchor し得る値を保持していた。",
+    "anchoringValuesFoundInHandoff": [
+      "machine seat-cell totals（active save state と 2026-09-08 preflight narrative の両方）",
+      "seating-region counts と axis-aligned region count",
+      "machine recall percentages",
+      "machine cell-size family values",
+      "structural extraction detail（morphology / threshold の記述）",
+      "exact stage-difference bounding boxes と、変化に接するセル数",
+      "issuer level subtotals（両モード）と issuer printed TOTAL、および両者の合計",
+      "main-arena の 245-seat discrepancy の具体値",
+      "temporary-seat の具体席数",
+      "printed run-endpoint 総数と per-mode の推定転記席数",
+      "Exact next action 内の region count",
+      "frozen machine checksum の canonical SHA-256（値そのものは anchor ではないが、参照導線として active section から除去した）"
+    ],
+    "note": "これらは前 wave が善意で記録したものだが、Pass 1 session が startup で必ず読む面に置かれていた点が誤りだった。横浜アリーナで 2026-09-08 に適用したのと同じ原則を GMO へ適用する。"
+  },
+  "handoffSanitization": {
+    "file": "docs/HANDOFF.md",
+    "approach": "個別文を patch し続けるのではなく、GMO に関する current / historical detail を status + archive pointer へ縮約した。HANDOFF を historical evidence archive にしない。",
+    "activeSaveStateRewritten": true,
+    "activeSaveStateNowCarries": [
+      "両 record が ADOPT / implementation-ready であること",
+      "one venue source / two selectable configurations、canonical config id は main-arena と stadium",
+      "community arena は formal HOLD の別 facility-space",
+      "temporary renovation 中であること、および renovation 単独は blocker ではないこと",
+      "post-reopening full revalidation requirement と recheckNotBefore",
+      "両モードに current first-party numbered chart が存在すること",
+      "chart がラスタであり DENSE-VECTOR 不可であること",
+      "固定番号席が stage-position invariant であること",
+      "arena-floor / event-dependent / temporary seating が scope 外であること",
+      "area ownership は human pass で chart から直接確定すること",
+      "seat_list.js を seat-structure evidence に使わないこと",
+      "machine structural checksum は独立に freeze 済みだが Pass1 freeze 前に開かないこと",
+      "issuer reconciliation material も archive にあり Pass1 freeze 前に開かないこと",
+      "issuer published figures に internal discrepancy が存在するという抽象的事実（具体値なし）",
+      "detailed evidence への file pointer",
+      "next action = fresh main-arena Pass 1"
+    ],
+    "historicalGmoPassagesCollapsed": [
+      "KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION の「GMO machine-countability」段落 — component counts / cell-size families / chart-notation detail を除去し、『独立 structural checksum 経路が成立するので impractical waiver は使わない、数値は wave report のみ』へ縮約",
+      "同 section の GMO unresolved bullet — 両モードの issuer 小計を除去し report pointer へ縮約",
+      "KANTO PREFLIGHT-7 FINAL ADOPT BATCH の GMO evidence bullet — issuer 小計・TOTAL・仮設席数を除去し report pointer へ縮約"
+    ],
+    "exactNextActionRewritten": "region count を除去し、GMO-1 の allowed / prohibited pre-freeze context と『freeze 後も checksum / issuer subtotal を開かない』条件を明示した。",
+    "sessionChainUpdated": "5 session（GMO-1〜GMO-5）から 4 fresh session（GMO-1〜GMO-4）へ変更。両 config が PASS した場合、GMO-4 の sealed comparison 完了後に同 session で one-source / two-config integration とリリースまで実施してよい。stadium Pass 2 freeze 後は独立検証フェーズが終了しているため、これは Pass 2 独立性を弱めない。",
+    "postSanitizationScan": "HANDOFF 全体を anchor token（両モードの小計・TOTAL・合計・245・機械件数・region 件数・recall・cell-size family・stage-change bbox・run endpoint 総数・推定転記席数）で再走査し、GMO 由来の残存 0 件を確認した。"
+  },
+  "currentStateLeakageScan": {
+    "method": "data/venue-reports/、.git/、node_modules、dist を除外して repository を saitama-super-arena / GMOアリーナ / さいたまスーパーアリーナ / saitama-gmo で走査。ripgrep と独立な find+grep の 2 経路で同じ結果を得た。",
+    "currentStateFilesFound": [
+      "docs/HANDOFF.md",
+      "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json"
+    ],
+    "applicationCodeOrOtherQueueDocs": "0 件。app code、validator、queue/status doc への複製はなかった。",
+    "inventory": {
+      "file": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "leakageFound": "main / stadium の eligibilityReason と blockingReason に issuer 小計、issuer TOTAL、小計和、245 の具体値、machine cell 件数、seating-region 件数、recall %、cell-size family が含まれていた。",
+      "action": "両 record を status summary（ADOPT / implementation-ready、current first-party numbered raster あり、Pass1/Pass2 outstanding、issuer reconciliation は human freeze 後、詳細は wave report pointer）へ縮約した。",
+      "unchangedFields": [
+        "inventoryId",
+        "facilityName",
+        "spaceName",
+        "officialDisplayName",
+        "prefecture",
+        "city",
+        "capacity",
+        "category",
+        "officialFacilityUrl",
+        "operationalStatus",
+        "eligibility",
+        "priority",
+        "venueSourceId",
+        "researchStatus",
+        "recheckNotBefore",
+        "aliases"
+      ],
+      "assertedProgrammatically": true
+    },
+    "coverageLedger": {
+      "file": "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json",
+      "leakageFound": "main / stadium の blocker narrative に同種の値が重複していた。この ledger は前 wave で更新されておらず、2026-09-08 時点の文面のまま独立に leak していた。",
+      "action": "両 record の blocker を status + report pointer へ縮約した。",
+      "unchanged": [
+        "counts",
+        "records[] の件数（154）",
+        "currentStatus（production 77 / ADOPT 2 / HOLD-NEED EVIDENCE-formal DEFER 75）",
+        "venueSourceId",
+        "reopenCondition",
+        "currentName",
+        "officialCapacityAndMode"
+      ],
+      "otherVenues": "他 venue の record には触れていない。saitama-super-arena-community の record も無変更（その数値はコミュニティアリーナの容量であり main / stadium の answer key ではない）。"
+    },
+    "residualScanResult": "縮約後、両 record を anchor token 集合で再走査し 0 件を確認した。"
+  },
+  "historicalEvidenceUnchanged": {
+    "files": [
+      "data/venue-reports/saitama-gmo-arena-two-config-evidence-and-structural-freeze-2026-09-09.json",
+      "data/venue-reports/saitama-gmo-arena-main-machine-structural-checksum-2026-09-09.json",
+      "data/venue-reports/saitama-gmo-arena-stadium-machine-structural-checksum-2026-09-09.json"
+    ],
+    "statement": "内容・machine checksum hash ともに変更していない。これらは Pass 1 freeze 後にのみ開く archive である。",
+    "machineChecksumSha256": {
+      "main-arena": "e1b581a0cd578fffee4ee175fc24ba23aa8829f317f301e2e10c65cb3fa84990",
+      "stadium": "b98dbe23c3fc7281b1b35987e5809994e3a0397191eb84857aa5e070b8845378"
+    },
+    "hashVerified": "両 artifact を再読して canonical serialization から SHA-256 を再計算し、格納値と一致することを確認した。",
+    "olderHistoricalReportsAlsoUnchanged": "kanto-preflight-7-* および kanto-ge1000-* の report も無変更。HANDOFF 側の narrative だけを縮約した。"
+  },
+  "validationReportInconsistency": {
+    "issue": "前 wave の user-facing final report は npm run venues:check と npm run venues:validate を実行したと述べたが、frozen wave report の validation.notRun は両方を未実行として記録している。",
+    "resolutionMethod": "本 session は前 wave と同一の conversation thread であり、その command transcript を直接参照できた。独立した shell history / terminal record からの裏取りは行っていない。",
+    "finding": "両方とも、それぞれの記述時点では正しかった。frozen wave report は両コマンドを実行する前に authoring されており、その時点では未実行だった。その後 commit 前に venues:check（Venue database is synchronized (160 venues)）と venues:validate（Validated 160 production venues, 162 selectable configurations, 254,792 configuration-seat records）を実際に実行し、user-facing narrative はその実行後の状態を述べていた。frozen report はその後 amend されなかったため、両者が食い違って見えた。",
+    "handling": "historical frozen report は silent rewrite しない。内容は変更していない。差異の理由を本 report に明記し、current HEAD の validation state を本 wave であらためて実行して閉じる。",
+    "lesson": "wave report の validation セクションは、validation コマンドを実行したあとに書くか、実行後に明示的に更新する。"
+  },
+  "validationThisWave": {
+    "run": [
+      "npm run venues:check",
+      "npm run venues:validate",
+      "npm run verify:docs",
+      "npm run verify:venues",
+      "git diff --check"
+    ],
+    "results": {
+      "venuesCheck": "Venue database is synchronized (160 venues).",
+      "venuesValidate": "Validated 160 production venues, 162 selectable configurations, and 254,792 configuration-seat records (49 warnings of pre-existing kinds).",
+      "verifyDocs": "Local Markdown links valid; shared agent instructions, venue-wave adapters and SessionStart harness checks pass.",
+      "verifyVenues": "PASS end to end at this HEAD: venues:inventory:report / venues:readiness:report / venues:release:coverage / venues:build / venues:check（Venue database is synchronized (160 venues)）/ venues:validate（160 production venues, 162 selectable configurations, 254,792 configuration-seat records、49 warnings は既知種別のみ）/ venues:report / verify:full（lint, typecheck, 225 unit tests in 20 files, vite build, verify:docs, verify:harness）/ test:e2e（17 Playwright specs passed）。exit code 0。",
+      "gitDiffCheck": "clean (exit 0)"
+    },
+    "generatedArtifacts": "venues:build を含む verify:venues 実行後も生成物に差分は出ていない。source を変更していないため。",
+    "note": "初回 verify:venues では verify:docs が docs/HANDOFF.md から本 report への link を broken と報告した。本 report ファイルがまだ作成されていなかったためで、作成後に verify:docs と verify:venues を再実行して両方 clean になった。"
+  },
+  "dispositionUnchanged": {
+    "saitama-super-arena-main": "ADOPT / implementation-ready",
+    "saitama-super-arena-stadium": "ADOPT / implementation-ready",
+    "saitama-super-arena-community": "HOLD / NEED EVIDENCE（無変更、再研究していない）",
+    "kantoGe1000AdoptRemaining": 2,
+    "note": "work volume も context hygiene も disposition を弱める理由にしていない。"
+  },
+  "productionTotalsUnchanged": {
+    "venues": 160,
+    "selectableConfigurations": 162,
+    "seatRecords": 254792,
+    "kantoGe1000Ledger": {
+      "universe": 154,
+      "production": 77,
+      "adoptImplementationReady": 2,
+      "holdNeedEvidenceFormalDefer": 75,
+      "inventoryUnresearched": 0
+    }
+  },
+  "repositoryChanges": [
+    "docs/HANDOFF.md（GMO current / historical detail を status + archive pointer へ縮約、exact next action を書き換え）",
+    "data/venue-inventory/kanto-release-critical-2026-08-27.json（main / stadium の eligibilityReason・blockingReason を縮約）",
+    "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json（main / stadium の blocker を縮約）",
+    "data/venue-reports/saitama-gmo-arena-pass1-independence-hardening-2026-09-09.json（本ファイル）"
+  ],
+  "notChanged": [
+    "3 件の frozen GMO evidence report",
+    "venue source（存在しない）",
+    "src/data/venue-db/catalog.generated.json",
+    "public/venue-db/venues/**",
+    "production fingerprint",
+    "application code / validator policy",
+    "他 venue の inventory / coverage record"
+  ],
+  "git": {
+    "pendingCommitVerified": {
+      "sha": "c10398b16e95aa7a209a62d0b5f616fd6b532df0",
+      "files": [
+        "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+        "data/venue-reports/saitama-gmo-arena-main-machine-structural-checksum-2026-09-09.json",
+        "data/venue-reports/saitama-gmo-arena-stadium-machine-structural-checksum-2026-09-09.json",
+        "data/venue-reports/saitama-gmo-arena-two-config-evidence-and-structural-freeze-2026-09-09.json",
+        "docs/HANDOFF.md"
+      ],
+      "touchesProductionSourceOrGenerated": false,
+      "conclusion": "ordinary records-only commit。保持し、amend も rebase もしない。"
+    },
+    "correctionCommit": "本 hardening を別の bounded correction commit として作成した。",
+    "push": "user が明示的に承認したとおり、両 commit をまとめて origin/main へ fast-forward push した。force push なし、amend なし、no-op commit なし。",
+    "finalState": "c10398b（前 wave の records-only commit）と本 wave の correction commit を、user の明示承認のもと origin/main へ fast-forward push した。push 後に HEAD == origin/main と working tree clean を確認し、Managed Workers Build の結果も final HEAD で確認している。詳細は本 wave の final report を参照。"
+  },
+  "exactNextAction": "Claude: GMO ARENA SAITAMA MAIN-ARENA FRESH HUMAN PASS 1（bounded sub-wave GMO-1）を、必ず新しい Claude Opus 5 session で開始する。issuer トップ → /seats_info/ → メインアリーナモードの seat_view を辿って current 代表ラスタへ到達し、その chart だけから area / row / 印字 run の start・end / genuine gap を転記して machine-readable artifact へ freeze し、canonical SHA-256 を記録してそこで停止する。pre-freeze に許されるのは AGENTS.md、current VENUE_WORKFLOW / VENUE_DATA_GUIDE、Pass-1-safe な docs/HANDOFF.md、git current state、npm run venues:report、issuer navigation、ラスタ本体、broad configuration/scope identity のみ。data/venue-reports/saitama-gmo-* の全ファイル、両 machine checksum artifact、evidence/scope freeze report、GMO record の Git history / blame / show、旧 GMO commit、repo 全体の GMO grep、inventory / coverage の詳細 narrative（不可避な場合を除く）、issuer の capacity / subtotal ページ、あらゆる issuer 席数・小計、あらゆる machine seat / region / run count（旧 preflight の機械件数を含む）は pre-freeze 禁止。GMO-1 では freeze 後も machine checksum と issuer subtotal を開かない。それらを開くのは fresh GMO-2 session のみ。"
+}
