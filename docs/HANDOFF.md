@@ -2,13 +2,15 @@
 
 Updated: 2026-09-09 (Asia/Tokyo)
 
-## Active save state — GMO ARENA SAITAMA MAIN-ARENA + STADIUM (ADOPT; evidence and structural freeze complete, transcription not started)
+## Active save state — GMO ARENA SAITAMA MAIN-ARENA + STADIUM (ADOPT; GMO-1 HUMAN PASS 1 — CONTINUE SAME PASS)
 
 **This section is deliberately Pass-1-safe: it carries no seat count, subtotal, region count, machine count or discrepancy value for either GMO configuration.** Those live only in the frozen wave reports named below, which a Pass 1 or Pass 2 session must not open before freezing its own transcription.
 
 `saitama-super-arena-main` and `saitama-super-arena-stadium` **stay ADOPT / implementation-ready** and must be implemented together as **one venue source with two selectable configurations** (`main-arena`, `stadium`), with `saitama-super-arena-main` holding the `venueSourceId`; the eventual production increment is venue +1 / configuration +2. `saitama-super-arena-community` stays formal HOLD / NEED EVIDENCE as a separate facility-space that can operate simultaneously with the main arena, and is not merged into that source.
 
-**Status. No seat has been transcribed for either configuration.** Two bounded waves have run — the 2026-09-08 preflight and the 2026-09-09 evidence / scope / structural freeze — and between them currentness, chart provenance, configuration scope, stage-position invariance, the independent machine structural checksum and the issuer reconciliation material are complete and frozen. No venue source exists, no generated catalog, runtime detail, fingerprint, ledger or production total changed, and nothing was deployed. The outstanding work is the fresh independent human visual two-pass for each configuration.
+**Status. `GMO-1` main-arena Human Pass 1 is IN PROGRESS and PARTIAL — it is not frozen.** Three bounded waves have run: the 2026-09-08 preflight, the 2026-09-09 evidence / scope / structural freeze, and the 2026-09-09 `GMO-1` main-arena Pass 1 sub-wave. Between the first two, currentness, chart provenance, configuration scope, stage-position invariance, the independent machine structural checksum and the issuer reconciliation material are complete and frozen. `GMO-1` then began the main-arena human visual Pass 1 from a freshly navigated current first-party chart and stopped partway on transcription volume, saving a quarantined `PARTIAL` working artifact. **No seat has been transcribed for `stadium`.** No venue source exists, no generated catalog, runtime detail, fingerprint, ledger or production total changed, and nothing was deployed.
+
+`GMO-1` **PARTIAL Pass 1 working artifact** — quarantined answer-key material; **do not open it before your own transcription is frozen**: [`saitama-gmo-arena-main-human-pass1-partial-2026-09-09.json`](../data/venue-reports/saitama-gmo-arena-main-human-pass1-partial-2026-09-09.json), canonical SHA-256 `048a3ea24f3cce71e030a4bf32f59295bdfd0cd07141e3b92e09580b0e867e2a`. It records the fresh issuer navigation path and chart provenance, the human visual method actually used, how area ownership was resolved from the chart, the completed-region ledger, and the explicit list of regions still to transcribe. Its pre-freeze independence audit is clean: no issuer subtotal or total, no machine structural checksum, no historical GMO wave report, no GMO Git history or repository-wide GMO grep, and no `seat_list.js` was opened. **It is a working artifact, not a completed Pass 1**: it does not satisfy the Pass 1 leg of the two-pass requirement, must not be compared with machine or issuer evidence, and must not be treated as frozen.
 
 What is settled, and safe to carry into a Pass 1 session:
 
@@ -29,10 +31,13 @@ Production is unchanged at **160 venues / 162 selectable configurations / 254,79
 
 Unresolved items:
 
-- **`saitama-super-arena-main` + `saitama-super-arena-stadium` remain ADOPT.** Outstanding work is exactly the `GMO-1` … `GMO-4` chain above.
+- **`saitama-super-arena-main` + `saitama-super-arena-stadium` remain ADOPT.** Outstanding work is exactly the `GMO-1` … `GMO-4` chain above, with `GMO-1` now mid-pass rather than unstarted.
+- **`GMO-1` main-arena Pass 1 is unfinished.** The continuation session must read the `PARTIAL` artifact named above and continue **the same Pass 1** over the regions its ledger lists as outstanding, then freeze. Do not restart Pass 1 from scratch, do not begin `GMO-2`, and do not convert unfinished transcription volume into a `HOLD` or `NEED EVIDENCE` disposition.
 - **The issuer's `main-arena` internal figure discrepancy is unreconciled** and must be resolved at `GMO-2`, without fitting.
-- **Area ownership for both configurations is unfixed** and must be read from the chart at Pass 1.
+- **Area ownership for `stadium` is unfixed** and must be read from the chart at its Pass 1. For `main-arena`, `GMO-1` resolved ownership from the chart's own asset and recorded how in the `PARTIAL` artifact; the continuation session should reuse that resolution rather than re-deriving it.
 - **`saitama-super-arena-community`** stays formal HOLD / NEED EVIDENCE; the issuer publishes no numbered chart and no `seat_view` page for it. RaiBoC and `tokyo-official-1121` 日野市民会館 remain a separate remediation queue. Tokyo Priority D stays queued behind Kanto ADOPT closure.
+
+**Exact next action: `Claude: GMO ARENA SAITAMA MAIN-ARENA HUMAN PASS 1 CONTINUATION (GMO-1)`** — a fresh session that reads only this file, the canonical `AGENTS.md` / workflow / data-guide documents and the `PARTIAL` artifact named above, re-navigates the current first-party chart, continues the same main-arena Human Pass 1 over the outstanding regions its ledger lists, and freezes when the whole declared scope is transcribed. It must not open the machine structural checksum, any issuer subtotal or total, or any historical GMO wave report, and must not start `GMO-2`.
 
 ## Recent completed work — YOKOHAMA ARENA A-PATTERN FRESH INDEPENDENT PASS-2 + PRODUCTION CLOSURE (2026-09-09, production)
 
@@ -243,7 +248,7 @@ The `KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 4` (2026-09-04) is complete
 
 ## Current exact next action
 
-**Superseded — the one current exact next action is the one stated at the end of this file (`Claude: GMO ARENA SAITAMA MAIN-ARENA SINGLE-CONFIG BOUNDED IMPLEMENTATION`). The rest of this section is retained as the historical record of earlier waves.**
+**Superseded — the one current exact next action is the one stated in the active save state at the top of this file (`Claude: GMO ARENA SAITAMA MAIN-ARENA HUMAN PASS 1 CONTINUATION (GMO-1)`). The rest of this section is retained as the historical record of earlier waves.**
 
 The next action recorded at the time was **`CODEX: KANTO >=1000 HIGH-IMPACT UNRESEARCHED PREFLIGHT 6`** — continue the formal accounting of the remaining **28** `inventory-unresearched` Kanto >=1,000 records. Rerank that live pool, confirm first-party currentness before any seat assessment, and open candidates until the wave's own stop rule is reached, recording for each a PRODUCTION-candidate (ADOPT), HOLD, NEED EVIDENCE or formal DEFER disposition with its exact blocker and reopen condition. Preflight only: transcribe no seat, promote nothing, and change no source, range, fingerprint, generated artifact or production total. `gunma-maebashi-culture-main` stays a formal SOURCE HOLD until a working current official issuer page and a complete numbered chart exist — do not bridge it with capacity, an old chart or a third-party map. RaiBoC remains a separate remediation queue, and Tokyo Priority D remains after the Kanto >=1,000 formal accounting is complete.
 

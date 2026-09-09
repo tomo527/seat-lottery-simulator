@@ -1,0 +1,4573 @@
+{
+ "artifactType": "human-visual-pass1-working-table",
+ "status": "PARTIAL",
+ "completeness": "draft",
+ "quarantined": true,
+ "quarantineNote": "Answer-key material for GMO ARENA SAITAMA main-arena Human Pass 1. A Pass 2 session must not open this file before freezing its own independent transcription. This file is a PARTIAL Pass 1 working artifact, not a completed frozen Pass 1.",
+ "inventoryId": "saitama-super-arena-main",
+ "venueName": "GMOアリーナさいたま",
+ "configuration": "main-arena",
+ "wave": "GMO-1 MAIN-ARENA FRESH HUMAN PASS 1 (bounded sub-wave)",
+ "createdAt": "2026-09-09",
+ "timezone": "Asia/Tokyo",
+ "issuerNavigation": {
+  "method": "fresh current first-party navigation; no pinned URL was used as the entry point",
+  "path": [
+   "https://www.saitama-arena.co.jp/ (issuer top; title GMOアリーナさいたま; footer Copyright (c) 2026 SAITAMA ARENA Co.,Ltd.)",
+   "-> 客席確認・案内 /seats_info/",
+   "-> メインアリーナモード / エンドステージ1 -> /seat_view/arena_end01/",
+   "-> embedded chart object ../img/img-map_arena_end01.svg",
+   "-> representative raster referenced by that SVG: img-map_arena_end01.png"
+  ],
+  "capacityOrSubtotalPagesVisited": false,
+  "seatListJsOpened": false
+ },
+ "chartProvenance": {
+  "rasterUrl": "https://www.saitama-arena.co.jp/seat_view/img/img-map_arena_end01.png",
+  "rasterBytes": 540763,
+  "rasterSha256": "6d9cc55018b11f9901cab697cc6427f7350c3bbc9c4414efc47f83ef8e1aaf31",
+  "rasterLastModified": "Tue, 24 Mar 2026 09:06:36 GMT",
+  "rasterPixelSize": "3967x3864",
+  "svgUrl": "https://www.saitama-arena.co.jp/seat_view/img/img-map_arena_end01.svg",
+  "svgBytes": 174100,
+  "svgSha256": "eac52930b0d5321afa82b389f74f52eb5d96780ed9dc365baef10c91f6bce379",
+  "svgLastModified": "Fri, 22 Nov 2019 07:02:01 GMT",
+  "fetchedAt": "2026-09-09",
+  "note": "Both assets were re-fetched fresh in this session by following the navigation path above."
+ },
+ "currentnessCheck": {
+  "scope": "narrow, per task section 5",
+  "identityConfirmed": "Same facility: GMOアリーナさいたま / SAITAMA ARENA Co.,Ltd.",
+  "currentSeatChartReachable": true,
+  "temporaryRenovationStateObserved": "The issuer schedule surface shows only けやきひろば activity, and the top page carries a 2027年春、始動 smart-arena message, consistent with the temporary renovation state already recorded upstream. Temporary renovation alone is not a stop condition.",
+  "explicitSeatingStructureChangeStatementFound": false,
+  "stopTriggered": false
+ },
+ "humanVisualMethod": {
+  "allowedAidsUsed": [
+   "high-resolution raster rendering composited over white, which is the issuer rendering ground (palette index 0 is fully transparent)",
+   "crop",
+   "enlargement up to 26x",
+   "rotation / deskew for the curved outer arcs",
+   "local tangent alignment by per-segment rotation angle",
+   "single-column strips rotated 90 degrees to count cells along a run"
+  ],
+  "prohibitedTechniquesNotUsed": [
+   "connected-component seat counting used as the answer",
+   "machine seat-cell extraction",
+   "OCR auto-transcription",
+   "machine-generated row/range table",
+   "geometry interpolation",
+   "symmetry completion",
+   "neighbour-row completion",
+   "ignoring gaps between endpoints",
+   "capacity fitting"
+  ],
+  "readingContract": "Every seat number and every row identifier in this table was read from printing on the chart. Within a contiguous printed run the numbering was verified sequential by counting cells between two printed endpoints. Where a run boundary carried a printed number on only one side, the opposite endpoint was obtained by counting cells inside that same contiguous run from its own printed anchor - never by extrapolating across a boundary, and never from a neighbouring row.",
+  "keyStructuralFinding": "Numbering discontinuities on this chart are NOT proportional to the drawn gap. Verified cases: rows A-H at the left flank run 341-335 then 333 across a sub-cell-width separator (334 absent); the 320|319 aisle is physically wide yet skips no number; and at the top-right level-200 block two physically adjacent cells carry 488 and 608. No endpoint was therefore ever inferred from spacing."
+ },
+ "areaOwnership": {
+  "issue": "The raster prints no area or level name anywhere.",
+  "resolution": "Ownership was taken from the chart's own SVG layer, which declares four issuer level groups - lv_200, lv_300, lv_400, lv_500 - each containing the highlight regions covering that level's seating. This is issuer-declared structure inside the chart asset itself, corroborated by the chart's visible printed gate numbers, which fall in the matching 2xx / 3xx / 4xx / 5xx families.",
+  "gateProximityUsed": false,
+  "priorKnowledgeUsed": false,
+  "seatListJsUsed": false,
+  "levelGroupsObserved": {
+   "lv_200": 121,
+   "lv_300": 20,
+   "lv_400": 62,
+   "lv_500": 20,
+   "arena": 1
+  },
+  "identityModel": "(level, rowLabel, seatNumber). Row labels are printed: letters A-L in the level-200 arena-adjacent tier, integers elsewhere. No repository-invented area name was created, and none is required for uniqueness.",
+  "unresolvedAreaOwnership": 0
+ },
+ "scope": {
+  "included": "fixed printed numbered seats only",
+  "excluded": [
+   "event-dependent arena-floor seating (the issuer states fixed seats are partly retracted to install arena seating and that the affected seats, blocks, rows and seat numbers must be asked of the event organiser)",
+   "temporary seating",
+   "unnumbered accessibility positions",
+   "community arena",
+   "stadium mode"
+  ],
+  "numberedAccessibilitySeatsFound": "none identified as separately printed within the regions traversed"
+ },
+ "levelSummary": {
+  "200": {
+   "runs": 342,
+   "expandedSeatKeys": 3388,
+   "rowLabels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19"
+   ]
+  },
+  "300": {
+   "runs": 72,
+   "expandedSeatKeys": 636,
+   "rowLabels": [
+    "1",
+    "2",
+    "3"
+   ]
+  },
+  "500": {
+   "runs": 58,
+   "expandedSeatKeys": 752,
+   "rowLabels": [
+    "1",
+    "2",
+    "3"
+   ]
+  }
+ },
+ "table": [
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 1,
+   "seatFrom": 335,
+   "seatTo": 341,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 2,
+   "seatFrom": 326,
+   "seatTo": 333,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 3,
+   "seatFrom": 320,
+   "seatTo": 324,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 4,
+   "seatFrom": 309,
+   "seatTo": 319,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 5,
+   "seatFrom": 297,
+   "seatTo": 307,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 6,
+   "seatFrom": 289,
+   "seatTo": 293,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 7,
+   "seatFrom": 280,
+   "seatTo": 287,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 8,
+   "seatFrom": 272,
+   "seatTo": 278,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 1,
+   "seatFrom": 345,
+   "seatTo": 348,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 2,
+   "seatFrom": 335,
+   "seatTo": 341,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 3,
+   "seatFrom": 326,
+   "seatTo": 333,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 4,
+   "seatFrom": 320,
+   "seatTo": 324,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 5,
+   "seatFrom": 309,
+   "seatTo": 319,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 6,
+   "seatFrom": 297,
+   "seatTo": 307,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 7,
+   "seatFrom": 289,
+   "seatTo": 293,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 8,
+   "seatFrom": 280,
+   "seatTo": 287,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 9,
+   "seatFrom": 272,
+   "seatTo": 278,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 10,
+   "seatFrom": 267,
+   "seatTo": 270,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 1,
+   "seatFrom": 345,
+   "seatTo": 351,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 2,
+   "seatFrom": 335,
+   "seatTo": 341,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 3,
+   "seatFrom": 326,
+   "seatTo": 333,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 4,
+   "seatFrom": 320,
+   "seatTo": 324,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 5,
+   "seatFrom": 309,
+   "seatTo": 319,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 6,
+   "seatFrom": 297,
+   "seatTo": 307,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 7,
+   "seatFrom": 289,
+   "seatTo": 293,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 8,
+   "seatFrom": 280,
+   "seatTo": 287,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 9,
+   "seatFrom": 272,
+   "seatTo": 278,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 10,
+   "seatFrom": 264,
+   "seatTo": 270,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 1,
+   "seatFrom": 345,
+   "seatTo": 355,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 2,
+   "seatFrom": 335,
+   "seatTo": 341,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 3,
+   "seatFrom": 326,
+   "seatTo": 333,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 4,
+   "seatFrom": 320,
+   "seatTo": 324,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 5,
+   "seatFrom": 309,
+   "seatTo": 319,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 6,
+   "seatFrom": 297,
+   "seatTo": 307,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 7,
+   "seatFrom": 289,
+   "seatTo": 293,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 8,
+   "seatFrom": 280,
+   "seatTo": 287,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 9,
+   "seatFrom": 272,
+   "seatTo": 278,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 10,
+   "seatFrom": 260,
+   "seatTo": 270,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 1,
+   "seatFrom": 345,
+   "seatTo": 360,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 2,
+   "seatFrom": 335,
+   "seatTo": 341,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 3,
+   "seatFrom": 326,
+   "seatTo": 333,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 4,
+   "seatFrom": 320,
+   "seatTo": 324,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 5,
+   "seatFrom": 309,
+   "seatTo": 319,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 6,
+   "seatFrom": 297,
+   "seatTo": 307,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 7,
+   "seatFrom": 289,
+   "seatTo": 293,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 8,
+   "seatFrom": 280,
+   "seatTo": 287,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 9,
+   "seatFrom": 272,
+   "seatTo": 278,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 10,
+   "seatFrom": 255,
+   "seatTo": 270,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 1,
+   "seatFrom": 345,
+   "seatTo": 364,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 2,
+   "seatFrom": 335,
+   "seatTo": 341,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 3,
+   "seatFrom": 326,
+   "seatTo": 333,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 4,
+   "seatFrom": 320,
+   "seatTo": 324,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 5,
+   "seatFrom": 309,
+   "seatTo": 319,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 6,
+   "seatFrom": 297,
+   "seatTo": 307,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 7,
+   "seatFrom": 289,
+   "seatTo": 293,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 8,
+   "seatFrom": 280,
+   "seatTo": 287,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 9,
+   "seatFrom": 272,
+   "seatTo": 278,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 10,
+   "seatFrom": 251,
+   "seatTo": 270,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 1,
+   "seatFrom": 345,
+   "seatTo": 366,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 2,
+   "seatFrom": 335,
+   "seatTo": 341,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 3,
+   "seatFrom": 326,
+   "seatTo": 333,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 4,
+   "seatFrom": 320,
+   "seatTo": 324,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 5,
+   "seatFrom": 309,
+   "seatTo": 319,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 6,
+   "seatFrom": 297,
+   "seatTo": 307,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 7,
+   "seatFrom": 289,
+   "seatTo": 293,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 8,
+   "seatFrom": 280,
+   "seatTo": 287,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 9,
+   "seatFrom": 272,
+   "seatTo": 278,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 10,
+   "seatFrom": 249,
+   "seatTo": 270,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 1,
+   "seatFrom": 345,
+   "seatTo": 366,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 2,
+   "seatFrom": 335,
+   "seatTo": 341,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 3,
+   "seatFrom": 326,
+   "seatTo": 333,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 4,
+   "seatFrom": 320,
+   "seatTo": 324,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 5,
+   "seatFrom": 309,
+   "seatTo": 319,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 6,
+   "seatFrom": 297,
+   "seatTo": 307,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 7,
+   "seatFrom": 289,
+   "seatTo": 293,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 8,
+   "seatFrom": 280,
+   "seatTo": 287,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 9,
+   "seatFrom": 272,
+   "seatTo": 278,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 10,
+   "seatFrom": 249,
+   "seatTo": 270,
+   "chartRegion": "x1480-1800,y1240-2760",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 1,
+   "seatFrom": 716,
+   "seatTo": 722,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 2,
+   "seatFrom": 724,
+   "seatTo": 731,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 3,
+   "seatFrom": 733,
+   "seatTo": 737,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 4,
+   "seatFrom": 741,
+   "seatTo": 751,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 5,
+   "seatFrom": 753,
+   "seatTo": 763,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 6,
+   "seatFrom": 767,
+   "seatTo": 771,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 7,
+   "seatFrom": 773,
+   "seatTo": 780,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 8,
+   "seatFrom": 782,
+   "seatTo": 788,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 1,
+   "seatFrom": 709,
+   "seatTo": 712,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 2,
+   "seatFrom": 716,
+   "seatTo": 722,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 3,
+   "seatFrom": 724,
+   "seatTo": 731,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 4,
+   "seatFrom": 733,
+   "seatTo": 737,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 5,
+   "seatFrom": 741,
+   "seatTo": 751,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 6,
+   "seatFrom": 753,
+   "seatTo": 763,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 7,
+   "seatFrom": 767,
+   "seatTo": 771,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 8,
+   "seatFrom": 773,
+   "seatTo": 780,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 9,
+   "seatFrom": 782,
+   "seatTo": 788,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 10,
+   "seatFrom": 792,
+   "seatTo": 795,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 1,
+   "seatFrom": 706,
+   "seatTo": 712,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 2,
+   "seatFrom": 716,
+   "seatTo": 722,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 3,
+   "seatFrom": 724,
+   "seatTo": 731,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 4,
+   "seatFrom": 733,
+   "seatTo": 737,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 5,
+   "seatFrom": 741,
+   "seatTo": 751,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 6,
+   "seatFrom": 753,
+   "seatTo": 763,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 7,
+   "seatFrom": 767,
+   "seatTo": 771,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 8,
+   "seatFrom": 773,
+   "seatTo": 780,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 9,
+   "seatFrom": 782,
+   "seatTo": 788,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 10,
+   "seatFrom": 792,
+   "seatTo": 798,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 1,
+   "seatFrom": 702,
+   "seatTo": 712,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 2,
+   "seatFrom": 716,
+   "seatTo": 722,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 3,
+   "seatFrom": 724,
+   "seatTo": 731,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 4,
+   "seatFrom": 733,
+   "seatTo": 737,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 5,
+   "seatFrom": 741,
+   "seatTo": 751,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 6,
+   "seatFrom": 753,
+   "seatTo": 763,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 7,
+   "seatFrom": 767,
+   "seatTo": 771,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 8,
+   "seatFrom": 773,
+   "seatTo": 780,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 9,
+   "seatFrom": 782,
+   "seatTo": 788,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 10,
+   "seatFrom": 792,
+   "seatTo": 802,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 1,
+   "seatFrom": 697,
+   "seatTo": 712,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 2,
+   "seatFrom": 716,
+   "seatTo": 722,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 3,
+   "seatFrom": 724,
+   "seatTo": 731,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 4,
+   "seatFrom": 733,
+   "seatTo": 737,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 5,
+   "seatFrom": 741,
+   "seatTo": 751,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 6,
+   "seatFrom": 753,
+   "seatTo": 763,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 7,
+   "seatFrom": 767,
+   "seatTo": 771,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 8,
+   "seatFrom": 773,
+   "seatTo": 780,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 9,
+   "seatFrom": 782,
+   "seatTo": 788,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 10,
+   "seatFrom": 792,
+   "seatTo": 807,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 1,
+   "seatFrom": 693,
+   "seatTo": 712,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 2,
+   "seatFrom": 716,
+   "seatTo": 722,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 3,
+   "seatFrom": 724,
+   "seatTo": 731,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 4,
+   "seatFrom": 733,
+   "seatTo": 737,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 5,
+   "seatFrom": 741,
+   "seatTo": 751,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 6,
+   "seatFrom": 753,
+   "seatTo": 763,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 7,
+   "seatFrom": 767,
+   "seatTo": 771,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 8,
+   "seatFrom": 773,
+   "seatTo": 780,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 9,
+   "seatFrom": 782,
+   "seatTo": 788,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 10,
+   "seatFrom": 792,
+   "seatTo": 811,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 1,
+   "seatFrom": 691,
+   "seatTo": 712,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 2,
+   "seatFrom": 716,
+   "seatTo": 722,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 3,
+   "seatFrom": 724,
+   "seatTo": 731,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 4,
+   "seatFrom": 733,
+   "seatTo": 737,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 5,
+   "seatFrom": 741,
+   "seatTo": 751,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 6,
+   "seatFrom": 753,
+   "seatTo": 763,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 7,
+   "seatFrom": 767,
+   "seatTo": 771,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 8,
+   "seatFrom": 773,
+   "seatTo": 780,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 9,
+   "seatFrom": 782,
+   "seatTo": 788,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 10,
+   "seatFrom": 792,
+   "seatTo": 813,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 1,
+   "seatFrom": 691,
+   "seatTo": 712,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 2,
+   "seatFrom": 716,
+   "seatTo": 722,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 3,
+   "seatFrom": 724,
+   "seatTo": 731,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 4,
+   "seatFrom": 733,
+   "seatTo": 737,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 5,
+   "seatFrom": 741,
+   "seatTo": 751,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 6,
+   "seatFrom": 753,
+   "seatTo": 763,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 7,
+   "seatFrom": 767,
+   "seatTo": 771,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 8,
+   "seatFrom": 773,
+   "seatTo": 780,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 9,
+   "seatFrom": 782,
+   "seatTo": 788,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 10,
+   "seatFrom": 792,
+   "seatTo": 813,
+   "chartRegion": "x2180-2560,y1120-2600",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 1,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 2,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 1,
+   "seatFrom": 457,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 483,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 1,
+   "seatFrom": 456,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 484,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 1,
+   "seatFrom": 455,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 485,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 1,
+   "seatFrom": 453,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 487,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 1,
+   "seatFrom": 452,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 1,
+   "seatFrom": 451,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 489,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 1,
+   "seatFrom": 450,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 490,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "I",
+   "runOrdinal": 1,
+   "seatFrom": 448,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "I",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "I",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "I",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 492,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "J",
+   "runOrdinal": 1,
+   "seatFrom": 447,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "J",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "J",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "J",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 493,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "K",
+   "runOrdinal": 1,
+   "seatFrom": 446,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "K",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "K",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "K",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 494,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "L",
+   "runOrdinal": 1,
+   "seatFrom": 445,
+   "seatTo": 457,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "L",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 469,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "L",
+   "runOrdinal": 3,
+   "seatFrom": 471,
+   "seatTo": 482,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "L",
+   "runOrdinal": 4,
+   "seatFrom": 483,
+   "seatTo": 495,
+   "chartRegion": "x1600-2320,y1090-1430",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 1,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "A",
+   "runOrdinal": 2,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 161,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "B",
+   "runOrdinal": 4,
+   "seatFrom": 135,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 162,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "C",
+   "runOrdinal": 4,
+   "seatFrom": 134,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 163,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "D",
+   "runOrdinal": 4,
+   "seatFrom": 133,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 165,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "E",
+   "runOrdinal": 4,
+   "seatFrom": 131,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 166,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "F",
+   "runOrdinal": 4,
+   "seatFrom": 130,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 167,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "G",
+   "runOrdinal": 4,
+   "seatFrom": 129,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 168,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "H",
+   "runOrdinal": 4,
+   "seatFrom": 128,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "I",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 170,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "I",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "I",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "I",
+   "runOrdinal": 4,
+   "seatFrom": 126,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "J",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 171,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "J",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "J",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "J",
+   "runOrdinal": 4,
+   "seatFrom": 125,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "K",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 172,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "K",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "K",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "K",
+   "runOrdinal": 4,
+   "seatFrom": 124,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "L",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 173,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "L",
+   "runOrdinal": 2,
+   "seatFrom": 149,
+   "seatTo": 160,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "L",
+   "runOrdinal": 3,
+   "seatFrom": 136,
+   "seatTo": 147,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "L",
+   "runOrdinal": 4,
+   "seatFrom": 123,
+   "seatTo": 135,
+   "chartRegion": "x1600-2320,y2380-2720",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "1",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "2",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "3",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "4",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "4",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "4",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 618,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "5",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "5",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "5",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 618,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "6",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "6",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "6",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 618,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "7",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "7",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "7",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 619,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "8",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "8",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "8",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 619,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "9",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "9",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "9",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 620,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "10",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "10",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "10",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 620,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "11",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "11",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "11",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 620,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "12",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "12",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "12",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 621,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "13",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "13",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "13",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 621,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "14",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "14",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "14",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 621,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "15",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "15",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "15",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 622,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "16",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "16",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "16",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 622,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "17",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "17",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "17",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 622,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "18",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "18",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "18",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 622,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "medium",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "19",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 488,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "19",
+   "runOrdinal": 2,
+   "seatFrom": 608,
+   "seatTo": 617,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "19",
+   "runOrdinal": 3,
+   "seatFrom": 618,
+   "seatTo": 621,
+   "chartRegion": "x2140-2412,y715-1125",
+   "humanReadConfidence": "high",
+   "note": "483-488 and 608-617 are physically adjacent cells (no drawn gap) but carry a printed numbering discontinuity, marked by two adjacent teal endpoint cells; verified at 14x."
+  },
+  {
+   "level": "200",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "1",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "2",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "3",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "4",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "4",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "5",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "5",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "6",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "6",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "7",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "7",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "8",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "8",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "9",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "9",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "10",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "10",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "11",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "11",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "12",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "12",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "13",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "13",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "14",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "14",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "15",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "15",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "16",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "16",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "17",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "17",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 467,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "17",
+   "runOrdinal": 3,
+   "seatFrom": 478,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "18",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "18",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 467,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "18",
+   "runOrdinal": 3,
+   "seatFrom": 478,
+   "seatTo": 482,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "19",
+   "runOrdinal": 1,
+   "seatFrom": 442,
+   "seatTo": 457,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "200",
+   "rowLabel": "19",
+   "runOrdinal": 2,
+   "seatFrom": 458,
+   "seatTo": 467,
+   "chartRegion": "x1600-2170,y725-1135",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 55,
+   "seatTo": 61,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 2,
+   "seatFrom": 62,
+   "seatTo": 74,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 3,
+   "seatFrom": 75,
+   "seatTo": 79,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 4,
+   "seatFrom": 81,
+   "seatTo": 87,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 5,
+   "seatFrom": 88,
+   "seatTo": 98,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 6,
+   "seatFrom": 99,
+   "seatTo": 108,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 7,
+   "seatFrom": 109,
+   "seatTo": 118,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 8,
+   "seatFrom": 119,
+   "seatTo": 129,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 9,
+   "seatFrom": 130,
+   "seatTo": 136,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 10,
+   "seatFrom": 138,
+   "seatTo": 142,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 11,
+   "seatFrom": 143,
+   "seatTo": 155,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 12,
+   "seatFrom": 156,
+   "seatTo": 162,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 48,
+   "seatTo": 54,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 2,
+   "seatFrom": 35,
+   "seatTo": 47,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 3,
+   "seatFrom": 30,
+   "seatTo": 34,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 4,
+   "seatFrom": 22,
+   "seatTo": 28,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 5,
+   "seatFrom": 11,
+   "seatTo": 21,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 6,
+   "seatFrom": 1,
+   "seatTo": 10,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 7,
+   "seatFrom": 207,
+   "seatTo": 216,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 8,
+   "seatFrom": 196,
+   "seatTo": 206,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 9,
+   "seatFrom": 189,
+   "seatTo": 195,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 10,
+   "seatFrom": 183,
+   "seatTo": 187,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 11,
+   "seatFrom": 170,
+   "seatTo": 182,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "1",
+   "runOrdinal": 12,
+   "seatFrom": 163,
+   "seatTo": 169,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 55,
+   "seatTo": 61,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 2,
+   "seatFrom": 62,
+   "seatTo": 74,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 3,
+   "seatFrom": 75,
+   "seatTo": 79,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 4,
+   "seatFrom": 81,
+   "seatTo": 87,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 5,
+   "seatFrom": 88,
+   "seatTo": 98,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 6,
+   "seatFrom": 99,
+   "seatTo": 108,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 7,
+   "seatFrom": 109,
+   "seatTo": 118,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 8,
+   "seatFrom": 119,
+   "seatTo": 129,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 9,
+   "seatFrom": 130,
+   "seatTo": 136,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 10,
+   "seatFrom": 138,
+   "seatTo": 142,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 11,
+   "seatFrom": 143,
+   "seatTo": 155,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 12,
+   "seatFrom": 156,
+   "seatTo": 162,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 48,
+   "seatTo": 54,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 2,
+   "seatFrom": 35,
+   "seatTo": 47,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 3,
+   "seatFrom": 30,
+   "seatTo": 34,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 4,
+   "seatFrom": 22,
+   "seatTo": 28,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 5,
+   "seatFrom": 11,
+   "seatTo": 21,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 6,
+   "seatFrom": 1,
+   "seatTo": 10,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 7,
+   "seatFrom": 207,
+   "seatTo": 216,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 8,
+   "seatFrom": 196,
+   "seatTo": 206,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 9,
+   "seatFrom": 189,
+   "seatTo": 195,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 10,
+   "seatFrom": 183,
+   "seatTo": 187,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 11,
+   "seatFrom": 170,
+   "seatTo": 182,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "2",
+   "runOrdinal": 12,
+   "seatFrom": 163,
+   "seatTo": 169,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 55,
+   "seatTo": 61,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 2,
+   "seatFrom": 62,
+   "seatTo": 74,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 3,
+   "seatFrom": 75,
+   "seatTo": 79,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 4,
+   "seatFrom": 81,
+   "seatTo": 87,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 5,
+   "seatFrom": 88,
+   "seatTo": 98,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 6,
+   "seatFrom": 99,
+   "seatTo": 108,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 7,
+   "seatFrom": 109,
+   "seatTo": 118,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 8,
+   "seatFrom": 119,
+   "seatTo": 129,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 9,
+   "seatFrom": 130,
+   "seatTo": 136,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 10,
+   "seatFrom": 138,
+   "seatTo": 142,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 11,
+   "seatFrom": 143,
+   "seatTo": 155,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 12,
+   "seatFrom": 156,
+   "seatTo": 162,
+   "chartRegion": "x1140-2830,y545-860",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 48,
+   "seatTo": 54,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 2,
+   "seatFrom": 35,
+   "seatTo": 47,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 3,
+   "seatFrom": 30,
+   "seatTo": 34,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 4,
+   "seatFrom": 22,
+   "seatTo": 28,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 5,
+   "seatFrom": 11,
+   "seatTo": 21,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 6,
+   "seatFrom": 1,
+   "seatTo": 10,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 7,
+   "seatFrom": 207,
+   "seatTo": 216,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 8,
+   "seatFrom": 196,
+   "seatTo": 206,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 9,
+   "seatFrom": 189,
+   "seatTo": 195,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 10,
+   "seatFrom": 183,
+   "seatTo": 187,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 11,
+   "seatFrom": 170,
+   "seatTo": 182,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "300",
+   "rowLabel": "3",
+   "runOrdinal": 12,
+   "seatFrom": 163,
+   "seatTo": 169,
+   "chartRegion": "x1120-2830,y3000-3270",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 182,
+   "seatTo": 184,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 182,
+   "seatTo": 183,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 185,
+   "seatTo": 205,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 187,
+   "seatTo": 204,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 190,
+   "seatTo": 201,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 206,
+   "seatTo": 226,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 207,
+   "seatTo": 224,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 210,
+   "seatTo": 221,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 227,
+   "seatTo": 244,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 229,
+   "seatTo": 243,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 232,
+   "seatTo": 239,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 245,
+   "seatTo": 251,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 247,
+   "seatTo": 251,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 250,
+   "seatTo": 251,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 343,
+   "seatTo": 349,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 343,
+   "seatTo": 347,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 343,
+   "seatTo": 344,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 350,
+   "seatTo": 367,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 351,
+   "seatTo": 365,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 354,
+   "seatTo": 361,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 368,
+   "seatTo": 388,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 369,
+   "seatTo": 386,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 372,
+   "seatTo": 383,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 389,
+   "seatTo": 409,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 391,
+   "seatTo": 408,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 394,
+   "seatTo": 405,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 410,
+   "seatTo": 432,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 412,
+   "seatTo": 431,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 415,
+   "seatTo": 428,
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 159,
+   "seatTo": 181,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 161,
+   "seatTo": 180,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 164,
+   "seatTo": 177,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 138,
+   "seatTo": 158,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 140,
+   "seatTo": 157,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 143,
+   "seatTo": 154,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 117,
+   "seatTo": 137,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 119,
+   "seatTo": 136,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 122,
+   "seatTo": 133,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 99,
+   "seatTo": 116,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 100,
+   "seatTo": 114,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 103,
+   "seatTo": 110,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 92,
+   "seatTo": 98,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 92,
+   "seatTo": 96,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 92,
+   "seatTo": 93,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 496,
+   "seatTo": 502,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 498,
+   "seatTo": 502,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 501,
+   "seatTo": 502,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 478,
+   "seatTo": 495,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 480,
+   "seatTo": 494,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 483,
+   "seatTo": 490,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 457,
+   "seatTo": 477,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 459,
+   "seatTo": 476,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 462,
+   "seatTo": 473,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 436,
+   "seatTo": 456,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 438,
+   "seatTo": 455,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "3",
+   "runOrdinal": 1,
+   "seatFrom": 441,
+   "seatTo": 452,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "1",
+   "runOrdinal": 1,
+   "seatFrom": 433,
+   "seatTo": 435,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  },
+  {
+   "level": "500",
+   "rowLabel": "2",
+   "runOrdinal": 1,
+   "seatFrom": 433,
+   "seatTo": 434,
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "humanReadConfidence": "high"
+  }
+ ],
+ "regionLedger": [
+  {
+   "region": "L200-lettered-left-flank",
+   "chartRegion": "x1480-1800,y1240-2760",
+   "status": "complete",
+   "note": "Rows A-H, 8 rows. Band boundaries verified aligned across all rows at 14x; 341-335 cell-counted (7 cells); 320|319 re-read at 15x (no skip despite wide aisle); 335|333 re-read at 14x (334 absent, no physical gap)."
+  },
+  {
+   "region": "L200-lettered-right-flank",
+   "chartRegion": "x2180-2560,y1120-2600",
+   "status": "complete",
+   "note": "Rows A-H, 8 rows; mirror of left flank. 722|724 break re-read at 14x and confirmed aligned across all 8 rows. Rows C-H lie under the semi-transparent エンドステージ1 overlay but are fully drawn; stage-position invariance of fixed seating already frozen upstream."
+  },
+  {
+   "region": "L200-lettered-top-end",
+   "chartRegion": "x1600-2320,y1090-1430",
+   "status": "complete",
+   "note": "Rows A-L, 12 rows, horizontal. Two printed vertical aisles carry the row letters; 457|458 and 482|483 are numerically contiguous but physically separated, so kept as separate runs. 470 absent between 469 and 471. Row start/end digits re-read at 11x: 449, 454, 486, 491 are not used as row endpoints."
+  },
+  {
+   "region": "L200-lettered-bottom-end",
+   "chartRegion": "x1600-2320,y2380-2720",
+   "status": "complete",
+   "note": "Rows A-L, 12 rows, horizontal; numbering decreases left-to-right. Two printed vertical aisles carry the row letters; 161|160 and 136|135 numerically contiguous but physically separated, kept as separate runs. 148 absent between 149 and 147. 164, 169, 132, 127 are not used as row endpoints."
+  },
+  {
+   "region": "L200-numbered-top-right(483-622)",
+   "chartRegion": "x2140-2412,y715-1125",
+   "status": "complete",
+   "note": "Rows 1-19 horizontal. Left sub-block rectangular across all 19 rows: runs 483-488 and 608-617 (printed numbering discontinuity, no physical gap, re-read at 14x). Right sub-block starts at printed 618 (anchored at row 4 label and row 10 teal marker) with a diagonal right edge; per-row right endpoints are NOT printed except row 19 (621), so rows 4-18 right endpoints were obtained by direct cell counting at 8x within each contiguous run."
+  },
+  {
+   "region": "L200-numbered-top-centre(442-482)",
+   "chartRegion": "x1600-2170,y725-1135",
+   "status": "complete",
+   "note": "Rows 1-19 horizontal. Sub-block 442-457 (16 cells) uniform across all rows; sub-block 458-482 (25 cells) continuous for rows 1-16. Rows 17-18 carry a printed notch: 458-467 then 478-482. Row 19 has no cells in the 478-482 group - resolved at 26x, the area above the 478/482 labels is blank. 468-477 absent in rows 17,18,19 only."
+  },
+  {
+   "region": "L300-top-band",
+   "chartRegion": "x1140-2830,y545-860",
+   "status": "complete",
+   "note": "Rows 1-3 (row 1 nearest arena). 12 printed blocks: 55-61,62-74,75-79,81-87,88-98,99-108,109-118,119-129,130-136,138-142,143-155,156-162. 80 and 137 absent. Each block's range printed at both row 3 and row 1; all three rows share the block range."
+  },
+  {
+   "region": "L300-bottom-band",
+   "chartRegion": "x1120-2830,y3000-3270",
+   "status": "complete",
+   "note": "Rows 1-3. 12 printed blocks: 163-169,170-182,183-187,189-195,196-206,207-216,1-10,11-21,22-28,30-34,35-47,48-54. 29 and 188 absent. Together with the top band this closes a 1-216 ring with exactly four absent numbers (29,80,137,188)."
+  },
+  {
+   "region": "L500-top-arc",
+   "chartRegion": "x560-3800,y0-700 (level 500 outer top arc)",
+   "status": "complete",
+   "note": "3 rows (row 1 nearest arena). 10 printed blocks spanning 182-251 and 343-432; the 252-342 gap is a physically empty top-centre section. End blocks 182-184 and 410-432 read at the block junctions. All ranges printed at both ends of each row; deskewed rendering used to count cells."
+  },
+  {
+   "region": "L500-bottom-arc",
+   "chartRegion": "x320-3620,y3080-3830 (level 500 outer bottom arc)",
+   "status": "complete",
+   "note": "3 rows. 10 printed blocks spanning 92-181 and 433-502, numbering decreasing left-to-right in each half. Block junctions re-read at 4.2x deskew to fix the 159/161/164 endpoints. The 92|502 junction is a single printed aisle across which the numbering is discontinuous - recorded as printed, not interpolated."
+  }
+ ],
+ "traversalCompleteness": {
+  "basis": "The chart's own SVG declares 224 seating highlight regions plus one arena-floor rectangle. Those regions were used ONLY as a traversal checklist, never as seat structure.",
+  "levelsComplete": [
+   "300",
+   "500"
+  ],
+  "levelsPartial": [
+   "200"
+  ],
+  "levelsNotStarted": [
+   "400"
+  ],
+  "regionsTraversedApprox": 79,
+  "regionsTotal": 224,
+  "remainingWork": [
+   "Level 200 numbered tier - left flank block (rows 1-32). It is a SINGLE continuous 32-row block with a staggered diagonal at both ends, not the three sub-groups it superficially resembles; column pitch was checked at 11x and is uniform across the apparent gaps.",
+   "Level 200 numbered tier - right flank block",
+   "Level 200 numbered tier - bottom-centre block (rows 1-19)",
+   "Level 200 numbered tier - top-left, bottom-left, top-right and bottom-right corner blocks, including the angled runs (for example the 625/634 family at the top right and the 883/886 family at the bottom right)",
+   "Level 400 in full (62 chart regions): left and right flank blocks with numbered rows to about 24, top and bottom 5-row bands, and the corner arcs. Sampled at 2.5x: the level-400 top band is NOT uniform per row and needs the same per-row endpoint reading as the level-200 flanks."
+  ]
+ },
+ "selfCheck": {
+  "requiredFieldsMissing": 0,
+  "fromGreaterThanTo": 0,
+  "identicalDuplicateRecords": 0,
+  "intraRowOverlaps": 0,
+  "expandedSeatKeys": 4776,
+  "expandedDuplicateKeys": 0,
+  "unresolvedAreaOwnership": 0,
+  "unresolvedRowIdentity": 0,
+  "unresolvedRunBoundary": 0,
+  "note": "These checks are internal only. No expanded total was compared with any external figure."
+ },
+ "independenceDeclarations": {
+  "issuerSubtotalsConsulted": false,
+  "issuerGrandTotalConsulted": false,
+  "issuerCapacityOrLayoutSizePageOpened": false,
+  "machineStructuralChecksumConsulted": false,
+  "historicalGmoWaveReportsOpened": false,
+  "gmoGitHistoryOrRepositoryWideGrepPerformed": false,
+  "seatListJsOpened": false,
+  "previousHumanTranscriptionConsulted": false,
+  "pass2Started": false,
+  "productionIntegrationPerformed": false,
+  "contaminationDetected": false,
+  "incidentalExposureNote": "One non-main-arena figure was visible on the authorised /seats_info/ navigation page: the issuer description of the separate コミュニティアリーナ as having about 3,000 retractable seats. That facility space is out of scope for this configuration and the figure carries no main-arena seat, row or subtotal information. No main-arena total, level subtotal, region count or machine count was seen."
+ },
+ "dispositionUnchanged": "saitama-super-arena-main remains ADOPT. This artifact makes no production claim and changes no production data.",
+ "nextAction": "Claude: GMO ARENA SAITAMA MAIN-ARENA HUMAN PASS 1 CONTINUATION (GMO-1)",
+ "canonicalSerialization": {
+  "recipe": "json.dumps(payload_without_this_key, ensure_ascii=False, sort_keys=True, separators=(',',':')) encoded UTF-8",
+  "sha256": "048a3ea24f3cce71e030a4bf32f59295bdfd0cd07141e3b92e09580b0e867e2a"
+ }
+}
