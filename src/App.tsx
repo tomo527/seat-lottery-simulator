@@ -243,8 +243,8 @@ function App() {
 
       <main>
         <section className="hero-section">
-          <h1>あなたの今日の席運は？</h1>
-          <p className="hero-lead">ライブ前の願掛けに。架空の座席抽選を、ちょっと楽しく体験できます。</p>
+          <h1>ライブ・イベント会場の座席抽選シミュレーター</h1>
+          <p className="hero-lead">ライブ・コンサート・イベント会場の代表的な座席配置から、1〜4席をランダムに抽選できます。座席範囲を自分で作って試すこともできます。</p>
           <div className="hero-notice">
             <span aria-hidden="true">i</span>
             <p><strong>遊びのためのシミュレーションです</strong>実際の座席割り当てを予測または再現するものではありません。</p>

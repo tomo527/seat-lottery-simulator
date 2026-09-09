@@ -44,7 +44,8 @@ const chooseVenue = async (name = 'Hakuju Hall') => {
 describe('App', () => {
   it('初期表示では詳細を読まず、全東京会場を絞り込める', () => {
     render(<App />)
-    expect(screen.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'ライブ・イベント会場の座席抽選シミュレーター' })).toBeInTheDocument()
+    expect(screen.getByText(/1〜4席をランダムに抽選できます/)).toBeInTheDocument()
     expect(screen.getByText(/座席配置は各会場の公開情報をもとにした代表的なものです/)).toBeInTheDocument()
     expect(screen.getByText('まだ会場が選択されていません。')).toBeInTheDocument()
     expect(loadVenueSeatData).not.toHaveBeenCalled()

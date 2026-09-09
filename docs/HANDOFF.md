@@ -2,6 +2,14 @@
 
 Updated: 2026-09-09 (Asia/Tokyo)
 
+## Recent application change — homepage SEO foundation (2026-09-09)
+
+This application-only change does not supersede or alter the active GMO ARENA SAITAMA venue save state below. The homepage SEO audit and minimal implementation are complete locally. The static and client-applied homepage title/description now agree; the production root is declared as canonical; Open Graph, Twitter summary metadata, and factual `WebSite` JSON-LD are present; and the visible H1/lead describe the service as a random seat simulator for live, concert, and event venues without claiming to predict real allocations. Legal routes update their own canonical and social metadata after routing. `public/googled32dc6977d90953d.html` is unchanged.
+
+The pre-change production audit returned HTTP 200 for `/`, query-parameter URLs, and the SPA fallback, HTTP 307 from `/index.html` to `/`, no `X-Robots-Tag`, and no dedicated `robots.txt` (that path received the HTML SPA fallback). The app remains a client-rendered Vite SPA whose initial HTML has metadata but no body copy; SSR/SSG, routing changes, sitemap, venue landing pages, and a redundant allow-all robots file were deliberately left out of scope. Local validation passed `npm run verify:app` (lint, typecheck, 227 unit tests, production build, docs/harness/diff checks) and `npm run test:e2e` (17 Chromium tests). Existing venue-validation warnings remain unchanged.
+
+Delivery is the normal authorized `main` push and GitHub-connected Workers Build; repository `HEAD` is authoritative for the exact commit. Exact next action after the public response carries the new metadata: use Search Console URL inspection for the production root, test the live URL, and request indexing once.
+
 ## Active save state — GMO ARENA SAITAMA MAIN-ARENA + STADIUM (ADOPT; GMO-1 HUMAN PASS 1 — CONTINUE SAME PASS)
 
 **This section is deliberately Pass-1-safe: it carries no seat count, subtotal, region count, machine count or discrepancy value for either GMO configuration.** Those live only in the frozen wave reports named below, which a Pass 1 or Pass 2 session must not open before freezing its own transcription.

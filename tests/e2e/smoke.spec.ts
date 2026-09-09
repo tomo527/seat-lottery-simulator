@@ -63,7 +63,7 @@ test('フッターから法務ページを往復し、直接URLでも表示で�
   await expect(page.getByRole('heading', { name: '利用規約', level: 1 })).toBeVisible()
   await expect(page.getByRole('heading', { name: '第8条（免責事項）' })).toBeVisible()
   await page.getByRole('link', { name: '← TOPへ戻る' }).click()
-  await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'ライブ・イベント会場の座席抽選シミュレーター' })).toBeVisible()
 
   await page.getByRole('link', { name: 'プライバシーポリシー' }).click()
   await expect(page).toHaveURL(/\/privacy$/)
@@ -72,7 +72,7 @@ test('フッターから法務ページを往復し、直接URLでも表示で�
   await page.reload()
   await expect(page.getByRole('heading', { name: 'プライバシーポリシー', level: 1 })).toBeVisible()
   await page.getByRole('link', { name: '← TOPへ戻る' }).click()
-  await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'ライブ・イベント会場の座席抽選シミュレーター' })).toBeVisible()
 
   await page.getByRole('link', { name: '特定商取引法に基づく表記' }).click()
   await expect(page).toHaveURL(/\/tokushoho$/)
@@ -83,7 +83,7 @@ test('フッターから法務ページを往復し、直接URLでも表示で�
   await expect(page.getByText('キャンセル・返金')).toBeVisible()
   await expect(page.getByRole('link', { name: 'studiotomo99@gmail.com' })).toHaveAttribute('href', 'mailto:studiotomo99@gmail.com')
   await page.getByRole('link', { name: '← TOPへ戻る' }).click()
-  await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'ライブ・イベント会場の座席抽選シミュレーター' })).toBeVisible()
   await expect(page.locator('.support-section')).not.toBeVisible()
 
   await page.goto('/terms')
@@ -91,7 +91,7 @@ test('フッターから法務ページを往復し、直接URLでも表示で�
   await page.goto('/tokushoho')
   await expect(page.getByRole('heading', { name: '特定商取引法に基づく表記', level: 1 })).toBeVisible()
   await page.goto('/unknown-spa-path')
-  await expect(page.getByRole('heading', { name: 'あなたの今日の席運は？' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'ライブ・イベント会場の座席抽選シミュレーター' })).toBeVisible()
 })
 
 test('願掛け（開発支援）は抽選結果表示後だけ現れ、再抽選や条件変更で再び消える', async ({ page }) => {
