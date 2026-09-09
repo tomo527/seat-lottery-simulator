@@ -1,0 +1,174 @@
+{
+  "reportVersion": 1,
+  "title": "YOKOHAMA ARENA PASS-2 INDEPENDENCE HARDENING — CORRECTION WAVE 2 (HANDOFF QUARANTINE ONLY)",
+  "asOf": "2026-09-09",
+  "scope": "docs/HANDOFF.md の横浜アリーナ関連 passage のみ。seat transcription なし、Pass 2 開始なし、venue source 作成なし、production 変更なし。GMOアリーナさいたま、RaiBoC、日野市民会館、Tokyo Priority D、その他 venue には触れていない。",
+  "outcome": "COMPLETE。docs/HANDOFF.md に残っていた Pass 1 由来の answer-key / anchoring information を、個別修正ではなく historical section の丸ごと縮約によって除去し、詳細監査証跡は data/venue-reports/ の archive pointer へ一本化した。historical wave reports は 1 バイトも変更していない。disposition・production・Kanto ledger はいずれも不変。",
+  "waveType": "records / context hygiene only",
+  "start": {
+    "head": "adbed1bb497dd887b3bf7a53a746f82d534144e1",
+    "originMain": "adbed1bb497dd887b3bf7a53a746f82d534144e1",
+    "workingTree": "clean",
+    "productionTotals": {
+      "venues": 159,
+      "selectableConfigurations": 161,
+      "seatRecords": 246023
+    },
+    "stateSource": "git status / git rev-parse のみ。Pass 1 historical reports は開いていない。"
+  },
+  "correctionOfPreviousWave": {
+    "previousWave": "YOKOHAMA ARENA PASS-2 INDEPENDENCE HARDENING (2026-09-08)",
+    "previousReport": "data/venue-reports/kanagawa-yokohama-arena-pass2-independence-hardening-2026-09-08.json",
+    "previousClaim": "同 report と当時の HANDOFF active section は「docs/HANDOFF.md の横浜アリーナ関連 passage を active / superseded 含めて Pass2-safe 化した」と自己申告していた。",
+    "repositoryInspectionResult": "current HANDOFF 実体を確認したところ、その申告は不完全だった。前 wave は個別の文を patch する方式を取り、historical sections に Pass 1 由来の material がまとまって残っていた。",
+    "residualLeakageFound": [
+      "ある arena block の per-block total を明記した 1 文（前 wave が一度も触れていない箇所）",
+      "block 間の mirror / exact-mirror 関係と、それを用いた block-specific equality claim",
+      "宣言 scope 全体の row 総数と、arena block / stand block あたりの row 数",
+      "specific aisle row label と、特定 row の resolution 記述",
+      "machine-human の per-segment delta（block 別の exact / short-by-one 内訳）",
+      "structural wave の fitted parameters: seat-cell geometry、row pitch、in-row pitch、non-seat rectangle 判定閾値、polar centre と theta span、fill colour",
+      "推奨 reading technique（polar unwrap と slice 回転で 1 block を数枚の画像に収める手順）",
+      "block F の描画状況に関する具体的な確定記述と、その per-block total"
+    ],
+    "whyThisMatters": "AGENTS.md の startup contract により全 session が HANDOFF 全体を読む。historical section に残っていても、active section に残っているのと同程度に fresh Pass 2 の独立性を破壊する。",
+    "principle": "repository 実体が正であり、前 wave の completion claim を repository 実体より優先しない。",
+    "previousReportNotRewritten": "前 wave の hardening report は historical audit evidence として一切改変していない。本 report がその claim の不完全性を明示的に記録することで訂正する（silent rewrite ではない）。"
+  },
+  "handoffSectionsCollapsed": {
+    "method": "個別記述の部分修正ではなく、横浜アリーナ historical narrative を丸ごと archive pointer へ縮約した。各 section は wave 名 / date、outcome、historical / superseded status、対応する data/venue-reports/*.json への pointer のみを残す。",
+    "collapsedWholesale": [
+      "Recent completed work — YOKOHAMA ARENA A-PATTERN PASS-2（independence void）→ 1 段落",
+      "Recent completed work — YOKOHAMA ARENA A-PATTERN PASS-1 COMPLETION / FREEZE → 1 段落",
+      "Recent completed work — YOKOHAMA ARENA A-PATTERN STRUCTURAL COMPLETION → 1 段落"
+    ],
+    "reducedInPlace": [
+      "KANTO PREFLIGHT-7 REMAINING ADOPT IMPLEMENTATION section 内の横浜アリーナ passage（superseded banner、configuration scope 段落、Pass 1 段落、structural findings 段落、unresolved bullet、exact next action）",
+      "KANTO PREFLIGHT-7 FINAL ADOPT BATCH section 内の横浜アリーナ unresolved bullet"
+    ],
+    "otherVenueContentUntouched": "上記 2 section は GMOアリーナさいたま / さいたまスーパーアリーナ の記述も含むため、横浜アリーナ部分のみを surgical に縮約し、他 venue の記述は 1 文字も変更していない。",
+    "activeSectionReplaced": "active save state を本 correction wave のものへ置き換えた。内容は Pass2-safe な最小情報のみ。",
+    "handoffLineCount": "672 行 → 603 行"
+  },
+  "removedFromAllHandoffYokohamaPassages": [
+    "per-row ranges",
+    "row-specific start/end numbers",
+    "per-block totals",
+    "arena / stand mapped totals",
+    "grand mapped total",
+    "Pass1 expanded-key count",
+    "issuer subtotal values",
+    "machine totals",
+    "machine-human deltas",
+    "row-specific machine counts",
+    "specific aisle row labels",
+    "mirror / exact-mirror relationships",
+    "block-specific equality claims",
+    "specific-row resolutions",
+    "polar centre / theta / radius / pitch などの fitted parameters",
+    "individual block geometry parameters",
+    "block-specific segment counts",
+    "row-specific positional-gap structures",
+    "特定 block / row が「どう見えるはずか」を告げる記述",
+    "transcription を bias し得る Pass1 固有の reconstruction parameter",
+    "推奨 reading methodology（次 session は chart から自分で方法を選ぶ）"
+  ],
+  "retainedInHandoff": [
+    "configuration identity（A-pattern）",
+    "issuer-defined area names at a broad scope level",
+    "1階センター席は event-variable",
+    "立見スペースは seat ではない",
+    "スイート・ボックスには seat identifier がない",
+    "A / B / 中央 pattern を混ぜない",
+    "currentness status",
+    "asset current-linked status と fingerprint",
+    "disposition = ADOPT、Pass 1 = complete / frozen、Pass 2 = 未実施",
+    "evidence contradiction は存在しない",
+    "wave reports への file pointer",
+    "GMO 等の queue 順序",
+    "production / Kanto の current operational state"
+  ],
+  "retentionRule": "上記のいずれについても、席数・行数・具体的 range・subtotal 値は HANDOFF に書いていない。",
+  "inventoryAndCoverageVerified": {
+    "method": "current file の当該 record のみを読んだ。Git history / blame / show は使用していない。",
+    "inventory": {
+      "file": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "record": "kanagawa-yokohama-arena-main",
+      "researchStatus": "source-located",
+      "eligibility": "likely-eligible",
+      "venueSourceId": null,
+      "verdict": "既に Pass2-safe。ADOPT / Pass1 frozen / Pass2 outstanding / status + pointer のみで、Pass 1 answer key も issuer subtotal 値も保持していない。変更していない。"
+    },
+    "coverageLedger": {
+      "file": "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json",
+      "record": "kanagawa-yokohama-arena-main",
+      "currentStatus": "ADOPT / implementation-ready",
+      "verdict": "既に Pass2-safe。同上。変更していない。"
+    },
+    "numericScan": "両 record の narrative 全体に対する answer-key 数値走査で hit 0。"
+  },
+  "currentStateLeakageScan": {
+    "method": "data/venue-reports/、.git/、node_modules、dist / build / test 出力を除外して current-state repository を検索した。Git history content は検索対象に含めていない（git log -p / git show / blame は未使用）。",
+    "surfacesReferencingVenue": [
+      "docs/HANDOFF.md — 本 wave で縮約",
+      "data/venue-inventory/kanto-release-critical-2026-08-27.json — 既に safe、無変更",
+      "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json — 既に safe、無変更"
+    ],
+    "noOtherLeakage": "queue / status docs、venue sources、generated catalog、runtime detail、app code、validator のいずれにも横浜アリーナへの言及はなく、Pass1-specific identifier detail / block totals / issuer subtotal / machine counts / mirror answer key / row-specific structure の複製も存在しなかった。他 venue の記録には触れていない。",
+    "residualScanResult": "sanitization 後、3 surfaces すべてに対する Yokohama answer-key 走査で hit 0。"
+  },
+  "historicalEvidencePreserved": {
+    "policy": "HANDOFF から詳細を消すことは evidence deletion ではなく archive pointer 化である。完全な監査証跡は wave report にのみ保持する。",
+    "unchangedFiles": [
+      "data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass1-completion-2026-09-08.json",
+      "data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass2-independence-void-2026-09-08.json",
+      "data/venue-reports/kanagawa-yokohama-arena-a-pattern-structural-completion-2026-09-08.json",
+      "data/venue-reports/kanagawa-yokohama-arena-pass2-independence-hardening-2026-09-08.json",
+      "data/venue-reports/kanto-preflight-7-remaining-adopt-implementation-2026-09-08.json",
+      "data/venue-reports/ 配下のその他すべて"
+    ],
+    "verification": "git status data/venue-reports/ には本 report の新規追加以外の変更なし。"
+  },
+  "policyAndProductionUnchanged": {
+    "notChanged": [
+      "venue source",
+      "generated catalog / runtime",
+      "production fingerprint",
+      "seat data",
+      "app code",
+      "validator thresholds",
+      "AGENTS.md",
+      "docs/VENUE_WORKFLOW.md",
+      "docs/VENUE_DATA_GUIDE.md",
+      "docs/VALIDATION.md",
+      "横浜アリーナの disposition",
+      "GMO records",
+      "RaiBoC / 日野市民会館 / Tokyo Priority D",
+      "他 venue の inventory / ledger / HANDOFF 記述"
+    ],
+    "independentPassRuleNotWeakened": "既存の independent-pass rule は緩めていない。実行可能にするために current-state surface を整えただけである。"
+  },
+  "dispositionOutcome": {
+    "venue": "kanagawa-yokohama-arena-main",
+    "disposition": "ADOPT（据え置き）",
+    "researchStatus": "source-located（据え置き）",
+    "promoted": 0,
+    "newFormalBlockers": 0,
+    "retainedAdoptKanto": 3
+  },
+  "productionTotalsUnchanged": {
+    "venues": 159,
+    "selectableConfigurations": 161,
+    "seatRecords": 246023
+  },
+  "kantoLedgerUnchanged": {
+    "universe": 154,
+    "production": 76,
+    "adopt": 3,
+    "holdNeedEvidenceFormalDefer": 75,
+    "inventoryUnresearched": 0,
+    "missing": 0,
+    "kantoComplete": false
+  },
+  "exactNextAction": "Claude: YOKOHAMA ARENA A-PATTERN FRESH INDEPENDENT PASS-2 + PRODUCTION CLOSURE — 必ず新しい Claude Opus 5 session で実行する。pre-freeze の allowed context は AGENTS.md、current VENUE_WORKFLOW / VENUE_DATA_GUIDE、Pass2-safe な HANDOFF active state、git current state、npm run venues:report、current first-party A-pattern chart、および seat-count / subtotal の answer value を露出しない範囲で configuration scope を特定するための issuer material のみ。pre-freeze に禁止されるのは data/venue-reports/ の Yokohama report、historical Yokohama transcription record、Yokohama record の Git history / blame / show、repo-wide Yokohama grep、issuer capacity / subtotal ページ、Pass1 total、issuer subtotal、および既に sanitize 済みの high-level current-state status を超える inventory / coverage フィールドの参照。Pass 2 を transcribe して freeze した後に初めて Pass 1 report と issuer reconciliation evidence を開く。"
+}
