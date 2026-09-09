@@ -40,14 +40,14 @@
       "category": "arena",
       "officialFacilityUrl": "https://www.yokohama-arena.co.jp/",
       "operationalStatus": "active",
-      "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-08 PASS-2 INDEPENDENCE HARDENING wave によりPass2-safeなcurrent-state summaryへ縮約。venueはACTIVEで、休館・改修・座席変更の告知はない。issuer現行「座席案内」Aパターンページからcurrent first-party seat chartへ到達でき、asset fingerprintはpinned値とバイト一致する。Aパターンのissuer-defined fixed-numbered regions（2階アリーナ席の6ブロックと3階スタンド席の4ブロック）はrepresentative scopeとして成立する。human Pass 1はCOMPLETE / FROZEN。fresh independent Pass 2は未実施のためproduction gateは未充足で、disposition は ADOPT のまま。production blockerはevidence contradictionではなくoutstanding verificationである。detailed frozen Pass 1 evidence（per-row ranges・per-block totals・machine audit）は data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass1-completion-2026-09-08.json を参照。Pass 2 independence failureの監査記録は data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass2-independence-void-2026-09-08.json を参照。",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-09-09 fresh independent Pass 2 + production closure wave: 発行者の現行Aパターン拡大座席図（img_seatzoom_01.png, sha256 960e9794…, 同日再取得でバイト一致）に、2階アリーナ席A〜Fブロックと3階スタンド席北・東・南・西の列記号と座席番号がすべて印字されている。Pass 1を一切開かずに転記・freezeしたfresh independent Pass 2（frozen sha256 17ac32e2…）と、既存のfrozen Pass 1とのbidirectional symmetric differenceは8,769 keyで0（Pass1-only 0 / Pass2-only 0、area key・row key・per-area countも完全一致）。freeze後に構築した独立machine structural checksum（frozen sha256 f2f02298…）も同一の10 seating regionとA12/D12を含むlabelled row setを再現し、phantom / missingは0。freeze後に初めて開いた発行者のAステージ客席数内訳との照合はアリーナ席5,498／スタンド席3,271／該当合計8,769でdelta 0。1階センター席3,114（催事依存）、立見スペース1,420（座席なし）、スイート・ボックス140（列・番号の印字なし）はscope外。venue source yokohama-arena-main / configuration a-pattern-fixed-numbered-seats としてproduction化した。",
       "priority": "A",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-08",
+      "venueSourceId": "yokohama-arena-main",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-09",
       "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready（2026-09-08時点）: 残作業は fresh independent Pass 2 とその後の Pass1/Pass2 bidirectional symmetric difference 0、independent structural checksum、issuer subtotalとのpost-check reconciliation、venue source作成・integration・deploy。scopeはAパターンのfixed-numbered regionsのみで、B／中央パターンとは混ぜない。1階センター席はevent-variable、立見スペースは座席なし、スイート・ボックスは座席図に列・番号がいっさい印字されないため、いずれもscope外（公表席数から番号を創作しない）。positional number gapsを埋めない。【Pass2 independence注意】本フィールドは意図的にPass 1のper-row range・B7/C7 range・per-block totals・arena/stand mapped subtotal・grand total・expanded key数・machine per-block/per-row counts・machine-human delta・aisle row label・mirror由来のrange・Pass1固有のsegment topology、および issuer subtotalの具体値をいっさい保持していない。これらはPass 2 freeze前に読むと独立性を損なうため、detailed frozen evidenceは data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass1-completion-2026-09-08.json に、independence failureの監査記録は data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass2-independence-void-2026-09-08.json にのみ存在する。次のstepはfresh sessionでのindependent Pass 2であり、Pass 2をfreezeした後に初めてPass 1 reportとissuer subtotal evidenceを開く。"
+      "blockingReason": null
     },
     {
       "inventoryId": "kanagawa-pia-arena-mm",

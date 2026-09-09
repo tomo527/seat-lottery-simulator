@@ -1,0 +1,208 @@
+{
+  "artifactType": "machine-structural-checksum-frozen",
+  "venueId": "kanagawa-yokohama-arena-main",
+  "configuration": "Aパターン",
+  "builtAfter": "the human Pass 2 freeze; before any Pass 1 or issuer capacity/subtotal material was opened",
+  "independence": {
+    "seatIdSource": false,
+    "humanRangesUsedAsInput": false,
+    "capacityOrSubtotalUsedAsTarget": false,
+    "historicalStructuralReportParametersUsed": false,
+    "note": "The extractor reads only the chart raster. No transcribed range, row label, seat number, capacity or subtotal was supplied to it. Human Pass 2 counts appear in this document only as the comparison column."
+  },
+  "chartAsset": {
+    "url": "https://www.yokohama-arena.co.jp/common/img/seatguide/img_seatzoom_01.png",
+    "sha256": "960e9794c696c253e86944cbc48f15317b3561f7ac0e826bd4782bf903a3475c",
+    "pixelSize": "5000x3758"
+  },
+  "method": [
+    "The chart is a flat-colour vector rendering: seating polygons carry exactly one of two fill RGBs (2F blocks 51,134,196; outer stands 0,104,181) and are separated only by strictly darker outline strokes.",
+    "Seating regions are recovered from the chart's own topology: the exact-fill mask is dilated by 7px, which bridges hairline outline strokes inside a block but not the white aisles between blocks. Connected components of that dilation are the regions.",
+    "Cell polygons are recovered as connected components of (exact fill) union (enclosed small white components, i.e. printed digit glyphs, re-attached so that a numbered cell is one component rather than several fragments). Large white components (page background, aisles, arena floor) are never re-attached.",
+    "Every component is classified by its own geometry only: pixel area, and the axis ratio of its second-moment ellipse (rotation invariant). Seat cell = area 150..1199 px and axis ratio < 2.6. Staircases form a cleanly separated mode at ratio 3.0-4.7; inter-row background strips at ratio > 10; landings and block background fields at area > 1200.",
+    "Row-band topology for the axis-aligned blocks A and D was measured by binning classified cell centroids on the block's own detected row pitch."
+  ],
+  "results": {
+    "seatingRegionsFound": 10,
+    "seatingRegionsDeclaredInHumanPass2": 10,
+    "machineOnlyPhantomRegions": 0,
+    "humanPass2OnlyRegionsWithNoMachineStructure": 0,
+    "machineCellTotal": 8602,
+    "humanPass2SeatTotal": 8769,
+    "totalDifference": -167,
+    "regions": [
+      {
+        "fillClass": "stand",
+        "machineCellCount": 1248,
+        "bbox": {
+          "x0": 77,
+          "x1": 2383,
+          "y0": 72,
+          "y1": 1776
+        },
+        "areaId": "stand-north",
+        "humanPass2SeatCount": 1285,
+        "difference": -37
+      },
+      {
+        "fillClass": "inner",
+        "machineCellCount": 1226,
+        "bbox": {
+          "x0": 474,
+          "x1": 1753,
+          "y0": 500,
+          "y1": 1797
+        },
+        "areaId": "block-c",
+        "humanPass2SeatCount": 1238,
+        "difference": -12
+      },
+      {
+        "fillClass": "inner",
+        "machineCellCount": 1223,
+        "bbox": {
+          "x0": 474,
+          "x1": 1753,
+          "y0": 1959,
+          "y1": 3256
+        },
+        "areaId": "block-b",
+        "humanPass2SeatCount": 1238,
+        "difference": -15
+      },
+      {
+        "fillClass": "inner",
+        "machineCellCount": 1193,
+        "bbox": {
+          "x0": 1806,
+          "x1": 3193,
+          "y0": 2544,
+          "y1": 3260
+        },
+        "areaId": "block-a",
+        "humanPass2SeatCount": 1205,
+        "difference": -12
+      },
+      {
+        "fillClass": "inner",
+        "machineCellCount": 1178,
+        "bbox": {
+          "x0": 1806,
+          "x1": 3192,
+          "y0": 496,
+          "y1": 1212
+        },
+        "areaId": "block-d",
+        "humanPass2SeatCount": 1205,
+        "difference": -27
+      },
+      {
+        "fillClass": "stand",
+        "machineCellCount": 1032,
+        "bbox": {
+          "x0": 74,
+          "x1": 1809,
+          "y0": 1815,
+          "y1": 3680
+        },
+        "areaId": "stand-west",
+        "humanPass2SeatCount": 1050,
+        "difference": -18
+      },
+      {
+        "fillClass": "stand",
+        "machineCellCount": 657,
+        "bbox": {
+          "x0": 2438,
+          "x1": 3972,
+          "y0": 72,
+          "y1": 554
+        },
+        "areaId": "stand-east",
+        "humanPass2SeatCount": 663,
+        "difference": -6
+      },
+      {
+        "fillClass": "inner",
+        "machineCellCount": 299,
+        "bbox": {
+          "x0": 3245,
+          "x1": 3779,
+          "y0": 2477,
+          "y1": 3256
+        },
+        "areaId": "block-f",
+        "humanPass2SeatCount": 306,
+        "difference": -7
+      },
+      {
+        "fillClass": "inner",
+        "machineCellCount": 295,
+        "bbox": {
+          "x0": 3245,
+          "x1": 3778,
+          "y0": 500,
+          "y1": 1280
+        },
+        "areaId": "block-e",
+        "humanPass2SeatCount": 306,
+        "difference": -11
+      },
+      {
+        "fillClass": "stand",
+        "machineCellCount": 251,
+        "bbox": {
+          "x0": 3189,
+          "x1": 3971,
+          "y0": 3210,
+          "y1": 3681
+        },
+        "areaId": "stand-south",
+        "humanPass2SeatCount": 273,
+        "difference": -22
+      }
+    ]
+  },
+  "rowTopologyCheck": {
+    "blocksChecked": [
+      "block-a",
+      "block-d"
+    ],
+    "labelledRowBandsFoundPerBlock": 22,
+    "labelledRowBandsWithZeroCells": [
+      "A12",
+      "D12"
+    ],
+    "note": "The machine independently finds a labelled band with zero seat cells at the A12 and D12 positions, matching the human Pass 2 record of those rows as seatless cross-aisle bands.",
+    "blockA": {
+      "machineTotal": 1196,
+      "humanTotal": 1205,
+      "rowsExactlyEqual": 18,
+      "rowsMachineLower": 4,
+      "rowsMachineHigher": 0
+    },
+    "blockD": {
+      "machineTotal": 1184,
+      "humanTotal": 1205,
+      "rowsExactlyEqual": 14,
+      "rowsMachineLower": 7,
+      "rowsMachineHigher": 0
+    }
+  },
+  "limitations": [
+    "Under-segmentation: where a printed white digit or antialiasing bridges the hairline outline stroke between two adjacent cells, the two cells label as one component and the machine count falls one short. This is the sole observed failure mode; it can only lower the machine count, never raise it.",
+    "Consistent with that, the machine count is lower than or equal to the human Pass 2 count in every region and in every checked row, and never higher in any of them.",
+    "Partially drawn cells at a block's diagonal edge can fall below the 150px area floor and be dropped.",
+    "Radial row-band separation was not attempted for the four curved stands; region-level and run-level structure was used there instead. Cells in the stands group into adjacency runs of exactly 8, matching the run pitch read visually.",
+    "The machine path counts drawn polygons. It cannot read a seat number and therefore cannot confirm or supply any seat identifier; it is a cross-check only."
+  ],
+  "verdict": {
+    "materialStructuralContradictionWithHumanPass2": false,
+    "machineOnlyPhantomStructure": false,
+    "humanPass2OnlyUnexplainedStructure": false,
+    "summary": "Machine and human agree on the seating-region set (10/10), on the labelled row set of the two axis-aligned blocks including the two seatless labelled bands, and on per-row cell counts in the large majority of rows. The residual 1.9% machine deficit is one-signed and fully attributable to the documented under-segmentation failure mode."
+  },
+  "freezeTimestamp": "2026-09-09T00:00:00+09:00",
+  "_note": "SHA-256 computed over the canonical serialization of this document with _note and machineChecksumSha256 absent.",
+  "machineChecksumSha256": "f2f0229821bdeca605ead763e674016ad9a12b8b20dfe12400676b7420851bf8"
+}

@@ -3084,6 +3084,32 @@
   },
   {
     "schemaVersion": 2,
+    "id": "yokohama-arena-main",
+    "venueGroupId": "yokohama-arena-main",
+    "name": "横浜アリーナ",
+    "searchAliases": [
+      "YOKOHAMA ARENA",
+      "横アリ",
+      "横浜アリーナ〔メインアリーナ〕"
+    ],
+    "region": "関東",
+    "prefecture": "神奈川県",
+    "municipality": "横浜市",
+    "venueType": "arena",
+    "configurations": [
+      {
+        "id": "a-pattern-fixed-numbered-seats",
+        "canonicalName": "Aパターン固定番号席（2階アリーナ席・3階スタンド席）",
+        "seatCount": 8769,
+        "dataPath": "/venue-db/venues/yokohama-arena-main--a-pattern-fixed-numbered-seats.json",
+        "scope": "fixed-only",
+        "scopeDisclosure": "発行者がAパターンとして公開する現行座席図のうち、番号が印字された2階アリーナ席A〜Fブロックと3階スタンド席北・東・南・西だけを対象とする代表配置です。1階センター席、立見スペース、スイート・ボックスは含みません。公称の合計13,443席はこれらを含む数であり、抽選対象の席数とは一致しません。",
+        "fixedOnly": true
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "yokohama-budokan-arena",
     "venueGroupId": "yokohama-budokan-arena",
     "name": "横浜武道館",

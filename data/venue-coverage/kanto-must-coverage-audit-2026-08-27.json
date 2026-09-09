@@ -21,8 +21,8 @@
       "栃木県": 5
     },
     "byStatus": {
-      "production": 76,
-      "ADOPT / implementation-ready": 3,
+      "production": 77,
+      "ADOPT / implementation-ready": 2,
       "HOLD / NEED EVIDENCE / formal DEFER": 75,
       "inventory-unresearched": 0
     },
@@ -91,7 +91,7 @@
       ]
     }
   },
-  "nextMacro": "CLAUDE: YOKOHAMA ARENA A-PATTERN FRESH INDEPENDENT PASS-2 + PRODUCTION CLOSURE (kanagawa-yokohama-arena-main; fresh session only — transcribe and freeze Pass 2 before opening the Pass 1 report or any issuer subtotal evidence, then GMOアリーナさいたま as one venue source with stadium + main-arena configurations)",
+  "nextMacro": "CLAUDE: GMO ARENA SAITAMA MAIN-ARENA SINGLE-CONFIG BOUNDED IMPLEMENTATION (saitama-super-arena-main + saitama-super-arena-stadium remain ADOPT and must be implemented as one venue source with two selectable configurations; 横浜アリーナ closed to production on 2026-09-09)",
   "supersededNextMacro": {
     "selection": "bounded JUDGMENT / HARD-CASE evidence triage only; do not implement",
     "candidates": [
@@ -606,10 +606,10 @@
       "officialCapacityAndMode": "17000 (current inventory/audit capacity; see official URL)",
       "officialUrl": "https://www.yokohama-arena.co.jp/",
       "inventoryId": "kanagawa-yokohama-arena-main",
-      "venueSourceId": null,
-      "currentStatus": "ADOPT / implementation-ready",
-      "blocker": "ADOPT / implementation-ready（2026-09-08時点）: 残作業は fresh independent Pass 2 とその後の Pass1/Pass2 bidirectional symmetric difference 0、independent structural checksum、issuer subtotalとのpost-check reconciliation、venue source作成・integration・deploy。scopeはAパターンのfixed-numbered regionsのみで、B／中央パターンとは混ぜない。1階センター席はevent-variable、立見スペースは座席なし、スイート・ボックスは座席図に列・番号がいっさい印字されないため、いずれもscope外（公表席数から番号を創作しない）。positional number gapsを埋めない。【Pass2 independence注意】本フィールドは意図的にPass 1のper-row range・B7/C7 range・per-block totals・arena/stand mapped subtotal・grand total・expanded key数・machine per-block/per-row counts・machine-human delta・aisle row label・mirror由来のrange・Pass1固有のsegment topology、および issuer subtotalの具体値をいっさい保持していない。これらはPass 2 freeze前に読むと独立性を損なうため、detailed frozen evidenceは data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass1-completion-2026-09-08.json に、independence failureの監査記録は data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass2-independence-void-2026-09-08.json にのみ存在する。次のstepはfresh sessionでのindependent Pass 2であり、Pass 2をfreezeした後に初めてPass 1 reportとissuer subtotal evidenceを開く。",
-      "reopenCondition": "Current issuer-owned complete numbered-seat set and an issuer-defined representative configuration; no inferred rows, seat IDs, or capacity fitting."
+      "venueSourceId": "yokohama-arena-main",
+      "currentStatus": "production",
+      "blocker": null,
+      "productionNote": "2026-09-09 production: configuration a-pattern-fixed-numbered-seats（Aパターン固定番号席／2階アリーナ席A〜Fブロック＋3階スタンド席北・東・南・西）を8,769席で登録。fresh independent human Pass 2をPass 1・issuer subtotalを開く前にfreezeし、Pass1/Pass2のbidirectional symmetric differenceは0。freeze後の独立machine structural checksumは同一の10 seating regionとlabelled row setを再現。発行者Aステージ客席数内訳との照合はアリーナ席5,498／スタンド席3,271／該当合計8,769でdelta 0。1階センター席3,114・立見スペース1,420・スイート・ボックス140はscope外。"
     },
     {
       "prefecture": "神奈川県",

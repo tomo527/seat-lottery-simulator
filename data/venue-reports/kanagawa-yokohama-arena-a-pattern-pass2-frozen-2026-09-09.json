@@ -1,0 +1,3706 @@
+{
+  "artifactType": "human-visual-pass2-frozen",
+  "venueId": "kanagawa-yokohama-arena-main",
+  "venueName": "横浜アリーナ",
+  "configuration": {
+    "issuerLabel": "Aパターン",
+    "issuerPage": "https://www.yokohama-arena.co.jp/seatguide/astage.html",
+    "distinctFrom": [
+      "Bパターン (bstage.html / img_seatzoom_02.png)",
+      "中央パターン (cstage.html / img_seatzoom_03.png)"
+    ]
+  },
+  "chartProvenance": {
+    "issuer": "株式会社横浜アリーナ (first-party facility operator)",
+    "configurationPage": "https://www.yokohama-arena.co.jp/seatguide/astage.html",
+    "chartAsset": "https://www.yokohama-arena.co.jp/common/img/seatguide/img_seatzoom_01.png",
+    "assetLinkedFrom": "the A-pattern (Aパターン) page's own zoom link; the B and 中央 pages link img_seatzoom_02.png and img_seatzoom_03.png respectively",
+    "fetchedAt": "2026-09-09",
+    "assetBytes": 1526059,
+    "assetPixelSize": "5000x3758",
+    "assetSha256": "960e9794c696c253e86944cbc48f15317b3561f7ac0e826bd4782bf903a3475c"
+  },
+  "acquisitionAndMethod": {
+    "acquisition": "Direct HTTPS fetch of the A-pattern zoom chart asset from the issuer domain; no third-party or historical copy used.",
+    "visualMethod": [
+      "Method chosen fresh for this session; no historical Yokohama structural or transcription report was consulted.",
+      "Straight blocks (A, D) and the top-centre straight stand section: direct high-DPI crops at 2.2-3x, read left-to-right per labelled row.",
+      "Wedge blocks (E, F): single rigid rotation (-19 deg for F, +19 deg for E) of the block region to bring rows horizontal, then per-row reads at 3-3.4x with row labels in frame.",
+      "Corner blocks (B, C): elliptical polar resampling about the bowl's left-end centre (image coords 1754,1950) with a constant 57px major/minor offset, sampled over 181..88 deg (B) and 179..272 deg (C, then vertically flipped for upright glyphs); row labels at both strip ends kept in frame; every column re-read a second time from an independent rigid-rotation view (B: +19/+40/+65/+90 deg sectors; C: -90 deg sector).",
+      "Outer stands (西, 北): elliptical polar resampling about the same centre over the stand radii, chunked into six overlapping windows read at 2.0-2.1x, plus dedicated 4-row band strips to classify landings.",
+      "Outer stands (東, 南): direct crops and a polar resampling about the right-end centre (3400,1950); row labels 1-10 in frame.",
+      "Glyph disambiguation and step/landing classification resolved by returning to the chart at 5-9x native-pixel zoom (a seat cell is a full-row-height narrow rectangle; a staircase is a vertically inset wider rectangle; a landing is a large unsubdivided rectangle)."
+    ],
+    "prohibitionsObserved": [
+      "No range completed from symmetry, from a neighbouring row, or to fit any capacity or subtotal.",
+      "No seat identifier generated from machine geometry; no OCR or machine extraction used as a seat-ID source.",
+      "Printed positional gaps recorded as gaps, never filled.",
+      "No mixing of the A pattern with the B or 中央 pattern.",
+      "Excluded categories not transcribed: 1階センター席 (event-variable arena floor), 立見スペース, スイート・ボックス (no printed row or seat identifier on the chart), STAGE area."
+    ]
+  },
+  "declaredScope": {
+    "included": [
+      "2階 arena blocks A, B, C, D, E, F (printed row labels <letter><number>)",
+      "stand blocks 北 / 東 / 南 / 西 (printed row labels 1-10)"
+    ],
+    "excluded": [
+      "1階センター席 (event-variable)",
+      "立見スペース",
+      "スイート・ボックス",
+      "STAGE"
+    ]
+  },
+  "observations": {
+    "emptyLabelledRows": [
+      "A12",
+      "B11",
+      "C11",
+      "D12",
+      "E11",
+      "F11 — labelled cross-aisle bands carrying no seat cells; no seat identifiers transcribed"
+    ],
+    "rowsSixAndSevenLandings": {
+      "west": [
+        "38-45",
+        "62-69",
+        "86-93"
+      ],
+      "north": [
+        "25-32",
+        "49-56",
+        "73-80",
+        "105-112",
+        "129-136"
+      ],
+      "east": [
+        "17-24",
+        "41-48"
+      ],
+      "south": []
+    },
+    "issuerLogoOverlays": [
+      "西/WEST logo overlays the printed 69 and 62 labels of west stand rows 6-7; the underlying area was resolved at 7x as an unsubdivided landing (no seat cells), consistent with the counted 3 (rows 8-10) versus 5 (rows 6-10) label occurrences of the adjacent runs.",
+      "北/NORTH logo overlays part of north stand rows 6-7 around 73-80; resolved the same way.",
+      "東/EAST logo overlays part of east stand rows 6-7 around 41-48; resolved the same way."
+    ]
+  },
+  "unresolved": {
+    "rowOwnershipUnresolvedCount": 0,
+    "segmentBoundaryUnresolvedCount": 0,
+    "duplicateSeatKeyCount": 0,
+    "notes": "Every transcribed row's block ownership and every transcribed segment start/end value was read from a printed identifier at a zoom level at which the glyph was unambiguous."
+  },
+  "areaSummary": [
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowCount": 21,
+      "seatCount": 1205
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowCount": 21,
+      "seatCount": 1205
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowCount": 21,
+      "seatCount": 1238
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowCount": 21,
+      "seatCount": 1238
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowCount": 21,
+      "seatCount": 306
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowCount": 21,
+      "seatCount": 306
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowCount": 10,
+      "seatCount": 1050
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowCount": 10,
+      "seatCount": 1285
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowCount": 10,
+      "seatCount": 663
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowCount": 10,
+      "seatCount": 273
+    }
+  ],
+  "rows": [
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A1",
+      "ranges": [
+        {
+          "from": 8,
+          "to": 58
+        }
+      ],
+      "seatCount": 51
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A2",
+      "ranges": [
+        {
+          "from": 8,
+          "to": 58
+        }
+      ],
+      "seatCount": 51
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A3",
+      "ranges": [
+        {
+          "from": 7,
+          "to": 59
+        }
+      ],
+      "seatCount": 53
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A4",
+      "ranges": [
+        {
+          "from": 7,
+          "to": 59
+        }
+      ],
+      "seatCount": 53
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A5",
+      "ranges": [
+        {
+          "from": 7,
+          "to": 59
+        }
+      ],
+      "seatCount": 53
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A6",
+      "ranges": [
+        {
+          "from": 6,
+          "to": 60
+        }
+      ],
+      "seatCount": 55
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A7",
+      "ranges": [
+        {
+          "from": 6,
+          "to": 60
+        }
+      ],
+      "seatCount": 55
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A8",
+      "ranges": [
+        {
+          "from": 6,
+          "to": 60
+        }
+      ],
+      "seatCount": 55
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A9",
+      "ranges": [
+        {
+          "from": 5,
+          "to": 61
+        }
+      ],
+      "seatCount": 57
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A10",
+      "ranges": [
+        {
+          "from": 5,
+          "to": 61
+        }
+      ],
+      "seatCount": 57
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A11",
+      "ranges": [
+        {
+          "from": 5,
+          "to": 61
+        }
+      ],
+      "seatCount": 57
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A13",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A14",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A15",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A16",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A17",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A18",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A19",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 64
+        }
+      ],
+      "seatCount": 63
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A20",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 64
+        }
+      ],
+      "seatCount": 63
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A21",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 64
+        }
+      ],
+      "seatCount": 63
+    },
+    {
+      "areaId": "block-a",
+      "areaLabel": "Aブロック",
+      "rowLabel": "A22",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 65
+        }
+      ],
+      "seatCount": 65
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D1",
+      "ranges": [
+        {
+          "from": 8,
+          "to": 58
+        }
+      ],
+      "seatCount": 51
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D2",
+      "ranges": [
+        {
+          "from": 8,
+          "to": 58
+        }
+      ],
+      "seatCount": 51
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D3",
+      "ranges": [
+        {
+          "from": 7,
+          "to": 59
+        }
+      ],
+      "seatCount": 53
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D4",
+      "ranges": [
+        {
+          "from": 7,
+          "to": 59
+        }
+      ],
+      "seatCount": 53
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D5",
+      "ranges": [
+        {
+          "from": 7,
+          "to": 59
+        }
+      ],
+      "seatCount": 53
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D6",
+      "ranges": [
+        {
+          "from": 6,
+          "to": 60
+        }
+      ],
+      "seatCount": 55
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D7",
+      "ranges": [
+        {
+          "from": 6,
+          "to": 60
+        }
+      ],
+      "seatCount": 55
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D8",
+      "ranges": [
+        {
+          "from": 6,
+          "to": 60
+        }
+      ],
+      "seatCount": 55
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D9",
+      "ranges": [
+        {
+          "from": 5,
+          "to": 61
+        }
+      ],
+      "seatCount": 57
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D10",
+      "ranges": [
+        {
+          "from": 5,
+          "to": 61
+        }
+      ],
+      "seatCount": 57
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D11",
+      "ranges": [
+        {
+          "from": 5,
+          "to": 61
+        }
+      ],
+      "seatCount": 57
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D13",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D14",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D15",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D16",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D17",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D18",
+      "ranges": [
+        {
+          "from": 4,
+          "to": 62
+        }
+      ],
+      "seatCount": 59
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D19",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 64
+        }
+      ],
+      "seatCount": 63
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D20",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 64
+        }
+      ],
+      "seatCount": 63
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D21",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 64
+        }
+      ],
+      "seatCount": 63
+    },
+    {
+      "areaId": "block-d",
+      "areaLabel": "Dブロック",
+      "rowLabel": "D22",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 65
+        }
+      ],
+      "seatCount": 65
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B1",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 25
+        },
+        {
+          "from": 37,
+          "to": 46
+        },
+        {
+          "from": 58,
+          "to": 66
+        },
+        {
+          "from": 81,
+          "to": 84
+        }
+      ],
+      "seatCount": 38
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B2",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 25
+        },
+        {
+          "from": 37,
+          "to": 46
+        },
+        {
+          "from": 58,
+          "to": 66
+        },
+        {
+          "from": 81,
+          "to": 84
+        }
+      ],
+      "seatCount": 38
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B3",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 25
+        },
+        {
+          "from": 37,
+          "to": 46
+        },
+        {
+          "from": 58,
+          "to": 67
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 40
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B4",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 25
+        },
+        {
+          "from": 37,
+          "to": 46
+        },
+        {
+          "from": 58,
+          "to": 67
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 40
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B5",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 27
+        },
+        {
+          "from": 37,
+          "to": 48
+        },
+        {
+          "from": 58,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B6",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 27
+        },
+        {
+          "from": 37,
+          "to": 48
+        },
+        {
+          "from": 58,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B7",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 27
+        },
+        {
+          "from": 37,
+          "to": 48
+        },
+        {
+          "from": 58,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B8",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 27
+        },
+        {
+          "from": 37,
+          "to": 48
+        },
+        {
+          "from": 58,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B9",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 27
+        },
+        {
+          "from": 37,
+          "to": 48
+        },
+        {
+          "from": 58,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B10",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 27
+        },
+        {
+          "from": 37,
+          "to": 48
+        },
+        {
+          "from": 58,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B12",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 8
+        },
+        {
+          "from": 16,
+          "to": 29
+        },
+        {
+          "from": 37,
+          "to": 50
+        },
+        {
+          "from": 58,
+          "to": 72
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 57
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B13",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 9
+        },
+        {
+          "from": 16,
+          "to": 30
+        },
+        {
+          "from": 37,
+          "to": 51
+        },
+        {
+          "from": 58,
+          "to": 73
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 61
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B14",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 10
+        },
+        {
+          "from": 16,
+          "to": 31
+        },
+        {
+          "from": 37,
+          "to": 52
+        },
+        {
+          "from": 58,
+          "to": 74
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 65
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B15",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 10
+        },
+        {
+          "from": 16,
+          "to": 31
+        },
+        {
+          "from": 37,
+          "to": 52
+        },
+        {
+          "from": 58,
+          "to": 75
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 66
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B16",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 11
+        },
+        {
+          "from": 16,
+          "to": 32
+        },
+        {
+          "from": 37,
+          "to": 53
+        },
+        {
+          "from": 58,
+          "to": 75
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 69
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B17",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 12
+        },
+        {
+          "from": 16,
+          "to": 33
+        },
+        {
+          "from": 37,
+          "to": 54
+        },
+        {
+          "from": 58,
+          "to": 76
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 73
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B18",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 12
+        },
+        {
+          "from": 16,
+          "to": 33
+        },
+        {
+          "from": 37,
+          "to": 54
+        },
+        {
+          "from": 58,
+          "to": 77
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 74
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B19",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 13
+        },
+        {
+          "from": 16,
+          "to": 34
+        },
+        {
+          "from": 37,
+          "to": 55
+        },
+        {
+          "from": 58,
+          "to": 78
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 78
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B20",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 14
+        },
+        {
+          "from": 16,
+          "to": 35
+        },
+        {
+          "from": 37,
+          "to": 56
+        },
+        {
+          "from": 58,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 82
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B21",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 14
+        },
+        {
+          "from": 16,
+          "to": 35
+        },
+        {
+          "from": 37,
+          "to": 56
+        },
+        {
+          "from": 58,
+          "to": 86
+        }
+      ],
+      "seatCount": 83
+    },
+    {
+      "areaId": "block-b",
+      "areaLabel": "Bブロック",
+      "rowLabel": "B22",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 86
+        }
+      ],
+      "seatCount": 86
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C1",
+      "ranges": [
+        {
+          "from": 3,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 26
+        },
+        {
+          "from": 39,
+          "to": 48
+        },
+        {
+          "from": 60,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 38
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C2",
+      "ranges": [
+        {
+          "from": 3,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 26
+        },
+        {
+          "from": 39,
+          "to": 48
+        },
+        {
+          "from": 60,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 38
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C3",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 27
+        },
+        {
+          "from": 39,
+          "to": 48
+        },
+        {
+          "from": 60,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 40
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C4",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 27
+        },
+        {
+          "from": 39,
+          "to": 48
+        },
+        {
+          "from": 60,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 40
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C5",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 29
+        },
+        {
+          "from": 39,
+          "to": 50
+        },
+        {
+          "from": 60,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C6",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 29
+        },
+        {
+          "from": 39,
+          "to": 50
+        },
+        {
+          "from": 60,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C7",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 29
+        },
+        {
+          "from": 39,
+          "to": 50
+        },
+        {
+          "from": 60,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C8",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 29
+        },
+        {
+          "from": 39,
+          "to": 50
+        },
+        {
+          "from": 60,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C9",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 29
+        },
+        {
+          "from": 39,
+          "to": 50
+        },
+        {
+          "from": 60,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C10",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 18,
+          "to": 29
+        },
+        {
+          "from": 39,
+          "to": 50
+        },
+        {
+          "from": 60,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 48
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C12",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 9
+        },
+        {
+          "from": 18,
+          "to": 31
+        },
+        {
+          "from": 39,
+          "to": 52
+        },
+        {
+          "from": 60,
+          "to": 73
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 57
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C13",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 10
+        },
+        {
+          "from": 18,
+          "to": 32
+        },
+        {
+          "from": 39,
+          "to": 53
+        },
+        {
+          "from": 60,
+          "to": 74
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 61
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C14",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 11
+        },
+        {
+          "from": 18,
+          "to": 33
+        },
+        {
+          "from": 39,
+          "to": 54
+        },
+        {
+          "from": 60,
+          "to": 75
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 65
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C15",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 12
+        },
+        {
+          "from": 18,
+          "to": 33
+        },
+        {
+          "from": 39,
+          "to": 54
+        },
+        {
+          "from": 60,
+          "to": 75
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 66
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C16",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 12
+        },
+        {
+          "from": 18,
+          "to": 34
+        },
+        {
+          "from": 39,
+          "to": 55
+        },
+        {
+          "from": 60,
+          "to": 76
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 69
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C17",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 13
+        },
+        {
+          "from": 18,
+          "to": 35
+        },
+        {
+          "from": 39,
+          "to": 56
+        },
+        {
+          "from": 60,
+          "to": 77
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 73
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C18",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 14
+        },
+        {
+          "from": 18,
+          "to": 35
+        },
+        {
+          "from": 39,
+          "to": 56
+        },
+        {
+          "from": 60,
+          "to": 77
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 74
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C19",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 15
+        },
+        {
+          "from": 18,
+          "to": 36
+        },
+        {
+          "from": 39,
+          "to": 57
+        },
+        {
+          "from": 60,
+          "to": 78
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 78
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C20",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 16
+        },
+        {
+          "from": 18,
+          "to": 37
+        },
+        {
+          "from": 39,
+          "to": 58
+        },
+        {
+          "from": 60,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 82
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C21",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 37
+        },
+        {
+          "from": 39,
+          "to": 58
+        },
+        {
+          "from": 60,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 83
+    },
+    {
+      "areaId": "block-c",
+      "areaLabel": "Cブロック",
+      "rowLabel": "C22",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 86
+        }
+      ],
+      "seatCount": 86
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E1",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 20
+        }
+      ],
+      "seatCount": 10
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E2",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 20
+        }
+      ],
+      "seatCount": 10
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E3",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 20
+        }
+      ],
+      "seatCount": 10
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E4",
+      "ranges": [
+        {
+          "from": 2,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 20
+        }
+      ],
+      "seatCount": 10
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E5",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E6",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E7",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E8",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E9",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E10",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 6
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E12",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 8
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 14
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E13",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 9
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 15
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E14",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 10
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 16
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E15",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 10
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 16
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E16",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 11
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 17
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E17",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 12
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 18
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E18",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 12
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 18
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E19",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 13
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 19
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E20",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 14
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 20
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E21",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 14
+        },
+        {
+          "from": 16,
+          "to": 21
+        }
+      ],
+      "seatCount": 20
+    },
+    {
+      "areaId": "block-e",
+      "areaLabel": "Eブロック",
+      "rowLabel": "E22",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 21
+        }
+      ],
+      "seatCount": 21
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F1",
+      "ranges": [
+        {
+          "from": 65,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 10
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F2",
+      "ranges": [
+        {
+          "from": 65,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 10
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F3",
+      "ranges": [
+        {
+          "from": 65,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 10
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F4",
+      "ranges": [
+        {
+          "from": 65,
+          "to": 69
+        },
+        {
+          "from": 81,
+          "to": 85
+        }
+      ],
+      "seatCount": 10
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F5",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F6",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F7",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F8",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F9",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F10",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 71
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 12
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F12",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 73
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 14
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F13",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 74
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 15
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F14",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 75
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 16
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F15",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 75
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 16
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F16",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 76
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 17
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F17",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 77
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 18
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F18",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 77
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 18
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F19",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 78
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 19
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F20",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 20
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F21",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 86
+        }
+      ],
+      "seatCount": 20
+    },
+    {
+      "areaId": "block-f",
+      "areaLabel": "Fブロック",
+      "rowLabel": "F22",
+      "ranges": [
+        {
+          "from": 66,
+          "to": 86
+        }
+      ],
+      "seatCount": 21
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "1",
+      "ranges": [
+        {
+          "from": 16,
+          "to": 20
+        },
+        {
+          "from": 22,
+          "to": 28
+        },
+        {
+          "from": 30,
+          "to": 36
+        },
+        {
+          "from": 38,
+          "to": 44
+        },
+        {
+          "from": 46,
+          "to": 52
+        },
+        {
+          "from": 54,
+          "to": 60
+        },
+        {
+          "from": 62,
+          "to": 68
+        },
+        {
+          "from": 70,
+          "to": 76
+        },
+        {
+          "from": 78,
+          "to": 84
+        },
+        {
+          "from": 86,
+          "to": 92
+        },
+        {
+          "from": 94,
+          "to": 100
+        },
+        {
+          "from": 102,
+          "to": 108
+        },
+        {
+          "from": 110,
+          "to": 116
+        },
+        {
+          "from": 118,
+          "to": 124
+        }
+      ],
+      "seatCount": 96
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "2",
+      "ranges": [
+        {
+          "from": 16,
+          "to": 20
+        },
+        {
+          "from": 22,
+          "to": 28
+        },
+        {
+          "from": 30,
+          "to": 36
+        },
+        {
+          "from": 38,
+          "to": 44
+        },
+        {
+          "from": 46,
+          "to": 52
+        },
+        {
+          "from": 54,
+          "to": 60
+        },
+        {
+          "from": 62,
+          "to": 68
+        },
+        {
+          "from": 70,
+          "to": 76
+        },
+        {
+          "from": 78,
+          "to": 84
+        },
+        {
+          "from": 86,
+          "to": 92
+        },
+        {
+          "from": 94,
+          "to": 100
+        },
+        {
+          "from": 102,
+          "to": 108
+        },
+        {
+          "from": 110,
+          "to": 116
+        },
+        {
+          "from": 118,
+          "to": 124
+        }
+      ],
+      "seatCount": 96
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "3",
+      "ranges": [
+        {
+          "from": 14,
+          "to": 20
+        },
+        {
+          "from": 22,
+          "to": 28
+        },
+        {
+          "from": 30,
+          "to": 36
+        },
+        {
+          "from": 38,
+          "to": 44
+        },
+        {
+          "from": 46,
+          "to": 52
+        },
+        {
+          "from": 54,
+          "to": 60
+        },
+        {
+          "from": 62,
+          "to": 68
+        },
+        {
+          "from": 70,
+          "to": 76
+        },
+        {
+          "from": 78,
+          "to": 84
+        },
+        {
+          "from": 86,
+          "to": 92
+        },
+        {
+          "from": 94,
+          "to": 100
+        },
+        {
+          "from": 102,
+          "to": 108
+        },
+        {
+          "from": 110,
+          "to": 116
+        },
+        {
+          "from": 118,
+          "to": 124
+        }
+      ],
+      "seatCount": 98
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "4",
+      "ranges": [
+        {
+          "from": 14,
+          "to": 20
+        },
+        {
+          "from": 22,
+          "to": 28
+        },
+        {
+          "from": 30,
+          "to": 36
+        },
+        {
+          "from": 38,
+          "to": 44
+        },
+        {
+          "from": 46,
+          "to": 52
+        },
+        {
+          "from": 54,
+          "to": 60
+        },
+        {
+          "from": 62,
+          "to": 68
+        },
+        {
+          "from": 70,
+          "to": 76
+        },
+        {
+          "from": 78,
+          "to": 84
+        },
+        {
+          "from": 86,
+          "to": 92
+        },
+        {
+          "from": 94,
+          "to": 100
+        },
+        {
+          "from": 102,
+          "to": 108
+        },
+        {
+          "from": 110,
+          "to": 116
+        },
+        {
+          "from": 118,
+          "to": 124
+        }
+      ],
+      "seatCount": 98
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "5",
+      "ranges": [
+        {
+          "from": 14,
+          "to": 20
+        },
+        {
+          "from": 22,
+          "to": 28
+        },
+        {
+          "from": 30,
+          "to": 36
+        },
+        {
+          "from": 38,
+          "to": 44
+        },
+        {
+          "from": 46,
+          "to": 52
+        },
+        {
+          "from": 54,
+          "to": 60
+        },
+        {
+          "from": 62,
+          "to": 68
+        },
+        {
+          "from": 70,
+          "to": 76
+        },
+        {
+          "from": 78,
+          "to": 84
+        },
+        {
+          "from": 86,
+          "to": 92
+        },
+        {
+          "from": 94,
+          "to": 100
+        },
+        {
+          "from": 102,
+          "to": 108
+        },
+        {
+          "from": 110,
+          "to": 116
+        },
+        {
+          "from": 118,
+          "to": 124
+        }
+      ],
+      "seatCount": 98
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "6",
+      "ranges": [
+        {
+          "from": 14,
+          "to": 37
+        },
+        {
+          "from": 46,
+          "to": 61
+        },
+        {
+          "from": 70,
+          "to": 85
+        },
+        {
+          "from": 94,
+          "to": 125
+        }
+      ],
+      "seatCount": 88
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "7",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 37
+        },
+        {
+          "from": 46,
+          "to": 61
+        },
+        {
+          "from": 70,
+          "to": 85
+        },
+        {
+          "from": 94,
+          "to": 125
+        }
+      ],
+      "seatCount": 101
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "8",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 125
+        }
+      ],
+      "seatCount": 125
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "9",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 125
+        }
+      ],
+      "seatCount": 125
+    },
+    {
+      "areaId": "stand-west",
+      "areaLabel": "西スタンド",
+      "rowLabel": "10",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 125
+        }
+      ],
+      "seatCount": 125
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "1",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 7
+        },
+        {
+          "from": 9,
+          "to": 15
+        },
+        {
+          "from": 17,
+          "to": 23
+        },
+        {
+          "from": 25,
+          "to": 31
+        },
+        {
+          "from": 33,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        },
+        {
+          "from": 73,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 87
+        },
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 111
+        },
+        {
+          "from": 113,
+          "to": 119
+        },
+        {
+          "from": 121,
+          "to": 144
+        }
+      ],
+      "seatCount": 129
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "2",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 7
+        },
+        {
+          "from": 9,
+          "to": 15
+        },
+        {
+          "from": 17,
+          "to": 23
+        },
+        {
+          "from": 25,
+          "to": 31
+        },
+        {
+          "from": 33,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        },
+        {
+          "from": 73,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 87
+        },
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 111
+        },
+        {
+          "from": 113,
+          "to": 119
+        },
+        {
+          "from": 121,
+          "to": 144
+        }
+      ],
+      "seatCount": 129
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "3",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 7
+        },
+        {
+          "from": 9,
+          "to": 15
+        },
+        {
+          "from": 17,
+          "to": 23
+        },
+        {
+          "from": 25,
+          "to": 31
+        },
+        {
+          "from": 33,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        },
+        {
+          "from": 73,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 87
+        },
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 111
+        },
+        {
+          "from": 113,
+          "to": 119
+        },
+        {
+          "from": 121,
+          "to": 144
+        }
+      ],
+      "seatCount": 129
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "4",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 7
+        },
+        {
+          "from": 9,
+          "to": 15
+        },
+        {
+          "from": 17,
+          "to": 23
+        },
+        {
+          "from": 25,
+          "to": 31
+        },
+        {
+          "from": 33,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        },
+        {
+          "from": 73,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 87
+        },
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 111
+        },
+        {
+          "from": 113,
+          "to": 119
+        },
+        {
+          "from": 121,
+          "to": 144
+        }
+      ],
+      "seatCount": 129
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "5",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 7
+        },
+        {
+          "from": 9,
+          "to": 15
+        },
+        {
+          "from": 17,
+          "to": 23
+        },
+        {
+          "from": 25,
+          "to": 31
+        },
+        {
+          "from": 33,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        },
+        {
+          "from": 73,
+          "to": 79
+        },
+        {
+          "from": 81,
+          "to": 87
+        },
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 111
+        },
+        {
+          "from": 113,
+          "to": 119
+        },
+        {
+          "from": 121,
+          "to": 144
+        }
+      ],
+      "seatCount": 129
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "6",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 24
+        },
+        {
+          "from": 33,
+          "to": 48
+        },
+        {
+          "from": 57,
+          "to": 72
+        },
+        {
+          "from": 81,
+          "to": 104
+        },
+        {
+          "from": 113,
+          "to": 128
+        },
+        {
+          "from": 137,
+          "to": 144
+        }
+      ],
+      "seatCount": 104
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "7",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 24
+        },
+        {
+          "from": 33,
+          "to": 48
+        },
+        {
+          "from": 57,
+          "to": 72
+        },
+        {
+          "from": 81,
+          "to": 104
+        },
+        {
+          "from": 113,
+          "to": 128
+        },
+        {
+          "from": 137,
+          "to": 144
+        }
+      ],
+      "seatCount": 104
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "8",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 144
+        }
+      ],
+      "seatCount": 144
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "9",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 144
+        }
+      ],
+      "seatCount": 144
+    },
+    {
+      "areaId": "stand-north",
+      "areaLabel": "北スタンド",
+      "rowLabel": "10",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 144
+        }
+      ],
+      "seatCount": 144
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "1",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        }
+      ],
+      "seatCount": 67
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "2",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        }
+      ],
+      "seatCount": 67
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "3",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        }
+      ],
+      "seatCount": 67
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "4",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        }
+      ],
+      "seatCount": 67
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "5",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 39
+        },
+        {
+          "from": 41,
+          "to": 47
+        },
+        {
+          "from": 49,
+          "to": 55
+        },
+        {
+          "from": 57,
+          "to": 63
+        },
+        {
+          "from": 65,
+          "to": 71
+        }
+      ],
+      "seatCount": 67
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "6",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 16
+        },
+        {
+          "from": 25,
+          "to": 40
+        },
+        {
+          "from": 49,
+          "to": 72
+        }
+      ],
+      "seatCount": 56
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "7",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 16
+        },
+        {
+          "from": 25,
+          "to": 40
+        },
+        {
+          "from": 49,
+          "to": 72
+        }
+      ],
+      "seatCount": 56
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "8",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 72
+        }
+      ],
+      "seatCount": 72
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "9",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 72
+        }
+      ],
+      "seatCount": 72
+    },
+    {
+      "areaId": "stand-east",
+      "areaLabel": "東スタンド",
+      "rowLabel": "10",
+      "ranges": [
+        {
+          "from": 1,
+          "to": 72
+        }
+      ],
+      "seatCount": 72
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "1",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 109
+        }
+      ],
+      "seatCount": 19
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "2",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 109
+        }
+      ],
+      "seatCount": 19
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "3",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 111
+        }
+      ],
+      "seatCount": 21
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "4",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 111
+        }
+      ],
+      "seatCount": 21
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "5",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 95
+        },
+        {
+          "from": 97,
+          "to": 103
+        },
+        {
+          "from": 105,
+          "to": 111
+        }
+      ],
+      "seatCount": 21
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "6",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 112
+        }
+      ],
+      "seatCount": 24
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "7",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 125
+        }
+      ],
+      "seatCount": 37
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "8",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 125
+        }
+      ],
+      "seatCount": 37
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "9",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 125
+        }
+      ],
+      "seatCount": 37
+    },
+    {
+      "areaId": "stand-south",
+      "areaLabel": "南スタンド",
+      "rowLabel": "10",
+      "ranges": [
+        {
+          "from": 89,
+          "to": 125
+        }
+      ],
+      "seatCount": 37
+    }
+  ],
+  "expandedSeatKeyCount": 8769,
+  "freezeTimestamp": "2026-09-09T00:00:00+09:00",
+  "_note": "SHA-256 below is computed over the canonical serialization of this document with the _note and pass2FreezeSha256 fields absent: json.dumps(doc, ensure_ascii=False, sort_keys=True, separators=(',',':')) encoded UTF-8.",
+  "pass2FreezeSha256": "17ac32e284b48b7e9a5525e488ac4ec63423ce06f513adf0771d3beba20439d0"
+}

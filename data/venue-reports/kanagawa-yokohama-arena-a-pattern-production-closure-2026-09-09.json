@@ -1,0 +1,176 @@
+{
+  "reportVersion": 1,
+  "title": "YOKOHAMA ARENA A-PATTERN FRESH INDEPENDENT PASS-2 + PRODUCTION CLOSURE",
+  "asOf": "2026-09-09",
+  "scope": "kanagawa-yokohama-arena-main のみ。GMOアリーナさいたま、RaiBoC、日野市民会館、Tokyo Priority D には進んでいない。",
+  "outcome": "PRODUCTION。fresh independent human Pass 2 を Pass 1・issuer subtotal を一切開かずに完成・freeze し、独立 machine structural checksum も freeze したうえで、Pass1/Pass2 bidirectional symmetric difference 0 と issuer subtotal reconciliation delta 0 を確認した。venue source yokohama-arena-main / configuration a-pattern-fixed-numbered-seats を 8,769 席で production 化した。",
+  "start": {
+    "head": "f2038749e68045ac27cfdeefefc37735cd38c125",
+    "workingTree": "clean at session start"
+  },
+  "sealedPhase": {
+    "rule": "Pass 2 freeze 前に Pass 1 answer key と issuer subtotal を取得しない。",
+    "preFreezeRepositoryFilesOpened": [
+      "AGENTS.md / CLAUDE.md（session startup instruction files）",
+      "docs/HANDOFF.md（Pass2-safe active save state と heading 一覧のみ）",
+      "docs/VENUE_WORKFLOW.md",
+      "docs/VENUE_DATA_GUIDE.md",
+      "docs/VALIDATION.md",
+      "docs/COMMAND_GUARDRAILS.md"
+    ],
+    "preFreezeCommands": [
+      "git status",
+      "git rev-parse HEAD",
+      "git rev-parse origin/main",
+      "npm run venues:report"
+    ],
+    "preFreezeIssuerUrls": [
+      "https://www.yokohama-arena.co.jp/ （nav link 抽出のみ）",
+      "https://www.yokohama-arena.co.jp/seatguide/ ・/seatguide/astage.html ・/seatguide/bstage.html ・/seatguide/cstage.html （configuration identity 確認のため、HTML から画像・PDF の asset 属性だけを抽出し、本文テキストは表示していない）",
+      "https://www.yokohama-arena.co.jp/common/img/seatguide/img_seatzoom_01.png （A パターン拡大座席図）"
+    ],
+    "audit": {
+      "forbiddenHistoricalReportAccess": 0,
+      "gitHistoryAccess": 0,
+      "repositoryWideYokohamaGrep": 0,
+      "issuerSubtotalExposure": 0,
+      "pass1TotalExposure": 0,
+      "pass2FrozenArtifactSha256": "17ac32e284b48b7e9a5525e488ac4ec63423ce06f513adf0771d3beba20439d0",
+      "machineChecksumFrozen": true,
+      "machineChecksumSha256": "f2f0229821bdeca605ead763e674016ad9a12b8b20dfe12400676b7420851bf8",
+      "note": "data/venue-reports/ 配下のファイル一覧・内容へのアクセスは Pass 2 と machine checksum の両 freeze 後が初回。git show / git log -p / git blame は本 session で一度も実行していない。"
+    }
+  },
+  "chartProvenance": {
+    "issuer": "株式会社横浜アリーナ",
+    "configurationPage": "https://www.yokohama-arena.co.jp/seatguide/astage.html",
+    "chartAsset": "https://www.yokohama-arena.co.jp/common/img/seatguide/img_seatzoom_01.png",
+    "sha256": "960e9794c696c253e86944cbc48f15317b3561f7ac0e826bd4782bf903a3475c",
+    "bytes": 1526059,
+    "pixelSize": "5000x3758",
+    "configurationDistinctness": "B パターンは img_seatzoom_02.png、中央パターンは img_seatzoom_03.png を各自のページからリンクしており、資産レベルで分離している。"
+  },
+  "pass2": {
+    "artifact": "data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass2-frozen-2026-09-09.json",
+    "sha256": "17ac32e284b48b7e9a5525e488ac4ec63423ce06f513adf0771d3beba20439d0",
+    "method": "本 session で独自に選定。直交ブロック（A・D、スタンド上辺直線部）は高 DPI 直接クロップ、くさび形ブロック（E・F）は剛体回転、コーナーブロック（B・C）と外周スタンド（西・北）は楕円 polar 再サンプリング（中心 1754,1950、長短軸差 57px）、東・南は直接クロップと右端中心 (3400,1950) の polar。段差・踊り場・座席セルの識別は 5〜9 倍の native 拡大で確定。historical structural report の parameter は参照していない。",
+    "expandedSeatKeyCount": 8769,
+    "rowOwnershipUnresolved": 0,
+    "segmentBoundaryUnresolved": 0,
+    "duplicateSeatKeys": 0
+  },
+  "machineStructuralChecksum": {
+    "artifact": "data/venue-reports/kanagawa-yokohama-arena-a-pattern-machine-structural-checksum-2026-09-09.json",
+    "sha256": "f2f0229821bdeca605ead763e674016ad9a12b8b20dfe12400676b7420851bf8",
+    "builtAfterPass2Freeze": true,
+    "usedHumanRangesAsInput": false,
+    "seatingRegionsFound": 10,
+    "machineOnlyPhantomRegions": 0,
+    "humanOnlyRegionsWithoutMachineStructure": 0,
+    "machineCellTotal": 8602,
+    "humanTotal": 8769,
+    "delta": -167,
+    "direction": "one-signed (machine <= human in every region and every checked row)",
+    "rowTopology": "block A / block D で 22 の labelled row band を独立に検出し、A12 / D12 が座席セル 0 の band であることを再現。per-row count は大半の行で完全一致。",
+    "limitation": "印字数字またはアンチエイリアスが隣接セル間の細線輪郭を橋渡しすると 2 セルが 1 成分になる under-segmentation。機械値が人手値を上回る事象は 0 件。"
+  },
+  "passComparison": {
+    "pass1Artifact": "data/venue-reports/kanagawa-yokohama-arena-a-pattern-pass1-completion-2026-09-08.json",
+    "openedOnlyAfter": "Pass 2 freeze と machine checksum freeze の完了後",
+    "pass1ExpandedKeys": 8769,
+    "pass2ExpandedKeys": 8769,
+    "pass1Only": 0,
+    "pass2Only": 0,
+    "symmetricDifference": 0,
+    "areaKeysEqual": true,
+    "rowKeysEqual": true,
+    "perAreaCounts": {
+      "arena-a": 1205,
+      "arena-b": 1238,
+      "arena-c": 1238,
+      "arena-d": 1205,
+      "arena-e": 306,
+      "arena-f": 306,
+      "stand-north": 1285,
+      "stand-east": 663,
+      "stand-south": 273,
+      "stand-west": 1050
+    },
+    "note": "frozen Pass 2 artifact は比較後もいっさい書き換えていない。"
+  },
+  "issuerReconciliation": {
+    "openedOnlyAfter": "symmetric difference 0 の確認後",
+    "source": "https://www.yokohama-arena.co.jp/organizer/plans/ （2026-09-09 再取得）",
+    "issuerAStageBreakdown": {
+      "センター席": 3114,
+      "アリーナ席": 5498,
+      "スタンド席": 3271,
+      "スイート・ボックス": 140,
+      "立見スペース": 1420,
+      "合計": 13443
+    },
+    "mappedArena": 5498,
+    "arenaDelta": 0,
+    "mappedStand": 3271,
+    "standDelta": 0,
+    "mappedApplicableSubtotal": 8769,
+    "applicableIssuerSubtotal": 8769,
+    "grandDelta": 0,
+    "note": "13,443 − 3,114 − 140 − 1,420 = 8,769。B ステージ（アリーナ 4,933／スタンド 3,086）とは一致せず、configuration mixing がないことも確認できる。数値合わせのための range 変更は一切行っていない。"
+  },
+  "productionGate": {
+    "currentFirstPartyChart": true,
+    "coherentAPatternRepresentativeScope": true,
+    "frozenPass1": true,
+    "freshIndependentFrozenPass2": true,
+    "passSymmetricDifferenceZero": true,
+    "independentStructuralChecksumClosure": true,
+    "issuerReconciliationPostCheck": true,
+    "noInventedIds": true,
+    "noConfigurationMixing": true,
+    "excludedCategoriesAbsent": true,
+    "verdict": "PRODUCTION"
+  },
+  "integration": {
+    "venueSource": "data/venue-sources/yokohama-arena-main.json",
+    "configuration": "a-pattern-fixed-numbered-seats",
+    "mappedSeatCount": 8769,
+    "rangeCount": 554,
+    "areas": 10,
+    "inventory": "data/venue-inventory/kanto-release-critical-2026-08-27.json — kanagawa-yokohama-arena-main を eligible / production / venueSourceId=yokohama-arena-main へ更新、blockingReason を null 化",
+    "coverageLedger": "data/venue-coverage/kanto-must-coverage-audit-2026-08-27.json — 該当 record を production 化し byStatus を production 77 / ADOPT 2 へ更新",
+    "fingerprint": "data/venue-fingerprints/production.json に yokohama-arena-main を追加（count 8769、samples arena-a/A1/8・arena-d/D14/51・stand-west/10/125、sha256 5bef66e5b4d24bc5e21ce6c672768d34a54d6cb494ccda63f6c2d73260b14941）",
+    "generated": "npm run venues:build により src/data/venue-db/catalog.generated.json と public/venue-db/venues/yokohama-arena-main--a-pattern-fixed-numbered-seats.json を再生成"
+  },
+  "countsAfter": {
+    "productionTotals": {
+      "venues": 160,
+      "selectableConfigurations": 162,
+      "seatRecords": 254792
+    },
+    "delta": {
+      "venues": 1,
+      "selectableConfigurations": 1,
+      "seatRecords": 8769
+    },
+    "kantoLedgerFromRecords": {
+      "universe": 154,
+      "production": 77,
+      "adopt": 2,
+      "blockedFormal": 75,
+      "inventoryUnresearched": 0,
+      "missingFromInventory": 0
+    },
+    "ledgerInvariant": "77 + 2 + 75 = 154。Kanto >=1,000 は complete / closed ではない（GMOアリーナさいたま 2 configuration が ADOPT のまま）。"
+  },
+  "prohibitionsObserved": [
+    "seat ID・列・番号の創作なし",
+    "capacity / subtotal を target とした range 変更なし",
+    "symmetry・隣接行・幾何からの range 補完なし",
+    "印字された positional gap の穴埋めなし",
+    "A / B / 中央 パターンの混在なし",
+    "1階センター席・立見スペース・スイート・ボックスの登録なし",
+    "frozen Pass 2 artifact の比較後編集なし",
+    "生成物の手編集なし"
+  ]
+}

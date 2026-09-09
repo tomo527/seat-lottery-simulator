@@ -1,0 +1,3992 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "yokohama-arena-main",
+  "name": "横浜アリーナ",
+  "prefecture": "神奈川県",
+  "city": "横浜市",
+  "aliases": [
+    "横浜アリーナ〔メインアリーナ〕",
+    "YOKOHAMA ARENA",
+    "横アリ"
+  ],
+  "venueType": "arena",
+  "sources": [
+    {
+      "id": "official-a-pattern-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "株式会社横浜アリーナ",
+      "title": "横浜アリーナ 座席情報 座席パターン Aパターン（番号入り拡大座席図）",
+      "url": "https://www.yokohama-arena.co.jp/seatguide/astage.html",
+      "checkedAt": "2026-09-09"
+    },
+    {
+      "id": "official-capacity-breakdown",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "株式会社横浜アリーナ",
+      "title": "横浜アリーナ ご利用プラン コンサート・ショー（Aステージ客席数内訳）",
+      "url": "https://www.yokohama-arena.co.jp/organizer/plans/",
+      "checkedAt": "2026-09-09"
+    },
+    {
+      "id": "official-barrier-free",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "株式会社横浜アリーナ",
+      "title": "横浜アリーナ バリアフリー情報（客席）",
+      "url": "https://www.yokohama-arena.co.jp/barrierfree/",
+      "checkedAt": "2026-09-09"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "a-pattern-fixed-numbered-seats",
+      "canonicalName": "Aパターン固定番号席（2階アリーナ席・3階スタンド席）",
+      "issuerDefinedCondition": "発行者が「座席情報 › 座席パターン」でAパターンとして公開する配置。Bパターン・中央パターンは別ページ・別座席図・別客席数内訳として公開されており、混在させない。",
+      "definitionAuthority": "issuer",
+      "selectionBasis": "発行者はAパターンの拡大座席図に、2階アリーナ席のA〜Fブロックと3階スタンド席の北・東・南・西について列記号と座席番号をすべて印字している。1階センター席は同図で番号のない一体のセンターセルとして描かれる催事依存エリア、立見スペースは座席ではなく、スイート・ボックスは輪郭のみで列・番号の印字が一切ない。したがって番号が印字された固定席だけを代表配置として採用する。",
+      "sourceGeneration": "2026-09-09時点の現行公式Aパターン拡大座席図 img_seatzoom_01.png（5000x3758、1,526,059バイト、sha256 960e9794c696c253e86944cbc48f15317b3561f7ac0e826bd4782bf903a3475c）。同日に発行者ドメインから再取得してバイト一致を確認した。",
+      "sourceIds": [
+        "official-a-pattern-seat-map",
+        "official-capacity-breakdown",
+        "official-barrier-free"
+      ],
+      "differenceBasisSourceIds": [
+        "official-a-pattern-seat-map",
+        "official-capacity-breakdown"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 8769,
+      "scope": {
+        "kind": "fixed-only",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false,
+        "excludesDynamicAreas": true,
+        "maximumCapacity": false,
+        "excludedAreas": [
+          "1階センター席 3,114席（Aパターン図で番号のない一体のセンターセルとして描かれる催事依存エリア）",
+          "立見スペース 1,420席（座席ではない）",
+          "スイート・ボックス 140席（Aパターン図に列・番号の印字が一切ない）",
+          "Bパターン・中央パターンの配置"
+        ],
+        "exactSubtotal": 8769
+      },
+      "scopeDisclosure": "発行者がAパターンとして公開する現行座席図のうち、番号が印字された2階アリーナ席A〜Fブロックと3階スタンド席北・東・南・西だけを対象とする代表配置です。1階センター席、立見スペース、スイート・ボックスは含みません。公称の合計13,443席はこれらを含む数であり、抽選対象の席数とは一致しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "発行者はバリアフリー情報の「客席」で、舞台位置と客席配列を催物ごとに変更するため固定した専用客席を設けておらず、車椅子でご覧いただける席はイベントごとに主催者が用意すると明示している。Aパターン座席図にも車いす区画の記号・列・番号の印字がないため、催事別の置換関係を反映せず、印字された通常番号席だけを登録する。",
+        "sourceIds": [
+          "official-barrier-free",
+          "official-a-pattern-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-09",
+        "method": "fresh-independent-human-visual-two-pass-on-current-issuer-a-pattern-chart, with (1) Pass 2 transcribed and frozen before any Pass 1 material or issuer subtotal was opened (frozen artifact kanagawa-yokohama-arena-a-pattern-pass2-frozen-2026-09-09.json, canonical sha256 17ac32e284b48b7e9a5525e488ac4ec63423ce06f513adf0771d3beba20439d0), (2) machine expansion of both passes to seat keys giving Pass1-only 0 / Pass2-only 0 / symmetric difference 0 over 8,769 keys with identical area keys, row keys and per-area counts, (3) an independent machine structural checksum built after the Pass 2 freeze from the chart raster alone (flat-fill polygon segmentation plus rotation-invariant geometric classification; frozen artifact kanagawa-yokohama-arena-a-pattern-machine-structural-checksum-2026-09-09.json, canonical sha256 f2f0229821bdeca605ead763e674016ad9a12b8b20dfe12400676b7420851bf8) which recovers the same 10 seating regions, the same labelled row set including the seatless A12/D12 bands, and per-row counts equal to or one-signed below the human counts, and (4) an issuer subtotal reconciliation run only after the freeze against the issuer's own Aステージ客席数内訳: アリーナ席5,498 vs mapped 5,498, スタンド席3,271 vs mapped 3,271, applicable subtotal 8,769 vs mapped 8,769, delta 0 in all three.",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "機械構造チェックサムの総セル数は8,602で人手転記の8,769より167少ない。差は片側のみに出る既知のunder-segmentation（印字数字またはアンチエイリアスが隣接セル間の細線輪郭を橋渡しして2セルが1成分になる）で、どの領域・どの行でも機械値が人手値を上回ることはなく、machine-only phantom structureもPass2-only unexplained structureも検出されていない。機械経路はseat IDを生成せず、cross-checkとしてのみ用いた。",
+          "座席図上で発行者のロゴ（西/WEST・北/NORTH・東/EAST）がスタンド6・7列の一部区間の印字番号に重なる。該当区間は7〜9倍拡大で座席セルを持たない踊り場（分割線のない大矩形）であることを確認しており、隣接区間の印字番号出現数（8〜10列の3件に対し6〜10列の5件）とも整合する。番号の創作は行っていない。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A1",
+          "from": 8,
+          "to": 58
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A2",
+          "from": 8,
+          "to": 58
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A3",
+          "from": 7,
+          "to": 59
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A4",
+          "from": 7,
+          "to": 59
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A5",
+          "from": 7,
+          "to": 59
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A6",
+          "from": 6,
+          "to": 60
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A7",
+          "from": 6,
+          "to": 60
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A8",
+          "from": 6,
+          "to": 60
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A9",
+          "from": 5,
+          "to": 61
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A10",
+          "from": 5,
+          "to": 61
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A11",
+          "from": 5,
+          "to": 61
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A13",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A14",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A15",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A16",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A17",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A18",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A19",
+          "from": 2,
+          "to": 64
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A20",
+          "from": 2,
+          "to": 64
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A21",
+          "from": 2,
+          "to": 64
+        },
+        {
+          "areaId": "arena-a",
+          "areaLabel": "アリーナ席Aブロック",
+          "rowLabel": "A22",
+          "from": 1,
+          "to": 65
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B1",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B1",
+          "from": 16,
+          "to": 25
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B1",
+          "from": 37,
+          "to": 46
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B1",
+          "from": 58,
+          "to": 66
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B1",
+          "from": 81,
+          "to": 84
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B2",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B2",
+          "from": 16,
+          "to": 25
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B2",
+          "from": 37,
+          "to": 46
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B2",
+          "from": 58,
+          "to": 66
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B2",
+          "from": 81,
+          "to": 84
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B3",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B3",
+          "from": 16,
+          "to": 25
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B3",
+          "from": 37,
+          "to": 46
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B3",
+          "from": 58,
+          "to": 67
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B3",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B4",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B4",
+          "from": 16,
+          "to": 25
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B4",
+          "from": 37,
+          "to": 46
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B4",
+          "from": 58,
+          "to": 67
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B4",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B5",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B5",
+          "from": 16,
+          "to": 27
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B5",
+          "from": 37,
+          "to": 48
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B5",
+          "from": 58,
+          "to": 69
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B5",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B6",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B6",
+          "from": 16,
+          "to": 27
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B6",
+          "from": 37,
+          "to": 48
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B6",
+          "from": 58,
+          "to": 69
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B6",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B7",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B7",
+          "from": 16,
+          "to": 27
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B7",
+          "from": 37,
+          "to": 48
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B7",
+          "from": 58,
+          "to": 69
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B7",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B8",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B8",
+          "from": 16,
+          "to": 27
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B8",
+          "from": 37,
+          "to": 48
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B8",
+          "from": 58,
+          "to": 69
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B8",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B9",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B9",
+          "from": 16,
+          "to": 27
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B9",
+          "from": 37,
+          "to": 48
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B9",
+          "from": 58,
+          "to": 69
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B9",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B10",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B10",
+          "from": 16,
+          "to": 27
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B10",
+          "from": 37,
+          "to": 48
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B10",
+          "from": 58,
+          "to": 69
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B10",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B12",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B12",
+          "from": 16,
+          "to": 29
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B12",
+          "from": 37,
+          "to": 50
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B12",
+          "from": 58,
+          "to": 72
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B12",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B13",
+          "from": 1,
+          "to": 9
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B13",
+          "from": 16,
+          "to": 30
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B13",
+          "from": 37,
+          "to": 51
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B13",
+          "from": 58,
+          "to": 73
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B13",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B14",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B14",
+          "from": 16,
+          "to": 31
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B14",
+          "from": 37,
+          "to": 52
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B14",
+          "from": 58,
+          "to": 74
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B14",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B15",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B15",
+          "from": 16,
+          "to": 31
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B15",
+          "from": 37,
+          "to": 52
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B15",
+          "from": 58,
+          "to": 75
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B15",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B16",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B16",
+          "from": 16,
+          "to": 32
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B16",
+          "from": 37,
+          "to": 53
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B16",
+          "from": 58,
+          "to": 75
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B16",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B17",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B17",
+          "from": 16,
+          "to": 33
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B17",
+          "from": 37,
+          "to": 54
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B17",
+          "from": 58,
+          "to": 76
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B17",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B18",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B18",
+          "from": 16,
+          "to": 33
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B18",
+          "from": 37,
+          "to": 54
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B18",
+          "from": 58,
+          "to": 77
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B18",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B19",
+          "from": 1,
+          "to": 13
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B19",
+          "from": 16,
+          "to": 34
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B19",
+          "from": 37,
+          "to": 55
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B19",
+          "from": 58,
+          "to": 78
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B19",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B20",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B20",
+          "from": 16,
+          "to": 35
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B20",
+          "from": 37,
+          "to": 56
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B20",
+          "from": 58,
+          "to": 79
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B20",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B21",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B21",
+          "from": 16,
+          "to": 35
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B21",
+          "from": 37,
+          "to": 56
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B21",
+          "from": 58,
+          "to": 86
+        },
+        {
+          "areaId": "arena-b",
+          "areaLabel": "アリーナ席Bブロック",
+          "rowLabel": "B22",
+          "from": 1,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C1",
+          "from": 3,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C1",
+          "from": 18,
+          "to": 26
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C1",
+          "from": 39,
+          "to": 48
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C1",
+          "from": 60,
+          "to": 69
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C1",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C2",
+          "from": 3,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C2",
+          "from": 18,
+          "to": 26
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C2",
+          "from": 39,
+          "to": 48
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C2",
+          "from": 60,
+          "to": 69
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C2",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C3",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C3",
+          "from": 18,
+          "to": 27
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C3",
+          "from": 39,
+          "to": 48
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C3",
+          "from": 60,
+          "to": 69
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C3",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C4",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C4",
+          "from": 18,
+          "to": 27
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C4",
+          "from": 39,
+          "to": 48
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C4",
+          "from": 60,
+          "to": 69
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C4",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C5",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C5",
+          "from": 18,
+          "to": 29
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C5",
+          "from": 39,
+          "to": 50
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C5",
+          "from": 60,
+          "to": 71
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C5",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C6",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C6",
+          "from": 18,
+          "to": 29
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C6",
+          "from": 39,
+          "to": 50
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C6",
+          "from": 60,
+          "to": 71
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C6",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C7",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C7",
+          "from": 18,
+          "to": 29
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C7",
+          "from": 39,
+          "to": 50
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C7",
+          "from": 60,
+          "to": 71
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C7",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C8",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C8",
+          "from": 18,
+          "to": 29
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C8",
+          "from": 39,
+          "to": 50
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C8",
+          "from": 60,
+          "to": 71
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C8",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C9",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C9",
+          "from": 18,
+          "to": 29
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C9",
+          "from": 39,
+          "to": 50
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C9",
+          "from": 60,
+          "to": 71
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C9",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C10",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C10",
+          "from": 18,
+          "to": 29
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C10",
+          "from": 39,
+          "to": 50
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C10",
+          "from": 60,
+          "to": 71
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C10",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C12",
+          "from": 1,
+          "to": 9
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C12",
+          "from": 18,
+          "to": 31
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C12",
+          "from": 39,
+          "to": 52
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C12",
+          "from": 60,
+          "to": 73
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C12",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C13",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C13",
+          "from": 18,
+          "to": 32
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C13",
+          "from": 39,
+          "to": 53
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C13",
+          "from": 60,
+          "to": 74
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C13",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C14",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C14",
+          "from": 18,
+          "to": 33
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C14",
+          "from": 39,
+          "to": 54
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C14",
+          "from": 60,
+          "to": 75
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C14",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C15",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C15",
+          "from": 18,
+          "to": 33
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C15",
+          "from": 39,
+          "to": 54
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C15",
+          "from": 60,
+          "to": 75
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C15",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C16",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C16",
+          "from": 18,
+          "to": 34
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C16",
+          "from": 39,
+          "to": 55
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C16",
+          "from": 60,
+          "to": 76
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C16",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C17",
+          "from": 1,
+          "to": 13
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C17",
+          "from": 18,
+          "to": 35
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C17",
+          "from": 39,
+          "to": 56
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C17",
+          "from": 60,
+          "to": 77
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C17",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C18",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C18",
+          "from": 18,
+          "to": 35
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C18",
+          "from": 39,
+          "to": 56
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C18",
+          "from": 60,
+          "to": 77
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C18",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C19",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C19",
+          "from": 18,
+          "to": 36
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C19",
+          "from": 39,
+          "to": 57
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C19",
+          "from": 60,
+          "to": 78
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C19",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C20",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C20",
+          "from": 18,
+          "to": 37
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C20",
+          "from": 39,
+          "to": 58
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C20",
+          "from": 60,
+          "to": 79
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C20",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C21",
+          "from": 1,
+          "to": 37
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C21",
+          "from": 39,
+          "to": 58
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C21",
+          "from": 60,
+          "to": 79
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C21",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-c",
+          "areaLabel": "アリーナ席Cブロック",
+          "rowLabel": "C22",
+          "from": 1,
+          "to": 86
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D1",
+          "from": 8,
+          "to": 58
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D2",
+          "from": 8,
+          "to": 58
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D3",
+          "from": 7,
+          "to": 59
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D4",
+          "from": 7,
+          "to": 59
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D5",
+          "from": 7,
+          "to": 59
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D6",
+          "from": 6,
+          "to": 60
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D7",
+          "from": 6,
+          "to": 60
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D8",
+          "from": 6,
+          "to": 60
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D9",
+          "from": 5,
+          "to": 61
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D10",
+          "from": 5,
+          "to": 61
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D11",
+          "from": 5,
+          "to": 61
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D13",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D14",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D15",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D16",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D17",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D18",
+          "from": 4,
+          "to": 62
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D19",
+          "from": 2,
+          "to": 64
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D20",
+          "from": 2,
+          "to": 64
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D21",
+          "from": 2,
+          "to": 64
+        },
+        {
+          "areaId": "arena-d",
+          "areaLabel": "アリーナ席Dブロック",
+          "rowLabel": "D22",
+          "from": 1,
+          "to": 65
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E1",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E1",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E2",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E2",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E3",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E3",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E4",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E4",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E5",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E5",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E6",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E6",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E7",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E7",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E8",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E8",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E9",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E9",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E10",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E10",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E12",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E12",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E13",
+          "from": 1,
+          "to": 9
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E13",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E14",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E14",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E15",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E15",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E16",
+          "from": 1,
+          "to": 11
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E16",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E17",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E17",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E18",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E18",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E19",
+          "from": 1,
+          "to": 13
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E19",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E20",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E20",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E21",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E21",
+          "from": 16,
+          "to": 21
+        },
+        {
+          "areaId": "arena-e",
+          "areaLabel": "アリーナ席Eブロック",
+          "rowLabel": "E22",
+          "from": 1,
+          "to": 21
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F1",
+          "from": 65,
+          "to": 69
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F1",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F2",
+          "from": 65,
+          "to": 69
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F2",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F3",
+          "from": 65,
+          "to": 69
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F3",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F4",
+          "from": 65,
+          "to": 69
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F4",
+          "from": 81,
+          "to": 85
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F5",
+          "from": 66,
+          "to": 71
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F5",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F6",
+          "from": 66,
+          "to": 71
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F6",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F7",
+          "from": 66,
+          "to": 71
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F7",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F8",
+          "from": 66,
+          "to": 71
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F8",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F9",
+          "from": 66,
+          "to": 71
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F9",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F10",
+          "from": 66,
+          "to": 71
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F10",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F12",
+          "from": 66,
+          "to": 73
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F12",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F13",
+          "from": 66,
+          "to": 74
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F13",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F14",
+          "from": 66,
+          "to": 75
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F14",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F15",
+          "from": 66,
+          "to": 75
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F15",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F16",
+          "from": 66,
+          "to": 76
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F16",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F17",
+          "from": 66,
+          "to": 77
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F17",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F18",
+          "from": 66,
+          "to": 77
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F18",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F19",
+          "from": 66,
+          "to": 78
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F19",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F20",
+          "from": 66,
+          "to": 79
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F20",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F21",
+          "from": 66,
+          "to": 79
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F21",
+          "from": 81,
+          "to": 86
+        },
+        {
+          "areaId": "arena-f",
+          "areaLabel": "アリーナ席Fブロック",
+          "rowLabel": "F22",
+          "from": 66,
+          "to": 86
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 9,
+          "to": 15
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 17,
+          "to": 23
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 25,
+          "to": 31
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 33,
+          "to": 39
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 73,
+          "to": 79
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 105,
+          "to": 111
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 113,
+          "to": 119
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "1",
+          "from": 121,
+          "to": 144
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 9,
+          "to": 15
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 17,
+          "to": 23
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 25,
+          "to": 31
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 33,
+          "to": 39
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 73,
+          "to": 79
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 105,
+          "to": 111
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 113,
+          "to": 119
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "2",
+          "from": 121,
+          "to": 144
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 9,
+          "to": 15
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 17,
+          "to": 23
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 25,
+          "to": 31
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 33,
+          "to": 39
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 73,
+          "to": 79
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 105,
+          "to": 111
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 113,
+          "to": 119
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "3",
+          "from": 121,
+          "to": 144
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 9,
+          "to": 15
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 17,
+          "to": 23
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 25,
+          "to": 31
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 33,
+          "to": 39
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 73,
+          "to": 79
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 105,
+          "to": 111
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 113,
+          "to": 119
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "4",
+          "from": 121,
+          "to": 144
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 9,
+          "to": 15
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 17,
+          "to": 23
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 25,
+          "to": 31
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 33,
+          "to": 39
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 73,
+          "to": 79
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 81,
+          "to": 87
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 105,
+          "to": 111
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 113,
+          "to": 119
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "5",
+          "from": 121,
+          "to": 144
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 24
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "6",
+          "from": 33,
+          "to": 48
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "6",
+          "from": 57,
+          "to": 72
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "6",
+          "from": 81,
+          "to": 104
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "6",
+          "from": 113,
+          "to": 128
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "6",
+          "from": 137,
+          "to": 144
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 24
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "7",
+          "from": 33,
+          "to": 48
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "7",
+          "from": 57,
+          "to": 72
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "7",
+          "from": 81,
+          "to": 104
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "7",
+          "from": 113,
+          "to": 128
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "7",
+          "from": 137,
+          "to": 144
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 144
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 144
+        },
+        {
+          "areaId": "stand-north",
+          "areaLabel": "スタンド席北",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 144
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "1",
+          "from": 1,
+          "to": 39
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "1",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "1",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "1",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "1",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "2",
+          "from": 1,
+          "to": 39
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "2",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "2",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "2",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "2",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "3",
+          "from": 1,
+          "to": 39
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "3",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "3",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "3",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "3",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 39
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "4",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "4",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "4",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "4",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 39
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "5",
+          "from": 41,
+          "to": 47
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "5",
+          "from": 49,
+          "to": 55
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "5",
+          "from": 57,
+          "to": 63
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "5",
+          "from": 65,
+          "to": 71
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "6",
+          "from": 25,
+          "to": 40
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "6",
+          "from": 49,
+          "to": 72
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "7",
+          "from": 25,
+          "to": 40
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "7",
+          "from": 49,
+          "to": 72
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 72
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 72
+        },
+        {
+          "areaId": "stand-east",
+          "areaLabel": "スタンド席東",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 72
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "1",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "1",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "1",
+          "from": 105,
+          "to": 109
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "2",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "2",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "2",
+          "from": 105,
+          "to": 109
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "3",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "3",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "3",
+          "from": 105,
+          "to": 111
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "4",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "4",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "4",
+          "from": 105,
+          "to": 111
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "5",
+          "from": 89,
+          "to": 95
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "5",
+          "from": 97,
+          "to": 103
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "5",
+          "from": 105,
+          "to": 111
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "6",
+          "from": 89,
+          "to": 112
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "7",
+          "from": 89,
+          "to": 125
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "8",
+          "from": 89,
+          "to": 125
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "9",
+          "from": 89,
+          "to": 125
+        },
+        {
+          "areaId": "stand-south",
+          "areaLabel": "スタンド席南",
+          "rowLabel": "10",
+          "from": 89,
+          "to": 125
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 22,
+          "to": 28
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 30,
+          "to": 36
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 38,
+          "to": 44
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 46,
+          "to": 52
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 54,
+          "to": 60
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 62,
+          "to": 68
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 70,
+          "to": 76
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 78,
+          "to": 84
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 86,
+          "to": 92
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 94,
+          "to": 100
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 102,
+          "to": 108
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 110,
+          "to": 116
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "1",
+          "from": 118,
+          "to": 124
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 16,
+          "to": 20
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 22,
+          "to": 28
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 30,
+          "to": 36
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 38,
+          "to": 44
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 46,
+          "to": 52
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 54,
+          "to": 60
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 62,
+          "to": 68
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 70,
+          "to": 76
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 78,
+          "to": 84
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 86,
+          "to": 92
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 94,
+          "to": 100
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 102,
+          "to": 108
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 110,
+          "to": 116
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "2",
+          "from": 118,
+          "to": 124
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 14,
+          "to": 20
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 22,
+          "to": 28
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 30,
+          "to": 36
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 38,
+          "to": 44
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 46,
+          "to": 52
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 54,
+          "to": 60
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 62,
+          "to": 68
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 70,
+          "to": 76
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 78,
+          "to": 84
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 86,
+          "to": 92
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 94,
+          "to": 100
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 102,
+          "to": 108
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 110,
+          "to": 116
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "3",
+          "from": 118,
+          "to": 124
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 14,
+          "to": 20
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 22,
+          "to": 28
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 30,
+          "to": 36
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 38,
+          "to": 44
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 46,
+          "to": 52
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 54,
+          "to": 60
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 62,
+          "to": 68
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 70,
+          "to": 76
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 78,
+          "to": 84
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 86,
+          "to": 92
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 94,
+          "to": 100
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 102,
+          "to": 108
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 110,
+          "to": 116
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "4",
+          "from": 118,
+          "to": 124
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 14,
+          "to": 20
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 22,
+          "to": 28
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 30,
+          "to": 36
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 38,
+          "to": 44
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 46,
+          "to": 52
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 54,
+          "to": 60
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 62,
+          "to": 68
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 70,
+          "to": 76
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 78,
+          "to": 84
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 86,
+          "to": 92
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 94,
+          "to": 100
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 102,
+          "to": 108
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 110,
+          "to": 116
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "5",
+          "from": 118,
+          "to": 124
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "6",
+          "from": 14,
+          "to": 37
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "6",
+          "from": 46,
+          "to": 61
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "6",
+          "from": 70,
+          "to": 85
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "6",
+          "from": 94,
+          "to": 125
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 37
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "7",
+          "from": 46,
+          "to": 61
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "7",
+          "from": 70,
+          "to": 85
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "7",
+          "from": 94,
+          "to": 125
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 125
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 125
+        },
+        {
+          "areaId": "stand-west",
+          "areaLabel": "スタンド席西",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 125
+        }
+      ]
+    }
+  ]
+}
