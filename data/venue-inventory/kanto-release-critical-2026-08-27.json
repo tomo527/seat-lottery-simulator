@@ -426,9 +426,9 @@
       "priority": "A",
       "venueSourceId": null,
       "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-09",
+      "lastCheckedAt": "2026-09-10",
       "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready（転記は未着手。このフィールドは Pass-1-safe に縮約済みで、issuer 小計・機械件数・region 件数を含めない）: stadium mode は GMOアリーナさいたまの単一 venue source（saitama-super-arena-main が保持）上の selectable configuration として実装する。2 venue として作らない。現行 first-party の番号付きラスタ座席図が存在し、currentness / chart provenance / configuration scope / stage-position invariance / independent machine structural checksum / issuer reconciliation material はいずれも 2026-09-09 時点で完了・freeze 済み。machine structural count が実用的でないという waiver は本会場で使用禁止。残作業は sub-wave GMO-3（stadium Pass 1 freeze）→ GMO-4（fresh session の independent Pass 2、比較、checksum、issuer reconciliation、verdict）で、GMO-1 / GMO-2（main-arena）の完了後に着手する。main-arena の range を stadium の answer key にしないこと。area ownership は human pass で chart から直接確定する。アリーナフロアの event-dependent 座席と仮設席は scope 外。seat_list.js は seat-structure evidence には使わない。詳細 evidence: data/venue-reports/saitama-gmo-arena-two-config-evidence-and-structural-freeze-2026-09-09.json、saitama-gmo-arena-stadium-machine-structural-checksum-2026-09-09.json、saitama-gmo-arena-pass1-independence-hardening-2026-09-09.json。【independence 注意】これらの report は Pass 1 / Pass 2 を freeze する前に開かないこと。",
+      "blockingReason": "ADOPT / implementation-readyを維持。Representation A: stadiumはmainとは独立して既存schema v2のproduction gateへ進められる。1 physical venue / 1 sourceを維持し、将来のstadium統合時はstadium inventoryだけがvenueSourceIdを保持する。mainはblocked / venueSourceId nullのまま、未完成configurationは非公開。現時点ではsource未作成、両venueSourceIdはnullのまま。次はfresh independent stadium Human Pass 1 (GMO-3)、freeze後停止。mainのPARTIAL・seat_list.js・旧report・machine checksum・issuer subtotalを転記のanswer keyにしない。event-dependent floor席は除外。Report: data/venue-reports/saitama-gmo-arena-main-identifier-completeness-audit-2026-09-10.json",
       "recheckNotBefore": "2027-04-01"
     },
     {
@@ -443,13 +443,13 @@
       "officialFacilityUrl": "https://www.saitama-arena.co.jp/",
       "operationalStatus": "renovation",
       "eligibility": "likely-eligible",
-      "eligibilityReason": "2026-09-09 GMO ARENA SAITAMA PASS-1 INDEPENDENCE HARDENING wave（このフィールドは Pass-1-safe に縮約済み。GMO の席数・小計・機械件数・region 件数・差分値はいっさい含めない）: currentness は 2026-09-09 に fresh 再確認済み。issuer トップから /seats_info/ へ辿り、メインアリーナモードとスタジアムモードの seat_view に再到達した。現行表記は GMOアリーナさいたまで same facility-space identity を維持。座席数・列・席番号・topology の変更を明示する issuer の記載はない（記載がないことを変更されない証拠としては扱わない）。大規模改修工事中で令和９年４月のリニューアルオープンを目指す旨が告知されており、2026-09-04 revised closure policy により一時休館・改修単独では blocker としない。recheckNotBefore 2027-04-01 と再開後 full revalidation 契約を維持。両モードとも現行 first-party の番号付き座席図が存在するが実体はラスタであり、SVG には座席 geometry がないため DENSE-VECTOR は使えず、既定の fresh independent human visual two-pass が必須。固定番号席は stage-position invariant であることが確認済み。詳細 evidence は data/venue-reports/saitama-gmo-arena-two-config-evidence-and-structural-freeze-2026-09-09.json 参照。当該 report と machine structural checksum artifacts は、human pass を freeze する前に開かないこと。",
+      "eligibilityReason": "2026-09-10 judgment audit: facility eligibilityと一時改修のcurrentness判断は維持するが、main-arenaのidentifier completenessは未達。転記作業量の問題ではない。recheckNotBefore 2027-04-01と再開後full revalidation契約を維持。Status / blocker / evidence: data/venue-reports/saitama-gmo-arena-main-identifier-completeness-audit-2026-09-10.json",
       "priority": "A",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-09",
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-10",
       "aliases": [],
-      "blockingReason": "ADOPT / implementation-ready（転記は未着手。このフィールドは Pass-1-safe に縮約済みで、issuer 小計・TOTAL・機械件数・region 件数・差分値を含めない）: GMOアリーナさいたまを 1 venue source（本レコードが venueSourceId を保持）とし、main-arena mode と stadium mode を 2 つの selectable production configuration として実装する。現行 first-party の番号付きラスタ座席図が存在し、currentness / chart provenance / configuration scope / stage-position invariance / independent machine structural checksum / issuer reconciliation material はいずれも 2026-09-09 時点で完了・freeze 済み。machine structural count が実用的でないという waiver は本会場で使用禁止。残作業は sub-wave GMO-1（main-arena Pass 1 freeze）→ GMO-2（fresh session の independent Pass 2、比較、checksum、issuer reconciliation、production-gate verdict）→ GMO-3 / GMO-4（stadium 同様。両 config PASS なら GMO-4 の sealed comparison 完了後に同 session で 1 source / 2 config 統合とリリースまで実施可）。Pass 2 は Pass 1 を見ていない fresh session であること。area ownership は human pass で chart から直接確定する。アリーナフロアの event-dependent 座席・仮設席・無番号 accessibility position は scope 外。issuer の published figures には内部不整合が存在するため、mapped set 確定後に reconcile し、説明できなければ unresolvedIssue として記録すること（具体値は wave report のみに置く。差を埋めるための range 伸縮・座席追加・mapped seat 削除はいずれも禁止）。seat_list.js は seat-structure evidence には使わない（cross-check 補助のみ）。詳細 evidence: data/venue-reports/saitama-gmo-arena-two-config-evidence-and-structural-freeze-2026-09-09.json、saitama-gmo-arena-main-machine-structural-checksum-2026-09-09.json、saitama-gmo-arena-pass1-independence-hardening-2026-09-09.json。【independence 注意】これらの report は Pass 1 / Pass 2 を freeze する前に開かないこと。",
+      "blockingReason": "NEED EVIDENCE / evidence completeness blocker: current main-arena chartにはrow/cellは存在するが、そのrow自身のseat numberが印字されず、current first-party materialにもcompleteでlosslessなper-row/per-seat mappingが確認できない。GMO1-U1 = NOT ALLOWED。neighbouring-row / marker-band / geometry propagationは禁止。official searchは番号条件を含むがcomplete identifier setとしては採用不可。PARTIAL / PARTIAL-2 / PARTIAL-3はvalid historical evidenceとして変更せず保持。reopen: issuerがcomplete per-row numbered chartまたはexact row/seat mappingを公開した場合。Report: data/venue-reports/saitama-gmo-arena-main-identifier-completeness-audit-2026-09-10.json",
       "recheckNotBefore": "2027-04-01"
     },
     {

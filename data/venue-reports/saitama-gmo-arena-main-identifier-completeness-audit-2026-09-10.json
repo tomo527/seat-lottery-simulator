@@ -1,0 +1,190 @@
+{
+  "auditVersion": 1,
+  "title": "GMO ARENA SAITAMA MAIN-ARENA IDENTIFIER-COMPLETENESS JUDGMENT AUDIT",
+  "asOf": "2026-09-10",
+  "lane": "JUDGMENT",
+  "startHead": "b918a879c49dc6e31fed18c23e615ef1b7d43e40",
+  "scope": "Research / judgment only: main identifier rescue and, after main disposition, stadium representation. No human transcription, Pass 2, new ranges, venue source, integration, generated artifacts, fingerprint, application or validator changes.",
+  "fixedDecision": "GMO1-U1 = NOT ALLOWED",
+  "prohibitions": "No neighbouring-row, marker-band, aligned-boundary, bounding-row interpolation, equal-cell-count, symmetry, geometry, pitch, capacity or subtotal propagation. Structural checks never supply IDs. GMO1-U2 is not resolved by this audit.",
+  "decision": "B — no admissible exact rescue source found in the inspected current first-party ecosystem",
+  "mainDisposition": "NEED EVIDENCE / blocked",
+  "blockerKind": "evidence completeness, not work volume",
+  "blocker": "The current main-arena chart contains rows/cells whose own seat numbers are not printed. No inspected current first-party material supplies a complete, lossless, non-contradictory per-row/per-seat mapping for those rows. Neighbouring-row, marker-band and geometry propagation are prohibited. The official search predicate is not an admitted complete identifier set.",
+  "reopenCondition": "The issuer publishes a current complete per-row numbered main-arena chart or an exact row/seat mapping covering all affected rows, with lossless configuration correspondence and no event-dependent floor-seat mixing. Recheck that evidence and the existing production gates; additional transcription effort alone does not reopen this disposition.",
+  "evidenceAudit": {
+    "method": "Fresh navigation from the current operator top, followed by current-linked pages, their actual HTML/scripts/SVG/image references, official documents, and live seat-search UI probes. Search-engine results were used only to discover official URLs. No third-party map, archive or old mirror was admitted. Downloads remained temporary outside the repository.",
+    "surfaces": [
+      {
+        "url": "https://www.saitama-arena.co.jp/",
+        "finding": "Current GMO name; links to seats_info, facility maps, organizer documents and the naming-rights partner. Freshly fetched, not inherited from an old report."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/seats_info/",
+        "finding": "Explicit main-arena and stadium modes, four stage-position links each; event-variable arena-floor warning. No separate complete row/seat table or download."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/seat_view/arena_end01/",
+        "finding": "Fresh HTML/SVG/PNG fetched. Same shared search scripts; no embedded individual-seat data."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/seat_view/arena_end02/",
+        "finding": "Fresh HTML/SVG/PNG fetched. Same shared search scripts; no alternate complete row numbering."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/seat_view/arena_center/",
+        "finding": "Fresh HTML/SVG/PNG fetched. Stage alternative, not a lossless supplementary identifier table."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/seat_view/arena_not_fixed/",
+        "finding": "Fresh HTML/SVG/PNG and live search inspected. body.arena selects the arena data branch. SVG embeds the raster; gate vectors and highlight polygons add no individual-seat identifiers."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/seat_view/arena_not_fixed/images.html",
+        "finding": "Current script-linked fallback. All four main-arena images.html pages and their *_images.png files fetched. The representative fallback adds gate labels to the raster, not the missing per-row seat IDs. seat_map_images.js contains image pan/zoom behavior, not a second identifier service."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/seats_info/ticket/",
+        "finding": "Explains level, row, seat and event-variable floor blocks; does not enumerate membership."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/floor_map/arena.html",
+        "finding": "Floor/gate/amenity maps. Fresh 2F and 4F enlarged images visually checked: room outlines and facilities, no per-row/per-seat mapping."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/business/layout_sizes/layout_sizes_main_arena/",
+        "finding": "Layout examples, capacity/subtotals and event photographs. Its enlarged /business/files/img_are_0802.jpg is a photograph, not a numbered chart."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/business/layout_sizes/flexible_movable_facilities/",
+        "finding": "Movable-mode facility explanation; no identifier table. Supports one physical bowl with mutually exclusive modes."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/business/outlook_of_use/",
+        "finding": "Current official download index inspected. Arena fee, guide and terms PDFs are use/fee/administration documents, not complete row/seat data."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/business/outlook_of_use/pdf/arena-fee.pdf",
+        "finding": "Fee and room schedules, no complete seat-ID table."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/business/outlook_of_use/pdf/guide.pdf",
+        "finding": "Use procedures, no complete seat-ID table."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/business/outlook_of_use/pdf/terms.pdf",
+        "finding": "Facility-use rules, no complete seat-ID table."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/sitemap/",
+        "finding": "No additional current public seat-data service discovered."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/news/area-naming-rights.html",
+        "finding": "Current-linked announcement and facility/naming-rights PDFs inspected; renovation and gates/spaces, not missing row IDs. April 2027 reopening target remains."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/news/wp-content/uploads/sites/3/2026/05/04_salessheet.pdf",
+        "finding": "Facility/mode and naming-rights material; not an exact identifier source."
+      },
+      {
+        "url": "https://www.saitama-arena.co.jp/news/wp-content/uploads/sites/3/2026/05/03-01_shisetugaiyou.pdf",
+        "finding": "Naming-rights target spaces, not a main-arena numbered-seat set."
+      },
+      {
+        "url": "https://group.gmo/arena/",
+        "finding": "Current operator-linked naming-rights partner site directs facility information back to the operator; no rescue mapping discovered."
+      }
+    ],
+    "searchData": {
+      "url": "https://www.saitama-arena.co.jp/seat_view/js/seat_list.js",
+      "sha256": "c41f78459f25088ec7c0a2dc6d7948449c57dd6ba3d3abb2dd5a454de8300d46",
+      "bytes": 108451,
+      "granularity": "Mode/level-specific seat-number and row-bound predicates leading to highlight-block IDs, with some explicitly row-keyed need/not_need individual-number lists. It is more informative than a bare polygon list, but is not a verified lossless per-seat map.",
+      "exactRowIdentity": "Partly: explicit row keys in need/not_need; otherwise ordered row upper bounds in block. Alphabetic level-200 rows use the arena.100 branch. Do not describe this file as containing no row information.",
+      "individualMembership": "Individual-number inclusion/exclusion predicates exist and the lookup is deterministic. Deterministic UI acceptance does not prove complete physical membership; a concrete conflict with the preserved valid chart transcription was found.",
+      "locationMapping": "selectId maps to SVG #highlight_<id>, a polygon spanning multiple rows and seats. No individual-cell location or row/run-to-cell correspondence is supplied.",
+      "modeScope": "Explicit arena versus stadium branches; body.arena selects arena. Floor arena selection is separately routed to the event-dependent floor graphic and was not mixed into this audit's fixed numbered scope.",
+      "counterexample": "arena.200.separate[379].not_need[27] excludes number 379. The preserved valid PARTIAL-3 chart record includes that identifier in its directly anchored row-27 run. A bounded read-only comparison of existing historical records against the fresh search predicate exposed this conflict; no new transcription/range table was created and no checkpoint was changed. Live UI likewise rejects level 200 / row 27 / number 379, while 378 opens the broad highlight_52 region. This is a failure of lossless compatibility, not permission to correct either artifact by inference.",
+      "admissionConsequence": "The known incompatibility defeats the required non-contradiction/completeness gate. The rest of the table cannot be certified as a rescue set merely because it accepts inputs. No exhaustive reconstructed seat set was created or promoted. Resolving only this sample would not establish complete coverage of every affected row."
+    },
+    "searchExecution": {
+      "url": "https://www.saitama-arena.co.jp/seat_view/js/seat_map.js",
+      "sha256": "d37dca7098c0567f8b53bcebd4f91d21d633446728840f8cc1cd338f3b332190",
+      "codePath": "Mode selection around lines 734-736; search handler around lines 843-1025. Select first seat-number upper bound, apply need/not_need, select row upper bound, animate #highlight_<selectId> and pan to its bounding box. Rejection shows the missing-seat alert.",
+      "networkAndEndpoints": "The inspected search path reads already-loaded $.seatList data and embedded object.contentDocument; it does not issue a seat-query XHR/fetch, JSON request, form submission or API call. The first-party data endpoint actually used is the static /seat_view/js/seat_list.js, alongside seat_map.js and SVG/PNG assets. The seven script tags include standard jQuery/UI/touch/d3/velocity libraries and these two application scripts; no extra data script or JSON endpoint is declared. Image fallback uses seat_map_images.js (SHA-256 c1996ab9c4526d59b8707e9ac65405510c67d5d991fd4134b21ecda740033570). Analytics is not a seat-data source. This conclusion is from request-site/HTML inspection plus live UI behavior, not a claimed captured network trace.",
+      "uiGranularity": "Actual successful probe produces a yellow multi-row block, not an individual seat/row marker or a complete returned identifier list. Input capability alone was not treated as evidence."
+    },
+    "assetContinuity": {
+      "representativePng": "https://www.saitama-arena.co.jp/seat_view/img/img-map_arena_not_fixed.png",
+      "representativePngSha256": "1375f6481a4f428392c8b66cac553a6bf94bd85fe934fe713ea56ea6d6311c67",
+      "representativeSvgSha256": "567cdd44652ea61549d1adcd9e9dcec1e046094ca4c8ea0a3c3557406b4849c0",
+      "end01PngSha256": "6d9cc55018b11f9901cab697cc6427f7350c3bbc9c4414efc47f83ef8e1aaf31",
+      "end02PngSha256": "93438d8ac83415333af37e13b4411fb9e9a24173c9628405b9da0b52a8fe72e6",
+      "centerPngSha256": "ae1fd2f3322e49e576c7f52c9b693fe52e9ad73e0bfdc9703f5c6e4db28fe858",
+      "interpretation": "Fresh current-linked assets, no newly published complete identifier layer found. No structural count was used to fill identifiers."
+    },
+    "admissionCriteria": [
+      "1 current first party: PASS for the operator scripts/assets.",
+      "2 main-arena scope: PASS for arena branch/pages.",
+      "3 affected row identity directly held: PARTIAL; exact row exceptions coexist with upper-bound block routing.",
+      "4 individual numbers / lossless numbered runs directly held: number predicates exist, but not an admitted lossless chart mapping.",
+      "5 complete affected-row coverage: NOT ESTABLISHED; do not equate predicate coverage with physical membership.",
+      "6 reconstruct exact IDs without geometry/neighbours/capacity: UI acceptance can be computed, but equating it to the exact chart set fails the evidence test.",
+      "7 no chart contradiction: FAIL; fresh search exclusion conflicts with preserved valid historical chart evidence.",
+      "8 no event-floor mixing: separable in the code; floor branch excluded."
+    ],
+    "policyJudgment": "No admissible rescue source was found, so no new evidence class or waiver is proposed. Existing no-inference/complete-numbered-set rules suffice for NEED EVIDENCE. The old seat_list.js prohibition remains; its factual rationale is now qualified: row/number predicates exist, but lossless completeness is unproven and compatibility fails. No global policy change and no USER JUDGMENT REQUIRED. The negative finding is bounded to the inspected current public first-party surfaces, not a claim about unpublished issuer databases."
+  },
+  "historicalCheckpoints": {
+    "preserved": [
+      "data/venue-reports/saitama-gmo-arena-main-human-pass1-partial-2026-09-09.json",
+      "data/venue-reports/saitama-gmo-arena-main-human-pass1-partial-2-2026-09-10.json",
+      "data/venue-reports/saitama-gmo-arena-main-human-pass1-partial-3-2026-09-10.json"
+    ],
+    "status": "Valid historical transcription evidence retained byte-for-byte; no completion, deletion, replacement, production promotion or new human pass. This judgment session read the existing checkpoint solely for audit comparison and is not an independent transcription session. GMO1-U2 remains unresolved."
+  },
+  "stadiumRepresentation": {
+    "decision": "A — stadium alone can proceed under existing policy, subject to its own evidence and production gates",
+    "evidenceDisposition": "ADOPT / implementation-ready remains; no stadium transcription started. This is a representation decision, not a certification of its as-yet-untranscribed complete seat set.",
+    "physicalIdentity": "One physical bowl, one eventual schema-v2 venue source. Community arena remains separate. Do not create two production venues for main and stadium.",
+    "canonicalBasis": "VENUE_DATA_GUIDE.md schema v2 expressly permits the first useful configuration to reach production without all variants, and incomplete draft/non-selectable configurations may coexist. source-schema.mjs productionConfigurations filters each configuration independently. Existing meijiza-standard and otemachi-mitsui-hall-standard demonstrate one source / multiple configurations; they do not require atomic promotion. There is no current mixed production/draft multi-configuration precedent, so that particular capability rests on the explicit schema contract rather than an invented precedent.",
+    "inventoryConstraint": "inventory.mjs lines 162-165 prohibit duplicate venueSourceId assignment; lines 209-222 require the sole owner of a production source to have researchStatus production. Main must not be falsely marked production to publish stadium. Both current GMO venueSourceId fields are null and no source exists.",
+    "losslessExistingSchemaPath": "At the separately authorized stadium integration, assign the single shared source's venueSourceId only to saitama-super-arena-stadium and mark that owner production after stadium passes every gate. Keep main blocked with venueSourceId null and a report pointer to the shared identity. Represent main as draft/selectable false with no imported PARTIAL ranges, or omit the unavailable configuration as schema v2 permits. Later main, if evidence reopens and all gates pass, is added to that same source; never duplicate venueSourceId. No existing source identity or assignment is renamed or migrated today.",
+    "supersededPlanningNote": "Earlier HANDOFF/inventory/ledger prose assigning prospective ownership to main and requiring both configurations together was a task plan, not the canonical schema rule. Since neither assignment nor source exists, choosing stadium as the sole future owner satisfies the existing validator without policy/schema/validator changes. The present user explicitly requested this representation judgment.",
+    "priority": "Stadium's own fresh Human Pass 1 is next, before Tokyo Priority D. It cannot inherit main ranges or use this audit/seat_list.js as an answer key; if stadium independently reveals incomplete evidence, record its own disposition at that time."
+  },
+  "kantoLedger": {
+    "universeTotal": 154,
+    "production": 77,
+    "adopt": 1,
+    "holdNeedEvidenceFormalDefer": 76,
+    "inventoryUnresearched": 0,
+    "missingFromInventory": 0,
+    "closure": "Not closed: stadium remains ADOPT. Main alone moves ADOPT to formal evidence hold. No production totals change."
+  },
+  "exactNextAction": "GMO ARENA SAITAMA STADIUM FRESH HUMAN PASS 1 (GMO-3): in a fresh independent session navigate issuer top -> seats_info -> stadium seat_view, establish direct row/seat evidence and area ownership, freeze Pass 1 only if complete, then stop. Do not open main PARTIAL artifacts, this audit's detailed evidence, old GMO reports, seat_list.js, machine checksums or issuer subtotals before freezing. No neighbouring-row/marker-band/geometry propagation. Main stays blocked; do not start Pass 2 or integration in that Pass-1 task.",
+  "validation": {
+    "state": "PASS — proportional records-only validation",
+    "passed": [
+      "Data JSON integrity: all 484 data JSON files",
+      "npm run venues:inventory:report",
+      "npm run venues:release:coverage",
+      "npm run venues:validate: 160 production venues / 162 configurations / 254792 records, 49 existing warnings",
+      "npm run venues:check: synchronized, no regeneration",
+      "npm run verify:docs: passed including harness in approved environment",
+      "Kanto records[] status-count reconciliation",
+      "git diff --check"
+    ],
+    "limitations": [
+      "Both prescribed target venues:review -- --id calls returned Venue source not found, as expected for inventory-only candidates; no target source or batch exists and none was created. Inventory/coverage validation is the applicable target check.",
+      "Initial sandbox verify:harness failed to spawn git; unchanged command passed outside sandbox.",
+      "An attempted repository-wide strict JSON parse encountered pre-existing JSON-with-comments TypeScript configuration; the relevant complete data/ JSON tree passed strict JSON.parse.",
+      "verify:venues was not run because it includes venues:build and app/E2E checks; no production source changed and regeneration was explicitly forbidden. venues:check independently confirms generated synchronization."
+    ]
+  },
+  "delivery": {
+    "authorization": "User explicitly authorized records-only commit and normal fast-forward push. No force push, amend or rebase.",
+    "state": "Ready for the explicitly authorized records-only commit and normal fast-forward main push; final commit SHA and its Workers Builds result are verified after push in the task final response. No claim of completion before that check."
+  }
+}
