@@ -1,0 +1,176 @@
+{
+  "wave": "TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT",
+  "date": "2026-09-10",
+  "phase": "Bounded current-first-party evidence preflight only",
+  "scopeBoundary": "The live Tokyo Priority-D pool was recomputed from data/venue-inventory/tokyo.json. This wave could open at most five newly eligible performance-identity candidates and had to stop at three ADOPTs. It stopped after the third ADOPT at rank 3. No seat transcription, Human Pass, venue-source creation, production integration, generated artifact, fingerprint, application-code, validator, GMO, RaiBoC, 日野市民会館大ホール, or existing blocked/HARD-CASE record was opened or changed.",
+  "policyBasis": "ADOPT is a preflight finding only: a current issuer page and its current-linked numbered chart must make one representative configuration losslessly reproducible without capacity fitting, geometry completion, neighbouring-row propagation, third-party completion, or configuration mixing. The later implementation must still independently satisfy the current human two-pass, machine-expanded comparison, issuer-subtotal reconciliation, and practical independent structural-checksum gates.",
+  "livePoolReconstruction": {
+    "source": "data/venue-inventory/tokyo.json at HEAD 59d906f4fd852300ddd03df7c56f61ce6174c4e8",
+    "candidateDefinition": "priority D; researchStatus in {not-started, source-located}; venueSourceId null; with production, blocked, rejected/DEFER/NEED EVIDENCE/HOLD, and known duplicate facility-spaces excluded.",
+    "candidateCount": 787,
+    "duplicateExclusion": "tokyo-official-0460 シアター H remains the recorded duplicate of production theater-h-standard and was not eligible as a new candidate.",
+    "rankingMethod": "Applied the current Priority-D portfolio lane audit's yield-oriented rule: first dedicated ticketed performance identity (劇場/theater/theatre/演芸場/能楽堂/音楽堂/コンサートホール/auditorium and proper-noun single-purpose halls), then civic/public 大・中・小・主・メインホール. Within the performance tier, continuing assigned-seat programming, current first-party chart locatability, a single standard configuration, and issuer production precedent are positive tie-breakers. Capacity unknown and a missing stored officialFacilityUrl are neutral; studio/rehearsal/training/live-house/meeting/movable/free-seating identity is deprioritised. This is a research-order rule only and changes no evidence or production rule.",
+    "rankedLeadFive": [
+      {
+        "rank": 1,
+        "inventoryId": "tokyo-official-0690",
+        "venue": "紀伊國屋サザンシアターTAKASHIMAYA",
+        "rankingReason": "Dedicated ticketed theatre with an active issuer schedule and the same issuer already represented by production kinokuniya-hall-standard."
+      },
+      {
+        "rank": 2,
+        "inventoryId": "tokyo-official-0740",
+        "venue": "PARCO劇場〔パルコ劇場〕",
+        "rankingReason": "Dedicated continuously programmed theatre with a current official numbered-chart page and a single current post-reopening theatre identity."
+      },
+      {
+        "rank": 3,
+        "inventoryId": "tokyo-official-0105",
+        "venue": "三越劇場",
+        "rankingReason": "Dedicated commercial theatre with a current issuer standard chart, fixed 1F/2F subtotal, and continuing ticketed theatre, rakugo, and concert programming."
+      },
+      {
+        "rank": 4,
+        "inventoryId": "tokyo-official-1068",
+        "venue": "調布市せんがわ劇場〔ホール〕",
+        "rankingReason": "Municipal dedicated theatre with the same issuer family already in production; not opened because the ADOPT stop condition occurred at rank 3."
+      },
+      {
+        "rank": 5,
+        "inventoryId": "tokyo-official-0103",
+        "venue": "中央区立日本橋公会堂(日本橋劇場)〔ホール(日本橋劇場)〕",
+        "rankingReason": "Civic public performance hall with official fixed-seat and chart materials; not opened because the ADOPT stop condition occurred at rank 3."
+      }
+    ]
+  },
+  "facilitySpaceDuplicateCheck": "Each of the three researched records has venueSourceId null and a distinct facility-space identity. A repository check found no production source or recorded duplicate for any of them. The rank-4 and rank-5 records were not researched or reclassified after the stop condition.",
+  "venues": [
+    {
+      "rank": 1,
+      "inventoryId": "tokyo-official-0690",
+      "venue": "紀伊國屋サザンシアターTAKASHIMAYA",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://store.kinokuniya.co.jp/store/kinokuniya-southern-theatre-takashimaya/?type=details",
+          "role": "current operator facility page: active theatre identity, operation, ticket purchasing, and current venue identity"
+        },
+        {
+          "url": "https://store.kinokuniya.co.jp/theater/guide-southerntheater/",
+          "role": "current operator theatre-use guide that directly links the official seating chart"
+        },
+        {
+          "url": "https://store.kinokuniya.co.jp/wp-content/uploads/2020/08/%E3%82%B5%E3%82%B6%E3%83%B3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BCTAKASHIMAYA%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf",
+          "role": "current-linked official numbered seating chart; prints 468 seats, rows 1 through 21, and all individual seat numbers"
+        },
+        {
+          "url": "https://store.kinokuniya.co.jp/event/?period=fromnowon&venue%5B0%5D=kinokuniya-southern-theatre-takashimaya",
+          "role": "current operator event listing, confirming ongoing theatre programming"
+        }
+      ],
+      "currentnessAndOperationalStatus": "Active. The current operator facility page, guide, and future event listing were rechecked on 2026-09-10; no closure, replacement, or seating-change notice was found. The guide presently links the chart, so its uploaded filename date is not used as a substitute for current linkage.",
+      "representativeConfiguration": "The single issuer-presented standard 468-seat theatre chart. No other configuration is selected or combined. The official materials reviewed do not define an event-dependent seating-layout variant for this scope.",
+      "numberedSeatEvidence": "Complete and implementation-feasible: the current-linked chart prints row identity 1 through 21 and every individual number across its left, centre, and right blocks. The chart itself prints 客席数468; its block boundaries and the printed row/seat identifiers, rather than inferred geometry or capacity, are the future source of truth.",
+      "rowIdentityAndConfigurationScope": "One floor/chart with explicit row labels and side/centre ownership. No unprinted row, gap, or position may be supplied from adjacent rows during later transcription.",
+      "accessibilityAndMovability": "The chart explicitly states that row 14 seats 3 through 6 may be used as wheelchair-only space. The current ticket guidance separately says wheelchair space requires advance reservation. This is an issuer-described conversion of printed identifiers, not authority to create a second set or infer companion positions; the exact selected standard-scope treatment must be frozen from the current chart during implementation.",
+      "capacityRelation": "The chart's own stated 468 seats is the issuer subtotal to reconcile after independent extraction. No capacity fitting is authorised.",
+      "reason": "A current operator guide links a complete, issuer-numbered standard chart with an explicit issuer total and accessibility conversion note. It supports a lossless later implementation without any missing-ID inference.",
+      "implementationVerificationPlan": "Freshly re-fetch the guide and chart; freeze Human Pass 1 before exposing any earlier extraction, then obtain an independent Human Pass 2 in a different row/block traversal. Machine-expand both authored sets and require bidirectional equality; reconcile the issuer's printed 468 subtotal; independently checksum visible row/block/cell structure where practical; and preserve the 14列3〜6番 wheelchair-conversion semantics directly from the chart. Any material mismatch, changed asset, or unresolved conversion stops production."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "tokyo-official-0740",
+      "venue": "PARCO劇場〔パルコ劇場〕",
+      "lane": "DENSE",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://stage.parco.jp/parcotheater/",
+          "role": "current PARCO STAGE theatre page: current operating identity, active theatre page, chart link, and accessibility operation"
+        },
+        {
+          "url": "https://stage.parco.jp/assets/pdf/parcotheater_open/seating_chart.pdf",
+          "role": "current-linked official standard seating chart with printed A through T row identity and individual numbered positions"
+        },
+        {
+          "url": "https://stage.parco.jp/kokeraotoshi/",
+          "role": "issuer page identifying the current rebuilt theatre as the 636-seat new PARCO theatre"
+        }
+      ],
+      "currentnessAndOperationalStatus": "Active. The current PARCO STAGE theatre page was rechecked on 2026-09-10 and still links the same standard seating PDF and current support material; its page identifies the theatre at Shibuya PARCO 8F. The old 458-seat PARCO theatre page is a closed historical facility and was explicitly excluded from this configuration.",
+      "representativeConfiguration": "The issuer-linked standard chart for the rebuilt 636-seat PARCO theatre only. It is not the historical 458-seat theatre and no event-specific or pre-rebuild seating material is mixed in.",
+      "numberedSeatEvidence": "Complete and implementation-feasible: the official chart prints row labels A through T, individual seat numbers, and explicit left/centre/right block boundaries. The issuer's current-theatre material names 636 seats; later range extraction must read only the printed identifiers and gaps on this chart.",
+      "rowIdentityAndConfigurationScope": "One current theatre plan with printed rows A through T and individually printed identifiers. Because the plan is visually dense and includes irregular side blocks, it is routed DENSE; no symmetry, repeated-row shape, or overall 636 total may fill an unclear mark.",
+      "accessibilityAndMovability": "The current operator page marks wheelchair spaces and requires the patron first buy a ticket and contact the event's wheelchair-space desk; it also describes limited hearing-loop areas. The reviewed material does not authorise inventing a permanent wheelchair or companion seat-ID set. Implementation must classify only what the current chart and operator text expressly show and leave any unresolvable conversion out rather than infer it.",
+      "capacityRelation": "636 is an issuer-published current-theatre total and is a later reconciliation target, never a source for creating a position. The 458-seat historic theatre and all third-party/event charts are out of scope.",
+      "reason": "The current issuer page directly links a full numbered standard chart for the current rebuilt theatre and provides the current 636-seat identity. Its dense visual layout increases verification work but does not create an evidence gap.",
+      "implementationVerificationPlan": "Freshly re-fetch the current theatre page and PDF; perform two independently frozen visual passes in different row/block order without sharing ranges or totals; machine-expand and compare both sets bidirectionally; reconcile the final selected printed set to 636 only after the comparison; derive an independent structural checksum from the chart's visible row/block/cell structure where practical; and resolve every printed versus non-numbered wheelchair/accessible-space semantic directly from current issuer material. Any changed asset, material mismatch, or unresolvable accessibility conversion stops promotion."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "tokyo-official-0105",
+      "venue": "三越劇場",
+      "lane": "DENSE",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://mitsukoshi.mistore.jp/bunka/theater/index.html",
+          "role": "current operator theatre top page with current ticketed-programme links"
+        },
+        {
+          "url": "https://mitsukoshi.mistore.jp/bunka/theater/about_sp.html",
+          "role": "current operator theatre and seating page, stating the standard 514 seats as 1F 402 plus 2F 112 and exposing the official seat map"
+        },
+        {
+          "url": "https://mitsukoshi.mistore.jp/bunka/images/theater/230331/about/seat_pic.jpg",
+          "role": "current-linked official standard numbered seat-map image"
+        }
+      ],
+      "currentnessAndOperationalStatus": "Active. The current Mitsukoshi operator pages were rechecked on 2026-09-10; they expose theatre ticket-programme links and describe ongoing rakugo, theatre, and concert use. No closure, replacement, renovation, or seating-change notice was found in the reviewed current material.",
+      "representativeConfiguration": "The current operator's standard two-floor map: 514 seats, expressly split 1F 402 and 2F 112. This is the only configuration assessed. Event-specific external charts with different totals are not evidence for, and were not mixed into, this standard configuration.",
+      "numberedSeatEvidence": "Complete and implementation-feasible: the current operator page exposes its numbered seat-map image for the standard two-floor configuration, and its per-seat viewing links are organized from that chart. The chart's printed row/individual-seat identifiers and floor grouping are the future transcription source; the 514 total is only a later issuer-subtotal cross-check.",
+      "rowIdentityAndConfigurationScope": "The map separates 1F and 2F and supplies printed individual positions for the standard plan. Later work must retain floor identity and every chart-printed gap; it must not reconcile a different event map by deleting, adding, or moving positions.",
+      "accessibilityAndMovability": "No wheelchair-specific position, companion replacement, movable-seat conversion, or alternate numbered configuration was stated on the inspected current operator seating page. This absence is not evidence of any relation: implementation must recheck current official accessibility material and preserve only explicitly charted identifiers/semantics.",
+      "capacityRelation": "The current issuer page states 514 total seats, 1F 402 and 2F 112. The later implementation must independently reconcile both floor subtotals and the total; it may not use any subtotal to fill unread labels.",
+      "reason": "The current operator provides one standard, floor-explicit numbered map and its exact floor/total subtotals, allowing a lossless later two-pass extraction without drawing on third-party or event-specific material.",
+      "implementationVerificationPlan": "Freshly re-fetch the operator seating page and image; freeze independent Human Pass 1 and Human Pass 2 before comparison, using different floor/row traversal orders; machine-expand the two authored sets and require exact bidirectional equality; reconcile 1F 402, 2F 112, and total 514 only after extraction; create an independent structural checksum where practical; and independently verify the current operator's wheelchair/movability semantics before selecting any conversion treatment. Any material mismatch, changed chart, or unresolved claimed conversion stops production."
+    }
+  ],
+  "notResearchedAfterStop": [
+    {
+      "rank": 4,
+      "inventoryId": "tokyo-official-1068",
+      "venue": "調布市せんがわ劇場〔ホール〕",
+      "researchStarted": false,
+      "reason": "The third ADOPT stop condition was reached before this candidate was opened; inventory is unchanged."
+    },
+    {
+      "rank": 5,
+      "inventoryId": "tokyo-official-0103",
+      "venue": "中央区立日本橋公会堂(日本橋劇場)〔ホール(日本橋劇場)〕",
+      "researchStarted": false,
+      "reason": "The third ADOPT stop condition was reached before this candidate was opened; inventory is unchanged."
+    }
+  ],
+  "result": {
+    "candidateCeiling": 5,
+    "candidatesResearchStarted": 3,
+    "stoppedAfterResearchOrderRank": 3,
+    "adoptedCandidates": 3,
+    "deferredNeedEvidenceHold": 0,
+    "hardCases": 0,
+    "notResearchedAfterStop": 2,
+    "productionPromotions": 0
+  },
+  "inventorySynchronization": "tokyo-official-0690, tokyo-official-0740, and tokyo-official-0105 are now active/eligible/source-located with current issuer URLs, a 2026-09-10 check date, and an ADOPT preflight blocker requiring a separate two-pass implementation. The rank-4/rank-5 records and every excluded record remain unchanged.",
+  "productionImpact": {
+    "changed": false,
+    "venueSourcesTouched": [],
+    "generatedArtifactsTouched": [],
+    "productionFingerprintsTouched": [],
+    "productionDataChanges": "none"
+  },
+  "validationPlan": "Records-only preflight: parse all JSON, run inventory integrity, relevant coverage/ledger integrity, venues:inventory:report, venues:release:coverage, venues:validate, verify:docs, and git diff --check. Do not run venues:build or regenerate production artifacts because no production source changed.",
+  "exactNextAction": "A fresh bounded Claude implementation may target only the three ADOPTs from this report: tokyo-official-0690 紀伊國屋サザンシアターTAKASHIMAYA, tokyo-official-0740 PARCO劇場, and tokyo-official-0105 三越劇場. Treat each implementationVerificationPlan as a mandatory independently frozen two-pass gate; do not start rank 4/5 research, GMO rechecks, RaiBoC, 日野市民会館大ホール, or any existing blocked/HARD-CASE work in that implementation."
+}

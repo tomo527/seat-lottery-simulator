@@ -2,6 +2,22 @@
 
 Updated: 2026-09-10 (Asia/Tokyo)
 
+## Active save state — Tokyo Priority D performance-identity preflight closed (2026-09-10)
+
+The bounded **TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT** recomputed the live pool from current `data/venue-inventory/tokyo.json`: **787** Priority-D candidates remain after excluding production, blocked/DEFER/NEED EVIDENCE/HOLD/rejected records and recorded duplicate facility-spaces. It applied the current portfolio audit's yield-oriented order — dedicated ticketed performance identity first, then civic large/medium/small/main halls; capacity-unknown and missing stored URLs are neutral; studio/training/live-house/meeting/movable seating is deprioritised. The first three performance candidates reached ADOPT, so the wave stopped before opening ranks 4–5.
+
+**ADOPT — implementation feasible, not implemented:**
+
+- `tokyo-official-0690` 紀伊國屋サザンシアターTAKASHIMAYA: active current operator guide links its complete printed 468-seat chart (rows 1–21); 14列3〜6番 have an explicit wheelchair-conversion annotation.
+- `tokyo-official-0740` PARCO劇場: active current operator page links the full numbered A〜T chart for the rebuilt 636-seat theatre; its wheelchair-space operating semantics must be re-read directly in implementation.
+- `tokyo-official-0105` 三越劇場: active current operator standard map and page give 514 seats, split 1F 402 / 2F 112, with the map's printed identifiers as the only implementation source.
+
+The machine-readable evidence and gate plans are in [`tokyo-priority-d-performance-identity-preflight-2026-09-10.json`](../data/venue-reports/tokyo-priority-d-performance-identity-preflight-2026-09-10.json). Each candidate is now `active` / `eligible` / `source-located` in the inventory; no venue source or range exists. **No seat transcription, Human Pass, production source, production integration, catalog/runtime/fingerprint regeneration, application change, GMO recheck, RaiBoC, 日野市民会館大ホール, or existing blocked/HARD-CASE record was touched.**
+
+**Exact next action:** run a fresh bounded Claude implementation for **only** `tokyo-official-0690`, `tokyo-official-0740`, and `tokyo-official-0105`. For each, freshly fetch the issuer chart, freeze independent Human Passes 1 and 2 before comparison, require bidirectional machine-expanded equality, reconcile issuer subtotals, create an independent practical structural checksum, and resolve only issuer-explicit accessibility/movability semantics. Stop promotion on any material mismatch or unclear conversion; do not start rank-4/rank-5 research.
+
+Validation passed: all 486 `data/**/*.json` files parse; `venues:inventory:report` reports 0 errors and Priority-D outstanding remains 787; `venues:readiness:report` has 0 errors; `venues:release:coverage` remains PASS; `venues:validate` has 0 errors and the same 49 pre-existing warnings; `verify:docs` (including the harness) and `git diff --check` pass. `venues:build` is intentionally out of scope because production data did not change.
+
 ## Recent application change — homepage SEO foundation (2026-09-09)
 
 This application-only change does not supersede or alter the active GMO ARENA SAITAMA venue save state below. The homepage SEO audit and minimal implementation are complete locally. The static and client-applied homepage title/description now agree; the production root is declared as canonical; Open Graph, Twitter summary metadata, and factual `WebSite` JSON-LD are present; and the visible H1/lead describe the service as a random seat simulator for live, concert, and event venues without claiming to predict real allocations. Legal routes update their own canonical and social metadata after routing. `public/googled32dc6977d90953d.html` is unchanged.
