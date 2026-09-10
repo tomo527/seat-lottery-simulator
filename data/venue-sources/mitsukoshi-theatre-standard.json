@@ -1,0 +1,316 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "mitsukoshi-theatre-standard",
+  "name": "三越劇場",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": [
+    "日本橋三越劇場",
+    "三越劇場 座席表"
+  ],
+  "venueType": "theater",
+  "knownLimitations": [
+    "現行運営者ページは客席数を514席（1階402席・2階112席）と明記し、転記したmapped setも1階402席・2階112席・合計514席で階別subtotal・総数ともに完全一致しています。",
+    "エリアはissuerが定義する1階・2階をそのまま保持しています。座席番号は各階の列ごとの通し番号で、図が4ブロックに分けて描く区画をまたいで連続するため、repository由来のブロック名は付与していません。",
+    "2階E列は中央部分に照明・音響室があり、図でも1〜12番と21〜24番に分断して印字されています。13〜20番は座席として印字されていないため登録していません。分断はrangeを分けて保持し、補完していません。",
+    "現行座席図には、同じページの「各客席からの視点」機能の赤い視点アイコン9個が画像そのものに焼き込まれており、その真下の座席セル9個は番号が読み取れません。該当9席の識別子は推測せず、同じ現行ページが読み込むissuer自身の視点定義（viewsample.js）が各アイコンに割り当てる座席名から確定しました（1階1列6番・1列12番・5列13番・7列24番・11列12番・15列1番・17列13番、2階A列12番・E列1番）。9個のアイコン座標はそれぞれ当該セルの位置と一致します。",
+    "現行公式座席図は725×916のラスタPNGとしてのみ公開され、セル外形はアンチエイリアスと点線を含み、セルピッチは実測17.5pxです。1階前方（1〜17列のうち1〜10列）は扇状の曲線配置でブロックごとに傾きが異なり、さらに上記9個のアイコンがセル外形を破壊するため、この資産に対する全席単位の機械構造カウントは実用的ではありません。機械経路が独立に確定できたのは階・列帯・ブロック骨格とセルピッチであり、席数のindependent checksumにはissuerの階別公表値を用いています。",
+    "図には「公演により1列目を使用せず2列目が最前列になる場合がございます。また花道および仮設舞台を使用する公演など、座席配置を変更する場合がございます。」と印字されています。issuerは公演別の番号付き座席図を公開していないため、登録したのは標準の2層配置1件だけで、公演別の増減は反映していません。",
+    "2026-09-10に確認した現行運営者の劇場ページ、座席ページ、アクセスページ、貸出ページのいずれにも、車椅子スペースの位置、台数、番号席との置換関係、可動席の記載はありません。記載がないことを「存在しない証明」としては扱わず、番号レベルの関係を推測せずに、印字座席をそのまま登録しています。"
+  ],
+  "sources": [
+    {
+      "id": "official-theatre-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "株式会社三越伊勢丹 日本橋三越本店（施設運営者）",
+      "title": "三越劇場 劇場ページ（日本橋三越本店本館6階の現行劇場ページ。現行のチケット販売中公演一覧へリンクし、三越落語会をはじめとする継続的な公演を案内する。閉館、建替え、改修、座席変更の告知はない）",
+      "url": "https://mitsukoshi.mistore.jp/bunka/theater/index.html",
+      "checkedAt": "2026-09-10"
+    },
+    {
+      "id": "official-seating-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count",
+        "seat-structure"
+      ],
+      "publisher": "株式会社三越伊勢丹 日本橋三越本店（施設運営者）",
+      "title": "三越劇場 劇場について・座席表（【客席について】として「客席数は514席(1階402席・2階112席)でございます。」と明記し、現行の公式番号座席図と「各客席からの視点」機能を掲載する）",
+      "url": "https://mitsukoshi.mistore.jp/bunka/theater/about_sp.html",
+      "checkedAt": "2026-09-10"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "株式会社三越伊勢丹 日本橋三越本店（施設運営者）",
+      "title": "三越劇場 公式座席図（seat_map.png、725×916。右上に「総席数514席」、左下に「1F 402席」「2F 112席」を印字し、1階1列〜17列と2階A列〜E列の座席番号を各4ブロックに分けて個別に印字する。図中に「公演により1列目を使用せず2列目が最前列になる場合がございます。また花道および仮設舞台を使用する公演など、座席配置を変更する場合がございます。」の注記を印字する）",
+      "url": "https://mitsukoshi.mistore.jp/bunka/images/theater/230331/about/seat_map.png",
+      "checkedAt": "2026-09-10"
+    },
+    {
+      "id": "official-viewpoint-definition",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "株式会社三越伊勢丹 日本橋三越本店（施設運営者）",
+      "title": "三越劇場「各客席からの視点」定義（viewsample.js。座席ページが読み込むissuer自身のスクリプトで、座席図に重ねる9個の視点アイコンの座標と、それぞれが指す座席の視点画像を対応づける。画像名が当該座席を1-6・1-12・5-13・7-24・11-12・15-1・17-13・2-A12・2-E1として明示する）",
+      "url": "https://mitsukoshi.mistore.jp/bunka/asset/js/viewsample.js",
+      "checkedAt": "2026-09-10"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "現行標準配置（総席数514席・1階402席／2階112席）",
+      "issuerDefinedCondition": "現行運営者の「劇場について・座席表」ページが客席数514席（1階402席・2階112席）として案内し、同ページが掲載する公式番号座席図が示す標準の2層配置。",
+      "selectionBasis": "issuerが公開する番号付き座席図は現行座席ページのこの1点のみで、公演別・イベント別の番号図は公開されていない。図自身が公演による前列不使用や花道・仮設舞台での配置変更の可能性を注記するが、その場合の番号図は公開されていないため、標準配置1件だけを登録している。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-10に現行運営者の座席ページ（https://mitsukoshi.mistore.jp/bunka/theater/about_sp.html ）が掲載する座席図として取得した。URL直打ちでcurrent扱いはしていない。SHA-256: 413760c6015d10808845efdf82d4f75e68a9e688467d9472fcff1babeb064750、65,214バイト、725×916のパレットPNG。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256）であることを確認している。ベクターPDFではなくラスタ画像であり、座席番号はテキストとして抽出できないため、DENSE-VECTOR verificationの前提を満たさない。既定どおりfresh independent human visual two-passを実施し、機械経路はhuman range tableを入力に用いない構造checksumとしてのみ用いた。なお同ページのseat_pic.jpg（360×240）は客席写真であって番号座席図ではないため、転記には使用していない。",
+      "sourceIds": [
+        "official-theatre-page",
+        "official-seating-page",
+        "official-seat-map",
+        "official-viewpoint-definition"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 514,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式座席図に印字された全514席の標準配置です。エリアはissuerが定義する「1階」402席と「2階」112席の2つで、列は図の印字どおり1階が1列〜17列、2階がA列〜E列です。座席番号は各階の列ごとの通し番号で、図が4ブロックに分けて描く区画をまたいで連続するため、repository由来のブロック名は付与していません。1階1列は3〜22番、2列は2〜23番、3列以降が1〜24番です。2階A〜D列は1〜24番、E列は中央に照明・音響室があるため1〜12番と21〜24番に分断されています。図の視点アイコンで番号が隠れる9席は、同じ現行ページのissuer自身の視点定義が示す座席名で確定しました。図の注記のとおり、公演によっては1列目を使用しない場合や花道・仮設舞台で配置が変わる場合がありますが、その番号図は公開されていないため反映していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "2026-09-10時点で、現行運営者の劇場ページ、座席ページ、アクセスページ、貸出ページのいずれにも車椅子スペースの位置、台数、番号席との置換関係、可動席の記載はなく、現行座席図にも車椅子区画や可動席の印字はない。したがって置換関係は不明であり、通常の印字番号席をそのまま登録している。記載がないことを「車椅子スペースが存在しない証明」としては扱わず、番号の創作、削除、置換、同伴者席の推測はいっさい行っていない。",
+        "sourceIds": [
+          "official-seating-page",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-10",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-reversed-floor-and-row-order-reversed-block-order-and-re-rendered-crops-at-a-different-scale-and-colour-mode-from-an-independently-re-fetched-byte-identical-asset; issuer-per-floor-subtotal-reconciliation-1F-402-2F-112-total-514; issuer-own-viewpoint-definition-for-the-nine-icon-covered-identifiers; partial-machine-structural-skeleton-checksum-from-the-raster-cell-borders-with-a-recorded-reason-why-a-full-per-cell-machine-count-is-not-practical-on-this-asset",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "human visual two-pass: 現行座席図はラスタPNGで座席番号はテキストではないため、既定どおり人が直接視認する独立two-passを実施した。Pass 1はRGBのまま3倍にLANCZOS拡大した横帯cropを用い、1階1列→17列、続いて2階A列→E列の順に、各列で左ブロック→中央左→中央右→右ブロックの順に小さい番号側から読み取った。Pass 2は同一URLから独立に再取得し（SHA-256一致でバイト単位同一）、Pass 1のtableを参照せずに、グレースケール変換のうえ5倍BICUBIC拡大というPass 1と異なる倍率・補間・色モードでブロック別の縦帯cropを作り、2階E列→A列、次に1階の右ブロック列→左ブロック列→中央左列→中央右列の順、各列内は17列→1列の降順で読み取った。両passをfreezeしてから機械展開して比較し、22列・展開座席ID集合514件の双方向set equalityで差分0、unresolved mismatch 0件だった。",
+          "icon-occluded identifiers: 現行座席図には同ページの「各客席からの視点」機能の赤い視点アイコン9個が画像に焼き込まれており、その真下の座席セル9個は番号が視認できない。両passともこの9セルを独立に同じ位置で検出した。識別子は連番からの推測で埋めず、同じ現行ページが読み込むissuer自身の視点定義viewsample.jsが各アイコン座標に割り当てる座席名から確定した（1階1列6番・1列12番・5列13番・7列24番・11列12番・15列1番・17列13番、2階A列12番・E列1番）。9件の視点画像はいずれもHTTP 200で現存する。隣接列からの伝播、対称性による生成、第三者資料による補完はいっさい行っていない。",
+          "issuer checksum reconciliation（階別・総数）: 現行運営者の座席ページは「客席数は514席(1階402席・2階112席)でございます。」と明記し、座席図自身も「総席数514席」「1F 402席」「2F 112席」を印字する。転記したmapped setは1階402席、2階112席、合計514席で、階別subtotalと総数のすべてに完全一致した。1階の内訳も1列20席（3〜22番）、2列22席（2〜23番）、3〜17列が各24席で、20+22+24×15＝402となり公表値と一致する。2階もA〜D列各24席とE列16席（1〜12番・21〜24番）で合計112席となり一致する。これらの値はtranscription targetにしておらず、番号集合を先に独立確定したうえで事後にreconcileしている。",
+          "independent structural checksum（機械経路: ラスタのセル外形骨格。full per-cell countは実用的でない）: human range tableをいっさい入力に使わず、座席図のラスタ画像だけからセル外形の縦罫を抽出して階・列帯・ブロック骨格とセルピッチを独立に確定した。結果は1階17列帯・各列4ブロック、2階5列帯、実測セルピッチ17.5pxで、human two-passの階・列・ブロック構成と矛盾はない。一方で全席単位の機械カウントはこの資産では実用的でないと判断した。理由は三つあり、(1) 図が725×916のラスタPNGとしてのみ公開され、セル外形がアンチエイリアスと点線を含むため、罫線を確実に拾える二値化閾値では座席番号の数字も同じ縦罫として混入する、(2) 1階前方は扇状の曲線配置でブロックごとに傾きが異なり、階全体にも列全体にも単一のdeskewが効かない、(3) 視点アイコン9個がセル外形そのものを破壊する。したがってVENUE_DATA_GUIDEの転記cross-check要件の第4項に従い、実用的でない理由を記録したうえで、issuerの階別公表値（1階402席・2階112席・総数514席）とissuer自身の視点定義という2つのindependent checksumを用いた。閾値をtargetに合わせる恣意的調整は行っていない。",
+          "source equality: 登録したsource rangeを機械展開した集合（514件、1階402件・2階112件）と、human two-passの確定集合を双方向のset equalityで比較し、差分0だった。runtime key（area, 列, 座席番号）の重複は0件、同一(area, 列)内のrange重複も0件である。",
+          "printed gap semantics: 1階1列は3番から、2列は2番から始まり、いずれも図に前方端の座席が印字されていない。2階E列は中央に照明・音響室があるため1〜12番と21〜24番に分断されており、13〜20番は座席として印字されていない。分断はrangeを分けて保持し、補完も削除も行っていない。",
+          "event-dependent variation: 図は「公演により1列目を使用せず2列目が最前列になる場合がございます。また花道および仮設舞台を使用する公演など、座席配置を変更する場合がございます。」と注記する。issuerは公演別の番号付き座席図を公開していないため、標準配置1件のみを登録し、公演別の増減や仮設番号は作成していない。",
+          "currentness: 2026-09-10に現行運営者の劇場ページ、座席ページ、アクセスページ、貸出ページを再確認した。劇場は日本橋三越本店本館6階で運営中で、現行のチケット販売中公演一覧が稼働しており、閉館・建替え・改修・座席構造変更の告知はない。日本橋三越本店本館は2016年に国の重要文化財に指定され、劇場の装飾は開場当時のまま保たれている旨をissuerが記載している。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "1列",
+          "from": 3,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "2列",
+          "from": 2,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "3列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "4列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "5列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "10列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "A列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "B列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "C列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "D列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "E列",
+          "from": 1,
+          "to": 12,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "E列",
+          "from": 21,
+          "to": 24,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

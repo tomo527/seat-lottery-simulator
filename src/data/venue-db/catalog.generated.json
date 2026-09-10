@@ -974,6 +974,34 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "kinokuniya-southern-theatre-takashimaya-standard",
+    "venueGroupId": "kinokuniya-southern-theatre-takashimaya-standard",
+    "name": "紀伊國屋サザンシアターTAKASHIMAYA",
+    "searchAliases": [
+      "サザンシアター",
+      "サザンシアターTAKASHIMAYA",
+      "紀伊国屋サザンシアター",
+      "紀伊國屋サザンシアター",
+      "紀伊國屋サザンシアター TAKASHIMAYA"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "現行標準配置（客席数468）",
+        "seatCount": 468,
+        "dataPath": "/venue-db/venues/kinokuniya-southern-theatre-takashimaya-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席表に印字された全468席の標準配置です。座席番号は列ごとの通し番号で、図が左・中央・右に分けて描くブロックをまたいで連続するため、repository由来のブロック名は付与していません。列は図の印字どおり1列から21列です。番号が飛ぶ箇所はすべて図に座席が印字されていない位置で、主なものは偶数列の18番、1列から5列の前方端、20列・21列の後方端です。補完も削除も行っていません。14列3〜6番は図の脚注により車椅子専用スペースとして使用できる旨が注記された印字座席で、標準配置の座席として保持しています。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "kioi-small-hall-standard",
     "name": "日本製鉄紀尾井小ホール",
     "searchAliases": [
@@ -1217,6 +1245,31 @@
         "dataPath": "/venue-db/venues/mito-civic-globis-hall--standard.json",
         "scope": "official-variant",
         "scopeDisclosure": "公式1F/2F/3F座席表PDFに印字された通常番号席の全席（1F 1,293・2F 333・3F 374、計2,000）を登録した標準構成です。1F前方の親子室A（A-5〜A-8）・親子室B（B-1〜B-4）、及びR/L可動椅子区画（各1〜4）の印字番号を含みます。車いす席は催事ごとに配置が変わると公式に明記されており、この通常番号構成には反映していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "mitsukoshi-theatre-standard",
+    "venueGroupId": "mitsukoshi-theatre-standard",
+    "name": "三越劇場",
+    "searchAliases": [
+      "三越劇場 座席表",
+      "日本橋三越劇場"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "現行標準配置（総席数514席・1階402席／2階112席）",
+        "seatCount": 514,
+        "dataPath": "/venue-db/venues/mitsukoshi-theatre-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席図に印字された全514席の標準配置です。エリアはissuerが定義する「1階」402席と「2階」112席の2つで、列は図の印字どおり1階が1列〜17列、2階がA列〜E列です。座席番号は各階の列ごとの通し番号で、図が4ブロックに分けて描く区画をまたいで連続するため、repository由来のブロック名は付与していません。1階1列は3〜22番、2列は2〜23番、3列以降が1〜24番です。2階A〜D列は1〜24番、E列は中央に照明・音響室があるため1〜12番と21〜24番に分断されています。図の視点アイコンで番号が隠れる9席は、同じ現行ページのissuer自身の視点定義が示す座席名で確定しました。図の注記のとおり、公演によっては1列目を使用しない場合や花道・仮設舞台で配置が変わる場合がありますが、その番号図は公開されていないため反映していません。",
         "fixedOnly": false
       }
     ]
@@ -1772,6 +1825,32 @@
         "dataPath": "/venue-db/venues/pacifico-yokohama-national-hall--basic-stage.json",
         "scope": "official-variant",
         "scopeDisclosure": "issuerが「国立大ホール 利用パターン」の第1に掲げるパターン1 基本舞台の公式座席図に印字された全番号席5,002席（1階席3,260席・2階席994席・3階席748席）を登録した構成です。エリアは公式座席図が図中に印字する区分をそのまま用い、「1階席」（1列〜47列、座席番号1〜80）、「2階席」（1列〜18列、座席番号1〜82）、「3階席」（1列〜17列、座席番号1〜84）の3つとしています。列番号・座席番号は階ごとの通し番号で、repository由来のブロック名は付与していません。1階席の座席図は、issuerが左端に「AA」（1列〜8列）、「A」（9列〜28列）、「B」（29列〜47列）の区分記号を印字します。2階席には「C」、3階席には「D」の記号が舞台側に印字されます。これらは座席番号の一部ではないためエリアIDには使用していません。座席図には可動席の網掛けと凡例（1階席「可動席」、2階席「＊2階席の■部分60席は、一括でロールバックして収納されます。」）があり、登録した5,002席のうち770席（1階席710席・2階席60席）が可動席です。3階席は全席固定です。可動席はパターン1では設置されている番号席であり、issuerの3,260席・994席・5,002席の内数として公表されているため登録に含めています。パターン2〜4では舞台の作り方に応じて一部が撤去され、issuerは「可動席は1席のみを単独で外すことはできません」「撤去した可動席数を超えて仮設椅子席を設けることはできません」と注記します。撤去時にどの番号が外れるかは公開されていないため、他パターンは登録も混在もしていません。1階席の座席図には迫舞台（せりぶたい）の範囲が破線とXハッチで重ねて描かれますが、その範囲内の座席にも番号が印字されており、パターン1では客席として存在します。パターン4（基本舞台+迫舞台+置舞台）で迫舞台を使用する場合の1階席は2,796席とissuerが公表していますが、そのときの番号集合は公開されていません。印字どおりに登録しており、欠番の補完も削除も行っていません。番号が飛ぶ箇所はすべて図面上に座席が印字されていない位置です。主なものは、1階席47列の29〜31番・39〜42番・50〜52番（通路・柱位置）、2階席1列〜6列と3階席1列〜6列の左右ウイングのあいだ（中央が吹き抜け）、2階席18列の18〜20番・29〜31番・36〜47番・52〜54番・63〜65番（中央は調整室等の設備）、3階席13列〜17列の31〜36番・49〜54番（後方3ブロックのあいだの通路）です。issuerが1階席について公表する「奇数列座席の背もたれを倒し、1,670席に変更可能」の仕様は、集計値のみで番号付き座席図が公開されていないため登録していません。車椅子席も、issuerが存在を公表する一方で席数・位置・通常番号席との置換関係を公開しておらず、座席図にも印字がないため登録していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "parco-theater-standard",
+    "venueGroupId": "parco-theater-standard",
+    "name": "PARCO劇場",
+    "searchAliases": [
+      "PARCO THEATER",
+      "パルコ劇場",
+      "渋谷PARCO劇場"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "現行標準配置（客席数636）",
+        "seatCount": 636,
+        "dataPath": "/venue-db/venues/parco-theater-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "2020年に建て替え開場した現行PARCO劇場の公式座席表に印字された全636席の標準配置です。列は図の印字どおりA列からT列までの20列で、座席番号は列ごとの通し番号（最大1〜40番）です。図は各列を左・中央・右のブロックに分けて描きますが番号はブロックをまたいで連続するため、repository由来のブロック名は付与していません。A列とT列には側方ブロックがなく中央の13〜28番／13〜27番だけです。中央ブロックが27番で終わる列では28番が図上に印字されないため欠番として保持しています。左右2か所の車椅子区画は印字済み座席（M列3・4番、N列2・3番、M列37・38番、N列38・39番）に重なる案内表示で、issuerが番号レベルの置換関係を公開していないため、これらは通常の印字座席として保持しています。",
         "fixedOnly": false
       }
     ]

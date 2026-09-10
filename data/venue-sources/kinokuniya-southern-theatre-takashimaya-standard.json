@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "kinokuniya-southern-theatre-takashimaya-standard",
+  "name": "紀伊國屋サザンシアターTAKASHIMAYA",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": [
+    "紀伊國屋サザンシアター TAKASHIMAYA",
+    "紀伊國屋サザンシアター",
+    "紀伊国屋サザンシアター",
+    "サザンシアターTAKASHIMAYA",
+    "サザンシアター"
+  ],
+  "venueType": "theater",
+  "knownLimitations": [
+    "現行公式座席表は図の見出しに「座席表 (客席数468)」と印字し、転記したmapped setも468席で完全一致します。issuerはこの図以外に番号付きの別配置図を公開していないため、登録したconfigurationは1件だけです。",
+    "図は各列を左・中央・右の3ブロックに分けて描きますが、座席番号は列ごとに1番から通しで振られ、ブロック境界で番号が途切れません。したがってrepository由来のブロック名は付与せず、単一エリアの列・番号だけで登録しています。ブロック間および列端の欠番はすべて図に番号が印字されていない位置で、補完も削除も行っていません。",
+    "図の脚注は「※14列3〜6番の座席は車椅子専用スペースとして使用することができます」と印字し、当該4席は図上で太枠で囲まれています。issuerが示すのは印字済み座席番号の任意の転用であり、別番号体系や同伴者席は定義されていません。標準配置の座席として保持し、車椅子利用時の運用差は登録データへ反映していません。",
+    "この座席表PDFは全体が1枚のラスタ画像（1520×2205、テキスト・ベクター描画なし）で構成されるため、DENSE-VECTOR verificationの前提であるvector PDF上のテキスト印字を満たしません。既定どおりfresh independent human visual two-passを実施し、機械経路はhuman range tableを入力に用いないraster seat-cell structural checksumとしてのみ使用しました。"
+  ],
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "株式会社紀伊國屋書店（施設運営者）",
+      "title": "紀伊國屋サザンシアター TAKASHIMAYA 施設詳細（所在地を東京都渋谷区千駄ヶ谷5-24-2 タカシマヤタイムズスクエア南館7Fとし、現在も劇場として運営中であること、キノチケットカウンター／キノチケオンラインでの公演チケット販売を案内する。閉館、建替え、改修、座席変更の告知はない）",
+      "url": "https://store.kinokuniya.co.jp/store/kinokuniya-southern-theatre-takashimaya/?type=details",
+      "checkedAt": "2026-09-10"
+    },
+    {
+      "id": "official-theatre-guide",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "株式会社紀伊國屋書店（施設運営者）",
+      "title": "【紀伊國屋サザンシアター TAKASHIMAYA】劇場利用案内（【客席】として現行の座席表PDFへ直接リンクする現行運営者ページ。備品一覧PDFが2026-09に更新されており、現に維持されているページであることを確認した）",
+      "url": "https://store.kinokuniya.co.jp/theater/guide-southerntheater/",
+      "checkedAt": "2026-09-10"
+    },
+    {
+      "id": "official-standard-seat-chart",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "株式会社紀伊國屋書店（施設運営者）",
+      "title": "サザンシアターTAKASHIMAYA座席表（1ページ。見出しに「座席表 (客席数468)」を印字し、1列から21列まで各列を左・中央・右の3ブロックに分けて座席番号を個別に印字する。脚注に「※14列3〜6番の座席は車椅子専用スペースとして使用することができます」を印字する）",
+      "url": "https://store.kinokuniya.co.jp/wp-content/uploads/2020/08/%E3%82%B5%E3%82%B6%E3%83%B3%E3%82%B7%E3%82%A2%E3%82%BF%E3%83%BCTAKASHIMAYA%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf",
+      "checkedAt": "2026-09-10"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "現行標準配置（客席数468）",
+      "issuerDefinedCondition": "現行運営者の劇場利用案内が【客席】として直接リンクする、唯一の公式番号座席表が示す標準配置。",
+      "selectionBasis": "issuerが公開する番号付き座席図はこの現行「サザンシアターTAKASHIMAYA座席表」1点のみで、図自身が「客席数468」と標準配席を明示する。別配置・イベント別配置の番号図はissuerから公開されていないため、代替configurationは作成していない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-10に現行運営者の劇場利用案内（https://store.kinokuniya.co.jp/theater/guide-southerntheater/ ）がリンクする座席表として取得した。URL直打ちでcurrent扱いはしていない。SHA-256: dc5a8e2adcd707745d92bf885be433e828b27e601f9c590f471930f8cd9be19b、928,355バイト、PDF 1.3、1ページ、547.2×793.8pt。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256）であることを確認している。ページはフォントもベクター描画も持たず、1点の埋め込みラスタ画像（1520×2205、JPEG）だけで構成されるため、テキスト抽出は0文字であり、DENSE-VECTOR verificationの前提を満たさない。",
+      "sourceIds": [
+        "official-facility-page",
+        "official-theatre-guide",
+        "official-standard-seat-chart"
+      ],
+      "differenceBasisSourceIds": [
+        "official-standard-seat-chart"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 468,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式座席表に印字された全468席の標準配置です。座席番号は列ごとの通し番号で、図が左・中央・右に分けて描くブロックをまたいで連続するため、repository由来のブロック名は付与していません。列は図の印字どおり1列から21列です。番号が飛ぶ箇所はすべて図に座席が印字されていない位置で、主なものは偶数列の18番、1列から5列の前方端、20列・21列の後方端です。補完も削除も行っていません。14列3〜6番は図の脚注により車椅子専用スペースとして使用できる旨が注記された印字座席で、標準配置の座席として保持しています。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行公式座席表は脚注に「※14列3〜6番の座席は車椅子専用スペースとして使用することができます」と印字し、当該4席を図上で太枠で囲む。両passでこの太枠と4つの番号（3・4・5・6）を個別に視認し、機械経路でも14列左ブロックに6個の座席セルが検出され、うち太枠に囲まれた4個は枠線が太いぶん白領域面積が小さいという同じ構造が確認された。issuerが定義しているのは印字済み座席番号の任意の転用のみで、車椅子スペースと通常番号席の置換関係、同伴者席、転用時の別番号体系はいっさい公開されていない。したがって4席は印字IDのまま標準配置に保持し、追加・削除・置換は行わず、車椅子利用時の運用差は登録データへ反映していない。",
+        "sourceIds": [
+          "official-standard-seat-chart"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-10",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-linked-official-seat-chart-with-reversed-row-order-reversed-block-order-and-re-rendered-crops-at-a-different-resolution-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-from-raster-seat-cell-connected-components-not-fed-by-the-human-range-tables; issuer-printed-total-reconciliation; left-right-block-symmetry-invariant",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "human visual two-pass: 座席番号はラスタ画像であってテキストではないため、既定どおり人が現行公式図を直接視認する独立two-passを実施した。Pass 1はPDFから抽出した native 1520×2205 のJPEGを2倍に拡大した全幅の横帯cropを用い、1列→21列の昇順に、各列で左ブロック→中央ブロック→右ブロックの順に小さい番号側から読み取った。Pass 2はPDFを同一URLから独立に再取得し（SHA-256一致でバイト単位同一）、native画像ではなく420dpi（3192×4631）で再描画した別解像度のブロック別縦帯cropを用い、Pass 1のtableを参照せずに右ブロック→中央ブロック→左ブロックの順、各ブロック内は21列→1列の降順で読み取った。両passをfreezeしてから機械展開して比較し、21列・63ブロック・展開座席ID集合468件の双方向set equalityで差分0、unresolved mismatch 0件だった。",
+          "independent structural checksum（機械経路: ラスタ座席セルの連結成分幾何）: human range tableをいっさい入力に使わず、現行図のラスタ画像だけを二値化して白の連結成分を抽出し、面積700〜2200px・幅25〜50px・高さ35〜60pxという座席セル形状の成分だけを座席枠内部として数えた（この形状条件により、図の四隅にある扉開き弧の53×48成分と、数字のカウンタ等の微小成分は除外される）。さらに各ブロック帯について座席列の傾きをロバスト推定してから行に分帯した。この経路が独立に得た結果は、左ブロックが21帯で2,4,4,5,5,6×14,5,5、中央ブロックが21帯で12,11,12,11,12,11,12,11,12,11,12,11,12,11,12,11,12,11,12,11,10、右ブロックが21帯で2,4,4,5,5,6×14,5,5、総計468セルであった。human two-passが独立に得た63ブロックの座席数と1件も違わず一致し、機械側の総計468も一致した。",
+          "issuer checksum reconciliation: 現行公式座席表は図の見出しに「座席表 (客席数468)」と自ら印字する。転記したmapped setは468席で、この印字総数と完全一致した。issuerは階別・区分別のsubtotalを公開していないため、区分別照合は該当しない。468はtranscription targetにしておらず、番号集合を先に独立確定したうえで事後にreconcileしている。",
+          "source equality: 登録したsource rangeを機械展開した集合（468件）と、human two-passの確定集合を双方向のset equalityで比較し、差分0だった。runtime key（列, 座席番号）の重複は0件、同一列内のrange重複も0件である。",
+          "left-right block symmetry invariant: 図は中心軸について左右対称で、左ブロックと右ブロックは各列で同数の座席を持つ。確定した集合でも21列すべてで左右の座席数が一致し（2/4/4/5/5/6…5/5）、左右を別々のcropから読み取っているためこの不変量は片側の読み取り誤りを検出する。機械経路の左右帯別カウントも同一だった。",
+          "printed gap semantics: 偶数列（2・4・6・8・10・12・14・16・18列）は中央ブロックが7〜17番で終わり右ブロックが19番から始まるため、18番が図上に印字されない。20列は6番・18番・19番が、21列は6番・17番・18番・19番が印字されない。いずれも図上に座席そのものが描かれていない位置であり、excludedとして保持している。番号を補完しても削除してもいない。",
+          "currentness: 2026-09-10に現行運営者の施設詳細ページと劇場利用案内を再確認した。劇場は運営中で、閉館・建替え・改修・座席構造変更の告知はない。劇場利用案内は現に維持されており（備品一覧PDFが2026-09に更新されている）、【客席】として本座席表へ直接リンクしている。座席表PDF自体のアップロード先ディレクトリは2020/08だが、現行ページからのlinkageをcurrentnessの根拠としており、ファイル日付を根拠にしていない。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "1列",
+          "from": 5,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "rowLabel": "2列",
+          "from": 3,
+          "to": 22,
+          "excluded": [
+            18
+          ]
+        },
+        {
+          "rowLabel": "3列",
+          "from": 3,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "rowLabel": "4列",
+          "from": 2,
+          "to": 23,
+          "excluded": [
+            18
+          ]
+        },
+        {
+          "rowLabel": "5列",
+          "from": 2,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "rowLabel": "6列",
+          "from": 1,
+          "to": 24,
+          "excluded": [
+            18
+          ]
+        },
+        {
+          "rowLabel": "7列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "rowLabel": "8列",
+          "from": 1,
+          "to": 24,
+          "excluded": [
+            18
+          ]
+        },
+        {
+          "rowLabel": "9列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "rowLabel": "10列",
+          "from": 1,
+          "to": 24,
+          "excluded": [
+            18
+          ]
+        },
+        {
+          "rowLabel": "11列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "rowLabel": "12列",
+          "from": 1,
+          "to": 24,
+          "excluded": [
+            18
+          ]
+        },
+        {
+          "rowLabel": "13列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "rowLabel": "14列",
+          "from": 1,
+          "to": 24,
+          "excluded": [
+            18
+          ]
+        },
+        {
+          "rowLabel": "15列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "rowLabel": "16列",
+          "from": 1,
+          "to": 24,
+          "excluded": [
+            18
+          ]
+        },
+        {
+          "rowLabel": "17列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "rowLabel": "18列",
+          "from": 1,
+          "to": 24,
+          "excluded": [
+            18
+          ]
+        },
+        {
+          "rowLabel": "19列",
+          "from": 1,
+          "to": 24,
+          "excluded": []
+        },
+        {
+          "rowLabel": "20列",
+          "from": 1,
+          "to": 24,
+          "excluded": [
+            6,
+            18,
+            19
+          ]
+        },
+        {
+          "rowLabel": "21列",
+          "from": 1,
+          "to": 24,
+          "excluded": [
+            6,
+            17,
+            18,
+            19
+          ]
+        }
+      ]
+    }
+  ]
+}

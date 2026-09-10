@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "parco-theater-standard",
+  "name": "PARCO劇場",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": [
+    "パルコ劇場",
+    "PARCO THEATER",
+    "渋谷PARCO劇場"
+  ],
+  "venueType": "theater",
+  "knownLimitations": [
+    "対象は2020年に渋谷PARCO 7〜9階（エントランス8階）へ建て替え開場した現行のPARCO劇場だけです。2016年に休館した旧PARCO劇場（458席、旧渋谷PARCO 9階）の資料はいっさい参照も混在もしていません。issuerである株式会社パルコは旧劇場458席から現行636席へ客席数を増やしたことを明示しています。",
+    "座席番号は列ごとに1番から40番までの通し番号で、図が左・中央・右に分けて描くブロックをまたいで連続します。したがってrepository由来のブロック名は付与せず、単一エリアの列（A〜T）と番号だけで登録しています。",
+    "現行座席図はA列とT列に側方ブロックを描いていません。両列は中央ブロックだけの列です。側方ブロックには列記号が印字されていないため、その列所属は図の印字レイアウトから確定しました。各側方ブロックの内側端はPDFのベクター幾何上、割り当てた列の中央ブロックから最大6.1pt、次に近い列からは最小14.1ptの位置にあり（列ピッチ約20pt）、割り当ては一意に決まります。両human passも同じ結論に達しています。幾何による補完や隣接列からの番号伝播はいっさい行っていません。",
+    "中央ブロックが27番で終わる列（B・D・F・H・J・L・N・P・R）では28番が図上に印字されず、右ブロックが29番から始まります。この欠番は図の印字どおりexcludedとして保持し、補完していません。",
+    "現行公式ページは車椅子スペースについて、あらかじめ観劇券を購入したうえで来場日時と座席番号を各公演の車椅子スペース受付窓口へ連絡する運用とし、空き状況によっては購入した座席で観劇する場合があると案内します。座席図は左右2か所を車椅子ピクトグラム付きの青い区画で示しますが、この区画は印字済み座席（左: M列3・4番、N列2・3番／右: M列37・38番、N列38・39番）に重なるだけで、どの番号席がどの車椅子スペースへ置き換わるかというlosslessな対応関係はissuerから公開されていません。したがって8席は印字IDのまま保持し、置換関係は登録データへ反映していません。ヒアリングループ対象座席エリアについても同様に、番号レベルの定義は公開されていません。"
+  ],
+  "sources": [
+    {
+      "id": "official-theatre-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-structure"
+      ],
+      "publisher": "株式会社パルコ エンタテインメント事業部（施設運営者）",
+      "title": "PARCO劇場（PARCO STAGE）劇場ページ（現行の劇場案内。所在地を〒150-8377 東京都渋谷区宇田川町15-1 渋谷PARCO 8階とし、「座席表」節から現行の公式座席表PDFへ直接リンクする。「観劇サポート」節で車椅子スペースとヒアリングループの運用を案内する）",
+      "url": "https://stage.parco.jp/parcotheater/",
+      "checkedAt": "2026-09-10"
+    },
+    {
+      "id": "official-seat-chart",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "株式会社パルコ エンタテインメント事業部（施設運営者）",
+      "title": "PARCO劇場座席表（seating_chart.pdf、1ページ。A列からT列までの列記号と、各列の左・中央・右ブロックの座席番号を個別に印字する。左右2か所に車椅子ピクトグラム付きの青い区画を重ねて描く）",
+      "url": "https://stage.parco.jp/assets/pdf/parcotheater_open/seating_chart.pdf",
+      "checkedAt": "2026-09-10"
+    },
+    {
+      "id": "official-seat-count",
+      "official": true,
+      "roles": [
+        "seat-count",
+        "facility"
+      ],
+      "publisher": "株式会社パルコ（施設運営者）",
+      "title": "ニュースリリース「2020年3月グランドオープン！ PARCO劇場 REBORN！」（渋谷PARCO 7〜9階の現行PARCO劇場について、客席数を新劇場636席・旧劇場458席と表で明示し、ワンスロープ・オールS席の中劇場であることを記載する）",
+      "url": "https://www.parco.co.jp/news/detail/?id=1343",
+      "checkedAt": "2026-09-10"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "現行標準配置（客席数636）",
+      "issuerDefinedCondition": "現行PARCO劇場ページの「座席表」節が直接リンクする、唯一の公式番号座席表が示す標準配置。オールS席のワンスロープ客席をそのまま用いる。",
+      "selectionBasis": "issuerが公開する番号付き座席図は現行劇場ページがリンクするこの1点のみで、公演別・イベント別の番号図は公開されていない。旧458席劇場は2016年に休館した別世代の客席であり、対象外として完全に除外している。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-10に現行PARCO劇場ページ（https://stage.parco.jp/parcotheater/ ）の「座席表」節がリンクする座席表として取得した。URL直打ちでcurrent扱いはしていない。SHA-256: 379d328ce2bd3a1fed0684b1efa1a7d0c396e27efc3b29e4077bdb5824dfef81、360,015バイト、PDF 1.5、1ページ、595.28×841.89pt、creator Adobe Illustrator CC 23.1、title「PARCO劇場座席表」。Pass 2の直前に独立に再取得し、バイト単位で同一（同一SHA-256）であることを確認している。ページはラスタ画像を含まない全ベクターだが、抽出できるテキストは扉表示の「1 扉」「2 扉」「3 扉」「4 扉」の15文字だけで、座席番号と列記号はテキストではなくベクターのアウトラインとして描かれている。したがってDENSE-VECTOR verificationの前提である全seat identifierのPDF上のテキスト印字を満たさず、既定どおりfresh independent human visual two-passを実施し、ベクター経路はhuman range tableを入力に用いないstructural checksumとしてのみ用いた。",
+      "sourceIds": [
+        "official-theatre-page",
+        "official-seat-chart",
+        "official-seat-count"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-chart"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 636,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "2020年に建て替え開場した現行PARCO劇場の公式座席表に印字された全636席の標準配置です。列は図の印字どおりA列からT列までの20列で、座席番号は列ごとの通し番号（最大1〜40番）です。図は各列を左・中央・右のブロックに分けて描きますが番号はブロックをまたいで連続するため、repository由来のブロック名は付与していません。A列とT列には側方ブロックがなく中央の13〜28番／13〜27番だけです。中央ブロックが27番で終わる列では28番が図上に印字されないため欠番として保持しています。左右2か所の車椅子区画は印字済み座席（M列3・4番、N列2・3番、M列37・38番、N列38・39番）に重なる案内表示で、issuerが番号レベルの置換関係を公開していないため、これらは通常の印字座席として保持しています。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行劇場ページは「車椅子でご来場予定のお客様は、あらかじめご観劇券（チケット）をご購入の上、ご来場日時と座席番号、電話番号を各公演ページ記載の車椅子スペース受付窓口までお早目にご連絡ください」「車椅子スペースには限りがございますため、ご購入のお座席でご観劇いただく場合もございます」と案内する。すなわち来場者は通常の番号席を購入したうえで公演ごとに車椅子スペースを申し込む運用であり、特定の番号席が恒久的に車椅子スペースへ置き換わる関係はissuerから公開されていない。座席図は左右2か所に車椅子ピクトグラム付きの青い区画を描くが、両passで確認したとおりこの区画は印字済み座席セル（左: M列3番・4番とN列2番・3番／右: M列37番・38番とN列38番・39番）の上に重なるだけで、区画の台数も対応する番号も図中に印字されていない。したがって当該8席は印字IDのまま標準配置に保持し、車椅子スペースの創作、同伴者席の推測、番号の削除・置換はいっさい行っていない。ヒアリングループ対象座席エリアも同様に番号レベルでは公開されていないため反映していない。",
+        "sourceIds": [
+          "official-theatre-page",
+          "official-seat-chart"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-10",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-linked-official-seat-chart-with-reversed-row-order-reversed-block-order-and-re-rendered-crops-at-a-different-resolution-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-from-pdf-vector-seat-block-outlines-and-interior-divider-segments-not-fed-by-the-human-range-tables; issuer-published-636-seat-total-reconciliation; left-right-mirror-symmetry-invariant; geometric-side-block-row-assignment-separation-check",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "human visual two-pass: 座席番号と列記号はテキストではなくベクターのアウトラインで描かれているため、既定どおり人が現行公式図を直接視認する独立two-passを実施した。Pass 1はPDFを500dpi（4134×5847）で再描画し、A列→T列の昇順に、各列で左ブロック→中央ブロック→右ブロックの順に小さい番号側から読み取った。Pass 2はPDFを同一URLから独立に再取得し（SHA-256一致でバイト単位同一）、Pass 1のtableを参照せずに300dpi（2481×3508）という異なる解像度で再描画し、右ブロック列→中央ブロック→左ブロック列の順に、各ブロック列内はT列→A列の降順で読み取った。両passをfreezeしてから機械展開して比較し、20列・56ブロック・展開座席ID集合636件の双方向set equalityで差分0、unresolved mismatch 0件だった。",
+          "side-block row identity: 座席図は列記号A〜Tを中央ブロックの左右に各1回印字するだけで、側方ブロックには列記号を印字しない。側方ブロックの列所属は推測せず、図の印字レイアウトから確定した。上部ブロック帯では側方ブロックが片側11個に対し列記号は12個（A〜L）、下部帯では片側7個に対し8個（M〜T）で、いちばん奥の側方ブロックがそれぞれL列・S列と並び、A列とT列には側方ブロックがない。両human passがこの結論に独立に達し、さらにベクター幾何による機械測定でも、18個の側方ブロックすべてについて内側端の中点が割り当て先の列の中央ブロックから最大6.1pt、次に近い列からは最小14.1ptの位置にあることが確認された（列ピッチ約20pt）。分離比は2.3倍以上で、割り当ては一意である。",
+          "independent structural checksum（機械経路: PDFベクターのブロック外形と内部仕切り線）: human range tableをいっさい入力に使わず、PDFの描画命令だけを解析した。各座席ブロックは1本の閉じた矩形（中央20ブロック）または回転矩形（側方36ブロック）の外形として描かれ、ブロック内の座席は長さ10〜20ptの単独線分で仕切られている。したがって座席数＝そのブロック多角形の内部にある仕切り線の本数＋1として、human経路とは独立に数えられる。この経路が得た結果は、中央ブロック20個（A〜T列で16,15,16,15,…と交互）、側方ブロック左右各18個（B〜L列が5,6,6,7,7,8,8,9,9,9,10、M〜S列が10,11,11,11,12,12,12）、仕切り線580本、総計636席であった。56ブロックすべての座席数がhuman two-passと1件も違わず一致した（580＋56＝636）。",
+          "issuer checksum reconciliation: 施設運営者である株式会社パルコのニュースリリースは、渋谷PARCO 7〜9階の現行PARCO劇場について客席数を「新劇場636席／旧劇場458席」と表で明示する。転記したmapped setは636席で、この現行公表値と完全一致した。issuerは列別・区分別のsubtotalを公開していないため区分別照合は該当しない。636はtranscription targetにしておらず、番号集合を先に独立確定したうえで事後にreconcileしている。",
+          "source equality: 登録したsource rangeを機械展開した集合（636件）と、human two-passの確定集合を双方向のset equalityで比較し、差分0だった。runtime key（列, 座席番号）の重複は0件、同一列内のrange重複も0件である。",
+          "left-right mirror symmetry invariant: 座席図は中心軸について左右対称で、各列の左ブロックと右ブロックの座席数が対応する。確定した集合でもB〜L列とM〜S列の18列すべてで左右の座席数が一致し、A列とT列は左右とも側方ブロックを持たない。左右を別々のcropから読み取っているため、この不変量は片側の読み取り誤りを検出する。機械経路の左右別カウントも同一だった。",
+          "printed gap semantics: 中央ブロックが27番で終わるB・D・F・H・J・L・N・P・R列では、右ブロックが29番から始まるため28番が図上に印字されない。この9件の欠番はexcludedとして保持し、補完も削除もしていない。A列は13〜28番、T列は13〜27番で、いずれも側方ブロックを持たない。",
+          "currentness / configuration scope: 2026-09-10に現行PARCO劇場ページを再確認した。劇場は運営中で、閉館・改修・座席構造変更の告知はない。ページは渋谷PARCO 8階の現行劇場を案内し、同じ標準座席表PDFへリンクしている。2016年に休館した旧458席劇場は建替えによる別世代の客席であり、その資料は参照も混在もしていない。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "A",
+          "from": 13,
+          "to": 28,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B",
+          "from": 8,
+          "to": 33,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "rowLabel": "C",
+          "from": 7,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D",
+          "from": 7,
+          "to": 34,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "rowLabel": "E",
+          "from": 6,
+          "to": 35,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F",
+          "from": 6,
+          "to": 35,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "rowLabel": "G",
+          "from": 5,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 5,
+          "to": 36,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "rowLabel": "I",
+          "from": 4,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "rowLabel": "J",
+          "from": 4,
+          "to": 37,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "rowLabel": "K",
+          "from": 4,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 3,
+          "to": 38,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "rowLabel": "M",
+          "from": 3,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "N",
+          "from": 2,
+          "to": 39,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "rowLabel": "O",
+          "from": 2,
+          "to": 39,
+          "excluded": []
+        },
+        {
+          "rowLabel": "P",
+          "from": 2,
+          "to": 39,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "rowLabel": "Q",
+          "from": 1,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "R",
+          "from": 1,
+          "to": 40,
+          "excluded": [
+            28
+          ]
+        },
+        {
+          "rowLabel": "S",
+          "from": 1,
+          "to": 40,
+          "excluded": []
+        },
+        {
+          "rowLabel": "T",
+          "from": 13,
+          "to": 27,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

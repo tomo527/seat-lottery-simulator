@@ -2,7 +2,31 @@
 
 Updated: 2026-09-10 (Asia/Tokyo)
 
-## Active save state — Tokyo Priority D performance-identity preflight closed (2026-09-10)
+## Active save state — Tokyo Priority D performance venues implemented; all three in production (2026-09-10)
+
+The bounded **TOKYO PRIORITY D PERFORMANCE VENUES 3-VENUE IMPLEMENTATION** (batch `tokyo-wave-35-priority-d-performance-adopt-implementation`) implemented the three ADOPTs left by the preflight, as three independent mini-waves. **All three passed the production gate and are live; production venues went 160 → 163 and 1,618 seats were added.**
+
+- `tokyo-official-0690` 紀伊國屋サザンシアターTAKASHIMAYA → `kinokuniya-southern-theatre-takashimaya-standard`, 468 seats, rows 1列–21列, single area.
+- `tokyo-official-0740` PARCO劇場 → `parco-theater-standard`, 636 seats, rows A–T, single area, current rebuilt theatre only.
+- `tokyo-official-0105` 三越劇場 → `mitsukoshi-theatre-standard`, 514 seats, issuer floors kept as areas (1階 402 / 2階 112).
+
+**Method.** For each venue the current issuer page was re-checked first, the current-linked chart re-fetched from that page and hashed, DENSE-VECTOR eligibility decided from the actual asset (**none of the three qualified** — Kinokuniya is a raster-only PDF, PARCO is all-vector but its seat identifiers are outlines with only 15 characters of extractable text, 三越 is a raster PNG), and a fresh independent human visual two-pass frozen pass by pass before any machine expansion. Pass 2 used a re-fetched byte-identical asset at a different resolution, colour mode and traversal order. **Expanded `(area,row,seat)` mismatch was 0 for all three.** No capacity fitting, unprinted-identifier inference, neighbouring-row propagation, geometry completion, symmetry-derived IDs, third-party completion or configuration mixing was used.
+
+**Structural checksums.** Kinokuniya: an independent raster seat-cell connected-component path reproduced all 63 block counts and 468 cells. PARCO: an independent PDF vector path (block outlines plus interior divider segments, 580 + 56 = 636) reproduced all 56 block counts. 三越: the raster path confirmed the floor/row/block skeleton (17 + 5 row bands, 4 blocks per 1F row, 17.5px pitch) but **a full per-cell machine count was judged not practical on that asset**, with the reason recorded — raster-only 725×916 publication with anti-aliased partly dotted outlines, a curved 1F front section with per-block tilt, and nine cells whose outlines are destroyed by baked-in viewpoint icons. Per `VENUE_DATA_GUIDE` cross-check item 4 the issuer's per-floor published values were used as the independent checksum instead.
+
+**Issuer reconciliation.** 468 against the chart's own printed 客席数468; 636 against 株式会社パルコ's published new-theatre total; 514 against the issuer's 514 = 1F 402 + 2F 112, with **both floor subtotals and the total matching exactly**.
+
+**Two identifier questions were resolved from printed issuer evidence rather than inference.** PARCO's side blocks carry no printed row letter: both passes independently found 11 side blocks per side against 12 row letters above the aisle and 7 against 8 below (so rows A and T have no side seats), and the PDF vector geometry then confirmed every one of the 18 side blocks sits within 6.1pt of its assigned row and no closer than 14.1pt to the runner-up, against a ~20pt row pitch. 三越's nine icon-covered cells were named by the issuer's own `viewsample.js`, which maps each icon's coordinates to a named viewpoint asset (1F 1列6番/1列12番/5列13番/7列24番/11列12番/15列1番/17列13番, 2F A列12番/E列1番); all nine assets return HTTP 200.
+
+**Accessibility semantics** are `not-reflected` with `accessibilityConversionNotReflected: true` on all three: Kinokuniya's chart footnote allows 14列3〜6番 to be *used as* wheelchair space but publishes no replacement relation or companion seats; PARCO requires buying a normal numbered ticket then contacting the per-performance wheelchair desk and publishes no number-level mapping for its two blue areas; 三越 publishes no wheelchair or movable-seat information at all on any current theatre, seating, access or rental page, and that absence was not read as proof of absence.
+
+The machine-readable record is [`tokyo-wave-35-priority-d-performance-adopt-implementation-2026-09-10.json`](../data/venue-reports/tokyo-wave-35-priority-d-performance-adopt-implementation-2026-09-10.json). **No existing production venue's data, fingerprint or generated artifact changed**; the three fingerprint entries are additive. No rank-4/rank-5 research, GMO, RaiBoC, 日野市民会館大ホール, or existing blocked/HARD-CASE record was opened.
+
+Validation: per-venue and batch `venues:review` (0 blockers, 0 errors, 0 warnings each); `venues:batch:report` production=3; full `npm run verify:venues` — `venues:check` synchronized at 163 venues, `venues:validate` 163 production venues / 165 selectable configurations / 256,410 configuration-seat records, lint, typecheck, unit tests, production build, `verify:docs`, `verify:harness`, `git diff --check`, and 17 Playwright E2E tests passed. Release coverage gate PASS, RELEASE READY yes. **Warning count is 49 before and after: delta 0**, and none is attributable to the three new venues.
+
+**Exact next action:** return to the **Tokyo Priority D performance-identity preflight** and recompute the live Priority-D pool from the current `data/venue-inventory/tokyo.json`, re-ranking the next high-yield performance candidates from scratch. Do **not** carry rank 4 (`tokyo-official-1068` 調布市せんがわ劇場) or rank 5 (`tokyo-official-0103` 中央区立日本橋公会堂) forward as fixed carry-overs — recompute them from the live pool. Do not open GMO, RaiBoC, 日野市民会館大ホール, or any existing blocked/HARD-CASE record.
+
+## Recent completed work — Tokyo Priority D performance-identity preflight (2026-09-10, superseded by the implementation above)
 
 The bounded **TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT** recomputed the live pool from current `data/venue-inventory/tokyo.json`: **787** Priority-D candidates remain after excluding production, blocked/DEFER/NEED EVIDENCE/HOLD/rejected records and recorded duplicate facility-spaces. It applied the current portfolio audit's yield-oriented order — dedicated ticketed performance identity first, then civic large/medium/small/main halls; capacity-unknown and missing stored URLs are neutral; studio/training/live-house/meeting/movable seating is deprioritised. The first three performance candidates reached ADOPT, so the wave stopped before opening ranks 4–5.
 
