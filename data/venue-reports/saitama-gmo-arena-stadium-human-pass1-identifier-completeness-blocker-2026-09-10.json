@@ -1,0 +1,177 @@
+{
+  "reportVersion": 1,
+  "title": "GMO ARENA SAITAMA STADIUM FRESH HUMAN PASS 1 (GMO-3) — identifier completeness blocker",
+  "asOf": "2026-09-10",
+  "timezone": "Asia/Tokyo",
+  "scope": {
+    "inventoryId": "saitama-super-arena-stadium",
+    "facilityName": "GMOアリーナさいたま",
+    "spaceName": "スタジアム",
+    "task": "fresh independent Human Pass 1 only",
+    "explicitlyOutOfScope": [
+      "Human Pass 2",
+      "machine structural checksum",
+      "issuer subtotal reconciliation",
+      "venue source creation",
+      "production integration",
+      "main-arena continuation"
+    ]
+  },
+  "outcome": {
+    "humanPass1": "BLOCKED",
+    "frozenArtifact": null,
+    "partialCheckpoint": null,
+    "reason": "current-chart evidence completeness, not work volume or session limit",
+    "seatsTranscribed": 0,
+    "unresolvedIdentifierAmbiguity": "not enumerable as a bounded list — the blocker is systemic across the whole chart"
+  },
+  "independence": {
+    "preFreezeReadingActuallyUsed": [
+      "AGENTS.md",
+      "docs/VENUE_DATA_GUIDE.md",
+      "docs/VENUE_WORKFLOW.md",
+      "docs/VALIDATION.md",
+      "docs/COMMAND_GUARDRAILS.md",
+      "docs/HANDOFF.md (current save state and next action only)",
+      "data/venue-inventory/kanto-release-critical-2026-08-27.json (the three GMO records)",
+      "Git current state",
+      "current first-party issuer navigation and the current stadium seat chart"
+    ],
+    "notOpened": [
+      "data/venue-reports/saitama-gmo-arena-main-human-pass1-partial-2026-09-09.json",
+      "data/venue-reports/saitama-gmo-arena-main-human-pass1-partial-2-2026-09-10.json",
+      "data/venue-reports/saitama-gmo-arena-main-human-pass1-partial-3-2026-09-10.json",
+      "data/venue-reports/saitama-gmo-arena-main-identifier-completeness-audit-2026-09-10.json",
+      "data/venue-reports/saitama-gmo-arena-two-config-evidence-and-structural-freeze-2026-09-09.json",
+      "data/venue-reports/saitama-gmo-arena-main-machine-structural-checksum-2026-09-09.json",
+      "data/venue-reports/saitama-gmo-arena-stadium-machine-structural-checksum-2026-09-09.json",
+      "js/seat_list.js on the issuer site",
+      "issuer seat subtotal or capacity used as an answer key",
+      "Git history of earlier GMO transcription results"
+    ],
+    "mainArenaTranscriptionReused": false
+  },
+  "freshIssuerNavigation": {
+    "path": [
+      "https://www.saitama-arena.co.jp/ (issuer top, current branding GMOアリーナさいたま)",
+      "https://www.saitama-arena.co.jp/seats_info/ (客席確認・案内)",
+      "https://www.saitama-arena.co.jp/seat_view/stadium_not_fixed/ (スタジアムモード ステージ位置未定・非公表)"
+    ],
+    "otherStadiumSeatViews": [
+      "https://www.saitama-arena.co.jp/seat_view/stadium_end01/",
+      "https://www.saitama-arena.co.jp/seat_view/stadium_end02/",
+      "https://www.saitama-arena.co.jp/seat_view/stadium_center/"
+    ],
+    "supportingIssuerPages": [
+      "https://www.saitama-arena.co.jp/seats_info/ticket/ (チケットの見方 — identifier model)",
+      "https://www.saitama-arena.co.jp/floor_map/stadium.html (フロアマップ スタジアムモード — level and floor mapping)"
+    ],
+    "checkedAt": "2026-09-10"
+  },
+  "chartProvenance": {
+    "renderedBy": "the seat_view page embeds https://www.saitama-arena.co.jp/seat_view/img/img-map_stadium_not_fixed.svg as an object element",
+    "svgStructure": "the SVG carries an empty ブロック placeholder group, a gate group of outlined door-number paths, and exactly one raster image element; it contains no text element and no per-seat vector geometry",
+    "numberedChartAsset": "https://www.saitama-arena.co.jp/seat_view/img/img-map_stadium_not_fixed.png",
+    "rasterSize": "5176 x 3823",
+    "consequence": "every printed 座席番号 and 列番号 exists only inside the raster, so DENSE-VECTOR verification is unavailable and the default fresh independent human visual two-pass applies",
+    "visualAidsUsed": "zoom and crop of the first-party raster only; no OCR or machine extraction was used as a seat-ID source"
+  },
+  "areaOwnershipFromIssuer": {
+    "levels": [
+      "アリーナレベル (1F) — event-dependent floor seating with no fixed issuer seat identity, out of scope",
+      "200レベル (2F)",
+      "300レベル (3F)",
+      "400レベル (4F)",
+      "500レベル (5F)"
+    ],
+    "levelEvidence": [
+      "seats_info/ticket/: 400レベルとは4階のことです。200レベル、300レベル、500レベルはそれぞれ2階、3階、5階、その他に1階をアリーナレベルといいます。",
+      "floor_map/stadium.html: 2F=200レベル, 3F=300レベル, 4F=400レベル, 5F=500レベル, 1F=アリーナレベル",
+      "the stadium seat_view search レベル selector offers exactly アリーナ席 / 200 / 300 / 400 / 500"
+    ],
+    "blockIdentity": "3-digit 入口(扉)番号, drawn as vector door labels in the SVG gate group and shown on the rendered chart; the ticket page defines 入口(扉) as the 3-digit door number",
+    "buildingGates": "A・B・N・W2(W) building gates are a separate concourse concept from the 3-digit door numbers",
+    "arenaBlocks": "A〜F などのブロック are declared by the issuer as arena-level only and event-dependent (ブロック数や数字はイベントにより異なります), so they are correctly excluded from fixed numbered seating",
+    "repositoryInventedAreas": "none created"
+  },
+  "stagePositionInvariance": {
+    "method": "the four current stadium seat_view rasters (not_fixed, end01, end02, center) were composited on white and compared pixel by pixel",
+    "result": "all differences are confined to the central arena-floor placeholder box; every fixed numbered stand pixel is identical across the four stage positions",
+    "conclusion": "the fixed numbered stadium seating is stage-position invariant in current issuer evidence, so a single fixed-seating transcription target is the correct scope",
+    "note": "this is a structural comparison of the chart images; it is not a seat-ID source and not a structural checksum of the seat set"
+  },
+  "blocker": {
+    "classification": "NEED EVIDENCE / evidence completeness blocker",
+    "statement": "The current first-party stadium chart does not print a seat identifier in every drawn row. Seat numbers are printed only against shared marker columns at a small number of rows per block, and 列番号 are printed only at interval rows. The great majority of drawn rows carry neither a seat number nor a row label of their own.",
+    "whyThisIsNotCompletable": "Establishing the seat identifiers of an unlabelled row from this chart requires exactly the operations this task and docs/VENUE_DATA_GUIDE.md prohibit: propagation from a neighbouring row, completion from the marker band, completion from aligned boundaries, completion from equal cell counts, geometry, symmetry or pitch reasoning, interpolation, or capacity and subtotal fitting. Row identity of an unlabelled row is likewise obtainable only by counting rows between two printed 列番号, which is geometric inference.",
+    "visualEvidenceSamples": [
+      {
+        "region": "raster x1750 y3150 w1750 h400 — lower straight stand, 6 rows, 5 blocks",
+        "finding": "列番号 printed for the first and last row only; seat numbers printed against the first and last row plus one mid-row deviation label; four intermediate rows carry no seat number of their own"
+      },
+      {
+        "region": "raster x1820 y20 w1700 h240 — upper straight stand, 5 rows, 5 blocks",
+        "finding": "列番号 printed for the first and last row only; seat numbers printed for the first, middle and last row; two intermediate rows carry neither a row label nor a seat number"
+      },
+      {
+        "region": "raster x1900 y380 w1300 h280 — straight stand, 6 rows",
+        "finding": "same convention; four of six rows carry no seat number of their own"
+      },
+      {
+        "region": "raster x3450 y1440 w900 h500 — side stand with rows running across the block",
+        "finding": "列番号 printed at interval rows only; seat numbers printed against those interval rows only; every row between them is unlabelled in both axes"
+      },
+      {
+        "region": "raster x100 y1300 w700 h700 — curved corner section, more than 20 rows",
+        "finding": "列番号 printed at interval rows only; the majority of rows carry no printed identifier of either kind"
+      },
+      {
+        "region": "raster x4250 y2350 w900 h500 — opposite curved section",
+        "finding": "same convention confirmed independently"
+      },
+      {
+        "region": "raster x600 y60 w900 h400 — outermost arc, 3-row blocks",
+        "finding": "short 3-row blocks happen to be fully labelled because every row is an edge row; this does not generalise and does not repair the multi-row blocks"
+      }
+    ],
+    "coverage": "the convention was checked in structurally distinct region types — lower and upper straight stands, side stands with transverse rows, both curved corner sections, and the outermost arc — and is uniform across the chart",
+    "issuerSeatSearchAssessed": {
+      "interface": "座席番号から検索 accepts レベル + 列 + 番号",
+      "negativeProbe": "レベル200 / 列3 / 番号100 returned 入力いただいた客席がございません。",
+      "positiveProbe": "レベル200 / 列1 / 番号1 highlighted a whole door-block rectangle spanning many rows and seats, not an individual seat",
+      "conclusion": "the search resolves to a block or door region rather than a per-seat identity, so it is not a complete lossless per-row identifier source. It was not used as a seat-ID source, and brute-force enumeration through it would be machine extraction of the site seat data rather than direct chart evidence."
+    },
+    "otherFirstPartyMaterialChecked": [
+      "the three other stadium stage-position seat_view charts — same raster convention, fixed stands pixel-identical",
+      "floor_map/stadium.html 1F to 6F and B1 floor plans — facility plans with no seat numbering",
+      "seats_info/ and seats_info/ticket/ — identifier model only, no numbered chart"
+    ],
+    "noAdmissibleRescueSourceFound": true
+  },
+  "prohibitedInferenceUsed": "none — no seat ID, row label, gap or split range was adopted, and nothing was propagated, interpolated or fitted",
+  "reopenCondition": "the issuer publishes a complete per-row numbered stadium chart, or an exact row and seat mapping, in which every drawn row carries its own printed seat identifiers. Independently, the 2027-04-01 post-renovation recheck obligation and the full post-reopening revalidation contract remain in force.",
+  "dispositionChange": {
+    "before": "ADOPT / implementation-ready (representation A), researchStatus source-located",
+    "after": "NEED EVIDENCE / blocked, researchStatus blocked, venueSourceId remains null",
+    "basis": "a new evidence blocker was found in the current chart itself during this Pass 1; the docs/VENUE_DATA_GUIDE.md production gate and this task transcription rule both require directly evidenced per-row identifiers",
+    "note": "the earlier ADOPT rested on representation feasibility under schema v2, which this report does not dispute. What is now shown is that the current chart cannot supply a complete lossless seat identifier set, so no bounded implementation can start.",
+    "representationADecisionRetained": "if and when either configuration becomes evidenced, one physical bowl remains one source and the stadium inventory record is the one that would carry venueSourceId; nothing about that decision is changed here",
+    "renovationRecheckRetained": "recheckNotBefore 2027-04-01 unchanged"
+  },
+  "repositoryChanges": [
+    "data/venue-reports/saitama-gmo-arena-stadium-human-pass1-identifier-completeness-blocker-2026-09-10.json (new)",
+    "data/venue-inventory/kanto-release-critical-2026-08-27.json (saitama-super-arena-stadium record only: researchStatus, eligibilityReason, blockingReason, lastCheckedAt)",
+    "docs/HANDOFF.md"
+  ],
+  "notChanged": [
+    "every venue source file",
+    "production fingerprints",
+    "generated catalog and runtime artifacts",
+    "application code",
+    "validators",
+    "all main-arena records and PARTIAL artifacts",
+    "the community-arena record",
+    "every other inventory record"
+  ],
+  "exactNextAction": "Do not schedule a GMO ARENA SAITAMA STADIUM HUMAN PASS 2. Both the stadium and the main arena are now NEED EVIDENCE / blocked on current-chart identifier completeness, so the next GMO action is the dated recheck rather than another transcription pass. Proceed instead to the next in-scope Kanto work, Tokyo Priority D, and reopen GMO only on the reopen condition recorded above."
+}
