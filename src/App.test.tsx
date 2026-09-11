@@ -31,13 +31,20 @@ afterEach(() => {
   vi.useRealTimers()
 })
 
-const chooseVenue = async (name = 'Hakuju Hall') => {
-  const trigger = screen.queryByRole('button', { name: '会場を選ぶ' }) ?? screen.getByRole('button', { name: '会場を変更' })
-  fireEvent.click(trigger)
+// The picker renders only the first page of the catalogue, so a venue that sits past
+// that page has to be searched for first. Tests state which venue they want, not where
+// it happens to fall in the catalogue.
+const pickVenueInOpenPanel = (name: string) => {
   if (!screen.queryByRole('button', { name: `${name}を選ぶ` })) {
     fireEvent.change(screen.getByLabelText('会場名で検索'), { target: { value: name } })
   }
   fireEvent.click(screen.getByRole('button', { name: `${name}を選ぶ` }))
+}
+
+const chooseVenue = async (name = 'Hakuju Hall') => {
+  const trigger = screen.queryByRole('button', { name: '会場を選ぶ' }) ?? screen.getByRole('button', { name: '会場を変更' })
+  fireEvent.click(trigger)
+  pickVenueInOpenPanel(name)
   await waitFor(() => expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled())
 }
 
@@ -72,7 +79,7 @@ describe('App', () => {
     render(<App />)
     const trigger = screen.getByRole('button', { name: '会場を選ぶ' })
     fireEvent.click(trigger)
-    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    pickVenueInOpenPanel('Hakuju Hall')
     expect(screen.getByText('座席データを読み込んでいます')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
     expect(loadVenueSeatData).toHaveBeenCalledTimes(1)
@@ -94,7 +101,7 @@ describe('App', () => {
     render(<App />)
     const trigger = screen.getByRole('button', { name: '会場を選ぶ' })
     fireEvent.click(trigger)
-    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    pickVenueInOpenPanel('Hakuju Hall')
     expect(await screen.findByRole('alert')).toHaveTextContent('座席データを読み込めませんでした。もう一度会場を選択してください。')
     expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeDisabled()
   })
@@ -104,10 +111,10 @@ describe('App', () => {
     loadVenueSeatData.mockRejectedValueOnce(new Error('network details'))
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
-    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    pickVenueInOpenPanel('Hakuju Hall')
     await screen.findByRole('alert')
     fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
-    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    pickVenueInOpenPanel('Hakuju Hall')
     await waitFor(() => expect(screen.getByRole('button', { name: '座席を抽選する' })).toBeEnabled())
     expect(loadVenueSeatData).toHaveBeenCalledTimes(2)
   })
@@ -117,10 +124,9 @@ describe('App', () => {
     loadVenueSeatData.mockImplementation((venue: LegacyVenueCatalogEntry) => new Promise((resolve) => pending.set(venue.id, resolve)))
     render(<App />)
     fireEvent.click(screen.getByRole('button', { name: '会場を選ぶ' }))
-    fireEvent.click(screen.getByRole('button', { name: 'Hakuju Hallを選ぶ' }))
+    pickVenueInOpenPanel('Hakuju Hall')
     fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
-    fireEvent.change(screen.getByLabelText('会場名で検索'), { target: { value: 'TOPPANホール' } })
-    fireEvent.click(screen.getByRole('button', { name: 'TOPPANホールを選ぶ' }))
+    pickVenueInOpenPanel('TOPPANホール')
     const first = loadVenueSeatData.mock.calls[0][0] as LegacyVenueCatalogEntry
     const second = loadVenueSeatData.mock.calls[1][0] as LegacyVenueCatalogEntry
     act(() => pending.get(second.id)?.(samplerFor(second)))
@@ -187,8 +193,7 @@ describe('App', () => {
     fireEvent.click(screen.getByRole('button', { name: '抽選中……' }))
     expect(setTimeoutSpy).toHaveBeenCalledTimes(count)
     fireEvent.click(screen.getByRole('button', { name: '会場を変更' }))
-    fireEvent.change(screen.getByLabelText('会場名で検索'), { target: { value: 'TOPPANホール' } })
-    fireEvent.click(screen.getByRole('button', { name: 'TOPPANホールを選ぶ' }))
+    pickVenueInOpenPanel('TOPPANホール')
     act(staleCallback)
     expect(screen.queryByRole('heading', { name: '抽選結果のお知らせ' })).not.toBeInTheDocument()
   })

@@ -1,0 +1,130 @@
+{
+  "wave": "TOKYO PRIORITY D PERFORMANCE VENUES 5-VENUE BOUNDED PRODUCTION IMPLEMENTATION",
+  "date": "2026-09-11",
+  "phase": "implementation mini-wave 5 of 5",
+  "inventoryId": "tokyo-official-0316",
+  "venue": "宝生能楽堂",
+  "disposition": "HOLD / NEED EVIDENCE (blocked)",
+  "dispositionClass": "YELLOW — existing formal non-production disposition applies; the problem is confined to this venue and no policy, schema or validator change is required",
+  "scopeBoundary": "Only tokyo-official-0316 was worked in this mini-wave. No seat range, venue source, production artifact, fingerprint or generated file was created or changed for this venue.",
+  "currentness": {
+    "result": "PASS",
+    "evidence": "公益社団法人宝生会の現行施設ページ https://www.hosho.or.jp/nohgakudo/ は、現在の宝生能楽堂が昭和53年（1978年）完成の現行建物であり、宝生流の中心拠点として他流の催しにも使われる現役の能楽堂であることを案内する。公演スケジュールとチケット販売も現行で稼働している。閉館・解体・建替え・改修・座席変更の告知はない。"
+  },
+  "currentChartProvenance": [
+    {
+      "role": "current issuer facility page embedding the seat chart",
+      "url": "https://www.hosho.or.jp/nohgakudo/",
+      "note": "本文中に alt=\"宝生能楽堂|座席表\" として座席図を直接掲載する。ページの最終更新は2025-10-09。"
+    },
+    {
+      "role": "current-linked seat chart image as embedded by the facility page",
+      "url": "https://www.hosho.or.jp/wp/wp-content/uploads/2025/10/zaseki-scaled.jpg",
+      "sha256": "212a83e5b2b46f31478e39d12c0e188a31b81bb95d15d903a90e29d99b731603",
+      "bytes": 436785,
+      "pixels": "1802x2560",
+      "mode": "grayscale JPEG",
+      "note": "ページ上のリンクはhttp://だが、同一パスのhttps://がHTTP 200で同じ資産を返す。"
+    },
+    {
+      "role": "same issuer upload at full published resolution (WordPress original of the -scaled asset)",
+      "url": "https://www.hosho.or.jp/wp/wp-content/uploads/2025/10/zaseki.jpg",
+      "sha256": "06064ee9805510bb3aeda8c4dc947a263a6349a1f2b4a692d520f6ce667ff175",
+      "bytes": 673542,
+      "pixels": "2561x3638",
+      "mode": "RGB JPEG",
+      "note": "issuerが公開している最高解像度。blocker判定はこの解像度で確認した。"
+    },
+    {
+      "role": "current issuer ticket page and its colour-coded seat chart",
+      "url": "https://www.hosho.or.jp/ticket/",
+      "chartUrl": "https://www.hosho.or.jp/wp/wp-content/uploads/2021/02/%E5%BA%A7%E5%B8%AD%E8%A1%A83-e1612836166372.png",
+      "chartSha256": "168492464eac4a5c05ec689d9ae51d15c56409297046206251bae9cd4bdca6ef",
+      "chartPixels": "723x720",
+      "note": "「※以下の座席表は、指定席公演時に適用となります。」として同一レイアウトを席種別に着色して掲載し、定員表を印字する。"
+    }
+  ],
+  "newIssuerEvidenceFoundThisWave": {
+    "issuerCapacityTable": {
+      "source": "current issuer ticket page chart (https://www.hosho.or.jp/ticket/)",
+      "printedTable": {
+        "S": 148,
+        "A": 80,
+        "B": 106,
+        "C": 99,
+        "D（自由）": 57
+      },
+      "sum": 490,
+      "significance": "2026-09-11 preflightは『current issuer exact seat total / subtotalが見つかっていない』と記録していたが、本実装で現行チケットページの座席表に席種別定員表（S148・A80・B106・C99・D（自由）57）が印字されていることを確認した。合計490。これは現行first-partyの総数evidenceであり、inventoryのcapacityへ反映した。ただしこの総数はblockerを解消しない（後述）。"
+    }
+  },
+  "chartStructure": {
+    "sectors": [
+      "脇正面",
+      "中正面",
+      "正面"
+    ],
+    "rowLabelSystem": "いろは（い・ろ・は・に・ほ・へ・と・ち・り・ぬ・る・を・わ・か）。同じ行記号が複数sectorに現れ、sectorごとに番号帯が異なる（脇正面はおおむね1〜18、中正面は21〜38、正面は50〜69）。",
+    "fullyIdentifiedSectors": [
+      {
+        "sector": "正面",
+        "detail": "い〜ち列が51〜61と62〜69、り〜か列が50〜69帯。全席に行記号と席番が印字される。"
+      },
+      {
+        "sector": "脇正面",
+        "detail": "い〜り列が1〜12、ぬ・る・を・わ列が1〜18帯。全席に行記号と席番が印字される。"
+      },
+      {
+        "sector": "中正面（ラベル付きグループ）",
+        "detail": "ろ・は・に・ほ・へ・と・ち・り列の各ブロックに行記号が印字され、席番は21〜29帯。"
+      }
+    ]
+  },
+  "blocker": {
+    "type": "identifier completeness — printed seat numbers without printed row ownership",
+    "summary": "現行公式座席図の中正面sectorには、席番だけが印字され行記号がいっさい印字されていない傾斜ブロックが11個ある。これらの席にlosslessな(row, seat)識別子を与えるには、隣接するラベル付き列からの伝播、または扇状配置の幾何からのrow ownership推定が必要であり、いずれも禁止されている。",
+    "unlabelledBlocksAsPrinted": [
+      "30 31",
+      "30",
+      "30 31",
+      "37 38",
+      "29 30 31",
+      "36 37 38",
+      "35 36 37 38",
+      "33 34 35 36 37 38",
+      "31 32 33 34 35 36 37 38",
+      "30 31 32 33 34 35 36 37 38",
+      "31 32 33 34 35"
+    ],
+    "unlabelledPrintedSeatPositions": 45,
+    "numbersAreNotUniqueKeys": "席番のみでは一意にならない。30は5ブロック、31は6ブロック、37は6ブロックに重複して印字される。したがって行記号なしでは同一scope内で(row, seat)の一意集合を構成できない。",
+    "notSimpleContinuations": "ラベル付きグループの各列はろ21〜22、は21〜23、に21〜24、ほ21〜26、へ21〜28、と21〜29、ち21〜28、り24〜28で終わる。無ラベルブロックは29〜38帯から始まり、番号が滑らかに連続しない（例: ろは22で終わるが、最も近い無ラベルブロックは30から始まる）。したがって『直前のラベル付き列の続き』として機械的に対応づけることもできない。",
+    "exhaustedSearchForLabels": "ラベルの有無は、ページが埋め込む1802x2560版だけでなく、issuerが公開する最高解像度の2561x3638版でも確認した。11ブロックのいずれについても、ブロックの上端側・下端側・左右いずれの余白にも行記号は印字されておらず、無ラベル扇と正面ブロックのあいだの領域は完全な空白である。",
+    "otherIssuerMaterialChecked": "現行のご利用案内ページ（https://www.hosho.or.jp/nohgakudo/guide/ ）と現行チケットページ（https://www.hosho.or.jp/ticket/ ）も確認した。チケットページの座席表は同一レイアウトを席種（S/A/B/C/自由）で着色したもので、着色は席種であって行識別子ではなく、無ラベルブロックの行記号を補うものではない。"
+  },
+  "independentStructuralChecksum": {
+    "method": "issuerの最高解像度画像（2561x3638）に対し、インクを2x2でclose処理して走査由来の線の途切れを補修したうえで、背景以外の『インクに囲まれた白領域』を連結成分として抽出し、面積中央値の0.45〜2.2倍という目標値非依存の基準でセルを選別した。human range tableは入力に用いていない。",
+    "wholeChartCellClassRegions": 515,
+    "unlabelledFanRegionCellClassRegions": 42,
+    "interpretation": "無ラベル扇の機械カウント42は、目視で数えた印字席位置45と同程度であり（傾斜ブロックの外形は回転しているため連結成分の分離が完全ではない）、blockerが図全体のごく一部ではなく、issuer定員490に対しておよそ9%規模のまとまった領域に及ぶことを裏づける。図全体の515は、席セルに加えて凡例枠・行記号枠・扉枠などを含むため、issuer総数490のexact checksumとしては採用していない。",
+    "limitation": "この機械経路はseat IDを生成・補完する根拠としては使用していない。blockerの規模を定量化するためのcross-checkとしてのみ用いた。"
+  },
+  "whyNotPartialProduction": "無ラベルブロックはissuerが定義する『中正面』sectorの内部にあり、独立した側方・box・分節blockとして切り出せる単位ではない。したがってこれらを除いた部分集合をproduction scopeとして宣言すると、issuerが定義していない境界をrepositoryが作り出すことになる。VENUE_DATA_GUIDEのrepository由来area名称の許容条件（block境界が公式図上で明確であること、隣接main rowへの帰属を主張しないこと）を満たさないため、部分production化は行わない。",
+  "humanPasses": "本mini-waveではHuman Pass 1・Pass 2のいずれもfreezeしていない。currentness gateとconfiguration/identifier完全性の確認段階でblockerが確定したため、転記は開始していない。座席IDの転記物は本レポートにも含めない。",
+  "reopenCondition": "issuerが中正面sectorの全ブロックについて行記号（または他のlosslessな座席識別子）を印字した座席図を公開した場合、または指定席販売系統がissuer自身のものとして席ごとの(row, seat)識別子を公開した場合にのみ再開する。日付による自動再開は設定しない。現行の席種別定員表（S148・A80・B106・C99・D（自由）57、合計490）は再開後のissuer reconciliation targetとして利用できる。",
+  "prohibitedActionsNotTaken": [
+    "隣接するラベル付き列からのrow ownership伝播",
+    "扇状配置の幾何・対称性からのrow推定",
+    "席種着色（S/A/B/C/自由）を行識別子として代用すること",
+    "席番のみを一意キーとして扱うこと",
+    "issuer定員490へ合わせるためのcapacity fitting",
+    "第三者チケットサイトの座席図による補完"
+  ],
+  "repositoryImpact": {
+    "venueSourceCreated": false,
+    "rangesWritten": 0,
+    "productionChange": "none",
+    "inventoryChange": "tokyo-official-0316 の researchStatus を source-located から blocked へ変更し、blockingReason と更新した eligibilityReason を記録した。新たに確認したissuer定員合計490を capacity へ反映した。",
+    "generatedArtifacts": "unchanged by this mini-wave"
+  }
+}

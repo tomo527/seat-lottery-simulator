@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "sengawa-theatre-hall-standard",
+  "name": "調布市せんがわ劇場",
+  "prefecture": "東京都",
+  "city": "調布市",
+  "aliases": [
+    "せんがわ劇場",
+    "調布市せんがわ劇場 ホール",
+    "せんがわ劇場 座席表"
+  ],
+  "venueType": "theater",
+  "knownLimitations": [
+    "現行指定管理者のホールページは貸出し施設を「ホール 約188ｍ²（通常は雛壇式客席：約121席。平置き客席に組むこともできます※別途費用等あり。要問合せ）」と案内し、最大定員を121人と明記します。登録したのは通常の雛壇式121席配置1件だけです。",
+    "同じページが案内する平置き客席（最大162席）は別途費用と問合せを要する可動配置で、issuerは番号付き座席図を公開していません。別configurationであり、121席の標準配置と混在させていません。162席との差分から座席IDを生成することもしていません。",
+    "現行の座席表PDFは、I列11番のセル外形線だけが描画されていません。ただし席番「11」は他列とまったく同じx座標・同じ書体でテキストとして印字されており、同じ運営者のホールページが掲載する別の公式座席表画像（sengawaseat.png）も「I-11」を明示します。図形の欠けは作図上のもので、席自体はissuerが明示的に印字しています。隣接列からの伝播や対称性による生成は行っていません。",
+    "現行のホールページ、座席表ページ、座席図のいずれにも、車椅子スペースの位置・台数・番号席との置換関係、同伴者席、可動席・仮設席の番号レベルの記載はありません。ホールページに記載があるのは来館者用の身体障害者用駐車スペース1台分だけです。記載がないことを「存在しない証明」とは扱わず、印字番号席をそのまま登録しています。"
+  ],
+  "sources": [
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人 調布市文化・コミュニティ振興財団（指定管理者）",
+      "title": "調布市せんがわ劇場 ホール（現行の指定管理者による施設案内ページ。最大定員121人、通常は雛壇式客席約121席、平置き客席への組み替えは別途費用・要問合せと明記し、同ページ内の「座席表」節に公式座席表画像を掲載する。閉館・建替え・改修・座席変更の告知はない）",
+      "url": "https://www.chofu-culture-community.org/halls/sengawa-hall",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-seat-index",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "公益財団法人 調布市文化・コミュニティ振興財団（指定管理者）",
+      "title": "座席表（財団の現行座席表インデックス。グリーンホール・くすのきホールと並べてせんがわ劇場の現行座席表PDFへリンクする）",
+      "url": "https://www.chofu-culture-community.org/tickets/seats",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-seat-map-pdf",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人 調布市文化・コミュニティ振興財団（指定管理者）",
+      "title": "せんがわ劇場 座席表（現行座席表ページがリンクするベクターPDF。「ステージ」を上にしてS列・A列・B列、「ここより段差あり」の破線、C列〜J列を描き、全11列について1〜4番と5〜11番の2ブロックに分けて席番を個別に印字し、列記号を各列の左右両方の余白に印字する）",
+      "url": "https://static.chofu-culture-community.org/uploads/2022/08/%E3%81%9B%E3%82%93%E3%81%8C%E3%82%8F%E5%BA%A7%E5%B8%AD-1.pdf",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-seat-map-image",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "公益財団法人 調布市文化・コミュニティ振興財団（指定管理者）",
+      "title": "調布市せんがわ劇場 ホール 座席表画像（ホールページの「座席表」節が直接掲載する561×853の公式座席図。「舞台」を上にしてS列〜J列を描き、各席をS-1〜S-11のように列記号と席番を結合した形で個別に印字する。PDFとは別系統の公式図で、I-11を含む全121席を明示する）",
+      "url": "https://chofu-culture-community.imgix.net/2021/03/sengawaseat.png",
+      "checkedAt": "2026-09-11"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常の雛壇式客席（121席）",
+      "issuerDefinedCondition": "現行指定管理者がホール案内で「通常は雛壇式客席：約121席」とし、最大定員121人として運用する通常配置。座席表ページと同ホールページが公開する公式座席表が示すS列・A〜J列の固定番号配置。",
+      "selectionBasis": "issuerが番号付き座席図を公開しているのはこの雛壇式121席配置だけで、これがホールの通常配置として明示されている。平置き客席（最大162席）は別途費用と問合せを要する可動配置であり、番号図が公開されていないため登録していない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-11に現行のホールページ（https://www.chofu-culture-community.org/halls/sengawa-hall ）と現行の座席表インデックス（https://www.chofu-culture-community.org/tickets/seats ）から辿って取得した。座席表PDFのSHA-256は f50ea7c15b5ba9fec755e4b0bee252b58e82038f53467ec0e10af40daeac7d0c、438,755バイト、1ページのベクターPDF（1207.56×858.90pt）。Pass 2の直前に別のUser-Agentで独立に再取得し、バイト単位で同一であることを確認している。ホールページが直接掲載する座席図画像のSHA-256は 237c9f68f1311428011e94a638a081513eecde014d7ef2f6d90e688c47b24c65、55,649バイト、561×853のRGB PNG。対象は121席の小規模図でありDENSE-VECTOR verificationが想定する超高密度図ではないため、既定どおりfresh independent human visual two-passを実施し、機械経路はhuman range tableを入力に用いない独立structural checksumとしてのみ用いた。",
+      "sourceIds": [
+        "official-hall-page",
+        "official-seat-index",
+        "official-seat-map-pdf",
+        "official-seat-map-image"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map-pdf"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 121,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式座席表に印字された通常の雛壇式客席121席です。列はステージ側からS列・A列・B列、「ここより段差あり」の段差を挟んでC列〜J列の全11列で、各列とも1番〜11番が通し番号で印字されています。4番と5番のあいだに中央通路がありますが番号は連続しています。欠番はありません。同ホールは別途費用で平置き客席（最大162席）に組み替えられますが、その番号付き座席図は公開されていないため反映していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "2026-09-11時点で、現行のホールページ、座席表ページ、座席表PDF、座席表画像のいずれにも、車椅子スペースの位置・台数・番号席との置換関係、同伴者席、可動席・仮設席の記載はない。ホールページが記載するのは来館者用の身体障害者用駐車スペース1台分だけで、客席側の置換関係は公表されていない。したがって置換関係は不明であり、印字された通常番号席をそのまま登録している。記載がないことを「車椅子スペースが存在しない証明」としては扱わず、番号の創作・削除・置換・同伴者席の推測はいっさい行っていない。",
+        "sourceIds": [
+          "official-hall-page",
+          "official-seat-map-pdf",
+          "official-seat-map-image"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-11",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-reversed-row-order-swapped-block-order-and-a-different-dpi-colour-mode-and-scale-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-on-the-pdf-vector-geometry-via-two-separate-paths-seat-cell-rectangles-and-printed-text-object-geometry; cross-document-confirmation-against-a-second-independent-issuer-published-seat-chart-image; issuer-total-reconciliation-121",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "human visual two-pass: 121席の小規模図でDENSE-VECTOR verificationの前提（超高密度図）を満たさないため、既定どおり人が直接視認する独立two-passを実施した。Pass 1は150dpiのRGB全ページレンダリングを用い、S列→J列の上から下、各列は左ブロック（1〜4番）→右ブロック（5〜11番）の順に読み取った。Pass 1をfreezeしたのち、別のUser-Agentで同一URLから独立に再取得し（SHA-256一致でバイト単位同一）、Pass 1のtableを参照せずに300dpiでレンダリング、グレースケール化して階調反転し、列ごとの帯に切り出したうえで、J列→S列の下から上の逆順、各列は右ブロック→左ブロックの入れ替え順、0.78倍という異なるdpi・色モード・倍率・走査方向でPass 2を読み取った。両passをfreezeしてから機械展開して比較し、展開(area,row,seat)集合121件でPass1-only 0件・Pass2-only 0件・symmetric difference 0件、列集合・列別席数も完全一致だった。",
+          "independent structural checksum: human range tableを入力に用いない2経路の機械構造カウントをPDFのベクター幾何から独立に構築した。経路A（座席セル矩形）はteal色のストローク矩形を抽出し、11本の列帯と各列[4, 7]のブロック構成を再現したが総数は120で、経路B（印字テキストオブジェクトの幾何）は11本の列帯・左右両余白の列記号・各列1-2-3-4と5-6-7-8-9-10-11のブロック構成を再現して総数121だった。両経路の差1件はI列11番のセル外形線が描画されていない1点に完全に局在する。",
+          "I列11番: 上記の構造checksum差分を座席図へ戻って分類した。I列11番は席番テキスト「11」がx0=730.2, x1=750.5に印字されており、これはH列・J列の「11」（同じくx0=730.2, x1=750.5）と完全に同じ位置・同じ書体である。700dpi拡大でもH列・J列と同一位置に「11」が印字され、セル外形線だけが描かれていないことを目視確認した。さらに同じ運営者のホールページが掲載する別系統の公式座席図画像は同じ席を「I-11」として明示する。したがってこれは作図上の線の欠落であって席の欠落ではなく、issuerが明示的に印字した識別子として登録した。容量合わせ、隣接列からの伝播、対称性による生成、幾何補完、第三者資料による補完はいっさい行っていない。",
+          "issuer checksum reconciliation: 両passのfreeze後にだけissuer公表値と照合した。現行ホールページは最大定員121人・通常は雛壇式客席約121席と明記し、mapped setも121席で一致した。平置き最大162席は別配置であり照合対象にしていない。数値を合わせるためにrangeを修正した箇所はない。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "S列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "A列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "C列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "E列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "G列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "I列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        },
+        {
+          "rowLabel": "J列",
+          "from": 1,
+          "to": 11,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

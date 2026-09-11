@@ -117,6 +117,20 @@
         }
       }
     },
+    "dai-ichi-seimei-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 759,
+          "samples": [
+            "floor1/①/6",
+            "floor1/⑬/9",
+            "floor2/C3/16"
+          ],
+          "sha256": "aa835eacdb2142b9aaab52b1664435001cf51e80cd0863cc1608aa35ea1b7274"
+        }
+      }
+    },
     "ebara-culture-main-standard": {
       "count": 437,
       "samples": [
@@ -206,6 +220,20 @@
             "third-floor/D/24"
           ],
           "sha256": "f1a81d936fb72922c31c600085aafddb206fbfd831ac5b54c52b6a318c551b39"
+        }
+      }
+    },
+    "hakuhinkan-theatre-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 381,
+          "samples": [
+            "main/A/2",
+            "main/I/5",
+            "main/S/23"
+          ],
+          "sha256": "fe929074eb9f33f08956381ec61f9336e9d69a9daa81ee923d9ad036fb033fc0"
         }
       }
     },
@@ -327,6 +355,34 @@
         "second-floor/13/52"
       ],
       "sha256": "7ae919f62ef67281a2ac29d369fd42985ca3b4bc900d81704d131df5d65b7d0d"
+    },
+    "nihonbashi-kokaido-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 424,
+          "samples": [
+            "floor1/①/4",
+            "floor1/⑪/10",
+            "floor2/右/10"
+          ],
+          "sha256": "0f11cd9a2fcf7df9332c1ffca381ee3e357d8032afde9f7d04dce455ea79ac70"
+        }
+      }
+    },
+    "sengawa-theatre-hall-standard": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 121,
+          "samples": [
+            "main/S列/1",
+            "main/E列/6",
+            "main/J列/11"
+          ],
+          "sha256": "debb333e4094760303a6c7d724fa406b58f767282a4049cc9b62eb73f92aaf2c"
+        }
+      }
     },
     "ichihara-civic-large-hall": {
       "schemaVersion": 2,

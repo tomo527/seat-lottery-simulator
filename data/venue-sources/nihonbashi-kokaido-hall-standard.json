@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "nihonbashi-kokaido-hall-standard",
+  "name": "日本橋公会堂（日本橋劇場）",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": [
+    "日本橋劇場",
+    "日本橋公会堂",
+    "中央区立日本橋公会堂",
+    "日本橋公会堂 ホール"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "現行運営者のホールページは固定席（定員数）を表で公開し、通常は固定座席424席（440名）＝1階277席＋2階147席、車椅子席4席分、親子席12席と明記します。現行の客席配置図（通常）も図中の凡例に「1階 固定座席 277席」「2階 固定座席 147席」「1・2階固定座席 合計 424席」を印字します。登録scopeはこのissuer定義の1・2階固定座席424席です。",
+    "同じ図が示す「花道使用時」配置（1階 235席、1・2階合計 382席）は別configurationです。通常配置との差42席は1階全14列の4・5・6番（14×3＝42）にあたり、図でも花道の帯として網掛け表示されます。本sourceには通常配置だけを登録し、花道使用時の差分から座席IDを生成・削除することはしていません。",
+    "親子室は図の1階席ブロックの外側に独立した部屋として描かれ、1〜12番が個別に印字されます。issuerはこれを固定座席424席に含めず「親子席 12席」として別枠で数えるため、登録scopeから除外しています。番号は図に実在しますが、issuerのconfiguration定義に従って混在させていません。",
+    "車椅子スペースは1階⑭列の中央、通常なら7〜16番にあたる位置に、番号を持たない4つの区画として描かれます。issuerはこれを「車椅子席 4席分」として固定座席424席とは別に数えます。⑭列は図のとおり1〜6番と17〜21番だけを印字し、7〜16番は印字されていないため、そのとおり2つのrangeに分けて登録しています。番号席との置換関係はissuerが公表していないため推測していません。",
+    "1階①列は1〜3番が存在せず4〜19番のみ、⑧列は1番が存在せず2〜20番のみ、2階②列は3〜21番のみを印字します。これらはいずれも現行図の印字どおりで、補完はしていません。"
+  ],
+  "sources": [
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "中央区立日本橋公会堂（指定管理者運営の現行公式サイト）",
+      "title": "ホール（日本橋劇場）（現行のホール案内ページ。「固定席（定員数）」表で通常424席（440名）＝1階277席・2階147席・車椅子席4席分・親子席12席、花道使用時382席（398名）＝1階235席・2階147席を明記し、現行の各種PDFへリンクする。閉館・建替え・改修・座席変更の告知はない）",
+      "url": "https://www.nihonbasikokaido.com/hall/",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "中央区立日本橋公会堂（指定管理者運営の現行公式サイト）",
+      "title": "日本橋公会堂 客席配置図（通常）（ホールページがリンクする現行のベクターPDF。1階席の①〜⑭列と2階席の①〜⑤列・左桟敷1〜8・右桟敷1〜8・左1〜10・右1〜10の全席番を個別に印字し、花道の帯、車椅子スペース4区画、親子室1〜12番、1扉〜6扉を示す。図中の凡例表に1階固定座席277席・花道使用時固定座席235席・親子室12席・車椅子スペース4席分・2階固定座席147席・1・2階固定座席合計424席・花道使用時合計382席を印字する）",
+      "url": "https://www.nihonbasikokaido.com/cms/wp-content/uploads/2026/05/0805-%E5%AE%A2%E5%B8%AD%E9%85%8D%E7%BD%AE%E5%9B%B3-%E9%80%9A%E5%B8%B8.pdf",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-hall-guide",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "中央区立日本橋公会堂（指定管理者運営の現行公式サイト）",
+      "title": "0804 ホール利用案内（ホールページがリンクする現行の利用案内PDF。ホールの設備と利用条件を案内する）",
+      "url": "https://www.nihonbasikokaido.com/cms/wp-content/uploads/2026/04/0804-%E3%83%9B%E3%83%BC%E3%83%AB%E5%88%A9%E7%94%A8%E6%A1%88%E5%86%85.pdf",
+      "checkedAt": "2026-09-11"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置 1・2階固定座席（424席）",
+      "issuerDefinedCondition": "現行運営者がホールページの「固定席（定員数）」表で「通常」として公開し、現行の客席配置図（通常）が示す、花道を使用しない標準の固定座席配置。",
+      "selectionBasis": "issuerはこのホールについて「通常」と「花道使用時」の2つの固定座席数を明示し、現行の客席配置図（通常）が通常配置の全席番を印字している。通常配置がホールの標準状態であり、番号がlosslessに転記できるため、これを代表configurationとして登録した。花道使用時は別configurationであり、番号図が通常図と共用のため差分からの生成を避けて登録していない。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-11に現行のホールページ（https://www.nihonbasikokaido.com/hall/ ）から辿って取得した。客席配置図（通常）のSHA-256は 0c4714a1994c78cbb4940f03fabb2fbbc1186438cca2d8f4b9a4cfcd072aca50、21,865バイト、1ページのベクターPDF（842×595pt）。Pass 2の直前に別のUser-Agentで独立に再取得し、バイト単位で同一であることを確認している。座席番号はテキストとして存在するが、対象は424席で超高密度図ではなくDENSE-VECTOR verificationの前提を満たさないため、既定どおりfresh independent human visual two-passを実施し、ベクター経路はhuman range tableを入力に用いない独立structural checksumとしてのみ用いた。",
+      "sourceIds": [
+        "official-hall-page",
+        "official-seat-map",
+        "official-hall-guide"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 424,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式の客席配置図（通常）に印字された1・2階固定座席424席です。エリアはissuerが定義する「1階」277席と「2階」147席です。1階は①〜⑭列で、①列は4〜19番、⑧列は2〜20番、⑭列は1〜6番と17〜21番、その他の列は1〜21番です。2階は①〜⑤列（①③④⑤列が1〜23番、②列が3〜21番）に加え、左桟敷1〜8、右桟敷1〜8、左1〜10、右1〜10です。issuerが固定座席とは別に数える親子室12席と車椅子スペース4席分、および別配置である花道使用時の382席は含みません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行の客席配置図（通常）は、1階⑭列の中央、通常なら7〜16番にあたる位置に「車椅子スペース」として番号を持たない4つの区画を描く。ホールページも図の凡例も、これを固定座席424席とは別枠の「車椅子席 4席分」として数える。図上でこの4区画には座席番号がいっさい印字されておらず（機械的な文字占有検査でも4区画の数字グリフは0件）、番号席との置換関係、同伴者席、可動席としての転換関係もissuerは公表していない。したがって置換関係は不明であり、⑭列は印字どおり1〜6番と17〜21番だけを登録している。7〜16番を車椅子席に対応づける推測、番号の創作・削除はいっさい行っていない。",
+        "sourceIds": [
+          "official-hall-page",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-11",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-reversed-floor-and-row-order-reversed-block-order-and-a-different-dpi-colour-mode-and-scale-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-on-the-pdf-vector-geometry-via-spatially-partitioned-seat-cell-rectangle-classes-plus-a-character-level-occupancy-check-of-every-drawn-box; issuer-per-floor-subtotal-reconciliation-1F-277-2F-147-total-424-against-both-the-hall-page-capacity-table-and-the-chart-own-printed-legend",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "human visual two-pass: 424席の図で超高密度図ではないため、既定どおり人が直接視認する独立two-passを実施した。Pass 1は220dpiのRGB全ページレンダリングと520〜560dpiの領域拡大を用い、1階席を①→⑭列の上から下（各列は左外側ブロック→花道側ブロック→中央ブロック→右ブロックの順）、続いて2階席を左桟敷・右桟敷・左・右・①→⑤列の順に読み取った。Pass 1をfreezeしたのち、別のUser-Agentで同一URLから独立に再取得し（SHA-256一致でバイト単位同一）、Pass 1のtableを参照せずに430/460/360dpiでレンダリング、グレースケール化して階調反転し、帯に切り出したうえで1階⑭→①列、次に2階⑤→①列、続いて右・左・右桟敷・左桟敷という逆順でPass 2を読み取った。両passをfreezeしてから機械展開して比較し、展開(area,row,seat)集合424件でPass1-only 0件・Pass2-only 0件・symmetric difference 0件、エリア別席数も1階277席・2階147席で完全一致した。",
+          "independent structural checksum: human range tableを入力に用いない機械構造カウントをPDFのベクター幾何から構築した。矩形をサイズ別に分類すると、座席セル（18.2〜18.5×9.1〜9.4pt）400個、2階左右列ボックス（8.6〜8.9×18.2〜18.5pt）20個、2階桟敷ボックス（8.6〜8.9×32.9pt）16個、車椅子スペース（18.2×18.7pt）4個に完全に分かれた。座席セル400個は図の大きな空白帯で2領域に分離し、2階側111個・1階側289個となった。1階側289個のうち12個は独立した空間クラスタ（親子室）で、残り277個が1階の番号席である。したがって機械経路のみで1階277席、2階111＋20＋16＝147席、固定座席合計424席が再現され、human two-passと完全に一致した。さらに文字レベルの占有検査で、座席セル400個すべてが1〜2個の数字グリフを含み（空のセルは0件）、左右列20個と桟敷16個もすべて数字を含み、車椅子スペース4個だけが数字グリフを含まないことを確認した。",
+          "row ⑭ seat 17: 単語単位のテキスト抽出では1階⑭列の17番だけが語として取り出せず、436個の番号付きボックスのうち1個が空に見えた。座席図へ戻って900dpiで拡大確認したところ、⑭列の右ブロックは17・18・19・20・21を他列とまったく同じ書体・位置で印字しており、文字レベルの抽出でも当該セル内に該当する数字グリフが存在した。これはPDFの語分割の副作用であって識別子の欠落ではない。両human passも独立に17番を読み取っている。容量合わせ、隣接列からの伝播、幾何補完はいっさい行っていない。",
+          "issuer checksum reconciliation: 両passのfreeze後にだけissuer公表値と照合した。現行ホールページの「固定席（定員数）」表は通常の固定座席を424席（440名）とし、その内訳を1階277席・2階147席・車椅子席4席分・親子席12席とする（424＋4＋12＝440）。現行の客席配置図も図中凡例に1階固定座席277席・2階固定座席147席・1・2階固定座席合計424席を印字する。mapped setは1階277席・2階147席・合計424席で、階別subtotalと総数のいずれも完全一致した。数値を合わせるためにrangeを修正した箇所はない。なお本実装の直前の2026-09-11 preflight recordは1階424席・2階277席・合計701席と記載していたが、これはホールページの表のcolspan構造の読み違いであり、現行issuer evidence（ページの表と図中凡例の両方）を優先して1階277席・2階147席・合計424席とした。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "①",
+          "from": 4,
+          "to": 19,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "②",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "③",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "④",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑤",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑥",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑦",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑧",
+          "from": 2,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑨",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑩",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑪",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑫",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑬",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑭",
+          "from": 1,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "areaId": "floor1",
+          "areaLabel": "1階",
+          "rowLabel": "⑭",
+          "from": 17,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "①",
+          "from": 1,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "②",
+          "from": 3,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "③",
+          "from": 1,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "④",
+          "from": 1,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "⑤",
+          "from": 1,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "左桟敷",
+          "from": 1,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "右桟敷",
+          "from": 1,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "左",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "floor2",
+          "areaLabel": "2階",
+          "rowLabel": "右",
+          "from": 1,
+          "to": 10,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

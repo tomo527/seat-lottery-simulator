@@ -1,0 +1,170 @@
+{
+  "wave": "TOKYO PRIORITY D PERFORMANCE VENUES 5-VENUE BOUNDED PRODUCTION IMPLEMENTATION",
+  "batchId": "tokyo-wave-36-priority-d-performance-adopt-implementation",
+  "date": "2026-09-11",
+  "startHead": "949bd543246c11e4e740b9734871507e2e006419",
+  "scopeBoundary": "Only the five ADOPTs of the 2026-09-11 Tokyo Priority D performance-identity preflight were worked, as five independent mini-waves inside one batch. No other candidate research was started. GMO ARENA SAITAMA, RaiBoC, 日野市民会館大ホール and every existing blocked/HARD-CASE record were not opened.",
+  "method": {
+    "preflightRole": "Entry information only. The preflight's recorded seat structures were never used as an answer key; every venue was re-derived from the current issuer page. Where fresh issuer evidence contradicted the preflight, the fresh evidence won (see 日本橋劇場 below).",
+    "currentnessGate": "For each venue the current issuer page was fetched first and checked for facility-space identity, current operation, the current-linked chart, standard and alternate configurations, movable/removable seating, accessibility semantics and any closure/renovation or seating-change notice.",
+    "denseVectorEligibility": "Decided from the actual asset each time. None of the five qualified: せんがわ is a 121-seat vector PDF (not an ultra-dense chart), 日本橋 a 424-seat vector PDF (not ultra-dense), 第一生命 a raster image embedded in a PDF (seat numbers are not text), 博品館 a 381-seat vector PDF (not ultra-dense), 宝生 a raster JPEG. The default fresh independent human visual two-pass was used throughout.",
+    "twoPassIndependence": "Pass 1 was read and frozen, then the asset was independently re-fetched with a different User-Agent and verified byte-identical by SHA-256, then Pass 2 was read without consulting the Pass 1 table, using a different dpi, colour mode/tone polarity, crop windows, scale and a reversed traversal order. Only after both freezes were the passes machine-expanded and compared.",
+    "machinePathRole": "Every structural checksum was built from the asset alone and never took the human range table as input. Machine output was never used to create or complete a seat identifier; where machine and human diverged, the chart was re-examined and the divergence classified."
+  },
+  "venues": [
+    {
+      "order": 1,
+      "inventoryId": "tokyo-official-1068",
+      "venue": "調布市せんがわ劇場〔ホール〕",
+      "venueSourceId": "sengawa-theatre-hall-standard",
+      "disposition": "PRODUCTION",
+      "chartProvenance": "現行指定管理者のホールページ https://www.chofu-culture-community.org/halls/sengawa-hall と現行座席表インデックス https://www.chofu-culture-community.org/tickets/seats から辿った座席表PDF（SHA-256 f50ea7c1…、438,755バイト、1207.56×858.90ptのベクター）。同ホールページが直接掲載する別系統の公式座席図画像（SHA-256 237c9f68…、561×853 PNG）も独立evidenceとして使用。",
+      "verificationMethod": "fresh independent human visual two-pass",
+      "passes": "Pass 1: 150dpi RGB全ページ、S列→J列、各列は左ブロック→右ブロック。Pass 2: 独立再取得（バイト同一）後、300dpi・グレースケール階調反転・列帯切り出し・0.78倍で、J列→S列の逆順、右ブロック→左ブロックの入れ替え順。",
+      "expandedMismatch": "Pass1-only 0 / Pass2-only 0 / symmetric difference 0（121 keys）",
+      "structuralChecksum": "2経路。経路A（ベクター座席セル矩形）は11列・各列[4,7]構成を再現し総数120。経路B（印字テキストオブジェクト幾何）は11列・左右両余白の列記号・各列1-4と5-11を再現し総数121。差1件はI列11番のセル外形線のみ未描画であることに完全に局在し、700dpi拡大でH列・J列と同一位置・同一書体の「11」が印字されていることと、別系統の公式座席図画像がI-11を明示することで解決。",
+      "issuerReconciliation": "121（ホールページの最大定員121人・通常は雛壇式客席約121席）と完全一致。",
+      "accessibilityMovability": "現行のホールページ・座席表・座席図に車椅子スペースの位置・台数・番号席との置換関係・可動席の記載なし（記載があるのは来館者用の身体障害者用駐車スペース1台分のみ）。not-reflected、accessibilityConversionNotReflected: true。",
+      "excludedConfigurations": "平置き客席（最大162席）は別途費用・要問合せの可動配置で番号図が未公開のため対象外。162との差分から座席IDを作っていない。",
+      "registered": {
+        "seats": 121,
+        "areas": 1,
+        "rows": "S列・A列〜J列の11列、各列1〜11番"
+      }
+    },
+    {
+      "order": 2,
+      "inventoryId": "tokyo-official-0103",
+      "venue": "中央区立日本橋公会堂(日本橋劇場)〔ホール(日本橋劇場)〕",
+      "venueSourceId": "nihonbashi-kokaido-hall-standard",
+      "disposition": "PRODUCTION",
+      "chartProvenance": "現行ホールページ https://www.nihonbasikokaido.com/hall/ から辿った客席配置図（通常）PDF（SHA-256 0c4714a1…、21,865バイト、842×595ptのベクター）。",
+      "verificationMethod": "fresh independent human visual two-pass",
+      "passes": "Pass 1: 220dpi RGB全ページ＋520〜560dpi領域拡大、1階①→⑭列（各列は左外側→花道側→中央→右）、続いて2階の左桟敷・右桟敷・左・右・①→⑤列。Pass 2: 独立再取得（バイト同一）後、430/460/360dpi・グレースケール階調反転・帯切り出しで、1階⑭→①列、2階⑤→①列、右・左・右桟敷・左桟敷の逆順。",
+      "expandedMismatch": "Pass1-only 0 / Pass2-only 0 / symmetric difference 0（424 keys、1階277・2階147）",
+      "structuralChecksum": "ベクター矩形をサイズ別に分類し、座席セル400・2階左右列ボックス20・桟敷ボックス16・車椅子スペース4に完全分離。座席セル400は図の空白帯で2階側111・1階側289に分かれ、1階側289のうち12は独立空間クラスタ（親子室）。機械経路のみで1階277・2階147・合計424を再現。さらに文字レベル占有検査で、番号付き436ボックスすべてが数字グリフを含み、車椅子スペース4ボックスだけが数字グリフ0件であることを確認。",
+      "preflightCorrection": "2026-09-11 preflightは1階424席・2階277席・合計701席と記載していたが、これはホールページ「固定席（定員数）」表のcolspan=2構造の読み違いだった。現行issuer evidenceは、ページの表と座席図中の凡例の双方が1階固定座席277席・2階固定座席147席・1・2階固定座席合計424席（定員440名＝424＋車椅子4＋親子12）を明示する。fresh evidenceを優先して訂正し、inventoryのcapacityも701→424へ修正した。",
+      "issuerReconciliation": "1階277・2階147・合計424。階別subtotalと総数のいずれも完全一致。",
+      "accessibilityMovability": "車椅子スペースは1階⑭列中央（通常なら7〜16番の位置）に番号を持たない4区画として描かれ、issuerは固定座席424席とは別枠の「車椅子席 4席分」として数える。番号席との置換関係は未公表のためnot-reflected、accessibilityConversionNotReflected: true。⑭列は印字どおり1〜6番と17〜21番の2rangeで登録。",
+      "excludedConfigurations": "花道使用時（1階235席・合計382席）は別configuration。差42席は1階全14列の4・5・6番（14×3）に一致するが、差分から座席IDを生成・削除していない。親子室12席（1〜12番）はissuerが固定座席と別枠で数える独立した部屋のため登録scope外。",
+      "registered": {
+        "seats": 424,
+        "areas": 2,
+        "rows": "1階①〜⑭列、2階①〜⑤列＋左桟敷・右桟敷・左・右"
+      }
+    },
+    {
+      "order": 3,
+      "inventoryId": "tokyo-official-0098",
+      "venue": "第一生命ホール",
+      "venueSourceId": "dai-ichi-seimei-hall-standard",
+      "disposition": "PRODUCTION",
+      "chartProvenance": "現行座席表ページ https://www.dai-ichi-seimei-hall.jp/seatplan/ から辿った座席表PDF（SHA-256 92036e07…、507,870バイト）。図面はこのPDFに埋め込まれた3510×4964の1bit PNG 1点（SHA-256 cd785049…）で、PDFのテキストは図中集計表47文字のみ。",
+      "verificationMethod": "fresh independent human visual two-pass",
+      "passes": "Pass 1: 埋め込み画像をネイティブ解像度で取り出し、1階①→⑳列（各列は左→中央→右ブロック）、続いて2階の左側L1・L2・L3、右側R1・R2・R3、最後にC1→C3。Pass 2: 独立再取得（PDFも埋め込み画像もバイト同一）後、階調反転・異なる切り出し窓・異なる倍率で、1階⑳→①列、2階は左右とも最終番号側から先頭への逆走査。",
+      "expandedMismatch": "Pass1-only 0 / Pass2-only 0 / symmetric difference 0（759 keys、1階566・2階193）",
+      "structuralChecksum": "ラスタ構造カウント（インクを2×2でclose補修し、背景以外の『インクに囲まれた白領域』を連結成分として抽出、各ゾーンの面積中央値の0.45〜2.2倍という目標値非依存基準で選別）。2階C1〜C3列は45（closeカーネル2・3・4で不変）、2階側面列は147/面積正規化148、1階中央は567。1階中央では行帯をちょうど20本検出し、20列中17列で列別席数がhuman tableと完全一致。",
+      "divergencesResolvedAtTheChart": "機械と人間が食い違った1階の3列を座席図へ戻って分類した。⑧列と⑭列の右ブロックはいずれも34番で終わり（human 25〜34が正しい）、⑫列の左ブロックは1番から始まる（human 1〜12が正しい）。差分はブロック外枠と最外セルの罫線が重なる位置で連結成分が分離・結合する1bitラスタ特有の挙動であり、識別子の曖昧さではない。閾値を目標席数へ合わせる調整は行っていない。",
+      "floorAssignment": "側面のL1〜L3・R1〜R3が1階ではなく2階であることを、席数整合（側面148＋C列45＝193＝issuer 2階席）に加えて、issuerフロア案内の5F平面図が「1階席」を中央ブロックのみとして示し、6F平面図が「2階席」を客席上部を取り囲む座席帯および後方ブロックとして示すことから確認した。",
+      "issuerReconciliation": "2階193はmapped 193と完全一致。1階はmapped 566で、issuerの574との差8席はissuer自身が「574席に含む」と明記する番号なしの車椅子席8区画として完全に説明できる。総数はmapped 759＋車椅子8＝767でissuer合計767と一致。",
+      "accessibilityMovability": "車椅子席8は1階⑨列の左右に各2、⑲⑳列の左右に各2の計8区画として破線で描かれ、座席番号はいっさい印字されていない。番号席との置換関係・同伴者席・可動席転換関係はいずれも未公表のためnot-reflected、accessibilityConversionNotReflected: true。識別子がないため登録していない。",
+      "excludedConfigurations": "張出舞台使用時（1階521席・合計714席）は別configuration。図が印字する53席減は①列26席＋②列27席に一致するが、通常配置のrange削除には使っていない。親子室3名×2室も別枠。",
+      "registered": {
+        "seats": 759,
+        "areas": 2,
+        "rows": "1階①〜⑳列、2階L1・L2・L3・R1・R2・R3・C1・C2・C3"
+      }
+    },
+    {
+      "order": 4,
+      "inventoryId": "tokyo-official-0094",
+      "venue": "博品館劇場",
+      "venueSourceId": "hakuhinkan-theatre-standard",
+      "disposition": "PRODUCTION",
+      "chartProvenance": "現行座席表ページ https://www.hakuhinkan.co.jp/theater/座席表 から辿った座席表PDF（SHA-256 1950ad77…、90,367バイト、841.89×1190.55ptのベクター）。ページ上のリンクはhttp://だが、同一パスのhttps://がHTTP 200で同じ資産を返すためHTTPS URLを記録。",
+      "verificationMethod": "fresh independent human visual two-pass",
+      "passes": "Pass 1: 140dpi RGB全ページ＋380〜420dpi領域拡大、A列→S列（各列は左→中央→右ブロック）。Pass 2: 独立再取得（バイト同一）後、300dpi・グレースケール階調反転・4帯切り出しでS列→A列の逆順。",
+      "expandedMismatch": "Pass1-only 0 / Pass2-only 0 / symmetric difference 0（381 keys）",
+      "structuralChecksum": "ベクター塗りつぶしパスをサイズ別に分類し、直立座席形状（外接矩形23×39pt）335個と傾斜座席形状（32×44pt）46個、合計381個が完全に分離。y中心クラスタで16帯が得られ、傾斜によりA〜D列が統合された帯が94個（22＋24＋24＋24）、残る15帯がE〜S列に対応して22・22・24・24・24・24・24・20・12・12・16・16・16・18・13となりhuman tableと完全一致。さらに包含検査で、座席形状の内側にある番号テキスト381件、番号を含まない座席形状0件、座席形状の外側の数字は7件（1扉〜4扉と「（381席）」の3桁）のみ。",
+      "issuerReconciliation": "381（座席表ページの「座席 381席」と図中印字の「（381席）」の双方）と完全一致。",
+      "accessibilityMovability": "issuerが専用ページで「博品館劇場には、車椅子席はございません。」と明記。車椅子席という区画自体が存在せず番号席の置換関係も発生しないためresolved。軽量折りたたみ車椅子は係員介助で指定の通常席へ移る運用、電動車椅子は客席が階段状のため対応不可と明記。",
+      "excludedConfigurations": "現行資料に別の番号付きconfigurationは存在しない。",
+      "registered": {
+        "seats": 381,
+        "areas": 1,
+        "rows": "A〜S列の19列。7番と20番はどの列にも印字されない中央通路。"
+      }
+    },
+    {
+      "order": 5,
+      "inventoryId": "tokyo-official-0316",
+      "venue": "宝生能楽堂",
+      "venueSourceId": null,
+      "disposition": "HOLD / NEED EVIDENCE (blocked)",
+      "dispositionClass": "YELLOW — existing formal non-production disposition; confined to this venue; no policy, schema or validator change required",
+      "blocker": "現行公式座席図の中正面sectorにある11個の傾斜ブロック（印字席位置45件）に行記号が印字されておらず、席番のみでは一意にならない（30は5ブロック、31は6ブロックに重複）。losslessな(row, seat)集合を作るには隣接ラベル付き列からのrow ownership伝播または扇状配置の幾何推定が必要で、いずれも禁止。",
+      "evidenceDepth": "ラベル不在はページが埋め込む1802×2560版だけでなく、issuerが公開する最高解像度の2561×3638版でも確認した。11ブロックいずれについても上下左右の余白に行記号はなく、無ラベル扇と正面ブロックのあいだは完全な空白。現行のご利用案内ページと現行チケットページも確認したが、チケットページの座席表は同一レイアウトを席種（S/A/B/C/自由）で着色したもので、着色は席種であって行識別子ではない。",
+      "newIssuerEvidence": "現行チケットページの座席表に席種別定員表（S148・A80・B106・C99・D（自由）57、合計490）が印字されていることを新たに確認した。2026-09-11 preflightは『current issuer exact seat total / subtotalが見つかっていない』と記録していたため、これは新規のcurrent first-party総数evidenceであり、inventoryのcapacityへ反映した（null→490）。ただしこの総数はblockerを解消しない。",
+      "notPartialProduction": "無ラベルブロックはissuer定義の中正面sector内部にあり、独立した側方・box・分節blockとして切り出せる単位ではない。除外して部分scopeを宣言するとissuerが定義していない境界をrepositoryが作ることになるため、部分production化も行わない。",
+      "humanPasses": "Pass 1・Pass 2ともfreezeしていない。currentness gateとidentifier完全性の確認段階でblockerが確定したため転記を開始していない。",
+      "reopenCondition": "issuerが中正面sectorの全ブロックについて行記号（または他のlosslessな座席識別子）を印字した座席図を公開した場合、または指定席販売系統がissuer自身のものとして席ごとの(row, seat)識別子を公開した場合にのみ再開する。日付による自動再開は設定しない。",
+      "report": "data/venue-reports/tokyo-hosho-nohgakudo-identifier-completeness-blocker-2026-09-11.json"
+    }
+  ],
+  "productionTotals": {
+    "before": {
+      "venues": 163,
+      "selectableConfigurations": 165,
+      "configurationSeatRecords": 256410
+    },
+    "after": {
+      "venues": 167,
+      "selectableConfigurations": 169,
+      "configurationSeatRecords": 258095
+    },
+    "delta": {
+      "venues": 4,
+      "selectableConfigurations": 4,
+      "configurationSeatRecords": 1685,
+      "seatsByVenue": {
+        "sengawa-theatre-hall-standard": 121,
+        "nihonbashi-kokaido-hall-standard": 424,
+        "dai-ichi-seimei-hall-standard": 759,
+        "hakuhinkan-theatre-standard": 381
+      }
+    }
+  },
+  "warnings": {
+    "before": 49,
+    "after": 49,
+    "delta": 0,
+    "note": "新規4会場のいずれもwarningを出していない。既存warningの閾値変更、compaction、無関係refactorはいっさい行っていない。"
+  },
+  "prohibitedActionsNotTaken": [
+    "capacity fitting",
+    "neighbouring-row propagation",
+    "unprinted identifier inference",
+    "geometry completion",
+    "symmetry-derived seat IDs",
+    "third-party completion",
+    "configuration mixing",
+    "alternate-layout difference-derived seat IDs"
+  ],
+  "outOfScopeUnchanged": "既存production会場のsource・fingerprint・runtime detailはいっさい変更していない。catalogの差分は104行の追加のみで削除0、既存entryの変更0。fingerprintの差分は56行の追加のみで削除0、既存entryの変更0。GMO、RaiBoC、日野市民会館大ホール、既存blocked/HARD-CASE recordは開いていない。",
+  "testFixtureFix": "src/App.test.tsx の4件のテストが、会場pickerの未絞り込み先頭20件にHakuju Hallが含まれることを前提にしていた。博品館劇場（hakuhinkan-theatre-standard）がcatalogのalphabetical順でhakuju-hall-standardの直前に入ったためHakuju Hallが21番目となり、前提が崩れた。アプリの挙動は正しい（167件中先頭20件を表示し検索を提供する）ため、同ファイルに既存の『表示されていなければ検索してから選ぶ』パターンをpickVenueInOpenPanelヘルパーへ切り出して該当箇所に適用した。assertionの削除・弱体化はしていない。",
+  "validation": {
+    "perVenueReview": "4会場とも production blockers 0 / validation errors 0 / validation warnings 0",
+    "batchReview": "venues:review --batch は4 production会場を要約し、宝生能楽堂は source未作成として明示",
+    "batchReport": "production=4, draft=0, blocked=1, rejected=0, missing=0, batch validation errors=(none)",
+    "inventoryReport": "errors=(none)",
+    "readinessReport": "validation errors=(none)",
+    "releaseCoverage": "全6 gate PASS、Coverage gate result: PASS、RELEASE READY: yes",
+    "venuesCheck": "Venue database is synchronized (167 venues)",
+    "venuesValidate": "167 production venues / 169 selectable configurations / 258,095 configuration-seat records、0 errors、49 warnings",
+    "lintTypecheckUnitTests": "21 test files / 227 tests passed",
+    "productionBuild": "passed",
+    "docsAndHarness": "verify:docs と verify:harness passed（Codex execpolicy checkは環境に未導入のためskip、inline rule testsは構成済み）",
+    "gitDiffCheck": "passed",
+    "e2e": "Playwright Chromium 17 tests passed"
+  }
+}
