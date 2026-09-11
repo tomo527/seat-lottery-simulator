@@ -1,0 +1,392 @@
+{
+  "wave": "TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT 4 — EVIDENCE-YIELD RECOVERY",
+  "date": "2026-09-11",
+  "phase": "Bounded current-first-party research and disposition only",
+  "scopeBoundary": "Research/disposition only. No seat transcription, Human Pass, venue-source creation, production integration, generated catalog/runtime, fingerprint, application code, validator, or existing production data was touched. venues:build was deliberately not run. Historical reports were not rewritten.",
+  "policyBasis": "ADOPT requires a current facility identity, current first-party seat material, an issuer-defined representative configuration, and direct lossless ownership of every required area/row/seat identifier. A chart alone is insufficient: blank-cell interpolation, neighbouring-row propagation, alignment-derived ownership, geometry/symmetry completion, pitch-based completion and capacity fitting are all prohibited. Machine structure is a future independent checksum only, never an identifier source.",
+  "livePoolReconstruction": {
+    "source": "data/venue-inventory/tokyo.json at start HEAD 11c10e0be6d2f6fa469de61aa79fbeb31d0a8ca9",
+    "rawCandidateDefinition": "priority D; researchStatus in {not-started, source-located}; venueSourceId null; no formal disposition (production, blocked, rejected, review-mismatch) — then remove recorded facility-space duplicates and the task exclusions.",
+    "rawCandidateCountBeforeDuplicateRemoval": 763,
+    "candidateCount": 761,
+    "poolArithmetic": "The previous preflight left a 769-candidate pool and formalised eight candidates as blocked; 769 − 8 = 761, which the independent recomputation reproduces exactly. The 50 Priority-D source-located records carry only a first-pass research note, not a formal disposition, and therefore remain in the pool.",
+    "duplicateExclusions": [
+      "tokyo-official-0460 シアター H remains the recorded duplicate of production theater-h-standard and was not edited.",
+      "tokyo-official-0059 ヒューリックホール東京〔旧TOHOシネマズ日劇〕 remains the recorded duplicate of production hulic-hall-tokyo-standard established by the previous preflight, and was not edited."
+    ],
+    "newDuplicatesFound": "none. Each of the eight researched records is a distinct current facility-space, and every same-facility sibling in the inventory (tokyo-official-0213 サンモールスタジオ, 0854 南大塚Welcome back, 0902 日暮里サニーホール〔コンサートサロン〕, 1158 ハミングホール〔小ホール〕, 1156 狛江市立中央公民館) is a separate space that was not researched in this batch.",
+    "taskExclusionsHonoured": "GMO, RaiBoC, 日野市民会館大ホール, the previous batch's eight formalised candidates (梅若能楽堂, プーク人形劇場, 六本木トリコロールシアター, ヤクルトホール, アニェッリホール, スペース・ゼロ, OAGホール, シアターブラッツ), 草月ホール, 渋谷よしもと漫才劇場, YOSHIMOTO ROPPONGI THEATER, 宝生能楽堂, 六行会ホール, 座・高円寺1, and every earlier blocked / HARD-CASE / rejected record were excluded before ranking and none was reopened.",
+    "rankingAdjustment": "Evidence-yield recovery. Because the previous batch returned 0 ADOPT from eight dedicated-theatre-first candidates, the ranking stopped treating \"dedicated theatre\" as sufficient for the top tier. Tier A required high current performance value AND a positive evidence signal (a current issuer seat-map link, a downloads/technical section carrying audience material, explicit fixed/standard-seating wording, per-floor or per-area seat subtotals, continuing assigned-seat sale, or issuer/sibling precedent); civic performance halls (大ホール/主ホール/メインホール and proper-noun halls) were ranked level with dedicated theatres inside that tier. Tier B was high performance value with unknown evidence. Tier C (flat floor, free seating, freely arranged movable chairs, rental/studio/rehearsal/meeting rooms, maximum-capacity-only wording) was deprioritised. Unknown capacity and absent stored URL stayed neutral. Lightweight issuer discovery was used only to order the full-research queue, never to dispose of a candidate.",
+    "rankedResearchOrder": [
+      {
+        "rank": 1,
+        "inventoryId": "tokyo-official-0301",
+        "venue": "後楽園ホール",
+        "tier": "A",
+        "reason": "Very high current performance value (continuous ticketed boxing, professional wrestling and live events) with a current issuer 施設・座席案内 page that explicitly publishes seat charts — the strongest combined value/evidence signal in the pool."
+      },
+      {
+        "rank": 2,
+        "inventoryId": "tokyo-official-0214",
+        "venue": "シアターサンモール",
+        "tier": "A",
+        "reason": "Active dedicated Shinjuku theatre with continuing reserved-seat programming and an issuer 劇場資料 index whose item 4 is titled 客席表 — a document family with an existing production precedent (シアター・アルファ東京)."
+      },
+      {
+        "rank": 3,
+        "inventoryId": "tokyo-official-0079",
+        "venue": "中央区中央会館(銀座ブロッサム)〔ホール〕",
+        "tier": "A",
+        "reason": "Large civic performance hall in continuous concert and 寄席 use whose issuer hall page carries a dedicated seat-map asset and per-floor subtotals."
+      },
+      {
+        "rank": 4,
+        "inventoryId": "tokyo-official-0043",
+        "venue": "千代田区立内幸町ホール〔ホール〕",
+        "tier": "A",
+        "reason": "Ward performance hall with a dedicated issuer site and an indexed seat page; the lightweight pass flagged a possible currentness problem, which only a full audit could settle."
+      },
+      {
+        "rank": 5,
+        "inventoryId": "tokyo-official-0853",
+        "venue": "豊島区立南大塚ホール〔南大塚ホール〕",
+        "tier": "A",
+        "reason": "Ward performance hall run by としま未来文化財団 — an issuer with existing production precedent — whose hall page publishes a 客席 document alongside its technical drawings."
+      },
+      {
+        "rank": 6,
+        "inventoryId": "tokyo-official-0901",
+        "venue": "日暮里サニーホール〔ホール〕",
+        "tier": "A",
+        "reason": "Ward performance hall whose issuer publishes a full downloads section including several named 定型座席配置 layouts with per-block seat subtotals."
+      },
+      {
+        "rank": 7,
+        "inventoryId": "tokyo-official-1157",
+        "venue": "東大和市民会館(ハミングホール)〔大ホール〕",
+        "tier": "A",
+        "reason": "Municipal main hall with a dedicated issuer site, an explicit 座席表 link on 施設案内 and an issuer capacity that separates wheelchair seats."
+      },
+      {
+        "rank": 8,
+        "inventoryId": "tokyo-official-1152",
+        "venue": "狛江市民ホール(狛江エコルマホール)〔狛江市民ホール〕",
+        "tier": "A",
+        "reason": "Municipal main hall with a dedicated 座席表 page, per-seat stage-view photography keyed to individual seat identifiers (G2, G19, F37, T1, T19, T38) — a direct signal that the issuer numbers individual seats — and continuing assigned-seat programming."
+      }
+    ],
+    "stopRule": "Stopped at 5 ADOPT (the earlier of 5 ADOPT / 12 candidates), reached after 8 candidates. Ranks 9 and below were not opened."
+  },
+  "venues": [
+    {
+      "rank": 1,
+      "inventoryId": "tokyo-official-0301",
+      "venue": "後楽園ホール",
+      "lane": "STANDARD",
+      "disposition": "HOLD / NEED EVIDENCE",
+      "officialSources": [
+        {
+          "url": "https://www.tokyo-dome.co.jp/hall/seat/",
+          "role": "current issuer 施設・座席案内: publishes both seat charts and states 「座席表はいずれも基本パターンです。主催毎に変更になる場合があります。」"
+        },
+        {
+          "url": "https://www.tokyo-dome.co.jp/hall/seat/pdf/pdf_pro-wres.pdf",
+          "role": "current issuer professional-wrestling 基本パターン chart (vector PDF, 1,395 text tokens, 2,060 vector drawings)"
+        },
+        {
+          "url": "https://www.tokyo-dome.co.jp/hall/seat/pdf/pdf_boxing.pdf",
+          "role": "current issuer boxing 基本パターン chart (single embedded 1133×1730 raster, no text layer)"
+        },
+        {
+          "url": "https://www.tokyo-dome.co.jp/hall/guide/",
+          "role": "current issuer ご利用案内"
+        },
+        {
+          "url": "https://www.tokyo-dome.co.jp/faq/facility/hall/",
+          "role": "current issuer よくあるご質問"
+        }
+      ],
+      "issuerDiscoveryAudit": "Checked the issuer top, hall top, ご利用案内, 施設・座席案内, よくあるご質問 and アクセス, then both published chart assets in their native form — the wrestling PDF via its vector text and drawing layers, and the boxing PDF by extracting and reading the embedded 1133×1730 raster rather than stopping at the HTML. No further audience chart, seating list, downloads section, technical drawing or accessibility document was discovered; the two 基本パターン charts are the issuer's complete published audience material.",
+      "identifierCompleteness": "FAIL. The wrestling chart prints an individual number on every position but carries no row label anywhere: its only alphabetic labels are the five side-stand column letters A–E on each side, and the 北側 ringside grid repeats 1–36 across five unlabelled rows, so numbers alone are not unique keys and rows would have to be created from vertical position. The boxing chart is much richer — 北側 rows A–K, 南側 rows A–R and 東側/西側 columns A–E all print their letters on both sides of each block with individual seat numbers — but its ringside blocks い・ろ・は・に repeat on all four sides of the ring with the same (label, number) keys, and no ringside block carries a printed 側 owner. The four 側 captions sit at the page margins beside the stands; assigning the ringside blocks to them would be alignment-derived ownership, which is prohibited.",
+      "configurationCompleteness": "The issuer does directly define two representative configurations and calls them 基本パターン, so movability is not the blocker. The blocker is that neither configuration yields a complete direct identifier set.",
+      "issuerTotalAndMappedTarget": "No issuer numbered-seat subtotal, per-block subtotal or whole-room total was found on the seat page, the hall pages or the FAQ. Nothing usable as a mapped target exists, and no total may be inferred from the drawings.",
+      "structuralCheckPath": "Vector cell geometry with printed-number occupancy (wrestling) and raster seat-cell components with row-band profiling (boxing) would both be feasible independent checksums later, but neither can supply the missing row or sector ownership.",
+      "reopenCondition": "Issuer publishes a complete numbered chart or per-seat list in which every position — ringside blocks included — carries a directly printed area/row/seat identity."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "tokyo-official-0214",
+      "venue": "シアターサンモール",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "http://theatersunmall.server-shared.com/theater.html",
+          "role": "current issuer 劇場案内: 客席数294席, 客席前方(124席)・客席後部(170席、I〜S列), stage and equipment specification"
+        },
+        {
+          "url": "http://theatersunmall.server-shared.com/siryou/siryou.htm",
+          "role": "current issuer 劇場資料 index (updated 2026-05-05), listing item 4 as 客席表(A4)"
+        },
+        {
+          "url": "http://theatersunmall.server-shared.com/siryou/4seat.pdf",
+          "role": "current issuer 客席表 (vector PDF, sha256 13c23e4c810f94c99399615efa95f8ef11140ca75050d99228e5cef2c23402f5, 145,814 bytes, 335 text tokens, 343 vector drawings)"
+        },
+        {
+          "url": "http://theatersunmall.server-shared.com/siryou/2kitei.pdf",
+          "role": "current issuer 使用規程: wheelchair handling statement"
+        },
+        {
+          "url": "http://theatersunmall.server-shared.com/siryou/8stageheimenzu.pdf",
+          "role": "current issuer 舞台平面図: prints 客席(294席)"
+        }
+      ],
+      "transportNote": "The issuer serves no working HTTPS endpoint: TLS to the host fails certificate validation with an untrusted self-signed root, and the 資料 asset paths return 404 over TLS even with verification disabled. The real http:// URL is recorded under the existing httpOnlyOfficial waiver rather than rewritten to an invented HTTPS address.",
+      "issuerDiscoveryAudit": "Checked the issuer frameset, menu, 劇場案内 (施設 / 客席 / 設備), the 劇場資料 index and its individual documents (使用申込書, 使用規程, 楽屋案内図, 客席表, 昇降装置図, 備品リスト, 舞台使用注意事項, 舞台平面図, 吊り物配置図, 音響回路図, 照明回路図・DMX対応表, 案内地図, 感染予防対策), plus the 料金表. 4seat.pdf is the only audience chart; the 舞台平面図 raster was rendered and read rather than assumed, and it independently prints 客席(294席).",
+      "identifierCompleteness": "PASS. Rows A–S each print their row letter twice (left and right of the centre block) and every seat carries a directly printed number: A–G and I–R are 1〜16, H is 3〜14, S is 1〜5 and 12〜16. No blank cell, no gap requiring interpolation, no unlabelled region. 17×16 + 12 + 10 = 294.",
+      "configurationCompleteness": "PASS. The issuer publishes exactly one 客席表 and designates it by printing （総席数及び入場定員=294）. The 客席 page adds that the front 124 seats sit on a flat floor and that rows A and B only may have four seats removed at a time — a stated variation from the representative layout, with no competing numbered chart. Movability alone is not a blocker, and no alternate layout may be generated repository-side.",
+      "issuerTotalAndMappedTarget": "Three independent current issuer statements agree: the chart prints （総席数及び入場定員=294）, the 客席 page states 客席数294席 with 前方124席 / 後部170席（I〜S列）, and the 舞台平面図 prints 客席(294席). The A–H sum is 124 and the I–S sum is 170, matching the page's own split. All 294 are numbered seats; no wheelchair, standing, companion, parent-room, VIP or auxiliary position is published, and the 使用規程 places wheelchair handling on the organiser without defining a position or count.",
+      "structuralCheckPath": "Independent checks available from the asset alone: vector rectangle geometry per row band for per-row cell counts; printed-number occupancy (the 335 extracted tokens decompose exactly as 294 seat numbers + 38 row letters + the 客席表 / ステージ / （総席数及び入場定員=294） captions); and the issuer 124 / 170 floor split as a third partition check.",
+      "implementationVerificationPlan": {
+        "humanPass1": "Fresh independent human visual read of the re-fetched 4seat.pdf at the issuer URL, frozen before any machine expansion.",
+        "humanPass2": "Fresh independent second pass on an independently re-fetched byte-identical asset rendered at a different scale, tone polarity and rotation, traversed in reversed row order.",
+        "expandedEquality": "Expanded (area,row,seat) bidirectional set equality between the two passes, requiring 0 mismatches and 0 duplicate keys.",
+        "issuerReconciliation": "Reconcile 294 against the chart caption, the 客席 page 客席数294席 and the 舞台平面図 客席(294席); reconcile the A–H = 124 and I–S = 170 partition against the 客席 page.",
+        "structuralChecksum": "Vector cell-rectangle count per row band plus printed-number occupancy, both derived from the asset alone and never from the human table.",
+        "accessibilityMovability": "Record as not-reflected with accessibilityConversionNotReflected: true. The issuer publishes no wheelchair position or count; the A/B removable-seat statement is recorded as issuer-stated variation and no seat is removed or converted."
+      },
+      "productionDuplicateCheck": "Distinct from tokyo-official-0213 サンモールスタジオ (a separate blocked studio space) and from every production venue."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "tokyo-official-0079",
+      "venue": "中央区中央会館(銀座ブロッサム)〔ホール〕",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://ginza-blossom.jp/hall",
+          "role": "current issuer ホール page: 「客席数は900席（1階636席・2階264席）のキャパシティを擁しております。」 plus the 1階席636人（座席） / 2階席264人（座席） / 合計900人 table"
+        },
+        {
+          "url": "https://ginza-blossom.jp/wp-content/themes/ginza-blossom/assets/pdf/hall-seat-map.pdf",
+          "role": "current issuer ホール座席表 (sha256 42e031e8a759f29537479b074fd4fd0f7a48419974f164ecd55bebeac680a57f, 326,946 bytes, single 800×1060 raster, legend 1階席636席 / 2階席264席 / 合計900席)"
+        },
+        {
+          "url": "https://ginza-blossom.jp/faq",
+          "role": "current issuer FAQ: 「収容人数はどれくらいですか」→「900席（1階席636 / 2階席264）です。」"
+        }
+      ],
+      "issuerDiscoveryAudit": "Checked the issuer top, ホール (about / facility / equipment / price / guide / seating anchors), 宴集会室, FAQ, お知らせ, 利用者登録, サイトマップ and アクセス, and enumerated every PDF the hall page links (舞台平面図×2, 舞台設備, DMX, 負荷, 楽屋平面図, 楽屋備品, 音響×2, 照明配置, 照明表, 【ホール】ご利用にあたって). Only hall-seat-map.pdf is an audience chart. The 404 on the older /hall/seating.html path was resolved by re-entering from the issuer top rather than concluding absence from a dead link.",
+      "identifierCompleteness": "PASS. Row identifiers are numeric and globally unique across the hall: 1階席 rows 1–21 and 2階席 rows 22–29, each printed in the vertical band between the centre and right blocks. Every seat carries an individually printed number, and numbering runs contiguously across the left, centre and right blocks of a row (for example row 8: left 1–12, centre 13–22, right 23–33), so block membership is read from the printed number sequence itself rather than from alignment. Legibility was confirmed at the issuer's maximum published resolution.",
+      "configurationCompleteness": "PASS. One issuer chart, one fixed configuration. The hall page and FAQ describe no movable seating, flat-floor mode or alternate layout, and no orchestra pit, hanamichi, projecting-stage or event-specific variant is published.",
+      "issuerTotalAndMappedTarget": "Three independent current issuer statements agree on 900 = 1階636 + 2階264: the chart legend, the hall page prose and its specification table, and the FAQ answer. The issuer publishes no wheelchair, standing, companion, parent-room, VIP or auxiliary count, so all 900 are presented as numbered 座席.",
+      "structuralCheckPath": "Raster seat-cell connected components per row band for per-row counts; printed-number occupancy per cell; per-floor partition against 636 / 264; and a per-row contiguity check exploiting the issuer's continuous cross-block numbering.",
+      "implementationVerificationPlan": {
+        "humanPass1": "Fresh independent human visual read of the re-fetched hall-seat-map.pdf raster, frozen before any machine expansion.",
+        "humanPass2": "Fresh independent second pass on an independently re-fetched byte-identical asset at a different dpi, tone polarity and crop, read in reversed floor and block order.",
+        "expandedEquality": "Expanded (area,row,seat) bidirectional set equality, 0 mismatches and 0 duplicate keys, with 1階席 and 2階席 kept as the issuer's own areas.",
+        "issuerReconciliation": "Reconcile per-floor 636 / 264 and total 900 against the chart legend, the hall page table and the FAQ.",
+        "structuralChecksum": "Raster cell components plus printed-number occupancy, derived from the asset alone.",
+        "accessibilityMovability": "Record as not-reflected with accessibilityConversionNotReflected: true; absence of any issuer wheelchair statement is recorded as absence, never as proof of absence."
+      },
+      "productionDuplicateCheck": "Distinct from production 中央区立日本橋公会堂 (nihonbashi-kokaido-hall-standard) and from every other production venue; the only 中央会館 record in the inventory."
+    },
+    {
+      "rank": 4,
+      "inventoryId": "tokyo-official-0043",
+      "venue": "千代田区立内幸町ホール〔ホール〕",
+      "lane": "STANDARD",
+      "disposition": "HOLD / NEED EVIDENCE",
+      "officialSources": [
+        {
+          "url": "https://www.uchisaiwai-hall.jp/",
+          "role": "current issuer top: 「千代田区立内幸町ホールはただいま施設改装工事を行っております。リニューアルオープンに向けて順次情報をUPしてまいります。」"
+        },
+        {
+          "url": "https://www.uchisaiwai-hall.jp/file/guide20260715.pdf",
+          "role": "current issuer 利用案内 (12 pages, 2026-07-15): 定員170名（固定席、可動席/車いす席 含め）, the 火災予防条例 capacity rule, and a document list naming 「座席表（客席図）」"
+        },
+        {
+          "url": "https://www.uchisaiwai-hall.jp/topics/",
+          "role": "current issuer お知らせ: closure-period notice, and the 2026 season concert moved to 日経ホール 「内幸町ホールの改修工事に伴い」"
+        }
+      ],
+      "issuerDiscoveryAudit": "Checked the issuer top, お知らせ (including the 2026 index), イベント / これまでのイベント, 指定管理者, ウェブアクセシビリティ方針, プライバシーポリシー, アクセス and お問い合わせ; requested 施設案内 (/facility/) and 各種ダウンロード (/downloads/) directly; read all 12 pages of the current 利用案内 PDF; and searched the issuer domain for 座席表・客席図・図面・seat・seating.",
+      "identifierCompleteness": "FAIL (no reachable material). 施設案内 and 各種ダウンロード both return 404 during the renovation, so the 「座席表（客席図）」 the current 利用案内 lists is not presently published. The only seating page still indexed for the domain is 「(最大91名)参考座席図」, itself now 404, and its own title marks it as a reduced reference layout rather than a representative numbered configuration.",
+      "configurationCompleteness": "FAIL. No current issuer-defined representative configuration is reachable, and the facility is in 大規模改修 temporary closure, so any pre-renovation layout would also fail currentness for the reopened hall.",
+      "issuerTotalAndMappedTarget": "定員170名 is explicitly 固定席、可動席/車いす席 含め — an admission capacity mixing fixed seats, movable seats and wheelchair positions, not a numbered-seat subtotal. The widely repeated 188席 figure is not an issuer statement and was not used.",
+      "structuralCheckPath": "Not applicable until a current numbered chart or list exists.",
+      "reopenCondition": "Issuer republishes 座席表（客席図） (or a per-seat row/seat list) for the post-renovation representative configuration after the reopening. No dated auto-recheck is set because the issuer has published no reopening date."
+    },
+    {
+      "rank": 5,
+      "inventoryId": "tokyo-official-0853",
+      "venue": "豊島区立南大塚ホール〔南大塚ホール〕",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://www.toshima-mirai.or.jp/center/h_otsuka/",
+          "role": "current issuer hall page with the linked document set"
+        },
+        {
+          "url": "https://www.toshima-mirai.or.jp/Portals/0/resources/center/h_otsuka/documents/kyakuseki_002.pdf",
+          "role": "current issuer 客席 plan (sha256 62356612b2673b2f5c3537a38fef6c4bb6e85a6980c9e16db88c26c74fe1fecb, 405,278 bytes, 17 embedded rasters up to 8412×5910)"
+        },
+        {
+          "url": "https://www.toshima-mirai.or.jp/center/h_otsuka/shisetsu.html",
+          "role": "current issuer 施設案内: 「定員267名（車椅子席4席を含む）の客席はゆったりした幅で座り心地の良いシート」"
+        }
+      ],
+      "issuerDiscoveryAudit": "Checked the issuer hall top and 施設案内, and every linked document — 客席図, 平面図, 断面図, 舞台平面図, the 舞台設備 / 照明 / 音響 sheets, 吊り物平面・断面, 利用変更申請書, the 企画書 / 申込書 and the reservation-status PDF — plus the 落語 event pages and the facility photo/movie set. kyakuseki_002.pdf is the only audience chart; the 利用変更申請書 was opened and confirmed to be a booking form, not a seating variant.",
+      "identifierCompleteness": "PASS. Rows A–N, and each of the three blocks in a row carries its own printed row letter immediately adjacent to it (left block ends 「…5 A」, centre reads 「A 6…16 A」, right reads 「A 17 18 19」), so no block depends on alignment for its row. Every seat carries an individually printed number, contiguous across blocks within a row. E and F have no right block (the 車椅子スペース occupies that area) and N has only a centre block — both directly visible on the chart, not inferred.",
+      "configurationCompleteness": "PASS. One issuer chart, fixed seating. The 施設案内 describes variability only in the stage background (音響反射板 / ホリゾント幕 / 大黒幕) and in the 楽屋 partitioning, never in the auditorium.",
+      "issuerTotalAndMappedTarget": "The numbered set is 263 (A 17, B 19, C 21, D 21, E 16, F 16, G 21, H 21, I 21, J 21, K 21, L 21, M 17, N 10). The issuer states 定員267名（車椅子席4席を含む）, and 263 + 4 = 267 exactly. The four wheelchair positions are drawn as a separately captioned 車椅子スペース with no printed identifier, so they are counted but not mapped.",
+      "structuralCheckPath": "Raster seat-cell connected components per row band for per-row counts; printed-number occupancy per cell; and the 263 + 4 = 267 issuer reconciliation as an independent partition check.",
+      "implementationVerificationPlan": {
+        "humanPass1": "Fresh independent human visual read of the re-fetched kyakuseki_002.pdf rendered from its embedded rasters, frozen before any machine expansion.",
+        "humanPass2": "Fresh independent second pass on an independently re-fetched byte-identical asset at a different dpi, tone polarity and crop, read in reversed row and block order.",
+        "expandedEquality": "Expanded (area,row,seat) bidirectional set equality, 0 mismatches and 0 duplicate keys, single area.",
+        "issuerReconciliation": "Reconcile 263 numbered seats + 4 wheelchair = 267 against the 施設案内 定員267名（車椅子席4席を含む）.",
+        "structuralChecksum": "Raster cell components and printed-number occupancy, derived from the asset alone.",
+        "accessibilityMovability": "Record as not-reflected with accessibilityConversionNotReflected: true. The four wheelchair spaces are inside the issuer's 267 but carry no printed identifier; no numbered seat is converted or removed to represent them."
+      },
+      "productionDuplicateCheck": "Distinct from tokyo-official-0854 南大塚Welcome back (a separate unresearched space) and from every production venue."
+    },
+    {
+      "rank": 6,
+      "inventoryId": "tokyo-official-0901",
+      "venue": "日暮里サニーホール〔ホール〕",
+      "lane": "STANDARD",
+      "disposition": "HOLD / NEED EVIDENCE",
+      "officialSources": [
+        {
+          "url": "https://www.sunny-move.jp/sunny/facility/index.html",
+          "role": "current issuer ホール facility page"
+        },
+        {
+          "url": "https://www.sunny-move.jp/sunny/download/index.html",
+          "role": "current issuer 各種ダウンロード index (complete document list)"
+        },
+        {
+          "url": "https://www.sunny-move.jp/sunny/download/pdf/02_01hallBasicver3.pdf",
+          "role": "current issuer 基本舞台 定型座席配置 411席 (Ver.20240801, Flat部208席 / RB部203席)"
+        },
+        {
+          "url": "https://www.sunny-move.jp/sunny/download/pdf/02_02hallBigver2.pdf",
+          "role": "current issuer 大舞台 定型座席配置 355席 (Flat部152席 / RB部203席)"
+        },
+        {
+          "url": "https://www.sunny-move.jp/sunny/download/pdf/02_03hallSmallver2.pdf",
+          "role": "current issuer 小舞台 定型座席配置 439席 (Flat部236席 / RB部203席)"
+        },
+        {
+          "url": "https://www.sunny-move.jp/sunny/download/pdf/02_05hallFlat.pdf",
+          "role": "current issuer フラット図面: スタッキングチェア and ロールバックチェア counts only"
+        }
+      ],
+      "issuerDiscoveryAudit": "Checked the issuer top, 施設のご案内 (ホール / コンサートサロン / 会議室), the complete 各種ダウンロード list, the ホール利用案内, all four hall layout drawings, the stage / lighting / sound equipment sheets, the 大割 and catwalk drawings, and the pamphlet and ご利用 PDFs. The four layout drawings are the issuer's only audience-configuration material and each was read from its own vector text layer rather than from the page.",
+      "identifierCompleteness": "FAIL. Only 基本舞台 Ver.20240801 prints any seat numbers, and only for the RB部 fixed rows A–G × 26 = 182 positions, each row letter printed twice. The Flat部 of every layout is drawn as movable-chair blocks carrying nothing but block subtotals (56席 / 96席 / 56席 for 基本, and the corresponding 72 / 40 / 40 and 108 / 64 / 64 splits for 大舞台 and 小舞台) with no row letter and no seat number on any cell; the RB部 positions beyond the 182 are likewise unnumbered. Supplying those numbers would require counting blank cells or deriving rows from geometry, both prohibited.",
+      "configurationCompleteness": "The issuer does directly define three named 定型座席配置 plus a flat plan, so configuration definition is not the blocker; the identifier set inside each of them is.",
+      "issuerTotalAndMappedTarget": "Issuer totals are 411席 (Flat部208 + RB部203), 355席 (152 + 203) and 439席 (236 + 203). These are configuration capacities, not numbered-seat subtotals, and only 182 positions carry printed identifiers in any of them. No wheelchair, standing or auxiliary breakdown is published. No total was converted into identifiers.",
+      "structuralCheckPath": "Not applicable until a complete numbered layout exists; the vector cell geometry would checksum a future transcription but cannot create the missing numbers.",
+      "reopenCondition": "Issuer publishes, for one designated 定型座席配置, a chart or list carrying a row identifier and a seat number on every position including the Flat部."
+    },
+    {
+      "rank": 7,
+      "inventoryId": "tokyo-official-1157",
+      "venue": "東大和市民会館(ハミングホール)〔大ホール〕",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://www.humming-hall.jp/facility-guide.php",
+          "role": "current issuer 施設案内: 「客席数：714席（うち車椅子席6席）」, the 大ホール specification and the 座席表 link"
+        },
+        {
+          "url": "https://www.humming-hall.jp/pdf/humming-007.pdf",
+          "role": "current issuer 大ホール　座席表 (sha256 acd52d244cee91eb066c5ade7b676d85b0e70e63416c93c8efb015b1d4a88642, 41,117 bytes, vector PDF, 772 text tokens, 1,186 drawings, printing 「客席数　714席（うち車椅子 6席）」)"
+        },
+        {
+          "url": "https://www.humming-hall.jp/pdf/humming-008.pdf",
+          "role": "current issuer 小ホール 座席表, confirming 008 belongs to the separate 300席 small hall and is not an alternate 大ホール layout"
+        }
+      ],
+      "issuerDiscoveryAudit": "Checked the issuer top and 施設案内 (大ホール / 小ホール / 練習室 / 会議室 / 和室) and both linked seat-chart PDFs. Only humming-007.pdf is the 大ホール audience chart; humming-008.pdf was opened and confirmed to be the 小ホール chart (300席、うち電動可動席216席), which belongs to the separate inventory record tokyo-official-1158 and was not researched here.",
+      "identifierCompleteness": "PASS. Rows A–X each print their row letter twice, and every position carries a directly printed number, including all six wheelchair positions (H列8・10・23・25 and X列22・23, each drawn with a wheelchair glyph beside its printed number). Front rows A–H are arced and their blocks are directly labelled; X列 omits 21 and 24 as drawn wheelchair access, directly visible rather than inferred. The per-row sums are A 26, B–G 30 each, H 26, I–V 30 each, W 32 and X 30 = 714.",
+      "configurationCompleteness": "PASS. One issuer chart for the 大ホール. The 施設案内 describes variability only in the stage (上下可変プロセニアム) and the ceiling reflector (可動天井反射板); the movable-seat wording belongs to the 小ホール, not this hall.",
+      "issuerTotalAndMappedTarget": "The chart prints 客席数　714席（うち車椅子 6席） and the 施設案内 states 客席数：714席（うち車椅子席6席）. The transcribable set is the full 714, because unusually the six wheelchair positions themselves carry printed row and seat numbers. The 親子鑑賞室 is drawn as a separate unnumbered room and is excluded.",
+      "structuralCheckPath": "Vector rectangle geometry per row band; printed-number occupancy (the 772 extracted tokens decompose exactly as 714 seat numbers + 48 row letters + the title, the capacity caption, four 扉 labels, 親子鑑賞室 and the page footer); and an independent count of the six wheelchair glyphs.",
+      "implementationVerificationPlan": {
+        "humanPass1": "Fresh independent human visual read of the re-fetched humming-007.pdf, frozen before any machine expansion, with the arced rows A–H read individually.",
+        "humanPass2": "Fresh independent second pass on an independently re-fetched byte-identical asset at a different scale, tone polarity and rotation, traversed in reversed row order.",
+        "expandedEquality": "Expanded (area,row,seat) bidirectional set equality, 0 mismatches and 0 duplicate keys, single area.",
+        "issuerReconciliation": "Reconcile 714 against both the chart caption and the 施設案内, and the wheelchair subset of 6 against both.",
+        "structuralChecksum": "Vector cell rectangles per row band plus printed-number occupancy and wheelchair-glyph count, all derived from the asset alone.",
+        "accessibilityMovability": "The six wheelchair positions are numbered seats inside the issuer's 714 and are mapped as such; record wheelchair metadata from the issuer statement without converting or removing any other seat. 親子鑑賞室 is excluded as an unnumbered separate room."
+      },
+      "productionDuplicateCheck": "Distinct from tokyo-official-1158 小ホール and tokyo-official-1159 東大和市中央公民館〔ホール〕 (blocked), and from every production venue."
+    },
+    {
+      "rank": 8,
+      "inventoryId": "tokyo-official-1152",
+      "venue": "狛江市民ホール(狛江エコルマホール)〔狛江市民ホール〕",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {
+          "url": "https://ecorma-hall.jp/?page_id=12149",
+          "role": "current issuer ホール座席表 page, also publishing per-seat stage-view photographs keyed to G2, G19, F37, T1, T19 and T38"
+        },
+        {
+          "url": "https://ecorma-hall.jp/wp-content/uploads/2011/07/seat1.pdf",
+          "role": "current issuer 座席表 (sha256 50d67730b16c7f528faf665de522716b28912246ab2b89a50d52545ac81c3994, 633,120 bytes, vector PDF with 2,868 drawings, title 「狛江エコルマホール　座席表（728席・車椅子3席含む）」)"
+        },
+        {
+          "url": "https://ecorma-hall.jp/?p=109",
+          "role": "current issuer 施設利用案内: 「728席（車椅子席３席含む）」, 舞台平面図 and 舞台断面図"
+        }
+      ],
+      "issuerDiscoveryAudit": "Checked the issuer top, ホール主催公演, その他の催し物, チケット購入方法, 施設利用案内（施設案内）, ホール座席表, 施設空き状況, 交通・アクセス and サイトマップ, and the linked 舞台平面図 / 舞台断面図. seat1.pdf is the only audience chart; because its numbers are outlined vector paths rather than extractable text (2 text tokens against 2,868 drawings), it was rendered at 260 dpi and read visually rather than declared unnumbered.",
+      "identifierCompleteness": "PASS. Rows A–T, with the row letter printed at every block boundary of every row, and an individually printed number on every seat: A 6–33, B 5–34, C 3–36, D–F 2–37, G 2–32, H–T 1–38, each numbered contiguously across its blocks. The three wheelchair positions sit in G列 as solid cells bearing only a wheelchair glyph, directly distinguishable from numbered seats.",
+      "configurationCompleteness": "PASS. One issuer chart, fixed seating; the 施設利用案内 publishes no movable-seat, flat-floor, pit, hanamichi or alternate-layout statement.",
+      "issuerTotalAndMappedTarget": "The numbered set is 725 (A 28, B 30, C 34, D 36, E 36, F 36, G 31, and H–T 38 each). The chart title and the 施設利用案内 both state 728席・車椅子3席含む, and 725 + 3 = 728 exactly. The three wheelchair positions are counted by the issuer but carry no number, so they are not mapped.",
+      "structuralCheckPath": "Vector cell-rectangle geometry per row band for per-row counts; glyph-outline occupancy per cell; an independent count of the three solid wheelchair cells; and the 725 + 3 = 728 issuer reconciliation.",
+      "implementationVerificationPlan": {
+        "humanPass1": "Fresh independent human visual read of the re-fetched seat1.pdf rendered from its vector outlines, frozen before any machine expansion.",
+        "humanPass2": "Fresh independent second pass on an independently re-fetched byte-identical asset rendered at a different dpi, tone polarity and rotation, read in reversed row and block order.",
+        "expandedEquality": "Expanded (area,row,seat) bidirectional set equality, 0 mismatches and 0 duplicate keys, single area.",
+        "issuerReconciliation": "Reconcile 725 numbered + 3 wheelchair = 728 against the chart title and the 施設利用案内. Optionally cross-check the issuer's own per-seat stage-view photographs (G2, G19, F37, T1, T19, T38) against the transcribed identifiers.",
+        "structuralChecksum": "Vector cell rectangles per row band plus outline occupancy and wheelchair-cell count, derived from the asset alone.",
+        "accessibilityMovability": "Record as not-reflected with accessibilityConversionNotReflected: true. The three wheelchair spaces are inside the issuer's 728 but unnumbered; no numbered seat is converted or removed."
+      },
+      "productionDuplicateCheck": "Distinct from tokyo-official-1156 狛江市立中央公民館 and from every production venue."
+    }
+  ],
+  "result": {
+    "candidateCeiling": 12,
+    "adoptCeiling": 5,
+    "candidatesResearched": 8,
+    "stoppedAfterResearchOrderRank": 8,
+    "stopReason": "5 ADOPT reached",
+    "adoptedCandidates": 5,
+    "holdNeedEvidenceDefer": 3,
+    "hardCases": 0,
+    "productionPromotions": 0
+  },
+  "inventorySynchronization": "The eight researched records now carry their current issuer URL, current operational status, evidence-based eligibility reason and updated lastCheckedAt. The five ADOPTs are eligible / source-located with the issuer capacity recorded (294, 900, 267, 714, 728); シアターサンモール additionally carries the existing httpOnlyOfficial waiver because the issuer serves no working HTTPS endpoint. The three HOLDs are likely-eligible / blocked with their exact blocker and reopen condition in blockingReason. No new status, field or schema semantic was introduced, and no production field was changed.",
+  "productionImpact": {
+    "changed": false,
+    "venueSourcesTouched": [],
+    "seatRangesTouched": [],
+    "humanPassArtifactsTouched": [],
+    "generatedArtifactsTouched": [],
+    "productionFingerprintsTouched": [],
+    "applicationCodeTouched": [],
+    "validatorsTouched": [],
+    "productionDataChanges": "none"
+  },
+  "validation": "Written JSON parsed; venues:inventory:report and venues:readiness:report completed with 0 errors; venues:release:coverage is PASS / RELEASE READY yes; venues:validate passed for 171 production venues, 173 selectable configurations and 258,912 configuration-seat records; verify:docs (including verify:harness) and git diff --check passed. venues:build was deliberately not run for this records-only preflight.",
+  "exactNextAction": "Fresh bounded Claude implementation of all five ADOPTs from this preflight (シアターサンモール 294, 銀座ブロッサム 900, 南大塚ホール 267, ハミングホール大ホール 714, 狛江エコルマホール 728) as independent mini-waves inside one bounded implementation batch."
+}
