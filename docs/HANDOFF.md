@@ -2,7 +2,19 @@
 
 Updated: 2026-09-11 (Asia/Tokyo)
 
-## Active save state — Tokyo Priority D five-venue implementation complete; four in production, 宝生能楽堂 blocked (2026-09-11)
+## Active save state — Tokyo Priority D performance-identity preflight: four ADOPTs, four local HOLDs (2026-09-11)
+
+The records-only **TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT — IMPLEMENTATION-READINESS NEXT BATCH** rebuilt the live pool from the current Tokyo inventory at `5f058607dff88bd21349533800fcead5ac3d4ee2`: **779** Priority-D candidates after excluding production, formal blocked/rejected/review-mismatch records, the recorded duplicate, and the task exclusions. It re-ranked dedicated ticketed performance identities ahead of civic performance halls, then applied current assigned-seat use, current issuer chart, issuer-separated standard configuration, and issuer/sibling precedent as tie-breakers; unknown capacity and missing saved URLs were neutral.
+
+Eight fresh candidates were researched in order. **ADOPT (4):** `tokyo-official-0716` CBGK シブゲキ!! (242 numbered seats plus 2 unnumbered wheelchair spaces), `tokyo-official-0742` シアター・アルファ東京 (201), `tokyo-official-0075` 神保町よしもと漫才劇場 (126 numbered seats; issuer capacity 136 is a separately recorded unexplained unnumbered difference), and `tokyo-official-0791` 座・高円寺1 (issuer-defined basic movable 238-seat configuration only). Each has a current first-party chart with direct `(area,row,seat)` identifiers and a separately feasible structural-check route; implementation is not started.
+
+**Local HOLD / NEED EVIDENCE (4):** `tokyo-official-0139` 草月ホール — 2F/3F positions have no direct row label; `tokyo-official-0751` 渋谷よしもと漫才劇場 — side blocks lack direct row labels; `tokyo-official-0170` YOSHIMOTO ROPPONGI THEATER — right-side blocks lack direct row labels; and `tokyo-official-0457` 六行会ホール — no current issuer numbered audience chart/configuration. The inventory holds the exact blockers and reopen conditions. These are local evidence failures, not a policy or schema issue. The machine-readable evidence record is [`tokyo-priority-d-performance-identity-preflight-2-2026-09-11.json`](../data/venue-reports/tokyo-priority-d-performance-identity-preflight-2-2026-09-11.json). No venue source, seat range, Human Pass, production data, generated catalog/runtime, fingerprint, app code, validator, or existing production record changed.
+
+Validation: all 500 `data/**/*.json` files parsed; `venues:inventory:report` and `venues:readiness:report` had 0 errors; `venues:release:coverage` is PASS / RELEASE READY yes; `venues:validate` passed for 167 production venues / 169 selectable configurations / 258,095 configuration-seat records with the pre-existing 49 warnings; `verify:docs` (including `verify:harness`) and `git diff --check` passed. `venues:build` remains deliberately out of scope.
+
+**Exact next action: fresh bounded Claude implementation of all ADOPTs from this preflight.** Treat CBGK, シアター・アルファ東京, 神保町よしもと漫才劇場, and 座・高円寺1 as independent mini-waves in one bounded implementation batch. Re-fetch current first-party assets, complete fresh independent Human Passes 1/2, require expanded-set bidirectional equality, reconcile only issuer-defined numbered subtotals, use an independent structural checksum, and preserve accessibility/movability semantics without inference. Do not reopen the four local HOLDs, GMO, RaiBoC, 日野市民会館大ホール, 宝生能楽堂, or other existing blocked/HARD-CASE records.
+
+## Previous save state — Tokyo Priority D five-venue implementation complete; four in production, 宝生能楽堂 blocked (2026-09-11)
 
 The bounded **TOKYO PRIORITY D PERFORMANCE VENUES 5-VENUE BOUNDED PRODUCTION IMPLEMENTATION** (batch `tokyo-wave-36-priority-d-performance-adopt-implementation`) worked the five ADOPTs of the same-day preflight as five independent mini-waves. **Four passed the production gate and are live; production venues went 163 → 167 and 1,685 seats were added. 宝生能楽堂 is a formal HOLD / NEED EVIDENCE and the batch continued past it.**
 

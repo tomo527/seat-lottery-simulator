@@ -1,0 +1,185 @@
+{
+  "wave": "TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT — IMPLEMENTATION-READINESS NEXT BATCH",
+  "date": "2026-09-11",
+  "phase": "Bounded current-first-party research and preflight only",
+  "scopeBoundary": "Research/disposition only. No seat transcription, Human Pass, venue-source creation, production integration, generated catalog/runtime, fingerprint, application code, validator, or existing production data was touched. GMO, RaiBoC, 日野市民会館大ホール, 宝生能楽堂, and every pre-existing blocked/HARD-CASE record were out of scope.",
+  "policyBasis": "ADOPT requires a current issuer-defined representative configuration and direct lossless ownership of every (area,row,seat). No capacity fitting, row propagation, geometry/symmetry completion, alternate-layout mixing, or third-party completion is permitted. An implementation remains separately gated by fresh independent Human Passes 1/2, expanded-set bidirectional equality, issuer subtotal reconciliation, an independent structural checksum, and explicit accessibility/movability treatment.",
+  "livePoolReconstruction": {
+    "source": "data/venue-inventory/tokyo.json at start HEAD 5f058607dff88bd21349533800fcead5ac3d4ee2",
+    "candidateDefinition": "priority D; live research status {not-started, source-located}; no venue source; excluding production, blocked, rejected, independent-review-mismatch, recorded duplicates, and the task exclusions.",
+    "candidateCount": 779,
+    "duplicateExclusion": "tokyo-official-0460 シアター H remains the recorded duplicate of production theater-h-standard and was excluded before ranking.",
+    "rankingMethod": "All live candidates were re-ranked from current inventory rather than carried over. Dedicated ticketed theatres/theaters/theatres, 演芸場, 能楽堂, 音楽堂, concert halls, auditoria and proper-noun specialist halls ranked before civic 大・中・小・主・メインホール. Within a tier, current assigned-seat programming, a current issuer chart, an issuer-separated standard configuration, and issuer/sibling precedent raised priority. Capacity unknown and missing stored URLs were neutral; studios, rehearsal/training/meeting spaces, live houses, free seating, and user-arranged movable chairs were deprioritised.",
+    "rankedResearchOrder": [
+      { "rank": 1, "inventoryId": "tokyo-official-0139", "venue": "草月会館〔草月ホール〕", "reason": "Active 526-seat named performance hall; current issuer facility page directly links its seating table." },
+      { "rank": 2, "inventoryId": "tokyo-official-0716", "venue": "CBGK シブゲキ!!", "reason": "Active dedicated theatre, recurrent all-reserved programme, current issuer chart and explicit numbered-seat/accessible-space totals." },
+      { "rank": 3, "inventoryId": "tokyo-official-0742", "venue": "シアター・アルファ東京〔シアター・アルファ東京〕", "reason": "Active dedicated theatre with current operator technical page linking a complete 201-seat chart." },
+      { "rank": 4, "inventoryId": "tokyo-official-0075", "venue": "神保町よしもと漫才劇場", "reason": "Active dedicated comedy theatre with recurring ticketed use and current issuer 126-seat chart." },
+      { "rank": 5, "inventoryId": "tokyo-official-0751", "venue": "渋谷よしもと漫才劇場", "reason": "Active dedicated comedy theatre with current issuer chart and sustained assigned-seat programming, but its map required the stronger identifier gate." },
+      { "rank": 6, "inventoryId": "tokyo-official-0791", "venue": "杉並区立杉並芸術会館 座・高円寺〔座・高円寺1〕", "reason": "Public performance theatre; the issuer distinguishes a current basic configuration and publishes its complete numbered plan." },
+      { "rank": 7, "inventoryId": "tokyo-official-0170", "venue": "YOSHIMOTO ROPPONGI THEATER", "reason": "Active dedicated comedy theatre with current 300-seat issuer chart, tested under the stronger side-block identifier rule." },
+      { "rank": 8, "inventoryId": "tokyo-official-0457", "venue": "一般財団法人六行会〔六行会ホール〕", "reason": "Active named performance hall with current issuer programme/technical material, but no current numbered audience chart located." }
+    ]
+  },
+  "facilitySpaceDuplicateCheck": "Each researched item has venueSourceId null and a distinct facility-space identity. No newly researched record duplicates a production source or a previously formalised blocked/HARD-CASE record.",
+  "venues": [
+    {
+      "rank": 1,
+      "inventoryId": "tokyo-official-0139",
+      "venue": "草月会館〔草月ホール〕",
+      "lane": "STANDARD",
+      "disposition": "HOLD / NEED EVIDENCE",
+      "officialSources": [
+        { "url": "https://www.sogetsu.or.jp/about/hq-building/hall/", "role": "current issuer page: active 526-seat hall, current performance identity, and current-linked seating PDF" },
+        { "url": "https://www.sogetsu.or.jp/wp-content/uploads/2021/05/sogetsu_hall_2.pdf", "role": "current-linked issuer seating table/plan: 1F fixed/movable rows, 2F/3F positions, 526 total, and projection/movable-stage exclusions" }
+      ],
+      "finding": "The current issuer separates fixed and movable seats and marks its alternate projection/movable-stage exclusions, so configuration semantics are explicit. But 2F fixed 36 + movable 10 and 3F fixed 36 positions print only floor plus seat number. No row label exists for any of those positions.",
+      "identifierCompleteness": "FAIL: creating a row key for 2F/3F would invent a label or derive it from geometry. The 1F A-K/SA-SF table cannot supply a row for a different floor.",
+      "configurationCompleteness": "PASS for the published full 526-seat base arrangement; the PDF itself distinguishes fixed/movable seats and names the alternate use exclusions.",
+      "issuerTotalAndMappedTarget": "Issuer total 526 = 1F fixed 320 + 1F movable 124 + 2F fixed 36 + 2F movable 10 + 3F fixed 36. No mapped target is authorised while direct row ownership fails.",
+      "structuralCheckPath": "Vector PDF table-cell and text-geometry counts would be practical after identifiers are complete.",
+      "reopenCondition": "Issuer publishes a direct per-seat row identifier for 2F/3F, or an explicit lossless rowless identifier contract addressable by the current schema."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "tokyo-official-0716",
+      "venue": "CBGK シブゲキ!!",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        { "url": "https://www.cbgk.jp/about/index.html", "role": "current operator page: active dedicated theatre, 242 seats plus two wheelchair spaces, and chart link" },
+        { "url": "https://www.cbgk.jp/about/img/cbgk_seat.jpg", "role": "current issuer chart: A-L row labels beside every horizontal row and individually printed seat numbers" },
+        { "url": "https://www.cbgk.jp/schedule/", "role": "current issuer schedule: ongoing all-reserved theatre programming and current wheelchair ticket-contact semantics" }
+      ],
+      "finding": "The direct chart gives one named standard plan with complete single-area A-L row/seat identifiers. No identifier depends on a neighbour, alignment, or inferred block ownership.",
+      "identifierCompleteness": "PASS: every printed seat has direct row and seat ownership; there is one area.",
+      "configurationCompleteness": "PASS: the issuer publishes one 242-seat auditorium chart; no conflicting numbered alternate layout was found in the issuer sweep.",
+      "issuerTotalAndMappedTarget": "Mapped target is the issuer's 242 numbered seats. The issuer separately states two wheelchair spaces; they are unnumbered and are not converted into IDs.",
+      "structuralCheckPath": "Raster seat-cell connected components plus independent A-L row-band/printed-number occupancy checks.",
+      "implementationVerificationPlan": "Fresh independent Human Pass 1/2; expanded-set bidirectional equality; reconcile 242 only after both passes; make an independent structural checksum; and retain the issuer's unnumbered wheelchair-space and ticket-contact semantics without inferring conversion."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "tokyo-official-0742",
+      "venue": "シアター・アルファ東京〔シアター・アルファ東京〕",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        { "url": "https://www.alpha-tk.com/", "role": "current operator home: ongoing performances" },
+        { "url": "https://www.alpha-tk.com/%E6%96%BD%E8%A8%AD-%E6%A9%9F%E6%9D%90-%E5%9B%B3%E9%9D%A2", "role": "current operator technical/download page linking 客席図" },
+        { "url": "https://www.alpha-tk.com/_files/ugd/aa1078_12afab3904ba487ab6e4d252354f710b.pdf", "role": "current-linked issuer PDF: direct A-L row labels, individually printed seats, and total/admission capacity 201" }
+      ],
+      "finding": "The full issuer chart directly labels every physical block A-L and every seat number, including tilted front-side cells. Its printed total is 201; no chart-derived completion is needed.",
+      "identifierCompleteness": "PASS: one area, direct A-L row ownership, and direct individual seat number for every seat.",
+      "configurationCompleteness": "PASS: the current chart itself is a single 201-seat representative plan; no alternate numbered configuration was found in the current operator facility, use, accessibility, or download material.",
+      "issuerTotalAndMappedTarget": "Issuer total and mapped target are both 201. No wheelchair conversion, companion relation, or temporary-seat exception was published in the inspected issuer material; that absence is not treated as proof of absence.",
+      "structuralCheckPath": "Vector PDF seat-outline count and row/block skeleton, independently of the human transcription.",
+      "implementationVerificationPlan": "Fresh independent Human Pass 1/2; expanded-set bidirectional equality; reconcile issuer 201 only after both passes; independent vector structural checksum; and preserve only fresh issuer-explicit accessibility/movability semantics."
+    },
+    {
+      "rank": 4,
+      "inventoryId": "tokyo-official-0075",
+      "venue": "神保町よしもと漫才劇場",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        { "url": "https://jimbocho-manzaigekijyo.yoshimoto.co.jp/about/", "role": "current issuer theatre page: ongoing programme, 126 numbered seats, 136 admission capacity, chart, ticket and wheelchair guidance" }
+      ],
+      "finding": "The current issuer page itself displays a nine-row A-I numbered chart. Every row letter appears directly at both ends of its full contiguous row, and every position is individually numbered.",
+      "identifierCompleteness": "PASS: one area, direct A-I row labels, and direct seat numbers; no side-block propagation is involved.",
+      "configurationCompleteness": "PASS for the issuer's single displayed 126-seat plan. The page's instruction that staff may guide a guest differently does not define an alternate numbered chart and must not be used to alter identifiers.",
+      "issuerTotalAndMappedTarget": "Mapped target is the issuer's 126 numbered seats. Issuer admission capacity is 136, leaving an unexplained unnumbered difference of 10; it must remain unnumbered and be rechecked during implementation, never capacity-fitted.",
+      "structuralCheckPath": "Raster row-band/cell count: nine directly labelled rows of fourteen printed positions, independently checked against the 126-seat issuer subtotal.",
+      "implementationVerificationPlan": "Fresh independent Human Pass 1/2; expanded-set bidirectional equality; reconcile the 126 numbered-seat subtotal while separately recording the 136 admission capacity; make a row/cell structural checksum; and preserve the issuer's staff-guided wheelchair semantics without invention."
+    },
+    {
+      "rank": 5,
+      "inventoryId": "tokyo-official-0751",
+      "venue": "渋谷よしもと漫才劇場",
+      "lane": "DENSE",
+      "disposition": "HOLD / NEED EVIDENCE",
+      "officialSources": [
+        { "url": "https://shibuya-manzaigekijyo.yoshimoto.co.jp/about/", "role": "current issuer page: active programming, 218-seat/282-capacity statements, chart, ticket and accessibility pages" },
+        { "url": "https://shibuya-manzaigekijyo.yoshimoto.co.jp/assets/images/about/about-img02.jpg", "role": "current issuer 218-seat chart" }
+      ],
+      "finding": "The chart shows coloured curved blocks and central A-I letters, but repeated side-block numbers have no direct row label. The current page offers wheelchair contact and a rear standing-space statement, but no number-level conversion.",
+      "identifierCompleteness": "FAIL: side-block ownership would require horizontal alignment, colour/symmetry, or neighbour-row propagation from the central letters.",
+      "configurationCompleteness": "The displayed 218-seat chart is current, but cannot be adopted while identifier ownership is incomplete.",
+      "issuerTotalAndMappedTarget": "Issuer states 218 seats and capacity 282; no mapped target is authorised. The difference is not used to identify or add seats.",
+      "structuralCheckPath": "Chart row/block skeleton could later verify a transcription, but cannot supply missing identifiers.",
+      "reopenCondition": "Issuer publishes a chart/list that prints the row identity of every side block directly."
+    },
+    {
+      "rank": 6,
+      "inventoryId": "tokyo-official-0791",
+      "venue": "杉並区立杉並芸術会館 座・高円寺〔座・高円寺1〕",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        { "url": "https://za-koenji.jp/guide", "role": "current public-theatre facility page: active identity and basic 238-seat configuration" },
+        { "url": "https://za-koenji.jp/rental", "role": "current rental page: basic 238-seat configuration and current 座・高円寺1 seating-plan link" },
+        { "url": "https://za-koenji.jp/new/wp-content/uploads/2025/11/za-koenji1_seating_plan.pdf", "role": "current-linked issuer basic chart: direct A-J row labels and individual seat numbers" },
+        { "url": "https://za-koenji.jp/qa", "role": "current FAQ: basic maps exist but performance-specific shapes can differ; wheelchair viewing space is by prior contact" }
+      ],
+      "finding": "The issuer distinguishes the basic 238-seat plan from variable performance layouts. The basic chart directly labels A-J and each individual seat, so no movable-layout difference is inferred.",
+      "identifierCompleteness": "PASS: one area with every A-J row and individual seat directly printed.",
+      "configurationCompleteness": "PASS only for the issuer-labelled basic 238-seat configuration. All seats are movable and the issuer says performance shapes can change, so alternates remain out of scope rather than being mixed.",
+      "issuerTotalAndMappedTarget": "Issuer basic target is 238. The facility publishes wheelchair viewing spaces but no number-level conversion; they remain an explicit non-mapped accessibility operation.",
+      "structuralCheckPath": "Vector PDF row-band/seat-cell geometry and a direct A-J skeleton checksum.",
+      "implementationVerificationPlan": "Fresh independent Human Pass 1/2; expanded-set bidirectional equality; reconcile basic 238 only; independently count the plan's row/cell structure; and record movable-layout and wheelchair-contact semantics without importing any alternate layout."
+    },
+    {
+      "rank": 7,
+      "inventoryId": "tokyo-official-0170",
+      "venue": "YOSHIMOTO ROPPONGI THEATER",
+      "lane": "DENSE",
+      "disposition": "HOLD / NEED EVIDENCE",
+      "officialSources": [
+        { "url": "https://roppongi.yoshimoto.co.jp/about/", "role": "current issuer page: active regular programming, 300-seat chart, 302-person capacity, and explicit no-wheelchair-access statement" },
+        { "url": "https://roppongi.yoshimoto.co.jp/assets/images/about/about-img02.jpg", "role": "current issuer chart" }
+      ],
+      "finding": "The chart prints red row indices only beside the left/central bands. The right-side numbered blocks lack their own direct row labels.",
+      "identifierCompleteness": "FAIL: associating the right-side blocks with a row would require horizontal alignment to a label elsewhere.",
+      "configurationCompleteness": "The current 300-seat chart is clear as a single displayed configuration, but cannot pass the identifier gate.",
+      "issuerTotalAndMappedTarget": "Issuer states 300 seats and admission capacity 302. No mapped target is authorised; the difference is not capacity-fitted.",
+      "structuralCheckPath": "The raster row/block skeleton is usable only after direct identifiers are available.",
+      "reopenCondition": "Issuer publishes direct row labels for the right-side blocks or a complete per-seat list."
+    },
+    {
+      "rank": 8,
+      "inventoryId": "tokyo-official-0457",
+      "venue": "一般財団法人六行会〔六行会ホール〕",
+      "lane": "STANDARD",
+      "disposition": "HOLD / NEED EVIDENCE",
+      "officialSources": [
+        { "url": "https://www.rikkoukai.com/pages/15/", "role": "current issuer hall/facility entrypoint" },
+        { "url": "https://www.rikkoukai.com/pages/124/", "role": "current issuer programme/activity record" }
+      ],
+      "finding": "Current issuer material establishes ongoing hall use and offers current technical plans, but no current numbered audience-seat chart/list, seat total, or issuer-separated representative auditorium configuration was found in the facility, use, download or accessibility sweep.",
+      "identifierCompleteness": "FAIL: no issuer seat identifiers exist.",
+      "configurationCompleteness": "FAIL: no issuer-defined numbered representative configuration was found.",
+      "issuerTotalAndMappedTarget": "No current issuer audience total/subtotal or mapped target located; no capacity is inferred.",
+      "structuralCheckPath": "Not applicable until a current numbered chart is published.",
+      "reopenCondition": "Issuer publishes a complete numbered representative seating chart/list and its configuration semantics."
+    }
+  ],
+  "result": {
+    "candidateCeiling": 8,
+    "candidatesResearchStarted": 8,
+    "stoppedAfterResearchOrderRank": 8,
+    "adoptedCandidates": 4,
+    "deferredNeedEvidenceHold": 4,
+    "hardCases": 0,
+    "productionPromotions": 0
+  },
+  "inventorySynchronization": "The four ADOPTs are now active/eligible/source-located. The four local identifier/evidence failures are formal blocked records with exact reopen conditions. No unresearched candidate was changed.",
+  "productionImpact": {
+    "changed": false,
+    "venueSourcesTouched": [],
+    "generatedArtifactsTouched": [],
+    "productionFingerprintsTouched": [],
+    "productionDataChanges": "none"
+  },
+  "validation": "All data JSON parsed (500 files). venues:inventory:report found 0 errors; venues:readiness:report found 0 errors; venues:release:coverage is PASS / RELEASE READY yes; venues:validate passed for 167 production venues, 169 selectable configurations and 258,095 configuration-seat records with the pre-existing 49 warnings; verify:docs (including verify:harness) passed; and git diff --check passed. venues:build was deliberately not run for this records-only preflight.",
+  "exactNextAction": "fresh bounded Claude implementation of all ADOPTs from this preflight"
+}
