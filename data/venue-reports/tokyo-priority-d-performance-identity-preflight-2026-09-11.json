@@ -1,0 +1,117 @@
+{
+  "wave": "TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT — NEXT BATCH",
+  "date": "2026-09-11",
+  "phase": "Bounded current-first-party research and preflight only",
+  "scopeBoundary": "The live Tokyo Priority-D pool was reconstructed from the current inventory and researched in the freshly ranked order. The batch stopped at five ADOPTs after five candidates. No seat transcription, Human Pass, venue-source creation, production integration, generated artifact, production fingerprint, application-code, validator, GMO, RaiBoC, 日野市民会館大ホール, or pre-existing blocked/HARD-CASE record was opened or changed.",
+  "policyBasis": "ADOPT is a preflight feasibility finding only. Each candidate needs current issuer material that can losslessly define one numbered standard configuration without capacity fitting, neighbouring-row propagation, geometry or symmetry completion, third-party supplementation, or configuration mixing. Implementation remains separately gated by fresh independent Human Pass 1/2, expanded-set equality, issuer reconciliation when the issuer publishes a subtotal, a practical independent structural checksum, and issuer-explicit accessibility/movability treatment.",
+  "livePoolReconstruction": {
+    "source": "data/venue-inventory/tokyo.json at start HEAD 1bb2e74416da4c7b6a8b5b95ab502da8b778d4a8",
+    "candidateDefinition": "priority D; researchStatus in {not-started, source-located}; venueSourceId null; excluding production, blocked, rejected/DEFER/NEED EVIDENCE/HOLD records, and recorded duplicate facility-spaces.",
+    "candidateCount": 784,
+    "duplicateExclusion": "tokyo-official-0460 シアター H remains the recorded duplicate of production theater-h-standard and was excluded. GMO, RaiBoC, 日野市民会館大ホール, and all pre-existing blocked/HARD-CASE records were also excluded before ranking.",
+    "rankingMethod": "Every live candidate was re-scored from its current inventory identity. Dedicated ticketed performance identity (劇場/theater/theatre/演芸場/能楽堂/音楽堂/コンサートホール/auditorium and proper-noun specialist halls) ranked before civic/public 大・中・小・主・メインホール. Within a tier, evidence of continuing assigned-seat programming, a current first-party chart, a standard configuration, and issuer/sibling precedent raised priority. Capacity unknown and a missing stored URL were neutral. Studio, rehearsal, training, meeting, live-house, free-seating, and primarily movable-event spaces were deprioritised. This changes research order only.",
+    "rankedLeadFive": [
+      {"rank": 1, "inventoryId": "tokyo-official-1068", "venue": "調布市せんがわ劇場〔ホール〕", "reason": "Active municipal dedicated theatre; current issuer family already has produced Chofu hall precedents, and the issuer links its 121-seat standard chart."},
+      {"rank": 2, "inventoryId": "tokyo-official-0103", "venue": "中央区立日本橋公会堂(日本橋劇場)〔ホール(日本橋劇場)〕", "reason": "Current civic theatre with a current first-party numbered normal-layout PDF and explicitly separate fixed-seat variants."},
+      {"rank": 3, "inventoryId": "tokyo-official-0098", "venue": "第一生命ホール", "reason": "Dedicated 767-seat concert hall with current first-party chart, active programme, and issuer policy that makes assigned seats the default."},
+      {"rank": 4, "inventoryId": "tokyo-official-0094", "venue": "博品館劇場", "reason": "Dedicated commercial theatre with current programme, a current issuer-linked 381-seat A–S chart, and sustained ticketed use."},
+      {"rank": 5, "inventoryId": "tokyo-official-0316", "venue": "宝生能楽堂", "reason": "Active dedicated noh theatre with a current issuer page and a current full native-resolution numbered seating image."}
+    ]
+  },
+  "facilitySpaceDuplicateCheck": "Each researched record still has venueSourceId null and a distinct facility-space identity. Current inventory, venue sources, and prior reports show no production duplicate or previous formal disposition for any of the five.",
+  "venues": [
+    {
+      "rank": 1,
+      "inventoryId": "tokyo-official-1068",
+      "venue": "調布市せんがわ劇場〔ホール〕",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://www.chofu-culture-community.org/halls/sengawa-hall", "role": "current designated-operator hall page: active theatre identity, 121-seat usual tiered configuration, performance use, and separate flat-floor option"},
+        {"url": "https://www.chofu-culture-community.org/tickets/seats", "role": "current issuer seat-chart index linking the theatre chart"},
+        {"url": "https://static.chofu-culture-community.org/uploads/2022/08/%E3%81%9B%E3%82%93%E3%81%8C%E3%82%8F%E5%BA%A7%E5%B8%AD-1.pdf", "role": "current-linked issuer PDF: row S and A–J, every row's 1–11 identifiers"}
+      ],
+      "finding": "Active theatre. The usual raked configuration is one explicit 121-seat set: S/A–J rows and every individual 1–11 seat ID are printed. The issuer also says a flat 162-seat arrangement can be made by separate request and cost; that is movable/event-dependent and must never be mixed with the 121-seat standard configuration.",
+      "accessibilityMovability": "The inspected issuer materials state the alternate flat seating but no wheelchair conversion, companion relation, or numbered temporary-seat mapping. This absence is not a negative inference; implementation records only explicit current issuer semantics.",
+      "issuerSubtotal": "121 for the normal raked seating. The future extraction reconciles only this standard subtotal, never the 162-seat flat layout.",
+      "implementationVerificationPlan": "Re-fetch the operator page and linked PDF; independently freeze Human Pass 1 then Pass 2 in different row order; compare expanded (area,row,seat) sets bidirectionally; reconcile 121 only after both freezes; independently count the 11 printed row bands/cells where practical; and retain the flat layout as excluded alternate configuration unless a separately evidenced source is authorised."
+    },
+    {
+      "rank": 2,
+      "inventoryId": "tokyo-official-0103",
+      "venue": "中央区立日本橋公会堂(日本橋劇場)〔ホール(日本橋劇場)〕",
+      "lane": "DENSE",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://www.nihonbasikokaido.com/hall/", "role": "current municipal operator page: active Japanese-performance theatre, fixed-seat totals, and current PDF links"},
+        {"url": "https://www.nihonbasikokaido.com/cms/wp-content/uploads/2026/05/0805-%E5%AE%A2%E5%B8%AD%E9%85%8D%E7%BD%AE%E5%9B%B3-%E9%80%9A%E5%B8%B8.pdf", "role": "current-linked issuer normal-layout chart: floor, row/block identity and printed individual seats"},
+        {"url": "https://www.nihonbasikokaido.com/cms/wp-content/uploads/2026/04/0804-%E3%83%9B%E3%83%BC%E3%83%AB%E5%88%A9%E7%94%A8%E6%A1%88%E5%86%85.pdf", "role": "current-linked usage guide: fixed normal 1F/2F 424+277, flower-path variant 382+235, wheelchair space and parent-room capacities"}
+      ],
+      "finding": "Active municipal theatre. The normal PDF presents a complete numbered fixed-seat configuration with explicit 1F/2F grouping, row identity, numbered seats, and printed unnumbered wheelchair/parent-room semantics. The issuer separately defines flower-path use; implementation must choose the normal 701 fixed-seat configuration only and must not use the 617-seat flower-path version to alter it.",
+      "accessibilityMovability": "The issuer explicitly marks four wheelchair-space units and 12 parent-room seats, but the current material does not publish a number-level conversion or companion mapping. Retain only the printed standard IDs and classify unnumbered spaces from issuer text; do not invent or remove IDs.",
+      "issuerSubtotal": "Normal fixed seats 701 = 1F 424 + 2F 277; flower-path fixed seats 617 = 1F 382 + 2F 235, deliberately out of scope.",
+      "implementationVerificationPlan": "Freshly retrieve the current normal PDF and guide; freeze independent passes before comparing; expand and require exact bidirectional equality by floor/row/seat; reconcile 424, 277, and 701 post-freeze; derive an independent vector/raster structural checksum where practical; and explicitly preserve every wheelchair/parent-room/movable flower-path semantic from the issuer."
+    },
+    {
+      "rank": 3,
+      "inventoryId": "tokyo-official-0098",
+      "venue": "第一生命ホール",
+      "lane": "DENSE",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://www.dai-ichi-seimei-hall.jp/", "role": "current active concert-hall page and programme identity"},
+        {"url": "https://www.dai-ichi-seimei-hall.jp/seatplan/", "role": "current issuer seat page and standard chart, with 1F/2F subtotals"},
+        {"url": "https://www.dai-ichi-seimei-hall.jp/about-hall/floorguide/", "role": "current issuer maximum-capacity and alternate projecting-stage statement"},
+        {"url": "https://www.dai-ichi-seimei-hall.jp/wp-content/uploads/2020/09/%E3%83%9B%E3%83%BC%E3%83%AB%E3%81%94%E5%88%A9%E7%94%A8%E3%81%AB%E3%81%82%E3%81%A3%E3%81%A6%E3%81%AE%E3%81%8A%E9%A1%98%E3%81%84-1.pdf", "role": "issuer use guidance: assigned seating is the basic operation and 767 includes eight wheelchair seats"}
+      ],
+      "finding": "Active 767-seat concert hall. Its current standard chart identifies every floor/area, row and seat number and the issuer gives 1F 574 (including eight wheelchair seats) + 2F 193. The issuer's 714-seat projecting-stage state is an explicit alternate configuration, never a reconciliation target for standard seats.",
+      "accessibilityMovability": "Eight wheelchair seats are counted in the 1F 574. The exact numbered relationship must be frozen from the fresh chart and issuer page; no companion or substitution relation is inferred. Projecting-stage use remains out of the standard scope.",
+      "issuerSubtotal": "767 = 574 first floor + 193 second floor; the distinct projecting-stage maximum is 714.",
+      "implementationVerificationPlan": "Re-fetch all current issuer chart/guide evidence; freeze two independent visual passes using different floor/area order; require exact expanded-set equality; reconcile 574/193/767 only afterwards; perform a separate practical structural checksum by visible seat blocks; and record only issuer-explicit wheelchair and stage-variant semantics."
+    },
+    {
+      "rank": 4,
+      "inventoryId": "tokyo-official-0094",
+      "venue": "博品館劇場",
+      "lane": "STANDARD",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://www.hakuhinkan.co.jp/theater/", "role": "current operator home and continuing theatre programme"},
+        {"url": "https://www.hakuhinkan.co.jp/theater/%E5%BA%A7%E5%B8%AD%E8%A1%A8", "role": "current operator seat page stating 381 seats and linking the chart"},
+        {"url": "https://www.hakuhinkan.co.jp/theater/wp-content/uploads/2021/04/%E5%BA%A7%E5%B8%AD%E8%A1%A8.pdf", "role": "current-linked official seating chart: A–S rows and individual printed positions"}
+      ],
+      "finding": "Active commercial theatre with recurring assigned-ticket stage, musical, comedy and reading events. The current issuer chart prints one 381-seat A–S standard arrangement with individual seat numbers and no second numbered configuration in the inspected current material.",
+      "accessibilityMovability": "Current operator materials point visitors needing wheelchair assistance to the theatre but did not expose a number-level conversion, companion relation, or movable-seat alternative. Do not infer one.",
+      "issuerSubtotal": "381 on the current operator seat page and chart.",
+      "implementationVerificationPlan": "Freshly fetch the page/PDF; freeze two independent passes in different row/block directions; compare expanded sets bidirectionally; reconcile issuer 381 after extraction; make an independent structure count where practical; and classify accessibility/movability only from freshly confirmed issuer text/chart annotations."
+    },
+    {
+      "rank": 5,
+      "inventoryId": "tokyo-official-0316",
+      "venue": "宝生能楽堂",
+      "lane": "DENSE",
+      "disposition": "ADOPT",
+      "officialSources": [
+        {"url": "https://www.hosho.or.jp/nohgakudo/", "role": "current 宝生会 facility page: active dedicated noh theatre, ongoing use, and current seat-image link"},
+        {"url": "https://www.hosho.or.jp/wp/wp-content/uploads/2025/10/zaseki-scaled.jpg", "role": "current-linked native 1802×2560 issuer seating image, visually confirmed on 2026-09-11 to contain the full seated plan, sector/row ownership, and individual printed identifiers"}
+      ],
+      "finding": "Active dedicated noh theatre. The current issuer image is a complete fixed seat plan rather than an event-specific sales chart: all visible seating blocks carry issuer row/sector identity and individual printed seat identifiers. No source mixing is needed; later passes must treat the image's printed gaps and ownership as authoritative.",
+      "accessibilityMovability": "No current page/image statement of wheelchair conversion, companion relation, removable seating, or alternate numbered layout was found. This is recorded as absent information, not proof of absence.",
+      "issuerSubtotal": "No exact issuer seat total/subtotal was located in the current facility and chart materials. This does not authorise a fitted total; implementation instead requires two-pass equality and an independent chart-only structural count, recording the absent issuer reconciliation explicitly.",
+      "implementationVerificationPlan": "Re-fetch the facility page and native image; freeze independent Human Passes 1/2 at usable native resolution with different sector traversal; require expanded bidirectional equality; derive a practical independent structural checksum directly from the chart; do not set or fit a capacity absent issuer publication; and preserve only current issuer-explicit accessibility/movability semantics."
+    }
+  ],
+  "result": {
+    "candidateCeiling": 8,
+    "candidatesResearchStarted": 5,
+    "stoppedAfterResearchOrderRank": 5,
+    "adoptedCandidates": 5,
+    "deferredNeedEvidenceHold": 0,
+    "hardCases": 0,
+    "productionPromotions": 0
+  },
+  "inventorySynchronization": "The five ADOPTs are active/eligible/source-located with their current issuer URL and 2026-09-11 check date. No venue source was created. No unresearched record, including later-ranked civic candidates, was modified.",
+  "productionImpact": {"changed": false, "venueSourcesTouched": [], "generatedArtifactsTouched": [], "productionFingerprintsTouched": [], "productionDataChanges": "none"},
+  "validation": "All data JSON parsed. venues:inventory:report: 0 errors, Priority-D outstanding 784. venues:readiness:report: 0 errors. venues:release:coverage: PASS / RELEASE READY yes. venues:validate: 0 errors and the pre-existing 49 warnings. verify:docs and git diff --check: PASS. venues:build was intentionally not run because no production source or generated artifact changed.",
+  "exactNextAction": "fresh bounded Claude implementation of all ADOPTs from this preflight"
+}

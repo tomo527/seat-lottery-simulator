@@ -1,8 +1,26 @@
 # Current save state
 
-Updated: 2026-09-10 (Asia/Tokyo)
+Updated: 2026-09-11 (Asia/Tokyo)
 
-## Active save state — Tokyo Priority D performance venues implemented; all three in production (2026-09-10)
+## Active save state — Tokyo Priority D performance-identity next-batch preflight complete (2026-09-11)
+
+The records-only preflight rebuilt the live Priority-D pool from current `data/venue-inventory/tokyo.json`: **784** candidates remain after excluding production, formal blocked/DEFER/NEED EVIDENCE/HOLD/rejected records, and the recorded duplicate. Dedicated ticketed performance identities were ranked before civic performance halls, with active assigned-seat use, current first-party chart availability, clear standard configurations, and issuer/sibling precedent as tie-breakers. Capacity-unknown and missing stored URLs were neutral.
+
+**Five ADOPTs reached the stop condition, in freshly recomputed order:**
+
+- `tokyo-official-1068` 調布市せんがわ劇場〔ホール〕 — usual raked 121-seat S/A–J × 1–11 chart; the separate flat 162-seat layout is out of scope.
+- `tokyo-official-0103` 中央区立日本橋公会堂(日本橋劇場)〔ホール(日本橋劇場)〕 — normal 701 fixed-seat configuration (1F 424 + 2F 277); flower-path 617 is a separate variant.
+- `tokyo-official-0098` 第一生命ホール — 767-seat standard (1F 574 including eight wheelchair seats + 2F 193); projecting-stage 714 is separate.
+- `tokyo-official-0094` 博品館劇場 — current 381-seat A–S chart.
+- `tokyo-official-0316` 宝生能楽堂 — current full issuer seat image with sector/row/individual identifiers; no issuer total was found, so a later checksum must not be capacity-fitted.
+
+All five are `active` / `eligible` / `source-located` in the inventory. Their current first-party links, configuration boundaries, accessibility/movability evidence, issuer totals (or their absence), and mandatory implementation gates are in [`tokyo-priority-d-performance-identity-preflight-2026-09-11.json`](../data/venue-reports/tokyo-priority-d-performance-identity-preflight-2026-09-11.json). No source, seat range, Human Pass, production artifact, fingerprint, application code, validator, GMO/RaiBoC/日野, or prior blocked/HARD-CASE record changed.
+
+Validation passed: all `data/**/*.json` parsed; `venues:inventory:report` reports 0 errors and Priority-D outstanding 784; `venues:readiness:report` has 0 errors; `venues:release:coverage` is PASS / RELEASE READY yes; `venues:validate` has 0 errors and the pre-existing 49 warnings; `verify:docs` and `git diff --check` pass. `venues:build` remains intentionally out of scope.
+
+**Exact next action:** fresh bounded Claude implementation of all ADOPTs from this preflight.
+
+## Recent completed work — Tokyo Priority D performance venues implemented; all three in production (2026-09-10)
 
 The bounded **TOKYO PRIORITY D PERFORMANCE VENUES 3-VENUE IMPLEMENTATION** (batch `tokyo-wave-35-priority-d-performance-adopt-implementation`) implemented the three ADOPTs left by the preflight, as three independent mini-waves. **All three passed the production gate and are live; production venues went 160 → 163 and 1,618 seats were added.**
 
