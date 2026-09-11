@@ -1523,10 +1523,10 @@
       "officialFacilityUrl": "https://jimbocho-manzaigekijyo.yoshimoto.co.jp/about/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight: 吉本興業の現行劇場案内が継続的な指定席公演、客席数126席と、A〜Iの各列・1〜14番を直接印字した現行座席表を公開する。全席は同一area内で(row, seat)が直接一意。定員136名との差10名は未番号の入場定員であり、図から補完しない。",
+      "eligibilityReason": "2026-09-11のTokyo Priority D 5会場実装waveで、現行運営者の劇場案内ページ・同ページ掲載の客席図（原本717×800px）・チケットページをfreshに再確認し、A〜I列×1〜14番の126席をindependent human visual two-pass（symmetric difference 0）とラスタ構造の独立structural checksum（座席セル126個、行帯9本×14席、印字番号occupancy 126/126、番号なしセル0）で確定してproduction化した。劇場案内の「客席数：126席」および図の印字「計126席」と完全一致。定員136名との差10名はissuerの説明がなく、番号を持たない入場定員上の差として保持した。図の「（120席）」併記と凡例のないI列6〜11番の灰色塗り分けも説明がなく、126席すべてを登録している。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "jimbocho-yoshimoto-manzai-gekijo-standard",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-09-11"
     },
     {
@@ -9044,17 +9044,16 @@
       "officialDisplayName": "一般財団法人六行会〔六行会ホール〕",
       "prefecture": "東京都",
       "city": "品川区",
-      "capacity": null,
+      "capacity": 248,
       "category": "hall",
-      "officialFacilityUrl": "https://www.rikkoukai.com/pages/15/",
+      "officialFacilityUrl": "https://www.rikkoukai.com/pages/31/",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight: issuer maintains current hall/technical and programme pages, but current facility and downloadable materials expose stage/lighting plans only, not a numbered audience-seat chart.",
+      "eligibility": "eligible",
+      "eligibilityReason": "2026-09-11のTokyo Priority D 5会場実装waveで、同日のpreflightが見落としていた現行issuerの客席ページ（https://www.rikkoukai.com/pages/31/ ）に「客席 座席表　※座席数：２４８席」として現行の番号付き座席表が掲載されていることを確認し、preflightのHOLDをsupersedeした。A〜N列248席をindependent human visual two-pass（symmetric difference 0）と独立structural checksum（後方7行126席＋前方中央70席＋前方傾斜側方52席＝248、傾斜側方ブロックは内側端が当該行帯内部に収まることを機械計測で確認）で確定してproduction化した。客席ページの248席、「六行会について」ページの定員248名、2025年10月の「ホールシート２４８席」施工告知のいずれとも完全一致。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-09-11",
-      "blockingReason": "HOLD / NEED EVIDENCE (TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT): current first-party pages establish ongoing hall activity but no current issuer-numbered audience chart/list, row identifiers, representative seating configuration, or exact audience total was located. Reopen only when the issuer publishes a complete numbered representative chart."
+      "venueSourceId": "rikkoukai-hall-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-11"
     },
     {
       "inventoryId": "tokyo-official-0458",
@@ -14087,10 +14086,10 @@
       "officialFacilityUrl": "https://www.cbgk.jp/about/index.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight: current issuer pages show active all-reserved performances, 242 numbered seats plus 2 wheelchair spaces, and a current linked chart with A〜L row labels and every printed individual seat number. The unnumbered wheelchair spaces are outside the mapped target.",
+      "eligibilityReason": "2026-09-11のTokyo Priority D 5会場実装waveで、現行運営者のABOUTページ・同ページ掲載の場内案内図・公式スケジュールをfreshに再確認し、A〜L列242席をindependent human visual two-pass（symmetric difference 0）とラスタ構造の独立structural checksum（行帯12本、自己相関ピッチ9.147pxによるブロック別セル数が列別席数と完全一致、合計242）で確定してproduction化した。ABOUTページの「客席数 242席」と完全一致。別枠の「車椅子スペース 2席」は無番号で、図上の無番号2区画との対応関係もissuerが公表していないため登録していない。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "cbgk-shibugeki-standard",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-09-11"
     },
     {
@@ -14599,10 +14598,10 @@
       "officialFacilityUrl": "https://www.alpha-tk.com/",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight: current operator pages list active performance use and link a current 201-seat chart. Every seat carries a directly printed A〜L row label and number; the chart itself prints total seats and admission capacity 201.",
+      "eligibilityReason": "2026-09-11のTokyo Priority D 5会場実装waveで、現行運営者のトップ・利用案内・施設／機材／図面ページと現行リンクの客席図PDFをfreshに再確認し、A〜L列201席をindependent human visual two-pass（symmetric difference 0）とPDFベクター幾何の独立structural checksum（座席本体201件、行帯12本、ブロック構成一致）で確定してproduction化した。客席図の印字「（総席数及び入場定員＝201）」と利用案内の「201席」の双方と完全一致。車椅子席・仮設席・同伴者席の記載は現行資料に存在しない。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
+      "venueSourceId": "theater-alpha-tokyo-standard",
+      "researchStatus": "production",
       "lastCheckedAt": "2026-09-11"
     },
     {
@@ -15542,14 +15541,16 @@
       "city": "杉並区",
       "capacity": 238,
       "category": "hall",
-      "officialFacilityUrl": "https://za-koenji.jp/guide",
+      "officialFacilityUrl": "https://za-koenji.jp/rental",
       "operationalStatus": "active",
-      "eligibility": "eligible",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight: current public-theatre issuer pages distinguish 座・高円寺1's basic 238-seat configuration from alternate movable layouts and link the basic A〜J numbered chart. Every block is directly row-labelled and individually numbered.",
+      "eligibility": "likely-eligible",
+      "eligibilityReason": "2026-09-11のTokyo Priority D 5会場実装waveで現行の基本客席図（za-koenji1_seating_plan.pdf、2025-11公開、埋め込みラスタ2931×2376px）をfreshに再確認した。issuerは基本形状238席を明確に定義しA〜J列の列記号も印字するが、座席セルに印字される番号は各ブロックの端の目印だけで、大多数のセルには番号が印字されていない（例：A列は4・5・6・13・14・21・22・23のみ、間の各6セルは無番号）。番号を補うにはセル数からの内挿が必要で禁止されるため正式HOLD。なお施設案内ページの導入文は「基本形状 客席数２３３」、同ページのホール案内・施設を借りるページ・舞台断面図はいずれも「２３８席（基本形状）」としており、issuer内部でも数値が一致していない。",
       "priority": "D",
       "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-11"
+      "researchStatus": "blocked",
+      "lastCheckedAt": "2026-09-11",
+      "blockingReason": "SOURCE HOLD（identifier completeness）: 現行公式の「座・高円寺1 基本客席 238席」座席図は、各行の一部のセル（各ブロックの先頭・末尾など）にしか座席番号を印字しない。A列は4・5・6・13・14・21・22・23、B列は3・5・6・13・14・21・22・24、C〜I列は1・5・6・13・14・21・22・26、J列は7・13・14・20のみが印字され、その間のセルは無番号で、B列には印字済み番号の間に無番号セルが1つだけある箇所（3と5の間、22と24の間）もある。losslessな(row, seat)集合を作るには印字済み番号の間のセル数から番号を内挿する必要があり、geometry completionに該当して禁止。現行issuerの他資料（施設案内、施設を借りる、よくある質問、座・高円寺1舞台図面類PDF）にも全席に番号を印字した図は存在せず、FAQは「基本的な座席表」のみを公開していると明記する。issuerが全席に個別番号を印字した基本配置図、または席ごとの(row, seat)識別子一覧を公開した場合にのみ再開する。証拠は data/venue-reports/tokyo-wave-37-priority-d-performance-adopt-implementation-2026-09-11.json。",
+      "recheckNotBefore": null
     },
     {
       "inventoryId": "tokyo-official-0792",

@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "cbgk-shibugeki-standard",
+  "name": "CBGKシブゲキ!!",
+  "prefecture": "東京都",
+  "city": "渋谷区",
+  "aliases": [
+    "シブゲキ",
+    "CBGK",
+    "シブゲキ!!",
+    "CBGK シブゲキ"
+  ],
+  "venueType": "theater",
+  "knownLimitations": [
+    "現行運営者のABOUTページは【収容人数】を「客席数 242席・車椅子スペース 2席」と明記し、同ページに掲載される現行の場内案内図に印字された番号席も242席で完全一致しています。",
+    "列はA列〜L列の12列で、各列の列記号は左端・左ブロックと中央ブロックの間・中央ブロックと右ブロックの間・右端の4か所に印字されます。したがって左右のブロックにも直接の列帰属があり、隣接列からの推定や幾何学的な推測は使用していません。",
+    "A〜C列は3〜20番、D〜J列は1〜22番で、図上のブロック分割は通路による見た目の分割であり番号は連続しています。K列は1〜3番・7〜16番・20〜22番、L列は1〜4番・7〜16番・19〜22番で、印字のない番号はそのとおり欠番として保持しています。",
+    "図には最後列の後方に番号を持たない塗りつぶしの円が2つ描かれていますが、図上にそれが何であるかの印字はありません。issuerがABOUTページで242席とは別枠に示す「車椅子スペース 2席」との対応関係は公表されていないため、識別子を作成せず、番号席との置換関係も推定していません。"
+  ],
+  "sources": [
+    {
+      "id": "official-about",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "CBGKシブゲキ!!（劇場運営者）",
+      "title": "CBGKシブゲキ!! ABOUT（現行の劇場公式紹介ページ。【収容人数】を「客席数 242席・車椅子スペース 2席」と明記し、【場内案内図】として現行の座席図を掲載する。閉館、建替え、改修、座席変更の告知はない）",
+      "url": "https://www.cbgk.jp/about/index.html",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "CBGKシブゲキ!!（劇場運営者）",
+      "title": "CBGKシブゲキ!! 場内案内図（ABOUTページが掲載する現行の場内案内図。舞台を上にしてA列〜L列の全席を個別の座席セルとして描き、各セルに番号を、各列の4か所に列記号を印字する）",
+      "url": "https://www.cbgk.jp/about/img/cbgk_seat.jpg",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-schedule",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "CBGKシブゲキ!!（劇場運営者）",
+      "title": "CBGKシブゲキ!! SCHEDULE（現行の公式公演スケジュール。2026年9月以降の演劇・お笑い・イベント公演を継続して掲載し、全席指定公演を含む。改修・休館・座席変更の告知はない）",
+      "url": "https://www.cbgk.jp/schedule/index.html",
+      "checkedAt": "2026-09-11"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "標準配置（242席）",
+      "issuerDefinedCondition": "現行運営者がABOUTページで「客席数 242席」として案内し、同ページの【場内案内図】が示すA列〜L列の配置。",
+      "selectionBasis": "issuerが公開している番号付き座席図は現行ABOUTページに掲載されたこの場内案内図1点のみで、別の番号付きconfigurationは現行の公式資料に存在しない。同ページの客席数242席と図上の印字番号数が一致する。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-11に現行のABOUTページ（https://www.cbgk.jp/about/index.html ）から辿って取得した。場内案内図のSHA-256は b85191c2c69aeea6bf4f27047243c16d7a63e83f36b4743f3cb477165b517e1f、105,993バイト、500×520pxのJPEG。Pass 2の直前に別のUser-Agentで独立に再取得し、バイト単位で同一であることを確認している。ラスタ画像であり座席番号をテキストとして抽出できないためDENSE-VECTOR verificationの前提を満たさず、既定どおりfresh independent human visual two-passを実施し、機械経路はhuman range tableを入力に用いない独立structural checksumとしてのみ用いた。",
+      "sourceIds": [
+        "official-about",
+        "official-seat-map",
+        "official-schedule"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 242,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式の場内案内図に印字された全242席です。列は舞台側からA列〜L列の12列で、A〜C列は3〜20番、D〜J列は1〜22番、K列は1〜3番・7〜16番・20〜22番、L列は1〜4番・7〜16番・19〜22番です。図上で番号が印字されていない位置は欠番としてそのまま保持しており、補完した箇所はありません。issuerが別枠で示す車椅子スペース2席は番号を持たないため含みません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerはABOUTページの【収容人数】で「客席数 242席・車椅子スペース 2席」と、242席とは別枠に車椅子スペース2席を示している。現行の場内案内図には最後列後方に番号を持たない塗りつぶしの円が2つ描かれるが、図上にそれが車椅子スペースである旨の印字はなく、番号席との置換関係、同伴者席の対応、可動席としての転換関係も現行のABOUT・スケジュールいずれのページからも確認できない。したがって置換関係は不明として扱い、印字された242席のみを登録し、無番号の2区画には識別子を作成していない。記載がないことを「存在しない証明」としては扱っていない。",
+        "sourceIds": [
+          "official-about",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-11",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-a-180-degree-rotated-tone-inverted-greyscale-render-and-reversed-row-and-block-order-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-on-the-raster-via-row-band-ink-profiling-autocorrelation-derived-seat-pitch-and-per-block-cell-counts; issuer-total-reconciliation-242-against-the-about-page-declared-seat-count",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "human visual two-pass: 242席の図で超高密度図ではなく、またラスタJPEGのため、DENSE-VECTOR verificationの前提を満たさない。既定どおり人が直接視認する独立two-passを実施した。Pass 1は原寸500×520pxをLANCZOSで7〜9倍に拡大したRGBレンダリングを用い、A列→L列の上から下へ、各列は左ブロック→中央ブロック→右ブロックの順に読み取った。Pass 1をfreezeしたのち、別のUser-Agentで同一URLから独立に再取得し（SHA-256一致でバイト単位同一）、Pass 1のtableを参照せずに、グレースケール化・階調反転・autocontrastのうえ図面を180度回転し、BICUBICで9倍に拡大した別の切り出し窓で、L列→A列の下から上・各列は右ブロック→中央ブロック→左ブロックという逆順でPass 2を読み取った。両passをfreezeしてから機械展開して比較し、展開(row,seat)集合242件でPass1-only 0件・Pass2-only 0件・symmetric difference 0件・重複キー0件、列集合と列別席数も完全一致した。",
+          "independent structural checksum: human range tableを入力に用いない機械構造カウントをラスタ画像から独立に構築した。客席領域の水平インクプロファイルを最大値の2%で閾値化すると行帯がちょうど12本得られ、A〜L列の12列と一致した。座席ピッチは全行帯を合算した列方向インクプロファイルの自己相関の極大から9.147pxと推定し（目標席数に依存しない）、各行帯を列方向の無インク間隙でブロックへ分割して、ブロック幅÷ピッチの丸めをセル数とした。結果は行帯ごとに 18・18・18・22・22・22・22・22・22・22・16・18 で合計242、ブロック構成も 3|12|3 が3本、5|12|5 が7本、3|10|3 が1本、4|10|4 が1本となり、human two-passの列別席数およびブロック構成と完全に一致した。閾値やピッチを目標値へ合わせる調整は行っていない。",
+          "issuer checksum reconciliation: 両passのfreeze後にだけissuer公表値と照合した。現行ABOUTページは【収容人数】を「客席数 242席・車椅子スペース 2席」と明記しており、mapped setは242席で客席数と完全一致した。車椅子スペース2席はissuer自身が242席とは別枠に示しており、番号を持たないため加算も減算もしていない。数値を合わせるためにrangeを修正した箇所はない。",
+          "accessibility semantics: 現行の公式資料に車椅子スペースと番号席の置換関係、同伴者席、可動席としての転換関係の記載はない。図上の無番号の2区画は識別子を持たないため登録せず、記載がないことを存在しない証明としては扱っていない。",
+          "currentness: 現行の公式スケジュールは2026年9月以降の公演を継続的に掲載しており、全席指定公演を含む。閉館、建替え、改修、休館、座席変更の告知は現行の公式資料に存在しない。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "A",
+          "from": 3,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B",
+          "from": 3,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "rowLabel": "C",
+          "from": 3,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D",
+          "from": 1,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "rowLabel": "E",
+          "from": 1,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F",
+          "from": 1,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "rowLabel": "G",
+          "from": 1,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 1,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "rowLabel": "I",
+          "from": 1,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "rowLabel": "J",
+          "from": 1,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "rowLabel": "K",
+          "from": 1,
+          "to": 3,
+          "excluded": []
+        },
+        {
+          "rowLabel": "K",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "K",
+          "from": 20,
+          "to": 22,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 1,
+          "to": 4,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 7,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 19,
+          "to": 22,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

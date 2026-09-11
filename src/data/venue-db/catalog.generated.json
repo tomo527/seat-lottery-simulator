@@ -93,6 +93,33 @@
   },
   {
     "schemaVersion": 2,
+    "id": "cbgk-shibugeki-standard",
+    "venueGroupId": "cbgk-shibugeki-standard",
+    "name": "CBGKシブゲキ!!",
+    "searchAliases": [
+      "CBGK",
+      "CBGK シブゲキ",
+      "シブゲキ",
+      "シブゲキ!!"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "標準配置（242席）",
+        "seatCount": 242,
+        "dataPath": "/venue-db/venues/cbgk-shibugeki-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の場内案内図に印字された全242席です。列は舞台側からA列〜L列の12列で、A〜C列は3〜20番、D〜J列は1〜22番、K列は1〜3番・7〜16番・20〜22番、L列は1〜4番・7〜16番・19〜22番です。図上で番号が印字されていない位置は欠番としてそのまま保持しており、補完した箇所はありません。issuerが別枠で示す車椅子スペース2席は番号を持たないため含みません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "cerulean-tower-noh-standard",
     "venueGroupId": "cerulean-tower-noh-standard",
     "name": "セルリアンタワー能楽堂〔セルリアンタワー能楽堂〕",
@@ -817,6 +844,32 @@
         "dataPath": "/venue-db/venues/jcom-hall-hachioji-standard--current-fixed-numbered-seat-map.json",
         "scope": "full-venue",
         "scopeDisclosure": "現行公式座席図の固定番号席1,870席を抽選します。公式固定席1,869席との差1席は2階に残ります。親子席8席、立見席144席、車椅子・オーケストラピット・音響反射板・可倒席の運用差は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "jimbocho-yoshimoto-manzai-gekijo-standard",
+    "venueGroupId": "jimbocho-yoshimoto-manzai-gekijo-standard",
+    "name": "神保町よしもと漫才劇場",
+    "searchAliases": [
+      "よしもと漫才劇場 神保町",
+      "神保町マンゲキ",
+      "神保町よしもと"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "標準配置（126席）",
+        "seatCount": 126,
+        "dataPath": "/venue-db/venues/jimbocho-yoshimoto-manzai-gekijo-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の客席図に印字された全126席です。列はステージ側からA列〜I列の9列で、各列とも1番〜14番です。issuerが別に示す定員136名は入場定員であり、差10名分に対応する番号席は公開資料に存在しないため含みません。図がI列6〜11番を異なる色で塗り分け、表題に「（120席）」を併記している点についてissuerの説明はなく、番号と列記号を持つ印字席として126席すべてを登録しています。",
         "fixedOnly": false
       }
     ]
@@ -1988,6 +2041,32 @@
     "dataPath": "/venue-db/venues/popuri-hall-tsurukawa-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "rikkoukai-hall-standard",
+    "venueGroupId": "rikkoukai-hall-standard",
+    "name": "六行会ホール",
+    "searchAliases": [
+      "一般財団法人六行会",
+      "六行会",
+      "六行会ホール 座席表"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "品川区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "標準配置（248席）",
+        "seatCount": 248,
+        "dataPath": "/venue-db/venues/rikkoukai-hall-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の座席表に印字された全248席です。列はステージ側からA列〜N列の14列で、A列は3〜16番、B列〜N列は1〜18番です。各列は通路で左・中央・右のブロックに分かれて描かれますが番号は列内で連続しており、補完や欠番の創作はありません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "risuru-main-standard",
     "name": "たましんRISURUホール 大ホール",
     "searchAliases": [
@@ -2384,6 +2463,32 @@
         "scope": "fixed-only",
         "scopeDisclosure": "issuerの現行「固定席の図面（座席番号）」に印字された固定式観覧席3,000席の全番号席を登録した構成です。エリアは図面に印字された公式ブロック名どおり、西側がCブロック329席・Bブロック692席・Aブロック329席、東側がEブロック329席・Fブロック640席・Gブロック329席、南側がDブロック176席、北側がHブロック176席です。列番号も図面の印字どおりで、東西の各ブロックが1〜11列、南北のD・Hブロックが1〜2列です。移動式観覧席1,022席、大会運営者が手配する仮設スタンド1,972席、および図面に番号が印字されていない車いす席21席は含みません。最大収容6,015席の配置ではありません。",
         "fixedOnly": true
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "theater-alpha-tokyo-standard",
+    "venueGroupId": "theater-alpha-tokyo-standard",
+    "name": "シアター・アルファ東京",
+    "searchAliases": [
+      "ALPHA-TOKYO",
+      "アルファ東京",
+      "シアターアルファ東京"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "渋谷区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "標準配置（201席）",
+        "seatCount": 201,
+        "dataPath": "/venue-db/venues/theater-alpha-tokyo-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式の客席図に印字された全201席です。列は舞台側からA列〜L列の12列で、A列1〜16番、B〜F列1〜19番、G〜J列1〜16番、K列1〜17番、L列1〜9番です。図上のブロック分割は通路や段差による見た目の分割で、番号は各列で連続しており、補完や欠番の創作はありません。",
+        "fixedOnly": false
       }
     ]
   },

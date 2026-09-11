@@ -1,0 +1,210 @@
+{
+  "wave": "tokyo-wave-37-priority-d-performance-adopt-implementation",
+  "date": "2026-09-11",
+  "phase": "implementation",
+  "scopeBoundary": "Exactly the five bounded venues tokyo-official-0716, tokyo-official-0742, tokyo-official-0075, tokyo-official-0791 and tokyo-official-0457, run as five independent mini-waves in one batch. No other candidate research was performed. 草月ホール, 渋谷よしもと漫才劇場, YOSHIMOTO ROPPONGI THEATER, 宝生能楽堂, GMO, RaiBoC, 日野市民会館大ホール and every other existing blocked/HARD-CASE record stayed closed.",
+  "policyBasis": "AGENTS.md autonomous continuation policy (GREEN / YELLOW / LOCAL RED / GLOBAL RED); docs/VENUE_DATA_GUIDE.md production hard gate and the mandatory transcription cross-check requirements; docs/VENUE_WORKFLOW.md canonical sequence; docs/VALIDATION.md venue profile.",
+  "method": {
+    "currentnessFirst": "For each venue the current issuer facility/seat page was re-read before any transcription, then the current-linked chart was fetched by following that page.",
+    "denseVectorEligibility": "Decided from the actual asset for each venue. None of the five qualified: CBGK, 神保町 and 六行会 publish raster images, 座・高円寺1 publishes a raster image embedded in a PDF, and the シアター・アルファ東京 PDF is vector but exposes zero extractable text (all seat numbers are embedded images or outlines).",
+    "humanTwoPass": "Fresh independent human visual two-pass on every venue that reached transcription. Pass 1 frozen to a file before Pass 2; asset independently re-fetched with a different User-Agent and confirmed byte-identical by SHA-256; Pass 2 read from a differently rendered image (rotation, tone polarity, colourspace, scale, crop windows) in reversed row and block order without consulting Pass 1. Machine expansion and comparison happened only after both passes were frozen.",
+    "structuralChecksum": "Built per venue from the asset alone. The frozen human range tables were never an input to any machine path.",
+    "issuerReconciliation": "Issuer subtotals were compared only after both passes were frozen, and were never used as a transcription target. No range was altered to fit a published number."
+  },
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0716",
+      "venue": "CBGK シブゲキ!!",
+      "venueSourceId": "cbgk-shibugeki-standard",
+      "lane": "STANDARD",
+      "disposition": "PRODUCTION",
+      "chartProvenance": {
+        "entryPage": "https://www.cbgk.jp/about/index.html",
+        "asset": "https://www.cbgk.jp/about/img/cbgk_seat.jpg",
+        "assetKind": "raster JPEG 500x520",
+        "sha256": "b85191c2c69aeea6bf4f27047243c16d7a63e83f36b4743f3cb477165b517e1f",
+        "bytes": 105993,
+        "refetchByteIdentical": true
+      },
+      "denseVectorEligible": false,
+      "humanPass1": "A→L top to bottom, per row left → centre → right, LANCZOS 7x/9x RGB render. 242 seats.",
+      "humanPass2": "L→A bottom to top, per row right → centre → left, greyscale autocontrast + tone inversion + 180° rotation, BICUBIC 9x, different crop windows. 242 seats.",
+      "expandedComparison": {
+        "pass1": 242,
+        "pass2": 242,
+        "pass1Only": 0,
+        "pass2Only": 0,
+        "symmetricDifference": 0,
+        "duplicateKeys": 0
+      },
+      "structuralChecksum": "Raster row-band ink profiling found exactly 12 row bands (A–L); the seat pitch was estimated at 9.147 px from the autocorrelation of the summed column ink profile (target-independent); per-band block widths divided by that pitch gave 18·18·18·22·22·22·22·22·22·22·16·18 = 242 with block structures 3|12|3, 5|12|5, 3|10|3 and 4|10|4 — identical to the human two-pass per-row counts and block structure.",
+      "issuerReconciliation": "ABOUT page 【収容人数】客席数 242席・車椅子スペース 2席. Mapped 242 matches the declared seat count exactly. The two wheelchair spaces are counted separately by the issuer, carry no printed identifier, and were neither added nor subtracted.",
+      "accessibility": "not-reflected (accessibilityConversionNotReflected: true). The chart draws two unnumbered filled circles behind the last row but prints nothing identifying them; no conversion, companion or movable relation to any numbered seat is published.",
+      "mappedSeats": 242,
+      "rows": "A–L; A–C 3–20, D–J 1–22, K 1–3/7–16/20–22, L 1–4/7–16/19–22"
+    },
+    {
+      "inventoryId": "tokyo-official-0742",
+      "venue": "シアター・アルファ東京",
+      "venueSourceId": "theater-alpha-tokyo-standard",
+      "lane": "STANDARD",
+      "disposition": "PRODUCTION",
+      "chartProvenance": {
+        "entryPage": "https://www.alpha-tk.com/%E6%96%BD%E8%A8%AD-%E6%A9%9F%E6%9D%90-%E5%9B%B3%E9%9D%A2",
+        "asset": "https://www.alpha-tk.com/_files/ugd/aa1078_12afab3904ba487ab6e4d252354f710b.pdf",
+        "assetKind": "vector PDF, 1 page 595.32x841.92pt, 0 extractable characters, 237 placed number images, 1541 drawing paths",
+        "sha256": "3abeb5a667c8872a6f97aed692bf2fb20724312d2d87a7a4228c8a7937e5df89",
+        "bytes": 158340,
+        "refetchByteIdentical": true
+      },
+      "denseVectorEligible": false,
+      "denseVectorReason": "Vector PDF, but get_text() returns 0 characters: every seat number and row letter is an embedded image or an outline, so the requirement that all declared-scope identifiers be printed as extractable text is not met.",
+      "humanPass1": "A→L top to bottom, per row leftmost → rightmost block, 440 dpi RGB render. 201 seats.",
+      "humanPass2": "L→A bottom to top, per row rightmost → leftmost block, 300 dpi greyscale, tone-inverted, 180° rotated, different crop windows. 201 seats.",
+      "expandedComparison": {
+        "pass1": 201,
+        "pass2": 201,
+        "pass1Only": 0,
+        "pass2Only": 0,
+        "symmetricDifference": 0,
+        "duplicateKeys": 0
+      },
+      "structuralChecksum": "PDF vector geometry. The modal drawn rectangle taller than 15 pt is 14.0×22.0 pt with 186 occurrences; selecting rectangles within 0.75–1.30× its width and 0.90–1.20× its height (target-independent) gives 201 seat bodies, of which 15 are the tilted A/B-row seats with slightly larger bounding boxes. Clustering by y-centre yields exactly 12 row bands with 16·19·19·19·19·19·16·16·16·16·17·9 = 201 and block structures 2|5|5|4, 4|5|5|5 (×5), 7|9 (×4), 7|10 and 9 — identical to the human two-pass.",
+      "issuerReconciliation": "The chart prints （総席数及び入場定員＝201）and the current 利用案内 page states 「余裕のリクライニングシートは201席」. Mapped 201 matches both exactly.",
+      "accessibility": "not-reflected (accessibilityConversionNotReflected: true). No wheelchair seat, wheelchair space, companion seat, temporary seat or movable-conversion statement exists anywhere in the current issuer material; that absence is recorded as absence, not as proof of absence.",
+      "mappedSeats": 201,
+      "rows": "A–L; A 1–16, B–F 1–19, G–J 1–16, K 1–17, L 1–9"
+    },
+    {
+      "inventoryId": "tokyo-official-0075",
+      "venue": "神保町よしもと漫才劇場",
+      "venueSourceId": "jimbocho-yoshimoto-manzai-gekijo-standard",
+      "lane": "STANDARD",
+      "disposition": "PRODUCTION",
+      "chartProvenance": {
+        "entryPage": "https://jimbocho-manzaigekijyo.yoshimoto.co.jp/about/",
+        "asset": "https://jimbocho-manzaigekijyo.yoshimoto.co.jp/.assets/%E7%A5%9E%E4%BF%9D%E7%94%BA%E3%82%88%E3%81%97%E3%82%82%E3%81%A8%E6%BC%AB%E6%89%8D%E5%8A%87%E5%A0%B4-112%E5%B8%AD%E5%BA%A7%E5%B8%AD%E8%A1%A820230416%E6%9B%B4%E6%96%B0-%281%29_page-0001.jpg",
+        "assetKind": "raster JPEG 717x800 (the un-thumbnailed original; the 640wri/1280wri/1920wri thumbnails are all the same 717x800, so this is the issuer's maximum published resolution)",
+        "sha256": "e5be300b067652dc6952d32114825935a5a27b52d103e913c2902171febe8f07",
+        "bytes": 154490,
+        "refetchByteIdentical": true
+      },
+      "denseVectorEligible": false,
+      "humanPass1": "A→I top to bottom, 1→14 left to right, LANCZOS 2x/4x RGB render. 126 seats.",
+      "humanPass2": "I→A bottom to top, 14→1 right to left, greyscale autocontrast + tone inversion + 180° rotation, NEAREST 3x. 126 seats.",
+      "expandedComparison": {
+        "pass1": 126,
+        "pass2": 126,
+        "pass1Only": 0,
+        "pass2Only": 0,
+        "symmetricDifference": 0,
+        "duplicateKeys": 0
+      },
+      "structuralChecksum": "Raster fill-region connected components (grey level 60–235) selected at 0.6–1.5× the median 41×42 px cell size (target-independent) give 126 seat cells in exactly 9 row bands of 14, one block per row. A per-cell printed-number occupancy check found 126 cells containing dark ink and 0 empty cells. An independent fill-colour classification on the same path found 120 saturated (magenta) cells and 6 neutral-grey cells.",
+      "issuerReconciliation": "The 劇場案内 page states 「客席数：126席（定員 136名）」 and the chart itself prints 「計126席」. Mapped 126 matches both exactly.",
+      "unexplainedIssuerDifferences": [
+        "客席数 126席 vs 定員 136名: a difference of 10 people. A fresh sweep of the current issuer 劇場案内, チケット, よくある質問, お知らせ, スケジュール and トップ pages found no issuer explanation. No standing, wheelchair, staff or temporary-seat interpretation was assumed; the 10 remain an unnumbered admission-capacity difference and were not converted into seat IDs.",
+        "The chart's own title prints 「計126席　（120席）」 and shades exactly six cells (I列6番–11番) neutral grey with no legend. 126 − 6 = 120 reproduces the parenthetical, and the machine fill-colour classification found 120 saturated and 6 grey cells independently, but the issuer explains neither the grey nor the condition under which 120 applies. All six carry a directly printed row letter and seat number, so all 126 were mapped; no alternate configuration was created and no seat was removed."
+      ],
+      "accessibility": "not-reflected (accessibilityConversionNotReflected: true). The issuer publishes a wheelchair contact procedure and warns that the theatre's structure may mean a guest is seated somewhere other than the printed seat or numbered ticket, but publishes no wheelchair position, count or per-seat conversion.",
+      "assetFilenameNote": "The chart's filename still contains the stale string 「112席座席表20230416更新」. The chart's own printed total and the hosting page both say 126, and the chart contains A–I × 1–14 = 126 cells. The filename number was not used.",
+      "mappedSeats": 126,
+      "rows": "A–I × 1–14"
+    },
+    {
+      "inventoryId": "tokyo-official-0791",
+      "venue": "杉並区立杉並芸術会館 座・高円寺〔座・高円寺1〕",
+      "venueSourceId": null,
+      "lane": "STANDARD",
+      "disposition": "HOLD / NEED EVIDENCE",
+      "sourceCreated": false,
+      "humanPassFrozen": false,
+      "seatsTranscribed": 0,
+      "chartProvenance": {
+        "entryPage": "https://za-koenji.jp/rental",
+        "asset": "https://za-koenji.jp/new/wp-content/uploads/2025/11/za-koenji1_seating_plan.pdf",
+        "assetKind": "PDF, 1 page 2931x2376 pt, 0 extractable characters, one embedded 2931x2376 raster image",
+        "pdfSha256": "5d2de6202e3fe43ca77c58dd3bc430f7c83c32f6abbdd002143c12ff8cfb87f6",
+        "embeddedImageSha256": "fff6ced679faddb81a78ccba6e616f014a10dadcd22619bbd9af7b20dd5766cd"
+      },
+      "exactBlocker": "Identifier completeness FAILS. The chart is titled 「座・高円寺1 基本客席 238席」 and prints A–J row letters, but it prints a seat number on only a minority of the drawn seat cells — the landmark cells at each block edge. Row A prints 4, 5, 6, 13, 14, 21, 22, 23; row B prints 3, 5, 6, 13, 14, 21, 22, 24; rows C–I print 1, 5, 6, 13, 14, 21, 22, 26; row J prints 7, 13, 14, 20. Every cell between those landmarks is blank at the issuer's maximum published resolution, and row B additionally has single blank cells between printed 3 and 5 and between printed 22 and 24. Constructing a lossless (row, seat) set would require interpolating the missing numbers from the count of blank cells between printed landmarks — geometry completion, which is prohibited.",
+      "preflightContradiction": "The 2026-09-11 preflight recorded 「complete individual IDs」 and 「every A–J row and individual seat directly printed」 for this venue. The fresh asset contradicts that; the fresh evidence wins.",
+      "sweepPerformed": "施設案内 (guide), 施設を借りる (rental), よくある質問 (qa), チケット, アクセス, and the 座・高円寺1舞台図面類 technical-plan PDF (11 pages, including its 3255x2634, 3243x2352 and 2931x2376 embedded drawings) were checked. No chart printing a number on every seat exists. The FAQ states outright that the site publishes only the 「基本的な座席表」 for 座・高円寺1 and 座・高円寺2 and that performance layouts can differ.",
+      "issuerInternalInconsistency": "The 施設案内 page's introduction says 「座・高円寺１」（基本形状 客席数２３３）, while the same page's ホール案内 block, the 施設を借りる page and the technical plan's west-side section drawing all say 238席（基本形状）. Recorded as context; it is not the blocker.",
+      "reopenCondition": "Reopen only when the issuer publishes a basic-configuration chart that prints an individual seat number on every seat, or a per-seat (row, seat) identifier list for the basic 238-seat configuration.",
+      "recheckNotBefore": null,
+      "scopeDiscipline": "No seat was transcribed, no range was created, no source file was created, no alternate layout was mixed in, and the basic 238 figure was not used as a transcription target."
+    },
+    {
+      "inventoryId": "tokyo-official-0457",
+      "venue": "一般財団法人六行会〔六行会ホール〕",
+      "venueSourceId": "rikkoukai-hall-standard",
+      "lane": "STANDARD",
+      "disposition": "PRODUCTION",
+      "preflightReEvaluation": {
+        "preflightDisposition": "HOLD / NEED EVIDENCE — 'no current numbered audience chart/list, seat total, or issuer-separated representative auditorium configuration'",
+        "outcome": "SUPERSEDED",
+        "reason": "The current issuer page https://www.rikkoukai.com/pages/31/ (客席・ホワイエ・楽屋, under ホール図面・資料) publishes 「客席 座席表　※座席数：２４８席」 with a complete numbered chart. The preflight had reached the facility through https://www.rikkoukai.com/pages/15/ and did not open this page. The preflight record is retained unaltered as a historical record."
+      },
+      "chartProvenance": {
+        "entryPage": "https://www.rikkoukai.com/pages/31/",
+        "asset": "https://www.rikkoukai.com/files/libs/1386/202207011145576657.jpg",
+        "assetKind": "raster greyscale JPEG 2048x2896 (the un-resized original; the page embeds an 870x1230 display copy)",
+        "sha256": "9702d75cc38cbb9a0e2e8d3f6e70d544ac27fe16838f1d06a27cbc7991bb0891",
+        "bytes": 352403,
+        "refetchByteIdentical": true
+      },
+      "firstGate": {
+        "issuerOwned": "Yes — served from the issuer's own domain and titled 六行会ホール座席表.",
+        "hallIdentity": "Matches: 六行会ホール, B2F of the 六行会総合ビル, 品川区北品川2-32-3.",
+        "rowLabelsPrinted": "Yes — every row prints its letter twice, between the left block and the centre block and between the centre block and the right block.",
+        "seatNumbersPrinted": "Yes — every drawn cell carries an individually printed number.",
+        "sideBlockRowOwnership": "Direct. Numbers run contiguously across the blocks within each row (A 3–16, B–N 1–18) with no repetition, the row letter is printed immediately beside each side block on the row line, and the tilted A–G side blocks' inner ends were independently measured to fall inside their own row band.",
+        "representativeConfiguration": "Yes — the single 248-seat auditorium plan.",
+        "coversWholeAuditorium": "Yes — mapped 248 equals the issuer's declared seat count and hall capacity.",
+        "alternateOrRemovableConfigurations": "None published."
+      },
+      "denseVectorEligible": false,
+      "humanPass1": "A→N top to bottom, per row left → centre → right block, ~1.3x LANCZOS crops of the 2048x2896 greyscale original. 248 seats.",
+      "humanPass2": "N→A bottom to top, per row right → centre → left block, autocontrast + tone inversion + 180° rotation, 1.5x, different crop windows. 248 seats.",
+      "expandedComparison": {
+        "pass1": 248,
+        "pass2": 248,
+        "pass1Only": 0,
+        "pass2Only": 0,
+        "symmetricDifference": 0,
+        "duplicateKeys": 0
+      },
+      "structuralChecksum": "Three independent machine sub-counts summing to 248: (1) the axis-aligned rear section gave 7 row bands and, with a seat pitch of 60.167 px derived from the autocorrelation of the column ink profile (target-independent), block widths divided by that pitch gave 4|10|4 = 18 × 7 = 126; (2) the front section's axis-aligned centre blocks gave 7 bands × 10 = 70; (3) the front section's tilted side blocks were measured with minAreaRect on Otsu-thresholded components, selected by a short side of 0.85–1.25× the pitch (i.e. exactly one cell wide), and their long side divided by the pitch gave 2+4+4+4+4+4+4 = 26 per side = 52. 126 + 70 + 52 = 248, matching the human two-pass total and per-row counts.",
+      "sideBlockGeometricConfirmation": "For all 14 tilted side blocks the inner end lies inside exactly one of the 7 row bands derived independently from the centre blocks, 11.9–17.4 px from that band's centre versus 79.3–157.1 px to the runner-up, against a ~60 px cell height and ~110–140 px row pitch. Geometry was used only to confirm an ownership already fixed by the printed row letters and the contiguous numbering, never to generate one.",
+      "issuerReconciliation": "客席ページ 「座席数：２４８席」, 六行会について 「六行会ホール（定員248名）」, and the same 客席ページ's 2025-10-15 notice 「ホールシート２４８席の抗菌・抗ウイルスコーティング加工」. Mapped 248 matches all three exactly; no range was changed to fit them.",
+      "accessibility": "not-reflected (accessibilityConversionNotReflected: true). No wheelchair seat/space, companion seat, movable seat, temporary seat or alternate layout is mentioned anywhere in the current issuer material, and the chart draws no unnumbered position. Absence was not treated as proof of absence.",
+      "currentness": "Active: phone bookings open for 2027-09-20–26 hall use, a 2027-01 fee revision notice, 2026 organised events, and the 2025-10-15 seat-coating notice covering all 248 seats. A stale 2020-04-13 「六行会ホール営業休止のご案内」 RSS item remains in the notice list and is contradicted by all of the above; it was not treated as the current operating state. No renovation or seating-change notice exists.",
+      "mappedSeats": 248,
+      "rows": "A–N; A 3–16, B–N 1–18"
+    }
+  ],
+  "result": {
+    "production": 4,
+    "blocked": 1,
+    "seatsAdded": 817,
+    "productionVenuesBefore": 167,
+    "productionVenuesAfter": 171,
+    "selectableConfigurationsBefore": 169,
+    "selectableConfigurationsAfter": 173,
+    "configurationSeatRecordsBefore": 258095,
+    "configurationSeatRecordsAfter": 258912
+  },
+  "prohibitedTechniquesNotUsed": [
+    "capacity fitting",
+    "neighbouring-row propagation",
+    "geometry completion",
+    "alignment-derived row ownership",
+    "symmetry-derived identifiers",
+    "third-party chart completion",
+    "configuration mixing",
+    "alternate-layout difference-derived seat IDs",
+    "back-calculating missing seat IDs from admission capacity"
+  ],
+  "exactNextAction": "TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT — recompute the live pool from scratch from the current data/venue-inventory/tokyo.json, which now reflects CBGK シブゲキ!!, シアター・アルファ東京, 神保町よしもと漫才劇場 and 六行会ホール as production and 座・高円寺1 as formal blocked. Do not carry any candidate ranked 9th or lower in the 2026-09-11 preflight forward as a fixed carry-over."
+}

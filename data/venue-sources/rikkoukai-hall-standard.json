@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "rikkoukai-hall-standard",
+  "name": "六行会ホール",
+  "prefecture": "東京都",
+  "city": "品川区",
+  "aliases": [
+    "六行会",
+    "一般財団法人六行会",
+    "六行会ホール 座席表"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "現行運営者の「客席・ホワイエ・楽屋」ページは「客席 座席表　※座席数：２４８席」と明記し、「六行会について」ページも「六行会ホール（定員248名）」と記載します。転記したmapped setも248席で完全一致しています。",
+    "列はA列〜N列の14列です。各列は左ブロック・中央ブロック・右ブロックに分かれて描かれますが、各列の列記号が左ブロックと中央ブロックの間、および中央ブロックと右ブロックの間の2か所に直接印字されており、番号も列内で連続しています。A列は3〜16番、B列〜N列は1〜18番で、欠番はありません。",
+    "A列〜G列（前方セクション）の左右のブロックは扇状に傾けて描かれています。各ブロックの内側の端は、その列の行帯の内部に収まっており（機械計測で行帯中心から11.9〜17.4px、次点の列までは79〜157px）、列の連続として描かれています。印字された番号をそのまま転記しており、傾きや対称性から番号を生成した箇所はありません。",
+    "現行の公式資料に車椅子席・車椅子スペース・可動席・仮設席・別配置の記載は見つかりませんでした。記載がないことを存在しない証明としては扱わず、番号席との置換関係を推定していません。",
+    "2020年4月13日付の「六行会ホール営業休止のご案内」がトップページのお知らせ一覧に残っていますが、現行の同じサイトは2027年9月のホール使用申込を先着順で受付中とし、2027年1月からの使用料金改定、2026年の主催事業、および2025年10月15日に「ホールシート２４８席」へ抗菌・抗ウイルスコーティングを施工した旨を案内しており、ホールは現に稼働しています。改修・座席変更の告知はありません。"
+  ],
+  "sources": [
+    {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "一般財団法人六行会（六行会ホール運営者）",
+      "title": "六行会 客席・ホワイエ・楽屋（現行の公式「ホール図面・資料」内ページ。「客席 座席表　※座席数：２４８席」と明記して現行の座席表を掲載し、C列・H列・N列の座席位置別景観と、2025年10月15日にホールシート248席へ抗菌・抗ウイルスコーティングを施工した旨を案内する）",
+      "url": "https://www.rikkoukai.com/pages/31/",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "一般財団法人六行会（六行会ホール運営者）",
+      "title": "六行会ホール座席表（客席ページが掲載する現行の座席表画像。ステージを上にしてA列〜N列の全席を個別の座席セルとして描き、各セルに番号を、各列の左右2か所に列記号を印字する）",
+      "url": "https://www.rikkoukai.com/files/libs/1386/202207011145576657.jpg",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-about",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "一般財団法人六行会（六行会ホール運営者）",
+      "title": "六行会について（現行の公式紹介ページ。六行会総合ビル地下2階の「六行会ホール（定員248名）」と、8階の貸会議室ラウンジ荏川倶楽部を案内する）",
+      "url": "https://www.rikkoukai.com/pages/9/",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-hall-top",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "一般財団法人六行会（六行会ホール運営者）",
+      "title": "六行会ホール トップページ（現行の公式トップページ。2027年9月の六行会ホール使用申込を先着順で受付中、2027年1月からの使用料金改定、2026年の主催事業を案内し、貸出用途を演劇・ミュージカル・ダンス・落語等の舞台芸術公演と定める。閉館、建替え、改修、座席変更の告知はない）",
+      "url": "https://www.rikkoukai.com/pages/15/",
+      "checkedAt": "2026-09-11"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "標準配置（248席）",
+      "issuerDefinedCondition": "現行運営者が「客席・ホワイエ・楽屋」ページで「客席 座席表　※座席数：２４８席」として公開する、A列〜N列の固定客席配置。",
+      "selectionBasis": "issuerが公開している番号付き座席図は客席ページのこの座席表1点のみで、別の番号付きconfigurationや可動・仮設配置の記載は現行の公式資料に存在しない。図から転記した248席は、同ページの座席数248席、「六行会について」ページの定員248名、および2025年10月の「ホールシート２４８席」の施工告知のいずれとも一致する。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-11に現行の客席ページ（https://www.rikkoukai.com/pages/31/ ）が掲載する座席表から辿り、issuerが公開する最大解像度の原本（2048×2896px、グレースケールJPEG）を取得した。SHA-256は 9702d75cc38cbb9a0e2e8d3f6e70d544ac27fe16838f1d06a27cbc7991bb0891、352,403バイト。ページ埋め込みの表示用は870×1230pxの縮小版である。Pass 2の直前に別のUser-Agentで独立に再取得し、バイト単位で同一であることを確認している。ラスタ画像であり座席番号をテキストとして抽出できないためDENSE-VECTOR verificationの前提を満たさず、既定どおりfresh independent human visual two-passを実施し、機械経路はhuman range tableを入力に用いない独立structural checksumとしてのみ用いた。",
+      "sourceIds": [
+        "official-seat-page",
+        "official-seat-map",
+        "official-about",
+        "official-hall-top"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 248,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式の座席表に印字された全248席です。列はステージ側からA列〜N列の14列で、A列は3〜16番、B列〜N列は1〜18番です。各列は通路で左・中央・右のブロックに分かれて描かれますが番号は列内で連続しており、補完や欠番の創作はありません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行の公式資料（客席・ホワイエ・楽屋、六行会について、トップページ、ご利用案内、使用料金、設備・備品、お申込み、交通案内）を確認したが、六行会ホールの車椅子席・車椅子スペース・同伴者席・可動席・仮設席に関する記載はいっさい見つからなかった。座席表にも番号を持たない区画は描かれていない。issuerが示す数値は座席数248席と定員248名のみで、両者は一致する。したがって番号席との置換関係は不明として扱い、印字された248席のみを登録した。記載がないことを「車椅子対応が存在しない証明」としては扱っていない。",
+        "sourceIds": [
+          "official-seat-page",
+          "official-seat-map",
+          "official-about"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-11",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-a-180-degree-rotated-tone-inverted-autocontrast-render-different-crop-windows-and-reversed-row-and-block-order-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-on-the-raster-via-row-band-ink-profiling-autocorrelation-derived-seat-pitch-per-block-cell-counts-and-min-area-rect-measurement-of-the-tilted-side-blocks; side-block-row-ownership-confirmed-by-inner-end-containment-inside-the-row-band; issuer-total-reconciliation-248-against-the-seat-page-declared-seat-count-and-the-about-page-declared-hall-capacity",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "preflight supersession: 2026-09-11のTOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT（2回目）は本会場をHOLD / NEED EVIDENCEとし、その理由を「現行issuerに番号付き客席図・座席数・代表配置が見つからない」としていた。今回のimplementation-time再調査で、現行issuerの「ホール図面・資料」配下の客席ページ（https://www.rikkoukai.com/pages/31/ ）に「客席 座席表　※座席数：２４８席」として現行の番号付き座席表が掲載されていることを確認した。preflightのHOLD判定はこの現行ページの見落としによるものであり、本実装によりsupersededされた。preflight recordは歴史的記録としてそのまま保持している。",
+          "human visual two-pass: 248席の図で超高密度図ではなく、ラスタJPEGのためDENSE-VECTOR verificationの前提も満たさない。既定どおり人が直接視認する独立two-passを実施した。Pass 1は原本2048×2896pxのグレースケールを1.3倍前後で拡大した4つの切り出し窓を用い、A列→N列の上から下へ、各列は左ブロック→中央ブロック→右ブロックの順に読み取った。Pass 1をfreezeしたのち、別のUser-Agent（curl）で同一URLから独立に再取得し（SHA-256一致でバイト単位同一）、Pass 1のtableを参照せずに、autocontrastと階調反転を施したうえで図面を180度回転し、1.5倍・別の切り出し窓で、N列→A列の下から上・各列は右ブロック→中央ブロック→左ブロックという逆順でPass 2を読み取った。両passをfreezeしてから機械展開して比較し、展開(row,seat)集合248件でPass1-only 0件・Pass2-only 0件・symmetric difference 0件・重複キー0件、列集合と列別席数も完全一致した。",
+          "independent structural checksum: human range tableを入力に用いない機械構造カウントをラスタ画像から独立に構築した。(1) 後方セクション（軸に平行な7行）は水平インクプロファイルで行帯を7本検出し、座席ピッチを全行帯の列方向インクプロファイルの自己相関の極大から60.167pxと推定したうえで（目標席数に依存しない）、行帯ごとにブロック幅÷ピッチを丸めて 4|10|4 ＝18席×7行＝126席を得た。(2) 前方セクションの中央ブロックは同じ手順で行帯7本×10席＝70席。(3) 前方セクションの傾いた左右ブロックはOtsu二値化後の連結成分にminAreaRectを当て、短辺がピッチの0.85〜1.25倍（＝1セル幅）という目標非依存の基準で座席ブロックを選別し、長辺÷ピッチで左右それぞれ 2＋4＋4＋4＋4＋4＋4＝26席、計52席を得た。合計126＋70＋52＝248席で、human two-passの総数および列別席数と完全に一致した。閾値やピッチを目標席数へ合わせる調整は行っていない。",
+          "side-block row ownership (independent geometric confirmation): 前方セクションA〜G列の傾いた左右ブロックについて、各ブロックの内側の端（左ブロックは右端、右ブロックは左端）のy座標を機械計測し、中央ブロックから独立に得た7本の行帯と照合した。14ブロックすべてについて内側の端はただ1本の行帯の内部に収まり、その行帯中心までの距離は11.9〜17.4pxであるのに対し、次に近い行帯までは79.3〜157.1pxだった（セル高さ約60px、行ピッチ約110〜140px）。すなわち各側方ブロックは当該列の行帯の延長として描かれている。加えて、各列の列記号が左ブロックと中央ブロックの間および中央ブロックと右ブロックの間に直接印字され、番号も列内で連続している（A列3〜16、B〜N列1〜18）ため、番号の重複や帰属の曖昧さは生じない。幾何だけを根拠に帰属を生成した箇所はない。",
+          "issuer checksum reconciliation: 両passのfreeze後にだけissuer公表値と照合した。現行の客席ページは「客席 座席表　※座席数：２４８席」と明記し、「六行会について」ページは「六行会ホール（定員248名）」と記載し、同じ客席ページの2025年10月15日付の告知も「ホールシート２４８席」への施工を案内する。mapped setは248席でいずれとも完全一致した。数値を合わせるためにrangeを修正した箇所はない。",
+          "currentness: 現行の公式トップページは2027年9月20日〜26日の六行会ホール使用申込を先着順で受付中とし、2027年1月からの使用料金改定と2026年の主催事業を案内している。客席ページの2025年10月15日付の抗菌・抗ウイルスコーティング施工告知も現行座席が248席であることを示す。トップページのお知らせ一覧には2020年4月13日付の「六行会ホール営業休止のご案内」が残っているが、上記の現行情報と矛盾するため現行の運営状態を示すものではないと判断した。改修による座席数・列構成・番号体系の変更を示す告知は現行の公式資料に存在しない。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "A",
+          "from": 3,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "C",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "E",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "G",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "I",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "J",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "K",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "M",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        },
+        {
+          "rowLabel": "N",
+          "from": 1,
+          "to": 18,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

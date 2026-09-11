@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "jimbocho-yoshimoto-manzai-gekijo-standard",
+  "name": "神保町よしもと漫才劇場",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [
+    "神保町マンゲキ",
+    "よしもと漫才劇場 神保町",
+    "神保町よしもと"
+  ],
+  "venueType": "theater",
+  "knownLimitations": [
+    "現行運営者の劇場案内ページは「客席数：126席（定員 136名）」と記載し、同ページが掲載する現行の客席図も図中に「計126席」と印字します。転記したmapped setも126席で完全一致しています。",
+    "列はA列〜I列の9列で、各列とも1番〜14番の14席、欠番はありません。列記号は各列の左右両端に直接印字されており、隣接列からの推定は使用していません。",
+    "客席数126席と定員136名の差10名について、現行の公式資料（劇場案内、チケット、よくある質問、お知らせ、スケジュール、トップ）を確認しましたが、issuer自身による説明は見つかりませんでした。立ち見・補助席・車いす・スタッフ席などの内訳はいっさい推測せず、差10は番号を持たない入場定員上の差としてそのまま保持しています。この10名分に対応するseat IDは作成していません。",
+    "現行の客席図は表題に「計126席　（120席）」と印字し、I列6番〜11番の6席だけを他の席と異なる灰色で塗り分けています。126−6＝120がこの括弧内の数値と一致しますが、図には凡例がなく、灰色が何を意味するか、また（120席）がどの条件の数値かをissuerは説明していません。現行資料が示す客席数は126席であり、灰色の6席も番号と列記号を持つ印字席であるため、126席すべてを登録しています。灰色の区別を根拠に別configurationを作成したり、6席を削除したりはしていません。",
+    "客席図の画像ファイル名には「112席座席表20230416更新」という旧い文字列が残っていますが、図自身の印字と掲載ページの記載はいずれも126席であり、図の内容もA〜I列×1〜14番の126席です。ファイル名の数値は採用していません。"
+  ],
+  "sources": [
+    {
+      "id": "official-theatre-guide",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "吉本興業株式会社（神保町よしもと漫才劇場運営者）",
+      "title": "神保町よしもと漫才劇場 劇場案内（現行の公式劇場案内ページ。レギュラーライブ、アクセス、座席表、車いすでご来場のお客様へを掲載し、「客席数：126席（定員 136名）」と明記して現行の客席図を掲載する。閉館、建替え、改修、座席変更の告知はない）",
+      "url": "https://jimbocho-manzaigekijyo.yoshimoto.co.jp/about/",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "吉本興業株式会社（神保町よしもと漫才劇場運営者）",
+      "title": "神保町よしもと漫才劇場 客席図（劇場案内ページが掲載する現行の客席図。ステージを上にしてA列〜I列の全席を個別の座席セルとして描き、各セルに番号を、各列の左右両端に列記号を印字し、表題に「計126席　（120席）」を印字する）",
+      "url": "https://jimbocho-manzaigekijyo.yoshimoto.co.jp/.assets/%E7%A5%9E%E4%BF%9D%E7%94%BA%E3%82%88%E3%81%97%E3%82%82%E3%81%A8%E6%BC%AB%E6%89%8D%E5%8A%87%E5%A0%B4-112%E5%B8%AD%E5%BA%A7%E5%B8%AD%E8%A1%A820230416%E6%9B%B4%E6%96%B0-%281%29_page-0001.jpg",
+      "checkedAt": "2026-09-11"
+    },
+    {
+      "id": "official-ticket",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "吉本興業株式会社（神保町よしもと漫才劇場運営者）",
+      "title": "神保町よしもと漫才劇場 チケット（現行の公式チケット案内ページ。前売・当日券の販売と、車いすで来場する場合は購入前に問い合わせること、劇場の構造上チケットの座席指定や整理番号にかかわらず観覧場所を案内する場合があることを案内する）",
+      "url": "https://jimbocho-manzaigekijyo.yoshimoto.co.jp/ticket/",
+      "checkedAt": "2026-09-11"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "標準配置（126席）",
+      "issuerDefinedCondition": "現行運営者が劇場案内ページで「客席数：126席」として案内し、同ページの客席図が示すA列〜I列の配置。",
+      "selectionBasis": "issuerが公開している番号付き座席図は劇場案内ページのこの客席図1点のみで、別の番号付きconfigurationは現行の公式資料に存在しない。図の印字「計126席」と掲載ページの客席数126席が一致する。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-11に現行の劇場案内ページ（https://jimbocho-manzaigekijyo.yoshimoto.co.jp/about/ ）に掲載された客席図から辿り、同一資産のうちissuerが公開する最大解像度（サムネイルではない原本、717×800px）を取得した。SHA-256は e5be300b067652dc6952d32114825935a5a27b52d103e913c2902171febe8f07、154,490バイトのJPEG。640wri・1280wri・1920wriのサムネイル系列はいずれも原本と同じ717×800pxで、これ以上の解像度は公開されていない。Pass 2の直前に別のUser-Agentで独立に再取得し、バイト単位で同一であることを確認している。ラスタ画像であり座席番号をテキストとして抽出できないためDENSE-VECTOR verificationの前提を満たさず、既定どおりfresh independent human visual two-passを実施し、機械経路はhuman range tableを入力に用いない独立structural checksumとしてのみ用いた。",
+      "sourceIds": [
+        "official-theatre-guide",
+        "official-seat-map",
+        "official-ticket"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 126,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式の客席図に印字された全126席です。列はステージ側からA列〜I列の9列で、各列とも1番〜14番です。issuerが別に示す定員136名は入場定員であり、差10名分に対応する番号席は公開資料に存在しないため含みません。図がI列6〜11番を異なる色で塗り分け、表題に「（120席）」を併記している点についてissuerの説明はなく、番号と列記号を持つ印字席として126席すべてを登録しています。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行運営者は劇場案内ページとチケットページに「車いすでご来場のお客様へ」を掲載し、チケット購入前にFANYチケット問合せダイヤルへ問い合わせること、来場時はスタッフが場内へ案内すること、劇場の構造上チケットの座席指定や整理番号にかかわらず観覧場所を案内する場合があることを記載している。これは運用上の案内であり、特定の番号席を車いす席へ転換する関係、同伴者席の対応、車いす区画の位置や数はいっさい公表されていない。客席数126席と定員136名の差10名についてもissuerの説明はなく、車いす分・立ち見分・スタッフ分といった内訳を推測していない。したがって置換関係は不明として扱い、印字された126席のみを登録した。記載がないことを存在しない証明としては扱っていない。",
+        "sourceIds": [
+          "official-theatre-guide",
+          "official-ticket",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-11",
+        "method": "fresh-independent-human-visual-two-pass-on-the-current-official-seat-chart-with-a-180-degree-rotated-tone-inverted-greyscale-nearest-neighbour-render-and-reversed-row-and-seat-order-from-an-independently-re-fetched-byte-identical-asset; independent-machine-structural-checksum-on-the-raster-via-fill-region-connected-components-row-band-clustering-per-cell-printed-number-occupancy-and-fill-colour-classification; issuer-subtotal-reconciliation-126-against-both-the-theatre-guide-page-and-the-chart-own-printed-total-with-the-136-admission-capacity-recorded-separately",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "human visual two-pass: 126席の図で超高密度図ではなく、ラスタJPEGのためDENSE-VECTOR verificationの前提も満たさない。既定どおり人が直接視認する独立two-passを実施した。Pass 1は原寸717×800pxをLANCZOSで2〜4倍に拡大したRGBレンダリングを用い、A列→I列の上から下へ、各列は1番→14番の左から右へ読み取った。Pass 1をfreezeしたのち、別のUser-Agent（curl）で同一URLから独立に再取得し（SHA-256一致でバイト単位同一）、Pass 1のtableを参照せずに、グレースケール化・autocontrast・階調反転のうえ図面を180度回転し、NEARESTで3倍に拡大した別の切り出し窓で、I列→A列の下から上・各列は14番→1番という逆順でPass 2を読み取った。両passをfreezeしてから機械展開して比較し、展開(row,seat)集合126件でPass1-only 0件・Pass2-only 0件・symmetric difference 0件・重複キー0件、列集合と列別席数も完全一致した。",
+          "independent structural checksum: human range tableを入力に用いない機械構造カウントをラスタ画像から独立に構築した。グレースケール値が60〜235の画素を「座席セルの塗り」とみなして連結成分を取り、面積200px超の成分の寸法中央値（41×42px）の0.6〜1.5倍という目標値に依存しない基準で選別すると座席セルは126個となった。y中心でクラスタリングすると行帯がちょうど9本得られ、各行帯の席数はすべて14、x方向の間隙による分割も各行1ブロックで、human two-passの列別席数と完全に一致した。各セル内部の暗画素量を数える印字番号occupancy検査では、番号が印字されたセルが126個、番号のないセルが0個だった。閾値を目標席数へ合わせる調整は行っていない。",
+          "fill-colour classification (independent): 同じ機械経路でセル塗りの彩度を分類したところ、彩度の高い塗り（マゼンタ）が120個、彩度のない灰色の塗りが6個だった。灰色の6個は図上のI列6番〜11番にあたり、126−6＝120は図の表題が併記する「（120席）」と一致する。ただし図には凡例がなく、灰色の意味も（120席）の条件もissuerは説明していない。番号と列記号はこの6席にも直接印字されているため、126席すべてを宣言scopeの完全な番号集合として登録し、灰色を根拠にした削除・別configuration化・capacity fittingはいっさい行っていない。",
+          "issuer checksum reconciliation: 両passのfreeze後にだけissuer公表値と照合した。現行の劇場案内ページは「客席数：126席（定員 136名）」と記載し、客席図自身も表題に「計126席」を印字する。mapped setは126席で客席数および図の印字総数と完全一致した。定員136名は入場定員であり、126席との差10名についてissuer自身の説明は現行の劇場案内・チケット・よくある質問・お知らせ・スケジュール・トップのいずれにも見つからなかった。この10名分は番号を持たない入場定員上の差としてそのまま残し、seat IDへ変換していない。数値を合わせるためにrangeを修正した箇所はない。",
+          "unexplained issuer differences (recorded, not resolved): (1) 客席数126席と定員136名の差10名、(2) 客席図の「計126席　（120席）」という併記と、凡例のないI列6〜11番の灰色塗り分け。いずれもissuerによる説明が現行資料に存在しない。どちらも番号席の集合そのものとは矛盾せず（mapped 126はissuerの客席数と図の印字総数の双方に一致）、推測による解決は行っていない。issuerが凡例・内訳を公開した場合に再確認する。",
+          "asset filename note: 客席図の画像ファイル名には「112席座席表20230416更新」という旧い文字列が含まれるが、図自身の印字（計126席）と掲載ページの記載（客席数：126席）はいずれも126席であり、図の実体もA〜I列×1〜14番の126席である。ファイル名の数値は採用していない。",
+          "currentness: 現行の劇場案内ページは2025年4月からの渋谷よしもと漫才劇場との2館体制と継続的なレギュラーライブを案内し、スケジュールページも現行公演を掲載している。閉館、建替え、改修、休館、座席構造の変更を示す告知は現行の公式資料に存在しない。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "A",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "rowLabel": "C",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "rowLabel": "E",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "rowLabel": "G",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "rowLabel": "I",
+          "from": 1,
+          "to": 14,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}
