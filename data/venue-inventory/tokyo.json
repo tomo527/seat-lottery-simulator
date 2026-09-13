@@ -1602,11 +1602,11 @@
       "officialFacilityUrl": "https://ginza-blossom.jp/hall",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight 4: 現行issuerのホールページが公開する hall-seat-map.pdf「銀座ブロッサム 中央会館 ホール座席表」は、1階席1〜21列・2階席22〜29列の列番号を各行に印字し、全席に個別番号を印字する。左・中央・右ブロックの番号は同一行内で連続し、列番号は1階・2階を通して一意。図の凡例（1階席636席／2階席264席／合計900席）、ホールページの「客席数は900席（1階636席・2階264席）」、FAQの「900席（1階席636／2階席264）」が三重に一致する。可動席・代替配置の記述はない。",
+      "eligibilityReason": "2026-09-13 Phase 1 implementation: current issuerのhall-seat-map.pdfをfreshに独立二重転記し、1階636席・2階264席・合計900席を確認。raster seat-cell checksumとホールページ・凡例・FAQが一致。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-11"
+      "venueSourceId": "ginza-blossom-hall-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13"
     },
     {
       "inventoryId": "tokyo-official-0080",
@@ -4270,15 +4270,15 @@
       "officialFacilityUrl": "http://theatersunmall.server-shared.com/theater.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight 4: 現行issuerの劇場資料index（siryou.htm）が「4 客席表(A4)」として公開する 4seat.pdf は、A〜S列の各行に列記号を左右2箇所印字し、全席に個別番号（大半の行は1〜16番、H列は3〜14番、S列は1〜5・12〜16番）を直接印字する。図自身が「（総席数及び入場定員=294）」と印字し、劇場案内の客席数294席、客席前方124席（A〜H列）・客席後部170席（I〜S列）、および舞台平面図の「客席(294席)」と完全に一致する。単一areaで(row, seat)が直接一意。",
+      "eligibilityReason": "2026-09-13 Phase 1 implementation: current issuerの4seat.pdfをfreshに独立二重転記し、294席、A〜H=124、I〜S=170、H/S irregularity、無番号セル0を確認。asset-only vector checksumも294で一致。A/Bの4席単位取り外しはevent差としてmetadata化し、wheelchair位置は未公表のため推測しない。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-11",
+      "venueSourceId": "theater-sun-mall-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13",
       "httpOnlyOfficial": {
         "issuerDomain": "theatersunmall.server-shared.com",
-        "httpsCheckedAt": "2026-09-11",
-        "httpsUnavailableEvidence": "TLS handshake to https://theatersunmall.server-shared.com/ fails certificate validation with an untrusted self-signed root in two independent clients, and the 資料 asset paths return 404 over TLS even with verification disabled; the issuer serves the 劇場案内 and 劇場資料 only over http://."
+        "httpsCheckedAt": "2026-09-13",
+        "httpsUnavailableEvidence": "Fresh curl/Schannel certificate-validated requests failed with SEC_E_UNTRUSTED_ROOT; independent requests with certificate verification disabled reached the TLS virtual host but returned 404 for both /theater.html and /siryou/4seat.pdf. The current issuer pages and assets are served only over HTTP; no HTTPS URL was invented."
       }
     },
     {
@@ -16772,11 +16772,11 @@
       "officialFacilityUrl": "https://www.toshima-mirai.or.jp/center/h_otsuka/shisetsu.html",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight 4: 現行issuer（としま未来文化財団）のホールページが公開する kyakuseki_002.pdf は、A〜N列の各ブロック（左・中央・右）にそれぞれ列記号を印字し、全席に個別番号を印字する。番号は同一行内でブロックをまたいで連続する。数え上げは263席で、施設案内の「定員267名（車椅子席4席を含む）」と、図上に別枠で描かれた無番号の車椅子スペースを合わせて一致する。車椅子位置には識別子が印字されないため変換は行わない。",
+      "eligibilityReason": "2026-09-13 Phase 1 implementation: current issuer chartをfreshに独立二重転記して番号席263席を確定。asset-only raster checksumも263。無番号wheelchair4席はID化せず、263+4=267をfreeze後に照合。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-11"
+      "venueSourceId": "minami-otsuka-hall-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13"
     },
     {
       "inventoryId": "tokyo-official-0854",
@@ -22645,11 +22645,11 @@
       "officialFacilityUrl": "https://ecorma-hall.jp/?p=109",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight 4: 現行issuerの座席表ページが公開する seat1.pdf「狛江エコルマホール　座席表（728席・車椅子3席含む）」は、A〜T列の各ブロックに列記号を印字し、全席に個別番号を印字する。番号席の数え上げは725席で、G列右ブロックに描かれた無番号の車椅子マーク3席を加えて、図および施設利用案内の「728席（車椅子席３席含む）」と一致する。車椅子位置には番号が印字されないため変換は行わない。可動席・代替配置の記述はない。",
+      "eligibilityReason": "2026-09-13 Phase 1 implementation: current issuer chartをfreshに独立二重転記して番号席725席を確定。asset-only vector seat-body checksum725、unnumbered wheelchair glyph3。725+3=728をfreeze後に照合し、無番号3位置はID化しない。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-11"
+      "venueSourceId": "ecorma-hall-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13"
     },
     {
       "inventoryId": "tokyo-official-1153",
@@ -22744,11 +22744,11 @@
       "officialFacilityUrl": "https://www.humming-hall.jp/facility-guide.php",
       "operationalStatus": "active",
       "eligibility": "eligible",
-      "eligibilityReason": "2026-09-11 Tokyo Priority D performance-identity preflight 4: 現行issuerの施設案内が公開する humming-007.pdf「大ホール　座席表」は、A〜X列の列記号を各行に2箇所印字し、全席に個別番号を印字する。車椅子席6席（H列8・10・23・25、X列22・23）も番号が印字されており、図の「客席数　714席（うち車椅子 6席）」および施設案内の「客席数：714席（うち車椅子席6席）」と一致する。親子鑑賞室は番号のない別室として区別される。大ホールに可動席・代替配置の記述はない。",
+      "eligibilityReason": "2026-09-13 Phase 1 implementation: current issuer chartをfreshに独立二重転記して714席を確定。H8/H10/H23/H25/X22/X23はwheelchair glyphとprinted numberが同一seat cellを直接表すことを再確認し、番号席として含めた。asset-only printed-number checksum714、glyph6。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "source-located",
-      "lastCheckedAt": "2026-09-11"
+      "venueSourceId": "humming-hall-main-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13"
     },
     {
       "inventoryId": "tokyo-official-1158",

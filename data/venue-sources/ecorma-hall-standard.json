@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "ecorma-hall-standard",
+  "name": "狛江エコルマホール",
+  "prefecture": "東京都",
+  "city": "狛江市",
+  "aliases": [
+    "エコルマホール",
+    "狛江市民ホール"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "現行公式図に個別番号が印字された725席のみを登録しています。公称728席はG列右側の無番号車椅子位置3席を含みます。",
+    "無番号の3位置にseat IDを作らず、番号席との置換関係も推測していません。"
+  ],
+  "sources": [
+    {
+      "id": "official-top",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "狛江市文化振興事業団（狛江エコルマホール運営者）",
+      "title": "公式トップ（2026年の現行公演・お知らせを掲載）",
+      "url": "https://ecorma-hall.jp/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "狛江市文化振興事業団（狛江エコルマホール運営者）",
+      "title": "施設利用案内（ホール728席、車椅子席3席を含む）",
+      "url": "https://ecorma-hall.jp/?p=109",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "狛江市文化振興事業団（狛江エコルマホール運営者）",
+      "title": "座席表・舞台の見え方（現行seat1.pdfへのリンクとG2/G19/F37/T1/T19/T38等の座席視点例）",
+      "url": "https://ecorma-hall.jp/?page_id=12149",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "狛江市文化振興事業団（狛江エコルマホール運営者）",
+      "title": "狛江エコルマホール座席表 seat1.pdf（728席・車椅子3席含む、A〜T列の番号席と無番号wheelchair glyph3個を表示）",
+      "url": "https://ecorma-hall.jp/wp-content/uploads/2011/07/seat1.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "標準配置（番号席725席）",
+      "issuerDefinedCondition": "現行公式座席表に個別番号が印字されたA列〜T列725席の配置。",
+      "selectionBasis": "各block boundaryのrow labelと全printed numberを直接転記し、G列の無番号wheelchair glyph3位置はID化しない。issuer stage-view examplesは生成に使わず、freeze後のspot-checkにのみ使用。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13に現行座席表ページからseat1.pdfをfresh取得。633,120 bytes、SHA-256 50d67730b16c7f528faf665de522716b28912246ab2b89a50d52545ac81c3994。1-page vector-outline PDF、extractable words 2、955 rectangles、2,377 curves、1 line、embedded image 0。番号がtext抽出不能なoutlineでordinary hall scaleのためDENSE-VECTORを使わずhuman visual two-passを優先。別client再取得はbyte-identical。",
+      "sourceIds": [
+        "official-top",
+        "official-facility-page",
+        "official-seat-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 728,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式座席表に個別番号が印字されたA〜T列725席を抽選します。G列右側に別cellとして描かれた無番号の車椅子位置3席はseat IDを持たないため含みません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerは公称728席に車椅子席3席を含むと明記し、seat1.pdfはG列右側にprinted IDを持たないwheelchair glyph cellを3つ描く。番号席との置換関係は明記されないため識別子を作成せず、725番号席のみ登録した。",
+        "sourceIds": [
+          "official-facility-page",
+          "official-seat-page",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "fresh-independent-human-visual-two-pass-on-byte-identical-current-official-vector-outline-chart-with-260dpi-A-to-T-left-to-right-pass1-and-320dpi-autocontrast-inverted-180-degree-rotated-T-to-A-right-to-left-pass2; expanded-set-bidirectional-comparison; asset-only-vector-seat-body-shape-count-and-separately-sized-solid-wheelchair-compound-glyph-count; issuer-725-plus-3-equals-728-reconciliation; post-freeze-stage-view-identifier-spot-check",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -3,
+        "unresolvedIssues": [
+          "Human Pass 1/2: 725 vs 725; Pass1-only 0、Pass2-only 0、symmetric difference 0、duplicate keys 0。A〜T、全block-boundary labels、front starts、G/T structureが一致。",
+          "Independent structural checksum: human tableを入力に使わずvector white seat-body shapesをaxis-aligned 474 + tilted quadrilateral 251 = 725検出。別sizeのsolid wheelchair compound glyphは3。",
+          "Issuer reconciliation: numbered 725 + unnumbered wheelchair positions 3 = issuer capacity 728。3位置にprinted IDはなくmappingしない。",
+          "Independent spot checks: issuer seat-view examples G2、G19、F37、T1、T19、T38はいずれもfrozen setに存在。ID生成には不使用。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "A",
+          "from": 6,
+          "to": 33,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B",
+          "from": 5,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "rowLabel": "C",
+          "from": 3,
+          "to": 36,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D",
+          "from": 2,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "rowLabel": "E",
+          "from": 2,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F",
+          "from": 2,
+          "to": 37,
+          "excluded": []
+        },
+        {
+          "rowLabel": "G",
+          "from": 2,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "I",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "J",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "K",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "M",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "N",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "O",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "P",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "Q",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "R",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "S",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        },
+        {
+          "rowLabel": "T",
+          "from": 1,
+          "to": 38,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

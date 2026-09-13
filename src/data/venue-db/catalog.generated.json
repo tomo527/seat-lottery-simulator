@@ -259,6 +259,31 @@
   },
   {
     "schemaVersion": 2,
+    "id": "ecorma-hall-standard",
+    "venueGroupId": "ecorma-hall-standard",
+    "name": "狛江エコルマホール",
+    "searchAliases": [
+      "エコルマホール",
+      "狛江市民ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "狛江市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "標準配置（番号席725席）",
+        "seatCount": 725,
+        "dataPath": "/venue-db/venues/ecorma-hall-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席表に個別番号が印字されたA〜T列725席を抽選します。G列右側に別cellとして描かれた無番号の車椅子位置3席はseat IDを持たないため含みません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "eurolive-standard",
     "venueGroupId": "eurolive-standard",
     "name": "ユーロライブ",
@@ -393,6 +418,33 @@
         "dataPath": "/venue-db/venues/galaxy-theatre-standard--standard.json",
         "scope": "full-venue",
         "scopeDisclosure": "公開済みの完全な番号付き座席図を代表配置として抽選します。公演ごとの販売停止席・可変配置・車いす転換は、この番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "ginza-blossom-hall-standard",
+    "venueGroupId": "ginza-blossom-hall-standard",
+    "name": "銀座ブロッサム 中央会館 ホール",
+    "searchAliases": [
+      "銀座ブロッサム",
+      "銀座ブロッサムホール",
+      "中央会館ホール",
+      "中央区中央会館"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "ホール標準配置（900席）",
+        "seatCount": 900,
+        "dataPath": "/venue-db/venues/ginza-blossom-hall-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式座席図に印字された番号席900席を抽選します。1階席は1〜21列636席、2階席は22〜29列264席で、issuerの階identityを表示に保持します。",
         "fixedOnly": false
       }
     ]
@@ -652,6 +704,32 @@
         "dataPath": "/venue-db/venues/hulic-hall-tokyo-standard--fixed-886.json",
         "scope": "official-variant",
         "scopeDisclosure": "公式固定座席表に印字された886番号席を代表配置として抽選します。舞台・販売条件により使われない席、車椅子転換、同伴者席はこの番号席集合へ反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "humming-hall-main-standard",
+    "venueGroupId": "humming-hall-main-standard",
+    "name": "東大和市民会館 ハミングホール 大ホール",
+    "searchAliases": [
+      "ハミングホール",
+      "ハミングホール大ホール",
+      "東大和市民会館"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "東大和市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "大ホール標準配置（714席）",
+        "seatCount": 714,
+        "dataPath": "/venue-db/venues/humming-hall-main-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式大ホール座席表に印字されたA〜X列714席を抽選します。H8・H10・H23・H25・X22・X23は公式図で同一seat cellに番号と車椅子glyphが直接併記された番号席なので含みます。親子鑑賞室と小ホールは含みません。",
         "fixedOnly": false
       }
     ]
@@ -1309,6 +1387,31 @@
         "dataPath": "/venue-db/venues/meijiza-standard--without-hanamichi.json",
         "scope": "official-variant",
         "scopeDisclosure": "明治座が公式に定義する「花道なし」の固定番号席のみを抽選します。2階左右コーナーの無番号車いすスペース、補助席、注釈付き席、立ち見は抽選対象に含みません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "minami-otsuka-hall-standard",
+    "venueGroupId": "minami-otsuka-hall-standard",
+    "name": "南大塚ホール",
+    "searchAliases": [
+      "南大塚地域文化創造館 ホール",
+      "豊島区立南大塚ホール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "豊島区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "標準配置（番号席263席）",
+        "seatCount": 263,
+        "dataPath": "/venue-db/venues/minami-otsuka-hall-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式客席図に個別番号が印字された263席を抽選します。A〜N列を登録し、E/F列右側の無番号車椅子席4席はseat IDを持たないため抽選対象に含めません。",
         "fixedOnly": false
       }
     ]
@@ -2594,6 +2697,32 @@
     "representativePatternName": "基本構成907席",
     "seatCount": 907,
     "dataPath": "/venue-db/venues/theater-milano-za-standard.json"
+  },
+  {
+    "schemaVersion": 2,
+    "id": "theater-sun-mall-standard",
+    "venueGroupId": "theater-sun-mall-standard",
+    "name": "シアターサンモール",
+    "searchAliases": [
+      "THEATER SUN-MALL",
+      "サンモール劇場",
+      "シアター・サンモール"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "新宿区",
+    "venueType": "theater",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "標準配置（294席）",
+        "seatCount": 294,
+        "dataPath": "/venue-db/venues/theater-sun-mall-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式客席表に印字されたA〜S列294席を抽選します。A〜G・I〜R列は1〜16番、H列は3〜14番、S列は1〜5番・12〜16番です。A/B列の4席単位の取り外しは個別利用差のため反映しません。",
+        "fixedOnly": false
+      }
+    ]
   },
   {
     "id": "theatre-crea-standard",

@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "ginza-blossom-hall-standard",
+  "name": "銀座ブロッサム 中央会館 ホール",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": [
+    "銀座ブロッサム",
+    "中央区中央会館",
+    "中央会館ホール",
+    "銀座ブロッサムホール"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "現行公式座席図の番号席900席を1階636席・2階264席のissuer floor identityで分離して登録しています。",
+    "現行のホールページ・座席図凡例・FAQはいずれも900席（1階636席・2階264席）で一致します。",
+    "現行公式資料に番号席との車椅子転換、同伴者席、可動席、別配置の関係は見つかっていません。"
+  ],
+  "sources": [
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "銀座ブロッサム中央会館（中央区立中央会館指定管理者）",
+      "title": "ホール（客席900席、1階636席・2階264席を明記し、現行座席表へリンク）",
+      "url": "https://ginza-blossom.jp/hall/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "銀座ブロッサム中央会館（中央区立中央会館指定管理者）",
+      "title": "ホール座席表（1階1〜21列636席、2階22〜29列264席、合計900席の凡例と全番号を印字）",
+      "url": "https://ginza-blossom.jp/wp-content/themes/ginza-blossom/assets/pdf/hall-seat-map.pdf",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-faq",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "銀座ブロッサム中央会館（中央区立中央会館指定管理者）",
+      "title": "よくある質問（ホール900席、1階636席／2階264席と回答）",
+      "url": "https://ginza-blossom.jp/faq/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-top",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "銀座ブロッサム中央会館（中央区立中央会館指定管理者）",
+      "title": "公式トップ（2026年の全席指定公演を含む現行イベントを掲載）",
+      "url": "https://ginza-blossom.jp/",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "ホール標準配置（900席）",
+      "issuerDefinedCondition": "現行公式ホール座席表が示す1階席1〜21列・2階席22〜29列の900席配置。",
+      "selectionBasis": "issuer floor identityをそのままarea分離し、各blockをまたぐ印字番号を直接転記。図の凡例、ホールページ、FAQの三者とfreeze後に照合した。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13に現行ホールページからhall-seat-map.pdfをfresh取得。326,946 bytes、SHA-256 42e031e8a759f29537479b074fd4fd0f7a48419974f164ecd55bebeac680a57f。1-page tagged PDF、800×1060のsingle raster image、extractable words 0。別client再取得はbyte-identical。raster chartのためDENSE-VECTOR対象外。",
+      "sourceIds": [
+        "official-hall-page",
+        "official-seat-map",
+        "official-faq",
+        "official-top"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 900,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式座席図に印字された番号席900席を抽選します。1階席は1〜21列636席、2階席は22〜29列264席で、issuerの階identityを表示に保持します。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行のホールページ、座席図、FAQから番号席との車椅子転換・同伴者席・可動席関係を確認できない。印字番号席900席のみを登録し、未公表の関係を推定していない。",
+        "sourceIds": [
+          "official-hall-page",
+          "official-seat-map",
+          "official-faq"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "fresh-independent-human-visual-two-pass-on-byte-identical-current-official-raster-chart-with-300dpi-floor1-to-floor2-left-to-right-pass1-and-220dpi-autocontrast-inverted-180-degree-rotated-floor2-to-floor1-right-to-left-pass2; expanded-set-bidirectional-comparison-by-area-row-seat; asset-only-raster-enclosed-seat-cell-component-count-by-floor; issuer-636-264-900-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "Human Pass 1/2: 900 vs 900; Pass1-only 0、Pass2-only 0、symmetric difference 0、duplicate keys 0。area set first-floor/second-floor、row set 1〜29、全row countが一致。",
+          "Independent structural checksum: human tableを入力に使わず、rasterのmodal cell clusterから導いたtarget-independent boundsでenclosed seat-cell interiorsを数え、1階636、2階264、合計900。",
+          "Issuer reconciliation: 座席図凡例、ホールページ、FAQの636/264/900と完全一致。21列・29列の分割と各row start/endを容量から逆算していない。"
+        ]
+      },
+      "ranges": [
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "1",
+          "from": 9,
+          "to": 26,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "2",
+          "from": 8,
+          "to": 27,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "3",
+          "from": 5,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "4",
+          "from": 4,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "5",
+          "from": 5,
+          "to": 30,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "6",
+          "from": 4,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "7",
+          "from": 3,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "8",
+          "from": 2,
+          "to": 33,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "10",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "11",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "12",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "13",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "14",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "18",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "19",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "20",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "21",
+          "from": 4,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "21",
+          "from": 15,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "areaId": "first-floor",
+          "areaLabel": "1階席",
+          "rowLabel": "21",
+          "from": 25,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "22",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "23",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "24",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "25",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "26",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "27",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "28",
+          "from": 1,
+          "to": 34,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "29",
+          "from": 2,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "29",
+          "from": 12,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "areaId": "second-floor",
+          "areaLabel": "2階席",
+          "rowLabel": "29",
+          "from": 27,
+          "to": 33,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

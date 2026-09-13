@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "humming-hall-main-standard",
+  "name": "東大和市民会館 ハミングホール 大ホール",
+  "prefecture": "東京都",
+  "city": "東大和市",
+  "aliases": [
+    "ハミングホール",
+    "東大和市民会館",
+    "ハミングホール大ホール"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "現行公式図に印字された714席を登録し、そのうちH8・H10・H23・H25・X22・X23の6席は同一seat cell内に車椅子glyphと座席番号が直接併記されています。",
+    "親子鑑賞室は無番号の別室として描かれ、714の番号席集合には含めていません。小ホールは同施設の別spaceであり混在させていません。"
+  ],
+  "sources": [
+    {
+      "id": "official-top",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "東大和市民会館ハミングホール（指定管理者）",
+      "title": "公式トップ（2026年9月時点の現行公演・お知らせを継続掲載）",
+      "url": "https://www.humming-hall.jp/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "東大和市民会館ハミングホール（指定管理者）",
+      "title": "施設案内（大ホール客席714席、うち車椅子席6席、親子鑑賞室を案内し、現行座席表へリンク）",
+      "url": "https://www.humming-hall.jp/facility-guide.php",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "東大和市民会館ハミングホール（指定管理者）",
+      "title": "大ホール座席表 humming-007.pdf（A〜X列の全番号と車椅子glyph6位置、親子鑑賞室を表示）",
+      "url": "https://www.humming-hall.jp/pdf/humming-007.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "大ホール標準配置（714席）",
+      "issuerDefinedCondition": "現行公式大ホール座席表が示すA列〜X列714席（うち番号付き車椅子席6席）の配置。",
+      "selectionBasis": "車椅子glyph6個についてcurrent chartをfreshに拡大し、各glyphとprinted numberが同一の直接境界seat cellを表すことをPass 1/2の双方で確認した場合のみ通常番号席として含めた。親子鑑賞室と小ホールは除外。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13に現行施設案内からhumming-007.pdfをfresh取得。41,117 bytes、SHA-256 acd52d244cee91eb066c5ade7b676d85b0e70e63416c93c8efb015b1d4a88642。1-page vector PDF、777 words、714 standalone numeric labels、111 rectangles、143 curves、1,036 lines、embedded image 0。別client再取得はbyte-identical。ordinary 714-seat hall chartのためDENSE-VECTORを使わずhuman visual two-passを優先。",
+      "sourceIds": [
+        "official-top",
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 714,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式大ホール座席表に印字されたA〜X列714席を抽選します。H8・H10・H23・H25・X22・X23は公式図で同一seat cellに番号と車椅子glyphが直接併記された番号席なので含みます。親子鑑賞室と小ホールは含みません。",
+      "wheelchairSemantics": {
+        "status": "resolved",
+        "description": "施設案内は714席の内数として車椅子席6席を明記する。現行座席図をfreshに拡大確認すると、H8・H10・H23・H25・X22・X23ではwheelchair glyphとprinted seat numberがそれぞれ同一の直接境界seat cell内にあり、別位置を表していない。よって6位置は通常の番号識別子として714 setに含めた。親子鑑賞室は無番号の別室で除外した。",
+        "sourceIds": [
+          "official-facility-page",
+          "official-seat-map"
+        ]
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "fresh-independent-human-visual-two-pass-on-byte-identical-current-official-vector-chart-with-300dpi-A-to-X-left-to-right-pass1-and-240dpi-autocontrast-inverted-180-degree-rotated-X-to-A-right-to-left-pass2; direct-same-cell-wheelchair-glyph-and-number-revalidation; expanded-set-bidirectional-comparison; asset-only-printed-number-occupancy-by-24-row-label-bands-and-six-repeated-wheelchair-vector-glyph-localization; issuer-714-including-6-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "Human Pass 1/2: 714 vs 714; Pass1-only 0、Pass2-only 0、symmetric difference 0、duplicate keys 0。A〜X全row、front curve、H/X gaps、6 wheelchair cells、親子鑑賞室除外が一致。",
+          "Critical wheelchair revalidation: H8、H10、H23、H25、X22、X23の各cellでglyphとprinted numberが同一直接境界内。別positionではなく、LOCAL HOLD条件は発生しなかった。",
+          "Independent structural checksum: human tableを入力に使わずprinted-number occupancy 714を24 row-label bandsへgroup化し、row counts 26,30,30,30,30,30,30,26,30,30,30,30,30,30,30,30,30,30,30,30,30,30,32,30。wheelchair vector glyph clusterは6。",
+          "Issuer reconciliation: chartと施設案内の714（うちwheelchair 6）と一致。parent roomはunlabelled separate room。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "A",
+          "from": 4,
+          "to": 29,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "C",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "E",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "G",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 2,
+          "to": 6,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 8,
+          "to": 8,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 10,
+          "to": 10,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 11,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 25,
+          "to": 25,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 27,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "I",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "J",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "K",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "M",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "N",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "O",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "P",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "Q",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "R",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "S",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "T",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "U",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "V",
+          "from": 2,
+          "to": 31,
+          "excluded": []
+        },
+        {
+          "rowLabel": "W",
+          "from": 1,
+          "to": 32,
+          "excluded": []
+        },
+        {
+          "rowLabel": "X",
+          "from": 1,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "rowLabel": "X",
+          "from": 22,
+          "to": 23,
+          "excluded": []
+        },
+        {
+          "rowLabel": "X",
+          "from": 25,
+          "to": 32,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

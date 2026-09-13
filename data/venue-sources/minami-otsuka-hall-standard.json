@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "minami-otsuka-hall-standard",
+  "name": "南大塚ホール",
+  "prefecture": "東京都",
+  "city": "豊島区",
+  "aliases": [
+    "豊島区立南大塚ホール",
+    "南大塚地域文化創造館 ホール"
+  ],
+  "venueType": "hall",
+  "knownLimitations": [
+    "現行公式図に個別番号が印字された263席のみを登録しています。公称定員267名は無番号の車椅子席4席を含みます。",
+    "E列・F列の右側に車椅子席の別枠が描かれますが、個別seat IDと番号席との置換関係は公表されていないため生成していません。"
+  ],
+  "sources": [
+    {
+      "id": "official-hall-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人としま未来文化財団",
+      "title": "南大塚地域文化創造館（現行利用案内・ホール定員267名、車椅子席4席を含む）",
+      "url": "https://www.toshima-mirai.or.jp/center/h_otsuka/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人としま未来文化財団",
+      "title": "南大塚ホール施設案内（定員267名・車椅子席4席を含む、現行客席図へリンク）",
+      "url": "https://www.toshima-mirai.or.jp/center/h_otsuka/shisetsu.html",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人としま未来文化財団",
+      "title": "南大塚ホール客席図 kyakuseki_002.pdf（A〜N列の番号席と無番号の車椅子席区画を表示）",
+      "url": "https://www.toshima-mirai.or.jp/Portals/0/resources/center/h_otsuka/documents/kyakuseki_002.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "標準配置（番号席263席）",
+      "issuerDefinedCondition": "現行公式客席図に個別番号が印字されたA列〜N列の263席配置。",
+      "selectionBasis": "left/centre/right各blockの直接印字row labelと個別番号を転記し、無番号の車椅子4席はID化しない。263+4=267はfreeze後のissuer reconciliationとしてのみ使用。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13に現行施設ページからkyakuseki_002.pdfをfresh取得。405,278 bytes、SHA-256 62356612b2673b2f5c3537a38fef6c4bb6e85a6980c9e16db88c26c74fe1fecb。1-page A3 PDF、17 embedded raster images、extractable text/vector object 0。別client再取得はbyte-identical。raster chartのためDENSE-VECTOR対象外。",
+      "sourceIds": [
+        "official-hall-page",
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 267,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式客席図に個別番号が印字された263席を抽選します。A〜N列を登録し、E/F列右側の無番号車椅子席4席はseat IDを持たないため抽選対象に含めません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerは定員267名に車椅子席4席を含むと明記し、図はE/F列右側に無番号の車椅子席区画を描く。4位置にprinted IDはなく、どの番号席を置換するかも明記されないためseat IDを作らず、263番号席のみ登録した。",
+        "sourceIds": [
+          "official-hall-page",
+          "official-facility-page",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "fresh-independent-human-visual-two-pass-on-byte-identical-current-official-raster-chart-with-200dpi-A-to-N-left-centre-right-pass1-and-260dpi-autocontrast-inverted-180-degree-rotated-N-to-A-right-centre-left-pass2; expanded-set-bidirectional-comparison; asset-only-raster-enclosed-seat-body-component-count-and-wheelchair-region-inspection; issuer-263-plus-4-equals-267-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "mismatched",
+        "rangeDiff": -4,
+        "unresolvedIssues": [
+          "Human Pass 1/2: 263 vs 263; Pass1-only 0、Pass2-only 0、symmetric difference 0、duplicate keys 0。A〜Nのrow ownership、全block、E/F、N列が一致。",
+          "Independent structural checksum: human tableを入力に使わず、rasterの2種類のperspective cell modal clustersからderived boundsを作り、enclosed white seat bodiesを263検出。番号席countと一致。",
+          "Issuer reconciliation: numbered 263 + unnumbered wheelchair positions 4 = issuer capacity 267。4位置にはprinted IDがなく、replacement relationを推測していない。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "A",
+          "from": 3,
+          "to": 19,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B",
+          "from": 2,
+          "to": 20,
+          "excluded": []
+        },
+        {
+          "rowLabel": "C",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "rowLabel": "E",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "G",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "rowLabel": "I",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "rowLabel": "J",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "rowLabel": "K",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 1,
+          "to": 21,
+          "excluded": []
+        },
+        {
+          "rowLabel": "M",
+          "from": 3,
+          "to": 19,
+          "excluded": []
+        },
+        {
+          "rowLabel": "N",
+          "from": 6,
+          "to": 15,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

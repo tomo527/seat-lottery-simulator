@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "theater-sun-mall-standard",
+  "name": "シアターサンモール",
+  "prefecture": "東京都",
+  "city": "新宿区",
+  "aliases": [
+    "THEATER SUN-MALL",
+    "シアター・サンモール",
+    "サンモール劇場"
+  ],
+  "venueType": "theater",
+  "knownLimitations": [
+    "現行公式客席表に印字された294席を登録しています。A〜H列124席、I〜S列170席で、客席ページと舞台平面図の294席にも一致します。",
+    "A列・B列は使用内容により4席単位で取り外す場合があるとの公式注記がありますが、個別公演差は代表配置へ反映しません。",
+    "現行資料は車椅子利用者を主催者が案内する運用を示しますが、公式の車椅子位置・席数・番号席との置換関係は公表されていません。",
+    "公式issuerはHTTPのみで、2026-09-13にHTTPSの利用不能をfreshに再確認し、既存httpOnlyOfficial policyを適用しています。"
+  ],
+  "sources": [
+    {
+      "id": "official-theater-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "株式会社サンモール劇場（劇場運営者）",
+      "title": "シアターサンモール 劇場案内（客席294席、前方A〜H列124席、後方I〜S列170席、A/B列は使用内容により4席単位で取り外す場合があると明記）",
+      "url": "http://theatersunmall.server-shared.com/theater.html",
+      "checkedAt": "2026-09-13",
+      "httpOnlyOfficial": {
+        "issuerDomain": "theatersunmall.server-shared.com",
+        "httpsCheckedAt": "2026-09-13",
+        "httpsUnavailableEvidence": "Fresh curl/Schannel certificate-validated requests failed with SEC_E_UNTRUSTED_ROOT; independent requests with certificate verification disabled reached the TLS virtual host but returned 404 for both /theater.html and /siryou/4seat.pdf. The current issuer pages and assets are served only over HTTP; no HTTPS URL was invented."
+      }
+    },
+    {
+      "id": "official-materials-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "株式会社サンモール劇場（劇場運営者）",
+      "title": "劇場資料（2026年5月5日更新。「4 客席表(A4)」として現行4seat.pdfを掲載）",
+      "url": "http://theatersunmall.server-shared.com/siryou.htm",
+      "checkedAt": "2026-09-13",
+      "httpOnlyOfficial": {
+        "issuerDomain": "theatersunmall.server-shared.com",
+        "httpsCheckedAt": "2026-09-13",
+        "httpsUnavailableEvidence": "Fresh curl/Schannel certificate-validated requests failed with SEC_E_UNTRUSTED_ROOT; independent requests with certificate verification disabled reached the TLS virtual host but returned 404 for both /theater.html and /siryou/4seat.pdf. The current issuer pages and assets are served only over HTTP; no HTTPS URL was invented."
+      }
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "株式会社サンモール劇場（劇場運営者）",
+      "title": "客席表 4seat.pdf（A〜S列の各座席セルに番号を印字し、総席数及び入場定員294と記載）",
+      "url": "http://theatersunmall.server-shared.com/siryou/4seat.pdf",
+      "checkedAt": "2026-09-13",
+      "httpOnlyOfficial": {
+        "issuerDomain": "theatersunmall.server-shared.com",
+        "httpsCheckedAt": "2026-09-13",
+        "httpsUnavailableEvidence": "Fresh curl/Schannel certificate-validated requests failed with SEC_E_UNTRUSTED_ROOT; independent requests with certificate verification disabled reached the TLS virtual host but returned 404 for both /theater.html and /siryou/4seat.pdf. The current issuer pages and assets are served only over HTTP; no HTTPS URL was invented."
+      }
+    },
+    {
+      "id": "official-stage-plan",
+      "official": true,
+      "roles": [
+        "seat-count"
+      ],
+      "publisher": "株式会社サンモール劇場（劇場運営者）",
+      "title": "舞台平面図 8stageheimenzu.pdf（客席294席と記載）",
+      "url": "http://theatersunmall.server-shared.com/siryou/8stageheimenzu.pdf",
+      "checkedAt": "2026-09-13",
+      "httpOnlyOfficial": {
+        "issuerDomain": "theatersunmall.server-shared.com",
+        "httpsCheckedAt": "2026-09-13",
+        "httpsUnavailableEvidence": "Fresh curl/Schannel certificate-validated requests failed with SEC_E_UNTRUSTED_ROOT; independent requests with certificate verification disabled reached the TLS virtual host but returned 404 for both /theater.html and /siryou/4seat.pdf. The current issuer pages and assets are served only over HTTP; no HTTPS URL was invented."
+      }
+    },
+    {
+      "id": "official-use-rules",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "株式会社サンモール劇場（劇場運営者）",
+      "title": "劇場使用規定 2kitei.pdf（2026年4月改訂。車椅子利用者は主催者が案内すると記載し、位置・席数は示さない）",
+      "url": "http://theatersunmall.server-shared.com/siryou/2kitei.pdf",
+      "checkedAt": "2026-09-13",
+      "httpOnlyOfficial": {
+        "issuerDomain": "theatersunmall.server-shared.com",
+        "httpsCheckedAt": "2026-09-13",
+        "httpsUnavailableEvidence": "Fresh curl/Schannel certificate-validated requests failed with SEC_E_UNTRUSTED_ROOT; independent requests with certificate verification disabled reached the TLS virtual host but returned 404 for both /theater.html and /siryou/4seat.pdf. The current issuer pages and assets are served only over HTTP; no HTTPS URL was invented."
+      }
+    }
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "標準配置（294席）",
+      "issuerDefinedCondition": "現行公式客席表が示すA列〜S列の294席配置。",
+      "selectionBasis": "issuerが公開する番号付き客席表はこの代表図1点。図から独立転記した294席が、客席ページ、図面自身、舞台平面図、および124/170の前後区分と一致する。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13にissuer資料indexから現行4seat.pdfをfresh取得。145,814 bytes、SHA-256 13c23e4c810f94c99399615efa95f8ef11140ca75050d99228e5cef2c23402f5。1-page vector PDF（335 words、294 standalone numeric labels、320 rectangles、22 curves、3 lines、embedded image 0）。別clientで再取得したPass 2 assetはbyte-identical。ordinary 294-seat chartのためDENSE-VECTORを使わずhuman visual two-passを優先した。",
+      "sourceIds": [
+        "official-theater-page",
+        "official-materials-page",
+        "official-seat-map",
+        "official-stage-plan",
+        "official-use-rules"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 294,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式客席表に印字されたA〜S列294席を抽選します。A〜G・I〜R列は1〜16番、H列は3〜14番、S列は1〜5番・12〜16番です。A/B列の4席単位の取り外しは個別利用差のため反映しません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行使用規定は車椅子利用者を主催者が案内すると記載するが、位置、席数、番号席との置換関係は示さない。番号のないseat IDは作成せず、印字された294席のみを登録した。",
+        "sourceIds": [
+          "official-use-rules",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "verified",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "fresh-independent-human-visual-two-pass-on-byte-identical-current-official-chart-with-240dpi-top-to-bottom-left-to-right-pass1-and-300dpi-autocontrast-inverted-180-degree-rotated-bottom-to-top-right-to-left-pass2; expanded-set-bidirectional-comparison; asset-only-vector-seat-body-and-printed-number-occupancy-checksum; issuer-294-and-124-plus-170-reconciliation",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": [
+          "Human Pass 1/2: 294 vs 294; Pass1-only 0、Pass2-only 0、symmetric difference 0、duplicate keys 0、area/row setと全行countが一致。H列3〜14とS列1〜5・12〜16を独立に再確認し、無番号セル0。",
+          "Independent structural checksum: human range tableを入力に使わずPDF vector rectangleを座席bodyとして294、standalone printed-number occupancyを294検出。19 row bandsは16,16,16,16,16,16,16,12,16,16,16,16,16,16,16,16,16,16,10でhuman転記と一致。",
+          "Issuer reconciliation: A〜H=124、I〜S=170、合計294。客席表、劇場案内、舞台平面図の公表値と一致し、capacity fittingは不使用。"
+        ]
+      },
+      "ranges": [
+        {
+          "rowLabel": "A",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "B",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "C",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "D",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "E",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "F",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "G",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "H",
+          "from": 3,
+          "to": 14,
+          "excluded": []
+        },
+        {
+          "rowLabel": "I",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "J",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "K",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "L",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "M",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "N",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "O",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "P",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "Q",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "R",
+          "from": 1,
+          "to": 16,
+          "excluded": []
+        },
+        {
+          "rowLabel": "S",
+          "from": 1,
+          "to": 5,
+          "excluded": []
+        },
+        {
+          "rowLabel": "S",
+          "from": 12,
+          "to": 16,
+          "excluded": []
+        }
+      ]
+    }
+  ]
+}

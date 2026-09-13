@@ -1,0 +1,268 @@
+{
+  "wave": "tokyo-wave-38-priority-d-five-adopt-implementation",
+  "date": "2026-09-13",
+  "phase": "implementation",
+  "scopeBoundary": "Exactly the five user-authorized venues tokyo-official-0214, tokyo-official-0079, tokyo-official-0853, tokyo-official-1157 and tokyo-official-1152. No excluded venue, existing production venue, or additional candidate was researched or changed.",
+  "policyBasis": "Existing production implementation process under AGENTS.md, docs/VENUE_WORKFLOW.md, docs/VENUE_DATA_GUIDE.md and docs/VALIDATION.md; no macro-process or policy/schema change.",
+  "method": {
+    "currentnessFirst": "Issuer top/current facility page was re-navigated before following the current seat-chart link. Every chart was freshly fetched and hashed.",
+    "humanTwoPass": "Pass 1 was frozen before an independent Pass 2 fetch. Pass 2 used a different client and byte-identical asset plus changed DPI, tone/polarity, rotation, crop, row order and block order. Pass 1 was not used as an answer key.",
+    "expandedComparison": "Both frozen passes were expanded to (area,row,seat), compared bidirectionally, and checked for duplicate keys, area/row sets and per-area/per-row counts.",
+    "structuralChecksum": "Asset-only geometry/component/printed-occupancy paths used no human range table and generated no seat identifiers.",
+    "issuerReconciliation": "Issuer totals were consulted only after both passes froze and were never used as transcription targets."
+  },
+  "venues": [
+    {
+      "inventoryId": "tokyo-official-0214",
+      "venue": "シアターサンモール",
+      "venueSourceId": "theater-sun-mall-standard",
+      "configurationId": "standard",
+      "lane": "STANDARD",
+      "disposition": "PRODUCTION",
+      "chartAsset": "http://theatersunmall.server-shared.com/siryou/4seat.pdf",
+      "currentnessCheckedAt": "2026-09-13",
+      "denseVectorEligible": false,
+      "denseVectorReason": "ordinary hall chart; human visual two-pass preferred (Ecorma identifiers are vector outlines without extractable text)",
+      "humanPass1": 294,
+      "humanPass2": 294,
+      "expandedComparison": {
+        "pass1Only": 0,
+        "pass2Only": 0,
+        "symmetricDifference": 0,
+        "duplicateKeys": 0,
+        "unresolvedRowOwnership": 0,
+        "unresolvedIdentifierBoundary": 0,
+        "areaCounts": {
+          "main": 294
+        }
+      },
+      "structuralChecksum": "asset-only vector seat-body rectangles 294; printed-number occupancy 294; row bands 16,16,16,16,16,16,16,12,16,16,16,16,16,16,16,16,16,16,10",
+      "issuerReconciliation": "Issuer reconciliation: A〜H=124、I〜S=170、合計294。客席表、劇場案内、舞台平面図の公表値と一致し、capacity fittingは不使用。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行使用規定は車椅子利用者を主催者が案内すると記載するが、位置、席数、番号席との置換関係は示さない。番号のないseat IDは作成せず、印字された294席のみを登録した。",
+        "sourceIds": [
+          "official-use-rules",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "mappedSeats": 294
+    },
+    {
+      "inventoryId": "tokyo-official-0079",
+      "venue": "銀座ブロッサム 中央会館 ホール",
+      "venueSourceId": "ginza-blossom-hall-standard",
+      "configurationId": "standard",
+      "lane": "STANDARD",
+      "disposition": "PRODUCTION",
+      "chartAsset": "https://ginza-blossom.jp/wp-content/themes/ginza-blossom/assets/pdf/hall-seat-map.pdf",
+      "currentnessCheckedAt": "2026-09-13",
+      "denseVectorEligible": false,
+      "denseVectorReason": "raster chart",
+      "humanPass1": 900,
+      "humanPass2": 900,
+      "expandedComparison": {
+        "pass1Only": 0,
+        "pass2Only": 0,
+        "symmetricDifference": 0,
+        "duplicateKeys": 0,
+        "unresolvedRowOwnership": 0,
+        "unresolvedIdentifierBoundary": 0,
+        "areaCounts": {
+          "first-floor": 636,
+          "second-floor": 264
+        }
+      },
+      "structuralChecksum": "asset-only raster enclosed seat-cell interiors: 1F 636, 2F 264, total 900",
+      "issuerReconciliation": "Issuer reconciliation: 座席図凡例、ホールページ、FAQの636/264/900と完全一致。21列・29列の分割と各row start/endを容量から逆算していない。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "現行のホールページ、座席図、FAQから番号席との車椅子転換・同伴者席・可動席関係を確認できない。印字番号席900席のみを登録し、未公表の関係を推定していない。",
+        "sourceIds": [
+          "official-hall-page",
+          "official-seat-map",
+          "official-faq"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "mappedSeats": 900
+    },
+    {
+      "inventoryId": "tokyo-official-0853",
+      "venue": "南大塚ホール",
+      "venueSourceId": "minami-otsuka-hall-standard",
+      "configurationId": "standard",
+      "lane": "STANDARD",
+      "disposition": "PRODUCTION",
+      "chartAsset": "https://www.toshima-mirai.or.jp/Portals/0/resources/center/h_otsuka/documents/kyakuseki_002.pdf",
+      "currentnessCheckedAt": "2026-09-13",
+      "denseVectorEligible": false,
+      "denseVectorReason": "raster chart",
+      "humanPass1": 263,
+      "humanPass2": 263,
+      "expandedComparison": {
+        "pass1Only": 0,
+        "pass2Only": 0,
+        "symmetricDifference": 0,
+        "duplicateKeys": 0,
+        "unresolvedRowOwnership": 0,
+        "unresolvedIdentifierBoundary": 0,
+        "areaCounts": {
+          "main": 263
+        }
+      },
+      "structuralChecksum": "asset-only raster enclosed white seat-body components: 263; separately labelled unnumbered wheelchair region confirmed visually; issuer count 4",
+      "issuerReconciliation": "Issuer reconciliation: numbered 263 + unnumbered wheelchair positions 4 = issuer capacity 267。4位置にはprinted IDがなく、replacement relationを推測していない。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerは定員267名に車椅子席4席を含むと明記し、図はE/F列右側に無番号の車椅子席区画を描く。4位置にprinted IDはなく、どの番号席を置換するかも明記されないためseat IDを作らず、263番号席のみ登録した。",
+        "sourceIds": [
+          "official-hall-page",
+          "official-facility-page",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "mappedSeats": 263
+    },
+    {
+      "inventoryId": "tokyo-official-1157",
+      "venue": "東大和市民会館 ハミングホール 大ホール",
+      "venueSourceId": "humming-hall-main-standard",
+      "configurationId": "standard",
+      "lane": "STANDARD",
+      "disposition": "PRODUCTION",
+      "chartAsset": "https://www.humming-hall.jp/pdf/humming-007.pdf",
+      "currentnessCheckedAt": "2026-09-13",
+      "denseVectorEligible": false,
+      "denseVectorReason": "ordinary hall chart; human visual two-pass preferred (Ecorma identifiers are vector outlines without extractable text)",
+      "humanPass1": 714,
+      "humanPass2": 714,
+      "expandedComparison": {
+        "pass1Only": 0,
+        "pass2Only": 0,
+        "symmetricDifference": 0,
+        "duplicateKeys": 0,
+        "unresolvedRowOwnership": 0,
+        "unresolvedIdentifierBoundary": 0,
+        "areaCounts": {
+          "main": 714
+        }
+      },
+      "structuralChecksum": "asset-only printed-number occupancy 714 by 24 row-label bands; repeated wheelchair vector glyph clusters 6 at H8/H10/H23/H25/X22/X23",
+      "issuerReconciliation": "Issuer reconciliation: chartと施設案内の714（うちwheelchair 6）と一致。parent roomはunlabelled separate room。",
+      "wheelchairSemantics": {
+        "status": "resolved",
+        "description": "施設案内は714席の内数として車椅子席6席を明記する。現行座席図をfreshに拡大確認すると、H8・H10・H23・H25・X22・X23ではwheelchair glyphとprinted seat numberがそれぞれ同一の直接境界seat cell内にあり、別位置を表していない。よって6位置は通常の番号識別子として714 setに含めた。親子鑑賞室は無番号の別室で除外した。",
+        "sourceIds": [
+          "official-facility-page",
+          "official-seat-map"
+        ]
+      },
+      "mappedSeats": 714
+    },
+    {
+      "inventoryId": "tokyo-official-1152",
+      "venue": "狛江エコルマホール",
+      "venueSourceId": "ecorma-hall-standard",
+      "configurationId": "standard",
+      "lane": "STANDARD",
+      "disposition": "PRODUCTION",
+      "chartAsset": "https://ecorma-hall.jp/wp-content/uploads/2011/07/seat1.pdf",
+      "currentnessCheckedAt": "2026-09-13",
+      "denseVectorEligible": false,
+      "denseVectorReason": "ordinary hall chart; human visual two-pass preferred (Ecorma identifiers are vector outlines without extractable text)",
+      "humanPass1": 725,
+      "humanPass2": 725,
+      "expandedComparison": {
+        "pass1Only": 0,
+        "pass2Only": 0,
+        "symmetricDifference": 0,
+        "duplicateKeys": 0,
+        "unresolvedRowOwnership": 0,
+        "unresolvedIdentifierBoundary": 0,
+        "areaCounts": {
+          "main": 725
+        }
+      },
+      "structuralChecksum": "asset-only vector white seat bodies: axis-aligned 474 + tilted quadrilateral 251 = 725; separately sized solid wheelchair compound glyphs 3",
+      "issuerReconciliation": "Issuer reconciliation: numbered 725 + unnumbered wheelchair positions 3 = issuer capacity 728。3位置にprinted IDはなくmappingしない。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "issuerは公称728席に車椅子席3席を含むと明記し、seat1.pdfはG列右側にprinted IDを持たないwheelchair glyph cellを3つ描く。番号席との置換関係は明記されないため識別子を作成せず、725番号席のみ登録した。",
+        "sourceIds": [
+          "official-facility-page",
+          "official-seat-page",
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "mappedSeats": 725
+    }
+  ],
+  "result": {
+    "production": 5,
+    "blocked": 0,
+    "hardCase": 0,
+    "seatsAdded": 2896,
+    "productionVenuesBefore": 171,
+    "productionVenuesAfter": 176,
+    "selectableConfigurationsBefore": 173,
+    "selectableConfigurationsAfter": 178,
+    "configurationSeatRecordsBefore": 258912,
+    "configurationSeatRecordsAfter": 261808
+  },
+  "warningDelta": {
+    "before": 50,
+    "after": 57,
+    "newWarnings": [
+      "theater-sun-mall-standard: five official HTTP provenance URLs recorded under the existing httpOnlyOfficial waiver after fresh HTTPS failure confirmation",
+      "minami-otsuka-hall-standard: official total 267 differs from mapped numbered-seat count 263 because the issuer includes four unnumbered wheelchair positions",
+      "ecorma-hall-standard: official total 728 differs from mapped numbered-seat count 725 because the issuer includes three unnumbered wheelchair positions"
+    ]
+  },
+  "validation": {
+    "perVenueReview": "5/5 passed; production blockers 0; validation errors 0",
+    "batchReport": "production=5, blocked=0, rejected=0, missing=0, validation errors 0",
+    "verifyVenues": "passed in the approved environment after the sandbox-only first attempt stopped at Vitest startup with spawn EPERM",
+    "inventoryErrors": 0,
+    "readinessErrors": 0,
+    "releaseCoverage": "PASS; RELEASE READY yes",
+    "venuesCheck": "synchronized at 176 production venues",
+    "lint": "PASS",
+    "typecheck": "PASS",
+    "unitTests": "PASS",
+    "productionBuild": "PASS",
+    "docsAndHarness": "PASS",
+    "e2e": "PASS",
+    "warnings": 57
+  },
+  "localRuntimeExhaustiveVerification": {
+    "result": "PASS for all five generated payloads",
+    "checks": "JSON parse, declared total, catalog total, expanded count, duplicate keys, source-only/runtime-only set difference, per-area counts and metadata leakage",
+    "perVenue": {
+      "theater-sun-mall-standard": "294; main=294; S6-S11 absent",
+      "ginza-blossom-hall-standard": "900; first-floor=636; second-floor=264",
+      "minami-otsuka-hall-standard": "263; unnumbered wheelchair positions mapped=0",
+      "humming-hall-main-standard": "714; numbered wheelchair H8/H10/H23/H25/X22/X23 present; H7/H9/H24/H26/X21/X24 absent",
+      "ecorma-hall-standard": "725; unnumbered wheelchair positions mapped=0"
+    },
+    "metadataLeak": false,
+    "existingProductionPayloadsChanged": 0
+  },
+  "prohibitedTechniquesNotUsed": [
+    "capacity fitting",
+    "missing identifier interpolation",
+    "blank-cell seat ID generation",
+    "neighbouring-row propagation",
+    "alignment-only row ownership",
+    "symmetry-derived identifiers",
+    "pitch/geometry identifier completion",
+    "third-party completion",
+    "alternate configuration mixing",
+    "preflight range copying",
+    "issuer subtotal fitting"
+  ],
+  "exactNextAction": "ASTRA: TOKYO / KANTO SOURCE-DISCOVERY FALSE-NEGATIVE REAUDIT MACRO"
+}
