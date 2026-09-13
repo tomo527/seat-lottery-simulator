@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "mizuho-sky-small-standard",
+  "name": "瑞穂ビューパーク・スカイホール 小ホール",
+  "prefecture": "東京都",
+  "city": "瑞穂町",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（番号付き可動席236席）",
+    "coverage": "complete",
+    "expectedSeatCount": 236,
+    "selectionReason": "公式詳細図の可動席236席のみ。別記された仮設64席は番号がなく対象外。300席全体の番号を創作しない。",
+    "notIncludedPatterns": [
+      "公式詳細図の可動席236席のみ。別記された仮設64席は番号がなく対象外。300席全体の番号を創作しない。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "瑞穂町",
+      "title": "瑞穂ビューパーク・スカイホール 小ホール 現行施設案内",
+      "url": "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "瑞穂町",
+      "title": "瑞穂ビューパーク・スカイホール 小ホール 現行リンク座席表",
+      "url": "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144_d/fil/syouho-ruheimen.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "通常配置（番号付き可動席236席）の全印字番号。公式詳細図の可動席236席のみ。別記された仮設64席は番号がなく対象外。300席全体の番号を創作しない。",
+  "completenessBasis": "fresh independent visual two-pass、expanded bidirectional set equality、画像cell checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認し同じ列の連続区間へ圧縮。図上の欠番をexcludedとして保持。",
+  "knownLimitations": [
+    "公式詳細図の可動席236席のみ。別記された仮設64席は番号がなく対象外。300席全体の番号を創作しない。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent human visual two-pass frozen before comparison: parent fresh PDF/PyMuPDF2x; reviewer independent curl/Poppler2800. SHA256 4d0b4016ed17d4f7dd97fbb6b2008f87a31cebcc130c0e96d31acfd2b48dc9dc. Expanded Pass1-only0/Pass2-only0/duplicates0 after documented direct-source resolution. Independent pixel contour checksum 236; binary inverse threshold180; cell bounds32-37x47-52; pixel count uses no ranges. Issuer reconciliation: 公式詳細図の可動席236席のみ。別記された仮設64席は番号がなく対象外。300席全体の番号を創作しない。",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "rowLabel": "1",
+      "from": 3,
+      "to": 18
+    },
+    {
+      "rowLabel": "2",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "3",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "4",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "5",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "6",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "7",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "8",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "9",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "10",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "11",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "rowLabel": "12",
+      "from": 1,
+      "to": 20
+    }
+  ]
+}

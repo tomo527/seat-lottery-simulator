@@ -365,18 +365,1533 @@
       "inventoryId": "tokyo-official-0983",
       "name": "八王子市学園都市センター〔イベントホール〕",
       "inventoryFile": "data/venue-inventory/tokyo.json",
-      "venueSourceId": null,
+      "venueSourceId": "hachioji-gakuen-event-hall-standard",
       "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
       "entryUrl": null,
-      "discoveryStatus": "recovered-pending-implementation",
+      "discoveryStatus": "production",
       "checkedPaths": [
         "https://www.hachiojibunka.or.jp/gakuen/file/",
         "https://www.hachiojibunka.or.jp/gakuen/facility/event_hall/",
         "https://www.hachiojibunka.or.jp/gakuen/wp-content/uploads/2022/12/event_hall_zaseki216.pdf"
       ],
-      "disposition": null,
+      "disposition": "GREEN",
       "reopenCondition": null,
-      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+      "findings": "最大288席配置は対象外。現行施設案内が明示する標準216席を採用。",
+      "verification": {
+        "pass1Initial": {
+          "ranges": [
+            {
+              "rowLabel": "E",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "F",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "G",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "H",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "I",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "J",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "K",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "L",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "M",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "N",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "O",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "P",
+              "from": 1,
+              "to": 18
+            }
+          ],
+          "notes": "Penultimate row glyph O/0 exact label requires glyph/font confirmation before final decision; not silently normalized."
+        },
+        "pass1FinalRanges": [
+          {
+            "rowLabel": "E",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "F",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "G",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "H",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "I",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "J",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "K",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "L",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "M",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "N",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "O",
+            "from": 1,
+            "to": 18
+          },
+          {
+            "rowLabel": "P",
+            "from": 1,
+            "to": 18
+          }
+        ],
+        "pass2": {
+          "ranges": [
+            {
+              "rowLabel": "E",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "F",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "G",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "H",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "I",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "J",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "K",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "L",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "M",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "N",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "O",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "P",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            }
+          ]
+        },
+        "assetSha256": "ef0646c90a890398b8a43d01ec0e846f0f63f158058218244bd203bcf041e140",
+        "expandedSet": {
+          "pass1Only": 0,
+          "pass2Only": 0,
+          "duplicates": 0,
+          "count": 216
+        },
+        "independentStructuralChecksum": {
+          "method": "Pixel contours from independent Poppler render",
+          "count": 216,
+          "bounds": [
+            [
+              1889,
+              2644,
+              56,
+              41
+            ],
+            [
+              1822,
+              2644,
+              56,
+              41
+            ],
+            [
+              1756,
+              2644,
+              56,
+              41
+            ],
+            [
+              1689,
+              2644,
+              56,
+              41
+            ],
+            [
+              1622,
+              2644,
+              56,
+              41
+            ],
+            [
+              1555,
+              2644,
+              56,
+              41
+            ],
+            [
+              1488,
+              2644,
+              56,
+              41
+            ],
+            [
+              1421,
+              2644,
+              56,
+              41
+            ],
+            [
+              1354,
+              2644,
+              57,
+              41
+            ],
+            [
+              564,
+              2643,
+              57,
+              42
+            ],
+            [
+              497,
+              2643,
+              57,
+              42
+            ],
+            [
+              431,
+              2643,
+              57,
+              42
+            ],
+            [
+              364,
+              2643,
+              57,
+              42
+            ],
+            [
+              297,
+              2643,
+              57,
+              42
+            ],
+            [
+              230,
+              2643,
+              57,
+              42
+            ],
+            [
+              163,
+              2643,
+              57,
+              42
+            ],
+            [
+              96,
+              2643,
+              57,
+              42
+            ],
+            [
+              29,
+              2643,
+              57,
+              42
+            ],
+            [
+              1889,
+              2530,
+              56,
+              42
+            ],
+            [
+              1822,
+              2530,
+              56,
+              42
+            ],
+            [
+              1756,
+              2530,
+              56,
+              42
+            ],
+            [
+              1689,
+              2530,
+              56,
+              42
+            ],
+            [
+              1622,
+              2530,
+              56,
+              42
+            ],
+            [
+              1555,
+              2530,
+              56,
+              42
+            ],
+            [
+              1488,
+              2530,
+              56,
+              42
+            ],
+            [
+              1421,
+              2530,
+              56,
+              42
+            ],
+            [
+              1354,
+              2530,
+              57,
+              42
+            ],
+            [
+              564,
+              2530,
+              57,
+              42
+            ],
+            [
+              497,
+              2530,
+              57,
+              42
+            ],
+            [
+              431,
+              2530,
+              57,
+              42
+            ],
+            [
+              364,
+              2530,
+              57,
+              42
+            ],
+            [
+              297,
+              2530,
+              57,
+              42
+            ],
+            [
+              230,
+              2530,
+              57,
+              42
+            ],
+            [
+              163,
+              2530,
+              57,
+              42
+            ],
+            [
+              96,
+              2530,
+              57,
+              42
+            ],
+            [
+              29,
+              2530,
+              57,
+              42
+            ],
+            [
+              1649,
+              2336,
+              57,
+              42
+            ],
+            [
+              1582,
+              2336,
+              57,
+              42
+            ],
+            [
+              1515,
+              2336,
+              57,
+              42
+            ],
+            [
+              1448,
+              2336,
+              57,
+              42
+            ],
+            [
+              1381,
+              2336,
+              57,
+              42
+            ],
+            [
+              1196,
+              2336,
+              57,
+              42
+            ],
+            [
+              1129,
+              2336,
+              56,
+              42
+            ],
+            [
+              1061,
+              2336,
+              57,
+              42
+            ],
+            [
+              994,
+              2336,
+              57,
+              42
+            ],
+            [
+              928,
+              2336,
+              57,
+              42
+            ],
+            [
+              861,
+              2336,
+              57,
+              42
+            ],
+            [
+              794,
+              2336,
+              57,
+              42
+            ],
+            [
+              727,
+              2336,
+              57,
+              42
+            ],
+            [
+              534,
+              2336,
+              57,
+              42
+            ],
+            [
+              467,
+              2336,
+              57,
+              42
+            ],
+            [
+              400,
+              2336,
+              57,
+              42
+            ],
+            [
+              333,
+              2336,
+              57,
+              42
+            ],
+            [
+              266,
+              2336,
+              57,
+              42
+            ],
+            [
+              1649,
+              2222,
+              57,
+              42
+            ],
+            [
+              1582,
+              2222,
+              57,
+              42
+            ],
+            [
+              1515,
+              2222,
+              57,
+              42
+            ],
+            [
+              1448,
+              2222,
+              57,
+              42
+            ],
+            [
+              1381,
+              2222,
+              57,
+              42
+            ],
+            [
+              1196,
+              2222,
+              57,
+              42
+            ],
+            [
+              1129,
+              2222,
+              57,
+              42
+            ],
+            [
+              1062,
+              2222,
+              57,
+              42
+            ],
+            [
+              995,
+              2222,
+              57,
+              42
+            ],
+            [
+              928,
+              2222,
+              57,
+              42
+            ],
+            [
+              861,
+              2222,
+              57,
+              42
+            ],
+            [
+              794,
+              2222,
+              57,
+              42
+            ],
+            [
+              727,
+              2222,
+              57,
+              42
+            ],
+            [
+              534,
+              2222,
+              57,
+              42
+            ],
+            [
+              467,
+              2222,
+              57,
+              42
+            ],
+            [
+              400,
+              2222,
+              57,
+              42
+            ],
+            [
+              333,
+              2222,
+              57,
+              42
+            ],
+            [
+              266,
+              2222,
+              57,
+              42
+            ],
+            [
+              1196,
+              2110,
+              57,
+              42
+            ],
+            [
+              1129,
+              2110,
+              57,
+              42
+            ],
+            [
+              1062,
+              2110,
+              57,
+              42
+            ],
+            [
+              995,
+              2110,
+              57,
+              42
+            ],
+            [
+              928,
+              2110,
+              57,
+              42
+            ],
+            [
+              861,
+              2110,
+              57,
+              42
+            ],
+            [
+              794,
+              2110,
+              57,
+              42
+            ],
+            [
+              727,
+              2110,
+              57,
+              42
+            ],
+            [
+              1649,
+              2109,
+              57,
+              42
+            ],
+            [
+              1582,
+              2109,
+              57,
+              42
+            ],
+            [
+              1515,
+              2109,
+              57,
+              42
+            ],
+            [
+              1448,
+              2109,
+              57,
+              42
+            ],
+            [
+              1381,
+              2109,
+              57,
+              42
+            ],
+            [
+              534,
+              2109,
+              57,
+              42
+            ],
+            [
+              467,
+              2109,
+              57,
+              42
+            ],
+            [
+              400,
+              2109,
+              57,
+              42
+            ],
+            [
+              333,
+              2109,
+              57,
+              42
+            ],
+            [
+              266,
+              2109,
+              57,
+              42
+            ],
+            [
+              1649,
+              1988,
+              57,
+              42
+            ],
+            [
+              1582,
+              1988,
+              57,
+              42
+            ],
+            [
+              1515,
+              1988,
+              57,
+              42
+            ],
+            [
+              1448,
+              1988,
+              57,
+              42
+            ],
+            [
+              1381,
+              1988,
+              57,
+              42
+            ],
+            [
+              1196,
+              1988,
+              57,
+              42
+            ],
+            [
+              1129,
+              1988,
+              57,
+              42
+            ],
+            [
+              1062,
+              1988,
+              57,
+              42
+            ],
+            [
+              995,
+              1988,
+              57,
+              42
+            ],
+            [
+              928,
+              1988,
+              57,
+              42
+            ],
+            [
+              861,
+              1988,
+              57,
+              42
+            ],
+            [
+              794,
+              1988,
+              57,
+              42
+            ],
+            [
+              727,
+              1988,
+              57,
+              42
+            ],
+            [
+              534,
+              1988,
+              57,
+              42
+            ],
+            [
+              467,
+              1988,
+              57,
+              42
+            ],
+            [
+              400,
+              1988,
+              57,
+              42
+            ],
+            [
+              333,
+              1988,
+              57,
+              42
+            ],
+            [
+              266,
+              1988,
+              57,
+              42
+            ],
+            [
+              1649,
+              1880,
+              57,
+              41
+            ],
+            [
+              1582,
+              1880,
+              57,
+              41
+            ],
+            [
+              1515,
+              1880,
+              57,
+              41
+            ],
+            [
+              1448,
+              1880,
+              57,
+              41
+            ],
+            [
+              1381,
+              1880,
+              57,
+              41
+            ],
+            [
+              1196,
+              1880,
+              57,
+              41
+            ],
+            [
+              1129,
+              1880,
+              56,
+              41
+            ],
+            [
+              1062,
+              1880,
+              56,
+              41
+            ],
+            [
+              995,
+              1880,
+              56,
+              41
+            ],
+            [
+              928,
+              1880,
+              57,
+              41
+            ],
+            [
+              861,
+              1880,
+              57,
+              41
+            ],
+            [
+              794,
+              1880,
+              57,
+              41
+            ],
+            [
+              727,
+              1880,
+              57,
+              41
+            ],
+            [
+              534,
+              1880,
+              57,
+              41
+            ],
+            [
+              467,
+              1880,
+              57,
+              41
+            ],
+            [
+              400,
+              1880,
+              57,
+              41
+            ],
+            [
+              333,
+              1880,
+              57,
+              41
+            ],
+            [
+              266,
+              1880,
+              57,
+              41
+            ],
+            [
+              1649,
+              1766,
+              57,
+              42
+            ],
+            [
+              1582,
+              1766,
+              57,
+              42
+            ],
+            [
+              1515,
+              1766,
+              57,
+              42
+            ],
+            [
+              1448,
+              1766,
+              57,
+              42
+            ],
+            [
+              1381,
+              1766,
+              57,
+              42
+            ],
+            [
+              1195,
+              1766,
+              58,
+              42
+            ],
+            [
+              1128,
+              1766,
+              57,
+              42
+            ],
+            [
+              1061,
+              1766,
+              57,
+              42
+            ],
+            [
+              994,
+              1766,
+              57,
+              42
+            ],
+            [
+              928,
+              1766,
+              57,
+              42
+            ],
+            [
+              861,
+              1766,
+              57,
+              42
+            ],
+            [
+              794,
+              1766,
+              57,
+              42
+            ],
+            [
+              727,
+              1766,
+              57,
+              42
+            ],
+            [
+              467,
+              1766,
+              57,
+              41
+            ],
+            [
+              400,
+              1766,
+              57,
+              42
+            ],
+            [
+              333,
+              1766,
+              57,
+              42
+            ],
+            [
+              266,
+              1766,
+              57,
+              42
+            ],
+            [
+              534,
+              1765,
+              57,
+              42
+            ],
+            [
+              1649,
+              1644,
+              57,
+              42
+            ],
+            [
+              1582,
+              1644,
+              57,
+              42
+            ],
+            [
+              1515,
+              1644,
+              57,
+              42
+            ],
+            [
+              1448,
+              1644,
+              57,
+              42
+            ],
+            [
+              1381,
+              1644,
+              57,
+              42
+            ],
+            [
+              1196,
+              1644,
+              57,
+              42
+            ],
+            [
+              1129,
+              1644,
+              57,
+              42
+            ],
+            [
+              1062,
+              1644,
+              57,
+              42
+            ],
+            [
+              995,
+              1644,
+              57,
+              42
+            ],
+            [
+              928,
+              1644,
+              57,
+              42
+            ],
+            [
+              861,
+              1644,
+              57,
+              42
+            ],
+            [
+              794,
+              1644,
+              57,
+              42
+            ],
+            [
+              727,
+              1644,
+              57,
+              42
+            ],
+            [
+              534,
+              1644,
+              57,
+              42
+            ],
+            [
+              467,
+              1644,
+              57,
+              42
+            ],
+            [
+              400,
+              1644,
+              57,
+              42
+            ],
+            [
+              333,
+              1644,
+              57,
+              42
+            ],
+            [
+              266,
+              1644,
+              57,
+              42
+            ],
+            [
+              1649,
+              1532,
+              57,
+              42
+            ],
+            [
+              1582,
+              1532,
+              57,
+              42
+            ],
+            [
+              1515,
+              1532,
+              57,
+              42
+            ],
+            [
+              1448,
+              1532,
+              57,
+              42
+            ],
+            [
+              1381,
+              1532,
+              57,
+              42
+            ],
+            [
+              1195,
+              1532,
+              58,
+              42
+            ],
+            [
+              1128,
+              1532,
+              57,
+              42
+            ],
+            [
+              1061,
+              1532,
+              57,
+              42
+            ],
+            [
+              994,
+              1532,
+              57,
+              42
+            ],
+            [
+              928,
+              1532,
+              57,
+              42
+            ],
+            [
+              861,
+              1532,
+              57,
+              42
+            ],
+            [
+              794,
+              1532,
+              57,
+              42
+            ],
+            [
+              727,
+              1532,
+              57,
+              42
+            ],
+            [
+              534,
+              1531,
+              57,
+              42
+            ],
+            [
+              467,
+              1531,
+              57,
+              42
+            ],
+            [
+              400,
+              1531,
+              57,
+              42
+            ],
+            [
+              333,
+              1531,
+              57,
+              42
+            ],
+            [
+              266,
+              1531,
+              57,
+              42
+            ],
+            [
+              1129,
+              1423,
+              57,
+              41
+            ],
+            [
+              1062,
+              1423,
+              56,
+              41
+            ],
+            [
+              995,
+              1423,
+              56,
+              41
+            ],
+            [
+              928,
+              1423,
+              57,
+              41
+            ],
+            [
+              861,
+              1423,
+              57,
+              41
+            ],
+            [
+              1649,
+              1422,
+              57,
+              42
+            ],
+            [
+              1582,
+              1422,
+              57,
+              42
+            ],
+            [
+              1516,
+              1422,
+              56,
+              42
+            ],
+            [
+              1448,
+              1422,
+              57,
+              42
+            ],
+            [
+              1381,
+              1422,
+              57,
+              42
+            ],
+            [
+              1196,
+              1422,
+              57,
+              42
+            ],
+            [
+              794,
+              1422,
+              57,
+              42
+            ],
+            [
+              727,
+              1422,
+              57,
+              42
+            ],
+            [
+              534,
+              1422,
+              57,
+              42
+            ],
+            [
+              467,
+              1422,
+              57,
+              42
+            ],
+            [
+              400,
+              1422,
+              57,
+              42
+            ],
+            [
+              333,
+              1422,
+              57,
+              42
+            ],
+            [
+              266,
+              1422,
+              57,
+              42
+            ],
+            [
+              1649,
+              1305,
+              57,
+              42
+            ],
+            [
+              1582,
+              1305,
+              57,
+              42
+            ],
+            [
+              1515,
+              1305,
+              57,
+              42
+            ],
+            [
+              1448,
+              1305,
+              57,
+              42
+            ],
+            [
+              1381,
+              1305,
+              57,
+              42
+            ],
+            [
+              1196,
+              1305,
+              57,
+              42
+            ],
+            [
+              1129,
+              1305,
+              57,
+              42
+            ],
+            [
+              1062,
+              1305,
+              56,
+              42
+            ],
+            [
+              995,
+              1305,
+              56,
+              42
+            ],
+            [
+              928,
+              1305,
+              57,
+              42
+            ],
+            [
+              861,
+              1305,
+              57,
+              42
+            ],
+            [
+              794,
+              1305,
+              57,
+              42
+            ],
+            [
+              727,
+              1305,
+              57,
+              42
+            ],
+            [
+              534,
+              1305,
+              57,
+              42
+            ],
+            [
+              467,
+              1305,
+              57,
+              42
+            ],
+            [
+              400,
+              1305,
+              57,
+              42
+            ],
+            [
+              333,
+              1305,
+              57,
+              42
+            ],
+            [
+              266,
+              1305,
+              57,
+              42
+            ]
+          ]
+        },
+        "method": "Fresh independent human visual two-pass frozen before comparison: parent fresh PDF/PyMuPDF2x; reviewer independent curl/Poppler2800. SHA256 ef0646c90a890398b8a43d01ec0e846f0f63f158058218244bd203bcf041e140. Expanded Pass1-only0/Pass2-only0/duplicates0 after documented direct-source resolution. Pass1 flagged O/0 glyph; independent visual Pass2 confirmed letter O. Independent pixel contour checksum 216; binary inverse threshold180; cell bounds52-62x37-42; pixel count uses no ranges. Issuer reconciliation: 最大288席配置は対象外。現行施設案内が明示する標準216席を採用。"
+      }
     },
     {
       "inventoryId": "tokyo-official-0994",
@@ -451,14 +1966,258 @@
       "venueSourceId": null,
       "priorBlocker": "有効な公式施設URLを確認できず、全列・全番号を判読できる公式座席表と現在の番号席総数を独立照合できない。",
       "entryUrl": "https://www.fuchu-platz.jp/",
-      "discoveryStatus": "recovered-pending-implementation",
+      "discoveryStatus": "closed-structural-blocker",
       "checkedPaths": [
         "https://www.fuchu-platz.jp/use/1001976.html",
         "https://www.fuchu-platz.jp/_res/projects/default_project/_page_/001/001/976/kyakuseki.pdf"
       ],
-      "disposition": null,
-      "reopenCondition": null,
-      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+      "disposition": "LOCAL RED / CONTRADICTION",
+      "reopenCondition": "Current issuer explains298 printed IDs vs284 stated seats or publishes corrected complete chart.",
+      "findings": "CONTRADICTION: 現行公式客席図を回収し独立visual2passとも298番号席。現行284席・図の284席表記との14席差をissuer evidenceで説明できない。車椅子重ね描きから削除・置換を推測しない。Reopen: issuerによる差の説明または訂正版番号図。",
+      "verification": {
+        "pass1": {
+          "ranges": [
+            {
+              "rowLabel": "A",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "B",
+              "from": 1,
+              "to": 18,
+              "excluded": [
+                13
+              ]
+            },
+            {
+              "rowLabel": "C",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "D",
+              "from": 1,
+              "to": 18,
+              "excluded": [
+                13
+              ]
+            },
+            {
+              "rowLabel": "E",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "F",
+              "from": 1,
+              "to": 18,
+              "excluded": [
+                13
+              ]
+            },
+            {
+              "rowLabel": "G",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "H",
+              "from": 1,
+              "to": 18,
+              "excluded": [
+                13
+              ]
+            },
+            {
+              "rowLabel": "I",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "J",
+              "from": 1,
+              "to": 18,
+              "excluded": [
+                13
+              ]
+            },
+            {
+              "rowLabel": "K",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "L",
+              "from": 1,
+              "to": 18,
+              "excluded": [
+                13
+              ]
+            },
+            {
+              "rowLabel": "M",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "N",
+              "from": 1,
+              "to": 18,
+              "excluded": [
+                13
+              ]
+            },
+            {
+              "rowLabel": "O",
+              "from": 1,
+              "to": 18
+            },
+            {
+              "rowLabel": "P",
+              "from": 1,
+              "to": 18,
+              "excluded": [
+                13
+              ]
+            },
+            {
+              "rowLabel": "Q",
+              "from": 1,
+              "to": 18
+            }
+          ],
+          "notes": "Printed identifiers include wheelchair overprinted numbers B1/B3/B5/B14/B16/B18; scope/count reconciliation pending. Do not alter ranges to fit header."
+        },
+        "pass2": {
+          "ranges": [
+            {
+              "rowLabel": "A",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "B",
+              "to": 18,
+              "excluded": [
+                13
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "C",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "D",
+              "to": 18,
+              "excluded": [
+                13
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "E",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "F",
+              "to": 18,
+              "excluded": [
+                13
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "G",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "H",
+              "to": 18,
+              "excluded": [
+                13
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "I",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "J",
+              "to": 18,
+              "excluded": [
+                13
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "K",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "L",
+              "to": 18,
+              "excluded": [
+                13
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "M",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "N",
+              "to": 18,
+              "excluded": [
+                13
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "O",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "P",
+              "to": 18,
+              "excluded": [
+                13
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "Q",
+              "to": 18,
+              "excluded": [],
+              "from": 1
+            }
+          ]
+        },
+        "expandedSet": {
+          "pass1Only": 0,
+          "pass2Only": 0,
+          "count": 298
+        },
+        "machineChecksum": "Attempted contour count; overprinted wheelchair symbols and scanned chair details do not support reliable classification. No production."
+      }
     },
     {
       "inventoryId": "tokyo-official-1075",
@@ -573,17 +2332,1890 @@
       "inventoryId": "tokyo-official-1171",
       "name": "武蔵村山市民会館 さくらホール〔小ホール〕",
       "inventoryFile": "data/venue-inventory/tokyo.json",
-      "venueSourceId": null,
+      "venueSourceId": "musashimurayama-sakura-small-standard",
       "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
       "entryUrl": null,
-      "discoveryStatus": "recovered-pending-implementation",
+      "discoveryStatus": "production",
       "checkedPaths": [
         "https://www.musashimurayama-sakurahall.jp/guide/download/",
         "https://www.musashimurayama-sakurahall.jp/src/2016/02/hall_small_zaseki.pdf"
       ],
-      "disposition": null,
+      "disposition": "GREEN",
       "reopenCondition": null,
-      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+      "findings": "公式246固定＋12移動＝258席の全番号。移動席と車椅子転換の個別対応は図にないため推測しない。",
+      "verification": {
+        "pass1Initial": {
+          "ranges": [
+            {
+              "rowLabel": "1",
+              "from": 9,
+              "to": 20
+            },
+            {
+              "rowLabel": "2",
+              "from": 8,
+              "to": 21
+            },
+            {
+              "rowLabel": "3",
+              "from": 3,
+              "to": 22,
+              "excluded": [
+                7
+              ]
+            },
+            {
+              "rowLabel": "4",
+              "from": 2,
+              "to": 23
+            },
+            {
+              "rowLabel": "5",
+              "from": 2,
+              "to": 23,
+              "excluded": [
+                7
+              ]
+            },
+            {
+              "rowLabel": "6",
+              "from": 2,
+              "to": 23
+            },
+            {
+              "rowLabel": "7",
+              "from": 2,
+              "to": 23,
+              "excluded": [
+                7
+              ]
+            },
+            {
+              "rowLabel": "8",
+              "from": 1,
+              "to": 24
+            },
+            {
+              "rowLabel": "9",
+              "from": 1,
+              "to": 24,
+              "excluded": [
+                7
+              ]
+            },
+            {
+              "rowLabel": "10",
+              "from": 1,
+              "to": 24
+            },
+            {
+              "rowLabel": "11",
+              "from": 1,
+              "to": 24,
+              "excluded": [
+                7
+              ]
+            },
+            {
+              "rowLabel": "12",
+              "from": 1,
+              "to": 24,
+              "excluded": [
+                2,
+                7
+              ]
+            },
+            {
+              "rowLabel": "13",
+              "from": 2,
+              "to": 23,
+              "excluded": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ]
+            }
+          ],
+          "notes": "Direct visible skip7 in odd centre rows, row12 lacks2 and7; last row side blocks only."
+        },
+        "pass1FinalRanges": [
+          {
+            "rowLabel": "1",
+            "from": 9,
+            "to": 20
+          },
+          {
+            "rowLabel": "2",
+            "from": 8,
+            "to": 21
+          },
+          {
+            "rowLabel": "3",
+            "from": 3,
+            "to": 22,
+            "excluded": [
+              7
+            ]
+          },
+          {
+            "rowLabel": "4",
+            "from": 2,
+            "to": 23
+          },
+          {
+            "rowLabel": "5",
+            "from": 2,
+            "to": 23,
+            "excluded": [
+              7
+            ]
+          },
+          {
+            "rowLabel": "6",
+            "from": 2,
+            "to": 23
+          },
+          {
+            "rowLabel": "7",
+            "from": 2,
+            "to": 23,
+            "excluded": [
+              7
+            ]
+          },
+          {
+            "rowLabel": "8",
+            "from": 1,
+            "to": 24
+          },
+          {
+            "rowLabel": "9",
+            "from": 1,
+            "to": 24,
+            "excluded": [
+              7
+            ]
+          },
+          {
+            "rowLabel": "10",
+            "from": 1,
+            "to": 24
+          },
+          {
+            "rowLabel": "11",
+            "from": 1,
+            "to": 24,
+            "excluded": [
+              7
+            ]
+          },
+          {
+            "rowLabel": "12",
+            "from": 1,
+            "to": 24,
+            "excluded": [
+              7
+            ]
+          },
+          {
+            "rowLabel": "13",
+            "from": 2,
+            "to": 23,
+            "excluded": [
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18
+            ]
+          }
+        ],
+        "pass2": {
+          "ranges": [
+            {
+              "rowLabel": "1",
+              "to": 20,
+              "excluded": [],
+              "from": 9
+            },
+            {
+              "rowLabel": "2",
+              "to": 21,
+              "excluded": [],
+              "from": 8
+            },
+            {
+              "rowLabel": "3",
+              "to": 22,
+              "excluded": [
+                7
+              ],
+              "from": 3
+            },
+            {
+              "rowLabel": "4",
+              "to": 23,
+              "excluded": [],
+              "from": 2
+            },
+            {
+              "rowLabel": "5",
+              "to": 23,
+              "excluded": [
+                7
+              ],
+              "from": 2
+            },
+            {
+              "rowLabel": "6",
+              "to": 23,
+              "excluded": [],
+              "from": 2
+            },
+            {
+              "rowLabel": "7",
+              "to": 23,
+              "excluded": [
+                7
+              ],
+              "from": 2
+            },
+            {
+              "rowLabel": "8",
+              "to": 24,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "9",
+              "to": 24,
+              "excluded": [
+                7
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "10",
+              "to": 24,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "11",
+              "to": 24,
+              "excluded": [
+                7
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "12",
+              "to": 24,
+              "excluded": [
+                7
+              ],
+              "from": 1
+            },
+            {
+              "rowLabel": "13",
+              "to": 23,
+              "excluded": [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ],
+              "from": 2
+            }
+          ]
+        },
+        "assetSha256": "ae21292aefb74d391b5b5872c5773966bbfbd9298ed0bde3460d79b8b5b06614",
+        "expandedSet": {
+          "pass1Only": 0,
+          "pass2Only": 0,
+          "duplicates": 0,
+          "count": 258
+        },
+        "independentStructuralChecksum": {
+          "method": "Pixel contours from independent Poppler render",
+          "count": 258,
+          "bounds": [
+            [
+              1252,
+              1621,
+              35,
+              41
+            ],
+            [
+              732,
+              1621,
+              35,
+              41
+            ],
+            [
+              1281,
+              1616,
+              37,
+              41
+            ],
+            [
+              702,
+              1616,
+              37,
+              41
+            ],
+            [
+              1311,
+              1610,
+              37,
+              41
+            ],
+            [
+              672,
+              1610,
+              37,
+              41
+            ],
+            [
+              1341,
+              1605,
+              37,
+              41
+            ],
+            [
+              641,
+              1605,
+              38,
+              41
+            ],
+            [
+              1371,
+              1599,
+              37,
+              41
+            ],
+            [
+              612,
+              1599,
+              37,
+              41
+            ],
+            [
+              1160,
+              1562,
+              34,
+              37
+            ],
+            [
+              1127,
+              1562,
+              34,
+              37
+            ],
+            [
+              1093,
+              1562,
+              35,
+              37
+            ],
+            [
+              1059,
+              1562,
+              35,
+              37
+            ],
+            [
+              1026,
+              1562,
+              34,
+              37
+            ],
+            [
+              993,
+              1562,
+              34,
+              37
+            ],
+            [
+              959,
+              1562,
+              35,
+              37
+            ],
+            [
+              926,
+              1562,
+              34,
+              37
+            ],
+            [
+              892,
+              1562,
+              35,
+              37
+            ],
+            [
+              859,
+              1562,
+              34,
+              37
+            ],
+            [
+              825,
+              1562,
+              35,
+              37
+            ],
+            [
+              1250,
+              1557,
+              37,
+              41
+            ],
+            [
+              732,
+              1557,
+              37,
+              41
+            ],
+            [
+              1281,
+              1552,
+              37,
+              41
+            ],
+            [
+              702,
+              1552,
+              37,
+              41
+            ],
+            [
+              1311,
+              1546,
+              37,
+              41
+            ],
+            [
+              672,
+              1546,
+              37,
+              41
+            ],
+            [
+              1341,
+              1541,
+              37,
+              41
+            ],
+            [
+              641,
+              1541,
+              38,
+              41
+            ],
+            [
+              1371,
+              1535,
+              37,
+              42
+            ],
+            [
+              612,
+              1535,
+              37,
+              41
+            ],
+            [
+              1401,
+              1530,
+              37,
+              41
+            ],
+            [
+              581,
+              1530,
+              37,
+              41
+            ],
+            [
+              1147,
+              1498,
+              32,
+              37
+            ],
+            [
+              1117,
+              1498,
+              31,
+              37
+            ],
+            [
+              1086,
+              1498,
+              31,
+              37
+            ],
+            [
+              1055,
+              1498,
+              32,
+              37
+            ],
+            [
+              1025,
+              1498,
+              31,
+              37
+            ],
+            [
+              994,
+              1498,
+              31,
+              37
+            ],
+            [
+              963,
+              1498,
+              32,
+              37
+            ],
+            [
+              933,
+              1498,
+              31,
+              37
+            ],
+            [
+              902,
+              1498,
+              31,
+              37
+            ],
+            [
+              871,
+              1498,
+              32,
+              37
+            ],
+            [
+              841,
+              1498,
+              31,
+              37
+            ],
+            [
+              1250,
+              1493,
+              37,
+              41
+            ],
+            [
+              732,
+              1493,
+              37,
+              41
+            ],
+            [
+              1281,
+              1488,
+              37,
+              41
+            ],
+            [
+              702,
+              1488,
+              37,
+              41
+            ],
+            [
+              1311,
+              1482,
+              37,
+              41
+            ],
+            [
+              672,
+              1482,
+              37,
+              41
+            ],
+            [
+              1341,
+              1477,
+              37,
+              41
+            ],
+            [
+              641,
+              1477,
+              38,
+              41
+            ],
+            [
+              1371,
+              1471,
+              37,
+              42
+            ],
+            [
+              612,
+              1471,
+              37,
+              42
+            ],
+            [
+              1401,
+              1466,
+              37,
+              41
+            ],
+            [
+              581,
+              1466,
+              37,
+              41
+            ],
+            [
+              1163,
+              1434,
+              31,
+              37
+            ],
+            [
+              1132,
+              1434,
+              31,
+              37
+            ],
+            [
+              1101,
+              1434,
+              32,
+              37
+            ],
+            [
+              1071,
+              1434,
+              31,
+              37
+            ],
+            [
+              1040,
+              1434,
+              31,
+              37
+            ],
+            [
+              1009,
+              1434,
+              32,
+              37
+            ],
+            [
+              979,
+              1434,
+              31,
+              37
+            ],
+            [
+              948,
+              1434,
+              31,
+              37
+            ],
+            [
+              917,
+              1434,
+              32,
+              37
+            ],
+            [
+              887,
+              1434,
+              31,
+              37
+            ],
+            [
+              856,
+              1434,
+              31,
+              37
+            ],
+            [
+              825,
+              1434,
+              32,
+              37
+            ],
+            [
+              1250,
+              1429,
+              37,
+              41
+            ],
+            [
+              732,
+              1429,
+              37,
+              41
+            ],
+            [
+              1281,
+              1424,
+              37,
+              41
+            ],
+            [
+              702,
+              1424,
+              37,
+              41
+            ],
+            [
+              1311,
+              1418,
+              37,
+              41
+            ],
+            [
+              672,
+              1418,
+              37,
+              41
+            ],
+            [
+              1341,
+              1413,
+              37,
+              41
+            ],
+            [
+              641,
+              1413,
+              38,
+              41
+            ],
+            [
+              1371,
+              1407,
+              37,
+              42
+            ],
+            [
+              612,
+              1407,
+              37,
+              42
+            ],
+            [
+              1401,
+              1402,
+              37,
+              41
+            ],
+            [
+              581,
+              1402,
+              37,
+              41
+            ],
+            [
+              1147,
+              1370,
+              32,
+              37
+            ],
+            [
+              1117,
+              1370,
+              31,
+              37
+            ],
+            [
+              1086,
+              1370,
+              31,
+              37
+            ],
+            [
+              1055,
+              1370,
+              32,
+              37
+            ],
+            [
+              1025,
+              1370,
+              31,
+              37
+            ],
+            [
+              994,
+              1370,
+              31,
+              37
+            ],
+            [
+              963,
+              1370,
+              32,
+              37
+            ],
+            [
+              933,
+              1370,
+              31,
+              37
+            ],
+            [
+              902,
+              1370,
+              31,
+              37
+            ],
+            [
+              871,
+              1370,
+              32,
+              37
+            ],
+            [
+              841,
+              1370,
+              31,
+              37
+            ],
+            [
+              1250,
+              1365,
+              37,
+              41
+            ],
+            [
+              732,
+              1365,
+              37,
+              41
+            ],
+            [
+              1281,
+              1360,
+              37,
+              41
+            ],
+            [
+              702,
+              1360,
+              37,
+              41
+            ],
+            [
+              1311,
+              1354,
+              37,
+              42
+            ],
+            [
+              672,
+              1354,
+              37,
+              41
+            ],
+            [
+              1341,
+              1349,
+              37,
+              41
+            ],
+            [
+              641,
+              1349,
+              38,
+              41
+            ],
+            [
+              1371,
+              1343,
+              37,
+              42
+            ],
+            [
+              612,
+              1343,
+              37,
+              42
+            ],
+            [
+              1401,
+              1338,
+              37,
+              41
+            ],
+            [
+              581,
+              1338,
+              37,
+              41
+            ],
+            [
+              1163,
+              1306,
+              31,
+              37
+            ],
+            [
+              1132,
+              1306,
+              31,
+              37
+            ],
+            [
+              1101,
+              1306,
+              32,
+              37
+            ],
+            [
+              1071,
+              1306,
+              31,
+              37
+            ],
+            [
+              1040,
+              1306,
+              31,
+              37
+            ],
+            [
+              1009,
+              1306,
+              32,
+              37
+            ],
+            [
+              979,
+              1306,
+              31,
+              37
+            ],
+            [
+              948,
+              1306,
+              31,
+              37
+            ],
+            [
+              917,
+              1306,
+              32,
+              37
+            ],
+            [
+              887,
+              1306,
+              31,
+              37
+            ],
+            [
+              856,
+              1306,
+              31,
+              37
+            ],
+            [
+              825,
+              1306,
+              32,
+              37
+            ],
+            [
+              1250,
+              1301,
+              37,
+              41
+            ],
+            [
+              732,
+              1301,
+              37,
+              41
+            ],
+            [
+              1281,
+              1296,
+              37,
+              41
+            ],
+            [
+              701,
+              1296,
+              38,
+              41
+            ],
+            [
+              1311,
+              1290,
+              37,
+              42
+            ],
+            [
+              672,
+              1290,
+              37,
+              41
+            ],
+            [
+              1341,
+              1285,
+              37,
+              41
+            ],
+            [
+              641,
+              1285,
+              38,
+              41
+            ],
+            [
+              1371,
+              1279,
+              37,
+              42
+            ],
+            [
+              612,
+              1279,
+              37,
+              42
+            ],
+            [
+              1401,
+              1274,
+              37,
+              41
+            ],
+            [
+              581,
+              1274,
+              37,
+              41
+            ],
+            [
+              1147,
+              1242,
+              32,
+              37
+            ],
+            [
+              1117,
+              1242,
+              31,
+              37
+            ],
+            [
+              1086,
+              1242,
+              31,
+              37
+            ],
+            [
+              1055,
+              1242,
+              32,
+              37
+            ],
+            [
+              1025,
+              1242,
+              31,
+              37
+            ],
+            [
+              994,
+              1242,
+              31,
+              37
+            ],
+            [
+              963,
+              1242,
+              32,
+              37
+            ],
+            [
+              933,
+              1242,
+              31,
+              37
+            ],
+            [
+              902,
+              1242,
+              31,
+              37
+            ],
+            [
+              871,
+              1242,
+              32,
+              37
+            ],
+            [
+              841,
+              1242,
+              31,
+              37
+            ],
+            [
+              1250,
+              1237,
+              37,
+              41
+            ],
+            [
+              732,
+              1237,
+              37,
+              41
+            ],
+            [
+              1281,
+              1232,
+              37,
+              41
+            ],
+            [
+              702,
+              1232,
+              37,
+              41
+            ],
+            [
+              1311,
+              1226,
+              37,
+              41
+            ],
+            [
+              672,
+              1226,
+              37,
+              41
+            ],
+            [
+              1341,
+              1221,
+              37,
+              41
+            ],
+            [
+              641,
+              1221,
+              38,
+              41
+            ],
+            [
+              1371,
+              1215,
+              37,
+              42
+            ],
+            [
+              612,
+              1215,
+              37,
+              41
+            ],
+            [
+              1163,
+              1178,
+              31,
+              37
+            ],
+            [
+              1132,
+              1178,
+              31,
+              37
+            ],
+            [
+              1101,
+              1178,
+              32,
+              37
+            ],
+            [
+              1071,
+              1178,
+              31,
+              37
+            ],
+            [
+              1040,
+              1178,
+              31,
+              37
+            ],
+            [
+              1009,
+              1178,
+              32,
+              37
+            ],
+            [
+              979,
+              1178,
+              31,
+              37
+            ],
+            [
+              948,
+              1178,
+              31,
+              37
+            ],
+            [
+              917,
+              1178,
+              32,
+              37
+            ],
+            [
+              887,
+              1178,
+              31,
+              37
+            ],
+            [
+              856,
+              1178,
+              31,
+              37
+            ],
+            [
+              825,
+              1178,
+              32,
+              37
+            ],
+            [
+              1250,
+              1173,
+              37,
+              41
+            ],
+            [
+              732,
+              1173,
+              37,
+              41
+            ],
+            [
+              1281,
+              1168,
+              37,
+              41
+            ],
+            [
+              702,
+              1168,
+              37,
+              41
+            ],
+            [
+              1311,
+              1162,
+              37,
+              41
+            ],
+            [
+              672,
+              1162,
+              37,
+              41
+            ],
+            [
+              1341,
+              1157,
+              37,
+              41
+            ],
+            [
+              641,
+              1157,
+              38,
+              41
+            ],
+            [
+              1371,
+              1151,
+              37,
+              42
+            ],
+            [
+              612,
+              1151,
+              37,
+              41
+            ],
+            [
+              1147,
+              1114,
+              32,
+              37
+            ],
+            [
+              1117,
+              1114,
+              31,
+              37
+            ],
+            [
+              1086,
+              1114,
+              31,
+              37
+            ],
+            [
+              1055,
+              1114,
+              32,
+              37
+            ],
+            [
+              1025,
+              1114,
+              31,
+              37
+            ],
+            [
+              994,
+              1114,
+              31,
+              37
+            ],
+            [
+              963,
+              1114,
+              32,
+              37
+            ],
+            [
+              933,
+              1114,
+              31,
+              37
+            ],
+            [
+              902,
+              1114,
+              31,
+              37
+            ],
+            [
+              871,
+              1114,
+              32,
+              37
+            ],
+            [
+              841,
+              1114,
+              31,
+              37
+            ],
+            [
+              1250,
+              1109,
+              37,
+              41
+            ],
+            [
+              732,
+              1109,
+              37,
+              41
+            ],
+            [
+              1281,
+              1104,
+              37,
+              41
+            ],
+            [
+              702,
+              1104,
+              37,
+              41
+            ],
+            [
+              1311,
+              1098,
+              37,
+              42
+            ],
+            [
+              672,
+              1098,
+              37,
+              41
+            ],
+            [
+              1341,
+              1093,
+              37,
+              41
+            ],
+            [
+              641,
+              1093,
+              38,
+              41
+            ],
+            [
+              1371,
+              1087,
+              37,
+              42
+            ],
+            [
+              612,
+              1087,
+              37,
+              42
+            ],
+            [
+              1163,
+              1050,
+              31,
+              37
+            ],
+            [
+              1132,
+              1050,
+              31,
+              37
+            ],
+            [
+              1101,
+              1050,
+              32,
+              37
+            ],
+            [
+              1071,
+              1050,
+              31,
+              37
+            ],
+            [
+              1040,
+              1050,
+              31,
+              37
+            ],
+            [
+              1009,
+              1050,
+              32,
+              37
+            ],
+            [
+              979,
+              1050,
+              31,
+              37
+            ],
+            [
+              948,
+              1050,
+              31,
+              37
+            ],
+            [
+              917,
+              1050,
+              32,
+              37
+            ],
+            [
+              887,
+              1050,
+              31,
+              37
+            ],
+            [
+              856,
+              1050,
+              31,
+              37
+            ],
+            [
+              825,
+              1050,
+              32,
+              37
+            ],
+            [
+              1250,
+              1045,
+              37,
+              41
+            ],
+            [
+              732,
+              1045,
+              37,
+              41
+            ],
+            [
+              1281,
+              1040,
+              37,
+              41
+            ],
+            [
+              701,
+              1040,
+              38,
+              41
+            ],
+            [
+              1311,
+              1034,
+              37,
+              42
+            ],
+            [
+              672,
+              1034,
+              37,
+              41
+            ],
+            [
+              1341,
+              1029,
+              37,
+              41
+            ],
+            [
+              641,
+              1029,
+              38,
+              41
+            ],
+            [
+              1371,
+              1023,
+              37,
+              42
+            ],
+            [
+              612,
+              1023,
+              37,
+              42
+            ],
+            [
+              1147,
+              986,
+              32,
+              37
+            ],
+            [
+              1117,
+              986,
+              31,
+              37
+            ],
+            [
+              1086,
+              986,
+              31,
+              37
+            ],
+            [
+              1055,
+              986,
+              32,
+              37
+            ],
+            [
+              1025,
+              986,
+              31,
+              37
+            ],
+            [
+              994,
+              986,
+              31,
+              37
+            ],
+            [
+              963,
+              986,
+              32,
+              37
+            ],
+            [
+              933,
+              986,
+              31,
+              37
+            ],
+            [
+              902,
+              986,
+              31,
+              37
+            ],
+            [
+              871,
+              986,
+              32,
+              37
+            ],
+            [
+              841,
+              986,
+              31,
+              37
+            ],
+            [
+              1250,
+              981,
+              37,
+              42
+            ],
+            [
+              732,
+              981,
+              37,
+              42
+            ],
+            [
+              1281,
+              976,
+              37,
+              41
+            ],
+            [
+              702,
+              976,
+              37,
+              41
+            ],
+            [
+              1311,
+              970,
+              37,
+              42
+            ],
+            [
+              672,
+              970,
+              37,
+              41
+            ],
+            [
+              1341,
+              965,
+              37,
+              41
+            ],
+            [
+              642,
+              965,
+              37,
+              41
+            ],
+            [
+              1163,
+              922,
+              31,
+              37
+            ],
+            [
+              1132,
+              922,
+              31,
+              37
+            ],
+            [
+              1101,
+              922,
+              32,
+              37
+            ],
+            [
+              1071,
+              922,
+              31,
+              37
+            ],
+            [
+              1040,
+              922,
+              31,
+              37
+            ],
+            [
+              1009,
+              922,
+              32,
+              37
+            ],
+            [
+              979,
+              922,
+              31,
+              37
+            ],
+            [
+              948,
+              922,
+              31,
+              37
+            ],
+            [
+              917,
+              922,
+              32,
+              37
+            ],
+            [
+              887,
+              922,
+              31,
+              37
+            ],
+            [
+              856,
+              922,
+              31,
+              37
+            ],
+            [
+              1250,
+              917,
+              37,
+              42
+            ],
+            [
+              1281,
+              912,
+              37,
+              41
+            ],
+            [
+              1311,
+              906,
+              37,
+              42
+            ],
+            [
+              1147,
+              858,
+              32,
+              37
+            ],
+            [
+              1117,
+              858,
+              31,
+              37
+            ],
+            [
+              1086,
+              858,
+              31,
+              37
+            ],
+            [
+              1055,
+              858,
+              32,
+              37
+            ],
+            [
+              1025,
+              858,
+              31,
+              37
+            ],
+            [
+              994,
+              858,
+              31,
+              37
+            ],
+            [
+              963,
+              858,
+              32,
+              37
+            ],
+            [
+              933,
+              858,
+              31,
+              37
+            ],
+            [
+              902,
+              858,
+              31,
+              37
+            ],
+            [
+              871,
+              858,
+              32,
+              37
+            ],
+            [
+              1250,
+              853,
+              37,
+              42
+            ],
+            [
+              1281,
+              848,
+              37,
+              41
+            ]
+          ]
+        },
+        "method": "Fresh independent human visual two-pass frozen before comparison: parent fresh PDF/PyMuPDF2x; reviewer independent curl/Poppler2800. SHA256 ae21292aefb74d391b5b5872c5773966bbfbd9298ed0bde3460d79b8b5b06614. Expanded Pass1-only0/Pass2-only0/duplicates0 after documented direct-source resolution. Initial Pass1 omitted row12 seat2 (257 vs258); returned to original enlarged row12 crop, explicitly read printed2, corrected that single omission; preserved initial freeze. Final bidirectional equality0. Independent pixel contour checksum 258; binary inverse threshold180; cell bounds28-42x32-42, seating ROI570<x<1460/800<y<1710; architectural object outside excluded; pixel count uses no ranges. Issuer reconciliation: 公式246固定＋12移動＝258席の全番号。移動席と車椅子転換の個別対応は図にないため推測しない。"
+      }
     },
     {
       "inventoryId": "tokyo-official-1176",
@@ -637,17 +4269,1652 @@
       "inventoryId": "tokyo-official-1206",
       "name": "瑞穂ビューパーク・スカイホール〔小ホール〕",
       "inventoryFile": "data/venue-inventory/tokyo.json",
-      "venueSourceId": null,
+      "venueSourceId": "mizuho-sky-small-standard",
       "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
       "entryUrl": null,
-      "discoveryStatus": "recovered-pending-implementation",
+      "discoveryStatus": "production",
       "checkedPaths": [
         "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html",
         "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144_d/fil/syouho-ruheimen.pdf"
       ],
-      "disposition": null,
+      "disposition": "GREEN",
       "reopenCondition": null,
-      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+      "findings": "公式詳細図の可動席236席のみ。別記された仮設64席は番号がなく対象外。300席全体の番号を創作しない。",
+      "verification": {
+        "pass1Initial": {
+          "ranges": [
+            {
+              "rowLabel": "1",
+              "from": 3,
+              "to": 18
+            },
+            {
+              "rowLabel": "2",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "3",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "4",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "5",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "6",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "7",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "8",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "9",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "10",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "11",
+              "from": 1,
+              "to": 20
+            },
+            {
+              "rowLabel": "12",
+              "from": 1,
+              "to": 20
+            }
+          ],
+          "notes": "236 numbered movable seats;64 unnumbered temporary chairs separately stated. No invented IDs."
+        },
+        "pass1FinalRanges": [
+          {
+            "rowLabel": "1",
+            "from": 3,
+            "to": 18
+          },
+          {
+            "rowLabel": "2",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "3",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "4",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "5",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "6",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "7",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "8",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "9",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "10",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "11",
+            "from": 1,
+            "to": 20
+          },
+          {
+            "rowLabel": "12",
+            "from": 1,
+            "to": 20
+          }
+        ],
+        "pass2": {
+          "ranges": [
+            {
+              "rowLabel": "1",
+              "to": 18,
+              "excluded": [],
+              "from": 3
+            },
+            {
+              "rowLabel": "2",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "3",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "4",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "5",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "6",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "7",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "8",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "9",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "10",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "11",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            },
+            {
+              "rowLabel": "12",
+              "to": 20,
+              "excluded": [],
+              "from": 1
+            }
+          ]
+        },
+        "assetSha256": "4d0b4016ed17d4f7dd97fbb6b2008f87a31cebcc130c0e96d31acfd2b48dc9dc",
+        "expandedSet": {
+          "pass1Only": 0,
+          "pass2Only": 0,
+          "duplicates": 0,
+          "count": 236
+        },
+        "independentStructuralChecksum": {
+          "method": "Pixel contours from independent Poppler render",
+          "count": 236,
+          "bounds": [
+            [
+              419,
+              2109,
+              35,
+              49
+            ],
+            [
+              384,
+              2109,
+              36,
+              49
+            ],
+            [
+              610,
+              2108,
+              35,
+              49
+            ],
+            [
+              524,
+              2108,
+              35,
+              49
+            ],
+            [
+              489,
+              2108,
+              36,
+              49
+            ],
+            [
+              454,
+              2108,
+              35,
+              49
+            ],
+            [
+              820,
+              2107,
+              34,
+              49
+            ],
+            [
+              784,
+              2107,
+              36,
+              49
+            ],
+            [
+              749,
+              2107,
+              36,
+              50
+            ],
+            [
+              714,
+              2107,
+              35,
+              50
+            ],
+            [
+              679,
+              2107,
+              36,
+              50
+            ],
+            [
+              644,
+              2107,
+              36,
+              50
+            ],
+            [
+              1147,
+              2106,
+              35,
+              49
+            ],
+            [
+              1112,
+              2106,
+              35,
+              49
+            ],
+            [
+              1077,
+              2106,
+              36,
+              49
+            ],
+            [
+              1042,
+              2106,
+              35,
+              49
+            ],
+            [
+              1007,
+              2106,
+              35,
+              49
+            ],
+            [
+              925,
+              2106,
+              34,
+              50
+            ],
+            [
+              889,
+              2106,
+              36,
+              50
+            ],
+            [
+              854,
+              2106,
+              36,
+              50
+            ],
+            [
+              524,
+              2038,
+              35,
+              49
+            ],
+            [
+              489,
+              2038,
+              35,
+              50
+            ],
+            [
+              454,
+              2038,
+              35,
+              50
+            ],
+            [
+              419,
+              2038,
+              35,
+              50
+            ],
+            [
+              384,
+              2038,
+              35,
+              50
+            ],
+            [
+              889,
+              2037,
+              36,
+              49
+            ],
+            [
+              854,
+              2037,
+              35,
+              49
+            ],
+            [
+              819,
+              2037,
+              35,
+              49
+            ],
+            [
+              784,
+              2037,
+              35,
+              49
+            ],
+            [
+              749,
+              2037,
+              35,
+              49
+            ],
+            [
+              714,
+              2037,
+              35,
+              50
+            ],
+            [
+              679,
+              2037,
+              35,
+              50
+            ],
+            [
+              644,
+              2037,
+              35,
+              50
+            ],
+            [
+              610,
+              2037,
+              34,
+              50
+            ],
+            [
+              1112,
+              2036,
+              35,
+              49
+            ],
+            [
+              1077,
+              2036,
+              35,
+              49
+            ],
+            [
+              1042,
+              2036,
+              35,
+              49
+            ],
+            [
+              1007,
+              2036,
+              35,
+              49
+            ],
+            [
+              924,
+              2036,
+              35,
+              50
+            ],
+            [
+              1147,
+              2035,
+              35,
+              50
+            ],
+            [
+              679,
+              1968,
+              35,
+              49
+            ],
+            [
+              644,
+              1968,
+              35,
+              49
+            ],
+            [
+              609,
+              1968,
+              35,
+              49
+            ],
+            [
+              524,
+              1968,
+              35,
+              49
+            ],
+            [
+              488,
+              1968,
+              36,
+              49
+            ],
+            [
+              453,
+              1968,
+              36,
+              50
+            ],
+            [
+              419,
+              1968,
+              35,
+              50
+            ],
+            [
+              383,
+              1968,
+              36,
+              50
+            ],
+            [
+              854,
+              1967,
+              35,
+              49
+            ],
+            [
+              819,
+              1967,
+              35,
+              49
+            ],
+            [
+              784,
+              1967,
+              35,
+              49
+            ],
+            [
+              749,
+              1967,
+              35,
+              49
+            ],
+            [
+              714,
+              1967,
+              35,
+              49
+            ],
+            [
+              1146,
+              1966,
+              36,
+              49
+            ],
+            [
+              1112,
+              1966,
+              35,
+              49
+            ],
+            [
+              1076,
+              1966,
+              36,
+              49
+            ],
+            [
+              1041,
+              1966,
+              36,
+              49
+            ],
+            [
+              1007,
+              1966,
+              35,
+              50
+            ],
+            [
+              924,
+              1966,
+              35,
+              50
+            ],
+            [
+              889,
+              1966,
+              35,
+              50
+            ],
+            [
+              418,
+              1899,
+              35,
+              49
+            ],
+            [
+              383,
+              1899,
+              36,
+              49
+            ],
+            [
+              644,
+              1898,
+              35,
+              49
+            ],
+            [
+              609,
+              1898,
+              35,
+              49
+            ],
+            [
+              523,
+              1898,
+              35,
+              49
+            ],
+            [
+              488,
+              1898,
+              36,
+              49
+            ],
+            [
+              453,
+              1898,
+              36,
+              49
+            ],
+            [
+              924,
+              1897,
+              35,
+              49
+            ],
+            [
+              889,
+              1897,
+              35,
+              49
+            ],
+            [
+              854,
+              1897,
+              35,
+              49
+            ],
+            [
+              819,
+              1897,
+              35,
+              49
+            ],
+            [
+              784,
+              1897,
+              35,
+              49
+            ],
+            [
+              749,
+              1897,
+              35,
+              50
+            ],
+            [
+              714,
+              1897,
+              35,
+              50
+            ],
+            [
+              679,
+              1897,
+              35,
+              50
+            ],
+            [
+              1146,
+              1896,
+              36,
+              49
+            ],
+            [
+              1111,
+              1896,
+              36,
+              49
+            ],
+            [
+              1076,
+              1896,
+              36,
+              49
+            ],
+            [
+              1041,
+              1896,
+              36,
+              49
+            ],
+            [
+              1006,
+              1896,
+              36,
+              49
+            ],
+            [
+              383,
+              1829,
+              35,
+              49
+            ],
+            [
+              714,
+              1828,
+              35,
+              49
+            ],
+            [
+              679,
+              1828,
+              35,
+              49
+            ],
+            [
+              644,
+              1828,
+              35,
+              49
+            ],
+            [
+              609,
+              1828,
+              35,
+              49
+            ],
+            [
+              523,
+              1828,
+              35,
+              50
+            ],
+            [
+              488,
+              1828,
+              35,
+              50
+            ],
+            [
+              453,
+              1828,
+              35,
+              50
+            ],
+            [
+              418,
+              1828,
+              35,
+              50
+            ],
+            [
+              924,
+              1827,
+              35,
+              49
+            ],
+            [
+              889,
+              1827,
+              35,
+              49
+            ],
+            [
+              854,
+              1827,
+              35,
+              49
+            ],
+            [
+              819,
+              1827,
+              35,
+              49
+            ],
+            [
+              784,
+              1827,
+              35,
+              49
+            ],
+            [
+              749,
+              1827,
+              35,
+              49
+            ],
+            [
+              1146,
+              1826,
+              35,
+              49
+            ],
+            [
+              1111,
+              1826,
+              36,
+              49
+            ],
+            [
+              1076,
+              1826,
+              35,
+              49
+            ],
+            [
+              1041,
+              1826,
+              35,
+              49
+            ],
+            [
+              1006,
+              1826,
+              36,
+              49
+            ],
+            [
+              679,
+              1758,
+              35,
+              49
+            ],
+            [
+              644,
+              1758,
+              35,
+              49
+            ],
+            [
+              609,
+              1758,
+              35,
+              49
+            ],
+            [
+              523,
+              1758,
+              35,
+              49
+            ],
+            [
+              488,
+              1758,
+              35,
+              50
+            ],
+            [
+              452,
+              1758,
+              36,
+              50
+            ],
+            [
+              418,
+              1758,
+              35,
+              50
+            ],
+            [
+              383,
+              1758,
+              35,
+              50
+            ],
+            [
+              889,
+              1757,
+              35,
+              49
+            ],
+            [
+              854,
+              1757,
+              35,
+              49
+            ],
+            [
+              819,
+              1757,
+              35,
+              49
+            ],
+            [
+              784,
+              1757,
+              35,
+              49
+            ],
+            [
+              749,
+              1757,
+              35,
+              49
+            ],
+            [
+              714,
+              1757,
+              35,
+              50
+            ],
+            [
+              1146,
+              1756,
+              35,
+              49
+            ],
+            [
+              1111,
+              1756,
+              35,
+              49
+            ],
+            [
+              1076,
+              1756,
+              35,
+              49
+            ],
+            [
+              1041,
+              1756,
+              35,
+              50
+            ],
+            [
+              1006,
+              1756,
+              35,
+              50
+            ],
+            [
+              924,
+              1756,
+              35,
+              50
+            ],
+            [
+              452,
+              1689,
+              36,
+              49
+            ],
+            [
+              417,
+              1689,
+              36,
+              49
+            ],
+            [
+              383,
+              1689,
+              35,
+              49
+            ],
+            [
+              644,
+              1688,
+              35,
+              49
+            ],
+            [
+              609,
+              1688,
+              35,
+              49
+            ],
+            [
+              523,
+              1688,
+              35,
+              49
+            ],
+            [
+              488,
+              1688,
+              35,
+              49
+            ],
+            [
+              1005,
+              1687,
+              36,
+              49
+            ],
+            [
+              924,
+              1687,
+              35,
+              49
+            ],
+            [
+              889,
+              1687,
+              35,
+              49
+            ],
+            [
+              854,
+              1687,
+              35,
+              49
+            ],
+            [
+              819,
+              1687,
+              35,
+              49
+            ],
+            [
+              784,
+              1687,
+              35,
+              50
+            ],
+            [
+              749,
+              1687,
+              35,
+              50
+            ],
+            [
+              714,
+              1687,
+              35,
+              50
+            ],
+            [
+              679,
+              1687,
+              35,
+              50
+            ],
+            [
+              1146,
+              1686,
+              35,
+              49
+            ],
+            [
+              1110,
+              1686,
+              36,
+              49
+            ],
+            [
+              1075,
+              1686,
+              36,
+              49
+            ],
+            [
+              1041,
+              1686,
+              35,
+              49
+            ],
+            [
+              382,
+              1619,
+              35,
+              49
+            ],
+            [
+              714,
+              1618,
+              35,
+              49
+            ],
+            [
+              679,
+              1618,
+              35,
+              49
+            ],
+            [
+              644,
+              1618,
+              35,
+              49
+            ],
+            [
+              609,
+              1618,
+              35,
+              49
+            ],
+            [
+              522,
+              1618,
+              36,
+              50
+            ],
+            [
+              487,
+              1618,
+              35,
+              50
+            ],
+            [
+              452,
+              1618,
+              35,
+              50
+            ],
+            [
+              417,
+              1618,
+              36,
+              50
+            ],
+            [
+              924,
+              1617,
+              35,
+              49
+            ],
+            [
+              889,
+              1617,
+              35,
+              49
+            ],
+            [
+              854,
+              1617,
+              35,
+              49
+            ],
+            [
+              819,
+              1617,
+              35,
+              49
+            ],
+            [
+              784,
+              1617,
+              35,
+              49
+            ],
+            [
+              749,
+              1617,
+              35,
+              50
+            ],
+            [
+              1145,
+              1616,
+              35,
+              49
+            ],
+            [
+              1110,
+              1616,
+              36,
+              49
+            ],
+            [
+              1075,
+              1616,
+              36,
+              50
+            ],
+            [
+              1040,
+              1616,
+              35,
+              50
+            ],
+            [
+              1005,
+              1616,
+              36,
+              50
+            ],
+            [
+              487,
+              1549,
+              35,
+              49
+            ],
+            [
+              452,
+              1549,
+              35,
+              49
+            ],
+            [
+              417,
+              1549,
+              35,
+              49
+            ],
+            [
+              382,
+              1549,
+              35,
+              49
+            ],
+            [
+              679,
+              1548,
+              35,
+              49
+            ],
+            [
+              644,
+              1548,
+              35,
+              49
+            ],
+            [
+              609,
+              1548,
+              35,
+              49
+            ],
+            [
+              522,
+              1548,
+              35,
+              49
+            ],
+            [
+              889,
+              1547,
+              35,
+              49
+            ],
+            [
+              854,
+              1547,
+              35,
+              49
+            ],
+            [
+              819,
+              1547,
+              35,
+              50
+            ],
+            [
+              784,
+              1547,
+              35,
+              50
+            ],
+            [
+              749,
+              1547,
+              35,
+              50
+            ],
+            [
+              714,
+              1547,
+              35,
+              50
+            ],
+            [
+              1145,
+              1546,
+              35,
+              49
+            ],
+            [
+              1110,
+              1546,
+              35,
+              49
+            ],
+            [
+              1075,
+              1546,
+              35,
+              49
+            ],
+            [
+              1040,
+              1546,
+              35,
+              50
+            ],
+            [
+              1005,
+              1546,
+              35,
+              50
+            ],
+            [
+              924,
+              1546,
+              35,
+              50
+            ],
+            [
+              452,
+              1479,
+              35,
+              49
+            ],
+            [
+              417,
+              1479,
+              35,
+              49
+            ],
+            [
+              382,
+              1479,
+              35,
+              49
+            ],
+            [
+              644,
+              1478,
+              35,
+              49
+            ],
+            [
+              609,
+              1478,
+              35,
+              49
+            ],
+            [
+              522,
+              1478,
+              35,
+              50
+            ],
+            [
+              487,
+              1478,
+              35,
+              50
+            ],
+            [
+              924,
+              1477,
+              35,
+              49
+            ],
+            [
+              889,
+              1477,
+              35,
+              49
+            ],
+            [
+              854,
+              1477,
+              35,
+              49
+            ],
+            [
+              819,
+              1477,
+              35,
+              49
+            ],
+            [
+              784,
+              1477,
+              35,
+              50
+            ],
+            [
+              749,
+              1477,
+              35,
+              50
+            ],
+            [
+              714,
+              1477,
+              35,
+              50
+            ],
+            [
+              679,
+              1477,
+              35,
+              50
+            ],
+            [
+              1145,
+              1476,
+              35,
+              49
+            ],
+            [
+              1110,
+              1476,
+              35,
+              49
+            ],
+            [
+              1074,
+              1476,
+              36,
+              49
+            ],
+            [
+              1040,
+              1476,
+              35,
+              49
+            ],
+            [
+              1005,
+              1476,
+              35,
+              50
+            ],
+            [
+              416,
+              1409,
+              36,
+              49
+            ],
+            [
+              381,
+              1409,
+              36,
+              49
+            ],
+            [
+              714,
+              1408,
+              35,
+              49
+            ],
+            [
+              679,
+              1408,
+              35,
+              49
+            ],
+            [
+              644,
+              1408,
+              35,
+              49
+            ],
+            [
+              609,
+              1408,
+              35,
+              49
+            ],
+            [
+              521,
+              1408,
+              36,
+              50
+            ],
+            [
+              486,
+              1408,
+              36,
+              50
+            ],
+            [
+              451,
+              1408,
+              36,
+              50
+            ],
+            [
+              924,
+              1407,
+              35,
+              49
+            ],
+            [
+              889,
+              1407,
+              35,
+              49
+            ],
+            [
+              854,
+              1407,
+              35,
+              49
+            ],
+            [
+              819,
+              1407,
+              35,
+              49
+            ],
+            [
+              784,
+              1407,
+              35,
+              49
+            ],
+            [
+              749,
+              1407,
+              35,
+              50
+            ],
+            [
+              1144,
+              1406,
+              36,
+              49
+            ],
+            [
+              1109,
+              1406,
+              36,
+              49
+            ],
+            [
+              1074,
+              1406,
+              36,
+              50
+            ],
+            [
+              1039,
+              1406,
+              36,
+              50
+            ],
+            [
+              1005,
+              1406,
+              35,
+              50
+            ],
+            [
+              521,
+              1339,
+              35,
+              48
+            ],
+            [
+              486,
+              1339,
+              36,
+              49
+            ],
+            [
+              451,
+              1339,
+              36,
+              49
+            ],
+            [
+              714,
+              1338,
+              35,
+              49
+            ],
+            [
+              679,
+              1338,
+              35,
+              49
+            ],
+            [
+              644,
+              1338,
+              35,
+              49
+            ],
+            [
+              609,
+              1338,
+              35,
+              49
+            ],
+            [
+              924,
+              1337,
+              35,
+              49
+            ],
+            [
+              889,
+              1337,
+              35,
+              49
+            ],
+            [
+              853,
+              1337,
+              36,
+              49
+            ],
+            [
+              819,
+              1337,
+              35,
+              49
+            ],
+            [
+              784,
+              1337,
+              35,
+              50
+            ],
+            [
+              749,
+              1337,
+              35,
+              50
+            ],
+            [
+              1074,
+              1336,
+              35,
+              49
+            ],
+            [
+              1039,
+              1336,
+              35,
+              49
+            ],
+            [
+              1004,
+              1336,
+              35,
+              50
+            ]
+          ]
+        },
+        "method": "Fresh independent human visual two-pass frozen before comparison: parent fresh PDF/PyMuPDF2x; reviewer independent curl/Poppler2800. SHA256 4d0b4016ed17d4f7dd97fbb6b2008f87a31cebcc130c0e96d31acfd2b48dc9dc. Expanded Pass1-only0/Pass2-only0/duplicates0 after documented direct-source resolution. Independent pixel contour checksum 236; binary inverse threshold180; cell bounds32-37x47-52; pixel count uses no ranges. Issuer reconciliation: 公式詳細図の可動席236席のみ。別記された仮設64席は番号がなく対象外。300席全体の番号を創作しない。"
+      }
     },
     {
       "inventoryId": "tokyo-official-0028",
@@ -656,10 +5923,21 @@
       "venueSourceId": null,
       "priorBlocker": "HOLD / NEED EVIDENCE (TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT): issuer entrypoint, event/ticket, FAQ, download and seating/drawing domain sweep found a 372-capacity statement only, not a complete current numbered chart/list. Capacity cannot supply identifiers. Reopen only if the issuer publishes a numbered representative seating chart/list.",
       "entryUrl": "https://iictokyo.esteri.it/ja/chi-siamo/la-sede/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://iictokyo.esteri.it/ja/chi-siamo/la-sede/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer complete representative numbered chart.",
+      "findings": "Issuer facility and domain search; no numbered original recovered.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0028",
+        "checkedPaths": [
+          "https://iictokyo.esteri.it/ja/chi-siamo/la-sede/"
+        ],
+        "findings": "Issuer facility and domain search; no numbered original recovered.",
+        "reopenCondition": "Issuer complete representative numbered chart."
+      }
     },
     {
       "inventoryId": "tokyo-official-0032",
@@ -724,10 +6002,25 @@
       "venueSourceId": "tokyo-wave3-0135",
       "priorBlocker": "DEFER (TOKYO PRIORITY C RANKED PREFLIGHT): current official facility page links a seat chart, but the linked PDF currently returns PAGE NOT FOUND. Do not infer the removable first two rows; reopen only with a current complete issuer-numbered map/list.",
       "entryUrl": null,
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.kissport.or.jp/sisetu/akasaka/list/",
+        "https://dp700d203kaax.cloudfront.net/sisetu/akasaka/sheets_akasaka.pdf",
+        "https://dp700d203kaax.cloudfront.net/sisetu/akasaka/riyou-tebiki.pdf"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Visual qualify original, removable rows and current applicability; retrieve notice.",
+      "findings": "Recovered current operator-linked numbered PDF. Guide linked. Renovation notice2025-12-05 and outdated-site warning fetch failed.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0135",
+        "checkedPaths": [
+          "https://www.kissport.or.jp/sisetu/akasaka/list/",
+          "https://dp700d203kaax.cloudfront.net/sisetu/akasaka/sheets_akasaka.pdf",
+          "https://dp700d203kaax.cloudfront.net/sisetu/akasaka/riyou-tebiki.pdf"
+        ],
+        "findings": "Recovered current operator-linked numbered PDF. Guide linked. Renovation notice2025-12-05 and outdated-site warning fetch failed.",
+        "reopenCondition": "Visual qualify original, removable rows and current applicability; retrieve notice."
+      }
     },
     {
       "inventoryId": "tokyo-official-0144",
@@ -736,10 +6029,23 @@
       "venueSourceId": null,
       "priorBlocker": "HOLD / NEED EVIDENCE (TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT): hall, use/access, linked seat endpoint, ticket/FAQ, downloads and issuer-domain seating/drawing searches were checked. The current linked seat endpoint is page-not-found and no numbered asset remains. Reopen only when the issuer publishes/restores a complete numbered representative chart/list.",
       "entryUrl": "https://www.yakult.co.jp/spn/hall/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.yakult.co.jp/spn/hall/",
+        "https://www.yakult.co.jp/hall/seat/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Alternate-client retrieval; failure is not absence.",
+      "findings": "Mobile issuer navigation links seat page; cache failure. PC link redirects corporate home.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0144",
+        "checkedPaths": [
+          "https://www.yakult.co.jp/spn/hall/",
+          "https://www.yakult.co.jp/hall/seat/"
+        ],
+        "findings": "Mobile issuer navigation links seat page; cache failure. PC link redirects corporate home.",
+        "reopenCondition": "Alternate-client retrieval; failure is not absence."
+      }
     },
     {
       "inventoryId": "tokyo-official-0172",
@@ -748,10 +6054,21 @@
       "venueSourceId": null,
       "priorBlocker": "HOLD / NEED EVIDENCE (TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT): issuer top, schedule/ticket, floor-plan/technical, download, FAQ/accessibility and domain seating/drawing searches found only a partial A列5-15 member allocation, not a complete identifier set/configuration. Reopen only with a complete issuer-numbered representative chart/list.",
       "entryUrl": "https://tricolore-theater.com/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://tricolore-theater.com/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Parent HTML retrieval; full representative chart required.",
+      "findings": "Current indexed2026 event content only identifies membership A5-15; direct fetch failed.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0172",
+        "checkedPaths": [
+          "https://tricolore-theater.com/"
+        ],
+        "findings": "Current indexed2026 event content only identifies membership A5-15; direct fetch failed.",
+        "reopenCondition": "Parent HTML retrieval; full representative chart required."
+      }
     },
     {
       "inventoryId": "tokyo-official-0297",
@@ -760,10 +6077,23 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3): the current official room-rental page states only 最大72名 for 講堂 with hourly rental pricing and rentable equipment (mics, projector, screen, whiteboard, mats), and the current facility-overview page lists 講堂 with no capacity or seating detail at all. No current seating chart, floor plan, or row/seat numbering exists anywhere on the site. Reopen only if the issuer publishes a numbered seat chart.",
       "entryUrl": "https://www.tokyo-mw-kaikan.jp/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.tokyo-mw-kaikan.jp/",
+        "http://www.tokyo-mw-kaikan.jp/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Alternate-client issuer retrieval; existing capacity only cannot prove identifiers.",
+      "findings": "Both fetch routes fail; domain and fullname search no replacement issuer chart.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0297",
+        "checkedPaths": [
+          "https://www.tokyo-mw-kaikan.jp/",
+          "http://www.tokyo-mw-kaikan.jp/"
+        ],
+        "findings": "Both fetch routes fail; domain and fullname search no replacement issuer chart.",
+        "reopenCondition": "Alternate-client issuer retrieval; existing capacity only cannot prove identifiers."
+      }
     },
     {
       "inventoryId": "tokyo-official-0323",
@@ -772,10 +6102,23 @@
       "venueSourceId": "taito-civic-hall-standard",
       "priorBlocker": "公式施設資料の300席について、固定番号が記載された現行座席表を取得し全rangeを確認する。",
       "entryUrl": "https://www.city.taito.lg.jp/index/shisetsu/hall/kuminkan/riyouannai.html",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.city.taito.lg.jp/kusei/shisetsu/hall/kuminkan/riyouannai.html",
+        "https://www.city.taito.lg.jp/kusei/shisetsu/hall/kuminkan/riyouannai.files/heimenzu.pdf"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Representative chair arrangement and official identifiers.",
+      "findings": "Opened floor PDF:8F/9F rooms,300capacity hall; no numbered set.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0323",
+        "checkedPaths": [
+          "https://www.city.taito.lg.jp/kusei/shisetsu/hall/kuminkan/riyouannai.html",
+          "https://www.city.taito.lg.jp/kusei/shisetsu/hall/kuminkan/riyouannai.files/heimenzu.pdf"
+        ],
+        "findings": "Opened floor PDF:8F/9F rooms,300capacity hall; no numbered set.",
+        "reopenCondition": "Representative chair arrangement and official identifiers."
+      }
     },
     {
       "inventoryId": "tokyo-official-0331",
@@ -784,10 +6127,23 @@
       "venueSourceId": "tokyo-wave3-0331",
       "priorBlocker": "DEFER (TOKYO PRIORITY C RANKED PREFLIGHT): current issuer page states fixed393 plus wheelchair2 but provides no complete numbered map/list, row/block ownership, or numbered wheelchair relation. Existing draft ranges have no current issuer provenance.",
       "entryUrl": null,
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.tnm.jp/modules/r_free_page/index.php?id=184&lang=ja",
+        "https://www.tnm.jp/common/fckeditor/editor/filemanager/connectors/php/transfer.php?file=%2Fevent%2Fuid000318_73656174696E672D63686172742E706466"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Retrieve and visually qualify current applicability; no old draft answer key.",
+      "findings": "Issuer seating PDF discovered indexed; fetch failed. Current facility393fixed+2wheelchair.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0331",
+        "checkedPaths": [
+          "https://www.tnm.jp/modules/r_free_page/index.php?id=184&lang=ja",
+          "https://www.tnm.jp/common/fckeditor/editor/filemanager/connectors/php/transfer.php?file=%2Fevent%2Fuid000318_73656174696E672D63686172742E706466"
+        ],
+        "findings": "Issuer seating PDF discovered indexed; fetch failed. Current facility393fixed+2wheelchair.",
+        "reopenCondition": "Retrieve and visually qualify current applicability; no old draft answer key."
+      }
     },
     {
       "inventoryId": "tokyo-official-0337",
@@ -796,10 +6152,25 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official site (kahaku.go.jp) facility-rental page describes 日本館講堂 only with a photo and no capacity figure or seat chart; the only externally indexed rental-guide PDF (inst_lend.pdf) returns the site’s top page (dead/redirected link), not a document. No current issuer-numbered seat set or capacity statement was located. Reopen only if the issuer publishes a current numbered seat chart or a working rental-guide document with seating detail.",
       "entryUrl": "https://www.kahaku.go.jp/index.php",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.kahaku.go.jp/kahaku/kashidashi/shisetsu.html",
+        "https://www.kahaku.go.jp/albums/abm.php?d=2674&f=abm00010300.pdf&n=inst_lend.pdf",
+        "https://www.kahaku.go.jp/procedure/rent/institution/pdf/inst_intro.pdf"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Structural HOLD until representative numbered configuration.",
+      "findings": "Current32page rental PDF opens; p13 capacity150 equipment190chairs40tables. Old intro redirects. No indexed IDs.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0337",
+        "checkedPaths": [
+          "https://www.kahaku.go.jp/kahaku/kashidashi/shisetsu.html",
+          "https://www.kahaku.go.jp/albums/abm.php?d=2674&f=abm00010300.pdf&n=inst_lend.pdf",
+          "https://www.kahaku.go.jp/procedure/rent/institution/pdf/inst_intro.pdf"
+        ],
+        "findings": "Current32page rental PDF opens; p13 capacity150 equipment190chairs40tables. Old intro redirects. No indexed IDs.",
+        "reopenCondition": "Structural HOLD until representative numbered configuration."
+      }
     },
     {
       "inventoryId": "tokyo-official-0338",
@@ -808,10 +6179,23 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official facility page and its linked current usage-guide PDF (2024年3月改訂) both state only a capacity figure, \"定員230名（車いすスペース5台分含む）\", with no seat chart, row label, or numbered seat list of any kind. Reopen only if the issuer publishes a numbered seat chart.",
       "entryUrl": "https://www.tobikan.jp/index.html",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.tobikan.jp/media/pdf/2024/guide_auditorium.pdf",
+        "https://www.tobikan.jp/guide/rental.html"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Complete225fixed numbered set and wheelchair scope.",
+      "findings": "5page guide opens usage rules/capacity. Rental route fails; domain search no chart.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0338",
+        "checkedPaths": [
+          "https://www.tobikan.jp/media/pdf/2024/guide_auditorium.pdf",
+          "https://www.tobikan.jp/guide/rental.html"
+        ],
+        "findings": "5page guide opens usage rules/capacity. Rental route fails; domain search no chart.",
+        "reopenCondition": "Complete225fixed numbered set and wheelchair scope."
+      }
     },
     {
       "inventoryId": "tokyo-official-0359",
@@ -820,10 +6204,23 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TYPE-ONLY A/B LANE CLOSURE): 現行公式は固定席1,200を示すが、issuer-numbered set、losslessなprinted seat set、issuer-defined ownershipがない。番号付き座席図/seat listが現行公式で公開された場合のみ再評価する。",
       "entryUrl": "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/toubuk/ueno/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/toubuk/ueno/notice",
+        "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/-"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Post-repair official numbered chart; thirdparty1212 not authoritative.",
+      "findings": "Current12page guide revised2024-09-01;1200fixed;2022-23seat repairs; no numbered original recovered.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0359",
+        "checkedPaths": [
+          "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/toubuk/ueno/notice",
+          "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/-"
+        ],
+        "findings": "Current12page guide revised2024-09-01;1200fixed;2022-23seat repairs; no numbered original recovered.",
+        "reopenCondition": "Post-repair official numbered chart; thirdparty1212 not authoritative."
+      }
     },
     {
       "inventoryId": "tokyo-official-0366",
@@ -832,10 +6229,21 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 2): the current official operator site (https://theater.sasayacafe.com/) states only 常設151席 and publishes no seat chart, PDF, or numbered diagram; third-party ticketing sites (eplus, okepi, mdata) are not issuer evidence. Reopen only if the issuer publishes a current numbered seat chart.",
       "entryUrl": "https://theatersasayacafe.com/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://theater.sasayacafe.com/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Full official chart and representative scope.",
+      "findings": "Current overview151permanent/introduction150; no download original.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0366",
+        "checkedPaths": [
+          "https://theater.sasayacafe.com/"
+        ],
+        "findings": "Current overview151permanent/introduction150; no download original.",
+        "reopenCondition": "Full official chart and representative scope."
+      }
     },
     {
       "inventoryId": "tokyo-official-0367",
@@ -844,10 +6252,23 @@
       "venueSourceId": "tokyo-wave3-0367",
       "priorBlocker": "DEFER (TOKYO PRIORITY C REMAINING PREFLIGHT): current official rental material confirms the 369-seat large hall and wheelchair space, but has no current complete issuer-numbered map/list; the old overview PDF URL is now 404.",
       "entryUrl": "https://www.edo-tokyo-museum.or.jp/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.edo-tokyo-museum.or.jp/information/room-rental/facilities/",
+        "https://www.edo-tokyo-museum.or.jp/information/room-rental/facilities/pdf/1_l_seat-configurations.pdf"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Parent visual qualification.",
+      "findings": "Current navigation recovered onepage raster chart header369.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0367",
+        "checkedPaths": [
+          "https://www.edo-tokyo-museum.or.jp/information/room-rental/facilities/",
+          "https://www.edo-tokyo-museum.or.jp/information/room-rental/facilities/pdf/1_l_seat-configurations.pdf"
+        ],
+        "findings": "Current navigation recovered onepage raster chart header369.",
+        "reopenCondition": "Parent visual qualification."
+      }
     },
     {
       "inventoryId": "tokyo-official-0446",
@@ -856,10 +6277,25 @@
       "venueSourceId": "kita-noh-theatre-standard",
       "priorBlocker": "公式客席案内から385席の正面・中正面・脇正面のarea、列、番号方向を独立抽出し、補助席を除外する。",
       "entryUrl": "https://kita-noh.com/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://kita-noh.com/stage/seat/",
+        "https://kita-noh.com/wp2014/wp-content/themes/kita2014/img/seat_map1f.png",
+        "https://kita-noh.com/wp2014/wp-content/themes/kita2014/img/seat_map2f.png"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Retrieve1F and visual qualify area/row identifiers; no invented tatami IDs.",
+      "findings": "Current interactive map originals;1Ftimeout,2Fimage.289+79fixed+17tatami.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0446",
+        "checkedPaths": [
+          "https://kita-noh.com/stage/seat/",
+          "https://kita-noh.com/wp2014/wp-content/themes/kita2014/img/seat_map1f.png",
+          "https://kita-noh.com/wp2014/wp-content/themes/kita2014/img/seat_map2f.png"
+        ],
+        "findings": "Current interactive map originals;1Ftimeout,2Fimage.289+79fixed+17tatami.",
+        "reopenCondition": "Retrieve1F and visual qualify area/row identifiers; no invented tatami IDs."
+      }
     },
     {
       "inventoryId": "tokyo-official-0464",
@@ -868,10 +6304,21 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official facility-use page (https://www.bungakukan.or.jp/guidance/facilities/) states only an approximate capacity \"座席数100前後（要予約）\" for 講堂, with no seat chart, row label, or numbered seat list anywhere on the site. Reopen only if the issuer publishes a numbered seat chart or an exact (non-approximate) seat count.",
       "entryUrl": "https://www.bungakukan.or.jp/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.bungakukan.or.jp/guidance/facilities/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Representative numbered configuration.",
+      "findings": "Approximately100seats multipurpose classroom/meeting use; no chart recovered.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0464",
+        "checkedPaths": [
+          "https://www.bungakukan.or.jp/guidance/facilities/"
+        ],
+        "findings": "Approximately100seats multipurpose classroom/meeting use; no chart recovered.",
+        "reopenCondition": "Representative numbered configuration."
+      }
     },
     {
       "inventoryId": "tokyo-official-0537",
@@ -880,10 +6327,23 @@
       "venueSourceId": null,
       "priorBlocker": "公式施設ページは最大1,570席を示すが、全列・全番号を判読できる公式座席表を公開していない。座席表公開時に再確認する。",
       "entryUrl": "https://www.seijogakuen.ed.jp/about/facilities/auditorium/index.html",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.seijogakuen.ed.jp/news/2026/e0pnlf0000003m0b.html",
+        "https://www.seijogakuen.ed.jp/about/facilities/auditorium/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Parent HTML obtain chart target and visually inspect.",
+      "findings": "Current2026-03-12 recital expressly links seating chart(link43); click fails without target; facility fetch fails.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0537",
+        "checkedPaths": [
+          "https://www.seijogakuen.ed.jp/news/2026/e0pnlf0000003m0b.html",
+          "https://www.seijogakuen.ed.jp/about/facilities/auditorium/"
+        ],
+        "findings": "Current2026-03-12 recital expressly links seating chart(link43); click fails without target; facility fetch fails.",
+        "reopenCondition": "Parent HTML obtain chart target and visually inspect."
+      }
     },
     {
       "inventoryId": "tokyo-official-0546",
@@ -892,10 +6352,21 @@
       "venueSourceId": null,
       "priorBlocker": "大学公式サイトで講堂の利用は確認できるが、全列・全番号と総席数を同時に裏付ける公開公式資料を確認できない。",
       "entryUrl": "https://www.komazawa-u.ac.jp/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.komazawa-u.ac.jp/facilities/campus/komazawa.html"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Complete current issuer numbered chart.",
+      "findings": "1150capacity and facility description only, issuer-domain search no numbered chart.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0546",
+        "checkedPaths": [
+          "https://www.komazawa-u.ac.jp/facilities/campus/komazawa.html"
+        ],
+        "findings": "1150capacity and facility description only, issuer-domain search no numbered chart.",
+        "reopenCondition": "Complete current issuer numbered chart."
+      }
     },
     {
       "inventoryId": "tokyo-official-0561",
@@ -904,10 +6375,23 @@
       "venueSourceId": "tokyo-wave3-0561",
       "priorBlocker": "DEFER (TOKYO-WAVE-25): 現行大学公式資料ではグリーンホールはBuilding 3の教室として扱われ、番号付きrepresentative setはない。現行issuerのcomplete numbered mapが確認できるまで通常candidate discoveryから除外する。",
       "entryUrl": null,
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.swu.ac.jp/examinee/student/course/room.html",
+        "https://www.swu.ac.jp/about/campus/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Structural HOLD until own representative numbered source.",
+      "findings": "Current2026 classroom GreenHall separate attachedBuilding3; no representative chart. Hitomi is different venue.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0561",
+        "checkedPaths": [
+          "https://www.swu.ac.jp/examinee/student/course/room.html",
+          "https://www.swu.ac.jp/about/campus/"
+        ],
+        "findings": "Current2026 classroom GreenHall separate attachedBuilding3; no representative chart. Hitomi is different venue.",
+        "reopenCondition": "Structural HOLD until own representative numbered source."
+      }
     },
     {
       "inventoryId": "tokyo-official-0704",
@@ -916,10 +6400,23 @@
       "venueSourceId": null,
       "priorBlocker": "代々木能舞台はTOKYO PRIORITY D RANKED NEXT PREFLIGHT 4 (2026-08-26)でDEFER。運営者サイト(HTTPSはホスト名不一致で証明書検証失敗、HTTPは到達可)およびWikipediaは座布団敷き(畳)の概算席数(約160席/約80席)のみを示し、番号付き座席図・列名・座席番号は皆無。再調査は公式の番号付き座席図が新たに公開された場合のみ。",
       "entryUrl": "https://www.yoyoginoubutai.com/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "http://www.yoyoginoubutai.com/",
+        "https://www.yoyoginoubutai.com/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Alternate-client retrieval; issuer representative numbered positions required.",
+      "findings": "HTTP upgradedHTTPS502; domain search no chart. Existing tatami/cushion variable arrangement remains blocker.",
+      "independentDiscovery": {
+        "id": "tokyo-official-0704",
+        "checkedPaths": [
+          "http://www.yoyoginoubutai.com/",
+          "https://www.yoyoginoubutai.com/"
+        ],
+        "findings": "HTTP upgradedHTTPS502; domain search no chart. Existing tatami/cushion variable arrangement remains blocker.",
+        "reopenCondition": "Alternate-client retrieval; issuer representative numbered positions required."
+      }
     },
     {
       "inventoryId": "tokyo-official-0813",
@@ -928,10 +6425,24 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the current official site (http://suginaminohgakudou.org/) was reviewed across its guidance, access, history, and performances pages; it publishes only a rental fee schedule and past performance-program PDFs (through 2019), with no seat count, seat chart, or row/seat numbering anywhere on the site. Reopen only if the issuer publishes a numbered seat chart or seat-count statement.",
       "entryUrl": null,
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "http://suginaminohgakudou.org/",
+        "http://suginaminohgakudou.org/guidance.html"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer full numbered map",
+      "findings": "HTTP issuer guidance/history/performance navigation no numbered chart recovered. HTTPS timeout.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-0813",
+        "checkedPaths": [
+          "http://suginaminohgakudou.org/",
+          "http://suginaminohgakudou.org/guidance.html"
+        ],
+        "findings": "HTTP issuer guidance/history/performance navigation no numbered chart recovered. HTTPS timeout.",
+        "reopenCondition": "Issuer full numbered map",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-0816",
@@ -940,10 +6451,26 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 2): the current official facilities/system pages (https://zoshigayaongakudo.com/) publish only an unnumbered 見取り図 image and a maximum-capacity figure (最大席数70); no issuer-numbered seat chart exists. Reopen only if the issuer publishes a numbered seat chart.",
       "entryUrl": "https://zoshigayaongakudo.music.coocan.jp/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://zoshigayaongakudo.com/facilities/",
+        "https://zoshigayaongakudo.com/system/",
+        "https://zoshigayaongakudo.com/wp-content/uploads/2019/12/hallgaiyou1.gif"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer numbered standard arrangement",
+      "findings": "Current replacement site. Original GIF viewed: room dimensions/piano/balcony only.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-0816",
+        "checkedPaths": [
+          "https://zoshigayaongakudo.com/facilities/",
+          "https://zoshigayaongakudo.com/system/",
+          "https://zoshigayaongakudo.com/wp-content/uploads/2019/12/hallgaiyou1.gif"
+        ],
+        "findings": "Current replacement site. Original GIF viewed: room dimensions/piano/balcony only.",
+        "reopenCondition": "Issuer numbered standard arrangement",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-0818",
@@ -952,10 +6479,24 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the current official site (https://nishisugamo-ongakudo.com/) publishes no seat chart, row labels, or seat count; its only capacity-adjacent statement is a variable occupancy limit (\"ご利用人数を最大30名様から20名様までに変更\") for a piano salon space, not a numbered audience-seat set. Reopen only if the issuer publishes a numbered seat chart.",
       "entryUrl": "https://nishisugamo-ongakudo.com/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://nishisugamo-ongakudo.com/",
+        "https://nishisugamo-ongakudo.com/facility/"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer numbered standard chart",
+      "findings": "Current salon rental page and image/lightbox link inventory;2025 rental notice; no chart link recovered.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-0818",
+        "checkedPaths": [
+          "https://nishisugamo-ongakudo.com/",
+          "https://nishisugamo-ongakudo.com/facility/"
+        ],
+        "findings": "Current salon rental page and image/lightbox link inventory;2025 rental notice; no chart link recovered.",
+        "reopenCondition": "Issuer numbered standard chart",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-0849",
@@ -964,10 +6505,28 @@
       "venueSourceId": null,
       "priorBlocker": "大学公式ページは1,005席を示すが、一般に再確認可能な全番号付き公式座席表を確認できない。公開資料追加時に再確認する。",
       "entryUrl": "https://www.thu.ac.jp/aboutus/facility/okinaga",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.thu.ac.jp/aboutus/facility/okinaga",
+        "https://hall.thu.ac.jp/hall.html",
+        "https://hall.thu.ac.jp/seat.html",
+        "https://hall.thu.ac.jp/pdf/seat.pdf"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Proceed bounded independent transcription997 standard; exclude unnumbered8",
+      "findings": "REOPEN current linked original viewed.997 numbered777+220 and8 blank wheelchair positions explain1005. Python ordinary UA/Referer succeeds.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-0849",
+        "checkedPaths": [
+          "https://www.thu.ac.jp/aboutus/facility/okinaga",
+          "https://hall.thu.ac.jp/hall.html",
+          "https://hall.thu.ac.jp/seat.html",
+          "https://hall.thu.ac.jp/pdf/seat.pdf"
+        ],
+        "findings": "REOPEN current linked original viewed.997 numbered777+220 and8 blank wheelchair positions explain1005. Python ordinary UA/Referer succeeds.",
+        "reopenCondition": "Proceed bounded independent transcription997 standard; exclude unnumbered8",
+        "disposition": "ADOPT candidate"
+      }
     },
     {
       "inventoryId": "tokyo-official-0893",
@@ -976,10 +6535,26 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the operator's own domain (tokyobabylon.org) could not be safely fetched (TLS certificate mismatch on shared hosting), and current-linked secondary sources (theater.co.jp portal, dated 2022-01-19) and third-party listings state differing capacity figures (48-50) with no seat chart; the venue is consistently described as a flat free-use space with no permanent/fixed seating. No issuer-numbered chart exists. Reopen only if the issuer publishes a current numbered seat chart from a verifiable current site.",
       "entryUrl": "https://www.tokyobabylon.org/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "http://www.tokyobabylon.org/",
+        "http://www.tokyobabylon.org/babylon01.html",
+        "http://www.tokyobabylon.org/babylon_A3.pdf"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer numbered stable arrangement",
+      "findings": "HTTP current issuer recovered. Original empty dimensional plan viewed;60 folding chairs and variable equipment.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-0893",
+        "checkedPaths": [
+          "http://www.tokyobabylon.org/",
+          "http://www.tokyobabylon.org/babylon01.html",
+          "http://www.tokyobabylon.org/babylon_A3.pdf"
+        ],
+        "findings": "HTTP current issuer recovered. Original empty dimensional plan viewed;60 folding chairs and variable equipment.",
+        "reopenCondition": "Issuer numbered stable arrangement",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-0974",
@@ -988,10 +6563,30 @@
       "venueSourceId": "kasai-civic-hall-standard",
       "priorBlocker": "公式施設ページに掲載される501席のうち、固定番号席の全列・番号と車椅子利用時の転換席を座席図で確認する。",
       "entryUrl": "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/index.html",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/index.html",
+        "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/guide.html",
+        "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/room.html",
+        "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/map.html",
+        "https://www.city.edogawa.tokyo.jp/images/6654/annnaizu.png"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer numbered hall chart",
+      "findings": "Original floor guide viewed501 capacity no IDs;index2026-09-09. Meeting-room maintenance not hall-seating change.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-0974",
+        "checkedPaths": [
+          "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/index.html",
+          "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/guide.html",
+          "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/room.html",
+          "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/map.html",
+          "https://www.city.edogawa.tokyo.jp/images/6654/annnaizu.png"
+        ],
+        "findings": "Original floor guide viewed501 capacity no IDs;index2026-09-09. Meeting-room maintenance not hall-seating change.",
+        "reopenCondition": "Issuer numbered hall chart",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-0977",
@@ -1000,10 +6595,28 @@
       "venueSourceId": "komatsugawa-civic-hall-standard",
       "priorBlocker": "対象ホールは公式300席・常設非可動まで確認したが、全列・全番号を示す公式座席図が公開されていない。",
       "entryUrl": "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/index.html",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/index.html",
+        "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/room.html",
+        "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/map.html",
+        "https://www.city.edogawa.tokyo.jp/images/6494/img2103.jpg"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer numbered chart for300 venue",
+      "findings": "Current floor original viewed300-capacity hall;no numbering. Not Sakura hall.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-0977",
+        "checkedPaths": [
+          "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/index.html",
+          "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/room.html",
+          "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/map.html",
+          "https://www.city.edogawa.tokyo.jp/images/6494/img2103.jpg"
+        ],
+        "findings": "Current floor original viewed300-capacity hall;no numbering. Not Sakura hall.",
+        "reopenCondition": "Issuer numbered chart for300 venue",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-0989",
@@ -1012,10 +6625,24 @@
       "venueSourceId": "tokyo-wave3-0989",
       "priorBlocker": "DEFER (TOKYO-WAVE-25): boundedな現行first-party確認ではcomplete numbered mapを特定できず、既存Wave3 sourceは一般的な施設・連絡先資料にとどまる。現行issuer番号図が得られるまで通常candidate discoveryから除外する。",
       "entryUrl": null,
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.soka.ac.jp/about/campusmap/globalsquare/",
+        "https://wwwstorage.soka.ac.jp/8617/1592/5799/20170810004756-2.gif"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer full numbered chart",
+      "findings": "B1 original viewed AB101 outline only;current university activities;no full numbered chart found.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-0989",
+        "checkedPaths": [
+          "https://www.soka.ac.jp/about/campusmap/globalsquare/",
+          "https://wwwstorage.soka.ac.jp/8617/1592/5799/20170810004756-2.gif"
+        ],
+        "findings": "B1 original viewed AB101 outline only;current university activities;no full numbered chart found.",
+        "reopenCondition": "Issuer full numbered chart",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-1008",
@@ -1024,10 +6651,22 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3): the current official facility page states 講堂 capacity 130名 with a photo and equipment list but no seating chart, floor plan, or row/seat numbering; two additional indexed pages that might otherwise carry a floor plan (a facility-introduction PDF and a detail sub-page) both currently return HTTP 404. Reopen only if the issuer publishes a current numbered seat chart.",
       "entryUrl": "https://www.city.tachikawa.lg.jp/shogaigakushu/shisetsu/gakushukan/002.html",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.city.tachikawa.lg.jp/shisetsu/1008071/1008239.html"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Numbered electric-seat arrangement chart",
+      "findings": "Replacement current page2026-07-19,191m2/130/electric chairs;no chart link recovered.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-1008",
+        "checkedPaths": [
+          "https://www.city.tachikawa.lg.jp/shisetsu/1008071/1008239.html"
+        ],
+        "findings": "Replacement current page2026-07-19,191m2/130/electric chairs;no chart link recovered.",
+        "reopenCondition": "Numbered electric-seat arrangement chart",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-1020",
@@ -1036,10 +6675,26 @@
       "venueSourceId": "tokyo-wave3-1020",
       "priorBlocker": "SOURCE HOLD: 現行の完全番号付き座席表が登録されていない。現行issuer seat mapと番号席集合を確認するまで通常candidate discoveryから除外する。",
       "entryUrl": null,
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.kunitachi.ac.jp/introduction/organization/hall.html",
+        "https://www.kunitachi.ac.jp/introduction/campusmap/20.html",
+        "https://www.kunitachi.ac.jp/100th/maekawa_architects/article/vol3.html"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer full500 small-hall map",
+      "findings": "Only downloadable numbered hall map is large l_hall_seating.pdf. Small alphabet labels mentioned, no complete map.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-1020",
+        "checkedPaths": [
+          "https://www.kunitachi.ac.jp/introduction/organization/hall.html",
+          "https://www.kunitachi.ac.jp/introduction/campusmap/20.html",
+          "https://www.kunitachi.ac.jp/100th/maekawa_architects/article/vol3.html"
+        ],
+        "findings": "Only downloadable numbered hall map is large l_hall_seating.pdf. Small alphabet labels mentioned, no complete map.",
+        "reopenCondition": "Issuer full500 small-hall map",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-1057",
@@ -1048,10 +6703,28 @@
       "venueSourceId": "tufs-prometheus-hall-standard",
       "priorBlocker": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
       "entryUrl": "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA_Global.html",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA_Global.html",
+        "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA1F.jpg",
+        "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA2F.jpg",
+        "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA3F.jpg"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer numbered auditorium chart",
+      "findings": "All three floor originals viewed;outlines no IDs.501+wheelchair3.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-1057",
+        "checkedPaths": [
+          "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA_Global.html",
+          "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA1F.jpg",
+          "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA2F.jpg",
+          "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA3F.jpg"
+        ],
+        "findings": "All three floor originals viewed;outlines no IDs.501+wheelchair3.",
+        "reopenCondition": "Issuer numbered auditorium chart",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-1066",
@@ -1060,10 +6733,24 @@
       "venueSourceId": "chofu-green-small-standard",
       "priorBlocker": "公式座席資料から300席の全列・全番号を転記し、平土間転換の有無と通常固定席配置を確認する。",
       "entryUrl": "https://www.chofu-culture-community.org/forms/menutop/menutop.aspx?menu_id=90",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.chofu-culture-community.org/halls/green-hall-small",
+        "https://static.chofu-culture-community.org/uploads/2025/05/%E8%88%9E%E5%8F%B0%E9%96%A2%E4%BF%82%E8%B3%87%E6%96%99%E5%B0%8F%E3%83%9B%E3%83%BC%E3%83%AB20250528-1.zip"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer complete numbered map",
+      "findings": "Current20250528 ZIP extracted standard floorplan viewed rows1-14 but cells unnumbered.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-1066",
+        "checkedPaths": [
+          "https://www.chofu-culture-community.org/halls/green-hall-small",
+          "https://static.chofu-culture-community.org/uploads/2025/05/%E8%88%9E%E5%8F%B0%E9%96%A2%E4%BF%82%E8%B3%87%E6%96%99%E5%B0%8F%E3%83%9B%E3%83%BC%E3%83%AB20250528-1.zip"
+        ],
+        "findings": "Current20250528 ZIP extracted standard floorplan viewed rows1-14 but cells unnumbered.",
+        "reopenCondition": "Issuer complete numbered map",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-1090",
@@ -1072,10 +6759,28 @@
       "venueSourceId": null,
       "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): university-published complete numbered hall chart and current assigned-seat configuration required.",
       "entryUrl": "https://www.hosei.ac.jp/tama/gaiyo/shisetsu/2/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.hosei.ac.jp/tama/gaiyo/shisetsu/2/",
+        "https://www.hoseikyoiku.jp/facilities/university_classroom_a.html",
+        "https://www.hoseikyoiku.jp/facilities/university_classroom_a/floor.pdf",
+        "https://www.hoseikyoiku.jp/facilities/university_classroom_a/07_zm_1f.png"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer numbered current hall map",
+      "findings": "PDF viewed dummy text;PNG viewed solid outline. Current2026 use;future2030 rebuilding not present invalidation.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-1090",
+        "checkedPaths": [
+          "https://www.hosei.ac.jp/tama/gaiyo/shisetsu/2/",
+          "https://www.hoseikyoiku.jp/facilities/university_classroom_a.html",
+          "https://www.hoseikyoiku.jp/facilities/university_classroom_a/floor.pdf",
+          "https://www.hoseikyoiku.jp/facilities/university_classroom_a/07_zm_1f.png"
+        ],
+        "findings": "PDF viewed dummy text;PNG viewed solid outline. Current2026 use;future2030 rebuilding not present invalidation.",
+        "reopenCondition": "Issuer numbered current hall map",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-1145",
@@ -1084,10 +6789,24 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2): the current official facility page states only an approximate maximum capacity \"〜150人程度\" for 大ホール, lists 机・椅子 as furnishing (not fixed theater seating), and publishes no seating chart, floor plan, or row/seat numbering of any kind. Reopen only if the issuer publishes a numbered seat chart or an exact (non-approximate) seat count.",
       "entryUrl": "https://www.kunitachi-csw.tokyo/renting_facilities/#kasidasisisetu",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.kunitachi-csw.tokyo/renting_facilities/",
+        "https://www.kunitachi-csw.tokyo/wp-content/uploads/2022/04/80023d929ba5cc6748ec3d569baa91b6-1200x800.jpg"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer numbered arrangement",
+      "findings": "Current2026 booking page;240m2/about150;original photo viewed empty floor.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-1145",
+        "checkedPaths": [
+          "https://www.kunitachi-csw.tokyo/renting_facilities/",
+          "https://www.kunitachi-csw.tokyo/wp-content/uploads/2022/04/80023d929ba5cc6748ec3d569baa91b6-1200x800.jpg"
+        ],
+        "findings": "Current2026 booking page;240m2/about150;original photo viewed empty floor.",
+        "reopenCondition": "Issuer numbered arrangement",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-1155",
@@ -1096,10 +6815,30 @@
       "venueSourceId": null,
       "priorBlocker": "グスタフスタジオ〔シアターグスタフ〕はTOKYO PRIORITY D RANKED NEXT PREFLIGHT 4 (2026-08-26)でDEFER。現行公式ページ(HTTPS到達可)は「最大130名収容可能」という可変上限のみを示し、座席図・列名・座席番号は皆無。第三者情報では約90席という異なる概数も見られ、番号付き座席集合は存在しない。再調査は公式の番号付き座席図が新たに公開された場合のみ。",
       "entryUrl": "https://cr-gustaf.com/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://cr-gustaf.com/syoukai.html",
+        "https://cr-gustaf.com/ikai.html",
+        "https://cr-gustaf.com/image/contents/ika1.jpg",
+        "https://cr-gustaf.com/image/contents/ika2.jpg",
+        "https://cr-gustaf.com/image/contents/ikai3.jpg"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer numbered arrangement and scope",
+      "findings": "Full photos viewed moveable seats/empty floor. Detail100 seated vs homepage130 maximum;no map.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-1155",
+        "checkedPaths": [
+          "https://cr-gustaf.com/syoukai.html",
+          "https://cr-gustaf.com/ikai.html",
+          "https://cr-gustaf.com/image/contents/ika1.jpg",
+          "https://cr-gustaf.com/image/contents/ika2.jpg",
+          "https://cr-gustaf.com/image/contents/ikai3.jpg"
+        ],
+        "findings": "Full photos viewed moveable seats/empty floor. Detail100 seated vs homepage130 maximum;no map.",
+        "reopenCondition": "Issuer numbered arrangement and scope",
+        "disposition": "NEED EVIDENCE / DEFER"
+      }
     },
     {
       "inventoryId": "tokyo-official-1186",
@@ -1108,10 +6847,26 @@
       "venueSourceId": null,
       "priorBlocker": "DEFER (TOKYO PRIORITY C SOURCE-LOCATED PREFLIGHT): 現行市公式は運営サイトへリンクするが、運営サイトと旧座席PDF URLの現在性を安全に確認できず、current/current-linked issuer-numbered setとして採用しない。third-party transcription、capacity fitting、geometry-only ownershipはしない。current issuer chart/listが公開・到達可能になった場合のみ再評価する。",
       "entryUrl": "https://www.iplaza.inagi.tokyo.jp/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "http://www.iplaza.inagi.tokyo.jp/",
+        "http://www.iplaza.inagi.tokyo.jp/guidance/hall.html",
+        "http://www.iplaza.inagi.tokyo.jp/cabinet/pdf/HallKyakuseki090825.pdf"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Independent standard numbered transcription;disclose7 unnumbered",
+      "findings": "REOPEN original viewed;current HTTP site2026 events links old chart.410 includes7 unnumbered wheelchair. No TLS bypass.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-1186",
+        "checkedPaths": [
+          "http://www.iplaza.inagi.tokyo.jp/",
+          "http://www.iplaza.inagi.tokyo.jp/guidance/hall.html",
+          "http://www.iplaza.inagi.tokyo.jp/cabinet/pdf/HallKyakuseki090825.pdf"
+        ],
+        "findings": "REOPEN original viewed;current HTTP site2026 events links old chart.410 includes7 unnumbered wheelchair. No TLS bypass.",
+        "reopenCondition": "Independent standard numbered transcription;disclose7 unnumbered",
+        "disposition": "ADOPT candidate"
+      }
     },
     {
       "inventoryId": "tokyo-official-1198",
@@ -1120,10 +6875,24 @@
       "venueSourceId": "hoya-komorebi-small-standard",
       "priorBlocker": "公式施設資料の250席について、平土間転換可能な座席の番号体系と通常配置を座席図から確認する。",
       "entryUrl": "https://www.komorebi-hall.jp/",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.komorebi-hall.jp/guide/download/",
+        "https://www.komorebi-hall.jp/src/2023/03/dl_small01_seat.pdf"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Issuer corrected labels for both rear rows;do not inventM/N",
+      "findings": "Current-linked original viewed A-L explicit but two rear rows9-14 have no row labels.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-official-1198",
+        "checkedPaths": [
+          "https://www.komorebi-hall.jp/guide/download/",
+          "https://www.komorebi-hall.jp/src/2023/03/dl_small01_seat.pdf"
+        ],
+        "findings": "Current-linked original viewed A-L explicit but two rear rows9-14 have no row labels.",
+        "reopenCondition": "Issuer corrected labels for both rear rows;do not inventM/N",
+        "disposition": "HOLD structural"
+      }
     },
     {
       "inventoryId": "tokyo-coverage-pia-theater-yaesu",
@@ -1132,10 +6901,26 @@
       "venueSourceId": "pia-theater-yaesu-standard",
       "priorBlocker": "SOURCE/SCHEMA HOLD: 公開公式資料は階別容量と固定席構造を示すが、完全なrow label・seat number図面を公開していない。",
       "entryUrl": "https://www.yaesu.theater-conference.jp/facilities/theater/organizers",
-      "discoveryStatus": "pending",
-      "checkedPaths": [],
+      "discoveryStatus": "discovered-pending-parent-disposition",
+      "checkedPaths": [
+        "https://www.yaesu.theater-conference.jp/facilities/theater/organizers",
+        "https://www.yaesu.theater-conference.jp/download",
+        "https://storage.googleapis.com/studio-design-asset-files/projects/BVqXdz1RqR/s-1x1_a0e133f8-e26c-45d9-8a41-1cae6e7ca058.pdf"
+      ],
       "disposition": null,
-      "reopenCondition": null
+      "reopenCondition": "Independent transcription of full standard806",
+      "findings": "REOPEN current-linked technical original viewed806=593+213;removable105/backfold36 remain printed standard seats.",
+      "independentDiscovery": {
+        "inventoryId": "tokyo-coverage-pia-theater-yaesu",
+        "checkedPaths": [
+          "https://www.yaesu.theater-conference.jp/facilities/theater/organizers",
+          "https://www.yaesu.theater-conference.jp/download",
+          "https://storage.googleapis.com/studio-design-asset-files/projects/BVqXdz1RqR/s-1x1_a0e133f8-e26c-45d9-8a41-1cae6e7ca058.pdf"
+        ],
+        "findings": "REOPEN current-linked technical original viewed806=593+213;removable105/backfold36 remain printed standard seats.",
+        "reopenCondition": "Independent transcription of full standard806",
+        "disposition": "ADOPT candidate"
+      }
     },
     {
       "inventoryId": "gunma-maebashi-culture-main",
@@ -2028,7 +7813,34 @@
         "verifyVenues": "PASS approved environment; sandbox Vitest startup failed",
         "e2e": 17
       },
+      "delivery": {
+        "commit": "1a2dd05",
+        "push": "PASS origin/main",
+        "workersBuild": "success",
+        "buildId": "d7d7dd22-c559-4313-9aa5-3d69e54adfad",
+        "publicSmoke": "pending"
+      }
+    },
+    {
+      "id": 2,
+      "implementation": [
+        "tokyo-official-0983",
+        "tokyo-official-1206",
+        "tokyo-official-1171"
+      ],
+      "retainedLocalHold": "tokyo-official-1050",
+      "totals": {
+        "venues": 180,
+        "configurations": 182,
+        "seats": 264450
+      },
+      "validation": {
+        "targetReview": "PASS all3",
+        "verifyVenues": "PASS 17 E2E",
+        "initialFailure": "New batch lexical ordering, resolved by canonical wave39 batch name; no validator change"
+      },
       "delivery": "pending"
     }
-  ]
+  ],
+  "activeBatch": "tokyo-wave-39-source-discovery-closure"
 }

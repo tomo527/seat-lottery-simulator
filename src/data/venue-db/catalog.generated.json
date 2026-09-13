@@ -487,6 +487,18 @@
     "dataPath": "/venue-db/venues/gunma-music-center-release-seed.json"
   },
   {
+    "id": "hachioji-gakuen-event-hall-standard",
+    "name": "八王子市学園都市センター イベントホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "八王子市",
+    "venueType": "hall",
+    "representativePatternName": "標準216席",
+    "seatCount": 216,
+    "dataPath": "/venue-db/venues/hachioji-gakuen-event-hall-standard.json"
+  },
+  {
     "schemaVersion": 2,
     "id": "hakuhinkan-theatre-standard",
     "venueGroupId": "hakuhinkan-theatre-standard",
@@ -1494,6 +1506,18 @@
     ]
   },
   {
+    "id": "mizuho-sky-small-standard",
+    "name": "瑞穂ビューパーク・スカイホール 小ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "瑞穂町",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（番号付き可動席236席）",
+    "seatCount": 236,
+    "dataPath": "/venue-db/venues/mizuho-sky-small-standard.json"
+  },
+  {
     "schemaVersion": 2,
     "id": "mon-takanawa-box1000-standard",
     "venueGroupId": "mon-takanawa-box1000-standard",
@@ -1518,6 +1542,18 @@
         "fixedOnly": false
       }
     ]
+  },
+  {
+    "id": "musashimurayama-sakura-small-standard",
+    "name": "武蔵村山市民会館 さくらホール 小ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "武蔵村山市",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（258番号席）",
+    "seatCount": 258,
+    "dataPath": "/venue-db/venues/musashimurayama-sakura-small-standard.json"
   },
   {
     "schemaVersion": 2,

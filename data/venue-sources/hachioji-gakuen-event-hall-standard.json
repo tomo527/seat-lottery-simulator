@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "hachioji-gakuen-event-hall-standard",
+  "name": "八王子市学園都市センター イベントホール",
+  "prefecture": "東京都",
+  "city": "八王子市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "標準216席",
+    "coverage": "complete",
+    "expectedSeatCount": 216,
+    "selectionReason": "最大288席配置は対象外。現行施設案内が明示する標準216席を採用。",
+    "notIncludedPatterns": [
+      "最大288席配置は対象外。現行施設案内が明示する標準216席を採用。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人八王子市学園都市文化ふれあい財団",
+      "title": "八王子市学園都市センター イベントホール 現行施設案内",
+      "url": "https://www.hachiojibunka.or.jp/gakuen/facility/event_hall/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人八王子市学園都市文化ふれあい財団",
+      "title": "八王子市学園都市センター イベントホール 現行リンク座席表",
+      "url": "https://www.hachiojibunka.or.jp/gakuen/wp-content/uploads/2022/12/event_hall_zaseki216.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "標準216席の全印字番号。最大288席配置は対象外。現行施設案内が明示する標準216席を採用。",
+  "completenessBasis": "fresh independent visual two-pass、expanded bidirectional set equality、画像cell checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認し同じ列の連続区間へ圧縮。図上の欠番をexcludedとして保持。",
+  "knownLimitations": [
+    "最大288席配置は対象外。現行施設案内が明示する標準216席を採用。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent human visual two-pass frozen before comparison: parent fresh PDF/PyMuPDF2x; reviewer independent curl/Poppler2800. SHA256 ef0646c90a890398b8a43d01ec0e846f0f63f158058218244bd203bcf041e140. Expanded Pass1-only0/Pass2-only0/duplicates0 after documented direct-source resolution. Pass1 flagged O/0 glyph; independent visual Pass2 confirmed letter O. Independent pixel contour checksum 216; binary inverse threshold180; cell bounds52-62x37-42; pixel count uses no ranges. Issuer reconciliation: 最大288席配置は対象外。現行施設案内が明示する標準216席を採用。",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "rowLabel": "E",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "F",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "G",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "H",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "I",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "J",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "K",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "L",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "M",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "N",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "O",
+      "from": 1,
+      "to": 18
+    },
+    {
+      "rowLabel": "P",
+      "from": 1,
+      "to": 18
+    }
+  ]
+}

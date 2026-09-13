@@ -1,0 +1,43 @@
+{
+  "batchId": "tokyo-wave-39-source-discovery-closure",
+  "createdAt": "2026-09-13",
+  "scope": "Bounded 99-record historical source-discovery closure. This batch registers completed implementation carryovers; full pool and pending stages are in the closure report.",
+  "status": "in-progress",
+  "priority": "A",
+  "targetVenueIds": [
+    "gunma-music-center",
+    "tokyo-official-0983",
+    "tokyo-official-1206",
+    "tokyo-official-1171"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "gunma-music-center",
+      "carryOverFrom": "release-seed-v1",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery closure recovered correct current issuer numbered chart; full fresh implementation completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-0983",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "blocked",
+      "recheckReason": "Authorized source-discovery closure; recovered current issuer numbered chart and fresh production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-1206",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "blocked",
+      "recheckReason": "Authorized source-discovery closure; recovered current issuer numbered chart and fresh production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-1171",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "blocked",
+      "recheckReason": "Authorized source-discovery closure; recovered current issuer numbered chart and fresh production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    }
+  ]
+}

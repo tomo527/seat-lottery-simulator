@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "musashimurayama-sakura-small-standard",
+  "name": "武蔵村山市民会館 さくらホール 小ホール",
+  "prefecture": "東京都",
+  "city": "武蔵村山市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（258番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 258,
+    "selectionReason": "公式246固定＋12移動＝258席の全番号。移動席と車椅子転換の個別対応は図にないため推測しない。",
+    "notIncludedPatterns": [
+      "公式246固定＋12移動＝258席の全番号。移動席と車椅子転換の個別対応は図にないため推測しない。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "武蔵村山市民会館",
+      "title": "武蔵村山市民会館 さくらホール 小ホール 現行施設案内",
+      "url": "https://www.musashimurayama-sakurahall.jp/about/hall_small/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "武蔵村山市民会館",
+      "title": "武蔵村山市民会館 さくらホール 小ホール 現行リンク座席表",
+      "url": "https://www.musashimurayama-sakurahall.jp/src/2016/02/hall_small_zaseki.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "通常配置（258番号席）の全印字番号。公式246固定＋12移動＝258席の全番号。移動席と車椅子転換の個別対応は図にないため推測しない。",
+  "completenessBasis": "fresh independent visual two-pass、expanded bidirectional set equality、画像cell checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認し同じ列の連続区間へ圧縮。図上の欠番をexcludedとして保持。",
+  "knownLimitations": [
+    "公式246固定＋12移動＝258席の全番号。移動席と車椅子転換の個別対応は図にないため推測しない。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent human visual two-pass frozen before comparison: parent fresh PDF/PyMuPDF2x; reviewer independent curl/Poppler2800. SHA256 ae21292aefb74d391b5b5872c5773966bbfbd9298ed0bde3460d79b8b5b06614. Expanded Pass1-only0/Pass2-only0/duplicates0 after documented direct-source resolution. Initial Pass1 omitted row12 seat2 (257 vs258); returned to original enlarged row12 crop, explicitly read printed2, corrected that single omission; preserved initial freeze. Final bidirectional equality0. Independent pixel contour checksum 258; binary inverse threshold180; cell bounds28-42x32-42, seating ROI570<x<1460/800<y<1710; architectural object outside excluded; pixel count uses no ranges. Issuer reconciliation: 公式246固定＋12移動＝258席の全番号。移動席と車椅子転換の個別対応は図にないため推測しない。",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "rowLabel": "1",
+      "from": 9,
+      "to": 20
+    },
+    {
+      "rowLabel": "2",
+      "from": 8,
+      "to": 21
+    },
+    {
+      "rowLabel": "3",
+      "from": 3,
+      "to": 22,
+      "excluded": [
+        7
+      ]
+    },
+    {
+      "rowLabel": "4",
+      "from": 2,
+      "to": 23
+    },
+    {
+      "rowLabel": "5",
+      "from": 2,
+      "to": 23,
+      "excluded": [
+        7
+      ]
+    },
+    {
+      "rowLabel": "6",
+      "from": 2,
+      "to": 23
+    },
+    {
+      "rowLabel": "7",
+      "from": 2,
+      "to": 23,
+      "excluded": [
+        7
+      ]
+    },
+    {
+      "rowLabel": "8",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "rowLabel": "9",
+      "from": 1,
+      "to": 24,
+      "excluded": [
+        7
+      ]
+    },
+    {
+      "rowLabel": "10",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "rowLabel": "11",
+      "from": 1,
+      "to": 24,
+      "excluded": [
+        7
+      ]
+    },
+    {
+      "rowLabel": "12",
+      "from": 1,
+      "to": 24,
+      "excluded": [
+        7
+      ]
+    },
+    {
+      "rowLabel": "13",
+      "from": 2,
+      "to": 23,
+      "excluded": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    }
+  ]
+}
