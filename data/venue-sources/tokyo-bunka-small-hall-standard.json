@@ -1,0 +1,301 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "tokyo-bunka-small-hall-standard",
+  "name": "東京文化会館 小ホール",
+  "prefecture": "東京都",
+  "city": "台東区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置",
+    "coverage": "complete",
+    "expectedSeatCount": 649,
+    "selectionReason": "現行公式掲載の通常配置・全649番号席。",
+    "notIncludedPatterns": [
+      "2026年5月から2028年度まで改修休館予定。現行掲載図の番号席649席、無番号車椅子4位置は抽選対象外。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "東京文化会館 小ホール",
+      "title": "現行施設・座席資料案内",
+      "url": "https://www.t-bunka.jp/hall/small.html",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "東京文化会館 小ホール",
+      "title": "現行公式番号座席図",
+      "url": "https://www.t-bunka.jp/hall/pdf/shall_zaseki_a4.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式掲載の通常配置・全649番号席。",
+  "completenessBasis": "Fresh independent Human Pass1/Pass2を別取得・全席視認でfreeze後、expanded bidirectional equality差0/重複0。原図欠番・側席・車椅子隣接を親再視認。PDF glyphs outlined; seat boundaries are individual lines/curves rather than closed per-seat polygons.4x/6xconnected white interiors with grayscale threshold220/240/245 and morphology attempted. Components leak across faint/diagonal joints; bigger kernels also split glyph holes into false positives. 623/639/646/655candidate counts are partial/noisy, NEVERfull seat counts. 機械検出が実用的でないため既存cross-check要件4に従い公式下段338/上段311/計649を代替独立checksumとする。部分countを全数とは扱わない。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "2026年5月から2028年度まで改修休館予定。現行掲載図の番号席649席、無番号車椅子4位置は抽選対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent Human Pass1/Pass2を別取得・全席視認でfreeze後、expanded bidirectional equality差0/重複0。原図欠番・側席・車椅子隣接を親再視認。PDF glyphs outlined; seat boundaries are individual lines/curves rather than closed per-seat polygons.4x/6xconnected white interiors with grayscale threshold220/240/245 and morphology attempted. Components leak across faint/diagonal joints; bigger kernels also split glyph holes into false positives. 623/639/646/655candidate counts are partial/noisy, NEVERfull seat counts. 機械検出が実用的でないため既存cross-check要件4に従い公式下段338/上段311/計649を代替独立checksumとする。部分countを全数とは扱わない。",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "A",
+      "from": 13,
+      "to": 35
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "B",
+      "from": 12,
+      "to": 35
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "C",
+      "from": 20,
+      "to": 27
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "D",
+      "from": 12,
+      "to": 35
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "E",
+      "from": 12,
+      "to": 35
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "F",
+      "from": 20,
+      "to": 27
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "G",
+      "from": 12,
+      "to": 35
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "H",
+      "from": 12,
+      "to": 35
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "I",
+      "from": 20,
+      "to": 27
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "J",
+      "from": 5,
+      "to": 9
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "J",
+      "from": 12,
+      "to": 44
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "K",
+      "from": 2,
+      "to": 10
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "K",
+      "from": 12,
+      "to": 45
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 10
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "L",
+      "from": 12,
+      "to": 45
+    },
+    {
+      "areaId": "lower",
+      "areaLabel": "下段席",
+      "rowLabel": "M",
+      "from": 1,
+      "to": 46
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "N",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "N",
+      "from": 27,
+      "to": 36
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "N",
+      "from": 39,
+      "to": 48
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "N",
+      "from": 51,
+      "to": 64
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "O",
+      "from": 1,
+      "to": 25
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "O",
+      "from": 27,
+      "to": 37
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "O",
+      "from": 39,
+      "to": 49
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "O",
+      "from": 51,
+      "to": 64
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "P",
+      "from": 1,
+      "to": 64
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "Q",
+      "from": 4,
+      "to": 5
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "Q",
+      "from": 7,
+      "to": 58
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "Q",
+      "from": 60,
+      "to": 61
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "R",
+      "from": 21,
+      "to": 44
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "S",
+      "from": 25,
+      "to": 40
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "T",
+      "from": 27,
+      "to": 38
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "U",
+      "from": 28,
+      "to": 37
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "V",
+      "from": 30,
+      "to": 35
+    },
+    {
+      "areaId": "upper",
+      "areaLabel": "上段席",
+      "rowLabel": "W",
+      "from": 31,
+      "to": 34
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "nippon-steel-kioi-hall-standard",
   "name": "日本製鉄紀尾井ホール",
   "prefecture": "東京都",
@@ -8,14 +8,28 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "post-renovation-standard",
-    "name": "改修後通常配置",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設案内は800席（1階522・2階278）を示し、公式座席図は通常配置候補を示す。ただし公式休館告知により改修後の現行代表配置は未確定。",
-    "notIncludedPatterns": []
+    "id": "standard",
+    "name": "通常配置",
+    "coverage": "complete",
+    "expectedSeatCount": 800,
+    "selectionReason": "現行公式掲載の通常配置・全800番号席。",
+    "notIncludedPatterns": [
+      "2026年12月まで改修休館、2027年1月再開予定。現行2025年10月版・再開用利用規程の通常配置。車椅子転換時の番号席取り外しは反映していません。"
+    ]
   },
   "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "日本製鉄紀尾井ホール",
+      "title": "現行施設・座席資料案内",
+      "url": "https://nipponsteel-kioihall.jp/facilities/seatingchart/",
+      "checkedAt": "2026-09-13"
+    },
     {
       "id": "official-seat-map",
       "official": true,
@@ -24,74 +38,390 @@
         "seat-count"
       ],
       "publisher": "日本製鉄紀尾井ホール",
-      "title": "日本製鉄紀尾井ホール 座席表",
+      "title": "現行公式番号座席図",
       "url": "https://nipponsteel-kioihall.jp/cms/wp-content/themes/kioihall/file/seatingchart/pdf-hall_202510.pdf",
-      "checkedAt": "2026-08-09"
-    },
-    {
-      "id": "official-facility-guide",
-      "official": true,
-      "roles": [
-        "facility",
-        "seat-count"
-      ],
-      "publisher": "日本製鉄紀尾井ホール",
-      "title": "日本製鉄紀尾井ホール 施設案内",
-      "url": "https://nipponsteel-kioihall.jp/facilities/hall/",
-      "checkedAt": "2026-08-09"
-    },
-    {
-      "id": "official-closure-notice",
-      "official": true,
-      "roles": [
-        "facility",
-        "event-layout"
-      ],
-      "publisher": "公益財団法人日本製鉄文化財団",
-      "title": "設備更新・修繕工事に伴う休館と事務所移転のお知らせ",
-      "url": "https://nipponsteel-kioihall.jp/news/info_20250708/",
-      "checkedAt": "2026-08-09"
-    },
-    {
-      "id": "official-reopening-page",
-      "official": true,
-      "roles": [
-        "facility",
-        "event-layout"
-      ],
-      "publisher": "日本製鉄紀尾井ホール",
-      "title": "再開場特設ページ",
-      "url": "https://nipponsteel-kioihall.jp/reopening/",
-      "checkedAt": "2026-08-09"
-    },
-    {
-      "id": "legacy-official-domain",
-      "official": true,
-      "roles": [
-        "facility"
-      ],
-      "publisher": "日本製鉄紀尾井ホール",
-      "title": "日本製鉄紀尾井ホール 旧公式ドメイン",
-      "url": "https://nipponsteel-kioihall.jp",
-      "checkedAt": "2026-08-09"
+      "checkedAt": "2026-09-13"
     }
   ],
-  "registeredScope": "改修後に公式が再提示する番号付き固定席の通常配置。",
-  "completenessBasis": "現行公式施設案内・座席図・休館告知・再開場特設ページを確認した。改修後の現行seat mapが出るまで代表パターンを固定しない。",
-  "transformation": "改修後の公式座席表から確認できた列・番号だけを明示rangeへ転記する。",
+  "registeredScope": "現行公式掲載の通常配置・全800番号席。",
+  "completenessBasis": "Fresh independent Human Pass1/Pass2を別取得・全席視認でfreeze後、expanded bidirectional equality差0/重複0。原図欠番・側席・車椅子隣接を親再視認。No human ranges input. PDF vector single closed rectangle/quadrilateral seat frames, width/height5..17points, stroke0.324;810candidates. A small outlined glyph fill centroid must lie strictly within polygon.800occupied frames,10blank frames excluded. Full-page red-point/blue-blank overlay visually verified one point per numbered seat. Independent structural checksum=800.",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
   "knownLimitations": [
-    "2026年8月時点で改修休館中のため、2025年10月版座席図をproductionの現行根拠にしない。"
+    "2026年12月まで改修休館、2027年1月再開予定。現行2025年10月版・再開用利用規程の通常配置。車椅子転換時の番号席取り外しは反映していません。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": "2026-08-09",
-    "method": "independent-official-source-review",
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent Human Pass1/Pass2を別取得・全席視認でfreeze後、expanded bidirectional equality差0/重複0。原図欠番・側席・車椅子隣接を親再視認。No human ranges input. PDF vector single closed rectangle/quadrilateral seat frames, width/height5..17points, stroke0.324;810candidates. A small outlined glyph fill centroid must lie strictly within polygon.800occupied frames,10blank frames excluded. Full-page red-point/blue-blank overlay visually verified one point per numbered seat. Independent structural checksum=800.",
     "seatStructure": "matched",
     "seatCount": "matched",
-    "unresolvedIssues": [
-      "第1パスと独立第2パスは公式施設案内の800席（1階522・2階278）と公式座席図の構造を確認した。",
-      "公式休館告知は2025年8月1日から2026年12月末まで休館と明記し、再開場特設ページも2027年1月の再開場記念公演を案内している。改修後の現行座席図と再開を確認するまでproduction化しない。"
-    ]
+    "rangeDiff": 0,
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "2",
+      "from": 18,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "4",
+      "from": 18,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "6",
+      "from": 18,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "8",
+      "from": 6,
+      "to": 17
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "9",
+      "from": 2,
+      "to": 16
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "9",
+      "from": 18,
+      "to": 21
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "11",
+      "from": 18,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "13",
+      "from": 18,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "15",
+      "from": 18,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "17",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "17",
+      "from": 18,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "18",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "19",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "19",
+      "from": 18,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "20",
+      "from": 1,
+      "to": 22
+    },
+    {
+      "areaId": "1F-center",
+      "areaLabel": "1階正面",
+      "rowLabel": "21",
+      "from": 6,
+      "to": 16
+    },
+    {
+      "areaId": "1F-BL",
+      "areaLabel": "1階BL",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 25
+    },
+    {
+      "areaId": "1F-BL",
+      "areaLabel": "1階BL",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "1F-BR",
+      "areaLabel": "1階BR",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 25
+    },
+    {
+      "areaId": "1F-BR",
+      "areaLabel": "1階BR",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 21
+    },
+    {
+      "areaId": "2F-BL",
+      "areaLabel": "2階BL",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 40
+    },
+    {
+      "areaId": "2F-BL",
+      "areaLabel": "2階BL",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 15
+    },
+    {
+      "areaId": "2F-BL",
+      "areaLabel": "2階BL",
+      "rowLabel": "2",
+      "from": 17,
+      "to": 24
+    },
+    {
+      "areaId": "2F-BL",
+      "areaLabel": "2階BL",
+      "rowLabel": "2",
+      "from": 26,
+      "to": 33
+    },
+    {
+      "areaId": "2F-BL",
+      "areaLabel": "2階BL",
+      "rowLabel": "2",
+      "from": 35,
+      "to": 40
+    },
+    {
+      "areaId": "2F-BR",
+      "areaLabel": "2階BR",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 40
+    },
+    {
+      "areaId": "2F-BR",
+      "areaLabel": "2階BR",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 15
+    },
+    {
+      "areaId": "2F-BR",
+      "areaLabel": "2階BR",
+      "rowLabel": "2",
+      "from": 17,
+      "to": 24
+    },
+    {
+      "areaId": "2F-BR",
+      "areaLabel": "2階BR",
+      "rowLabel": "2",
+      "from": 26,
+      "to": 33
+    },
+    {
+      "areaId": "2F-BR",
+      "areaLabel": "2階BR",
+      "rowLabel": "2",
+      "from": 35,
+      "to": 40
+    },
+    {
+      "areaId": "2F-C",
+      "areaLabel": "2階C",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "2F-C",
+      "areaLabel": "2階C",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "2F-C",
+      "areaLabel": "2階C",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "2F-C",
+      "areaLabel": "2階C",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "2F-C",
+      "areaLabel": "2階C",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 6
+    },
+    {
+      "areaId": "2F-C",
+      "areaLabel": "2階C",
+      "rowLabel": "5",
+      "from": 19,
+      "to": 24
+    },
+    {
+      "areaId": "2F-C",
+      "areaLabel": "2階C",
+      "rowLabel": "6",
+      "from": 8,
+      "to": 14
+    },
+    {
+      "areaId": "2F-C",
+      "areaLabel": "2階C",
+      "rowLabel": "7",
+      "from": 7,
+      "to": 15
+    }
+  ]
 }

@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "tiara-koto-small-standard",
+  "name": "ティアラこうとう 小ホール",
+  "prefecture": "東京都",
+  "city": "江東区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置",
+    "coverage": "complete",
+    "expectedSeatCount": 140,
+    "selectionReason": "現行公式掲載の通常配置・全140番号席。",
+    "notIncludedPatterns": [
+      "2027年9月まで改修休館予定。現行掲載の全番号通常配置。公演による座席差は反映していません。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "ティアラこうとう 小ホール",
+      "title": "現行施設・座席資料案内",
+      "url": "https://www.kcf.or.jp/tiara/outline/docs/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "ティアラこうとう 小ホール",
+      "title": "現行公式番号座席図",
+      "url": "https://www.kcf.or.jp/cms/files/pdf/id9_1476.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式掲載の通常配置・全140番号席。",
+  "completenessBasis": "Fresh independent Human Pass1/Pass2を別取得・全席視認でfreeze後、expanded bidirectional equality差0/重複0。原図欠番・側席・車椅子隣接を親再視認。4xgrayscale PDF render; white connected components threshold240, area2100..3200px, dimensions15..150px. Seat interiors isolated despite rotated outlines and text holes. Full-point overlay viewed, exactly one component per printed cell, no title/door components. Initial narrower area cutoff missed F1; expanded area window handles its smaller digit-ink footprint without adding nonseats. Independent structural checksum=140.",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "2027年9月まで改修休館予定。現行掲載の全番号通常配置。公演による座席差は反映していません。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent Human Pass1/Pass2を別取得・全席視認でfreeze後、expanded bidirectional equality差0/重複0。原図欠番・側席・車椅子隣接を親再視認。4xgrayscale PDF render; white connected components threshold240, area2100..3200px, dimensions15..150px. Seat interiors isolated despite rotated outlines and text holes. Full-point overlay viewed, exactly one component per printed cell, no title/door components. Initial narrower area cutoff missed F1; expanded area window handles its smaller digit-ink footprint without adding nonseats. Independent structural checksum=140.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "A",
+      "from": 8,
+      "to": 14
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "A",
+      "from": 21,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "B",
+      "from": 5,
+      "to": 15
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "B",
+      "from": 21,
+      "to": 25
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "C",
+      "from": 4,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "C",
+      "from": 21,
+      "to": 26
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "D",
+      "from": 3,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "D",
+      "from": 21,
+      "to": 27
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "E",
+      "from": 2,
+      "to": 18
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "E",
+      "from": 21,
+      "to": 28
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 19
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "F",
+      "from": 25,
+      "to": 26
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "G",
+      "from": 4,
+      "to": 20
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "H",
+      "from": 10,
+      "to": 20
+    }
+  ]
+}

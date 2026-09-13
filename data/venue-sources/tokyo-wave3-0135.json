@@ -1,32 +1,201 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "tokyo-wave3-0135",
-  "name": "赤坂区民センター〔区民ホール〕",
+  "name": "赤坂区民センター 区民ホール",
   "prefecture": "東京都",
   "city": "港区",
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
+    "id": "standard",
+    "name": "通常配置",
+    "coverage": "complete",
+    "expectedSeatCount": 396,
+    "selectionReason": "通常番号席396。現行利用手引き4頁が客席396+車椅子スペース4=定員400を明示。",
+    "notIncludedPatterns": [
+      "車椅子4位置は無番号のため対象外。最前2列取り外し配置は反映していません。"
+    ]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility","seat-count"],"publisher":"赤坂区民センター","title":"赤坂区民センター〔区民ホール〕 施設案内","url":"https://akasaka-civiccenter.jp/shisetsu/list_1.html","checkedAt":"2026-08-25"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["現行公式施設ページは400名定員と座席表PDFへのリンクを掲載するが、2026-08-25の取得では当該PDF URLがPAGE NOT FOUNDとなり、current issuer-numbered setを確認できない。"],
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "キスポート財団",
+      "title": "赤坂区民センター 施設一覧",
+      "url": "https://www.kissport.or.jp/sisetu/akasaka/list/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure"
+      ],
+      "publisher": "キスポート財団",
+      "title": "現行公式番号座席表",
+      "url": "https://dp700d203kaax.cloudfront.net/sisetu/akasaka/sheets_akasaka.pdf",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-guide",
+      "official": true,
+      "roles": [
+        "seat-count"
+      ],
+      "publisher": "キスポート財団",
+      "title": "ホール利用手引き 4頁 定員内訳",
+      "url": "https://dp700d203kaax.cloudfront.net/sisetu/akasaka/riyou-tebiki.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "通常番号席396。現行利用手引き4頁が客席396+車椅子スペース4=定員400を明示。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "車椅子4位置は無番号のため対象外。最前2列取り外し配置は反映していません。"
+  ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["現行公式ページがリンクする番号座席表PDFが取得不能のため、current issuer-numbered setを確認できない。"]
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent human visual two-pass freeze/expanded bidirectional equality差0重複0。独立pixel閉矩形396。現行施設リンクの利用手引き4頁で客席396・車椅子4・定員400を明示、差を解消。番号補完/削除なし。",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "A",
+      "from": 12,
+      "to": 22,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "B",
+      "from": 9,
+      "to": 25,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "C",
+      "from": 8,
+      "to": 26,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "D",
+      "from": 7,
+      "to": 27,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "E",
+      "from": 6,
+      "to": 28,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "F",
+      "from": 6,
+      "to": 28,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "G",
+      "from": 5,
+      "to": 29,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "H",
+      "from": 5,
+      "to": 29,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "I",
+      "from": 4,
+      "to": 30,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "J",
+      "from": 3,
+      "to": 31,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "K",
+      "from": 3,
+      "to": 31,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "L",
+      "from": 2,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 2,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "N",
+      "from": 1,
+      "to": 33,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "O",
+      "from": 1,
+      "to": 33,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "P",
+      "from": 8,
+      "to": 26,
+      "excluded": [],
+      "areaLabel": "客席"
+    }
+  ]
 }

@@ -20,7 +20,8 @@
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility", "seat-count"
+        "facility",
+        "seat-count"
       ],
       "publisher": "十四世喜多六平太記念能楽堂",
       "title": "十四世喜多六平太記念能楽堂 公式施設案内",
@@ -36,12 +37,12 @@
   ],
   "verification": {
     "status": "pending",
-    "checkedAt": null,
+    "checkedAt": "2026-09-13",
     "method": "",
     "seatStructure": "pending",
     "seatCount": "pending",
     "unresolvedIssues": [
-      "公式の階別・桟敷別定員は確認済みだが、全areaの番号方向、欠番、桟敷席の番号有無を確定できない。座席図の見た目から連番を補完しない。"
+      "現行番号図を回収・視認したが1階最終ぬ列の不規則cellと共有列番号軸の対応、2階端部無番号cellのownershipが解消しない。独立二回の集合も368/369で一致せず、桟敷17位置も一意番号未確認。表示用area名だけでは修復できないLOCAL identifier-ownership HOLD。 Reopen: 各cellの完全な番号と行ownershipを明示する現行公式図または公式補足。"
     ]
   },
   "ranges": []

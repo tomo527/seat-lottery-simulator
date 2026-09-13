@@ -1,0 +1,379 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "tiara-koto-main-standard",
+  "name": "ティアラこうとう 大ホール",
+  "prefecture": "東京都",
+  "city": "江東区",
+  "aliases": [],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "ティアラこうとう 大ホール",
+      "title": "現行施設・座席資料案内",
+      "url": "https://www.kcf.or.jp/tiara/outline/docs/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "ティアラこうとう 大ホール",
+      "title": "現行公式番号座席図",
+      "url": "https://www.kcf.or.jp/cms/files/pdf/id8_1477.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式掲載の通常配置・全1228番号席。",
+  "completenessBasis": "Fresh independent Human Pass1/Pass2を別取得・全席視認でfreeze後、expanded bidirectional equality差0/重複0。原図欠番・側席・車椅子隣接を親再視認。PDF digit-only words, unique bounding boxes; current original no ranges input. All-point full overlay visually verified. Title capacity contains comma and is not counted; side strips and dotted H cells included. Independent structural checksum=1228.",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "2027年9月まで改修休館予定。現行掲載の通常配置。H列の車椅子転換は反映せず全印字番号席を保持。",
+    "BL/BRは公式図に列記号がなく、通し番号は表示用の説明です。公式の全番号席を保持し、車椅子転換は反映していません。"
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置",
+      "issuerDefinedCondition": "現行公式掲載の通常配置・全1228番号席。",
+      "selectionBasis": "現行公式掲載の通常配置・全1228番号席。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13 current-linked official original 477c8c49eda791eaccf80cc151c047c56c9319cbeb78f74aece9729ac021b268",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1228,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "BL/BRは公式図に列記号がなく、通し番号は表示用の説明です。公式の全番号席を保持し、車椅子転換は反映していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "通常図の番号席を保持。公演時の車椅子転換は反映していません。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "Fresh independent Human Pass1/Pass2を別取得・全席視認でfreeze後、expanded bidirectional equality差0/重複0。原図欠番・側席・車椅子隣接を親再視認。PDF digit-only words, unique bounding boxes; current original no ranges input. All-point full overlay visually verified. Title capacity contains comma and is not counted; side strips and dotted H cells included. Independent structural checksum=1228.",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "A",
+          "from": 4,
+          "to": 32
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "B",
+          "from": 2,
+          "to": 34
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 35
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "I",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "M",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "N",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "O",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "P",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "Q",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "R",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "S",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "T",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "U",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "V",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "W",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "1F",
+          "areaLabel": "1階席",
+          "rowLabel": "X",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "BL",
+          "areaLabel": "BL",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "BL",
+          "areaLabel": "BL",
+          "rowLabel": "通し番号",
+          "from": 9,
+          "to": 16
+        },
+        {
+          "areaId": "BL",
+          "areaLabel": "BL",
+          "rowLabel": "通し番号",
+          "from": 18,
+          "to": 24
+        },
+        {
+          "areaId": "BR",
+          "areaLabel": "BR",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "BR",
+          "areaLabel": "BR",
+          "rowLabel": "通し番号",
+          "from": 9,
+          "to": 16
+        },
+        {
+          "areaId": "BR",
+          "areaLabel": "BR",
+          "rowLabel": "通し番号",
+          "from": 18,
+          "to": 24
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2A",
+          "from": 3,
+          "to": 34
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2B",
+          "from": 3,
+          "to": 34
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2C",
+          "from": 2,
+          "to": 35
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2D",
+          "from": 2,
+          "to": 35
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2E",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2F",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2G",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2H",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2I",
+          "from": 1,
+          "to": 36
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2J",
+          "from": 1,
+          "to": 12
+        },
+        {
+          "areaId": "2F",
+          "areaLabel": "2階席",
+          "rowLabel": "2J",
+          "from": 25,
+          "to": 36
+        }
+      ]
+    }
+  ]
+}

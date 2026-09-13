@@ -1,32 +1,177 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "tokyo-wave3-0367",
-  "name": "江戸東京博物館〔大ホール〕",
+  "name": "江戸東京博物館 大ホール",
   "prefecture": "東京都",
   "city": "墨田区",
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
+    "id": "standard",
+    "name": "通常配置",
+    "coverage": "complete",
+    "expectedSeatCount": 369,
+    "selectionReason": "現行公式通常配置の全369番号席。無番号車椅子スペースを除外。",
+    "notIncludedPatterns": [
+      "車椅子利用等による取り外し配置は含まない。"
+    ]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility","seat-count","event-layout"],"publisher":"江戸東京博物館","title":"貸出施設","url":"https://www.edo-tokyo-museum.or.jp/information/room-rental/","checkedAt":"2026-08-25"},{"id":"official-floor-guide","official":true,"roles":["facility"],"publisher":"江戸東京博物館","title":"フロアマップ","url":"https://www.edo-tokyo-museum.or.jp/information/floor-guide/","checkedAt":"2026-08-25"}],
-  "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
-  "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
-  "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["現行公式は大ホールの貸出と369席・車椅子スペースを示すが、complete issuer-numbered seat map/listを公開しない。検索に残る旧overview PDF URLは2026-08-25に404であり、current/current-linked chartとして採用しない。"],
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "江戸東京博物館 大ホール",
+      "title": "現行施設・座席案内",
+      "url": "https://www.edo-tokyo-museum.or.jp/information/room-rental/facilities/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "江戸東京博物館 大ホール",
+      "title": "現行公式番号座席図",
+      "url": "https://www.edo-tokyo-museum.or.jp/information/room-rental/facilities/pdf/1_l_seat-configurations.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式通常配置の全369番号席。無番号車椅子スペースを除外。",
+  "completenessBasis": "Fresh independent visual two-passと展開集合一致、公式印字subtotalによる独立checksum。機械count非実用性の具体的理由をverification.methodに記録。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "無番号車椅子スペースには座席IDを割り当てていません。"
+  ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": ["current issuer-numbered representative set、row/block ownership、番号付き車椅子関係を確認できない。"]
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent visual Pass1/Pass2 freeze後にexpanded bidirectional set equality:差0・重複0。親が原図の欠番・可動席・車椅子隣接を再視認。JPEG分割画像の破線可動席・回転セル・細い境界が連結/分裂し、閾値とmorphologyを複数検証しても全席一対一の機械検出は実用的でなかった。部分検出333を全数とは扱わず、公式図印字369と現行施設369を独立checksumに採用。 VENUE_DATA_GUIDE cross-check要件4の既存代替checksumを使用。capacity fittingなし。",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
   },
-  "ranges": []
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "B",
+      "from": 5,
+      "to": 28,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "C",
+      "from": 3,
+      "to": 30,
+      "excluded": [
+        22
+      ],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 32,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "L",
+      "from": 2,
+      "to": 31,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "M",
+      "from": 11,
+      "to": 22,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "N",
+      "from": 11,
+      "to": 22,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "O",
+      "from": 13,
+      "to": 20,
+      "excluded": [],
+      "areaLabel": "客席"
+    }
+  ]
 }

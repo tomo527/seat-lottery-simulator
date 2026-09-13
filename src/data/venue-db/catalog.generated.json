@@ -2072,6 +2072,18 @@
     ]
   },
   {
+    "id": "nippon-steel-kioi-hall-standard",
+    "name": "日本製鉄紀尾井ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置",
+    "seatCount": 800,
+    "dataPath": "/venue-db/venues/nippon-steel-kioi-hall-standard.json"
+  },
+  {
     "schemaVersion": 2,
     "id": "nissay-theatre-standard",
     "venueGroupId": "nissay-theatre-standard",
@@ -3088,6 +3100,40 @@
     "dataPath": "/venue-db/venues/theatre-crea-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "tiara-koto-main-standard",
+    "venueGroupId": "tiara-koto-main-standard",
+    "name": "ティアラこうとう 大ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "江東区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置",
+        "seatCount": 1228,
+        "dataPath": "/venue-db/venues/tiara-koto-main-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "BL/BRは公式図に列記号がなく、通し番号は表示用の説明です。公式の全番号席を保持し、車椅子転換は反映していません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "id": "tiara-koto-small-standard",
+    "name": "ティアラこうとう 小ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "江東区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置",
+    "seatCount": 140,
+    "dataPath": "/venue-db/venues/tiara-koto-small-standard.json"
+  },
+  {
     "id": "tochigi-ken-sogo-bunka-center-main-release-seed",
     "name": "栃木県総合文化センター メインホール",
     "searchAliases": [],
@@ -3123,6 +3169,18 @@
         "fixedOnly": false
       }
     ]
+  },
+  {
+    "id": "tokyo-bunka-small-hall-standard",
+    "name": "東京文化会館 小ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置",
+    "seatCount": 649,
+    "dataPath": "/venue-db/venues/tokyo-bunka-small-hall-standard.json"
   },
   {
     "id": "tokyo-fm-hall-a-stage",
@@ -3438,6 +3496,18 @@
     "dataPath": "/venue-db/venues/tokyo-wave3-0130.json"
   },
   {
+    "id": "tokyo-wave3-0135",
+    "name": "赤坂区民センター 区民ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "港区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置",
+    "seatCount": 396,
+    "dataPath": "/venue-db/venues/tokyo-wave3-0135.json"
+  },
+  {
     "schemaVersion": 2,
     "id": "tokyo-wave3-0136",
     "venueGroupId": "tokyo-wave3-0136",
@@ -3525,6 +3595,18 @@
         "fixedOnly": false
       }
     ]
+  },
+  {
+    "id": "tokyo-wave3-0367",
+    "name": "江戸東京博物館 大ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "墨田区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置",
+    "seatCount": 369,
+    "dataPath": "/venue-db/venues/tokyo-wave3-0367.json"
   },
   {
     "id": "tokyo-wave3-0645",
@@ -3904,6 +3986,18 @@
     "representativePatternName": "Standard fixed numbered seating",
     "seatCount": 2000,
     "dataPath": "/venue-db/venues/utsunomiya-city-culture-hall-release-seed.json"
+  },
+  {
+    "id": "yamaha-hall-standard",
+    "name": "ヤマハホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置",
+    "seatCount": 333,
+    "dataPath": "/venue-db/venues/yamaha-hall-standard.json"
   },
   {
     "schemaVersion": 2,
