@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "maebashi-culture-main-standard",
+  "name": "昌賢学園まえばしホール（前橋市民文化会館）大ホール",
+  "prefecture": "群馬県",
+  "city": "前橋市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（1,200番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 1200,
+    "selectionReason": "現行公式通常配置の1〜27列全1,200番号席。ピット156席を含む通常状態。",
+    "notIncludedPatterns": [
+      "車椅子8位置・立見60名・親子室6名は個別番号がなく抽選対象外。",
+      "ピット使用時や車椅子転換時は対象外。2027年7月以降の舞台改修後配置は保証しない。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "前橋市まちづくり公社",
+      "title": "昌賢学園まえばしホール（前橋市民文化会館）大ホール 現行施設案内",
+      "url": "https://maebashishibun.maebashi-cc.or.jp/lhall",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "前橋市まちづくり公社",
+      "title": "昌賢学園まえばしホール（前橋市民文化会館）大ホール 現行公式座席表",
+      "url": "https://maebashishibun.maebashi-cc.or.jp/wp/wp-content/uploads/2017/05/257e4c397addcd825c60a43215449cbe.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式通常配置の1〜27列全1,200番号席。ピット156席を含む通常状態。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "車椅子8位置・立見60名・親子室6名は個別番号がなく抽選対象外。",
+    "ピット使用時や車椅子転換時は対象外。2027年7月以降の舞台改修後配置は保証しない。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent human visual two-pass frozen before expanded bidirectional comparison. Original SHA256 cef23c0f822c7f418faa9e0cef355604737083bbdc6bec46ef3a9391fe4c4074. Initial P1 starts row6=6,row11=1; original enlarged crops show8 and2. P2 independently corrected row11=2. Initial freezes retained; final equality0. Expanded Pass1-only0/Pass2-only0/duplicates0. Independent raster structural checksum 1200: Pixel contour seat interiors; building stair component outside seat region excluded. Overlay viewed. Issuer subtotal reconciliation: 現行公式通常配置の1〜27列全1,200番号席。ピット156席を含む通常状態。",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "rowLabel": "1",
+      "from": 16,
+      "to": 39
+    },
+    {
+      "rowLabel": "2",
+      "from": 14,
+      "to": 41
+    },
+    {
+      "rowLabel": "3",
+      "from": 12,
+      "to": 43
+    },
+    {
+      "rowLabel": "4",
+      "from": 10,
+      "to": 45
+    },
+    {
+      "rowLabel": "5",
+      "from": 10,
+      "to": 45
+    },
+    {
+      "rowLabel": "6",
+      "from": 8,
+      "to": 47
+    },
+    {
+      "rowLabel": "7",
+      "from": 7,
+      "to": 48
+    },
+    {
+      "rowLabel": "8",
+      "from": 6,
+      "to": 49
+    },
+    {
+      "rowLabel": "9",
+      "from": 5,
+      "to": 50
+    },
+    {
+      "rowLabel": "10",
+      "from": 10,
+      "to": 45
+    },
+    {
+      "rowLabel": "11",
+      "from": 2,
+      "to": 53
+    },
+    {
+      "rowLabel": "12",
+      "from": 1,
+      "to": 54
+    },
+    {
+      "rowLabel": "13",
+      "from": 1,
+      "to": 54
+    },
+    {
+      "rowLabel": "14",
+      "from": 1,
+      "to": 54
+    },
+    {
+      "rowLabel": "15",
+      "from": 1,
+      "to": 54
+    },
+    {
+      "rowLabel": "16",
+      "from": 1,
+      "to": 54
+    },
+    {
+      "rowLabel": "17",
+      "from": 1,
+      "to": 54
+    },
+    {
+      "rowLabel": "18",
+      "from": 4,
+      "to": 51
+    },
+    {
+      "rowLabel": "19",
+      "from": 4,
+      "to": 51
+    },
+    {
+      "rowLabel": "20",
+      "from": 4,
+      "to": 51
+    },
+    {
+      "rowLabel": "21",
+      "from": 4,
+      "to": 51
+    },
+    {
+      "rowLabel": "22",
+      "from": 4,
+      "to": 51
+    },
+    {
+      "rowLabel": "23",
+      "from": 4,
+      "to": 51
+    },
+    {
+      "rowLabel": "24",
+      "from": 4,
+      "to": 51
+    },
+    {
+      "rowLabel": "25",
+      "from": 5,
+      "to": 50
+    },
+    {
+      "rowLabel": "26",
+      "from": 7,
+      "to": 48
+    },
+    {
+      "rowLabel": "27",
+      "from": 10,
+      "to": 45
+    }
+  ]
+}

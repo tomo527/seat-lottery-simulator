@@ -8,7 +8,11 @@
     "gunma-music-center",
     "tokyo-official-0983",
     "tokyo-official-1206",
-    "tokyo-official-1171"
+    "tokyo-official-1171",
+    "gunma-maebashi-culture-main",
+    "funabashi-civic-culture-hall",
+    "kawaguchi-lilia-main",
+    "chiba-city-culture-center-hall"
   ],
   "carryOvers": [
     {
@@ -37,6 +41,27 @@
       "carryOverFrom": "tokyo-wave-3",
       "previousStatus": "blocked",
       "recheckReason": "Authorized source-discovery closure; recovered current issuer numbered chart and fresh production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "funabashi-civic-culture-hall",
+      "carryOverFrom": "release-seed-v1",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "kawaguchi-lilia-main",
+      "carryOverFrom": "release-seed-v1",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "chiba-city-culture-center-hall",
+      "carryOverFrom": "release-seed-v1",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
       "recheckNotBefore": "2026-09-13"
     }
   ]

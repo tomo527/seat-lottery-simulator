@@ -784,16 +784,15 @@
       "city": "前橋市",
       "capacity": 1200,
       "category": "hall",
-      "officialFacilityUrl": "https://www.maebashi-culture.jp/",
+      "officialFacilityUrl": "https://maebashishibun.maebashi-cc.or.jp/lhall",
       "operationalStatus": "active",
-      "eligibility": "needs-research",
-      "eligibilityReason": "KANTO >=1000 audit first-party discovery: 1,200席; seat implementation evidence is not yet assessed.",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式通常配置の1〜27列全1,200番号席。ピット156席を含む通常状態。 fresh独立two-pass/expanded equality/画像checksum/issuer subtotal照合が一致。",
       "priority": "B",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-09-05",
-      "aliases": [],
-      "blockingReason": "SOURCE HOLD (2026-09-05 PREFLIGHT 5): recorded issuer hostname https://www.maebashi-culture.jp/ returned ERR_NAME_NOT_RESOLVED. Locate a working current issuer page and complete numbered representative chart before re-evaluation; no old/third-party chart, inferred IDs, rows, or capacity fitting."
+      "venueSourceId": "maebashi-culture-main-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13",
+      "aliases": []
     },
     {
       "inventoryId": "gunma-ota-culture-main",
