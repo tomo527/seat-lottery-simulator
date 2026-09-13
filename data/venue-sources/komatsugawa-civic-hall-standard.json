@@ -5,7 +5,9 @@
   "name": "小松川区民館 ホール",
   "prefecture": "東京都",
   "city": "江戸川区",
-  "aliases": ["江戸川区立小松川区民館 ホール"],
+  "aliases": [
+    "江戸川区立小松川区民館 ホール"
+  ],
   "venueType": "hall",
   "representativePattern": {
     "id": "standard-fixed-seats",
@@ -19,7 +21,9 @@
     {
       "id": "official-facility-page",
       "official": true,
-      "roles": ["facility"],
+      "roles": [
+        "facility"
+      ],
       "publisher": "江戸川区",
       "title": "小松川区民館",
       "url": "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/index.html",
@@ -28,7 +32,10 @@
     {
       "id": "official-facility-guide",
       "official": true,
-      "roles": ["facility", "seat-count"],
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
       "publisher": "江戸川区",
       "title": "小松川区民館 施設概要・アクセス",
       "url": "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/guide.html",
@@ -37,7 +44,11 @@
     {
       "id": "official-room-guide",
       "official": true,
-      "roles": ["facility", "seat-count", "event-layout"],
+      "roles": [
+        "facility",
+        "seat-count",
+        "event-layout"
+      ],
       "publisher": "江戸川区",
       "title": "小松川区民館 部屋紹介（ホール）",
       "url": "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/room.html",
@@ -58,7 +69,7 @@
     "seatStructure": "pending",
     "seatCount": "matched",
     "unresolvedIssues": [
-      "300席が常設・非可動であることは2026年4月7日更新の公式部屋紹介で確認したが、現行の全番号付き座席図、列名、番号、欠番、車椅子対応時の扱いは公開公式資料から確認できない。施設公式の現行座席表が必要。"
+      "HOLD / NEED EVIDENCE: Current floor original viewed300-capacity hall;no numbering. Not Sakura hall. Reopen: Issuer numbered chart for300 venue"
     ]
   },
   "ranges": []

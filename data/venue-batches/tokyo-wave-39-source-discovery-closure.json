@@ -26,7 +26,11 @@
     "tokyo-official-1048",
     "tokyo-official-1189",
     "tokyo-official-0849",
-    "tokyo-coverage-pia-theater-yaesu"
+    "tokyo-coverage-pia-theater-yaesu",
+    "tokyo-official-1186",
+    "tochigi-ken-sogo-bunka-center-main",
+    "mori-no-hall21-main",
+    "tokyo-official-0344"
   ],
   "carryOvers": [
     {
@@ -165,6 +169,34 @@
     {
       "inventoryId": "tokyo-official-0849",
       "carryOverFrom": "tokyo-wave-2",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-1186",
+      "carryOverFrom": "tokyo-wave-4",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tochigi-ken-sogo-bunka-center-main",
+      "carryOverFrom": "release-seed-v1",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "mori-no-hall21-main",
+      "carryOverFrom": "release-seed-v1",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-0344",
+      "carryOverFrom": "tokyo-wave-3",
       "previousStatus": "blocked",
       "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
       "recheckNotBefore": "2026-09-13"

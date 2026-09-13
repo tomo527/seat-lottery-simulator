@@ -603,6 +603,28 @@
     "dataPath": "/venue-db/venues/hamarikyu-asahi-hall-standard.json"
   },
   {
+    "schemaVersion": 2,
+    "id": "hanayashiki-kagekijo-standard",
+    "venueGroupId": "hanayashiki-kagekijo-standard",
+    "name": "花やしき花劇場",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "台東区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置（276番号席）",
+        "seatCount": 276,
+        "dataPath": "/venue-db/venues/hanayashiki-kagekijo-standard--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "基本着席配置276番号席。内側の3ブロック名称は抽選表示用の整理名であり公式座席名称ではない。公式図で列名が示されていないため隣接A列への所属を主張しない。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "hikifune-culture-hall-standard",
     "name": "曳舟文化センター 劇場ホール",
     "searchAliases": [
@@ -918,6 +940,18 @@
         "fixedOnly": false
       }
     ]
+  },
+  {
+    "id": "inagi-iplaza-hall-standard",
+    "name": "稲城市立iプラザ ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "稲城市",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（403番号席）",
+    "seatCount": 403,
+    "dataPath": "/venue-db/venues/inagi-iplaza-hall-standard.json"
   },
   {
     "id": "iris-hall-standard",
@@ -1659,6 +1693,28 @@
         "dataPath": "/venue-db/venues/mon-takanawa-box1000-standard--official-seated-layout.json",
         "scope": "representative-event",
         "scopeDisclosure": "現行公式客席図の着席配置1,048席を抽選します。スタンディング配置と公演ごとの販売停止は反映しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
+    "id": "mori-no-hall21-main-release-seed",
+    "venueGroupId": "mori-no-hall21-main-release-seed",
+    "name": "森のホール21 大ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "千葉県",
+    "municipality": "松戸市",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置（1955番号席）",
+        "seatCount": 1955,
+        "dataPath": "/venue-db/venues/mori-no-hall21-main-release-seed--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "通常配置1955番号席。独立ブロック名と「通し番号」は抽選表示用の整理名で、公式の列・座席名称ではありません。公式図の区切りを保持し、隣接する主客席列への所属を主張していません。",
         "fixedOnly": false
       }
     ]
@@ -2956,6 +3012,18 @@
     "representativePatternName": "通常舞台配置",
     "seatCount": 609,
     "dataPath": "/venue-db/venues/theatre-crea-standard.json"
+  },
+  {
+    "id": "tochigi-ken-sogo-bunka-center-main-release-seed",
+    "name": "栃木県総合文化センター メインホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "栃木県",
+    "municipality": "宇都宮市",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（1604番号席）",
+    "seatCount": 1604,
+    "dataPath": "/venue-db/venues/tochigi-ken-sogo-bunka-center-main-release-seed.json"
   },
   {
     "schemaVersion": 2,

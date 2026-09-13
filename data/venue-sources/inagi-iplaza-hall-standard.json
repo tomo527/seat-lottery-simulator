@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "inagi-iplaza-hall-standard",
+  "name": "稲城市立iプラザ ホール",
+  "prefecture": "東京都",
+  "city": "稲城市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（403番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 403,
+    "selectionReason": "現行通常配置403番号席と無番号車椅子7位置を区別し、公称410と照合。",
+    "notIncludedPatterns": [
+      "無番号車椅子7位置・親子室は抽選対象外。公式資料はHTTPで公開されています。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "稲城市立iプラザ",
+      "title": "稲城市立iプラザ ホール 現行案内",
+      "url": "http://www.iplaza.inagi.tokyo.jp/guidance/hall.html",
+      "checkedAt": "2026-09-13",
+      "httpOnlyOfficial": {
+        "issuerDomain": "iplaza.inagi.tokyo.jp",
+        "httpsCheckedAt": "2026-09-13",
+        "httpsUnavailableEvidence": "Fresh certificate-validated curl/Schannel request failed SEC_E_WRONG_PRINCIPAL; independent Python requests failed SSLCertVerificationError hostname mismatch. Current official HTTP page and linked original succeed; HTTPS was not invented or TLS validation bypassed."
+      }
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "稲城市立iプラザ",
+      "title": "稲城市立iプラザ ホール 現行番号座席図",
+      "url": "http://www.iplaza.inagi.tokyo.jp/cabinet/pdf/HallKyakuseki090825.pdf",
+      "checkedAt": "2026-09-13",
+      "httpOnlyOfficial": {
+        "issuerDomain": "iplaza.inagi.tokyo.jp",
+        "httpsCheckedAt": "2026-09-13",
+        "httpsUnavailableEvidence": "Fresh certificate-validated curl/Schannel request failed SEC_E_WRONG_PRINCIPAL; independent Python requests failed SSLCertVerificationError hostname mismatch. Current official HTTP page and linked original succeed; HTTPS was not invented or TLS validation bypassed."
+      }
+    }
+  ],
+  "registeredScope": "現行通常配置403番号席と無番号車椅子7位置を区別し、公称410と照合。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "無番号車椅子7位置・親子室は抽選対象外。公式資料はHTTPで公開されています。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent original visual Pass1 and Pass2 frozen before expanded bidirectional equality. Original SHA256 18e72469ae562150cad0d0888f41fbb3889732e3e3d5f336d9f514dcbee60a17. Independent full structural checksum: PyMuPDF get_text(words); select tokens whose entire string is digits. 403 boxes, all located on printed numbered seats. Japanese row suffixes and captions are not digit-only. Full red-point overlay visually checked. Issuer reconciliation: 現行通常配置403番号席と無番号車椅子7位置を区別し、公称410と照合。 No capacity fitting or inferred identifiers.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "1",
+      "from": 3,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "1",
+      "from": 19,
+      "to": 22
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "2",
+      "from": 2,
+      "to": 23
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "3",
+      "from": 2,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "3",
+      "from": 19,
+      "to": 23
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "4",
+      "from": 2,
+      "to": 23
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "5",
+      "from": 2,
+      "to": 17
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "5",
+      "from": 19,
+      "to": 23
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "6",
+      "from": 7,
+      "to": 18
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "7",
+      "from": 2,
+      "to": 23
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "17",
+      "from": 1,
+      "to": 24
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "18",
+      "from": 1,
+      "to": 24
+    }
+  ]
+}

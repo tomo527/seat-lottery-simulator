@@ -1,0 +1,270 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "hanayashiki-kagekijo-standard",
+  "name": "花やしき花劇場",
+  "prefecture": "東京都",
+  "city": "台東区",
+  "aliases": [],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "花やしき花劇場",
+      "title": "花やしき花劇場 現行案内",
+      "url": "https://www.hanayashiki-kagekijo.com/step/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "花やしき花劇場",
+      "title": "花やしき花劇場 現行番号座席図",
+      "url": "https://www.hanayashiki-kagekijo.com/uploads/2026/06/kyakuseki-butai.zip",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行基本原状復帰の舞台張り出し無・アリーナ着席配置。2階208＋3階68＝276番号席。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "内側の3ブロック名称は抽選表示用の整理名であり公式座席名称ではない。公式図で列名が示されていないため隣接A列への所属を主張しない。 立見席・関係者専用4階・別舞台配置は対象外。"
+  ],
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置（276番号席）",
+      "issuerDefinedCondition": "現行基本原状復帰の舞台張り出し無・アリーナ着席配置。2階208＋3階68＝276番号席。",
+      "selectionBasis": "現行基本原状復帰の舞台張り出し無・アリーナ着席配置。2階208＋3階68＝276番号席。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13 current-linked official original 8c58be45325f084cb6f95ed1613a094100eafb1e1b2225586c791dc183ba2629",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 276,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "基本着席配置276番号席。内側の3ブロック名称は抽選表示用の整理名であり公式座席名称ではない。公式図で列名が示されていないため隣接A列への所属を主張しない。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "通常図の番号席を保持。公演時の車椅子転換は反映していません。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "Fresh independent visual two-pass freeze, expanded equality276/duplicates0. After direct original review, inner balcony labels represented by canonical display-only areas with no adjacent A attribution. Asset-only vector seat-body glyph path count;276 total including208arena and68balcony. Full original geometry checksum; no ranges used. Original SHA256 8c58be45325f084cb6f95ed1613a094100eafb1e1b2225586c791dc183ba2629. Issuer208+68=276. No capacity fitting.",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 19,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 20,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 18,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 18,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 20,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 20,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 20,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "H",
+          "from": 1,
+          "to": 19,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "I",
+          "from": 1,
+          "to": 16,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 16,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 14,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "2F-arena",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 8,
+          "excluded": [],
+          "areaLabel": "ホール2階"
+        },
+        {
+          "areaId": "3F-balcony",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 9,
+          "excluded": [],
+          "areaLabel": "ホール3階"
+        },
+        {
+          "areaId": "3F-balcony",
+          "rowLabel": "A",
+          "from": 41,
+          "to": 49,
+          "excluded": [],
+          "areaLabel": "ホール3階"
+        },
+        {
+          "areaId": "3F-balcony",
+          "rowLabel": "B",
+          "from": 12,
+          "to": 18,
+          "excluded": [],
+          "areaLabel": "ホール3階"
+        },
+        {
+          "areaId": "3F-balcony",
+          "rowLabel": "B",
+          "from": 21,
+          "to": 29,
+          "excluded": [],
+          "areaLabel": "ホール3階"
+        },
+        {
+          "areaId": "3F-balcony",
+          "rowLabel": "B",
+          "from": 31,
+          "to": 37,
+          "excluded": [],
+          "areaLabel": "ホール3階"
+        },
+        {
+          "areaId": "3F-balcony",
+          "rowLabel": "B",
+          "from": 45,
+          "to": 49,
+          "excluded": [],
+          "areaLabel": "ホール3階"
+        },
+        {
+          "areaId": "balcony-inner-left",
+          "areaLabel": "3階内側左ブロック（表示用）",
+          "rowLabel": "通し番号",
+          "from": 11,
+          "to": 15
+        },
+        {
+          "areaId": "balcony-inner-rear",
+          "areaLabel": "3階内側後方ブロック（表示用）",
+          "rowLabel": "通し番号",
+          "from": 16,
+          "to": 17
+        },
+        {
+          "areaId": "balcony-inner-rear",
+          "areaLabel": "3階内側後方ブロック（表示用）",
+          "rowLabel": "通し番号",
+          "from": 21,
+          "to": 28
+        },
+        {
+          "areaId": "balcony-inner-rear",
+          "areaLabel": "3階内側後方ブロック（表示用）",
+          "rowLabel": "通し番号",
+          "from": 32,
+          "to": 33
+        },
+        {
+          "areaId": "balcony-inner-right",
+          "areaLabel": "3階内側右ブロック（表示用）",
+          "rowLabel": "通し番号",
+          "from": 34,
+          "to": 38
+        }
+      ]
+    }
+  ]
+}

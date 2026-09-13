@@ -1,97 +1,693 @@
 {
-  "schemaVersion": 1,
-  "status": "draft",
+  "schemaVersion": 2,
+  "status": "production",
   "id": "mori-no-hall21-main-release-seed",
   "name": "森のホール21 大ホール",
   "prefecture": "千葉県",
   "city": "松戸市",
   "aliases": [],
   "venueType": "hall",
-  "representativePattern": {
-    "id": "normal-1955-seat-layout-candidate",
-    "name": "通常1,955席配置候補",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "公式施設ページが通常1,955席を一意に示すが、登録済み資料だけでは全番号構造を確定できない。",
-    "notIncludedPatterns": [
-      "オーケストラピット使用時1,790席配置"
-    ]
-  },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
       "publisher": "森のホール21",
-      "title": "森のホール21 公式施設案内",
-      "url": "https://www.morinohall21.com/",
-      "checkedAt": "2026-08-02"
+      "title": "森のホール21 大ホール 現行案内",
+      "url": "https://www.morinohall21.com/users/download.html",
+      "checkedAt": "2026-09-13"
     },
     {
       "id": "official-seat-map",
       "official": true,
       "roles": [
-        "seat-structure"
-      ],
-      "publisher": "森のホール21 大ホール",
-      "title": "公式座席図・座席案内",
-      "url": "https://www.morinohall21.com/hall21/file/hall_l_seatingchart02.pdf",
-      "checkedAt": "2026-08-09"
-    },
-    {
-      "id": "official-seat-count",
-      "official": true,
-      "roles": [
+        "seat-structure",
         "seat-count"
       ],
-      "publisher": "森のホール21 大ホール",
-      "title": "公式施設・座席数案内",
-      "url": "https://www.morinohall21.com/hall21/hall_l.html",
-      "checkedAt": "2026-08-09"
+      "publisher": "森のホール21",
+      "title": "森のホール21 大ホール 現行番号座席図",
+      "url": "https://www.morinohall21.com/hall21/file/hall_l_seatingchart01.pdf",
+      "checkedAt": "2026-09-13"
     }
   ],
-  "registeredScope": "Sol公式資料確認記録のみ。選択可能な番号席rangeは登録しない。",
-  "completenessBasis": "公式ページは通常1,955席と階別内訳を明示するが、source登録済みPDFは3階見切れ席の見え方資料であり、全階の完全番号図ではない。",
-  "transformation": "全階の番号集合を独立2パスで読める公式資料がsource内にないためrange転記を行わない。",
+  "registeredScope": "現行通常図の1階1280・2階222・3階453、全1955番号席。図上の独立番号ブロックを隣接主列へ帰属させず表示用areaで保持。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
   "knownLimitations": [
-    "公式ページは通常1,955席（1階1,280、2階222、3階453）とピット使用時1,790席を明示する。",
-    "登録済みseat-map PDFは3階の見切れ席写真と一部番号を示す資料で、1〜3階の完全番号図ではない。",
-    "SOURCE HOLD: 完全番号図がsourceに追加されるまでrange、fingerprint、catalog、runtime detailを作成しない。"
+    "通常配置1955番号席。独立ブロック名と「通し番号」は抽選表示用の整理名で、公式の列・座席名称ではありません。公式図の区切りを保持し、隣接する主客席列への所属を主張していません。 ピット利用・車椅子転換時は別条件。"
   ],
-  "verification": {
-    "status": "pending",
-    "checkedAt": "2026-08-09",
-    "method": "independent-official-source-review",
-    "seatStructure": "pending",
-    "seatCount": "matched",
-    "unresolvedIssues": [
-      "SOURCE HOLD: the registered official PDF is a third-floor restricted-view guide, not a complete numbered map for all 1,955 normal seats."
-    ]
-  },
-  "ranges": [],
-  "preflight": {
-    "officialFacilityPage": "あり",
-    "officialSeatStructureSource": "あり",
-    "officialSeatCountSource": "あり",
-    "completeNumberedSeatMap": "なし（登録PDFは3階見切れ席資料）",
-    "exactNominalSeatCount": "あり",
-    "representativeLayout": "一意",
-    "fixedSeats": "あり",
-    "movableSeats": "なし",
-    "wheelchair": "あり（18席対応）",
-    "pit": "あり（通常1,955席から1,790席へ165席減）",
-    "areas": "複数",
-    "processingRoute": "Hold",
-    "classification": "SOURCE HOLD",
-    "mapUrl": "https://www.morinohall21.com/hall21/file/hall_l_seatingchart02.pdf",
-    "countUrl": "https://www.morinohall21.com/hall21/hall_l.html",
-    "checkedAt": "2026-08-09",
-    "rationale": "公式席数は確定したが、登録済みPDFは3階見切れ席資料で全階の完全番号図ではなく、独立2パスを完了できない。",
-    "officialFacilityUrl": "https://www.morinohall21.com/",
-    "status": "blocked",
-    "rangeEntry": "blocked-source-hold",
-    "decision": "source-hold"
-  }
+  "configurations": [
+    {
+      "id": "standard",
+      "canonicalName": "通常配置（1955番号席）",
+      "issuerDefinedCondition": "現行通常図の1階1280・2階222・3階453、全1955番号席。図上の独立番号ブロックを隣接主列へ帰属させず表示用areaで保持。",
+      "selectionBasis": "現行通常図の1階1280・2階222・3階453、全1955番号席。図上の独立番号ブロックを隣接主列へ帰属させず表示用areaで保持。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13 current-linked official original 70b3c12b6d18308148ba62fd1b064bbe4446dca1816ad97e3ca2899fa5f9d58a",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 1955,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "通常配置1955番号席。独立ブロック名と「通し番号」は抽選表示用の整理名で、公式の列・座席名称ではありません。公式図の区切りを保持し、隣接する主客席列への所属を主張していません。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "通常図の番号席を保持。公演時の車椅子転換は反映していません。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "Fresh independent original visual Pass1 and Pass2 frozen before expanded bidirectional equality. Original SHA256 70b3c12b6d18308148ba62fd1b064bbe4446dca1816ad97e3ca2899fa5f9d58a. Independent full structural checksum: get_text(words) digit-only6592; deduplicate same token with x0/y0 delta<0.5point to collapse offset overprinting =>1978. Exclude23 row-label tokens whose x0 in(382,384) and y0<500; this is the visible row-label gutter, not seat space =>1955. Floors divided visually at y500 and lower panels x410. Full red-point overlay inspected, including removable/shaded/parentchild/side cells. Issuer reconciliation: 現行通常図の1階1280・2階222・3階453、全1955番号席。図上の独立番号ブロックを隣接主列へ帰属させず表示用areaで保持。 No capacity fitting or inferred identifiers.",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "1",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "2",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "3",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "4",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "5",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "6",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "7",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "8",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "9",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "10",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "11",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "12",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "13",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "14",
+          "from": 4,
+          "to": 36
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "15",
+          "from": 1,
+          "to": 39
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "16",
+          "from": 1,
+          "to": 39
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "17",
+          "from": 1,
+          "to": 39
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "18",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "19",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "20",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "21",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "22",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "23",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "24",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "25",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "26",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "27",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "28",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "29",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "30",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "31",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "32",
+          "from": 2,
+          "to": 38
+        },
+        {
+          "areaId": "1F-front-left-separate-band-1",
+          "areaLabel": "1階前方左独立ブロック1（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "1F-front-left-separate-band-2",
+          "areaLabel": "1階前方左独立ブロック2（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "1F-front-left-separate-band-3",
+          "areaLabel": "1階前方左独立ブロック3（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "1F-front-left-separate-band-4",
+          "areaLabel": "1階前方左独立ブロック4（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "1F-front-left-separate-band-5",
+          "areaLabel": "1階前方左独立ブロック5（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "1F-front-left-separate-band-6",
+          "areaLabel": "1階前方左独立ブロック6（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "1F-front-left-separate-band-7",
+          "areaLabel": "1階前方左独立ブロック7（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 3
+        },
+        {
+          "areaId": "1F-front-right-separate-band-1",
+          "areaLabel": "1階前方右独立ブロック1（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 37,
+          "to": 39
+        },
+        {
+          "areaId": "1F-front-right-separate-band-2",
+          "areaLabel": "1階前方右独立ブロック2（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 37,
+          "to": 39
+        },
+        {
+          "areaId": "1F-front-right-separate-band-3",
+          "areaLabel": "1階前方右独立ブロック3（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 37,
+          "to": 39
+        },
+        {
+          "areaId": "1F-front-right-separate-band-4",
+          "areaLabel": "1階前方右独立ブロック4（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 37,
+          "to": 39
+        },
+        {
+          "areaId": "1F-front-right-separate-band-5",
+          "areaLabel": "1階前方右独立ブロック5（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 37,
+          "to": 39
+        },
+        {
+          "areaId": "1F-front-right-separate-band-6",
+          "areaLabel": "1階前方右独立ブロック6（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 37,
+          "to": 39
+        },
+        {
+          "areaId": "1F-front-right-separate-band-7",
+          "areaLabel": "1階前方右独立ブロック7（舞台側から・表示用）",
+          "rowLabel": "通し番号",
+          "from": 37,
+          "to": 39
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "L1",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "L2",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "L3",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "L4",
+          "from": 1,
+          "to": 9
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "R1",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "R2",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "R3",
+          "from": 1,
+          "to": 14
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "R4",
+          "from": 1,
+          "to": 9
+        },
+        {
+          "areaId": "1F-main",
+          "areaLabel": "1階",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "1",
+          "from": 7,
+          "to": 39
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "2",
+          "from": 3,
+          "to": 43
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "3",
+          "from": 2,
+          "to": 44
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "2F-rear-left-separate-band",
+          "areaLabel": "2階後方左独立ブロック（表示用）",
+          "rowLabel": "通し番号",
+          "from": 2,
+          "to": 6
+        },
+        {
+          "areaId": "2F-rear-right-separate-band",
+          "areaLabel": "2階後方右独立ブロック（表示用）",
+          "rowLabel": "通し番号",
+          "from": 40,
+          "to": 44
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "L1",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "L2",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "L3",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "R1",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "R2",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "areaId": "2F-main",
+          "areaLabel": "2階",
+          "rowLabel": "R3",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "1",
+          "from": 7,
+          "to": 39
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "2",
+          "from": 3,
+          "to": 43
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "3",
+          "from": 2,
+          "to": 44
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "4",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "5",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "6",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "7",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "8",
+          "from": 1,
+          "to": 45
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "9",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "9",
+          "from": 19,
+          "to": 27
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "9",
+          "from": 30,
+          "to": 45
+        },
+        {
+          "areaId": "3F-rear-left-separate-band",
+          "areaLabel": "3階後方左独立ブロック（表示用）",
+          "rowLabel": "通し番号",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "3F-rear-right-separate-band",
+          "areaLabel": "3階後方右独立ブロック（表示用）",
+          "rowLabel": "通し番号",
+          "from": 40,
+          "to": 45
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "L1",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "L2",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "L3",
+          "from": 1,
+          "to": 9
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "R1",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "R2",
+          "from": 1,
+          "to": 10
+        },
+        {
+          "areaId": "3F-main",
+          "areaLabel": "3階",
+          "rowLabel": "R3",
+          "from": 1,
+          "to": 9
+        }
+      ]
+    }
+  ]
 }
