@@ -13,20 +13,38 @@
     "coverage": "draft",
     "expectedSeatCount": null,
     "selectionReason": "東京都公式inventoryのWave 3候補。代表配置は公式座席表の確認後に確定する。",
-    "notIncludedPatterns": ["イベント固有配置、非番号席、補助席は代表配置確定まで未登録"]
+    "notIncludedPatterns": [
+      "イベント固有配置、非番号席、補助席は代表配置確定まで未登録"
+    ]
   },
-  "sources": [{"id":"official-facility-page","official":true,"roles":["facility"],"publisher":"二松学舎大学 中洲記念講堂","title":"二松学舎大学 中洲記念講堂 施設案内","url":"https://www.nishogakusha-u.ac.jp/","checkedAt":"2026-07-29"}],
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility"
+      ],
+      "publisher": "二松学舎大学 中洲記念講堂",
+      "title": "二松学舎大学 中洲記念講堂 施設案内",
+      "url": "https://www.nishogakusha-u.ac.jp/",
+      "checkedAt": "2026-07-29"
+    }
+  ],
   "registeredScope": "候補sourceを作成。番号付き座席rangeは未登録。",
   "completenessBasis": "公式施設情報の所在を記録した段階で、全番号座席図と総席数の照合は未完了。",
   "transformation": "未実施。公式座席図を取得後、列・番号・欠番をrangeへ転記する。",
-  "knownLimitations": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"],
+  "knownLimitations": [
+    "公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"
+  ],
   "verification": {
     "status": "pending",
     "checkedAt": null,
     "method": "",
     "seatStructure": "pending",
     "seatCount": "pending",
-    "unresolvedIssues": ["公式の全番号付き座席表と、番号席に対応する総席数資料を取得してrangeを入力する。"]
+    "unresolvedIssues": [
+      "HOLD / NEED_EVIDENCE: Current university top, campus tour and Nakasu auditorium panorama reached; auditorium photo viewed. Domain seat-map search found no issuer numbered original. Historical 1125/1100 annotation belongs to another venue. Reopen: Issuer complete numbered auditorium seat chart."
+    ]
   },
   "ranges": []
 }

@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "jiji-tsushin-hall",
+  "name": "時事通信ホール",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": [],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "時事通信ホール",
+      "title": "時事通信ホール 現行案内",
+      "url": "https://hall.jiji.com/about/document.html",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "時事通信ホール",
+      "title": "時事通信ホール 現行番号図",
+      "url": "https://hall.jiji.com/assets/doc/theater2/1-jijiシアター294席(座席番号取付例).W9600xD2400xH606.pdf",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map-320",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "時事通信ホール",
+      "title": "時事通信ホール 320席番号取付例",
+      "url": "https://hall.jiji.com/assets/doc/theater2/2-jijiシアター320席(座席番号取付例).W9600xD2400xH606.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式のシアター定型・座席番号取付例294/320を分離。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "座席番号は主催者がマグネットで取り付ける公式配置例です。可動席の配置・番号は公演により変わります。"
+  ],
+  "configurations": [
+    {
+      "id": "theater-294",
+      "canonicalName": "座席番号取付例294席",
+      "issuerDefinedCondition": "現行公式のシアター定型・座席番号取付例294/320を分離。",
+      "selectionBasis": "現行公式のシアター定型・座席番号取付例294/320を分離。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "2026-09-13 current original 5dc816473b4f369bb685e4f047b5b32fd83f4b445437db85562a7a7b1a77e53b",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 294,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式のシアター定型・座席番号取付例294/320を分離。 座席番号は主催者がマグネットで取り付ける公式配置例です。可動席の配置・番号は公演により変わります。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "通常図の番号席を保持。公演時の車椅子転換は反映していません。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "Fresh independent visual two-pass froze before expanded bidirectional comparison; final both differences0,duplicates0. Initial freeze/correction history preserved. Original SHA256 5dc816473b4f369bb685e4f047b5b32fd83f4b445437db85562a7a7b1a77e53b. Independent full asset checksum: Independent digit-only words, rotation90 normalized; visible seat rectangle x400..770 y215..680, original glyphheight<11 excludes dimensions. No human range input.. Configuration count 294. No inferred IDs or capacity fitting.",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "H",
+          "from": 2,
+          "to": 17
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "I",
+          "from": 2,
+          "to": 17
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "M",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "N",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "O",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "P",
+          "from": 1,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "Q",
+          "from": 5,
+          "to": 14
+        }
+      ]
+    },
+    {
+      "id": "theater-320",
+      "canonicalName": "座席番号取付例320席",
+      "issuerDefinedCondition": "現行公式のシアター定型・座席番号取付例294/320を分離。",
+      "selectionBasis": "現行公式のシアター定型・座席番号取付例294/320を分離。",
+      "definitionAuthority": "representative-evidence",
+      "sourceGeneration": "2026-09-13 current original 0e35b64856565e8854579128a47362eb654f33846bd1134b5be5af791ce1987f",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map-320"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map-320"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 320,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式のシアター定型・座席番号取付例294/320を分離。 座席番号は主催者がマグネットで取り付ける公式配置例です。可動席の配置・番号は公演により変わります。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "通常図の番号席を保持。公演時の車椅子転換は反映していません。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "Fresh independent visual two-pass froze before expanded bidirectional comparison; final both differences0,duplicates0. Initial freeze/correction history preserved. Original SHA256 0e35b64856565e8854579128a47362eb654f33846bd1134b5be5af791ce1987f. Independent full asset checksum: Independent digit-only words, rotation90 normalized; visible seat rectangle x400..770 y215..680, original glyphheight<11 excludes dimensions. No human range input.. Configuration count 320. No inferred IDs or capacity fitting.",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "A",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "B",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "F",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "G",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "H",
+          "from": 3,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "I",
+          "from": 3,
+          "to": 18
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "J",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "K",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "L",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "M",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "N",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "O",
+          "from": 1,
+          "to": 20
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "P",
+          "from": 2,
+          "to": 19
+        },
+        {
+          "areaId": "hall",
+          "areaLabel": "客席",
+          "rowLabel": "Q",
+          "from": 6,
+          "to": 15
+        }
+      ]
+    }
+  ]
+}

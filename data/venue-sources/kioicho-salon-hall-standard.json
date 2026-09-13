@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "kioicho-salon-hall-standard",
+  "name": "紀尾井町サロンホール",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（80番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 80,
+    "selectionReason": "現行公式の最大80席標準配置。全可動席だが公式番号図の完全な集合を採用。",
+    "notIncludedPatterns": [
+      "感染対策67席配置は対象外。主催者の配置・番号変更は反映しません。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "紀尾井町サロンホール",
+      "title": "紀尾井町サロンホール 現行案内",
+      "url": "https://kioichosalonhall.com/?page_id=102",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "紀尾井町サロンホール",
+      "title": "紀尾井町サロンホール 現行番号図",
+      "url": "https://drive.google.com/file/d/1SDZ3JNp8c4G3Wmfkp8y_C2eT0JeF8Qp5/view?usp=sharing",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式の最大80席標準配置。全可動席だが公式番号図の完全な集合を採用。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "感染対策67席配置は対象外。主催者の配置・番号変更は反映しません。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent peer visual Pass1 and parent fresh visual Pass2 frozen before expanded bidirectional equality0/duplicates0. Original SHA256 9b6e62c40cc29d0e580fc79852ca4c45ae336c4e294207b79a23c0141f2f1af7. Asset-only complete identifier-shaped text-token structural checksum 80, all tokens correspond to directly viewed cell labels; parent full original review confirmed scope. 現行公式の最大80席標準配置。全可動席だが公式番号図の完全な集合を採用。 No capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 10
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 10
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 10
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 10
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "5",
+      "from": 2,
+      "to": 11
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "6",
+      "from": 2,
+      "to": 11
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "7",
+      "from": 2,
+      "to": 11
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "8",
+      "from": 2,
+      "to": 11
+    }
+  ]
+}

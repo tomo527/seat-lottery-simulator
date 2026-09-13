@@ -2397,6 +2397,84 @@
         "main/2-Z/50"
       ],
       "sha256": "34ccd0071ba94fbc31fb3875d86399c45c136936fbf86a9f5c300fad4550c90a"
+    },
+    "geigeki-theatre-west": {
+      "schemaVersion": 2,
+      "configurations": {
+        "pattern-a": {
+          "count": 270,
+          "samples": [
+            "main/A/5",
+            "main/F/18",
+            "main/RA/17"
+          ],
+          "sha256": "fe60547db374417bb1db7ce1fedf2ffed54116b2a5be7189081d45f0d7433464"
+        },
+        "pattern-b": {
+          "count": 222,
+          "samples": [
+            "main/L1/1",
+            "main/H/4",
+            "main/RA/17"
+          ],
+          "sha256": "f3cded315d3258ebbe4605a2529483004935bd85526df89d058dde9eadedf794"
+        }
+      }
+    },
+    "tokyo-wave3-0052": {
+      "schemaVersion": 2,
+      "configurations": {
+        "standard": {
+          "count": 1100,
+          "samples": [
+            "1F/A/10",
+            "2F-side-left/通し番号/29",
+            "2F/L/44"
+          ],
+          "sha256": "1ffa1e3062a47c2fac02b3ac9ac25158aaa87d9d9d8a393d29aa4f408aae7eca"
+        }
+      }
+    },
+    "jiji-tsushin-hall": {
+      "schemaVersion": 2,
+      "configurations": {
+        "theater-294": {
+          "count": 294,
+          "samples": [
+            "hall/A/1",
+            "hall/I/7",
+            "hall/Q/14"
+          ],
+          "sha256": "df318b7b2b425065d951906f41bb02d71319a1346f502eab8bfb358fb91caf09"
+        },
+        "theater-320": {
+          "count": 320,
+          "samples": [
+            "hall/A/1",
+            "hall/I/7",
+            "hall/Q/15"
+          ],
+          "sha256": "3597f1baca45db272d5bf493fbf2f00c4e9c95056fcb58246324a4522a54c19d"
+        }
+      }
+    },
+    "kioicho-salon-hall-standard": {
+      "count": 80,
+      "samples": [
+        "main/1/1",
+        "main/5/2",
+        "main/8/11"
+      ],
+      "sha256": "01a6156a8f5e135015497ad8b52cadc9c29e5ee817d30e27d467b6e7f557fec5"
+    },
+    "udx-theater-standard": {
+      "count": 174,
+      "samples": [
+        "main/A/1",
+        "main/E/11",
+        "main/I/19"
+      ],
+      "sha256": "37c70ed3d4202ab7c88ab02be197c3aa7e81d5fa906a2fe099b0be1c0a56ed8b"
     }
   }
 }

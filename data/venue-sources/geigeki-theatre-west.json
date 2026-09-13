@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 2,
+  "status": "production",
+  "id": "geigeki-theatre-west",
+  "name": "東京芸術劇場 シアターウエスト",
+  "prefecture": "東京都",
+  "city": "豊島区",
+  "aliases": [],
+  "venueType": "hall",
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "東京芸術劇場",
+      "title": "東京芸術劇場 シアターウエスト 現行案内",
+      "url": "https://www.geigeki.jp/rent/theatre_west/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "東京芸術劇場",
+      "title": "東京芸術劇場 シアターウエスト 現行番号図",
+      "url": "https://www.geigeki.jp/facilities/pdf/west.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "公演により配置は変わります。EX席も各基本図の印字通り保持。"
+  ],
+  "configurations": [
+    {
+      "id": "pattern-a",
+      "canonicalName": "基本パターンA",
+      "issuerDefinedCondition": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。",
+      "selectionBasis": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13 current original 1cffe1a1561023e1db00c0bf36f9502d9e4aac515e3aa61e03e6a4749a5b45a9",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 270,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。 公演により配置は変わります。EX席も各基本図の印字通り保持。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "通常図の番号席を保持。公演時の車椅子転換は反映していません。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "Fresh independent visual two-pass froze before expanded bidirectional comparison; final both differences0,duplicates0. Initial freeze/correction history preserved. Original SHA256 1cffe1a1561023e1db00c0bf36f9502d9e4aac515e3aa61e03e6a4749a5b45a9. Independent full asset checksum: White filled/stroked seat-body vector paths with both bbox dimensions10..20points; rejects thin chair back elements. No human ranges read by script.. Configuration count 270. No inferred IDs or capacity fitting.",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "A",
+          "from": 5,
+          "to": 15
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "A",
+          "from": 17,
+          "to": 19
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "B",
+          "from": 2,
+          "to": 22
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "C",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "C",
+          "from": 17,
+          "to": 23
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "D",
+          "from": 1,
+          "to": 23
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "E",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "E",
+          "from": 17,
+          "to": 23
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "EX",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 15
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "F",
+          "from": 17,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "G",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "H",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "I",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "J",
+          "from": 3,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "K",
+          "from": 3,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "K",
+          "from": 9,
+          "to": 13
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "K",
+          "from": 17,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L",
+          "from": 2,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L",
+          "from": 10,
+          "to": 13
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L",
+          "from": 17,
+          "to": 22
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "M",
+          "from": 9,
+          "to": 15
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "LA",
+          "from": 9,
+          "to": 17
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "RA",
+          "from": 9,
+          "to": 17
+        }
+      ]
+    },
+    {
+      "id": "pattern-b",
+      "canonicalName": "基本パターンB",
+      "issuerDefinedCondition": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。",
+      "selectionBasis": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。",
+      "definitionAuthority": "issuer",
+      "sourceGeneration": "2026-09-13 current original 1cffe1a1561023e1db00c0bf36f9502d9e4aac515e3aa61e03e6a4749a5b45a9",
+      "sourceIds": [
+        "official-facility-page",
+        "official-seat-map"
+      ],
+      "differenceBasisSourceIds": [
+        "official-seat-map"
+      ],
+      "status": "production",
+      "selectable": true,
+      "numberedSeatSetComplete": true,
+      "capacityFitting": false,
+      "repositoryInventedDifferences": false,
+      "expectedSeatCount": 222,
+      "scope": {
+        "kind": "official-variant",
+        "issuerDefined": true,
+        "containsEventDependentSeatIds": false
+      },
+      "scopeDisclosure": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。 公演により配置は変わります。EX席も各基本図の印字通り保持。",
+      "wheelchairSemantics": {
+        "status": "not-reflected",
+        "description": "通常図の番号席を保持。公演時の車椅子転換は反映していません。",
+        "sourceIds": [
+          "official-seat-map"
+        ],
+        "accessibilityConversionNotReflected": true
+      },
+      "confidence": "representative",
+      "verification": {
+        "status": "verified",
+        "checkedAt": "2026-09-13",
+        "method": "Fresh independent visual two-pass froze before expanded bidirectional comparison; final both differences0,duplicates0. Initial freeze/correction history preserved. Original SHA256 1cffe1a1561023e1db00c0bf36f9502d9e4aac515e3aa61e03e6a4749a5b45a9. Independent full asset checksum: White filled/stroked seat-body vector paths with both bbox dimensions10..20points; rejects thin chair back elements. No human ranges read by script.. Configuration count 222. No inferred IDs or capacity fitting.",
+        "seatStructure": "matched",
+        "seatCount": "matched",
+        "rangeDiff": 0,
+        "unresolvedIssues": []
+      },
+      "ranges": [
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L1",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L2",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L3",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L4",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "R1",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "R2",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "R3",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "R4",
+          "from": 1,
+          "to": 6
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "EX",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "F",
+          "from": 3,
+          "to": 15
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "F",
+          "from": 17,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "G",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "H",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "I",
+          "from": 3,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "J",
+          "from": 3,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "J",
+          "from": 9,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "K",
+          "from": 3,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "K",
+          "from": 9,
+          "to": 13
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "K",
+          "from": 17,
+          "to": 21
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L",
+          "from": 2,
+          "to": 7
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L",
+          "from": 10,
+          "to": 13
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "L",
+          "from": 17,
+          "to": 22
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "M",
+          "from": 9,
+          "to": 15
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "LA",
+          "from": 9,
+          "to": 17
+        },
+        {
+          "areaId": "main",
+          "areaLabel": "客席",
+          "rowLabel": "RA",
+          "from": 9,
+          "to": 17
+        }
+      ]
+    }
+  ]
+}

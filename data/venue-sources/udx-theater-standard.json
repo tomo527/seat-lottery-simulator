@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "udx-theater-standard",
+  "name": "UDXシアター",
+  "prefecture": "東京都",
+  "city": "千代田区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（174番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 174,
+    "selectionReason": "現行公式全174番号位置。通常固定172席と直接番号を持つ車椅子用A17/A18の2位置を含む。",
+    "notIncludedPatterns": [
+      "A17/A18は公式図で番号が明記された車椅子用席です。実公演での利用・販売状況は反映しません。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "UDX AKIHABARA SPACE",
+      "title": "UDXシアター 現行案内",
+      "url": "https://udx-akibaspace.jp/theater/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "UDX AKIHABARA SPACE",
+      "title": "UDXシアター 現行番号図",
+      "url": "https://udx-akibaspace.jp/udxa/wp-content/themes/udxa/assets/pdf/2_guide/2_theater/theater_seat_numbers.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式全174番号位置。通常固定172席と直接番号を持つ車椅子用A17/A18の2位置を含む。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "A17/A18は公式図で番号が明記された車椅子用席です。実公演での利用・販売状況は反映しません。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent peer visual Pass1 and parent fresh visual Pass2 frozen before expanded bidirectional equality0/duplicates0. Original SHA256 2f20ecd384aceaf0e0303cd7a6cd43f29e4a3d77d342dc5d59632184dd369c24. Asset-only complete identifier-shaped text-token structural checksum 174, all tokens correspond to directly viewed cell labels; parent full original review confirmed scope. 現行公式全174番号位置。通常固定172席と直接番号を持つ車椅子用A17/A18の2位置を含む。 No capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "A",
+      "from": 1,
+      "to": 16
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "A",
+      "from": 17,
+      "to": 18
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "B",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "C",
+      "from": 1,
+      "to": 19
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 19
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 19
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 20
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 19
+    }
+  ]
+}

@@ -149,8 +149,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-13",
-      "blockingReason": "B_SOURCE_LIMITED: complete numbered-seat setとwheelchair semanticsをlosslessに確定できない。issuerが現行generationと車いす包含・置換番号を公開した場合のみ再確認する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD / DEFER: Three current-linked technical/theater floor PDFs were downloaded and visually inspected. Non-removable unnumbered benches plus rear standing; no row/seat identifier set. Historical EX Theater annotation is unrelated. Reopen: Official complete numbered representative bench/seat map."
     },
     {
       "inventoryId": "tokyo-official-0008",
@@ -169,9 +169,9 @@
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0008",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-25",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://myoujin-hall.jp/",
-      "blockingReason": "SOURCE HOLD (TOKYO-WAVE-18): current official capacity is1,192 with two wheelchair spaces, but use-dependent multiple layouts provide no fixed clear standard numbered configuration. The inventory's legacy1,055 value also conflicts. Reopen only with current issuer material defining one complete fixed numbered standard."
+      "blockingReason": "HOLD / DEFER: Current February 2026 theater originals 392 portable, 296 lift and 280 lift/PA inspected. Chair cells are all unnumbered. Historical 1192/1055 annotation is unrelated. Reopen: Issuer assigns complete row/seat identifiers to a standard theater configuration."
     },
     {
       "inventoryId": "tokyo-official-0009",
@@ -481,16 +481,15 @@
       "city": "千代田区",
       "capacity": 80,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "ineligible",
-      "eligibilityReason": "東京都公式inventoryに記載された施設用途を一次判定。固定番号席を持つ公演会場ではなく、平土間・立見・会議・展示・屋外・イベント別可変配置のため本DBのproduction対象外。",
+      "officialFacilityUrl": "https://kioichosalonhall.com/?page_id=102",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式の最大80席標準配置。全可動席だが公式番号図の完全な集合を採用。 fresh独立two-pass/expanded equality/画像checksum/issuer subtotal照合が一致。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "discoveryUrlRaw": "http://www.ark-home.jp/hall/",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "venueSourceId": "kioicho-salon-hall-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13",
+      "discoveryUrlRaw": "http://www.ark-home.jp/hall/"
     },
     {
       "inventoryId": "tokyo-official-0025",
@@ -615,9 +614,9 @@
       "priority": "C",
       "venueSourceId": "tokyo-wave3-0030",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-25",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.nishogakusha-u.ac.jp/",
-      "blockingReason": "SOURCE HOLD (TOKYO-WAVE-18): ownership passes, but the current official map prints1,125 numbered seats (1F525 + 2F600) versus the published1,100. Independent recount also found1,125; removing wheelchair-compatible A10/A11/A24/A25 still gives1,121. The issuer contradiction cannot be capacity-fitted."
+      "blockingReason": "HOLD / NEED_EVIDENCE: Current university top, campus tour and Nakasu auditorium panorama reached; auditorium photo viewed. Domain seat-map search found no issuer numbered original. Historical 1125/1100 annotation belongs to another venue. Reopen: Issuer complete numbered auditorium seat chart."
     },
     {
       "inventoryId": "tokyo-official-0031",
@@ -656,9 +655,9 @@
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0032",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-23",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.meiji.ac.jp/kanzai/academyhall.html",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "blockingReason": "NEED EVIDENCE / currentness: Fully numbered original recovered in issuer AcademyHall.pdf brochure (878+312;1192 includes2WC), so no-chart finding is superseded. Current rental page links a2023 Word layout request form, not this numbered brochure. Word rendered completely via official Office viewer: only unnumbered stage/front-seat fragment. Current linked hall3floor and alternate layoutPDF are unnumbered. Numbered brochure contains old usage-fee table and no date/current maintained navigation; direct current-page link to this seat generation was not established. Unchanged public capacity is not proof unchanged numbering. Reopen: Current issuer navigation/publication or dated issuer evidence establishes applicability of AcademyHall.pdf numbered generation, or publishes current complete numbered chart. Then fresh independent passes and checks."
     },
     {
       "inventoryId": "tokyo-official-0033",
@@ -875,9 +874,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-09-11",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.uchisaiwai-hall.jp/",
-      "blockingReason": "HOLD / NEED EVIDENCE (TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT 4): issuer top、お知らせ、指定管理者、ウェブアクセシビリティ方針、イベント、利用案内PDF（guide20260715.pdf 全12ページ）を確認し、issuer domain内で座席表・客席図・図面・seatを検索した。施設案内（/facility/）と各種ダウンロード（/downloads/）はいずれも404、利用案内PDFが資料一覧に挙げる「座席表（客席図）」の実体は現在到達できず、索引に残る唯一の座席ページ「(最大91名)参考座席図」も404で、これは大規模改修前の縮小配置の参考図である。定員170名は固定席と可動席/車いす席を混在させた入場定員で番号席小計ではない。改装後の再開館にあわせてissuerが代表配置の全番号付き座席表（客席図）を再公開した場合にのみ再開する。"
+      "blockingReason": "HOLD / NEED_EVIDENCE: Current top reachable but current facility/download links return 404. Prior September 11 discovery already reached current July 2026 guide; seat original still unresolved. Search returns historical 2021 guide/2015 seat PDF, not current post-renovation 170-seat scope; not used as current evidence. Reopen: Current maintained post-renovation numbered map or restored download link."
     },
     {
       "inventoryId": "tokyo-iino-hall",
@@ -1055,16 +1054,15 @@
       "city": "千代田区",
       "capacity": 1100,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "officialFacilityUrl": "https://yomi-h.jp/seat.html",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行通常配置の1階522・2階578、全1100番号席。 fresh独立two-pass/expanded equality/画像checksum/issuer subtotal照合が一致。",
       "priority": "A",
       "venueSourceId": "tokyo-wave3-0052",
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-23",
-      "discoveryUrlRaw": "http://yomi-h.jp/",
-      "blockingReason": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。"
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13",
+      "discoveryUrlRaw": "http://yomi-h.jp/"
     },
     {
       "inventoryId": "tokyo-official-0053",
@@ -1216,16 +1214,15 @@
       "city": "千代田区",
       "capacity": 172,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "ineligible",
-      "eligibilityReason": "東京都公式inventoryに記載された施設用途を一次判定。固定番号席を持つ公演会場ではなく、平土間・立見・会議・展示・屋外・イベント別可変配置のため本DBのproduction対象外。",
+      "officialFacilityUrl": "https://udx-akibaspace.jp/theater/",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式全174番号位置。通常固定172席と直接番号を持つ車椅子用A17/A18の2位置を含む。 fresh独立two-pass/expanded equality/画像checksum/issuer subtotal照合が一致。",
       "priority": "D",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "discoveryUrlRaw": "udx-akibaspace.jp/thrater/",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "venueSourceId": "udx-theater-standard",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13",
+      "discoveryUrlRaw": "udx-akibaspace.jp/thrater/"
     },
     {
       "inventoryId": "tokyo-official-0061",
@@ -1307,9 +1304,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "udx-akibaspace.jp/gallery-n/",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "blockingReason": "HOLD: Current NEXT-3 theater original page 9 has blank individual cells; side 8/10 labels are dimensions/counts, not complete seat IDs. No complete issuer numbered layout found. Reopen: Issuer publishes complete individual seat identifiers for a bounded representative NEXT-3 configuration."
     },
     {
       "inventoryId": "tokyo-official-0065",
@@ -1328,9 +1325,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "udx-akibaspace.jp/gallery-n/",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "blockingReason": "HOLD: Current theater arrangement page 5 draws blank chair cells with no individual identifiers. DEF document is separate D/E/F rooms, not evidence of a numbered combined DEF configuration. Reopen: Current complete numbered issuer representative chart for the exact target room configuration."
     },
     {
       "inventoryId": "tokyo-official-0066",
@@ -1349,9 +1346,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "udx-akibaspace.jp/gallery-n/",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "blockingReason": "HOLD: Current theater arrangement page 5 draws blank chair cells with no individual identifiers. DEF document is separate D/E/F rooms, not evidence of a numbered combined DEF configuration. Reopen: Current complete numbered issuer representative chart for the exact target room configuration."
     },
     {
       "inventoryId": "tokyo-official-0067",
@@ -1370,8 +1367,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD: Current layout original chair cells are blank. Download index supplies equipment/floor/access documents, not complete numbered chart. Room A/B/C/D/BC menu has school/theater/island examples, no identified numbered representative. Reopen: Issuer complete seat-level numbered chart and exact room/configuration scope."
     },
     {
       "inventoryId": "tokyo-official-0068",
@@ -1390,8 +1387,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD: Current 2A/3BC sample layouts contain unnumbered chairs; current download index supplies room layout, scale, electrical and equipment documentation but no complete numbered representative chart identified. Reopen: Current issuer seat-level numbered representative configuration with exact room scope."
     },
     {
       "inventoryId": "tokyo-nippon-budokan-fixed-stands",
@@ -1429,8 +1426,8 @@
       "priority": "A",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-25",
-      "blockingReason": "DEFER (TYPE-ONLY A/B LANE CLOSURE): 現行公式資料にissuer-numbered set、losslessなprinted seat set、issuer-defined ownershipがない。番号付きrepresentative configurationが現行公式で公開された場合のみ再評価する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD / DEFER: Current park facility and May 2026 Nire event page/map inspected. Event map is site/stage placement, no numbered seat layout or owned identifiers. Reopen: Issuer representative event seating configuration with complete identifiers."
     },
     {
       "inventoryId": "tokyo-official-0071",
@@ -1449,8 +1446,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "NEED EVIDENCE: Park map and current facility/application navigation identify fountain public space, not a complete individual numbered seating configuration. No current numbered fountain-square layout found. Reopen: Issuer publishes a complete numbered representative fountain-square layout, with configuration identified."
     },
     {
       "inventoryId": "tokyo-official-0072",
@@ -1469,8 +1466,8 @@
       "priority": "B",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-25",
-      "blockingReason": "DEFER (TYPE-ONLY REPRESENTATIVE PREFLIGHT): 現行公式資料は再生整備に伴い2024-09-01以降の利用休止を示し、current/current-linked complete numbered mapがない。再開後にissuer番号付きrepresentative configurationが公開された場合のみ再評価する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD / NEED_EVIDENCE: Current park facility page records 1000-seat small outdoor bandstand and regeneration pause. Current park/event map viewed; no numbered seat original recovered by issuer-domain search. Closure is not the blocker. Reopen: Complete issuer numbered small-bandstand map, irrespective of temporary closure."
     },
     {
       "inventoryId": "tokyo-official-0073",
@@ -1489,9 +1486,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "なし",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "blockingReason": "NEED EVIDENCE: Old operator domain DNS/timeout failure. Current metropolitan first-party redevelopment documents explicitly describe rebuilding the large music hall; complete current numbered seating original/current-layout applicability could not be recovered. Third-party archived 2019-chart links do not establish current issuer applicability. Reopen: Current issuer confirms applicable post-rebuild or unchanged configuration and publishes complete numbered original. Recheck after announced works milestone, not automatic adoption of old chart."
     },
     {
       "inventoryId": "tokyo-official-0074",
@@ -1586,8 +1583,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "NEED EVIDENCE: Current issuer facility/usage/equipment information and city plan do not provide numbered individual chairs. Evacuation manual actual page95 floorplan shows open multipurpose hall, not numbered seats. Reopen: Current complete issuer numbered representative hall arrangement."
     },
     {
       "inventoryId": "tokyo-official-0079",
@@ -1680,16 +1677,15 @@
       "city": "中央区",
       "capacity": 320,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "officialFacilityUrl": "https://hall.jiji.com/about/document.html",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式のシアター定型・座席番号取付例294/320を分離。 fresh独立two-pass/expanded equality/画像checksum/issuer subtotal照合が一致。",
       "priority": "C",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-29",
-      "discoveryUrlRaw": "http://www.jiji.com/hall/",
-      "blockingReason": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。"
+      "venueSourceId": "jiji-tsushin-hall",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13",
+      "discoveryUrlRaw": "http://www.jiji.com/hall/"
     },
     {
       "inventoryId": "tokyo-official-0084",
@@ -1708,8 +1704,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD: Current multipurpose theater layout original has unnumbered benches/chairs, no complete individual identifiers. Download destination has no additional chart link for this room. Reopen: Complete numbered first-party multipurpose-hall representative original."
     },
     {
       "inventoryId": "tokyo-shinbashi-enbujo",
@@ -1748,8 +1744,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "NEED EVIDENCE: HTTPS fails TLS but HTTP current entry and information/equipment/booking page work. Navigation and original asset list provide equipment and venue photos, not seat-level numbered layout. Reopen: Current issuer publishes complete numbered representative seating original."
     },
     {
       "inventoryId": "tokyo-official-0087",
@@ -1789,8 +1785,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "NEED EVIDENCE: HTTPS top and old floor-map asset time out. HTTP domain now serves Onamae parking page, not issuer; no replacement current first-party complete chart found. Reopen: Current operator/provenance restored or successor issuer identified and complete current numbered original published."
     },
     {
       "inventoryId": "tokyo-official-0089",
@@ -1848,8 +1844,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "NEED EVIDENCE: Current studio page includes FAQ/current events and maximum112chairs, but no complete numbered original; searched download evidence belongs to separate Yamaha Hall. Reopen: Complete numbered current representative Studio configuration, not neighboring Hall."
     },
     {
       "inventoryId": "tokyo-official-0092",
@@ -2419,9 +2415,9 @@
       "priority": "C",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.princehotels.co.jp/shinagawa/clubex/",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "blockingReason": "HOLD: Current linked seat PDF has three configurations but most interior cells unnumbered, with only row endpoints. Current floor PDF unnumbered. A complete set would require interpolation; reject that. Reopen: Issuer prints every seat identifier for an applicable representative configuration, including any current long-run layout."
     },
     {
       "inventoryId": "tokyo-official-0121",
@@ -2482,9 +2478,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.selene.studio/",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "blockingReason": "HOLD: Current floor originals show 3D overview and blank measured hall; no numbered chair configuration. Equipment links do not establish complete numbered seats. Reopen: Complete current first-party numbered representative b2 seating chart."
     },
     {
       "inventoryId": "tokyo-official-0124",
@@ -2562,8 +2558,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD: Current studio technical original is blank floor with building/electrical dimensions, not numbered seating. Current theater capacity alone does not provide seat identifiers. Reopen: Issuer publishes complete numbered representative Earth seating original."
     },
     {
       "inventoryId": "tokyo-official-0128",
@@ -2582,8 +2578,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD: Current studio technical original is blank floor with building/electrical dimensions, not numbered seating. Current theater capacity alone does not provide seat identifiers. Reopen: Issuer publishes complete numbered representative Jupiter seating original."
     },
     {
       "inventoryId": "tokyo-official-0129",
@@ -2668,8 +2664,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "NEED EVIDENCE: Old official domain now hosts unrelated celebrity/news content, not livehouse issuer. Current first-party numbered evidence or verified successor not found. Reopen: Verified current operator/venue and complete current numbered representative chart."
     },
     {
       "inventoryId": "tokyo-official-0133",
@@ -2768,8 +2764,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "DEFER: Current first-party TBS explicitly says former live space became television-program-production studio in2022. Historical Mynavi BLITZ livehouse configuration is superseded; no current complete numbered representative studio chart found. Reopen: Issuer identifies an applicable current numbered representative configuration for successor studio; old livehouse numbering is not reusable."
     },
     {
       "inventoryId": "tokyo-official-0138",
@@ -2848,8 +2844,8 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-28",
-      "blockingReason": "固定番号席による単一代表パターンを定義できないため再調査しない。施設用途が固定番号席へ公式に変更された場合のみ再判定する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "NEED EVIDENCE: HTTPS fails TLS/502; working HTTP site/event navigation and original event gallery provide photos/contact, no downloadable numbered seating chart or table of identifiers. Reopen: Current issuer complete numbered representative event-space layout."
     },
     {
       "inventoryId": "tokyo-official-0142",
@@ -3322,9 +3318,9 @@
       "priority": "A",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-29",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.jpnsport.go.jp/chichibunomiya/",
-      "blockingReason": "固定番号席の一意な代表配置を定義できないため、range入力対象外。"
+      "blockingReason": "HOLD / DEFER_ACTUAL_CHART: All ten gate-detail GIF originals viewed. Diagrams give section boundary row/seat endpoints, standing areas and irregular block shapes, but not all row/seat combinations. Geometry interpolation would be needed for full set. Reopen: Issuer lossless per-row seat ranges or fully numbered cells for complete intended stand configuration."
     },
     {
       "inventoryId": "tokyo-official-0166",
@@ -4413,9 +4409,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-29",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://gyoen-sound.com/",
-      "blockingReason": "固定番号席の一意な代表配置を定義できないため、range入力対象外。"
+      "blockingReason": "HOLD / DEFER: HTTPS hosting response is wrong; current HTTP issuer top/information/price/sitemap/access work. Floor photograph viewed, movable table/chair room; issuer describes up to 45 seated/120 standing. No assigned seat identifiers or numbered representative layout offered. Reopen: Issuer complete numbered representative seating plan."
     },
     {
       "inventoryId": "tokyo-official-0222",
@@ -4746,9 +4742,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-25",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.ongakunotomo.co.jp/company/hall.html",
-      "blockingReason": "DEFER (TOKYO PRIORITY D NEXT HIGH-YIELD PREFLIGHT): 現行公式は最大208席・可動式椅子で席数変動ありとするが、全番号付き座席表、single representative configuration、番号席と車椅子等の関係を公開していない。capacity又はgeometryからのseat ID生成は禁止。公式がcomplete numbered representative chartを公開した場合のみ再判定する。"
+      "blockingReason": "HOLD / NEED_EVIDENCE: Current information/howto pages and hall photo examined; movable 208-chair scope, rental price PDF only, no numbered original found in issuer-domain search. Movability alone is not exclusion. Reopen: Issuer complete numbered representative layout."
     },
     {
       "inventoryId": "tokyo-official-0239",
@@ -6003,9 +5999,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-29",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.city.bunkyo.lg.jp/shisetsu/bunka/academy/mukougaoka.html",
-      "blockingReason": "固定番号席の一意な代表配置を定義できないため、range入力対象外。"
+      "blockingReason": "HOLD / DEFER_ACTUAL_ASSET: Current city page links rekuho-ru.pdf; original visually inspected. Room/equipment sheet with empty-room photo and user-arranged chairs/tables, no seat identifiers. Reopen: Issuer complete numbered representative recreation layout."
     },
     {
       "inventoryId": "tokyo-official-0303",
@@ -7377,8 +7373,8 @@
       "priority": "B",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-25",
-      "blockingReason": "DEFER (TYPE-ONLY REPRESENTATIVE PREFLIGHT): 現行公式は改修休館中で、旧700脚可動椅子・可動stageの案内はcurrent/current-linked numbered setにならない。再開後にissuer番号付きrepresentative configurationが公開された場合のみ再評価する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD / DEFER_ACTUAL_ASSET: Current facility/use/equipment pages, empty-floor hall photo and official 2025 renovation proposal floor plans examined. 700 stored chairs and movable stage, no numbered representative layout. Closure is not sole reason. Reopen: Issuer complete numbered representative hall layout."
     },
     {
       "inventoryId": "tokyo-official-0373",
@@ -8071,8 +8067,8 @@
       "priority": "C",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-25",
-      "blockingReason": "DEFER (TOKYO PRIORITY C CLOSURE): current official material defines 390 chairs and a 320m2 recreation room, with possible connection to the exhibition hall, but no issuer-numbered seat set, representative configuration, or numbered ownership/subtotal."
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "HOLD / DEFER_ACTUAL_ASSET: Current Sogo room detail and docs examined; current equipment PDF and simple rec/subrec floor plan id24_8361.pdf viewed. Blank floor plan; 390 stored chairs, no row/seat identifiers. Reopen: Issuer complete numbered representative recreation layout."
     },
     {
       "inventoryId": "tokyo-official-0408",
@@ -8187,9 +8183,9 @@
       "priority": "D",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-29",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.Kcf.or.jp/Fukagawa/",
-      "blockingReason": "固定番号席の一意な代表配置を定義できないため、range入力対象外。"
+      "blockingReason": "HOLD / DEFER_ACTUAL_ASSET: Old uppercase path 404 corrected to current lowercase fukagawa/outline/docs. Linked id61_27714.pdf viewed: blank room/equipment plan, no seat IDs. Reopen: Issuer complete numbered representative recreation layout."
     },
     {
       "inventoryId": "tokyo-official-0414",
@@ -16240,16 +16236,15 @@
       "city": "豊島区",
       "capacity": 278,
       "category": "hall",
-      "officialFacilityUrl": null,
-      "operationalStatus": "unknown",
-      "eligibility": "needs-research",
-      "eligibilityReason": "東京都公式inventoryの掲載と施設公式URLを一次資料として特定。現役性、固定番号席、公式座席表、公式総席数、代表配置はWave 3の個別調査で確認する。",
+      "officialFacilityUrl": "https://www.geigeki.jp/rent/theatre_west/",
+      "operationalStatus": "active",
+      "eligibility": "eligible",
+      "eligibilityReason": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。 fresh独立two-pass/expanded equality/画像checksum/issuer subtotal照合が一致。",
       "priority": "C",
-      "venueSourceId": null,
-      "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-29",
-      "discoveryUrlRaw": "http://www.geigeki.jp/rent/theater/west.html",
-      "blockingReason": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。"
+      "venueSourceId": "geigeki-theatre-west",
+      "researchStatus": "production",
+      "lastCheckedAt": "2026-09-13",
+      "discoveryUrlRaw": "http://www.geigeki.jp/rent/theater/west.html"
     },
     {
       "inventoryId": "tokyo-official-0827",
@@ -22343,9 +22338,9 @@
       "priority": "C",
       "venueSourceId": null,
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-07-29",
+      "lastCheckedAt": "2026-09-13",
       "discoveryUrlRaw": "http://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/kouminkan/1003831.html",
-      "blockingReason": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。"
+      "blockingReason": "HOLD / NEED EVIDENCE: Fresh PDF page2 visually checked:three interior photos, empty movable floor and chairs stored againstwalls. Page1 prior discovery floorplan/no numbered chart. No complete issuer numbered representative layout in checked hall PDF. Reopen: Issuer representative numbered layout published."
     },
     {
       "inventoryId": "tokyo-official-1138",
@@ -23544,8 +23539,8 @@
       "priority": "D",
       "venueSourceId": "hoya-komorebi-small-standard",
       "researchStatus": "blocked",
-      "lastCheckedAt": "2026-08-02",
-      "blockingReason": "公式施設資料の250席について、平土間転換可能な座席の番号体系と通常配置を座席図から確認する。"
+      "lastCheckedAt": "2026-09-13",
+      "blockingReason": "CONTRADICTION: Current official small hall chart explicitly states maximum250 but two independent fresh visual passes and asset digit-cell occupancy count both252. Main240 plus two separate rear6-cell bands12. Canonical display-only names resolve missing rear row labels but do not resolve2-seat issuer contradiction. No numbered seat may be deleted to fit250. Reopen: Issuer explains252 printed numbered positions versus stated maximum250 or publishes corrected complete chart. No capacity fitting."
     },
     {
       "inventoryId": "tokyo-official-1199",

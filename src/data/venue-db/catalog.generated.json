@@ -460,6 +460,37 @@
   },
   {
     "schemaVersion": 2,
+    "id": "geigeki-theatre-west",
+    "venueGroupId": "geigeki-theatre-west",
+    "name": "東京芸術劇場 シアターウエスト",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "豊島区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "pattern-a",
+        "canonicalName": "基本パターンA",
+        "seatCount": 270,
+        "dataPath": "/venue-db/venues/geigeki-theatre-west--pattern-a.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。 公演により配置は変わります。EX席も各基本図の印字通り保持。",
+        "fixedOnly": false
+      },
+      {
+        "id": "pattern-b",
+        "canonicalName": "基本パターンB",
+        "seatCount": 222,
+        "dataPath": "/venue-db/venues/geigeki-theatre-west--pattern-b.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式基本パターンA/Bをそれぞれ完全な番号集合として分離。 公演により配置は変わります。EX席も各基本図の印字通り保持。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "ginza-blossom-hall-standard",
     "venueGroupId": "ginza-blossom-hall-standard",
     "name": "銀座ブロッサム 中央会館 ホール",
@@ -1058,6 +1089,37 @@
   },
   {
     "schemaVersion": 2,
+    "id": "jiji-tsushin-hall",
+    "venueGroupId": "jiji-tsushin-hall",
+    "name": "時事通信ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "theater-294",
+        "canonicalName": "座席番号取付例294席",
+        "seatCount": 294,
+        "dataPath": "/venue-db/venues/jiji-tsushin-hall--theater-294.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式のシアター定型・座席番号取付例294/320を分離。 座席番号は主催者がマグネットで取り付ける公式配置例です。可動席の配置・番号は公演により変わります。",
+        "fixedOnly": false
+      },
+      {
+        "id": "theater-320",
+        "canonicalName": "座席番号取付例320席",
+        "seatCount": 320,
+        "dataPath": "/venue-db/venues/jiji-tsushin-hall--theater-320.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行公式のシアター定型・座席番号取付例294/320を分離。 座席番号は主催者がマグネットで取り付ける公式配置例です。可動席の配置・番号は公演により変わります。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
+    "schemaVersion": 2,
     "id": "jimbocho-yoshimoto-manzai-gekijo-standard",
     "venueGroupId": "jimbocho-yoshimoto-manzai-gekijo-standard",
     "name": "神保町よしもと漫才劇場",
@@ -1339,6 +1401,18 @@
     "representativePatternName": "通常座席",
     "seatCount": 250,
     "dataPath": "/venue-db/venues/kioi-small-hall-standard.json"
+  },
+  {
+    "id": "kioicho-salon-hall-standard",
+    "name": "紀尾井町サロンホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（80番号席）",
+    "seatCount": 80,
+    "dataPath": "/venue-db/venues/kioicho-salon-hall-standard.json"
   },
   {
     "schemaVersion": 2,
@@ -3314,6 +3388,28 @@
     ]
   },
   {
+    "schemaVersion": 2,
+    "id": "tokyo-wave3-0052",
+    "venueGroupId": "tokyo-wave3-0052",
+    "name": "有楽町よみうりホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "configurations": [
+      {
+        "id": "standard",
+        "canonicalName": "通常配置（1100番号席）",
+        "seatCount": 1100,
+        "dataPath": "/venue-db/venues/tokyo-wave3-0052--standard.json",
+        "scope": "official-variant",
+        "scopeDisclosure": "現行通常配置1100番号席。2階側方は公式の左・右ブロック内の通し番号です。「通し番号」は表示用の整理語であり、隣接するA列等への所属を主張しません。",
+        "fixedOnly": false
+      }
+    ]
+  },
+  {
     "id": "tokyo-wave3-0101",
     "name": "浜離宮朝日ホール〔小ホール〕",
     "searchAliases": [
@@ -3772,6 +3868,18 @@
     "representativePatternName": "通常番号席配置（可動席含む）",
     "seatCount": 300,
     "dataPath": "/venue-db/venues/toyosu-civic-center-hall-standard.json"
+  },
+  {
+    "id": "udx-theater-standard",
+    "name": "UDXシアター",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "千代田区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（174番号席）",
+    "seatCount": 174,
+    "dataPath": "/venue-db/venues/udx-theater-standard.json"
   },
   {
     "id": "urayasu-culture-hall-release-seed",
