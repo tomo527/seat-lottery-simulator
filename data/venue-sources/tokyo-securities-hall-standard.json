@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "tokyo-securities-hall-standard",
+  "name": "東京証券会館 ホール",
+  "prefecture": "東京都",
+  "city": "中央区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（342番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 342,
+    "selectionReason": "現行公式劇場型配置の342番号席。",
+    "notIncludedPatterns": [
+      "別レイアウトは対象外。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "株式会社東京証券会館",
+      "title": "東京証券会館 ホール 現行施設案内",
+      "url": "https://www.ts-kaikan.co.jp/hall/facilities.html",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "株式会社東京証券会館",
+      "title": "東京証券会館 ホール 現行リンク番号図",
+      "url": "https://www.ts-kaikan.co.jp/hall/img/img_facili_floor02.gif",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式劇場型配置の342番号席。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "別レイアウトは対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent peer human visual Pass1 and Pass2 separately fetched/rendered current original and froze complete transcription before comparison. Asset SHA256 779f0709ff10961ed39a0b9c7ee32cf25f1ee12be751e63b5a61770ad8f26f89. Expanded bidirectional Pass1-only0/Pass2-only0/duplicates0. Independent structural checksum 342: Pixel enclosed seat-cell contours; no text/OCR/ranges input. Issuer reconciliation: 現行公式劇場型配置の342番号席。 No inferred identifiers or capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "A",
+      "from": 3,
+      "to": 16,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "B",
+      "from": 2,
+      "to": 17,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "C",
+      "from": 2,
+      "to": 17,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "M",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "N",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "O",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "P",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "Q",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "R",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "S",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "T",
+      "from": 1,
+      "to": 4,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "T",
+      "from": 15,
+      "to": 18,
+      "excluded": []
+    }
+  ]
+}

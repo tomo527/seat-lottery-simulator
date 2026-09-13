@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "kitazawa-town-hall-standard",
+  "name": "北沢タウンホール",
+  "prefecture": "東京都",
+  "city": "世田谷区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "基本配置（294番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 294,
+    "selectionReason": "現行基本配置のSA・SBとA〜Lの全294番号席。",
+    "notIncludedPatterns": [
+      "舞台を変更する別配置は対象外。基本配置に印字された仮設席を含む。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "株式会社世田谷サービス公社",
+      "title": "北沢タウンホール 現行施設案内",
+      "url": "https://www.setagaya.co.jp/kuminkaikan/kitazawatownhall/download",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "株式会社世田谷サービス公社",
+      "title": "北沢タウンホール 現行リンク番号図",
+      "url": "https://www.setagaya.co.jp/kuminkaikan/kitazawatownhall/contents/wp-content/themes/kuminkaikan/assets/pdf/download/hall_seatingarrangement.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行基本配置のSA・SBとA〜Lの全294番号席。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "舞台を変更する別配置は対象外。基本配置に印字された仮設席を含む。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent peer human visual Pass1 and Pass2 separately fetched/rendered current original and froze complete transcription before comparison. Asset SHA256 e79efa14fad800f2bc4f16330191a09d8ece7c7ed2b2879a6cedcf3b057c2af0. Expanded bidirectional Pass1-only0/Pass2-only0/duplicates0. Independent structural checksum 294: Poppler2400px grayscale white8connectedcomponents threshold200; seat interior bbox dimensions selected from visual component histogram;no ranges input;y>1000 seating area excludes title glyph counter. Issuer reconciliation: 現行基本配置のSA・SBとA〜Lの全294番号席。 No inferred identifiers or capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "SA",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "SB",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "A",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "B",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "C",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 21,
+      "excluded": []
+    }
+  ]
+}

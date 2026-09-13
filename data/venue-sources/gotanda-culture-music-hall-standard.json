@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "gotanda-culture-music-hall-standard",
+  "name": "五反田文化センター 音楽ホール",
+  "prefecture": "東京都",
+  "city": "品川区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（248番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 248,
+    "selectionReason": "現行公式音楽ホール図の固定248番号席。車椅子2位置を含む定員250と区別。",
+    "notIncludedPatterns": [
+      "車椅子2位置は無番号で対象外。空調工事休館後の座席変更は保証しない。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "品川区",
+      "title": "五反田文化センター 音楽ホール 現行施設案内",
+      "url": "https://shinagawa-gotanda-planetarium.com/hall/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "品川区",
+      "title": "五反田文化センター 音楽ホール 現行リンク番号図",
+      "url": "https://www.city.shinagawa.tokyo.jp/contentshozon2023/gotanda2.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式音楽ホール図の固定248番号席。車椅子2位置を含む定員250と区別。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "車椅子2位置は無番号で対象外。空調工事休館後の座席変更は保証しない。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent peer human visual Pass1 and Pass2 separately fetched/rendered current original and froze complete transcription before comparison. Asset SHA256 e7cb7d2fe6ffdb505e5277546a6969775563dfec09ec7df4d78c5c4b48e859fe. Expanded bidirectional Pass1-only0/Pass2-only0/duplicates0. Independent structural checksum 248: Independent closed white seat-cell connected components on3200px rendering; threshold200; excludes small cushion subcells/labels/building geometry. No ranges read.. Issuer reconciliation: 現行公式音楽ホール図の固定248番号席。車椅子2位置を含む定員250と区別。 No inferred identifiers or capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "A",
+      "from": 1,
+      "to": 19,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "B",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "C",
+      "from": 1,
+      "to": 19,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 19,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 19,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 19,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 17,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "M",
+      "from": 1,
+      "to": 17,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "N",
+      "from": 1,
+      "to": 11,
+      "excluded": []
+    }
+  ]
+}

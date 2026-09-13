@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "fukagawa-edo-small-theatre-standard",
+  "name": "深川江戸資料館 小劇場",
+  "prefecture": "東京都",
+  "city": "江東区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（237番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 237,
+    "selectionReason": "現行小劇場図の一般232番号席と独立した親子室か列5番号席、合計237。",
+    "notIncludedPatterns": [
+      "立見を含む定員300を番号へ変換しない。無番号車椅子位置は対象外。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人江東区文化コミュニティ財団",
+      "title": "深川江戸資料館 小劇場 現行施設案内",
+      "url": "https://www.kcf.or.jp/fukagawa/shisetsu/ichiran/detail/?id=168",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人江東区文化コミュニティ財団",
+      "title": "深川江戸資料館 小劇場 現行リンク番号図",
+      "url": "https://www.kcf.or.jp/cms/files/pdf/id60_42797.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行小劇場図の一般232番号席と独立した親子室か列5番号席、合計237。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "立見を含む定員300を番号へ変換しない。無番号車椅子位置は対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent peer human visual Pass1 and Pass2 separately fetched/rendered current original and froze complete transcription before comparison. Asset SHA256 1a2cded643b0ec32bd321e7156ec63a9e28d158e80994b73663212b07c1898e1. Expanded bidirectional Pass1-only0/Pass2-only0/duplicates0. Independent structural checksum 237: Pixel enclosed seat-cell contours; no text/OCR/ranges input. Issuer reconciliation: 現行小劇場図の一般232番号席と独立した親子室か列5番号席、合計237。 No inferred identifiers or capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "い",
+      "from": 5,
+      "to": 16,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "ろ",
+      "from": 3,
+      "to": 18,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "は",
+      "from": 2,
+      "to": 19,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "に",
+      "from": 2,
+      "to": 14,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "ほ",
+      "from": 2,
+      "to": 14,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "へ",
+      "from": 1,
+      "to": 20,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "と",
+      "from": 1,
+      "to": 20,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "ち",
+      "from": 1,
+      "to": 20,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "り",
+      "from": 1,
+      "to": 20,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "ぬ",
+      "from": 1,
+      "to": 20,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "る",
+      "from": 1,
+      "to": 20,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "を",
+      "from": 1,
+      "to": 20,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "わ",
+      "from": 1,
+      "to": 20,
+      "excluded": []
+    },
+    {
+      "areaId": "parent-child",
+      "areaLabel": "親子室",
+      "rowLabel": "か",
+      "from": 1,
+      "to": 5,
+      "excluded": []
+    }
+  ]
+}

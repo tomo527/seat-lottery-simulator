@@ -1,72 +1,351 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "ibaraki-kenritsu-bunka-center-large-release-seed",
-  "name": "ザ・ヒロサワ・シティ会館 大ホール",
+  "name": "茨城県立県民文化センター 大ホール",
   "prefecture": "茨城県",
   "city": "水戸市",
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "id": "standard",
+    "name": "通常配置（1514番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 1514,
+    "selectionReason": "現行通常配置の1〜36列全1,514番号席。ピット76席を含む。",
+    "notIncludedPatterns": [
+      "ピット使用時・16列9〜14/41〜46の車椅子転換時は別条件。通常番号を削除しない。"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
-      "publisher": "ザ・ヒロサワ・シティ会館",
-      "title": "ザ・ヒロサワ・シティ会館 公式施設案内",
-      "url": "https://www.ibarakiken-bunkacenter.com/",
-      "checkedAt": "2026-08-02"
+      "publisher": "茨城県立県民文化センター",
+      "title": "茨城県立県民文化センター 大ホール 現行施設案内",
+      "url": "https://www.ibarakiken-bunkacenter.com/facilities/hall_l.html",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "茨城県立県民文化センター",
+      "title": "茨城県立県民文化センター 大ホール 現行リンク番号図",
+      "url": "https://www.ibarakiken-bunkacenter.com/facilities/file/hall_l-seatingchart.pdf",
+      "checkedAt": "2026-09-13"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "現行通常配置の1〜36列全1,514番号席。ピット76席を含む。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
   "knownLimitations": [
-    "Closure Pass分類: SOURCE HOLD。公式施設サイトは確認できたが、対象大ホールの現行完全番号図・厳密席数を確定できない。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "ピット使用時・16列9〜14/41〜46の車椅子転換時は別条件。通常番号を削除しない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
-    ]
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent human visual two-pass: parent current PDF/PyMuPDF full view; peer independently fetched/current PDF visual freeze. Original SHA256 1ffc3239369a1a5f743d9ef078da157d09dec2110607a8b49a255bf05841eafb. Initial expanded bidirectional Pass1-only0/Pass2-only0/duplicates0. Independent structural checksum 1514: Independent connected-component seat-cell interior count from PDF rendering. No transcription/range/expandedSet files read. White bounded seat-cell interiors width28..32 height33..37px. GeometrySHA 0c25117fa852f7c43a11f63516c115e4f135bc0ac35abf07a0d1b7056b6115d0. Issuer reconciliation: 現行通常配置の1〜36列全1,514番号席。ピット76席を含む。 No capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
   },
-  "ranges": [],
-  "preflight": {
-    "officialFacilityPage": "あり",
-    "officialSeatStructureSource": "なし",
-    "officialSeatCountSource": "なし",
-    "completeNumberedSeatMap": "なし",
-    "exactNominalSeatCount": "なし",
-    "representativeLayout": "不明",
-    "fixedSeats": "不明",
-    "movableSeats": "不明",
-    "wheelchair": "不明",
-    "pit": "不明",
-    "areas": "不明",
-    "processingRoute": "Hold",
-    "classification": "SOURCE HOLD",
-    "mapUrl": null,
-    "countUrl": null,
-    "checkedAt": "2026-08-03",
-    "rationale": "公式施設サイトは確認できたが、対象大ホールの現行完全番号図・厳密席数を確定できない。",
-    "officialFacilityUrl": "https://www.ibarakiken-bunkacenter.com/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "pending"
-  }
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "1",
+      "from": 16,
+      "to": 38,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "2",
+      "from": 15,
+      "to": 40,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "3",
+      "from": 14,
+      "to": 40,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "4",
+      "from": 13,
+      "to": 42,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "5",
+      "from": 12,
+      "to": 42,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "6",
+      "from": 12,
+      "to": 43,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "7",
+      "from": 12,
+      "to": 42,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "8",
+      "from": 12,
+      "to": 43,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "9",
+      "from": 10,
+      "to": 44,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "10",
+      "from": 9,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "11",
+      "from": 8,
+      "to": 46,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "12",
+      "from": 7,
+      "to": 48,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "13",
+      "from": 6,
+      "to": 48,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "14",
+      "from": 5,
+      "to": 50,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "15",
+      "from": 5,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "16",
+      "from": 6,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "17",
+      "from": 6,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "18",
+      "from": 5,
+      "to": 50,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "19",
+      "from": 5,
+      "to": 50,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "20",
+      "from": 5,
+      "to": 50,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "21",
+      "from": 4,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "22",
+      "from": 4,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "23",
+      "from": 4,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "24",
+      "from": 3,
+      "to": 52,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "25",
+      "from": 3,
+      "to": 52,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "26",
+      "from": 3,
+      "to": 52,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "27",
+      "from": 3,
+      "to": 52,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "28",
+      "from": 7,
+      "to": 48,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "29",
+      "from": 6,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "30",
+      "from": 6,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "31",
+      "from": 6,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "32",
+      "from": 6,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "33",
+      "from": 6,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "34",
+      "from": 1,
+      "to": 54,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "35",
+      "from": 1,
+      "to": 54,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "36",
+      "from": 1,
+      "to": 54,
+      "excluded": []
+    }
+  ]
 }

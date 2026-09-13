@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "suginami-kinro-hall-standard",
+  "name": "杉並勤労福祉会館 ホール",
+  "prefecture": "東京都",
+  "city": "杉並区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（303番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 303,
+    "selectionReason": "現行公式ホール図のA〜N全303番号席。交互列の16番欠番を保持。",
+    "notIncludedPatterns": [
+      "図上の点線区域を根拠なく除外しない。別配置は対象外。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "西荻地域区民センター・勤労福祉会館",
+      "title": "杉並勤労福祉会館 ホール 現行施設案内",
+      "url": "https://nishiogi-community.jp/center/project/hall/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "西荻地域区民センター・勤労福祉会館",
+      "title": "杉並勤労福祉会館 ホール 現行リンク番号図",
+      "url": "https://nishiogi-community.jp/center/wp-content/uploads/2021/03/ホール座席レイアウト.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式ホール図のA〜N全303番号席。交互列の16番欠番を保持。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "図上の点線区域を根拠なく除外しない。別配置は対象外。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent peer human visual Pass1 and Pass2 separately fetched/rendered current original and froze complete transcription before comparison. Asset SHA256 7987fe566bbdc7b77fa48868631c4fb02203696dcf9fd310e390cbcbfabd745b. Expanded bidirectional Pass1-only0/Pass2-only0/duplicates0. Independent structural checksum 303: Poppler2400px grayscale white8connectedcomponents threshold200; seat interior bbox dimensions selected from visual component histogram;no ranges input;area3000..4099 includes two larger M15/E15 interiors;dimensions60..75. Issuer reconciliation: 現行公式ホール図のA〜N全303番号席。交互列の16番欠番を保持。 No inferred identifiers or capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "A",
+      "from": 4,
+      "to": 20,
+      "excluded": [
+        16
+      ]
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "B",
+      "from": 3,
+      "to": 21,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "C",
+      "from": 2,
+      "to": 22,
+      "excluded": [
+        16
+      ]
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 23,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 23,
+      "excluded": [
+        16
+      ]
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 23,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 23,
+      "excluded": [
+        16
+      ]
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 23,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 23,
+      "excluded": [
+        16
+      ]
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 23,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 23,
+      "excluded": [
+        16
+      ]
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 23,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "M",
+      "from": 1,
+      "to": 23,
+      "excluded": [
+        16
+      ]
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "N",
+      "from": 1,
+      "to": 23,
+      "excluded": []
+    }
+  ]
+}

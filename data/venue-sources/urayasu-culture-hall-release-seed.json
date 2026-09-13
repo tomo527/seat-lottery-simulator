@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "urayasu-culture-hall-release-seed",
   "name": "浦安市文化会館 大ホール",
   "prefecture": "千葉県",
@@ -8,65 +8,283 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "id": "standard",
+    "name": "通常配置（1182番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 1182,
+    "selectionReason": "現行通常配置の1〜28列全1,182番号席。",
+    "notIncludedPatterns": [
+      "親子室6席は番号がなく対象外。車椅子転換時とピット使用時は別条件。"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
-      "publisher": "浦安市文化会館",
-      "title": "浦安市文化会館 公式施設案内",
-      "url": "https://www.urayasu-zaidan.or.jp/urayasu-bunka/",
-      "checkedAt": "2026-08-02"
+      "publisher": "公益財団法人うらやす財団",
+      "title": "浦安市文化会館 大ホール 現行施設案内",
+      "url": "https://www.urayasu-zaidan.or.jp/urayasu-bunka/1001517.html",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人うらやす財団",
+      "title": "浦安市文化会館 大ホール 現行リンク番号図",
+      "url": "https://www.urayasu-zaidan.or.jp/_res/projects/default_project/_page_/001/001/517/0129daikyaku.pdf",
+      "checkedAt": "2026-09-13"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "現行通常配置の1〜28列全1,182番号席。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
   "knownLimitations": [
-    "Closure Pass分類: SOURCE HOLD。公式施設ページは確認できたが、現行の完全番号図と厳密席数の組合せを特定できない。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "親子室6席は番号がなく対象外。車椅子転換時とピット使用時は別条件。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
-    ]
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent human visual two-pass: parent current PDF/PyMuPDF full view; peer independently fetched/current PDF visual freeze. Original SHA256 64f7659cab471b0382e0661ff86527fa044d9c7b291c64441b1140488034c26b. Initial expanded bidirectional Pass1-only0/Pass2-only0/duplicates0. Independent structural checksum 1182: Independent connected-component seat-cell interior count from PDF rendering. No transcription/range/expandedSet files read. White bounded numbered seat-back interiors width20..38 height20..37; exclude separate lower chair cushions (height<=19), title/parentchild area outside y530..2150, stair tread cells at far left/right outside x175..2030. Spatial mask from visual page only, no row ranges. GeometrySHA 57d197a6c76539d28bcc3c4bcb75d5d5dd563670f01b41000d40330a01c3f8aa. Issuer reconciliation: 現行通常配置の1〜28列全1,182番号席。 No capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
   },
-  "ranges": [],
-  "preflight": {
-    "officialFacilityPage": "あり",
-    "officialSeatStructureSource": "なし",
-    "officialSeatCountSource": "なし",
-    "completeNumberedSeatMap": "なし",
-    "exactNominalSeatCount": "なし",
-    "representativeLayout": "不明",
-    "fixedSeats": "不明",
-    "movableSeats": "不明",
-    "wheelchair": "不明",
-    "pit": "不明",
-    "areas": "不明",
-    "processingRoute": "Hold",
-    "classification": "SOURCE HOLD",
-    "mapUrl": null,
-    "countUrl": null,
-    "checkedAt": "2026-08-03",
-    "rationale": "公式施設ページは確認できたが、現行の完全番号図と厳密席数の組合せを特定できない。",
-    "officialFacilityUrl": "https://www.urayasu-zaidan.or.jp/urayasu-bunka/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "pending"
-  }
+  "ranges": [
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "1",
+      "from": 13,
+      "to": 39,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "2",
+      "from": 11,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "3",
+      "from": 11,
+      "to": 41,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "4",
+      "from": 10,
+      "to": 42,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "5",
+      "from": 10,
+      "to": 42,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "6",
+      "from": 10,
+      "to": 42,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "7",
+      "from": 10,
+      "to": 42,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "8",
+      "from": 6,
+      "to": 46,
+      "excluded": [
+        9,
+        43
+      ]
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "9",
+      "from": 5,
+      "to": 47,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "10",
+      "from": 4,
+      "to": 48,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "11",
+      "from": 3,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "12",
+      "from": 2,
+      "to": 50,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "16",
+      "from": 1,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "17",
+      "from": 1,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "18",
+      "from": 1,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "19",
+      "from": 8,
+      "to": 44,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "20",
+      "from": 8,
+      "to": 44,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "21",
+      "from": 8,
+      "to": 44,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "22",
+      "from": 8,
+      "to": 44,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "23",
+      "from": 1,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "24",
+      "from": 1,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "25",
+      "from": 1,
+      "to": 51,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "26",
+      "from": 3,
+      "to": 49,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "27",
+      "from": 5,
+      "to": 47,
+      "excluded": []
+    },
+    {
+      "areaId": "main",
+      "areaLabel": "客席",
+      "rowLabel": "28",
+      "from": 6,
+      "to": 46,
+      "excluded": []
+    }
+  ]
 }
