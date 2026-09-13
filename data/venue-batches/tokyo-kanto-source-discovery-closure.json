@@ -1,0 +1,19 @@
+{
+  "batchId": "tokyo-kanto-source-discovery-closure",
+  "createdAt": "2026-09-13",
+  "scope": "Bounded 99-record historical source-discovery closure. This batch registers completed implementation carryovers; full pool and pending stages are in the closure report.",
+  "status": "in-progress",
+  "priority": "A",
+  "targetVenueIds": [
+    "gunma-music-center"
+  ],
+  "carryOvers": [
+    {
+      "inventoryId": "gunma-music-center",
+      "carryOverFrom": "release-seed-v1",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery closure recovered correct current issuer numbered chart; full fresh implementation completed.",
+      "recheckNotBefore": "2026-09-13"
+    }
+  ]
+}

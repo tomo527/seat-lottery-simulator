@@ -2,6 +2,20 @@
 
 Updated: 2026-09-13 (Asia/Tokyo)
 
+## Active — Tokyo/Kanto source-discovery false-negative closure
+
+User authorized exhaustive historical nonproduction source-discovery audit, eligible implementations, normal commit/push and Workers Builds delivery. The initial bounded pool is **99 candidates** (Tokyo79 / Kanto critical9 / release-seed11); final orphan/exclusion completeness sweep remains pending. Existing production and actual-chart structural/configuration/user-HOLD/HARD CASE candidates remain excluded. Canonical tracking: [closure report](../data/venue-reports/tokyo-kanto-source-discovery-closure-2026-09-13.json). This is an ongoing checkpoint, **not closure; remaining is not zero**.
+
+**Completed implementation:** gunma-music-center -> gunma-music-center-release-seed, standard, **1,932 printed seats**. Correct current issuer /culture/m-center/ replaced the historical wrong theatre entry. Fresh independent visual passes matched every33 row/exclusion and expanded1,932-seat set with zero differences/duplicates. Independent raster cell interiors count1,932, all20 issuer block subtotals reconcile, front1,136+rear796. Three unnumbered wheelchair positions remain excluded; pit72 included in normal condition. Existing176 production sources/fingerprints/runtime semantics unchanged. Production now **177 venues /179 configurations /263,740 seats** (+1/+1/+1,932).
+
+**Validation:** target review and closure batch report PASS, no blockers/errors. Full npm run verify:venues PASS in approved environment (17 E2E passed); initial sandbox run stopped at Vitest startup permissions. Warnings unchanged57. Checkpoint commit/push/build/public smoke pending.
+
+**Open work:** finish99 candidate discovery dispositions and all eligible fresh implementations. Many current originals recovered (Maebashi, Mori, Funabashi, Chiba Art, Urayasu, Lilia, ATM, Ibaraki, Tochigi and Tokyo halls); report labels are pending gates, not adoption conclusions. Belluna live issuer seat app displays individual block/row/number; complete interactive verification remains pending. Failed web asset fetches must use alternate client, never become no-chart conclusions. Candidate-local misplaced Gunma/Lilia eligibilityReason origin proven by cbc5ea8/af19dda; Gunma corrected with implementation; Lilia awaits its own fresh disposition. No GLOBAL issue established.
+
+**Exact next action:** deliver this validated Gunma checkpoint by normal commit/push, then continue pending originals and independent implementation gates from the closure report without restarting completed passes.
+
+## Previous save state (historical; superseded by active state above)
+
 ## Active save state — Phase 1 Tokyo Priority D five-ADOPT production implementation (2026-09-13)
 
 The bounded batch `tokyo-wave-38-priority-d-five-adopt-implementation` implemented exactly the five ADOPTs from **TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT 4 — EVIDENCE-YIELD RECOVERY** as five independent mini-waves. All five passed the existing production admission gate; no LOCAL HOLD, HARD CASE or GLOBAL RED occurred, and no excluded venue or additional candidate was opened. The machine-readable record is [`tokyo-wave-38-priority-d-five-adopt-implementation-2026-09-13.json`](../data/venue-reports/tokyo-wave-38-priority-d-five-adopt-implementation-2026-09-13.json).

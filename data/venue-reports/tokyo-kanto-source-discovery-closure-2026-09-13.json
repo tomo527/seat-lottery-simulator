@@ -1,0 +1,2034 @@
+{
+  "reportVersion": 1,
+  "reportId": "tokyo-kanto-source-discovery-closure-2026-09-13",
+  "checkedAt": "2026-09-13",
+  "status": "in-progress",
+  "baseline": {
+    "head": "c9a9c3901acec5002525b4d241514af054e26f9b",
+    "venues": 176,
+    "configurations": 178,
+    "seats": 261808
+  },
+  "scope": "Historical Tokyo/Kanto nonproduction source-discovery risks only; existing production and actual-chart structural/configuration/user-HOLD/HARD CASE excluded.",
+  "classification": {
+    "poolCount": 99,
+    "tokyo": 79,
+    "kantoCritical": 9,
+    "releaseSeed": 11,
+    "completeness": "Initial inventory/source/report classification; final orphan and exclusion sweep pending."
+  },
+  "candidates": [
+    {
+      "inventoryId": "tokyo-official-0083",
+      "name": "時事通信ホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://hall.jiji.com/about/layout.html",
+        "https://hall.jiji.com/about/document.html",
+        "https://hall.jiji.com/about/equipment.html"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Numbered294/320 attachment examples recovered; issuer representative applicability still requires parent judgment, not no-chart."
+    },
+    {
+      "inventoryId": "tokyo-official-0104",
+      "name": "東京証券会館",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.ts-kaikan.co.jp/hall/facilities.html",
+        "https://www.ts-kaikan.co.jp/hall/img/img_facili_floor02.gif"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0124",
+      "name": "建築会館ホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.aij.or.jp/hall-overview.html",
+        "https://www.aij.or.jp/hall-layout.html",
+        "https://www.aij.or.jp/jpn/hall/hall/pdf/p1-200.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Original empty dimension plan, renter layouts192/128; no numbered representative configuration."
+    },
+    {
+      "inventoryId": "tokyo-official-0227",
+      "name": "新宿末廣亭",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://suehirotei.com/guide.html",
+        "https://suehirotei.com/img/Kyakuseki1f.png"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Current free-seating guidance; original seat/sajiki diagram unnumbered."
+    },
+    {
+      "inventoryId": "tokyo-official-0242",
+      "name": "東京オペライティ コンサートホール/リサイタルホール〔東京オペラシティ リサイタルホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.operacity.jp/concert/seat/",
+        "https://www.operacity.jp/concert/rental/download/",
+        "https://www.operacity.jp/concert/seat/common/img/img-rh-map.jpg",
+        "https://www.operacity.jp/concert/rental/download/pdf/7_RH_seat.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Original cells all unnumbered; download page says drawings are pre-renovation."
+    },
+    {
+      "inventoryId": "tokyo-official-0344",
+      "name": "浅草花劇場",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "有効な公式施設URLを確認できず、全列・全番号を判読できる公式座席表と現在の番号席総数を独立照合できない。",
+      "entryUrl": "https://www.hanayashiki-kagekijo.com",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.hanayashiki-kagekijo.com/step/",
+        "https://www.hanayashiki-kagekijo.com/uploads/2026/06/kyakuseki-butai.zip"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0404",
+      "name": "日本科学未来館〔未来館ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.miraikan.jst.go.jp/visit/facility-rental/conference/",
+        "https://www.miraikan.jst.go.jp/visit/docs/01_Miraikan-Hall_2509.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Current2025Sep technical original unnumbered; equipment/usage guides and domain searches no complete IDs."
+    },
+    {
+      "inventoryId": "tokyo-official-0412",
+      "name": "深川江戸資料館〔小劇場〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.kcf.or.jp/fukagawa/outline/docs/",
+        "https://www.kcf.or.jp/cms/files/pdf/id60_42797.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0447",
+      "name": "五反田文化センター〔音楽ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.city.shinagawa.tokyo.jp/PC/shisetsu/shisetsu-bunka/shisetsu-bunka-bunka/hpg000028612.html",
+        "https://www.city.shinagawa.tokyo.jp/contentshozon2023/gotanda2.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0454",
+      "name": "品川区立総合区民会館 きゅりあん〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.shinagawa-culture.or.jp/curian/facility/download.html",
+        "https://www.shinagawa-culture.or.jp/curian/facility/jk1h86000000065y-att/equipment-13ver4.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0520",
+      "name": "大田文化の森〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.ota-bunka.or.jp/facilities/bunka/halls/main_hall/main_hall01",
+        "https://www.ota-bunka.or.jp/files/bunka_hall_zaseki.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0607",
+      "name": "北沢タウンホール(北沢区民会館)〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "有効な公式施設URLを確認できず、全列・全番号を判読できる公式座席表と現在の番号席総数を独立照合できない。",
+      "entryUrl": "https://www.setagaya.co.jp/kuminkaikan/kitazawatownhall/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.setagaya.co.jp/kuminkaikan/kitazawatownhall/facilities/hall/",
+        "https://www.setagaya.co.jp/kuminkaikan/kitazawatownhall/contents/wp-content/themes/kuminkaikan/assets/pdf/download/hall_seatingarrangement.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0803",
+      "name": "杉並区立勤労福祉会館〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.city.suginami.tokyo.jp/s033/shisetsu/14968.html",
+        "https://nishiogi-community.jp/center/project/hall/",
+        "https://nishiogi-community.jp/center/wp-content/uploads/2021/03/ホール座席レイアウト.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0826",
+      "name": "東京芸術劇場〔シアターウエスト〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.geigeki.jp/rent/theatre_west/",
+        "https://www.geigeki.jp/facilities/pdf/west.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0827",
+      "name": "自由学園明日館〔自由学園明日館 講堂〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://jiyu.jp/facility-guide/",
+        "https://jiyu.jp/wp-content/uploads/2025/03/heimenzu_JP.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Actual current plan unnumbered; original shisetsu25/26/27 are photos, not seat lists."
+    },
+    {
+      "inventoryId": "tokyo-official-0895",
+      "name": "荒川区民会館(サンパール荒川)〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.sunpearl-arakawa.com/about/hall_small/",
+        "https://www.sunpearl-arakawa.com/guide/download/",
+        "https://www.sunpearl-arakawa.com/src/pdf/hall_small_zaseki.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Actual so-called seat PDF is empty floor grid;300 movable seats, arbitrary layout."
+    },
+    {
+      "inventoryId": "tokyo-official-0906",
+      "name": "板橋区立グリーンホール〔1階ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.itabashi-ci.org/greenhall/institution/green-h1.html",
+        "https://www.itabashi-ci.org/greenhall/institution/pdf/attach_green_01.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Actual original empty floor plan; capacity depends setting."
+    },
+    {
+      "inventoryId": "tokyo-official-0907",
+      "name": "板橋区立グリーンホール〔2階ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "有効な公式施設URLを確認できず、全列・全番号を判読できる公式座席表と現在の番号席総数を独立照合できない。",
+      "entryUrl": "https://www.itabashi-ci.org/greenhall/",
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.itabashi-ci.org/greenhall/institution/green-h2.html",
+        "https://www.itabashi-ci.org/greenhall/institution/pdf/attach_green_02.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Actual original empty floor plan; no complete numbered configuration."
+    },
+    {
+      "inventoryId": "tokyo-official-0918",
+      "name": "大東文化会館 ホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.daito.ac.jp/campuslife/facility/culturalhall.html",
+        "https://www.daito.ac.jp/campuslife/facility/"
+      ],
+      "disposition": null,
+      "reopenCondition": "Issuer-defined current complete numbered representative configuration.",
+      "findings": "Current university315 capacity/photos; issuer search only facility/statistics, no numbered original."
+    },
+    {
+      "inventoryId": "tokyo-official-0941",
+      "name": "竹の塚地域学習センター〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": "https://www.kunitachi.ac.jp/introduction/organization/hall.html",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.city.adachi.tokyo.jp/sg-shien/shisetsu/shogaigakushu/009.html",
+        "https://www.adachi-takenotsukacenter.net/hall/",
+        "https://www.adachi-takenotsukacenter.net/download/seating_chart.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0970",
+      "name": "江戸川区総合区民ホール タワーホール船堀 〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.towerhall.jp/page-4235/",
+        "https://www.towerhall.jp/tower/wp-content/uploads/2022/04/hallsmall-za.jpg"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0983",
+      "name": "八王子市学園都市センター〔イベントホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.hachiojibunka.or.jp/gakuen/file/",
+        "https://www.hachiojibunka.or.jp/gakuen/facility/event_hall/",
+        "https://www.hachiojibunka.or.jp/gakuen/wp-content/uploads/2022/12/event_hall_zaseki216.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0994",
+      "name": "首都大学東京 南大沢キャンパス講堂〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://gs.tmu.ac.jp/activities/use_lending/auditorium.html",
+        "https://gs.tmu.ac.jp/activities/use_lending/",
+        "https://gs.tmu.ac.jp/assets/files/manual_2023shisetsu_gakusei.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Current issuer complete numbered representative chart and applicable configuration evidence.",
+      "findings": "University use manual/facility311 only; no complete small-hall identifiers recovered."
+    },
+    {
+      "inventoryId": "tokyo-official-0997",
+      "name": "八王子市北野市民センター〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.hachiojibunka.or.jp/center/kitano/",
+        "https://www.hachiojibunka.or.jp/center/assets/kitano/kitanos.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Current issuer complete numbered representative chart and applicable configuration evidence.",
+      "findings": "Current room/capacity297 only; no numbered representative chart recovered."
+    },
+    {
+      "inventoryId": "tokyo-official-1000",
+      "name": "八王子市芸術文化会館(いちょうホール)〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "有効な公式施設URLを確認できず、全列・全番号を判読できる公式座席表と現在の番号席総数を独立照合できない。",
+      "entryUrl": "https://www.hachiojibunka.or.jp/icho/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.hachiojibunka.or.jp/icho/facility/",
+        "https://www.hachiojibunka.or.jp/icho/assets/doc/sub_hall.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-1048",
+      "name": "三鷹市芸術文化センター〔星のホール(小ホール)〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "有効な公式施設URLを確認できず、全列・全番号を判読できる公式座席表と現在の番号席総数を独立照合できない。",
+      "entryUrl": "https://mitaka-sportsandculture.or.jp/geibun/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://mitaka-sportsandculture.or.jp/geibun/info/star.html",
+        "https://mitaka-sportsandculture.or.jp/_files/00001588/star_seat.gif",
+        "https://mitaka-sportsandculture.or.jp/_files/00001601/star_floorplan.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-1050",
+      "name": "府中市市民活動センタープラッツ〔バルト ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "有効な公式施設URLを確認できず、全列・全番号を判読できる公式座席表と現在の番号席総数を独立照合できない。",
+      "entryUrl": "https://www.fuchu-platz.jp/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.fuchu-platz.jp/use/1001976.html",
+        "https://www.fuchu-platz.jp/_res/projects/default_project/_page_/001/001/976/kyakuseki.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-1075",
+      "name": "南市民センター〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.city.machida.tokyo.jp/kurashi/touroku/shisetsu/03/sisetuannai.html"
+      ],
+      "disposition": null,
+      "reopenCondition": "Current issuer complete numbered representative chart and applicable configuration evidence.",
+      "findings": "Current room/use information only, no numbered chart. Rentals suspended Dec1 2025; closure alone is not blocker."
+    },
+    {
+      "inventoryId": "tokyo-official-1083",
+      "name": "木曽山崎コミュニティセンター〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.city.machida.tokyo.jp/kurashi/touroku/shisetsu/com08.html"
+      ],
+      "disposition": null,
+      "reopenCondition": "Current issuer complete numbered representative chart and applicable configuration evidence.",
+      "findings": "Room capacity300 and equipment only; no complete numbered layout found. Sept8 outage resolved Sept9."
+    },
+    {
+      "inventoryId": "tokyo-official-1084",
+      "name": "小山市民センター〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.city.machida.tokyo.jp/kurashi/touroku/shisetsu/06/sisetuannai.html",
+        "https://www.city.machida.tokyo.jp/shisei/shiyakusyo/gyomu/shimin/oyama.html"
+      ],
+      "disposition": null,
+      "reopenCondition": "Current issuer complete numbered representative chart and applicable configuration evidence.",
+      "findings": "No numbered map found. Rental suspension Jan4 2026; not closure-only blocker."
+    },
+    {
+      "inventoryId": "tokyo-official-1094",
+      "name": "忠生市民センター〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.city.machida.tokyo.jp/kurashi/touroku/shisetsu/01/sisetuannai.html",
+        "https://www.city.machida.tokyo.jp/kurashi/touroku/shisetsu/01/sisetuannai.files/tadao_kannaimap.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": "Current issuer complete numbered representative chart and applicable configuration evidence.",
+      "findings": "Actual floor map has rooms/stage, no complete seat identifiers."
+    },
+    {
+      "inventoryId": "tokyo-official-1137",
+      "name": "本多公民館〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "discovery-reviewed",
+      "checkedPaths": [
+        "https://www.city.kokubunji.tokyo.jp/shisetsu/shikanren/kouminkan/1003831.html",
+        "https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/003/831/ho-ru.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Parent fetched PDF successfully. Page1 is empty floor with stored chairs, expressly movable tables/chairs; page2 pending visual."
+    },
+    {
+      "inventoryId": "tokyo-official-1159",
+      "name": "東大和市中央公民館〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://www.city.higashiyamato.lg.jp/bunkasports/1007933/1009691/1009692.html"
+      ],
+      "disposition": null,
+      "reopenCondition": "Current issuer complete numbered representative chart and applicable configuration evidence.",
+      "findings": "Capacity422 and floor guides; second-floor image needs alternate retrieval before final negative."
+    },
+    {
+      "inventoryId": "tokyo-official-1167",
+      "name": "成美教育文化会館〔成美グリーンホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "pending-final-negative-verification",
+      "checkedPaths": [
+        "https://syuurenkai.or.jp/pages/seibi-sisetu.html",
+        "https://syuurenkai.or.jp/images/seibi-01s.jpg"
+      ],
+      "disposition": null,
+      "reopenCondition": "Current issuer complete numbered representative chart and applicable configuration evidence.",
+      "findings": "Movable302 capacity; no complete numbered configuration recovered."
+    },
+    {
+      "inventoryId": "tokyo-official-1171",
+      "name": "武蔵村山市民会館 さくらホール〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.musashimurayama-sakurahall.jp/guide/download/",
+        "https://www.musashimurayama-sakurahall.jp/src/2016/02/hall_small_zaseki.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-1176",
+      "name": "多摩市立関戸公民館(ヴィータ・コミューネ)〔ヴィータホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "discovery-reviewed",
+      "checkedPaths": [
+        "https://www.city.tama.lg.jp/kenkofukushi/katsudo/kouminkan/1003189.html",
+        "https://www.city.tama.lg.jp/_res/projects/default_project/_page_/001/003/189/vita_butai.pdf"
+      ],
+      "disposition": "IDENTIFIER HOLD",
+      "reopenCondition": "Issuer publishes complete directly identified rows/seats for representative theatre configuration.",
+      "findings": "Parent actual PDF visual: fixed206+auxiliary34+parent10=250; all cells unnumbered, no row identifiers."
+    },
+    {
+      "inventoryId": "tokyo-official-1183",
+      "name": "多摩市立複合文化施設 パルテノン多摩〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "有効な公式施設URLを確認できず、全列・全番号を判読できる公式座席表と現在の番号席総数を独立照合できない。",
+      "entryUrl": "https://www.parthenon.or.jp/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.parthenon.or.jp/guide/facility/community-hall/",
+        "https://www.parthenon.or.jp/download/Tama_CommunityHall_Zaseki.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-1189",
+      "name": "羽村市生涯学習センターゆとろぎ〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.city.hamura.tokyo.jp/0000018212.html",
+        "https://www.city.hamura.tokyo.jp/cmsfiles/contents/0000018/18212/small_zaseki.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-1206",
+      "name": "瑞穂ビューパーク・スカイホール〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページの所在は確認したが、全列・全番号を一括転記できる公式座席表と、通常配置の番号席総数を組み合わせて確認できない。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144.html",
+        "https://www.town.mizuho.tokyo.jp/kyoikuiinkai/about/007/001/p005144_d/fil/syouho-ruheimen.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer-linked original recovered; parent fresh visual/configuration and independent gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0028",
+      "name": "イタリア文化会館 アニェッリホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT): issuer entrypoint, event/ticket, FAQ, download and seating/drawing domain sweep found a 372-capacity statement only, not a complete current numbered chart/list. Capacity cannot supply identifiers. Reopen only if the issuer publishes a numbered representative seating chart/list.",
+      "entryUrl": "https://iictokyo.esteri.it/ja/chi-siamo/la-sede/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0032",
+      "name": "明治大学 アカデミーホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "tokyo-wave3-0032",
+      "priorBlocker": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。",
+      "entryUrl": null,
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0034",
+      "name": "全電通労働会館〔全電通ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "zendentsu-hall-standard",
+      "priorBlocker": "公式座席表から420席の全rangeを転記し、前方席または舞台拡張時に外す席が標準配置へ含まれるか確認する。",
+      "entryUrl": "https://zhall.or.jp/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0052",
+      "name": "有楽町よみうりホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "tokyo-wave3-0052",
+      "priorBlocker": "source JSONへ公式施設ページを記録済み。production化には全列・全番号を判読できる公式座席表と、番号席総数の一致確認が必要。",
+      "entryUrl": null,
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://yomi-h.jp/seat.html",
+        "https://yomi-h.jp/item/seat.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0090",
+      "name": "ヤマハホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "yamaha-hall-standard",
+      "priorBlocker": "公式座席表から333席の1・2階全rangeを転記し、車椅子利用時に取り外す固定席を確認する。",
+      "entryUrl": "https://www.yamahaginza.com/hall/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://retailing.jp.yamaha.com/shop/ginza/hall/",
+        "https://retailing.jp.yamaha.com/var/rev0/0176/0728/seating.gif"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current original numbered source recovered; fresh implementation gates pending."
+    },
+    {
+      "inventoryId": "tokyo-official-0135",
+      "name": "赤坂区民センター〔区民ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "tokyo-wave3-0135",
+      "priorBlocker": "DEFER (TOKYO PRIORITY C RANKED PREFLIGHT): current official facility page links a seat chart, but the linked PDF currently returns PAGE NOT FOUND. Do not infer the removable first two rows; reopen only with a current complete issuer-numbered map/list.",
+      "entryUrl": null,
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0144",
+      "name": "ヤクルトホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT): hall, use/access, linked seat endpoint, ticket/FAQ, downloads and issuer-domain seating/drawing searches were checked. The current linked seat endpoint is page-not-found and no numbered asset remains. Reopen only when the issuer publishes/restores a complete numbered representative chart/list.",
+      "entryUrl": "https://www.yakult.co.jp/spn/hall/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0172",
+      "name": "六本木トリコロールシアターロッポンギ",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (TOKYO PRIORITY D PERFORMANCE-IDENTITY PREFLIGHT): issuer top, schedule/ticket, floor-plan/technical, download, FAQ/accessibility and domain seating/drawing searches found only a partial A列5-15 member allocation, not a complete identifier set/configuration. Reopen only with a complete issuer-numbered representative chart/list.",
+      "entryUrl": "https://tricolore-theater.com/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0297",
+      "name": "東京都助産師会館〔講堂〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3): the current official room-rental page states only 最大72名 for 講堂 with hourly rental pricing and rentable equipment (mics, projector, screen, whiteboard, mats), and the current facility-overview page lists 講堂 with no capacity or seating detail at all. No current seating chart, floor plan, or row/seat numbering exists anywhere on the site. Reopen only if the issuer publishes a numbered seat chart.",
+      "entryUrl": "https://www.tokyo-mw-kaikan.jp/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0323",
+      "name": "台東区民会館〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "taito-civic-hall-standard",
+      "priorBlocker": "公式施設資料の300席について、固定番号が記載された現行座席表を取得し全rangeを確認する。",
+      "entryUrl": "https://www.city.taito.lg.jp/index/shisetsu/hall/kuminkan/riyouannai.html",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0331",
+      "name": "東京国立博物館〔平成館大講堂〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "tokyo-wave3-0331",
+      "priorBlocker": "DEFER (TOKYO PRIORITY C RANKED PREFLIGHT): current issuer page states fixed393 plus wheelchair2 but provides no complete numbered map/list, row/block ownership, or numbered wheelchair relation. Existing draft ranges have no current issuer provenance.",
+      "entryUrl": null,
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0337",
+      "name": "独立行政法人 国立科学博物館〔日本館講堂〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official site (kahaku.go.jp) facility-rental page describes 日本館講堂 only with a photo and no capacity figure or seat chart; the only externally indexed rental-guide PDF (inst_lend.pdf) returns the site’s top page (dead/redirected link), not a document. No current issuer-numbered seat set or capacity statement was located. Reopen only if the issuer publishes a current numbered seat chart or a working rental-guide document with seating detail.",
+      "entryUrl": "https://www.kahaku.go.jp/index.php",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0338",
+      "name": "東京都美術館〔講堂〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official facility page and its linked current usage-guide PDF (2024年3月改訂) both state only a capacity figure, \"定員230名（車いすスペース5台分含む）\", with no seat chart, row label, or numbered seat list of any kind. Reopen only if the issuer publishes a numbered seat chart.",
+      "entryUrl": "https://www.tobikan.jp/index.html",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0359",
+      "name": "上野恩賜公園〔野外ステージ〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TYPE-ONLY A/B LANE CLOSURE): 現行公式は固定席1,200を示すが、issuer-numbered set、losslessなprinted seat set、issuer-defined ownershipがない。番号付き座席図/seat listが現行公式で公開された場合のみ再評価する。",
+      "entryUrl": "https://www.kensetsu.metro.tokyo.lg.jp/jimusho/toubuk/ueno/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0366",
+      "name": "すみだパークシアター倉",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 2): the current official operator site (https://theater.sasayacafe.com/) states only 常設151席 and publishes no seat chart, PDF, or numbered diagram; third-party ticketing sites (eplus, okepi, mdata) are not issuer evidence. Reopen only if the issuer publishes a current numbered seat chart.",
+      "entryUrl": "https://theatersasayacafe.com/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0367",
+      "name": "江戸東京博物館〔大ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "tokyo-wave3-0367",
+      "priorBlocker": "DEFER (TOKYO PRIORITY C REMAINING PREFLIGHT): current official rental material confirms the 369-seat large hall and wheelchair space, but has no current complete issuer-numbered map/list; the old overview PDF URL is now 404.",
+      "entryUrl": "https://www.edo-tokyo-museum.or.jp/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0446",
+      "name": "十四世喜多六平太記念能楽堂",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "kita-noh-theatre-standard",
+      "priorBlocker": "公式客席案内から385席の正面・中正面・脇正面のarea、列、番号方向を独立抽出し、補助席を除外する。",
+      "entryUrl": "https://kita-noh.com/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0464",
+      "name": "日本近代文学館〔講堂〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D HIGH-YIELD CROSS-TIER PREFLIGHT): the current official facility-use page (https://www.bungakukan.or.jp/guidance/facilities/) states only an approximate capacity \"座席数100前後（要予約）\" for 講堂, with no seat chart, row label, or numbered seat list anywhere on the site. Reopen only if the issuer publishes a numbered seat chart or an exact (non-approximate) seat count.",
+      "entryUrl": "https://www.bungakukan.or.jp/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0537",
+      "name": "成城学園 澤柳記念講堂",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "公式施設ページは最大1,570席を示すが、全列・全番号を判読できる公式座席表を公開していない。座席表公開時に再確認する。",
+      "entryUrl": "https://www.seijogakuen.ed.jp/about/facilities/auditorium/index.html",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0546",
+      "name": "駒澤大学 記念講堂",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "大学公式サイトで講堂の利用は確認できるが、全列・全番号と総席数を同時に裏付ける公開公式資料を確認できない。",
+      "entryUrl": "https://www.komazawa-u.ac.jp/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0561",
+      "name": "昭和女子大学グリーンホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "tokyo-wave3-0561",
+      "priorBlocker": "DEFER (TOKYO-WAVE-25): 現行大学公式資料ではグリーンホールはBuilding 3の教室として扱われ、番号付きrepresentative setはない。現行issuerのcomplete numbered mapが確認できるまで通常candidate discoveryから除外する。",
+      "entryUrl": null,
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0704",
+      "name": "代々木能舞台",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "代々木能舞台はTOKYO PRIORITY D RANKED NEXT PREFLIGHT 4 (2026-08-26)でDEFER。運営者サイト(HTTPSはホスト名不一致で証明書検証失敗、HTTPは到達可)およびWikipediaは座布団敷き(畳)の概算席数(約160席/約80席)のみを示し、番号付き座席図・列名・座席番号は皆無。再調査は公式の番号付き座席図が新たに公開された場合のみ。",
+      "entryUrl": "https://www.yoyoginoubutai.com/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0813",
+      "name": "一般財団法人 杉並能楽堂",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the current official site (http://suginaminohgakudou.org/) was reviewed across its guidance, access, history, and performances pages; it publishes only a rental fee schedule and past performance-program PDFs (through 2019), with no seat count, seat chart, or row/seat numbering anywhere on the site. Reopen only if the issuer publishes a numbered seat chart or seat-count statement.",
+      "entryUrl": null,
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0816",
+      "name": "雑司が谷音楽堂",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 2): the current official facilities/system pages (https://zoshigayaongakudo.com/) publish only an unnumbered 見取り図 image and a maximum-capacity figure (最大席数70); no issuer-numbered seat chart exists. Reopen only if the issuer publishes a numbered seat chart.",
+      "entryUrl": "https://zoshigayaongakudo.music.coocan.jp/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0818",
+      "name": "西巣鴨音楽堂",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the current official site (https://nishisugamo-ongakudo.com/) publishes no seat chart, row labels, or seat count; its only capacity-adjacent statement is a variable occupancy limit (\"ご利用人数を最大30名様から20名様までに変更\") for a piano salon space, not a numbered audience-seat set. Reopen only if the issuer publishes a numbered seat chart.",
+      "entryUrl": "https://nishisugamo-ongakudo.com/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0849",
+      "name": "帝京平成大学 冲永記念ホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "大学公式ページは1,005席を示すが、一般に再確認可能な全番号付き公式座席表を確認できない。公開資料追加時に再確認する。",
+      "entryUrl": "https://www.thu.ac.jp/aboutus/facility/okinaga",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0893",
+      "name": "シアター・バビロンの流れのほとりにて",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D RANKED NEXT PREFLIGHT 3): the operator's own domain (tokyobabylon.org) could not be safely fetched (TLS certificate mismatch on shared hosting), and current-linked secondary sources (theater.co.jp portal, dated 2022-01-19) and third-party listings state differing capacity figures (48-50) with no seat chart; the venue is consistently described as a flat free-use space with no permanent/fixed seating. No issuer-numbered chart exists. Reopen only if the issuer publishes a current numbered seat chart from a verifiable current site.",
+      "entryUrl": "https://www.tokyobabylon.org/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0974",
+      "name": "江戸川区立葛西区民館〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "kasai-civic-hall-standard",
+      "priorBlocker": "公式施設ページに掲載される501席のうち、固定番号席の全列・番号と車椅子利用時の転換席を座席図で確認する。",
+      "entryUrl": "https://www.city.edogawa.tokyo.jp/e034/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_kasai/index.html",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0977",
+      "name": "江戸川区立小松川区民館〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "komatsugawa-civic-hall-standard",
+      "priorBlocker": "対象ホールは公式300席・常設非可動まで確認したが、全列・全番号を示す公式座席図が公開されていない。",
+      "entryUrl": "https://www.city.edogawa.tokyo.jp/e033/kuseijoho/gaiyo/shisetsuguide/bunya/kuyakusho/c_komatsugawa/index.html",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-0989",
+      "name": "創価大学 ディスカバリーホール",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "tokyo-wave3-0989",
+      "priorBlocker": "DEFER (TOKYO-WAVE-25): boundedな現行first-party確認ではcomplete numbered mapを特定できず、既存Wave3 sourceは一般的な施設・連絡先資料にとどまる。現行issuer番号図が得られるまで通常candidate discoveryから除外する。",
+      "entryUrl": null,
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-1008",
+      "name": "幸学習館〔講堂〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 3): the current official facility page states 講堂 capacity 130名 with a photo and equipment list but no seating chart, floor plan, or row/seat numbering; two additional indexed pages that might otherwise carry a floor plan (a facility-introduction PDF and a detail sub-page) both currently return HTTP 404. Reopen only if the issuer publishes a current numbered seat chart.",
+      "entryUrl": "https://www.city.tachikawa.lg.jp/shogaigakushu/shisetsu/gakushukan/002.html",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-1020",
+      "name": "国立音楽大学 〔講堂小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "tokyo-wave3-1020",
+      "priorBlocker": "SOURCE HOLD: 現行の完全番号付き座席表が登録されていない。現行issuer seat mapと番号席集合を確認するまで通常candidate discoveryから除外する。",
+      "entryUrl": null,
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-1057",
+      "name": "プロメテウス・ホール(東京外国語大学アゴラ・グローバル内)",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "tufs-prometheus-hall-standard",
+      "priorBlocker": "東京都公式リスト掲載。現役性、固定番号席、全列・番号、総席数、代表パターンを要調査。",
+      "entryUrl": "https://www.tufs.ac.jp/common/is/shisetsu/top/kenchiku/AGORA_Global/AGORA_Global.html",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-1066",
+      "name": "調布市グリーンホール〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "chofu-green-small-standard",
+      "priorBlocker": "公式座席資料から300席の全列・全番号を転記し、平土間転換の有無と通常固定席配置を確認する。",
+      "entryUrl": "https://www.chofu-culture-community.org/forms/menutop/menutop.aspx?menu_id=90",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-1090",
+      "name": "法政大学 多摩キャンパス 大教室A棟",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): university-published complete numbered hall chart and current assigned-seat configuration required.",
+      "entryUrl": "https://www.hosei.ac.jp/tama/gaiyo/shisetsu/2/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-1145",
+      "name": "くにたち福祉会館〔大ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY D CROSS-TIER HIGH-YIELD PREFLIGHT 2): the current official facility page states only an approximate maximum capacity \"〜150人程度\" for 大ホール, lists 机・椅子 as furnishing (not fixed theater seating), and publishes no seating chart, floor plan, or row/seat numbering of any kind. Reopen only if the issuer publishes a numbered seat chart or an exact (non-approximate) seat count.",
+      "entryUrl": "https://www.kunitachi-csw.tokyo/renting_facilities/#kasidasisisetu",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-1155",
+      "name": "グスタフスタジオ〔シアターグスタフ〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "グスタフスタジオ〔シアターグスタフ〕はTOKYO PRIORITY D RANKED NEXT PREFLIGHT 4 (2026-08-26)でDEFER。現行公式ページ(HTTPS到達可)は「最大130名収容可能」という可変上限のみを示し、座席図・列名・座席番号は皆無。第三者情報では約90席という異なる概数も見られ、番号付き座席集合は存在しない。再調査は公式の番号付き座席図が新たに公開された場合のみ。",
+      "entryUrl": "https://cr-gustaf.com/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-1186",
+      "name": "稲城市立iプラザ〔ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": null,
+      "priorBlocker": "DEFER (TOKYO PRIORITY C SOURCE-LOCATED PREFLIGHT): 現行市公式は運営サイトへリンクするが、運営サイトと旧座席PDF URLの現在性を安全に確認できず、current/current-linked issuer-numbered setとして採用しない。third-party transcription、capacity fitting、geometry-only ownershipはしない。current issuer chart/listが公開・到達可能になった場合のみ再評価する。",
+      "entryUrl": "https://www.iplaza.inagi.tokyo.jp/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-official-1198",
+      "name": "西東京市保谷こもれびホール〔小ホール〕",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "hoya-komorebi-small-standard",
+      "priorBlocker": "公式施設資料の250席について、平土間転換可能な座席の番号体系と通常配置を座席図から確認する。",
+      "entryUrl": "https://www.komorebi-hall.jp/",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "tokyo-coverage-pia-theater-yaesu",
+      "name": "東京建物 ぴあ シアター",
+      "inventoryFile": "data/venue-inventory/tokyo.json",
+      "venueSourceId": "pia-theater-yaesu-standard",
+      "priorBlocker": "SOURCE/SCHEMA HOLD: 公開公式資料は階別容量と固定席構造を示すが、完全なrow label・seat number図面を公開していない。",
+      "entryUrl": "https://www.yaesu.theater-conference.jp/facilities/theater/organizers",
+      "discoveryStatus": "pending",
+      "checkedPaths": [],
+      "disposition": null,
+      "reopenCondition": null
+    },
+    {
+      "inventoryId": "gunma-maebashi-culture-main",
+      "name": "昌賢学園まえばしホール〔大ホール〕",
+      "inventoryFile": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "venueSourceId": null,
+      "priorBlocker": "SOURCE HOLD (2026-09-05 PREFLIGHT 5): recorded issuer hostname https://www.maebashi-culture.jp/ returned ERR_NAME_NOT_RESOLVED. Locate a working current issuer page and complete numbered representative chart before re-evaluation; no old/third-party chart, inferred IDs, rows, or capacity fitting.",
+      "entryUrl": "https://www.maebashi-culture.jp/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://maebashishibun.maebashi-cc.or.jp/lhall",
+        "https://maebashishibun.maebashi-cc.or.jp/dl",
+        "https://maebashishibun.maebashi-cc.or.jp/wp/wp-content/uploads/2017/05/257e4c397addcd825c60a43215449cbe.pdf",
+        "https://maebashishibun.maebashi-cc.or.jp/?p=20126"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current issuer linked numbered chart recovered; visual two-pass and structural verification pending. Planned July2027-March2029 stage renovation recorded."
+    },
+    {
+      "inventoryId": "kanagawa-yokohama-buntai-main",
+      "name": "横浜BUNTAI〔メインアリーナ〕",
+      "inventoryFile": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer complete numbered chart required for one configuration, including movable, temporary, wheelchair, suite and box semantics.",
+      "entryUrl": "https://yokohama-buntai.jp/",
+      "discoveryStatus": "pending-asset-verification",
+      "checkedPaths": [
+        "https://yokohama-buntai.jp/organizer/",
+        "https://yokohama-buntai.jp/floor/",
+        "https://yokohama-buntai.jp/wp-includes/images/floor_guid/2F.png"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current January29 guide and category maps found, full numbered map not recovered."
+    },
+    {
+      "inventoryId": "kanagawa-todoroki-arena-main",
+      "name": "川崎市とどろきアリーナ〔メインアリーナ〕",
+      "inventoryFile": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer numbered chart plus selected fixed/movable/accessibility scope required.",
+      "entryUrl": "https://kawasaki-todoroki-arena.co.jp/",
+      "discoveryStatus": "discovery-reviewed",
+      "checkedPaths": [
+        "https://kawasaki-todoroki-park.co.jp/guide/arena/"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current facility gives fixed/moving subtotals, no complete numbered stand map found through issuer navigation and domain search. Future replacement-arena plans excluded."
+    },
+    {
+      "inventoryId": "kanagawa-odawara-arena-main",
+      "name": "小田原アリーナ〔メインアリーナ〕",
+      "inventoryFile": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current official numbered chart and fixed/movable/temporary seating semantics required.",
+      "entryUrl": "https://www.odawara-zaidan.or.jp/arena/",
+      "discoveryStatus": "pending-asset-verification",
+      "checkedPaths": [
+        "https://odawaraarena.main.jp/",
+        "https://odawaraarena.main.jp/main_arena.htm",
+        "https://odawaraarena.main.jp/pdf/arena01.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Floor plan found; relevant failed-fetch utilization guide requires alternate-client check."
+    },
+    {
+      "inventoryId": "ibaraki-adastria-mito-arena",
+      "name": "アダストリアみとアリーナ〔メインアリーナ〕",
+      "inventoryFile": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current facility/operator numbered chart with an issuer-defined representative configuration required.",
+      "entryUrl": "https://mito-arena.jp/",
+      "discoveryStatus": "discovery-reviewed",
+      "checkedPaths": [
+        "https://www.city.mito.lg.jp/page/1015.html",
+        "https://maas.or.jp/pages/126/"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Recovered current operator; spectator renovation completed March5 2026, no post-renovation numbered chart recovered. Old event charts excluded."
+    },
+    {
+      "inventoryId": "gunma-alsok-arena",
+      "name": "ALSOKぐんまアリーナ",
+      "inventoryFile": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer chart with every selected identifier and explicit movable/accessibility relationship required.",
+      "entryUrl": "https://www.gunma-sports.or.jp/",
+      "discoveryStatus": "pending-asset-verification",
+      "checkedPaths": [
+        "https://gunma-sports.or.jp/sportscenter/arena/facility/index.php",
+        "https://gunma-sports.or.jp/sportscenter/arena/facility/pdf/1.arina_20heimenzu02.pdf",
+        "https://gunma-sports.or.jp/sportscenter/arena/download/index.php"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer floor plan fetch pending alternate client; domain search no target chart, third-party event diagrams not adopted."
+    },
+    {
+      "inventoryId": "gunma-green-dome-maebashi",
+      "name": "日本トーターグリーンドーム前橋",
+      "inventoryFile": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): current issuer numbered stand chart and declared representative scope required.",
+      "entryUrl": "https://greendome.jp/",
+      "discoveryStatus": "pending-asset-verification",
+      "checkedPaths": [
+        "https://greendome.jp/mainevent",
+        "https://greendome.jp/dl",
+        "https://greendome.jp/wp-content/uploads/2023/01/main_2f.pdf",
+        "https://greendome.jp/wp-content/uploads/2023/01/main_4f.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "2F/4F building plans checked; 3F/accessibility failed-fetch checks pending."
+    },
+    {
+      "inventoryId": "saitama-belluna-dome",
+      "name": "ベルーナドーム",
+      "inventoryFile": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): issuer-owned complete current numbered stand chart with group/accessibility/event semantics required.",
+      "entryUrl": "https://www.seibulions.jp/stadium/",
+      "discoveryStatus": "recovered-pending-interactive-inspection",
+      "checkedPaths": [
+        "https://www.seibulions.jp/news/detail/202500550481.html",
+        "https://ticket.seibulions.jp/seat"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Issuer seat search app recovered; complete unfiltered current identifiers and scope pending browser inspection."
+    },
+    {
+      "inventoryId": "chiba-zozo-marine-stadium",
+      "name": "ZOZOマリンスタジアム",
+      "inventoryFile": "data/venue-inventory/kanto-release-critical-2026-08-27.json",
+      "venueSourceId": null,
+      "priorBlocker": "HOLD / NEED EVIDENCE (PREFLIGHT-7): complete current issuer fixed-stand identifier evidence with event/blocked/accessible-seat treatment required.",
+      "entryUrl": "https://www.marines.co.jp/stadium/",
+      "discoveryStatus": "pending-interactive-inspection",
+      "checkedPaths": [
+        "https://www.marines.co.jp/ticket/seat/genelal/",
+        "https://www.marines.co.jp/ticket/season2026/seatmap.html",
+        "https://www.marines.co.jp/ticket/how/mticket/"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Static category surfaces only; complete non-sale-filtered identifiers not established."
+    },
+    {
+      "inventoryId": "narashino-culture-hall",
+      "name": "習志野文化ホール",
+      "inventoryFile": "data/venue-inventory/release-seed-chiba.json",
+      "venueSourceId": "narashino-culture-hall-release-seed",
+      "priorBlocker": "登録済み公式URLが404で、現行施設ページ・番号図・厳密席数を確認できない。",
+      "entryUrl": "https://narashino-future.jp/bunka/",
+      "discoveryStatus": "discovery-reviewed",
+      "checkedPaths": [
+        "https://www.city.narashino.lg.jp/soshiki/sogoseisaku/gyomu/shisetu/kominkan/bunkahall.html"
+      ],
+      "disposition": "NEED EVIDENCE",
+      "reopenCondition": "Correct cultural-hall issuer publishes/links complete maintained numbered map; do not substitute Platz.",
+      "findings": "Stored narashino-future.jp belongs to different Platz municipal hall. Correct cultural hall current city page plans FY2028 reopening. No maintained complete numbered map recovered."
+    },
+    {
+      "inventoryId": "funabashi-civic-culture-hall",
+      "name": "船橋市民文化ホール",
+      "inventoryFile": "data/venue-inventory/release-seed-chiba.json",
+      "venueSourceId": "funabashi-civic-culture-hall-release-seed",
+      "priorBlocker": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。",
+      "entryUrl": "https://funabashi-bunka.or.jp/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.city.funabashi.lg.jp/shisetsu/bunka/0001/0001/0004/p000988.html",
+        "https://www.city.funabashi.lg.jp/shisetsu/bunka/0001/0001/0004/p000988_d/fil/zaseki.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current issuer page links original numbered chart. Independent implementation gate pending; discovery report is not an extraction answer key."
+    },
+    {
+      "inventoryId": "chiba-city-culture-center-hall",
+      "name": "千葉市文化センター アートホール",
+      "inventoryFile": "data/venue-inventory/release-seed-chiba.json",
+      "venueSourceId": "chiba-city-culture-center-hall-release-seed",
+      "priorBlocker": "登録URLは財団トップへリダイレクトし、対象アートホールの現行番号図・厳密席数を特定できない。",
+      "entryUrl": "https://www.f-cp.jp/chibacenter/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.f-cp.jp/bunka/guide/",
+        "https://www.f-cp.jp/common/bunka_images/guide_center_kyakuseki.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current issuer page links original numbered chart. Independent implementation gate pending; discovery report is not an extraction answer key."
+    },
+    {
+      "inventoryId": "urayasu-culture-hall",
+      "name": "浦安市文化会館 大ホール",
+      "inventoryFile": "data/venue-inventory/release-seed-chiba.json",
+      "venueSourceId": "urayasu-culture-hall-release-seed",
+      "priorBlocker": "公式施設ページは確認できたが、現行の完全番号図と厳密席数の組合せを特定できない。",
+      "entryUrl": "https://www.urayasu-zaidan.or.jp/urayasu-bunka/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.urayasu-zaidan.or.jp/urayasu-bunka/1001517.html",
+        "https://www.urayasu-zaidan.or.jp/_res/projects/default_project/_page_/001/001/517/0129daikyaku.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current issuer page links original numbered chart. Independent implementation gate pending; discovery report is not an extraction answer key."
+    },
+    {
+      "inventoryId": "kawaguchi-lilia-main",
+      "name": "川口総合文化センター・リリア メインホール",
+      "inventoryFile": "data/venue-inventory/release-seed-saitama.json",
+      "venueSourceId": "kawaguchi-lilia-main-release-seed",
+      "priorBlocker": "公式トップは確認できたが、改修後の対象メインホールについて現行完全番号図・厳密席数を確定できない。",
+      "entryUrl": "https://www.lilia.or.jp/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.lilia.or.jp/audiences/hallseat/",
+        "https://www.lilia.or.jp/img/hallseat/hall_main_proscenium.pdf",
+        "https://www.lilia.or.jp/img/hallseat/hall_main_apronstage.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current issuer page links original numbered chart. Independent implementation gate pending; discovery report is not an extraction answer key."
+    },
+    {
+      "inventoryId": "mito-arts-tower-concert",
+      "name": "水戸芸術館 コンサートホールATM",
+      "inventoryFile": "data/venue-inventory/release-seed-ibaraki.json",
+      "venueSourceId": "mito-arts-tower-concert-release-seed",
+      "priorBlocker": "公式ホール施設ページは確認できたが、現行コンサートホールATMの完全番号図と厳密席数を同一対象として特定できない。",
+      "entryUrl": "https://www.arttowermito.or.jp/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.arttowermito.or.jp/hall/about/",
+        "https://www.arttowermito.or.jp/hall/about/seat.pdf?20221220=",
+        "https://www.arttowermito.or.jp/service/guide2025.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current issuer page links original numbered chart. Independent implementation gate pending; discovery report is not an extraction answer key."
+    },
+    {
+      "inventoryId": "ibaraki-kenritsu-bunka-center-large",
+      "name": "ザ・ヒロサワ・シティ会館 大ホール",
+      "inventoryFile": "data/venue-inventory/release-seed-ibaraki.json",
+      "venueSourceId": "ibaraki-kenritsu-bunka-center-large-release-seed",
+      "priorBlocker": "公式施設サイトは確認できたが、対象大ホールの現行完全番号図・厳密席数を確定できない。",
+      "entryUrl": "https://www.ibarakiken-bunkacenter.com/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.ibarakiken-bunkacenter.com/facilities/hall_l.html",
+        "https://www.ibarakiken-bunkacenter.com/facilities/file/hall_l-seatingchart.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current issuer page links original numbered chart. Independent implementation gate pending; discovery report is not an extraction answer key."
+    },
+    {
+      "inventoryId": "tochigi-ken-sogo-bunka-center-main",
+      "name": "栃木県総合文化センター メインホール",
+      "inventoryFile": "data/venue-inventory/release-seed-tochigi.json",
+      "venueSourceId": "tochigi-ken-sogo-bunka-center-main-release-seed",
+      "priorBlocker": "登録済み公式URLへの現行資料到達を確認できず、番号図・厳密席数を確定しない。",
+      "entryUrl": "https://www.tochigi-kenmin.jp/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.sobun-tochigi.jp/mainhall.html",
+        "https://www.sobun-tochigi.jp/files/pdf/guide/mainhall_seat.pdf",
+        "https://www.sobun-tochigi.jp/barrier-free_main.html"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Current issuer page links original numbered chart. Independent implementation gate pending; discovery report is not an extraction answer key."
+    },
+    {
+      "inventoryId": "kanagawa-kenmin-hall-main",
+      "name": "神奈川県民ホール 大ホール",
+      "inventoryFile": "data/venue-inventory/release-seed-kanagawa.json",
+      "venueSourceId": "kanagawa-kenmin-hall-main-release-seed",
+      "priorBlocker": "SOURCE HOLD: complete independently readable official numbered-seat map is not publicly available.",
+      "entryUrl": "https://www.kanagawa-kenminhall.com/about/mainhall",
+      "discoveryStatus": "discovery-reviewed",
+      "checkedPaths": [
+        "https://www.kanagawa-kenminhall.com/about/mainhall",
+        "https://www.kanagawa-kenminhall.com/about",
+        "https://www.pref.kanagawa.jp/docs/yi4/prs/r4987594.html",
+        "https://www.pref.kanagawa.jp/docs/yi4/cnt/f500091/index.html"
+      ],
+      "disposition": "REBUILD / CURRENTNESS HOLD",
+      "reopenCondition": "Issuer establishes eligible facility-space and current complete numbered configuration after rebuilding disposition.",
+      "findings": "Current prefecture explicitly decides main-building replacement; this is not temporary closure alone."
+    },
+    {
+      "inventoryId": "gunma-music-center",
+      "name": "群馬音楽センター",
+      "inventoryFile": "data/venue-inventory/release-seed-gunma.json",
+      "venueSourceId": "gunma-music-center-release-seed",
+      "priorBlocker": "登録URLは高崎芸術劇場の資料ページで、群馬音楽センター対象の現行番号図・厳密席数を識別できない。",
+      "entryUrl": "https://www.takasaki-foundation.or.jp/theatre/",
+      "discoveryStatus": "implemented-validated-pending-delivery",
+      "checkedPaths": [
+        "https://www.takasaki-foundation.or.jp/culture/m-center/",
+        "https://www.takasaki-foundation.or.jp/culture/m-center/pdf/gmc14.zasekihyo.pdf"
+      ],
+      "disposition": "PRODUCTION",
+      "reopenCondition": "Issuer publishes superseding numbered chart or changed seating structure.",
+      "findings": "Current linked complete numbered chart visually confirmed; fresh Pass1 frozen locally; independent Pass2/checksum pending.",
+      "implementation": {
+        "pass1": {
+          "venueId": "gunma-music-center-release-seed",
+          "pass": "Human Pass 1",
+          "frozenAt": "2026-09-13",
+          "asset": "https://www.takasaki-foundation.or.jp/culture/m-center/pdf/gmc14.zasekihyo.pdf",
+          "method": "Fresh direct visual reading of full chart and enlarged front/rear/wing/wheelchair crops. Every printed row boundary read; no historical ranges used.",
+          "ranges": [
+            {
+              "rowLabel": "1",
+              "from": 29,
+              "to": 52
+            },
+            {
+              "rowLabel": "2",
+              "from": 23,
+              "to": 58
+            },
+            {
+              "rowLabel": "3",
+              "from": 21,
+              "to": 60
+            },
+            {
+              "rowLabel": "4",
+              "from": 21,
+              "to": 60
+            },
+            {
+              "rowLabel": "5",
+              "from": 21,
+              "to": 60
+            },
+            {
+              "rowLabel": "6",
+              "from": 19,
+              "to": 62
+            },
+            {
+              "rowLabel": "7",
+              "from": 18,
+              "to": 63
+            },
+            {
+              "rowLabel": "8",
+              "from": 16,
+              "to": 65
+            },
+            {
+              "rowLabel": "9",
+              "from": 15,
+              "to": 66
+            },
+            {
+              "rowLabel": "10",
+              "from": 13,
+              "to": 68
+            },
+            {
+              "rowLabel": "11",
+              "from": 11,
+              "to": 70
+            },
+            {
+              "rowLabel": "12",
+              "from": 10,
+              "to": 71
+            },
+            {
+              "rowLabel": "13",
+              "from": 10,
+              "to": 71
+            },
+            {
+              "rowLabel": "14",
+              "from": 10,
+              "to": 71
+            },
+            {
+              "rowLabel": "15",
+              "from": 9,
+              "to": 72
+            },
+            {
+              "rowLabel": "16",
+              "from": 9,
+              "to": 72
+            },
+            {
+              "rowLabel": "17",
+              "from": 8,
+              "to": 73
+            },
+            {
+              "rowLabel": "18",
+              "from": 8,
+              "to": 73
+            },
+            {
+              "rowLabel": "19",
+              "from": 6,
+              "to": 75
+            },
+            {
+              "rowLabel": "20",
+              "from": 6,
+              "to": 75,
+              "excluded": [
+                53,
+                54,
+                55,
+                56,
+                57
+              ]
+            },
+            {
+              "rowLabel": "21",
+              "from": 5,
+              "to": 76,
+              "excluded": [
+                53,
+                54,
+                55,
+                56,
+                57
+              ]
+            },
+            {
+              "rowLabel": "22",
+              "from": 10,
+              "to": 71,
+              "excluded": [
+                24,
+                25,
+                26,
+                27,
+                28,
+                53,
+                54,
+                55,
+                56,
+                57
+              ]
+            },
+            {
+              "rowLabel": "23",
+              "from": 10,
+              "to": 71,
+              "excluded": [
+                24,
+                25,
+                26,
+                27,
+                28,
+                53,
+                54,
+                55,
+                56,
+                57
+              ]
+            },
+            {
+              "rowLabel": "24",
+              "from": 9,
+              "to": 72,
+              "excluded": [
+                24,
+                25,
+                26,
+                27,
+                28,
+                53,
+                54,
+                55,
+                56,
+                57
+              ]
+            },
+            {
+              "rowLabel": "25",
+              "from": 9,
+              "to": 72,
+              "excluded": [
+                24,
+                25,
+                26,
+                27,
+                28,
+                53,
+                54,
+                55,
+                56,
+                57
+              ]
+            },
+            {
+              "rowLabel": "26",
+              "from": 8,
+              "to": 73,
+              "excluded": [
+                24,
+                25,
+                26,
+                27,
+                28,
+                53,
+                54,
+                55,
+                56,
+                57
+              ]
+            },
+            {
+              "rowLabel": "27",
+              "from": 8,
+              "to": 73
+            },
+            {
+              "rowLabel": "28",
+              "from": 7,
+              "to": 74
+            },
+            {
+              "rowLabel": "29",
+              "from": 3,
+              "to": 78
+            },
+            {
+              "rowLabel": "30",
+              "from": 2,
+              "to": 79
+            },
+            {
+              "rowLabel": "31",
+              "from": 1,
+              "to": 80
+            },
+            {
+              "rowLabel": "32",
+              "from": 1,
+              "to": 80
+            },
+            {
+              "rowLabel": "33",
+              "from": 1,
+              "to": 80
+            }
+          ],
+          "unresolved": [],
+          "accessibility": "Three unnumbered wheelchair positions; no fabricated identifiers. Pit is central rows 1-3 seats29-52, optional event condition; standard includes those printed seats."
+        },
+        "pass2": [
+          [
+            1,
+            29,
+            52,
+            []
+          ],
+          [
+            2,
+            23,
+            58,
+            []
+          ],
+          [
+            3,
+            21,
+            60,
+            []
+          ],
+          [
+            4,
+            21,
+            60,
+            []
+          ],
+          [
+            5,
+            21,
+            60,
+            []
+          ],
+          [
+            6,
+            19,
+            62,
+            []
+          ],
+          [
+            7,
+            18,
+            63,
+            []
+          ],
+          [
+            8,
+            16,
+            65,
+            []
+          ],
+          [
+            9,
+            15,
+            66,
+            []
+          ],
+          [
+            10,
+            13,
+            68,
+            []
+          ],
+          [
+            11,
+            11,
+            70,
+            []
+          ],
+          [
+            12,
+            10,
+            71,
+            []
+          ],
+          [
+            13,
+            10,
+            71,
+            []
+          ],
+          [
+            14,
+            10,
+            71,
+            []
+          ],
+          [
+            15,
+            9,
+            72,
+            []
+          ],
+          [
+            16,
+            9,
+            72,
+            []
+          ],
+          [
+            17,
+            8,
+            73,
+            []
+          ],
+          [
+            18,
+            8,
+            73,
+            []
+          ],
+          [
+            19,
+            6,
+            75,
+            []
+          ],
+          [
+            20,
+            6,
+            75,
+            [
+              53,
+              54,
+              55,
+              56,
+              57
+            ]
+          ],
+          [
+            21,
+            5,
+            76,
+            [
+              53,
+              54,
+              55,
+              56,
+              57
+            ]
+          ],
+          [
+            22,
+            10,
+            71,
+            [
+              24,
+              25,
+              26,
+              27,
+              28,
+              53,
+              54,
+              55,
+              56,
+              57
+            ]
+          ],
+          [
+            23,
+            10,
+            71,
+            [
+              24,
+              25,
+              26,
+              27,
+              28,
+              53,
+              54,
+              55,
+              56,
+              57
+            ]
+          ],
+          [
+            24,
+            9,
+            72,
+            [
+              24,
+              25,
+              26,
+              27,
+              28,
+              53,
+              54,
+              55,
+              56,
+              57
+            ]
+          ],
+          [
+            25,
+            9,
+            72,
+            [
+              24,
+              25,
+              26,
+              27,
+              28,
+              53,
+              54,
+              55,
+              56,
+              57
+            ]
+          ],
+          [
+            26,
+            8,
+            73,
+            [
+              24,
+              25,
+              26,
+              27,
+              28,
+              53,
+              54,
+              55,
+              56,
+              57
+            ]
+          ],
+          [
+            27,
+            8,
+            73,
+            []
+          ],
+          [
+            28,
+            7,
+            74,
+            []
+          ],
+          [
+            29,
+            3,
+            78,
+            []
+          ],
+          [
+            30,
+            2,
+            79,
+            []
+          ],
+          [
+            31,
+            1,
+            80,
+            []
+          ],
+          [
+            32,
+            1,
+            80,
+            []
+          ],
+          [
+            33,
+            1,
+            80,
+            []
+          ]
+        ],
+        "assetSha256": "90b2a5fcc68e804814cd98879a76efbf6a375bdb252242b841006614c3ff2e02",
+        "setEquality": {
+          "pass1Count": 1932,
+          "pass2Count": 1932,
+          "pass1Only": 0,
+          "pass2Only": 0,
+          "duplicates": 0
+        },
+        "structuralChecksum": {
+          "method": "independent Poppler raster enclosed cell interiors; threshold200/225; reviewed centroid overlay",
+          "count": 1932
+        },
+        "issuerFront": 1136,
+        "issuerRear": 796,
+        "issuerTotal": 1932
+      }
+    },
+    {
+      "inventoryId": "mori-no-hall21-main",
+      "name": "森のホール21 大ホール",
+      "inventoryFile": "data/venue-inventory/release-seed-chiba.json",
+      "venueSourceId": "mori-no-hall21-main-release-seed",
+      "priorBlocker": "SOURCE HOLD: the registered official PDF does not expose a complete numbered map for all floors.",
+      "entryUrl": "https://www.morinohall21.com/",
+      "discoveryStatus": "recovered-pending-implementation",
+      "checkedPaths": [
+        "https://www.morinohall21.com/hall21/",
+        "https://www.morinohall21.com/hall21/hall_l.html",
+        "https://www.morinohall21.com/hall21/users/download.html",
+        "https://www.morinohall21.com/hall21/file/hall_l_seatingchart01.pdf"
+      ],
+      "disposition": null,
+      "reopenCondition": null,
+      "findings": "Correct current-linked complete-chart asset recovered separately from old restricted-view photo guide; fresh implementation gates pending."
+    }
+  ],
+  "annotationAudit": {
+    "affected": [
+      "gunma-music-center",
+      "kawaguchi-lilia-main"
+    ],
+    "finding": "Misplaced eligibilityReason strings proven by cbc5ea8 and af19dda. Candidate-local correction authorized; source status/IDs/ranges remain coherent. Never use transplanted totals as evidence.",
+    "globalIssue": false
+  },
+  "checkpoints": [
+    {
+      "id": 1,
+      "implementation": "gunma-music-center",
+      "totals": {
+        "venues": 177,
+        "configurations": 179,
+        "seats": 263740
+      },
+      "validation": {
+        "targetReview": "PASS",
+        "batchReport": "PASS",
+        "verifyVenues": "PASS approved environment; sandbox Vitest startup failed",
+        "e2e": 17
+      },
+      "delivery": "pending"
+    }
+  ]
+}

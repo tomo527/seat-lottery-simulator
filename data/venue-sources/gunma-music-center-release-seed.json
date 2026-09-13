@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "draft",
+  "status": "production",
   "id": "gunma-music-center-release-seed",
   "name": "群馬音楽センター",
   "prefecture": "群馬県",
@@ -8,65 +8,297 @@
   "aliases": [],
   "venueType": "hall",
   "representativePattern": {
-    "id": "",
-    "name": "",
-    "coverage": "draft",
-    "expectedSeatCount": null,
-    "selectionReason": "Release Seed preflight: representative fixed numbered-seat pattern has not yet been independently established.",
-    "notIncludedPatterns": []
+    "id": "standard",
+    "name": "通常配置（番号席1,932席）",
+    "coverage": "complete",
+    "expectedSeatCount": 1932,
+    "selectionReason": "現行公式施設ページがリンクするホール座席表の全33列・全印字番号を通常配置として採用。オーケストラピット使用時は別条件として除外。",
+    "notIncludedPatterns": [
+      "オーケストラピット使用時",
+      "無番号の車椅子3位置"
+    ]
   },
   "sources": [
     {
       "id": "official-facility-page",
       "official": true,
       "roles": [
-        "facility"
+        "facility",
+        "seat-count"
       ],
-      "publisher": "群馬音楽センター",
-      "title": "群馬音楽センター 公式施設案内",
-      "url": "https://www.takasaki-foundation.or.jp/theatre/",
-      "checkedAt": "2026-08-02"
+      "publisher": "公益財団法人高崎財団",
+      "title": "群馬音楽センター 施設案内（固定席1,932席・車椅子3席、現行座席表へのリンク）",
+      "url": "https://www.takasaki-foundation.or.jp/culture/m-center/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人高崎財団",
+      "title": "群馬音楽センター ホール座席表 gmc14.zasekihyo.pdf",
+      "url": "https://www.takasaki-foundation.or.jp/culture/m-center/pdf/gmc14.zasekihyo.pdf",
+      "checkedAt": "2026-09-13"
     }
   ],
-  "registeredScope": "Release Seed preflight record only; no selectable-seat range is registered.",
-  "completenessBasis": "An official numbered seat map and a precise official capacity source must both be confirmed before range entry.",
-  "transformation": "No seat-map transcription has been performed.",
+  "registeredScope": "現行公式図の1〜33列に印字された全1,932番号席。2階ロビーはロビー名でありfloor namespaceを創作しない。",
+  "completenessBasis": "fresh independent human visual two-passをfreeze後にexpanded bidirectional set equalityで比較し差分0・重複0。独立画像cell checksum1,932と全20blockのissuer subtotalが一致。",
+  "transformation": "各印字番号を直接視認して同一列の連続区間へ圧縮。20・21列53〜57、22〜26列24〜28/53〜57は図上で無番号の空白であり、excludedとして保持。",
   "knownLimitations": [
-    "Closure Pass分類: SOURCE HOLD。登録URLは高崎芸術劇場の資料ページで、群馬音楽センター対象の現行番号図・厳密席数を識別できない。",
-    "Closure Passでは公式資料の存在と処理経路を確定し、番号rangeの転記は行っていない。"
+    "車椅子3位置は個別番号がなく抽選対象外。番号席との置換関係を推測していない。",
+    "ピットは1〜3列29〜52番の72席に対応。通常配置には含め、ピット使用時は扱わない。"
   ],
   "verification": {
-    "status": "pending",
-    "checkedAt": null,
-    "method": "",
-    "seatStructure": "pending",
-    "seatCount": "pending",
-    "unresolvedIssues": [
-      "Official seat-structure and seat-count evidence must be independently reviewed before this draft can be promoted."
-    ]
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent human visual two-pass: Pass1 PowerShell fetch / PyMuPDF crops; Pass2 independent urllib fetch / Poppler3000px quadrant and independent block checks, frozen before comparison. Asset SHA256 90b2a5fcc68e804814cd98879a76efbf6a375bdb252242b841006614c3ff2e02. All33 rows and exclusions MATCH; expanded Pass1-only0/Pass2-only0/duplicates0. Independent raster white-cell connected-components at thresholds200 and225 both1932, area300-600px2 width12-42 height15-45 and chart bounds, centroid overlay visually checked; no range-derived count. Issuer front blocks51,112,158,168,168,168,148,112,51=1136; rear17,70,96,71,96,96,96,71,96,70,17=796; grand1932. No capacity fitting or machine-generated IDs.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
   },
-  "ranges": [],
-  "preflight": {
-    "officialFacilityPage": "あり",
-    "officialSeatStructureSource": "なし",
-    "officialSeatCountSource": "なし",
-    "completeNumberedSeatMap": "なし",
-    "exactNominalSeatCount": "なし",
-    "representativeLayout": "不明",
-    "fixedSeats": "不明",
-    "movableSeats": "不明",
-    "wheelchair": "不明",
-    "pit": "不明",
-    "areas": "不明",
-    "processingRoute": "Hold",
-    "classification": "SOURCE HOLD",
-    "mapUrl": null,
-    "countUrl": null,
-    "checkedAt": "2026-08-03",
-    "rationale": "登録URLは高崎芸術劇場の資料ページで、群馬音楽センター対象の現行番号図・厳密席数を識別できない。",
-    "officialFacilityUrl": "https://www.takasaki-foundation.or.jp/theatre/",
-    "status": "complete",
-    "rangeEntry": "not-started",
-    "decision": "pending"
-  }
+  "ranges": [
+    {
+      "rowLabel": "1",
+      "from": 29,
+      "to": 52
+    },
+    {
+      "rowLabel": "2",
+      "from": 23,
+      "to": 58
+    },
+    {
+      "rowLabel": "3",
+      "from": 21,
+      "to": 60
+    },
+    {
+      "rowLabel": "4",
+      "from": 21,
+      "to": 60
+    },
+    {
+      "rowLabel": "5",
+      "from": 21,
+      "to": 60
+    },
+    {
+      "rowLabel": "6",
+      "from": 19,
+      "to": 62
+    },
+    {
+      "rowLabel": "7",
+      "from": 18,
+      "to": 63
+    },
+    {
+      "rowLabel": "8",
+      "from": 16,
+      "to": 65
+    },
+    {
+      "rowLabel": "9",
+      "from": 15,
+      "to": 66
+    },
+    {
+      "rowLabel": "10",
+      "from": 13,
+      "to": 68
+    },
+    {
+      "rowLabel": "11",
+      "from": 11,
+      "to": 70
+    },
+    {
+      "rowLabel": "12",
+      "from": 10,
+      "to": 71
+    },
+    {
+      "rowLabel": "13",
+      "from": 10,
+      "to": 71
+    },
+    {
+      "rowLabel": "14",
+      "from": 10,
+      "to": 71
+    },
+    {
+      "rowLabel": "15",
+      "from": 9,
+      "to": 72
+    },
+    {
+      "rowLabel": "16",
+      "from": 9,
+      "to": 72
+    },
+    {
+      "rowLabel": "17",
+      "from": 8,
+      "to": 73
+    },
+    {
+      "rowLabel": "18",
+      "from": 8,
+      "to": 73
+    },
+    {
+      "rowLabel": "19",
+      "from": 6,
+      "to": 75
+    },
+    {
+      "rowLabel": "20",
+      "from": 6,
+      "to": 75,
+      "excluded": [
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "rowLabel": "21",
+      "from": 5,
+      "to": 76,
+      "excluded": [
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "rowLabel": "22",
+      "from": 10,
+      "to": 71,
+      "excluded": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "rowLabel": "23",
+      "from": 10,
+      "to": 71,
+      "excluded": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "rowLabel": "24",
+      "from": 9,
+      "to": 72,
+      "excluded": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "rowLabel": "25",
+      "from": 9,
+      "to": 72,
+      "excluded": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "rowLabel": "26",
+      "from": 8,
+      "to": 73,
+      "excluded": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "rowLabel": "27",
+      "from": 8,
+      "to": 73
+    },
+    {
+      "rowLabel": "28",
+      "from": 7,
+      "to": 74
+    },
+    {
+      "rowLabel": "29",
+      "from": 3,
+      "to": 78
+    },
+    {
+      "rowLabel": "30",
+      "from": 2,
+      "to": 79
+    },
+    {
+      "rowLabel": "31",
+      "from": 1,
+      "to": 80
+    },
+    {
+      "rowLabel": "32",
+      "from": 1,
+      "to": 80
+    },
+    {
+      "rowLabel": "33",
+      "from": 1,
+      "to": 80
+    }
+  ]
 }
