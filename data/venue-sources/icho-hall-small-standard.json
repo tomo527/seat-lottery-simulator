@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "icho-hall-small-standard",
+  "name": "いちょうホール 小ホール",
+  "prefecture": "東京都",
+  "city": "八王子市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（282番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 282,
+    "selectionReason": "現行公式図の主客席260とL/Rバルコニー各11の282番号席。",
+    "notIncludedPatterns": [
+      "通常図に印字された取外し可能席を含みます。車椅子転換時・平土間配置は対象外です。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人八王子市学園都市文化ふれあい財団",
+      "title": "いちょうホール 小ホール 現行施設案内",
+      "url": "https://www.hachiojibunka.or.jp/icho/file/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "公益財団法人八王子市学園都市文化ふれあい財団",
+      "title": "いちょうホール 小ホール 現行番号座席図",
+      "url": "https://www.hachiojibunka.or.jp/icho/assets/doc/sub_hall.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式図の主客席260とL/Rバルコニー各11の282番号席。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "通常図に印字された取外し可能席を含みます。車椅子転換時・平土間配置は対象外です。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent visual Pass1/Pass2 separately fetched/rendered and froze before expanded bidirectional equality (both differences0,duplicates0). Asset SHA256 71fa88a7e4e97b43178f6d7ac5460e85b6b11c74db7a20f8d52a456686c26bb1. Independent full structural checksum 282: Count individual PDF fill paths of peach seat color (RGB approximately .98832685,.83620965,.80657661; type f). Includes rotated L/R balcony cells and removable L11/R11. Full overlay visually checked.. Issuer reconciliation: 現行公式図の主客席260とL/Rバルコニー各11の282番号席。 No identifier inference or capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "basement",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 24,
+      "excluded": [
+        18
+      ],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 24,
+      "excluded": [
+        7,
+        18
+      ],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 24,
+      "excluded": [
+        18
+      ],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 24,
+      "excluded": [],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 24,
+      "excluded": [],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 24,
+      "excluded": [],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 24,
+      "excluded": [],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 24,
+      "excluded": [],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 24,
+      "excluded": [],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 24,
+      "excluded": [],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "basement",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 24,
+      "excluded": [],
+      "areaLabel": "basement"
+    },
+    {
+      "areaId": "balcony",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 11,
+      "excluded": [],
+      "areaLabel": "balcony"
+    },
+    {
+      "areaId": "balcony",
+      "rowLabel": "R",
+      "from": 1,
+      "to": 11,
+      "excluded": [],
+      "areaLabel": "balcony"
+    }
+  ]
+}

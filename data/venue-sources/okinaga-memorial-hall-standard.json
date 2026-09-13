@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "okinaga-memorial-hall-standard",
+  "name": "帝京平成大学 冲永記念ホール",
+  "prefecture": "東京都",
+  "city": "豊島区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（997番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 997,
+    "selectionReason": "現行通常配置の1階777・2階220、計997番号席。無番号車椅子8位置を含む総数1005と区別。",
+    "notIncludedPatterns": [
+      "無番号車椅子位置は抽選対象外。公演による販売停止・転換は反映しません。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "帝京平成大学",
+      "title": "帝京平成大学 冲永記念ホール 現行施設案内",
+      "url": "https://hall.thu.ac.jp/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "帝京平成大学",
+      "title": "帝京平成大学 冲永記念ホール 現行番号座席図",
+      "url": "https://hall.thu.ac.jp/pdf/seat.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行通常配置の1階777・2階220、計997番号席。無番号車椅子8位置を含む総数1005と区別。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "無番号車椅子位置は抽選対象外。公演による販売停止・転換は反映しません。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent visual Pass1/Pass2 separately fetched/rendered and froze before expanded bidirectional equality (both differences0,duplicates0). Asset SHA256 73718d1fb1ccf673e1b7c23060df1cb23f9fedb3a2d3395ff0423fceb5ab779e. Independent full structural checksum 997: All digit-only PyMuPDF word tokens; hyphenated row labels excluded. Full overlay visually checked. Coordinate floor grouping yields 777 and220.. Issuer reconciliation: 現行通常配置の1階777・2階220、計997番号席。無番号車椅子8位置を含む総数1005と区別。 No identifier inference or capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "1F",
+      "rowLabel": "1",
+      "from": 10,
+      "to": 30,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "2",
+      "from": 10,
+      "to": 30,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "3",
+      "from": 10,
+      "to": 30,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "4",
+      "from": 7,
+      "to": 33,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "5",
+      "from": 6,
+      "to": 34,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "6",
+      "from": 5,
+      "to": 35,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "7",
+      "from": 4,
+      "to": 36,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "8",
+      "from": 3,
+      "to": 37,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "9",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 39,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 39,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 39,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 39,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 39,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 39,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "16",
+      "from": 10,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "17",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "18",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "19",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "20",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "21",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "22",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "1F",
+      "rowLabel": "23",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "1階"
+    },
+    {
+      "areaId": "2F",
+      "rowLabel": "24",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "2階"
+    },
+    {
+      "areaId": "2F",
+      "rowLabel": "25",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "2階"
+    },
+    {
+      "areaId": "2F",
+      "rowLabel": "26",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "2階"
+    },
+    {
+      "areaId": "2F",
+      "rowLabel": "27",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "2階"
+    },
+    {
+      "areaId": "2F",
+      "rowLabel": "28",
+      "from": 2,
+      "to": 38,
+      "excluded": [],
+      "areaLabel": "2階"
+    },
+    {
+      "areaId": "2F",
+      "rowLabel": "29",
+      "from": 3,
+      "to": 37,
+      "excluded": [],
+      "areaLabel": "2階"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "batchId": "tokyo-wave-39-source-discovery-closure",
   "createdAt": "2026-09-13",
-  "scope": "Bounded 99-record historical source-discovery closure. This batch registers completed implementation carryovers; full pool and pending stages are in the closure report.",
+  "scope": "Bounded255-record historical source-discovery closure after exhaustive report-body refinement. Batch registers completed implementation carryovers; full pool and pending phases are in the closure report.",
   "status": "in-progress",
   "priority": "A",
   "targetVenueIds": [
@@ -20,7 +20,13 @@
     "tokyo-official-0607",
     "tokyo-official-0803",
     "urayasu-culture-hall",
-    "ibaraki-kenritsu-bunka-center-large"
+    "ibaraki-kenritsu-bunka-center-large",
+    "tokyo-official-0970",
+    "tokyo-official-1000",
+    "tokyo-official-1048",
+    "tokyo-official-1189",
+    "tokyo-official-0849",
+    "tokyo-coverage-pia-theater-yaesu"
   ],
   "carryOvers": [
     {
@@ -124,6 +130,41 @@
     {
       "inventoryId": "ibaraki-kenritsu-bunka-center-large",
       "carryOverFrom": "release-seed-v1",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-0970",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-1000",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-1048",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-1189",
+      "carryOverFrom": "tokyo-wave-3",
+      "previousStatus": "blocked",
+      "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
+      "recheckNotBefore": "2026-09-13"
+    },
+    {
+      "inventoryId": "tokyo-official-0849",
+      "carryOverFrom": "tokyo-wave-2",
       "previousStatus": "blocked",
       "recheckReason": "User-authorized source-discovery recovery; fresh independent production gates completed.",
       "recheckNotBefore": "2026-09-13"

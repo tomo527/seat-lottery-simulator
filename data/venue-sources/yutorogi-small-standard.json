@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "yutorogi-small-standard",
+  "name": "羽村市生涯学習センターゆとろぎ 小ホール",
+  "prefecture": "東京都",
+  "city": "羽村市",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（252番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 252,
+    "selectionReason": "現行公式小ホール基本配置のA〜L全252番号席。",
+    "notIncludedPatterns": [
+      "可動席の公式番号配置です。平土間・別配置は対象外です。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "羽村市",
+      "title": "羽村市生涯学習センターゆとろぎ 小ホール 現行施設案内",
+      "url": "https://www.city.hamura.tokyo.jp/0000018212.html",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "羽村市",
+      "title": "羽村市生涯学習センターゆとろぎ 小ホール 現行番号座席図",
+      "url": "https://www.city.hamura.tokyo.jp/cmsfiles/contents/0000018/18212/small_zaseki.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式小ホール基本配置のA〜L全252番号席。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "可動席の公式番号配置です。平土間・別配置は対象外です。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent visual Pass1/Pass2 separately fetched/rendered and froze before expanded bidirectional equality (both differences0,duplicates0). Asset SHA256 d211fdaf15f3d6dddf835b530050e11590a44fe0590db17048ac9fd13aa0086f. Independent full structural checksum 252: independent pixel closed cell contour count, no glyph extraction. Issuer reconciliation: 現行公式小ホール基本配置のA〜L全252番号席。 No identifier inference or capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "A",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "B",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "C",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "D",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "E",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "F",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "G",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "H",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "I",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "J",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "K",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "L",
+      "from": 1,
+      "to": 21,
+      "excluded": [],
+      "areaLabel": "客席"
+    }
+  ]
+}

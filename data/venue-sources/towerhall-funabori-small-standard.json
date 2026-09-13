@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "status": "production",
+  "id": "towerhall-funabori-small-standard",
+  "name": "タワーホール船堀 小ホール",
+  "prefecture": "東京都",
+  "city": "江戸川区",
+  "aliases": [],
+  "venueType": "hall",
+  "representativePattern": {
+    "id": "standard",
+    "name": "通常配置（260番号席）",
+    "coverage": "complete",
+    "expectedSeatCount": 260,
+    "selectionReason": "現行公式通常配置の260番号席。",
+    "notIncludedPatterns": [
+      "実際の椅子に番号の貼付がない場合もあります。本データは公式図面の番号です。"
+    ]
+  },
+  "sources": [
+    {
+      "id": "official-facility-page",
+      "official": true,
+      "roles": [
+        "facility",
+        "seat-count"
+      ],
+      "publisher": "タワーホール船堀",
+      "title": "タワーホール船堀 小ホール 現行施設案内",
+      "url": "https://www.towerhall.jp/usage-guide/download/",
+      "checkedAt": "2026-09-13"
+    },
+    {
+      "id": "official-seat-map",
+      "official": true,
+      "roles": [
+        "seat-structure",
+        "seat-count"
+      ],
+      "publisher": "タワーホール船堀",
+      "title": "タワーホール船堀 小ホール 現行番号座席図",
+      "url": "https://www.towerhall.jp/tower/wp-content/uploads/2022/06/gb07.pdf",
+      "checkedAt": "2026-09-13"
+    }
+  ],
+  "registeredScope": "現行公式通常配置の260番号席。",
+  "completenessBasis": "現行公式図のfresh independent visual two-passをfreeze後にexpanded bidirectional set equalityで比較。独立画像structural checksumとissuer subtotalを照合。",
+  "transformation": "全印字番号を直接視認して同一列の連続区間へ圧縮。図上の欠番を保持し、容量に合わせた補完・削除なし。",
+  "knownLimitations": [
+    "実際の椅子に番号の貼付がない場合もあります。本データは公式図面の番号です。"
+  ],
+  "verification": {
+    "status": "verified",
+    "checkedAt": "2026-09-13",
+    "method": "Fresh independent visual Pass1/Pass2 separately fetched/rendered and froze before expanded bidirectional equality (both differences0,duplicates0). Asset SHA256 482de1c3df22ca738abe918e64f1e38907067f154adc80cea25c25139644174c. Independent full structural checksum 260: All digit-only PyMuPDF word tokens; row labels and heading totals are joined with Japanese text and are not digit-only. Full overlay visually checked.. Issuer reconciliation: 現行公式通常配置の260番号席。 No identifier inference or capacity fitting.",
+    "seatStructure": "matched",
+    "seatCount": "matched",
+    "rangeDiff": 0,
+    "unresolvedIssues": []
+  },
+  "ranges": [
+    {
+      "areaId": "main",
+      "rowLabel": "1",
+      "from": 1,
+      "to": 20,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "2",
+      "from": 1,
+      "to": 20,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "3",
+      "from": 1,
+      "to": 20,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "4",
+      "from": 1,
+      "to": 20,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "5",
+      "from": 1,
+      "to": 20,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "6",
+      "from": 1,
+      "to": 20,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "7",
+      "from": 1,
+      "to": 20,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "8",
+      "from": 1,
+      "to": 15,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "9",
+      "from": 1,
+      "to": 15,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "10",
+      "from": 1,
+      "to": 15,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "11",
+      "from": 1,
+      "to": 15,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "12",
+      "from": 1,
+      "to": 15,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "13",
+      "from": 1,
+      "to": 15,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "14",
+      "from": 1,
+      "to": 15,
+      "excluded": [],
+      "areaLabel": "客席"
+    },
+    {
+      "areaId": "main",
+      "rowLabel": "15",
+      "from": 1,
+      "to": 15,
+      "excluded": [],
+      "areaLabel": "客席"
+    }
+  ]
+}

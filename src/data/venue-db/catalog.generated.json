@@ -870,6 +870,18 @@
     "dataPath": "/venue-db/venues/icho-hall-main-standard.json"
   },
   {
+    "id": "icho-hall-small-standard",
+    "name": "いちょうホール 小ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "八王子市",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（282番号席）",
+    "seatCount": 282,
+    "dataPath": "/venue-db/venues/icho-hall-small-standard.json"
+  },
+  {
     "id": "iino-hall-standard",
     "name": "イイノホール",
     "searchAliases": [
@@ -1551,6 +1563,18 @@
     "dataPath": "/venue-db/venues/mitaka-arts-wind-hall-standard.json"
   },
   {
+    "id": "mitaka-star-hall-standard",
+    "name": "三鷹市芸術文化センター 星のホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "三鷹市",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（248番号席）",
+    "seatCount": 248,
+    "dataPath": "/venue-db/venues/mitaka-star-hall-standard.json"
+  },
+  {
     "schemaVersion": 2,
     "id": "mito-civic-globis-hall",
     "venueGroupId": "mito-civic-globis-hall",
@@ -2057,6 +2081,18 @@
     "dataPath": "/venue-db/venues/oji-hall-standard.json"
   },
   {
+    "id": "okinaga-memorial-hall-standard",
+    "name": "帝京平成大学 冲永記念ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "豊島区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（997番号席）",
+    "seatCount": 997,
+    "dataPath": "/venue-db/venues/okinaga-memorial-hall-standard.json"
+  },
+  {
     "id": "olympic-center-main-hall-standard",
     "name": "国立オリンピック記念青少年総合センター カルチャー棟 大ホール",
     "searchAliases": [],
@@ -2283,6 +2319,21 @@
         "fixedOnly": true
       }
     ]
+  },
+  {
+    "id": "pia-theater-yaesu-standard",
+    "name": "東京建物 ぴあ シアター",
+    "searchAliases": [
+      "ぴあシアター",
+      "東京建物 ぴあ シアター＆カンファレンス"
+    ],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "中央区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（806番号席）",
+    "seatCount": 806,
+    "dataPath": "/venue-db/venues/pia-theater-yaesu-standard.json"
   },
   {
     "id": "popuri-hall-tsurukawa-standard",
@@ -3629,6 +3680,18 @@
     ]
   },
   {
+    "id": "towerhall-funabori-small-standard",
+    "name": "タワーホール船堀 小ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "江戸川区",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（260番号席）",
+    "seatCount": 260,
+    "dataPath": "/venue-db/venues/towerhall-funabori-small-standard.json"
+  },
+  {
     "id": "toyosu-civic-center-hall-standard",
     "name": "豊洲シビックセンターホール",
     "searchAliases": [
@@ -3830,6 +3893,18 @@
     "representativePatternName": "Aタイプ（通常タイプ）",
     "seatCount": 636,
     "dataPath": "/venue-db/venues/yurakucho-asahi-hall-standard.json"
+  },
+  {
+    "id": "yutorogi-small-standard",
+    "name": "羽村市生涯学習センターゆとろぎ 小ホール",
+    "searchAliases": [],
+    "region": "関東",
+    "prefecture": "東京都",
+    "municipality": "羽村市",
+    "venueType": "hall",
+    "representativePatternName": "通常配置（252番号席）",
+    "seatCount": 252,
+    "dataPath": "/venue-db/venues/yutorogi-small-standard.json"
   },
   {
     "schemaVersion": 2,
